@@ -4,7 +4,8 @@ import { RosCluster } from './emr.generated';
 export { RosCluster as ClusterProperty };
 
 /**
- * Properties for defining a `ALIYUN::EMR::Cluster`
+ * Properties for defining a `Cluster`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-cluster
  */
 export interface ClusterProps {
 
@@ -107,7 +108,7 @@ export interface ClusterProps {
     readonly instanceGeneration?: string | ros.IResolvable;
 
     /**
-     * Property ioOptimized: Indicates wether I/O optimization is enabled. Default value: true.
+     * Property ioOptimized: Indicates wether I\/O optimization is enabled. Default value: true.
      */
     readonly ioOptimized?: boolean | ros.IResolvable;
 
@@ -141,7 +142,7 @@ export interface ClusterProps {
     readonly masterPwd?: string | ros.IResolvable;
 
     /**
-     * Property metaStoreConf: Meta store conf of specific meta store type. If MetaStoreType=user_rds, MetaStoreConf should be like {"dbUrl":"jdbc:mysql://xxxxxx", "dbUserName":"username", "dbPassword":"password"}
+     * Property metaStoreConf: Meta store conf of specific meta store type. If MetaStoreType=user_rds, MetaStoreConf should be like {"dbUrl":"jdbc:mysql:\/\/xxxxxx", "dbUserName":"username", "dbPassword":"password"}
      */
     readonly metaStoreConf?: string | ros.IResolvable;
 
@@ -234,14 +235,11 @@ export interface ClusterProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::EMR::Cluster`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EMR::Cluster`, which is used to create an E-MapReduce (EMR) cluster.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-cluster
  */
 export class Cluster extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ClusterId: The ID of the cluster.
@@ -264,8 +262,6 @@ export class Cluster extends ros.Resource {
     public readonly attrMasterNodePubIps: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::EMR::Cluster`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Nas
 {
-    /// <summary>Properties for defining a `ALIYUN::NAS::ProtocolService`.</summary>
+    /// <summary>Properties for defining a `RosProtocolService`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-protocolservice
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosProtocolServiceProps), fullyQualifiedName: "@alicloud/ros-cdk-nas.RosProtocolServiceProps")]
     public interface IRosProtocolServiceProps
     {
@@ -60,7 +63,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         /// <strong>Property</strong>: description: Description of protocol service.The console shows the "protocol service name".
         /// limit:
         /// The length is 2 to 128 English or Chinese characters.
-        /// Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //.
+        /// Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/.
         /// It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
         /// </remarks>
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -75,7 +78,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
 
         /// <remarks>
         /// <strong>Property</strong>: throughput: The bandwidth of the agreement service.
-        /// Unit: MB/S.
+        /// Unit: MB\/S.
         /// </remarks>
         [JsiiProperty(name: "throughput", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -87,7 +90,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::NAS::ProtocolService`.</summary>
+        /// <summary>Properties for defining a `RosProtocolService`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-protocolservice
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosProtocolServiceProps), fullyQualifiedName: "@alicloud/ros-cdk-nas.RosProtocolServiceProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Nas.IRosProtocolServiceProps
         {
@@ -147,7 +153,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             /// <strong>Property</strong>: description: Description of protocol service.The console shows the "protocol service name".
             /// limit:
             /// The length is 2 to 128 English or Chinese characters.
-            /// Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //.
+            /// Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/.
             /// It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
             /// </remarks>
             [JsiiOptional]
@@ -159,7 +165,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
 
             /// <remarks>
             /// <strong>Property</strong>: throughput: The bandwidth of the agreement service.
-            /// Unit: MB/S.
+            /// Unit: MB\/S.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "throughput", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

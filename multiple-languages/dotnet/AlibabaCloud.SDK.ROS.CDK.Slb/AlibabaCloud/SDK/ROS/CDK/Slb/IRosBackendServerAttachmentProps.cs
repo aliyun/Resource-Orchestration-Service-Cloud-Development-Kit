@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Slb
 {
-    /// <summary>Properties for defining a `ALIYUN::SLB::BackendServerAttachment`.</summary>
+    /// <summary>Properties for defining a `RosBackendServerAttachment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-backendserverattachment
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosBackendServerAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-slb.RosBackendServerAttachmentProps")]
     public interface IRosBackendServerAttachmentProps
     {
@@ -56,7 +59,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::SLB::BackendServerAttachment`.</summary>
+        /// <summary>Properties for defining a `RosBackendServerAttachment`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-backendserverattachment
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosBackendServerAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-slb.RosBackendServerAttachmentProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Slb.IRosBackendServerAttachmentProps
         {

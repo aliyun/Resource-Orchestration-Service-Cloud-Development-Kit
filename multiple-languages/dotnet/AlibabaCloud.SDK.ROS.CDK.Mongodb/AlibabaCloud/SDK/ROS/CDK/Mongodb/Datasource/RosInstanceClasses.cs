@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Mongodb.Datasource
 {
-    /// <summary>A ROS template type:  `DATASOURCE::MONGODB::InstanceClasses`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `DATASOURCE::MONGODB::InstanceClasses`, which is used to query the instance types that are supported by ApsaraDB for MongoDB in the specified zone.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `InstanceClasses` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mongodb-instanceclasses
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Mongodb.Datasource.RosInstanceClasses), fullyQualifiedName: "@alicloud/ros-cdk-mongodb.datasource.RosInstanceClasses", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-mongodb.datasource.RosInstanceClassesProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosInstanceClasses : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `DATASOURCE::MONGODB::InstanceClasses`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>

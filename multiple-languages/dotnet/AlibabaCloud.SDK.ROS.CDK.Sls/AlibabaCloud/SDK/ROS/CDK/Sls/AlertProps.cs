@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::SLS::Alert`.</summary>
+    /// <summary>Properties for defining a `Alert`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-alert
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-sls.AlertProps")]
     public class AlertProps : AlibabaCloud.SDK.ROS.CDK.Sls.IAlertProps
     {

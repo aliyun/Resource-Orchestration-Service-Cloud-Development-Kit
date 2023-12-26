@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Kms
 {
-    /// <summary>Properties for defining a `ALIYUN::KMS::Alias`.</summary>
+    /// <summary>Properties for defining a `Alias`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-alias
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IAliasProps), fullyQualifiedName: "@alicloud/ros-cdk-kms.AliasProps")]
     public interface IAliasProps
     {
@@ -25,7 +28,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::KMS::Alias`.</summary>
+        /// <summary>Properties for defining a `Alias`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-alias
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IAliasProps), fullyQualifiedName: "@alicloud/ros-cdk-kms.AliasProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Kms.IAliasProps
         {

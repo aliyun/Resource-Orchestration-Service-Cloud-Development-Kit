@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Edas
 {
-    /// <summary>Properties for defining a `ALIYUN::EDAS::K8sApplication`.</summary>
+    /// <summary>Properties for defining a `K8sApplication`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-k8sapplication
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IK8sApplicationProps), fullyQualifiedName: "@alicloud/ros-cdk-edas.K8sApplicationProps")]
     public interface IK8sApplicationProps
     {
@@ -655,7 +658,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::EDAS::K8sApplication`.</summary>
+        /// <summary>Properties for defining a `K8sApplication`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-k8sapplication
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IK8sApplicationProps), fullyQualifiedName: "@alicloud/ros-cdk-edas.K8sApplicationProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Edas.IK8sApplicationProps
         {

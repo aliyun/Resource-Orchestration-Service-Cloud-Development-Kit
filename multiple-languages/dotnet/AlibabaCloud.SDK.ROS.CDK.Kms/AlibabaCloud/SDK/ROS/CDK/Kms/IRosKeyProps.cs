@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Kms
 {
-    /// <summary>Properties for defining a `ALIYUN::KMS::Key`.</summary>
+    /// <summary>Properties for defining a `RosKey`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-key
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosKeyProps), fullyQualifiedName: "@alicloud/ros-cdk-kms.RosKeyProps")]
     public interface IRosKeyProps
     {
@@ -48,7 +51,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: enableAutomaticRotation: Whether to enable automatic key rotation. Valid value: true/false (default)
+        /// <strong>Property</strong>: enableAutomaticRotation: Whether to enable automatic key rotation. Valid value: true\/false (default)
         /// </remarks>
         [JsiiProperty(name: "enableAutomaticRotation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -61,7 +64,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: keySpec: Key type. Valid value: Aliyun_AES_256/Aliyun_SM4/RSA_2048/EC_P256/EC_P256K/EC_SM2
+        /// <strong>Property</strong>: keySpec: Key type. Valid value: Aliyun_AES_256\/Aliyun_SM4\/RSA_2048\/EC_P256\/EC_P256K\/EC_SM2
         /// </remarks>
         [JsiiProperty(name: "keySpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -75,9 +78,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
 
         /// <remarks>
         /// <strong>Property</strong>: keyUsage: The usage of the CMK. Valid values:
-        /// ENCRYPT/DECRYPT: encrypts or decrypts data.
-        /// SIGN/VERIFY: generates or verifies a digital signature.
-        /// If the CMK supports signature verification, the default value is SIGN/VERIFY. If the CMK does not support signature verification, the default value is ENCRYPT/DECRYPT.
+        /// ENCRYPT\/DECRYPT: encrypts or decrypts data.
+        /// SIGN\/VERIFY: generates or verifies a digital signature.
+        /// If the CMK supports signature verification, the default value is SIGN\/VERIFY. If the CMK does not support signature verification, the default value is ENCRYPT\/DECRYPT.
         /// </remarks>
         [JsiiProperty(name: "keyUsage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -130,7 +133,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::KMS::Key`.</summary>
+        /// <summary>Properties for defining a `RosKey`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-key
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosKeyProps), fullyQualifiedName: "@alicloud/ros-cdk-kms.RosKeyProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Kms.IRosKeyProps
         {
@@ -169,7 +175,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: enableAutomaticRotation: Whether to enable automatic key rotation. Valid value: true/false (default)
+            /// <strong>Property</strong>: enableAutomaticRotation: Whether to enable automatic key rotation. Valid value: true\/false (default)
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "enableAutomaticRotation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -179,7 +185,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: keySpec: Key type. Valid value: Aliyun_AES_256/Aliyun_SM4/RSA_2048/EC_P256/EC_P256K/EC_SM2
+            /// <strong>Property</strong>: keySpec: Key type. Valid value: Aliyun_AES_256\/Aliyun_SM4\/RSA_2048\/EC_P256\/EC_P256K\/EC_SM2
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "keySpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -190,9 +196,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
 
             /// <remarks>
             /// <strong>Property</strong>: keyUsage: The usage of the CMK. Valid values:
-            /// ENCRYPT/DECRYPT: encrypts or decrypts data.
-            /// SIGN/VERIFY: generates or verifies a digital signature.
-            /// If the CMK supports signature verification, the default value is SIGN/VERIFY. If the CMK does not support signature verification, the default value is ENCRYPT/DECRYPT.
+            /// ENCRYPT\/DECRYPT: encrypts or decrypts data.
+            /// SIGN\/VERIFY: generates or verifies a digital signature.
+            /// If the CMK supports signature verification, the default value is SIGN\/VERIFY. If the CMK does not support signature verification, the default value is ENCRYPT\/DECRYPT.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "keyUsage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

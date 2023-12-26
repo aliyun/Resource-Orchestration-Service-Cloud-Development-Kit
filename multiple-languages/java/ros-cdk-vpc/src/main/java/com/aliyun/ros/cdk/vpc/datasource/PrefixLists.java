@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc.datasource;
 
 /**
- * A ROS resource type:  <code>DATASOURCE::VPC::PrefixLists</code>.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::VPC::PrefixLists</code>, which is used to query the details of prefix lists.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.776Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:18.616Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.PrefixLists")
 public class PrefixLists extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,11 +16,7 @@ public class PrefixLists extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>DATASOURCE::VPC::PrefixLists</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -33,11 +29,7 @@ public class PrefixLists extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>DATASOURCE::VPC::PrefixLists</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -49,11 +41,7 @@ public class PrefixLists extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>DATASOURCE::VPC::PrefixLists</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.

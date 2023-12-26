@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Rds
 {
-    /// <summary>Properties for defining a `ALIYUN::RDS::ReadOnlyDBInstance`.</summary>
+    /// <summary>Properties for defining a `RosReadOnlyDBInstance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-readonlydbinstance
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosReadOnlyDBInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-rds.RosReadOnlyDBInstanceProps")]
     public interface IRosReadOnlyDBInstanceProps
     {
@@ -216,12 +219,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// Key
         /// It can be up to 64 characters in length.
         /// Cannot begin with aliyun.
-        /// Cannot begin with http:// or https://.
+        /// Cannot begin with http:\/\/ or https:\/\/.
         /// Cannot be a null string.
         /// Value
         /// It can be up to 128 characters in length.
         /// Cannot begin with aliyun.
-        /// Cannot begin with http:// or https://.
+        /// Cannot begin with http:\/\/ or https:\/\/.
         /// Can be a null string.
         /// </remarks>
         [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}", isOptional: true)]
@@ -273,7 +276,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::RDS::ReadOnlyDBInstance`.</summary>
+        /// <summary>Properties for defining a `RosReadOnlyDBInstance`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-readonlydbinstance
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosReadOnlyDBInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-rds.RosReadOnlyDBInstanceProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Rds.IRosReadOnlyDBInstanceProps
         {
@@ -456,12 +462,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             /// Key
             /// It can be up to 64 characters in length.
             /// Cannot begin with aliyun.
-            /// Cannot begin with http:// or https://.
+            /// Cannot begin with http:\/\/ or https:\/\/.
             /// Cannot be a null string.
             /// Value
             /// It can be up to 128 characters in length.
             /// Cannot begin with aliyun.
-            /// Cannot begin with http:// or https://.
+            /// Cannot begin with http:\/\/ or https:\/\/.
             /// Can be a null string.
             /// </remarks>
             [JsiiOptional]

@@ -4,7 +4,8 @@ import { RosVpnGateway } from './vpc.generated';
 export { RosVpnGateway as VpnGatewayProperty };
 
 /**
- * Properties for defining a `ALIYUN::VPC::VpnGateway`
+ * Properties for defining a `VpnGateway`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpngateway
  */
 export interface VpnGatewayProps {
 
@@ -29,7 +30,7 @@ export interface VpnGatewayProps {
 
     /**
      * Property description: Description of the VPN gateway.
-     * The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:// or https://.
+     * The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:\/\/ or https:\/\/.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -64,7 +65,7 @@ export interface VpnGatewayProps {
 
     /**
      * Property name: Name of the VPN gateway. The default value is the ID of the VPN gateway.
-     * The length is 2~100 English or Chinese characters. It must start with a large or small letter or Chinese. It can contain numbers, underscores (_) and dashes (-). It cannot start with http:// or https://.
+     * The length is 2~100 English or Chinese characters. It must start with a large or small letter or Chinese. It can contain numbers, underscores (_) and dashes (-). It cannot start with http:\/\/ or https:\/\/.
      */
     readonly name?: string | ros.IResolvable;
 
@@ -101,14 +102,11 @@ export interface VpnGatewayProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::VPC::VpnGateway`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpnGateway`, which is used to create a VPN gateway.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpnGateway`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpngateway
  */
 export class VpnGateway extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DisasterRecoveryInternetIp: The second IP address assigned by the system to create an IPsec-VPN connection.This attribute is returned only when the VPN gateway supports the dual-tunnel mode.
@@ -166,8 +164,6 @@ export class VpnGateway extends ros.Resource {
     public readonly attrVpnType: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VPC::VpnGateway`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

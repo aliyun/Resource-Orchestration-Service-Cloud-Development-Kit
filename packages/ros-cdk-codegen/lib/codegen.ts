@@ -106,7 +106,7 @@ export default class CodeGenerator {
     }
     const name = genspec.CodeName.forResourceProperties(resourceContext);
 
-    this.docLink(spec.Documentation, `Properties for defining a \`${resourceContext.specName!.fqn}\``);
+    this.docLink(spec.Documentation, `Properties for defining a \`${resourceContext.className}\`. `);
     this.code.openBlock(`export interface ${name.className}`);
     const conversionTable = this.emitPropsTypeProperties(resourceContext, spec.Properties, Container.Interface);
 
@@ -185,7 +185,13 @@ export default class CodeGenerator {
     // The class declaration representing this Resource
     //
 
-    this.docLink(spec.Documentation, `A ROS template type:  \`${rosTypeName}\``);
+    let specificDescription = `This class is a base encapsulation around the ROS resource type \`${rosTypeName}\`.`;
+    if (spec.Description) {
+      specificDescription = `${specificDescription.replace('.', spec.Description.replace(rosTypeName, ', which'))}`;
+    }
+    const regex = new RegExp('Ros');
+    const note = `@Note This class does not contain additional functions, so it is recommended to use the \`${resourceName.className.replace(regex, '')}\` class instead of this class for a more convenient development experience.`;
+    this.docLink(spec.Documentation, specificDescription, note);
     this.openClass(resourceName, RESOURCE_BASE_CLASS);
     //
     // Static inspectors.
@@ -196,12 +202,6 @@ export default class CodeGenerator {
     this.code.line(' * The resource type name for this resource class.');
     this.code.line(' */');
     this.code.line(`public static readonly ROS_RESOURCE_TYPE_NAME = ${rosResourceTypeName};`);
-
-    this.code.line();
-    this.code.line('/**');
-    this.code.line(' * A factory method that creates a new instance of this class from an object');
-    this.code.line(' * containing the properties of this ROS resource.');
-    this.code.line(' */');
 
     //
     // Attributes
@@ -246,8 +246,6 @@ export default class CodeGenerator {
 
     this.code.line();
     this.code.line('/**');
-    this.code.line(` * Create a new ${quoteCode(resourceName.specName!.fqn)}.`);
-    this.code.line(' *');
     this.code.line(' * @param scope - scope in which this resource is defined');
     this.code.line(' * @param id    - scoped id of the resource');
     this.code.line(' * @param props - resource properties');
@@ -598,7 +596,7 @@ export default class CodeGenerator {
 
     this.docLink(
         undefined,
-        `@Property ${javascriptPropertyName}: ${props.spec.Description?.replace(new RegExp('\n', 'gm'), '\n     * ')}`,
+        `@Property ${javascriptPropertyName}: ${props.spec.Description?.replace(new RegExp('\n', 'gm'), '\n     * ').replace(new RegExp('/', 'gm'), '\\/')}`,
     );
     const line =
         props.propName === 'Tags' && (props.spec as schema.ComplexListProperty).ItemType === 'Tag'
@@ -614,7 +612,7 @@ export default class CodeGenerator {
     const javascriptPropertyName = genspec.rosTemplateToScriptName(props.propName);
     this.docLink(
         undefined,
-        `@Property ${javascriptPropertyName}: ${props.spec.Description?.replace(new RegExp('\n', 'gm'), '\n     * ')}`,
+        `@Property ${javascriptPropertyName}: ${props.spec.Description?.replace(new RegExp('\n', 'gm'), '\n     * ').replace(new RegExp('/', 'gm'), '\\/')}`,
     );
     const question = props.spec.Required ? ';' : ' | undefined;';
     const line = `: ${`${this.findNativeType(props.context, props.spec, props.propName)}`}${question}`;
@@ -772,7 +770,7 @@ export default class CodeGenerator {
     this.code.line('/**');
     before.forEach((line) => this.code.line(` * ${line}`.trimRight()));
     if (link) {
-      this.code.line(` * @see ${link}`);
+      this.code.line(` * See ${link}`);
     }
     this.code.line(' */');
     return;

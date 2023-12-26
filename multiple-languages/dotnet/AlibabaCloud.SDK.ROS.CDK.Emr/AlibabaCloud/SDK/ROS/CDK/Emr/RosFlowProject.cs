@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Emr
 {
-    /// <summary>A ROS template type:  `ALIYUN::EMR::FlowProject`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::EMR::FlowProject`, which is used to create a data development project.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `FlowProject` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-flowproject
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Emr.RosFlowProject), fullyQualifiedName: "@alicloud/ros-cdk-emr.RosFlowProject", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-emr.RosFlowProjectProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosFlowProject : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::EMR::FlowProject`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>

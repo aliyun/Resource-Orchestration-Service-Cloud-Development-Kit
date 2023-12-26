@@ -4,7 +4,8 @@ import { RosVSwitch } from './ecs.generated';
 export { RosVSwitch as VSwitchProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECS::VSwitch`
+ * Properties for defining a `VSwitch`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-vswitch
  */
 export interface VSwitchProps {
 
@@ -58,14 +59,11 @@ export interface VSwitchProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECS::VSwitch`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::VSwitch`, which is used to create a vSwitch.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVSwitch`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-vswitch
  */
 export class VSwitch extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute CidrBlock: CIDR Block of created VSwitch
@@ -83,8 +81,6 @@ export class VSwitch extends ros.Resource {
     public readonly attrVSwitchId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ECS::VSwitch`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

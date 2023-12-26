@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Dfs
 {
-    /// <summary>Properties for defining a `ALIYUN::DFS::MountPoint`.</summary>
+    /// <summary>Properties for defining a `MountPoint`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-mountpoint
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IMountPointProps), fullyQualifiedName: "@alicloud/ros-cdk-dfs.MountPointProps")]
     public interface IMountPointProps
     {
@@ -71,7 +74,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dfs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::DFS::MountPoint`.</summary>
+        /// <summary>Properties for defining a `MountPoint`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-mountpoint
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IMountPointProps), fullyQualifiedName: "@alicloud/ros-cdk-dfs.MountPointProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Dfs.IMountPointProps
         {

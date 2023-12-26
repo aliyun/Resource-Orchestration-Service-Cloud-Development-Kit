@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cs.Datasource
 {
-    /// <summary>A ROS template type:  `DATASOURCE::CS::ClusterNodePools`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `DATASOURCE::CS::ClusterNodePools`, which is used to query the details of all node pools in a cluster.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `ClusterNodePools` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-clusternodepools
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Cs.Datasource.RosClusterNodePools), fullyQualifiedName: "@alicloud/ros-cdk-cs.datasource.RosClusterNodePools", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-cs.datasource.RosClusterNodePoolsProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosClusterNodePools : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `DATASOURCE::CS::ClusterNodePools`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>

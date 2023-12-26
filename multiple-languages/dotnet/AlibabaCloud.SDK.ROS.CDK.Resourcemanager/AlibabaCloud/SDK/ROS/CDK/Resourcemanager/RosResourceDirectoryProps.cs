@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
 {
-    /// <summary>Properties for defining a `ALIYUN::ResourceManager::ResourceDirectory`.</summary>
+    /// <summary>Properties for defining a `RosResourceDirectory`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourcedirectory
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-resourcemanager.RosResourceDirectoryProps")]
     public class RosResourceDirectoryProps : AlibabaCloud.SDK.ROS.CDK.Resourcemanager.IRosResourceDirectoryProps
     {

@@ -4,20 +4,18 @@ import { RosUserDefineRegions } from './edas.generated';
 export { RosUserDefineRegions as UserDefineRegionsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::EDAS::UserDefineRegions`
+ * Properties for defining a `UserDefineRegions`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-edas-userdefineregions
  */
 export interface UserDefineRegionsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::EDAS::UserDefineRegions`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::EDAS::UserDefineRegions`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUserDefineRegions`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-edas-userdefineregions
  */
 export class UserDefineRegions extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Ids: The list of user define region IDs.
@@ -30,8 +28,6 @@ export class UserDefineRegions extends ros.Resource {
     public readonly attrUserDefineRegions: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::EDAS::UserDefineRegions`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

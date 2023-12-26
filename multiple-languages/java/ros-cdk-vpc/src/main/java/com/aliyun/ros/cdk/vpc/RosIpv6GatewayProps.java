@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * Properties for defining a <code>ALIYUN::VPC::Ipv6Gateway</code>.
+ * Properties for defining a <code>RosIpv6Gateway</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipv6gateway
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.607Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:18.462Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosIpv6GatewayProps")
 @software.amazon.jsii.Jsii.Proxy(RosIpv6GatewayProps.Jsii$Proxy.class)
 public interface RosIpv6GatewayProps extends software.amazon.jsii.JsiiSerializable {

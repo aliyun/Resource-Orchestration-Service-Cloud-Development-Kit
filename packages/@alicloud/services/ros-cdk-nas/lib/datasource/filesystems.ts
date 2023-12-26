@@ -4,7 +4,8 @@ import { RosFileSystems } from './nas.generated';
 export { RosFileSystems as FileSystemsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::NAS::FileSystems`
+ * Properties for defining a `FileSystems`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-filesystems
  */
 export interface FileSystemsProps {
 
@@ -24,14 +25,11 @@ export interface FileSystemsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::NAS::FileSystems`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::NAS::FileSystems`, which is used to query the details of file systems.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFileSystems`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-filesystems
  */
 export class FileSystems extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute FileSystemIds: The list of file system IDs.
@@ -44,8 +42,6 @@ export class FileSystems extends ros.Resource {
     public readonly attrFileSystems: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::NAS::FileSystems`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ECS::Snapshot`.</summary>
+    /// <summary>Properties for defining a `RosSnapshot`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-snapshot
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.RosSnapshotProps")]
     public class RosSnapshotProps : AlibabaCloud.SDK.ROS.CDK.Ecs.IRosSnapshotProps
     {
@@ -45,7 +48,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         private object? _description;
 
         /// <remarks>
-        /// <strong>Property</strong>: description: The description of a snapshot can be 2 to 256 characters in length and cannot begin with http:// or https://. The description will appear on the console. By default, the value is zero.
+        /// <strong>Property</strong>: description: The description of a snapshot can be 2 to 256 characters in length and cannot begin with http:\/\/ or https:\/\/. The description will appear on the console. By default, the value is zero.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -260,7 +263,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         private object? _snapshotName;
 
         /// <remarks>
-        /// <strong>Property</strong>: snapshotName: The name of the snapshot, [2, 128] English or Chinese characters. It must begin with an uppercase/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:// or https://.
+        /// <strong>Property</strong>: snapshotName: The name of the snapshot, [2, 128] English or Chinese characters. It must begin with an uppercase\/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "snapshotName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

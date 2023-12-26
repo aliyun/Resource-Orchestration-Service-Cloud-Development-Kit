@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ebs
 {
-    /// <summary>A ROS template type:  `ALIYUN::EBS::DiskReplicaPairAddition`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::EBS::DiskReplicaPairAddition`, which is used to add a replication pair to a replication pair-consistent group.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `DiskReplicaPairAddition` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ebs-diskreplicapairaddition
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Ebs.RosDiskReplicaPairAddition), fullyQualifiedName: "@alicloud/ros-cdk-ebs.RosDiskReplicaPairAddition", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-ebs.RosDiskReplicaPairAdditionProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosDiskReplicaPairAddition : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::EBS::DiskReplicaPairAddition`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>

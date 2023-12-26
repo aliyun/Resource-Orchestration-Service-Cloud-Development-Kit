@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sae
 {
-    /// <summary>Properties for defining a `ALIYUN::SAE::Application`.</summary>
+    /// <summary>Properties for defining a `Application`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-application
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IApplicationProps), fullyQualifiedName: "@alicloud/ros-cdk-sae.ApplicationProps")]
     public interface IApplicationProps
     {
@@ -294,7 +297,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
             }
         }
 
-        /// <summary>Property postStart: Executing the script, such as after starting the format: { "exec": { "command": "cat", "/ etc / group"}}.</summary>
+        /// <summary>Property postStart: Executing the script, such as after starting the format: { "exec": { "command": "cat", "\/ etc \/ group"}}.</summary>
         [JsiiProperty(name: "postStart", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? PostStart
@@ -305,7 +308,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
             }
         }
 
-        /// <summary>Property preStop: Script is executed before stopping the format as: { "exec": { "command": "cat", "/ etc / group"}}.</summary>
+        /// <summary>Property preStop: Script is executed before stopping the format as: { "exec": { "command": "cat", "\/ etc \/ group"}}.</summary>
         [JsiiProperty(name: "preStop", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? PreStop
@@ -436,7 +439,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::SAE::Application`.</summary>
+        /// <summary>Properties for defining a `Application`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-application
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IApplicationProps), fullyQualifiedName: "@alicloud/ros-cdk-sae.ApplicationProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sae.IApplicationProps
         {
@@ -679,7 +685,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property postStart: Executing the script, such as after starting the format: { "exec": { "command": "cat", "/ etc / group"}}.</summary>
+            /// <summary>Property postStart: Executing the script, such as after starting the format: { "exec": { "command": "cat", "\/ etc \/ group"}}.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "postStart", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PostStart
@@ -687,7 +693,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property preStop: Script is executed before stopping the format as: { "exec": { "command": "cat", "/ etc / group"}}.</summary>
+            /// <summary>Property preStop: Script is executed before stopping the format as: { "exec": { "command": "cat", "\/ etc \/ group"}}.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "preStop", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PreStop

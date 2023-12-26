@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ESS::ServerGroupAttachment`.</summary>
+    /// <summary>Properties for defining a `RosServerGroupAttachment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-servergroupattachment
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ess.RosServerGroupAttachmentProps")]
     public class RosServerGroupAttachmentProps : AlibabaCloud.SDK.ROS.CDK.Ess.IRosServerGroupAttachmentProps
     {

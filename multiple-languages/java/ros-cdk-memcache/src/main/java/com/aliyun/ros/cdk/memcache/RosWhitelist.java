@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.memcache;
 
 /**
- * A ROS template type:  <code>ALIYUN::Memcache::Whitelist</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::Memcache::Whitelist</code>, which is used to create a Whitelist.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.038Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.822Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.memcache.$Module.class, fqn = "@alicloud/ros-cdk-memcache.RosWhitelist")
 public class RosWhitelist extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,8 +20,6 @@ public class RosWhitelist extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * Create a new <code>ALIYUN::Memcache::Whitelist</code>.
-     * <p>
      * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
      * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
      * @param props <ul><li>resource properties.</li></ul> This parameter is required.

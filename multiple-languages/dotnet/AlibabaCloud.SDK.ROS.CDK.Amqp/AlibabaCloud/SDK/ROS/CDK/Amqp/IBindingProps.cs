@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Amqp
 {
-    /// <summary>Properties for defining a `ALIYUN::AMQP::Binding`.</summary>
+    /// <summary>Properties for defining a `Binding`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-binding
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IBindingProps), fullyQualifiedName: "@alicloud/ros-cdk-amqp.BindingProps")]
     public interface IBindingProps
     {
@@ -65,7 +68,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::AMQP::Binding`.</summary>
+        /// <summary>Properties for defining a `Binding`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-binding
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IBindingProps), fullyQualifiedName: "@alicloud/ros-cdk-amqp.BindingProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Amqp.IBindingProps
         {

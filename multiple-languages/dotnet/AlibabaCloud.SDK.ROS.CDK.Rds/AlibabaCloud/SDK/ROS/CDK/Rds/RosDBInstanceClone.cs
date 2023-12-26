@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Rds
 {
-    /// <summary>A ROS template type:  `ALIYUN::RDS::DBInstanceClone`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBInstanceClone`.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `DBInstanceClone` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstanceclone
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Rds.RosDBInstanceClone), fullyQualifiedName: "@alicloud/ros-cdk-rds.RosDBInstanceClone", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-rds.RosDBInstanceCloneProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosDBInstanceClone : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::RDS::DBInstanceClone`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -1187,7 +1190,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0/0 means no limitation.
+        /// <strong>Property</strong>: securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0\/0 means no limitation.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "securityIpList", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1387,12 +1390,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// Key
         /// It can be up to 64 characters in length.
         /// Cannot begin with aliyun.
-        /// Cannot begin with http:// or https://.
+        /// Cannot begin with http:\/\/ or https:\/\/.
         /// Cannot be a null string.
         /// Value
         /// It can be up to 128 characters in length.
         /// Cannot begin with aliyun.
-        /// Cannot begin with http:// or https://.
+        /// Cannot begin with http:\/\/ or https:\/\/.
         /// Can be a null string.
         /// </remarks>
         [JsiiOptional]

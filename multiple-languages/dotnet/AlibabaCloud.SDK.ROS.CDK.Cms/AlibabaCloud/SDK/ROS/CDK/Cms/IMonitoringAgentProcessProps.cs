@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cms
 {
-    /// <summary>Properties for defining a `ALIYUN::CMS::MonitoringAgentProcess`.</summary>
+    /// <summary>Properties for defining a `MonitoringAgentProcess`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitoringagentprocess
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IMonitoringAgentProcessProps), fullyQualifiedName: "@alicloud/ros-cdk-cms.MonitoringAgentProcessProps")]
     public interface IMonitoringAgentProcessProps
     {
@@ -37,7 +40,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::CMS::MonitoringAgentProcess`.</summary>
+        /// <summary>Properties for defining a `MonitoringAgentProcess`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitoringagentprocess
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IMonitoringAgentProcessProps), fullyQualifiedName: "@alicloud/ros-cdk-cms.MonitoringAgentProcessProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cms.IMonitoringAgentProcessProps
         {

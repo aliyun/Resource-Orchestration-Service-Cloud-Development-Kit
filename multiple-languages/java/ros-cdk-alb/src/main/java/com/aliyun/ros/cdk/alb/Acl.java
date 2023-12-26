@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.alb;
 
 /**
- * A ROS resource type:  <code>ALIYUN::ALB::Acl</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ALB::Acl</code>, which is used to create an access control list (ACL).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:33.197Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:13.668Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.Acl")
 public class Acl extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,11 +16,7 @@ public class Acl extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ALB::Acl</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -33,11 +29,7 @@ public class Acl extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ALB::Acl</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -49,11 +41,7 @@ public class Acl extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ALB::Acl</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.

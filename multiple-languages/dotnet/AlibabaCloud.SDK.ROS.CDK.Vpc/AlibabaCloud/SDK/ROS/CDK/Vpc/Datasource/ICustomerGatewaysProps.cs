@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::VPC::CustomerGateways`.</summary>
+    /// <summary>Properties for defining a `CustomerGateways`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-customergateways
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ICustomerGatewaysProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.datasource.CustomerGatewaysProps")]
     public interface ICustomerGatewaysProps
     {
@@ -19,7 +22,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::VPC::CustomerGateways`.</summary>
+        /// <summary>Properties for defining a `CustomerGateways`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-customergateways
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ICustomerGatewaysProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.datasource.CustomerGatewaysProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource.ICustomerGatewaysProps
         {

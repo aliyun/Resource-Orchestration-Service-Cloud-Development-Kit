@@ -4,7 +4,8 @@ import { RosSleep } from './ros.generated';
 export { RosSleep as SleepProperty };
 
 /**
- * Properties for defining a `ALIYUN::ROS::Sleep`
+ * Properties for defining a `Sleep`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-sleep
  */
 export interface SleepProps {
 
@@ -35,18 +36,13 @@ export interface SleepProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ROS::Sleep`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ROS::Sleep`, which is used to delay the creation, deletion, update, and rollback of other resources.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSleep`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-sleep
  */
 export class Sleep extends ros.Resource {
 
     /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
-
-    /**
-     * Create a new `ALIYUN::ROS::Sleep`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

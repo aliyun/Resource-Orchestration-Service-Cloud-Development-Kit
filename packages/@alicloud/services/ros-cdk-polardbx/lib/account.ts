@@ -4,7 +4,8 @@ import { RosAccount } from './polardbx.generated';
 export { RosAccount as AccountProperty };
 
 /**
- * Properties for defining a `ALIYUN::PolarDBX::Account`
+ * Properties for defining a `Account`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardbx-account
  */
 export interface AccountProps {
 
@@ -30,14 +31,11 @@ export interface AccountProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::PolarDBX::Account`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::PolarDBX::Account`, which is used to create an account.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccount`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardbx-account
  */
 export class Account extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AccountDescription: Account description information.
@@ -60,8 +58,6 @@ export class Account extends ros.Resource {
     public readonly attrDbInstanceId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::PolarDBX::Account`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

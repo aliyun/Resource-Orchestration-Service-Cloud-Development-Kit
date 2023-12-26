@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Oos.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::OOS::PatchBaselines`.</summary>
+    /// <summary>Properties for defining a `PatchBaselines`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-patchbaselines
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-oos.datasource.PatchBaselinesProps")]
     public class PatchBaselinesProps : AlibabaCloud.SDK.ROS.CDK.Oos.Datasource.IPatchBaselinesProps
     {

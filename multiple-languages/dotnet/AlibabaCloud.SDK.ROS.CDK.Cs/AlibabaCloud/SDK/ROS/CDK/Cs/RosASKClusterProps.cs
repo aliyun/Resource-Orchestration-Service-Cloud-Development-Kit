@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CS::ASKCluster`.</summary>
+    /// <summary>Properties for defining a `RosASKCluster`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-askcluster
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cs.RosASKClusterProps")]
     public class RosASKClusterProps : AlibabaCloud.SDK.ROS.CDK.Cs.IRosASKClusterProps
     {
@@ -335,7 +338,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         private object? _serviceCidr;
 
         /// <remarks>
-        /// <strong>Property</strong>: serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
+        /// <strong>Property</strong>: serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0\/20 is used by default.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "serviceCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

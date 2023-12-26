@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.polardb;
 
 /**
- * Properties for defining a <code>ALIYUN::POLARDB::Account</code>.
+ * Properties for defining a <code>RosAccount</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-account
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.489Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.272Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosAccountProps")
 @software.amazon.jsii.Jsii.Proxy(RosAccountProps.Jsii$Proxy.class)
 public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {

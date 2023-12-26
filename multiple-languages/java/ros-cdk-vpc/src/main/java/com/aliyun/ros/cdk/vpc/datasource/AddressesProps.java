@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.vpc.datasource;
 
 /**
- * Properties for defining a <code>DATASOURCE::EIP::Addresses</code>.
+ * Properties for defining a <code>Addresses</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eip-addresses
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.754Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:18.603Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.AddressesProps")
 @software.amazon.jsii.Jsii.Proxy(AddressesProps.Jsii$Proxy.class)
 public interface AddressesProps extends software.amazon.jsii.JsiiSerializable {

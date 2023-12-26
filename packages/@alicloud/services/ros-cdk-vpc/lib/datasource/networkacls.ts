@@ -4,7 +4,8 @@ import { RosNetworkAcls } from './vpc.generated';
 export { RosNetworkAcls as NetworkAclsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::VPC::NetworkAcls`
+ * Properties for defining a `NetworkAcls`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-networkacls
  */
 export interface NetworkAclsProps {
 
@@ -15,7 +16,7 @@ export interface NetworkAclsProps {
 
     /**
      * Property networkAclName: The name of the network ACL.
-     * The name must be 2 to 128 characters in length, and can contain letters, digits, underscores (_), and hyphens (-). The name must start with a letter but cannot start with http:// or https://.
+     * The name must be 2 to 128 characters in length, and can contain letters, digits, underscores (_), and hyphens (-). The name must start with a letter but cannot start with http:\/\/ or https:\/\/.
      */
     readonly networkAclName?: string | ros.IResolvable;
 
@@ -37,14 +38,11 @@ export interface NetworkAclsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::VPC::NetworkAcls`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::NetworkAcls`, which is used to query created network access control lists (ACLs).
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNetworkAcls`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-networkacls
  */
 export class NetworkAcls extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute NetworkAclIds: The list of The network acl ids.
@@ -57,8 +55,6 @@ export class NetworkAcls extends ros.Resource {
     public readonly attrNetworkAcls: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::VPC::NetworkAcls`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

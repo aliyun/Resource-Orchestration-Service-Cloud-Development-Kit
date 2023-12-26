@@ -4,7 +4,8 @@ import { RosClusterApplication } from './cs.generated';
 export { RosClusterApplication as ClusterApplicationProperty };
 
 /**
- * Properties for defining a `ALIYUN::CS::ClusterApplication`
+ * Properties for defining a `ClusterApplication`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterapplication
  */
 export interface ClusterApplicationProps {
 
@@ -32,17 +33,22 @@ export interface ClusterApplicationProps {
      * The default value is EnsureAdminRoleAndBinding.
      */
     readonly rolePolicy?: string | ros.IResolvable;
+
+    /**
+     * Property stage: At what stage to run. Valid values:
+     * - All: all stages, including create, update, and delete.
+     * - Delete: the delete stage. This means that only in the deletion stage of this resource will apply yaml to the cluster.
+     * The default is All.
+     */
+    readonly stage?: string | ros.IResolvable;
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CS::ClusterApplication`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ClusterApplication`, which is used to deploy a container application.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosClusterApplication`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterapplication
  */
 export class ClusterApplication extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ClusterId: The ID of the cluster.
@@ -50,8 +56,6 @@ export class ClusterApplication extends ros.Resource {
     public readonly attrClusterId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CS::ClusterApplication`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties
@@ -64,6 +68,7 @@ export class ClusterApplication extends ros.Resource {
             clusterId: props.clusterId,
             yamlContent: props.yamlContent,
             defaultNamespace: props.defaultNamespace === undefined || props.defaultNamespace === null ? 'default' : props.defaultNamespace,
+            stage: props.stage === undefined || props.stage === null ? 'All' : props.stage,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosClusterApplication;
         this.attrClusterId = rosClusterApplication.attrClusterId;

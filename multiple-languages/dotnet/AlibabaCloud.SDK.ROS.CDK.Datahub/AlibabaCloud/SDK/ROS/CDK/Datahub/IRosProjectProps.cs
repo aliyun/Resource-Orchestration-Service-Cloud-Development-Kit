@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Datahub
 {
-    /// <summary>Properties for defining a `ALIYUN::DATAHUB::Project`.</summary>
+    /// <summary>Properties for defining a `RosProject`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-datahub-project
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosProjectProps), fullyQualifiedName: "@alicloud/ros-cdk-datahub.RosProjectProps")]
     public interface IRosProjectProps
     {
@@ -26,7 +29,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Datahub
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::DATAHUB::Project`.</summary>
+        /// <summary>Properties for defining a `RosProject`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-datahub-project
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosProjectProps), fullyQualifiedName: "@alicloud/ros-cdk-datahub.RosProjectProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Datahub.IRosProjectProps
         {

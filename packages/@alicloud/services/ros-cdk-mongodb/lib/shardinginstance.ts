@@ -4,7 +4,8 @@ import { RosShardingInstance } from './mongodb.generated';
 export { RosShardingInstance as ShardingInstanceProperty };
 
 /**
- * Properties for defining a `ALIYUN::MONGODB::ShardingInstance`
+ * Properties for defining a `ShardingInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mongodb-shardinginstance
  */
 export interface ShardingInstanceProps {
 
@@ -138,14 +139,11 @@ export interface ShardingInstanceProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::MONGODB::ShardingInstance`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::MONGODB::ShardingInstance`, which is used to create or clone an ApsaraDB for MongoDB sharded cluster instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosShardingInstance`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mongodb-shardinginstance
  */
 export class ShardingInstance extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DBInstanceId: The instance id of created mongodb instance.
@@ -163,8 +161,6 @@ export class ShardingInstance extends ros.Resource {
     public readonly attrOrderId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::MONGODB::ShardingInstance`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

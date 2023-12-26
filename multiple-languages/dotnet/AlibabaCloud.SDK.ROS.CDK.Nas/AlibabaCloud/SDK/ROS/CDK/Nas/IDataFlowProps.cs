@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Nas
 {
-    /// <summary>Properties for defining a `ALIYUN::NAS::DataFlow`.</summary>
+    /// <summary>Properties for defining a `DataFlow`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-dataflow
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IDataFlowProps), fullyQualifiedName: "@alicloud/ros-cdk-nas.DataFlowProps")]
     public interface IDataFlowProps
     {
@@ -22,14 +25,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             get;
         }
 
-        /// <summary>Property sourceStorage: Access path stored at the source.Format: &lt;storage Type&gt;: // &lt;PATH&gt;. in: Storage Type: Currently only supports OSS. PATH: OSS's bucket name.Limit the following. Only support the lowercase letters, numbers and short strokes (-) and must start with a lowercase letter or number. The length is 8 ~ 128 English characters. Use UTF-8 encoding. Can't start with http: // and https: //. Explain that the OSS BUCKET must be the bucket that exists in the region.</summary>
+        /// <summary>Property sourceStorage: Access path stored at the source.Format: &lt;storage Type&gt;: \/\/ &lt;PATH&gt;. in: Storage Type: Currently only supports OSS. PATH: OSS's bucket name.Limit the following. Only support the lowercase letters, numbers and short strokes (-) and must start with a lowercase letter or number. The length is 8 ~ 128 English characters. Use UTF-8 encoding. Can't start with http: \/\/ and https: \/\/. Explain that the OSS BUCKET must be the bucket that exists in the region.</summary>
         [JsiiProperty(name: "sourceStorage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object SourceStorage
         {
             get;
         }
 
-        /// <summary>Property throughput: The upper limit of transmission bandwidth for data flow, unit: MB/s. Value:  600 1200 1500.</summary>
+        /// <summary>Property throughput: The upper limit of transmission bandwidth for data flow, unit: MB\/s. Value:  600 1200 1500.</summary>
         /// <remarks>
         /// Explanation The transmission bandwidth of the data flow must be smaller than the IO bandwidth of the file system.
         /// </remarks>
@@ -113,7 +116,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::NAS::DataFlow`.</summary>
+        /// <summary>Properties for defining a `DataFlow`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-dataflow
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IDataFlowProps), fullyQualifiedName: "@alicloud/ros-cdk-nas.DataFlowProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Nas.IDataFlowProps
         {
@@ -135,14 +141,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property sourceStorage: Access path stored at the source.Format: &lt;storage Type&gt;: // &lt;PATH&gt;. in: Storage Type: Currently only supports OSS. PATH: OSS's bucket name.Limit the following. Only support the lowercase letters, numbers and short strokes (-) and must start with a lowercase letter or number. The length is 8 ~ 128 English characters. Use UTF-8 encoding. Can't start with http: // and https: //. Explain that the OSS BUCKET must be the bucket that exists in the region.</summary>
+            /// <summary>Property sourceStorage: Access path stored at the source.Format: &lt;storage Type&gt;: \/\/ &lt;PATH&gt;. in: Storage Type: Currently only supports OSS. PATH: OSS's bucket name.Limit the following. Only support the lowercase letters, numbers and short strokes (-) and must start with a lowercase letter or number. The length is 8 ~ 128 English characters. Use UTF-8 encoding. Can't start with http: \/\/ and https: \/\/. Explain that the OSS BUCKET must be the bucket that exists in the region.</summary>
             [JsiiProperty(name: "sourceStorage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object SourceStorage
             {
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property throughput: The upper limit of transmission bandwidth for data flow, unit: MB/s. Value:  600 1200 1500.</summary>
+            /// <summary>Property throughput: The upper limit of transmission bandwidth for data flow, unit: MB\/s. Value:  600 1200 1500.</summary>
             /// <remarks>
             /// Explanation The transmission bandwidth of the data flow must be smaller than the IO bandwidth of the file system.
             /// </remarks>

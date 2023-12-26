@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::PrivateLink::VpcEndpoint`.</summary>
+    /// <summary>Properties for defining a `VpcEndpoint`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpoint
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-privatelink.VpcEndpointProps")]
     public class VpcEndpointProps : AlibabaCloud.SDK.ROS.CDK.Privatelink.IVpcEndpointProps
     {

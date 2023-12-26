@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::DMS::User`.</summary>
+    /// <summary>Properties for defining a `RosUser`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dms-user
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-dms.RosUserProps")]
     public class RosUserProps : AlibabaCloud.SDK.ROS.CDK.Dms.IRosUserProps
     {

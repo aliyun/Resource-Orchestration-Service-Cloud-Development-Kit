@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::VPC::PublicIpAddressPools`.</summary>
+    /// <summary>Properties for defining a `PublicIpAddressPools`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-publicipaddresspools
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IPublicIpAddressPoolsProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.datasource.PublicIpAddressPoolsProps")]
     public interface IPublicIpAddressPoolsProps
     {
@@ -61,7 +64,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::VPC::PublicIpAddressPools`.</summary>
+        /// <summary>Properties for defining a `PublicIpAddressPools`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-publicipaddresspools
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IPublicIpAddressPoolsProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.datasource.PublicIpAddressPoolsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource.IPublicIpAddressPoolsProps
         {

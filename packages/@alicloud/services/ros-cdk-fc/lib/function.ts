@@ -4,7 +4,8 @@ import { RosFunction } from './fc.generated';
 export { RosFunction as FunctionProperty };
 
 /**
- * Properties for defining a `ALIYUN::FC::Function`
+ * Properties for defining a `Function`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-function
  */
 export interface FunctionProps {
 
@@ -130,14 +131,11 @@ export interface FunctionProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::FC::Function`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::FC::Function`, which is used to create a function. Functions must be associated with services. All functions of a service share the same attributes as the service, such as service authorization and log configurations.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFunction`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-function
  */
 export class Function extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ARN: The ARN for ALIYUN::ROS::CustomResource
@@ -165,8 +163,6 @@ export class Function extends ros.Resource {
     public readonly attrServiceName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::FC::Function`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

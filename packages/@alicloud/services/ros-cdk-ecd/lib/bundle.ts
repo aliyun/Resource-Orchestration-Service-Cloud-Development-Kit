@@ -4,7 +4,8 @@ import { RosBundle } from './ecd.generated';
 export { RosBundle as BundleProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECD::Bundle`
+ * Properties for defining a `Bundle`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-bundle
  */
 export interface BundleProps {
 
@@ -72,14 +73,11 @@ export interface BundleProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECD::Bundle`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECD::Bundle`, which is used to create a custom desktop template.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBundle`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-bundle
  */
 export class Bundle extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute BundleId: Desktop bundle ID.
@@ -87,8 +85,6 @@ export class Bundle extends ros.Resource {
     public readonly attrBundleId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ECD::Bundle`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

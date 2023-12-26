@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Threatdetection.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ThreatDetection::Instances`.</summary>
+    /// <summary>Properties for defining a `Instances`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-threatdetection-instances
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-threatdetection.datasource.InstancesProps")]
     public class InstancesProps : AlibabaCloud.SDK.ROS.CDK.Threatdetection.Datasource.IInstancesProps
     {

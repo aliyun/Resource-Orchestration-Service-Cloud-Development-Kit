@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
 {
-    /// <summary>Properties for defining a `ALIYUN::ClickHouse::SynDb`.</summary>
+    /// <summary>Properties for defining a `RosSynDb`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-clickhouse-syndb
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosSynDbProps), fullyQualifiedName: "@alicloud/ros-cdk-clickhouse.RosSynDbProps")]
     public interface IRosSynDbProps
     {
@@ -145,7 +148,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ClickHouse::SynDb`.</summary>
+        /// <summary>Properties for defining a `RosSynDb`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-clickhouse-syndb
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosSynDbProps), fullyQualifiedName: "@alicloud/ros-cdk-clickhouse.RosSynDbProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Clickhouse.IRosSynDbProps
         {

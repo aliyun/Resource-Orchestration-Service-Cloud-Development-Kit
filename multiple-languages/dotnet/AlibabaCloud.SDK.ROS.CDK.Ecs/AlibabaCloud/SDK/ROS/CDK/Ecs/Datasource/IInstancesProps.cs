@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ECS::Instances`.</summary>
+    /// <summary>Properties for defining a `Instances`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-instances
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IInstancesProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.datasource.InstancesProps")]
     public interface IInstancesProps
     {
@@ -198,7 +201,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
             }
         }
 
-        /// <summary>Property ioOptimized: Specifies whether the instance is I/O optimized.</summary>
+        /// <summary>Property ioOptimized: Specifies whether the instance is I\/O optimized.</summary>
         [JsiiProperty(name: "ioOptimized", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? IoOptimized
@@ -361,7 +364,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::ECS::Instances`.</summary>
+        /// <summary>Properties for defining a `Instances`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-instances
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IInstancesProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.datasource.InstancesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource.IInstancesProps
         {
@@ -517,7 +523,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property ioOptimized: Specifies whether the instance is I/O optimized.</summary>
+            /// <summary>Property ioOptimized: Specifies whether the instance is I\/O optimized.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "ioOptimized", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? IoOptimized

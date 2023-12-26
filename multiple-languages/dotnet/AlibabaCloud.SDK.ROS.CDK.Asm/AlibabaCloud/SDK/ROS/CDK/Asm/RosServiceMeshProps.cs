@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ASM::ServiceMesh`.</summary>
+    /// <summary>Properties for defining a `RosServiceMesh`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-asm-servicemesh
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-asm.RosServiceMeshProps")]
     public class RosServiceMeshProps : AlibabaCloud.SDK.ROS.CDK.Asm.IRosServiceMeshProps
     {

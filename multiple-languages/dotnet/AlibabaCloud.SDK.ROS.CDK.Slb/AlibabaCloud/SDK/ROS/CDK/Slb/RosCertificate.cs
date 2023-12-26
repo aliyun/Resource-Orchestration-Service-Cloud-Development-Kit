@@ -4,11 +4,16 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Slb
 {
-    /// <summary>A ROS template type:  `ALIYUN::SLB::Certificate`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::Certificate`, which is used to upload a certificate to a Server Load Balancer (SLB) instance.</summary>
+    /// <remarks>
+    /// Server certificates and certificate authority (CA) certificates are supported.
+    ///
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Certificate` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-certificate
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Slb.RosCertificate), fullyQualifiedName: "@alicloud/ros-cdk-slb.RosCertificate", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-slb.RosCertificateProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosCertificate : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::SLB::Certificate`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>

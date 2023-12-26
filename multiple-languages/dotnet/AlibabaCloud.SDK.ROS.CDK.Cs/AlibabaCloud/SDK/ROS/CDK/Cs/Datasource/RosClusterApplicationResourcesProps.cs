@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs.Datasource
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `DATASOURCE::CS::ClusterApplicationResources`.</summary>
+    /// <summary>Properties for defining a `RosClusterApplicationResources`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-clusterapplicationresources
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cs.datasource.RosClusterApplicationResourcesProps")]
     public class RosClusterApplicationResourcesProps : AlibabaCloud.SDK.ROS.CDK.Cs.Datasource.IRosClusterApplicationResourcesProps
     {

@@ -4,7 +4,8 @@ import { RosNamespace } from './cms.generated';
 export { RosNamespace as NamespaceProperty };
 
 /**
- * Properties for defining a `ALIYUN::CMS::Namespace`
+ * Properties for defining a `Namespace`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-namespace
  */
 export interface NamespaceProps {
 
@@ -32,14 +33,11 @@ export interface NamespaceProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CMS::Namespace`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::Namespace`, which is used to create a namespace.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNamespace`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-namespace
  */
 export class Namespace extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute CreateTime: The timestamp that was generated when the namespace was created.
@@ -74,8 +72,6 @@ Unit: milliseconds.
     public readonly attrSpecification: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CMS::Namespace`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

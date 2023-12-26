@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.sls;
 
 /**
- * A ROS resource type:  <code>ALIYUN::SLS::ApplyConfigToMachineGroup</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::SLS::ApplyConfigToMachineGroup</code>, which is used to apply Log Service configurations to machine groups.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.338Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:18.146Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.ApplyConfigToMachineGroup")
 public class ApplyConfigToMachineGroup extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,11 +16,7 @@ public class ApplyConfigToMachineGroup extends com.aliyun.ros.cdk.core.Resource 
     }
 
     /**
-     * Create a new <code>ALIYUN::SLS::ApplyConfigToMachineGroup</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -33,11 +29,7 @@ public class ApplyConfigToMachineGroup extends com.aliyun.ros.cdk.core.Resource 
     }
 
     /**
-     * Create a new <code>ALIYUN::SLS::ApplyConfigToMachineGroup</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -49,11 +41,7 @@ public class ApplyConfigToMachineGroup extends com.aliyun.ros.cdk.core.Resource 
     }
 
     /**
-     * Create a new <code>ALIYUN::SLS::ApplyConfigToMachineGroup</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.

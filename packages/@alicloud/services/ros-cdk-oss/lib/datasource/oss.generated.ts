@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::OSS::Buckets`
+ * Properties for defining a `RosBuckets`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oss-buckets
  */
 export interface RosBucketsProps {
 }
@@ -39,18 +40,15 @@ function rosBucketsPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `DATASOURCE::OSS::Buckets`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::OSS::Buckets`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Buckets` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oss-buckets
  */
 export class RosBuckets extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::OSS::Buckets";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute BucketNames: The list of bucket names.
@@ -66,8 +64,6 @@ export class RosBuckets extends ros.RosResource {
 
 
     /**
-     * Create a new `DATASOURCE::OSS::Buckets`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

@@ -4,16 +4,15 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cddc
 {
-    /// <summary>A ROS resource type:  `ALIYUN::CDDC::DedicatedHostGroup`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::CDDC::DedicatedHostGroup`, which is used to create a dedicated cluster.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDedicatedHostGroup`for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cddc-dedicatedhostgroup
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Cddc.DedicatedHostGroup), fullyQualifiedName: "@alicloud/ros-cdk-cddc.DedicatedHostGroup", parametersJson: "[{\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-cddc.DedicatedHostGroupProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"optional\":true,\"type\":{\"primitive\":\"boolean\"}}]")]
     public class DedicatedHostGroup : AlibabaCloud.SDK.ROS.CDK.Core.Resource_
     {
-        /// <summary>Create a new `ALIYUN::CDDC::DedicatedHostGroup`.</summary>
-        /// <remarks>
-        /// Param scope - scope in which this resource is defined
-        /// Param id    - scoped id of the resource
-        /// Param props - resource properties
-        /// </remarks>
+        /// <summary>Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.</summary>
         public DedicatedHostGroup(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Cddc.IDedicatedHostGroupProps props, bool? enableResourcePropertyConstraint = null): base(_MakeDeputyProps(scope, id, props, enableResourcePropertyConstraint))
         {
         }

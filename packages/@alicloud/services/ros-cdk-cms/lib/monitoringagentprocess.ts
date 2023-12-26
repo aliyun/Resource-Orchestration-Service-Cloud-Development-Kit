@@ -4,7 +4,8 @@ import { RosMonitoringAgentProcess } from './cms.generated';
 export { RosMonitoringAgentProcess as MonitoringAgentProcessProperty };
 
 /**
- * Properties for defining a `ALIYUN::CMS::MonitoringAgentProcess`
+ * Properties for defining a `MonitoringAgentProcess`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitoringagentprocess
  */
 export interface MonitoringAgentProcessProps {
 
@@ -25,14 +26,11 @@ export interface MonitoringAgentProcessProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CMS::MonitoringAgentProcess`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::MonitoringAgentProcess`, which is used to create a task to monitor a process.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMonitoringAgentProcess`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitoringagentprocess
  */
 export class MonitoringAgentProcess extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Id: The process ID.
@@ -40,8 +38,6 @@ export class MonitoringAgentProcess extends ros.Resource {
     public readonly attrId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CMS::MonitoringAgentProcess`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

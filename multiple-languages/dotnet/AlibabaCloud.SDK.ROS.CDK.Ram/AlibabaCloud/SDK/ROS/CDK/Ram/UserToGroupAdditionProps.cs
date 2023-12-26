@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::RAM::UserToGroupAddition`.</summary>
+    /// <summary>Properties for defining a `UserToGroupAddition`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-usertogroupaddition
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ram.UserToGroupAdditionProps")]
     public class UserToGroupAdditionProps : AlibabaCloud.SDK.ROS.CDK.Ram.IUserToGroupAdditionProps
     {

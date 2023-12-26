@@ -4,16 +4,15 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Nas
 {
-    /// <summary>A ROS resource type:  `ALIYUN::NAS::Fileset`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::NAS::Fileset`, which is used to create a fileset.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFileset`for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-fileset
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Nas.Fileset), fullyQualifiedName: "@alicloud/ros-cdk-nas.Fileset", parametersJson: "[{\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-nas.FilesetProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"optional\":true,\"type\":{\"primitive\":\"boolean\"}}]")]
     public class Fileset : AlibabaCloud.SDK.ROS.CDK.Core.Resource_
     {
-        /// <summary>Create a new `ALIYUN::NAS::Fileset`.</summary>
-        /// <remarks>
-        /// Param scope - scope in which this resource is defined
-        /// Param id    - scoped id of the resource
-        /// Param props - resource properties
-        /// </remarks>
+        /// <summary>Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.</summary>
         public Fileset(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Nas.IFilesetProps props, bool? enableResourcePropertyConstraint = null): base(_MakeDeputyProps(scope, id, props, enableResourcePropertyConstraint))
         {
         }

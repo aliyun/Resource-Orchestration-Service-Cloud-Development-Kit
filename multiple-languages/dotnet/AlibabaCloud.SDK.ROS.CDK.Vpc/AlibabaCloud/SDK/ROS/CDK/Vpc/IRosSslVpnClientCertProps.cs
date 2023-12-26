@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>Properties for defining a `ALIYUN::VPC::SslVpnClientCert`.</summary>
+    /// <summary>Properties for defining a `RosSslVpnClientCert`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-sslvpnclientcert
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosSslVpnClientCertProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosSslVpnClientCertProps")]
     public interface IRosSslVpnClientCertProps
     {
@@ -19,7 +22,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         /// <remarks>
         /// <strong>Property</strong>: name: The name of the client certificate.
-        /// The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
+        /// The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -31,7 +34,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::VPC::SslVpnClientCert`.</summary>
+        /// <summary>Properties for defining a `RosSslVpnClientCert`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-sslvpnclientcert
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosSslVpnClientCertProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosSslVpnClientCertProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.IRosSslVpnClientCertProps
         {
@@ -50,7 +56,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
             /// <remarks>
             /// <strong>Property</strong>: name: The name of the client certificate.
-            /// The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
+            /// The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:\/\/ or https:\/\/.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

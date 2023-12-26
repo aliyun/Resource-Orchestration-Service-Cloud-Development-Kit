@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eais
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::EAIS::ClientInstanceAttachment`.</summary>
+    /// <summary>Properties for defining a `RosClientInstanceAttachment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eais-clientinstanceattachment
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-eais.RosClientInstanceAttachmentProps")]
     public class RosClientInstanceAttachmentProps : AlibabaCloud.SDK.ROS.CDK.Eais.IRosClientInstanceAttachmentProps
     {

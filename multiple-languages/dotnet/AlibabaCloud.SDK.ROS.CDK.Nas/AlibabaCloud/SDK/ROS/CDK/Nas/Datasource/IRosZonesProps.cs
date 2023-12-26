@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Nas.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::NAS::Zones`.</summary>
+    /// <summary>Properties for defining a `RosZones`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-zones
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosZonesProps), fullyQualifiedName: "@alicloud/ros-cdk-nas.datasource.RosZonesProps")]
     public interface IRosZonesProps
     {
@@ -24,7 +27,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::NAS::Zones`.</summary>
+        /// <summary>Properties for defining a `RosZones`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-zones
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosZonesProps), fullyQualifiedName: "@alicloud/ros-cdk-nas.datasource.RosZonesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Nas.Datasource.IRosZonesProps
         {

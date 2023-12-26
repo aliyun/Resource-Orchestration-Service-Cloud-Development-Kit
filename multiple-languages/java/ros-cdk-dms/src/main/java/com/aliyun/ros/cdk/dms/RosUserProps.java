@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.dms;
 
 /**
- * Properties for defining a <code>ALIYUN::DMS::User</code>.
+ * Properties for defining a <code>RosUser</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dms-user
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.465Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.878Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dms.$Module.class, fqn = "@alicloud/ros-cdk-dms.RosUserProps")
 @software.amazon.jsii.Jsii.Proxy(RosUserProps.Jsii$Proxy.class)
 public interface RosUserProps extends software.amazon.jsii.JsiiSerializable {

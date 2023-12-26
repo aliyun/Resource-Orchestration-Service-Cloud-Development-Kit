@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Nlb
 {
-    /// <summary>A ROS template type:  `ALIYUN::NLB::LoadBalancer`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::LoadBalancer`, which is used to create a Network Load Balancer (NLB) instance.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `LoadBalancer` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-loadbalancer
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Nlb.RosLoadBalancer), fullyQualifiedName: "@alicloud/ros-cdk-nlb.RosLoadBalancer", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-nlb.RosLoadBalancerProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosLoadBalancer : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::NLB::LoadBalancer`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -1161,6 +1164,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: eipType: The type of the EIP. Valid values:
+            /// - **Common**
+            /// - **Anycast**
+            /// **Note**: Only NLB instances in Hong Kong, China, support binding Anycast EIP.
+            /// </remarks>
+            [JsiiProperty(name: "eipType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? EipType
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: loadBalancerAddresses: Load balancer addresses. This property has higher priority than AllocationId and EipType in ZoneMappings.
             /// </remarks>
             [JsiiProperty(name: "loadBalancerAddresses", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-nlb.RosLoadBalancer.LoadBalancerAddressesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -1217,6 +1236,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
                 [JsiiOptional]
                 [JsiiProperty(name: "allocationId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? AllocationId
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: eipType: The type of the EIP. Valid values:
+                /// - **Common**
+                /// - **Anycast**
+                /// **Note**: Only NLB instances in Hong Kong, China, support binding Anycast EIP.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "eipType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? EipType
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -1341,6 +1373,42 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
                         }
                     }
                     _allocationId = value;
+                }
+            }
+
+            private object? _eipType;
+
+            /// <remarks>
+            /// <strong>Property</strong>: eipType: The type of the EIP. Valid values:
+            /// - **Common**
+            /// - **Anycast**
+            /// **Note**: Only NLB instances in Hong Kong, China, support binding Anycast EIP.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "eipType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EipType
+            {
+                get => _eipType;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _eipType = value;
                 }
             }
 

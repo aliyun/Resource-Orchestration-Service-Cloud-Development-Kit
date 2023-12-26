@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Pai.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::PAI::Workspaces`.</summary>
+    /// <summary>Properties for defining a `Workspaces`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-workspaces
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IWorkspacesProps), fullyQualifiedName: "@alicloud/ros-cdk-pai.datasource.WorkspacesProps")]
     public interface IWorkspacesProps
     {
@@ -39,7 +42,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pai.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::PAI::Workspaces`.</summary>
+        /// <summary>Properties for defining a `Workspaces`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-workspaces
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IWorkspacesProps), fullyQualifiedName: "@alicloud/ros-cdk-pai.datasource.WorkspacesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Pai.Datasource.IWorkspacesProps
         {

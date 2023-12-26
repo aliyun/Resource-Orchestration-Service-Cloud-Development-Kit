@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Emr.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::EMR::Cluster2`.</summary>
+    /// <summary>Properties for defining a `Cluster2`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-emr-cluster2
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ICluster2Props), fullyQualifiedName: "@alicloud/ros-cdk-emr.datasource.Cluster2Props")]
     public interface ICluster2Props
     {
@@ -85,7 +88,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::EMR::Cluster2`.</summary>
+        /// <summary>Properties for defining a `Cluster2`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-emr-cluster2
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ICluster2Props), fullyQualifiedName: "@alicloud/ros-cdk-emr.datasource.Cluster2Props")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Emr.Datasource.ICluster2Props
         {

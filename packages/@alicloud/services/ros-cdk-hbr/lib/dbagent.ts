@@ -4,7 +4,8 @@ import { RosDbAgent } from './hbr.generated';
 export { RosDbAgent as DbAgentProperty };
 
 /**
- * Properties for defining a `ALIYUN::HBR::DbAgent`
+ * Properties for defining a `DbAgent`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbagent
  */
 export interface DbAgentProps {
 
@@ -15,14 +16,11 @@ export interface DbAgentProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::HBR::DbAgent`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::HBR::DbAgent`, which is used to install a Cloud Backup backup client for a database.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDbAgent`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbagent
  */
 export class DbAgent extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute InstanceIds: Uni backup agent instance ids
@@ -45,8 +43,6 @@ export class DbAgent extends ros.Resource {
     public readonly attrUniBackupInstances: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::HBR::DbAgent`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Drds.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::DRDS::Accounts`.</summary>
+    /// <summary>Properties for defining a `Accounts`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-drds-accounts
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-drds.datasource.AccountsProps")]
     public class AccountsProps : AlibabaCloud.SDK.ROS.CDK.Drds.Datasource.IAccountsProps
     {

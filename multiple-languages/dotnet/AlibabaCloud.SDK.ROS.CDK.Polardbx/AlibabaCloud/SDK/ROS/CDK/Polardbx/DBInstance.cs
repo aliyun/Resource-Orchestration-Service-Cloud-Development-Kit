@@ -4,16 +4,15 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Polardbx
 {
-    /// <summary>A ROS resource type:  `ALIYUN::PolarDBX::DBInstance`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::PolarDBX::DBInstance`, which is used to create a PolarDB-X 1.0 instance.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBInstance`for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardbx-dbinstance
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Polardbx.DBInstance), fullyQualifiedName: "@alicloud/ros-cdk-polardbx.DBInstance", parametersJson: "[{\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-polardbx.DBInstanceProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"optional\":true,\"type\":{\"primitive\":\"boolean\"}}]")]
     public class DBInstance : AlibabaCloud.SDK.ROS.CDK.Core.Resource_
     {
-        /// <summary>Create a new `ALIYUN::PolarDBX::DBInstance`.</summary>
-        /// <remarks>
-        /// Param scope - scope in which this resource is defined
-        /// Param id    - scoped id of the resource
-        /// Param props - resource properties
-        /// </remarks>
+        /// <summary>Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.</summary>
         public DBInstance(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Polardbx.IDBInstanceProps props, bool? enableResourcePropertyConstraint = null): base(_MakeDeputyProps(scope, id, props, enableResourcePropertyConstraint))
         {
         }

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>Properties for defining a `ALIYUN::VPC::VpnRouteEntry`.</summary>
+    /// <summary>Properties for defining a `RosVpnRouteEntry`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnrouteentry
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosVpnRouteEntryProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosVpnRouteEntryProps")]
     public interface IRosVpnRouteEntryProps
     {
@@ -81,7 +84,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::VPC::VpnRouteEntry`.</summary>
+        /// <summary>Properties for defining a `RosVpnRouteEntry`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnrouteentry
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosVpnRouteEntryProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosVpnRouteEntryProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.IRosVpnRouteEntryProps
         {

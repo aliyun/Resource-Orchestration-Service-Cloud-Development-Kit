@@ -4,7 +4,8 @@ import { RosAITask } from './polardb.generated';
 export { RosAITask as AITaskProperty };
 
 /**
- * Properties for defining a `ALIYUN::POLARDB::AITask`
+ * Properties for defining a `AITask`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-aitask
  */
 export interface AITaskProps {
 
@@ -32,14 +33,11 @@ export interface AITaskProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::POLARDB::AITask`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::AITask`DATASOURCE::POLARDB::DBNodeClasses is used to query the available resources of a PolarDB cluster.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAITask`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-aitask
  */
 export class AITask extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DBClusterId: The ID of the DB cluster.
@@ -47,8 +45,6 @@ export class AITask extends ros.Resource {
     public readonly attrDbClusterId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::POLARDB::AITask`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

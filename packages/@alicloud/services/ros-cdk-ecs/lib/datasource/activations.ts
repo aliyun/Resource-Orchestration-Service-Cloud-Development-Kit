@@ -4,7 +4,8 @@ import { RosActivations } from './ecs.generated';
 export { RosActivations as ActivationsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::ECS::Activations`
+ * Properties for defining a `Activations`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-activations
  */
 export interface ActivationsProps {
 
@@ -20,14 +21,11 @@ export interface ActivationsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::ECS::Activations`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Activations`, which is used to query activation codes.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosActivations`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-activations
  */
 export class Activations extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ActivationIds: The list of activation IDs.
@@ -40,8 +38,6 @@ export class Activations extends ros.Resource {
     public readonly attrActivations: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::ECS::Activations`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

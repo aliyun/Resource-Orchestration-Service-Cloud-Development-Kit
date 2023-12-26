@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.ros;
 
 /**
- * Properties for defining a <code>ALIYUN::ROS::AutoEnableService</code>.
+ * Properties for defining a <code>AutoEnableService</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-autoenableservice
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.002Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.867Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.AutoEnableServiceProps")
 @software.amazon.jsii.Jsii.Proxy(AutoEnableServiceProps.Jsii$Proxy.class)
 public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSerializable {
@@ -50,6 +52,7 @@ public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSeriali
      * CDT: Cloud Data Transfer
      * CDTCb: Cloud Data Transfer for Cross Border
      * TransitRouter: Cen Transit Router
+     * PAI: Platform of Artificial Intelligence
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getServiceName();
 
@@ -107,6 +110,7 @@ public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSeriali
          *                    CDT: Cloud Data Transfer
          *                    CDTCb: Cloud Data Transfer for Cross Border
          *                    TransitRouter: Cen Transit Router
+         *                    PAI: Platform of Artificial Intelligence
          * @return {@code this}
          */
         public Builder serviceName(java.lang.String serviceName) {
@@ -156,6 +160,7 @@ public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSeriali
          *                    CDT: Cloud Data Transfer
          *                    CDTCb: Cloud Data Transfer for Cross Border
          *                    TransitRouter: Cen Transit Router
+         *                    PAI: Platform of Artificial Intelligence
          * @return {@code this}
          */
         public Builder serviceName(com.aliyun.ros.cdk.core.IResolvable serviceName) {

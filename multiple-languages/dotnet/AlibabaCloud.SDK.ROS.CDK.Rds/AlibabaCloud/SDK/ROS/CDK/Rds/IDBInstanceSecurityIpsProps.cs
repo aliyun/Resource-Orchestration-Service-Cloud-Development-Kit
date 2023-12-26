@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Rds
 {
-    /// <summary>Properties for defining a `ALIYUN::RDS::DBInstanceSecurityIps`.</summary>
+    /// <summary>Properties for defining a `DBInstanceSecurityIps`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstancesecurityips
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IDBInstanceSecurityIpsProps), fullyQualifiedName: "@alicloud/ros-cdk-rds.DBInstanceSecurityIpsProps")]
     public interface IDBInstanceSecurityIpsProps
     {
@@ -36,7 +39,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::RDS::DBInstanceSecurityIps`.</summary>
+        /// <summary>Properties for defining a `DBInstanceSecurityIps`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstancesecurityips
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IDBInstanceSecurityIpsProps), fullyQualifiedName: "@alicloud/ros-cdk-rds.DBInstanceSecurityIpsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Rds.IDBInstanceSecurityIpsProps
         {

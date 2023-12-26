@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Rds
 {
-    /// <summary>Properties for defining a `ALIYUN::RDS::ADInfo`.</summary>
+    /// <summary>Properties for defining a `ADInfo`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-adinfo
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IADInfoProps), fullyQualifiedName: "@alicloud/ros-cdk-rds.ADInfoProps")]
     public interface IADInfoProps
     {
@@ -43,7 +46,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::RDS::ADInfo`.</summary>
+        /// <summary>Properties for defining a `ADInfo`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-adinfo
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IADInfoProps), fullyQualifiedName: "@alicloud/ros-cdk-rds.ADInfoProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Rds.IADInfoProps
         {

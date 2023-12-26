@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Maxcompute
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::MaxCompute::Table`.</summary>
+    /// <summary>Properties for defining a `Table`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-maxcompute-table
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-maxcompute.TableProps")]
     public class TableProps : AlibabaCloud.SDK.ROS.CDK.Maxcompute.ITableProps
     {

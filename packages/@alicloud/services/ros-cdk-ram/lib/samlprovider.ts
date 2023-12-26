@@ -4,7 +4,8 @@ import { RosSAMLProvider } from './ram.generated';
 export { RosSAMLProvider as SAMLProviderProperty };
 
 /**
- * Properties for defining a `ALIYUN::RAM::SAMLProvider`
+ * Properties for defining a `SAMLProvider`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-samlprovider
  */
 export interface SAMLProviderProps {
 
@@ -24,20 +25,17 @@ export interface SAMLProviderProps {
     readonly samlMetadataDocument?: string | ros.IResolvable;
 
     /**
-     * Property samlMetadataDocumentUrl: The URL for the file that contains the SAML metadata document. The URL must point to a document located in an HTTP or HTTPS web server or an Alibaba Cloud OSS bucket. Examples: oss://ros/document/demo and oss://ros/document/demo?RegionId=cn-hangzhou. The URL can be up to 1,024 bytes in length.
+     * Property samlMetadataDocumentUrl: The URL for the file that contains the SAML metadata document. The URL must point to a document located in an HTTP or HTTPS web server or an Alibaba Cloud OSS bucket. Examples: oss:\/\/ros\/document\/demo and oss:\/\/ros\/document\/demo?RegionId=cn-hangzhou. The URL can be up to 1,024 bytes in length.
      */
     readonly samlMetadataDocumentUrl?: string | ros.IResolvable;
 }
 
 /**
- * A ROS resource type:  `ALIYUN::RAM::SAMLProvider`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::SAMLProvider`, which is used to create an identity provider (IdP) for role-based single sign-on (SSO).
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSAMLProvider`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-samlprovider
  */
 export class SAMLProvider extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Arn: ARN.
@@ -50,8 +48,6 @@ export class SAMLProvider extends ros.Resource {
     public readonly attrSamlProviderName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::RAM::SAMLProvider`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

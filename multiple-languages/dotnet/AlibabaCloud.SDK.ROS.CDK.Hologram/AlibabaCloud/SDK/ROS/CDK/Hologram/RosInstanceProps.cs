@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hologram
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::Hologram::Instance`.</summary>
+    /// <summary>Properties for defining a `RosInstance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hologram-instance
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-hologram.RosInstanceProps")]
     public class RosInstanceProps : AlibabaCloud.SDK.ROS.CDK.Hologram.IRosInstanceProps
     {

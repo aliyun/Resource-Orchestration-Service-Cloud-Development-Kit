@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Nlb
 {
-    /// <summary>A ROS template type:  `ALIYUN::NLB::SecurityGroupAttachment`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::SecurityGroupAttachment`DATASOURCE::NLB::LoadBalancers is used to query the basic information about created Network Load Balancer (NLB) instances.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `SecurityGroupAttachment` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-securitygroupattachment
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Nlb.RosSecurityGroupAttachment), fullyQualifiedName: "@alicloud/ros-cdk-nlb.RosSecurityGroupAttachment", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-nlb.RosSecurityGroupAttachmentProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosSecurityGroupAttachment : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::NLB::SecurityGroupAttachment`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -56,7 +59,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             get => GetInstanceProperty<System.Collections.Generic.IDictionary<string, object>>()!;
         }
 
-        /// <summary>A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.</summary>
         [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
         public virtual bool EnableResourcePropertyConstraint
         {

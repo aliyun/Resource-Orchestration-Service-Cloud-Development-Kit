@@ -4,7 +4,8 @@ import { RosProduct } from './iot.generated';
 export { RosProduct as ProductProperty };
 
 /**
- * Properties for defining a `ALIYUN::IOT::Product`
+ * Properties for defining a `Product`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-product
  */
 export interface ProductProps {
 
@@ -55,7 +56,7 @@ export interface ProductProps {
      * Property dataFormat: You must specify this parameter if the value of AliyunCommodityCode is iothub_senior.
      * This parameter is only available and required when you create a Pro Edition product.
      * Options:
-     * 0: Do not parse/Custom.
+     * 0: Do not parse\/Custom.
      * 1: Alink JSON.
      */
     readonly dataFormat?: number | ros.IResolvable;
@@ -132,14 +133,11 @@ export interface ProductProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::IOT::Product`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::IOT::Product`, which is used to create a product.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosProduct`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-product
  */
 export class Product extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute IotInstanceId: IOT instance ID.
@@ -152,8 +150,6 @@ export class Product extends ros.Resource {
     public readonly attrProductKey: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::IOT::Product`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

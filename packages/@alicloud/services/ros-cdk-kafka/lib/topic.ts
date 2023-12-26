@@ -4,7 +4,8 @@ import { RosTopic } from './kafka.generated';
 export { RosTopic as TopicProperty };
 
 /**
- * Properties for defining a `ALIYUN::KAFKA::Topic`
+ * Properties for defining a `Topic`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-topic
  */
 export interface TopicProps {
 
@@ -84,14 +85,11 @@ export interface TopicProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::KAFKA::Topic`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::KAFKA::Topic`, which is used to create a topic.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTopic`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-topic
  */
 export class Topic extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute InstanceId: The ID of the Message Queue for Apache Kafka instance where the topic is located.
@@ -105,8 +103,6 @@ You can call the GetInstanceList operation to query instances.
     public readonly attrTopic: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::KAFKA::Topic`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

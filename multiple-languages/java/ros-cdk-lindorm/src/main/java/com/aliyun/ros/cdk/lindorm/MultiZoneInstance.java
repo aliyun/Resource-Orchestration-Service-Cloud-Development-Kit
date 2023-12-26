@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.lindorm;
 
 /**
- * A ROS resource type:  <code>ALIYUN::Lindorm::MultiZoneInstance</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::Lindorm::MultiZoneInstance</code>, which is used to create a multi-zone Lindorm instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:35.977Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.757Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.lindorm.$Module.class, fqn = "@alicloud/ros-cdk-lindorm.MultiZoneInstance")
 public class MultiZoneInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,11 +16,7 @@ public class MultiZoneInstance extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::Lindorm::MultiZoneInstance</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -33,11 +29,7 @@ public class MultiZoneInstance extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::Lindorm::MultiZoneInstance</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.

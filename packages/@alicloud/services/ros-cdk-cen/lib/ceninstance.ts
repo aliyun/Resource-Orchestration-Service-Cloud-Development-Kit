@@ -4,19 +4,20 @@ import { RosCenInstance } from './cen.generated';
 export { RosCenInstance as CenInstanceProperty };
 
 /**
- * Properties for defining a `ALIYUN::CEN::CenInstance`
+ * Properties for defining a `CenInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-ceninstance
  */
 export interface CenInstanceProps {
 
     /**
      * Property description: The description of the instance.
-     * The name can be 2-256 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:// or https://.
+     * The name can be 2-256 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:\/\/ or https:\/\/.
      */
     readonly description?: string | ros.IResolvable;
 
     /**
      * Property name: The name of the instance.
-     * The name can be 2-128 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:// or https://.
+     * The name can be 2-128 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:\/\/ or https:\/\/.
      */
     readonly name?: string | ros.IResolvable;
 
@@ -39,14 +40,11 @@ export interface CenInstanceProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CEN::CenInstance`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenInstance`, which is used to create a Cloud Enterprise Network (CEN) instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCenInstance`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-ceninstance
  */
 export class CenInstance extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute CenId: The ID of the request.
@@ -54,8 +52,6 @@ export class CenInstance extends ros.Resource {
     public readonly attrCenId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CEN::CenInstance`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

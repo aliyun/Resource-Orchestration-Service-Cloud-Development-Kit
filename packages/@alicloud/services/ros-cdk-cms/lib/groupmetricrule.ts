@@ -4,7 +4,8 @@ import { RosGroupMetricRule } from './cms.generated';
 export { RosGroupMetricRule as GroupMetricRuleProperty };
 
 /**
- * Properties for defining a `ALIYUN::CMS::GroupMetricRule`
+ * Properties for defining a `GroupMetricRule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-groupmetricrule
  */
 export interface GroupMetricRuleProps {
 
@@ -28,7 +29,7 @@ export interface GroupMetricRuleProps {
      * IOT_EDGE (IoT Edge)
      * K8S_POD (k8s pod)
      * KVSTORE_SHARDING (ApsaraDB for Redis cluster version)
-     * KVSTORE_SPLITRW (ApsaraDB for Redis read/write splitting version)
+     * KVSTORE_SPLITRW (ApsaraDB for Redis read\/write splitting version)
      * KVSTORE_STANDARD (ApsaraDB for Redis standard version)
      * MEMCACHE (ApsaraDB for Memcache)
      * MNS (Message Service)
@@ -123,14 +124,11 @@ export interface GroupMetricRuleProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CMS::GroupMetricRule`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::GroupMetricRule`, which is used to create an alert rule for an application group.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGroupMetricRule`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-groupmetricrule
  */
 export class GroupMetricRule extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute RuleId: Rule ID.
@@ -138,8 +136,6 @@ export class GroupMetricRule extends ros.Resource {
     public readonly attrRuleId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CMS::GroupMetricRule`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

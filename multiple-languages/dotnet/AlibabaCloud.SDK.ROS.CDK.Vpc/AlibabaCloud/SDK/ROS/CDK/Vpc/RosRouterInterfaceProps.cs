@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::VPC::RouterInterface`.</summary>
+    /// <summary>Properties for defining a `RosRouterInterface`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-routerinterface
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.RosRouterInterfaceProps")]
     public class RosRouterInterfaceProps : AlibabaCloud.SDK.ROS.CDK.Vpc.IRosRouterInterfaceProps
     {

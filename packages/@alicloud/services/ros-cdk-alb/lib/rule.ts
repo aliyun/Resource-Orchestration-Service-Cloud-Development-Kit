@@ -4,7 +4,8 @@ import { RosRule } from './alb.generated';
 export { RosRule as RuleProperty };
 
 /**
- * Properties for defining a `ALIYUN::ALB::Rule`
+ * Properties for defining a `Rule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-rule
  */
 export interface RuleProps {
 
@@ -45,14 +46,11 @@ export interface RuleProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ALB::Rule`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::Rule`ALIYUN::Config::Rule is used to create a forwarding rule.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRule`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-rule
  */
 export class Rule extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute RuleId: The ID of the forwarding rules.
@@ -60,8 +58,6 @@ export class Rule extends ros.Resource {
     public readonly attrRuleId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ALB::Rule`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

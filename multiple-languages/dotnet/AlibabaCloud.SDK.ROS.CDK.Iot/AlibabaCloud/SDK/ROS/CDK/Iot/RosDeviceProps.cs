@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::IOT::Device`.</summary>
+    /// <summary>Properties for defining a `RosDevice`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-device
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-iot.RosDeviceProps")]
     public class RosDeviceProps : AlibabaCloud.SDK.ROS.CDK.Iot.IRosDeviceProps
     {

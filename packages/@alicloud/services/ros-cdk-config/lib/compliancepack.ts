@@ -4,7 +4,8 @@ import { RosCompliancePack } from './config.generated';
 export { RosCompliancePack as CompliancePackProperty };
 
 /**
- * Properties for defining a `ALIYUN::Config::CompliancePack`
+ * Properties for defining a `CompliancePack`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-compliancepack
  */
 export interface CompliancePackProps {
 
@@ -35,14 +36,11 @@ export interface CompliancePackProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::Config::CompliancePack`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::Config::CompliancePack`, which is used to create a compliance package.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCompliancePack`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-compliancepack
  */
 export class CompliancePack extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AccountId: Aliyun User Id
@@ -75,8 +73,6 @@ export class CompliancePack extends ros.Resource {
     public readonly attrRiskLevel: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::Config::CompliancePack`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

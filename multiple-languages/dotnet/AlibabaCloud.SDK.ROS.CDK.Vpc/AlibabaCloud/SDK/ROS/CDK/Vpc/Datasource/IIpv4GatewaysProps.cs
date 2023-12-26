@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::VPC::Ipv4Gateways`.</summary>
+    /// <summary>Properties for defining a `Ipv4Gateways`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-ipv4gateways
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IIpv4GatewaysProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.datasource.Ipv4GatewaysProps")]
     public interface IIpv4GatewaysProps
     {
@@ -41,7 +44,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::VPC::Ipv4Gateways`.</summary>
+        /// <summary>Properties for defining a `Ipv4Gateways`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-ipv4gateways
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IIpv4GatewaysProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.datasource.Ipv4GatewaysProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource.IIpv4GatewaysProps
         {

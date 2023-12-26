@@ -4,7 +4,8 @@ import { RosNamespace } from './cr.generated';
 export { RosNamespace as NamespaceProperty };
 
 /**
- * Properties for defining a `ALIYUN::CR::Namespace`
+ * Properties for defining a `Namespace`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-namespace
  */
 export interface NamespaceProps {
 
@@ -30,14 +31,11 @@ export interface NamespaceProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CR::Namespace`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CR::Namespace`, which is used to create a namespace.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNamespace`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-namespace
  */
 export class Namespace extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute InstanceId: The ID of the enterprise edition instance which namespace belongs to.
@@ -55,8 +53,6 @@ export class Namespace extends ros.Resource {
     public readonly attrNamespaceId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CR::Namespace`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

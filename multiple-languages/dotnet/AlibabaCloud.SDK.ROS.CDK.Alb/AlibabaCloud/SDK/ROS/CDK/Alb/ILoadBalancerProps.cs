@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Alb
 {
-    /// <summary>Properties for defining a `ALIYUN::ALB::LoadBalancer`.</summary>
+    /// <summary>Properties for defining a `LoadBalancer`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-loadbalancer
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ILoadBalancerProps), fullyQualifiedName: "@alicloud/ros-cdk-alb.LoadBalancerProps")]
     public interface ILoadBalancerProps
     {
@@ -174,7 +177,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ALB::LoadBalancer`.</summary>
+        /// <summary>Properties for defining a `LoadBalancer`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-loadbalancer
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ILoadBalancerProps), fullyQualifiedName: "@alicloud/ros-cdk-alb.LoadBalancerProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Alb.ILoadBalancerProps
         {

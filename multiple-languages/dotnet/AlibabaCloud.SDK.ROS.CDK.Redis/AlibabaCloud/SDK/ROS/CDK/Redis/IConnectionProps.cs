@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Redis
 {
-    /// <summary>Properties for defining a `ALIYUN::REDIS::Connection`.</summary>
+    /// <summary>Properties for defining a `Connection`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-connection
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IConnectionProps), fullyQualifiedName: "@alicloud/ros-cdk-redis.ConnectionProps")]
     public interface IConnectionProps
     {
@@ -49,7 +52,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::REDIS::Connection`.</summary>
+        /// <summary>Properties for defining a `Connection`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-connection
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IConnectionProps), fullyQualifiedName: "@alicloud/ros-cdk-redis.ConnectionProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Redis.IConnectionProps
         {

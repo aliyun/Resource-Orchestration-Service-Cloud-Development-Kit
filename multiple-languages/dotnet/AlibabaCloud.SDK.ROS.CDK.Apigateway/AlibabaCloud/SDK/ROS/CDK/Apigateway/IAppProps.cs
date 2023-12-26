@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 {
-    /// <summary>Properties for defining a `ALIYUN::ApiGateway::App`.</summary>
+    /// <summary>Properties for defining a `App`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-app
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IAppProps), fullyQualifiedName: "@alicloud/ros-cdk-apigateway.AppProps")]
     public interface IAppProps
     {
-        /// <summary>Property appName: The name of the App.Need [4, 26] Chinese\English\Number characters or "_",and should start with Chinese/English character.</summary>
+        /// <summary>Property appName: The name of the App.Need [4, 26] Chinese\English\Number characters or "_",and should start with Chinese\/English character.</summary>
         [JsiiProperty(name: "appName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AppName
         {
@@ -83,7 +86,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ApiGateway::App`.</summary>
+        /// <summary>Properties for defining a `App`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-app
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IAppProps), fullyQualifiedName: "@alicloud/ros-cdk-apigateway.AppProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Apigateway.IAppProps
         {
@@ -91,7 +97,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             {
             }
 
-            /// <summary>Property appName: The name of the App.Need [4, 26] Chinese\English\Number characters or "_",and should start with Chinese/English character.</summary>
+            /// <summary>Property appName: The name of the App.Need [4, 26] Chinese\English\Number characters or "_",and should start with Chinese\/English character.</summary>
             [JsiiProperty(name: "appName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object AppName
             {

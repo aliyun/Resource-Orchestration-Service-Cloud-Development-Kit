@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::RAM::Groups`
+ * Properties for defining a `RosGroups`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-groups
  */
 export interface RosGroupsProps {
 
@@ -53,18 +54,15 @@ function rosGroupsPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * A ROS template type:  `DATASOURCE::RAM::Groups`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::RAM::Groups`, which is used to query Resource Access Management (RAM) user groups.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Groups` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-groups
  */
 export class RosGroups extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::RAM::Groups";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute GroupNames: The list of group names.
@@ -90,8 +88,6 @@ export class RosGroups extends ros.RosResource {
     public userName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::RAM::Groups`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -119,7 +115,8 @@ export class RosGroups extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::RAM::Policies`
+ * Properties for defining a `RosPolicies`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-policies
  */
 export interface RosPoliciesProps {
 
@@ -196,18 +193,15 @@ function rosPoliciesPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `DATASOURCE::RAM::Policies`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::RAM::Policies`, which is used to query policies.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Policies` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-policies
  */
 export class RosPolicies extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::RAM::Policies";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Policies: The list of policies.
@@ -248,8 +242,6 @@ export class RosPolicies extends ros.RosResource {
     public userName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::RAM::Policies`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -283,7 +275,8 @@ export class RosPolicies extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::RAM::Roles`
+ * Properties for defining a `RosRoles`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-roles
  */
 export interface RosRolesProps {
 
@@ -326,18 +319,15 @@ function rosRolesPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `DATASOURCE::RAM::Roles`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::RAM::Roles`, which is used to query the details of RAM roles.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Roles` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-roles
  */
 export class RosRoles extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::RAM::Roles";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute RoleNames: The list of role names.
@@ -358,8 +348,6 @@ export class RosRoles extends ros.RosResource {
     public roleName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::RAM::Roles`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -385,7 +373,8 @@ export class RosRoles extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::RAM::Users`
+ * Properties for defining a `RosUsers`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-users
  */
 export interface RosUsersProps {
 
@@ -435,18 +424,15 @@ function rosUsersPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `DATASOURCE::RAM::Users`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::RAM::Users`, which is used to query Resource Access Management (RAM) users.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Users` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-users
  */
 export class RosUsers extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::RAM::Users";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute UserNames: The list of user names.
@@ -472,8 +458,6 @@ export class RosUsers extends ros.RosResource {
     public userName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::RAM::Users`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

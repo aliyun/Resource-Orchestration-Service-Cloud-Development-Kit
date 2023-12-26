@@ -4,16 +4,15 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Apigateway.Datasource
 {
-    /// <summary>A ROS resource type:  `DATASOURCE::ApiGateway::Apis`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::ApiGateway::Apis`, which is used to query APIs in API Gateway.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApis`for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-apis
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Apigateway.Datasource.Apis), fullyQualifiedName: "@alicloud/ros-cdk-apigateway.datasource.Apis", parametersJson: "[{\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"props\",\"optional\":true,\"type\":{\"fqn\":\"@alicloud/ros-cdk-apigateway.datasource.ApisProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"optional\":true,\"type\":{\"primitive\":\"boolean\"}}]")]
     public class Apis : AlibabaCloud.SDK.ROS.CDK.Core.Resource_
     {
-        /// <summary>Create a new `DATASOURCE::ApiGateway::Apis`.</summary>
-        /// <remarks>
-        /// Param scope - scope in which this resource is defined
-        /// Param id    - scoped id of the resource
-        /// Param props - resource properties
-        /// </remarks>
+        /// <summary>Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.</summary>
         public Apis(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Apigateway.Datasource.IApisProps? props = null, bool? enableResourcePropertyConstraint = null): base(_MakeDeputyProps(scope, id, props, enableResourcePropertyConstraint))
         {
         }

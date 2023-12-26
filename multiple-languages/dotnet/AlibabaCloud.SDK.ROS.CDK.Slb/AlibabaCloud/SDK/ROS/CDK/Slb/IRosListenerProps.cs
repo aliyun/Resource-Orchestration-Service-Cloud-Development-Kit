@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Slb
 {
-    /// <summary>Properties for defining a `ALIYUN::SLB::Listener`.</summary>
+    /// <summary>Properties for defining a `RosListener`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-listener
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosListenerProps), fullyQualifiedName: "@alicloud/ros-cdk-slb.RosListenerProps")]
     public interface IRosListenerProps
     {
@@ -134,7 +137,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: description: The description of the listener.It must be 1 to 80 characters in length and can contain letters, digits, hyphens (-), forward slashes (/), periods (.), and underscores (_). Chinese characters are supported.
+        /// <strong>Property</strong>: description: The description of the listener.It must be 1 to 80 characters in length and can contain letters, digits, hyphens (-), forward slashes (\/), periods (.), and underscores (_). Chinese characters are supported.
         /// </remarks>
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -147,7 +150,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: enableHttp2: Specifies whether to use HTTP/2. It takes effect when Protocol=https. Valid values:
+        /// <strong>Property</strong>: enableHttp2: Specifies whether to use HTTP\/2. It takes effect when Protocol=https. Valid values:
         /// on: yes
         /// off: no
         /// </remarks>
@@ -338,7 +341,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::SLB::Listener`.</summary>
+        /// <summary>Properties for defining a `RosListener`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-listener
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosListenerProps), fullyQualifiedName: "@alicloud/ros-cdk-slb.RosListenerProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Slb.IRosListenerProps
         {
@@ -454,7 +460,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: description: The description of the listener.It must be 1 to 80 characters in length and can contain letters, digits, hyphens (-), forward slashes (/), periods (.), and underscores (_). Chinese characters are supported.
+            /// <strong>Property</strong>: description: The description of the listener.It must be 1 to 80 characters in length and can contain letters, digits, hyphens (-), forward slashes (\/), periods (.), and underscores (_). Chinese characters are supported.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -464,7 +470,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: enableHttp2: Specifies whether to use HTTP/2. It takes effect when Protocol=https. Valid values:
+            /// <strong>Property</strong>: enableHttp2: Specifies whether to use HTTP\/2. It takes effect when Protocol=https. Valid values:
             /// on: yes
             /// off: no
             /// </remarks>

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
 {
-    /// <summary>Properties for defining a `ALIYUN::ElasticSearch::Instance`.</summary>
+    /// <summary>Properties for defining a `Instance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-elasticsearch-instance
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-elasticsearch.InstanceProps")]
     public interface IInstanceProps
     {
@@ -153,7 +156,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             }
         }
 
-        /// <summary>Property periodUnit: Unit of prepaid time period, it could be Month/Year.</summary>
+        /// <summary>Property periodUnit: Unit of prepaid time period, it could be Month\/Year.</summary>
         /// <remarks>
         /// Default value is Month.
         /// </remarks>
@@ -250,7 +253,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ElasticSearch::Instance`.</summary>
+        /// <summary>Properties for defining a `Instance`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-elasticsearch-instance
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-elasticsearch.InstanceProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Elasticsearch.IInstanceProps
         {
@@ -376,7 +382,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property periodUnit: Unit of prepaid time period, it could be Month/Year.</summary>
+            /// <summary>Property periodUnit: Unit of prepaid time period, it could be Month\/Year.</summary>
             /// <remarks>
             /// Default value is Month.
             /// </remarks>

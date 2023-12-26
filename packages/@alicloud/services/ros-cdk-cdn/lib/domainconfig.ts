@@ -4,7 +4,8 @@ import { RosDomainConfig } from './cdn.generated';
 export { RosDomainConfig as DomainConfigProperty };
 
 /**
- * Properties for defining a `ALIYUN::CDN::DomainConfig`
+ * Properties for defining a `DomainConfig`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cdn-domainconfig
  */
 export interface DomainConfigProps {
 
@@ -20,18 +21,13 @@ export interface DomainConfigProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CDN::DomainConfig`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CDN::DomainConfig`, which is used to add multiple domain name settings.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomainConfig`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cdn-domainconfig
  */
 export class DomainConfig extends ros.Resource {
 
     /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
-
-    /**
-     * Create a new `ALIYUN::CDN::DomainConfig`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

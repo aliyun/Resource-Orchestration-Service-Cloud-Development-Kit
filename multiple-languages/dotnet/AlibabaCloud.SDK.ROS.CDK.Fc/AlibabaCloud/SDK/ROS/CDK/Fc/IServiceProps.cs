@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Fc
 {
-    /// <summary>Properties for defining a `ALIYUN::FC::Service`.</summary>
+    /// <summary>Properties for defining a `Service`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-service
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IServiceProps), fullyQualifiedName: "@alicloud/ros-cdk-fc.ServiceProps")]
     public interface IServiceProps
     {
@@ -160,7 +163,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::FC::Service`.</summary>
+        /// <summary>Properties for defining a `Service`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-service
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IServiceProps), fullyQualifiedName: "@alicloud/ros-cdk-fc.ServiceProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Fc.IServiceProps
         {

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::POLARDB::GlobalDatabaseNetwork`.</summary>
+    /// <summary>Properties for defining a `GlobalDatabaseNetwork`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-globaldatabasenetwork
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-polardb.GlobalDatabaseNetworkProps")]
     public class GlobalDatabaseNetworkProps : AlibabaCloud.SDK.ROS.CDK.Polardb.IGlobalDatabaseNetworkProps
     {

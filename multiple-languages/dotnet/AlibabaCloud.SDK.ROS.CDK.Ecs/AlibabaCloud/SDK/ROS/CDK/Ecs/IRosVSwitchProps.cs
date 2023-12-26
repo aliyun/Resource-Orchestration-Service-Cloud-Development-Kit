@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>Properties for defining a `ALIYUN::ECS::VSwitch`.</summary>
+    /// <summary>Properties for defining a `RosVSwitch`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-vswitch
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosVSwitchProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosVSwitchProps")]
     public interface IRosVSwitchProps
     {
@@ -115,7 +118,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ECS::VSwitch`.</summary>
+        /// <summary>Properties for defining a `RosVSwitch`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-vswitch
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosVSwitchProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosVSwitchProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.IRosVSwitchProps
         {

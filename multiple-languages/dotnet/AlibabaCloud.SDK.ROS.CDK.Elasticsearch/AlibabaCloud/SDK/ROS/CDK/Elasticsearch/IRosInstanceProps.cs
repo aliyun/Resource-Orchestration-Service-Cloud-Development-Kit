@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
 {
-    /// <summary>Properties for defining a `ALIYUN::ElasticSearch::Instance`.</summary>
+    /// <summary>Properties for defining a `RosInstance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-elasticsearch-instance
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-elasticsearch.RosInstanceProps")]
     public interface IRosInstanceProps
     {
@@ -164,7 +167,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: periodUnit: Unit of prepaid time period, it could be Month/Year. Default value is Month.
+        /// <strong>Property</strong>: periodUnit: Unit of prepaid time period, it could be Month\/Year. Default value is Month.
         /// </remarks>
         [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -269,7 +272,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ElasticSearch::Instance`.</summary>
+        /// <summary>Properties for defining a `RosInstance`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-elasticsearch-instance
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-elasticsearch.RosInstanceProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Elasticsearch.IRosInstanceProps
         {
@@ -406,7 +412,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: periodUnit: Unit of prepaid time period, it could be Month/Year. Default value is Month.
+            /// <strong>Property</strong>: periodUnit: Unit of prepaid time period, it could be Month\/Year. Default value is Month.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

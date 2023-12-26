@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
 {
-    /// <summary>A ROS template type:  `ALIYUN::CLOUDFW::VpcFirewallControlPolicy`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallControlPolicy`, which is used to add an access control policy to a specified policy group for a Virtual Private Cloud (VPC) firewall.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `VpcFirewallControlPolicy` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-vpcfirewallcontrolpolicy
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Cloudfw.RosVpcFirewallControlPolicy), fullyQualifiedName: "@alicloud/ros-cdk-cloudfw.RosVpcFirewallControlPolicy", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-cloudfw.RosVpcFirewallControlPolicyProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosVpcFirewallControlPolicy : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::CLOUDFW::VpcFirewallControlPolicy`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -178,7 +181,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
         /// <strong>Property</strong>: destination: The destination address in the access control policy.
         /// Set this parameter in the following way:
         /// If the DestinationType parameter is set to net, set the value to a Classless Inter-Domain Routing (CIDR) block.
-        /// Example: 10.2.3.0/24.
+        /// Example: 10.2.3.0\/24.
         /// If the DestinationType parameter is set to group, set the value to the name of an address book.
         /// Example: db_group.
         /// If the DestinationType parameter is set to domain, set the value to a domain name.
@@ -315,7 +318,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
 
         /// <remarks>
         /// <strong>Property</strong>: source: The source address in the access control policy.
-        /// If the SourceType parameter is set to net, set the value to a CIDR block. Example: 10.2.3.0/24.
+        /// If the SourceType parameter is set to net, set the value to a CIDR block. Example: 10.2.3.0\/24.
         /// If the SourceType parameter is set to group, set the value to the name of an address book. Example: db_group.
         /// </remarks>
         [JsiiProperty(name: "source", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]

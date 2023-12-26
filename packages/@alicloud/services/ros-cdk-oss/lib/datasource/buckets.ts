@@ -4,20 +4,18 @@ import { RosBuckets } from './oss.generated';
 export { RosBuckets as BucketsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::OSS::Buckets`
+ * Properties for defining a `Buckets`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oss-buckets
  */
 export interface BucketsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::OSS::Buckets`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::OSS::Buckets`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBuckets`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oss-buckets
  */
 export class Buckets extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute BucketNames: The list of bucket names.
@@ -30,8 +28,6 @@ export class Buckets extends ros.Resource {
     public readonly attrBuckets: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::OSS::Buckets`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

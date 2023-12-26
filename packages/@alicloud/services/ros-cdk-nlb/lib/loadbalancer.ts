@@ -4,7 +4,8 @@ import { RosLoadBalancer } from './nlb.generated';
 export { RosLoadBalancer as LoadBalancerProperty };
 
 /**
- * Properties for defining a `ALIYUN::NLB::LoadBalancer`
+ * Properties for defining a `LoadBalancer`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-loadbalancer
  */
 export interface LoadBalancerProps {
 
@@ -83,14 +84,11 @@ export interface LoadBalancerProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::NLB::LoadBalancer`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::NLB::LoadBalancer`, which is used to create a Network Load Balancer (NLB) instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLoadBalancer`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-loadbalancer
  */
 export class LoadBalancer extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AddressIpVersion: The version of IP address that the NLB instance uses to provide services.
@@ -128,8 +126,6 @@ export class LoadBalancer extends ros.Resource {
     public readonly attrZoneMappings: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::NLB::LoadBalancer`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

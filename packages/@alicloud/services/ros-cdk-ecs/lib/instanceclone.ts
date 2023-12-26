@@ -4,7 +4,8 @@ import { RosInstanceClone } from './ecs.generated';
 export { RosInstanceClone as InstanceCloneProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECS::InstanceClone`
+ * Properties for defining a `InstanceClone`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instanceclone
  */
 export interface InstanceCloneProps {
 
@@ -113,14 +114,11 @@ export interface InstanceCloneProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECS::InstanceClone`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::InstanceClone`, which is used to clone an Elastic Compute Service (ECS) instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstanceClone`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instanceclone
  */
 export class InstanceClone extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute HostName: Host name of created instance.
@@ -163,8 +161,6 @@ export class InstanceClone extends ros.Resource {
     public readonly attrZoneId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ECS::InstanceClone`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

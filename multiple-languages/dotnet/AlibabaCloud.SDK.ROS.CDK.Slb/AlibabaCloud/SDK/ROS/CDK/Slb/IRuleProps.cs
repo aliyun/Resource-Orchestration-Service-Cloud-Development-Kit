@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Slb
 {
-    /// <summary>Properties for defining a `ALIYUN::SLB::Rule`.</summary>
+    /// <summary>Properties for defining a `Rule`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-rule
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRuleProps), fullyQualifiedName: "@alicloud/ros-cdk-slb.RuleProps")]
     public interface IRuleProps
     {
@@ -44,7 +47,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::SLB::Rule`.</summary>
+        /// <summary>Properties for defining a `Rule`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-rule
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRuleProps), fullyQualifiedName: "@alicloud/ros-cdk-slb.RuleProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Slb.IRuleProps
         {

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Searchengine
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::SearchEngine::Instance`.</summary>
+    /// <summary>Properties for defining a `Instance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-searchengine-instance
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-searchengine.InstanceProps")]
     public class InstanceProps : AlibabaCloud.SDK.ROS.CDK.Searchengine.IInstanceProps
     {

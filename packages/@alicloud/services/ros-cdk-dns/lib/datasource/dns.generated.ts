@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::DNS::DomainGroups`
+ * Properties for defining a `RosDomainGroups`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dns-domaingroups
  */
 export interface RosDomainGroupsProps {
 
@@ -53,18 +54,15 @@ function rosDomainGroupsPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * A ROS template type:  `DATASOURCE::DNS::DomainGroups`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::DNS::DomainGroups`, which is used to query domain name groups.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DomainGroups` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dns-domaingroups
  */
 export class RosDomainGroups extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::DNS::DomainGroups";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DomainGroupIds: The list of The DNS domain group ids.
@@ -90,8 +88,6 @@ export class RosDomainGroups extends ros.RosResource {
     public lang: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::DNS::DomainGroups`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -119,7 +115,8 @@ export class RosDomainGroups extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::DNS::DomainRecords`
+ * Properties for defining a `RosDomainRecords`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dns-domainrecords
  */
 export interface RosDomainRecordsProps {
 
@@ -259,18 +256,15 @@ function rosDomainRecordsPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `DATASOURCE::DNS::DomainRecords`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::DNS::DomainRecords`, which is used to query domain name system (DNS) records.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DomainRecords` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dns-domainrecords
  */
 export class RosDomainRecords extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::DNS::DomainRecords";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DomainRecordIds: The list of The DNS domain record ids.
@@ -351,8 +345,6 @@ export class RosDomainRecords extends ros.RosResource {
     public valueKeyWord: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::DNS::DomainRecords`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -402,7 +394,8 @@ export class RosDomainRecords extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::DNS::Domains`
+ * Properties for defining a `RosDomains`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dns-domains
  */
 export interface RosDomainsProps {
 
@@ -486,18 +479,15 @@ function rosDomainsPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `DATASOURCE::DNS::Domains`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::DNS::Domains`, which is used to query domain names.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Domains` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dns-domains
  */
 export class RosDomains extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::DNS::Domains";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DomainIds: The list of The DNS domain ids.
@@ -543,8 +533,6 @@ export class RosDomains extends ros.RosResource {
     public starmark: boolean | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::DNS::Domains`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

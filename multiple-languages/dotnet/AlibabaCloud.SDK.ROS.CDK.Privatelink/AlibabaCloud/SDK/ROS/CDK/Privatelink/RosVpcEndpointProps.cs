@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::PrivateLink::VpcEndpoint`.</summary>
+    /// <summary>Properties for defining a `RosVpcEndpoint`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpoint
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-privatelink.RosVpcEndpointProps")]
     public class RosVpcEndpointProps : AlibabaCloud.SDK.ROS.CDK.Privatelink.IRosVpcEndpointProps
     {
@@ -95,7 +98,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
 
         /// <remarks>
         /// <strong>Property</strong>: endpointDescription: The description of the endpoint.
-        /// The description must be 2 to 256 characters in length and cannot start with http:// or https://.
+        /// The description must be 2 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "endpointDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

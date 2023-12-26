@@ -4,7 +4,8 @@ import { RosVpcEndpointServiceAttachment } from './privatelink.generated';
 export { RosVpcEndpointServiceAttachment as VpcEndpointServiceAttachmentProperty };
 
 /**
- * Properties for defining a `ALIYUN::PrivateLink::VpcEndpointServiceAttachment`
+ * Properties for defining a `VpcEndpointServiceAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpointserviceattachment
  */
 export interface VpcEndpointServiceAttachmentProps {
 
@@ -28,14 +29,11 @@ export interface VpcEndpointServiceAttachmentProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::PrivateLink::VpcEndpointServiceAttachment`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::PrivateLink::VpcEndpointServiceAttachment`, which is used to add a service resource to an endpoint service.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpcEndpointServiceAttachment`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpointserviceattachment
  */
 export class VpcEndpointServiceAttachment extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ResourceId: The resource id.
@@ -53,8 +51,6 @@ export class VpcEndpointServiceAttachment extends ros.Resource {
     public readonly attrServiceId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::PrivateLink::VpcEndpointServiceAttachment`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

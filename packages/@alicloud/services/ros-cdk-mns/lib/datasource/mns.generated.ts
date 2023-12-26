@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::MNS::Queues`
+ * Properties for defining a `RosQueues`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-queues
  */
 export interface RosQueuesProps {
 
@@ -46,18 +47,15 @@ function rosQueuesPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * A ROS template type:  `DATASOURCE::MNS::Queues`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::MNS::Queues`, which is used to query all Message Service (MNS) queues within a specified Alibaba Cloud account.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Queues` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-queues
  */
 export class RosQueues extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::MNS::Queues";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute QueueNames: The list of queue names.
@@ -78,8 +76,6 @@ export class RosQueues extends ros.RosResource {
     public queueName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::MNS::Queues`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -105,7 +101,8 @@ export class RosQueues extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::MNS::Subscriptions`
+ * Properties for defining a `RosSubscriptions`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-subscriptions
  */
 export interface RosSubscriptionsProps {
 
@@ -156,18 +153,15 @@ function rosSubscriptionsPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `DATASOURCE::MNS::Subscriptions`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::MNS::Subscriptions`, which is used to query the information about subscriptions.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Subscriptions` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-subscriptions
  */
 export class RosSubscriptions extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::MNS::Subscriptions";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute SubscriptionIds: The list of subscription names.
@@ -193,8 +187,6 @@ export class RosSubscriptions extends ros.RosResource {
     public subscriptionName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::MNS::Subscriptions`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -222,7 +214,8 @@ export class RosSubscriptions extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::MNS::Topics`
+ * Properties for defining a `RosTopics`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-topics
  */
 export interface RosTopicsProps {
 
@@ -265,18 +258,15 @@ function rosTopicsPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * A ROS template type:  `DATASOURCE::MNS::Topics`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::MNS::Topics`, which is used to query topics.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Topics` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-topics
  */
 export class RosTopics extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::MNS::Topics";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute TopicNames: The list of topic names.
@@ -297,8 +287,6 @@ export class RosTopics extends ros.RosResource {
     public topicName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::MNS::Topics`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

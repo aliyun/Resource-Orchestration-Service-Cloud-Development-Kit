@@ -4,7 +4,8 @@ import { RosScalingConfigurations } from './ess.generated';
 export { RosScalingConfigurations as ScalingConfigurationsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::ESS::ScalingConfigurations`
+ * Properties for defining a `ScalingConfigurations`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ess-scalingconfigurations
  */
 export interface ScalingConfigurationsProps {
 
@@ -25,14 +26,11 @@ export interface ScalingConfigurationsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::ESS::ScalingConfigurations`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ESS::ScalingConfigurations`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosScalingConfigurations`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ess-scalingconfigurations
  */
 export class ScalingConfigurations extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ScalingConfigurationIds: The list of scaling configuration IDs.
@@ -45,8 +43,6 @@ export class ScalingConfigurations extends ros.Resource {
     public readonly attrScalingConfigurations: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::ESS::ScalingConfigurations`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

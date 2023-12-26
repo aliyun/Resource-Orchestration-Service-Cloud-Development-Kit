@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cs.datasource;
 
 /**
- * A ROS resource type:  <code>DATASOURCE::CS::ClusterNodePools</code>.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::CS::ClusterNodePools</code>, which is used to query the details of all node pools in a cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.335Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.741Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.datasource.ClusterNodePools")
 public class ClusterNodePools extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,11 +16,7 @@ public class ClusterNodePools extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>DATASOURCE::CS::ClusterNodePools</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -33,11 +29,7 @@ public class ClusterNodePools extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>DATASOURCE::CS::ClusterNodePools</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.

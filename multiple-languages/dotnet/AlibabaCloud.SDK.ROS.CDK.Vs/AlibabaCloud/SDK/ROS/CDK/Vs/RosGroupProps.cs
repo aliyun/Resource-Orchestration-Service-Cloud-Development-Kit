@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::VS::Group`.</summary>
+    /// <summary>Properties for defining a `RosGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vs-group
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vs.RosGroupProps")]
     public class RosGroupProps : AlibabaCloud.SDK.ROS.CDK.Vs.IRosGroupProps
     {
@@ -240,7 +243,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vs
         private object? _callback;
 
         /// <remarks>
-        /// <strong>Property</strong>: callback: Updating the space callback device / flow state
+        /// <strong>Property</strong>: callback: Updating the space callback device \/ flow state
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "callback", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

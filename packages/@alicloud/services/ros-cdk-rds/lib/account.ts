@@ -4,7 +4,8 @@ import { RosAccount } from './rds.generated';
 export { RosAccount as AccountProperty };
 
 /**
- * Properties for defining a `ALIYUN::RDS::Account`
+ * Properties for defining a `Account`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-account
  */
 export interface AccountProps {
 
@@ -32,9 +33,9 @@ export interface AccountProps {
 
     /**
      * Property accountDescription: Account remarks.
-     * It cannot begin with http:// or https://.
+     * It cannot begin with http:\/\/ or https:\/\/.
      * It must start with a Chinese character or English letter.
-     * It can include Chinese and English characters/letters, underscores (_), hyphens (-), and digits.
+     * It can include Chinese and English characters\/letters, underscores (_), hyphens (-), and digits.
      * The length may be 2-256 characters.
      */
     readonly accountDescription?: string | ros.IResolvable;
@@ -44,21 +45,18 @@ export interface AccountProps {
      * Normal: Common privilege.
      * Super: High privilege. And the default value is Normal.
      * Sysadmin: Super privileges (SA) (only supported by SQL Server)
-     * This parameter is valid for MySQL 5.5/5.6 only.
-     * MySQL 5.7, SQL Server 2012/2016, PostgreSQL, and PPAS each can have only one initial account. Other accounts are created by the initial account that has logged on to the database.
+     * This parameter is valid for MySQL 5.5\/5.6 only.
+     * MySQL 5.7, SQL Server 2012\/2016, PostgreSQL, and PPAS each can have only one initial account. Other accounts are created by the initial account that has logged on to the database.
      */
     readonly accountType?: string | ros.IResolvable;
 }
 
 /**
- * A ROS resource type:  `ALIYUN::RDS::Account`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::Account`, which is used to create a database account for an ApsaraDB for RDS instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccount`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-account
  */
 export class Account extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AccountName: Account name
@@ -66,8 +64,6 @@ export class Account extends ros.Resource {
     public readonly attrAccountName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::RDS::Account`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Dfs
 {
-    /// <summary>Properties for defining a `ALIYUN::DFS::FileSystem`.</summary>
+    /// <summary>Properties for defining a `FileSystem`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-filesystem
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IFileSystemProps), fullyQualifiedName: "@alicloud/ros-cdk-dfs.FileSystemProps")]
     public interface IFileSystemProps
     {
@@ -136,7 +139,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dfs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::DFS::FileSystem`.</summary>
+        /// <summary>Properties for defining a `FileSystem`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-filesystem
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IFileSystemProps), fullyQualifiedName: "@alicloud/ros-cdk-dfs.FileSystemProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Dfs.IFileSystemProps
         {

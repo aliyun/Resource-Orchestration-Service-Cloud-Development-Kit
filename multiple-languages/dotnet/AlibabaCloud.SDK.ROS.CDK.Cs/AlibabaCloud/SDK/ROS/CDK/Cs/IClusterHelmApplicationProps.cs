@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cs
 {
-    /// <summary>Properties for defining a `ALIYUN::CS::ClusterHelmApplication`.</summary>
+    /// <summary>Properties for defining a `ClusterHelmApplication`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterhelmapplication
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IClusterHelmApplicationProps), fullyQualifiedName: "@alicloud/ros-cdk-cs.ClusterHelmApplicationProps")]
     public interface IClusterHelmApplicationProps
     {
@@ -60,7 +63,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// <summary>Property namespace: Namespace to use with helm.</summary>
         /// <remarks>
         /// Default is default.
-        /// If the DefaultNamespace does not exist, ROS will automatically create it and delete it during the deletion phase.
+        /// If the Namespace does not exist, ROS will automatically create it and delete it during the deletion phase.
         /// </remarks>
         [JsiiProperty(name: "namespace", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -72,7 +75,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::CS::ClusterHelmApplication`.</summary>
+        /// <summary>Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>EnsureAdminRoleAndBinding: Automatically create a role named "ros:application-admin:${user-id}" with administrator permissions and bind it to the current user.</description>
+        /// <description>None: Do nothing.
+        /// The default value is EnsureAdminRoleAndBinding.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiProperty(name: "rolePolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? RolePolicy
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Properties for defining a `ClusterHelmApplication`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterhelmapplication
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IClusterHelmApplicationProps), fullyQualifiedName: "@alicloud/ros-cdk-cs.ClusterHelmApplicationProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cs.IClusterHelmApplicationProps
         {
@@ -126,11 +152,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// <summary>Property namespace: Namespace to use with helm.</summary>
             /// <remarks>
             /// Default is default.
-            /// If the DefaultNamespace does not exist, ROS will automatically create it and delete it during the deletion phase.
+            /// If the Namespace does not exist, ROS will automatically create it and delete it during the deletion phase.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "namespace", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Namespace
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user.</summary>
+            /// <remarks>
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>EnsureAdminRoleAndBinding: Automatically create a role named "ros:application-admin:${user-id}" with administrator permissions and bind it to the current user.</description>
+            /// <description>None: Do nothing.
+            /// The default value is EnsureAdminRoleAndBinding.</description>
+            /// </list>
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "rolePolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RolePolicy
             {
                 get => GetInstanceProperty<object?>();
             }

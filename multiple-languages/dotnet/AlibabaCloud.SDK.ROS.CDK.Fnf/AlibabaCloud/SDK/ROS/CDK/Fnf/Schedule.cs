@@ -4,16 +4,15 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Fnf
 {
-    /// <summary>A ROS resource type:  `ALIYUN::FNF::Schedule`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::FNF::Schedule`, which is used to create a time-based schedule.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSchedule`for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fnf-schedule
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Fnf.Schedule), fullyQualifiedName: "@alicloud/ros-cdk-fnf.Schedule", parametersJson: "[{\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-fnf.ScheduleProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"optional\":true,\"type\":{\"primitive\":\"boolean\"}}]")]
     public class Schedule : AlibabaCloud.SDK.ROS.CDK.Core.Resource_
     {
-        /// <summary>Create a new `ALIYUN::FNF::Schedule`.</summary>
-        /// <remarks>
-        /// Param scope - scope in which this resource is defined
-        /// Param id    - scoped id of the resource
-        /// Param props - resource properties
-        /// </remarks>
+        /// <summary>Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.</summary>
         public Schedule(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Fnf.IScheduleProps props, bool? enableResourcePropertyConstraint = null): base(_MakeDeputyProps(scope, id, props, enableResourcePropertyConstraint))
         {
         }

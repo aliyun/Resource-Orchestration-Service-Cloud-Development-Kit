@@ -4,7 +4,8 @@ import { RosContact } from './cms.generated';
 export { RosContact as ContactProperty };
 
 /**
- * Properties for defining a `ALIYUN::CMS::Contact`
+ * Properties for defining a `Contact`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-contact
  */
 export interface ContactProps {
 
@@ -25,14 +26,11 @@ export interface ContactProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CMS::Contact`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::Contact`, which is used to create an alert contact.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosContact`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-contact
  */
 export class Contact extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ContactName: The name of the alarm contact.
@@ -40,8 +38,6 @@ export class Contact extends ros.Resource {
     public readonly attrContactName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CMS::Contact`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

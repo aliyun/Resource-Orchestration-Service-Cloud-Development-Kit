@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::RDS::DBInstanceParameterGroup`.</summary>
+    /// <summary>Properties for defining a `RosDBInstanceParameterGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstanceparametergroup
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-rds.RosDBInstanceParameterGroupProps")]
     public class RosDBInstanceParameterGroupProps : AlibabaCloud.SDK.ROS.CDK.Rds.IRosDBInstanceParameterGroupProps
     {

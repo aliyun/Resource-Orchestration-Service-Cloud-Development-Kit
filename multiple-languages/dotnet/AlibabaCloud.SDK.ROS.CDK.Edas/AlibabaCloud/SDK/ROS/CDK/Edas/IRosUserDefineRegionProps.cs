@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Edas
 {
-    /// <summary>Properties for defining a `ALIYUN::EDAS::UserDefineRegion`.</summary>
+    /// <summary>Properties for defining a `RosUserDefineRegion`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-userdefineregion
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosUserDefineRegionProps), fullyQualifiedName: "@alicloud/ros-cdk-edas.RosUserDefineRegionProps")]
     public interface IRosUserDefineRegionProps
     {
@@ -52,7 +55,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::EDAS::UserDefineRegion`.</summary>
+        /// <summary>Properties for defining a `RosUserDefineRegion`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-userdefineregion
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosUserDefineRegionProps), fullyQualifiedName: "@alicloud/ros-cdk-edas.RosUserDefineRegionProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Edas.IRosUserDefineRegionProps
         {

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Acm
 {
-    /// <summary>Properties for defining a `ALIYUN::ACM::Configuration`.</summary>
+    /// <summary>Properties for defining a `RosConfiguration`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acm-configuration
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosConfigurationProps), fullyQualifiedName: "@alicloud/ros-cdk-acm.RosConfigurationProps")]
     public interface IRosConfigurationProps
     {
@@ -91,7 +94,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Acm
 
         /// <remarks>
         /// <strong>Property</strong>: type: Provisioning content format, optional values as follows:
-        /// text, json, xml, yaml, text/html, properties
+        /// text, json, xml, yaml, text\/html, properties
         /// </remarks>
         [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -103,7 +106,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Acm
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ACM::Configuration`.</summary>
+        /// <summary>Properties for defining a `RosConfiguration`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acm-configuration
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosConfigurationProps), fullyQualifiedName: "@alicloud/ros-cdk-acm.RosConfigurationProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Acm.IRosConfigurationProps
         {
@@ -182,7 +188,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Acm
 
             /// <remarks>
             /// <strong>Property</strong>: type: Provisioning content format, optional values as follows:
-            /// text, json, xml, yaml, text/html, properties
+            /// text, json, xml, yaml, text\/html, properties
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

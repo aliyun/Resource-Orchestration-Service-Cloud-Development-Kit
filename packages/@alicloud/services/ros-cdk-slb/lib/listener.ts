@@ -4,7 +4,8 @@ import { RosListener } from './slb.generated';
 export { RosListener as ListenerProperty };
 
 /**
- * Properties for defining a `ALIYUN::SLB::Listener`
+ * Properties for defining a `Listener`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-listener
  */
 export interface ListenerProps {
 
@@ -70,12 +71,12 @@ export interface ListenerProps {
     readonly caCertificateId?: string | ros.IResolvable;
 
     /**
-     * Property description: The description of the listener.It must be 1 to 80 characters in length and can contain letters, digits, hyphens (-), forward slashes (/), periods (.), and underscores (_). Chinese characters are supported.
+     * Property description: The description of the listener.It must be 1 to 80 characters in length and can contain letters, digits, hyphens (-), forward slashes (\/), periods (.), and underscores (_). Chinese characters are supported.
      */
     readonly description?: string | ros.IResolvable;
 
     /**
-     * Property enableHttp2: Specifies whether to use HTTP/2. It takes effect when Protocol=https. Valid values:
+     * Property enableHttp2: Specifies whether to use HTTP\/2. It takes effect when Protocol=https. Valid values:
      * on: yes
      * off: no
      */
@@ -156,14 +157,11 @@ export interface ListenerProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::SLB::Listener`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::Listener`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosListener`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-listener
  */
 export class Listener extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ListenerPortsAndProtocol: The collection of listener.
@@ -176,8 +174,6 @@ export class Listener extends ros.Resource {
     public readonly attrLoadBalancerId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::SLB::Listener`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

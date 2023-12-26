@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Adb
 {
-    /// <summary>Properties for defining a `ALIYUN::ADB::DBCluster`.</summary>
+    /// <summary>Properties for defining a `RosDBCluster`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adb-dbcluster
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosDBClusterProps), fullyQualifiedName: "@alicloud/ros-cdk-adb.RosDBClusterProps")]
     public interface IRosDBClusterProps
     {
@@ -240,7 +243,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ADB::DBCluster`.</summary>
+        /// <summary>Properties for defining a `RosDBCluster`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adb-dbcluster
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosDBClusterProps), fullyQualifiedName: "@alicloud/ros-cdk-adb.RosDBClusterProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Adb.IRosDBClusterProps
         {

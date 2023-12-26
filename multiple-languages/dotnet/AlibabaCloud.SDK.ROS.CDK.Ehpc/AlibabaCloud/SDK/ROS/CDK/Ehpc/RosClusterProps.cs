@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::EHPC::Cluster`.</summary>
+    /// <summary>Properties for defining a `RosCluster`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-cluster
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ehpc.RosClusterProps")]
     public class RosClusterProps : AlibabaCloud.SDK.ROS.CDK.Ehpc.IRosClusterProps
     {
@@ -1129,7 +1132,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         private object? _password;
 
         /// <remarks>
-        /// <strong>Property</strong>: password: Root password of jump server (login node). 8 to 30 characters, must contain three (upper and lower case letters, numbers and special symbols). ! Supports the following special characters :() `~ @ # $% ^ & * - + = | {} []:; '<>, / Be sure to use the HTTPS protocol API call to avoid password leaks that may occur.?.
+        /// <strong>Property</strong>: password: Root password of jump server (login node). 8 to 30 characters, must contain three (upper and lower case letters, numbers and special symbols). ! Supports the following special characters :() `~ @ # $% ^ & * - + = | {} []:; '<>, \/ Be sure to use the HTTPS protocol API call to avoid password leaks that may occur.?.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1162,7 +1165,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         private object? _period;
 
         /// <remarks>
-        /// <strong>Property</strong>: period: The purchase of long resources, units: week / month / year. When the value of the parameter EcsChargeType when PrePaid take effect and for the selected value will be.
+        /// <strong>Property</strong>: period: The purchase of long resources, units: week \/ month \/ year. When the value of the parameter EcsChargeType when PrePaid take effect and for the selected value will be.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1215,7 +1218,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         private object? _periodUnit;
 
         /// <remarks>
-        /// <strong>Property</strong>: periodUnit: The purchase of long-resources unit. Alternatively value Week / Month / year.
+        /// <strong>Property</strong>: periodUnit: The purchase of long-resources unit. Alternatively value Week \/ Month \/ year.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1385,7 +1388,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         private object? _remoteDirectory;
 
         /// <remarks>
-        /// <strong>Property</strong>: remoteDirectory: Mount shared storage remote directory. The final path to the mount point and mount the remote directory composition: NasMountpoint: / RemoteDirectory
+        /// <strong>Property</strong>: remoteDirectory: Mount shared storage remote directory. The final path to the mount point and mount the remote directory composition: NasMountpoint: \/ RemoteDirectory
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "remoteDirectory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1626,10 +1629,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
 
         /// <remarks>
         /// <strong>Property</strong>: systemDiskLevel: The performance level of the ESSD that is created as the system disk. Valid values:
-        /// PL0: A single ESSD can deliver up to 10,000 input/output operations per second (IOPS) of random read/write.
-        /// PL1: A single ESSD can deliver up to 50,000 IOPS of random read/write.
-        /// PL2: A single ESSD can deliver up to 100,000 IOPS of random read/write.
-        /// PL3: A single ESSD can deliver up to 1,000,000 IOPS of random read/write.
+        /// PL0: A single ESSD can deliver up to 10,000 input\/output operations per second (IOPS) of random read\/write.
+        /// PL1: A single ESSD can deliver up to 50,000 IOPS of random read\/write.
+        /// PL2: A single ESSD can deliver up to 100,000 IOPS of random read\/write.
+        /// PL3: A single ESSD can deliver up to 1,000,000 IOPS of random read\/write.
         /// Default value: PL1
         /// </remarks>
         [JsiiOptional]

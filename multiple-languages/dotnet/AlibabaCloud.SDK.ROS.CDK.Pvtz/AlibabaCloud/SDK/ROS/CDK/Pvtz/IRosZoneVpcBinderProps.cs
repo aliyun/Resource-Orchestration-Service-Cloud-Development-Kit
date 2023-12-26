@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
 {
-    /// <summary>Properties for defining a `ALIYUN::PVTZ::ZoneVpcBinder`.</summary>
+    /// <summary>Properties for defining a `RosZoneVpcBinder`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-zonevpcbinder
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosZoneVpcBinderProps), fullyQualifiedName: "@alicloud/ros-cdk-pvtz.RosZoneVpcBinderProps")]
     public interface IRosZoneVpcBinderProps
     {
@@ -26,7 +29,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::PVTZ::ZoneVpcBinder`.</summary>
+        /// <summary>Properties for defining a `RosZoneVpcBinder`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-zonevpcbinder
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosZoneVpcBinderProps), fullyQualifiedName: "@alicloud/ros-cdk-pvtz.RosZoneVpcBinderProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Pvtz.IRosZoneVpcBinderProps
         {

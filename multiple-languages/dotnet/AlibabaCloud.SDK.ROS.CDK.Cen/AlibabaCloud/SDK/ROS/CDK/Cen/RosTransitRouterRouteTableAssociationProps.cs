@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CEN::TransitRouterRouteTableAssociation`.</summary>
+    /// <summary>Properties for defining a `RosTransitRouterRouteTableAssociation`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterroutetableassociation
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cen.RosTransitRouterRouteTableAssociationProps")]
     public class RosTransitRouterRouteTableAssociationProps : AlibabaCloud.SDK.ROS.CDK.Cen.IRosTransitRouterRouteTableAssociationProps
     {

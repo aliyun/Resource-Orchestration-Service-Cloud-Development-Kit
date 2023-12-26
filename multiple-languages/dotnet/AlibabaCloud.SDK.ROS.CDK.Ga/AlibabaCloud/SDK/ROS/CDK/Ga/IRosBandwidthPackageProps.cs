@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ga
 {
-    /// <summary>Properties for defining a `ALIYUN::GA::BandwidthPackage`.</summary>
+    /// <summary>Properties for defining a `RosBandwidthPackage`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-bandwidthpackage
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosBandwidthPackageProps), fullyQualifiedName: "@alicloud/ros-cdk-ga.RosBandwidthPackageProps")]
     public interface IRosBandwidthPackageProps
     {
@@ -156,7 +159,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::GA::BandwidthPackage`.</summary>
+        /// <summary>Properties for defining a `RosBandwidthPackage`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-bandwidthpackage
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosBandwidthPackageProps), fullyQualifiedName: "@alicloud/ros-cdk-ga.RosBandwidthPackageProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ga.IRosBandwidthPackageProps
         {

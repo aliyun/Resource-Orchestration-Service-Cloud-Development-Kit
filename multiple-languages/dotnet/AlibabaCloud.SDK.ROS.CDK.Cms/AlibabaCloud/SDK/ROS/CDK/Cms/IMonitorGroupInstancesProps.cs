@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cms
 {
-    /// <summary>Properties for defining a `ALIYUN::CMS::MonitorGroupInstances`.</summary>
+    /// <summary>Properties for defining a `MonitorGroupInstances`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitorgroupinstances
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IMonitorGroupInstancesProps), fullyQualifiedName: "@alicloud/ros-cdk-cms.MonitorGroupInstancesProps")]
     public interface IMonitorGroupInstancesProps
     {
@@ -22,7 +25,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::CMS::MonitorGroupInstances`.</summary>
+        /// <summary>Properties for defining a `MonitorGroupInstances`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitorgroupinstances
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IMonitorGroupInstancesProps), fullyQualifiedName: "@alicloud/ros-cdk-cms.MonitorGroupInstancesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cms.IMonitorGroupInstancesProps
         {

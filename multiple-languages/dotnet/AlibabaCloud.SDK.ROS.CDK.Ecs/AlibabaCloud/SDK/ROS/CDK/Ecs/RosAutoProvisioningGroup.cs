@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>A ROS template type:  `ALIYUN::ECS::AutoProvisioningGroup`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::AutoProvisioningGroup`, which is used to create an auto provisioning group.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `AutoProvisioningGroup` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-autoprovisioninggroup
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Ecs.RosAutoProvisioningGroup), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosAutoProvisioningGroup", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-ecs.RosAutoProvisioningGroupProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosAutoProvisioningGroup : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::ECS::AutoProvisioningGroup`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -117,7 +120,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         /// <remarks>
         /// <strong>Property</strong>: autoProvisioningGroupName: The name of the auto provisioning group to be created. It must be 2 to 128 characters
-        /// in length. It must start with a letter but cannot start with http:// or https://.
+        /// in length. It must start with a letter but cannot start with http:\/\/ or https:\/\/.
         /// It can contain letters, digits, colons (:), underscores (_), and hyphens (-).
         /// </remarks>
         [JsiiOptional]
@@ -908,7 +911,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: description: The description of data disk N. The description must be 2 to 256 characters in length and cannot start with http:// or https://.
+            /// <strong>Property</strong>: description: The description of data disk N. The description must be 2 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
             /// </remarks>
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -921,7 +924,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: diskName: The name of data disk N. The name must be 2 to 128 characters in length. It must start with a letter but cannot start with http:// or https://. It can contain letters, digits, periods (.), colons (:), underscores (_), and hyphens (-).
+            /// <strong>Property</strong>: diskName: The name of data disk N. The name must be 2 to 128 characters in length. It must start with a letter but cannot start with http:\/\/ or https:\/\/. It can contain letters, digits, periods (.), colons (:), underscores (_), and hyphens (-).
             /// </remarks>
             [JsiiProperty(name: "diskName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -976,10 +979,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
             /// <remarks>
             /// <strong>Property</strong>: performanceLevel: The performance level of the ESSD used as data disk. Default value: PL1. Valid values:
-            /// PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
-            /// PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
-            /// PL2: A single ESSD can deliver up to 100,000 random read/write IOPS.
-            /// PL3: A single ESSD can deliver up to 1,000,000 random read/write IOPS.
+            /// PL0: A single ESSD can deliver up to 10,000 random read\/write IOPS.
+            /// PL1: A single ESSD can deliver up to 50,000 random read\/write IOPS.
+            /// PL2: A single ESSD can deliver up to 100,000 random read\/write IOPS.
+            /// PL3: A single ESSD can deliver up to 1,000,000 random read\/write IOPS.
             /// </remarks>
             [JsiiProperty(name: "performanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1049,7 +1052,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: description: The description of data disk N. The description must be 2 to 256 characters in length and cannot start with http:// or https://.
+                /// <strong>Property</strong>: description: The description of data disk N. The description must be 2 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1059,7 +1062,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: diskName: The name of data disk N. The name must be 2 to 128 characters in length. It must start with a letter but cannot start with http:// or https://. It can contain letters, digits, periods (.), colons (:), underscores (_), and hyphens (-).
+                /// <strong>Property</strong>: diskName: The name of data disk N. The name must be 2 to 128 characters in length. It must start with a letter but cannot start with http:\/\/ or https:\/\/. It can contain letters, digits, periods (.), colons (:), underscores (_), and hyphens (-).
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "diskName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1102,10 +1105,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
                 /// <remarks>
                 /// <strong>Property</strong>: performanceLevel: The performance level of the ESSD used as data disk. Default value: PL1. Valid values:
-                /// PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
-                /// PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
-                /// PL2: A single ESSD can deliver up to 100,000 random read/write IOPS.
-                /// PL3: A single ESSD can deliver up to 1,000,000 random read/write IOPS.
+                /// PL0: A single ESSD can deliver up to 10,000 random read\/write IOPS.
+                /// PL1: A single ESSD can deliver up to 50,000 random read\/write IOPS.
+                /// PL2: A single ESSD can deliver up to 100,000 random read\/write IOPS.
+                /// PL3: A single ESSD can deliver up to 1,000,000 random read\/write IOPS.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "performanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1211,7 +1214,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             private object? _description;
 
             /// <remarks>
-            /// <strong>Property</strong>: description: The description of data disk N. The description must be 2 to 256 characters in length and cannot start with http:// or https://.
+            /// <strong>Property</strong>: description: The description of data disk N. The description must be 2 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1244,7 +1247,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             private object? _diskName;
 
             /// <remarks>
-            /// <strong>Property</strong>: diskName: The name of data disk N. The name must be 2 to 128 characters in length. It must start with a letter but cannot start with http:// or https://. It can contain letters, digits, periods (.), colons (:), underscores (_), and hyphens (-).
+            /// <strong>Property</strong>: diskName: The name of data disk N. The name must be 2 to 128 characters in length. It must start with a letter but cannot start with http:\/\/ or https:\/\/. It can contain letters, digits, periods (.), colons (:), underscores (_), and hyphens (-).
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "diskName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1379,10 +1382,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
             /// <remarks>
             /// <strong>Property</strong>: performanceLevel: The performance level of the ESSD used as data disk. Default value: PL1. Valid values:
-            /// PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
-            /// PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
-            /// PL2: A single ESSD can deliver up to 100,000 random read/write IOPS.
-            /// PL3: A single ESSD can deliver up to 1,000,000 random read/write IOPS.
+            /// PL0: A single ESSD can deliver up to 10,000 random read\/write IOPS.
+            /// PL1: A single ESSD can deliver up to 50,000 random read\/write IOPS.
+            /// PL2: A single ESSD can deliver up to 100,000 random read\/write IOPS.
+            /// PL3: A single ESSD can deliver up to 1,000,000 random read\/write IOPS.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "performanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1602,7 +1605,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: internetMaxBandwidthOut: The maximum outbound public bandwidth. Unit: Mbit/s. Valid values: 0 to 100. Default value: 0.
+            /// <strong>Property</strong>: internetMaxBandwidthOut: The maximum outbound public bandwidth. Unit: Mbit\/s. Valid values: 0 to 100. Default value: 0.
             /// </remarks>
             [JsiiProperty(name: "internetMaxBandwidthOut", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1615,9 +1618,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: ioOptimized: Specifies whether the instance is I/O optimized. Valid values:
-            /// none: The instance is not I/O optimized.
-            /// optimized: The instance is I/O optimized.
+            /// <strong>Property</strong>: ioOptimized: Specifies whether the instance is I\/O optimized. Valid values:
+            /// none: The instance is not I\/O optimized.
+            /// optimized: The instance is I\/O optimized.
             /// </remarks>
             [JsiiProperty(name: "ioOptimized", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1714,7 +1717,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: systemDiskDescription: The description of the system disk. The description must be 2 to 256 characters in length and cannot start with http:// or https://.
+            /// <strong>Property</strong>: systemDiskDescription: The description of the system disk. The description must be 2 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
             /// </remarks>
             [JsiiProperty(name: "systemDiskDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1727,7 +1730,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: systemDiskName: The name of the system disk. The name must be 2 to 128 characters in length. It must start with a letter but cannot start with http:// or https://. It can contain letters, digits, periods (.), colons (:), underscores (_), and hyphens (-).
+            /// <strong>Property</strong>: systemDiskName: The name of the system disk. The name must be 2 to 128 characters in length. It must start with a letter but cannot start with http:\/\/ or https:\/\/. It can contain letters, digits, periods (.), colons (:), underscores (_), and hyphens (-).
             /// </remarks>
             [JsiiProperty(name: "systemDiskName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1741,10 +1744,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
             /// <remarks>
             /// <strong>Property</strong>: systemDiskPerformanceLevel: The performance level of the ESSD used as the system disk. Default value: PL0. Valid values:
-            /// PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
-            /// PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
-            /// PL2: A single ESSD can deliver up to 100,000 random read/write IOPS.
-            /// PL3: A single ESSD can deliver up to 1,000,000 random read/write IOPS.
+            /// PL0: A single ESSD can deliver up to 10,000 random read\/write IOPS.
+            /// PL1: A single ESSD can deliver up to 50,000 random read\/write IOPS.
+            /// PL2: A single ESSD can deliver up to 100,000 random read\/write IOPS.
+            /// PL3: A single ESSD can deliver up to 1,000,000 random read\/write IOPS.
             /// </remarks>
             [JsiiProperty(name: "systemDiskPerformanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1885,7 +1888,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: internetMaxBandwidthOut: The maximum outbound public bandwidth. Unit: Mbit/s. Valid values: 0 to 100. Default value: 0.
+                /// <strong>Property</strong>: internetMaxBandwidthOut: The maximum outbound public bandwidth. Unit: Mbit\/s. Valid values: 0 to 100. Default value: 0.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "internetMaxBandwidthOut", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1895,9 +1898,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: ioOptimized: Specifies whether the instance is I/O optimized. Valid values:
-                /// none: The instance is not I/O optimized.
-                /// optimized: The instance is I/O optimized.
+                /// <strong>Property</strong>: ioOptimized: Specifies whether the instance is I\/O optimized. Valid values:
+                /// none: The instance is not I\/O optimized.
+                /// optimized: The instance is I\/O optimized.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "ioOptimized", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1973,7 +1976,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: systemDiskDescription: The description of the system disk. The description must be 2 to 256 characters in length and cannot start with http:// or https://.
+                /// <strong>Property</strong>: systemDiskDescription: The description of the system disk. The description must be 2 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "systemDiskDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1983,7 +1986,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: systemDiskName: The name of the system disk. The name must be 2 to 128 characters in length. It must start with a letter but cannot start with http:// or https://. It can contain letters, digits, periods (.), colons (:), underscores (_), and hyphens (-).
+                /// <strong>Property</strong>: systemDiskName: The name of the system disk. The name must be 2 to 128 characters in length. It must start with a letter but cannot start with http:\/\/ or https:\/\/. It can contain letters, digits, periods (.), colons (:), underscores (_), and hyphens (-).
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "systemDiskName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1994,10 +1997,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
                 /// <remarks>
                 /// <strong>Property</strong>: systemDiskPerformanceLevel: The performance level of the ESSD used as the system disk. Default value: PL0. Valid values:
-                /// PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
-                /// PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
-                /// PL2: A single ESSD can deliver up to 100,000 random read/write IOPS.
-                /// PL3: A single ESSD can deliver up to 1,000,000 random read/write IOPS.
+                /// PL0: A single ESSD can deliver up to 10,000 random read\/write IOPS.
+                /// PL1: A single ESSD can deliver up to 50,000 random read\/write IOPS.
+                /// PL2: A single ESSD can deliver up to 100,000 random read\/write IOPS.
+                /// PL3: A single ESSD can deliver up to 1,000,000 random read\/write IOPS.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "systemDiskPerformanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -2328,7 +2331,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             private object? _internetMaxBandwidthOut;
 
             /// <remarks>
-            /// <strong>Property</strong>: internetMaxBandwidthOut: The maximum outbound public bandwidth. Unit: Mbit/s. Valid values: 0 to 100. Default value: 0.
+            /// <strong>Property</strong>: internetMaxBandwidthOut: The maximum outbound public bandwidth. Unit: Mbit\/s. Valid values: 0 to 100. Default value: 0.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "internetMaxBandwidthOut", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -2381,9 +2384,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             private object? _ioOptimized;
 
             /// <remarks>
-            /// <strong>Property</strong>: ioOptimized: Specifies whether the instance is I/O optimized. Valid values:
-            /// none: The instance is not I/O optimized.
-            /// optimized: The instance is I/O optimized.
+            /// <strong>Property</strong>: ioOptimized: Specifies whether the instance is I\/O optimized. Valid values:
+            /// none: The instance is not I\/O optimized.
+            /// optimized: The instance is I\/O optimized.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "ioOptimized", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -2620,7 +2623,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             private object? _systemDiskDescription;
 
             /// <remarks>
-            /// <strong>Property</strong>: systemDiskDescription: The description of the system disk. The description must be 2 to 256 characters in length and cannot start with http:// or https://.
+            /// <strong>Property</strong>: systemDiskDescription: The description of the system disk. The description must be 2 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "systemDiskDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -2653,7 +2656,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             private object? _systemDiskName;
 
             /// <remarks>
-            /// <strong>Property</strong>: systemDiskName: The name of the system disk. The name must be 2 to 128 characters in length. It must start with a letter but cannot start with http:// or https://. It can contain letters, digits, periods (.), colons (:), underscores (_), and hyphens (-).
+            /// <strong>Property</strong>: systemDiskName: The name of the system disk. The name must be 2 to 128 characters in length. It must start with a letter but cannot start with http:\/\/ or https:\/\/. It can contain letters, digits, periods (.), colons (:), underscores (_), and hyphens (-).
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "systemDiskName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -2687,10 +2690,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
             /// <remarks>
             /// <strong>Property</strong>: systemDiskPerformanceLevel: The performance level of the ESSD used as the system disk. Default value: PL0. Valid values:
-            /// PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
-            /// PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
-            /// PL2: A single ESSD can deliver up to 100,000 random read/write IOPS.
-            /// PL3: A single ESSD can deliver up to 1,000,000 random read/write IOPS.
+            /// PL0: A single ESSD can deliver up to 10,000 random read\/write IOPS.
+            /// PL1: A single ESSD can deliver up to 50,000 random read\/write IOPS.
+            /// PL2: A single ESSD can deliver up to 100,000 random read\/write IOPS.
+            /// PL3: A single ESSD can deliver up to 1,000,000 random read\/write IOPS.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "systemDiskPerformanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

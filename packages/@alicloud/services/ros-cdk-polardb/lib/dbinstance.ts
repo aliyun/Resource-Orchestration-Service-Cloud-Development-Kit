@@ -4,7 +4,8 @@ import { RosDBInstance } from './polardb.generated';
 export { RosDBInstance as DBInstanceProperty };
 
 /**
- * Properties for defining a `ALIYUN::POLARDB::DBInstance`
+ * Properties for defining a `DBInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbinstance
  */
 export interface DBInstanceProps {
 
@@ -59,25 +60,20 @@ export interface DBInstanceProps {
 
     /**
      * Property dbDescription: The description of the database. Valid values:
-     * It cannot start with http:// or https://.
+     * It cannot start with http:\/\/ or https:\/\/.
      * It must be 2 to 256 characters in length.
      */
     readonly dbDescription?: string | ros.IResolvable;
 }
 
 /**
- * A ROS resource type:  `ALIYUN::POLARDB::DBInstance`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::DBInstance`, which is used to create a database in a PolarDB cluster.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBInstance`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbinstance
  */
 export class DBInstance extends ros.Resource {
 
     /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
-
-    /**
-     * Create a new `ALIYUN::POLARDB::DBInstance`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

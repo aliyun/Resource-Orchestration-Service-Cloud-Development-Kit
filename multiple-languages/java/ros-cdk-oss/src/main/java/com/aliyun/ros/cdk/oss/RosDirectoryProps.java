@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.oss;
 
 /**
- * Properties for defining a <code>ALIYUN::OSS::Directory</code>.
+ * Properties for defining a <code>RosDirectory</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-directory
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.330Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.105Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.RosDirectoryProps")
 @software.amazon.jsii.Jsii.Proxy(RosDirectoryProps.Jsii$Proxy.class)
 public interface RosDirectoryProps extends software.amazon.jsii.JsiiSerializable {

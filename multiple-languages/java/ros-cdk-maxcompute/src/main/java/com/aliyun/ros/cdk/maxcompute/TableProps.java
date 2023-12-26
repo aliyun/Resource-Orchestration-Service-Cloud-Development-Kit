@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.maxcompute;
 
 /**
- * Properties for defining a <code>ALIYUN::MaxCompute::Table</code>.
+ * Properties for defining a <code>Table</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-maxcompute-table
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.019Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.802Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.maxcompute.$Module.class, fqn = "@alicloud/ros-cdk-maxcompute.TableProps")
 @software.amazon.jsii.Jsii.Proxy(TableProps.Jsii$Proxy.class)
 public interface TableProps extends software.amazon.jsii.JsiiSerializable {

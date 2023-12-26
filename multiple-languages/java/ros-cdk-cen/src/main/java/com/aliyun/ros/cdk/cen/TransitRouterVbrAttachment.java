@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cen;
 
 /**
- * A ROS resource type:  <code>ALIYUN::CEN::TransitRouterVbrAttachment</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CEN::TransitRouterVbrAttachment</code>, which is used to create a virtual border router (VBR) connection from an Enterprise Edition transit router.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:33.767Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.198Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.TransitRouterVbrAttachment")
 public class TransitRouterVbrAttachment extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,11 +16,7 @@ public class TransitRouterVbrAttachment extends com.aliyun.ros.cdk.core.Resource
     }
 
     /**
-     * Create a new <code>ALIYUN::CEN::TransitRouterVbrAttachment</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -33,11 +29,7 @@ public class TransitRouterVbrAttachment extends com.aliyun.ros.cdk.core.Resource
     }
 
     /**
-     * Create a new <code>ALIYUN::CEN::TransitRouterVbrAttachment</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.

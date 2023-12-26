@@ -4,7 +4,8 @@ import { RosACLRule } from './sag.generated';
 export { RosACLRule as ACLRuleProperty };
 
 /**
- * Properties for defining a `ALIYUN::SAG::ACLRule`
+ * Properties for defining a `ACLRule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-aclrule
  */
 export interface ACLRuleProps {
 
@@ -19,7 +20,7 @@ export interface ACLRuleProps {
     readonly destCidr: string | ros.IResolvable;
 
     /**
-     * Property destPortRange: Destination port range, 80/80.
+     * Property destPortRange: Destination port range, 80\/80.
      */
     readonly destPortRange: string | ros.IResolvable;
 
@@ -45,7 +46,7 @@ export interface ACLRuleProps {
     readonly sourceCidr: string | ros.IResolvable;
 
     /**
-     * Property sourcePortRange: Source port range, 80/80.
+     * Property sourcePortRange: Source port range, 80\/80.
      */
     readonly sourcePortRange: string | ros.IResolvable;
 
@@ -90,14 +91,11 @@ export interface ACLRuleProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::SAG::ACLRule`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::ACLRule`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosACLRule`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-aclrule
  */
 export class ACLRule extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AcrId: Access control rule ID.
@@ -105,8 +103,6 @@ export class ACLRule extends ros.Resource {
     public readonly attrAcrId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::SAG::ACLRule`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

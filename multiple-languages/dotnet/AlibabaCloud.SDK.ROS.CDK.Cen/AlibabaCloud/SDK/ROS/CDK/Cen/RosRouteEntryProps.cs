@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CEN::RouteEntry`.</summary>
+    /// <summary>Properties for defining a `RosRouteEntry`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-routeentry
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cen.RosRouteEntryProps")]
     public class RosRouteEntryProps : AlibabaCloud.SDK.ROS.CDK.Cen.IRosRouteEntryProps
     {

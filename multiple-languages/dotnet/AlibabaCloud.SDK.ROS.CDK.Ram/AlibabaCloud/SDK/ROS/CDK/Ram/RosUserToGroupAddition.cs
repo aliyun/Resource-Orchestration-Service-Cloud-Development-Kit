@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ram
 {
-    /// <summary>A ROS template type:  `ALIYUN::RAM::UserToGroupAddition`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::UserToGroupAddition`, which is used to add users to a RAM group.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `UserToGroupAddition` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-usertogroupaddition
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Ram.RosUserToGroupAddition), fullyQualifiedName: "@alicloud/ros-cdk-ram.RosUserToGroupAddition", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-ram.RosUserToGroupAdditionProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosUserToGroupAddition : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::RAM::UserToGroupAddition`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -56,7 +59,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             get => GetInstanceProperty<System.Collections.Generic.IDictionary<string, object>>()!;
         }
 
-        /// <summary>A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.</summary>
         [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
         public virtual bool EnableResourcePropertyConstraint
         {

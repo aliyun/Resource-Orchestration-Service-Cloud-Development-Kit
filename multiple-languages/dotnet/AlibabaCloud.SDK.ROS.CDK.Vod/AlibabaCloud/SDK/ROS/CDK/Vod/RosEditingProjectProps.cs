@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vod
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::VOD::EditingProject`.</summary>
+    /// <summary>Properties for defining a `RosEditingProject`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vod-editingproject
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vod.RosEditingProjectProps")]
     public class RosEditingProjectProps : AlibabaCloud.SDK.ROS.CDK.Vod.IRosEditingProjectProps
     {

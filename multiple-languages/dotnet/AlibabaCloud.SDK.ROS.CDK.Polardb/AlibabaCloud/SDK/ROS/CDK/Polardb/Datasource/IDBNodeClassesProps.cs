@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Polardb.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::POLARDB::DBNodeClasses`.</summary>
+    /// <summary>Properties for defining a `DBNodeClasses`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-dbnodeclasses
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IDBNodeClassesProps), fullyQualifiedName: "@alicloud/ros-cdk-polardb.datasource.DBNodeClassesProps")]
     public interface IDBNodeClassesProps
     {
@@ -76,7 +79,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::POLARDB::DBNodeClasses`.</summary>
+        /// <summary>Properties for defining a `DBNodeClasses`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-dbnodeclasses
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IDBNodeClassesProps), fullyQualifiedName: "@alicloud/ros-cdk-polardb.datasource.DBNodeClassesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Polardb.Datasource.IDBNodeClassesProps
         {

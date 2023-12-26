@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Lindorm.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::Lindorm::Instances`.</summary>
+    /// <summary>Properties for defining a `Instances`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-lindorm-instances
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-lindorm.datasource.InstancesProps")]
     public class InstancesProps : AlibabaCloud.SDK.ROS.CDK.Lindorm.Datasource.IInstancesProps
     {

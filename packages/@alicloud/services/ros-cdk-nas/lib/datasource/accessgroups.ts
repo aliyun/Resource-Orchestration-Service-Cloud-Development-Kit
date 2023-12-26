@@ -4,7 +4,8 @@ import { RosAccessGroups } from './nas.generated';
 export { RosAccessGroups as AccessGroupsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::NAS::AccessGroups`
+ * Properties for defining a `AccessGroups`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-accessgroups
  */
 export interface AccessGroupsProps {
 
@@ -15,14 +16,11 @@ export interface AccessGroupsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::NAS::AccessGroups`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::NAS::AccessGroups`, which is used to query the details of permission groups.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccessGroups`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-accessgroups
  */
 export class AccessGroups extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AccessGroupNames: The list of access group names.
@@ -35,8 +33,6 @@ export class AccessGroups extends ros.Resource {
     public readonly attrAccessGroups: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::NAS::AccessGroups`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

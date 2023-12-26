@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ALB::ServerGroup`.</summary>
+    /// <summary>Properties for defining a `RosServerGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-servergroup
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.RosServerGroupProps")]
     public class RosServerGroupProps : AlibabaCloud.SDK.ROS.CDK.Alb.IRosServerGroupProps
     {

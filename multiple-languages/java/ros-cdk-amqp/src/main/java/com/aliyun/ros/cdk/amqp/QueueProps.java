@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.amqp;
 
 /**
- * Properties for defining a <code>ALIYUN::AMQP::Queue</code>.
+ * Properties for defining a <code>Queue</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-queue
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:33.319Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:13.816Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.amqp.$Module.class, fqn = "@alicloud/ros-cdk-amqp.QueueProps")
 @software.amazon.jsii.Jsii.Proxy(QueueProps.Jsii$Proxy.class)
 public interface QueueProps extends software.amazon.jsii.JsiiSerializable {

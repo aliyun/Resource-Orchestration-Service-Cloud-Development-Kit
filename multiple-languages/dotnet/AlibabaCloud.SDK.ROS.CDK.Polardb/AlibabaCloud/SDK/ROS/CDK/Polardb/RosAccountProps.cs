@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::POLARDB::Account`.</summary>
+    /// <summary>Properties for defining a `RosAccount`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-account
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-polardb.RosAccountProps")]
     public class RosAccountProps : AlibabaCloud.SDK.ROS.CDK.Polardb.IRosAccountProps
     {
@@ -115,7 +118,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
 
         /// <remarks>
         /// <strong>Property</strong>: accountDescription: The description of the database account. The description must comply with the following rules:
-        /// - It cannot start with http:// or https://.
+        /// - It cannot start with http:\/\/ or https:\/\/.
         /// - It must be 2 to 256 characters in length.
         /// </remarks>
         [JsiiOptional]

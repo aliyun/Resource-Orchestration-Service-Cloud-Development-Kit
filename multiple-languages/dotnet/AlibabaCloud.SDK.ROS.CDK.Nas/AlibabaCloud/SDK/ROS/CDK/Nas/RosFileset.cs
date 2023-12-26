@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Nas
 {
-    /// <summary>A ROS template type:  `ALIYUN::NAS::Fileset`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::Fileset`, which is used to create a fileset.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Fileset` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-fileset
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Nas.RosFileset), fullyQualifiedName: "@alicloud/ros-cdk-nas.RosFileset", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-nas.RosFilesetProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosFileset : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::NAS::Fileset`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -124,7 +127,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         /// <strong>Property</strong>: fileSystemPath: The absolute path of Fileset to be created.
         /// The parent catalog of specified the directory must be a directory in the file system.
         /// The length is 2 to 1024 characters.
-        /// Specify the directory must start with positive (/).
+        /// Specify the directory must start with positive (\/).
         /// </remarks>
         [JsiiProperty(name: "fileSystemPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object FileSystemPath
@@ -156,7 +159,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         /// <remarks>
         /// <strong>Property</strong>: description: Fileset description information.
         /// The length is 2 to 128 English or Chinese characters.
-        /// Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //.
+        /// Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/.
         /// It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
         /// </remarks>
         [JsiiOptional]

@@ -4,7 +4,8 @@ import { RosDeployGroup } from './edas.generated';
 export { RosDeployGroup as DeployGroupProperty };
 
 /**
- * Properties for defining a `ALIYUN::EDAS::DeployGroup`
+ * Properties for defining a `DeployGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-deploygroup
  */
 export interface DeployGroupProps {
 
@@ -20,14 +21,11 @@ export interface DeployGroupProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::EDAS::DeployGroup`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::DeployGroup`, which is used to create an instance group for an application.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDeployGroup`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-deploygroup
  */
 export class DeployGroup extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AppId: Application ID
@@ -45,8 +43,6 @@ export class DeployGroup extends ros.Resource {
     public readonly attrId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::EDAS::DeployGroup`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

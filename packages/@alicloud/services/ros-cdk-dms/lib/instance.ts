@@ -4,7 +4,8 @@ import { RosInstance } from './dms.generated';
 export { RosInstance as InstanceProperty };
 
 /**
- * Properties for defining a `ALIYUN::DMS::Instance`
+ * Properties for defining a `Instance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dms-instance
  */
 export interface InstanceProps {
 
@@ -146,14 +147,11 @@ export interface InstanceProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::DMS::Instance`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DMS::Instance`, which is used to register a database instance for your enterprise.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dms-instance
  */
 export class Instance extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Host: The endpoint of the database instance.
@@ -171,8 +169,6 @@ export class Instance extends ros.Resource {
     public readonly attrPort: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::DMS::Instance`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

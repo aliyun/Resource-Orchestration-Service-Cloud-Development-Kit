@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.edas;
 
 /**
- * Properties for defining a <code>ALIYUN::EDAS::K8sApplication</code>.
+ * Properties for defining a <code>RosK8sApplication</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-k8sapplication
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:35.269Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.788Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.RosK8sApplicationProps")
 @software.amazon.jsii.Jsii.Proxy(RosK8sApplicationProps.Jsii$Proxy.class)
 public interface RosK8sApplicationProps extends software.amazon.jsii.JsiiSerializable {

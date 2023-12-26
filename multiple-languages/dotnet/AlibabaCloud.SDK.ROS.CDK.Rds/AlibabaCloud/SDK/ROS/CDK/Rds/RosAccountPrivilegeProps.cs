@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::RDS::AccountPrivilege`.</summary>
+    /// <summary>Properties for defining a `RosAccountPrivilege`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-accountprivilege
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-rds.RosAccountPrivilegeProps")]
     public class RosAccountPrivilegeProps : AlibabaCloud.SDK.ROS.CDK.Rds.IRosAccountPrivilegeProps
     {

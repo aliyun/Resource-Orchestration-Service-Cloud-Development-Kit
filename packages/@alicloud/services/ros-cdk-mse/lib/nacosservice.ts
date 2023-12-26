@@ -4,7 +4,8 @@ import { RosNacosService } from './mse.generated';
 export { RosNacosService as NacosServiceProperty };
 
 /**
- * Properties for defining a `ALIYUN::MSE::NacosService`
+ * Properties for defining a `NacosService`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-nacosservice
  */
 export interface NacosServiceProps {
 
@@ -42,18 +43,13 @@ export interface NacosServiceProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::MSE::NacosService`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::MSE::NacosService`, which is used to create a Nacos service.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNacosService`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-nacosservice
  */
 export class NacosService extends ros.Resource {
 
     /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
-
-    /**
-     * Create a new `ALIYUN::MSE::NacosService`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

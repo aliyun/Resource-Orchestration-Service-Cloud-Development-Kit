@@ -4,7 +4,8 @@ import { RosLayer } from './fc.generated';
 export { RosLayer as LayerProperty };
 
 /**
- * Properties for defining a `ALIYUN::FC::Layer`
+ * Properties for defining a `Layer`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-layer
  */
 export interface LayerProps {
 
@@ -30,14 +31,11 @@ export interface LayerProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::FC::Layer`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::FC::Layer`, which is used to publish layer versions.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLayer`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-layer
  */
 export class Layer extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Arn: The name of the layer resource.
@@ -55,8 +53,6 @@ export class Layer extends ros.Resource {
     public readonly attrVersion: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::FC::Layer`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

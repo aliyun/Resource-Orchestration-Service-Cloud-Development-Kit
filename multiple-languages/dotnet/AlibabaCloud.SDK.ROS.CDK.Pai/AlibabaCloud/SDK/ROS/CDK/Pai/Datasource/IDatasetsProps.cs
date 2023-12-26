@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Pai.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::PAI::Datasets`.</summary>
+    /// <summary>Properties for defining a `Datasets`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-datasets
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IDatasetsProps), fullyQualifiedName: "@alicloud/ros-cdk-pai.datasource.DatasetsProps")]
     public interface IDatasetsProps
     {
@@ -37,7 +40,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pai.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::PAI::Datasets`.</summary>
+        /// <summary>Properties for defining a `Datasets`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-datasets
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IDatasetsProps), fullyQualifiedName: "@alicloud/ros-cdk-pai.datasource.DatasetsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Pai.Datasource.IDatasetsProps
         {

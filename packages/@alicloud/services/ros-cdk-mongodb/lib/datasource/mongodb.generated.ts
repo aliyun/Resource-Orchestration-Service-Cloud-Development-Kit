@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::MONGODB::InstanceClasses`
+ * Properties for defining a `RosInstanceClasses`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mongodb-instanceclasses
  */
 export interface RosInstanceClassesProps {
 
@@ -71,18 +72,15 @@ function rosInstanceClassesPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * A ROS template type:  `DATASOURCE::MONGODB::InstanceClasses`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::MONGODB::InstanceClasses`, which is used to query the instance types that are supported by ApsaraDB for MongoDB in the specified zone.
+ * @Note This class does not contain additional functions, so it is recommended to use the `InstanceClasses` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mongodb-instanceclasses
  */
 export class RosInstanceClasses extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::MONGODB::InstanceClasses";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute InstanceClassIds: The list of The instance class Ids.
@@ -122,8 +120,6 @@ export class RosInstanceClasses extends ros.RosResource {
     public zoneId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::MONGODB::InstanceClasses`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -155,7 +151,8 @@ export class RosInstanceClasses extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::MONGODB::Instances`
+ * Properties for defining a `RosInstances`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mongodb-instances
  */
 export interface RosInstancesProps {
 
@@ -326,18 +323,15 @@ function rosInstancesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `DATASOURCE::MONGODB::Instances`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::MONGODB::Instances`, which is used to query the details of ApsaraDB for MongoDB instances.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Instances` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mongodb-instances
  */
 export class RosInstances extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::MONGODB::Instances";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute InstanceIds: The list of The instance Ids.
@@ -449,8 +443,6 @@ export class RosInstances extends ros.RosResource {
     public zoneId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::MONGODB::Instances`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

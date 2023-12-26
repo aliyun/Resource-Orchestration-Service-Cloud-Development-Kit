@@ -4,7 +4,8 @@ import { RosVpcs } from './vpc.generated';
 export { RosVpcs as VpcsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::VPC::Vpcs`
+ * Properties for defining a `Vpcs`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-vpcs
  */
 export interface VpcsProps {
 
@@ -43,14 +44,11 @@ export interface VpcsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::VPC::Vpcs`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::Vpcs`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpcs`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-vpcs
  */
 export class Vpcs extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute VpcIds: The list of The VPC IDs.
@@ -63,8 +61,6 @@ export class Vpcs extends ros.Resource {
     public readonly attrVpcs: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::VPC::Vpcs`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

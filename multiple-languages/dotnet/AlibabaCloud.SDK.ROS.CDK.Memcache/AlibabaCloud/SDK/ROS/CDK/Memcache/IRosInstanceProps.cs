@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Memcache
 {
-    /// <summary>Properties for defining a `ALIYUN::Memcache::Instance`.</summary>
+    /// <summary>Properties for defining a `RosInstance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-memcache-instance
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-memcache.RosInstanceProps")]
     public interface IRosInstanceProps
     {
@@ -146,7 +149,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
         }
 
         /// <remarks>
-        /// <strong></strong>: ), forward slashes (/), colons (:), equal signs (=), double quotation marks
+        /// <strong></strong>: ), forward slashes (\/), colons (:), equal signs (=), double quotation marks
         /// ("), angle brackets (<>), braces ([]), curly brackets ({}) and spaces.
         ///
         /// <strong>Property</strong>: instanceName: The name of the instance. The name can be 2 to 128 characters in length and must start
@@ -295,7 +298,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::Memcache::Instance`.</summary>
+        /// <summary>Properties for defining a `RosInstance`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-memcache-instance
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-memcache.RosInstanceProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Memcache.IRosInstanceProps
         {
@@ -414,7 +420,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
             }
 
             /// <remarks>
-            /// <strong></strong>: ), forward slashes (/), colons (:), equal signs (=), double quotation marks
+            /// <strong></strong>: ), forward slashes (\/), colons (:), equal signs (=), double quotation marks
             /// ("), angle brackets (<>), braces ([]), curly brackets ({}) and spaces.
             ///
             /// <strong>Property</strong>: instanceName: The name of the instance. The name can be 2 to 128 characters in length and must start

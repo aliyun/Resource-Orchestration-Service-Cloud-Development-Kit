@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
 {
-    /// <summary>A ROS template type:  `ALIYUN::PrivateLink::VpcEndpoint`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::PrivateLink::VpcEndpoint`, which is used to create an endpoint.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `VpcEndpoint` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpoint
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Privatelink.RosVpcEndpoint), fullyQualifiedName: "@alicloud/ros-cdk-privatelink.RosVpcEndpoint", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-privatelink.RosVpcEndpointProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosVpcEndpoint : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::PrivateLink::VpcEndpoint`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -214,7 +217,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
 
         /// <remarks>
         /// <strong>Property</strong>: endpointDescription: The description of the endpoint.
-        /// The description must be 2 to 256 characters in length and cannot start with http:// or https://.
+        /// The description must be 2 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "endpointDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Paidlc
 {
-    /// <summary>Properties for defining a `ALIYUN::PAIDLC::Tensorboard`.</summary>
+    /// <summary>Properties for defining a `Tensorboard`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidlc-tensorboard
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ITensorboardProps), fullyQualifiedName: "@alicloud/ros-cdk-paidlc.TensorboardProps")]
     public interface ITensorboardProps
     {
@@ -156,7 +159,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Paidlc
             }
         }
 
-        /// <summary>Property uri: URI of a dataset: When DataSourceType is OSS, the format is: OSS: // [OSS-BUCET].</summary>
+        /// <summary>Property uri: URI of a dataset: When DataSourceType is OSS, the format is: OSS: \/\/ [OSS-BUCET].</summary>
         /// <remarks>
         /// [Endpoint]/[Path].
         /// When the DataSourceType is NAS, the format is: nas:// [nas-filesystem-id]. [Region]/[PATH].
@@ -171,7 +174,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Paidlc
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::PAIDLC::Tensorboard`.</summary>
+        /// <summary>Properties for defining a `Tensorboard`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidlc-tensorboard
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ITensorboardProps), fullyQualifiedName: "@alicloud/ros-cdk-paidlc.TensorboardProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Paidlc.ITensorboardProps
         {
@@ -294,7 +300,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Paidlc
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property uri: URI of a dataset: When DataSourceType is OSS, the format is: OSS: // [OSS-BUCET].</summary>
+            /// <summary>Property uri: URI of a dataset: When DataSourceType is OSS, the format is: OSS: \/\/ [OSS-BUCET].</summary>
             /// <remarks>
             /// [Endpoint]/[Path].
             /// When the DataSourceType is NAS, the format is: nas:// [nas-filesystem-id]. [Region]/[PATH].

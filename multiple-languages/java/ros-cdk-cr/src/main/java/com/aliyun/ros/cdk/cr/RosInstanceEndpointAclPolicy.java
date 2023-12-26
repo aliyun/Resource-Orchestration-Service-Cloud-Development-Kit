@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cr;
 
 /**
- * A ROS template type:  <code>ALIYUN::CR::InstanceEndpointAclPolicy</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CR::InstanceEndpointAclPolicy</code>, which is used to create a whitelist for the access port of a public-facing instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.157Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.525Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.RosInstanceEndpointAclPolicy")
 public class RosInstanceEndpointAclPolicy extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,8 +20,6 @@ public class RosInstanceEndpointAclPolicy extends com.aliyun.ros.cdk.core.RosRes
     }
 
     /**
-     * Create a new <code>ALIYUN::CR::InstanceEndpointAclPolicy</code>.
-     * <p>
      * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
      * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
      * @param props <ul><li>resource properties.</li></ul> This parameter is required.

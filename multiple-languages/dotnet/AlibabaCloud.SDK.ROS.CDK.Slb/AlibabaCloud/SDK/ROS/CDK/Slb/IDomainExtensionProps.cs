@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Slb
 {
-    /// <summary>Properties for defining a `ALIYUN::SLB::DomainExtension`.</summary>
+    /// <summary>Properties for defining a `DomainExtension`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-domainextension
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IDomainExtensionProps), fullyQualifiedName: "@alicloud/ros-cdk-slb.DomainExtensionProps")]
     public interface IDomainExtensionProps
     {
@@ -40,7 +43,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::SLB::DomainExtension`.</summary>
+        /// <summary>Properties for defining a `DomainExtension`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-domainextension
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IDomainExtensionProps), fullyQualifiedName: "@alicloud/ros-cdk-slb.DomainExtensionProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Slb.IDomainExtensionProps
         {

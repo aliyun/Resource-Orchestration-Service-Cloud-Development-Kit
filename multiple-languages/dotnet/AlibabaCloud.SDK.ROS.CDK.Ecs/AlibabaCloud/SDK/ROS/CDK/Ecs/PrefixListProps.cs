@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ECS::PrefixList`.</summary>
+    /// <summary>Properties for defining a `PrefixList`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-prefixlist
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.PrefixListProps")]
     public class PrefixListProps : AlibabaCloud.SDK.ROS.CDK.Ecs.IPrefixListProps
     {

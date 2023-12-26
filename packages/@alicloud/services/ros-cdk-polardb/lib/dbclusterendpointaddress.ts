@@ -4,7 +4,8 @@ import { RosDBClusterEndpointAddress } from './polardb.generated';
 export { RosDBClusterEndpointAddress as DBClusterEndpointAddressProperty };
 
 /**
- * Properties for defining a `ALIYUN::POLARDB::DBClusterEndpointAddress`
+ * Properties for defining a `DBClusterEndpointAddress`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusterendpointaddress
  */
 export interface DBClusterEndpointAddressProps {
 
@@ -35,14 +36,11 @@ export interface DBClusterEndpointAddressProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::POLARDB::DBClusterEndpointAddress`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::DBClusterEndpointAddress`, which is used to create a public endpoint for an Apsara PolarDB cluster. The public endpoint can be a primary endpoint, the default cluster endpoint, or a custom cluster endpoint.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBClusterEndpointAddress`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusterendpointaddress
  */
 export class DBClusterEndpointAddress extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Address: The details of the endpoint address.
@@ -55,8 +53,6 @@ export class DBClusterEndpointAddress extends ros.Resource {
     public readonly attrConnectionString: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::POLARDB::DBClusterEndpointAddress`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

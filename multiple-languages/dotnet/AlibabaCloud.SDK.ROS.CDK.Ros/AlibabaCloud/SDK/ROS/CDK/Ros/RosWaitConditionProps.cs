@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ROS::WaitCondition`.</summary>
+    /// <summary>Properties for defining a `RosWaitCondition`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-waitcondition
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ros.RosWaitConditionProps")]
     public class RosWaitConditionProps : AlibabaCloud.SDK.ROS.CDK.Ros.IRosWaitConditionProps
     {

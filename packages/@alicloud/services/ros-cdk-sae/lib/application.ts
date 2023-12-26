@@ -4,7 +4,8 @@ import { RosApplication } from './sae.generated';
 export { RosApplication as ApplicationProperty };
 
 /**
- * Properties for defining a `ALIYUN::SAE::Application`
+ * Properties for defining a `Application`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-application
  */
 export interface ApplicationProps {
 
@@ -80,13 +81,13 @@ export interface ApplicationProps {
     readonly imageUrl?: string | ros.IResolvable;
 
     /**
-     * Property jarStartArgs: Jar package startup application parameters. Apply the default startup command: $ JAVA_HOME / bin / java $ JarStartOptions -jar $ CATALINA_OPTS "$ package_path"
+     * Property jarStartArgs: Jar package startup application parameters. Apply the default startup command: $ JAVA_HOME \/ bin \/ java $ JarStartOptions -jar $ CATALINA_OPTS "$ package_path"
      * $ JarStartArgs
      */
     readonly jarStartArgs?: string | ros.IResolvable;
 
     /**
-     * Property jarStartOptions: Jar start the application package option. Apply the default startup command: $ JAVA_HOME / bin / java $ JarStartOptions -jar $ CATALINA_OPTS "$ package_path"
+     * Property jarStartOptions: Jar start the application package option. Apply the default startup command: $ JAVA_HOME \/ bin \/ java $ JarStartOptions -jar $ CATALINA_OPTS "$ package_path"
      * $ JarStartArgs
      */
     readonly jarStartOptions?: string | ros.IResolvable;
@@ -127,12 +128,12 @@ export interface ApplicationProps {
     readonly packageVersion?: string | ros.IResolvable;
 
     /**
-     * Property postStart: Executing the script, such as after starting the format: { "exec": { "command": "cat", "/ etc / group"}}
+     * Property postStart: Executing the script, such as after starting the format: { "exec": { "command": "cat", "\/ etc \/ group"}}
      */
     readonly postStart?: string | ros.IResolvable;
 
     /**
-     * Property preStop: Script is executed before stopping the format as: { "exec": { "command": "cat", "/ etc / group"}}
+     * Property preStop: Script is executed before stopping the format as: { "exec": { "command": "cat", "\/ etc \/ group"}}
      */
     readonly preStop?: string | ros.IResolvable;
 
@@ -157,7 +158,7 @@ export interface ApplicationProps {
     readonly tags?: RosApplication.TagsProperty[];
 
     /**
-     * Property timezone: Application time zone. Default Asia/Shanghai.
+     * Property timezone: Application time zone. Default Asia\/Shanghai.
      */
     readonly timezone?: string | ros.IResolvable;
 
@@ -183,14 +184,11 @@ export interface ApplicationProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::SAE::Application`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SAE::Application`, which is used to create an application in Serverless App Engine (SAE).
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApplication`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-application
  */
 export class Application extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AppId: Creating successful application ID.
@@ -203,8 +201,6 @@ export class Application extends ros.Resource {
     public readonly attrChangeOrderId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::SAE::Application`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

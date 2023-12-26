@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::AMQP::Binding`
+ * Properties for defining a `RosBinding`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-binding
  */
 export interface RosBindingProps {
 
@@ -103,18 +104,15 @@ function rosBindingPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::AMQP::Binding`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::Binding`, which is used to bind a queue or exchange to an exchange.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Binding` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-binding
  */
 export class RosBinding extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::AMQP::Binding";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -157,8 +155,6 @@ export class RosBinding extends ros.RosResource {
     public virtualHost: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::AMQP::Binding`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -194,7 +190,8 @@ export class RosBinding extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::AMQP::Exchange`
+ * Properties for defining a `RosExchange`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-exchange
  */
 export interface RosExchangeProps {
 
@@ -306,18 +303,15 @@ function rosExchangePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::AMQP::Exchange`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::Exchange`, which is used to create an exchange.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Exchange` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-exchange
  */
 export class RosExchange extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::AMQP::Exchange";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ExchangeName: The name of the exchange.
@@ -371,8 +365,6 @@ export class RosExchange extends ros.RosResource {
     public alternateExchange: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::AMQP::Exchange`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -409,7 +401,8 @@ export class RosExchange extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::AMQP::Instance`
+ * Properties for defining a `RosInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-instance
  */
 export interface RosInstanceProps {
 
@@ -631,18 +624,15 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::AMQP::Instance`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::Instance`, which is used to create an ApsaraMQ for RabbitMQ instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-instance
  */
 export class RosInstance extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::AMQP::Instance";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ClassicEndpoint: The classic endpoint of the instance.
@@ -743,8 +733,6 @@ export class RosInstance extends ros.RosResource {
     public tracingStorageTime: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::AMQP::Instance`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -795,7 +783,8 @@ export class RosInstance extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::AMQP::Queue`
+ * Properties for defining a `RosQueue`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-queue
  */
 export interface RosQueueProps {
 
@@ -929,18 +918,15 @@ function rosQueuePropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `ALIYUN::AMQP::Queue`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::Queue`, which is used to create a queue.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Queue` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-queue
  */
 export class RosQueue extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::AMQP::Queue";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute QueueName: The name of the queue.
@@ -1017,8 +1003,6 @@ export class RosQueue extends ros.RosResource {
     public messageTtl: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::AMQP::Queue`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1063,7 +1047,8 @@ export class RosQueue extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::AMQP::VirtualHost`
+ * Properties for defining a `RosVirtualHost`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-virtualhost
  */
 export interface RosVirtualHostProps {
 
@@ -1122,18 +1107,15 @@ function rosVirtualHostPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `ALIYUN::AMQP::VirtualHost`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::VirtualHost`, which is used to create a vhost.
+ * @Note This class does not contain additional functions, so it is recommended to use the `VirtualHost` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-virtualhost
  */
 export class RosVirtualHost extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::AMQP::VirtualHost";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute VirtualHost: The name of the virtual host.
@@ -1154,8 +1136,6 @@ export class RosVirtualHost extends ros.RosResource {
     public virtualHost: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::AMQP::VirtualHost`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

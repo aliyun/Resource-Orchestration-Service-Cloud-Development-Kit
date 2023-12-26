@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.fc.datasource;
 
 /**
- * Properties for defining a <code>DATASOURCE::FC::Functions</code>.
+ * Properties for defining a <code>RosFunctions</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-functions
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:35.655Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.219Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.datasource.RosFunctionsProps")
 @software.amazon.jsii.Jsii.Proxy(RosFunctionsProps.Jsii$Proxy.class)
 public interface RosFunctionsProps extends software.amazon.jsii.JsiiSerializable {

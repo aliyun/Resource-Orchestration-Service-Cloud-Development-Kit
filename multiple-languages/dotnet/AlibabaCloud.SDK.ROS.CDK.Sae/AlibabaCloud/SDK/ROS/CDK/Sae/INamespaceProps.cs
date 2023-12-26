@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sae
 {
-    /// <summary>Properties for defining a `ALIYUN::SAE::Namespace`.</summary>
+    /// <summary>Properties for defining a `Namespace`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-namespace
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(INamespaceProps), fullyQualifiedName: "@alicloud/ros-cdk-sae.NamespaceProps")]
     public interface INamespaceProps
     {
@@ -36,7 +39,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::SAE::Namespace`.</summary>
+        /// <summary>Properties for defining a `Namespace`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-namespace
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(INamespaceProps), fullyQualifiedName: "@alicloud/ros-cdk-sae.NamespaceProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sae.INamespaceProps
         {

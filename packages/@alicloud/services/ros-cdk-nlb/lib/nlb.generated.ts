@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::NLB::Listener`
+ * Properties for defining a `RosListener`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-listener
  */
 export interface RosListenerProps {
 
@@ -244,18 +245,15 @@ function rosListenerPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::NLB::Listener`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::Listener`, which is used to create a listener.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Listener` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-listener
  */
 export class RosListener extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::NLB::Listener";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ListenerId: Id of created Listener
@@ -366,8 +364,6 @@ export class RosListener extends ros.RosResource {
     public startPort: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::NLB::Listener`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -429,7 +425,8 @@ export class RosListener extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::NLB::LoadBalancer`
+ * Properties for defining a `RosLoadBalancer`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-loadbalancer
  */
 export interface RosLoadBalancerProps {
 
@@ -595,18 +592,15 @@ function rosLoadBalancerPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * A ROS template type:  `ALIYUN::NLB::LoadBalancer`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::LoadBalancer`, which is used to create a Network Load Balancer (NLB) instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `LoadBalancer` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-loadbalancer
  */
 export class RosLoadBalancer extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::NLB::LoadBalancer";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AddressIpVersion: The version of IP address that the NLB instance uses to provide services.
@@ -720,8 +714,6 @@ export class RosLoadBalancer extends ros.RosResource {
     public trafficAffinityEnabled: boolean | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::NLB::LoadBalancer`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1038,6 +1030,13 @@ export namespace RosLoadBalancer {
          */
         readonly allocationId?: string | ros.IResolvable;
         /**
+         * @Property eipType: The type of the EIP. Valid values:
+     * - **Common**
+     * - **Anycast**
+     * **Note**: Only NLB instances in Hong Kong, China, support binding Anycast EIP.
+         */
+        readonly eipType?: string | ros.IResolvable;
+        /**
          * @Property loadBalancerAddresses: Load balancer addresses. This property has higher priority than AllocationId and EipType in ZoneMappings.
          */
         readonly loadBalancerAddresses?: Array<RosLoadBalancer.LoadBalancerAddressesProperty | ros.IResolvable> | ros.IResolvable;
@@ -1062,6 +1061,7 @@ function RosLoadBalancer_ZoneMappingsPropertyValidator(properties: any): ros.Val
     errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('allocationId', ros.validateString)(properties.allocationId));
+    errors.collect(ros.propertyValidator('eipType', ros.validateString)(properties.eipType));
     if(properties.loadBalancerAddresses && (Array.isArray(properties.loadBalancerAddresses) || (typeof properties.loadBalancerAddresses) === 'string')) {
         errors.collect(ros.propertyValidator('loadBalancerAddresses', ros.validateLength)({
             data: properties.loadBalancerAddresses.length,
@@ -1089,13 +1089,15 @@ function rosLoadBalancerZoneMappingsPropertyToRosTemplate(properties: any): any 
       ZoneId: ros.stringToRosTemplate(properties.zoneId),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
       AllocationId: ros.stringToRosTemplate(properties.allocationId),
+      EipType: ros.stringToRosTemplate(properties.eipType),
       LoadBalancerAddresses: ros.listMapper(rosLoadBalancerLoadBalancerAddressesPropertyToRosTemplate)(properties.loadBalancerAddresses),
       PrivateIPv4Address: ros.stringToRosTemplate(properties.privateIPv4Address),
     };
 }
 
 /**
- * Properties for defining a `ALIYUN::NLB::SecurityGroupAttachment`
+ * Properties for defining a `RosSecurityGroupAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-securitygroupattachment
  */
 export interface RosSecurityGroupAttachmentProps {
 
@@ -1154,18 +1156,15 @@ function rosSecurityGroupAttachmentPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * A ROS template type:  `ALIYUN::NLB::SecurityGroupAttachment`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::SecurityGroupAttachment`DATASOURCE::NLB::LoadBalancers is used to query the basic information about created Network Load Balancer (NLB) instances.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SecurityGroupAttachment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-securitygroupattachment
  */
 export class RosSecurityGroupAttachment extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::NLB::SecurityGroupAttachment";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1181,8 +1180,6 @@ export class RosSecurityGroupAttachment extends ros.RosResource {
     public securityGroupIds: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::NLB::SecurityGroupAttachment`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1208,7 +1205,8 @@ export class RosSecurityGroupAttachment extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::NLB::ServerGroup`
+ * Properties for defining a `RosServerGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-servergroup
  */
 export interface RosServerGroupProps {
 
@@ -1390,18 +1388,15 @@ function rosServerGroupPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `ALIYUN::NLB::ServerGroup`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::ServerGroup`, which is used to create a server group for a Network Load Balancer (NLB) instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ServerGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-servergroup
  */
 export class RosServerGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::NLB::ServerGroup";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ServerGroupId: ID of ServerGroup
@@ -1482,8 +1477,6 @@ export class RosServerGroup extends ros.RosResource {
     public servers: Array<RosServerGroup.ServersProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::NLB::ServerGroup`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1690,7 +1683,7 @@ export namespace RosServerGroup {
          */
         readonly serverType: string | ros.IResolvable;
         /**
-         * @Property description: The description of the servers. The description must be 2 to 256 characters in length, and can contain letters, digits, commas (,), periods (.), semicolons (;), forward slashes (/), at signs (@), underscores (_), and hyphens (-).
+         * @Property description: The description of the servers. The description must be 2 to 256 characters in length, and can contain letters, digits, commas (,), periods (.), semicolons (;), forward slashes (\/), at signs (@), underscores (_), and hyphens (-).
          */
         readonly description?: string | ros.IResolvable;
         /**

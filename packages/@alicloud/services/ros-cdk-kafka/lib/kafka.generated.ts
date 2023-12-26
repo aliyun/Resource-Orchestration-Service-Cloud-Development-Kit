@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::KAFKA::ConsumerGroup`
+ * Properties for defining a `RosConsumerGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-consumergroup
  */
 export interface RosConsumerGroupProps {
 
@@ -79,18 +80,15 @@ function rosConsumerGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `ALIYUN::KAFKA::ConsumerGroup`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KAFKA::ConsumerGroup`, which is used to create a consumer group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ConsumerGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-consumergroup
  */
 export class RosConsumerGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::KAFKA::ConsumerGroup";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ConsumerId: Consumer group ID
@@ -124,8 +122,6 @@ export class RosConsumerGroup extends ros.RosResource {
     public tags: RosConsumerGroup.TagsProperty[] | undefined;
 
     /**
-     * Create a new `ALIYUN::KAFKA::ConsumerGroup`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -204,7 +200,8 @@ function rosConsumerGroupTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::KAFKA::Instance`
+ * Properties for defining a `RosInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-instance
  */
 export interface RosInstanceProps {
 
@@ -395,18 +392,15 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::KAFKA::Instance`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KAFKA::Instance`, which is used to create an ApsaraMQ for Kafka instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-instance
  */
 export class RosInstance extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::KAFKA::Instance";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DomainEndpoint: The default endpoints of the instance in domain name mode.
@@ -545,8 +539,6 @@ export class RosInstance extends ros.RosResource {
     public topicQuota: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::KAFKA::Instance`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -812,7 +804,8 @@ function rosInstanceTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::KAFKA::Topic`
+ * Properties for defining a `RosTopic`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-topic
  */
 export interface RosTopicProps {
 
@@ -966,18 +959,15 @@ function rosTopicPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `ALIYUN::KAFKA::Topic`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KAFKA::Topic`, which is used to create a topic.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Topic` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-topic
  */
 export class RosTopic extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::KAFKA::Topic";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute InstanceId: The ID of the Message Queue for Apache Kafka instance where the topic is located.
@@ -1068,8 +1058,6 @@ You can call the GetInstanceList operation to query instances.
     public tags: RosTopic.TagsProperty[] | undefined;
 
     /**
-     * Create a new `ALIYUN::KAFKA::Topic`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

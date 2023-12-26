@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>Properties for defining a `ALIYUN::VPC::NetworkAclAssociation`.</summary>
+    /// <summary>Properties for defining a `RosNetworkAclAssociation`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-networkaclassociation
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosNetworkAclAssociationProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosNetworkAclAssociationProps")]
     public interface IRosNetworkAclAssociationProps
     {
@@ -26,7 +29,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::VPC::NetworkAclAssociation`.</summary>
+        /// <summary>Properties for defining a `RosNetworkAclAssociation`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-networkaclassociation
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosNetworkAclAssociationProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosNetworkAclAssociationProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.IRosNetworkAclAssociationProps
         {

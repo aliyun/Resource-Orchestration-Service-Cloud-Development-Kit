@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::GPDB::InstancePublicConnection`.</summary>
+    /// <summary>Properties for defining a `RosInstancePublicConnection`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-instancepublicconnection
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-gpdb.RosInstancePublicConnectionProps")]
     public class RosInstancePublicConnectionProps : AlibabaCloud.SDK.ROS.CDK.Gpdb.IRosInstancePublicConnectionProps
     {

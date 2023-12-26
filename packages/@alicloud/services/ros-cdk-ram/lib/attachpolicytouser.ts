@@ -4,7 +4,8 @@ import { RosAttachPolicyToUser } from './ram.generated';
 export { RosAttachPolicyToUser as AttachPolicyToUserProperty };
 
 /**
- * Properties for defining a `ALIYUN::RAM::AttachPolicyToUser`
+ * Properties for defining a `AttachPolicyToUser`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-attachpolicytouser
  */
 export interface AttachPolicyToUserProps {
 
@@ -25,18 +26,13 @@ export interface AttachPolicyToUserProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::RAM::AttachPolicyToUser`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::AttachPolicyToUser`, which is used to grant permissions to a specified user.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAttachPolicyToUser`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-attachpolicytouser
  */
 export class AttachPolicyToUser extends ros.Resource {
 
     /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
-
-    /**
-     * Create a new `ALIYUN::RAM::AttachPolicyToUser`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

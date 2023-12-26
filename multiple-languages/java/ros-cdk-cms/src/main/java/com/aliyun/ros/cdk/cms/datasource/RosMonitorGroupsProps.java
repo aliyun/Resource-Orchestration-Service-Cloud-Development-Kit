@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.cms.datasource;
 
 /**
- * Properties for defining a <code>DATASOURCE::CMS::MonitorGroups</code>.
+ * Properties for defining a <code>RosMonitorGroups</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-monitorgroups
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.075Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.453Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.datasource.RosMonitorGroupsProps")
 @software.amazon.jsii.Jsii.Proxy(RosMonitorGroupsProps.Jsii$Proxy.class)
 public interface RosMonitorGroupsProps extends software.amazon.jsii.JsiiSerializable {

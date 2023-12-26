@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::NLB::SecurityGroupAttachment`.</summary>
+    /// <summary>Properties for defining a `RosSecurityGroupAttachment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-securitygroupattachment
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-nlb.RosSecurityGroupAttachmentProps")]
     public class RosSecurityGroupAttachmentProps : AlibabaCloud.SDK.ROS.CDK.Nlb.IRosSecurityGroupAttachmentProps
     {

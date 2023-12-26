@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::OOS::Execution`.</summary>
+    /// <summary>Properties for defining a `Execution`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-execution
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-oos.ExecutionProps")]
     public class ExecutionProps : AlibabaCloud.SDK.ROS.CDK.Oos.IExecutionProps
     {

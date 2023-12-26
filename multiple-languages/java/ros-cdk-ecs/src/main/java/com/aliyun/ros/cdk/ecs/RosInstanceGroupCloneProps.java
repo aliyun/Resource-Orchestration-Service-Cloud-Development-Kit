@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * Properties for defining a <code>ALIYUN::ECS::InstanceGroupClone</code>.
+ * Properties for defining a <code>RosInstanceGroupClone</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instancegroupclone
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.940Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.432Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInstanceGroupCloneProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstanceGroupCloneProps.Jsii$Proxy.class)
 public interface RosInstanceGroupCloneProps extends software.amazon.jsii.JsiiSerializable {
@@ -942,7 +944,7 @@ public interface RosInstanceGroupCloneProps extends software.amazon.jsii.JsiiSer
          * @param securityGroupIds the value to be set.
          * @return {@code this}
          */
-        public Builder securityGroupIds(java.util.List<? extends java.lang.Object> securityGroupIds) {
+        public Builder securityGroupIds(com.aliyun.ros.cdk.core.IResolvable securityGroupIds) {
             this.securityGroupIds = securityGroupIds;
             return this;
         }
@@ -952,7 +954,7 @@ public interface RosInstanceGroupCloneProps extends software.amazon.jsii.JsiiSer
          * @param securityGroupIds the value to be set.
          * @return {@code this}
          */
-        public Builder securityGroupIds(com.aliyun.ros.cdk.core.IResolvable securityGroupIds) {
+        public Builder securityGroupIds(java.util.List<? extends java.lang.Object> securityGroupIds) {
             this.securityGroupIds = securityGroupIds;
             return this;
         }

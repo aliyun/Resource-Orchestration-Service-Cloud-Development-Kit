@@ -4,7 +4,8 @@ import { RosIpSets } from './ga.generated';
 export { RosIpSets as IpSetsProperty };
 
 /**
- * Properties for defining a `ALIYUN::GA::IpSets`
+ * Properties for defining a `IpSets`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-ipsets
  */
 export interface IpSetsProps {
 
@@ -20,14 +21,11 @@ export interface IpSetsProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::GA::IpSets`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::GA::IpSets`, which is used to create acceleration regions.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosIpSets`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-ipsets
  */
 export class IpSets extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AccelerateRegionIds: The ID list of the accelerate region.
@@ -45,8 +43,6 @@ export class IpSets extends ros.Resource {
     public readonly attrIpVersions: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::GA::IpSets`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

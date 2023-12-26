@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::ROCKETMQ::Groups`
+ * Properties for defining a `RosGroups`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rocketmq-groups
  */
 export interface RosGroupsProps {
 
@@ -66,18 +67,15 @@ function rosGroupsPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * A ROS template type:  `DATASOURCE::ROCKETMQ::Groups`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ROCKETMQ::Groups`, which is used to query the groups in Message Queue for Apache RocketMQ.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Groups` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rocketmq-groups
  */
 export class RosGroups extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ROCKETMQ::Groups";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute GroupNames: The list of group names.
@@ -108,8 +106,6 @@ export class RosGroups extends ros.RosResource {
     public instanceId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::ROCKETMQ::Groups`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -139,7 +135,8 @@ export class RosGroups extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::ROCKETMQ::Instances`
+ * Properties for defining a `RosInstances`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rocketmq-instances
  */
 export interface RosInstancesProps {
 }
@@ -175,18 +172,15 @@ function rosInstancesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `DATASOURCE::ROCKETMQ::Instances`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ROCKETMQ::Instances`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Instances` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rocketmq-instances
  */
 export class RosInstances extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ROCKETMQ::Instances";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute InstanceIds: The list of instance IDs.
@@ -202,8 +196,6 @@ export class RosInstances extends ros.RosResource {
 
 
     /**
-     * Create a new `DATASOURCE::ROCKETMQ::Instances`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -227,7 +219,8 @@ export class RosInstances extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::ROCKETMQ::Topics`
+ * Properties for defining a `RosTopics`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rocketmq-topics
  */
 export interface RosTopicsProps {
 
@@ -277,18 +270,15 @@ function rosTopicsPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * A ROS template type:  `DATASOURCE::ROCKETMQ::Topics`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ROCKETMQ::Topics`, which is used to query topics in Message Queue for Apache RocketMQ.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Topics` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rocketmq-topics
  */
 export class RosTopics extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ROCKETMQ::Topics";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute TopicNames: The list of topic names.
@@ -314,8 +304,6 @@ export class RosTopics extends ros.RosResource {
     public topicName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::ROCKETMQ::Topics`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

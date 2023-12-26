@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::VPC::EIPAssociation`.</summary>
+    /// <summary>Properties for defining a `EIPAssociation`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eipassociation
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.EIPAssociationProps")]
     public class EIPAssociationProps : AlibabaCloud.SDK.ROS.CDK.Vpc.IEIPAssociationProps
     {
@@ -42,7 +45,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         private object _instanceId;
 
-        /// <summary>Property instanceId: ECS/SLB/NAT/HaVip/ENI instance id to bid the EIP.</summary>
+        /// <summary>Property instanceId: ECS\/SLB\/NAT\/HaVip\/ENI instance id to bid the EIP.</summary>
         [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object InstanceId
         {

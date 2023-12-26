@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * Properties for defining a <code>ALIYUN::ECS::InstanceGroupClone</code>.
+ * Properties for defining a <code>InstanceGroupClone</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instancegroupclone
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.795Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.256Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceGroupCloneProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceGroupCloneProps.Jsii$Proxy.class)
 public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerializable {
@@ -1129,7 +1131,7 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
          *                         The valid values of N are based on the maximum number of security groups to which an instance can belong. For more information, see Security group limits.Note: You cannot specify both SecurityGroupId and SecurityGroupIds at the same time.
          * @return {@code this}
          */
-        public Builder securityGroupIds(java.util.List<? extends java.lang.Object> securityGroupIds) {
+        public Builder securityGroupIds(com.aliyun.ros.cdk.core.IResolvable securityGroupIds) {
             this.securityGroupIds = securityGroupIds;
             return this;
         }
@@ -1140,7 +1142,7 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
          *                         The valid values of N are based on the maximum number of security groups to which an instance can belong. For more information, see Security group limits.Note: You cannot specify both SecurityGroupId and SecurityGroupIds at the same time.
          * @return {@code this}
          */
-        public Builder securityGroupIds(com.aliyun.ros.cdk.core.IResolvable securityGroupIds) {
+        public Builder securityGroupIds(java.util.List<? extends java.lang.Object> securityGroupIds) {
             this.securityGroupIds = securityGroupIds;
             return this;
         }

@@ -4,7 +4,8 @@ import { RosSecurityGroups } from './ecs.generated';
 export { RosSecurityGroups as SecurityGroupsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::ECS::SecurityGroups`
+ * Properties for defining a `SecurityGroups`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-securitygroups
  */
 export interface SecurityGroupsProps {
 
@@ -56,14 +57,11 @@ export interface SecurityGroupsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::ECS::SecurityGroups`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::SecurityGroups`, which is used to query the basic information about security groups.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecurityGroups`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-securitygroups
  */
 export class SecurityGroups extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute SecurityGroupIds: The list of security group ids.
@@ -76,8 +74,6 @@ export class SecurityGroups extends ros.Resource {
     public readonly attrSecurityGroups: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::ECS::SecurityGroups`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

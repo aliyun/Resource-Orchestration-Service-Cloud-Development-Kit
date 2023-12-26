@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ECS::SNatEntry`.</summary>
+    /// <summary>Properties for defining a `RosSNatEntry`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-snatentry
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.RosSNatEntryProps")]
     public class RosSNatEntryProps : AlibabaCloud.SDK.ROS.CDK.Ecs.IRosSNatEntryProps
     {
@@ -77,7 +80,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         private object? _snatEntryName;
 
         /// <remarks>
-        /// <strong>Property</strong>: snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.
+        /// <strong>Property</strong>: snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "snatEntryName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -110,7 +113,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         private object? _sourceCidr;
 
         /// <remarks>
-        /// <strong>Property</strong>: sourceCidr: Specifies the network segment of the switch. For example, 10.0.0.1/24. This parameter and the SourceVSwtichId parameter are mutually exclusive and cannot appear at the same time.
+        /// <strong>Property</strong>: sourceCidr: Specifies the network segment of the switch. For example, 10.0.0.1\/24. This parameter and the SourceVSwtichId parameter are mutually exclusive and cannot appear at the same time.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "sourceCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

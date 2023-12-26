@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::NAS::AccessGroup`
+ * Properties for defining a `RosAccessGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-accessgroup
  */
 export interface RosAccessGroupProps {
 
@@ -88,18 +89,15 @@ function rosAccessGroupPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `ALIYUN::NAS::AccessGroup`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::AccessGroup`, which is used to create a permission group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AccessGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-accessgroup
  */
 export class RosAccessGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::NAS::AccessGroup";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AccessGroupName: Permission group name
@@ -131,8 +129,6 @@ export class RosAccessGroup extends ros.RosResource {
     public fileSystemType: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::NAS::AccessGroup`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -163,7 +159,8 @@ export class RosAccessGroup extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::NAS::AccessRule`
+ * Properties for defining a `RosAccessRule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-accessrule
  */
 export interface RosAccessRuleProps {
 
@@ -279,18 +276,15 @@ function rosAccessRulePropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::NAS::AccessRule`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::AccessRule`, which is used to create a rule for a permission group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AccessRule` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-accessrule
  */
 export class RosAccessRule extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::NAS::AccessRule";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AccessRuleId: Rule serial number
@@ -341,8 +335,6 @@ export class RosAccessRule extends ros.RosResource {
     public userAccessType: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::NAS::AccessRule`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -379,7 +371,8 @@ export class RosAccessRule extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::NAS::DataFlow`
+ * Properties for defining a `RosDataFlow`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-dataflow
  */
 export interface RosDataFlowProps {
 
@@ -394,20 +387,20 @@ export interface RosDataFlowProps {
     readonly fsetId: string | ros.IResolvable;
 
     /**
-     * @Property sourceStorage: Access path stored at the source.Format: <storage Type>: // <PATH>.
+     * @Property sourceStorage: Access path stored at the source.Format: <storage Type>: \/\/ <PATH>.
      * in:
      * Storage Type: Currently only supports OSS.
      * PATH: OSS's bucket name.Limit the following.
      * Only support the lowercase letters, numbers and short strokes (-) and must start with a lowercase letter or number.
      * The length is 8 ~ 128 English characters.
      * Use UTF-8 encoding.
-     * Can't start with http: // and https: //.
+     * Can't start with http: \/\/ and https: \/\/.
      * Explain that the OSS BUCKET must be the bucket that exists in the region.
      */
     readonly sourceStorage: string | ros.IResolvable;
 
     /**
-     * @Property throughput: The upper limit of transmission bandwidth for data flow, unit: MB/s.
+     * @Property throughput: The upper limit of transmission bandwidth for data flow, unit: MB\/s.
      * Value: 
      * 600
      * 1200
@@ -439,7 +432,7 @@ export interface RosDataFlowProps {
      * @Property description: Description of data flow.
      * limit:
      * The length is 2 to 128 English or Chinese characters.
-     * Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //.
+     * Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/.
      * It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
      */
     readonly description?: string | ros.IResolvable;
@@ -530,18 +523,15 @@ function rosDataFlowPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::NAS::DataFlow`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::DataFlow`, which is used to create a data flow between a Cloud Parallel File Storage (CPFS) file system and an Object Storage Service (OSS) bucket.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DataFlow` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-dataflow
  */
 export class RosDataFlow extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::NAS::DataFlow";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DataFlowId: Data flow ID.
@@ -567,20 +557,20 @@ export class RosDataFlow extends ros.RosResource {
     public fsetId: string | ros.IResolvable;
 
     /**
-     * @Property sourceStorage: Access path stored at the source.Format: <storage Type>: // <PATH>.
+     * @Property sourceStorage: Access path stored at the source.Format: <storage Type>: \/\/ <PATH>.
      * in:
      * Storage Type: Currently only supports OSS.
      * PATH: OSS's bucket name.Limit the following.
      * Only support the lowercase letters, numbers and short strokes (-) and must start with a lowercase letter or number.
      * The length is 8 ~ 128 English characters.
      * Use UTF-8 encoding.
-     * Can't start with http: // and https: //.
+     * Can't start with http: \/\/ and https: \/\/.
      * Explain that the OSS BUCKET must be the bucket that exists in the region.
      */
     public sourceStorage: string | ros.IResolvable;
 
     /**
-     * @Property throughput: The upper limit of transmission bandwidth for data flow, unit: MB/s.
+     * @Property throughput: The upper limit of transmission bandwidth for data flow, unit: MB\/s.
      * Value: 
      * 600
      * 1200
@@ -612,7 +602,7 @@ export class RosDataFlow extends ros.RosResource {
      * @Property description: Description of data flow.
      * limit:
      * The length is 2 to 128 English or Chinese characters.
-     * Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //.
+     * Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/.
      * It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
      */
     public description: string | ros.IResolvable | undefined;
@@ -625,8 +615,6 @@ export class RosDataFlow extends ros.RosResource {
     public sourceSecurityType: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::NAS::DataFlow`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -678,7 +666,7 @@ export namespace RosDataFlow {
      * limit:
      * The length is 2 to 1024 characters.
      * Use UTF-8 encoding.
-     * It must start with a positive oblique line (/).
+     * It must start with a positive oblique line (\/).
      * This directory must be existing directory on CPFS and must be located in the Fileset directory that flows in the data.
          */
         readonly refreshPath: string | ros.IResolvable;
@@ -716,7 +704,8 @@ function rosDataFlowAutoRefreshsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::NAS::FileSystem`
+ * Properties for defining a `RosFileSystem`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-filesystem
  */
 export interface RosFileSystemProps {
 
@@ -736,7 +725,7 @@ export interface RosFileSystemProps {
     readonly storageType: string | ros.IResolvable;
 
     /**
-     * @Property bandwidth: Maximum file system throughput, unit is MB/s. Required and valid only when FileSystemType=cpfs.
+     * @Property bandwidth: Maximum file system throughput, unit is MB\/s. Required and valid only when FileSystemType=cpfs.
      */
     readonly bandwidth?: number | ros.IResolvable;
 
@@ -900,18 +889,15 @@ function rosFileSystemPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::NAS::FileSystem`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::FileSystem`, which is used to create a file system in Apsara File Storage NAS (NAS).
+ * @Note This class does not contain additional functions, so it is recommended to use the `FileSystem` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-filesystem
  */
 export class RosFileSystem extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::NAS::FileSystem";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute FileSystemId: ID of the file system created
@@ -937,7 +923,7 @@ export class RosFileSystem extends ros.RosResource {
     public storageType: string | ros.IResolvable;
 
     /**
-     * @Property bandwidth: Maximum file system throughput, unit is MB/s. Required and valid only when FileSystemType=cpfs.
+     * @Property bandwidth: Maximum file system throughput, unit is MB\/s. Required and valid only when FileSystemType=cpfs.
      */
     public bandwidth: number | ros.IResolvable | undefined;
 
@@ -1007,8 +993,6 @@ export class RosFileSystem extends ros.RosResource {
     public zoneId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::NAS::FileSystem`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1109,7 +1093,8 @@ function rosFileSystemTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::NAS::Fileset`
+ * Properties for defining a `RosFileset`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-fileset
  */
 export interface RosFilesetProps {
 
@@ -1122,14 +1107,14 @@ export interface RosFilesetProps {
      * @Property fileSystemPath: The absolute path of Fileset to be created.
      * The parent catalog of specified the directory must be a directory in the file system.
      * The length is 2 to 1024 characters.
-     * Specify the directory must start with positive (/).
+     * Specify the directory must start with positive (\/).
      */
     readonly fileSystemPath: string | ros.IResolvable;
 
     /**
      * @Property description: Fileset description information.
      * The length is 2 to 128 English or Chinese characters.
-     * Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //.
+     * Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/.
      * It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
      */
     readonly description?: string | ros.IResolvable;
@@ -1174,18 +1159,15 @@ function rosFilesetPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::NAS::Fileset`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::Fileset`, which is used to create a fileset.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Fileset` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-fileset
  */
 export class RosFileset extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::NAS::Fileset";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute FileSystemId: File system ID.
@@ -1214,21 +1196,19 @@ export class RosFileset extends ros.RosResource {
      * @Property fileSystemPath: The absolute path of Fileset to be created.
      * The parent catalog of specified the directory must be a directory in the file system.
      * The length is 2 to 1024 characters.
-     * Specify the directory must start with positive (/).
+     * Specify the directory must start with positive (\/).
      */
     public fileSystemPath: string | ros.IResolvable;
 
     /**
      * @Property description: Fileset description information.
      * The length is 2 to 128 English or Chinese characters.
-     * Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //.
+     * Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/.
      * It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
      */
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::NAS::Fileset`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1259,7 +1239,8 @@ export class RosFileset extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::NAS::MountTarget`
+ * Properties for defining a `RosMountTarget`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-mounttarget
  */
 export interface RosMountTargetProps {
 
@@ -1369,18 +1350,15 @@ function rosMountTargetPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `ALIYUN::NAS::MountTarget`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::MountTarget`, which is used to create a mount target.
+ * @Note This class does not contain additional functions, so it is recommended to use the `MountTarget` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-mounttarget
  */
 export class RosMountTarget extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::NAS::MountTarget";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute MountTargetDomain: Mount point domain name
@@ -1434,8 +1412,6 @@ export class RosMountTarget extends ros.RosResource {
     public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::NAS::MountTarget`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1474,7 +1450,8 @@ export class RosMountTarget extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::NAS::ProtocolMountTarget`
+ * Properties for defining a `RosProtocolMountTarget`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-protocolmounttarget
  */
 export interface RosProtocolMountTargetProps {
 
@@ -1508,7 +1485,7 @@ export interface RosProtocolMountTargetProps {
      * @Property description: Description of the protocol service to export the directory.The console is displayed as the export directory name.
      * limit:
      * The length is 2 to 128 English or Chinese characters.
-     * Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //.
+     * Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/.
      * It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
      */
     readonly description?: string | ros.IResolvable;
@@ -1531,7 +1508,7 @@ export interface RosProtocolMountTargetProps {
      * Format:
      * The length is 1 to 1024 characters.
      * Use UTF-8 encoding.
-     * It must start with the positive oblique line (/), and the root directory must be/.
+     * It must start with the positive oblique line (\/), and the root directory must be\/.
      */
     readonly path?: string | ros.IResolvable;
 }
@@ -1587,18 +1564,15 @@ function rosProtocolMountTargetPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * A ROS template type:  `ALIYUN::NAS::ProtocolMountTarget`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::ProtocolMountTarget`, which is used to create an export directory for a protocol service.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ProtocolMountTarget` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-protocolmounttarget
  */
 export class RosProtocolMountTarget extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::NAS::ProtocolMountTarget";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ExportId: The protocol service exports directory ID.
@@ -1653,7 +1627,7 @@ export class RosProtocolMountTarget extends ros.RosResource {
      * @Property description: Description of the protocol service to export the directory.The console is displayed as the export directory name.
      * limit:
      * The length is 2 to 128 English or Chinese characters.
-     * Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //.
+     * Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/.
      * It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
      */
     public description: string | ros.IResolvable | undefined;
@@ -1676,13 +1650,11 @@ export class RosProtocolMountTarget extends ros.RosResource {
      * Format:
      * The length is 1 to 1024 characters.
      * Use UTF-8 encoding.
-     * It must start with the positive oblique line (/), and the root directory must be/.
+     * It must start with the positive oblique line (\/), and the root directory must be\/.
      */
     public path: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::NAS::ProtocolMountTarget`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1724,7 +1696,8 @@ export class RosProtocolMountTarget extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::NAS::ProtocolService`
+ * Properties for defining a `RosProtocolService`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-protocolservice
  */
 export interface RosProtocolServiceProps {
 
@@ -1760,14 +1733,14 @@ export interface RosProtocolServiceProps {
      * @Property description: Description of protocol service.The console shows the "protocol service name".
      * limit:
      * The length is 2 to 128 English or Chinese characters.
-     * Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //.
+     * Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/.
      * It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
      */
     readonly description?: string | ros.IResolvable;
 
     /**
      * @Property throughput: The bandwidth of the agreement service.
-     * Unit: MB/S.
+     * Unit: MB\/S.
      */
     readonly throughput?: number | ros.IResolvable;
 }
@@ -1834,18 +1807,15 @@ function rosProtocolServicePropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * A ROS template type:  `ALIYUN::NAS::ProtocolService`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::ProtocolService`, which is used to create a protocol service for a Cloud Paralleled File System (CPFS) file system.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ProtocolService` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-protocolservice
  */
 export class RosProtocolService extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::NAS::ProtocolService";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute FileSystemId: File system ID.
@@ -1892,20 +1862,18 @@ export class RosProtocolService extends ros.RosResource {
      * @Property description: Description of protocol service.The console shows the "protocol service name".
      * limit:
      * The length is 2 to 128 English or Chinese characters.
-     * Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //.
+     * Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/.
      * It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
      */
     public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property throughput: The bandwidth of the agreement service.
-     * Unit: MB/S.
+     * Unit: MB\/S.
      */
     public throughput: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::NAS::ProtocolService`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

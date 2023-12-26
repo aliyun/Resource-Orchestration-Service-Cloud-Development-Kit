@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Alb
 {
-    /// <summary>Properties for defining a `ALIYUN::ALB::Listener`.</summary>
+    /// <summary>Properties for defining a `Listener`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-listener
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IListenerProps), fullyQualifiedName: "@alicloud/ros-cdk-alb.ListenerProps")]
     public interface IListenerProps
     {
@@ -93,7 +96,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
         }
 
-        /// <summary>Property http2Enabled: Specifies whether to enable HTTP/2.</summary>
+        /// <summary>Property http2Enabled: Specifies whether to enable HTTP\/2.</summary>
         /// <remarks>
         /// Default value: on.
         /// Valid values: true and false.
@@ -208,7 +211,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ALB::Listener`.</summary>
+        /// <summary>Properties for defining a `Listener`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-listener
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IListenerProps), fullyQualifiedName: "@alicloud/ros-cdk-alb.ListenerProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Alb.IListenerProps
         {
@@ -289,7 +295,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property http2Enabled: Specifies whether to enable HTTP/2.</summary>
+            /// <summary>Property http2Enabled: Specifies whether to enable HTTP\/2.</summary>
             /// <remarks>
             /// Default value: on.
             /// Valid values: true and false.

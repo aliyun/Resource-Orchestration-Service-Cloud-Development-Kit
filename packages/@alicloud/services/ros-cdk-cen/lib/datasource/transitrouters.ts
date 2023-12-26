@@ -4,7 +4,8 @@ import { RosTransitRouters } from './cen.generated';
 export { RosTransitRouters as TransitRoutersProperty };
 
 /**
- * Properties for defining a `DATASOURCE::CEN::TransitRouters`
+ * Properties for defining a `TransitRouters`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-transitrouters
  */
 export interface TransitRoutersProps {
 
@@ -26,14 +27,11 @@ export interface TransitRoutersProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::CEN::TransitRouters`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::CEN::TransitRouters`, which is used to query the transit routers of a Cloud Enterprise Network (CEN) instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTransitRouters`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-transitrouters
  */
 export class TransitRouters extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute TransitRouterIds: The list of TransitRouter IDs.
@@ -46,8 +44,6 @@ export class TransitRouters extends ros.Resource {
     public readonly attrTransitRouters: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::CEN::TransitRouters`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

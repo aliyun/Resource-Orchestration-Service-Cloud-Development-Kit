@@ -4,7 +4,8 @@ import { RosAntiBruteForceRule } from './threatdetection.generated';
 export { RosAntiBruteForceRule as AntiBruteForceRuleProperty };
 
 /**
- * Properties for defining a `ALIYUN::ThreatDetection::AntiBruteForceRule`
+ * Properties for defining a `AntiBruteForceRule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-threatdetection-antibruteforcerule
  */
 export interface AntiBruteForceRuleProps {
 
@@ -61,14 +62,11 @@ export interface AntiBruteForceRuleProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ThreatDetection::AntiBruteForceRule`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ThreatDetection::AntiBruteForceRule`, which is used to create a defense rule against brute-force attacks.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAntiBruteForceRule`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-threatdetection-antibruteforcerule
  */
 export class AntiBruteForceRule extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AntiBruteForceRuleId: The ID of the defense rule.
@@ -109,8 +107,6 @@ Valid values:
     public readonly attrUuidList: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ThreatDetection::AntiBruteForceRule`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.sag;
 
 /**
- * A ROS resource type:  <code>ALIYUN::SAG::AppUser</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::SAG::AppUser</code>, which is used to create a client account for a Smart Access Gateway (SAG) app instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.126Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.967Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.AppUser")
 public class AppUser extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,11 +16,7 @@ public class AppUser extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::SAG::AppUser</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -33,11 +29,7 @@ public class AppUser extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::SAG::AppUser</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -56,7 +48,7 @@ public class AppUser extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Attribute UserName: &lt;heat.engine.properties.Schema object at 0x7f789e4ada90&gt;.
+     * Attribute UserName: &lt;heat.engine.properties.Schema object at 0x7fd9b9b6e1d0&gt;.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrUserName() {
         return software.amazon.jsii.Kernel.get(this, "attrUserName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));

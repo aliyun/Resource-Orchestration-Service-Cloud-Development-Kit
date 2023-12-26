@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * Properties for defining a <code>ALIYUN::ECS::CustomImage</code>.
+ * Properties for defining a <code>RosCustomImage</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-customimage
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.884Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.367Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosCustomImageProps")
 @software.amazon.jsii.Jsii.Proxy(RosCustomImageProps.Jsii$Proxy.class)
 public interface RosCustomImageProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,7 +18,19 @@ public interface RosCustomImageProps extends software.amazon.jsii.JsiiSerializab
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBootMode() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDetectionStrategy() {
         return null;
     }
 
@@ -35,6 +49,12 @@ public interface RosCustomImageProps extends software.amazon.jsii.JsiiSerializab
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getImageName() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getImageVersion() {
         return null;
     }
 
@@ -85,10 +105,13 @@ public interface RosCustomImageProps extends software.amazon.jsii.JsiiSerializab
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosCustomImageProps> {
         java.lang.Object architecture;
+        java.lang.Object bootMode;
         java.lang.Object description;
+        java.lang.Object detectionStrategy;
         java.lang.Object diskDeviceMapping;
         java.lang.Object imageFamily;
         java.lang.Object imageName;
+        java.lang.Object imageVersion;
         java.lang.Object instanceId;
         java.lang.Object platform;
         java.lang.Object resourceGroupId;
@@ -117,6 +140,26 @@ public interface RosCustomImageProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosCustomImageProps#getBootMode}
+         * @param bootMode the value to be set.
+         * @return {@code this}
+         */
+        public Builder bootMode(java.lang.String bootMode) {
+            this.bootMode = bootMode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCustomImageProps#getBootMode}
+         * @param bootMode the value to be set.
+         * @return {@code this}
+         */
+        public Builder bootMode(com.aliyun.ros.cdk.core.IResolvable bootMode) {
+            this.bootMode = bootMode;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosCustomImageProps#getDescription}
          * @param description the value to be set.
          * @return {@code this}
@@ -133,6 +176,26 @@ public interface RosCustomImageProps extends software.amazon.jsii.JsiiSerializab
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
             this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCustomImageProps#getDetectionStrategy}
+         * @param detectionStrategy the value to be set.
+         * @return {@code this}
+         */
+        public Builder detectionStrategy(java.lang.String detectionStrategy) {
+            this.detectionStrategy = detectionStrategy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCustomImageProps#getDetectionStrategy}
+         * @param detectionStrategy the value to be set.
+         * @return {@code this}
+         */
+        public Builder detectionStrategy(com.aliyun.ros.cdk.core.IResolvable detectionStrategy) {
+            this.detectionStrategy = detectionStrategy;
             return this;
         }
 
@@ -193,6 +256,26 @@ public interface RosCustomImageProps extends software.amazon.jsii.JsiiSerializab
          */
         public Builder imageName(com.aliyun.ros.cdk.core.IResolvable imageName) {
             this.imageName = imageName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCustomImageProps#getImageVersion}
+         * @param imageVersion the value to be set.
+         * @return {@code this}
+         */
+        public Builder imageVersion(java.lang.String imageVersion) {
+            this.imageVersion = imageVersion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCustomImageProps#getImageVersion}
+         * @param imageVersion the value to be set.
+         * @return {@code this}
+         */
+        public Builder imageVersion(com.aliyun.ros.cdk.core.IResolvable imageVersion) {
+            this.imageVersion = imageVersion;
             return this;
         }
 
@@ -333,10 +416,13 @@ public interface RosCustomImageProps extends software.amazon.jsii.JsiiSerializab
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosCustomImageProps {
         private final java.lang.Object architecture;
+        private final java.lang.Object bootMode;
         private final java.lang.Object description;
+        private final java.lang.Object detectionStrategy;
         private final java.lang.Object diskDeviceMapping;
         private final java.lang.Object imageFamily;
         private final java.lang.Object imageName;
+        private final java.lang.Object imageVersion;
         private final java.lang.Object instanceId;
         private final java.lang.Object platform;
         private final java.lang.Object resourceGroupId;
@@ -351,10 +437,13 @@ public interface RosCustomImageProps extends software.amazon.jsii.JsiiSerializab
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.architecture = software.amazon.jsii.Kernel.get(this, "architecture", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.bootMode = software.amazon.jsii.Kernel.get(this, "bootMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.detectionStrategy = software.amazon.jsii.Kernel.get(this, "detectionStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.diskDeviceMapping = software.amazon.jsii.Kernel.get(this, "diskDeviceMapping", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.imageFamily = software.amazon.jsii.Kernel.get(this, "imageFamily", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.imageName = software.amazon.jsii.Kernel.get(this, "imageName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.imageVersion = software.amazon.jsii.Kernel.get(this, "imageVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.platform = software.amazon.jsii.Kernel.get(this, "platform", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -369,10 +458,13 @@ public interface RosCustomImageProps extends software.amazon.jsii.JsiiSerializab
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.architecture = builder.architecture;
+            this.bootMode = builder.bootMode;
             this.description = builder.description;
+            this.detectionStrategy = builder.detectionStrategy;
             this.diskDeviceMapping = builder.diskDeviceMapping;
             this.imageFamily = builder.imageFamily;
             this.imageName = builder.imageName;
+            this.imageVersion = builder.imageVersion;
             this.instanceId = builder.instanceId;
             this.platform = builder.platform;
             this.resourceGroupId = builder.resourceGroupId;
@@ -387,8 +479,18 @@ public interface RosCustomImageProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
+        public final java.lang.Object getBootMode() {
+            return this.bootMode;
+        }
+
+        @Override
         public final java.lang.Object getDescription() {
             return this.description;
+        }
+
+        @Override
+        public final java.lang.Object getDetectionStrategy() {
+            return this.detectionStrategy;
         }
 
         @Override
@@ -404,6 +506,11 @@ public interface RosCustomImageProps extends software.amazon.jsii.JsiiSerializab
         @Override
         public final java.lang.Object getImageName() {
             return this.imageName;
+        }
+
+        @Override
+        public final java.lang.Object getImageVersion() {
+            return this.imageVersion;
         }
 
         @Override
@@ -445,8 +552,14 @@ public interface RosCustomImageProps extends software.amazon.jsii.JsiiSerializab
             if (this.getArchitecture() != null) {
                 data.set("architecture", om.valueToTree(this.getArchitecture()));
             }
+            if (this.getBootMode() != null) {
+                data.set("bootMode", om.valueToTree(this.getBootMode()));
+            }
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
+            }
+            if (this.getDetectionStrategy() != null) {
+                data.set("detectionStrategy", om.valueToTree(this.getDetectionStrategy()));
             }
             if (this.getDiskDeviceMapping() != null) {
                 data.set("diskDeviceMapping", om.valueToTree(this.getDiskDeviceMapping()));
@@ -456,6 +569,9 @@ public interface RosCustomImageProps extends software.amazon.jsii.JsiiSerializab
             }
             if (this.getImageName() != null) {
                 data.set("imageName", om.valueToTree(this.getImageName()));
+            }
+            if (this.getImageVersion() != null) {
+                data.set("imageVersion", om.valueToTree(this.getImageVersion()));
             }
             if (this.getInstanceId() != null) {
                 data.set("instanceId", om.valueToTree(this.getInstanceId()));
@@ -494,10 +610,13 @@ public interface RosCustomImageProps extends software.amazon.jsii.JsiiSerializab
             RosCustomImageProps.Jsii$Proxy that = (RosCustomImageProps.Jsii$Proxy) o;
 
             if (this.architecture != null ? !this.architecture.equals(that.architecture) : that.architecture != null) return false;
+            if (this.bootMode != null ? !this.bootMode.equals(that.bootMode) : that.bootMode != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
+            if (this.detectionStrategy != null ? !this.detectionStrategy.equals(that.detectionStrategy) : that.detectionStrategy != null) return false;
             if (this.diskDeviceMapping != null ? !this.diskDeviceMapping.equals(that.diskDeviceMapping) : that.diskDeviceMapping != null) return false;
             if (this.imageFamily != null ? !this.imageFamily.equals(that.imageFamily) : that.imageFamily != null) return false;
             if (this.imageName != null ? !this.imageName.equals(that.imageName) : that.imageName != null) return false;
+            if (this.imageVersion != null ? !this.imageVersion.equals(that.imageVersion) : that.imageVersion != null) return false;
             if (this.instanceId != null ? !this.instanceId.equals(that.instanceId) : that.instanceId != null) return false;
             if (this.platform != null ? !this.platform.equals(that.platform) : that.platform != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
@@ -509,10 +628,13 @@ public interface RosCustomImageProps extends software.amazon.jsii.JsiiSerializab
         @Override
         public final int hashCode() {
             int result = this.architecture != null ? this.architecture.hashCode() : 0;
+            result = 31 * result + (this.bootMode != null ? this.bootMode.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+            result = 31 * result + (this.detectionStrategy != null ? this.detectionStrategy.hashCode() : 0);
             result = 31 * result + (this.diskDeviceMapping != null ? this.diskDeviceMapping.hashCode() : 0);
             result = 31 * result + (this.imageFamily != null ? this.imageFamily.hashCode() : 0);
             result = 31 * result + (this.imageName != null ? this.imageName.hashCode() : 0);
+            result = 31 * result + (this.imageVersion != null ? this.imageVersion.hashCode() : 0);
             result = 31 * result + (this.instanceId != null ? this.instanceId.hashCode() : 0);
             result = 31 * result + (this.platform != null ? this.platform.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);

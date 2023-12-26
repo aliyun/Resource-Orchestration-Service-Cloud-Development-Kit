@@ -4,7 +4,8 @@ import { RosSslVpnClientCert } from './vpc.generated';
 export { RosSslVpnClientCert as SslVpnClientCertProperty };
 
 /**
- * Properties for defining a `ALIYUN::VPC::SslVpnClientCert`
+ * Properties for defining a `SslVpnClientCert`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-sslvpnclientcert
  */
 export interface SslVpnClientCertProps {
 
@@ -15,20 +16,17 @@ export interface SslVpnClientCertProps {
 
     /**
      * Property name: The name of the client certificate.
-     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
+     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:\/\/ or https:\/\/.
      */
     readonly name?: string | ros.IResolvable;
 }
 
 /**
- * A ROS resource type:  `ALIYUN::VPC::SslVpnClientCert`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::SslVpnClientCert`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSslVpnClientCert`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-sslvpnclientcert
  */
 export class SslVpnClientCert extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute SslVpnClientCertId: The ID of the client certificate.
@@ -36,8 +34,6 @@ export class SslVpnClientCert extends ros.Resource {
     public readonly attrSslVpnClientCertId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VPC::SslVpnClientCert`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

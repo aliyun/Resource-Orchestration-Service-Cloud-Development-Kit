@@ -4,7 +4,8 @@ import { RosDatabase } from './rds.generated';
 export { RosDatabase as DatabaseProperty };
 
 /**
- * Properties for defining a `ALIYUN::RDS::Database`
+ * Properties for defining a `Database`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-database
  */
 export interface DatabaseProps {
 
@@ -41,20 +42,17 @@ export interface DatabaseProps {
      * Property dbDescription: The description of the database. The description must be 2 to 256 characters in length.
      * The description must start with a letter and can contain letters, digits, underscores
      * (_), and hyphens (-).
-     * Note The description cannot start with http:// or https://.
+     * Note The description cannot start with http:\/\/ or https:\/\/.
      */
     readonly dbDescription?: string | ros.IResolvable;
 }
 
 /**
- * A ROS resource type:  `ALIYUN::RDS::Database`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::Database`, which is used to create a database in an ApsaraDB for RDS instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDatabase`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-database
  */
 export class Database extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DBInstanceId: The ID of the instance.
@@ -67,8 +65,6 @@ export class Database extends ros.Resource {
     public readonly attrDbName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::RDS::Database`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

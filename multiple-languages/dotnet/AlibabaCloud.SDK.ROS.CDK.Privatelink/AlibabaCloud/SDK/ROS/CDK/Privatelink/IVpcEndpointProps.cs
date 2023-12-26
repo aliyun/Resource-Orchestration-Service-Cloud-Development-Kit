@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
 {
-    /// <summary>Properties for defining a `ALIYUN::PrivateLink::VpcEndpoint`.</summary>
+    /// <summary>Properties for defining a `VpcEndpoint`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpoint
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IVpcEndpointProps), fullyQualifiedName: "@alicloud/ros-cdk-privatelink.VpcEndpointProps")]
     public interface IVpcEndpointProps
     {
@@ -148,7 +151,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::PrivateLink::VpcEndpoint`.</summary>
+        /// <summary>Properties for defining a `VpcEndpoint`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpoint
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IVpcEndpointProps), fullyQualifiedName: "@alicloud/ros-cdk-privatelink.VpcEndpointProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Privatelink.IVpcEndpointProps
         {

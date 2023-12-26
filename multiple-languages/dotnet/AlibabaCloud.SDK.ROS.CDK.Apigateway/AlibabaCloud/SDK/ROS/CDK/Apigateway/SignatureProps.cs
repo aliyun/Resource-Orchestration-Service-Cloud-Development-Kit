@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ApiGateway::Signature`.</summary>
+    /// <summary>Properties for defining a `Signature`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-signature
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-apigateway.SignatureProps")]
     public class SignatureProps : AlibabaCloud.SDK.ROS.CDK.Apigateway.ISignatureProps
     {
@@ -42,7 +45,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 
         private object _signatureName;
 
-        /// <summary>Property signatureName: The name of the Signature.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.</summary>
+        /// <summary>Property signatureName: The name of the Signature.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.</summary>
         [JsiiProperty(name: "signatureName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object SignatureName
         {

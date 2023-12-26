@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Edas.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::EDAS::Clusters`.</summary>
+    /// <summary>Properties for defining a `RosClusters`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-edas-clusters
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosClustersProps), fullyQualifiedName: "@alicloud/ros-cdk-edas.datasource.RosClustersProps")]
     public interface IRosClustersProps
     {
@@ -34,7 +37,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::EDAS::Clusters`.</summary>
+        /// <summary>Properties for defining a `RosClusters`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-edas-clusters
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosClustersProps), fullyQualifiedName: "@alicloud/ros-cdk-edas.datasource.RosClustersProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Edas.Datasource.IRosClustersProps
         {

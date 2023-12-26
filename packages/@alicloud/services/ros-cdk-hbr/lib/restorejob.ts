@@ -4,7 +4,8 @@ import { RosRestoreJob } from './hbr.generated';
 export { RosRestoreJob as RestoreJobProperty };
 
 /**
- * Properties for defining a `ALIYUN::HBR::RestoreJob`
+ * Properties for defining a `RestoreJob`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-restorejob
  */
 export interface RestoreJobProps {
 
@@ -44,7 +45,7 @@ export interface RestoreJobProps {
     readonly targetInstanceId: string | ros.IResolvable;
 
     /**
-     * Property targetPath: Target path. For instance, "/".
+     * Property targetPath: Target path. For instance, "\/".
      */
     readonly targetPath: string | ros.IResolvable;
 
@@ -55,14 +56,11 @@ export interface RestoreJobProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::HBR::RestoreJob`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::HBR::RestoreJob`, which is used to create a restore job.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRestoreJob`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-restorejob
  */
 export class RestoreJob extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ErrorMessage: Error message of restore job
@@ -90,8 +88,6 @@ export class RestoreJob extends ros.Resource {
     public readonly attrStatus: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::HBR::RestoreJob`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

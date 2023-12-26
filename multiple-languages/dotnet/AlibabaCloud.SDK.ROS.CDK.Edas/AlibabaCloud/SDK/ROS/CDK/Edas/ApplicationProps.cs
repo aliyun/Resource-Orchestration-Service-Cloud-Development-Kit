@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::EDAS::Application`.</summary>
+    /// <summary>Properties for defining a `Application`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-application
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-edas.ApplicationProps")]
     public class ApplicationProps : AlibabaCloud.SDK.ROS.CDK.Edas.IApplicationProps
     {
@@ -126,7 +129,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
 
         private object? _componentIds;
 
-        /// <summary>Property componentIds: Application component ID (available through the query interface to obtain a list of components to the interface ListComponents), when creating the application runtime environment using Apache Tomcat (war packet format Dubbo Application required) or standard Java application (jar package format Spring Boot / Spring Cloud applications require) you need to specify when the operating environment.</summary>
+        /// <summary>Property componentIds: Application component ID (available through the query interface to obtain a list of components to the interface ListComponents), when creating the application runtime environment using Apache Tomcat (war packet format Dubbo Application required) or standard Java application (jar package format Spring Boot \/ Spring Cloud applications require) you need to specify when the operating environment.</summary>
         /// <remarks>
         /// Commonly used application component ID and meaning:
         /// 4 represents Apache Tomcat 7.0.91,7 represented Apache Tomcat 8.5.42,5 represented OpenJDK 1.8.x, 6 represents OpenJDK

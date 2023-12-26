@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.ecd;
 
 /**
- * Properties for defining a <code>ALIYUN::ECD::Bundle</code>.
+ * Properties for defining a <code>Bundle</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-bundle
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.612Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.081Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecd.$Module.class, fqn = "@alicloud/ros-cdk-ecd.BundleProps")
 @software.amazon.jsii.Jsii.Proxy(BundleProps.Jsii$Proxy.class)
 public interface BundleProps extends software.amazon.jsii.JsiiSerializable {

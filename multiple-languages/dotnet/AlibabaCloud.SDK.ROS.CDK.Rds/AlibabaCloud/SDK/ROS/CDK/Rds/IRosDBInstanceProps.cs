@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Rds
 {
-    /// <summary>Properties for defining a `ALIYUN::RDS::DBInstance`.</summary>
+    /// <summary>Properties for defining a `RosDBInstance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstance
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosDBInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-rds.RosDBInstanceProps")]
     public interface IRosDBInstanceProps
     {
@@ -28,7 +31,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: engine: Database instance engine type. Support MySQL/SQLServer/PostgreSQL/PPAS/MariaDB now.
+        /// <strong>Property</strong>: engine: Database instance engine type. Support MySQL\/SQLServer\/PostgreSQL\/PPAS\/MariaDB now.
         /// </remarks>
         [JsiiProperty(name: "engine", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object Engine
@@ -50,7 +53,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0/0 means no limitation.
+        /// <strong>Property</strong>: securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0\/0 means no limitation.
         /// </remarks>
         [JsiiProperty(name: "securityIpList", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object SecurityIpList
@@ -787,18 +790,57 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: storageAutoScale: Storage space automatic expansion switch, only supported by MySQL and PostgreSQL
+        /// </remarks>
+        [JsiiProperty(name: "storageAutoScale", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? StorageAutoScale
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: storageThreshold: Storage space automatic expansion trigger threshold (percentage)
+        /// </remarks>
+        [JsiiProperty(name: "storageThreshold", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? StorageThreshold
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: storageUpperBound: The total storage space upper limit for automatic storage space expansion, that is, automatic expansion will not cause the total storage space of the instance to exceed this value.
+        /// </remarks>
+        [JsiiProperty(name: "storageUpperBound", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? StorageUpperBound
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: tags: The tags of an instance.
         /// You should input the information of the tag with the format of the Key-Value, such as {"key1":"value1","key2":"value2", ... "key5":"value5"}.
         /// At most 20 tags can be specified.
         /// Key
         /// It can be up to 64 characters in length.
         /// Cannot begin with aliyun.
-        /// Cannot begin with http:// or https://.
+        /// Cannot begin with http:\/\/ or https:\/\/.
         /// Cannot be a null string.
         /// Value
         /// It can be up to 128 characters in length.
         /// Cannot begin with aliyun.
-        /// Cannot begin with http:// or https://.
+        /// Cannot begin with http:\/\/ or https:\/\/.
         /// Can be a null string.
         /// </remarks>
         [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}", isOptional: true)]
@@ -889,7 +931,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::RDS::DBInstance`.</summary>
+        /// <summary>Properties for defining a `RosDBInstance`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstance
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosDBInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-rds.RosDBInstanceProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Rds.IRosDBInstanceProps
         {
@@ -917,7 +962,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: engine: Database instance engine type. Support MySQL/SQLServer/PostgreSQL/PPAS/MariaDB now.
+            /// <strong>Property</strong>: engine: Database instance engine type. Support MySQL\/SQLServer\/PostgreSQL\/PPAS\/MariaDB now.
             /// </remarks>
             [JsiiProperty(name: "engine", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Engine
@@ -939,7 +984,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0/0 means no limitation.
+            /// <strong>Property</strong>: securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0\/0 means no limitation.
             /// </remarks>
             [JsiiProperty(name: "securityIpList", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object SecurityIpList
@@ -1526,18 +1571,48 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: storageAutoScale: Storage space automatic expansion switch, only supported by MySQL and PostgreSQL
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "storageAutoScale", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? StorageAutoScale
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: storageThreshold: Storage space automatic expansion trigger threshold (percentage)
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "storageThreshold", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? StorageThreshold
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: storageUpperBound: The total storage space upper limit for automatic storage space expansion, that is, automatic expansion will not cause the total storage space of the instance to exceed this value.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "storageUpperBound", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? StorageUpperBound
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: tags: The tags of an instance.
             /// You should input the information of the tag with the format of the Key-Value, such as {"key1":"value1","key2":"value2", ... "key5":"value5"}.
             /// At most 20 tags can be specified.
             /// Key
             /// It can be up to 64 characters in length.
             /// Cannot begin with aliyun.
-            /// Cannot begin with http:// or https://.
+            /// Cannot begin with http:\/\/ or https:\/\/.
             /// Cannot be a null string.
             /// Value
             /// It can be up to 128 characters in length.
             /// Cannot begin with aliyun.
-            /// Cannot begin with http:// or https://.
+            /// Cannot begin with http:\/\/ or https:\/\/.
             /// Can be a null string.
             /// </remarks>
             [JsiiOptional]

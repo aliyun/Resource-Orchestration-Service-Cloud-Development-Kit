@@ -4,7 +4,8 @@ import { RosGlobalDatabaseNetwork } from './polardb.generated';
 export { RosGlobalDatabaseNetwork as GlobalDatabaseNetworkProperty };
 
 /**
- * Properties for defining a `ALIYUN::POLARDB::GlobalDatabaseNetwork`
+ * Properties for defining a `GlobalDatabaseNetwork`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-globaldatabasenetwork
  */
 export interface GlobalDatabaseNetworkProps {
 
@@ -25,14 +26,11 @@ export interface GlobalDatabaseNetworkProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::POLARDB::GlobalDatabaseNetwork`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::GlobalDatabaseNetwork`, which is used to create a global database network (GDN).
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGlobalDatabaseNetwork`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-globaldatabasenetwork
  */
 export class GlobalDatabaseNetwork extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Connections: The information about the connection to the cluster.
@@ -70,8 +68,6 @@ export class GlobalDatabaseNetwork extends ros.Resource {
     public readonly attrGdnId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::POLARDB::GlobalDatabaseNetwork`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

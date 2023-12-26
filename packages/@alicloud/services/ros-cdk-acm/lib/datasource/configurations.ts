@@ -4,7 +4,8 @@ import { RosConfigurations } from './acm.generated';
 export { RosConfigurations as ConfigurationsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::ACM::Configurations`
+ * Properties for defining a `Configurations`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-acm-configurations
  */
 export interface ConfigurationsProps {
 
@@ -30,14 +31,11 @@ export interface ConfigurationsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::ACM::Configurations`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ACM::Configurations`, which is used to query the details of configurations.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosConfigurations`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-acm-configurations
  */
 export class Configurations extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Configurations: The list of configurations.
@@ -50,8 +48,6 @@ export class Configurations extends ros.Resource {
     public readonly attrDataIds: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::ACM::Configurations`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

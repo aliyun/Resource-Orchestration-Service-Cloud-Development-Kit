@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ECI::ContainerGroup`.</summary>
+    /// <summary>Properties for defining a `ContainerGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eci-containergroup
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-eci.ContainerGroupProps")]
     public class ContainerGroupProps : AlibabaCloud.SDK.ROS.CDK.Eci.IContainerGroupProps
     {
@@ -956,7 +959,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
 
         private object? _tag;
 
-        /// <summary>Property tag: The list of container group tags in the form of key/value pairs.</summary>
+        /// <summary>Property tag: The list of container group tags in the form of key\/value pairs.</summary>
         /// <remarks>
         /// You can define a maximum of 20 tags for each container group.
         /// </remarks>

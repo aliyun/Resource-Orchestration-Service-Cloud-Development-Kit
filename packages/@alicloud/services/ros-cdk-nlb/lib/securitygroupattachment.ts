@@ -4,7 +4,8 @@ import { RosSecurityGroupAttachment } from './nlb.generated';
 export { RosSecurityGroupAttachment as SecurityGroupAttachmentProperty };
 
 /**
- * Properties for defining a `ALIYUN::NLB::SecurityGroupAttachment`
+ * Properties for defining a `SecurityGroupAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-securitygroupattachment
  */
 export interface SecurityGroupAttachmentProps {
 
@@ -20,18 +21,13 @@ export interface SecurityGroupAttachmentProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::NLB::SecurityGroupAttachment`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::NLB::SecurityGroupAttachment`DATASOURCE::NLB::LoadBalancers is used to query the basic information about created Network Load Balancer (NLB) instances.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecurityGroupAttachment`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-securitygroupattachment
  */
 export class SecurityGroupAttachment extends ros.Resource {
 
     /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
-
-    /**
-     * Create a new `ALIYUN::NLB::SecurityGroupAttachment`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

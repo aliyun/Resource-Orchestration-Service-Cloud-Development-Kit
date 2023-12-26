@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Swas
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::SWAS::Instance`.</summary>
+    /// <summary>Properties for defining a `RosInstance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-swas-instance
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-swas.RosInstanceProps")]
     public class RosInstanceProps : AlibabaCloud.SDK.ROS.CDK.Swas.IRosInstanceProps
     {

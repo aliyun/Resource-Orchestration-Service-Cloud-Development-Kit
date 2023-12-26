@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Fnf
 {
-    /// <summary>Properties for defining a `ALIYUN::FNF::Schedule`.</summary>
+    /// <summary>Properties for defining a `Schedule`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fnf-schedule
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IScheduleProps), fullyQualifiedName: "@alicloud/ros-cdk-fnf.ScheduleProps")]
     public interface IScheduleProps
     {
@@ -62,7 +65,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fnf
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::FNF::Schedule`.</summary>
+        /// <summary>Properties for defining a `Schedule`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fnf-schedule
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IScheduleProps), fullyQualifiedName: "@alicloud/ros-cdk-fnf.ScheduleProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Fnf.IScheduleProps
         {

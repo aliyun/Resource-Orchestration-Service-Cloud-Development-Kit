@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cloudphone.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::CloudPhone::Images`.</summary>
+    /// <summary>Properties for defining a `RosImages`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudphone-images
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cloudphone.datasource.RosImagesProps")]
     public class RosImagesProps : AlibabaCloud.SDK.ROS.CDK.Cloudphone.Datasource.IRosImagesProps
     {

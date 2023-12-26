@@ -4,7 +4,8 @@ import { RosSubscriptions } from './mns.generated';
 export { RosSubscriptions as SubscriptionsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::MNS::Subscriptions`
+ * Properties for defining a `Subscriptions`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-subscriptions
  */
 export interface SubscriptionsProps {
 
@@ -20,14 +21,11 @@ export interface SubscriptionsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::MNS::Subscriptions`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::MNS::Subscriptions`, which is used to query the information about subscriptions.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSubscriptions`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-subscriptions
  */
 export class Subscriptions extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute SubscriptionIds: The list of subscription names.
@@ -40,8 +38,6 @@ export class Subscriptions extends ros.Resource {
     public readonly attrSubscriptions: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::MNS::Subscriptions`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -1,0 +1,8 @@
+@alicloud/ros-cdk-hbase.Cluster=com.aliyun.ros.cdk.hbase.Cluster
+@alicloud/ros-cdk-hbase.ClusterProps=com.aliyun.ros.cdk.hbase.ClusterProps
+@alicloud/ros-cdk-hbase.MultiZoneCluster=com.aliyun.ros.cdk.hbase.MultiZoneCluster
+@alicloud/ros-cdk-hbase.MultiZoneClusterProps=com.aliyun.ros.cdk.hbase.MultiZoneClusterProps
+@alicloud/ros-cdk-hbase.RosCluster=com.aliyun.ros.cdk.hbase.RosCluster
+@alicloud/ros-cdk-hbase.RosClusterProps=com.aliyun.ros.cdk.hbase.RosClusterProps
+@alicloud/ros-cdk-hbase.RosMultiZoneCluster=com.aliyun.ros.cdk.hbase.RosMultiZoneCluster
+@alicloud/ros-cdk-hbase.RosMultiZoneClusterProps=com.aliyun.ros.cdk.hbase.RosMultiZoneClusterProps

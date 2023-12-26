@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::VPC::RouteTableAssociation`.</summary>
+    /// <summary>Properties for defining a `RouteTableAssociation`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-routetableassociation
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.RouteTableAssociationProps")]
     public class RouteTableAssociationProps : AlibabaCloud.SDK.ROS.CDK.Vpc.IRouteTableAssociationProps
     {

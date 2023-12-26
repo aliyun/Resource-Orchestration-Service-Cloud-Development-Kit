@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::VPC::NatGateways`.</summary>
+    /// <summary>Properties for defining a `RosNatGateways`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-natgateways
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosNatGatewaysProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.datasource.RosNatGatewaysProps")]
     public interface IRosNatGatewaysProps
     {
@@ -132,7 +135,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::VPC::NatGateways`.</summary>
+        /// <summary>Properties for defining a `RosNatGateways`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-natgateways
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosNatGatewaysProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.datasource.RosNatGatewaysProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource.IRosNatGatewaysProps
         {

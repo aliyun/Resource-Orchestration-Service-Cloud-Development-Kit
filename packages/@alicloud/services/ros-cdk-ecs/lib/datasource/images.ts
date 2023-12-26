@@ -4,7 +4,8 @@ import { RosImages } from './ecs.generated';
 export { RosImages as ImagesProperty };
 
 /**
- * Properties for defining a `DATASOURCE::ECS::Images`
+ * Properties for defining a `Images`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-images
  */
 export interface ImagesProps {
 
@@ -70,7 +71,7 @@ export interface ImagesProps {
     readonly isSupportCloudinit?: boolean | ros.IResolvable;
 
     /**
-     * Property isSupportIoOptimized: Specifies whether the image can be used on I/O optimized instances.
+     * Property isSupportIoOptimized: Specifies whether the image can be used on I\/O optimized instances.
      */
     readonly isSupportIoOptimized?: boolean | ros.IResolvable;
 
@@ -117,14 +118,11 @@ export interface ImagesProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::ECS::Images`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Images`, which is used to query available images.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosImages`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-images
  */
 export class Images extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ImageIds: The list of image IDs.
@@ -137,8 +135,6 @@ export class Images extends ros.Resource {
     public readonly attrImages: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::ECS::Images`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

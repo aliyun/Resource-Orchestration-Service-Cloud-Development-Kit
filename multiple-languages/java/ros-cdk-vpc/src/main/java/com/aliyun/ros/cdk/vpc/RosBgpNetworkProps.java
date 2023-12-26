@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * Properties for defining a <code>ALIYUN::VPC::BgpNetwork</code>.
+ * Properties for defining a <code>RosBgpNetwork</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-bgpnetwork
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.582Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:18.420Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosBgpNetworkProps")
 @software.amazon.jsii.Jsii.Proxy(RosBgpNetworkProps.Jsii$Proxy.class)
 public interface RosBgpNetworkProps extends software.amazon.jsii.JsiiSerializable {

@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sag
 {
-    /// <summary>A ROS template type:  `ALIYUN::SAG::SmartAccessGateway`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::SmartAccessGateway`, which is used to create a Smart Access Gateway (SAG) instance.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `SmartAccessGateway` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-smartaccessgateway
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Sag.RosSmartAccessGateway), fullyQualifiedName: "@alicloud/ros-cdk-sag.RosSmartAccessGateway", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-sag.RosSmartAccessGatewayProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosSmartAccessGateway : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::SAG::SmartAccessGateway`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -216,9 +219,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
 
         /// <remarks>
         /// <strong>Property</strong>: maxBandWidth: The bandwidth of the SAG instance.
-        /// If you want to create an SAG CPE instance and the model is sag-100wm, valid values of this parameter are 2 to 50. Unit: Mbit/s.
-        /// If you want to create an SAG CPE instance and the model is sag-1000, valid values of this parameter are 10 to 500. Unit: Mbit/s.
-        /// If you want to create an SAG vCPE instance, valid values of this parameter are 10 to 1000. Unit: Mbit/s.
+        /// If you want to create an SAG CPE instance and the model is sag-100wm, valid values of this parameter are 2 to 50. Unit: Mbit\/s.
+        /// If you want to create an SAG CPE instance and the model is sag-1000, valid values of this parameter are 10 to 500. Unit: Mbit\/s.
+        /// If you want to create an SAG vCPE instance, valid values of this parameter are 10 to 1000. Unit: Mbit\/s.
         /// </remarks>
         [JsiiProperty(name: "maxBandWidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object MaxBandWidth

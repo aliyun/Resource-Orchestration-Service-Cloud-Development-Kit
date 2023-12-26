@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cen
 {
-    /// <summary>A ROS template type:  `ALIYUN::CEN::CenRouteMap`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenRouteMap`, which is used to create a routing policy.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `CenRouteMap` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenroutemap
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Cen.RosCenRouteMap), fullyQualifiedName: "@alicloud/ros-cdk-cen.RosCenRouteMap", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-cen.RosCenRouteMapProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosCenRouteMap : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::CEN::CenRouteMap`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -285,9 +288,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <remarks>
         /// <strong>Property</strong>: cidrMatchMode: Match statements are used to match the prefixes. Valid values:
         /// Include: uses fuzzy match. If the routing prefix in the condition contains the routing prefix of the route, the match is successful.
-        /// For example, the 1.1.0.0/16 policy can match the 1.1.1.0/24 route.
+        /// For example, the 1.1.0.0\/16 policy can match the 1.1.1.0\/24 route.
         /// Complete: uses exact match. Only when the routing prefix in the condition is the same as the routing prefix of the route, the match is successful.
-        /// For example, the 1.1.0.0/16 policy can match the 1.1.0.0/16 route.
+        /// For example, the 1.1.0.0\/16 policy can match the 1.1.0.0\/16 route.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "cidrMatchMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

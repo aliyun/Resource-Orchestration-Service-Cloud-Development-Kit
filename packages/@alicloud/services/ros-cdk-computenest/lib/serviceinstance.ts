@@ -4,7 +4,8 @@ import { RosServiceInstance } from './computenest.generated';
 export { RosServiceInstance as ServiceInstanceProperty };
 
 /**
- * Properties for defining a `ALIYUN::ComputeNest::ServiceInstance`
+ * Properties for defining a `ServiceInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-computenest-serviceinstance
  */
 export interface ServiceInstanceProps {
 
@@ -84,14 +85,11 @@ export interface ServiceInstanceProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ComputeNest::ServiceInstance`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ComputeNest::ServiceInstance`, which is used to create and deploy a service instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosServiceInstance`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-computenest-serviceinstance
  */
 export class ServiceInstance extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Components: Additional billing items.
@@ -209,8 +207,6 @@ export class ServiceInstance extends ros.Resource {
     public readonly attrUserId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ComputeNest::ServiceInstance`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

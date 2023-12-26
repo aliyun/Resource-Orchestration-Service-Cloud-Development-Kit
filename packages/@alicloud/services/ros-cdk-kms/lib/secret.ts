@@ -4,7 +4,8 @@ import { RosSecret } from './kms.generated';
 export { RosSecret as SecretProperty };
 
 /**
- * Properties for defining a `ALIYUN::KMS::Secret`
+ * Properties for defining a `Secret`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-secret
  */
 export interface SecretProps {
 
@@ -97,14 +98,11 @@ export interface SecretProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::KMS::Secret`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::KMS::Secret`, which is used to create a secret and store the initial version of the secret.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecret`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-secret
  */
 export class Secret extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
@@ -117,8 +115,6 @@ export class Secret extends ros.Resource {
     public readonly attrSecretName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::KMS::Secret`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

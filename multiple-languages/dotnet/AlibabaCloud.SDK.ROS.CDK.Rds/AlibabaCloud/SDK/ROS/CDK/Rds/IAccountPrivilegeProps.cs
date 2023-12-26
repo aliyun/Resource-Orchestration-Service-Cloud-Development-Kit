@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Rds
 {
-    /// <summary>Properties for defining a `ALIYUN::RDS::AccountPrivilege`.</summary>
+    /// <summary>Properties for defining a `AccountPrivilege`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-accountprivilege
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IAccountPrivilegeProps), fullyQualifiedName: "@alicloud/ros-cdk-rds.AccountPrivilegeProps")]
     public interface IAccountPrivilegeProps
     {
@@ -36,7 +39,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::RDS::AccountPrivilege`.</summary>
+        /// <summary>Properties for defining a `AccountPrivilege`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-accountprivilege
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IAccountPrivilegeProps), fullyQualifiedName: "@alicloud/ros-cdk-rds.AccountPrivilegeProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Rds.IAccountPrivilegeProps
         {

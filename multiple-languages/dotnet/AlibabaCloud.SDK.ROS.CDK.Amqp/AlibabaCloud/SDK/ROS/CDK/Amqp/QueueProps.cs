@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::AMQP::Queue`.</summary>
+    /// <summary>Properties for defining a `Queue`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-queue
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-amqp.QueueProps")]
     public class QueueProps : AlibabaCloud.SDK.ROS.CDK.Amqp.IQueueProps
     {

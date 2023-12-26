@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sag
 {
-    /// <summary>Properties for defining a `ALIYUN::SAG::CloudConnectNetwork`.</summary>
+    /// <summary>Properties for defining a `CloudConnectNetwork`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-cloudconnectnetwork
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-sag.CloudConnectNetworkProps")]
     public class CloudConnectNetworkProps : AlibabaCloud.SDK.ROS.CDK.Sag.ICloudConnectNetworkProps
     {

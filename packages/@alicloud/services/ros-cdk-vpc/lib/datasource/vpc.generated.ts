@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::EIP::Addresses`
+ * Properties for defining a `RosAddresses`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eip-addresses
  */
 export interface RosAddressesProps {
 
@@ -127,18 +128,15 @@ function rosAddressesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `DATASOURCE::EIP::Addresses`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::EIP::Addresses`, which is used to query the information about elastic IP addresses (EIPs).
+ * @Note This class does not contain additional functions, so it is recommended to use the `Addresses` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eip-addresses
  */
 export class RosAddresses extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::EIP::Addresses";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Addresses: The details about the EIP
@@ -218,8 +216,6 @@ export class RosAddresses extends ros.RosResource {
     public segmentInstanceId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::EIP::Addresses`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -261,7 +257,8 @@ export class RosAddresses extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::VPC::CommonBandwidthPackages`
+ * Properties for defining a `RosCommonBandwidthPackages`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-commonbandwidthpackages
  */
 export interface RosCommonBandwidthPackagesProps {
 
@@ -318,18 +315,15 @@ function rosCommonBandwidthPackagesPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * A ROS template type:  `DATASOURCE::VPC::CommonBandwidthPackages`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::CommonBandwidthPackages`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `CommonBandwidthPackages` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-commonbandwidthpackages
  */
 export class RosCommonBandwidthPackages extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::VPC::CommonBandwidthPackages";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CommonBandwidthPackageIds: The list of common bandwidth package IDs.
@@ -360,8 +354,6 @@ export class RosCommonBandwidthPackages extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::VPC::CommonBandwidthPackages`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -391,7 +383,8 @@ export class RosCommonBandwidthPackages extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::VPC::CustomerGateways`
+ * Properties for defining a `RosCustomerGateways`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-customergateways
  */
 export interface RosCustomerGatewaysProps {
 
@@ -434,18 +427,15 @@ function rosCustomerGatewaysPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * A ROS template type:  `DATASOURCE::VPC::CustomerGateways`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::CustomerGateways`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `CustomerGateways` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-customergateways
  */
 export class RosCustomerGateways extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::VPC::CustomerGateways";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CustomerGatewayIds: The list of customer gateway IDs.
@@ -466,8 +456,6 @@ export class RosCustomerGateways extends ros.RosResource {
     public customerGatewayId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::VPC::CustomerGateways`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -493,7 +481,8 @@ export class RosCustomerGateways extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::VPC::FlowLogs`
+ * Properties for defining a `RosFlowLogs`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-flowlogs
  */
 export interface RosFlowLogsProps {
 
@@ -603,18 +592,15 @@ function rosFlowLogsPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `DATASOURCE::VPC::FlowLogs`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::FlowLogs`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `FlowLogs` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-flowlogs
  */
 export class RosFlowLogs extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::VPC::FlowLogs";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute FlowLogIds: The list of flow log IDs.
@@ -676,8 +662,6 @@ export class RosFlowLogs extends ros.RosResource {
     public trafficType: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::VPC::FlowLogs`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -717,7 +701,8 @@ export class RosFlowLogs extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::VPC::HaVips`
+ * Properties for defining a `RosHaVips`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-havips
  */
 export interface RosHaVipsProps {
 
@@ -760,18 +745,15 @@ function rosHaVipsPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * A ROS template type:  `DATASOURCE::VPC::HaVips`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::HaVips`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `HaVips` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-havips
  */
 export class RosHaVips extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::VPC::HaVips";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute HaVipIds: The list of ha vip IDs.
@@ -792,8 +774,6 @@ export class RosHaVips extends ros.RosResource {
     public haVipId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::VPC::HaVips`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -819,7 +799,8 @@ export class RosHaVips extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::VPC::Ipv4Gateways`
+ * Properties for defining a `RosIpv4Gateways`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-ipv4gateways
  */
 export interface RosIpv4GatewaysProps {
 
@@ -876,18 +857,15 @@ function rosIpv4GatewaysPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * A ROS template type:  `DATASOURCE::VPC::Ipv4Gateways`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::Ipv4Gateways`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Ipv4Gateways` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-ipv4gateways
  */
 export class RosIpv4Gateways extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::VPC::Ipv4Gateways";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Ipv4GatewayIds: The list of ipv4 gateway IDs.
@@ -918,8 +896,6 @@ export class RosIpv4Gateways extends ros.RosResource {
     public vpcId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::VPC::Ipv4Gateways`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -949,7 +925,8 @@ export class RosIpv4Gateways extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::VPC::NatGatewayZones`
+ * Properties for defining a `RosNatGatewayZones`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-natgatewayzones
  */
 export interface RosNatGatewayZonesProps {
 }
@@ -985,18 +962,15 @@ function rosNatGatewayZonesPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * A ROS template type:  `DATASOURCE::VPC::NatGatewayZones`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::NatGatewayZones`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `NatGatewayZones` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-natgatewayzones
  */
 export class RosNatGatewayZones extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::VPC::NatGatewayZones";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ZoneIds: The list of The Zone Ids.
@@ -1007,8 +981,6 @@ export class RosNatGatewayZones extends ros.RosResource {
 
 
     /**
-     * Create a new `DATASOURCE::VPC::NatGatewayZones`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1031,7 +1003,8 @@ export class RosNatGatewayZones extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::VPC::NatGateways`
+ * Properties for defining a `RosNatGateways`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-natgateways
  */
 export interface RosNatGatewaysProps {
 
@@ -1137,18 +1110,15 @@ function rosNatGatewaysPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `DATASOURCE::VPC::NatGateways`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::NatGateways`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `NatGateways` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-natgateways
  */
 export class RosNatGateways extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::VPC::NatGateways";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute NatGatewayIds: The list of The nat gateway ids.
@@ -1216,8 +1186,6 @@ export class RosNatGateways extends ros.RosResource {
     public zoneId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::VPC::NatGateways`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1259,7 +1227,8 @@ export class RosNatGateways extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::VPC::NatIpCidrs`
+ * Properties for defining a `RosNatIpCidrs`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-natipcidrs
  */
 export interface RosNatIpCidrsProps {
 
@@ -1269,7 +1238,7 @@ export interface RosNatIpCidrsProps {
     readonly natGatewayId: string | ros.IResolvable;
 
     /**
-     * @Property natIpCidr: Create a NAT IP ADDRESS. The new address segment must meet the following conditions: belong to 10.0.0.0/8, 172.16.0.0/12 or 192.168.0.0/16 network segment and its subnet. Support the subnet mask of the number of bits in the range of 16 to 32-bit. If you want to use the IP address of a public network segment as the NAT IP ADDRESS, the Virtual Private Cloud (VPC NAT is already using the IP address of a public network of permissions. For more information, see create a virtual private cloud (VPC NAT gateway instance.
+     * @Property natIpCidr: Create a NAT IP ADDRESS. The new address segment must meet the following conditions: belong to 10.0.0.0\/8, 172.16.0.0\/12 or 192.168.0.0\/16 network segment and its subnet. Support the subnet mask of the number of bits in the range of 16 to 32-bit. If you want to use the IP address of a public network segment as the NAT IP ADDRESS, the Virtual Private Cloud (VPC NAT is already using the IP address of a public network of permissions. For more information, see create a virtual private cloud (VPC NAT gateway instance.
      */
     readonly natIpCidr?: string | ros.IResolvable;
 }
@@ -1310,18 +1279,15 @@ function rosNatIpCidrsPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `DATASOURCE::VPC::NatIpCidrs`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::NatIpCidrs`, which is used to query the CIDR blocks of a NAT gateway.
+ * @Note This class does not contain additional functions, so it is recommended to use the `NatIpCidrs` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-natipcidrs
  */
 export class RosNatIpCidrs extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::VPC::NatIpCidrs";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute NatIpCidrIds: The list of nat ip cidr IDs.
@@ -1342,13 +1308,11 @@ export class RosNatIpCidrs extends ros.RosResource {
     public natGatewayId: string | ros.IResolvable;
 
     /**
-     * @Property natIpCidr: Create a NAT IP ADDRESS. The new address segment must meet the following conditions: belong to 10.0.0.0/8, 172.16.0.0/12 or 192.168.0.0/16 network segment and its subnet. Support the subnet mask of the number of bits in the range of 16 to 32-bit. If you want to use the IP address of a public network segment as the NAT IP ADDRESS, the Virtual Private Cloud (VPC NAT is already using the IP address of a public network of permissions. For more information, see create a virtual private cloud (VPC NAT gateway instance.
+     * @Property natIpCidr: Create a NAT IP ADDRESS. The new address segment must meet the following conditions: belong to 10.0.0.0\/8, 172.16.0.0\/12 or 192.168.0.0\/16 network segment and its subnet. Support the subnet mask of the number of bits in the range of 16 to 32-bit. If you want to use the IP address of a public network segment as the NAT IP ADDRESS, the Virtual Private Cloud (VPC NAT is already using the IP address of a public network of permissions. For more information, see create a virtual private cloud (VPC NAT gateway instance.
      */
     public natIpCidr: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::VPC::NatIpCidrs`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1376,7 +1340,8 @@ export class RosNatIpCidrs extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::VPC::NetworkAcls`
+ * Properties for defining a `RosNetworkAcls`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-networkacls
  */
 export interface RosNetworkAclsProps {
 
@@ -1387,7 +1352,7 @@ export interface RosNetworkAclsProps {
 
     /**
      * @Property networkAclName: The name of the network ACL.
-     * The name must be 2 to 128 characters in length, and can contain letters, digits, underscores (_), and hyphens (-). The name must start with a letter but cannot start with http:// or https://.
+     * The name must be 2 to 128 characters in length, and can contain letters, digits, underscores (_), and hyphens (-). The name must start with a letter but cannot start with http:\/\/ or https:\/\/.
      */
     readonly networkAclName?: string | ros.IResolvable;
 
@@ -1449,18 +1414,15 @@ function rosNetworkAclsPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `DATASOURCE::VPC::NetworkAcls`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::NetworkAcls`, which is used to query created network access control lists (ACLs).
+ * @Note This class does not contain additional functions, so it is recommended to use the `NetworkAcls` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-networkacls
  */
 export class RosNetworkAcls extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::VPC::NetworkAcls";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute NetworkAclIds: The list of The network acl ids.
@@ -1482,7 +1444,7 @@ export class RosNetworkAcls extends ros.RosResource {
 
     /**
      * @Property networkAclName: The name of the network ACL.
-     * The name must be 2 to 128 characters in length, and can contain letters, digits, underscores (_), and hyphens (-). The name must start with a letter but cannot start with http:// or https://.
+     * The name must be 2 to 128 characters in length, and can contain letters, digits, underscores (_), and hyphens (-). The name must start with a letter but cannot start with http:\/\/ or https:\/\/.
      */
     public networkAclName: string | ros.IResolvable | undefined;
 
@@ -1503,8 +1465,6 @@ export class RosNetworkAcls extends ros.RosResource {
     public vpcId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::VPC::NetworkAcls`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1538,7 +1498,8 @@ export class RosNetworkAcls extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::VPC::PrefixLists`
+ * Properties for defining a `RosPrefixLists`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-prefixlists
  */
 export interface RosPrefixListsProps {
 
@@ -1588,18 +1549,15 @@ function rosPrefixListsPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `DATASOURCE::VPC::PrefixLists`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::PrefixLists`, which is used to query the details of prefix lists.
+ * @Note This class does not contain additional functions, so it is recommended to use the `PrefixLists` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-prefixlists
  */
 export class RosPrefixLists extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::VPC::PrefixLists";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute PrefixListIds: The list of prefix list IDs.
@@ -1625,8 +1583,6 @@ export class RosPrefixLists extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::VPC::PrefixLists`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1654,7 +1610,8 @@ export class RosPrefixLists extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::VPC::PublicIpAddressPools`
+ * Properties for defining a `RosPublicIpAddressPools`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-publicipaddresspools
  */
 export interface RosPublicIpAddressPoolsProps {
 
@@ -1679,7 +1636,7 @@ export interface RosPublicIpAddressPoolsProps {
      * @Property publicIpAddressPoolName: The name of the IP address pool.
      * This parameter is optional. The name must be 1 to 128 characters in length, 
      * and can contain digits, periods (.), underscores (_), and hyphens (-). 
-     * The name must start with a letter but cannot start with http:// or https://.
+     * The name must start with a letter but cannot start with http:\/\/ or https:\/\/.
      */
     readonly publicIpAddressPoolName?: string | ros.IResolvable;
 
@@ -1732,18 +1689,15 @@ function rosPublicIpAddressPoolsPropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * A ROS template type:  `DATASOURCE::VPC::PublicIpAddressPools`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::PublicIpAddressPools`, which is used to query available IP address pools.
+ * @Note This class does not contain additional functions, so it is recommended to use the `PublicIpAddressPools` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-publicipaddresspools
  */
 export class RosPublicIpAddressPools extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::VPC::PublicIpAddressPools";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute PublicIpAddressPoolIds: The list of public ip address pool IDs.
@@ -1779,7 +1733,7 @@ export class RosPublicIpAddressPools extends ros.RosResource {
      * @Property publicIpAddressPoolName: The name of the IP address pool.
      * This parameter is optional. The name must be 1 to 128 characters in length, 
      * and can contain digits, periods (.), underscores (_), and hyphens (-). 
-     * The name must start with a letter but cannot start with http:// or https://.
+     * The name must start with a letter but cannot start with http:\/\/ or https:\/\/.
      */
     public publicIpAddressPoolName: string | ros.IResolvable | undefined;
 
@@ -1789,8 +1743,6 @@ export class RosPublicIpAddressPools extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::VPC::PublicIpAddressPools`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1820,7 +1772,8 @@ export class RosPublicIpAddressPools extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::VPC::RouteEntries`
+ * Properties for defining a `RosRouteEntries`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-routeentries
  */
 export interface RosRouteEntriesProps {
 
@@ -1927,18 +1880,15 @@ function rosRouteEntriesPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * A ROS template type:  `DATASOURCE::VPC::RouteEntries`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::RouteEntries`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `RouteEntries` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-routeentries
  */
 export class RosRouteEntries extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::VPC::RouteEntries";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute RouteEntries: The list of The route entries.
@@ -2008,8 +1958,6 @@ export class RosRouteEntries extends ros.RosResource {
     public routeEntryType: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::VPC::RouteEntries`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2049,7 +1997,8 @@ export class RosRouteEntries extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::VPC::RouteTables`
+ * Properties for defining a `RosRouteTables`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-routetables
  */
 export interface RosRouteTablesProps {
 
@@ -2130,18 +2079,15 @@ function rosRouteTablesPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `DATASOURCE::VPC::RouteTables`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::RouteTables`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `RouteTables` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-routetables
  */
 export class RosRouteTables extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::VPC::RouteTables";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute RouteTableIds: the list of the route table ids.
@@ -2190,8 +2136,6 @@ export class RosRouteTables extends ros.RosResource {
     public vpcId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::VPC::RouteTables`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2227,7 +2171,8 @@ export class RosRouteTables extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::VPC::TrafficMirrorFilters`
+ * Properties for defining a `RosTrafficMirrorFilters`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-trafficmirrorfilters
  */
 export interface RosTrafficMirrorFiltersProps {
 
@@ -2270,18 +2215,15 @@ function rosTrafficMirrorFiltersPropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * A ROS template type:  `DATASOURCE::VPC::TrafficMirrorFilters`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::TrafficMirrorFilters`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `TrafficMirrorFilters` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-trafficmirrorfilters
  */
 export class RosTrafficMirrorFilters extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::VPC::TrafficMirrorFilters";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute TrafficMirrorFilterIds: The list of traffic mirror filter IDs.
@@ -2302,8 +2244,6 @@ export class RosTrafficMirrorFilters extends ros.RosResource {
     public trafficMirrorFilterName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::VPC::TrafficMirrorFilters`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2329,7 +2269,8 @@ export class RosTrafficMirrorFilters extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::VPC::VSwitches`
+ * Properties for defining a `RosVSwitches`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-vswitches
  */
 export interface RosVSwitchesProps {
 
@@ -2431,18 +2372,15 @@ function rosVSwitchesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `DATASOURCE::VPC::VSwitches`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::VSwitches`, which is used to query created vSwitches.
+ * @Note This class does not contain additional functions, so it is recommended to use the `VSwitches` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-vswitches
  */
 export class RosVSwitches extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::VPC::VSwitches";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute VSwitchIds: The list of The vSwitch Ids.
@@ -2501,8 +2439,6 @@ export class RosVSwitches extends ros.RosResource {
     public vSwitchOwnerId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::VPC::VSwitches`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2542,7 +2478,8 @@ export class RosVSwitches extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::VPC::Vpcs`
+ * Properties for defining a `RosVpcs`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-vpcs
  */
 export interface RosVpcsProps {
 
@@ -2630,18 +2567,15 @@ function rosVpcsPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * A ROS template type:  `DATASOURCE::VPC::Vpcs`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::Vpcs`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Vpcs` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-vpcs
  */
 export class RosVpcs extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::VPC::Vpcs";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute VpcIds: The list of The VPC IDs.
@@ -2690,8 +2624,6 @@ export class RosVpcs extends ros.RosResource {
     public vpcOwnerId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::VPC::Vpcs`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

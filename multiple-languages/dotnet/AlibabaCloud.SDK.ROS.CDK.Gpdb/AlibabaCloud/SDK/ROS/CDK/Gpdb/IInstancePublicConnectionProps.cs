@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
 {
-    /// <summary>Properties for defining a `ALIYUN::GPDB::InstancePublicConnection`.</summary>
+    /// <summary>Properties for defining a `InstancePublicConnection`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-instancepublicconnection
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IInstancePublicConnectionProps), fullyQualifiedName: "@alicloud/ros-cdk-gpdb.InstancePublicConnectionProps")]
     public interface IInstancePublicConnectionProps
     {
@@ -29,7 +32,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::GPDB::InstancePublicConnection`.</summary>
+        /// <summary>Properties for defining a `InstancePublicConnection`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-instancepublicconnection
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IInstancePublicConnectionProps), fullyQualifiedName: "@alicloud/ros-cdk-gpdb.InstancePublicConnectionProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Gpdb.IInstancePublicConnectionProps
         {

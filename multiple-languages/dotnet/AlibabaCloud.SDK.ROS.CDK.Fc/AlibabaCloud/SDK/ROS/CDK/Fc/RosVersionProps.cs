@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::FC::Version`.</summary>
+    /// <summary>Properties for defining a `RosVersion`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-version
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-fc.RosVersionProps")]
     public class RosVersionProps : AlibabaCloud.SDK.ROS.CDK.Fc.IRosVersionProps
     {

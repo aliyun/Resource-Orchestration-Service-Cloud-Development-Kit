@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::SAG::Qos`.</summary>
+    /// <summary>Properties for defining a `Qos`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-qos
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-sag.QosProps")]
     public class QosProps : AlibabaCloud.SDK.ROS.CDK.Sag.IQosProps
     {

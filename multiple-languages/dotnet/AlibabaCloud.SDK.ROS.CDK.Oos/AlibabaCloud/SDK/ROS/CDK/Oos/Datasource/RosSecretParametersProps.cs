@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Oos.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::OOS::SecretParameters`.</summary>
+    /// <summary>Properties for defining a `RosSecretParameters`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-secretparameters
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-oos.datasource.RosSecretParametersProps")]
     public class RosSecretParametersProps : AlibabaCloud.SDK.ROS.CDK.Oos.Datasource.IRosSecretParametersProps
     {

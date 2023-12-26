@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cen.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::CEN::CenInstances`.</summary>
+    /// <summary>Properties for defining a `CenInstances`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-ceninstances
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ICenInstancesProps), fullyQualifiedName: "@alicloud/ros-cdk-cen.datasource.CenInstancesProps")]
     public interface ICenInstancesProps
     {
@@ -19,7 +22,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::CEN::CenInstances`.</summary>
+        /// <summary>Properties for defining a `CenInstances`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-ceninstances
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ICenInstancesProps), fullyQualifiedName: "@alicloud/ros-cdk-cen.datasource.CenInstancesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cen.Datasource.ICenInstancesProps
         {

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Polardb.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::POLARDB::ParameterGroups`.</summary>
+    /// <summary>Properties for defining a `ParameterGroups`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-parametergroups
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IParameterGroupsProps), fullyQualifiedName: "@alicloud/ros-cdk-polardb.datasource.ParameterGroupsProps")]
     public interface IParameterGroupsProps
     {
@@ -30,7 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::POLARDB::ParameterGroups`.</summary>
+        /// <summary>Properties for defining a `ParameterGroups`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-parametergroups
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IParameterGroupsProps), fullyQualifiedName: "@alicloud/ros-cdk-polardb.datasource.ParameterGroupsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Polardb.Datasource.IParameterGroupsProps
         {

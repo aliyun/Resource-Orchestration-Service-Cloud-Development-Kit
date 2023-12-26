@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CS::ManagedEdgeKubernetesCluster`.</summary>
+    /// <summary>Properties for defining a `RosManagedEdgeKubernetesCluster`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managededgekubernetescluster
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cs.RosManagedEdgeKubernetesClusterProps")]
     public class RosManagedEdgeKubernetesClusterProps : AlibabaCloud.SDK.ROS.CDK.Cs.IRosManagedEdgeKubernetesClusterProps
     {
@@ -347,7 +350,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         private object? _containerCidr;
 
         /// <remarks>
-        /// <strong>Property</strong>: containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
+        /// <strong>Property</strong>: containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0\/16 is used by default.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "containerCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -820,7 +823,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         private object? _serviceCidr;
 
         /// <remarks>
-        /// <strong>Property</strong>: serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
+        /// <strong>Property</strong>: serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0\/20 is used by default.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "serviceCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -955,7 +958,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         private object? _vpcId;
 
         /// <remarks>
-        /// <strong>Property</strong>: vpcId: VPC ID. If not set, the system will automatically create a VPC, and the VPC network segment created by the system is 192.168.0.0/16.
+        /// <strong>Property</strong>: vpcId: VPC ID. If not set, the system will automatically create a VPC, and the VPC network segment created by the system is 192.168.0.0\/16.
         /// VpcId and VSwitchId can only be empty at the same time or set the corresponding values at the same time.
         /// </remarks>
         [JsiiOptional]

@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::NLPAUTOML::Dataset`
+ * Properties for defining a `RosDataset`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlpautoml-dataset
  */
 export interface RosDatasetProps {
 
@@ -75,18 +76,15 @@ function rosDatasetPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::NLPAUTOML::Dataset`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NLPAUTOML::Dataset`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Dataset` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlpautoml-dataset
  */
 export class RosDataset extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::NLPAUTOML::Dataset";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DatasetId: The dataset ID.
@@ -112,8 +110,6 @@ export class RosDataset extends ros.RosResource {
     public datasetRecord: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::NLPAUTOML::Dataset`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -142,7 +138,8 @@ export class RosDataset extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::NLPAUTOML::Model`
+ * Properties for defining a `RosModel`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlpautoml-model
  */
 export interface RosModelProps {
 
@@ -252,18 +249,15 @@ function rosModelPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `ALIYUN::NLPAUTOML::Model`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NLPAUTOML::Model`, which is used to create a model.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Model` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlpautoml-model
  */
 export class RosModel extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::NLPAUTOML::Model";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ModelId: The ID of model.
@@ -315,8 +309,6 @@ export class RosModel extends ros.RosResource {
     public testDatasetIdList: Array<number | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::NLPAUTOML::Model`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -354,7 +346,8 @@ export class RosModel extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::NLPAUTOML::Project`
+ * Properties for defining a `RosProject`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlpautoml-project
  */
 export interface RosProjectProps {
 
@@ -432,18 +425,15 @@ function rosProjectPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::NLPAUTOML::Project`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NLPAUTOML::Project`, which is used to create a project.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Project` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlpautoml-project
  */
 export class RosProject extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::NLPAUTOML::Project";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ProjectId: The project ID
@@ -469,8 +459,6 @@ export class RosProject extends ros.RosResource {
     public projectType: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::NLPAUTOML::Project`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

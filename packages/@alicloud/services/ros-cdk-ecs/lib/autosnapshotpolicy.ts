@@ -4,7 +4,8 @@ import { RosAutoSnapshotPolicy } from './ecs.generated';
 export { RosAutoSnapshotPolicy as AutoSnapshotPolicyProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECS::AutoSnapshotPolicy`
+ * Properties for defining a `AutoSnapshotPolicy`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-autosnapshotpolicy
  */
 export interface AutoSnapshotPolicyProps {
 
@@ -34,7 +35,7 @@ export interface AutoSnapshotPolicyProps {
      * Property autoSnapshotPolicyName: The name of the automatic snapshot policy.
      * It can consist of [2, 128] English or Chinese characters.
      * Must begin with an uppercase or lowercase letter or a Chinese character. Can contain numbers, periods (.), colons (:), underscores (_), and hyphens (-).
-     * Cannot start with http:// or https://.
+     * Cannot start with http:\/\/ or https:\/\/.
      * Default value: null.
      */
     readonly autoSnapshotPolicyName?: string | ros.IResolvable;
@@ -56,14 +57,11 @@ export interface AutoSnapshotPolicyProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECS::AutoSnapshotPolicy`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::AutoSnapshotPolicy`, which is used to create an automatic snapshot policy.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAutoSnapshotPolicy`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-autosnapshotpolicy
  */
 export class AutoSnapshotPolicy extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AutoSnapshotPolicyId: The automatic snapshot policy ID.
@@ -71,8 +69,6 @@ export class AutoSnapshotPolicy extends ros.Resource {
     public readonly attrAutoSnapshotPolicyId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ECS::AutoSnapshotPolicy`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

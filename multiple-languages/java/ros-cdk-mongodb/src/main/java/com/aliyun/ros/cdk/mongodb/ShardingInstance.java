@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.mongodb;
 
 /**
- * A ROS resource type:  <code>ALIYUN::MONGODB::ShardingInstance</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::MONGODB::ShardingInstance</code>, which is used to create or clone an ApsaraDB for MongoDB sharded cluster instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.089Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.868Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.ShardingInstance")
 public class ShardingInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,11 +16,7 @@ public class ShardingInstance extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::MONGODB::ShardingInstance</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -33,11 +29,7 @@ public class ShardingInstance extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::MONGODB::ShardingInstance</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.

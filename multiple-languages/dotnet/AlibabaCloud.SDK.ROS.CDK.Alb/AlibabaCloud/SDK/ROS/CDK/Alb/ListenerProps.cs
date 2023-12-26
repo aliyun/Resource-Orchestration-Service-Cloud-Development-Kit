@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ALB::Listener`.</summary>
+    /// <summary>Properties for defining a `Listener`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-listener
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.ListenerProps")]
     public class ListenerProps : AlibabaCloud.SDK.ROS.CDK.Alb.IListenerProps
     {
@@ -340,7 +343,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
         private object? _http2Enabled;
 
-        /// <summary>Property http2Enabled: Specifies whether to enable HTTP/2.</summary>
+        /// <summary>Property http2Enabled: Specifies whether to enable HTTP\/2.</summary>
         /// <remarks>
         /// Default value: on.
         /// Valid values: true and false.

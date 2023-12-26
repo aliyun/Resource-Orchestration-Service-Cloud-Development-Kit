@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>Properties for defining a `ALIYUN::VPC::SslVpnClientCert`.</summary>
+    /// <summary>Properties for defining a `SslVpnClientCert`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-sslvpnclientcert
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ISslVpnClientCertProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.SslVpnClientCertProps")]
     public interface ISslVpnClientCertProps
     {
@@ -29,7 +32,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::VPC::SslVpnClientCert`.</summary>
+        /// <summary>Properties for defining a `SslVpnClientCert`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-sslvpnclientcert
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ISslVpnClientCertProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.SslVpnClientCertProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.ISslVpnClientCertProps
         {

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sls
 {
-    /// <summary>Properties for defining a `ALIYUN::SLS::Index`.</summary>
+    /// <summary>Properties for defining a `RosIndex`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-index
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosIndexProps), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosIndexProps")]
     public interface IRosIndexProps
     {
@@ -69,7 +72,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::SLS::Index`.</summary>
+        /// <summary>Properties for defining a `RosIndex`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-index
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosIndexProps), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosIndexProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sls.IRosIndexProps
         {

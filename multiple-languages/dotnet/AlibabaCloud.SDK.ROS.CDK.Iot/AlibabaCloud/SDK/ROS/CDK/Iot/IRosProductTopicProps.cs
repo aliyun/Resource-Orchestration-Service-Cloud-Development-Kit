@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Iot
 {
-    /// <summary>Properties for defining a `ALIYUN::IOT::ProductTopic`.</summary>
+    /// <summary>Properties for defining a `RosProductTopic`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-producttopic
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosProductTopicProps), fullyQualifiedName: "@alicloud/ros-cdk-iot.RosProductTopicProps")]
     public interface IRosProductTopicProps
     {
@@ -30,7 +33,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: topicShortName: The custom category hierarchy in the topic category. By default, a topic category contains two system defined category hierarchies: productKey and ${deviceName}. Forward slashes (/) are used to delimit the topic hierarchies. The format of a topic category is productKey/${deviceName}/topicShortName.
+        /// <strong>Property</strong>: topicShortName: The custom category hierarchy in the topic category. By default, a topic category contains two system defined category hierarchies: productKey and ${deviceName}. Forward slashes (\/) are used to delimit the topic hierarchies. The format of a topic category is productKey\/${deviceName}\/topicShortName.
         /// Note The name of each category hierarchy can contain English letters, digits, and underscores (_), and cannot be empty.
         /// </remarks>
         [JsiiProperty(name: "topicShortName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
@@ -65,7 +68,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::IOT::ProductTopic`.</summary>
+        /// <summary>Properties for defining a `RosProductTopic`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-producttopic
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosProductTopicProps), fullyQualifiedName: "@alicloud/ros-cdk-iot.RosProductTopicProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Iot.IRosProductTopicProps
         {
@@ -95,7 +101,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: topicShortName: The custom category hierarchy in the topic category. By default, a topic category contains two system defined category hierarchies: productKey and ${deviceName}. Forward slashes (/) are used to delimit the topic hierarchies. The format of a topic category is productKey/${deviceName}/topicShortName.
+            /// <strong>Property</strong>: topicShortName: The custom category hierarchy in the topic category. By default, a topic category contains two system defined category hierarchies: productKey and ${deviceName}. Forward slashes (\/) are used to delimit the topic hierarchies. The format of a topic category is productKey\/${deviceName}\/topicShortName.
             /// Note The name of each category hierarchy can contain English letters, digits, and underscores (_), and cannot be empty.
             /// </remarks>
             [JsiiProperty(name: "topicShortName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]

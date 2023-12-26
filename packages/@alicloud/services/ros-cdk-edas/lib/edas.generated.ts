@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::EDAS::Application`
+ * Properties for defining a `RosApplication`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-application
  */
 export interface RosApplicationProps {
 
@@ -24,7 +25,7 @@ export interface RosApplicationProps {
 
     /**
      * @Property componentIds: Application component ID (available through the query interface to obtain a list of components to the interface ListComponents), when creating the application runtime environment using Apache Tomcat (war packet format Dubbo
-     * Application required) or standard Java application (jar package format Spring Boot / Spring Cloud applications require) you need to specify when the operating environment. Commonly used application component ID and meaning:
+     * Application required) or standard Java application (jar package format Spring Boot \/ Spring Cloud applications require) you need to specify when the operating environment. Commonly used application component ID and meaning:
      * 4 represents Apache Tomcat 7.0.91,7 represented Apache Tomcat 8.5.42,5 represented OpenJDK 1.8.x, 6 represents OpenJDK
      * 1.7.x
      */
@@ -135,18 +136,15 @@ function rosApplicationPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `ALIYUN::EDAS::Application`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::Application`, which is used to create an application in an Elastic Compute Service (ECS) cluster in Enterprise Distributed Application Service (EDAS).
+ * @Note This class does not contain additional functions, so it is recommended to use the `Application` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-application
  */
 export class RosApplication extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EDAS::Application";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AppId: Application Id, a unique identifier EDAS application
@@ -178,7 +176,7 @@ export class RosApplication extends ros.RosResource {
 
     /**
      * @Property componentIds: Application component ID (available through the query interface to obtain a list of components to the interface ListComponents), when creating the application runtime environment using Apache Tomcat (war packet format Dubbo
-     * Application required) or standard Java application (jar package format Spring Boot / Spring Cloud applications require) you need to specify when the operating environment. Commonly used application component ID and meaning:
+     * Application required) or standard Java application (jar package format Spring Boot \/ Spring Cloud applications require) you need to specify when the operating environment. Commonly used application component ID and meaning:
      * 4 represents Apache Tomcat 7.0.91,7 represented Apache Tomcat 8.5.42,5 represented OpenJDK 1.8.x, 6 represents OpenJDK
      * 1.7.x
      */
@@ -221,8 +219,6 @@ export class RosApplication extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::EDAS::Application`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -398,7 +394,8 @@ function rosApplicationDeploymentPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::EDAS::Cluster`
+ * Properties for defining a `RosCluster`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-cluster
  */
 export interface RosClusterProps {
 
@@ -423,7 +420,7 @@ export interface RosClusterProps {
     readonly logicalRegionId?: string | ros.IResolvable;
 
     /**
-     * @Property oversoldFactor: Docker CPU cluster oversold. Support 2 (1: 2 ratio) / 4 (1: 4) / 8 (1: 8 ratio)
+     * @Property oversoldFactor: Docker CPU cluster oversold. Support 2 (1: 2 ratio) \/ 4 (1: 4) \/ 8 (1: 8 ratio)
      */
     readonly oversoldFactor?: number | ros.IResolvable;
 
@@ -492,18 +489,15 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::EDAS::Cluster`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::Cluster`, which is used to create a cluster.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Cluster` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-cluster
  */
 export class RosCluster extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EDAS::Cluster";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ClusterId: Cluster ID
@@ -549,7 +543,7 @@ export class RosCluster extends ros.RosResource {
     public logicalRegionId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property oversoldFactor: Docker CPU cluster oversold. Support 2 (1: 2 ratio) / 4 (1: 4) / 8 (1: 8 ratio)
+     * @Property oversoldFactor: Docker CPU cluster oversold. Support 2 (1: 2 ratio) \/ 4 (1: 4) \/ 8 (1: 8 ratio)
      */
     public oversoldFactor: number | ros.IResolvable | undefined;
 
@@ -564,8 +558,6 @@ export class RosCluster extends ros.RosResource {
     public vpcId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::EDAS::Cluster`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -605,7 +597,8 @@ export class RosCluster extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::EDAS::ClusterMember`
+ * Properties for defining a `RosClusterMember`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-clustermember
  */
 export interface RosClusterMemberProps {
 
@@ -672,18 +665,15 @@ function rosClusterMemberPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `ALIYUN::EDAS::ClusterMember`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::ClusterMember`, which is used to add Elastic Compute Service (ECS) instances to a cluster.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ClusterMember` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-clustermember
  */
 export class RosClusterMember extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EDAS::ClusterMember";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ClusterId: Cluster ID.
@@ -724,8 +714,6 @@ export class RosClusterMember extends ros.RosResource {
     public password: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::EDAS::ClusterMember`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -757,7 +745,8 @@ export class RosClusterMember extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::EDAS::DeployGroup`
+ * Properties for defining a `RosDeployGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-deploygroup
  */
 export interface RosDeployGroupProps {
 
@@ -816,18 +805,15 @@ function rosDeployGroupPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `ALIYUN::EDAS::DeployGroup`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::DeployGroup`, which is used to create an instance group for an application.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DeployGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-deploygroup
  */
 export class RosDeployGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EDAS::DeployGroup";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AppId: Application ID
@@ -858,8 +844,6 @@ export class RosDeployGroup extends ros.RosResource {
     public groupName: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::EDAS::DeployGroup`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -888,7 +872,8 @@ export class RosDeployGroup extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::EDAS::K8sApplication`
+ * Properties for defining a `RosK8sApplication`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-k8sapplication
  */
 export interface RosK8sApplicationProps {
 
@@ -1025,7 +1010,7 @@ export interface RosK8sApplicationProps {
     readonly liveness?: RosK8sApplication.LivenessProperty | ros.IResolvable;
 
     /**
-     * @Property localVolume: The configuration for mounting host files to the container where the application is running. For example, the value can be [{"type":"", "nodePath":"/localfiles", "mountPath":"/app/files"}, {"type":"Directory", "nodePath":"/mnt", "mountPath":"/app/storage"}].
+     * @Property localVolume: The configuration for mounting host files to the container where the application is running. For example, the value can be [{"type":"", "nodePath":"\/localfiles", "mountPath":"\/app\/files"}, {"type":"Directory", "nodePath":"\/mnt", "mountPath":"\/app\/storage"}].
      */
     readonly localVolume?: Array<RosK8sApplication.LocalVolumeProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -1035,7 +1020,7 @@ export interface RosK8sApplicationProps {
     readonly logicalRegionId?: string | ros.IResolvable;
 
     /**
-     * @Property mountDescs: The description of the NAS mounting configuration. For example, the value can be [{"NasPath": "/k8s","MountPath": "/mnt"}, {"NasPath": "/files", "MountPath": "/app/files"}].
+     * @Property mountDescs: The description of the NAS mounting configuration. For example, the value can be [{"NasPath": "\/k8s","MountPath": "\/mnt"}, {"NasPath": "\/files", "MountPath": "\/app\/files"}].
      */
     readonly mountDescs?: Array<RosK8sApplication.MountDescsProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -1069,12 +1054,12 @@ export interface RosK8sApplicationProps {
     readonly packageVersion?: string | ros.IResolvable;
 
     /**
-     * @Property postStart: The post-start script. For example, {"Exec": {"Command": ["ls", "/"]}}.
+     * @Property postStart: The post-start script. For example, {"Exec": {"Command": ["ls", "\/"]}}.
      */
     readonly postStart?: RosK8sApplication.PostStartProperty | ros.IResolvable;
 
     /**
-     * @Property preStop: The pre-stop script. For example, {"Exec": {"Command": ["ls", "/"]}}.
+     * @Property preStop: The pre-stop script. For example, {"Exec": {"Command": ["ls", "\/"]}}.
      */
     readonly preStop?: RosK8sApplication.PreStopProperty | ros.IResolvable;
 
@@ -1346,18 +1331,15 @@ function rosK8sApplicationPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * A ROS template type:  `ALIYUN::EDAS::K8sApplication`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::K8sApplication`, which is used to create an application in a Kubernetes cluster.
+ * @Note This class does not contain additional functions, so it is recommended to use the `K8sApplication` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-k8sapplication
  */
 export class RosK8sApplication extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EDAS::K8sApplication";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AppId: The ID of the application.
@@ -1520,7 +1502,7 @@ export class RosK8sApplication extends ros.RosResource {
     public liveness: RosK8sApplication.LivenessProperty | ros.IResolvable | undefined;
 
     /**
-     * @Property localVolume: The configuration for mounting host files to the container where the application is running. For example, the value can be [{"type":"", "nodePath":"/localfiles", "mountPath":"/app/files"}, {"type":"Directory", "nodePath":"/mnt", "mountPath":"/app/storage"}].
+     * @Property localVolume: The configuration for mounting host files to the container where the application is running. For example, the value can be [{"type":"", "nodePath":"\/localfiles", "mountPath":"\/app\/files"}, {"type":"Directory", "nodePath":"\/mnt", "mountPath":"\/app\/storage"}].
      */
     public localVolume: Array<RosK8sApplication.LocalVolumeProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -1530,7 +1512,7 @@ export class RosK8sApplication extends ros.RosResource {
     public logicalRegionId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property mountDescs: The description of the NAS mounting configuration. For example, the value can be [{"NasPath": "/k8s","MountPath": "/mnt"}, {"NasPath": "/files", "MountPath": "/app/files"}].
+     * @Property mountDescs: The description of the NAS mounting configuration. For example, the value can be [{"NasPath": "\/k8s","MountPath": "\/mnt"}, {"NasPath": "\/files", "MountPath": "\/app\/files"}].
      */
     public mountDescs: Array<RosK8sApplication.MountDescsProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -1564,12 +1546,12 @@ export class RosK8sApplication extends ros.RosResource {
     public packageVersion: string | ros.IResolvable | undefined;
 
     /**
-     * @Property postStart: The post-start script. For example, {"Exec": {"Command": ["ls", "/"]}}.
+     * @Property postStart: The post-start script. For example, {"Exec": {"Command": ["ls", "\/"]}}.
      */
     public postStart: RosK8sApplication.PostStartProperty | ros.IResolvable | undefined;
 
     /**
-     * @Property preStop: The pre-stop script. For example, {"Exec": {"Command": ["ls", "/"]}}.
+     * @Property preStop: The pre-stop script. For example, {"Exec": {"Command": ["ls", "\/"]}}.
      */
     public preStop: RosK8sApplication.PreStopProperty | ros.IResolvable | undefined;
 
@@ -1644,8 +1626,6 @@ export class RosK8sApplication extends ros.RosResource {
     public webContainerConfig: RosK8sApplication.WebContainerConfigProperty | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::EDAS::K8sApplication`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2471,7 +2451,7 @@ export namespace RosK8sApplication {
          */
         readonly threadStackSize?: RosK8sApplication.ThreadStackSizeProperty | ros.IResolvable;
         /**
-         * @Property survivorRatio: Eden/Survivor Memory Size Ratio.
+         * @Property survivorRatio: Eden\/Survivor Memory Size Ratio.
          */
         readonly survivorRatio?: RosK8sApplication.SurvivorRatioProperty | ros.IResolvable;
         /**
@@ -2487,7 +2467,7 @@ export namespace RosK8sApplication {
          */
         readonly concGcThreads?: RosK8sApplication.ConcGCThreadsProperty | ros.IResolvable;
         /**
-         * @Property newRatio: Old/Young Generation Memory Size Ratio.
+         * @Property newRatio: Old\/Young Generation Memory Size Ratio.
          */
         readonly newRatio?: RosK8sApplication.NewRatioProperty | ros.IResolvable;
         /**
@@ -4151,7 +4131,7 @@ export namespace RosK8sApplication {
         readonly type?: string | ros.IResolvable;
         /**
          * @Property logDir: If the standard output type is used, the collection path is stdout.log. If the file type is used, the collection path is the path of the collected file. Wildcards(*) are supported. The collection path must match the following regular expression:
-     * ^/( +)/(. *)^/$.
+     * ^\/( +)\/(. *)^\/$.
          */
         readonly logDir?: string | ros.IResolvable;
         /**
@@ -4410,7 +4390,7 @@ export namespace RosK8sApplication {
         /**
          * @Property contextInputType: Specifies whether to customize the access path for the application. Valid values:
      * war: The application access path is the name of the WAR package. You do not need to enter a custom path.
-     * root: The application access path is /. You do not need to enter a custom path.
+     * root: The application access path is \/. You do not need to enter a custom path.
      * custom: If you select this option, you must set contextPath to a custom path.
          */
         readonly contextInputType?: string | ros.IResolvable;
@@ -4539,7 +4519,8 @@ function rosK8sApplicationYoungGarbageCollectorPropertyToRosTemplate(properties:
 }
 
 /**
- * Properties for defining a `ALIYUN::EDAS::K8sCluster`
+ * Properties for defining a `RosK8sCluster`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-k8scluster
  */
 export interface RosK8sClusterProps {
 
@@ -4597,18 +4578,15 @@ function rosK8sClusterPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::EDAS::K8sCluster`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::K8sCluster`, which is used to create a cluster of Container Service for Kubernetes (ACK).
+ * @Note This class does not contain additional functions, so it is recommended to use the `K8sCluster` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-k8scluster
  */
 export class RosK8sCluster extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EDAS::K8sCluster";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ClusterId: The ID of the cluster.
@@ -4678,8 +4656,6 @@ export class RosK8sCluster extends ros.RosResource {
     public namespaceId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::EDAS::K8sCluster`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -4716,7 +4692,8 @@ export class RosK8sCluster extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::EDAS::K8sSlbBinding`
+ * Properties for defining a `RosK8sSlbBinding`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-k8sslbbinding
  */
 export interface RosK8sSlbBindingProps {
 
@@ -4821,18 +4798,15 @@ function rosK8sSlbBindingPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `ALIYUN::EDAS::K8sSlbBinding`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::K8sSlbBinding`, which is used to bind a Server Load Balancer (SLB) instance to an application in a Container Service for Kubernetes (ACK) cluster.
+ * @Note This class does not contain additional functions, so it is recommended to use the `K8sSlbBinding` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-k8sslbbinding
  */
 export class RosK8sSlbBinding extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EDAS::K8sSlbBinding";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Address: The address of load balancer instance.
@@ -4901,8 +4875,6 @@ export class RosK8sSlbBinding extends ros.RosResource {
     public specification: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::EDAS::K8sSlbBinding`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -5025,7 +4997,8 @@ function rosK8sSlbBindingServicePortInfosPropertyToRosTemplate(properties: any):
 }
 
 /**
- * Properties for defining a `ALIYUN::EDAS::UserDefineRegion`
+ * Properties for defining a `RosUserDefineRegion`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-userdefineregion
  */
 export interface RosUserDefineRegionProps {
 
@@ -5091,18 +5064,15 @@ function rosUserDefineRegionPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * A ROS template type:  `ALIYUN::EDAS::UserDefineRegion`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::UserDefineRegion`, which is used to create or edit a custom namespace.
+ * @Note This class does not contain additional functions, so it is recommended to use the `UserDefineRegion` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-userdefineregion
  */
 export class RosUserDefineRegion extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EDAS::UserDefineRegion";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute BelongRegion: Under the physical region ID
@@ -5153,8 +5123,6 @@ export class RosUserDefineRegion extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::EDAS::UserDefineRegion`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Graphdatabase
 {
-    /// <summary>A ROS template type:  `ALIYUN::GraphDatabase::DbInstance`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::GraphDatabase::DbInstance`, which is used to create a Graph Database (GDB) instance.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `DbInstance` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-graphdatabase-dbinstance
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Graphdatabase.RosDbInstance), fullyQualifiedName: "@alicloud/ros-cdk-graphdatabase.RosDbInstance", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-graphdatabase.RosDbInstanceProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosDbInstance : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::GraphDatabase::DbInstance`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -1017,7 +1020,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Graphdatabase
         public interface IDBInstanceIPArrayProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: securityIps: IP address whitelist addresses in the IP address list, and a maximum of 1000 comma-separated format is as follows: 0.0.0.0/0 and 10.23.12.24(IP) or 10.23.12.24/24(CIDR mode, CIDR (Classless Inter-Domain Routing)/24 represents the address prefixes in the length of the range [1,32]).
+            /// <strong>Property</strong>: securityIps: IP address whitelist addresses in the IP address list, and a maximum of 1000 comma-separated format is as follows: 0.0.0.0\/0 and 10.23.12.24(IP) or 10.23.12.24\/24(CIDR mode, CIDR (Classless Inter-Domain Routing)\/24 represents the address prefixes in the length of the range [1,32]).
             /// </remarks>
             [JsiiProperty(name: "securityIps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             object SecurityIps
@@ -1046,7 +1049,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Graphdatabase
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: securityIps: IP address whitelist addresses in the IP address list, and a maximum of 1000 comma-separated format is as follows: 0.0.0.0/0 and 10.23.12.24(IP) or 10.23.12.24/24(CIDR mode, CIDR (Classless Inter-Domain Routing)/24 represents the address prefixes in the length of the range [1,32]).
+                /// <strong>Property</strong>: securityIps: IP address whitelist addresses in the IP address list, and a maximum of 1000 comma-separated format is as follows: 0.0.0.0\/0 and 10.23.12.24(IP) or 10.23.12.24\/24(CIDR mode, CIDR (Classless Inter-Domain Routing)\/24 represents the address prefixes in the length of the range [1,32]).
                 /// </remarks>
                 [JsiiProperty(name: "securityIps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
                 public object SecurityIps
@@ -1073,7 +1076,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Graphdatabase
             private object _securityIps;
 
             /// <remarks>
-            /// <strong>Property</strong>: securityIps: IP address whitelist addresses in the IP address list, and a maximum of 1000 comma-separated format is as follows: 0.0.0.0/0 and 10.23.12.24(IP) or 10.23.12.24/24(CIDR mode, CIDR (Classless Inter-Domain Routing)/24 represents the address prefixes in the length of the range [1,32]).
+            /// <strong>Property</strong>: securityIps: IP address whitelist addresses in the IP address list, and a maximum of 1000 comma-separated format is as follows: 0.0.0.0\/0 and 10.23.12.24(IP) or 10.23.12.24\/24(CIDR mode, CIDR (Classless Inter-Domain Routing)\/24 represents the address prefixes in the length of the range [1,32]).
             /// </remarks>
             [JsiiProperty(name: "securityIps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object SecurityIps

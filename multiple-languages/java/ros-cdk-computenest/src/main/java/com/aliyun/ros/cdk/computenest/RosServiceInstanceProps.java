@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.computenest;
 
 /**
- * Properties for defining a <code>ALIYUN::ComputeNest::ServiceInstance</code>.
+ * Properties for defining a <code>RosServiceInstance</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-computenest-serviceinstance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.082Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.460Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.computenest.$Module.class, fqn = "@alicloud/ros-cdk-computenest.RosServiceInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosServiceInstanceProps.Jsii$Proxy.class)
 public interface RosServiceInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -120,7 +122,7 @@ public interface RosServiceInstanceProps extends software.amazon.jsii.JsiiSerial
          * @param service the value to be set. This parameter is required.
          * @return {@code this}
          */
-        public Builder service(com.aliyun.ros.cdk.computenest.RosServiceInstance.ServiceProperty service) {
+        public Builder service(com.aliyun.ros.cdk.core.IResolvable service) {
             this.service = service;
             return this;
         }
@@ -130,7 +132,7 @@ public interface RosServiceInstanceProps extends software.amazon.jsii.JsiiSerial
          * @param service the value to be set. This parameter is required.
          * @return {@code this}
          */
-        public Builder service(com.aliyun.ros.cdk.core.IResolvable service) {
+        public Builder service(com.aliyun.ros.cdk.computenest.RosServiceInstance.ServiceProperty service) {
             this.service = service;
             return this;
         }

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ECS::LaunchTemplate`.</summary>
+    /// <summary>Properties for defining a `LaunchTemplate`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-launchtemplate
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.LaunchTemplateProps")]
     public class LaunchTemplateProps : AlibabaCloud.SDK.ROS.CDK.Ecs.ILaunchTemplateProps
     {

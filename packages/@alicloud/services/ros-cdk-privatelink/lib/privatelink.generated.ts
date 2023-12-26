@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::PrivateLink::VpcEndpoint`
+ * Properties for defining a `RosVpcEndpoint`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpoint
  */
 export interface RosVpcEndpointProps {
 
@@ -19,7 +20,7 @@ export interface RosVpcEndpointProps {
 
     /**
      * @Property endpointDescription: The description of the endpoint.
-     * The description must be 2 to 256 characters in length and cannot start with http:// or https://.
+     * The description must be 2 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
      */
     readonly endpointDescription?: string | ros.IResolvable;
 
@@ -158,18 +159,15 @@ function rosVpcEndpointPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `ALIYUN::PrivateLink::VpcEndpoint`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PrivateLink::VpcEndpoint`, which is used to create an endpoint.
+ * @Note This class does not contain additional functions, so it is recommended to use the `VpcEndpoint` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpoint
  */
 export class RosVpcEndpoint extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PrivateLink::VpcEndpoint";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Bandwidth: The bandwidth of the endpoint.
@@ -226,7 +224,7 @@ export class RosVpcEndpoint extends ros.RosResource {
 
     /**
      * @Property endpointDescription: The description of the endpoint.
-     * The description must be 2 to 256 characters in length and cannot start with http:// or https://.
+     * The description must be 2 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
      */
     public endpointDescription: string | ros.IResolvable | undefined;
 
@@ -275,8 +273,6 @@ export class RosVpcEndpoint extends ros.RosResource {
     public zonePrivateIpAddressCount: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::PrivateLink::VpcEndpoint`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -429,7 +425,8 @@ function rosVpcEndpointZonePropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::PrivateLink::VpcEndpointService`
+ * Properties for defining a `RosVpcEndpointService`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpointservice
  */
 export interface RosVpcEndpointServiceProps {
 
@@ -441,7 +438,7 @@ export interface RosVpcEndpointServiceProps {
     readonly autoAcceptEnabled?: boolean | ros.IResolvable;
 
     /**
-     * @Property connectBandwidth: The default maximum bandwidth of the endpoint connection. Valid values: 100 to 1024. Unit: Mbit/s.
+     * @Property connectBandwidth: The default maximum bandwidth of the endpoint connection. Valid values: 100 to 1024. Unit: Mbit\/s.
      */
     readonly connectBandwidth?: number | ros.IResolvable;
 
@@ -575,18 +572,15 @@ function rosVpcEndpointServicePropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * A ROS template type:  `ALIYUN::PrivateLink::VpcEndpointService`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PrivateLink::VpcEndpointService`, which is used to create an endpoint service.
+ * @Note This class does not contain additional functions, so it is recommended to use the `VpcEndpointService` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpointservice
  */
 export class RosVpcEndpointService extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PrivateLink::VpcEndpointService";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute MaxBandwidth: The maximum bandwidth of the endpoint connection.
@@ -629,7 +623,7 @@ export class RosVpcEndpointService extends ros.RosResource {
     public autoAcceptEnabled: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property connectBandwidth: The default maximum bandwidth of the endpoint connection. Valid values: 100 to 1024. Unit: Mbit/s.
+     * @Property connectBandwidth: The default maximum bandwidth of the endpoint connection. Valid values: 100 to 1024. Unit: Mbit\/s.
      */
     public connectBandwidth: number | ros.IResolvable | undefined;
 
@@ -673,8 +667,6 @@ export class RosVpcEndpointService extends ros.RosResource {
     public zoneAffinityEnabled: boolean | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::PrivateLink::VpcEndpointService`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -824,7 +816,8 @@ function rosVpcEndpointServiceTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::PrivateLink::VpcEndpointServiceAttachment`
+ * Properties for defining a `RosVpcEndpointServiceAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpointserviceattachment
  */
 export interface RosVpcEndpointServiceAttachmentProps {
 
@@ -887,18 +880,15 @@ function rosVpcEndpointServiceAttachmentPropsToRosTemplate(properties: any, enab
 }
 
 /**
- * A ROS template type:  `ALIYUN::PrivateLink::VpcEndpointServiceAttachment`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PrivateLink::VpcEndpointServiceAttachment`, which is used to add a service resource to an endpoint service.
+ * @Note This class does not contain additional functions, so it is recommended to use the `VpcEndpointServiceAttachment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpointserviceattachment
  */
 export class RosVpcEndpointServiceAttachment extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PrivateLink::VpcEndpointServiceAttachment";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ResourceId: The resource id.
@@ -937,8 +927,6 @@ export class RosVpcEndpointServiceAttachment extends ros.RosResource {
     public serviceId: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::PrivateLink::VpcEndpointServiceAttachment`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

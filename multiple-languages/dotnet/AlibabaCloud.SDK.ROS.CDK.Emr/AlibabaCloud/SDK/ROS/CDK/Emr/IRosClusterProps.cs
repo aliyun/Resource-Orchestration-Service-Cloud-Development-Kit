@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Emr
 {
-    /// <summary>Properties for defining a `ALIYUN::EMR::Cluster`.</summary>
+    /// <summary>Properties for defining a `RosCluster`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-cluster
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosClusterProps), fullyQualifiedName: "@alicloud/ros-cdk-emr.RosClusterProps")]
     public interface IRosClusterProps
     {
@@ -227,7 +230,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: ioOptimized: Indicates wether I/O optimization is enabled. Default value: true.
+        /// <strong>Property</strong>: ioOptimized: Indicates wether I\/O optimization is enabled. Default value: true.
         /// </remarks>
         [JsiiProperty(name: "ioOptimized", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -309,7 +312,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: metaStoreConf: Meta store conf of specific meta store type. If MetaStoreType=user_rds, MetaStoreConf should be like {"dbUrl":"jdbc:mysql://xxxxxx", "dbUserName":"username", "dbPassword":"password"}
+        /// <strong>Property</strong>: metaStoreConf: Meta store conf of specific meta store type. If MetaStoreType=user_rds, MetaStoreConf should be like {"dbUrl":"jdbc:mysql:\/\/xxxxxx", "dbUserName":"username", "dbPassword":"password"}
         /// </remarks>
         [JsiiProperty(name: "metaStoreConf", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -528,7 +531,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::EMR::Cluster`.</summary>
+        /// <summary>Properties for defining a `RosCluster`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-cluster
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosClusterProps), fullyQualifiedName: "@alicloud/ros-cdk-emr.RosClusterProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Emr.IRosClusterProps
         {
@@ -722,7 +728,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: ioOptimized: Indicates wether I/O optimization is enabled. Default value: true.
+            /// <strong>Property</strong>: ioOptimized: Indicates wether I\/O optimization is enabled. Default value: true.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "ioOptimized", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -786,7 +792,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: metaStoreConf: Meta store conf of specific meta store type. If MetaStoreType=user_rds, MetaStoreConf should be like {"dbUrl":"jdbc:mysql://xxxxxx", "dbUserName":"username", "dbPassword":"password"}
+            /// <strong>Property</strong>: metaStoreConf: Meta store conf of specific meta store type. If MetaStoreType=user_rds, MetaStoreConf should be like {"dbUrl":"jdbc:mysql:\/\/xxxxxx", "dbUserName":"username", "dbPassword":"password"}
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "metaStoreConf", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

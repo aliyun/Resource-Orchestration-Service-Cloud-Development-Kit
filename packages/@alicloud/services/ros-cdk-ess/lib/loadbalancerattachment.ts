@@ -4,7 +4,8 @@ import { RosLoadBalancerAttachment } from './ess.generated';
 export { RosLoadBalancerAttachment as LoadBalancerAttachmentProperty };
 
 /**
- * Properties for defining a `ALIYUN::ESS::LoadBalancerAttachment`
+ * Properties for defining a `LoadBalancerAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-loadbalancerattachment
  */
 export interface LoadBalancerAttachmentProps {
 
@@ -33,18 +34,13 @@ export interface LoadBalancerAttachmentProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ESS::LoadBalancerAttachment`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::LoadBalancerAttachment`DATASOURCE::ESS::ScalingConfigurations is used to query the details of scaling configurations.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLoadBalancerAttachment`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-loadbalancerattachment
  */
 export class LoadBalancerAttachment extends ros.Resource {
 
     /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
-
-    /**
-     * Create a new `ALIYUN::ESS::LoadBalancerAttachment`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

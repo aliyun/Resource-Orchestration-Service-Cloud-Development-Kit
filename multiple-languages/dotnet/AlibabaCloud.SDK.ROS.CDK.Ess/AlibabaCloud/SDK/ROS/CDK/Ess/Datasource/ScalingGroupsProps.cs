@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ess.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ESS::ScalingGroups`.</summary>
+    /// <summary>Properties for defining a `ScalingGroups`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ess-scalinggroups
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ess.datasource.ScalingGroupsProps")]
     public class ScalingGroupsProps : AlibabaCloud.SDK.ROS.CDK.Ess.Datasource.IScalingGroupsProps
     {

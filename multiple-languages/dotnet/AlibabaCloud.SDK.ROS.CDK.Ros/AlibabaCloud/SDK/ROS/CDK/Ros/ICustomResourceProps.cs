@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ros
 {
-    /// <summary>Properties for defining a `ALIYUN::ROS::CustomResource`.</summary>
+    /// <summary>Properties for defining a `CustomResource`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-customresource
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ICustomResourceProps), fullyQualifiedName: "@alicloud/ros-cdk-ros.CustomResourceProps")]
     public interface ICustomResourceProps
     {
@@ -73,7 +76,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ROS::CustomResource`.</summary>
+        /// <summary>Properties for defining a `CustomResource`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-customresource
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ICustomResourceProps), fullyQualifiedName: "@alicloud/ros-cdk-ros.CustomResourceProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ros.ICustomResourceProps
         {

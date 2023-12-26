@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ots
 {
-    /// <summary>Properties for defining a `ALIYUN::OTS::Instance`.</summary>
+    /// <summary>Properties for defining a `Instance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-instance
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-ots.InstanceProps")]
     public interface IInstanceProps
     {
@@ -67,7 +70,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::OTS::Instance`.</summary>
+        /// <summary>Properties for defining a `Instance`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-instance
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-ots.InstanceProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ots.IInstanceProps
         {

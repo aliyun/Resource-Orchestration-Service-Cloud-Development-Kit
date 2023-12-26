@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::Config::CompliancePack`.</summary>
+    /// <summary>Properties for defining a `RosCompliancePack`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-compliancepack
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-config.RosCompliancePackProps")]
     public class RosCompliancePackProps : AlibabaCloud.SDK.ROS.CDK.Config.IRosCompliancePackProps
     {

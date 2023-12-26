@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.sls;
 
 /**
- * Properties for defining a <code>ALIYUN::SLS::Etl</code>.
+ * Properties for defining a <code>RosEtl</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-etl
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.391Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:18.219Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosEtlProps")
 @software.amazon.jsii.Jsii.Proxy(RosEtlProps.Jsii$Proxy.class)
 public interface RosEtlProps extends software.amazon.jsii.JsiiSerializable {

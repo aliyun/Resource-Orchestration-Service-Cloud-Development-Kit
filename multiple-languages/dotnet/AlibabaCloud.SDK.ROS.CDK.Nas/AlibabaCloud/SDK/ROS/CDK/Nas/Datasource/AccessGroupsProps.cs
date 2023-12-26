@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Nas.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::NAS::AccessGroups`.</summary>
+    /// <summary>Properties for defining a `AccessGroups`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-accessgroups
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-nas.datasource.AccessGroupsProps")]
     public class AccessGroupsProps : AlibabaCloud.SDK.ROS.CDK.Nas.Datasource.IAccessGroupsProps
     {

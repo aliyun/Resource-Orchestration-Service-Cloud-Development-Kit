@@ -4,7 +4,8 @@ import { RosClusters } from './mse.generated';
 export { RosClusters as ClustersProperty };
 
 /**
- * Properties for defining a `DATASOURCE::MSE::Clusters`
+ * Properties for defining a `Clusters`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mse-clusters
  */
 export interface ClustersProps {
 
@@ -15,14 +16,11 @@ export interface ClustersProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::MSE::Clusters`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::MSE::Clusters`, which is used to query the clusters of Microservices Registry.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosClusters`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mse-clusters
  */
 export class Clusters extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ClusterIds: The list of cluster IDs.
@@ -35,8 +33,6 @@ export class Clusters extends ros.Resource {
     public readonly attrClusters: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::MSE::Clusters`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

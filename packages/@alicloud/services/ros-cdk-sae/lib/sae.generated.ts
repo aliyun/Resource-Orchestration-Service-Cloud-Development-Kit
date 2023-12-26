@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::SAE::Application`
+ * Properties for defining a `RosApplication`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-application
  */
 export interface RosApplicationProps {
 
@@ -79,13 +80,13 @@ export interface RosApplicationProps {
     readonly imageUrl?: string | ros.IResolvable;
 
     /**
-     * @Property jarStartArgs: Jar package startup application parameters. Apply the default startup command: $ JAVA_HOME / bin / java $ JarStartOptions -jar $ CATALINA_OPTS "$ package_path"
+     * @Property jarStartArgs: Jar package startup application parameters. Apply the default startup command: $ JAVA_HOME \/ bin \/ java $ JarStartOptions -jar $ CATALINA_OPTS "$ package_path"
      * $ JarStartArgs
      */
     readonly jarStartArgs?: string | ros.IResolvable;
 
     /**
-     * @Property jarStartOptions: Jar start the application package option. Apply the default startup command: $ JAVA_HOME / bin / java $ JarStartOptions -jar $ CATALINA_OPTS "$ package_path"
+     * @Property jarStartOptions: Jar start the application package option. Apply the default startup command: $ JAVA_HOME \/ bin \/ java $ JarStartOptions -jar $ CATALINA_OPTS "$ package_path"
      * $ JarStartArgs
      */
     readonly jarStartOptions?: string | ros.IResolvable;
@@ -126,12 +127,12 @@ export interface RosApplicationProps {
     readonly packageVersion?: string | ros.IResolvable;
 
     /**
-     * @Property postStart: Executing the script, such as after starting the format: { "exec": { "command": "cat", "/ etc / group"}}
+     * @Property postStart: Executing the script, such as after starting the format: { "exec": { "command": "cat", "\/ etc \/ group"}}
      */
     readonly postStart?: string | ros.IResolvable;
 
     /**
-     * @Property preStop: Script is executed before stopping the format as: { "exec": { "command": "cat", "/ etc / group"}}
+     * @Property preStop: Script is executed before stopping the format as: { "exec": { "command": "cat", "\/ etc \/ group"}}
      */
     readonly preStop?: string | ros.IResolvable;
 
@@ -156,7 +157,7 @@ export interface RosApplicationProps {
     readonly tags?: RosApplication.TagsProperty[];
 
     /**
-     * @Property timezone: Application time zone. Default Asia/Shanghai.
+     * @Property timezone: Application time zone. Default Asia\/Shanghai.
      */
     readonly timezone?: string | ros.IResolvable;
 
@@ -314,18 +315,15 @@ function rosApplicationPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `ALIYUN::SAE::Application`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::Application`, which is used to create an application in Serverless App Engine (SAE).
+ * @Note This class does not contain additional functions, so it is recommended to use the `Application` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-application
  */
 export class RosApplication extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SAE::Application";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AppId: Creating successful application ID.
@@ -412,13 +410,13 @@ export class RosApplication extends ros.RosResource {
     public imageUrl: string | ros.IResolvable | undefined;
 
     /**
-     * @Property jarStartArgs: Jar package startup application parameters. Apply the default startup command: $ JAVA_HOME / bin / java $ JarStartOptions -jar $ CATALINA_OPTS "$ package_path"
+     * @Property jarStartArgs: Jar package startup application parameters. Apply the default startup command: $ JAVA_HOME \/ bin \/ java $ JarStartOptions -jar $ CATALINA_OPTS "$ package_path"
      * $ JarStartArgs
      */
     public jarStartArgs: string | ros.IResolvable | undefined;
 
     /**
-     * @Property jarStartOptions: Jar start the application package option. Apply the default startup command: $ JAVA_HOME / bin / java $ JarStartOptions -jar $ CATALINA_OPTS "$ package_path"
+     * @Property jarStartOptions: Jar start the application package option. Apply the default startup command: $ JAVA_HOME \/ bin \/ java $ JarStartOptions -jar $ CATALINA_OPTS "$ package_path"
      * $ JarStartArgs
      */
     public jarStartOptions: string | ros.IResolvable | undefined;
@@ -459,12 +457,12 @@ export class RosApplication extends ros.RosResource {
     public packageVersion: string | ros.IResolvable | undefined;
 
     /**
-     * @Property postStart: Executing the script, such as after starting the format: { "exec": { "command": "cat", "/ etc / group"}}
+     * @Property postStart: Executing the script, such as after starting the format: { "exec": { "command": "cat", "\/ etc \/ group"}}
      */
     public postStart: string | ros.IResolvable | undefined;
 
     /**
-     * @Property preStop: Script is executed before stopping the format as: { "exec": { "command": "cat", "/ etc / group"}}
+     * @Property preStop: Script is executed before stopping the format as: { "exec": { "command": "cat", "\/ etc \/ group"}}
      */
     public preStop: string | ros.IResolvable | undefined;
 
@@ -489,7 +487,7 @@ export class RosApplication extends ros.RosResource {
     public tags: RosApplication.TagsProperty[] | undefined;
 
     /**
-     * @Property timezone: Application time zone. Default Asia/Shanghai.
+     * @Property timezone: Application time zone. Default Asia\/Shanghai.
      */
     public timezone: string | ros.IResolvable | undefined;
 
@@ -514,8 +512,6 @@ export class RosApplication extends ros.RosResource {
     public webContainer: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::SAE::Application`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -655,7 +651,8 @@ function rosApplicationTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::SAE::Namespace`
+ * Properties for defining a `RosNamespace`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-namespace
  */
 export interface RosNamespaceProps {
 
@@ -714,18 +711,15 @@ function rosNamespacePropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `ALIYUN::SAE::Namespace`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::Namespace`, which is used to create a Namespace.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Namespace` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-namespace
  */
 export class RosNamespace extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SAE::Namespace";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute NamespaceId: Namespace ID
@@ -751,8 +745,6 @@ export class RosNamespace extends ros.RosResource {
     public namespaceDescription: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::SAE::Namespace`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -781,7 +773,8 @@ export class RosNamespace extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::SAE::SlbBinding`
+ * Properties for defining a `RosSlbBinding`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-slbbinding
  */
 export interface RosSlbBindingProps {
 
@@ -853,18 +846,15 @@ function rosSlbBindingPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::SAE::SlbBinding`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::SlbBinding`, which is used to bind an SLB instance to an application.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SlbBinding` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-slbbinding
  */
 export class RosSlbBinding extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SAE::SlbBinding";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AppId: Successful application deployment target ID
@@ -905,8 +895,6 @@ export class RosSlbBinding extends ros.RosResource {
     public intranetSlbId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::SAE::SlbBinding`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

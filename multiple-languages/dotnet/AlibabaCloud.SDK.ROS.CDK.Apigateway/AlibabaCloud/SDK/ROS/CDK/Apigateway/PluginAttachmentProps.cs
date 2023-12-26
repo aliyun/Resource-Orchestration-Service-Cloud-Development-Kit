@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ApiGateway::PluginAttachment`.</summary>
+    /// <summary>Properties for defining a `PluginAttachment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-pluginattachment
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-apigateway.PluginAttachmentProps")]
     public class PluginAttachmentProps : AlibabaCloud.SDK.ROS.CDK.Apigateway.IPluginAttachmentProps
     {

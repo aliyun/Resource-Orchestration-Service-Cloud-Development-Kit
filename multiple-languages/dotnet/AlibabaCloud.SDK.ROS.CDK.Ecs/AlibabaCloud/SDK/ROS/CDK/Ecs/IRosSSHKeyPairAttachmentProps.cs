@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>Properties for defining a `ALIYUN::ECS::SSHKeyPairAttachment`.</summary>
+    /// <summary>Properties for defining a `RosSSHKeyPairAttachment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-sshkeypairattachment
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosSSHKeyPairAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosSSHKeyPairAttachmentProps")]
     public interface IRosSSHKeyPairAttachmentProps
     {
@@ -40,7 +43,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ECS::SSHKeyPairAttachment`.</summary>
+        /// <summary>Properties for defining a `RosSSHKeyPairAttachment`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-sshkeypairattachment
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosSSHKeyPairAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosSSHKeyPairAttachmentProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.IRosSSHKeyPairAttachmentProps
         {

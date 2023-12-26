@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CR::Repository`.</summary>
+    /// <summary>Properties for defining a `RosRepository`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-repository
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cr.RosRepositoryProps")]
     public class RosRepositoryProps : AlibabaCloud.SDK.ROS.CDK.Cr.IRosRepositoryProps
     {

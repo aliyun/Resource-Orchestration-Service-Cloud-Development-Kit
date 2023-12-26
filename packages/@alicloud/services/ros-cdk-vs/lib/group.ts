@@ -4,7 +4,8 @@ import { RosGroup } from './vs.generated';
 export { RosGroup as GroupProperty };
 
 /**
- * Properties for defining a `ALIYUN::VS::Group`
+ * Properties for defining a `Group`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vs-group
  */
 export interface GroupProps {
 
@@ -46,7 +47,7 @@ export interface GroupProps {
     readonly app?: string | ros.IResolvable;
 
     /**
-     * Property callback: Updating the space callback device / flow state
+     * Property callback: Updating the space callback device \/ flow state
      */
     readonly callback?: string | ros.IResolvable;
 
@@ -67,14 +68,11 @@ export interface GroupProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::VS::Group`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VS::Group`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGroup`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vs-group
  */
 export class Group extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute GbId: GB ID space provided. (Applies only to access the space marked States)
@@ -97,8 +95,6 @@ export class Group extends ros.Resource {
     public readonly attrId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VS::Group`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

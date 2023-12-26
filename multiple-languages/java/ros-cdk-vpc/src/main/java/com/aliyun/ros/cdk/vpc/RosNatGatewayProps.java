@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * Properties for defining a <code>ALIYUN::VPC::NatGateway</code>.
+ * Properties for defining a <code>RosNatGateway</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-natgateway
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.610Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:18.465Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosNatGatewayProps")
 @software.amazon.jsii.Jsii.Proxy(RosNatGatewayProps.Jsii$Proxy.class)
 public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializable {

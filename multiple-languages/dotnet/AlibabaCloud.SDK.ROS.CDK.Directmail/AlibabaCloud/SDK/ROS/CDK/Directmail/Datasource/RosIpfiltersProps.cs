@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Directmail.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::DirectMail::Ipfilters`.</summary>
+    /// <summary>Properties for defining a `RosIpfilters`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-directmail-ipfilters
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-directmail.datasource.RosIpfiltersProps")]
     public class RosIpfiltersProps : AlibabaCloud.SDK.ROS.CDK.Directmail.Datasource.IRosIpfiltersProps
     {

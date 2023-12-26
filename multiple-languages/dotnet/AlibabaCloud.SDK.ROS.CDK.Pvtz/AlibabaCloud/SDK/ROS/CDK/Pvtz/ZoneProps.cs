@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::PVTZ::Zone`.</summary>
+    /// <summary>Properties for defining a `Zone`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-zone
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-pvtz.ZoneProps")]
     public class ZoneProps : AlibabaCloud.SDK.ROS.CDK.Pvtz.IZoneProps
     {

@@ -4,7 +4,8 @@ import { RosDomains } from './dns.generated';
 export { RosDomains as DomainsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::DNS::Domains`
+ * Properties for defining a `Domains`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dns-domains
  */
 export interface DomainsProps {
 
@@ -40,14 +41,11 @@ export interface DomainsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::DNS::Domains`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::DNS::Domains`, which is used to query domain names.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomains`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dns-domains
  */
 export class Domains extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DomainIds: The list of The DNS domain ids.
@@ -60,8 +58,6 @@ export class Domains extends ros.Resource {
     public readonly attrDomains: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::DNS::Domains`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

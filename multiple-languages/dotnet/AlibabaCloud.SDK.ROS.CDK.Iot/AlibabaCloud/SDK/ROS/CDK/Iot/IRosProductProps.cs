@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Iot
 {
-    /// <summary>Properties for defining a `ALIYUN::IOT::Product`.</summary>
+    /// <summary>Properties for defining a `RosProduct`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-product
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosProductProps), fullyQualifiedName: "@alicloud/ros-cdk-iot.RosProductProps")]
     public interface IRosProductProps
     {
@@ -87,7 +90,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// <strong>Property</strong>: dataFormat: You must specify this parameter if the value of AliyunCommodityCode is iothub_senior.
         /// This parameter is only available and required when you create a Pro Edition product.
         /// Options:
-        /// 0: Do not parse/Custom.
+        /// 0: Do not parse\/Custom.
         /// 1: Alink JSON.
         /// </remarks>
         [JsiiProperty(name: "dataFormat", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -234,7 +237,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::IOT::Product`.</summary>
+        /// <summary>Properties for defining a `RosProduct`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-product
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosProductProps), fullyQualifiedName: "@alicloud/ros-cdk-iot.RosProductProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Iot.IRosProductProps
         {
@@ -312,7 +318,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
             /// <strong>Property</strong>: dataFormat: You must specify this parameter if the value of AliyunCommodityCode is iothub_senior.
             /// This parameter is only available and required when you create a Pro Edition product.
             /// Options:
-            /// 0: Do not parse/Custom.
+            /// 0: Do not parse\/Custom.
             /// 1: Alink JSON.
             /// </remarks>
             [JsiiOptional]

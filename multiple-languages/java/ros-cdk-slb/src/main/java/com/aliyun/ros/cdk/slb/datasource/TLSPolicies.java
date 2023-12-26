@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.slb.datasource;
 
 /**
- * A ROS resource type:  <code>DATASOURCE::SLB::TLSPolicies</code>.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::SLB::TLSPolicies</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.316Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:18.138Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.datasource.TLSPolicies")
 public class TLSPolicies extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,11 +16,7 @@ public class TLSPolicies extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>DATASOURCE::SLB::TLSPolicies</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -33,11 +29,7 @@ public class TLSPolicies extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>DATASOURCE::SLB::TLSPolicies</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.

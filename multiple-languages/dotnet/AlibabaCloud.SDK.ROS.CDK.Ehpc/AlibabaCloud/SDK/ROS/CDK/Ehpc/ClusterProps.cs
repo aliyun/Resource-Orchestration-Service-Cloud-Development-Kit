@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::EHPC::Cluster`.</summary>
+    /// <summary>Properties for defining a `Cluster`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-cluster
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ehpc.ClusterProps")]
     public class ClusterProps : AlibabaCloud.SDK.ROS.CDK.Ehpc.IClusterProps
     {
@@ -1144,7 +1147,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
 
         private object? _period;
 
-        /// <summary>Property period: The purchase of long resources, units: week / month / year.</summary>
+        /// <summary>Property period: The purchase of long resources, units: week \/ month \/ year.</summary>
         /// <remarks>
         /// When the value of the parameter EcsChargeType when PrePaid take effect and for the selected value will be.
         /// </remarks>

@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::ACM::Configurations`
+ * Properties for defining a `RosConfigurations`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-acm-configurations
  */
 export interface RosConfigurationsProps {
 
@@ -68,18 +69,15 @@ function rosConfigurationsPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * A ROS template type:  `DATASOURCE::ACM::Configurations`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ACM::Configurations`, which is used to query the details of configurations.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Configurations` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-acm-configurations
  */
 export class RosConfigurations extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ACM::Configurations";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Configurations: The list of configurations.
@@ -115,8 +113,6 @@ export class RosConfigurations extends ros.RosResource {
     public group: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::ACM::Configurations`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -148,7 +144,8 @@ export class RosConfigurations extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::ACM::Namespaces`
+ * Properties for defining a `RosNamespaces`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-acm-namespaces
  */
 export interface RosNamespacesProps {
 }
@@ -184,18 +181,15 @@ function rosNamespacesPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `DATASOURCE::ACM::Namespaces`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ACM::Namespaces`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Namespaces` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-acm-namespaces
  */
 export class RosNamespaces extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ACM::Namespaces";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute NamespaceIds: The list of namespace IDs.
@@ -211,8 +205,6 @@ export class RosNamespaces extends ros.RosResource {
 
 
     /**
-     * Create a new `DATASOURCE::ACM::Namespaces`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

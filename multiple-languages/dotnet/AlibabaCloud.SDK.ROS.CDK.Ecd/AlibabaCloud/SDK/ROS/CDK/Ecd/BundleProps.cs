@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecd
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ECD::Bundle`.</summary>
+    /// <summary>Properties for defining a `Bundle`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-bundle
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecd.BundleProps")]
     public class BundleProps : AlibabaCloud.SDK.ROS.CDK.Ecd.IBundleProps
     {

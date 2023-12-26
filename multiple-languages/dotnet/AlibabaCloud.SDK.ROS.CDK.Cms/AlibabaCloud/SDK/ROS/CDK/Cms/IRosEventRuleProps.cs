@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cms
 {
-    /// <summary>Properties for defining a `ALIYUN::CMS::EventRule`.</summary>
+    /// <summary>Properties for defining a `RosEventRule`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-eventrule
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosEventRuleProps), fullyQualifiedName: "@alicloud/ros-cdk-cms.RosEventRuleProps")]
     public interface IRosEventRuleProps
     {
@@ -82,7 +85,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::CMS::EventRule`.</summary>
+        /// <summary>Properties for defining a `RosEventRule`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-eventrule
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosEventRuleProps), fullyQualifiedName: "@alicloud/ros-cdk-cms.RosEventRuleProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cms.IRosEventRuleProps
         {

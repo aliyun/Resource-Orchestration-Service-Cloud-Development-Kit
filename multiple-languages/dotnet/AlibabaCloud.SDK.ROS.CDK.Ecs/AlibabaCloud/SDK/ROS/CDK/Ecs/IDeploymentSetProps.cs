@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>Properties for defining a `ALIYUN::ECS::DeploymentSet`.</summary>
+    /// <summary>Properties for defining a `DeploymentSet`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-deploymentset
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IDeploymentSetProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.DeploymentSetProps")]
     public interface IDeploymentSetProps
     {
@@ -39,6 +42,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
+        /// <summary>Property groupCount: Set the number of groups for the deployment set group high availability policy.</summary>
+        /// <remarks>
+        /// Value range: 1~7.
+        /// Default value: 3.
+        /// This parameter only takes effect when Strategy=AvailabilityGroup.
+        /// </remarks>
+        [JsiiProperty(name: "groupCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? GroupCount
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property onUnableToRedeployFailedInstance: The emergency solution to redeploy failed instances in the deployment set.</summary>
         /// <remarks>
         /// Valid values:
@@ -57,7 +76,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ECS::DeploymentSet`.</summary>
+        /// <summary>Property strategy: Deployment strategy.</summary>
+        /// <remarks>
+        /// Ranges:
+        /// Availability: High availability strategy.
+        /// AvailabilityGroup: Deployment group high availability strategy.
+        /// LowLatency: Network low latency strategy.
+        /// </remarks>
+        [JsiiProperty(name: "strategy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Strategy
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Properties for defining a `DeploymentSet`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-deploymentset
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IDeploymentSetProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.DeploymentSetProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.IDeploymentSetProps
         {
@@ -90,6 +129,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property groupCount: Set the number of groups for the deployment set group high availability policy.</summary>
+            /// <remarks>
+            /// Value range: 1~7.
+            /// Default value: 3.
+            /// This parameter only takes effect when Strategy=AvailabilityGroup.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "groupCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? GroupCount
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property onUnableToRedeployFailedInstance: The emergency solution to redeploy failed instances in the deployment set.</summary>
             /// <remarks>
             /// Valid values:
@@ -101,6 +153,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             [JsiiOptional]
             [JsiiProperty(name: "onUnableToRedeployFailedInstance", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? OnUnableToRedeployFailedInstance
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property strategy: Deployment strategy.</summary>
+            /// <remarks>
+            /// Ranges:
+            /// Availability: High availability strategy.
+            /// AvailabilityGroup: Deployment group high availability strategy.
+            /// LowLatency: Network low latency strategy.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "strategy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Strategy
             {
                 get => GetInstanceProperty<object?>();
             }

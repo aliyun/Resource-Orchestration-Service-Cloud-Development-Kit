@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::OSS::Domain`.</summary>
+    /// <summary>Properties for defining a `Domain`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-domain
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-oss.DomainProps")]
     public class DomainProps : AlibabaCloud.SDK.ROS.CDK.Oss.IDomainProps
     {

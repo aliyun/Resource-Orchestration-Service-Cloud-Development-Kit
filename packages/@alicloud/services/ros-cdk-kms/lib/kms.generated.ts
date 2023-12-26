@@ -3,12 +3,13 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::KMS::Alias`
+ * Properties for defining a `RosAlias`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-alias
  */
 export interface RosAliasProps {
 
     /**
-     * @Property aliasName: - The display name of the key. You can use the alias to call APIs such as Encrypt, GenerateDataKey, and DescribeKey. - Not including the prefix, the minimum length of an alias is 1 and the maximum length is 255. - The prefix alias/ must be included.
+     * @Property aliasName: - The display name of the key. You can use the alias to call APIs such as Encrypt, GenerateDataKey, and DescribeKey. - Not including the prefix, the minimum length of an alias is 1 and the maximum length is 255. - The prefix alias\/ must be included.
      */
     readonly aliasName: string | ros.IResolvable;
 
@@ -62,7 +63,9 @@ function rosAliasPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `ALIYUN::KMS::Alias`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Alias`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Alias` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-alias
  */
 export class RosAlias extends ros.RosResource {
     /**
@@ -70,16 +73,11 @@ export class RosAlias extends ros.RosResource {
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::KMS::Alias";
 
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
-
     public enableResourcePropertyConstraint: boolean;
 
 
     /**
-     * @Property aliasName: - The display name of the key. You can use the alias to call APIs such as Encrypt, GenerateDataKey, and DescribeKey. - Not including the prefix, the minimum length of an alias is 1 and the maximum length is 255. - The prefix alias/ must be included.
+     * @Property aliasName: - The display name of the key. You can use the alias to call APIs such as Encrypt, GenerateDataKey, and DescribeKey. - Not including the prefix, the minimum length of an alias is 1 and the maximum length is 255. - The prefix alias\/ must be included.
      */
     public aliasName: string | ros.IResolvable;
 
@@ -89,8 +87,6 @@ export class RosAlias extends ros.RosResource {
     public keyId: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::KMS::Alias`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -116,7 +112,8 @@ export class RosAlias extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::KMS::Key`
+ * Properties for defining a `RosKey`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-key
  */
 export interface RosKeyProps {
 
@@ -136,20 +133,20 @@ export interface RosKeyProps {
     readonly enable?: boolean | ros.IResolvable;
 
     /**
-     * @Property enableAutomaticRotation: Whether to enable automatic key rotation. Valid value: true/false (default)
+     * @Property enableAutomaticRotation: Whether to enable automatic key rotation. Valid value: true\/false (default)
      */
     readonly enableAutomaticRotation?: boolean | ros.IResolvable;
 
     /**
-     * @Property keySpec: Key type. Valid value: Aliyun_AES_256/Aliyun_SM4/RSA_2048/EC_P256/EC_P256K/EC_SM2
+     * @Property keySpec: Key type. Valid value: Aliyun_AES_256\/Aliyun_SM4\/RSA_2048\/EC_P256\/EC_P256K\/EC_SM2
      */
     readonly keySpec?: string | ros.IResolvable;
 
     /**
      * @Property keyUsage: The usage of the CMK. Valid values:
-     * ENCRYPT/DECRYPT: encrypts or decrypts data.
-     * SIGN/VERIFY: generates or verifies a digital signature.
-     * If the CMK supports signature verification, the default value is SIGN/VERIFY. If the CMK does not support signature verification, the default value is ENCRYPT/DECRYPT.
+     * ENCRYPT\/DECRYPT: encrypts or decrypts data.
+     * SIGN\/VERIFY: generates or verifies a digital signature.
+     * If the CMK supports signature verification, the default value is SIGN\/VERIFY. If the CMK does not support signature verification, the default value is ENCRYPT\/DECRYPT.
      */
     readonly keyUsage?: string | ros.IResolvable;
 
@@ -234,18 +231,15 @@ function rosKeyPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * A ROS template type:  `ALIYUN::KMS::Key`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Key`, which is used to create a customer master key (CMK).
+ * @Note This class does not contain additional functions, so it is recommended to use the `Key` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-key
  */
 export class RosKey extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::KMS::Key";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute KeyId: The globally unique identifier for the CMK.
@@ -271,20 +265,20 @@ export class RosKey extends ros.RosResource {
     public enable: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property enableAutomaticRotation: Whether to enable automatic key rotation. Valid value: true/false (default)
+     * @Property enableAutomaticRotation: Whether to enable automatic key rotation. Valid value: true\/false (default)
      */
     public enableAutomaticRotation: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property keySpec: Key type. Valid value: Aliyun_AES_256/Aliyun_SM4/RSA_2048/EC_P256/EC_P256K/EC_SM2
+     * @Property keySpec: Key type. Valid value: Aliyun_AES_256\/Aliyun_SM4\/RSA_2048\/EC_P256\/EC_P256K\/EC_SM2
      */
     public keySpec: string | ros.IResolvable | undefined;
 
     /**
      * @Property keyUsage: The usage of the CMK. Valid values:
-     * ENCRYPT/DECRYPT: encrypts or decrypts data.
-     * SIGN/VERIFY: generates or verifies a digital signature.
-     * If the CMK supports signature verification, the default value is SIGN/VERIFY. If the CMK does not support signature verification, the default value is ENCRYPT/DECRYPT.
+     * ENCRYPT\/DECRYPT: encrypts or decrypts data.
+     * SIGN\/VERIFY: generates or verifies a digital signature.
+     * If the CMK supports signature verification, the default value is SIGN\/VERIFY. If the CMK does not support signature verification, the default value is ENCRYPT\/DECRYPT.
      */
     public keyUsage: string | ros.IResolvable | undefined;
 
@@ -306,8 +300,6 @@ export class RosKey extends ros.RosResource {
     public rotationInterval: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::KMS::Key`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -348,7 +340,8 @@ export class RosKey extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::KMS::Secret`
+ * Properties for defining a `RosSecret`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-secret
  */
 export interface RosSecretProps {
 
@@ -515,18 +508,15 @@ function rosSecretPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * A ROS template type:  `ALIYUN::KMS::Secret`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Secret`, which is used to create a secret and store the initial version of the secret.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Secret` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-secret
  */
 export class RosSecret extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::KMS::Secret";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
@@ -629,8 +619,6 @@ export class RosSecret extends ros.RosResource {
     public versionStages: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::KMS::Secret`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

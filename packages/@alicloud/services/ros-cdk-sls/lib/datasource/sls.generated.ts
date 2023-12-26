@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::SLS::Logstores`
+ * Properties for defining a `RosLogstores`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-sls-logstores
  */
 export interface RosLogstoresProps {
 
@@ -54,18 +55,15 @@ function rosLogstoresPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `DATASOURCE::SLS::Logstores`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLS::Logstores`, which is used to query Logstores.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Logstores` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-sls-logstores
  */
 export class RosLogstores extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::SLS::Logstores";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Logstores: The list of logstores.
@@ -86,8 +84,6 @@ export class RosLogstores extends ros.RosResource {
     public logstoreName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::SLS::Logstores`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -114,7 +110,8 @@ export class RosLogstores extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::SLS::Projects`
+ * Properties for defining a `RosProjects`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-sls-projects
  */
 export interface RosProjectsProps {
 }
@@ -150,18 +147,15 @@ function rosProjectsPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `DATASOURCE::SLS::Projects`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLS::Projects`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Projects` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-sls-projects
  */
 export class RosProjects extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::SLS::Projects";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ProjectNames: The list of project names.
@@ -177,8 +171,6 @@ export class RosProjects extends ros.RosResource {
 
 
     /**
-     * Create a new `DATASOURCE::SLS::Projects`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

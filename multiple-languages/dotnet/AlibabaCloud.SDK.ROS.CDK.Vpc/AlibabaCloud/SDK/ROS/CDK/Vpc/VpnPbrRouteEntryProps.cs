@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::VPC::VpnPbrRouteEntry`.</summary>
+    /// <summary>Properties for defining a `VpnPbrRouteEntry`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnpbrrouteentry
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.VpnPbrRouteEntryProps")]
     public class VpnPbrRouteEntryProps : AlibabaCloud.SDK.ROS.CDK.Vpc.IVpnPbrRouteEntryProps
     {

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `DATASOURCE::VPC::RouteEntries`.</summary>
+    /// <summary>Properties for defining a `RouteEntries`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-routeentries
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.datasource.RouteEntriesProps")]
     public class RouteEntriesProps : AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource.IRouteEntriesProps
     {

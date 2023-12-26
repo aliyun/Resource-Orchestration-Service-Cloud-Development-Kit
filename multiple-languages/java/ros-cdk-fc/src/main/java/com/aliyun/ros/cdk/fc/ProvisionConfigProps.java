@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.fc;
 
 /**
- * Properties for defining a <code>ALIYUN::FC::ProvisionConfig</code>.
+ * Properties for defining a <code>ProvisionConfig</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-provisionconfig
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:35.606Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.144Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.ProvisionConfigProps")
 @software.amazon.jsii.Jsii.Proxy(ProvisionConfigProps.Jsii$Proxy.class)
 public interface ProvisionConfigProps extends software.amazon.jsii.JsiiSerializable {

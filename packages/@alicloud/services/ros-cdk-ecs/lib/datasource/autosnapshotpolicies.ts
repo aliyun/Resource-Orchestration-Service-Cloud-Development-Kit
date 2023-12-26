@@ -4,7 +4,8 @@ import { RosAutoSnapshotPolicies } from './ecs.generated';
 export { RosAutoSnapshotPolicies as AutoSnapshotPoliciesProperty };
 
 /**
- * Properties for defining a `DATASOURCE::ECS::AutoSnapshotPolicies`
+ * Properties for defining a `AutoSnapshotPolicies`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-autosnapshotpolicies
  */
 export interface AutoSnapshotPoliciesProps {
 
@@ -25,14 +26,11 @@ export interface AutoSnapshotPoliciesProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::ECS::AutoSnapshotPolicies`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::AutoSnapshotPolicies`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAutoSnapshotPolicies`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-autosnapshotpolicies
  */
 export class AutoSnapshotPolicies extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AutoSnapshotPolicies: The list of auto snapshot policies.
@@ -45,8 +43,6 @@ export class AutoSnapshotPolicies extends ros.Resource {
     public readonly attrAutoSnapshotPolicyIds: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::ECS::AutoSnapshotPolicies`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

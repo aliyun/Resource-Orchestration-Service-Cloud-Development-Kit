@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Datahub
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::DATAHUB::Topic`.</summary>
+    /// <summary>Properties for defining a `RosTopic`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-datahub-topic
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-datahub.RosTopicProps")]
     public class RosTopicProps : AlibabaCloud.SDK.ROS.CDK.Datahub.IRosTopicProps
     {

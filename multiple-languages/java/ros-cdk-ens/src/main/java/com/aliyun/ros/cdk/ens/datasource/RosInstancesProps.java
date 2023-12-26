@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.ens.datasource;
 
 /**
- * Properties for defining a <code>DATASOURCE::ENS::Instances</code>.
+ * Properties for defining a <code>RosInstances</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ens-instances
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:35.456Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.975Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ens.$Module.class, fqn = "@alicloud/ros-cdk-ens.datasource.RosInstancesProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstancesProps.Jsii$Proxy.class)
 public interface RosInstancesProps extends software.amazon.jsii.JsiiSerializable {

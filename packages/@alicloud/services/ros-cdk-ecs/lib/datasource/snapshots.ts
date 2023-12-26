@@ -4,7 +4,8 @@ import { RosSnapshots } from './ecs.generated';
 export { RosSnapshots as SnapshotsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::ECS::Snapshots`
+ * Properties for defining a `Snapshots`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-snapshots
  */
 export interface SnapshotsProps {
 
@@ -105,14 +106,11 @@ export interface SnapshotsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::ECS::Snapshots`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Snapshots`, which is used to query all snapshots of an Elastic Compute Service (ECS) instance or a disk.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSnapshots`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-snapshots
  */
 export class Snapshots extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute SnapshotIds: the list of snapshot ids.
@@ -125,8 +123,6 @@ export class Snapshots extends ros.Resource {
     public readonly attrSnapshots: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::ECS::Snapshots`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

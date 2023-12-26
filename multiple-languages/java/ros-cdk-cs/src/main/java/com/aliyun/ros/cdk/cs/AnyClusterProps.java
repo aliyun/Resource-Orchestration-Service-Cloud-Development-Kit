@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.cs;
 
 /**
- * Properties for defining a <code>ALIYUN::CS::AnyCluster</code>.
+ * Properties for defining a <code>AnyCluster</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-anycluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.181Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.574Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.AnyClusterProps")
 @software.amazon.jsii.Jsii.Proxy(AnyClusterProps.Jsii$Proxy.class)
 public interface AnyClusterProps extends software.amazon.jsii.JsiiSerializable {

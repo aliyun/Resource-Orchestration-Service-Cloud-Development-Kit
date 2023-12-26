@@ -4,7 +4,8 @@ import { RosDomainConfig } from './waf.generated';
 export { RosDomainConfig as DomainConfigProperty };
 
 /**
- * Properties for defining a `ALIYUN::WAF::DomainConfig`
+ * Properties for defining a `DomainConfig`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-domainconfig
  */
 export interface DomainConfigProps {
 
@@ -90,14 +91,11 @@ export interface DomainConfigProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::WAF::DomainConfig`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::WAF::DomainConfig`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomainConfig`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-domainconfig
  */
 export class DomainConfig extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Cname: CNAME assigned by WAF instance.
@@ -110,8 +108,6 @@ export class DomainConfig extends ros.Resource {
     public readonly attrProtocolType: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::WAF::DomainConfig`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

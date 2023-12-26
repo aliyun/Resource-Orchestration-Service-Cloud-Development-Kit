@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cms
 {
-    /// <summary>Properties for defining a `ALIYUN::CMS::ContactGroup`.</summary>
+    /// <summary>Properties for defining a `RosContactGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-contactgroup
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosContactGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-cms.RosContactGroupProps")]
     public interface IRosContactGroupProps
     {
@@ -35,7 +38,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::CMS::ContactGroup`.</summary>
+        /// <summary>Properties for defining a `RosContactGroup`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-contactgroup
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosContactGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-cms.RosContactGroupProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cms.IRosContactGroupProps
         {

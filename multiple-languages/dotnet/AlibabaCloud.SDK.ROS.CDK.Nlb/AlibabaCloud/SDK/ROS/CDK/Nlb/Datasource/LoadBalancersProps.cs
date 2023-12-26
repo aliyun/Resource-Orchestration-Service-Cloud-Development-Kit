@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Nlb.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::NLB::LoadBalancers`.</summary>
+    /// <summary>Properties for defining a `LoadBalancers`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nlb-loadbalancers
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-nlb.datasource.LoadBalancersProps")]
     public class LoadBalancersProps : AlibabaCloud.SDK.ROS.CDK.Nlb.Datasource.ILoadBalancersProps
     {

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::FOAS::Project`.</summary>
+    /// <summary>Properties for defining a `RosProject`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-foas-project
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-foas.RosProjectProps")]
     public class RosProjectProps : AlibabaCloud.SDK.ROS.CDK.Foas.IRosProjectProps
     {

@@ -4,7 +4,8 @@ import { RosRestoreTask } from './dbs.generated';
 export { RosRestoreTask as RestoreTaskProperty };
 
 /**
- * Properties for defining a `ALIYUN::DBS::RestoreTask`
+ * Properties for defining a `RestoreTask`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dbs-restoretask
  */
 export interface RestoreTaskProps {
 
@@ -129,14 +130,11 @@ export interface RestoreTaskProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::DBS::RestoreTask`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DBS::RestoreTask`, which is used to create a restore task.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRestoreTask`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dbs-restoretask
  */
 export class RestoreTask extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute RestoreTaskId: The ID of the restoration task.
@@ -144,8 +142,6 @@ export class RestoreTask extends ros.Resource {
     public readonly attrRestoreTaskId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::DBS::RestoreTask`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

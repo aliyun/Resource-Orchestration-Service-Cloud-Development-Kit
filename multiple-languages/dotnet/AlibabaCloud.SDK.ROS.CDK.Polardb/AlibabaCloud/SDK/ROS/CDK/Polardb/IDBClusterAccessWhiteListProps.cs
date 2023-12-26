@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Polardb
 {
-    /// <summary>Properties for defining a `ALIYUN::POLARDB::DBClusterAccessWhiteList`.</summary>
+    /// <summary>Properties for defining a `DBClusterAccessWhiteList`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusteraccesswhitelist
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IDBClusterAccessWhiteListProps), fullyQualifiedName: "@alicloud/ros-cdk-polardb.DBClusterAccessWhiteListProps")]
     public interface IDBClusterAccessWhiteListProps
     {
@@ -47,7 +50,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::POLARDB::DBClusterAccessWhiteList`.</summary>
+        /// <summary>Properties for defining a `DBClusterAccessWhiteList`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusteraccesswhitelist
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IDBClusterAccessWhiteListProps), fullyQualifiedName: "@alicloud/ros-cdk-polardb.DBClusterAccessWhiteListProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Polardb.IDBClusterAccessWhiteListProps
         {

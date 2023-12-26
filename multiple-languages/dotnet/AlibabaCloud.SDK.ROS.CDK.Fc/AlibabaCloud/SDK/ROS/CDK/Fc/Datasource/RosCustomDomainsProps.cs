@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Fc.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::FC::CustomDomains`.</summary>
+    /// <summary>Properties for defining a `RosCustomDomains`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-customdomains
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-fc.datasource.RosCustomDomainsProps")]
     public class RosCustomDomainsProps : AlibabaCloud.SDK.ROS.CDK.Fc.Datasource.IRosCustomDomainsProps
     {

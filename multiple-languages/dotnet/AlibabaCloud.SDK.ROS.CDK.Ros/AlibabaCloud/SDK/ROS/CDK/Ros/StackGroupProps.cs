@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ROS::StackGroup`.</summary>
+    /// <summary>Properties for defining a `StackGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-stackgroup
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ros.StackGroupProps")]
     public class StackGroupProps : AlibabaCloud.SDK.ROS.CDK.Ros.IStackGroupProps
     {

@@ -4,12 +4,15 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Computenest
 {
-    /// <summary>Properties for defining a `ALIYUN::ComputeNest::ServiceInstance`.</summary>
+    /// <summary>Properties for defining a `ServiceInstance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-computenest-serviceinstance
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IServiceInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-computenest.ServiceInstanceProps")]
     public interface IServiceInstanceProps
     {
         /// <summary>Property service: Service details.</summary>
-        [JsiiProperty(name: "service", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-computenest.RosServiceInstance.ServiceProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        [JsiiProperty(name: "service", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-computenest.RosServiceInstance.ServiceProperty\"}]}}")]
         object Service
         {
             get;
@@ -174,7 +177,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Computenest
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ComputeNest::ServiceInstance`.</summary>
+        /// <summary>Properties for defining a `ServiceInstance`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-computenest-serviceinstance
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IServiceInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-computenest.ServiceInstanceProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Computenest.IServiceInstanceProps
         {
@@ -183,7 +189,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Computenest
             }
 
             /// <summary>Property service: Service details.</summary>
-            [JsiiProperty(name: "service", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-computenest.RosServiceInstance.ServiceProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            [JsiiProperty(name: "service", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-computenest.RosServiceInstance.ServiceProperty\"}]}}")]
             public object Service
             {
                 get => GetInstanceProperty<object>()!;

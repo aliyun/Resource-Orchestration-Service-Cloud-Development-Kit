@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb.Datasource
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `DATASOURCE::SLB::DomainExtensions`.</summary>
+    /// <summary>Properties for defining a `DomainExtensions`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-domainextensions
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-slb.datasource.DomainExtensionsProps")]
     public class DomainExtensionsProps : AlibabaCloud.SDK.ROS.CDK.Slb.Datasource.IDomainExtensionsProps
     {

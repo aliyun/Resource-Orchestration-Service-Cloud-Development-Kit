@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.paidlc;
 
 /**
- * Properties for defining a <code>ALIYUN::PAIDLC::Job</code>.
+ * Properties for defining a <code>Job</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidlc-job
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.398Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.175Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.paidlc.$Module.class, fqn = "@alicloud/ros-cdk-paidlc.JobProps")
 @software.amazon.jsii.Jsii.Proxy(JobProps.Jsii$Proxy.class)
 public interface JobProps extends software.amazon.jsii.JsiiSerializable {

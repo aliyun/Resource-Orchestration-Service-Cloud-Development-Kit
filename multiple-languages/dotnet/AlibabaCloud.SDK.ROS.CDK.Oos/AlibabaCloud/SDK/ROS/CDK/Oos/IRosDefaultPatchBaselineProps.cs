@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Oos
 {
-    /// <summary>Properties for defining a `ALIYUN::OOS::DefaultPatchBaseline`.</summary>
+    /// <summary>Properties for defining a `RosDefaultPatchBaseline`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-defaultpatchbaseline
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosDefaultPatchBaselineProps), fullyQualifiedName: "@alicloud/ros-cdk-oos.RosDefaultPatchBaselineProps")]
     public interface IRosDefaultPatchBaselineProps
     {
@@ -17,7 +20,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::OOS::DefaultPatchBaseline`.</summary>
+        /// <summary>Properties for defining a `RosDefaultPatchBaseline`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-defaultpatchbaseline
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosDefaultPatchBaselineProps), fullyQualifiedName: "@alicloud/ros-cdk-oos.RosDefaultPatchBaselineProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Oos.IRosDefaultPatchBaselineProps
         {

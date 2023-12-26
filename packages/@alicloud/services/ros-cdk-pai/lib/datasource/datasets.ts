@@ -4,7 +4,8 @@ import { RosDatasets } from './pai.generated';
 export { RosDatasets as DatasetsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::PAI::Datasets`
+ * Properties for defining a `Datasets`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-datasets
  */
 export interface DatasetsProps {
 
@@ -24,14 +25,11 @@ export interface DatasetsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::PAI::Datasets`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::Datasets`, which is used to query the basic information about datasets.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDatasets`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-datasets
  */
 export class Datasets extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DatasetIds: The list of dataset IDs.
@@ -44,8 +42,6 @@ export class Datasets extends ros.Resource {
     public readonly attrDatasets: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::PAI::Datasets`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

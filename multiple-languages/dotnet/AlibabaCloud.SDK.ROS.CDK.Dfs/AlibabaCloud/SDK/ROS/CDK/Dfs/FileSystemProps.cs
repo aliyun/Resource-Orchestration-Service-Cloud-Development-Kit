@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dfs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::DFS::FileSystem`.</summary>
+    /// <summary>Properties for defining a `FileSystem`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-filesystem
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-dfs.FileSystemProps")]
     public class FileSystemProps : AlibabaCloud.SDK.ROS.CDK.Dfs.IFileSystemProps
     {

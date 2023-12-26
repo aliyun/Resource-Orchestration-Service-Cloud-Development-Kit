@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Dts
 {
-    /// <summary>Properties for defining a `ALIYUN::DTS::ConsumerGroup`.</summary>
+    /// <summary>Properties for defining a `RosConsumerGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-consumergroup
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosConsumerGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-dts.RosConsumerGroupProps")]
     public interface IRosConsumerGroupProps
     {
@@ -44,7 +47,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::DTS::ConsumerGroup`.</summary>
+        /// <summary>Properties for defining a `RosConsumerGroup`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-consumergroup
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosConsumerGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-dts.RosConsumerGroupProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Dts.IRosConsumerGroupProps
         {

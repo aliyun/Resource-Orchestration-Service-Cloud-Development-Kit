@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::ARMS::Prometheis`
+ * Properties for defining a `RosPrometheis`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-prometheis
  */
 export interface RosPrometheisProps {
 
@@ -46,18 +47,15 @@ function rosPrometheisPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `DATASOURCE::ARMS::Prometheis`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::Prometheis`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Prometheis` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-prometheis
  */
 export class RosPrometheis extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ARMS::Prometheis";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ClusterIds: The list of cluster IDs.
@@ -78,8 +76,6 @@ export class RosPrometheis extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::ARMS::Prometheis`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

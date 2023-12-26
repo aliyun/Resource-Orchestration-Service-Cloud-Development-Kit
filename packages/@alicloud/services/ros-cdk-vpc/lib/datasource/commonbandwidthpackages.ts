@@ -4,7 +4,8 @@ import { RosCommonBandwidthPackages } from './vpc.generated';
 export { RosCommonBandwidthPackages as CommonBandwidthPackagesProperty };
 
 /**
- * Properties for defining a `DATASOURCE::VPC::CommonBandwidthPackages`
+ * Properties for defining a `CommonBandwidthPackages`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-commonbandwidthpackages
  */
 export interface CommonBandwidthPackagesProps {
 
@@ -25,14 +26,11 @@ export interface CommonBandwidthPackagesProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::VPC::CommonBandwidthPackages`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::CommonBandwidthPackages`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCommonBandwidthPackages`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-commonbandwidthpackages
  */
 export class CommonBandwidthPackages extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute CommonBandwidthPackageIds: The list of common bandwidth package IDs.
@@ -45,8 +43,6 @@ export class CommonBandwidthPackages extends ros.Resource {
     public readonly attrCommonBandwidthPackages: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::VPC::CommonBandwidthPackages`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

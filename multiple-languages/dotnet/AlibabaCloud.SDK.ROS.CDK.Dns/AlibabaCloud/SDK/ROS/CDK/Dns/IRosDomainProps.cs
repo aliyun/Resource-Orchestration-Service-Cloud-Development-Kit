@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Dns
 {
-    /// <summary>Properties for defining a `ALIYUN::DNS::Domain`.</summary>
+    /// <summary>Properties for defining a `RosDomain`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dns-domain
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosDomainProps), fullyQualifiedName: "@alicloud/ros-cdk-dns.RosDomainProps")]
     public interface IRosDomainProps
     {
@@ -56,7 +59,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::DNS::Domain`.</summary>
+        /// <summary>Properties for defining a `RosDomain`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dns-domain
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosDomainProps), fullyQualifiedName: "@alicloud/ros-cdk-dns.RosDomainProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Dns.IRosDomainProps
         {

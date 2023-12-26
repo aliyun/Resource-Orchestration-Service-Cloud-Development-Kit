@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * A ROS resource type:  <code>ALIYUN::ECS::CopyImage</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::CopyImage</code>, which is used to copy a custom image from one region to another region.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.726Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.179Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.CopyImage")
 public class CopyImage extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,11 +16,7 @@ public class CopyImage extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ECS::CopyImage</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -33,11 +29,7 @@ public class CopyImage extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ECS::CopyImage</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -142,6 +134,31 @@ public class CopyImage extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder imageId(final com.aliyun.ros.cdk.core.IResolvable imageId) {
             this.props.imageId(imageId);
+            return this;
+        }
+
+        /**
+         * Property allowCopyInSameRegion: Whether to allow copying images in the same region.
+         * <p>
+         * If set to true, the image will not be copied, the source image id will be returned, and the original image will not be deleted.
+         * <p>
+         * @return {@code this}
+         * @param allowCopyInSameRegion Property allowCopyInSameRegion: Whether to allow copying images in the same region. This parameter is required.
+         */
+        public Builder allowCopyInSameRegion(final java.lang.Boolean allowCopyInSameRegion) {
+            this.props.allowCopyInSameRegion(allowCopyInSameRegion);
+            return this;
+        }
+        /**
+         * Property allowCopyInSameRegion: Whether to allow copying images in the same region.
+         * <p>
+         * If set to true, the image will not be copied, the source image id will be returned, and the original image will not be deleted.
+         * <p>
+         * @return {@code this}
+         * @param allowCopyInSameRegion Property allowCopyInSameRegion: Whether to allow copying images in the same region. This parameter is required.
+         */
+        public Builder allowCopyInSameRegion(final com.aliyun.ros.cdk.core.IResolvable allowCopyInSameRegion) {
+            this.props.allowCopyInSameRegion(allowCopyInSameRegion);
             return this;
         }
 

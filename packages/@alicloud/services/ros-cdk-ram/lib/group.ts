@@ -4,7 +4,8 @@ import { RosGroup } from './ram.generated';
 export { RosGroup as GroupProperty };
 
 /**
- * Properties for defining a `ALIYUN::RAM::Group`
+ * Properties for defining a `Group`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-group
  */
 export interface GroupProps {
 
@@ -43,14 +44,11 @@ export interface GroupProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::RAM::Group`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::Group`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGroup`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-group
  */
 export class Group extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute GroupName: Id of ram group.
@@ -58,8 +56,6 @@ export class Group extends ros.Resource {
     public readonly attrGroupName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::RAM::Group`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

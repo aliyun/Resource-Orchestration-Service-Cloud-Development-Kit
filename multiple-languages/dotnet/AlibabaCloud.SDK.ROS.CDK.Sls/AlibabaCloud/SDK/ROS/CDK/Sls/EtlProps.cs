@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::SLS::Etl`.</summary>
+    /// <summary>Properties for defining a `Etl`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-etl
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-sls.EtlProps")]
     public class EtlProps : AlibabaCloud.SDK.ROS.CDK.Sls.IEtlProps
     {

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cen
 {
-    /// <summary>Properties for defining a `ALIYUN::CEN::CenBandwidthPackageAssociation`.</summary>
+    /// <summary>Properties for defining a `CenBandwidthPackageAssociation`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthpackageassociation
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ICenBandwidthPackageAssociationProps), fullyQualifiedName: "@alicloud/ros-cdk-cen.CenBandwidthPackageAssociationProps")]
     public interface ICenBandwidthPackageAssociationProps
     {
@@ -22,7 +25,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::CEN::CenBandwidthPackageAssociation`.</summary>
+        /// <summary>Properties for defining a `CenBandwidthPackageAssociation`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthpackageassociation
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ICenBandwidthPackageAssociationProps), fullyQualifiedName: "@alicloud/ros-cdk-cen.CenBandwidthPackageAssociationProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cen.ICenBandwidthPackageAssociationProps
         {

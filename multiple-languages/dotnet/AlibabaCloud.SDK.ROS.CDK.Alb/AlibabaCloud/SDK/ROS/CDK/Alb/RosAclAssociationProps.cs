@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ALB::AclAssociation`.</summary>
+    /// <summary>Properties for defining a `RosAclAssociation`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-aclassociation
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.RosAclAssociationProps")]
     public class RosAclAssociationProps : AlibabaCloud.SDK.ROS.CDK.Alb.IRosAclAssociationProps
     {

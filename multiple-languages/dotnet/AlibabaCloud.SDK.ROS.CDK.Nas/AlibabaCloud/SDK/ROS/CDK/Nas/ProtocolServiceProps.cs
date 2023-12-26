@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::NAS::ProtocolService`.</summary>
+    /// <summary>Properties for defining a `ProtocolService`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-protocolservice
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-nas.ProtocolServiceProps")]
     public class ProtocolServiceProps : AlibabaCloud.SDK.ROS.CDK.Nas.IProtocolServiceProps
     {
@@ -170,7 +173,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
 
         private object? _description;
 
-        /// <summary>Property description: Description of protocol service.The console shows the "protocol service name". limit: The length is 2 to 128 English or Chinese characters. Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //. It can contain numbers, half-horn colon (:), down line (_) or short lines (-).</summary>
+        /// <summary>Property description: Description of protocol service.The console shows the "protocol service name". limit: The length is 2 to 128 English or Chinese characters. Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/. It can contain numbers, half-horn colon (:), down line (_) or short lines (-).</summary>
         [JsiiOptional]
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? Description

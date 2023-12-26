@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::DBS::BackupPlans`
+ * Properties for defining a `RosBackupPlans`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dbs-backupplans
  */
 export interface RosBackupPlansProps {
 
@@ -60,18 +61,15 @@ function rosBackupPlansPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `DATASOURCE::DBS::BackupPlans`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::DBS::BackupPlans`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `BackupPlans` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dbs-backupplans
  */
 export class RosBackupPlans extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::DBS::BackupPlans";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute BackupPlanIds: The list of backup plan IDs.
@@ -102,8 +100,6 @@ export class RosBackupPlans extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::DBS::BackupPlans`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

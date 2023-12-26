@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::SLB::DomainExtension`.</summary>
+    /// <summary>Properties for defining a `RosDomainExtension`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-domainextension
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-slb.RosDomainExtensionProps")]
     public class RosDomainExtensionProps : AlibabaCloud.SDK.ROS.CDK.Slb.IRosDomainExtensionProps
     {

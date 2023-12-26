@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlpautoml
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::NLPAUTOML::Project`.</summary>
+    /// <summary>Properties for defining a `Project`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlpautoml-project
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-nlpautoml.ProjectProps")]
     public class ProjectProps : AlibabaCloud.SDK.ROS.CDK.Nlpautoml.IProjectProps
     {

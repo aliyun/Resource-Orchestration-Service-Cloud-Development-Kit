@@ -4,7 +4,8 @@ import { RosCenRouteMaps } from './cen.generated';
 export { RosCenRouteMaps as CenRouteMapsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::CEN::CenRouteMaps`
+ * Properties for defining a `CenRouteMaps`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-cenroutemaps
  */
 export interface CenRouteMapsProps {
 
@@ -35,14 +36,11 @@ export interface CenRouteMapsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::CEN::CenRouteMaps`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::CEN::CenRouteMaps`, which is used to query the details of routing policies.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCenRouteMaps`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-cenroutemaps
  */
 export class CenRouteMaps extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute RouteMapIds: The list of The RouteMap ids.
@@ -55,8 +53,6 @@ export class CenRouteMaps extends ros.Resource {
     public readonly attrRouteMaps: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::CEN::CenRouteMaps`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

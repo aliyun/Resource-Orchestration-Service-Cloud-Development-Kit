@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::EDAS::K8sApplication`.</summary>
+    /// <summary>Properties for defining a `RosK8sApplication`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-k8sapplication
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-edas.RosK8sApplicationProps")]
     public class RosK8sApplicationProps : AlibabaCloud.SDK.ROS.CDK.Edas.IRosK8sApplicationProps
     {
@@ -997,7 +1000,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
         private object? _localVolume;
 
         /// <remarks>
-        /// <strong>Property</strong>: localVolume: The configuration for mounting host files to the container where the application is running. For example, the value can be [{"type":"", "nodePath":"/localfiles", "mountPath":"/app/files"}, {"type":"Directory", "nodePath":"/mnt", "mountPath":"/app/storage"}].
+        /// <strong>Property</strong>: localVolume: The configuration for mounting host files to the container where the application is running. For example, the value can be [{"type":"", "nodePath":"\/localfiles", "mountPath":"\/app\/files"}, {"type":"Directory", "nodePath":"\/mnt", "mountPath":"\/app\/storage"}].
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "localVolume", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-edas.RosK8sApplication.LocalVolumeProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -1080,7 +1083,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
         private object? _mountDescs;
 
         /// <remarks>
-        /// <strong>Property</strong>: mountDescs: The description of the NAS mounting configuration. For example, the value can be [{"NasPath": "/k8s","MountPath": "/mnt"}, {"NasPath": "/files", "MountPath": "/app/files"}].
+        /// <strong>Property</strong>: mountDescs: The description of the NAS mounting configuration. For example, the value can be [{"NasPath": "\/k8s","MountPath": "\/mnt"}, {"NasPath": "\/files", "MountPath": "\/app\/files"}].
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "mountDescs", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-edas.RosK8sApplication.MountDescsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -1299,7 +1302,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
         private object? _postStart;
 
         /// <remarks>
-        /// <strong>Property</strong>: postStart: The post-start script. For example, {"Exec": {"Command": ["ls", "/"]}}.
+        /// <strong>Property</strong>: postStart: The post-start script. For example, {"Exec": {"Command": ["ls", "\/"]}}.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "postStart", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-edas.RosK8sApplication.PostStartProperty\"}]}}", isOptional: true)]
@@ -1332,7 +1335,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
         private object? _preStop;
 
         /// <remarks>
-        /// <strong>Property</strong>: preStop: The pre-stop script. For example, {"Exec": {"Command": ["ls", "/"]}}.
+        /// <strong>Property</strong>: preStop: The pre-stop script. For example, {"Exec": {"Command": ["ls", "\/"]}}.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "preStop", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-edas.RosK8sApplication.PreStopProperty\"}]}}", isOptional: true)]

@@ -4,11 +4,16 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ess
 {
-    /// <summary>A ROS template type:  `ALIYUN::ESS::AlarmTaskEnable`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::AlarmTaskEnable`, which is used to start an alarm task.</summary>
+    /// <remarks>
+    /// You can call this operation to enable alarm tasks when the task is stopped.
+    ///
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `AlarmTaskEnable` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-alarmtaskenable
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Ess.RosAlarmTaskEnable), fullyQualifiedName: "@alicloud/ros-cdk-ess.RosAlarmTaskEnable", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-ess.RosAlarmTaskEnableProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosAlarmTaskEnable : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::ESS::AlarmTaskEnable`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -116,7 +121,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
         }
 
-        /// <summary>A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.</summary>
         [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
         public virtual bool EnableResourcePropertyConstraint
         {

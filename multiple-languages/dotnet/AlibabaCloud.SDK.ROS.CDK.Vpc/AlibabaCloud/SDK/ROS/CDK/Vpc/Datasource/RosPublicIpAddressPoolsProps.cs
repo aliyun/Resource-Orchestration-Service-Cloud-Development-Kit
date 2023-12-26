@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::VPC::PublicIpAddressPools`.</summary>
+    /// <summary>Properties for defining a `RosPublicIpAddressPools`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-publicipaddresspools
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.datasource.RosPublicIpAddressPoolsProps")]
     public class RosPublicIpAddressPoolsProps : AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource.IRosPublicIpAddressPoolsProps
     {
@@ -59,7 +62,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
         /// <strong>Property</strong>: publicIpAddressPoolName: The name of the IP address pool.
         /// This parameter is optional. The name must be 1 to 128 characters in length,
         /// and can contain digits, periods (.), underscores (_), and hyphens (-).
-        /// The name must start with a letter but cannot start with http:// or https://.
+        /// The name must start with a letter but cannot start with http:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "publicIpAddressPoolName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

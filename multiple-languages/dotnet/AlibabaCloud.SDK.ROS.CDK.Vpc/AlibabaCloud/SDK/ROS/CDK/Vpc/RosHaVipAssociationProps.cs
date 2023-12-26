@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::VPC::HaVipAssociation`.</summary>
+    /// <summary>Properties for defining a `RosHaVipAssociation`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-havipassociation
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.RosHaVipAssociationProps")]
     public class RosHaVipAssociationProps : AlibabaCloud.SDK.ROS.CDK.Vpc.IRosHaVipAssociationProps
     {

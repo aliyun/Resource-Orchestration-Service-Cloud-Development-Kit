@@ -4,7 +4,8 @@ import { RosZoneVpcBinder } from './pvtz.generated';
 export { RosZoneVpcBinder as ZoneVpcBinderProperty };
 
 /**
- * Properties for defining a `ALIYUN::PVTZ::ZoneVpcBinder`
+ * Properties for defining a `ZoneVpcBinder`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-zonevpcbinder
  */
 export interface ZoneVpcBinderProps {
 
@@ -20,14 +21,11 @@ export interface ZoneVpcBinderProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::PVTZ::ZoneVpcBinder`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::PVTZ::ZoneVpcBinder`, which is used to bind a private zone to or unbind a private zone from a virtual private cloud (VPC).
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosZoneVpcBinder`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-zonevpcbinder
  */
 export class ZoneVpcBinder extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Vpcs: Vpc list
@@ -40,8 +38,6 @@ export class ZoneVpcBinder extends ros.Resource {
     public readonly attrZoneId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::PVTZ::ZoneVpcBinder`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

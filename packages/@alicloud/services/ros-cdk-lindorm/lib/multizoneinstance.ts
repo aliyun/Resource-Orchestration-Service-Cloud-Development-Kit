@@ -4,7 +4,8 @@ import { RosMultiZoneInstance } from './lindorm.generated';
 export { RosMultiZoneInstance as MultiZoneInstanceProperty };
 
 /**
- * Properties for defining a `ALIYUN::Lindorm::MultiZoneInstance`
+ * Properties for defining a `MultiZoneInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-lindorm-multizoneinstance
  */
 export interface MultiZoneInstanceProps {
 
@@ -241,14 +242,11 @@ export interface MultiZoneInstanceProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::Lindorm::MultiZoneInstance`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::Lindorm::MultiZoneInstance`, which is used to create a multi-zone Lindorm instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMultiZoneInstance`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-lindorm-multizoneinstance
  */
 export class MultiZoneInstance extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AuthInfos: The list of the Lindorm instance auth infos.
@@ -266,8 +264,6 @@ export class MultiZoneInstance extends ros.Resource {
     public readonly attrJdbcUrlList: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::Lindorm::MultiZoneInstance`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -4,7 +4,8 @@ import { RosTransitRouterPeerAttachment } from './cen.generated';
 export { RosTransitRouterPeerAttachment as TransitRouterPeerAttachmentProperty };
 
 /**
- * Properties for defining a `ALIYUN::CEN::TransitRouterPeerAttachment`
+ * Properties for defining a `TransitRouterPeerAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterpeerattachment
  */
 export interface TransitRouterPeerAttachmentProps {
 
@@ -55,14 +56,11 @@ export interface TransitRouterPeerAttachmentProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CEN::TransitRouterPeerAttachment`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterPeerAttachment`, which is used to create a cross-region connection for an Enterprise Edition transit router.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTransitRouterPeerAttachment`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterpeerattachment
  */
 export class TransitRouterPeerAttachment extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AutoPublishRouteEnabled: AutoPublishRouteEnabled
@@ -135,8 +133,6 @@ export class TransitRouterPeerAttachment extends ros.Resource {
     public readonly attrTransitRouterId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CEN::TransitRouterPeerAttachment`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>Properties for defining a `ALIYUN::ECS::AssignPrivateIpAddresses`.</summary>
+    /// <summary>Properties for defining a `AssignPrivateIpAddresses`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-assignprivateipaddresses
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IAssignPrivateIpAddressesProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.AssignPrivateIpAddressesProps")]
     public interface IAssignPrivateIpAddressesProps
     {
@@ -44,7 +47,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ECS::AssignPrivateIpAddresses`.</summary>
+        /// <summary>Properties for defining a `AssignPrivateIpAddresses`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-assignprivateipaddresses
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IAssignPrivateIpAddressesProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.AssignPrivateIpAddressesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.IAssignPrivateIpAddressesProps
         {

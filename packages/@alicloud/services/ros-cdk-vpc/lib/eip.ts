@@ -4,7 +4,8 @@ import { RosEIP } from './vpc.generated';
 export { RosEIP as EIPProperty };
 
 /**
- * Properties for defining a `ALIYUN::VPC::EIP`
+ * Properties for defining a `EIP`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eip
  */
 export interface EIPProps {
 
@@ -25,7 +26,7 @@ export interface EIPProps {
     readonly deletionProtection?: boolean | ros.IResolvable;
 
     /**
-     * Property description: Optional. The description of the EIP. The description must be 2 to 256 characters in length. It must start with a letter. It cannot start with http://  or https://.
+     * Property description: Optional. The description of the EIP. The description must be 2 to 256 characters in length. It must start with a letter. It cannot start with http:\/\/  or https:\/\/.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -47,7 +48,7 @@ export interface EIPProps {
     readonly isp?: string | ros.IResolvable;
 
     /**
-     * Property name: The name of the EIP. The name must be 2 to 128 characters in length. It must start with a letter. It can contain numbers, periods (.), underscores (_), and hyphens (-). It cannot start with http://  or https://
+     * Property name: The name of the EIP. The name must be 2 to 128 characters in length. It must start with a letter. It can contain numbers, periods (.), underscores (_), and hyphens (-). It cannot start with http:\/\/  or https:\/\/
      */
     readonly name?: string | ros.IResolvable;
 
@@ -80,7 +81,7 @@ export interface EIPProps {
     /**
      * Property securityProtectionTypes: The edition of Anti-DDoS.
      * If you do not set this parameter, Anti-DDoS Origin Basic is used.
-     * If you set the value to AntiDDoS_Enhanced, Anti-DDoS Pro/Premium is used.
+     * If you set the value to AntiDDoS_Enhanced, Anti-DDoS Pro\/Premium is used.
      */
     readonly securityProtectionTypes?: Array<string | ros.IResolvable> | ros.IResolvable;
 
@@ -96,14 +97,11 @@ export interface EIPProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::VPC::EIP`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::EIP`, which is used to apply for an elastic IP address (EIP).
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEIP`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eip
  */
 export class Eip extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AllocationId: ID that Aliyun assigns to represent the allocation of the address for use with VPC. Returned only for VPC elastic IP addresses.
@@ -126,8 +124,6 @@ export class Eip extends ros.Resource {
     public readonly attrOrderId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VPC::EIP`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

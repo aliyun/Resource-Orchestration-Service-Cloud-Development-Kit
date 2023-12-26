@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Alb
 {
-    /// <summary>A ROS template type:  `ALIYUN::ALB::ServerGroup`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::ServerGroup`, which is used to create a server group.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `ServerGroup` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-servergroup
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosServerGroup), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosServerGroup", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-alb.RosServerGroupProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosServerGroup : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::ALB::ServerGroup`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -492,13 +495,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
             /// <remarks>
             /// <strong></strong>: $ ^ : ' , +.
-            /// The URL must start with a forward slash (/).
+            /// The URL must start with a forward slash (\/).
             /// Note: This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
             ///
             /// <strong>Property</strong>: healthCheckPath: The URL that is used for health checks.
             /// The URL must be 1 to 80 characters in length, and can contain letters, digits, and
             /// the following special characters:
-            /// - / .% ?# & =.
+            /// - \/ .% ?# & =.
             /// It can also contain the following extended characters:
             /// _ ; ~ ! ( )* [ ]
             /// </remarks>
@@ -677,13 +680,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
                 /// <remarks>
                 /// <strong></strong>: $ ^ : ' , +.
-                /// The URL must start with a forward slash (/).
+                /// The URL must start with a forward slash (\/).
                 /// Note: This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
                 ///
                 /// <strong>Property</strong>: healthCheckPath: The URL that is used for health checks.
                 /// The URL must be 1 to 80 characters in length, and can contain letters, digits, and
                 /// the following special characters:
-                /// - / .% ?# & =.
+                /// - \/ .% ?# & =.
                 /// It can also contain the following extended characters:
                 /// _ ; ~ ! ( )* [ ]
                 /// </remarks>
@@ -1066,13 +1069,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
             /// <remarks>
             /// <strong></strong>: $ ^ : ' , +.
-            /// The URL must start with a forward slash (/).
+            /// The URL must start with a forward slash (\/).
             /// Note: This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
             ///
             /// <strong>Property</strong>: healthCheckPath: The URL that is used for health checks.
             /// The URL must be 1 to 80 characters in length, and can contain letters, digits, and
             /// the following special characters:
-            /// - / .% ?# & =.
+            /// - \/ .% ?# & =.
             /// It can also contain the following extended characters:
             /// _ ; ~ ! ( )* [ ]
             /// </remarks>

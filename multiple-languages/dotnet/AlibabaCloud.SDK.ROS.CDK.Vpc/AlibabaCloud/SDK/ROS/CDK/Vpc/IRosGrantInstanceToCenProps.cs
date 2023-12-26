@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>Properties for defining a `ALIYUN::VPC::GrantInstanceToCen`.</summary>
+    /// <summary>Properties for defining a `RosGrantInstanceToCen`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-grantinstancetocen
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosGrantInstanceToCenProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosGrantInstanceToCenProps")]
     public interface IRosGrantInstanceToCenProps
     {
@@ -47,7 +50,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::VPC::GrantInstanceToCen`.</summary>
+        /// <summary>Properties for defining a `RosGrantInstanceToCen`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-grantinstancetocen
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosGrantInstanceToCenProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosGrantInstanceToCenProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.IRosGrantInstanceToCenProps
         {

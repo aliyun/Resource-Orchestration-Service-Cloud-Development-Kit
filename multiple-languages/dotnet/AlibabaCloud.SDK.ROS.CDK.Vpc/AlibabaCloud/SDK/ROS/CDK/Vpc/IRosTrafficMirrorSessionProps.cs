@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>Properties for defining a `ALIYUN::VPC::TrafficMirrorSession`.</summary>
+    /// <summary>Properties for defining a `RosTrafficMirrorSession`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-trafficmirrorsession
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosTrafficMirrorSessionProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosTrafficMirrorSessionProps")]
     public interface IRosTrafficMirrorSessionProps
     {
@@ -112,7 +115,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         /// <remarks>
         /// <strong>Property</strong>: trafficMirrorSessionDescription: The description of the traffic mirror session.
-        /// The description must be 1 to 256 characters in length and cannot start with http:// or https://.
+        /// The description must be 1 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiProperty(name: "trafficMirrorSessionDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -126,7 +129,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         /// <remarks>
         /// <strong>Property</strong>: trafficMirrorSessionName: The name of the traffic mirror session.
-        /// The name must be 1 to 128 characters in length and cannot start with http:// or https://.
+        /// The name must be 1 to 128 characters in length and cannot start with http:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiProperty(name: "trafficMirrorSessionName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -152,7 +155,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::VPC::TrafficMirrorSession`.</summary>
+        /// <summary>Properties for defining a `RosTrafficMirrorSession`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-trafficmirrorsession
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosTrafficMirrorSessionProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosTrafficMirrorSessionProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.IRosTrafficMirrorSessionProps
         {
@@ -252,7 +258,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
             /// <remarks>
             /// <strong>Property</strong>: trafficMirrorSessionDescription: The description of the traffic mirror session.
-            /// The description must be 1 to 256 characters in length and cannot start with http:// or https://.
+            /// The description must be 1 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "trafficMirrorSessionDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -263,7 +269,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
             /// <remarks>
             /// <strong>Property</strong>: trafficMirrorSessionName: The name of the traffic mirror session.
-            /// The name must be 1 to 128 characters in length and cannot start with http:// or https://.
+            /// The name must be 1 to 128 characters in length and cannot start with http:\/\/ or https:\/\/.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "trafficMirrorSessionName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

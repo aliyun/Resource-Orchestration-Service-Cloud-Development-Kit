@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.hbr.datasource;
 
 /**
- * Properties for defining a <code>DATASOURCE::HBR::Vaults</code>.
+ * Properties for defining a <code>RosVaults</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-hbr-vaults
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:35.851Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.635Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.datasource.RosVaultsProps")
 @software.amazon.jsii.Jsii.Proxy(RosVaultsProps.Jsii$Proxy.class)
 public interface RosVaultsProps extends software.amazon.jsii.JsiiSerializable {

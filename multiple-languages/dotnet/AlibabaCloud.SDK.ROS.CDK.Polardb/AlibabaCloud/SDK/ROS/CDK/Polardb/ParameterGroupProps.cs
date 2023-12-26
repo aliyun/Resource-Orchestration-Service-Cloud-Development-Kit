@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::POLARDB::ParameterGroup`.</summary>
+    /// <summary>Properties for defining a `ParameterGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-parametergroup
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-polardb.ParameterGroupProps")]
     public class ParameterGroupProps : AlibabaCloud.SDK.ROS.CDK.Polardb.IParameterGroupProps
     {

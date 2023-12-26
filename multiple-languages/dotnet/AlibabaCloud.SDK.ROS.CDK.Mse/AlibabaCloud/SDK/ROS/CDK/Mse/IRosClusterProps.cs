@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Mse
 {
-    /// <summary>Properties for defining a `ALIYUN::MSE::Cluster`.</summary>
+    /// <summary>Properties for defining a `RosCluster`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-cluster
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosClusterProps), fullyQualifiedName: "@alicloud/ros-cdk-mse.RosClusterProps")]
     public interface IRosClusterProps
     {
@@ -218,7 +221,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::MSE::Cluster`.</summary>
+        /// <summary>Properties for defining a `RosCluster`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-cluster
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosClusterProps), fullyQualifiedName: "@alicloud/ros-cdk-mse.RosClusterProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Mse.IRosClusterProps
         {

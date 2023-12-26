@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::SAG::SmartAccessGatewayBinding`.</summary>
+    /// <summary>Properties for defining a `RosSmartAccessGatewayBinding`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-smartaccessgatewaybinding
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-sag.RosSmartAccessGatewayBindingProps")]
     public class RosSmartAccessGatewayBindingProps : AlibabaCloud.SDK.ROS.CDK.Sag.IRosSmartAccessGatewayBindingProps
     {

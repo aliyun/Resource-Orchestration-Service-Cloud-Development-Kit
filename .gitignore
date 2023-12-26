@@ -8,7 +8,6 @@ dist/
 .jsii
 package-lock.json
 .idea
-.vscode/
 
 .python-version
 
@@ -27,3 +26,12 @@ multiple-languages/java-test/.project
 tmp_specification_origin.json
 
 packages/@alicloud/test/
+
+references/docs/csharp
+references/docs/java
+references/docs/python
+references/docs/typescript
+references/site
+references/site.zip
+
+**/.DS_Store

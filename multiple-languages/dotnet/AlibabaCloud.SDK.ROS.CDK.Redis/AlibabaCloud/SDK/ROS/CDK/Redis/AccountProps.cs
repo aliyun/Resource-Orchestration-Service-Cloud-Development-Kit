@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::REDIS::Account`.</summary>
+    /// <summary>Properties for defining a `Account`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-account
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-redis.AccountProps")]
     public class AccountProps : AlibabaCloud.SDK.ROS.CDK.Redis.IAccountProps
     {

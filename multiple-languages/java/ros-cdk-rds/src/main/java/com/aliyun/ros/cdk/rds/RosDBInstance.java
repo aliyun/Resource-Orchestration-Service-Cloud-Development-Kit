@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.rds;
 
 /**
- * A ROS template type:  <code>ALIYUN::RDS::DBInstance</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::RDS::DBInstance</code>, which is used to create an ApsaraDB RDS instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.773Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.567Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosDBInstance")
 public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,8 +20,6 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * Create a new <code>ALIYUN::RDS::DBInstance</code>.
-     * <p>
      * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
      * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
      * @param props <ul><li>resource properties.</li></ul> This parameter is required.
@@ -1122,6 +1120,60 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setSslSetting(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "sslSetting", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getStorageAutoScale() {
+        return software.amazon.jsii.Kernel.get(this, "storageAutoScale", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setStorageAutoScale(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "storageAutoScale", value);
+    }
+
+    /**
+     */
+    public void setStorageAutoScale(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "storageAutoScale", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getStorageThreshold() {
+        return software.amazon.jsii.Kernel.get(this, "storageThreshold", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setStorageThreshold(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "storageThreshold", value);
+    }
+
+    /**
+     */
+    public void setStorageThreshold(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "storageThreshold", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getStorageUpperBound() {
+        return software.amazon.jsii.Kernel.get(this, "storageUpperBound", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setStorageUpperBound(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "storageUpperBound", value);
+    }
+
+    /**
+     */
+    public void setStorageUpperBound(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "storageUpperBound", value);
     }
 
     /**
@@ -2659,6 +2711,57 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder sslSetting(final com.aliyun.ros.cdk.core.IResolvable sslSetting) {
             this.props.sslSetting(sslSetting);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param storageAutoScale This parameter is required.
+         */
+        public Builder storageAutoScale(final java.lang.String storageAutoScale) {
+            this.props.storageAutoScale(storageAutoScale);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param storageAutoScale This parameter is required.
+         */
+        public Builder storageAutoScale(final com.aliyun.ros.cdk.core.IResolvable storageAutoScale) {
+            this.props.storageAutoScale(storageAutoScale);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param storageThreshold This parameter is required.
+         */
+        public Builder storageThreshold(final java.lang.Number storageThreshold) {
+            this.props.storageThreshold(storageThreshold);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param storageThreshold This parameter is required.
+         */
+        public Builder storageThreshold(final com.aliyun.ros.cdk.core.IResolvable storageThreshold) {
+            this.props.storageThreshold(storageThreshold);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param storageUpperBound This parameter is required.
+         */
+        public Builder storageUpperBound(final java.lang.Number storageUpperBound) {
+            this.props.storageUpperBound(storageUpperBound);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param storageUpperBound This parameter is required.
+         */
+        public Builder storageUpperBound(final com.aliyun.ros.cdk.core.IResolvable storageUpperBound) {
+            this.props.storageUpperBound(storageUpperBound);
             return this;
         }
 

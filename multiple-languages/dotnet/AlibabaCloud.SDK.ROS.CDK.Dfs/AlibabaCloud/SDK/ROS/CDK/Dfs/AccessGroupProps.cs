@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Dfs
 {
-    /// <summary>Properties for defining a `ALIYUN::DFS::AccessGroup`.</summary>
+    /// <summary>Properties for defining a `AccessGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-accessgroup
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-dfs.AccessGroupProps")]
     public class AccessGroupProps : AlibabaCloud.SDK.ROS.CDK.Dfs.IAccessGroupProps
     {

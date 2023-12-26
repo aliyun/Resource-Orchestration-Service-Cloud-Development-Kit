@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Alb.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ALB::LoadBalancers`.</summary>
+    /// <summary>Properties for defining a `LoadBalancers`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-alb-loadbalancers
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ILoadBalancersProps), fullyQualifiedName: "@alicloud/ros-cdk-alb.datasource.LoadBalancersProps")]
     public interface ILoadBalancersProps
     {
@@ -118,7 +121,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::ALB::LoadBalancers`.</summary>
+        /// <summary>Properties for defining a `LoadBalancers`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-alb-loadbalancers
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ILoadBalancersProps), fullyQualifiedName: "@alicloud/ros-cdk-alb.datasource.LoadBalancersProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Alb.Datasource.ILoadBalancersProps
         {

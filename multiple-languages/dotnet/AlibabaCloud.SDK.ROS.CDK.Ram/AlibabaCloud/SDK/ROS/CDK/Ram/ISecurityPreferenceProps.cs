@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ram
 {
-    /// <summary>Properties for defining a `ALIYUN::RAM::SecurityPreference`.</summary>
+    /// <summary>Properties for defining a `SecurityPreference`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-securitypreference
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ISecurityPreferenceProps), fullyQualifiedName: "@alicloud/ros-cdk-ram.SecurityPreferenceProps")]
     public interface ISecurityPreferenceProps
     {
@@ -128,7 +131,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::RAM::SecurityPreference`.</summary>
+        /// <summary>Properties for defining a `SecurityPreference`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-securitypreference
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ISecurityPreferenceProps), fullyQualifiedName: "@alicloud/ros-cdk-ram.SecurityPreferenceProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ram.ISecurityPreferenceProps
         {

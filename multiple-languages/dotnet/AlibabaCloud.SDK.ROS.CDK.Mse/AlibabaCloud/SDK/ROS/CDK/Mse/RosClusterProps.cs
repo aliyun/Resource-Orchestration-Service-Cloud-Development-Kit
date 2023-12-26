@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::MSE::Cluster`.</summary>
+    /// <summary>Properties for defining a `RosCluster`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-cluster
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-mse.RosClusterProps")]
     public class RosClusterProps : AlibabaCloud.SDK.ROS.CDK.Mse.IRosClusterProps
     {

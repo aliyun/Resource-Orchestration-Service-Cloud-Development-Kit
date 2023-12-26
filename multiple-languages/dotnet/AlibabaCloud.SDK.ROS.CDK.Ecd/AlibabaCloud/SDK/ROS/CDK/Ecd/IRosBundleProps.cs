@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecd
 {
-    /// <summary>Properties for defining a `ALIYUN::ECD::Bundle`.</summary>
+    /// <summary>Properties for defining a `RosBundle`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-bundle
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosBundleProps), fullyQualifiedName: "@alicloud/ros-cdk-ecd.RosBundleProps")]
     public interface IRosBundleProps
     {
@@ -124,7 +127,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecd
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ECD::Bundle`.</summary>
+        /// <summary>Properties for defining a `RosBundle`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-bundle
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosBundleProps), fullyQualifiedName: "@alicloud/ros-cdk-ecd.RosBundleProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecd.IRosBundleProps
         {

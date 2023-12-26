@@ -4,7 +4,8 @@ import { RosInstance } from './searchengine.generated';
 export { RosInstance as InstanceProperty };
 
 /**
- * Properties for defining a `ALIYUN::SearchEngine::Instance`
+ * Properties for defining a `Instance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-searchengine-instance
  */
 export interface InstanceProps {
 
@@ -61,14 +62,11 @@ export interface InstanceProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::SearchEngine::Instance`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SearchEngine::Instance`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-searchengine-instance
  */
 export class Instance extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Endpoint: The endpoint of instance.
@@ -81,8 +79,6 @@ export class Instance extends ros.Resource {
     public readonly attrInstanceId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::SearchEngine::Instance`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

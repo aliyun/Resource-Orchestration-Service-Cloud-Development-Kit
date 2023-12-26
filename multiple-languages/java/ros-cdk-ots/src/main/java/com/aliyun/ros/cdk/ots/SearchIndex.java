@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.ots;
 
 /**
- * A ROS resource type:  <code>ALIYUN::OTS::SearchIndex</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::OTS::SearchIndex</code>, which is used to create a search index for a data table.
+ * <p>
+ * You can create multiple search indexes for a data table.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.346Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.122Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.SearchIndex")
 public class SearchIndex extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,11 +18,7 @@ public class SearchIndex extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::OTS::SearchIndex</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -33,11 +31,7 @@ public class SearchIndex extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::OTS::SearchIndex</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.

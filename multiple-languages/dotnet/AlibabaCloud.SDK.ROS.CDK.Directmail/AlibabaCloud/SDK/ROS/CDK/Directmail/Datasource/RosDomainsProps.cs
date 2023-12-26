@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Directmail.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::DirectMail::Domains`.</summary>
+    /// <summary>Properties for defining a `RosDomains`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-directmail-domains
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-directmail.datasource.RosDomainsProps")]
     public class RosDomainsProps : AlibabaCloud.SDK.ROS.CDK.Directmail.Datasource.IRosDomainsProps
     {

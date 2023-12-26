@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * Properties for defining a <code>ALIYUN::VPC::SnatEntry</code>.
+ * Properties for defining a <code>RosSnatEntry</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-snatentry
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.645Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:18.483Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosSnatEntryProps")
 @software.amazon.jsii.Jsii.Proxy(RosSnatEntryProps.Jsii$Proxy.class)
 public interface RosSnatEntryProps extends software.amazon.jsii.JsiiSerializable {
@@ -162,7 +164,7 @@ public interface RosSnatEntryProps extends software.amazon.jsii.JsiiSerializable
          * @param sourceVSwitchIds the value to be set.
          * @return {@code this}
          */
-        public Builder sourceVSwitchIds(java.util.List<? extends java.lang.Object> sourceVSwitchIds) {
+        public Builder sourceVSwitchIds(com.aliyun.ros.cdk.core.IResolvable sourceVSwitchIds) {
             this.sourceVSwitchIds = sourceVSwitchIds;
             return this;
         }
@@ -172,7 +174,7 @@ public interface RosSnatEntryProps extends software.amazon.jsii.JsiiSerializable
          * @param sourceVSwitchIds the value to be set.
          * @return {@code this}
          */
-        public Builder sourceVSwitchIds(com.aliyun.ros.cdk.core.IResolvable sourceVSwitchIds) {
+        public Builder sourceVSwitchIds(java.util.List<? extends java.lang.Object> sourceVSwitchIds) {
             this.sourceVSwitchIds = sourceVSwitchIds;
             return this;
         }

@@ -4,7 +4,8 @@ import { RosDedicatedHost } from './cddc.generated';
 export { RosDedicatedHost as DedicatedHostProperty };
 
 /**
- * Properties for defining a `ALIYUN::CDDC::DedicatedHost`
+ * Properties for defining a `DedicatedHost`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cddc-dedicatedhost
  */
 export interface DedicatedHostProps {
 
@@ -70,14 +71,11 @@ export interface DedicatedHostProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CDDC::DedicatedHost`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CDDC::DedicatedHost`, which is used to create a host in a dedicated cluster.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDedicatedHost`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cddc-dedicatedhost
  */
 export class DedicatedHost extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AutoRenew: Whether Auto Renew
@@ -195,8 +193,6 @@ export class DedicatedHost extends ros.Resource {
     public readonly attrZoneId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CDDC::DedicatedHost`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

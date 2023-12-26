@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::VPC::BgpNetwork`.</summary>
+    /// <summary>Properties for defining a `BgpNetwork`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-bgpnetwork
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.BgpNetworkProps")]
     public class BgpNetworkProps : AlibabaCloud.SDK.ROS.CDK.Vpc.IBgpNetworkProps
     {

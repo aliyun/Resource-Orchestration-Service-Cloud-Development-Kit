@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Brainindustrial
 {
-    /// <summary>Properties for defining a `ALIYUN::BrainIndustrial::PidOrganization`.</summary>
+    /// <summary>Properties for defining a `RosPidOrganization`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-brainindustrial-pidorganization
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosPidOrganizationProps), fullyQualifiedName: "@alicloud/ros-cdk-brainindustrial.RosPidOrganizationProps")]
     public interface IRosPidOrganizationProps
     {
@@ -30,7 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Brainindustrial
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::BrainIndustrial::PidOrganization`.</summary>
+        /// <summary>Properties for defining a `RosPidOrganization`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-brainindustrial-pidorganization
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosPidOrganizationProps), fullyQualifiedName: "@alicloud/ros-cdk-brainindustrial.RosPidOrganizationProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Brainindustrial.IRosPidOrganizationProps
         {

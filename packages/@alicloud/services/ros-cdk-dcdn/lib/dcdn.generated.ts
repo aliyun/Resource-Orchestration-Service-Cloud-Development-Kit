@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::DCDN::Domain`
+ * Properties for defining a `RosDomain`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dcdn-domain
  */
 export interface RosDomainProps {
 
@@ -110,18 +111,15 @@ function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * A ROS template type:  `ALIYUN::DCDN::Domain`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DCDN::Domain`, which is used to add a Dynamic Route for CDN (DCDN) domain name.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Domain` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dcdn-domain
  */
 export class RosDomain extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DCDN::Domain";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Cname: The CNAME generated for the CDN domain.You must add a CNAME record with your DNS provider to map the CDN domain name to the CNAME.
@@ -172,8 +170,6 @@ export class RosDomain extends ros.RosResource {
     public topLevelDomain: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::DCDN::Domain`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

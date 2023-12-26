@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
 {
-    /// <summary>Properties for defining a `ALIYUN::GPDB::DBInstance`.</summary>
+    /// <summary>Properties for defining a `DBInstance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-dbinstance
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IDBInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-gpdb.DBInstanceProps")]
     public interface IDBInstanceProps
     {
@@ -227,7 +230,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
         }
 
-        /// <summary>Property periodUnit: Unit of subscription period, it could be Month/Year.</summary>
+        /// <summary>Property periodUnit: Unit of subscription period, it could be Month\/Year.</summary>
         /// <remarks>
         /// Default value is Month.
         /// </remarks>
@@ -407,7 +410,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::GPDB::DBInstance`.</summary>
+        /// <summary>Properties for defining a `DBInstance`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-dbinstance
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IDBInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-gpdb.DBInstanceProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Gpdb.IDBInstanceProps
         {
@@ -595,7 +601,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property periodUnit: Unit of subscription period, it could be Month/Year.</summary>
+            /// <summary>Property periodUnit: Unit of subscription period, it could be Month\/Year.</summary>
             /// <remarks>
             /// Default value is Month.
             /// </remarks>

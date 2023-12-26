@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::DNS::DomainGroup`.</summary>
+    /// <summary>Properties for defining a `RosDomainGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dns-domaingroup
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-dns.RosDomainGroupProps")]
     public class RosDomainGroupProps : AlibabaCloud.SDK.ROS.CDK.Dns.IRosDomainGroupProps
     {

@@ -4,11 +4,16 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Fc
 {
-    /// <summary>A ROS template type:  `ALIYUN::FC::Function`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Function`, which is used to create a function.</summary>
+    /// <remarks>
+    /// Functions must be associated with services. All functions of a service share the same attributes as the service, such as service authorization and log configurations.
+    ///
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Function` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-function
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Fc.RosFunction), fullyQualifiedName: "@alicloud/ros-cdk-fc.RosFunction", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-fc.RosFunctionProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosFunction : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::FC::Function`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -1562,7 +1567,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         public interface ICustomContainerConfigProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: image: Container image address. For example: registry-vpc.cn-hangzhou.aliyuncs.com/fc-demo/helloworld:v1beta1
+            /// <strong>Property</strong>: image: Container image address. For example: registry-vpc.cn-hangzhou.aliyuncs.com\/fc-demo\/helloworld:v1beta1
             /// </remarks>
             [JsiiProperty(name: "image", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             object Image
@@ -1599,7 +1604,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: command: Container start command. For example: ["/code/myserver"]
+            /// <strong>Property</strong>: command: Container start command. For example: ["\/code\/myserver"]
             /// </remarks>
             [JsiiProperty(name: "command", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1648,7 +1653,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: image: Container image address. For example: registry-vpc.cn-hangzhou.aliyuncs.com/fc-demo/helloworld:v1beta1
+                /// <strong>Property</strong>: image: Container image address. For example: registry-vpc.cn-hangzhou.aliyuncs.com\/fc-demo\/helloworld:v1beta1
                 /// </remarks>
                 [JsiiProperty(name: "image", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
                 public object Image
@@ -1679,7 +1684,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: command: Container start command. For example: ["/code/myserver"]
+                /// <strong>Property</strong>: command: Container start command. For example: ["\/code\/myserver"]
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "command", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1720,7 +1725,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             private object _image;
 
             /// <remarks>
-            /// <strong>Property</strong>: image: Container image address. For example: registry-vpc.cn-hangzhou.aliyuncs.com/fc-demo/helloworld:v1beta1
+            /// <strong>Property</strong>: image: Container image address. For example: registry-vpc.cn-hangzhou.aliyuncs.com\/fc-demo\/helloworld:v1beta1
             /// </remarks>
             [JsiiProperty(name: "image", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Image
@@ -1820,7 +1825,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             private object? _command;
 
             /// <remarks>
-            /// <strong>Property</strong>: command: Container start command. For example: ["/code/myserver"]
+            /// <strong>Property</strong>: command: Container start command. For example: ["\/code\/myserver"]
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "command", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

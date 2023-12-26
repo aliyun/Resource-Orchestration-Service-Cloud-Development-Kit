@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc.Datasource
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `DATASOURCE::FC::Triggers`.</summary>
+    /// <summary>Properties for defining a `Triggers`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-triggers
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-fc.datasource.TriggersProps")]
     public class TriggersProps : AlibabaCloud.SDK.ROS.CDK.Fc.Datasource.ITriggersProps
     {

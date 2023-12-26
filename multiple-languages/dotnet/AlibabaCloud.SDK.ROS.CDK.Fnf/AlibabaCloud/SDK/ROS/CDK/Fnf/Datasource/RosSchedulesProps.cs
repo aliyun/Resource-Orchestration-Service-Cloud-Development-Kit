@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fnf.Datasource
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `DATASOURCE::FNF::Schedules`.</summary>
+    /// <summary>Properties for defining a `RosSchedules`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fnf-schedules
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-fnf.datasource.RosSchedulesProps")]
     public class RosSchedulesProps : AlibabaCloud.SDK.ROS.CDK.Fnf.Datasource.IRosSchedulesProps
     {

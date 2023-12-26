@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sag
 {
-    /// <summary>Properties for defining a `ALIYUN::SAG::GrantCcnToCen`.</summary>
+    /// <summary>Properties for defining a `RosGrantCcnToCen`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-grantccntocen
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosGrantCcnToCenProps), fullyQualifiedName: "@alicloud/ros-cdk-sag.RosGrantCcnToCenProps")]
     public interface IRosGrantCcnToCenProps
     {
@@ -35,7 +38,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::SAG::GrantCcnToCen`.</summary>
+        /// <summary>Properties for defining a `RosGrantCcnToCen`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-grantccntocen
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosGrantCcnToCenProps), fullyQualifiedName: "@alicloud/ros-cdk-sag.RosGrantCcnToCenProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sag.IRosGrantCcnToCenProps
         {

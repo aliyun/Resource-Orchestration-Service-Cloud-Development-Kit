@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Marketplace
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::MarketPlace::Order`.</summary>
+    /// <summary>Properties for defining a `RosOrder`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-marketplace-order
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-marketplace.RosOrderProps")]
     public class RosOrderProps : AlibabaCloud.SDK.ROS.CDK.Marketplace.IRosOrderProps
     {

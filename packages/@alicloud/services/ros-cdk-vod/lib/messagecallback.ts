@@ -4,7 +4,8 @@ import { RosMessageCallback } from './vod.generated';
 export { RosMessageCallback as MessageCallbackProperty };
 
 /**
- * Properties for defining a `ALIYUN::VOD::MessageCallback`
+ * Properties for defining a `MessageCallback`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vod-messagecallback
  */
 export interface MessageCallbackProps {
 
@@ -62,14 +63,11 @@ export interface MessageCallbackProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::VOD::MessageCallback`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VOD::MessageCallback`, which is used to configure the callback method, callback URL, and event types for an event notification.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMessageCallback`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vod-messagecallback
  */
 export class MessageCallback extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AppId: appid.
@@ -112,8 +110,6 @@ export class MessageCallback extends ros.Resource {
     public readonly attrMnsQueueName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VOD::MessageCallback`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

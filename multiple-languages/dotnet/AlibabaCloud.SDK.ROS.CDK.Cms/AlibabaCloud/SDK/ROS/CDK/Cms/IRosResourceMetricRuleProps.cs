@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cms
 {
-    /// <summary>Properties for defining a `ALIYUN::CMS::ResourceMetricRule`.</summary>
+    /// <summary>Properties for defining a `RosResourceMetricRule`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-resourcemetricrule
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosResourceMetricRuleProps), fullyQualifiedName: "@alicloud/ros-cdk-cms.RosResourceMetricRuleProps")]
     public interface IRosResourceMetricRuleProps
     {
@@ -255,7 +258,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::CMS::ResourceMetricRule`.</summary>
+        /// <summary>Properties for defining a `RosResourceMetricRule`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-resourcemetricrule
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosResourceMetricRuleProps), fullyQualifiedName: "@alicloud/ros-cdk-cms.RosResourceMetricRuleProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cms.IRosResourceMetricRuleProps
         {

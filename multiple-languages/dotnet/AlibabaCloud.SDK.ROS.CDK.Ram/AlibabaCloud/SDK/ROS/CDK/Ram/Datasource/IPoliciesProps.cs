@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ram.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::RAM::Policies`.</summary>
+    /// <summary>Properties for defining a `Policies`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-policies
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IPoliciesProps), fullyQualifiedName: "@alicloud/ros-cdk-ram.datasource.PoliciesProps")]
     public interface IPoliciesProps
     {
@@ -69,7 +72,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::RAM::Policies`.</summary>
+        /// <summary>Properties for defining a `Policies`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-policies
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IPoliciesProps), fullyQualifiedName: "@alicloud/ros-cdk-ram.datasource.PoliciesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ram.Datasource.IPoliciesProps
         {

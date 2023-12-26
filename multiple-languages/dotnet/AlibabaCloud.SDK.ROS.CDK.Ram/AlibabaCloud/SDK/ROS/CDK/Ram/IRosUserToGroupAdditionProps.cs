@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ram
 {
-    /// <summary>Properties for defining a `ALIYUN::RAM::UserToGroupAddition`.</summary>
+    /// <summary>Properties for defining a `RosUserToGroupAddition`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-usertogroupaddition
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosUserToGroupAdditionProps), fullyQualifiedName: "@alicloud/ros-cdk-ram.RosUserToGroupAdditionProps")]
     public interface IRosUserToGroupAdditionProps
     {
@@ -26,7 +29,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::RAM::UserToGroupAddition`.</summary>
+        /// <summary>Properties for defining a `RosUserToGroupAddition`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-usertogroupaddition
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosUserToGroupAdditionProps), fullyQualifiedName: "@alicloud/ros-cdk-ram.RosUserToGroupAdditionProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ram.IRosUserToGroupAdditionProps
         {

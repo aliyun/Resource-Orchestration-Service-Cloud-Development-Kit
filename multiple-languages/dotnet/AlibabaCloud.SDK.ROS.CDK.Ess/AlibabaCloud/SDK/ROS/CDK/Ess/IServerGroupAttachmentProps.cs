@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ess
 {
-    /// <summary>Properties for defining a `ALIYUN::ESS::ServerGroupAttachment`.</summary>
+    /// <summary>Properties for defining a `ServerGroupAttachment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-servergroupattachment
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IServerGroupAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-ess.ServerGroupAttachmentProps")]
     public interface IServerGroupAttachmentProps
     {
@@ -39,7 +42,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ESS::ServerGroupAttachment`.</summary>
+        /// <summary>Properties for defining a `ServerGroupAttachment`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-servergroupattachment
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IServerGroupAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-ess.ServerGroupAttachmentProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ess.IServerGroupAttachmentProps
         {

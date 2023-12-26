@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::FOAS::Cluster`.</summary>
+    /// <summary>Properties for defining a `Cluster`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-foas-cluster
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-foas.ClusterProps")]
     public class ClusterProps : AlibabaCloud.SDK.ROS.CDK.Foas.IClusterProps
     {

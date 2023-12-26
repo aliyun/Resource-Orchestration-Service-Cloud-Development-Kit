@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::CDN::Domains`
+ * Properties for defining a `RosDomains`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cdn-domains
  */
 export interface RosDomainsProps {
 
@@ -47,18 +48,15 @@ function rosDomainsPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `DATASOURCE::CDN::Domains`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CDN::Domains`, which is used to query information about Content Delivery Network (CDN) domain names.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Domains` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cdn-domains
  */
 export class RosDomains extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::CDN::Domains";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DomainNames: The list of domain names.
@@ -79,8 +77,6 @@ export class RosDomains extends ros.RosResource {
     public domainName: string | ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::CDN::Domains`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

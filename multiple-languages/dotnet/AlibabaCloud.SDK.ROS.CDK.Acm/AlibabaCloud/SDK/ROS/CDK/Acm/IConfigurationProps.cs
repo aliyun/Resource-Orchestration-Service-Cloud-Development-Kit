@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Acm
 {
-    /// <summary>Properties for defining a `ALIYUN::ACM::Configuration`.</summary>
+    /// <summary>Properties for defining a `Configuration`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acm-configuration
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IConfigurationProps), fullyQualifiedName: "@alicloud/ros-cdk-acm.ConfigurationProps")]
     public interface IConfigurationProps
     {
@@ -78,7 +81,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Acm
             }
         }
 
-        /// <summary>Property type: Provisioning content format, optional values as follows: text, json, xml, yaml, text/html, properties.</summary>
+        /// <summary>Property type: Provisioning content format, optional values as follows: text, json, xml, yaml, text\/html, properties.</summary>
         [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Type
@@ -89,7 +92,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Acm
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ACM::Configuration`.</summary>
+        /// <summary>Properties for defining a `Configuration`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acm-configuration
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IConfigurationProps), fullyQualifiedName: "@alicloud/ros-cdk-acm.ConfigurationProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Acm.IConfigurationProps
         {
@@ -155,7 +161,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Acm
                 get => GetInstanceProperty<string?>();
             }
 
-            /// <summary>Property type: Provisioning content format, optional values as follows: text, json, xml, yaml, text/html, properties.</summary>
+            /// <summary>Property type: Provisioning content format, optional values as follows: text, json, xml, yaml, text\/html, properties.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Type

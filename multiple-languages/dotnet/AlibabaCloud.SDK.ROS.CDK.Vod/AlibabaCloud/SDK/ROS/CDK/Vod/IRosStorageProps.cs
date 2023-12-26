@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vod
 {
-    /// <summary>Properties for defining a `ALIYUN::VOD::Storage`.</summary>
+    /// <summary>Properties for defining a `RosStorage`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vod-storage
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosStorageProps), fullyQualifiedName: "@alicloud/ros-cdk-vod.RosStorageProps")]
     public interface IRosStorageProps
     {
@@ -39,7 +42,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vod
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::VOD::Storage`.</summary>
+        /// <summary>Properties for defining a `RosStorage`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vod-storage
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosStorageProps), fullyQualifiedName: "@alicloud/ros-cdk-vod.RosStorageProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vod.IRosStorageProps
         {

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ebs.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::EBS::DiskReplicaPairs`.</summary>
+    /// <summary>Properties for defining a `RosDiskReplicaPairs`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ebs-diskreplicapairs
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosDiskReplicaPairsProps), fullyQualifiedName: "@alicloud/ros-cdk-ebs.datasource.RosDiskReplicaPairsProps")]
     public interface IRosDiskReplicaPairsProps
     {
@@ -21,7 +24,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ebs.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::EBS::DiskReplicaPairs`.</summary>
+        /// <summary>Properties for defining a `RosDiskReplicaPairs`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ebs-diskreplicapairs
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosDiskReplicaPairsProps), fullyQualifiedName: "@alicloud/ros-cdk-ebs.datasource.RosDiskReplicaPairsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ebs.Datasource.IRosDiskReplicaPairsProps
         {

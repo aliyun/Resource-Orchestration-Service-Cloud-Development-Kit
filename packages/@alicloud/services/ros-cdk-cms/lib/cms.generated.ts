@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::CMS::Contact`
+ * Properties for defining a `RosContact`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-contact
  */
 export interface RosContactProps {
 
@@ -63,18 +64,15 @@ function rosContactPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::CMS::Contact`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::Contact`, which is used to create an alert contact.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Contact` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-contact
  */
 export class RosContact extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CMS::Contact";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ContactName: The name of the alarm contact.
@@ -100,8 +98,6 @@ export class RosContact extends ros.RosResource {
     public describe: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CMS::Contact`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -189,7 +185,8 @@ function rosContactChannelsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::CMS::ContactGroup`
+ * Properties for defining a `RosContactGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-contactgroup
  */
 export interface RosContactGroupProps {
 
@@ -256,18 +253,15 @@ function rosContactGroupPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * A ROS template type:  `ALIYUN::CMS::ContactGroup`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::ContactGroup`, which is used to create an alert contact group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ContactGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-contactgroup
  */
 export class RosContactGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CMS::ContactGroup";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ContactGroupName: The name of the alert contact group.
@@ -293,8 +287,6 @@ export class RosContactGroup extends ros.RosResource {
     public describe: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CMS::ContactGroup`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -323,7 +315,8 @@ export class RosContactGroup extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::CMS::DynamicTagGroup`
+ * Properties for defining a `RosDynamicTagGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-dynamictaggroup
  */
 export interface RosDynamicTagGroupProps {
 
@@ -439,18 +432,15 @@ function rosDynamicTagGroupPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * A ROS template type:  `ALIYUN::CMS::DynamicTagGroup`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::DynamicTagGroup`, which is used to create a tag rule based on which cloud resources can be automatically added to an application group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DynamicTagGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-dynamictaggroup
  */
 export class RosDynamicTagGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CMS::DynamicTagGroup";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DynamicTagRuleId: Dynamic tag rule ID.
@@ -510,8 +500,6 @@ export class RosDynamicTagGroup extends ros.RosResource {
     public templateIdList: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CMS::DynamicTagGroup`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -610,7 +598,8 @@ function rosDynamicTagGroupMatchExpressPropertyToRosTemplate(properties: any): a
 }
 
 /**
- * Properties for defining a `ALIYUN::CMS::EventRule`
+ * Properties for defining a `RosEventRule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-eventrule
  */
 export interface RosEventRuleProps {
 
@@ -701,18 +690,15 @@ function rosEventRulePropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `ALIYUN::CMS::EventRule`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::EventRule`, which is used to create or modify an event-triggered alert rule. If the specified rule name does not exist, an event-triggered alert rule is created. If the specified rule name exists, the specified event-triggered alert rule is modified.
+ * @Note This class does not contain additional functions, so it is recommended to use the `EventRule` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-eventrule
  */
 export class RosEventRule extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CMS::EventRule";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Data: Number of rows affected.
@@ -757,8 +743,6 @@ export class RosEventRule extends ros.RosResource {
     public state: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CMS::EventRule`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -859,7 +843,8 @@ function rosEventRuleEventPatternPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::CMS::EventRuleTargets`
+ * Properties for defining a `RosEventRuleTargets`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-eventruletargets
  */
 export interface RosEventRuleTargetsProps {
 
@@ -973,18 +958,15 @@ function rosEventRuleTargetsPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * A ROS template type:  `ALIYUN::CMS::EventRuleTargets`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::EventRuleTargets`, which is used to add or change the recipients to which alert notifications are sent based on an event-triggered alert rule.
+ * @Note This class does not contain additional functions, so it is recommended to use the `EventRuleTargets` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-eventruletargets
  */
 export class RosEventRuleTargets extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CMS::EventRuleTargets";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1020,8 +1002,6 @@ export class RosEventRuleTargets extends ros.RosResource {
     public webhookParameters: Array<RosEventRuleTargets.WebhookParametersProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CMS::EventRuleTargets`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1338,7 +1318,8 @@ function rosEventRuleTargetsWebhookParametersPropertyToRosTemplate(properties: a
 }
 
 /**
- * Properties for defining a `ALIYUN::CMS::GroupMetricRule`
+ * Properties for defining a `RosGroupMetricRule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-groupmetricrule
  */
 export interface RosGroupMetricRuleProps {
 
@@ -1362,7 +1343,7 @@ export interface RosGroupMetricRuleProps {
      * IOT_EDGE (IoT Edge)
      * K8S_POD (k8s pod)
      * KVSTORE_SHARDING (ApsaraDB for Redis cluster version)
-     * KVSTORE_SPLITRW (ApsaraDB for Redis read/write splitting version)
+     * KVSTORE_SPLITRW (ApsaraDB for Redis read\/write splitting version)
      * KVSTORE_STANDARD (ApsaraDB for Redis standard version)
      * MEMCACHE (ApsaraDB for Memcache)
      * MNS (Message Service)
@@ -1531,18 +1512,15 @@ function rosGroupMetricRulePropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * A ROS template type:  `ALIYUN::CMS::GroupMetricRule`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::GroupMetricRule`, which is used to create an alert rule for an application group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `GroupMetricRule` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-groupmetricrule
  */
 export class RosGroupMetricRule extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CMS::GroupMetricRule";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute RuleId: Rule ID.
@@ -1572,7 +1550,7 @@ export class RosGroupMetricRule extends ros.RosResource {
      * IOT_EDGE (IoT Edge)
      * K8S_POD (k8s pod)
      * KVSTORE_SHARDING (ApsaraDB for Redis cluster version)
-     * KVSTORE_SPLITRW (ApsaraDB for Redis read/write splitting version)
+     * KVSTORE_SPLITRW (ApsaraDB for Redis read\/write splitting version)
      * KVSTORE_STANDARD (ApsaraDB for Redis standard version)
      * MEMCACHE (ApsaraDB for Memcache)
      * MNS (Message Service)
@@ -1666,8 +1644,6 @@ export class RosGroupMetricRule extends ros.RosResource {
     public webhook: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CMS::GroupMetricRule`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1999,7 +1975,8 @@ function rosGroupMetricRuleWarnPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::CMS::MetricRuleTargets`
+ * Properties for defining a `RosMetricRuleTargets`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-metricruletargets
  */
 export interface RosMetricRuleTargetsProps {
 
@@ -2058,18 +2035,15 @@ function rosMetricRuleTargetsPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * A ROS template type:  `ALIYUN::CMS::MetricRuleTargets`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MetricRuleTargets`, which is used to add or modify one or more message resources of an alert rule.
+ * @Note This class does not contain additional functions, so it is recommended to use the `MetricRuleTargets` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-metricruletargets
  */
 export class RosMetricRuleTargets extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CMS::MetricRuleTargets";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Arns: The ARN list of targets
@@ -2095,8 +2069,6 @@ export class RosMetricRuleTargets extends ros.RosResource {
     public targets: Array<RosMetricRuleTargets.TargetsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CMS::MetricRuleTargets`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2140,8 +2112,8 @@ export namespace RosMetricRuleTargets {
          */
         readonly id: string | ros.IResolvable;
         /**
-         * @Property arn: The resource description in the format of acs:{Service name abbreviation}:{regionId}:{userId}:/{Message resource type}/{Resource
-     * name}/message. Example: acs:mns:cn-hangzhou:111:/queues/test/message.
+         * @Property arn: The resource description in the format of acs:{Service name abbreviation}:{regionId}:{userId}:\/{Message resource type}\/{Resource
+     * name}\/message. Example: acs:mns:cn-hangzhou:111:\/queues\/test\/message.
      * {Service name abbreviation}: the abbreviation of the service name. Set this value
      * to mns.
      * {regionId}: the region ID of the message queue or topic.
@@ -2191,7 +2163,8 @@ function rosMetricRuleTargetsTargetsPropertyToRosTemplate(properties: any): any 
 }
 
 /**
- * Properties for defining a `ALIYUN::CMS::MetricRuleTemplate`
+ * Properties for defining a `RosMetricRuleTemplate`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-metricruletemplate
  */
 export interface RosMetricRuleTemplateProps {
 
@@ -2272,18 +2245,15 @@ function rosMetricRuleTemplatePropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * A ROS template type:  `ALIYUN::CMS::MetricRuleTemplate`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MetricRuleTemplate`, which is used to create an alert template.
+ * @Note This class does not contain additional functions, so it is recommended to use the `MetricRuleTemplate` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-metricruletemplate
  */
 export class RosMetricRuleTemplate extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CMS::MetricRuleTemplate";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Id: Alarm template ID.
@@ -2321,8 +2291,6 @@ export class RosMetricRuleTemplate extends ros.RosResource {
     public templateId: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CMS::MetricRuleTemplate`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2385,7 +2353,7 @@ export namespace RosMetricRuleTemplate {
      * iot_edge: IoT Edge
      * k8s_pod: pods in Container Service for Kubernetes
      * kvstore_sharding: ApsaraDB for Redis of the cluster architecture
-     * kvstore_splitrw: ApsaraDB for Redis of the read/write splitting architecture
+     * kvstore_splitrw: ApsaraDB for Redis of the read\/write splitting architecture
      * kvstore_standard: ApsaraDB for Redis of the standard architecture
      * memcache: ApsaraDB for Memcache
      * mns: Message Service (MNS)
@@ -2777,7 +2745,8 @@ function rosMetricRuleTemplateWarnPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::CMS::MonitorGroup`
+ * Properties for defining a `RosMonitorGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitorgroup
  */
 export interface RosMonitorGroupProps {
 
@@ -2829,18 +2798,15 @@ function rosMonitorGroupPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * A ROS template type:  `ALIYUN::CMS::MonitorGroup`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MonitorGroup`, which is used to create an application group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `MonitorGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitorgroup
  */
 export class RosMonitorGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CMS::MonitorGroup";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute GroupId: Application group ID generated after the group is created.
@@ -2862,8 +2828,6 @@ export class RosMonitorGroup extends ros.RosResource {
     public contactGroups: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CMS::MonitorGroup`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2890,7 +2854,8 @@ export class RosMonitorGroup extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::CMS::MonitorGroupInstances`
+ * Properties for defining a `RosMonitorGroupInstances`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitorgroupinstances
  */
 export interface RosMonitorGroupInstancesProps {
 
@@ -2949,18 +2914,15 @@ function rosMonitorGroupInstancesPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * A ROS template type:  `ALIYUN::CMS::MonitorGroupInstances`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MonitorGroupInstances`, which is used to add instances to an application group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `MonitorGroupInstances` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitorgroupinstances
  */
 export class RosMonitorGroupInstances extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CMS::MonitorGroupInstances";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute GroupId: The ID of the application group.
@@ -2981,8 +2943,6 @@ export class RosMonitorGroupInstances extends ros.RosResource {
     public instances: Array<RosMonitorGroupInstances.InstancesProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CMS::MonitorGroupInstances`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3037,7 +2997,7 @@ export namespace RosMonitorGroupInstances {
      * IOT_EDGE (IoT Edge)
      * K8S_POD (k8s pod )
      * KVSTORE_SHARDING (ApsaraDB for Redis cluster version)
-     * KVSTORE_SPLITRW (ApsaraDB for Redis read/write splitting version)
+     * KVSTORE_SPLITRW (ApsaraDB for Redis read\/write splitting version)
      * KVSTORE_STANDARD (ApsaraDB for Redis standard version)
      * MEMCACHE (ApsaraDB for Memcache)
      * MNS (Message Service)
@@ -3107,7 +3067,8 @@ function rosMonitorGroupInstancesInstancesPropertyToRosTemplate(properties: any)
 }
 
 /**
- * Properties for defining a `ALIYUN::CMS::MonitoringAgentProcess`
+ * Properties for defining a `RosMonitoringAgentProcess`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitoringagentprocess
  */
 export interface RosMonitoringAgentProcessProps {
 
@@ -3165,18 +3126,15 @@ function rosMonitoringAgentProcessPropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * A ROS template type:  `ALIYUN::CMS::MonitoringAgentProcess`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MonitoringAgentProcess`, which is used to create a task to monitor a process.
+ * @Note This class does not contain additional functions, so it is recommended to use the `MonitoringAgentProcess` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitoringagentprocess
  */
 export class RosMonitoringAgentProcess extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CMS::MonitoringAgentProcess";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Id: The process ID.
@@ -3202,8 +3160,6 @@ export class RosMonitoringAgentProcess extends ros.RosResource {
     public processUser: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CMS::MonitoringAgentProcess`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3232,7 +3188,8 @@ export class RosMonitoringAgentProcess extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::CMS::Namespace`
+ * Properties for defining a `RosNamespace`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-namespace
  */
 export interface RosNamespaceProps {
 
@@ -3309,18 +3266,15 @@ function rosNamespacePropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `ALIYUN::CMS::Namespace`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::Namespace`, which is used to create a namespace.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Namespace` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-namespace
  */
 export class RosNamespace extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CMS::Namespace";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CreateTime: The timestamp that was generated when the namespace was created.
@@ -3380,8 +3334,6 @@ Unit: milliseconds.
     public specification: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CMS::Namespace`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3414,7 +3366,8 @@ Unit: milliseconds.
 }
 
 /**
- * Properties for defining a `ALIYUN::CMS::ResourceMetricRule`
+ * Properties for defining a `RosResourceMetricRule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-resourcemetricrule
  */
 export interface RosResourceMetricRuleProps {
 
@@ -3628,18 +3581,15 @@ function rosResourceMetricRulePropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * A ROS template type:  `ALIYUN::CMS::ResourceMetricRule`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::ResourceMetricRule`, which is used to create an alert rule for a metric of a resource.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ResourceMetricRule` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-resourcemetricrule
  */
 export class RosResourceMetricRule extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CMS::ResourceMetricRule";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute RuleId: The ID of the alert rule.
@@ -3770,8 +3720,6 @@ export class RosResourceMetricRule extends ros.RosResource {
     public webhook: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CMS::ResourceMetricRule`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -4512,7 +4460,8 @@ function rosResourceMetricRuleWarnPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::CMS::SiteMonitor`
+ * Properties for defining a `RosSiteMonitor`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-sitemonitor
  */
 export interface RosSiteMonitorProps {
 
@@ -4609,18 +4558,15 @@ function rosSiteMonitorPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `ALIYUN::CMS::SiteMonitor`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::SiteMonitor`, which is used to create a site monitoring job.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SiteMonitor` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-sitemonitor
  */
 export class RosSiteMonitor extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CMS::SiteMonitor";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute TaskId: The ID of the site monitoring task.
@@ -4675,8 +4621,6 @@ export class RosSiteMonitor extends ros.RosResource {
     public optionsJson: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CMS::SiteMonitor`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

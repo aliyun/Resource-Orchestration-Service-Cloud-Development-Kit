@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
 {
-    /// <summary>Properties for defining a `ALIYUN::ROCKETMQ::Topic`.</summary>
+    /// <summary>Properties for defining a `RosTopic`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq-topic
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosTopicProps), fullyQualifiedName: "@alicloud/ros-cdk-rocketmq.RosTopicProps")]
     public interface IRosTopicProps
     {
@@ -23,7 +26,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
         /// 1: partitionally ordered message
         /// 2: globally ordered message
         /// 4: transactional message
-        /// 5: scheduled/delayed message
+        /// 5: scheduled\/delayed message
         /// </remarks>
         [JsiiProperty(name: "messageType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object MessageType
@@ -57,7 +60,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ROCKETMQ::Topic`.</summary>
+        /// <summary>Properties for defining a `RosTopic`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq-topic
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosTopicProps), fullyQualifiedName: "@alicloud/ros-cdk-rocketmq.RosTopicProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Rocketmq.IRosTopicProps
         {
@@ -80,7 +86,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
             /// 1: partitionally ordered message
             /// 2: globally ordered message
             /// 4: transactional message
-            /// 5: scheduled/delayed message
+            /// 5: scheduled\/delayed message
             /// </remarks>
             [JsiiProperty(name: "messageType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object MessageType

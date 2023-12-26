@@ -6,13 +6,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ApiGateway::VpcAccessConfig`.</summary>
+    /// <summary>Properties for defining a `VpcAccessConfig`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-vpcaccessconfig
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-apigateway.VpcAccessConfigProps")]
     public class VpcAccessConfigProps : AlibabaCloud.SDK.ROS.CDK.Apigateway.IVpcAccessConfigProps
     {
         private object _instanceId;
 
-        /// <summary>Property instanceId: The id of the instance (ECS/SLB).</summary>
+        /// <summary>Property instanceId: The id of the instance (ECS\/SLB).</summary>
         [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object InstanceId
         {

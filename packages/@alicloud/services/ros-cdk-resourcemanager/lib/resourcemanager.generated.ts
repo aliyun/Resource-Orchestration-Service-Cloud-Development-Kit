@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::ResourceManager::Account`
+ * Properties for defining a `RosAccount`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-account
  */
 export interface RosAccountProps {
 
@@ -61,18 +62,15 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::ResourceManager::Account`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::Account`ALIYUN::ResourceManager::ControlPolicy is used to create a custom control policy.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-account
  */
 export class RosAccount extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ResourceManager::Account";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AccountId: This ID of Resource Manager Account
@@ -123,8 +121,6 @@ export class RosAccount extends ros.RosResource {
     public payerAccountId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ResourceManager::Account`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -158,7 +154,8 @@ export class RosAccount extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ResourceManager::ControlPolicy`
+ * Properties for defining a `RosControlPolicy`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-controlpolicy
  */
 export interface RosControlPolicyProps {
 
@@ -225,18 +222,15 @@ function rosControlPolicyPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `ALIYUN::ResourceManager::ControlPolicy`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::ControlPolicy`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ControlPolicy` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-controlpolicy
  */
 export class RosControlPolicy extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ResourceManager::ControlPolicy";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AttachmentCount: AttachmentCount
@@ -297,8 +291,6 @@ export class RosControlPolicy extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ResourceManager::ControlPolicy`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -335,7 +327,8 @@ export class RosControlPolicy extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ResourceManager::ControlPolicyAttachment`
+ * Properties for defining a `RosControlPolicyAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-controlpolicyattachment
  */
 export interface RosControlPolicyAttachmentProps {
 
@@ -387,18 +380,15 @@ function rosControlPolicyAttachmentPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * A ROS template type:  `ALIYUN::ResourceManager::ControlPolicyAttachment`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::ControlPolicyAttachment`, which is used to attach a custom control policy.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ControlPolicyAttachment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-controlpolicyattachment
  */
 export class RosControlPolicyAttachment extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ResourceManager::ControlPolicyAttachment";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AttachDate: AttachDate
@@ -444,8 +434,6 @@ export class RosControlPolicyAttachment extends ros.RosResource {
     public targetId: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ResourceManager::ControlPolicyAttachment`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -477,7 +465,8 @@ export class RosControlPolicyAttachment extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ResourceManager::Folder`
+ * Properties for defining a `RosFolder`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-folder
  */
 export interface RosFolderProps {
 
@@ -528,18 +517,15 @@ function rosFolderPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * A ROS template type:  `ALIYUN::ResourceManager::Folder`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::Folder`, which is used to create a folder.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Folder` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-folder
  */
 export class RosFolder extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ResourceManager::Folder";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute FolderId: The ID of the folder
@@ -570,8 +556,6 @@ export class RosFolder extends ros.RosResource {
     public parentFolderId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ResourceManager::Folder`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -600,7 +584,8 @@ export class RosFolder extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ResourceManager::Handshake`
+ * Properties for defining a `RosHandshake`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-handshake
  */
 export interface RosHandshakeProps {
 
@@ -659,18 +644,15 @@ function rosHandshakePropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `ALIYUN::ResourceManager::Handshake`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::Handshake`, which is used to create an invitation.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Handshake` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-handshake
  */
 export class RosHandshake extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ResourceManager::Handshake";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute HandshakeId: This ID of Resource Manager handshake
@@ -726,8 +708,6 @@ export class RosHandshake extends ros.RosResource {
     public note: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ResourceManager::Handshake`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -762,7 +742,8 @@ export class RosHandshake extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ResourceManager::PolicyAttachment`
+ * Properties for defining a `RosPolicyAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-policyattachment
  */
 export interface RosPolicyAttachmentProps {
 
@@ -837,18 +818,15 @@ function rosPolicyAttachmentPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * A ROS template type:  `ALIYUN::ResourceManager::PolicyAttachment`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::PolicyAttachment`, which is used to attach a policy to an object. After you attach a policy to an object, the object has the permissions to manage the resources in the current resource group or within the current Alibaba Cloud account.
+ * @Note This class does not contain additional functions, so it is recommended to use the `PolicyAttachment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-policyattachment
  */
 export class RosPolicyAttachment extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ResourceManager::PolicyAttachment";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AttachDate: Authorization time
@@ -914,8 +892,6 @@ export class RosPolicyAttachment extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ResourceManager::PolicyAttachment`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -954,7 +930,8 @@ export class RosPolicyAttachment extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ResourceManager::ResourceDirectory`
+ * Properties for defining a `RosResourceDirectory`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourcedirectory
  */
 export interface RosResourceDirectoryProps {
 }
@@ -990,18 +967,15 @@ function rosResourceDirectoryPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * A ROS template type:  `ALIYUN::ResourceManager::ResourceDirectory`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::ResourceDirectory`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ResourceDirectory` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourcedirectory
  */
 export class RosResourceDirectory extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ResourceManager::ResourceDirectory";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute MasterAccountId: The ID of the master account
@@ -1027,8 +1001,6 @@ export class RosResourceDirectory extends ros.RosResource {
 
 
     /**
-     * Create a new `ALIYUN::ResourceManager::ResourceDirectory`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1054,7 +1026,8 @@ export class RosResourceDirectory extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ResourceManager::ResourceGroup`
+ * Properties for defining a `RosResourceGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourcegroup
  */
 export interface RosResourceGroupProps {
 
@@ -1106,18 +1079,15 @@ function rosResourceGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `ALIYUN::ResourceManager::ResourceGroup`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::ResourceGroup`, which is used to create a resource group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ResourceGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourcegroup
  */
 export class RosResourceGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ResourceManager::ResourceGroup";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AccountId: The ID of the Alibaba Cloud account to which the resource group belongs
@@ -1158,8 +1128,6 @@ export class RosResourceGroup extends ros.RosResource {
     public name: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ResourceManager::ResourceGroup`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1190,7 +1158,8 @@ export class RosResourceGroup extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ResourceManager::ResourceShare`
+ * Properties for defining a `RosResourceShare`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourceshare
  */
 export interface RosResourceShareProps {
 
@@ -1296,18 +1265,15 @@ function rosResourceSharePropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `ALIYUN::ResourceManager::ResourceShare`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::ResourceShare`, which is used to create a resource share.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ResourceShare` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourceshare
  */
 export class RosResourceShare extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ResourceManager::ResourceShare";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ResourceShareId: The ID of the resource share.
@@ -1350,8 +1316,6 @@ export class RosResourceShare extends ros.RosResource {
     public targets: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ResourceManager::ResourceShare`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1439,7 +1403,8 @@ function rosResourceShareResourcesPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ResourceManager::ResourceShareAssociation`
+ * Properties for defining a `RosResourceShareAssociation`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourceshareassociation
  */
 export interface RosResourceShareAssociationProps {
 
@@ -1528,18 +1493,15 @@ function rosResourceShareAssociationPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * A ROS template type:  `ALIYUN::ResourceManager::ResourceShareAssociation`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::ResourceShareAssociation`ALIYUN::ROCKETMQ::Instance is used to create a Standard Edition instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ResourceShareAssociation` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourceshareassociation
  */
 export class RosResourceShareAssociation extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ResourceManager::ResourceShareAssociation";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ResourceShareId: The ID of the resource share.
@@ -1573,8 +1535,6 @@ export class RosResourceShareAssociation extends ros.RosResource {
     public targets: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ResourceManager::ResourceShareAssociation`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

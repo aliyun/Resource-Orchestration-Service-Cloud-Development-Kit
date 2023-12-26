@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>Properties for defining a `ALIYUN::VPC::PrefixList`.</summary>
+    /// <summary>Properties for defining a `RosPrefixList`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-prefixlist
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.RosPrefixListProps")]
     public class RosPrefixListProps : AlibabaCloud.SDK.ROS.CDK.Vpc.IRosPrefixListProps
     {
@@ -150,7 +153,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         /// <remarks>
         /// <strong>Property</strong>: prefixListDescription: The description of the prefix list.
-        /// It must be 2 to 256 characters in length and must start with a letter or Chinese, but cannot start with http:// or https.
+        /// It must be 2 to 256 characters in length and must start with a letter or Chinese, but cannot start with http:\/\/ or https.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "prefixListDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

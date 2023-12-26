@@ -4,7 +4,8 @@ import { RosSiteMonitor } from './cms.generated';
 export { RosSiteMonitor as SiteMonitorProperty };
 
 /**
- * Properties for defining a `ALIYUN::CMS::SiteMonitor`
+ * Properties for defining a `SiteMonitor`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-sitemonitor
  */
 export interface SiteMonitorProps {
 
@@ -54,14 +55,11 @@ export interface SiteMonitorProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CMS::SiteMonitor`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::SiteMonitor`, which is used to create a site monitoring job.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSiteMonitor`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-sitemonitor
  */
 export class SiteMonitor extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute TaskId: The ID of the site monitoring task.
@@ -69,8 +67,6 @@ export class SiteMonitor extends ros.Resource {
     public readonly attrTaskId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CMS::SiteMonitor`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

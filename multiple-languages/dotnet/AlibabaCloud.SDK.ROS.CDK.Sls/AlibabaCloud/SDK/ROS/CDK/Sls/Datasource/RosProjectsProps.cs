@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sls.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::SLS::Projects`.</summary>
+    /// <summary>Properties for defining a `RosProjects`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-sls-projects
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-sls.datasource.RosProjectsProps")]
     public class RosProjectsProps : AlibabaCloud.SDK.ROS.CDK.Sls.Datasource.IRosProjectsProps
     {

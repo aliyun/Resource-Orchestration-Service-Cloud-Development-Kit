@@ -4,11 +4,16 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Mns
 {
-    /// <summary>A ROS template type:  `ALIYUN::MNS::Subscription`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::MNS::Subscription`, which is used to subscribe an endpoint to an Alibaba Cloud Message Service (MNS) topic.</summary>
+    /// <remarks>
+    /// For a subscription to be created, the owner of the endpoint must confirm the subscription.
+    ///
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Subscription` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-subscription
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Mns.RosSubscription), fullyQualifiedName: "@alicloud/ros-cdk-mns.RosSubscription", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-mns.RosSubscriptionProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosSubscription : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::MNS::Subscription`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -93,8 +98,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         /// <remarks>
         /// <strong>Property</strong>: endpoint: Terminal address of the message recipient for the created subscription.
         /// Currently, four types of endpoints are supported:
-        /// 1. HttpEndpoint, which must be prefixed with "http://";
-        /// 2. QueueEndpoint, in the format of acs:mns:{REGION}:{AccountID}:queues/{QueueName};
+        /// 1. HttpEndpoint, which must be prefixed with "http:\/\/";
+        /// 2. QueueEndpoint, in the format of acs:mns:{REGION}:{AccountID}:queues\/{QueueName};
         /// 3. MailEndpoint, in the format of mail:directmail:{MailAddress};
         /// 4. SmsEndpoint, in the format of sms:directsms:anonymous or sms:directsms:{Phone}.
         /// </remarks>
@@ -219,7 +224,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
 
         /// <remarks>
         /// <strong>Property</strong>: notifyContentFormat: Format of the message content pushed to the endpoint.
-        /// XML, JSON, or SIMPLIFIED; default value: XML. For details about message formats, refer to Basic Concepts/NotifyContentFormat.
+        /// XML, JSON, or SIMPLIFIED; default value: XML. For details about message formats, refer to Basic Concepts\/NotifyContentFormat.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "notifyContentFormat", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -251,7 +256,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
 
         /// <remarks>
         /// <strong>Property</strong>: notifyStrategy: Retry policy that will be applied when an error occurs during message push to the endpoint.
-        /// BACKOFF_RETRY or EXPONENTIAL_DECAY_RETRY; default value: BACKOFF_RETRY. For details about retry policies, refer to Basic Concepts/NotifyStrategy.
+        /// BACKOFF_RETRY or EXPONENTIAL_DECAY_RETRY; default value: BACKOFF_RETRY. For details about retry policies, refer to Basic Concepts\/NotifyStrategy.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "notifyStrategy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

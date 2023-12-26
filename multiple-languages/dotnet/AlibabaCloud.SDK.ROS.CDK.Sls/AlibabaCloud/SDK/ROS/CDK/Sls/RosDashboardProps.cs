@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::SLS::Dashboard`.</summary>
+    /// <summary>Properties for defining a `RosDashboard`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-dashboard
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-sls.RosDashboardProps")]
     public class RosDashboardProps : AlibabaCloud.SDK.ROS.CDK.Sls.IRosDashboardProps
     {

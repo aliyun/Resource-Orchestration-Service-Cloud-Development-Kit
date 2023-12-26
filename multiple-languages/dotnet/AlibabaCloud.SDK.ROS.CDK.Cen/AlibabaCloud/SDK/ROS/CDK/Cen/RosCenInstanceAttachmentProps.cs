@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CEN::CenInstanceAttachment`.</summary>
+    /// <summary>Properties for defining a `RosCenInstanceAttachment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-ceninstanceattachment
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cen.RosCenInstanceAttachmentProps")]
     public class RosCenInstanceAttachmentProps : AlibabaCloud.SDK.ROS.CDK.Cen.IRosCenInstanceAttachmentProps
     {

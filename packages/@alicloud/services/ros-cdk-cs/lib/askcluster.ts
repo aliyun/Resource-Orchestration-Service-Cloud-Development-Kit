@@ -4,7 +4,8 @@ import { RosASKCluster } from './cs.generated';
 export { RosASKCluster as ASKClusterProperty };
 
 /**
- * Properties for defining a `ALIYUN::CS::ASKCluster`
+ * Properties for defining a `ASKCluster`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-askcluster
  */
 export interface ASKClusterProps {
 
@@ -63,7 +64,7 @@ export interface ASKClusterProps {
     readonly securityGroupId?: string | ros.IResolvable;
 
     /**
-     * Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
+     * Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0\/20 is used by default.
      */
     readonly serviceCidr?: string | ros.IResolvable;
 
@@ -117,14 +118,11 @@ export interface ASKClusterProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CS::ASKCluster`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ASKCluster`, which is used to create a Serverless Kubernetes (ASK) cluster.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosASKCluster`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-askcluster
  */
 export class ASKCluster extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute APIServerSLBId: The id of API server SLB
@@ -177,8 +175,6 @@ export class ASKCluster extends ros.Resource {
     public readonly attrWorkerRamRoleName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CS::ASKCluster`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

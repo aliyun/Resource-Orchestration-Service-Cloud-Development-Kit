@@ -4,7 +4,8 @@ import { RosPrepayInstance } from './redis.generated';
 export { RosPrepayInstance as PrepayInstanceProperty };
 
 /**
- * Properties for defining a `ALIYUN::REDIS::PrepayInstance`
+ * Properties for defining a `PrepayInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-prepayinstance
  */
 export interface PrepayInstanceProps {
 
@@ -162,14 +163,11 @@ export interface PrepayInstanceProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::REDIS::PrepayInstance`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::PrepayInstance`, which is used to create a subscription ApsaraDB for Redis instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPrepayInstance`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-prepayinstance
  */
 export class PrepayInstance extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ArchitectureType: The architecture.
@@ -327,8 +325,6 @@ export class PrepayInstance extends ros.Resource {
     public readonly attrZoneId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::REDIS::PrepayInstance`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

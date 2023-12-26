@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::CloudPhone::InstanceGroup`
+ * Properties for defining a `RosInstanceGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-instancegroup
  */
 export interface RosInstanceGroupProps {
 
@@ -53,7 +54,7 @@ export interface RosInstanceGroupProps {
 
     /**
      * @Property description: Description of instance. 
-     * The length is 2~256 English or Chinese characters and cannot start with http:// and https://.
+     * The length is 2~256 English or Chinese characters and cannot start with http:\/\/ and https:\/\/.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -86,7 +87,7 @@ export interface RosInstanceGroupProps {
     readonly period?: number | ros.IResolvable;
 
     /**
-     * @Property periodUnit: Unit of prepaid time period, it could be Month/Year. Default value is Month.
+     * @Property periodUnit: Unit of prepaid time period, it could be Month\/Year. Default value is Month.
      */
     readonly periodUnit?: string | ros.IResolvable;
 
@@ -204,18 +205,15 @@ function rosInstanceGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `ALIYUN::CloudPhone::InstanceGroup`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudPhone::InstanceGroup`, which is used to create and start one or more Elastic Cloud Phone (ECP) instances.
+ * @Note This class does not contain additional functions, so it is recommended to use the `InstanceGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-instancegroup
  */
 export class RosInstanceGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CloudPhone::InstanceGroup";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute InstanceIds: instance ids
@@ -281,7 +279,7 @@ export class RosInstanceGroup extends ros.RosResource {
 
     /**
      * @Property description: Description of instance. 
-     * The length is 2~256 English or Chinese characters and cannot start with http:// and https://.
+     * The length is 2~256 English or Chinese characters and cannot start with http:\/\/ and https:\/\/.
      */
     public description: string | ros.IResolvable | undefined;
 
@@ -314,7 +312,7 @@ export class RosInstanceGroup extends ros.RosResource {
     public period: number | ros.IResolvable | undefined;
 
     /**
-     * @Property periodUnit: Unit of prepaid time period, it could be Month/Year. Default value is Month.
+     * @Property periodUnit: Unit of prepaid time period, it could be Month\/Year. Default value is Month.
      */
     public periodUnit: string | ros.IResolvable | undefined;
 
@@ -337,8 +335,6 @@ export class RosInstanceGroup extends ros.RosResource {
     public vncPassword: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CloudPhone::InstanceGroup`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

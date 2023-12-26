@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vod
 {
-    /// <summary>Properties for defining a `ALIYUN::VOD::MessageCallback`.</summary>
+    /// <summary>Properties for defining a `RosMessageCallback`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vod-messagecallback
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosMessageCallbackProps), fullyQualifiedName: "@alicloud/ros-cdk-vod.RosMessageCallbackProps")]
     public interface IRosMessageCallbackProps
     {
@@ -120,7 +123,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vod
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::VOD::MessageCallback`.</summary>
+        /// <summary>Properties for defining a `RosMessageCallback`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vod-messagecallback
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosMessageCallbackProps), fullyQualifiedName: "@alicloud/ros-cdk-vod.RosMessageCallbackProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vod.IRosMessageCallbackProps
         {

@@ -4,7 +4,8 @@ import { RosDiskReplicaPair } from './ebs.generated';
 export { RosDiskReplicaPair as DiskReplicaPairProperty };
 
 /**
- * Properties for defining a `ALIYUN::EBS::DiskReplicaPair`
+ * Properties for defining a `DiskReplicaPair`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ebs-diskreplicapair
  */
 export interface DiskReplicaPairProps {
 
@@ -45,12 +46,12 @@ export interface DiskReplicaPairProps {
     readonly bandwidth?: number | ros.IResolvable;
 
     /**
-     * Property description: The description of the asynchronous replication relationship. 2 to 256 English or Chinese characters in length and cannot start with' http:// 'or' https.
+     * Property description: The description of the asynchronous replication relationship. 2 to 256 English or Chinese characters in length and cannot start with' http:\/\/ 'or' https.
      */
     readonly description?: string | ros.IResolvable;
 
     /**
-     * Property diskReplicaPairName: The name of the asynchronous replication relationship. The length must be 2 to 128 characters in length and must start with a letter or Chinese name. It cannot start with http:// or https. It can contain Chinese, English, numbers, half-width colons (:), underscores (_), half-width periods (.), or dashes (-).
+     * Property diskReplicaPairName: The name of the asynchronous replication relationship. The length must be 2 to 128 characters in length and must start with a letter or Chinese name. It cannot start with http:\/\/ or https. It can contain Chinese, English, numbers, half-width colons (:), underscores (_), half-width periods (.), or dashes (-).
      */
     readonly diskReplicaPairName?: string | ros.IResolvable;
 
@@ -88,14 +89,11 @@ export interface DiskReplicaPairProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::EBS::DiskReplicaPair`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EBS::DiskReplicaPair`, which is used to create a replication pair.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDiskReplicaPair`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ebs-diskreplicapair
  */
 export class DiskReplicaPair extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Bandwidth: The bandwidth for asynchronous data replication between cloud disks.
@@ -168,8 +166,6 @@ export class DiskReplicaPair extends ros.Resource {
     public readonly attrTags: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::EBS::DiskReplicaPair`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

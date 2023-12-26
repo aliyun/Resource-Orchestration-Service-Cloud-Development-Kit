@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::DRDS::Accounts`
+ * Properties for defining a `RosAccounts`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-drds-accounts
  */
 export interface RosAccountsProps {
 
@@ -46,18 +47,15 @@ function rosAccountsPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `DATASOURCE::DRDS::Accounts`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::DRDS::Accounts`ALIYUN::DTS::ConsumerGroup is used to create a consumer group for a change tracking instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Accounts` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-drds-accounts
  */
 export class RosAccounts extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::DRDS::Accounts";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Accounts: Indicates the information about the instance accounts.
@@ -78,8 +76,6 @@ export class RosAccounts extends ros.RosResource {
     public instanceId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::DRDS::Accounts`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -105,7 +101,8 @@ export class RosAccounts extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::DRDS::DrdsDBs`
+ * Properties for defining a `RosDrdsDBs`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-drds-drdsdbs
  */
 export interface RosDrdsDBsProps {
 
@@ -149,18 +146,15 @@ function rosDrdsDBsPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `DATASOURCE::DRDS::DrdsDBs`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::DRDS::DrdsDBs`, which is used to query the details of databases on an instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DrdsDBs` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-drds-drdsdbs
  */
 export class RosDrdsDBs extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::DRDS::DrdsDBs";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Databases: The list of drds databases.
@@ -181,8 +175,6 @@ export class RosDrdsDBs extends ros.RosResource {
     public instanceId: string | ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::DRDS::DrdsDBs`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -208,7 +200,8 @@ export class RosDrdsDBs extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::DRDS::DrdsInstances`
+ * Properties for defining a `RosDrdsInstances`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-drds-drdsinstances
  */
 export interface RosDrdsInstancesProps {
 
@@ -274,18 +267,15 @@ function rosDrdsInstancesPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `DATASOURCE::DRDS::DrdsInstances`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::DRDS::DrdsInstances`, which is used to query instances.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DrdsInstances` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-drds-drdsinstances
  */
 export class RosDrdsInstances extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::DRDS::DrdsInstances";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute InstanceIds: The list of drds instance IDs.
@@ -319,8 +309,6 @@ export class RosDrdsInstances extends ros.RosResource {
     public type: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::DRDS::DrdsInstances`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

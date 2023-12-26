@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cen
 {
-    /// <summary>Properties for defining a `ALIYUN::CEN::TransitRouterVpcAttachment`.</summary>
+    /// <summary>Properties for defining a `RosTransitRouterVpcAttachment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervpcattachment
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosTransitRouterVpcAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-cen.RosTransitRouterVpcAttachmentProps")]
     public interface IRosTransitRouterVpcAttachmentProps
     {
@@ -156,7 +159,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::CEN::TransitRouterVpcAttachment`.</summary>
+        /// <summary>Properties for defining a `RosTransitRouterVpcAttachment`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervpcattachment
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosTransitRouterVpcAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-cen.RosTransitRouterVpcAttachmentProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cen.IRosTransitRouterVpcAttachmentProps
         {

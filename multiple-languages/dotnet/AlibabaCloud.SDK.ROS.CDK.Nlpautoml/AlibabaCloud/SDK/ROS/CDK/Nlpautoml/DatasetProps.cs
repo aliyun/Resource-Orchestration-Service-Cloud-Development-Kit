@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlpautoml
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::NLPAUTOML::Dataset`.</summary>
+    /// <summary>Properties for defining a `Dataset`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlpautoml-dataset
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-nlpautoml.DatasetProps")]
     public class DatasetProps : AlibabaCloud.SDK.ROS.CDK.Nlpautoml.IDatasetProps
     {

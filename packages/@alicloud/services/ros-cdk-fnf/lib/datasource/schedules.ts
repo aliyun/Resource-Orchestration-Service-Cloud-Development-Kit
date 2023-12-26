@@ -4,7 +4,8 @@ import { RosSchedules } from './fnf.generated';
 export { RosSchedules as SchedulesProperty };
 
 /**
- * Properties for defining a `DATASOURCE::FNF::Schedules`
+ * Properties for defining a `Schedules`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fnf-schedules
  */
 export interface SchedulesProps {
 
@@ -20,14 +21,11 @@ export interface SchedulesProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::FNF::Schedules`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::FNF::Schedules`, which is used to query time-based schedules.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSchedules`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fnf-schedules
  */
 export class Schedules extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ScheduleNames: The list of schedule names.
@@ -40,8 +38,6 @@ export class Schedules extends ros.Resource {
     public readonly attrSchedules: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::FNF::Schedules`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Graphdatabase
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::GraphDatabase::Account`.</summary>
+    /// <summary>Properties for defining a `RosAccount`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-graphdatabase-account
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-graphdatabase.RosAccountProps")]
     public class RosAccountProps : AlibabaCloud.SDK.ROS.CDK.Graphdatabase.IRosAccountProps
     {

@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::ASM::ServiceMesh`
+ * Properties for defining a `RosServiceMesh`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-asm-servicemesh
  */
 export interface RosServiceMeshProps {
 
@@ -173,18 +174,15 @@ function rosServiceMeshPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `ALIYUN::ASM::ServiceMesh`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ASM::ServiceMesh`, which is used to create an Alibaba Cloud Service Mesh (ASM) instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ServiceMesh` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-asm-servicemesh
  */
 export class RosServiceMesh extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ASM::ServiceMesh";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ServiceMeshId: The ID of the ASM instance.
@@ -293,8 +291,6 @@ export class RosServiceMesh extends ros.RosResource {
     public tracing: boolean | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ASM::ServiceMesh`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

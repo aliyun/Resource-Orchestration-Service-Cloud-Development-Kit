@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>Properties for defining a `ALIYUN::VPC::VirtualBorderRouter`.</summary>
+    /// <summary>Properties for defining a `VirtualBorderRouter`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-virtualborderrouter
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IVirtualBorderRouterProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.VirtualBorderRouterProps")]
     public interface IVirtualBorderRouterProps
     {
@@ -100,7 +103,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::VPC::VirtualBorderRouter`.</summary>
+        /// <summary>Properties for defining a `VirtualBorderRouter`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-virtualborderrouter
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IVirtualBorderRouterProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.VirtualBorderRouterProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.IVirtualBorderRouterProps
         {

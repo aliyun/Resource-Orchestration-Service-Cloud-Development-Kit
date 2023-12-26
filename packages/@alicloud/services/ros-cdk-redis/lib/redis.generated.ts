@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::REDIS::Account`
+ * Properties for defining a `RosAccount`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-account
  */
 export interface RosAccountProps {
 
@@ -30,7 +31,7 @@ export interface RosAccountProps {
 
     /**
      * @Property accountDescription: The description of the account.
-     * The description must start with a letter, and cannot start with http:// or https://.
+     * The description must start with a letter, and cannot start with http:\/\/ or https:\/\/.
      * The description can contain letters, underscores (_), hyphens (-), and digits.
      * It can be 2 to 256 characters in length.
      */
@@ -100,18 +101,15 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::REDIS::Account`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::Account`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-account
  */
 export class RosAccount extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::REDIS::Account";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AccountName: The name of the account.
@@ -149,7 +147,7 @@ export class RosAccount extends ros.RosResource {
 
     /**
      * @Property accountDescription: The description of the account.
-     * The description must start with a letter, and cannot start with http:// or https://.
+     * The description must start with a letter, and cannot start with http:\/\/ or https:\/\/.
      * The description can contain letters, underscores (_), hyphens (-), and digits.
      * It can be 2 to 256 characters in length.
      */
@@ -173,8 +171,6 @@ export class RosAccount extends ros.RosResource {
     public accountType: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::REDIS::Account`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -210,7 +206,125 @@ export class RosAccount extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::REDIS::Connection`
+ * Properties for defining a `RosAuditLogConfig`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-auditlogconfig
+ */
+export interface RosAuditLogConfigProps {
+
+    /**
+     * @Property instanceId: The ID of the instance. You can call the DescribeInstances operation to query the ID of the instance.
+     */
+    readonly instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property retention: The retention period of audit logs. Valid values: 1 to 365. Unit: days.
+     * Note: The value of this parameter takes effect for all ApsaraDB for Redis instances in the current region.
+     */
+    readonly retention: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAuditLogConfigProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAuditLogConfigProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAuditLogConfigPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('retention', ros.requiredValidator)(properties.retention));
+    if(properties.retention && (typeof properties.retention) !== 'object') {
+        errors.collect(ros.propertyValidator('retention', ros.validateRange)({
+            data: properties.retention,
+            min: 1,
+            max: 365,
+          }));
+    }
+    errors.collect(ros.propertyValidator('retention', ros.validateNumber)(properties.retention));
+    return errors.wrap('supplied properties not correct for "RosAuditLogConfigProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::REDIS::AuditLogConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAuditLogConfigProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::REDIS::AuditLogConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosAuditLogConfigPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAuditLogConfigPropsValidator(properties).assertSuccess();
+    }
+    return {
+      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+      Retention: ros.numberToRosTemplate(properties.retention),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::AuditLogConfig`DATASOURCE::REDIS::InstanceClasses is used to query the types of ApsaraDB for Redis instances.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AuditLogConfig` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-auditlogconfig
+ */
+export class RosAuditLogConfig extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::REDIS::AuditLogConfig";
+
+    /**
+     * @Attribute InstanceId: IP address whitelist to be modified
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property instanceId: The ID of the instance. You can call the DescribeInstances operation to query the ID of the instance.
+     */
+    public instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property retention: The retention period of audit logs. Valid values: 1 to 365. Unit: days.
+     * Note: The value of this parameter takes effect for all ApsaraDB for Redis instances in the current region.
+     */
+    public retention: number | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAuditLogConfigProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAuditLogConfig.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrInstanceId = this.getAtt('InstanceId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.instanceId = props.instanceId;
+        this.retention = props.retention;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            instanceId: this.instanceId,
+            retention: this.retention,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAuditLogConfigPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosConnection`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-connection
  */
 export interface RosConnectionProps {
 
@@ -302,18 +416,15 @@ function rosConnectionPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::REDIS::Connection`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::Connection`, which is used to apply for a public endpoint for an ApsaraDB for Redis instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Connection` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-connection
  */
 export class RosConnection extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::REDIS::Connection";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ConnectionString: The allocated connection string.
@@ -349,8 +460,6 @@ export class RosConnection extends ros.RosResource {
     public port: number | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::REDIS::Connection`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -381,7 +490,8 @@ export class RosConnection extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::REDIS::Instance`
+ * Properties for defining a `RosInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-instance
  */
 export interface RosInstanceProps {
 
@@ -662,18 +772,15 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::REDIS::Instance`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::Instance`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-instance
  */
 export class RosInstance extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::REDIS::Instance";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ArchitectureType: The architecture.
@@ -983,8 +1090,6 @@ export class RosInstance extends ros.RosResource {
     public zoneId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::REDIS::Instance`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1094,7 +1199,7 @@ export namespace RosInstance {
      */
     export interface BackupPolicyProperty {
         /**
-         * @Property preferredBackupPeriod: The backup cycle. Valid values: Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday
+         * @Property preferredBackupPeriod: The backup cycle. Valid values: Monday\/Tuesday\/Wednesday\/Thursday\/Friday\/Saturday\/Sunday
          */
         readonly preferredBackupPeriod: string | ros.IResolvable;
         /**
@@ -1644,7 +1749,8 @@ function rosInstanceVpcPrivateConnectionPropertyToRosTemplate(properties: any): 
 }
 
 /**
- * Properties for defining a `ALIYUN::REDIS::PrepayInstance`
+ * Properties for defining a `RosPrepayInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-prepayinstance
  */
 export interface RosPrepayInstanceProps {
 
@@ -1922,18 +2028,15 @@ function rosPrepayInstancePropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * A ROS template type:  `ALIYUN::REDIS::PrepayInstance`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::PrepayInstance`, which is used to create a subscription ApsaraDB for Redis instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `PrepayInstance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-prepayinstance
  */
 export class RosPrepayInstance extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::REDIS::PrepayInstance";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ArchitectureType: The architecture.
@@ -2246,8 +2349,6 @@ export class RosPrepayInstance extends ros.RosResource {
     public zoneId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::REDIS::PrepayInstance`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2357,7 +2458,7 @@ export namespace RosPrepayInstance {
      */
     export interface BackupPolicyProperty {
         /**
-         * @Property preferredBackupPeriod: The backup cycle. Valid values: Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday
+         * @Property preferredBackupPeriod: The backup cycle. Valid values: Monday\/Tuesday\/Wednesday\/Thursday\/Friday\/Saturday\/Sunday
          */
         readonly preferredBackupPeriod: string | ros.IResolvable;
         /**
@@ -2907,7 +3008,8 @@ function rosPrepayInstanceVpcPrivateConnectionPropertyToRosTemplate(properties: 
 }
 
 /**
- * Properties for defining a `ALIYUN::REDIS::Whitelist`
+ * Properties for defining a `RosWhitelist`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-whitelist
  */
 export interface RosWhitelistProps {
 
@@ -2986,18 +3088,15 @@ function rosWhitelistPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `ALIYUN::REDIS::Whitelist`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::Whitelist`, which is used to configure an IP address whitelist for an ApsaraDB for Redis instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Whitelist` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-whitelist
  */
 export class RosWhitelist extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::REDIS::Whitelist";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute SecurityIpGroupAttribute: The default is empty. For distinguishing between different attribute values, the console will not display the value of hidden whitelist packet.
@@ -3038,8 +3137,6 @@ export class RosWhitelist extends ros.RosResource {
     public securityIpGroupName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::REDIS::Whitelist`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

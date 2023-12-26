@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Polardb
 {
-    /// <summary>Properties for defining a `ALIYUN::POLARDB::DBClusterEndpointAddress`.</summary>
+    /// <summary>Properties for defining a `RosDBClusterEndpointAddress`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusterendpointaddress
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosDBClusterEndpointAddressProps), fullyQualifiedName: "@alicloud/ros-cdk-polardb.RosDBClusterEndpointAddressProps")]
     public interface IRosDBClusterEndpointAddressProps
     {
@@ -57,7 +60,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::POLARDB::DBClusterEndpointAddress`.</summary>
+        /// <summary>Properties for defining a `RosDBClusterEndpointAddress`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusterendpointaddress
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosDBClusterEndpointAddressProps), fullyQualifiedName: "@alicloud/ros-cdk-polardb.RosDBClusterEndpointAddressProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Polardb.IRosDBClusterEndpointAddressProps
         {

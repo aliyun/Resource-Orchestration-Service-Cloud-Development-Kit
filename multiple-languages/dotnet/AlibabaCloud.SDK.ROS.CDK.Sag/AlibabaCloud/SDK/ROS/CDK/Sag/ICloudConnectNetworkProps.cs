@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sag
 {
-    /// <summary>Properties for defining a `ALIYUN::SAG::CloudConnectNetwork`.</summary>
+    /// <summary>Properties for defining a `CloudConnectNetwork`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-cloudconnectnetwork
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ICloudConnectNetworkProps), fullyQualifiedName: "@alicloud/ros-cdk-sag.CloudConnectNetworkProps")]
     public interface ICloudConnectNetworkProps
     {
@@ -61,7 +64,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::SAG::CloudConnectNetwork`.</summary>
+        /// <summary>Properties for defining a `CloudConnectNetwork`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-cloudconnectnetwork
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ICloudConnectNetworkProps), fullyQualifiedName: "@alicloud/ros-cdk-sag.CloudConnectNetworkProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sag.ICloudConnectNetworkProps
         {

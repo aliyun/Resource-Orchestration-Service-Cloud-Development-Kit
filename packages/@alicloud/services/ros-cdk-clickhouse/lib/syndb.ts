@@ -4,7 +4,8 @@ import { RosSynDb } from './clickhouse.generated';
 export { RosSynDb as SynDbProperty };
 
 /**
- * Properties for defining a `ALIYUN::ClickHouse::SynDb`
+ * Properties for defining a `SynDb`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-clickhouse-syndb
  */
 export interface SynDbProps {
 
@@ -75,14 +76,11 @@ export interface SynDbProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ClickHouse::SynDb`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ClickHouse::SynDb`, which is used to create a synchronization task for an ApsaraDB for ClickHouse Community-compatible Edition cluster.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSynDb`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-clickhouse-syndb
  */
 export class SynDb extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DbClusterId: The id of clickhouse.
@@ -100,8 +98,6 @@ export class SynDb extends ros.Resource {
     public readonly attrSynDbs: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ClickHouse::SynDb`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

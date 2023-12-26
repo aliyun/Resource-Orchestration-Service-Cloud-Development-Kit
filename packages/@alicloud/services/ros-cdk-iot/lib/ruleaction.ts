@@ -4,7 +4,8 @@ import { RosRuleAction } from './iot.generated';
 export { RosRuleAction as RuleActionProperty };
 
 /**
- * Properties for defining a `ALIYUN::IOT::RuleAction`
+ * Properties for defining a `RuleAction`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-ruleaction
  */
 export interface RuleActionProps {
 
@@ -59,14 +60,11 @@ export interface RuleActionProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::IOT::RuleAction`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::IOT::RuleAction`, which is used to create a rule action for a specified rule.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRuleAction`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-ruleaction
  */
 export class RuleAction extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ActionId: The ID of the rule action.
@@ -74,8 +72,6 @@ export class RuleAction extends ros.Resource {
     public readonly attrActionId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::IOT::RuleAction`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

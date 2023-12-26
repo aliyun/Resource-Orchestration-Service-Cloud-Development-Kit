@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * A ROS resource type:  <code>ALIYUN::ECS::CustomImage</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::CustomImage</code>, which is used to create a custom image.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.728Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.181Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.CustomImage")
 public class CustomImage extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,11 +16,7 @@ public class CustomImage extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ECS::CustomImage</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -33,11 +29,7 @@ public class CustomImage extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ECS::CustomImage</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -49,11 +41,7 @@ public class CustomImage extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ECS::CustomImage</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -140,6 +128,37 @@ public class CustomImage extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property bootMode: Modify the startup mode of the image.
+         * <p>
+         * Ranges:
+         * BIOS: BIOS boot mode.
+         * UEFI: UEFI boot mode.
+         * You need to know the startup mode supported by the specified image. After modifying the startup mode through this parameter, it must match the startup mode supported by the image itself so that the instance can start normally.
+         * <p>
+         * @return {@code this}
+         * @param bootMode Property bootMode: Modify the startup mode of the image. This parameter is required.
+         */
+        public Builder bootMode(final java.lang.String bootMode) {
+            this.props().bootMode(bootMode);
+            return this;
+        }
+        /**
+         * Property bootMode: Modify the startup mode of the image.
+         * <p>
+         * Ranges:
+         * BIOS: BIOS boot mode.
+         * UEFI: UEFI boot mode.
+         * You need to know the startup mode supported by the specified image. After modifying the startup mode through this parameter, it must match the startup mode supported by the image itself so that the instance can start normally.
+         * <p>
+         * @return {@code this}
+         * @param bootMode Property bootMode: Modify the startup mode of the image. This parameter is required.
+         */
+        public Builder bootMode(final com.aliyun.ros.cdk.core.IResolvable bootMode) {
+            this.props().bootMode(bootMode);
+            return this;
+        }
+
+        /**
          * Property description: The description of the image.
          * <p>
          * It can be [0, 256] letters in length.
@@ -169,6 +188,31 @@ public class CustomImage extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property detectionStrategy: Image detection policy.
+         * <p>
+         * If this parameter is not configured, detection will not be triggered. Only Standard detection mode is supported.Currently, most Linux/Windows versions are supported.
+         * <p>
+         * @return {@code this}
+         * @param detectionStrategy Property detectionStrategy: Image detection policy. This parameter is required.
+         */
+        public Builder detectionStrategy(final java.lang.String detectionStrategy) {
+            this.props().detectionStrategy(detectionStrategy);
+            return this;
+        }
+        /**
+         * Property detectionStrategy: Image detection policy.
+         * <p>
+         * If this parameter is not configured, detection will not be triggered. Only Standard detection mode is supported.Currently, most Linux/Windows versions are supported.
+         * <p>
+         * @return {@code this}
+         * @param detectionStrategy Property detectionStrategy: Image detection policy. This parameter is required.
+         */
+        public Builder detectionStrategy(final com.aliyun.ros.cdk.core.IResolvable detectionStrategy) {
+            this.props().detectionStrategy(detectionStrategy);
+            return this;
+        }
+
+        /**
          * Property diskDeviceMapping:.
          * <p>
          * @return {@code this}
@@ -190,24 +234,24 @@ public class CustomImage extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property imageFamily: The name of the image family of the custom image.
+         * Property imageFamily: The name of the image family of the image.
          * <p>
          * The name must be 2 to 128 characters in length and can contain letters, digits, colons (:), underscores (_), and hyphens (-). It cannot contain http:// or https://. It must start with a letter and cannot start with acs: or aliyun.This parameter is empty by default.
          * <p>
          * @return {@code this}
-         * @param imageFamily Property imageFamily: The name of the image family of the custom image. This parameter is required.
+         * @param imageFamily Property imageFamily: The name of the image family of the image. This parameter is required.
          */
         public Builder imageFamily(final java.lang.String imageFamily) {
             this.props().imageFamily(imageFamily);
             return this;
         }
         /**
-         * Property imageFamily: The name of the image family of the custom image.
+         * Property imageFamily: The name of the image family of the image.
          * <p>
          * The name must be 2 to 128 characters in length and can contain letters, digits, colons (:), underscores (_), and hyphens (-). It cannot contain http:// or https://. It must start with a letter and cannot start with acs: or aliyun.This parameter is empty by default.
          * <p>
          * @return {@code this}
-         * @param imageFamily Property imageFamily: The name of the image family of the custom image. This parameter is required.
+         * @param imageFamily Property imageFamily: The name of the image family of the image. This parameter is required.
          */
         public Builder imageFamily(final com.aliyun.ros.cdk.core.IResolvable imageFamily) {
             this.props().imageFamily(imageFamily);
@@ -238,6 +282,31 @@ public class CustomImage extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder imageName(final com.aliyun.ros.cdk.core.IResolvable imageName) {
             this.props().imageName(imageName);
+            return this;
+        }
+
+        /**
+         * Property imageVersion: Image version.
+         * <p>
+         * When you specify an instance ID (InstanceId) and the image of the instance is a cloud market image or a custom image created from a cloud market image. This parameter must be the same as the ImageVersion of the current instance image or set to empty.
+         * <p>
+         * @return {@code this}
+         * @param imageVersion Property imageVersion: Image version. This parameter is required.
+         */
+        public Builder imageVersion(final java.lang.String imageVersion) {
+            this.props().imageVersion(imageVersion);
+            return this;
+        }
+        /**
+         * Property imageVersion: Image version.
+         * <p>
+         * When you specify an instance ID (InstanceId) and the image of the instance is a cloud market image or a custom image created from a cloud market image. This parameter must be the same as the ImageVersion of the current instance image or set to empty.
+         * <p>
+         * @return {@code this}
+         * @param imageVersion Property imageVersion: Image version. This parameter is required.
+         */
+        public Builder imageVersion(final com.aliyun.ros.cdk.core.IResolvable imageVersion) {
+            this.props().imageVersion(imageVersion);
             return this;
         }
 

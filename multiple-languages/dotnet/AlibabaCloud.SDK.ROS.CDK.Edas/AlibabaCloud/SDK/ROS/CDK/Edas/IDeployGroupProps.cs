@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Edas
 {
-    /// <summary>Properties for defining a `ALIYUN::EDAS::DeployGroup`.</summary>
+    /// <summary>Properties for defining a `DeployGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-deploygroup
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IDeployGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-edas.DeployGroupProps")]
     public interface IDeployGroupProps
     {
@@ -22,7 +25,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::EDAS::DeployGroup`.</summary>
+        /// <summary>Properties for defining a `DeployGroup`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-deploygroup
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IDeployGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-edas.DeployGroupProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Edas.IDeployGroupProps
         {

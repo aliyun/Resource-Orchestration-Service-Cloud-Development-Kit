@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 {
-    /// <summary>Properties for defining a `ALIYUN::ApiGateway::Api`.</summary>
+    /// <summary>Properties for defining a `Api`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-api
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IApiProps), fullyQualifiedName: "@alicloud/ros-cdk-apigateway.ApiProps")]
     public interface IApiProps
     {
-        /// <summary>Property apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.</summary>
+        /// <summary>Property apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.</summary>
         [JsiiProperty(name: "apiName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object ApiName
         {
@@ -291,7 +294,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ApiGateway::Api`.</summary>
+        /// <summary>Properties for defining a `Api`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-api
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IApiProps), fullyQualifiedName: "@alicloud/ros-cdk-apigateway.ApiProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Apigateway.IApiProps
         {
@@ -299,7 +305,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             {
             }
 
-            /// <summary>Property apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.</summary>
+            /// <summary>Property apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.</summary>
             [JsiiProperty(name: "apiName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ApiName
             {

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Bss
 {
-    /// <summary>Properties for defining a `ALIYUN::BSS::WaitOrder`.</summary>
+    /// <summary>Properties for defining a `RosWaitOrder`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bss-waitorder
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosWaitOrderProps), fullyQualifiedName: "@alicloud/ros-cdk-bss.RosWaitOrderProps")]
     public interface IRosWaitOrderProps
     {
@@ -44,7 +47,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Bss
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::BSS::WaitOrder`.</summary>
+        /// <summary>Properties for defining a `RosWaitOrder`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bss-waitorder
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosWaitOrderProps), fullyQualifiedName: "@alicloud/ros-cdk-bss.RosWaitOrderProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Bss.IRosWaitOrderProps
         {

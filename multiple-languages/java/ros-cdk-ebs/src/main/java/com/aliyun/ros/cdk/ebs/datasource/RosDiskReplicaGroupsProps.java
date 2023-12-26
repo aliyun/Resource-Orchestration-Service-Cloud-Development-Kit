@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.ebs.datasource;
 
 /**
- * Properties for defining a <code>DATASOURCE::EBS::DiskReplicaGroups</code>.
+ * Properties for defining a <code>RosDiskReplicaGroups</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ebs-diskreplicagroups
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.609Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.078Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ebs.$Module.class, fqn = "@alicloud/ros-cdk-ebs.datasource.RosDiskReplicaGroupsProps")
 @software.amazon.jsii.Jsii.Proxy(RosDiskReplicaGroupsProps.Jsii$Proxy.class)
 public interface RosDiskReplicaGroupsProps extends software.amazon.jsii.JsiiSerializable {

@@ -4,7 +4,8 @@ import { RosCluster2 } from './emr.generated';
 export { RosCluster2 as Cluster2Property };
 
 /**
- * Properties for defining a `ALIYUN::EMR::Cluster2`
+ * Properties for defining a `Cluster2`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-cluster2
  */
 export interface Cluster2Props {
 
@@ -14,7 +15,7 @@ export interface Cluster2Props {
     readonly applications: Array<RosCluster2.ApplicationsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property clusterName: Cluster name.The length is 1 ~ 128 characters, and the alphabet or Chinese must be started. It cannot start with http:// and https: //.It can include Chinese, English, numbers, half-horn colons (:), down line (_), half-angle period (.) Or short lines (-)
+     * Property clusterName: Cluster name.The length is 1 ~ 128 characters, and the alphabet or Chinese must be started. It cannot start with http:\/\/ and https: \/\/.It can include Chinese, English, numbers, half-horn colons (:), down line (_), half-angle period (.) Or short lines (-)
      */
     readonly clusterName: string | ros.IResolvable;
 
@@ -92,14 +93,11 @@ export interface Cluster2Props {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::EMR::Cluster2`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EMR::Cluster2`, which is used to create an E-MapReduce (EMR) cluster.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster2`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-cluster2
  */
 export class Cluster2 extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ApplicationLinks: ApplicationLinks of cluster.
@@ -112,8 +110,6 @@ export class Cluster2 extends ros.Resource {
     public readonly attrClusterId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::EMR::Cluster2`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

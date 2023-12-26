@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Arms.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ARMS::Prometheis`.</summary>
+    /// <summary>Properties for defining a `Prometheis`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-prometheis
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-arms.datasource.PrometheisProps")]
     public class PrometheisProps : AlibabaCloud.SDK.ROS.CDK.Arms.Datasource.IPrometheisProps
     {

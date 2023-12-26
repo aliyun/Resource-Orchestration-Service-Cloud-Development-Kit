@@ -4,7 +4,8 @@ import { RosUserInfo } from './cr.generated';
 export { RosUserInfo as UserInfoProperty };
 
 /**
- * Properties for defining a `ALIYUN::CR::UserInfo`
+ * Properties for defining a `UserInfo`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-userinfo
  */
 export interface UserInfoProps {
 
@@ -15,14 +16,11 @@ export interface UserInfoProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CR::UserInfo`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CR::UserInfo`, which is used to create the information about a user.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUserInfo`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-userinfo
  */
 export class UserInfo extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute LoginName: Login name.
@@ -35,8 +33,6 @@ export class UserInfo extends ros.Resource {
     public readonly attrUserId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CR::UserInfo`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

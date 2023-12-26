@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::RAM::SAMLProvider`.</summary>
+    /// <summary>Properties for defining a `RosSAMLProvider`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-samlprovider
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ram.RosSAMLProviderProps")]
     public class RosSAMLProviderProps : AlibabaCloud.SDK.ROS.CDK.Ram.IRosSAMLProviderProps
     {
@@ -111,7 +114,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
         private object? _samlMetadataDocumentUrl;
 
         /// <remarks>
-        /// <strong>Property</strong>: samlMetadataDocumentUrl: The URL for the file that contains the SAML metadata document. The URL must point to a document located in an HTTP or HTTPS web server or an Alibaba Cloud OSS bucket. Examples: oss://ros/document/demo and oss://ros/document/demo?RegionId=cn-hangzhou. The URL can be up to 1,024 bytes in length.
+        /// <strong>Property</strong>: samlMetadataDocumentUrl: The URL for the file that contains the SAML metadata document. The URL must point to a document located in an HTTP or HTTPS web server or an Alibaba Cloud OSS bucket. Examples: oss:\/\/ros\/document\/demo and oss:\/\/ros\/document\/demo?RegionId=cn-hangzhou. The URL can be up to 1,024 bytes in length.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "samlMetadataDocumentUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::DNS::Domain`
+ * Properties for defining a `RosDomain`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dns-domain
  */
 export interface RosDomainProps {
 
@@ -75,18 +76,15 @@ function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * A ROS template type:  `ALIYUN::DNS::Domain`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DNS::Domain`, which is used to add a domain name.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Domain` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dns-domain
  */
 export class RosDomain extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DNS::Domain";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DnsServers: The DNS list for the domain name under resolution
@@ -142,8 +140,6 @@ export class RosDomain extends ros.RosResource {
     public tags: RosDomain.TagsProperty[] | undefined;
 
     /**
-     * Create a new `ALIYUN::DNS::Domain`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -227,7 +223,8 @@ function rosDomainTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::DNS::DomainGroup`
+ * Properties for defining a `RosDomainGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dns-domaingroup
  */
 export interface RosDomainGroupProps {
 
@@ -271,18 +268,15 @@ function rosDomainGroupPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `ALIYUN::DNS::DomainGroup`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DNS::DomainGroup`, which is used to add a domain name group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DomainGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dns-domaingroup
  */
 export class RosDomainGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DNS::DomainGroup";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute GroupId: Domain name group ID
@@ -298,8 +292,6 @@ export class RosDomainGroup extends ros.RosResource {
     public groupName: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::DNS::DomainGroup`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -324,7 +316,8 @@ export class RosDomainGroup extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::DNS::DomainRecord`
+ * Properties for defining a `RosDomainRecord`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dns-domainrecord
  */
 export interface RosDomainRecordProps {
 
@@ -420,18 +413,15 @@ function rosDomainRecordPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * A ROS template type:  `ALIYUN::DNS::DomainRecord`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DNS::DomainRecord`, which is used to add a domain name system (DNS) record.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DomainRecord` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dns-domainrecord
  */
 export class RosDomainRecord extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DNS::DomainRecord";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute RecordId: Parse the ID of the record
@@ -477,8 +467,6 @@ export class RosDomainRecord extends ros.RosResource {
     public ttl: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::DNS::DomainRecord`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

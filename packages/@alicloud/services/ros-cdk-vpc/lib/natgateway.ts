@@ -4,7 +4,8 @@ import { RosNatGateway } from './vpc.generated';
 export { RosNatGateway as NatGatewayProperty };
 
 /**
- * Properties for defining a `ALIYUN::VPC::NatGateway`
+ * Properties for defining a `NatGateway`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-natgateway
  */
 export interface NatGatewayProps {
 
@@ -106,14 +107,11 @@ export interface NatGatewayProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::VPC::NatGateway`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::NatGateway`, which is used to create a NAT gateway.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNatGateway`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-natgateway
  */
 export class NatGateway extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ForwardTableId: The forward table id.
@@ -131,8 +129,6 @@ export class NatGateway extends ros.Resource {
     public readonly attrSNatTableId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VPC::NatGateway`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Eais
 {
-    /// <summary>Properties for defining a `ALIYUN::EAIS::Instance`.</summary>
+    /// <summary>Properties for defining a `Instance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eais-instance
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-eais.InstanceProps")]
     public interface IInstanceProps
     {
@@ -80,7 +83,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eais
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::EAIS::Instance`.</summary>
+        /// <summary>Properties for defining a `Instance`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eais-instance
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-eais.InstanceProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Eais.IInstanceProps
         {

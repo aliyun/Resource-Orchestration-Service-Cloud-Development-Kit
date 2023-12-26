@@ -4,7 +4,8 @@ import { RosDBInstance } from './rds.generated';
 export { RosDBInstance as DBInstanceProperty };
 
 /**
- * Properties for defining a `ALIYUN::RDS::DBInstance`
+ * Properties for defining a `DBInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstance
  */
 export interface DBInstanceProps {
 
@@ -20,7 +21,7 @@ export interface DBInstanceProps {
     readonly dbInstanceStorage: number | ros.IResolvable;
 
     /**
-     * Property engine: Database instance engine type. Support MySQL/SQLServer/PostgreSQL/PPAS/MariaDB now.
+     * Property engine: Database instance engine type. Support MySQL\/SQLServer\/PostgreSQL\/PPAS\/MariaDB now.
      */
     readonly engine: string | ros.IResolvable;
 
@@ -34,7 +35,7 @@ export interface DBInstanceProps {
     readonly engineVersion: string | ros.IResolvable;
 
     /**
-     * Property securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0/0 means no limitation.
+     * Property securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0\/0 means no limitation.
      */
     readonly securityIpList: string | ros.IResolvable;
 
@@ -368,18 +369,33 @@ export interface DBInstanceProps {
     readonly sslSetting?: string | ros.IResolvable;
 
     /**
+     * Property storageAutoScale: Storage space automatic expansion switch, only supported by MySQL and PostgreSQL
+     */
+    readonly storageAutoScale?: string | ros.IResolvable;
+
+    /**
+     * Property storageThreshold: Storage space automatic expansion trigger threshold (percentage)
+     */
+    readonly storageThreshold?: number | ros.IResolvable;
+
+    /**
+     * Property storageUpperBound: The total storage space upper limit for automatic storage space expansion, that is, automatic expansion will not cause the total storage space of the instance to exceed this value.
+     */
+    readonly storageUpperBound?: number | ros.IResolvable;
+
+    /**
      * Property tags: The tags of an instance.
      * You should input the information of the tag with the format of the Key-Value, such as {"key1":"value1","key2":"value2", ... "key5":"value5"}.
      * At most 20 tags can be specified.
      * Key
      * It can be up to 64 characters in length.
      * Cannot begin with aliyun.
-     * Cannot begin with http:// or https://.
+     * Cannot begin with http:\/\/ or https:\/\/.
      * Cannot be a null string.
      * Value
      * It can be up to 128 characters in length.
      * Cannot begin with aliyun.
-     * Cannot begin with http:// or https://.
+     * Cannot begin with http:\/\/ or https:\/\/.
      * Can be a null string.
      */
     readonly tags?: { [key: string]: (any) };
@@ -416,14 +432,11 @@ export interface DBInstanceProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::RDS::DBInstance`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::DBInstance`, which is used to create an ApsaraDB RDS instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBInstance`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstance
  */
 export class DBInstance extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DBInstanceId: The instance id of created database instance.
@@ -461,8 +474,6 @@ export class DBInstance extends ros.Resource {
     public readonly attrPublicPort: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::RDS::DBInstance`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties
@@ -476,6 +487,8 @@ export class DBInstance extends ros.Resource {
             archiveBackupRetentionPeriod: props.archiveBackupRetentionPeriod,
             dbTimeZone: props.dbTimeZone,
             port: props.port,
+            storageThreshold: props.storageThreshold,
+            storageAutoScale: props.storageAutoScale === undefined || props.storageAutoScale === null ? 'Disable' : props.storageAutoScale,
             instanceNetworkType: props.instanceNetworkType,
             archiveBackupKeepCount: props.archiveBackupKeepCount,
             logBackupRetentionPeriod: props.logBackupRetentionPeriod,
@@ -483,15 +496,15 @@ export class DBInstance extends ros.Resource {
             dbMappings: props.dbMappings,
             connectionStringPrefix: props.connectionStringPrefix,
             multiAz: props.multiAz === undefined || props.multiAz === null ? false : props.multiAz,
-            engine: props.engine,
             tags: props.tags,
+            engine: props.engine,
             dbInstanceDescription: props.dbInstanceDescription,
             targetDedicatedHostIdForMaster: props.targetDedicatedHostIdForMaster,
             engineVersion: props.engineVersion,
             dbInstanceClass: props.dbInstanceClass,
             archiveBackupKeepPolicy: props.archiveBackupKeepPolicy,
-            vSwitchId: props.vSwitchId,
             backupPolicyMode: props.backupPolicyMode,
+            vSwitchId: props.vSwitchId,
             period: props.period === undefined || props.period === null ? 1 : props.period,
             localLogRetentionHours: props.localLogRetentionHours,
             payType: props.payType === undefined || props.payType === null ? 'Postpaid' : props.payType,
@@ -503,6 +516,7 @@ export class DBInstance extends ros.Resource {
             masterUsername: props.masterUsername,
             connectionMode: props.connectionMode,
             localLogRetentionSpace: props.localLogRetentionSpace,
+            storageUpperBound: props.storageUpperBound,
             category: props.category,
             privateIpAddress: props.privateIpAddress,
             targetDedicatedHostIdForSlave: props.targetDedicatedHostIdForSlave,
@@ -521,8 +535,8 @@ export class DBInstance extends ros.Resource {
             zoneId: props.zoneId,
             targetDedicatedHostIdForLog: props.targetDedicatedHostIdForLog,
             allocatePublicConnection: props.allocatePublicConnection,
-            preferredBackupTime: props.preferredBackupTime,
             securityGroupId: props.securityGroupId,
+            preferredBackupTime: props.preferredBackupTime,
             dbInstanceStorageType: props.dbInstanceStorageType,
             backUpCategory: props.backUpCategory,
             compressType: props.compressType,

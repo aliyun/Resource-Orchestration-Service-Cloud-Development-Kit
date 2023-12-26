@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.clickhouse;
 
 /**
- * A ROS template type:  <code>ALIYUN::ClickHouse::SynDb</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ClickHouse::SynDb</code>, which is used to create a synchronization task for an ApsaraDB for ClickHouse Community-compatible Edition cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:33.882Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.259Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.clickhouse.$Module.class, fqn = "@alicloud/ros-cdk-clickhouse.RosSynDb")
 public class RosSynDb extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,8 +20,6 @@ public class RosSynDb extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ClickHouse::SynDb</code>.
-     * <p>
      * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
      * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
      * @param props <ul><li>resource properties.</li></ul> This parameter is required.

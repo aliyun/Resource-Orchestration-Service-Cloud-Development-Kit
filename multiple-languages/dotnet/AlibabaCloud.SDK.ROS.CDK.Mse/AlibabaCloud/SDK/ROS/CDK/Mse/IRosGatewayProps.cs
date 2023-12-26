@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Mse
 {
-    /// <summary>Properties for defining a `ALIYUN::MSE::Gateway`.</summary>
+    /// <summary>Properties for defining a `RosGateway`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-gateway
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosGatewayProps), fullyQualifiedName: "@alicloud/ros-cdk-mse.RosGatewayProps")]
     public interface IRosGatewayProps
     {
@@ -109,7 +112,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::MSE::Gateway`.</summary>
+        /// <summary>Properties for defining a `RosGateway`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-gateway
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosGatewayProps), fullyQualifiedName: "@alicloud/ros-cdk-mse.RosGatewayProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Mse.IRosGatewayProps
         {

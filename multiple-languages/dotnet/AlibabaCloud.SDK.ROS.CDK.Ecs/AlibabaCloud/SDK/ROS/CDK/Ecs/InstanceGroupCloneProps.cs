@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ECS::InstanceGroupClone`.</summary>
+    /// <summary>Properties for defining a `InstanceGroupClone`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instancegroupclone
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.InstanceGroupCloneProps")]
     public class InstanceGroupCloneProps : AlibabaCloud.SDK.ROS.CDK.Ecs.IInstanceGroupCloneProps
     {
@@ -1054,7 +1057,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         private object? _periodUnit;
 
-        /// <summary>Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year.</summary>
+        /// <summary>Property periodUnit: Unit of prepaid time period, it could be Week\/Month\/Year.</summary>
         /// <remarks>
         /// Default value is Month.Old instances will not be changed.
         /// </remarks>
@@ -1192,7 +1195,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// The valid values of N are based on the maximum number of security groups to which an instance can belong. For more information, see Security group limits.Note: You cannot specify both SecurityGroupId and SecurityGroupIds at the same time.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "securityGroupIds", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [JsiiProperty(name: "securityGroupIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         public object? SecurityGroupIds
         {
             get => _securityGroupIds;
@@ -1202,9 +1205,26 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 {
                     switch (value)
                     {
-                        case object[] cast_cd4240:
-                            break;
                         case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case object[] cast_cd4240:
+                            for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
+                            {
+                                switch (cast_cd4240[__idx_f64a5c])
+                                {
+                                    case string cast_201718:
+                                        break;
+                                    case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                        break;
+                                    case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
+                                        // Not enough information to type-check...
+                                        break;
+                                    case null:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                                    default:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                }
+                            }
                             break;
                         case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
                             // Not enough information to type-check...
@@ -1212,7 +1232,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                         case null:
                             break;
                         default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: object[], {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
                     }
                 }
                 _securityGroupIds = value;

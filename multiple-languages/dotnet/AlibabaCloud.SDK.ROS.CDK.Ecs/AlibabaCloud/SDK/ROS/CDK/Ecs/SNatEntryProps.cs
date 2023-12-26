@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ECS::SNatEntry`.</summary>
+    /// <summary>Properties for defining a `SNatEntry`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-snatentry
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.SNatEntryProps")]
     public class SNatEntryProps : AlibabaCloud.SDK.ROS.CDK.Ecs.ISNatEntryProps
     {
@@ -72,7 +75,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         private object? _snatEntryName;
 
-        /// <summary>Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.</summary>
+        /// <summary>Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:\/\/ or https:\/\/.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "snatEntryName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? SnatEntryName

@@ -4,13 +4,16 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ess
 {
-    /// <summary>Properties for defining a `ALIYUN::ESS::ScalingGroup`.</summary>
+    /// <summary>Properties for defining a `ScalingGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroup
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IScalingGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-ess.ScalingGroupProps")]
     public interface IScalingGroupProps
     {
         /// <summary>Property maxSize: Maximum number of ECS instances in the scaling group.</summary>
         /// <remarks>
-        /// Value range: [0, 1000].
+        /// Value range: [0, 2000].
         /// </remarks>
         [JsiiProperty(name: "maxSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object MaxSize
@@ -20,7 +23,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
 
         /// <summary>Property minSize: Minimum number of ECS instances in the scaling group.</summary>
         /// <remarks>
-        /// Value range: [0, 1000].
+        /// Value range: [0, 2000].
         /// </remarks>
         [JsiiProperty(name: "minSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object MinSize
@@ -399,6 +402,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// Valid values:
         /// recycle
         /// release
+        /// forcerelease
         /// ScalingPolicy specifies the reclaim modes of scaling groups, but the policy that is used to remove ECS instances from scaling groups is determined by the RemovePolicy parameter of the RemoveInstances operation.
         /// </remarks>
         [JsiiProperty(name: "scalingPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -507,7 +511,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ESS::ScalingGroup`.</summary>
+        /// <summary>Properties for defining a `ScalingGroup`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroup
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IScalingGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-ess.ScalingGroupProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ess.IScalingGroupProps
         {
@@ -517,7 +524,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
 
             /// <summary>Property maxSize: Maximum number of ECS instances in the scaling group.</summary>
             /// <remarks>
-            /// Value range: [0, 1000].
+            /// Value range: [0, 2000].
             /// </remarks>
             [JsiiProperty(name: "maxSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object MaxSize
@@ -527,7 +534,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
 
             /// <summary>Property minSize: Minimum number of ECS instances in the scaling group.</summary>
             /// <remarks>
-            /// Value range: [0, 1000].
+            /// Value range: [0, 2000].
             /// </remarks>
             [JsiiProperty(name: "minSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object MinSize
@@ -834,6 +841,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             /// Valid values:
             /// recycle
             /// release
+            /// forcerelease
             /// ScalingPolicy specifies the reclaim modes of scaling groups, but the policy that is used to remove ECS instances from scaling groups is determined by the RemovePolicy parameter of the RemoveInstances operation.
             /// </remarks>
             [JsiiOptional]

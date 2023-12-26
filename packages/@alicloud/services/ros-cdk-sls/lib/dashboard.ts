@@ -4,7 +4,8 @@ import { RosDashboard } from './sls.generated';
 export { RosDashboard as DashboardProperty };
 
 /**
- * Properties for defining a `ALIYUN::SLS::Dashboard`
+ * Properties for defining a `Dashboard`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-dashboard
  */
 export interface DashboardProps {
 
@@ -38,14 +39,11 @@ export interface DashboardProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::SLS::Dashboard`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Dashboard`, which is used to create a dashboard.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDashboard`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-dashboard
  */
 export class Dashboard extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DashboardName: Dashboard name.
@@ -58,8 +56,6 @@ export class Dashboard extends ros.Resource {
     public readonly attrDisplayName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::SLS::Dashboard`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

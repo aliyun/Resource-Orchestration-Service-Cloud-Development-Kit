@@ -4,7 +4,8 @@ import { RosDBNodeClasses } from './polardb.generated';
 export { RosDBNodeClasses as DBNodeClassesProperty };
 
 /**
- * Properties for defining a `DATASOURCE::POLARDB::DBNodeClasses`
+ * Properties for defining a `DBNodeClasses`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-dbnodeclasses
  */
 export interface DBNodeClassesProps {
 
@@ -48,14 +49,11 @@ export interface DBNodeClassesProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::POLARDB::DBNodeClasses`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::POLARDB::DBNodeClasses`DATASOURCE::POLARDB::GlobalDatabaseNetworks is used to query all global database networks (GDNs) within the current Alibaba Cloud account.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBNodeClasses`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-dbnodeclasses
  */
 export class DBNodeClasses extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DBNodeClassIds: The list of db node class ids.
@@ -68,8 +66,6 @@ export class DBNodeClasses extends ros.Resource {
     public readonly attrDbNodeClasses: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::POLARDB::DBNodeClasses`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

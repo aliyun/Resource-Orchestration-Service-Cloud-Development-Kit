@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cen.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::CEN::CenInstances`.</summary>
+    /// <summary>Properties for defining a `CenInstances`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-ceninstances
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cen.datasource.CenInstancesProps")]
     public class CenInstancesProps : AlibabaCloud.SDK.ROS.CDK.Cen.Datasource.ICenInstancesProps
     {

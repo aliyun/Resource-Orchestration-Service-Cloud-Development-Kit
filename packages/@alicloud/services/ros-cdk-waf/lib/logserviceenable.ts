@@ -4,7 +4,8 @@ import { RosLogServiceEnable } from './waf.generated';
 export { RosLogServiceEnable as LogServiceEnableProperty };
 
 /**
- * Properties for defining a `ALIYUN::WAF::LogServiceEnable`
+ * Properties for defining a `LogServiceEnable`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-logserviceenable
  */
 export interface LogServiceEnableProps {
 
@@ -21,14 +22,11 @@ export interface LogServiceEnableProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::WAF::LogServiceEnable`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::WAF::LogServiceEnable`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLogServiceEnable`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-logserviceenable
  */
 export class LogServiceEnable extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Domain: The domain name that is added to WAF.
@@ -42,8 +40,6 @@ You can call the DescribeInstanceInfo operation to query the ID of the WAF insta
     public readonly attrInstanceId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::WAF::LogServiceEnable`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

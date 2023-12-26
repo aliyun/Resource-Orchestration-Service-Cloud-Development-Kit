@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::GPDB::Account`
+ * Properties for defining a `RosAccount`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-account
  */
 export interface RosAccountProps {
 
@@ -92,18 +93,15 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::GPDB::Account`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GPDB::Account`, which is used to create a database account for an AnalyticDB for PostgreSQL instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-account
  */
 export class RosAccount extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::GPDB::Account";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AccountName: The name of the account.
@@ -149,8 +147,6 @@ export class RosAccount extends ros.RosResource {
     public accountDescription: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::GPDB::Account`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -182,7 +178,8 @@ export class RosAccount extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::GPDB::DBInstance`
+ * Properties for defining a `RosDBInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-dbinstance
  */
 export interface RosDBInstanceProps {
 
@@ -281,7 +278,7 @@ export interface RosDBInstanceProps {
     readonly period?: number | ros.IResolvable;
 
     /**
-     * @Property periodUnit: Unit of subscription period, it could be Month/Year. Default value is Month.
+     * @Property periodUnit: Unit of subscription period, it could be Month\/Year. Default value is Month.
      */
     readonly periodUnit?: string | ros.IResolvable;
 
@@ -553,18 +550,15 @@ function rosDBInstancePropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::GPDB::DBInstance`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GPDB::DBInstance`, which is used to create an AnalyticDB for PostgreSQL instance in reserved storage mode.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DBInstance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-dbinstance
  */
 export class RosDBInstance extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::GPDB::DBInstance";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ConnectionString: The endpoint of the instance.
@@ -684,7 +678,7 @@ export class RosDBInstance extends ros.RosResource {
     public period: number | ros.IResolvable | undefined;
 
     /**
-     * @Property periodUnit: Unit of subscription period, it could be Month/Year. Default value is Month.
+     * @Property periodUnit: Unit of subscription period, it could be Month\/Year. Default value is Month.
      */
     public periodUnit: string | ros.IResolvable | undefined;
 
@@ -756,8 +750,6 @@ export class RosDBInstance extends ros.RosResource {
     public vpcId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::GPDB::DBInstance`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -887,7 +879,8 @@ function rosDBInstanceTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::GPDB::ElasticDBInstance`
+ * Properties for defining a `RosElasticDBInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-elasticdbinstance
  */
 export interface RosElasticDBInstanceProps {
 
@@ -976,7 +969,7 @@ export interface RosElasticDBInstanceProps {
     readonly period?: number | ros.IResolvable;
 
     /**
-     * @Property periodUnit: Unit of subscription period, it could be Month/Year. Default value is Month.
+     * @Property periodUnit: Unit of subscription period, it could be Month\/Year. Default value is Month.
      */
     readonly periodUnit?: string | ros.IResolvable;
 
@@ -1154,18 +1147,15 @@ function rosElasticDBInstancePropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * A ROS template type:  `ALIYUN::GPDB::ElasticDBInstance`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GPDB::ElasticDBInstance`, which is used to create an AnalyticDB for PostgreSQL instance in elastic storage mode.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ElasticDBInstance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-elasticdbinstance
  */
 export class RosElasticDBInstance extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::GPDB::ElasticDBInstance";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ConnectionString: The endpoint of the instance.
@@ -1275,7 +1265,7 @@ export class RosElasticDBInstance extends ros.RosResource {
     public period: number | ros.IResolvable | undefined;
 
     /**
-     * @Property periodUnit: Unit of subscription period, it could be Month/Year. Default value is Month.
+     * @Property periodUnit: Unit of subscription period, it could be Month\/Year. Default value is Month.
      */
     public periodUnit: string | ros.IResolvable | undefined;
 
@@ -1303,8 +1293,6 @@ export class RosElasticDBInstance extends ros.RosResource {
     public vpcId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::GPDB::ElasticDBInstance`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1418,7 +1406,8 @@ function rosElasticDBInstanceTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::GPDB::InstancePublicConnection`
+ * Properties for defining a `RosInstancePublicConnection`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-instancepublicconnection
  */
 export interface RosInstancePublicConnectionProps {
 
@@ -1478,18 +1467,15 @@ function rosInstancePublicConnectionPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * A ROS template type:  `ALIYUN::GPDB::InstancePublicConnection`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GPDB::InstancePublicConnection`, which is used to allocate a public connection string to an instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `InstancePublicConnection` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-instancepublicconnection
  */
 export class RosInstancePublicConnection extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::GPDB::InstancePublicConnection";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ConnectionString: The connection string of the instance.
@@ -1520,8 +1506,6 @@ export class RosInstancePublicConnection extends ros.RosResource {
     public port: number | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::GPDB::InstancePublicConnection`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

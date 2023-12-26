@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.fc;
 
 /**
- * Properties for defining a <code>ALIYUN::FC::Function</code>.
+ * Properties for defining a <code>Function</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-function
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:35.601Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.139Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.FunctionProps")
 @software.amazon.jsii.Jsii.Proxy(FunctionProps.Jsii$Proxy.class)
 public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {

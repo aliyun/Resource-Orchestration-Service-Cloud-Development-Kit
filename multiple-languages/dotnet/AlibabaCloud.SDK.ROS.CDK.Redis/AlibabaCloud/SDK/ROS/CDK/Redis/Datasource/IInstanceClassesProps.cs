@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Redis.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::REDIS::InstanceClasses`.</summary>
+    /// <summary>Properties for defining a `InstanceClasses`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-instanceclasses
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IInstanceClassesProps), fullyQualifiedName: "@alicloud/ros-cdk-redis.datasource.InstanceClassesProps")]
     public interface IInstanceClassesProps
     {
@@ -149,7 +152,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::REDIS::InstanceClasses`.</summary>
+        /// <summary>Properties for defining a `InstanceClasses`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-instanceclasses
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IInstanceClassesProps), fullyQualifiedName: "@alicloud/ros-cdk-redis.datasource.InstanceClassesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Redis.Datasource.IInstanceClassesProps
         {

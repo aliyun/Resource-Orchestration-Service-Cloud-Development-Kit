@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.slb;
 
 /**
- * A ROS template type:  <code>ALIYUN::SLB::Certificate</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SLB::Certificate</code>, which is used to upload a certificate to a Server Load Balancer (SLB) instance.
+ * <p>
+ * Server certificates and certificate authority (CA) certificates are supported.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.259Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:18.079Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosCertificate")
 public class RosCertificate extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,8 +22,6 @@ public class RosCertificate extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * Create a new <code>ALIYUN::SLB::Certificate</code>.
-     * <p>
      * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
      * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
      * @param props <ul><li>resource properties.</li></ul> This parameter is required.

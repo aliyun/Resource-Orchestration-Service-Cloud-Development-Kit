@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::SAG::ACL`.</summary>
+    /// <summary>Properties for defining a `ACL`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-acl
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-sag.ACLProps")]
     public class ACLProps : AlibabaCloud.SDK.ROS.CDK.Sag.IACLProps
     {

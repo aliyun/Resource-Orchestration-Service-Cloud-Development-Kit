@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::FC::CustomDomain`.</summary>
+    /// <summary>Properties for defining a `CustomDomain`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-customdomain
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-fc.CustomDomainProps")]
     public class CustomDomainProps : AlibabaCloud.SDK.ROS.CDK.Fc.ICustomDomainProps
     {

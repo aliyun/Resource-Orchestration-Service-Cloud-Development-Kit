@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.ga;
 
 /**
- * Properties for defining a <code>ALIYUN::GA::BandwidthPackageAcceleratorAddition</code>.
+ * Properties for defining a <code>BandwidthPackageAcceleratorAddition</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-bandwidthpackageacceleratoraddition
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:35.712Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.397Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.BandwidthPackageAcceleratorAdditionProps")
 @software.amazon.jsii.Jsii.Proxy(BandwidthPackageAcceleratorAdditionProps.Jsii$Proxy.class)
 public interface BandwidthPackageAcceleratorAdditionProps extends software.amazon.jsii.JsiiSerializable {

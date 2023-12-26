@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * A ROS template type:  <code>ALIYUN::ECS::RunCommand</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ECS::RunCommand</code>, which is used to run a shell, PowerShell, or batch command on Elastic Compute Service (ECS) instances.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.988Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.490Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosRunCommand")
 public class RosRunCommand extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,8 +20,6 @@ public class RosRunCommand extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ECS::RunCommand</code>.
-     * <p>
      * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
      * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
      * @param props <ul><li>resource properties.</li></ul> This parameter is required.
@@ -147,6 +145,42 @@ public class RosRunCommand extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setType(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "type", java.util.Objects.requireNonNull(value, "type is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getContainerId() {
+        return software.amazon.jsii.Kernel.get(this, "containerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setContainerId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "containerId", value);
+    }
+
+    /**
+     */
+    public void setContainerId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "containerId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getContainerName() {
+        return software.amazon.jsii.Kernel.get(this, "containerName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setContainerName(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "containerName", value);
+    }
+
+    /**
+     */
+    public void setContainerName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "containerName", value);
     }
 
     /**
@@ -289,6 +323,42 @@ public class RosRunCommand extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRepeatMode() {
+        return software.amazon.jsii.Kernel.get(this, "repeatMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setRepeatMode(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "repeatMode", value);
+    }
+
+    /**
+     */
+    public void setRepeatMode(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "repeatMode", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setResourceGroupId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
+     */
+    public void setResourceGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getRunAgainOn() {
         return software.amazon.jsii.Kernel.get(this, "runAgainOn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -353,24 +423,6 @@ public class RosRunCommand extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getTimed() {
-        return software.amazon.jsii.Kernel.get(this, "timed", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setTimed(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
-        software.amazon.jsii.Kernel.set(this, "timed", value);
-    }
-
-    /**
-     */
-    public void setTimed(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "timed", value);
-    }
-
-    /**
-     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getTimeout() {
         return software.amazon.jsii.Kernel.get(this, "timeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -385,6 +437,42 @@ public class RosRunCommand extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setTimeout(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "timeout", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getUsername() {
+        return software.amazon.jsii.Kernel.get(this, "username", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setUsername(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "username", value);
+    }
+
+    /**
+     */
+    public void setUsername(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "username", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getWindowsPasswordName() {
+        return software.amazon.jsii.Kernel.get(this, "windowsPasswordName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setWindowsPasswordName(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "windowsPasswordName", value);
+    }
+
+    /**
+     */
+    public void setWindowsPasswordName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "windowsPasswordName", value);
     }
 
     /**
@@ -652,6 +740,40 @@ public class RosRunCommand extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param containerId This parameter is required.
+         */
+        public Builder containerId(final java.lang.String containerId) {
+            this.props.containerId(containerId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param containerId This parameter is required.
+         */
+        public Builder containerId(final com.aliyun.ros.cdk.core.IResolvable containerId) {
+            this.props.containerId(containerId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param containerName This parameter is required.
+         */
+        public Builder containerName(final java.lang.String containerName) {
+            this.props.containerName(containerName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param containerName This parameter is required.
+         */
+        public Builder containerName(final com.aliyun.ros.cdk.core.IResolvable containerName) {
+            this.props.containerName(containerName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param contentEncoding This parameter is required.
          */
         public Builder contentEncoding(final java.lang.String contentEncoding) {
@@ -771,6 +893,40 @@ public class RosRunCommand extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param repeatMode This parameter is required.
+         */
+        public Builder repeatMode(final java.lang.String repeatMode) {
+            this.props.repeatMode(repeatMode);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param repeatMode This parameter is required.
+         */
+        public Builder repeatMode(final com.aliyun.ros.cdk.core.IResolvable repeatMode) {
+            this.props.repeatMode(repeatMode);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param resourceGroupId This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param resourceGroupId This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param runAgainOn This parameter is required.
          */
         public Builder runAgainOn(final com.aliyun.ros.cdk.core.IResolvable runAgainOn) {
@@ -814,23 +970,6 @@ public class RosRunCommand extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param timed This parameter is required.
-         */
-        public Builder timed(final java.lang.Boolean timed) {
-            this.props.timed(timed);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param timed This parameter is required.
-         */
-        public Builder timed(final com.aliyun.ros.cdk.core.IResolvable timed) {
-            this.props.timed(timed);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param timeout This parameter is required.
          */
         public Builder timeout(final java.lang.Number timeout) {
@@ -843,6 +982,40 @@ public class RosRunCommand extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder timeout(final com.aliyun.ros.cdk.core.IResolvable timeout) {
             this.props.timeout(timeout);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param username This parameter is required.
+         */
+        public Builder username(final java.lang.String username) {
+            this.props.username(username);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param username This parameter is required.
+         */
+        public Builder username(final com.aliyun.ros.cdk.core.IResolvable username) {
+            this.props.username(username);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param windowsPasswordName This parameter is required.
+         */
+        public Builder windowsPasswordName(final java.lang.String windowsPasswordName) {
+            this.props.windowsPasswordName(windowsPasswordName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param windowsPasswordName This parameter is required.
+         */
+        public Builder windowsPasswordName(final com.aliyun.ros.cdk.core.IResolvable windowsPasswordName) {
+            this.props.windowsPasswordName(windowsPasswordName);
             return this;
         }
 

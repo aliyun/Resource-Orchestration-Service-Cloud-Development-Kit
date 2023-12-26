@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * Properties for defining a <code>ALIYUN::ECS::SSHKeyPair</code>.
+ * Properties for defining a <code>RosSSHKeyPair</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-sshkeypair
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.995Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.497Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosSSHKeyPairProps")
 @software.amazon.jsii.Jsii.Proxy(RosSSHKeyPairProps.Jsii$Proxy.class)
 public interface RosSSHKeyPairProps extends software.amazon.jsii.JsiiSerializable {

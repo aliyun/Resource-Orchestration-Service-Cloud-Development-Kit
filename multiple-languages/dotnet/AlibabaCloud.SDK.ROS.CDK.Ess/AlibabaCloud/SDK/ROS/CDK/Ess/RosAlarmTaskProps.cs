@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ESS::AlarmTask`.</summary>
+    /// <summary>Properties for defining a `RosAlarmTask`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-alarmtask
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ess.RosAlarmTaskProps")]
     public class RosAlarmTaskProps : AlibabaCloud.SDK.ROS.CDK.Ess.IRosAlarmTaskProps
     {

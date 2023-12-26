@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>Properties for defining a `ALIYUN::ECS::DedicatedHost`.</summary>
+    /// <summary>Properties for defining a `DedicatedHost`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-dedicatedhost
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IDedicatedHostProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.DedicatedHostProps")]
     public interface IDedicatedHostProps
     {
@@ -163,7 +166,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year.</summary>
+        /// <summary>Property periodUnit: Unit of prepaid time period, it could be Week\/Month\/Year.</summary>
         /// <remarks>
         /// Default value is Month.
         /// </remarks>
@@ -227,7 +230,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ECS::DedicatedHost`.</summary>
+        /// <summary>Properties for defining a `DedicatedHost`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-dedicatedhost
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IDedicatedHostProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.DedicatedHostProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.IDedicatedHostProps
         {
@@ -357,7 +363,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year.</summary>
+            /// <summary>Property periodUnit: Unit of prepaid time period, it could be Week\/Month\/Year.</summary>
             /// <remarks>
             /// Default value is Month.
             /// </remarks>

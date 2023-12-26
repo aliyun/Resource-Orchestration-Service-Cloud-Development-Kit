@@ -4,7 +4,8 @@ import { RosTransitRouterRouteTablePropagation } from './cen.generated';
 export { RosTransitRouterRouteTablePropagation as TransitRouterRouteTablePropagationProperty };
 
 /**
- * Properties for defining a `ALIYUN::CEN::TransitRouterRouteTablePropagation`
+ * Properties for defining a `TransitRouterRouteTablePropagation`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterroutetablepropagation
  */
 export interface TransitRouterRouteTablePropagationProps {
 
@@ -20,14 +21,11 @@ export interface TransitRouterRouteTablePropagationProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CEN::TransitRouterRouteTablePropagation`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterRouteTablePropagation`, which is used to create a route learning correlation.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTransitRouterRouteTablePropagation`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterroutetablepropagation
  */
 export class TransitRouterRouteTablePropagation extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ResourceId: ResourceId
@@ -50,8 +48,6 @@ export class TransitRouterRouteTablePropagation extends ros.Resource {
     public readonly attrTransitRouterRouteTableId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CEN::TransitRouterRouteTablePropagation`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

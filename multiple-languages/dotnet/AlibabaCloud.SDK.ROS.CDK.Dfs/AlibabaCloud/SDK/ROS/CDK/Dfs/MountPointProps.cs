@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dfs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::DFS::MountPoint`.</summary>
+    /// <summary>Properties for defining a `MountPoint`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-mountpoint
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-dfs.MountPointProps")]
     public class MountPointProps : AlibabaCloud.SDK.ROS.CDK.Dfs.IMountPointProps
     {

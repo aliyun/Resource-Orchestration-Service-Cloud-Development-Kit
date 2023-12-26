@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Marketplace
 {
-    /// <summary>Properties for defining a `ALIYUN::MarketPlace::Order`.</summary>
+    /// <summary>Properties for defining a `RosOrder`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-marketplace-order
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosOrderProps), fullyQualifiedName: "@alicloud/ros-cdk-marketplace.RosOrderProps")]
     public interface IRosOrderProps
     {
@@ -91,7 +94,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Marketplace
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::MarketPlace::Order`.</summary>
+        /// <summary>Properties for defining a `RosOrder`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-marketplace-order
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosOrderProps), fullyQualifiedName: "@alicloud/ros-cdk-marketplace.RosOrderProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Marketplace.IRosOrderProps
         {

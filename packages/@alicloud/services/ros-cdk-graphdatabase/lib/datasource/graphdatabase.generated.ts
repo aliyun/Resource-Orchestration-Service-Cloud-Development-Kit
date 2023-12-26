@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::GraphDatabase::Accounts`
+ * Properties for defining a `RosAccounts`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-graphdatabase-accounts
  */
 export interface RosAccountsProps {
 
@@ -54,18 +55,15 @@ function rosAccountsPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `DATASOURCE::GraphDatabase::Accounts`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::GraphDatabase::Accounts`, which is used to query the information about accounts.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Accounts` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-graphdatabase-accounts
  */
 export class RosAccounts extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::GraphDatabase::Accounts";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AccountNames: The list of account names.
@@ -91,8 +89,6 @@ export class RosAccounts extends ros.RosResource {
     public accountName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::GraphDatabase::Accounts`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -120,7 +116,8 @@ export class RosAccounts extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::GraphDatabase::DbInstances`
+ * Properties for defining a `RosDbInstances`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-graphdatabase-dbinstances
  */
 export interface RosDbInstancesProps {
 
@@ -177,18 +174,15 @@ function rosDbInstancesPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `DATASOURCE::GraphDatabase::DbInstances`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::GraphDatabase::DbInstances`, which is used to query the information about Graph Database (GDB) instances.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DbInstances` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-graphdatabase-dbinstances
  */
 export class RosDbInstances extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::GraphDatabase::DbInstances";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DbInstanceIds: The list of db instance IDs.
@@ -219,8 +213,6 @@ export class RosDbInstances extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::GraphDatabase::DbInstances`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

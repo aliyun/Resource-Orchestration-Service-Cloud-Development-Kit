@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>A ROS template type:  `ALIYUN::VPC::VpnAttachment`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpnAttachment`.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `VpnAttachment` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnattachment
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Vpc.RosVpnAttachment), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosVpnAttachment", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-vpc.RosVpnAttachmentProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosVpnAttachment : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::VPC::VpnAttachment`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -122,7 +125,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         /// <remarks>
         /// <strong>Property</strong>: localSubnet: A network segment on the VPC side that needs to be interconnected with the local IDC for the second phase negotiation.
-        /// Multiple network segments are separated by commas, for example: 192.168.1.0/24, 192.168.2.0/24.
+        /// Multiple network segments are separated by commas, for example: 192.168.1.0\/24, 192.168.2.0\/24.
         /// </remarks>
         [JsiiProperty(name: "localSubnet", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object LocalSubnet
@@ -153,7 +156,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         /// <remarks>
         /// <strong>Property</strong>: remoteSubnet: The network segment of the local IDC is used for the second phase negotiation.
-        /// Multiple network segments are separated by commas, for example: 192.168.3.0/24, 192.168.4.0/24.
+        /// Multiple network segments are separated by commas, for example: 192.168.3.0\/24, 192.168.4.0\/24.
         /// </remarks>
         [JsiiProperty(name: "remoteSubnet", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object RemoteSubnet
@@ -444,7 +447,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         /// <remarks>
         /// <strong>Property</strong>: name: The name of the IPsec connection.
-        /// The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:// or https:// .
+        /// The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:\/\/ or https:\/\/ .
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -582,7 +585,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: tunnelCidr: the CIDR block of the IPsec tunnel. The CIDR block must fall within 169.254.0.0/16. The subnet mask of the CIDR block must be 30 bits in length.
+            /// <strong>Property</strong>: tunnelCidr: the CIDR block of the IPsec tunnel. The CIDR block must fall within 169.254.0.0\/16. The subnet mask of the CIDR block must be 30 bits in length.
             /// </remarks>
             [JsiiProperty(name: "tunnelCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -634,7 +637,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: tunnelCidr: the CIDR block of the IPsec tunnel. The CIDR block must fall within 169.254.0.0/16. The subnet mask of the CIDR block must be 30 bits in length.
+                /// <strong>Property</strong>: tunnelCidr: the CIDR block of the IPsec tunnel. The CIDR block must fall within 169.254.0.0\/16. The subnet mask of the CIDR block must be 30 bits in length.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "tunnelCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -771,7 +774,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             private object? _tunnelCidr;
 
             /// <remarks>
-            /// <strong>Property</strong>: tunnelCidr: the CIDR block of the IPsec tunnel. The CIDR block must fall within 169.254.0.0/16. The subnet mask of the CIDR block must be 30 bits in length.
+            /// <strong>Property</strong>: tunnelCidr: the CIDR block of the IPsec tunnel. The CIDR block must fall within 169.254.0.0\/16. The subnet mask of the CIDR block must be 30 bits in length.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "tunnelCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::VPC::VSwitches`.</summary>
+    /// <summary>Properties for defining a `RosVSwitches`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-vswitches
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosVSwitchesProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.datasource.RosVSwitchesProps")]
     public interface IRosVSwitchesProps
     {
@@ -115,7 +118,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::VPC::VSwitches`.</summary>
+        /// <summary>Properties for defining a `RosVSwitches`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-vswitches
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosVSwitchesProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.datasource.RosVSwitchesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource.IRosVSwitchesProps
         {

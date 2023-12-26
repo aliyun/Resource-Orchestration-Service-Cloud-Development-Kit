@@ -1,7 +1,8 @@
 export * from './consumergroup';
-export * from './migrationjob';
-export * from './subscriptioninstance';
-export * from './synchronizationjob';
+export * from './instance';
+export * from './migrationjob2';
+export * from './subscriptionjob2';
+export * from './synchronizationjob2';
 
 // ALIYUN::DTS Resources:
 export * from './dts.generated';

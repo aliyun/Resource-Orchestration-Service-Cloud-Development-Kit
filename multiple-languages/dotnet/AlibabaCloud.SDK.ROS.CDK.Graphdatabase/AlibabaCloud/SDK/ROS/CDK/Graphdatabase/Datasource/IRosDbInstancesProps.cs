@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Graphdatabase.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::GraphDatabase::DbInstances`.</summary>
+    /// <summary>Properties for defining a `RosDbInstances`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-graphdatabase-dbinstances
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosDbInstancesProps), fullyQualifiedName: "@alicloud/ros-cdk-graphdatabase.datasource.RosDbInstancesProps")]
     public interface IRosDbInstancesProps
     {
@@ -47,7 +50,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Graphdatabase.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::GraphDatabase::DbInstances`.</summary>
+        /// <summary>Properties for defining a `RosDbInstances`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-graphdatabase-dbinstances
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosDbInstancesProps), fullyQualifiedName: "@alicloud/ros-cdk-graphdatabase.datasource.RosDbInstancesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Graphdatabase.Datasource.IRosDbInstancesProps
         {

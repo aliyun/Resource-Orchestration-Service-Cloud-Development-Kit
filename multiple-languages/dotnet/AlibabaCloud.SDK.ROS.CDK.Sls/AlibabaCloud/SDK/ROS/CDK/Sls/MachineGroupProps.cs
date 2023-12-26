@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sls
 {
-    /// <summary>Properties for defining a `ALIYUN::SLS::MachineGroup`.</summary>
+    /// <summary>Properties for defining a `MachineGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-machinegroup
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-sls.MachineGroupProps")]
     public class MachineGroupProps : AlibabaCloud.SDK.ROS.CDK.Sls.IMachineGroupProps
     {

@@ -4,7 +4,8 @@ import { RosSnapshot } from './ecs.generated';
 export { RosSnapshot as SnapshotProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECS::Snapshot`
+ * Properties for defining a `Snapshot`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-snapshot
  */
 export interface SnapshotProps {
 
@@ -14,7 +15,7 @@ export interface SnapshotProps {
     readonly diskId: string | ros.IResolvable;
 
     /**
-     * Property description: The description of a snapshot can be 2 to 256 characters in length and cannot begin with http:// or https://. The description will appear on the console. By default, the value is zero.
+     * Property description: The description of a snapshot can be 2 to 256 characters in length and cannot begin with http:\/\/ or https:\/\/. The description will appear on the console. By default, the value is zero.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -49,7 +50,7 @@ export interface SnapshotProps {
     readonly retentionDays?: number | ros.IResolvable;
 
     /**
-     * Property snapshotName: The name of the snapshot, [2, 128] English or Chinese characters. It must begin with an uppercase/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:// or https://.
+     * Property snapshotName: The name of the snapshot, [2, 128] English or Chinese characters. It must begin with an uppercase\/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:\/\/ or https:\/\/.
      */
     readonly snapshotName?: string | ros.IResolvable;
 
@@ -65,14 +66,11 @@ export interface SnapshotProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECS::Snapshot`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Snapshot`, which is used to create a snapshot for a disk.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSnapshot`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-snapshot
  */
 export class Snapshot extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute SnapshotId: The snapshot ID.
@@ -80,8 +78,6 @@ export class Snapshot extends ros.Resource {
     public readonly attrSnapshotId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ECS::Snapshot`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

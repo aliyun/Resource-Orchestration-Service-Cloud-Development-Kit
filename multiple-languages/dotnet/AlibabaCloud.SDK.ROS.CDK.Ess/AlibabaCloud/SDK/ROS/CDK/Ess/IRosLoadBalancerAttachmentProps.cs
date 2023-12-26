@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ess
 {
-    /// <summary>Properties for defining a `ALIYUN::ESS::LoadBalancerAttachment`.</summary>
+    /// <summary>Properties for defining a `RosLoadBalancerAttachment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-loadbalancerattachment
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosLoadBalancerAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-ess.RosLoadBalancerAttachmentProps")]
     public interface IRosLoadBalancerAttachmentProps
     {
@@ -59,7 +62,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ESS::LoadBalancerAttachment`.</summary>
+        /// <summary>Properties for defining a `RosLoadBalancerAttachment`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-loadbalancerattachment
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosLoadBalancerAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-ess.RosLoadBalancerAttachmentProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ess.IRosLoadBalancerAttachmentProps
         {

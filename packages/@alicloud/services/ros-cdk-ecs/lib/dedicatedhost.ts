@@ -4,7 +4,8 @@ import { RosDedicatedHost } from './ecs.generated';
 export { RosDedicatedHost as DedicatedHostProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECS::DedicatedHost`
+ * Properties for defining a `DedicatedHost`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-dedicatedhost
  */
 export interface DedicatedHostProps {
 
@@ -44,7 +45,7 @@ export interface DedicatedHostProps {
     readonly chargeType?: string | ros.IResolvable;
 
     /**
-     * Property dedicatedHostName: The name of the dedicated host, [2, 128] English or Chinese characters. It must begin with an uppercase/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:// or https://.
+     * Property dedicatedHostName: The name of the dedicated host, [2, 128] English or Chinese characters. It must begin with an uppercase\/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:\/\/ or https:\/\/.
      */
     readonly dedicatedHostName?: string | ros.IResolvable;
 
@@ -69,7 +70,7 @@ export interface DedicatedHostProps {
     readonly period?: number | ros.IResolvable;
 
     /**
-     * Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year. Default value is Month.
+     * Property periodUnit: Unit of prepaid time period, it could be Week\/Month\/Year. Default value is Month.
      */
     readonly periodUnit?: string | ros.IResolvable;
 
@@ -95,14 +96,11 @@ export interface DedicatedHostProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECS::DedicatedHost`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::DedicatedHost`, which is used to create a dedicated host.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDedicatedHost`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-dedicatedhost
  */
 export class DedicatedHost extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DedicatedHostIds: The host id list of created hosts
@@ -115,8 +113,6 @@ export class DedicatedHost extends ros.Resource {
     public readonly attrOrderId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ECS::DedicatedHost`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

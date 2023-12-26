@@ -4,7 +4,8 @@ import { RosRamRoleAttachment } from './ecs.generated';
 export { RosRamRoleAttachment as RamRoleAttachmentProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECS::RamRoleAttachment`
+ * Properties for defining a `RamRoleAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-ramroleattachment
  */
 export interface RamRoleAttachmentProps {
 
@@ -26,14 +27,11 @@ export interface RamRoleAttachmentProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECS::RamRoleAttachment`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::RamRoleAttachment`, which is used to attach an instance Resource Access Management (RAM) role to Elastic Compute Service (ECS) instances.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRamRoleAttachment`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-ramroleattachment
  */
 export class RamRoleAttachment extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute InstanceIds: The list of ecs instance id
@@ -46,8 +44,6 @@ export class RamRoleAttachment extends ros.Resource {
     public readonly attrRamRoleName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ECS::RamRoleAttachment`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

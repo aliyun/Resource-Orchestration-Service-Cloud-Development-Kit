@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>Properties for defining a `ALIYUN::VPC::EIPSegment`.</summary>
+    /// <summary>Properties for defining a `EIPSegment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eipsegment
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IEIPSegmentProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.EIPSegmentProps")]
     public interface IEIPSegmentProps
     {
@@ -87,7 +90,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::VPC::EIPSegment`.</summary>
+        /// <summary>Properties for defining a `EIPSegment`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eipsegment
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IEIPSegmentProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.EIPSegmentProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.IEIPSegmentProps
         {

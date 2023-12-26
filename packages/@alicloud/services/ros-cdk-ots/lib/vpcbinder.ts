@@ -4,7 +4,8 @@ import { RosVpcBinder } from './ots.generated';
 export { RosVpcBinder as VpcBinderProperty };
 
 /**
- * Properties for defining a `ALIYUN::OTS::VpcBinder`
+ * Properties for defining a `VpcBinder`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-vpcbinder
  */
 export interface VpcBinderProps {
 
@@ -20,14 +21,11 @@ export interface VpcBinderProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::OTS::VpcBinder`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::OTS::VpcBinder`, which is used to bind a Tablestore instance to a virtual private cloud (VPC).
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpcBinder`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-vpcbinder
  */
 export class VpcBinder extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Domains: The domain names used to access the OTS instance in the VPC.
@@ -40,8 +38,6 @@ export class VpcBinder extends ros.Resource {
     public readonly attrEndpoints: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::OTS::VpcBinder`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

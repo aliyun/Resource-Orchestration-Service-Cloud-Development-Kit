@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::KMS::Secret`.</summary>
+    /// <summary>Properties for defining a `RosSecret`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-secret
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-kms.RosSecretProps")]
     public class RosSecretProps : AlibabaCloud.SDK.ROS.CDK.Kms.IRosSecretProps
     {

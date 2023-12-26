@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ECS::RecommendInstanceTypes`.</summary>
+    /// <summary>Properties for defining a `RecommendInstanceTypes`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-recommendinstancetypes
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.datasource.RecommendInstanceTypesProps")]
     public class RecommendInstanceTypesProps : AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource.IRecommendInstanceTypesProps
     {
@@ -221,7 +224,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
 
         private object? _ioOptimized;
 
-        /// <summary>Property ioOptimized: Specifies whether to match I/O optimized instances.</summary>
+        /// <summary>Property ioOptimized: Specifies whether to match I\/O optimized instances.</summary>
         /// <remarks>
         /// The IoOptimized parameter cannot be specified when the instance is not I/O optimized. Valid values:
         /// optimized: matches I/O optimized instances.

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cr
 {
-    /// <summary>Properties for defining a `ALIYUN::CR::InstanceEndpointAclPolicy`.</summary>
+    /// <summary>Properties for defining a `RosInstanceEndpointAclPolicy`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instanceendpointaclpolicy
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosInstanceEndpointAclPolicyProps), fullyQualifiedName: "@alicloud/ros-cdk-cr.RosInstanceEndpointAclPolicyProps")]
     public interface IRosInstanceEndpointAclPolicyProps
     {
@@ -79,7 +82,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::CR::InstanceEndpointAclPolicy`.</summary>
+        /// <summary>Properties for defining a `RosInstanceEndpointAclPolicy`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instanceendpointaclpolicy
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosInstanceEndpointAclPolicyProps), fullyQualifiedName: "@alicloud/ros-cdk-cr.RosInstanceEndpointAclPolicyProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cr.IRosInstanceEndpointAclPolicyProps
         {

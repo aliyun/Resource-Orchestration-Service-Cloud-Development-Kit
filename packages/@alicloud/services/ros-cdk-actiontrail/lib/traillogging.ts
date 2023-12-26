@@ -4,7 +4,8 @@ import { RosTrailLogging } from './actiontrail.generated';
 export { RosTrailLogging as TrailLoggingProperty };
 
 /**
- * Properties for defining a `ALIYUN::ACTIONTRAIL::TrailLogging`
+ * Properties for defining a `TrailLogging`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-actiontrail-traillogging
  */
 export interface TrailLoggingProps {
 
@@ -20,14 +21,11 @@ export interface TrailLoggingProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ACTIONTRAIL::TrailLogging`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ACTIONTRAIL::TrailLogging`, which is used to enable or disable trail logging.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTrailLogging`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-actiontrail-traillogging
  */
 export class TrailLogging extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute IsLogging: Indicates whether the trail is logging API invocations.
@@ -55,8 +53,6 @@ export class TrailLogging extends ros.Resource {
     public readonly attrStopLoggingTime: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ACTIONTRAIL::TrailLogging`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

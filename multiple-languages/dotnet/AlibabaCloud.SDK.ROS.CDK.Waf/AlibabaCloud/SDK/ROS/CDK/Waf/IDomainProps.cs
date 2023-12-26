@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Waf
 {
-    /// <summary>Properties for defining a `ALIYUN::WAF::Domain`.</summary>
+    /// <summary>Properties for defining a `Domain`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-domain
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IDomainProps), fullyQualifiedName: "@alicloud/ros-cdk-waf.DomainProps")]
     public interface IDomainProps
     {
@@ -168,7 +171,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::WAF::Domain`.</summary>
+        /// <summary>Properties for defining a `Domain`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-domain
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IDomainProps), fullyQualifiedName: "@alicloud/ros-cdk-waf.DomainProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Waf.IDomainProps
         {

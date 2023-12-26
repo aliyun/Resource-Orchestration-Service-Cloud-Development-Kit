@@ -4,7 +4,8 @@ import { RosService } from './pai.generated';
 export { RosService as ServiceProperty };
 
 /**
- * Properties for defining a `ALIYUN::PAI::Service`
+ * Properties for defining a `Service`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-service
  */
 export interface ServiceProps {
 
@@ -25,14 +26,11 @@ export interface ServiceProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::PAI::Service`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::PAI::Service`, which is used to create an Elastic Algorithm Service (EAS) service in Machine Learning Platform for AI (PAI).
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosService`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-service
  */
 export class Service extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AccessToken: Service Request authentication token.
@@ -190,8 +188,6 @@ export class Service extends ros.Resource {
     public readonly attrWeight: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::PAI::Service`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

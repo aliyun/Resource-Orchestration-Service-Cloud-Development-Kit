@@ -4,7 +4,8 @@ import { RosApplications } from './sae.generated';
 export { RosApplications as ApplicationsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::SAE::Applications`
+ * Properties for defining a `Applications`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-sae-applications
  */
 export interface ApplicationsProps {
 
@@ -34,14 +35,11 @@ export interface ApplicationsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::SAE::Applications`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::SAE::Applications`, which is used to query applications.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApplications`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-sae-applications
  */
 export class Applications extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ApplicationIds: The list of application IDs.
@@ -54,8 +52,6 @@ export class Applications extends ros.Resource {
     public readonly attrApplications: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::SAE::Applications`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

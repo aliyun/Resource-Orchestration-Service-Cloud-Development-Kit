@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::GA::Accelerator`
+ * Properties for defining a `RosAccelerator`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-accelerator
  */
 export interface RosAcceleratorProps {
 
@@ -122,18 +123,15 @@ function rosAcceleratorPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `ALIYUN::GA::Accelerator`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::Accelerator`, which is used to create a Global Accelerator (GA) instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Accelerator` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-accelerator
  */
 export class RosAccelerator extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::GA::Accelerator";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AcceleratorId: The ID of the GA instance to query.
@@ -239,8 +237,6 @@ export class RosAccelerator extends ros.RosResource {
     public spec: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::GA::Accelerator`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -334,7 +330,8 @@ function rosAcceleratorIpSetConfigPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::GA::BandwidthPackage`
+ * Properties for defining a `RosBandwidthPackage`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-bandwidthpackage
  */
 export interface RosBandwidthPackageProps {
 
@@ -456,18 +453,15 @@ function rosBandwidthPackagePropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * A ROS template type:  `ALIYUN::GA::BandwidthPackage`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BandwidthPackage`, which is used to create a bandwidth plan.
+ * @Note This class does not contain additional functions, so it is recommended to use the `BandwidthPackage` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-bandwidthpackage
  */
 export class RosBandwidthPackage extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::GA::BandwidthPackage";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AutoPay: The AutoPay of the bandwidth
@@ -598,8 +592,6 @@ export class RosBandwidthPackage extends ros.RosResource {
     public ratio: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::GA::BandwidthPackage`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -658,7 +650,8 @@ export class RosBandwidthPackage extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::GA::BandwidthPackageAcceleratorAddition`
+ * Properties for defining a `RosBandwidthPackageAcceleratorAddition`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-bandwidthpackageacceleratoraddition
  */
 export interface RosBandwidthPackageAcceleratorAdditionProps {
 
@@ -711,18 +704,15 @@ function rosBandwidthPackageAcceleratorAdditionPropsToRosTemplate(properties: an
 }
 
 /**
- * A ROS template type:  `ALIYUN::GA::BandwidthPackageAcceleratorAddition`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BandwidthPackageAcceleratorAddition`, which is used to bind a bandwidth plan to a global acceleration instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `BandwidthPackageAcceleratorAddition` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-bandwidthpackageacceleratoraddition
  */
 export class RosBandwidthPackageAcceleratorAddition extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::GA::BandwidthPackageAcceleratorAddition";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AcceleratorId: The ID of the Global Accelerator instance
@@ -749,8 +739,6 @@ export class RosBandwidthPackageAcceleratorAddition extends ros.RosResource {
     public bandwidthPackageId: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::GA::BandwidthPackageAcceleratorAddition`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -778,7 +766,8 @@ export class RosBandwidthPackageAcceleratorAddition extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::GA::EndpointGroup`
+ * Properties for defining a `RosEndpointGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-endpointgroup
  */
 export interface RosEndpointGroupProps {
 
@@ -948,18 +937,15 @@ function rosEndpointGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `ALIYUN::GA::EndpointGroup`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::EndpointGroup`, which is used to create an endpoint group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `EndpointGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-endpointgroup
  */
 export class RosEndpointGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::GA::EndpointGroup";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute EndpointGroupId: The ID of the endpoint group.
@@ -1057,8 +1043,6 @@ export class RosEndpointGroup extends ros.RosResource {
     public trafficPercentage: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::GA::EndpointGroup`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1191,7 +1175,8 @@ function rosEndpointGroupEndpointConfigurationsPropertyToRosTemplate(properties:
 }
 
 /**
- * Properties for defining a `ALIYUN::GA::IpSets`
+ * Properties for defining a `RosIpSets`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-ipsets
  */
 export interface RosIpSetsProps {
 
@@ -1250,18 +1235,15 @@ function rosIpSetsPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * A ROS template type:  `ALIYUN::GA::IpSets`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::IpSets`, which is used to create acceleration regions.
+ * @Note This class does not contain additional functions, so it is recommended to use the `IpSets` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-ipsets
  */
 export class RosIpSets extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::GA::IpSets";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AccelerateRegionIds: The ID list of the accelerate region.
@@ -1292,8 +1274,6 @@ export class RosIpSets extends ros.RosResource {
     public acceleratorId: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::GA::IpSets`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1335,9 +1315,9 @@ export namespace RosIpSets {
          */
         readonly ispType?: string | ros.IResolvable;
         /**
-         * @Property bandwidth: The bandwidth allocated to the acceleration region. Unit: Mbit/s.
+         * @Property bandwidth: The bandwidth allocated to the acceleration region. Unit: Mbit\/s.
      * Note
-     * The minimum bandwidth allocated to each accelerated region is 2 Mbit/s.
+     * The minimum bandwidth allocated to each accelerated region is 2 Mbit\/s.
      * The total bandwidth for all regions must not exceed the amount included in your basic
      * bandwidth plan.
          */
@@ -1400,7 +1380,8 @@ function rosIpSetsAccelerateRegionPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::GA::Listener`
+ * Properties for defining a `RosListener`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-listener
  */
 export interface RosListenerProps {
 
@@ -1553,18 +1534,15 @@ function rosListenerPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::GA::Listener`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::Listener`, which is used to create a listener for a Global Accelerator (GA) instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Listener` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-listener
  */
 export class RosListener extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::GA::Listener";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ListenerId: The ID of the listener.
@@ -1643,8 +1621,6 @@ export class RosListener extends ros.RosResource {
     public xForwardedForConfig: RosListener.XForwardedForConfigProperty | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::GA::Listener`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

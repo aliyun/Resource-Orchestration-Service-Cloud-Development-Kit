@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlpautoml
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::NLPAUTOML::Model`.</summary>
+    /// <summary>Properties for defining a `Model`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlpautoml-model
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-nlpautoml.ModelProps")]
     public class ModelProps : AlibabaCloud.SDK.ROS.CDK.Nlpautoml.IModelProps
     {

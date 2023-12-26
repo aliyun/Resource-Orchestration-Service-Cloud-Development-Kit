@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cs;
 
 /**
- * A ROS resource type:  <code>ALIYUN::CS::ClusterApplication</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CS::ClusterApplication</code>, which is used to deploy a container application.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.183Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.576Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ClusterApplication")
 public class ClusterApplication extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,11 +16,7 @@ public class ClusterApplication extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::CS::ClusterApplication</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -33,11 +29,7 @@ public class ClusterApplication extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::CS::ClusterApplication</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -192,6 +184,43 @@ public class ClusterApplication extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder rolePolicy(final com.aliyun.ros.cdk.core.IResolvable rolePolicy) {
             this.props.rolePolicy(rolePolicy);
+            return this;
+        }
+
+        /**
+         * Property stage: At what stage to run.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>All: all stages, including create, update, and delete.</li>
+         * <li>Delete: the delete stage. This means that only in the deletion stage of this resource will apply yaml to the cluster.
+         * The default is All.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param stage Property stage: At what stage to run. This parameter is required.
+         */
+        public Builder stage(final java.lang.String stage) {
+            this.props.stage(stage);
+            return this;
+        }
+        /**
+         * Property stage: At what stage to run.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>All: all stages, including create, update, and delete.</li>
+         * <li>Delete: the delete stage. This means that only in the deletion stage of this resource will apply yaml to the cluster.
+         * The default is All.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param stage Property stage: At what stage to run. This parameter is required.
+         */
+        public Builder stage(final com.aliyun.ros.cdk.core.IResolvable stage) {
+            this.props.stage(stage);
             return this;
         }
 

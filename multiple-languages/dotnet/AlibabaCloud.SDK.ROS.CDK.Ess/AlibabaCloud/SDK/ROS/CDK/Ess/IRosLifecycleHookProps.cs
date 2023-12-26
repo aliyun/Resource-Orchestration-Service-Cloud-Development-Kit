@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ess
 {
-    /// <summary>Properties for defining a `ALIYUN::ESS::LifecycleHook`.</summary>
+    /// <summary>Properties for defining a `RosLifecycleHook`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-lifecyclehook
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosLifecycleHookProps), fullyQualifiedName: "@alicloud/ros-cdk-ess.RosLifecycleHookProps")]
     public interface IRosLifecycleHookProps
     {
@@ -78,9 +81,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// region: the region to which the scaling group locates
         /// account-id: Alibaba Cloud ID
         /// For example:
-        /// MNS queue: acs:ess:{region}:{account-id}:queue/{queuename}
-        /// MNS topic: acs:ess:{region}:{account-id}:topic/{topicname}
-        /// OOS template: acs:ess:{region}:{account-id}:oos/{templatename}
+        /// MNS queue: acs:ess:{region}:{account-id}:queue\/{queuename}
+        /// MNS topic: acs:ess:{region}:{account-id}:topic\/{topicname}
+        /// OOS template: acs:ess:{region}:{account-id}:oos\/{templatename}
         /// </remarks>
         [JsiiProperty(name: "notificationArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -105,7 +108,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ESS::LifecycleHook`.</summary>
+        /// <summary>Properties for defining a `RosLifecycleHook`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-lifecyclehook
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosLifecycleHookProps), fullyQualifiedName: "@alicloud/ros-cdk-ess.RosLifecycleHookProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ess.IRosLifecycleHookProps
         {
@@ -174,9 +180,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             /// region: the region to which the scaling group locates
             /// account-id: Alibaba Cloud ID
             /// For example:
-            /// MNS queue: acs:ess:{region}:{account-id}:queue/{queuename}
-            /// MNS topic: acs:ess:{region}:{account-id}:topic/{topicname}
-            /// OOS template: acs:ess:{region}:{account-id}:oos/{templatename}
+            /// MNS queue: acs:ess:{region}:{account-id}:queue\/{queuename}
+            /// MNS topic: acs:ess:{region}:{account-id}:topic\/{topicname}
+            /// OOS template: acs:ess:{region}:{account-id}:oos\/{templatename}
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "notificationArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

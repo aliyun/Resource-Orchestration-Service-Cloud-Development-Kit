@@ -4,7 +4,8 @@ import { RosDomain } from './cdn.generated';
 export { RosDomain as DomainProperty };
 
 /**
- * Properties for defining a `ALIYUN::CDN::Domain`
+ * Properties for defining a `Domain`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cdn-domain
  */
 export interface DomainProps {
 
@@ -55,14 +56,11 @@ export interface DomainProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CDN::Domain`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CDN::Domain`, which is used to add a domain name to Alibaba Cloud CDN (CDN).
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomain`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cdn-domain
  */
 export class Domain extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Cname: The CNAME generated for the CDN domain.You must add a CNAME record with your DNS provider to map the CDN domain name to the CNAME.
@@ -75,8 +73,6 @@ export class Domain extends ros.Resource {
     public readonly attrDomainName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CDN::Domain`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

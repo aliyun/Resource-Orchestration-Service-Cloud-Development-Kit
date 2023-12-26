@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ECS::Images`.</summary>
+    /// <summary>Properties for defining a `Images`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-images
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IImagesProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.datasource.ImagesProps")]
     public interface IImagesProps
     {
@@ -144,7 +147,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
             }
         }
 
-        /// <summary>Property isSupportIoOptimized: Specifies whether the image can be used on I/O optimized instances.</summary>
+        /// <summary>Property isSupportIoOptimized: Specifies whether the image can be used on I\/O optimized instances.</summary>
         [JsiiProperty(name: "isSupportIoOptimized", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? IsSupportIoOptimized
@@ -244,7 +247,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::ECS::Images`.</summary>
+        /// <summary>Properties for defining a `Images`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-images
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IImagesProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.datasource.ImagesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource.IImagesProps
         {
@@ -361,7 +367,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property isSupportIoOptimized: Specifies whether the image can be used on I/O optimized instances.</summary>
+            /// <summary>Property isSupportIoOptimized: Specifies whether the image can be used on I\/O optimized instances.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "isSupportIoOptimized", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? IsSupportIoOptimized

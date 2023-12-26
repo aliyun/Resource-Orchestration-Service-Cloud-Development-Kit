@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Hbr
 {
-    /// <summary>A ROS template type:  `ALIYUN::HBR::RestoreJob`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::RestoreJob`, which is used to create a restore job.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `RestoreJob` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-restorejob
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Hbr.RosRestoreJob), fullyQualifiedName: "@alicloud/ros-cdk-hbr.RosRestoreJob", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-hbr.RosRestoreJobProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosRestoreJob : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::HBR::RestoreJob`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -319,7 +322,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: targetPath: Target path. For instance, "/".
+        /// <strong>Property</strong>: targetPath: Target path. For instance, "\/".
         /// </remarks>
         [JsiiProperty(name: "targetPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object TargetPath

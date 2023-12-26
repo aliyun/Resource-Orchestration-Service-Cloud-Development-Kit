@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::VPC::NetworkAclAssociation`.</summary>
+    /// <summary>Properties for defining a `RosNetworkAclAssociation`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-networkaclassociation
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.RosNetworkAclAssociationProps")]
     public class RosNetworkAclAssociationProps : AlibabaCloud.SDK.ROS.CDK.Vpc.IRosNetworkAclAssociationProps
     {

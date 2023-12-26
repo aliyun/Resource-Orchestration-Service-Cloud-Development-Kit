@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ots
 {
-    /// <summary>Properties for defining a `ALIYUN::OTS::Table`.</summary>
+    /// <summary>Properties for defining a `Table`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-table
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ITableProps), fullyQualifiedName: "@alicloud/ros-cdk-ots.TableProps")]
     public interface ITableProps
     {
@@ -71,7 +74,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             }
         }
 
-        /// <summary>Property reservedThroughput: The initial reserved read/write throughput setting of the table to be created, the reserved read throughput and reserved write throughput of any table cannot exceed 5000.</summary>
+        /// <summary>Property reservedThroughput: The initial reserved read\/write throughput setting of the table to be created, the reserved read throughput and reserved write throughput of any table cannot exceed 5000.</summary>
         [JsiiProperty(name: "reservedThroughput", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ots.RosTable.ReservedThroughputProperty\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ReservedThroughput
@@ -107,7 +110,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::OTS::Table`.</summary>
+        /// <summary>Properties for defining a `Table`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-table
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ITableProps), fullyQualifiedName: "@alicloud/ros-cdk-ots.TableProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ots.ITableProps
         {
@@ -169,7 +175,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property reservedThroughput: The initial reserved read/write throughput setting of the table to be created, the reserved read throughput and reserved write throughput of any table cannot exceed 5000.</summary>
+            /// <summary>Property reservedThroughput: The initial reserved read\/write throughput setting of the table to be created, the reserved read throughput and reserved write throughput of any table cannot exceed 5000.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "reservedThroughput", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ots.RosTable.ReservedThroughputProperty\"}]}}", isOptional: true)]
             public object? ReservedThroughput

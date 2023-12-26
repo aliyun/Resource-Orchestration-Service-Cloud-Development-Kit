@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ApiGateway::StageConfig`.</summary>
+    /// <summary>Properties for defining a `StageConfig`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-stageconfig
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-apigateway.StageConfigProps")]
     public class StageConfigProps : AlibabaCloud.SDK.ROS.CDK.Apigateway.IStageConfigProps
     {

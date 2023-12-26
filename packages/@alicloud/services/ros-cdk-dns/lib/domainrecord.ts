@@ -4,7 +4,8 @@ import { RosDomainRecord } from './dns.generated';
 export { RosDomainRecord as DomainRecordProperty };
 
 /**
- * Properties for defining a `ALIYUN::DNS::DomainRecord`
+ * Properties for defining a `DomainRecord`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dns-domainrecord
  */
 export interface DomainRecordProps {
 
@@ -45,14 +46,11 @@ export interface DomainRecordProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::DNS::DomainRecord`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DNS::DomainRecord`, which is used to add a domain name system (DNS) record.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomainRecord`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dns-domainrecord
  */
 export class DomainRecord extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute RecordId: Parse the ID of the record
@@ -60,8 +58,6 @@ export class DomainRecord extends ros.Resource {
     public readonly attrRecordId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::DNS::DomainRecord`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

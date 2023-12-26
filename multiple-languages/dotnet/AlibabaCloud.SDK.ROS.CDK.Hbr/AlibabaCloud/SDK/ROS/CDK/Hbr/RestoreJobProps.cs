@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::HBR::RestoreJob`.</summary>
+    /// <summary>Properties for defining a `RestoreJob`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-restorejob
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-hbr.RestoreJobProps")]
     public class RestoreJobProps : AlibabaCloud.SDK.ROS.CDK.Hbr.IRestoreJobProps
     {

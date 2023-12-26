@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * A ROS resource type:  <code>ALIYUN::ECS::InstanceGroup</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::InstanceGroup</code>, which is used to create a group of Elastic Compute Service (ECS) instances that have the same configurations.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.780Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.228Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceGroup")
 public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,11 +16,7 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ECS::InstanceGroup</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -33,11 +29,7 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ECS::InstanceGroup</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -154,27 +146,6 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property imageId: Image ID to create ecs instance.
-         * <p>
-         * @return {@code this}
-         * @param imageId Property imageId: Image ID to create ecs instance. This parameter is required.
-         */
-        public Builder imageId(final java.lang.String imageId) {
-            this.props.imageId(imageId);
-            return this;
-        }
-        /**
-         * Property imageId: Image ID to create ecs instance.
-         * <p>
-         * @return {@code this}
-         * @param imageId Property imageId: Image ID to create ecs instance. This parameter is required.
-         */
-        public Builder imageId(final com.aliyun.ros.cdk.core.IResolvable imageId) {
-            this.props.imageId(imageId);
-            return this;
-        }
-
-        /**
          * Property instanceType: Ecs instance supported instance type, make sure it should be correct.
          * <p>
          * @return {@code this}
@@ -213,6 +184,43 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder maxAmount(final com.aliyun.ros.cdk.core.IResolvable maxAmount) {
             this.props.maxAmount(maxAmount);
+            return this;
+        }
+
+        /**
+         * Property affinity: Specifies whether to associate the instance on a dedicated host with the dedicated host.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><strong>default</strong>: does not associate the ECS instance with the dedicated host. When you start an instance that was stopped in economical mode, the instance is automatically deployed to another dedicated host in the automatic deployment resource pool if the available resources of the original dedicated host are insufficient.</li>
+         * <li><strong>host</strong>: associates the ECS instance with the dedicated host. When you start an instance that was stopped in economical mode, the instance remains on the original dedicated host. If the available resources of the original dedicated host are insufficient, the instance cannot start.
+         * Default value: <strong>default</strong>.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param affinity Property affinity: Specifies whether to associate the instance on a dedicated host with the dedicated host. This parameter is required.
+         */
+        public Builder affinity(final java.lang.String affinity) {
+            this.props.affinity(affinity);
+            return this;
+        }
+        /**
+         * Property affinity: Specifies whether to associate the instance on a dedicated host with the dedicated host.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><strong>default</strong>: does not associate the ECS instance with the dedicated host. When you start an instance that was stopped in economical mode, the instance is automatically deployed to another dedicated host in the automatic deployment resource pool if the available resources of the original dedicated host are insufficient.</li>
+         * <li><strong>host</strong>: associates the ECS instance with the dedicated host. When you start an instance that was stopped in economical mode, the instance remains on the original dedicated host. If the available resources of the original dedicated host are insufficient, the instance cannot start.
+         * Default value: <strong>default</strong>.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param affinity Property affinity: Specifies whether to associate the instance on a dedicated host with the dedicated host. This parameter is required.
+         */
+        public Builder affinity(final com.aliyun.ros.cdk.core.IResolvable affinity) {
+            this.props.affinity(affinity);
             return this;
         }
 
@@ -317,6 +325,41 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property creditSpecification: The performance mode of the burstable instance.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><strong>Standard</strong>: the standard mode.</li>
+         * <li><strong>Unlimited</strong>: the unlimited mode.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param creditSpecification Property creditSpecification: The performance mode of the burstable instance. This parameter is required.
+         */
+        public Builder creditSpecification(final java.lang.String creditSpecification) {
+            this.props.creditSpecification(creditSpecification);
+            return this;
+        }
+        /**
+         * Property creditSpecification: The performance mode of the burstable instance.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><strong>Standard</strong>: the standard mode.</li>
+         * <li><strong>Unlimited</strong>: the unlimited mode.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param creditSpecification Property creditSpecification: The performance mode of the burstable instance. This parameter is required.
+         */
+        public Builder creditSpecification(final com.aliyun.ros.cdk.core.IResolvable creditSpecification) {
+            this.props.creditSpecification(creditSpecification);
+            return this;
+        }
+
+        /**
          * Property dedicatedHostId: which dedicated host will be deployed.
          * <p>
          * @return {@code this}
@@ -355,6 +398,31 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder deletionProtection(final com.aliyun.ros.cdk.core.IResolvable deletionProtection) {
             this.props.deletionProtection(deletionProtection);
+            return this;
+        }
+
+        /**
+         * Property deploymentSetGroupNo: The number of the deployment set group to which to deploy the instance.
+         * <p>
+         * If the deployment set specified by <strong>DeploymentSetId</strong> uses the high availability group strategy (AvailabilityGroup), you can use <strong>DeploymentSetGroupNo</strong> to specify a deployment set group in the deployment set. Valid values: 1 to 7.
+         * <p>
+         * @return {@code this}
+         * @param deploymentSetGroupNo Property deploymentSetGroupNo: The number of the deployment set group to which to deploy the instance. This parameter is required.
+         */
+        public Builder deploymentSetGroupNo(final java.lang.Number deploymentSetGroupNo) {
+            this.props.deploymentSetGroupNo(deploymentSetGroupNo);
+            return this;
+        }
+        /**
+         * Property deploymentSetGroupNo: The number of the deployment set group to which to deploy the instance.
+         * <p>
+         * If the deployment set specified by <strong>DeploymentSetId</strong> uses the high availability group strategy (AvailabilityGroup), you can use <strong>DeploymentSetGroupNo</strong> to specify a deployment set group in the deployment set. Valid values: 1 to 7.
+         * <p>
+         * @return {@code this}
+         * @param deploymentSetGroupNo Property deploymentSetGroupNo: The number of the deployment set group to which to deploy the instance. This parameter is required.
+         */
+        public Builder deploymentSetGroupNo(final com.aliyun.ros.cdk.core.IResolvable deploymentSetGroupNo) {
+            this.props.deploymentSetGroupNo(deploymentSetGroupNo);
             return this;
         }
 
@@ -529,6 +597,136 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder hpcClusterId(final com.aliyun.ros.cdk.core.IResolvable hpcClusterId) {
             this.props.hpcClusterId(hpcClusterId);
+            return this;
+        }
+
+        /**
+         * Property httpEndpoint: Specifies whether the access channel is enabled for instance metadata.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><strong>enabled</strong></li>
+         * <li><strong>disabled</strong>
+         * Default value: <strong>enabled</strong>.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param httpEndpoint Property httpEndpoint: Specifies whether the access channel is enabled for instance metadata. This parameter is required.
+         */
+        public Builder httpEndpoint(final java.lang.String httpEndpoint) {
+            this.props.httpEndpoint(httpEndpoint);
+            return this;
+        }
+        /**
+         * Property httpEndpoint: Specifies whether the access channel is enabled for instance metadata.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><strong>enabled</strong></li>
+         * <li><strong>disabled</strong>
+         * Default value: <strong>enabled</strong>.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param httpEndpoint Property httpEndpoint: Specifies whether the access channel is enabled for instance metadata. This parameter is required.
+         */
+        public Builder httpEndpoint(final com.aliyun.ros.cdk.core.IResolvable httpEndpoint) {
+            this.props.httpEndpoint(httpEndpoint);
+            return this;
+        }
+
+        /**
+         * Property httpTokens: Specifies whether the security hardening mode (IMDSv2) is forcefully used to access instance metadata.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><strong>optional</strong>: does not forcefully use the security-enhanced mode (IMDSv2).</li>
+         * <li><strong>required</strong>: forcefully uses the security-enhanced mode (IMDSv2). After you set this parameter to required, you cannot access instance metadata in normal mode.
+         * Default value: <strong>optional</strong>.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param httpTokens Property httpTokens: Specifies whether the security hardening mode (IMDSv2) is forcefully used to access instance metadata. This parameter is required.
+         */
+        public Builder httpTokens(final java.lang.String httpTokens) {
+            this.props.httpTokens(httpTokens);
+            return this;
+        }
+        /**
+         * Property httpTokens: Specifies whether the security hardening mode (IMDSv2) is forcefully used to access instance metadata.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><strong>optional</strong>: does not forcefully use the security-enhanced mode (IMDSv2).</li>
+         * <li><strong>required</strong>: forcefully uses the security-enhanced mode (IMDSv2). After you set this parameter to required, you cannot access instance metadata in normal mode.
+         * Default value: <strong>optional</strong>.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param httpTokens Property httpTokens: Specifies whether the security hardening mode (IMDSv2) is forcefully used to access instance metadata. This parameter is required.
+         */
+        public Builder httpTokens(final com.aliyun.ros.cdk.core.IResolvable httpTokens) {
+            this.props.httpTokens(httpTokens);
+            return this;
+        }
+
+        /**
+         * Property imageFamily: The name of the image family.
+         * <p>
+         * You can set this parameter to obtain the latest available custom image from the specified image family to create the instance.
+         * <p>
+         * <ul>
+         * <li><strong>ImageFamily</strong> must be empty if <strong>ImageId</strong> is specified.</li>
+         * <li><strong>ImageFamily</strong> can be specified if <strong>ImageId</strong> is not specified.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param imageFamily Property imageFamily: The name of the image family. This parameter is required.
+         */
+        public Builder imageFamily(final java.lang.String imageFamily) {
+            this.props.imageFamily(imageFamily);
+            return this;
+        }
+        /**
+         * Property imageFamily: The name of the image family.
+         * <p>
+         * You can set this parameter to obtain the latest available custom image from the specified image family to create the instance.
+         * <p>
+         * <ul>
+         * <li><strong>ImageFamily</strong> must be empty if <strong>ImageId</strong> is specified.</li>
+         * <li><strong>ImageFamily</strong> can be specified if <strong>ImageId</strong> is not specified.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param imageFamily Property imageFamily: The name of the image family. This parameter is required.
+         */
+        public Builder imageFamily(final com.aliyun.ros.cdk.core.IResolvable imageFamily) {
+            this.props.imageFamily(imageFamily);
+            return this;
+        }
+
+        /**
+         * Property imageId: Image ID to create ecs instance.
+         * <p>
+         * @return {@code this}
+         * @param imageId Property imageId: Image ID to create ecs instance. This parameter is required.
+         */
+        public Builder imageId(final java.lang.String imageId) {
+            this.props.imageId(imageId);
+            return this;
+        }
+        /**
+         * Property imageId: Image ID to create ecs instance.
+         * <p>
+         * @return {@code this}
+         * @param imageId Property imageId: Image ID to create ecs instance. This parameter is required.
+         */
+        public Builder imageId(final com.aliyun.ros.cdk.core.IResolvable imageId) {
+            this.props.imageId(imageId);
             return this;
         }
 
@@ -952,6 +1150,27 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property privatePoolOptions: The options of the private pool.
+         * <p>
+         * @return {@code this}
+         * @param privatePoolOptions Property privatePoolOptions: The options of the private pool. This parameter is required.
+         */
+        public Builder privatePoolOptions(final com.aliyun.ros.cdk.core.IResolvable privatePoolOptions) {
+            this.props.privatePoolOptions(privatePoolOptions);
+            return this;
+        }
+        /**
+         * Property privatePoolOptions: The options of the private pool.
+         * <p>
+         * @return {@code this}
+         * @param privatePoolOptions Property privatePoolOptions: The options of the private pool. This parameter is required.
+         */
+        public Builder privatePoolOptions(final com.aliyun.ros.cdk.ecs.RosInstanceGroup.PrivatePoolOptionsProperty privatePoolOptions) {
+            this.props.privatePoolOptions(privatePoolOptions);
+            return this;
+        }
+
+        /**
          * Property ramRoleName: Instance RAM role name.
          * <p>
          * The name is provided and maintained by Resource Access Management (RAM) and can be queried using ListRoles. For more information, see RAM API CreateRole and ListRoles.
@@ -1051,7 +1270,7 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param securityGroupIds Property securityGroupIds: The IDs of security groups N to which the instance belongs. This parameter is required.
          */
-        public Builder securityGroupIds(final java.util.List<? extends java.lang.Object> securityGroupIds) {
+        public Builder securityGroupIds(final com.aliyun.ros.cdk.core.IResolvable securityGroupIds) {
             this.props.securityGroupIds(securityGroupIds);
             return this;
         }
@@ -1063,7 +1282,7 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param securityGroupIds Property securityGroupIds: The IDs of security groups N to which the instance belongs. This parameter is required.
          */
-        public Builder securityGroupIds(final com.aliyun.ros.cdk.core.IResolvable securityGroupIds) {
+        public Builder securityGroupIds(final java.util.List<? extends java.lang.Object> securityGroupIds) {
             this.props.securityGroupIds(securityGroupIds);
             return this;
         }
@@ -1171,6 +1390,52 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder spotStrategy(final com.aliyun.ros.cdk.core.IResolvable spotStrategy) {
             this.props.spotStrategy(spotStrategy);
+            return this;
+        }
+
+        /**
+         * Property storageSetId: The storage set ID.
+         * <p>
+         * @return {@code this}
+         * @param storageSetId Property storageSetId: The storage set ID. This parameter is required.
+         */
+        public Builder storageSetId(final java.lang.String storageSetId) {
+            this.props.storageSetId(storageSetId);
+            return this;
+        }
+        /**
+         * Property storageSetId: The storage set ID.
+         * <p>
+         * @return {@code this}
+         * @param storageSetId Property storageSetId: The storage set ID. This parameter is required.
+         */
+        public Builder storageSetId(final com.aliyun.ros.cdk.core.IResolvable storageSetId) {
+            this.props.storageSetId(storageSetId);
+            return this;
+        }
+
+        /**
+         * Property storageSetPartitionNumber: The maximum number of partitions in the storage set.
+         * <p>
+         * The value must be greater than or equal to 2.
+         * <p>
+         * @return {@code this}
+         * @param storageSetPartitionNumber Property storageSetPartitionNumber: The maximum number of partitions in the storage set. This parameter is required.
+         */
+        public Builder storageSetPartitionNumber(final java.lang.Number storageSetPartitionNumber) {
+            this.props.storageSetPartitionNumber(storageSetPartitionNumber);
+            return this;
+        }
+        /**
+         * Property storageSetPartitionNumber: The maximum number of partitions in the storage set.
+         * <p>
+         * The value must be greater than or equal to 2.
+         * <p>
+         * @return {@code this}
+         * @param storageSetPartitionNumber Property storageSetPartitionNumber: The maximum number of partitions in the storage set. This parameter is required.
+         */
+        public Builder storageSetPartitionNumber(final com.aliyun.ros.cdk.core.IResolvable storageSetPartitionNumber) {
+            this.props.storageSetPartitionNumber(storageSetPartitionNumber);
             return this;
         }
 
@@ -1484,6 +1749,43 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property tenancy: Specifies whether to create the instance on a dedicated host.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><strong>default</strong>: creates the instance on a non-dedicated host.</li>
+         * <li><strong>host</strong>: creates the instance on a dedicated host. If you do not specify <strong>DedicatedHostId</strong>, Alibaba Cloud selects a dedicated host for the instance.
+         * Default value: <strong>default</strong>.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param tenancy Property tenancy: Specifies whether to create the instance on a dedicated host. This parameter is required.
+         */
+        public Builder tenancy(final java.lang.String tenancy) {
+            this.props.tenancy(tenancy);
+            return this;
+        }
+        /**
+         * Property tenancy: Specifies whether to create the instance on a dedicated host.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><strong>default</strong>: creates the instance on a non-dedicated host.</li>
+         * <li><strong>host</strong>: creates the instance on a dedicated host. If you do not specify <strong>DedicatedHostId</strong>, Alibaba Cloud selects a dedicated host for the instance.
+         * Default value: <strong>default</strong>.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param tenancy Property tenancy: Specifies whether to create the instance on a dedicated host. This parameter is required.
+         */
+        public Builder tenancy(final com.aliyun.ros.cdk.core.IResolvable tenancy) {
+            this.props.tenancy(tenancy);
+            return this;
+        }
+
+        /**
          * Property updatePolicy: Specify the policy at update.
          * <p>
          * The value can be 'ForNewInstances' or 'ForAllInstances'.
@@ -1509,6 +1811,31 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder updatePolicy(final com.aliyun.ros.cdk.core.IResolvable updatePolicy) {
             this.props.updatePolicy(updatePolicy);
+            return this;
+        }
+
+        /**
+         * Property useAdditionalService: Specifies whether to use the system configurations for virtual machines provided by Alibaba Cloud.
+         * <p>
+         * System configurations for Windows: NTP and KMS. System configurations for Linux: NTP and YUM.
+         * <p>
+         * @return {@code this}
+         * @param useAdditionalService Property useAdditionalService: Specifies whether to use the system configurations for virtual machines provided by Alibaba Cloud. This parameter is required.
+         */
+        public Builder useAdditionalService(final java.lang.Boolean useAdditionalService) {
+            this.props.useAdditionalService(useAdditionalService);
+            return this;
+        }
+        /**
+         * Property useAdditionalService: Specifies whether to use the system configurations for virtual machines provided by Alibaba Cloud.
+         * <p>
+         * System configurations for Windows: NTP and KMS. System configurations for Linux: NTP and YUM.
+         * <p>
+         * @return {@code this}
+         * @param useAdditionalService Property useAdditionalService: Specifies whether to use the system configurations for virtual machines provided by Alibaba Cloud. This parameter is required.
+         */
+        public Builder useAdditionalService(final com.aliyun.ros.cdk.core.IResolvable useAdditionalService) {
+            this.props.useAdditionalService(useAdditionalService);
             return this;
         }
 

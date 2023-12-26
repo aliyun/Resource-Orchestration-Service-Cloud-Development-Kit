@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Waf
 {
-    /// <summary>Properties for defining a `ALIYUN::WAF::Instance`.</summary>
+    /// <summary>Properties for defining a `RosInstance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-instance
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-waf.RosInstanceProps")]
     public interface IRosInstanceProps
     {
@@ -137,7 +140,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::WAF::Instance`.</summary>
+        /// <summary>Properties for defining a `RosInstance`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-instance
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-waf.RosInstanceProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Waf.IRosInstanceProps
         {

@@ -4,7 +4,8 @@ import { RosAttachPolicyToRole } from './ram.generated';
 export { RosAttachPolicyToRole as AttachPolicyToRoleProperty };
 
 /**
- * Properties for defining a `ALIYUN::RAM::AttachPolicyToRole`
+ * Properties for defining a `AttachPolicyToRole`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-attachpolicytorole
  */
 export interface AttachPolicyToRoleProps {
 
@@ -25,18 +26,13 @@ export interface AttachPolicyToRoleProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::RAM::AttachPolicyToRole`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::AttachPolicyToRole`, which is used to attach a policy to a specified role.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAttachPolicyToRole`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-attachpolicytorole
  */
 export class AttachPolicyToRole extends ros.Resource {
 
     /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
-
-    /**
-     * Create a new `ALIYUN::RAM::AttachPolicyToRole`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

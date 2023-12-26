@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sag
 {
-    /// <summary>Properties for defining a `ALIYUN::SAG::ACLRule`.</summary>
+    /// <summary>Properties for defining a `RosACLRule`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-aclrule
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosACLRuleProps), fullyQualifiedName: "@alicloud/ros-cdk-sag.RosACLRuleProps")]
     public interface IRosACLRuleProps
     {
@@ -27,7 +30,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: destPortRange: Destination port range, 80/80.
+        /// <strong>Property</strong>: destPortRange: Destination port range, 80\/80.
         /// </remarks>
         [JsiiProperty(name: "destPortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object DestPortRange
@@ -73,7 +76,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: sourcePortRange: Source port range, 80/80.
+        /// <strong>Property</strong>: sourcePortRange: Source port range, 80\/80.
         /// </remarks>
         [JsiiProperty(name: "sourcePortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object SourcePortRange
@@ -168,7 +171,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::SAG::ACLRule`.</summary>
+        /// <summary>Properties for defining a `RosACLRule`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-aclrule
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosACLRuleProps), fullyQualifiedName: "@alicloud/ros-cdk-sag.RosACLRuleProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sag.IRosACLRuleProps
         {
@@ -195,7 +201,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: destPortRange: Destination port range, 80/80.
+            /// <strong>Property</strong>: destPortRange: Destination port range, 80\/80.
             /// </remarks>
             [JsiiProperty(name: "destPortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object DestPortRange
@@ -241,7 +247,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: sourcePortRange: Source port range, 80/80.
+            /// <strong>Property</strong>: sourcePortRange: Source port range, 80\/80.
             /// </remarks>
             [JsiiProperty(name: "sourcePortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object SourcePortRange

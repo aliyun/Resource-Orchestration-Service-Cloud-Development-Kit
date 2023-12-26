@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cs
 {
-    /// <summary>Properties for defining a `ALIYUN::CS::ManagedEdgeKubernetesCluster`.</summary>
+    /// <summary>Properties for defining a `ManagedEdgeKubernetesCluster`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managededgekubernetescluster
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IManagedEdgeKubernetesClusterProps), fullyQualifiedName: "@alicloud/ros-cdk-cs.ManagedEdgeKubernetesClusterProps")]
     public interface IManagedEdgeKubernetesClusterProps
     {
@@ -496,7 +499,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::CS::ManagedEdgeKubernetesCluster`.</summary>
+        /// <summary>Properties for defining a `ManagedEdgeKubernetesCluster`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managededgekubernetescluster
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IManagedEdgeKubernetesClusterProps), fullyQualifiedName: "@alicloud/ros-cdk-cs.ManagedEdgeKubernetesClusterProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cs.IManagedEdgeKubernetesClusterProps
         {

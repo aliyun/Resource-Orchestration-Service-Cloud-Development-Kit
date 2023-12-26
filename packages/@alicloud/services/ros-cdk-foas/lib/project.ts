@@ -4,7 +4,8 @@ import { RosProject } from './foas.generated';
 export { RosProject as ProjectProperty };
 
 /**
- * Properties for defining a `ALIYUN::FOAS::Project`
+ * Properties for defining a `Project`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-foas-project
  */
 export interface ProjectProps {
 
@@ -42,14 +43,11 @@ export interface ProjectProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::FOAS::Project`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::FOAS::Project`, which is used to create a project in a Realtime Compute cluster.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosProject`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-foas-project
  */
 export class Project extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute State: Project state.
@@ -57,8 +55,6 @@ export class Project extends ros.Resource {
     public readonly attrState: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::FOAS::Project`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

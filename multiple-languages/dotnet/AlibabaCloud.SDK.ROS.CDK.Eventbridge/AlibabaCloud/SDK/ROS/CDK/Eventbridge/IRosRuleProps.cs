@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Eventbridge
 {
-    /// <summary>Properties for defining a `ALIYUN::EventBridge::Rule`.</summary>
+    /// <summary>Properties for defining a `RosRule`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eventbridge-rule
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosRuleProps), fullyQualifiedName: "@alicloud/ros-cdk-eventbridge.RosRuleProps")]
     public interface IRosRuleProps
     {
@@ -72,7 +75,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eventbridge
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::EventBridge::Rule`.</summary>
+        /// <summary>Properties for defining a `RosRule`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eventbridge-rule
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosRuleProps), fullyQualifiedName: "@alicloud/ros-cdk-eventbridge.RosRuleProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Eventbridge.IRosRuleProps
         {

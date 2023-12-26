@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns.Datasource
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `DATASOURCE::DNS::DomainRecords`.</summary>
+    /// <summary>Properties for defining a `DomainRecords`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dns-domainrecords
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-dns.datasource.DomainRecordsProps")]
     public class DomainRecordsProps : AlibabaCloud.SDK.ROS.CDK.Dns.Datasource.IDomainRecordsProps
     {

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::VPC::Vpcs`.</summary>
+    /// <summary>Properties for defining a `Vpcs`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-vpcs
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.datasource.VpcsProps")]
     public class VpcsProps : AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource.IVpcsProps
     {

@@ -4,7 +4,8 @@ import { RosVariableGroup } from './devops.generated';
 export { RosVariableGroup as VariableGroupProperty };
 
 /**
- * Properties for defining a `ALIYUN::DEVOPS::VariableGroup`
+ * Properties for defining a `VariableGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-variablegroup
  */
 export interface VariableGroupProps {
 
@@ -30,14 +31,11 @@ export interface VariableGroupProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::DEVOPS::VariableGroup`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DEVOPS::VariableGroup`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVariableGroup`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-variablegroup
  */
 export class VariableGroup extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute VariableGroupId: Variable group id.
@@ -45,8 +43,6 @@ export class VariableGroup extends ros.Resource {
     public readonly attrVariableGroupId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::DEVOPS::VariableGroup`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

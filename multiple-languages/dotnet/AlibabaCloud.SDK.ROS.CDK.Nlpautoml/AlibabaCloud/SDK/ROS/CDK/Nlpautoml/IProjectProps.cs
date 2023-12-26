@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Nlpautoml
 {
-    /// <summary>Properties for defining a `ALIYUN::NLPAUTOML::Project`.</summary>
+    /// <summary>Properties for defining a `Project`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlpautoml-project
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IProjectProps), fullyQualifiedName: "@alicloud/ros-cdk-nlpautoml.ProjectProps")]
     public interface IProjectProps
     {
@@ -35,7 +38,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlpautoml
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::NLPAUTOML::Project`.</summary>
+        /// <summary>Properties for defining a `Project`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlpautoml-project
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IProjectProps), fullyQualifiedName: "@alicloud/ros-cdk-nlpautoml.ProjectProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Nlpautoml.IProjectProps
         {

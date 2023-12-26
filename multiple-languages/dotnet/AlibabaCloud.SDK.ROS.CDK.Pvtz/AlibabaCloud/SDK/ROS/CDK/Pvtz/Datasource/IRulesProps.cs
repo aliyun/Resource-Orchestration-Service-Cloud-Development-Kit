@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Pvtz.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::PVTZ::Rules`.</summary>
+    /// <summary>Properties for defining a `Rules`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pvtz-rules
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRulesProps), fullyQualifiedName: "@alicloud/ros-cdk-pvtz.datasource.RulesProps")]
     public interface IRulesProps
     {
@@ -19,7 +22,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::PVTZ::Rules`.</summary>
+        /// <summary>Properties for defining a `Rules`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pvtz-rules
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRulesProps), fullyQualifiedName: "@alicloud/ros-cdk-pvtz.datasource.RulesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Pvtz.Datasource.IRulesProps
         {

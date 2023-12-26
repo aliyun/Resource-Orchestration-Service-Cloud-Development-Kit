@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::HBR::RestoreJob`.</summary>
+    /// <summary>Properties for defining a `RosRestoreJob`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-restorejob
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-hbr.RosRestoreJobProps")]
     public class RosRestoreJobProps : AlibabaCloud.SDK.ROS.CDK.Hbr.IRosRestoreJobProps
     {
@@ -237,7 +240,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
         private object _targetPath;
 
         /// <remarks>
-        /// <strong>Property</strong>: targetPath: Target path. For instance, "/".
+        /// <strong>Property</strong>: targetPath: Target path. For instance, "\/".
         /// </remarks>
         [JsiiProperty(name: "targetPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object TargetPath

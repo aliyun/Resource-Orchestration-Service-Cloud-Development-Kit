@@ -4,7 +4,8 @@ import { RosVpcPeerConnection } from './vpc.generated';
 export { RosVpcPeerConnection as VpcPeerConnectionProperty };
 
 /**
- * Properties for defining a `ALIYUN::VPC::VpcPeerConnection`
+ * Properties for defining a `VpcPeerConnection`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpcpeerconnection
  */
 export interface VpcPeerConnectionProps {
 
@@ -48,7 +49,7 @@ export interface VpcPeerConnectionProps {
     /**
      * Property description: The description of the VPC peering connection.
      * The description must be 2 to 256 characters in length. It must start with a letter
-     * but cannot start with http:// or https://.
+     * but cannot start with http:\/\/ or https:\/\/.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -61,14 +62,11 @@ export interface VpcPeerConnectionProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::VPC::VpcPeerConnection`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpcPeerConnection`, which is used to create a peering connection between virtual private clouds (VPCs).
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpcPeerConnection`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpcpeerconnection
  */
 export class VpcPeerConnection extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute InstanceId: The ID of the VPC peering connection.
@@ -76,8 +74,6 @@ export class VpcPeerConnection extends ros.Resource {
     public readonly attrInstanceId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VPC::VpcPeerConnection`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

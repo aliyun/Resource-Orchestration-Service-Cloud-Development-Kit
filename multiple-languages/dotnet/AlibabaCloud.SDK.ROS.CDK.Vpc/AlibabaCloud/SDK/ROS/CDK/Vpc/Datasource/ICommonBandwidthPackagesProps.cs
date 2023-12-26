@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::VPC::CommonBandwidthPackages`.</summary>
+    /// <summary>Properties for defining a `CommonBandwidthPackages`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-commonbandwidthpackages
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ICommonBandwidthPackagesProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.datasource.CommonBandwidthPackagesProps")]
     public interface ICommonBandwidthPackagesProps
     {
@@ -41,7 +44,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::VPC::CommonBandwidthPackages`.</summary>
+        /// <summary>Properties for defining a `CommonBandwidthPackages`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-commonbandwidthpackages
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ICommonBandwidthPackagesProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.datasource.CommonBandwidthPackagesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource.ICommonBandwidthPackagesProps
         {

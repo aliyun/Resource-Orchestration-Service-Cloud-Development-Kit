@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CEN::CenBandwidthPackage`.</summary>
+    /// <summary>Properties for defining a `CenBandwidthPackage`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthpackage
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cen.CenBandwidthPackageProps")]
     public class CenBandwidthPackageProps : AlibabaCloud.SDK.ROS.CDK.Cen.ICenBandwidthPackageProps
     {

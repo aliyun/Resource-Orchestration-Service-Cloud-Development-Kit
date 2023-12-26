@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * Properties for defining a <code>ALIYUN::ECS::CustomImage</code>.
+ * Properties for defining a <code>CustomImage</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-customimage
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.730Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.183Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.CustomImageProps")
 @software.amazon.jsii.Jsii.Proxy(CustomImageProps.Jsii$Proxy.class)
 public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable {
@@ -20,6 +22,18 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
+     * Property bootMode: Modify the startup mode of the image.
+     * <p>
+     * Ranges:
+     * BIOS: BIOS boot mode.
+     * UEFI: UEFI boot mode.
+     * You need to know the startup mode supported by the specified image. After modifying the startup mode through this parameter, it must match the startup mode supported by the image itself so that the instance can start normally.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBootMode() {
+        return null;
+    }
+
+    /**
      * Property description: The description of the image.
      * <p>
      * It can be [0, 256] letters in length.
@@ -31,6 +45,15 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
+     * Property detectionStrategy: Image detection policy.
+     * <p>
+     * If this parameter is not configured, detection will not be triggered. Only Standard detection mode is supported.Currently, most Linux/Windows versions are supported.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDetectionStrategy() {
+        return null;
+    }
+
+    /**
      * Property diskDeviceMapping:.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDiskDeviceMapping() {
@@ -38,7 +61,7 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
-     * Property imageFamily: The name of the image family of the custom image.
+     * Property imageFamily: The name of the image family of the image.
      * <p>
      * The name must be 2 to 128 characters in length and can contain letters, digits, colons (:), underscores (_), and hyphens (-). It cannot contain http:// or https://. It must start with a letter and cannot start with acs: or aliyun.This parameter is empty by default.
      */
@@ -53,6 +76,15 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
      * Cannot begin with http:// or https://.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getImageName() {
+        return null;
+    }
+
+    /**
+     * Property imageVersion: Image version.
+     * <p>
+     * When you specify an instance ID (InstanceId) and the image of the instance is a cloud market image or a custom image created from a cloud market image. This parameter must be the same as the ImageVersion of the current instance image or set to empty.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getImageVersion() {
         return null;
     }
 
@@ -113,10 +145,13 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
      */
     public static final class Builder implements software.amazon.jsii.Builder<CustomImageProps> {
         java.lang.Object architecture;
+        java.lang.Object bootMode;
         java.lang.Object description;
+        java.lang.Object detectionStrategy;
         java.lang.Object diskDeviceMapping;
         java.lang.Object imageFamily;
         java.lang.Object imageName;
+        java.lang.Object imageVersion;
         java.lang.Object instanceId;
         java.lang.Object platform;
         java.lang.Object resourceGroupId;
@@ -151,6 +186,34 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link CustomImageProps#getBootMode}
+         * @param bootMode Property bootMode: Modify the startup mode of the image.
+         *                 Ranges:
+         *                 BIOS: BIOS boot mode.
+         *                 UEFI: UEFI boot mode.
+         *                 You need to know the startup mode supported by the specified image. After modifying the startup mode through this parameter, it must match the startup mode supported by the image itself so that the instance can start normally.
+         * @return {@code this}
+         */
+        public Builder bootMode(java.lang.String bootMode) {
+            this.bootMode = bootMode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link CustomImageProps#getBootMode}
+         * @param bootMode Property bootMode: Modify the startup mode of the image.
+         *                 Ranges:
+         *                 BIOS: BIOS boot mode.
+         *                 UEFI: UEFI boot mode.
+         *                 You need to know the startup mode supported by the specified image. After modifying the startup mode through this parameter, it must match the startup mode supported by the image itself so that the instance can start normally.
+         * @return {@code this}
+         */
+        public Builder bootMode(com.aliyun.ros.cdk.core.IResolvable bootMode) {
+            this.bootMode = bootMode;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CustomImageProps#getDescription}
          * @param description Property description: The description of the image.
          *                    It can be [0, 256] letters in length.
@@ -177,6 +240,28 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link CustomImageProps#getDetectionStrategy}
+         * @param detectionStrategy Property detectionStrategy: Image detection policy.
+         *                          If this parameter is not configured, detection will not be triggered. Only Standard detection mode is supported.Currently, most Linux/Windows versions are supported.
+         * @return {@code this}
+         */
+        public Builder detectionStrategy(java.lang.String detectionStrategy) {
+            this.detectionStrategy = detectionStrategy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link CustomImageProps#getDetectionStrategy}
+         * @param detectionStrategy Property detectionStrategy: Image detection policy.
+         *                          If this parameter is not configured, detection will not be triggered. Only Standard detection mode is supported.Currently, most Linux/Windows versions are supported.
+         * @return {@code this}
+         */
+        public Builder detectionStrategy(com.aliyun.ros.cdk.core.IResolvable detectionStrategy) {
+            this.detectionStrategy = detectionStrategy;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CustomImageProps#getDiskDeviceMapping}
          * @param diskDeviceMapping Property diskDeviceMapping:.
          * @return {@code this}
@@ -198,7 +283,7 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CustomImageProps#getImageFamily}
-         * @param imageFamily Property imageFamily: The name of the image family of the custom image.
+         * @param imageFamily Property imageFamily: The name of the image family of the image.
          *                    The name must be 2 to 128 characters in length and can contain letters, digits, colons (:), underscores (_), and hyphens (-). It cannot contain http:// or https://. It must start with a letter and cannot start with acs: or aliyun.This parameter is empty by default.
          * @return {@code this}
          */
@@ -209,7 +294,7 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CustomImageProps#getImageFamily}
-         * @param imageFamily Property imageFamily: The name of the image family of the custom image.
+         * @param imageFamily Property imageFamily: The name of the image family of the image.
          *                    The name must be 2 to 128 characters in length and can contain letters, digits, colons (:), underscores (_), and hyphens (-). It cannot contain http:// or https://. It must start with a letter and cannot start with acs: or aliyun.This parameter is empty by default.
          * @return {@code this}
          */
@@ -239,6 +324,28 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
          */
         public Builder imageName(com.aliyun.ros.cdk.core.IResolvable imageName) {
             this.imageName = imageName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link CustomImageProps#getImageVersion}
+         * @param imageVersion Property imageVersion: Image version.
+         *                     When you specify an instance ID (InstanceId) and the image of the instance is a cloud market image or a custom image created from a cloud market image. This parameter must be the same as the ImageVersion of the current instance image or set to empty.
+         * @return {@code this}
+         */
+        public Builder imageVersion(java.lang.String imageVersion) {
+            this.imageVersion = imageVersion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link CustomImageProps#getImageVersion}
+         * @param imageVersion Property imageVersion: Image version.
+         *                     When you specify an instance ID (InstanceId) and the image of the instance is a cloud market image or a custom image created from a cloud market image. This parameter must be the same as the ImageVersion of the current instance image or set to empty.
+         * @return {@code this}
+         */
+        public Builder imageVersion(com.aliyun.ros.cdk.core.IResolvable imageVersion) {
+            this.imageVersion = imageVersion;
             return this;
         }
 
@@ -383,10 +490,13 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements CustomImageProps {
         private final java.lang.Object architecture;
+        private final java.lang.Object bootMode;
         private final java.lang.Object description;
+        private final java.lang.Object detectionStrategy;
         private final java.lang.Object diskDeviceMapping;
         private final java.lang.Object imageFamily;
         private final java.lang.Object imageName;
+        private final java.lang.Object imageVersion;
         private final java.lang.Object instanceId;
         private final java.lang.Object platform;
         private final java.lang.Object resourceGroupId;
@@ -401,10 +511,13 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.architecture = software.amazon.jsii.Kernel.get(this, "architecture", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.bootMode = software.amazon.jsii.Kernel.get(this, "bootMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.detectionStrategy = software.amazon.jsii.Kernel.get(this, "detectionStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.diskDeviceMapping = software.amazon.jsii.Kernel.get(this, "diskDeviceMapping", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.imageFamily = software.amazon.jsii.Kernel.get(this, "imageFamily", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.imageName = software.amazon.jsii.Kernel.get(this, "imageName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.imageVersion = software.amazon.jsii.Kernel.get(this, "imageVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.platform = software.amazon.jsii.Kernel.get(this, "platform", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -419,10 +532,13 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.architecture = builder.architecture;
+            this.bootMode = builder.bootMode;
             this.description = builder.description;
+            this.detectionStrategy = builder.detectionStrategy;
             this.diskDeviceMapping = builder.diskDeviceMapping;
             this.imageFamily = builder.imageFamily;
             this.imageName = builder.imageName;
+            this.imageVersion = builder.imageVersion;
             this.instanceId = builder.instanceId;
             this.platform = builder.platform;
             this.resourceGroupId = builder.resourceGroupId;
@@ -437,8 +553,18 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.lang.Object getBootMode() {
+            return this.bootMode;
+        }
+
+        @Override
         public final java.lang.Object getDescription() {
             return this.description;
+        }
+
+        @Override
+        public final java.lang.Object getDetectionStrategy() {
+            return this.detectionStrategy;
         }
 
         @Override
@@ -454,6 +580,11 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
         @Override
         public final java.lang.Object getImageName() {
             return this.imageName;
+        }
+
+        @Override
+        public final java.lang.Object getImageVersion() {
+            return this.imageVersion;
         }
 
         @Override
@@ -495,8 +626,14 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getArchitecture() != null) {
                 data.set("architecture", om.valueToTree(this.getArchitecture()));
             }
+            if (this.getBootMode() != null) {
+                data.set("bootMode", om.valueToTree(this.getBootMode()));
+            }
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
+            }
+            if (this.getDetectionStrategy() != null) {
+                data.set("detectionStrategy", om.valueToTree(this.getDetectionStrategy()));
             }
             if (this.getDiskDeviceMapping() != null) {
                 data.set("diskDeviceMapping", om.valueToTree(this.getDiskDeviceMapping()));
@@ -506,6 +643,9 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
             }
             if (this.getImageName() != null) {
                 data.set("imageName", om.valueToTree(this.getImageName()));
+            }
+            if (this.getImageVersion() != null) {
+                data.set("imageVersion", om.valueToTree(this.getImageVersion()));
             }
             if (this.getInstanceId() != null) {
                 data.set("instanceId", om.valueToTree(this.getInstanceId()));
@@ -544,10 +684,13 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
             CustomImageProps.Jsii$Proxy that = (CustomImageProps.Jsii$Proxy) o;
 
             if (this.architecture != null ? !this.architecture.equals(that.architecture) : that.architecture != null) return false;
+            if (this.bootMode != null ? !this.bootMode.equals(that.bootMode) : that.bootMode != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
+            if (this.detectionStrategy != null ? !this.detectionStrategy.equals(that.detectionStrategy) : that.detectionStrategy != null) return false;
             if (this.diskDeviceMapping != null ? !this.diskDeviceMapping.equals(that.diskDeviceMapping) : that.diskDeviceMapping != null) return false;
             if (this.imageFamily != null ? !this.imageFamily.equals(that.imageFamily) : that.imageFamily != null) return false;
             if (this.imageName != null ? !this.imageName.equals(that.imageName) : that.imageName != null) return false;
+            if (this.imageVersion != null ? !this.imageVersion.equals(that.imageVersion) : that.imageVersion != null) return false;
             if (this.instanceId != null ? !this.instanceId.equals(that.instanceId) : that.instanceId != null) return false;
             if (this.platform != null ? !this.platform.equals(that.platform) : that.platform != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
@@ -559,10 +702,13 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
         @Override
         public final int hashCode() {
             int result = this.architecture != null ? this.architecture.hashCode() : 0;
+            result = 31 * result + (this.bootMode != null ? this.bootMode.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+            result = 31 * result + (this.detectionStrategy != null ? this.detectionStrategy.hashCode() : 0);
             result = 31 * result + (this.diskDeviceMapping != null ? this.diskDeviceMapping.hashCode() : 0);
             result = 31 * result + (this.imageFamily != null ? this.imageFamily.hashCode() : 0);
             result = 31 * result + (this.imageName != null ? this.imageName.hashCode() : 0);
+            result = 31 * result + (this.imageVersion != null ? this.imageVersion.hashCode() : 0);
             result = 31 * result + (this.instanceId != null ? this.instanceId.hashCode() : 0);
             result = 31 * result + (this.platform != null ? this.platform.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);

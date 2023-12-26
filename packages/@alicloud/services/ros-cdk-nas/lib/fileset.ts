@@ -4,7 +4,8 @@ import { RosFileset } from './nas.generated';
 export { RosFileset as FilesetProperty };
 
 /**
- * Properties for defining a `ALIYUN::NAS::Fileset`
+ * Properties for defining a `Fileset`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-fileset
  */
 export interface FilesetProps {
 
@@ -17,28 +18,25 @@ export interface FilesetProps {
      * Property fileSystemPath: The absolute path of Fileset to be created.
      * The parent catalog of specified the directory must be a directory in the file system.
      * The length is 2 to 1024 characters.
-     * Specify the directory must start with positive (/).
+     * Specify the directory must start with positive (\/).
      */
     readonly fileSystemPath: string | ros.IResolvable;
 
     /**
      * Property description: Fileset description information.
      * The length is 2 to 128 English or Chinese characters.
-     * Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //.
+     * Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/.
      * It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
      */
     readonly description?: string | ros.IResolvable;
 }
 
 /**
- * A ROS resource type:  `ALIYUN::NAS::Fileset`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::NAS::Fileset`, which is used to create a fileset.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFileset`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-fileset
  */
 export class Fileset extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute FileSystemId: File system ID.
@@ -56,8 +54,6 @@ export class Fileset extends ros.Resource {
     public readonly attrFsetId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::NAS::Fileset`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

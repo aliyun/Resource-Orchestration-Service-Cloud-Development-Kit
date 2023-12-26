@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Nlb.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::NLB::LoadBalancers`.</summary>
+    /// <summary>Properties for defining a `RosLoadBalancers`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nlb-loadbalancers
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosLoadBalancersProps), fullyQualifiedName: "@alicloud/ros-cdk-nlb.datasource.RosLoadBalancersProps")]
     public interface IRosLoadBalancersProps
     {
@@ -151,7 +154,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::NLB::LoadBalancers`.</summary>
+        /// <summary>Properties for defining a `RosLoadBalancers`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nlb-loadbalancers
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosLoadBalancersProps), fullyQualifiedName: "@alicloud/ros-cdk-nlb.datasource.RosLoadBalancersProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Nlb.Datasource.IRosLoadBalancersProps
         {

@@ -4,12 +4,13 @@ import { RosApp } from './apigateway.generated';
 export { RosApp as AppProperty };
 
 /**
- * Properties for defining a `ALIYUN::ApiGateway::App`
+ * Properties for defining a `App`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-app
  */
 export interface AppProps {
 
     /**
-     * Property appName: The name of the App.Need [4, 26] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+     * Property appName: The name of the App.Need [4, 26] Chinese\English\Number characters or "_",and should start with Chinese\/English character.
      */
     readonly appName: string | ros.IResolvable;
 
@@ -44,14 +45,11 @@ export interface AppProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ApiGateway::App`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::App`, which is used to create an application. Before you call a third-party API, you must create an application and use the application as an identity to call the API.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApp`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-app
  */
 export class App extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AppCode: The code of the APP.
@@ -79,8 +77,6 @@ export class App extends ros.Resource {
     public readonly attrTags: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ApiGateway::App`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

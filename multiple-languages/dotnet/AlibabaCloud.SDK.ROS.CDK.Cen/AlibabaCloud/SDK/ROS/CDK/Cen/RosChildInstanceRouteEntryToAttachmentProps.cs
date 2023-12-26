@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CEN::ChildInstanceRouteEntryToAttachment`.</summary>
+    /// <summary>Properties for defining a `RosChildInstanceRouteEntryToAttachment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-childinstancerouteentrytoattachment
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cen.RosChildInstanceRouteEntryToAttachmentProps")]
     public class RosChildInstanceRouteEntryToAttachmentProps : AlibabaCloud.SDK.ROS.CDK.Cen.IRosChildInstanceRouteEntryToAttachmentProps
     {

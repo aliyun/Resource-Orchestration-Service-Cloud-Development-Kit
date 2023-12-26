@@ -4,7 +4,8 @@ import { RosExecution } from './oos.generated';
 export { RosExecution as ExecutionProperty };
 
 /**
- * Properties for defining a `ALIYUN::OOS::Execution`
+ * Properties for defining a `Execution`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-execution
  */
 export interface ExecutionProps {
 
@@ -57,14 +58,11 @@ export interface ExecutionProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::OOS::Execution`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::OOS::Execution`, which is used to start an execution.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosExecution`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-execution
  */
 export class Execution extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Counters: Task statistics: FailedTasks, SuccessTasks, TotalTasks.
@@ -114,8 +112,6 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
     public readonly attrWindowsCurlCli: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::OOS::Execution`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

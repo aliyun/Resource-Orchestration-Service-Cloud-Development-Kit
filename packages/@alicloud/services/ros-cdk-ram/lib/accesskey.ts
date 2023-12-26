@@ -4,7 +4,8 @@ import { RosAccessKey } from './ram.generated';
 export { RosAccessKey as AccessKeyProperty };
 
 /**
- * Properties for defining a `ALIYUN::RAM::AccessKey`
+ * Properties for defining a `AccessKey`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-accesskey
  */
 export interface AccessKeyProps {
 
@@ -15,14 +16,11 @@ export interface AccessKeyProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::RAM::AccessKey`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::AccessKey`, which is used to obtain the AccessKey pair (AccessKey ID and AccessKey secret) of a specified user and its status.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccessKey`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-accesskey
  */
 export class AccessKey extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AccessKeyId: Id of access key.
@@ -40,8 +38,6 @@ export class AccessKey extends ros.Resource {
     public readonly attrStatus: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::RAM::AccessKey`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

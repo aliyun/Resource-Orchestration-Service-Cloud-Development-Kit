@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Polardb
 {
-    /// <summary>A ROS template type:  `ALIYUN::POLARDB::DBCluster`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBCluster`, which is used to create a PolarDB cluster.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `DBCluster` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbcluster
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Polardb.RosDBCluster), fullyQualifiedName: "@alicloud/ros-cdk-polardb.RosDBCluster", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-polardb.RosDBClusterProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosDBCluster : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::POLARDB::DBCluster`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -627,7 +630,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <strong>Property</strong>: dbClusterDescription: The description of the cluster. The description must comply with the following rules:
         /// It must start with a Chinese character or an English letter.
         /// It can contain Chinese and English characters, digits, underscores (_), and hyphens (-).
-        /// It cannot start with http:// or https://.
+        /// It cannot start with http:\/\/ or https:\/\/.
         /// It must be 2 to 256 characters in length.
         /// </remarks>
         [JsiiOptional]

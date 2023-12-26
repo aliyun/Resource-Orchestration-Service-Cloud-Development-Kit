@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ECS::RunCommand`.</summary>
+    /// <summary>Properties for defining a `RunCommand`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-runcommand
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.RunCommandProps")]
     public class RunCommandProps : AlibabaCloud.SDK.ROS.CDK.Ecs.IRunCommandProps
     {
@@ -131,6 +134,88 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                     }
                 }
                 _type = value;
+            }
+        }
+
+        private object? _containerId;
+
+        /// <summary>Property containerId: The ID of the container.</summary>
+        /// <remarks>
+        /// Only 64-bit hexadecimal strings are supported. You can use container IDs that are prefixed with docker://, containerd://, or cri-o:// to specify container runtimes.
+        /// Take note of the following items:
+        ///
+        /// <list type="bullet">
+        /// <description>If you specify this parameter, Cloud Assistant runs scripts in the specified container of the instance.</description>
+        /// <description>If you specify this parameter, make sure that the version of Cloud Assistant Agent installed on Linux instances is 2.2.3.344 or later.- If you specify this parameter, Username that is specified in a request to call this operation and WorkingDir that is specified in a request to call the CreateCommand operation do not take effect. You can run the command only in the default working directory of the container by using the default user of the container.</description>
+        /// <description>If you specify this parameter, only shell scripts can be run in Linux containers. You cannot add a command in the format similar to #!/usr/bin/python at the beginning of a script to specify a script interpreter.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "containerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ContainerId
+        {
+            get => _containerId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _containerId = value;
+            }
+        }
+
+        private object? _containerName;
+
+        /// <summary>Property containerName: The name of the container.</summary>
+        /// <remarks>
+        /// Take note of the following items:
+        ///
+        /// <list type="bullet">
+        /// <description>If you specify this parameter, Cloud Assistant runs scripts in the specified container of the instance.</description>
+        /// <description>If you specify this parameter, make sure that the version of Cloud Assistant Agent installed on Linux instances is 2.2.3.344 or later.</description>
+        /// <description>If you specify this parameter, Username that is specified in a request to call this operation and WorkingDir that is specified in a request to call the CreateCommand operation do not take effect. You can run the command only in the default working directory of the container by using the default user of the container.</description>
+        /// <description>If you specify this parameter, only shell scripts can be run in Linux containers. You cannot add a command in the format similar to #!/usr/bin/python at the beginning of a script to specify a script interpreter.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "containerName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ContainerName
+        {
+            get => _containerName;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _containerName = value;
             }
         }
 
@@ -384,6 +469,84 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
+        private object? _repeatMode;
+
+        /// <summary>Property repeatMode: Specifies how to run the command.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description><strong>Once</strong>: immediately runs the command.</description>
+        /// <description><strong>Period</strong>: runs the command on a schedule. If you set this parameter to Period, you must specify <strong>Frequency</strong>.</description>
+        /// <description><strong>NextRebootOnly</strong>: runs the command the next time the instance is started.</description>
+        /// <description>*<em>EveryReboot</em>: runs the command every time the instance is started.
+        /// Default value:</description>
+        /// <description>If you do not specify Frequency, the default value is Once.</description>
+        /// <description>If you specify <strong>Frequency</strong>, <strong>Period</strong> is used as the value of RepeatMode regardless of whether RepeatMode is set to Period.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "repeatMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? RepeatMode
+        {
+            get => _repeatMode;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _repeatMode = value;
+            }
+        }
+
+        private object? _resourceGroupId;
+
+        /// <summary>Property resourceGroupId: The ID of the resource group to which to assign the command executions.</summary>
+        /// <remarks>
+        /// The instances specified by InstanceIds must belong to the specified resource group.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ResourceGroupId
+        {
+            get => _resourceGroupId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _resourceGroupId = value;
+            }
+        }
+
         private object? _runAgainOn;
 
         /// <summary>Property runAgainOn: The stage of executing the command again.</summary>
@@ -475,43 +638,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             set;
         }
 
-        private object? _timed;
-
-        /// <summary>Property timed: Specifies whether to periodically run the script.</summary>
-        /// <remarks>
-        /// Valid values:
-        /// true: runs the script on a regular basis based on the value set for the Frequency parameter. The result of the previous execution task does not affect the next execution task.
-        /// false: runs once only.
-        /// Default value: false
-        /// </remarks>
-        [JsiiOptional]
-        [JsiiProperty(name: "timed", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        public object? Timed
-        {
-            get => _timed;
-            set
-            {
-                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                {
-                    switch (value)
-                    {
-                        case bool cast_cd4240:
-                            break;
-                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                            break;
-                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                            // Not enough information to type-check...
-                            break;
-                        case null:
-                            break;
-                        default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                    }
-                }
-                _timed = value;
-            }
-        }
-
         private object? _timeout;
 
         /// <summary>Property timeout: The timeout period for script execution.</summary>
@@ -564,6 +690,81 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                     }
                 }
                 _timeout = value;
+            }
+        }
+
+        private object? _username;
+
+        /// <summary>Property username: The username to use to run the command on instances.</summary>
+        /// <remarks>
+        /// The username can be up to 255 characters in length.
+        ///
+        /// <list type="bullet">
+        /// <description>For Linux instances, the root username is used by default.</description>
+        /// <description>For Windows instances, the System username is used by default.
+        /// You can also specify other usernames that already exist in the instances to run the command. For security purposes, we recommend that you run Cloud Assistant commands as a regular user.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "username", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? Username
+        {
+            get => _username;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _username = value;
+            }
+        }
+
+        private object? _windowsPasswordName;
+
+        /// <summary>Property windowsPasswordName: The name of the password to use to run the command on Windows instances.</summary>
+        /// <remarks>
+        /// The name can be up to 255 characters in length.
+        /// If you do not want to use the default System user to run the command on Windows instances, specify both <strong>WindowsPasswordName</strong> and <strong>Username</strong>. To mitigate the risk of password leaks, the password is stored in plaintext in Operation Orchestration Service (OOS) Parameter Store, and only the name of the password is passed in by using WindowsPasswordName.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "windowsPasswordName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? WindowsPasswordName
+        {
+            get => _windowsPasswordName;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _windowsPasswordName = value;
             }
         }
 

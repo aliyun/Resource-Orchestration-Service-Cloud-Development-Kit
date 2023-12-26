@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CMS::GroupMetricRule`.</summary>
+    /// <summary>Properties for defining a `RosGroupMetricRule`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-groupmetricrule
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cms.RosGroupMetricRuleProps")]
     public class RosGroupMetricRuleProps : AlibabaCloud.SDK.ROS.CDK.Cms.IRosGroupMetricRuleProps
     {
@@ -32,7 +35,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// IOT_EDGE (IoT Edge)
         /// K8S_POD (k8s pod)
         /// KVSTORE_SHARDING (ApsaraDB for Redis cluster version)
-        /// KVSTORE_SPLITRW (ApsaraDB for Redis read/write splitting version)
+        /// KVSTORE_SPLITRW (ApsaraDB for Redis read\/write splitting version)
         /// KVSTORE_STANDARD (ApsaraDB for Redis standard version)
         /// MEMCACHE (ApsaraDB for Memcache)
         /// MNS (Message Service)

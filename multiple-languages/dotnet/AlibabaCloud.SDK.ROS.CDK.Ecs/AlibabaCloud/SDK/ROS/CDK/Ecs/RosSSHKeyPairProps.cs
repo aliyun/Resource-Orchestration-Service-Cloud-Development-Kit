@@ -6,14 +6,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ECS::SSHKeyPair`.</summary>
+    /// <summary>Properties for defining a `RosSSHKeyPair`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-sshkeypair
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.RosSSHKeyPairProps")]
     public class RosSSHKeyPairProps : AlibabaCloud.SDK.ROS.CDK.Ecs.IRosSSHKeyPairProps
     {
         private object _keyPairName;
 
         /// <remarks>
-        /// <strong>Property</strong>: keyPairName: SSH key pair name. It must be unique. [2, 128] characters. All character sets are supported. Do not start with a special character, digit, http://, or https://. It can contain digits, ".", "_", or "-".
+        /// <strong>Property</strong>: keyPairName: SSH key pair name. It must be unique. [2, 128] characters. All character sets are supported. Do not start with a special character, digit, http:\/\/, or https:\/\/. It can contain digits, ".", "_", or "-".
         /// </remarks>
         [JsiiProperty(name: "keyPairName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object KeyPairName

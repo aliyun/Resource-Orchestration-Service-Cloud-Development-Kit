@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ga
 {
-    /// <summary>Properties for defining a `ALIYUN::GA::EndpointGroup`.</summary>
+    /// <summary>Properties for defining a `RosEndpointGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-endpointgroup
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosEndpointGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-ga.RosEndpointGroupProps")]
     public interface IRosEndpointGroupProps
     {
@@ -199,7 +202,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::GA::EndpointGroup`.</summary>
+        /// <summary>Properties for defining a `RosEndpointGroup`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-endpointgroup
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosEndpointGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-ga.RosEndpointGroupProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ga.IRosEndpointGroupProps
         {

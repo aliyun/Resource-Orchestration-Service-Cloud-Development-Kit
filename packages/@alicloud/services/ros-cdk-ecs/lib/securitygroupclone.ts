@@ -4,7 +4,8 @@ import { RosSecurityGroupClone } from './ecs.generated';
 export { RosSecurityGroupClone as SecurityGroupCloneProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECS::SecurityGroupClone`
+ * Properties for defining a `SecurityGroupClone`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroupclone
  */
 export interface SecurityGroupCloneProps {
 
@@ -52,14 +53,11 @@ export interface SecurityGroupCloneProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECS::SecurityGroupClone`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::SecurityGroupClone`, which is used to clone a security group.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecurityGroupClone`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroupclone
  */
 export class SecurityGroupClone extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute SecurityGroupId: Generated security group id of new security group.
@@ -67,8 +65,6 @@ export class SecurityGroupClone extends ros.Resource {
     public readonly attrSecurityGroupId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ECS::SecurityGroupClone`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

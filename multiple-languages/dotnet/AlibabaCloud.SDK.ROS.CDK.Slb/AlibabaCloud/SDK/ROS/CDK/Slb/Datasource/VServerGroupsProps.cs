@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb.Datasource
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `DATASOURCE::SLB::VServerGroups`.</summary>
+    /// <summary>Properties for defining a `VServerGroups`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-vservergroups
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-slb.datasource.VServerGroupsProps")]
     public class VServerGroupsProps : AlibabaCloud.SDK.ROS.CDK.Slb.Datasource.IVServerGroupsProps
     {

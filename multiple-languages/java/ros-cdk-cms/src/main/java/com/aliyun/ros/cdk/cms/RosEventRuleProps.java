@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.cms;
 
 /**
- * Properties for defining a <code>ALIYUN::CMS::EventRule</code>.
+ * Properties for defining a <code>RosEventRule</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-eventrule
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.022Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.402Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosEventRuleProps")
 @software.amazon.jsii.Jsii.Proxy(RosEventRuleProps.Jsii$Proxy.class)
 public interface RosEventRuleProps extends software.amazon.jsii.JsiiSerializable {

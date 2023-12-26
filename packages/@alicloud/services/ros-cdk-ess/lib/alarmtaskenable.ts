@@ -4,7 +4,8 @@ import { RosAlarmTaskEnable } from './ess.generated';
 export { RosAlarmTaskEnable as AlarmTaskEnableProperty };
 
 /**
- * Properties for defining a `ALIYUN::ESS::AlarmTaskEnable`
+ * Properties for defining a `AlarmTaskEnable`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-alarmtaskenable
  */
 export interface AlarmTaskEnableProps {
 
@@ -20,18 +21,13 @@ export interface AlarmTaskEnableProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ESS::AlarmTaskEnable`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::AlarmTaskEnable`, which is used to start an alarm task. You can call this operation to enable alarm tasks when the task is stopped.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAlarmTaskEnable`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-alarmtaskenable
  */
 export class AlarmTaskEnable extends ros.Resource {
 
     /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
-
-    /**
-     * Create a new `ALIYUN::ESS::AlarmTaskEnable`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

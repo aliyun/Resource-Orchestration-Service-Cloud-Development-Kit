@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.devops;
 
 /**
- * A ROS template type:  <code>ALIYUN::DEVOPS::Pipeline</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DEVOPS::Pipeline</code>ALIYUN::DFS::AccessGroup is used to create a permission group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.399Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.806Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.devops.$Module.class, fqn = "@alicloud/ros-cdk-devops.RosPipeline")
 public class RosPipeline extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,8 +20,6 @@ public class RosPipeline extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * Create a new <code>ALIYUN::DEVOPS::Pipeline</code>.
-     * <p>
      * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
      * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
      * @param props <ul><li>resource properties.</li></ul> This parameter is required.

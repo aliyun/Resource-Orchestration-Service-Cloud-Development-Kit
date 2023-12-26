@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
 {
-    /// <summary>Properties for defining a `ALIYUN::ResourceManager::Folder`.</summary>
+    /// <summary>Properties for defining a `Folder`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-folder
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IFolderProps), fullyQualifiedName: "@alicloud/ros-cdk-resourcemanager.FolderProps")]
     public interface IFolderProps
     {
@@ -29,7 +32,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ResourceManager::Folder`.</summary>
+        /// <summary>Properties for defining a `Folder`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-folder
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IFolderProps), fullyQualifiedName: "@alicloud/ros-cdk-resourcemanager.FolderProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Resourcemanager.IFolderProps
         {

@@ -4,7 +4,8 @@ import { RosTable } from './ots.generated';
 export { RosTable as TableProperty };
 
 /**
- * Properties for defining a `ALIYUN::OTS::Table`
+ * Properties for defining a `Table`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-table
  */
 export interface TableProps {
 
@@ -39,7 +40,7 @@ export interface TableProps {
     readonly maxVersions?: number | ros.IResolvable;
 
     /**
-     * Property reservedThroughput: The initial reserved read/write throughput setting of the table to be created, the reserved read throughput and reserved write throughput of any table cannot exceed 5000.
+     * Property reservedThroughput: The initial reserved read\/write throughput setting of the table to be created, the reserved read throughput and reserved write throughput of any table cannot exceed 5000.
      */
     readonly reservedThroughput?: RosTable.ReservedThroughputProperty | ros.IResolvable;
 
@@ -55,14 +56,11 @@ export interface TableProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::OTS::Table`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::OTS::Table`, which is used to create a table based on a specified schema.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTable`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-table
  */
 export class Table extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute TableName: Table name
@@ -70,8 +68,6 @@ export class Table extends ros.Resource {
     public readonly attrTableName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::OTS::Table`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

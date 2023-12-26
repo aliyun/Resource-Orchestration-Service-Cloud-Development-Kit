@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Redis
 {
-    /// <summary>A ROS template type:  `ALIYUN::REDIS::Instance`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::Instance`.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-instance
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Redis.RosInstance), fullyQualifiedName: "@alicloud/ros-cdk-redis.RosInstance", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-redis.RosInstanceProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosInstance : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::REDIS::Instance`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -1210,7 +1213,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         public interface IBackupPolicyProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: preferredBackupPeriod: The backup cycle. Valid values: Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday
+            /// <strong>Property</strong>: preferredBackupPeriod: The backup cycle. Valid values: Monday\/Tuesday\/Wednesday\/Thursday\/Friday\/Saturday\/Sunday
             /// </remarks>
             [JsiiProperty(name: "preferredBackupPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             object PreferredBackupPeriod
@@ -1250,7 +1253,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: preferredBackupPeriod: The backup cycle. Valid values: Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday
+                /// <strong>Property</strong>: preferredBackupPeriod: The backup cycle. Valid values: Monday\/Tuesday\/Wednesday\/Thursday\/Friday\/Saturday\/Sunday
                 /// </remarks>
                 [JsiiProperty(name: "preferredBackupPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
                 public object PreferredBackupPeriod
@@ -1288,7 +1291,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             private object _preferredBackupPeriod;
 
             /// <remarks>
-            /// <strong>Property</strong>: preferredBackupPeriod: The backup cycle. Valid values: Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday
+            /// <strong>Property</strong>: preferredBackupPeriod: The backup cycle. Valid values: Monday\/Tuesday\/Wednesday\/Thursday\/Friday\/Saturday\/Sunday
             /// </remarks>
             [JsiiProperty(name: "preferredBackupPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object PreferredBackupPeriod

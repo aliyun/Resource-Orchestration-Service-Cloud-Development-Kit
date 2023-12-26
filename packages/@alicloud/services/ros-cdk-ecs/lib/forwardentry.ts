@@ -4,7 +4,8 @@ import { RosForwardEntry } from './ecs.generated';
 export { RosForwardEntry as ForwardEntryProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECS::ForwardEntry`
+ * Properties for defining a `ForwardEntry`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-forwardentry
  */
 export interface ForwardEntryProps {
 
@@ -14,7 +15,7 @@ export interface ForwardEntryProps {
     readonly externalIp: string | ros.IResolvable;
 
     /**
-     * Property externalPort: Source port, now support [1-65535]|Any|x/y
+     * Property externalPort: Source port, now support [1-65535]|Any|x\/y
      */
     readonly externalPort: string | ros.IResolvable;
 
@@ -29,7 +30,7 @@ export interface ForwardEntryProps {
     readonly internalIp: string | ros.IResolvable;
 
     /**
-     * Property internalPort: Destination port, now support [1-65535]|Any|x/y
+     * Property internalPort: Destination port, now support [1-65535]|Any|x\/y
      */
     readonly internalPort: string | ros.IResolvable;
 
@@ -39,7 +40,7 @@ export interface ForwardEntryProps {
     readonly ipProtocol: string | ros.IResolvable;
 
     /**
-     * Property forwardEntryName: the name of the DNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.
+     * Property forwardEntryName: the name of the DNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:\/\/ or https:\/\/.
      */
     readonly forwardEntryName?: string | ros.IResolvable;
 
@@ -50,14 +51,11 @@ export interface ForwardEntryProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECS::ForwardEntry`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::ForwardEntry`, which is used to configure the Destination Network Address Translation (DNAT) table of a Network Address Translation (NAT) gateway.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosForwardEntry`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-forwardentry
  */
 export class ForwardEntry extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ForwardEntryId: The id of created forward entry.
@@ -65,8 +63,6 @@ export class ForwardEntry extends ros.Resource {
     public readonly attrForwardEntryId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ECS::ForwardEntry`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

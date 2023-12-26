@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Nas
 {
-    /// <summary>Properties for defining a `ALIYUN::NAS::MountTarget`.</summary>
+    /// <summary>Properties for defining a `MountTarget`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-mounttarget
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IMountTargetProps), fullyQualifiedName: "@alicloud/ros-cdk-nas.MountTargetProps")]
     public interface IMountTargetProps
     {
@@ -87,7 +90,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::NAS::MountTarget`.</summary>
+        /// <summary>Properties for defining a `MountTarget`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-mounttarget
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IMountTargetProps), fullyQualifiedName: "@alicloud/ros-cdk-nas.MountTargetProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Nas.IMountTargetProps
         {

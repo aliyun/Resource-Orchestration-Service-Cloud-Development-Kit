@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::OSS::Bucket`.</summary>
+    /// <summary>Properties for defining a `RosBucket`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucket
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-oss.RosBucketProps")]
     public class RosBucketProps : AlibabaCloud.SDK.ROS.CDK.Oss.IRosBucketProps
     {
@@ -138,6 +141,40 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
                     }
                 }
                 _deletionForce = value;
+            }
+        }
+
+        private object? _enableOssHdfsService;
+
+        /// <remarks>
+        /// <strong>Property</strong>: enableOssHdfsService: Whether enable OSS-HDFS service.
+        /// **Note**: Once it's enabled, it can't be disabled again.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "enableOssHdfsService", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? EnableOssHdfsService
+        {
+            get => _enableOssHdfsService;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _enableOssHdfsService = value;
             }
         }
 

@@ -12,6 +12,7 @@ export * from './disk';
 export * from './diskattachment';
 export * from './forwardentry';
 export * from './hpccluster';
+export * from './imagesharepermission';
 export * from './instance';
 export * from './instanceclone';
 export * from './instancegroup';

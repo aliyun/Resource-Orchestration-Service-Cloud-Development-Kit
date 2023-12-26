@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.rds.datasource;
 
 /**
- * Properties for defining a <code>DATASOURCE::RDS::DBInstances</code>.
+ * Properties for defining a <code>DBInstances</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-dbinstances
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.822Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.641Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.datasource.DBInstancesProps")
 @software.amazon.jsii.Jsii.Proxy(DBInstancesProps.Jsii$Proxy.class)
 public interface DBInstancesProps extends software.amazon.jsii.JsiiSerializable {

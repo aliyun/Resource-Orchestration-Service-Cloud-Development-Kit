@@ -4,7 +4,8 @@ import { RosLoadBalancers } from './slb.generated';
 export { RosLoadBalancers as LoadBalancersProperty };
 
 /**
- * Properties for defining a `DATASOURCE::SLB::LoadBalancers`
+ * Properties for defining a `LoadBalancers`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-loadbalancers
  */
 export interface LoadBalancersProps {
 
@@ -80,14 +81,11 @@ export interface LoadBalancersProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::SLB::LoadBalancers`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::LoadBalancers`, which is used to query created Classic Load Balancer (CLB) instances.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLoadBalancers`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-loadbalancers
  */
 export class LoadBalancers extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute LoadBalancerIds: The list of load balancer IDs.
@@ -100,8 +98,6 @@ export class LoadBalancers extends ros.Resource {
     public readonly attrLoadBalancers: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::SLB::LoadBalancers`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

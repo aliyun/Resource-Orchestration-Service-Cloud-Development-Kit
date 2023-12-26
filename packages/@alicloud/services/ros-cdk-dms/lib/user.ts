@@ -4,7 +4,8 @@ import { RosUser } from './dms.generated';
 export { RosUser as UserProperty };
 
 /**
- * Properties for defining a `ALIYUN::DMS::User`
+ * Properties for defining a `User`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dms-user
  */
 export interface UserProps {
 
@@ -40,14 +41,11 @@ export interface UserProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::DMS::User`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DMS::User`, which is used to add a user to Data Management (DMS).
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUser`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dms-user
  */
 export class User extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Mobile: UserMobile
@@ -85,8 +83,6 @@ export class User extends ros.Resource {
     public readonly attrUserName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::DMS::User`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

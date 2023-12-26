@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Brainindustrial
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::BrainIndustrial::PidOrganization`.</summary>
+    /// <summary>Properties for defining a `RosPidOrganization`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-brainindustrial-pidorganization
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-brainindustrial.RosPidOrganizationProps")]
     public class RosPidOrganizationProps : AlibabaCloud.SDK.ROS.CDK.Brainindustrial.IRosPidOrganizationProps
     {

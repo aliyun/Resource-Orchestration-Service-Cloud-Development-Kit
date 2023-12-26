@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::SLB::BackendServerAttachment`.</summary>
+    /// <summary>Properties for defining a `BackendServerAttachment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-backendserverattachment
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-slb.BackendServerAttachmentProps")]
     public class BackendServerAttachmentProps : AlibabaCloud.SDK.ROS.CDK.Slb.IBackendServerAttachmentProps
     {

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::VPC::NatGateways`.</summary>
+    /// <summary>Properties for defining a `NatGateways`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-natgateways
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.datasource.NatGatewaysProps")]
     public class NatGatewaysProps : AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource.INatGatewaysProps
     {

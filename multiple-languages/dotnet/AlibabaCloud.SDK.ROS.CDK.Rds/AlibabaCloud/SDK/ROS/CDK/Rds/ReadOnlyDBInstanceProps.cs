@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::RDS::ReadOnlyDBInstance`.</summary>
+    /// <summary>Properties for defining a `ReadOnlyDBInstance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-readonlydbinstance
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-rds.ReadOnlyDBInstanceProps")]
     public class ReadOnlyDBInstanceProps : AlibabaCloud.SDK.ROS.CDK.Rds.IReadOnlyDBInstanceProps
     {

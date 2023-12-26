@@ -4,13 +4,16 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sag
 {
-    /// <summary>Properties for defining a `ALIYUN::SAG::QosPolicy`.</summary>
+    /// <summary>Properties for defining a `RosQosPolicy`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-qospolicy
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosQosPolicyProps), fullyQualifiedName: "@alicloud/ros-cdk-sag.RosQosPolicyProps")]
     public interface IRosQosPolicyProps
     {
         /// <remarks>
         /// <strong>Property</strong>: destCidr: The range of the destination IP addresses.
-        /// Specify the value of this parameter in CIDR notation. Example: 192.168.10.0/24.
+        /// Specify the value of this parameter in CIDR notation. Example: 192.168.10.0\/24.
         /// </remarks>
         [JsiiProperty(name: "destCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object DestCidr
@@ -22,9 +25,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         /// <strong>Property</strong>: destPortRange: The range of destination ports.
         /// Valid values: 1 to 65535 and -1.
         /// Set this parameter in one of the following formats:
-        /// 1/200: a port range from 1 to 200
-        /// 80/80: port 80
-        /// -1/-1: all ports
+        /// 1\/200: a port range from 1 to 200
+        /// 80\/80: port 80
+        /// -1\/-1: all ports
         /// </remarks>
         [JsiiProperty(name: "destPortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object DestPortRange
@@ -64,7 +67,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
 
         /// <remarks>
         /// <strong>Property</strong>: sourceCidr: The range of the source IP addresses.
-        /// Specify the value of this parameter in CIDR notation. Example: 192.168.1.0/24.
+        /// Specify the value of this parameter in CIDR notation. Example: 192.168.1.0\/24.
         /// </remarks>
         [JsiiProperty(name: "sourceCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object SourceCidr
@@ -76,9 +79,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         /// <strong>Property</strong>: sourcePortRange: The range of source ports.
         /// Valid values: 1 to 65535 and -1.
         /// Set this parameter in one of the following formats:
-        /// 1/200: a port range from 1 to 200
-        /// 80/80: port 80
-        /// -1/-1: all ports
+        /// 1\/200: a port range from 1 to 200
+        /// 80\/80: port 80
+        /// -1\/-1: all ports
         /// </remarks>
         [JsiiProperty(name: "sourcePortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object SourcePortRange
@@ -176,7 +179,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::SAG::QosPolicy`.</summary>
+        /// <summary>Properties for defining a `RosQosPolicy`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-qospolicy
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosQosPolicyProps), fullyQualifiedName: "@alicloud/ros-cdk-sag.RosQosPolicyProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sag.IRosQosPolicyProps
         {
@@ -186,7 +192,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
 
             /// <remarks>
             /// <strong>Property</strong>: destCidr: The range of the destination IP addresses.
-            /// Specify the value of this parameter in CIDR notation. Example: 192.168.10.0/24.
+            /// Specify the value of this parameter in CIDR notation. Example: 192.168.10.0\/24.
             /// </remarks>
             [JsiiProperty(name: "destCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object DestCidr
@@ -198,9 +204,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
             /// <strong>Property</strong>: destPortRange: The range of destination ports.
             /// Valid values: 1 to 65535 and -1.
             /// Set this parameter in one of the following formats:
-            /// 1/200: a port range from 1 to 200
-            /// 80/80: port 80
-            /// -1/-1: all ports
+            /// 1\/200: a port range from 1 to 200
+            /// 80\/80: port 80
+            /// -1\/-1: all ports
             /// </remarks>
             [JsiiProperty(name: "destPortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object DestPortRange
@@ -240,7 +246,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
 
             /// <remarks>
             /// <strong>Property</strong>: sourceCidr: The range of the source IP addresses.
-            /// Specify the value of this parameter in CIDR notation. Example: 192.168.1.0/24.
+            /// Specify the value of this parameter in CIDR notation. Example: 192.168.1.0\/24.
             /// </remarks>
             [JsiiProperty(name: "sourceCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object SourceCidr
@@ -252,9 +258,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
             /// <strong>Property</strong>: sourcePortRange: The range of source ports.
             /// Valid values: 1 to 65535 and -1.
             /// Set this parameter in one of the following formats:
-            /// 1/200: a port range from 1 to 200
-            /// 80/80: port 80
-            /// -1/-1: all ports
+            /// 1\/200: a port range from 1 to 200
+            /// 80\/80: port 80
+            /// -1\/-1: all ports
             /// </remarks>
             [JsiiProperty(name: "sourcePortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object SourcePortRange

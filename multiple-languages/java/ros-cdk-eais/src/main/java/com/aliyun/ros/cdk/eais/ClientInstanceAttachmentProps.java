@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.eais;
 
 /**
- * Properties for defining a <code>ALIYUN::EAIS::ClientInstanceAttachment</code>.
+ * Properties for defining a <code>ClientInstanceAttachment</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eais-clientinstanceattachment
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.566Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.035Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eais.$Module.class, fqn = "@alicloud/ros-cdk-eais.ClientInstanceAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(ClientInstanceAttachmentProps.Jsii$Proxy.class)
 public interface ClientInstanceAttachmentProps extends software.amazon.jsii.JsiiSerializable {

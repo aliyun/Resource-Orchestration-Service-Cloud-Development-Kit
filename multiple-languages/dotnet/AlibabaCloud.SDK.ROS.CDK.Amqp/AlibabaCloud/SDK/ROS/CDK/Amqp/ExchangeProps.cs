@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::AMQP::Exchange`.</summary>
+    /// <summary>Properties for defining a `Exchange`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-exchange
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-amqp.ExchangeProps")]
     public class ExchangeProps : AlibabaCloud.SDK.ROS.CDK.Amqp.IExchangeProps
     {

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cms.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::CMS::Namespaces`.</summary>
+    /// <summary>Properties for defining a `RosNamespaces`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-namespaces
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosNamespacesProps), fullyQualifiedName: "@alicloud/ros-cdk-cms.datasource.RosNamespacesProps")]
     public interface IRosNamespacesProps
     {
@@ -21,7 +24,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::CMS::Namespaces`.</summary>
+        /// <summary>Properties for defining a `RosNamespaces`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-namespaces
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosNamespacesProps), fullyQualifiedName: "@alicloud/ros-cdk-cms.datasource.RosNamespacesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cms.Datasource.IRosNamespacesProps
         {

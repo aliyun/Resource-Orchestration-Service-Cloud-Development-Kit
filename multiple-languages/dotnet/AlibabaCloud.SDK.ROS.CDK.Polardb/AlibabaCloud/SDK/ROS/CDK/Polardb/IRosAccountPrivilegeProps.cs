@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Polardb
 {
-    /// <summary>Properties for defining a `ALIYUN::POLARDB::AccountPrivilege`.</summary>
+    /// <summary>Properties for defining a `RosAccountPrivilege`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-accountprivilege
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosAccountPrivilegeProps), fullyQualifiedName: "@alicloud/ros-cdk-polardb.RosAccountPrivilegeProps")]
     public interface IRosAccountPrivilegeProps
     {
@@ -52,7 +55,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::POLARDB::AccountPrivilege`.</summary>
+        /// <summary>Properties for defining a `RosAccountPrivilege`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-accountprivilege
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosAccountPrivilegeProps), fullyQualifiedName: "@alicloud/ros-cdk-polardb.RosAccountPrivilegeProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Polardb.IRosAccountPrivilegeProps
         {

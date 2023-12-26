@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CS::ManagedEdgeKubernetesCluster`.</summary>
+    /// <summary>Properties for defining a `ManagedEdgeKubernetesCluster`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managededgekubernetescluster
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cs.ManagedEdgeKubernetesClusterProps")]
     public class ManagedEdgeKubernetesClusterProps : AlibabaCloud.SDK.ROS.CDK.Cs.IManagedEdgeKubernetesClusterProps
     {

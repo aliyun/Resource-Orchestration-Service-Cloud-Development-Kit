@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.nas;
 
 /**
- * Properties for defining a <code>ALIYUN::NAS::MountTarget</code>.
+ * Properties for defining a <code>MountTarget</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-mounttarget
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.184Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.960Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.MountTargetProps")
 @software.amazon.jsii.Jsii.Proxy(MountTargetProps.Jsii$Proxy.class)
 public interface MountTargetProps extends software.amazon.jsii.JsiiSerializable {

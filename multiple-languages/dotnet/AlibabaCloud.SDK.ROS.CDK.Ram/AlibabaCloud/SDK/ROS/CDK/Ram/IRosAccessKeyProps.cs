@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ram
 {
-    /// <summary>Properties for defining a `ALIYUN::RAM::AccessKey`.</summary>
+    /// <summary>Properties for defining a `RosAccessKey`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-accesskey
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosAccessKeyProps), fullyQualifiedName: "@alicloud/ros-cdk-ram.RosAccessKeyProps")]
     public interface IRosAccessKeyProps
     {
@@ -17,7 +20,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::RAM::AccessKey`.</summary>
+        /// <summary>Properties for defining a `RosAccessKey`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-accesskey
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosAccessKeyProps), fullyQualifiedName: "@alicloud/ros-cdk-ram.RosAccessKeyProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ram.IRosAccessKeyProps
         {

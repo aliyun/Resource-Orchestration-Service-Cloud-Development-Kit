@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc.Datasource
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `DATASOURCE::EHPC::Nodes`.</summary>
+    /// <summary>Properties for defining a `Nodes`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ehpc-nodes
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ehpc.datasource.NodesProps")]
     public class NodesProps : AlibabaCloud.SDK.ROS.CDK.Ehpc.Datasource.INodesProps
     {

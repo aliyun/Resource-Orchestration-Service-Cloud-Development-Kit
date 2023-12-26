@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Imm
 {
-    /// <summary>Properties for defining a `ALIYUN::IMM::Project`.</summary>
+    /// <summary>Properties for defining a `RosProject`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-imm-project
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosProjectProps), fullyQualifiedName: "@alicloud/ros-cdk-imm.RosProjectProps")]
     public interface IRosProjectProps
     {
@@ -30,7 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Imm
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::IMM::Project`.</summary>
+        /// <summary>Properties for defining a `RosProject`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-imm-project
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosProjectProps), fullyQualifiedName: "@alicloud/ros-cdk-imm.RosProjectProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Imm.IRosProjectProps
         {

@@ -4,7 +4,8 @@ import { RosHost } from './bastionhost.generated';
 export { RosHost as HostProperty };
 
 /**
- * Properties for defining a `ALIYUN::BastionHost::Host`
+ * Properties for defining a `Host`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bastionhost-host
  */
 export interface HostProps {
 
@@ -72,14 +73,11 @@ export interface HostProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::BastionHost::Host`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::BastionHost::Host`, which is used to create a host for O&M in a bastion host.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosHost`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bastionhost-host
  */
 export class Host extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute HostId: The ID of the host that was created.
@@ -87,8 +85,6 @@ export class Host extends ros.Resource {
     public readonly attrHostId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::BastionHost::Host`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::VPC::Ipv6Gateway`.</summary>
+    /// <summary>Properties for defining a `Ipv6Gateway`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipv6gateway
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.Ipv6GatewayProps")]
     public class Ipv6GatewayProps : AlibabaCloud.SDK.ROS.CDK.Vpc.IIpv6GatewayProps
     {

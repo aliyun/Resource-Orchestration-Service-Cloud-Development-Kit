@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::VPC::EIPSegment`.</summary>
+    /// <summary>Properties for defining a `EIPSegment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eipsegment
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.EIPSegmentProps")]
     public class EIPSegmentProps : AlibabaCloud.SDK.ROS.CDK.Vpc.IEIPSegmentProps
     {

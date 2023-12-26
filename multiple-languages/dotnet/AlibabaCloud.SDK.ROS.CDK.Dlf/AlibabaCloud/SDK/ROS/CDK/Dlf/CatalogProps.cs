@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dlf
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::DLF::Catalog`.</summary>
+    /// <summary>Properties for defining a `Catalog`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dlf-catalog
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-dlf.CatalogProps")]
     public class CatalogProps : AlibabaCloud.SDK.ROS.CDK.Dlf.ICatalogProps
     {
@@ -73,7 +76,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dlf
 
         private object? _locationUri;
 
-        /// <summary>Property locationUri: Location uri, for example: oss://dlf-test-oss-location/.</summary>
+        /// <summary>Property locationUri: Location uri, for example: oss:\/\/dlf-test-oss-location\/.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "locationUri", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? LocationUri

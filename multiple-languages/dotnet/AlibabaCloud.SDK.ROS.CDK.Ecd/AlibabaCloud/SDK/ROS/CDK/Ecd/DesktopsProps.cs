@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecd
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ECD::Desktops`.</summary>
+    /// <summary>Properties for defining a `Desktops`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-desktops
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecd.DesktopsProps")]
     public class DesktopsProps : AlibabaCloud.SDK.ROS.CDK.Ecd.IDesktopsProps
     {
@@ -611,7 +614,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecd
             }
         }
 
-        /// <summary>Property tags: The list of desktops tags in the form of key/value pairs.</summary>
+        /// <summary>Property tags: The list of desktops tags in the form of key\/value pairs.</summary>
         /// <remarks>
         /// You can define a maximum of 20 tags for each desktops.
         /// </remarks>

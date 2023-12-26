@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
 {
-    /// <summary>A ROS template type:  `ALIYUN::CLOUDFW::ControlPolicy`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::ControlPolicy`, which is used to add an access control policy.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `ControlPolicy` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-controlpolicy
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Cloudfw.RosControlPolicy), fullyQualifiedName: "@alicloud/ros-cdk-cloudfw.RosControlPolicy", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-cloudfw.RosControlPolicyProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosControlPolicy : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::CLOUDFW::ControlPolicy`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -162,7 +165,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
 
         /// <remarks>
         /// <strong>Property</strong>: destination: Security Access Control destination address policy.
-        /// When DestinationType is net, Destination purpose CIDR. For example: 1.2.3.4/24
+        /// When DestinationType is net, Destination purpose CIDR. For example: 1.2.3.4\/24
         /// When DestinationType as a group, Destination for the purpose of the address book name. For example: db_group
         /// When DestinationType for the domain, Destination for the purpose of a domain name. For example:. * Aliyuncs.com
         /// When DestinationType as location, Destination area for the purpose (see below position encoding specific regions). For example: [ "BJ11", "ZB"]
@@ -351,7 +354,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
 
         /// <remarks>
         /// <strong>Property</strong>: source: Security access control source address policy.
-        /// When SourceType for the net, Source is the source CIDR. For example: 1.2.3.0/24
+        /// When SourceType for the net, Source is the source CIDR. For example: 1.2.3.0\/24
         /// When SourceType as a group, Source name for the source address book. For example: db_group
         /// When SourceType as location, Source source region (specific region position encoder see below). For example, [ "BJ11", "ZB"]
         /// </remarks>

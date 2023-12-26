@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Nas.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::NAS::FileSystems`.</summary>
+    /// <summary>Properties for defining a `FileSystems`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-filesystems
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IFileSystemsProps), fullyQualifiedName: "@alicloud/ros-cdk-nas.datasource.FileSystemsProps")]
     public interface IFileSystemsProps
     {
@@ -36,7 +39,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::NAS::FileSystems`.</summary>
+        /// <summary>Properties for defining a `FileSystems`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-filesystems
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IFileSystemsProps), fullyQualifiedName: "@alicloud/ros-cdk-nas.datasource.FileSystemsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Nas.Datasource.IFileSystemsProps
         {

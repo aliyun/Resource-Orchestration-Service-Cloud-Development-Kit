@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.cms;
 
 /**
- * Properties for defining a <code>ALIYUN::CMS::DynamicTagGroup</code>.
+ * Properties for defining a <code>RosDynamicTagGroup</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-dynamictaggroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.020Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.400Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosDynamicTagGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosDynamicTagGroupProps.Jsii$Proxy.class)
 public interface RosDynamicTagGroupProps extends software.amazon.jsii.JsiiSerializable {

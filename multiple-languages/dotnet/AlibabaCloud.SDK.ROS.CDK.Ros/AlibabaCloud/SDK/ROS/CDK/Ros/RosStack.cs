@@ -4,11 +4,16 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ros
 {
-    /// <summary>A ROS template type:  `ALIYUN::ROS::Stack`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::Stack`, which is used to create a nested stack.</summary>
+    /// <remarks>
+    /// You can nest stacks up to five levels of depth.
+    ///
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Stack` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-stack
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Ros.RosStack), fullyQualifiedName: "@alicloud/ros-cdk-ros.RosStack", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-ros.RosStackProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosStack : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::ROS::Stack`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -56,7 +61,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
             get => GetInstanceProperty<System.Collections.Generic.IDictionary<string, object>>()!;
         }
 
-        /// <summary>A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.</summary>
         [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
         public virtual bool EnableResourcePropertyConstraint
         {
@@ -202,7 +206,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: templateUrl: Location of file containing the template body. The URL must point to a template (max size: 524288 bytes) that is located in a http web server(http, https), or an Aliyun OSS bucket(Such as oss://ros-template/demo?RegionId=cn-hangzhou, oss://ros-template/demo. RegionId is default to the value of RegionId Parameter of the request.).
+        /// <strong>Property</strong>: templateUrl: Location of file containing the template body. The URL must point to a template (max size: 524288 bytes) that is located in a http web server(http, https), or an Aliyun OSS bucket(Such as oss:\/\/ros-template\/demo?RegionId=cn-hangzhou, oss:\/\/ros-template\/demo. RegionId is default to the value of RegionId Parameter of the request.).
         /// You must specify either the TemplateBody or the TemplateURL property. If both are specified, TemplateBody will be used.
         /// </remarks>
         [JsiiOptional]

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
 {
-    /// <summary>Properties for defining a `ALIYUN::GPDB::Account`.</summary>
+    /// <summary>Properties for defining a `RosAccount`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-account
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosAccountProps), fullyQualifiedName: "@alicloud/ros-cdk-gpdb.RosAccountProps")]
     public interface IRosAccountProps
     {
@@ -60,7 +63,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::GPDB::Account`.</summary>
+        /// <summary>Properties for defining a `RosAccount`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-account
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosAccountProps), fullyQualifiedName: "@alicloud/ros-cdk-gpdb.RosAccountProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Gpdb.IRosAccountProps
         {

@@ -4,7 +4,8 @@ import { RosAddressBook } from './cloudfw.generated';
 export { RosAddressBook as AddressBookProperty };
 
 /**
- * Properties for defining a `ALIYUN::CLOUDFW::AddressBook`
+ * Properties for defining a `AddressBook`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-addressbook
  */
 export interface AddressBookProps {
 
@@ -30,8 +31,8 @@ export interface AddressBookProps {
     /**
      * Property addressList: Address list of the address book, between multiple addresses separated by commas.
      * Note: When GroupType ip, it must be set to port or domain.
-     * When GroupType as ip, address list, fill in the IP address. For example: 1.2.3.4/32, 1.2.3.0/24
-     * When GroupType for the port, the address list to fill in ports or port ranges. For example: 80, 100/200
+     * When GroupType as ip, address list, fill in the IP address. For example: 1.2.3.4\/32, 1.2.3.0\/24
+     * When GroupType for the port, the address list to fill in ports or port ranges. For example: 80, 100\/200
      * When GroupType for the domain, the domain name to fill in the address list. For example: demo1.aliyun.com, demo2.aliyun.com
      */
     readonly addressList?: string | ros.IResolvable;
@@ -60,14 +61,11 @@ export interface AddressBookProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CLOUDFW::AddressBook`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::AddressBook`, which is used to create access control address books. Access control address books include IP address books, Elastic Compute Service (ECS) tag address books, port address books, and domain address books.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAddressBook`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-addressbook
  */
 export class AddressBook extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute GroupUuid: After a successful return to the address book to add unique identification ID.
@@ -75,8 +73,6 @@ export class AddressBook extends ros.Resource {
     public readonly attrGroupUuid: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CLOUDFW::AddressBook`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

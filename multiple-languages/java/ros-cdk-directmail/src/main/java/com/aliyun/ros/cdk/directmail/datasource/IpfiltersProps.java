@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.directmail.datasource;
 
 /**
- * Properties for defining a <code>DATASOURCE::DirectMail::Ipfilters</code>.
+ * Properties for defining a <code>Ipfilters</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-directmail-ipfilters
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.448Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.846Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.directmail.$Module.class, fqn = "@alicloud/ros-cdk-directmail.datasource.IpfiltersProps")
 @software.amazon.jsii.Jsii.Proxy(IpfiltersProps.Jsii$Proxy.class)
 public interface IpfiltersProps extends software.amazon.jsii.JsiiSerializable {

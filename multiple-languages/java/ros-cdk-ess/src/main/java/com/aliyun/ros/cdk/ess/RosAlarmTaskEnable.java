@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.ess;
 
 /**
- * A ROS template type:  <code>ALIYUN::ESS::AlarmTaskEnable</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ESS::AlarmTaskEnable</code>, which is used to start an alarm task.
+ * <p>
+ * You can call this operation to enable alarm tasks when the task is stopped.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:35.483Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.987Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosAlarmTaskEnable")
 public class RosAlarmTaskEnable extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,8 +22,6 @@ public class RosAlarmTaskEnable extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ESS::AlarmTaskEnable</code>.
-     * <p>
      * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
      * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
      * @param props <ul><li>resource properties.</li></ul> This parameter is required.
@@ -83,16 +83,10 @@ public class RosAlarmTaskEnable extends com.aliyun.ros.cdk.core.RosResource {
         software.amazon.jsii.Kernel.set(this, "enable", java.util.Objects.requireNonNull(value, "enable is required"));
     }
 
-    /**
-     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
-     */
     public @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
         return software.amazon.jsii.Kernel.get(this, "enableResourcePropertyConstraint", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
     }
 
-    /**
-     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
-     */
     public void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
         software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
     }

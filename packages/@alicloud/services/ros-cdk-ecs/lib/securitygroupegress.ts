@@ -4,7 +4,8 @@ import { RosSecurityGroupEgress } from './ecs.generated';
 export { RosSecurityGroupEgress as SecurityGroupEgressProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECS::SecurityGroupEgress`
+ * Properties for defining a `SecurityGroupEgress`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroupegress
  */
 export interface SecurityGroupEgressProps {
 
@@ -14,7 +15,7 @@ export interface SecurityGroupEgressProps {
     readonly ipProtocol: string | ros.IResolvable;
 
     /**
-     * Property portRange: Ip protocol relative port range. For tcp and udp, the port rang is [1,65535], using format '1/200'For icmp|gre|all protocel, the port range should be '-1/-1'
+     * Property portRange: Ip protocol relative port range. For tcp and udp, the port rang is [1,65535], using format '1\/200'For icmp|gre|all protocel, the port range should be '-1\/-1'
      */
     readonly portRange: string | ros.IResolvable;
 
@@ -73,18 +74,13 @@ export interface SecurityGroupEgressProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECS::SecurityGroupEgress`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::SecurityGroupEgress`, which is used to create an outbound access rule for a security group.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecurityGroupEgress`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroupegress
  */
 export class SecurityGroupEgress extends ros.Resource {
 
     /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
-
-    /**
-     * Create a new `ALIYUN::ECS::SecurityGroupEgress`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

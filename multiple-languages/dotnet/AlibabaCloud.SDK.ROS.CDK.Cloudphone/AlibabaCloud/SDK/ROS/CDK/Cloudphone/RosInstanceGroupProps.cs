@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudphone
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CloudPhone::InstanceGroup`.</summary>
+    /// <summary>Properties for defining a `RosInstanceGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-instancegroup
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cloudphone.RosInstanceGroupProps")]
     public class RosInstanceGroupProps : AlibabaCloud.SDK.ROS.CDK.Cloudphone.IRosInstanceGroupProps
     {
@@ -298,7 +301,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudphone
 
         /// <remarks>
         /// <strong>Property</strong>: description: Description of instance.
-        /// The length is 2~256 English or Chinese characters and cannot start with http:// and https://.
+        /// The length is 2~256 English or Chinese characters and cannot start with http:\/\/ and https:\/\/.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -510,7 +513,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudphone
         private object? _periodUnit;
 
         /// <remarks>
-        /// <strong>Property</strong>: periodUnit: Unit of prepaid time period, it could be Month/Year. Default value is Month.
+        /// <strong>Property</strong>: periodUnit: Unit of prepaid time period, it could be Month\/Year. Default value is Month.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

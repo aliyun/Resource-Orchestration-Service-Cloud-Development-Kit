@@ -4,7 +4,8 @@ import { RosFlow } from './fnf.generated';
 export { RosFlow as FlowProperty };
 
 /**
- * Properties for defining a `ALIYUN::FNF::Flow`
+ * Properties for defining a `Flow`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fnf-flow
  */
 export interface FlowProps {
 
@@ -35,14 +36,11 @@ export interface FlowProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::FNF::Flow`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::FNF::Flow`, which is used to create a flow.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFlow`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fnf-flow
  */
 export class Flow extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute CreatedTime: Flow creation time.
@@ -65,8 +63,6 @@ export class Flow extends ros.Resource {
     public readonly attrName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::FNF::Flow`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -4,7 +4,8 @@ import { RosInstanceClasses } from './redis.generated';
 export { RosInstanceClasses as InstanceClassesProperty };
 
 /**
- * Properties for defining a `DATASOURCE::REDIS::InstanceClasses`
+ * Properties for defining a `InstanceClasses`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-instanceclasses
  */
 export interface InstanceClassesProps {
 
@@ -38,7 +39,7 @@ export interface InstanceClassesProps {
 
     /**
      * Property nodeId: The ID of the data node for which you want to query available instance types. You can call the DescribeLogicInstanceTopology operation to query the ID of the data node. Remove the number sign (#) and the content that follows the number sign. For example, retain only r-bp10noxlhcoim2****-db-0.
-     *  Note Before you set this parameter, you must set the InstanceId parameter to the ID of an instance in the cluster or read/write splitting architecture.
+     *  Note Before you set this parameter, you must set the InstanceId parameter to the ID of an instance in the cluster or read\/write splitting architecture.
      */
     readonly nodeId?: string | ros.IResolvable;
 
@@ -72,14 +73,11 @@ export interface InstanceClassesProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::REDIS::InstanceClasses`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::REDIS::InstanceClasses`DATASOURCE::REDIS::Instances is used to query the information about ApsaraDB for Redis instances.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstanceClasses`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-instanceclasses
  */
 export class InstanceClasses extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute InstanceClassIds: The list of db instance class ids.
@@ -92,8 +90,6 @@ export class InstanceClasses extends ros.Resource {
     public readonly attrInstanceClasses: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::REDIS::InstanceClasses`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

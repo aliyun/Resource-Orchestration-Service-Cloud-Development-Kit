@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb.Datasource
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `DATASOURCE::SLB::Rules`.</summary>
+    /// <summary>Properties for defining a `RosRules`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-rules
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-slb.datasource.RosRulesProps")]
     public class RosRulesProps : AlibabaCloud.SDK.ROS.CDK.Slb.Datasource.IRosRulesProps
     {

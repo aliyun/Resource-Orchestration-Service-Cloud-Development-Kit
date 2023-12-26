@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Dts.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::DTS::MigrationInstances`.</summary>
+    /// <summary>Properties for defining a `RosMigrationInstances`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dts-migrationinstances
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-dts.datasource.RosMigrationInstancesProps")]
     public class RosMigrationInstancesProps : AlibabaCloud.SDK.ROS.CDK.Dts.Datasource.IRosMigrationInstancesProps
     {

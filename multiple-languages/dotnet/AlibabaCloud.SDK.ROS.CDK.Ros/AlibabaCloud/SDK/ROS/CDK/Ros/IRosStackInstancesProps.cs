@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ros
 {
-    /// <summary>Properties for defining a `ALIYUN::ROS::StackInstances`.</summary>
+    /// <summary>Properties for defining a `RosStackInstances`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-stackinstances
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosStackInstancesProps), fullyQualifiedName: "@alicloud/ros-cdk-ros.RosStackInstancesProps")]
     public interface IRosStackInstancesProps
     {
@@ -130,7 +133,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ROS::StackInstances`.</summary>
+        /// <summary>Properties for defining a `RosStackInstances`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-stackinstances
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosStackInstancesProps), fullyQualifiedName: "@alicloud/ros-cdk-ros.RosStackInstancesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ros.IRosStackInstancesProps
         {

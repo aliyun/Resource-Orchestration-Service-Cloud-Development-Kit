@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::SLB::LoadBalancerClone`.</summary>
+    /// <summary>Properties for defining a `RosLoadBalancerClone`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-loadbalancerclone
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-slb.RosLoadBalancerCloneProps")]
     public class RosLoadBalancerCloneProps : AlibabaCloud.SDK.ROS.CDK.Slb.IRosLoadBalancerCloneProps
     {
@@ -163,7 +166,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         private object? _loadBalancerName;
 
         /// <remarks>
-        /// <strong>Property</strong>: loadBalancerName: Name of created load balancer. Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, /, _,.' When not specified, a default name will be assigned.
+        /// <strong>Property</strong>: loadBalancerName: Name of created load balancer. Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, \/, _,.' When not specified, a default name will be assigned.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "loadBalancerName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

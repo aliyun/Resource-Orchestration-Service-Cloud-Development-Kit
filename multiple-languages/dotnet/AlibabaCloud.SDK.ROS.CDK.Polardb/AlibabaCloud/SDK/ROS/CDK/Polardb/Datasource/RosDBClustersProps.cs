@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Polardb.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::POLARDB::DBClusters`.</summary>
+    /// <summary>Properties for defining a `RosDBClusters`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-dbclusters
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-polardb.datasource.RosDBClustersProps")]
     public class RosDBClustersProps : AlibabaCloud.SDK.ROS.CDK.Polardb.Datasource.IRosDBClustersProps
     {

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Rds
 {
-    /// <summary>Properties for defining a `ALIYUN::RDS::DBInstanceParameterGroup`.</summary>
+    /// <summary>Properties for defining a `DBInstanceParameterGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstanceparametergroup
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IDBInstanceParameterGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-rds.DBInstanceParameterGroupProps")]
     public interface IDBInstanceParameterGroupProps
     {
@@ -33,7 +36,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::RDS::DBInstanceParameterGroup`.</summary>
+        /// <summary>Properties for defining a `DBInstanceParameterGroup`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstanceparametergroup
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IDBInstanceParameterGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-rds.DBInstanceParameterGroupProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Rds.IDBInstanceParameterGroupProps
         {

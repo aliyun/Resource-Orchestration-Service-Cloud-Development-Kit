@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Redis
 {
-    /// <summary>Properties for defining a `ALIYUN::REDIS::Instance`.</summary>
+    /// <summary>Properties for defining a `RosInstance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-instance
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-redis.RosInstanceProps")]
     public interface IRosInstanceProps
     {
@@ -365,7 +368,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::REDIS::Instance`.</summary>
+        /// <summary>Properties for defining a `RosInstance`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-instance
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-redis.RosInstanceProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Redis.IRosInstanceProps
         {

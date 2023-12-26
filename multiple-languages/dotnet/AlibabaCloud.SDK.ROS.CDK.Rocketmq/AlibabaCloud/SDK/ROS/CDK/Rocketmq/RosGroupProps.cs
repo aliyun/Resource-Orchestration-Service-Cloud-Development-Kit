@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ROCKETMQ::Group`.</summary>
+    /// <summary>Properties for defining a `RosGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq-group
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-rocketmq.RosGroupProps")]
     public class RosGroupProps : AlibabaCloud.SDK.ROS.CDK.Rocketmq.IRosGroupProps
     {

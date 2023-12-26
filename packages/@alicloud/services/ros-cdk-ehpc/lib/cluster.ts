@@ -4,7 +4,8 @@ import { RosCluster } from './ehpc.generated';
 export { RosCluster as ClusterProperty };
 
 /**
- * Properties for defining a `ALIYUN::EHPC::Cluster`
+ * Properties for defining a `Cluster`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-cluster
  */
 export interface ClusterProps {
 
@@ -179,17 +180,17 @@ export interface ClusterProps {
     readonly networkInterfaceTrafficMode?: string | ros.IResolvable;
 
     /**
-     * Property password: Root password of jump server (login node). 8 to 30 characters, must contain three (upper and lower case letters, numbers and special symbols). ! Supports the following special characters :() `~ @ # $% ^ & * - + = | {} []:; '<>, / Be sure to use the HTTPS protocol API call to avoid password leaks that may occur.?.
+     * Property password: Root password of jump server (login node). 8 to 30 characters, must contain three (upper and lower case letters, numbers and special symbols). ! Supports the following special characters :() `~ @ # $% ^ & * - + = | {} []:; '<>, \/ Be sure to use the HTTPS protocol API call to avoid password leaks that may occur.?.
      */
     readonly password?: string | ros.IResolvable;
 
     /**
-     * Property period: The purchase of long resources, units: week / month / year. When the value of the parameter EcsChargeType when PrePaid take effect and for the selected value will be.
+     * Property period: The purchase of long resources, units: week \/ month \/ year. When the value of the parameter EcsChargeType when PrePaid take effect and for the selected value will be.
      */
     readonly period?: number | ros.IResolvable;
 
     /**
-     * Property periodUnit: The purchase of long-resources unit. Alternatively value Week / Month / year.
+     * Property periodUnit: The purchase of long-resources unit. Alternatively value Week \/ Month \/ year.
      */
     readonly periodUnit?: string | ros.IResolvable;
 
@@ -213,7 +214,7 @@ export interface ClusterProps {
     readonly ramRoleName?: string | ros.IResolvable;
 
     /**
-     * Property remoteDirectory: Mount shared storage remote directory. The final path to the mount point and mount the remote directory composition: NasMountpoint: / RemoteDirectory
+     * Property remoteDirectory: Mount shared storage remote directory. The final path to the mount point and mount the remote directory composition: NasMountpoint: \/ RemoteDirectory
      */
     readonly remoteDirectory?: string | ros.IResolvable;
 
@@ -258,10 +259,10 @@ export interface ClusterProps {
 
     /**
      * Property systemDiskLevel: The performance level of the ESSD that is created as the system disk. Valid values:
-     * PL0: A single ESSD can deliver up to 10,000 input/output operations per second (IOPS) of random read/write.
-     * PL1: A single ESSD can deliver up to 50,000 IOPS of random read/write.
-     * PL2: A single ESSD can deliver up to 100,000 IOPS of random read/write.
-     * PL3: A single ESSD can deliver up to 1,000,000 IOPS of random read/write.
+     * PL0: A single ESSD can deliver up to 10,000 input\/output operations per second (IOPS) of random read\/write.
+     * PL1: A single ESSD can deliver up to 50,000 IOPS of random read\/write.
+     * PL2: A single ESSD can deliver up to 100,000 IOPS of random read\/write.
+     * PL3: A single ESSD can deliver up to 1,000,000 IOPS of random read\/write.
      * Default value: PL1
      */
     readonly systemDiskLevel?: string | ros.IResolvable;
@@ -324,14 +325,11 @@ export interface ClusterProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::EHPC::Cluster`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EHPC::Cluster`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-cluster
  */
 export class Cluster extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ClusterId: Cluster Id.
@@ -355,8 +353,6 @@ You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2,
     public readonly attrSecurityGroupId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::EHPC::Cluster`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

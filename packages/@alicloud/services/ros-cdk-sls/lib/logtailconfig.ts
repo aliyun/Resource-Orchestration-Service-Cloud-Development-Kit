@@ -4,7 +4,8 @@ import { RosLogtailConfig } from './sls.generated';
 export { RosLogtailConfig as LogtailConfigProperty };
 
 /**
- * Properties for defining a `ALIYUN::SLS::LogtailConfig`
+ * Properties for defining a `LogtailConfig`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-logtailconfig
  */
 export interface LogtailConfigProps {
 
@@ -77,7 +78,7 @@ export interface LogtailConfigProps {
      *             "content"
      *         ],
      *         "localStorage": true,
-     *         "logPath": "/var/log/test",
+     *         "logPath": "\/var\/log\/test",
      *         "logTimezone": "",
      *         "logType": "delimiter_log",
      *         "maxDepth": 100,
@@ -111,14 +112,11 @@ export interface LogtailConfigProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::SLS::LogtailConfig`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::LogtailConfig`, which is used to configure Logtail properties for data collection.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLogtailConfig`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-logtailconfig
  */
 export class LogtailConfig extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AppliedMachineGroups: Applied machine groups.
@@ -136,8 +134,6 @@ export class LogtailConfig extends ros.Resource {
     public readonly attrLogtailConfigName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::SLS::LogtailConfig`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

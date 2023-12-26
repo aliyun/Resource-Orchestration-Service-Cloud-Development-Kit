@@ -4,7 +4,8 @@ import { RosApp } from './sag.generated';
 export { RosApp as AppProperty };
 
 /**
- * Properties for defining a `ALIYUN::SAG::App`
+ * Properties for defining a `App`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-app
  */
 export interface AppProps {
 
@@ -45,14 +46,11 @@ export interface AppProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::SAG::App`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::App`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApp`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-app
  */
 export class App extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute OrderId: The ID of the order that you placed to subscribe to the SAG APP instance.
@@ -65,8 +63,6 @@ export class App extends ros.Resource {
     public readonly attrSmartAgId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::SAG::App`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

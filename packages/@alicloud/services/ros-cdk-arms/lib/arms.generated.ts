@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::ARMS::AlertContact`
+ * Properties for defining a `RosAlertContact`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-alertcontact
  */
 export interface RosAlertContactProps {
 
@@ -95,18 +96,15 @@ function rosAlertContactPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * A ROS template type:  `ALIYUN::ARMS::AlertContact`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::AlertContact`, which is used to create an alert contact.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AlertContact` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-alertcontact
  */
 export class RosAlertContact extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ARMS::AlertContact";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ContactId: The ID of the alert contact that you created.
@@ -152,8 +150,6 @@ export class RosAlertContact extends ros.RosResource {
     public systemNoc: boolean | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ARMS::AlertContact`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -190,7 +186,8 @@ export class RosAlertContact extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ARMS::AlertContactGroup`
+ * Properties for defining a `RosAlertContactGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-alertcontactgroup
  */
 export interface RosAlertContactGroupProps {
 
@@ -262,18 +259,15 @@ function rosAlertContactGroupPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * A ROS template type:  `ALIYUN::ARMS::AlertContactGroup`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::AlertContactGroup`, which is used to create an alert contact group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AlertContactGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-alertcontactgroup
  */
 export class RosAlertContactGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ARMS::AlertContactGroup";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ContactGroupId: The ID of the alert contact group that you created.
@@ -304,8 +298,6 @@ export class RosAlertContactGroup extends ros.RosResource {
     public regionId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ARMS::AlertContactGroup`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -336,7 +328,8 @@ export class RosAlertContactGroup extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ARMS::ManagedPrometheus`
+ * Properties for defining a `RosManagedPrometheus`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-managedprometheus
  */
 export interface RosManagedPrometheusProps {
 
@@ -431,18 +424,15 @@ function rosManagedPrometheusPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * A ROS template type:  `ALIYUN::ARMS::ManagedPrometheus`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::ManagedPrometheus`, which is used to install a Prometheus agent in a ACK Serverless (ASK) cluster or an Elastic Compute Service (ECS) cluster.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ManagedPrometheus` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-managedprometheus
  */
 export class RosManagedPrometheus extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ARMS::ManagedPrometheus";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ClusterType: The type of the cluster.
@@ -493,8 +483,6 @@ export class RosManagedPrometheus extends ros.RosResource {
     public grafanaInstanceId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ARMS::ManagedPrometheus`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -532,7 +520,8 @@ export class RosManagedPrometheus extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ARMS::RetcodeApp`
+ * Properties for defining a `RosRetcodeApp`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-retcodeapp
  */
 export interface RosRetcodeAppProps {
 
@@ -598,18 +587,15 @@ function rosRetcodeAppPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::ARMS::RetcodeApp`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::RetcodeApp`, which is used to create an Application Real-Time Monitoring Service (ARMS) browser monitoring job.
+ * @Note This class does not contain additional functions, so it is recommended to use the `RetcodeApp` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-retcodeapp
  */
 export class RosRetcodeApp extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ARMS::RetcodeApp";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AppId: The ID of the application for which you created the browser monitoring job.
@@ -640,8 +626,6 @@ export class RosRetcodeApp extends ros.RosResource {
     public retcodeAppType: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ARMS::RetcodeApp`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

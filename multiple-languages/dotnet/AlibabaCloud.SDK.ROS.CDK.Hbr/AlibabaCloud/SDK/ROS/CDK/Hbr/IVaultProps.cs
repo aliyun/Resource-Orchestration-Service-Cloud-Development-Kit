@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Hbr
 {
-    /// <summary>Properties for defining a `ALIYUN::HBR::Vault`.</summary>
+    /// <summary>Properties for defining a `Vault`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-vault
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IVaultProps), fullyQualifiedName: "@alicloud/ros-cdk-hbr.VaultProps")]
     public interface IVaultProps
     {
@@ -135,7 +138,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::HBR::Vault`.</summary>
+        /// <summary>Properties for defining a `Vault`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-vault
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IVaultProps), fullyQualifiedName: "@alicloud/ros-cdk-hbr.VaultProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Hbr.IVaultProps
         {

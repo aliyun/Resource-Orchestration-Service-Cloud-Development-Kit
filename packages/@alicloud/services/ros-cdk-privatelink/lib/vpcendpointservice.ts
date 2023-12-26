@@ -4,7 +4,8 @@ import { RosVpcEndpointService } from './privatelink.generated';
 export { RosVpcEndpointService as VpcEndpointServiceProperty };
 
 /**
- * Properties for defining a `ALIYUN::PrivateLink::VpcEndpointService`
+ * Properties for defining a `VpcEndpointService`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpointservice
  */
 export interface VpcEndpointServiceProps {
 
@@ -16,7 +17,7 @@ export interface VpcEndpointServiceProps {
     readonly autoAcceptEnabled?: boolean | ros.IResolvable;
 
     /**
-     * Property connectBandwidth: The default maximum bandwidth of the endpoint connection. Valid values: 100 to 1024. Unit: Mbit/s.
+     * Property connectBandwidth: The default maximum bandwidth of the endpoint connection. Valid values: 100 to 1024. Unit: Mbit\/s.
      */
     readonly connectBandwidth?: number | ros.IResolvable;
 
@@ -61,14 +62,11 @@ export interface VpcEndpointServiceProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::PrivateLink::VpcEndpointService`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::PrivateLink::VpcEndpointService`, which is used to create an endpoint service.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpcEndpointService`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpointservice
  */
 export class VpcEndpointService extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute MaxBandwidth: The maximum bandwidth of the endpoint connection.
@@ -101,8 +99,6 @@ export class VpcEndpointService extends ros.Resource {
     public readonly attrServiceName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::PrivateLink::VpcEndpointService`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

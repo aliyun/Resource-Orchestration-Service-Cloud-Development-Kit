@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Dlf
 {
-    /// <summary>Properties for defining a `ALIYUN::DLF::Catalog`.</summary>
+    /// <summary>Properties for defining a `Catalog`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dlf-catalog
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ICatalogProps), fullyQualifiedName: "@alicloud/ros-cdk-dlf.CatalogProps")]
     public interface ICatalogProps
     {
@@ -26,7 +29,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dlf
             }
         }
 
-        /// <summary>Property locationUri: Location uri, for example: oss://dlf-test-oss-location/.</summary>
+        /// <summary>Property locationUri: Location uri, for example: oss:\/\/dlf-test-oss-location\/.</summary>
         [JsiiProperty(name: "locationUri", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? LocationUri
@@ -51,7 +54,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dlf
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::DLF::Catalog`.</summary>
+        /// <summary>Properties for defining a `Catalog`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dlf-catalog
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ICatalogProps), fullyQualifiedName: "@alicloud/ros-cdk-dlf.CatalogProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Dlf.ICatalogProps
         {
@@ -74,7 +80,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dlf
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property locationUri: Location uri, for example: oss://dlf-test-oss-location/.</summary>
+            /// <summary>Property locationUri: Location uri, for example: oss:\/\/dlf-test-oss-location\/.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "locationUri", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? LocationUri

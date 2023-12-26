@@ -4,7 +4,8 @@ import { RosCertificate } from './cas.generated';
 export { RosCertificate as CertificateProperty };
 
 /**
- * Properties for defining a `ALIYUN::CAS::Certificate`
+ * Properties for defining a `Certificate`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cas-certificate
  */
 export interface CertificateProps {
 
@@ -35,14 +36,11 @@ export interface CertificateProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CAS::Certificate`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CAS::Certificate`, which is used to add a certificate.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCertificate`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cas-certificate
  */
 export class Certificate extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute CertId: Certificate ID.
@@ -50,8 +48,6 @@ export class Certificate extends ros.Resource {
     public readonly attrCertId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CAS::Certificate`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

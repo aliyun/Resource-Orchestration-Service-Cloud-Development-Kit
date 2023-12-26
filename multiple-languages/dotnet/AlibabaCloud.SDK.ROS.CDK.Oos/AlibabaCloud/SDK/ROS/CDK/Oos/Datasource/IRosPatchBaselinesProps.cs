@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Oos.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::OOS::PatchBaselines`.</summary>
+    /// <summary>Properties for defining a `RosPatchBaselines`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-patchbaselines
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosPatchBaselinesProps), fullyQualifiedName: "@alicloud/ros-cdk-oos.datasource.RosPatchBaselinesProps")]
     public interface IRosPatchBaselinesProps
     {
@@ -47,7 +50,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::OOS::PatchBaselines`.</summary>
+        /// <summary>Properties for defining a `RosPatchBaselines`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-patchbaselines
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosPatchBaselinesProps), fullyQualifiedName: "@alicloud/ros-cdk-oos.datasource.RosPatchBaselinesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Oos.Datasource.IRosPatchBaselinesProps
         {

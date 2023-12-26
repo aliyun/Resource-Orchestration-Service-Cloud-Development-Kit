@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::DEVOPS::Pipeline`
+ * Properties for defining a `RosPipeline`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-pipeline
  */
 export interface RosPipelineProps {
 
@@ -63,18 +64,15 @@ function rosPipelinePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::DEVOPS::Pipeline`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DEVOPS::Pipeline`ALIYUN::DFS::AccessGroup is used to create a permission group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Pipeline` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-pipeline
  */
 export class RosPipeline extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DEVOPS::Pipeline";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute PipelineId: Pipeline id.
@@ -100,8 +98,6 @@ export class RosPipeline extends ros.RosResource {
     public organizationId: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::DEVOPS::Pipeline`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -130,7 +126,8 @@ export class RosPipeline extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::DEVOPS::PipelineRelations`
+ * Properties for defining a `RosPipelineRelations`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-pipelinerelations
  */
 export interface RosPipelineRelationsProps {
 
@@ -201,18 +198,15 @@ function rosPipelineRelationsPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * A ROS template type:  `ALIYUN::DEVOPS::PipelineRelations`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DEVOPS::PipelineRelations`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `PipelineRelations` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-pipelinerelations
  */
 export class RosPipelineRelations extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DEVOPS::PipelineRelations";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -241,8 +235,6 @@ export class RosPipelineRelations extends ros.RosResource {
     public relObjectType: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::DEVOPS::PipelineRelations`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -272,7 +264,8 @@ export class RosPipelineRelations extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::DEVOPS::PipelineRun`
+ * Properties for defining a `RosPipelineRun`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-pipelinerun
  */
 export interface RosPipelineRunProps {
 
@@ -357,18 +350,15 @@ function rosPipelineRunPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `ALIYUN::DEVOPS::PipelineRun`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DEVOPS::PipelineRun`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `PipelineRun` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-pipelinerun
  */
 export class RosPipelineRun extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DEVOPS::PipelineRun";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute PipelineRunId: Pipeline run id.
@@ -409,8 +399,6 @@ export class RosPipelineRun extends ros.RosResource {
     public timeout: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::DEVOPS::PipelineRun`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -443,7 +431,8 @@ export class RosPipelineRun extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::DEVOPS::VariableGroup`
+ * Properties for defining a `RosVariableGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-variablegroup
  */
 export interface RosVariableGroupProps {
 
@@ -510,18 +499,15 @@ function rosVariableGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `ALIYUN::DEVOPS::VariableGroup`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DEVOPS::VariableGroup`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `VariableGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-variablegroup
  */
 export class RosVariableGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DEVOPS::VariableGroup";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute VariableGroupId: Variable group id.
@@ -552,8 +538,6 @@ export class RosVariableGroup extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::DEVOPS::VariableGroup`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Redis.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::REDIS::InstanceClasses`.</summary>
+    /// <summary>Properties for defining a `RosInstanceClasses`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-instanceclasses
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosInstanceClassesProps), fullyQualifiedName: "@alicloud/ros-cdk-redis.datasource.RosInstanceClassesProps")]
     public interface IRosInstanceClassesProps
     {
@@ -70,7 +73,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis.Datasource
 
         /// <remarks>
         /// <strong>Property</strong>: nodeId: The ID of the data node for which you want to query available instance types. You can call the DescribeLogicInstanceTopology operation to query the ID of the data node. Remove the number sign (#) and the content that follows the number sign. For example, retain only r-bp10noxlhcoim2****-db-0.
-        /// Note Before you set this parameter, you must set the InstanceId parameter to the ID of an instance in the cluster or read/write splitting architecture.
+        /// Note Before you set this parameter, you must set the InstanceId parameter to the ID of an instance in the cluster or read\/write splitting architecture.
         /// </remarks>
         [JsiiProperty(name: "nodeId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -142,7 +145,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::REDIS::InstanceClasses`.</summary>
+        /// <summary>Properties for defining a `RosInstanceClasses`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-instanceclasses
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosInstanceClassesProps), fullyQualifiedName: "@alicloud/ros-cdk-redis.datasource.RosInstanceClassesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Redis.Datasource.IRosInstanceClassesProps
         {
@@ -200,7 +206,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis.Datasource
 
             /// <remarks>
             /// <strong>Property</strong>: nodeId: The ID of the data node for which you want to query available instance types. You can call the DescribeLogicInstanceTopology operation to query the ID of the data node. Remove the number sign (#) and the content that follows the number sign. For example, retain only r-bp10noxlhcoim2****-db-0.
-            /// Note Before you set this parameter, you must set the InstanceId parameter to the ID of an instance in the cluster or read/write splitting architecture.
+            /// Note Before you set this parameter, you must set the InstanceId parameter to the ID of an instance in the cluster or read\/write splitting architecture.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "nodeId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

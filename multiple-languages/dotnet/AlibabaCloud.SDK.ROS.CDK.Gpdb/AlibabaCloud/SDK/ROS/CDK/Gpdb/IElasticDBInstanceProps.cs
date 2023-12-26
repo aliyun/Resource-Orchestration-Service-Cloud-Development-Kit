@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
 {
-    /// <summary>Properties for defining a `ALIYUN::GPDB::ElasticDBInstance`.</summary>
+    /// <summary>Properties for defining a `ElasticDBInstance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-elasticdbinstance
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IElasticDBInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-gpdb.ElasticDBInstanceProps")]
     public interface IElasticDBInstanceProps
     {
@@ -194,7 +197,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
         }
 
-        /// <summary>Property periodUnit: Unit of subscription period, it could be Month/Year.</summary>
+        /// <summary>Property periodUnit: Unit of subscription period, it could be Month\/Year.</summary>
         /// <remarks>
         /// Default value is Month.
         /// </remarks>
@@ -264,7 +267,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::GPDB::ElasticDBInstance`.</summary>
+        /// <summary>Properties for defining a `ElasticDBInstance`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-elasticdbinstance
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IElasticDBInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-gpdb.ElasticDBInstanceProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Gpdb.IElasticDBInstanceProps
         {
@@ -434,7 +440,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property periodUnit: Unit of subscription period, it could be Month/Year.</summary>
+            /// <summary>Property periodUnit: Unit of subscription period, it could be Month\/Year.</summary>
             /// <remarks>
             /// Default value is Month.
             /// </remarks>

@@ -4,7 +4,8 @@ import { RosGateways } from './mse.generated';
 export { RosGateways as GatewaysProperty };
 
 /**
- * Properties for defining a `DATASOURCE::MSE::Gateways`
+ * Properties for defining a `Gateways`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mse-gateways
  */
 export interface GatewaysProps {
 
@@ -35,14 +36,11 @@ export interface GatewaysProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::MSE::Gateways`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::MSE::Gateways`, which is used to query gateways.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGateways`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mse-gateways
  */
 export class Gateways extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute GatewayIds: The list of gateway IDs.
@@ -55,8 +53,6 @@ export class Gateways extends ros.Resource {
     public readonly attrGateways: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::MSE::Gateways`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

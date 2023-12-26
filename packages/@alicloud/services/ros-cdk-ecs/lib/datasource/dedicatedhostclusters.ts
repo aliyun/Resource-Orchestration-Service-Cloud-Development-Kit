@@ -4,7 +4,8 @@ import { RosDedicatedHostClusters } from './ecs.generated';
 export { RosDedicatedHostClusters as DedicatedHostClustersProperty };
 
 /**
- * Properties for defining a `DATASOURCE::ECS::DedicatedHostClusters`
+ * Properties for defining a `DedicatedHostClusters`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-dedicatedhostclusters
  */
 export interface DedicatedHostClustersProps {
 
@@ -28,14 +29,11 @@ export interface DedicatedHostClustersProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::ECS::DedicatedHostClusters`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::DedicatedHostClusters`, which is used to query the information about dedicated host clusters.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDedicatedHostClusters`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-dedicatedhostclusters
  */
 export class DedicatedHostClusters extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DedicatedHostClusterIds: The list of dedicated host cluster IDs.
@@ -48,8 +46,6 @@ export class DedicatedHostClusters extends ros.Resource {
     public readonly attrDedicatedHostClusters: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::ECS::DedicatedHostClusters`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

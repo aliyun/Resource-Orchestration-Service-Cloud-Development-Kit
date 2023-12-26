@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ResourceManager::Folder`.</summary>
+    /// <summary>Properties for defining a `RosFolder`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-folder
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-resourcemanager.RosFolderProps")]
     public class RosFolderProps : AlibabaCloud.SDK.ROS.CDK.Resourcemanager.IRosFolderProps
     {

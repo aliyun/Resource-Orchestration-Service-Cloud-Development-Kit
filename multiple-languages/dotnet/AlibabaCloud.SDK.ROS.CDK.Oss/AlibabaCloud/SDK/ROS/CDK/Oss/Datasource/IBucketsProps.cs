@@ -4,12 +4,18 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Oss.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::OSS::Buckets`.</summary>
+    /// <summary>Properties for defining a `Buckets`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oss-buckets
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IBucketsProps), fullyQualifiedName: "@alicloud/ros-cdk-oss.datasource.BucketsProps")]
     public interface IBucketsProps
     {
 
-        /// <summary>Properties for defining a `DATASOURCE::OSS::Buckets`.</summary>
+        /// <summary>Properties for defining a `Buckets`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oss-buckets
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IBucketsProps), fullyQualifiedName: "@alicloud/ros-cdk-oss.datasource.BucketsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Oss.Datasource.IBucketsProps
         {

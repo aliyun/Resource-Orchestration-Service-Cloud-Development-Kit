@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::HBR::DbAgent`.</summary>
+    /// <summary>Properties for defining a `DbAgent`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbagent
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-hbr.DbAgentProps")]
     public class DbAgentProps : AlibabaCloud.SDK.ROS.CDK.Hbr.IDbAgentProps
     {

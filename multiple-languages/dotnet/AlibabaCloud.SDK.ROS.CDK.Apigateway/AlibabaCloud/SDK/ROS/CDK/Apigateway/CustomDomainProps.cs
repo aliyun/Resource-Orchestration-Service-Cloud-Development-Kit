@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ApiGateway::CustomDomain`.</summary>
+    /// <summary>Properties for defining a `CustomDomain`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-customdomain
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-apigateway.CustomDomainProps")]
     public class CustomDomainProps : AlibabaCloud.SDK.ROS.CDK.Apigateway.ICustomDomainProps
     {

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Arms
 {
-    /// <summary>Properties for defining a `ALIYUN::ARMS::RetcodeApp`.</summary>
+    /// <summary>Properties for defining a `RetcodeApp`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-retcodeapp
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRetcodeAppProps), fullyQualifiedName: "@alicloud/ros-cdk-arms.RetcodeAppProps")]
     public interface IRetcodeAppProps
     {
@@ -35,7 +38,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ARMS::RetcodeApp`.</summary>
+        /// <summary>Properties for defining a `RetcodeApp`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-retcodeapp
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRetcodeAppProps), fullyQualifiedName: "@alicloud/ros-cdk-arms.RetcodeAppProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Arms.IRetcodeAppProps
         {

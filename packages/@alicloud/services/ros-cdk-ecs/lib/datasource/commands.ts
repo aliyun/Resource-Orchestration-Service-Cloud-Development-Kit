@@ -4,7 +4,8 @@ import { RosCommands } from './ecs.generated';
 export { RosCommands as CommandsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::ECS::Commands`
+ * Properties for defining a `Commands`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-commands
  */
 export interface CommandsProps {
 
@@ -33,14 +34,11 @@ export interface CommandsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::ECS::Commands`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Commands`, which is used to query all available commands that you created.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCommands`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-commands
  */
 export class Commands extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute CommandIds: The list of command IDs.
@@ -53,8 +51,6 @@ export class Commands extends ros.Resource {
     public readonly attrCommands: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::ECS::Commands`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

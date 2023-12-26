@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::CDN::Domain`
+ * Properties for defining a `RosDomain`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cdn-domain
  */
 export interface RosDomainProps {
 
@@ -124,18 +125,15 @@ function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * A ROS template type:  `ALIYUN::CDN::Domain`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CDN::Domain`, which is used to add a domain name to Alibaba Cloud CDN (CDN).
+ * @Note This class does not contain additional functions, so it is recommended to use the `Domain` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cdn-domain
  */
 export class RosDomain extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CDN::Domain";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Cname: The CNAME generated for the CDN domain.You must add a CNAME record with your DNS provider to map the CDN domain name to the CNAME.
@@ -196,8 +194,6 @@ export class RosDomain extends ros.RosResource {
     public topLevelDomain: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CDN::Domain`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -375,7 +371,8 @@ function rosDomainTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::CDN::DomainConfig`
+ * Properties for defining a `RosDomainConfig`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cdn-domainconfig
  */
 export interface RosDomainConfigProps {
 
@@ -427,18 +424,15 @@ function rosDomainConfigPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * A ROS template type:  `ALIYUN::CDN::DomainConfig`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CDN::DomainConfig`, which is used to add multiple domain name settings.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DomainConfig` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cdn-domainconfig
  */
 export class RosDomainConfig extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CDN::DomainConfig";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -454,8 +448,6 @@ export class RosDomainConfig extends ros.RosResource {
     public functions: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CDN::DomainConfig`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ess
 {
-    /// <summary>Properties for defining a `ALIYUN::ESS::AlarmTask`.</summary>
+    /// <summary>Properties for defining a `AlarmTask`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-alarmtask
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IAlarmTaskProps), fullyQualifiedName: "@alicloud/ros-cdk-ess.AlarmTaskProps")]
     public interface IAlarmTaskProps
     {
@@ -135,7 +138,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ESS::AlarmTask`.</summary>
+        /// <summary>Properties for defining a `AlarmTask`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-alarmtask
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IAlarmTaskProps), fullyQualifiedName: "@alicloud/ros-cdk-ess.AlarmTaskProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ess.IAlarmTaskProps
         {

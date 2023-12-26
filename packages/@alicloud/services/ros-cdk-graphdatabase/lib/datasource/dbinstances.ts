@@ -4,7 +4,8 @@ import { RosDbInstances } from './graphdatabase.generated';
 export { RosDbInstances as DbInstancesProperty };
 
 /**
- * Properties for defining a `DATASOURCE::GraphDatabase::DbInstances`
+ * Properties for defining a `DbInstances`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-graphdatabase-dbinstances
  */
 export interface DbInstancesProps {
 
@@ -25,14 +26,11 @@ export interface DbInstancesProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::GraphDatabase::DbInstances`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::GraphDatabase::DbInstances`, which is used to query the information about Graph Database (GDB) instances.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDbInstances`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-graphdatabase-dbinstances
  */
 export class DbInstances extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DbInstanceIds: The list of db instance IDs.
@@ -45,8 +43,6 @@ export class DbInstances extends ros.Resource {
     public readonly attrDbInstances: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::GraphDatabase::DbInstances`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

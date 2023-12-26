@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb.Datasource
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `DATASOURCE::POLARDB::DBNodeClasses`.</summary>
+    /// <summary>Properties for defining a `DBNodeClasses`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-dbnodeclasses
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-polardb.datasource.DBNodeClassesProps")]
     public class DBNodeClassesProps : AlibabaCloud.SDK.ROS.CDK.Polardb.Datasource.IDBNodeClassesProps
     {

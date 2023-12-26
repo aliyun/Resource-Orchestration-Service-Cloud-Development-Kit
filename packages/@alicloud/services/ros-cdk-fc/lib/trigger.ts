@@ -4,7 +4,8 @@ import { RosTrigger } from './fc.generated';
 export { RosTrigger as TriggerProperty };
 
 /**
- * Properties for defining a `ALIYUN::FC::Trigger`
+ * Properties for defining a `Trigger`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-trigger
  */
 export interface TriggerProps {
 
@@ -37,7 +38,7 @@ export interface TriggerProps {
 
     /**
      * Property invocationRole: The role grants event source the permission to run function on behalf of user. This is optional for some triggers.
-     * Example : "acs:ram::1234567890:role/fc-test"
+     * Example : "acs:ram::1234567890:role\/fc-test"
      */
     readonly invocationRole?: string | ros.IResolvable;
 
@@ -55,14 +56,11 @@ export interface TriggerProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::FC::Trigger`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::FC::Trigger`, which is used to trigger the invocation of a function.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTrigger`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-trigger
  */
 export class Trigger extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute FunctionName: Function name.
@@ -95,8 +93,6 @@ export class Trigger extends ros.Resource {
     public readonly attrUrlIntranet: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::FC::Trigger`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

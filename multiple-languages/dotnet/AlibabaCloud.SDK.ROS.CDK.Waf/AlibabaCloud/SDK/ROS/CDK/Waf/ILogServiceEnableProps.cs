@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Waf
 {
-    /// <summary>Properties for defining a `ALIYUN::WAF::LogServiceEnable`.</summary>
+    /// <summary>Properties for defining a `LogServiceEnable`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-logserviceenable
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ILogServiceEnableProps), fullyQualifiedName: "@alicloud/ros-cdk-waf.LogServiceEnableProps")]
     public interface ILogServiceEnableProps
     {
@@ -25,7 +28,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::WAF::LogServiceEnable`.</summary>
+        /// <summary>Properties for defining a `LogServiceEnable`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-logserviceenable
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ILogServiceEnableProps), fullyQualifiedName: "@alicloud/ros-cdk-waf.LogServiceEnableProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Waf.ILogServiceEnableProps
         {

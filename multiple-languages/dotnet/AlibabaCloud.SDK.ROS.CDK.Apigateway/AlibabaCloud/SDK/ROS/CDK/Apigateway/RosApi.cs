@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 {
-    /// <summary>A ROS template type:  `ALIYUN::ApiGateway::Api`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Api`, which is used to create an API.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Api` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-api
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Apigateway.RosApi), fullyQualifiedName: "@alicloud/ros-cdk-apigateway.RosApi", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-apigateway.RosApiProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosApi : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::ApiGateway::Api`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -66,7 +69,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+        /// <strong>Property</strong>: apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.
         /// </remarks>
         [JsiiProperty(name: "apiName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object ApiName
@@ -1360,7 +1363,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: fcBaseUrl: Trigger path. Starts with http:// or https://
+            /// <strong>Property</strong>: fcBaseUrl: Trigger path. Starts with http:\/\/ or https:\/\/
             /// </remarks>
             [JsiiProperty(name: "fcBaseUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1426,7 +1429,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: onlyBusinessPath: If set true. The path in the trigger path (for example, /2016-08-15/proxy/xxx/xxx) will not be passed to the backend, and the backend will only receive the customized backend request path.
+            /// <strong>Property</strong>: onlyBusinessPath: If set true. The path in the trigger path (for example, \/2016-08-15\/proxy\/xxx\/xxx) will not be passed to the backend, and the backend will only receive the customized backend request path.
             /// </remarks>
             [JsiiProperty(name: "onlyBusinessPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1439,7 +1442,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: path: The backend request path must contain the Parameter Path in the backend service parameter within brackets ([]). For example: /getUserInfo/[userId].
+            /// <strong>Property</strong>: path: The backend request path must contain the Parameter Path in the backend service parameter within brackets ([]). For example: \/getUserInfo\/[userId].
             /// </remarks>
             [JsiiProperty(name: "path", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1518,7 +1521,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: fcBaseUrl: Trigger path. Starts with http:// or https://
+                /// <strong>Property</strong>: fcBaseUrl: Trigger path. Starts with http:\/\/ or https:\/\/
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "fcBaseUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1569,7 +1572,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: onlyBusinessPath: If set true. The path in the trigger path (for example, /2016-08-15/proxy/xxx/xxx) will not be passed to the backend, and the backend will only receive the customized backend request path.
+                /// <strong>Property</strong>: onlyBusinessPath: If set true. The path in the trigger path (for example, \/2016-08-15\/proxy\/xxx\/xxx) will not be passed to the backend, and the backend will only receive the customized backend request path.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "onlyBusinessPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1579,7 +1582,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: path: The backend request path must contain the Parameter Path in the backend service parameter within brackets ([]). For example: /getUserInfo/[userId].
+                /// <strong>Property</strong>: path: The backend request path must contain the Parameter Path in the backend service parameter within brackets ([]). For example: \/getUserInfo\/[userId].
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "path", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1691,7 +1694,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             private object? _fcBaseUrl;
 
             /// <remarks>
-            /// <strong>Property</strong>: fcBaseUrl: Trigger path. Starts with http:// or https://
+            /// <strong>Property</strong>: fcBaseUrl: Trigger path. Starts with http:\/\/ or https:\/\/
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "fcBaseUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1857,7 +1860,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             private object? _onlyBusinessPath;
 
             /// <remarks>
-            /// <strong>Property</strong>: onlyBusinessPath: If set true. The path in the trigger path (for example, /2016-08-15/proxy/xxx/xxx) will not be passed to the backend, and the backend will only receive the customized backend request path.
+            /// <strong>Property</strong>: onlyBusinessPath: If set true. The path in the trigger path (for example, \/2016-08-15\/proxy\/xxx\/xxx) will not be passed to the backend, and the backend will only receive the customized backend request path.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "onlyBusinessPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1890,7 +1893,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             private object? _path;
 
             /// <remarks>
-            /// <strong>Property</strong>: path: The backend request path must contain the Parameter Path in the backend service parameter within brackets ([]). For example: /getUserInfo/[userId].
+            /// <strong>Property</strong>: path: The backend request path must contain the Parameter Path in the backend service parameter within brackets ([]). For example: \/getUserInfo\/[userId].
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "path", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -2409,7 +2412,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: bodyFormat: Describe how data transform to the server, "FORM" for k-v and "STREAM" for bit stream.BodyFormat is required if RequestMode is specified as MAPPING and RequestHttpMethod is POST/PUT/PATCH.
+            /// <strong>Property</strong>: bodyFormat: Describe how data transform to the server, "FORM" for k-v and "STREAM" for bit stream.BodyFormat is required if RequestMode is specified as MAPPING and RequestHttpMethod is POST\/PUT\/PATCH.
             /// </remarks>
             [JsiiProperty(name: "bodyFormat", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -2478,7 +2481,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: bodyFormat: Describe how data transform to the server, "FORM" for k-v and "STREAM" for bit stream.BodyFormat is required if RequestMode is specified as MAPPING and RequestHttpMethod is POST/PUT/PATCH.
+                /// <strong>Property</strong>: bodyFormat: Describe how data transform to the server, "FORM" for k-v and "STREAM" for bit stream.BodyFormat is required if RequestMode is specified as MAPPING and RequestHttpMethod is POST\/PUT\/PATCH.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "bodyFormat", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -2634,7 +2637,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             private object? _bodyFormat;
 
             /// <remarks>
-            /// <strong>Property</strong>: bodyFormat: Describe how data transform to the server, "FORM" for k-v and "STREAM" for bit stream.BodyFormat is required if RequestMode is specified as MAPPING and RequestHttpMethod is POST/PUT/PATCH.
+            /// <strong>Property</strong>: bodyFormat: Describe how data transform to the server, "FORM" for k-v and "STREAM" for bit stream.BodyFormat is required if RequestMode is specified as MAPPING and RequestHttpMethod is POST\/PUT\/PATCH.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "bodyFormat", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -3780,7 +3783,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: serviceAddress: Backend service call address. If the complete backend service address is http://api.a.com:8080/object/add?key1=value1&key2=value2, ServiceAddress corresponds to http://api.a.com:8080.
+            /// <strong>Property</strong>: serviceAddress: Backend service call address. If the complete backend service address is http:\/\/api.a.com:8080\/object\/add?key1=value1&key2=value2, ServiceAddress corresponds to http:\/\/api.a.com:8080.
             /// </remarks>
             [JsiiProperty(name: "serviceAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -3806,7 +3809,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: servicePath: Backend service call path. If the complete backend service address is http://api.a.com:8080/object/add?key1=value1&key2=value2, ServicePath corresponds to /object/add.
+            /// <strong>Property</strong>: servicePath: Backend service call path. If the complete backend service address is http:\/\/api.a.com:8080\/object\/add?key1=value1&key2=value2, ServicePath corresponds to \/object\/add.
             /// </remarks>
             [JsiiProperty(name: "servicePath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -3948,7 +3951,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: serviceAddress: Backend service call address. If the complete backend service address is http://api.a.com:8080/object/add?key1=value1&key2=value2, ServiceAddress corresponds to http://api.a.com:8080.
+                /// <strong>Property</strong>: serviceAddress: Backend service call address. If the complete backend service address is http:\/\/api.a.com:8080\/object\/add?key1=value1&key2=value2, ServiceAddress corresponds to http:\/\/api.a.com:8080.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "serviceAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -3968,7 +3971,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: servicePath: Backend service call path. If the complete backend service address is http://api.a.com:8080/object/add?key1=value1&key2=value2, ServicePath corresponds to /object/add.
+                /// <strong>Property</strong>: servicePath: Backend service call path. If the complete backend service address is http:\/\/api.a.com:8080\/object\/add?key1=value1&key2=value2, ServicePath corresponds to \/object\/add.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "servicePath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -4292,7 +4295,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             private object? _serviceAddress;
 
             /// <remarks>
-            /// <strong>Property</strong>: serviceAddress: Backend service call address. If the complete backend service address is http://api.a.com:8080/object/add?key1=value1&key2=value2, ServiceAddress corresponds to http://api.a.com:8080.
+            /// <strong>Property</strong>: serviceAddress: Backend service call address. If the complete backend service address is http:\/\/api.a.com:8080\/object\/add?key1=value1&key2=value2, ServiceAddress corresponds to http:\/\/api.a.com:8080.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "serviceAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -4358,7 +4361,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             private object? _servicePath;
 
             /// <remarks>
-            /// <strong>Property</strong>: servicePath: Backend service call path. If the complete backend service address is http://api.a.com:8080/object/add?key1=value1&key2=value2, ServicePath corresponds to /object/add.
+            /// <strong>Property</strong>: servicePath: Backend service call path. If the complete backend service address is http:\/\/api.a.com:8080\/object\/add?key1=value1&key2=value2, ServicePath corresponds to \/object\/add.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "servicePath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -5226,7 +5229,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         public interface IVpcConfigProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: instanceId: The id of the instance (ECS/SLB).
+            /// <strong>Property</strong>: instanceId: The id of the instance (ECS\/SLB).
             /// </remarks>
             [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             object InstanceId
@@ -5260,7 +5263,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: instanceId: The id of the instance (ECS/SLB).
+                /// <strong>Property</strong>: instanceId: The id of the instance (ECS\/SLB).
                 /// </remarks>
                 [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
                 public object InstanceId
@@ -5295,7 +5298,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             private object _instanceId;
 
             /// <remarks>
-            /// <strong>Property</strong>: instanceId: The id of the instance (ECS/SLB).
+            /// <strong>Property</strong>: instanceId: The id of the instance (ECS\/SLB).
             /// </remarks>
             [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object InstanceId

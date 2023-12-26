@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ots.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::OTS::Tables`.</summary>
+    /// <summary>Properties for defining a `RosTables`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ots-tables
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosTablesProps), fullyQualifiedName: "@alicloud/ros-cdk-ots.datasource.RosTablesProps")]
     public interface IRosTablesProps
     {
@@ -30,7 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::OTS::Tables`.</summary>
+        /// <summary>Properties for defining a `RosTables`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ots-tables
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosTablesProps), fullyQualifiedName: "@alicloud/ros-cdk-ots.datasource.RosTablesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ots.Datasource.IRosTablesProps
         {

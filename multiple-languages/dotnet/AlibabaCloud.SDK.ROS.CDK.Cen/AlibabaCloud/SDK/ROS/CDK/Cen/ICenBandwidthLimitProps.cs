@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cen
 {
-    /// <summary>Properties for defining a `ALIYUN::CEN::CenBandwidthLimit`.</summary>
+    /// <summary>Properties for defining a `CenBandwidthLimit`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthlimit
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ICenBandwidthLimitProps), fullyQualifiedName: "@alicloud/ros-cdk-cen.CenBandwidthLimitProps")]
     public interface ICenBandwidthLimitProps
     {
@@ -39,7 +42,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::CEN::CenBandwidthLimit`.</summary>
+        /// <summary>Properties for defining a `CenBandwidthLimit`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthlimit
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ICenBandwidthLimitProps), fullyQualifiedName: "@alicloud/ros-cdk-cen.CenBandwidthLimitProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cen.ICenBandwidthLimitProps
         {

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CMS::ResourceMetricRule`.</summary>
+    /// <summary>Properties for defining a `ResourceMetricRule`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-resourcemetricrule
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cms.ResourceMetricRuleProps")]
     public class ResourceMetricRuleProps : AlibabaCloud.SDK.ROS.CDK.Cms.IResourceMetricRuleProps
     {

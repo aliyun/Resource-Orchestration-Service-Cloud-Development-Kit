@@ -4,15 +4,16 @@ import { RosVPC } from './ecs.generated';
 export { RosVPC as VPCProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECS::VPC`
+ * Properties for defining a `VPC`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-vpc
  */
 export interface VPCProps {
 
     /**
      * Property cidrBlock: The IP address range of the VPC in the CIDR block form. You can use the following IP address ranges and their subnets:
-     * 10.0.0.0/8
-     * 172.16.0.0/12 (Default)
-     * 192.168.0.0/16
+     * 10.0.0.0\/8
+     * 172.16.0.0\/12 (Default)
+     * 192.168.0.0\/16
      */
     readonly cidrBlock?: string | ros.IResolvable;
 
@@ -69,14 +70,11 @@ export interface VPCProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECS::VPC`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::VPC`, which is used to create a virtual private cloud (VPC).
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVPC`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-vpc
  */
 export class Vpc extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute RouteTableId: The router table id of created VPC.
@@ -94,8 +92,6 @@ export class Vpc extends ros.Resource {
     public readonly attrVpcId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ECS::VPC`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

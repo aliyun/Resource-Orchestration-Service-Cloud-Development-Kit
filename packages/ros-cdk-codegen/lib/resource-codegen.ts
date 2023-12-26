@@ -111,7 +111,7 @@ export default class ResourceCodeGenerator {
     }
     const name = genspec.CodeName.forResourceProperties(resourceContext);
 
-    this.docLink(undefined, `Properties for defining a \`${resourceContext.specName!.fqn}\``);
+    this.docLink(spec.Documentation, `Properties for defining a \`${resourceContext.className}\`. `);
     this.code.openBlock(`export interface ${name.className}`);
     this.emitPropsTypeProperties(rosResourceContext, spec.Properties, Container.Interface);
 
@@ -189,14 +189,13 @@ export default class ResourceCodeGenerator {
     // The class declaration representing this Resource
     //
 
-    this.docLink(spec.Documentation, `A ROS resource type:  \`${rosName}\``);
+    let specificDescription = `This class encapsulates and extends the ROS resource type \`${rosName}\`.`;
+    if (spec.Description) {
+      specificDescription = `${specificDescription.replace('.', spec.Description.replace(rosName, ', which'))}`;
+    }
+    const note = `@Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of \`Ros${resourceName.className}\`for a more convenient development experience.`;
+    this.docLink(spec.Documentation, specificDescription, note);
     this.openClass(resourceName, RESOURCE_BASE_CLASS);
-
-    this.code.line();
-    this.code.line('/**');
-    this.code.line(' * A factory method that creates a new instance of this class from an object');
-    this.code.line(' * containing the properties of this ROS resource, which will be assigned to ROS resource.');
-    this.code.line(' */');
 
     //
     // Attributes
@@ -229,8 +228,6 @@ export default class ResourceCodeGenerator {
 
     this.code.line();
     this.code.line('/**');
-    this.code.line(` * Create a new ${quoteCode(resourceName.specName!.fqn)}.`);
-    this.code.line(' *');
     this.code.line(' * Param scope - scope in which this resource is defined');
     this.code.line(' * Param id    - scoped id of the resource');
     this.code.line(' * Param props - resource properties');
@@ -286,7 +283,7 @@ export default class ResourceCodeGenerator {
 
     this.docLink(
       undefined,
-      `Property ${javascriptPropertyName}: ${props.spec.Description?.replace(new RegExp('\n', 'gm'), '\n     * ')}`,
+      `Property ${javascriptPropertyName}: ${props.spec.Description?.replace(new RegExp('\n', 'gm'), '\n     * ').replace(new RegExp('/', 'gm'), '\\/')}`,
     );
     const line =
       props.propName === 'Tags' && (props.spec as schema.ComplexListProperty).ItemType === 'Tag'

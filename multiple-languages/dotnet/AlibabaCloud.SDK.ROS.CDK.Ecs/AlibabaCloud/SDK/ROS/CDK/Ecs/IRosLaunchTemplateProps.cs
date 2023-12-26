@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>Properties for defining a `ALIYUN::ECS::LaunchTemplate`.</summary>
+    /// <summary>Properties for defining a `RosLaunchTemplate`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-launchtemplate
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosLaunchTemplateProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosLaunchTemplateProps")]
     public interface IRosLaunchTemplateProps
     {
@@ -451,10 +454,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         /// <remarks>
         /// <strong>Property</strong>: systemDiskPerformanceLevel: The performance level of the ESSD that is used as the system disk. Valid values:
-        /// PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
-        /// PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
-        /// PL2: A single ESSD can deliver up to 100,000 random read/write IOPS.
-        /// PL3: A single ESSD can deliver up to 1,000,000 random read/write IOPS.
+        /// PL0: A single ESSD can deliver up to 10,000 random read\/write IOPS.
+        /// PL1: A single ESSD can deliver up to 50,000 random read\/write IOPS.
+        /// PL2: A single ESSD can deliver up to 100,000 random read\/write IOPS.
+        /// PL3: A single ESSD can deliver up to 1,000,000 random read\/write IOPS.
         /// </remarks>
         [JsiiProperty(name: "systemDiskPerformanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -570,7 +573,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ECS::LaunchTemplate`.</summary>
+        /// <summary>Properties for defining a `RosLaunchTemplate`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-launchtemplate
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosLaunchTemplateProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosLaunchTemplateProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.IRosLaunchTemplateProps
         {
@@ -925,10 +931,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
             /// <remarks>
             /// <strong>Property</strong>: systemDiskPerformanceLevel: The performance level of the ESSD that is used as the system disk. Valid values:
-            /// PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
-            /// PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
-            /// PL2: A single ESSD can deliver up to 100,000 random read/write IOPS.
-            /// PL3: A single ESSD can deliver up to 1,000,000 random read/write IOPS.
+            /// PL0: A single ESSD can deliver up to 10,000 random read\/write IOPS.
+            /// PL1: A single ESSD can deliver up to 50,000 random read\/write IOPS.
+            /// PL2: A single ESSD can deliver up to 100,000 random read\/write IOPS.
+            /// PL3: A single ESSD can deliver up to 1,000,000 random read\/write IOPS.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "systemDiskPerformanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -4,13 +4,16 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>Properties for defining a `ALIYUN::VPC::DhcpOptionsSet`.</summary>
+    /// <summary>Properties for defining a `RosDhcpOptionsSet`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-dhcpoptionsset
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosDhcpOptionsSetProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosDhcpOptionsSetProps")]
     public interface IRosDhcpOptionsSetProps
     {
         /// <remarks>
         /// <strong>Property</strong>: dhcpOptionsSetDescription: The description of the DHCP options set.
-        /// The description must be 2 to 256 characters in length and cannot start with http:// or https://.
+        /// The description must be 2 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiProperty(name: "dhcpOptionsSetDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -63,7 +66,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::VPC::DhcpOptionsSet`.</summary>
+        /// <summary>Properties for defining a `RosDhcpOptionsSet`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-dhcpoptionsset
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosDhcpOptionsSetProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosDhcpOptionsSetProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.IRosDhcpOptionsSetProps
         {
@@ -73,7 +79,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
             /// <remarks>
             /// <strong>Property</strong>: dhcpOptionsSetDescription: The description of the DHCP options set.
-            /// The description must be 2 to 256 characters in length and cannot start with http:// or https://.
+            /// The description must be 2 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "dhcpOptionsSetDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

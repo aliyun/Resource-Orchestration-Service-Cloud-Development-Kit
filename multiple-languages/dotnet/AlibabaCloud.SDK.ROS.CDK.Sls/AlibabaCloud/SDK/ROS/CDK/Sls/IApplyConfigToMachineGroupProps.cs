@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sls
 {
-    /// <summary>Properties for defining a `ALIYUN::SLS::ApplyConfigToMachineGroup`.</summary>
+    /// <summary>Properties for defining a `ApplyConfigToMachineGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-applyconfigtomachinegroup
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IApplyConfigToMachineGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-sls.ApplyConfigToMachineGroupProps")]
     public interface IApplyConfigToMachineGroupProps
     {
@@ -41,7 +44,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::SLS::ApplyConfigToMachineGroup`.</summary>
+        /// <summary>Properties for defining a `ApplyConfigToMachineGroup`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-applyconfigtomachinegroup
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IApplyConfigToMachineGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-sls.ApplyConfigToMachineGroupProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sls.IApplyConfigToMachineGroupProps
         {

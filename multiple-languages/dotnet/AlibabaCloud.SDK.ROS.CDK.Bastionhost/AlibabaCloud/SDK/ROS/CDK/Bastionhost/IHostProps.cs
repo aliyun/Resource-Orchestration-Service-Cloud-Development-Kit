@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Bastionhost
 {
-    /// <summary>Properties for defining a `ALIYUN::BastionHost::Host`.</summary>
+    /// <summary>Properties for defining a `Host`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bastionhost-host
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IHostProps), fullyQualifiedName: "@alicloud/ros-cdk-bastionhost.HostProps")]
     public interface IHostProps
     {
@@ -143,7 +146,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Bastionhost
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::BastionHost::Host`.</summary>
+        /// <summary>Properties for defining a `Host`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bastionhost-host
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IHostProps), fullyQualifiedName: "@alicloud/ros-cdk-bastionhost.HostProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Bastionhost.IHostProps
         {

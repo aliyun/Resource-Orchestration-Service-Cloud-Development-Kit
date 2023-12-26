@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Hbr
 {
-    /// <summary>A ROS template type:  `ALIYUN::HBR::DbPlan`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::DbPlan`, which is used to create a backup plan.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `DbPlan` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbplan
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Hbr.RosDbPlan), fullyQualifiedName: "@alicloud/ros-cdk-hbr.RosDbPlan", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-hbr.RosDbPlanProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosDbPlan : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::HBR::DbPlan`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -716,7 +719,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
         public interface ISourceProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: entries: Backup database instance or databases or tables. For Oracle, use ["oracle://${instanceName}", "oracle://${instanceName}/archivelog"], ${instanceName} is the name of the oracle database instance, which can be get from dbAgent resource. For Mysql, use "mysql://${instanceName}". For SQL Server,  use ["mssql://${instanceName}/${databse1}", "mssql://${instanceName}/${databse2}"], ${databse} can be get from dbAgent resource(MSSQL)
+            /// <strong>Property</strong>: entries: Backup database instance or databases or tables. For Oracle, use ["oracle:\/\/${instanceName}", "oracle:\/\/${instanceName}\/archivelog"], ${instanceName} is the name of the oracle database instance, which can be get from dbAgent resource. For Mysql, use "mysql:\/\/${instanceName}". For SQL Server,  use ["mssql:\/\/${instanceName}\/${databse1}", "mssql:\/\/${instanceName}\/${databse2}"], ${databse} can be get from dbAgent resource(MSSQL)
             /// </remarks>
             [JsiiProperty(name: "entries", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -736,7 +739,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: entries: Backup database instance or databases or tables. For Oracle, use ["oracle://${instanceName}", "oracle://${instanceName}/archivelog"], ${instanceName} is the name of the oracle database instance, which can be get from dbAgent resource. For Mysql, use "mysql://${instanceName}". For SQL Server,  use ["mssql://${instanceName}/${databse1}", "mssql://${instanceName}/${databse2}"], ${databse} can be get from dbAgent resource(MSSQL)
+                /// <strong>Property</strong>: entries: Backup database instance or databases or tables. For Oracle, use ["oracle:\/\/${instanceName}", "oracle:\/\/${instanceName}\/archivelog"], ${instanceName} is the name of the oracle database instance, which can be get from dbAgent resource. For Mysql, use "mysql:\/\/${instanceName}". For SQL Server,  use ["mssql:\/\/${instanceName}\/${databse1}", "mssql:\/\/${instanceName}\/${databse2}"], ${databse} can be get from dbAgent resource(MSSQL)
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "entries", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -752,7 +755,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
             private object? _entries;
 
             /// <remarks>
-            /// <strong>Property</strong>: entries: Backup database instance or databases or tables. For Oracle, use ["oracle://${instanceName}", "oracle://${instanceName}/archivelog"], ${instanceName} is the name of the oracle database instance, which can be get from dbAgent resource. For Mysql, use "mysql://${instanceName}". For SQL Server,  use ["mssql://${instanceName}/${databse1}", "mssql://${instanceName}/${databse2}"], ${databse} can be get from dbAgent resource(MSSQL)
+            /// <strong>Property</strong>: entries: Backup database instance or databases or tables. For Oracle, use ["oracle:\/\/${instanceName}", "oracle:\/\/${instanceName}\/archivelog"], ${instanceName} is the name of the oracle database instance, which can be get from dbAgent resource. For Mysql, use "mysql:\/\/${instanceName}". For SQL Server,  use ["mssql:\/\/${instanceName}\/${databse1}", "mssql:\/\/${instanceName}\/${databse2}"], ${databse} can be get from dbAgent resource(MSSQL)
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "entries", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]

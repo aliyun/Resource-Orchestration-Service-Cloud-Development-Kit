@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::DirectMail::Domain`
+ * Properties for defining a `RosDomain`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-directmail-domain
  */
 export interface RosDomainProps {
 
@@ -47,18 +48,15 @@ function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * A ROS template type:  `ALIYUN::DirectMail::Domain`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DirectMail::Domain`, which is used to create a domain name in Direct Mail.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Domain` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-directmail-domain
  */
 export class RosDomain extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DirectMail::Domain";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CnameAuthStatus: Cname auth status.
@@ -159,8 +157,6 @@ export class RosDomain extends ros.RosResource {
     public domainName: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::DirectMail::Domain`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -202,7 +198,8 @@ export class RosDomain extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::DirectMail::Ipfilter`
+ * Properties for defining a `RosIpfilter`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-directmail-ipfilter
  */
 export interface RosIpfilterProps {
 
@@ -246,18 +243,15 @@ function rosIpfilterPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::DirectMail::Ipfilter`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DirectMail::Ipfilter`, which is used to add an IP filter.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Ipfilter` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-directmail-ipfilter
  */
 export class RosIpfilter extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DirectMail::Ipfilter";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CreateTime: Creation time.
@@ -283,8 +277,6 @@ export class RosIpfilter extends ros.RosResource {
     public ipAddress: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::DirectMail::Ipfilter`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

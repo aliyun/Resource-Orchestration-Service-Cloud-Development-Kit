@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::ROCKETMQ5::ConsumerGroup`
+ * Properties for defining a `RosConsumerGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq5-consumergroup
  */
 export interface RosConsumerGroupProps {
 
@@ -101,18 +102,15 @@ function rosConsumerGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `ALIYUN::ROCKETMQ5::ConsumerGroup`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ5::ConsumerGroup`, which is used to create a consumer group in ApsaraMQ for RocketMQ 5.0.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ConsumerGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq5-consumergroup
  */
 export class RosConsumerGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ROCKETMQ5::ConsumerGroup";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ConsumerGroupId: The ID of the consumer group.
@@ -161,8 +159,6 @@ export class RosConsumerGroup extends ros.RosResource {
     public remark: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ROCKETMQ5::ConsumerGroup`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -258,7 +254,8 @@ function rosConsumerGroupConsumeRetryPolicyPropertyToRosTemplate(properties: any
 }
 
 /**
- * Properties for defining a `ALIYUN::ROCKETMQ5::Instance`
+ * Properties for defining a `RosInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq5-instance
  */
 export interface RosInstanceProps {
 
@@ -435,18 +432,15 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::ROCKETMQ5::Instance`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ5::Instance`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq5-instance
  */
 export class RosInstance extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ROCKETMQ5::Instance";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute InstanceId: Instance ID created.
@@ -539,8 +533,6 @@ export class RosInstance extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ROCKETMQ5::Instance`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -605,7 +597,7 @@ export namespace RosInstance {
          */
         readonly internetSpec: string | ros.IResolvable;
         /**
-         * @Property flowOutBandwidth: Public network bandwidth specification. Unit: Mb/s.
+         * @Property flowOutBandwidth: Public network bandwidth specification. Unit: Mb\/s.
      * It needs to be filled in only when the billing type of the public network is billed by fixed bandwidth.
          */
         readonly flowOutBandwidth?: number | ros.IResolvable;
@@ -777,7 +769,8 @@ function rosInstanceVpcInfoPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ROCKETMQ5::Topic`
+ * Properties for defining a `RosTopic`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq5-topic
  */
 export interface RosTopicProps {
 
@@ -871,18 +864,15 @@ function rosTopicPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `ALIYUN::ROCKETMQ5::Topic`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ5::Topic`, which is used to create a topic for a Message Queue for Apache RocketMQ V5.0 instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Topic` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq5-topic
  */
 export class RosTopic extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ROCKETMQ5::Topic";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute InstanceId: The ID of the instance.
@@ -930,8 +920,6 @@ export class RosTopic extends ros.RosResource {
     public remark: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ROCKETMQ5::Topic`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

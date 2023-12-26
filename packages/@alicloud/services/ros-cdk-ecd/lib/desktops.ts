@@ -4,7 +4,8 @@ import { RosDesktops } from './ecd.generated';
 export { RosDesktops as DesktopsProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECD::Desktops`
+ * Properties for defining a `Desktops`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-desktops
  */
 export interface DesktopsProps {
 
@@ -132,7 +133,7 @@ export interface DesktopsProps {
     readonly promotionId?: string | ros.IResolvable;
 
     /**
-     * Property tags: The list of desktops tags in the form of key/value pairs.
+     * Property tags: The list of desktops tags in the form of key\/value pairs.
      * You can define a maximum of 20 tags for each desktops.
      */
     readonly tags?: RosDesktops.TagsProperty[];
@@ -172,14 +173,11 @@ export interface DesktopsProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECD::Desktops`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECD::Desktops`, which is used to create one or more cloud desktops.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDesktops`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-desktops
  */
 export class Desktops extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DesktopId: The ID of the cloud desktop. If multiple cloud desktops are created in a call, the
@@ -194,8 +192,6 @@ Note This parameter is returned only when the ChargeType parameter is set to Pre
     public readonly attrOrderId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ECD::Desktops`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ROS::StackInstances`.</summary>
+    /// <summary>Properties for defining a `RosStackInstances`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-stackinstances
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ros.RosStackInstancesProps")]
     public class RosStackInstancesProps : AlibabaCloud.SDK.ROS.CDK.Ros.IRosStackInstancesProps
     {

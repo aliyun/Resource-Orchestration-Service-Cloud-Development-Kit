@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::SAG::AppUser`.</summary>
+    /// <summary>Properties for defining a `AppUser`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-appuser
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-sag.AppUserProps")]
     public class AppUserProps : AlibabaCloud.SDK.ROS.CDK.Sag.IAppUserProps
     {

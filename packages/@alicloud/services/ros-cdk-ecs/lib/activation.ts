@@ -4,7 +4,8 @@ import { RosActivation } from './ecs.generated';
 export { RosActivation as ActivationProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECS::Activation`
+ * Properties for defining a `Activation`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-activation
  */
 export interface ActivationProps {
 
@@ -19,7 +20,7 @@ export interface ActivationProps {
     readonly instanceCount?: number | ros.IResolvable;
 
     /**
-     * Property instanceName: The default instance name prefix. The instance name prefix must be 2 to 50 characters in length. It must start with a letter and cannot start with http:// or https://. It can contain letters, digits, periods (.), underscores (_), hyphens (-), and colons (:). If you use the activation code that is created by calling this operation (CreateActivation) to register managed instances, the instances are assigned sequential names that are prefixed by the value of this parameter. You can also specify a new instance name to replace the assigned sequential name when you register a managed instance.If you specify InstanceName when you register a managed instance, an instance name in theformat of <InstanceName>-<Number> is generated. The number of digits in the <Number> value isdetermined by that in the InstanceCount value. Example: 001. If you do not specify InstanceName, the hostname (Hostname) is used as the instance name.
+     * Property instanceName: The default instance name prefix. The instance name prefix must be 2 to 50 characters in length. It must start with a letter and cannot start with http:\/\/ or https:\/\/. It can contain letters, digits, periods (.), underscores (_), hyphens (-), and colons (:). If you use the activation code that is created by calling this operation (CreateActivation) to register managed instances, the instances are assigned sequential names that are prefixed by the value of this parameter. You can also specify a new instance name to replace the assigned sequential name when you register a managed instance.If you specify InstanceName when you register a managed instance, an instance name in theformat of <InstanceName>-<Number> is generated. The number of digits in the <Number> value isdetermined by that in the InstanceCount value. Example: 001. If you do not specify InstanceName, the hostname (Hostname) is used as the instance name.
      */
     readonly instanceName?: string | ros.IResolvable;
 
@@ -40,14 +41,11 @@ export interface ActivationProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECS::Activation`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Activation`, which is used to create an activation code.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosActivation`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-activation
  */
 export class Activation extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ActivationCode: Activation code.
@@ -70,8 +68,6 @@ export class Activation extends ros.Resource {
     public readonly attrRegisteredCount: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ECS::Activation`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::EHPC::AutoScaleConfig`.</summary>
+    /// <summary>Properties for defining a `AutoScaleConfig`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-autoscaleconfig
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ehpc.AutoScaleConfigProps")]
     public class AutoScaleConfigProps : AlibabaCloud.SDK.ROS.CDK.Ehpc.IAutoScaleConfigProps
     {

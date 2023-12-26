@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CS::KubernetesCluster`.</summary>
+    /// <summary>Properties for defining a `KubernetesCluster`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-kubernetescluster
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cs.KubernetesClusterProps")]
     public class KubernetesClusterProps : AlibabaCloud.SDK.ROS.CDK.Cs.IKubernetesClusterProps
     {

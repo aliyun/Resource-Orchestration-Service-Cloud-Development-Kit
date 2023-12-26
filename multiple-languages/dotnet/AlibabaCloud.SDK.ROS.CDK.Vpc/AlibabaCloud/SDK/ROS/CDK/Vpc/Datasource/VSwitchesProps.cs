@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::VPC::VSwitches`.</summary>
+    /// <summary>Properties for defining a `VSwitches`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-vswitches
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.datasource.VSwitchesProps")]
     public class VSwitchesProps : AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource.IVSwitchesProps
     {

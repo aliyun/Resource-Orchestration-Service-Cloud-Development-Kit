@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::FC::Alias`.</summary>
+    /// <summary>Properties for defining a `RosAlias`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-alias
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-fc.RosAliasProps")]
     public class RosAliasProps : AlibabaCloud.SDK.ROS.CDK.Fc.IRosAliasProps
     {

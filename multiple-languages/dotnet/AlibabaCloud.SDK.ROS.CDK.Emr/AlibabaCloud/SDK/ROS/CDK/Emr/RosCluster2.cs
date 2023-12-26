@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Emr
 {
-    /// <summary>A ROS template type:  `ALIYUN::EMR::Cluster2`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::EMR::Cluster2`, which is used to create an E-MapReduce (EMR) cluster.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Cluster2` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-cluster2
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Emr.RosCluster2), fullyQualifiedName: "@alicloud/ros-cdk-emr.RosCluster2", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-emr.RosCluster2Props\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosCluster2 : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::EMR::Cluster2`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -122,7 +125,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: clusterName: Cluster name.The length is 1 ~ 128 characters, and the alphabet or Chinese must be started. It cannot start with http:// and https: //.It can include Chinese, English, numbers, half-horn colons (:), down line (_), half-angle period (.) Or short lines (-)
+        /// <strong>Property</strong>: clusterName: Cluster name.The length is 1 ~ 128 characters, and the alphabet or Chinese must be started. It cannot start with http:\/\/ and https: \/\/.It can include Chinese, English, numbers, half-horn colons (:), down line (_), half-angle period (.) Or short lines (-)
         /// </remarks>
         [JsiiProperty(name: "clusterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object ClusterName
@@ -1070,7 +1073,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <strong>Property</strong>: scriptName: script name. Required.
             /// The length is 1~64 characters.
             /// It must start with a big or small letter or Chinese.
-            /// It cannot start with http:// and https://.
+            /// It cannot start with http:\/\/ and https:\/\/.
             /// It can contain Chinese, English, numbers, underscores (_), or dashes (-)
             /// </remarks>
             [JsiiProperty(name: "scriptName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
@@ -1080,7 +1083,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: scriptPath: The OSS path where the script is located. Required. Start with oss://.
+            /// <strong>Property</strong>: scriptPath: The OSS path where the script is located. Required. Start with oss:\/\/.
             /// </remarks>
             [JsiiProperty(name: "scriptPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             object ScriptPath
@@ -1162,7 +1165,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
                 /// <strong>Property</strong>: scriptName: script name. Required.
                 /// The length is 1~64 characters.
                 /// It must start with a big or small letter or Chinese.
-                /// It cannot start with http:// and https://.
+                /// It cannot start with http:\/\/ and https:\/\/.
                 /// It can contain Chinese, English, numbers, underscores (_), or dashes (-)
                 /// </remarks>
                 [JsiiProperty(name: "scriptName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
@@ -1172,7 +1175,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: scriptPath: The OSS path where the script is located. Required. Start with oss://.
+                /// <strong>Property</strong>: scriptPath: The OSS path where the script is located. Required. Start with oss:\/\/.
                 /// </remarks>
                 [JsiiProperty(name: "scriptPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
                 public object ScriptPath
@@ -1266,7 +1269,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <strong>Property</strong>: scriptName: script name. Required.
             /// The length is 1~64 characters.
             /// It must start with a big or small letter or Chinese.
-            /// It cannot start with http:// and https://.
+            /// It cannot start with http:\/\/ and https:\/\/.
             /// It can contain Chinese, English, numbers, underscores (_), or dashes (-)
             /// </remarks>
             [JsiiProperty(name: "scriptName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
@@ -1299,7 +1302,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             private object _scriptPath;
 
             /// <remarks>
-            /// <strong>Property</strong>: scriptPath: The OSS path where the script is located. Required. Start with oss://.
+            /// <strong>Property</strong>: scriptPath: The OSS path where the script is located. Required. Start with oss:\/\/.
             /// </remarks>
             [JsiiProperty(name: "scriptPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ScriptPath
@@ -1768,10 +1771,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
 
             /// <remarks>
             /// <strong>Property</strong>: performanceLevel: The performance level of the enhanced SSD.Default value: PL1. Valid values:
-            /// PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
-            /// PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
-            /// PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.
-            /// PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+            /// PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.
+            /// PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.
+            /// PL2: A single enhanced SSD delivers up to 100,000 random read\/write IOPS.
+            /// PL3: A single enhanced SSD delivers up to 1,000,000 random read\/write IOPS.
             /// Default is PL1.
             /// </remarks>
             [JsiiProperty(name: "performanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1821,10 +1824,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
 
                 /// <remarks>
                 /// <strong>Property</strong>: performanceLevel: The performance level of the enhanced SSD.Default value: PL1. Valid values:
-                /// PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
-                /// PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
-                /// PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.
-                /// PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+                /// PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.
+                /// PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.
+                /// PL2: A single enhanced SSD delivers up to 100,000 random read\/write IOPS.
+                /// PL3: A single enhanced SSD delivers up to 1,000,000 random read\/write IOPS.
                 /// Default is PL1.
                 /// </remarks>
                 [JsiiOptional]
@@ -1981,10 +1984,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
 
             /// <remarks>
             /// <strong>Property</strong>: performanceLevel: The performance level of the enhanced SSD.Default value: PL1. Valid values:
-            /// PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
-            /// PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
-            /// PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.
-            /// PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+            /// PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.
+            /// PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.
+            /// PL2: A single enhanced SSD delivers up to 100,000 random read\/write IOPS.
+            /// PL3: A single enhanced SSD delivers up to 1,000,000 random read\/write IOPS.
             /// Default is PL1.
             /// </remarks>
             [JsiiOptional]
@@ -4314,10 +4317,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
 
             /// <remarks>
             /// <strong>Property</strong>: performanceLevel: The performance level of the enhanced SSD.Default value: PL1. Valid values:
-            /// PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
-            /// PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
-            /// PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.
-            /// PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+            /// PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.
+            /// PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.
+            /// PL2: A single enhanced SSD delivers up to 100,000 random read\/write IOPS.
+            /// PL3: A single enhanced SSD delivers up to 1,000,000 random read\/write IOPS.
             /// Default is PL1.
             /// </remarks>
             [JsiiProperty(name: "performanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -4367,10 +4370,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
 
                 /// <remarks>
                 /// <strong>Property</strong>: performanceLevel: The performance level of the enhanced SSD.Default value: PL1. Valid values:
-                /// PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
-                /// PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
-                /// PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.
-                /// PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+                /// PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.
+                /// PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.
+                /// PL2: A single enhanced SSD delivers up to 100,000 random read\/write IOPS.
+                /// PL3: A single enhanced SSD delivers up to 1,000,000 random read\/write IOPS.
                 /// Default is PL1.
                 /// </remarks>
                 [JsiiOptional]
@@ -4527,10 +4530,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
 
             /// <remarks>
             /// <strong>Property</strong>: performanceLevel: The performance level of the enhanced SSD.Default value: PL1. Valid values:
-            /// PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
-            /// PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
-            /// PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.
-            /// PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+            /// PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.
+            /// PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.
+            /// PL2: A single enhanced SSD delivers up to 100,000 random read\/write IOPS.
+            /// PL3: A single enhanced SSD delivers up to 1,000,000 random read\/write IOPS.
             /// Default is PL1.
             /// </remarks>
             [JsiiOptional]

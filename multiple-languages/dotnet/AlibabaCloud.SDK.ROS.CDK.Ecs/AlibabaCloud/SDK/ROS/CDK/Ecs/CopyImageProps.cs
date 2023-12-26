@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ECS::CopyImage`.</summary>
+    /// <summary>Properties for defining a `CopyImage`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-copyimage
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.CopyImageProps")]
     public class CopyImageProps : AlibabaCloud.SDK.ROS.CDK.Ecs.ICopyImageProps
     {
@@ -70,9 +73,43 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
+        private object? _allowCopyInSameRegion;
+
+        /// <summary>Property allowCopyInSameRegion: Whether to allow copying images in the same region.</summary>
+        /// <remarks>
+        /// If set to true, the image will not be copied, the source image id will be returned, and the original image will not be deleted.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "allowCopyInSameRegion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? AllowCopyInSameRegion
+        {
+            get => _allowCopyInSameRegion;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _allowCopyInSameRegion = value;
+            }
+        }
+
         private object? _destinationDescription;
 
-        /// <summary>Property destinationDescription: The description of the destination custom image.It cannot begin with http:// or https://.  Default value: null.</summary>
+        /// <summary>Property destinationDescription: The description of the destination custom image.It cannot begin with http:\/\/ or https:\/\/.  Default value: null.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "destinationDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? DestinationDescription

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Mns.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::MNS::Topics`.</summary>
+    /// <summary>Properties for defining a `Topics`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-topics
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ITopicsProps), fullyQualifiedName: "@alicloud/ros-cdk-mns.datasource.TopicsProps")]
     public interface ITopicsProps
     {
@@ -19,7 +22,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::MNS::Topics`.</summary>
+        /// <summary>Properties for defining a `Topics`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-topics
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ITopicsProps), fullyQualifiedName: "@alicloud/ros-cdk-mns.datasource.TopicsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Mns.Datasource.ITopicsProps
         {

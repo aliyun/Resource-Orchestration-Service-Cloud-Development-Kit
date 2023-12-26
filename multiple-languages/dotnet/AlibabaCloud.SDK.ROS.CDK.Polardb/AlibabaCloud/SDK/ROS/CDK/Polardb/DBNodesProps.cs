@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::POLARDB::DBNodes`.</summary>
+    /// <summary>Properties for defining a `DBNodes`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbnodes
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-polardb.DBNodesProps")]
     public class DBNodesProps : AlibabaCloud.SDK.ROS.CDK.Polardb.IDBNodesProps
     {

@@ -4,7 +4,8 @@ import { RosSecurityGroupIngress } from './ecs.generated';
 export { RosSecurityGroupIngress as SecurityGroupIngressProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECS::SecurityGroupIngress`
+ * Properties for defining a `SecurityGroupIngress`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroupingress
  */
 export interface SecurityGroupIngressProps {
 
@@ -14,7 +15,7 @@ export interface SecurityGroupIngressProps {
     readonly ipProtocol: string | ros.IResolvable;
 
     /**
-     * Property portRange: Ip protocol relative port range. For tcp and udp, the port rang is [1,65535], using format '1/200'For icmp|gre|all protocel, the port range should be '-1/-1'
+     * Property portRange: Ip protocol relative port range. For tcp and udp, the port rang is [1,65535], using format '1\/200'For icmp|gre|all protocel, the port range should be '-1\/-1'
      */
     readonly portRange: string | ros.IResolvable;
 
@@ -65,7 +66,7 @@ export interface SecurityGroupIngressProps {
     readonly sourceGroupOwnerId?: string | ros.IResolvable;
 
     /**
-     * Property sourcePortRange: The range of the ports enabled by the source security group for the transport layer protocol. Valid values: TCP/UDP: Value range: 1 to 65535. The start port and the end port are separated by a slash (/). Correct example: 1/200. Incorrect example: 200/1.ICMP: -1/-1.GRE: -1/-1.ALL: -1/-1.
+     * Property sourcePortRange: The range of the ports enabled by the source security group for the transport layer protocol. Valid values: TCP\/UDP: Value range: 1 to 65535. The start port and the end port are separated by a slash (\/). Correct example: 1\/200. Incorrect example: 200\/1.ICMP: -1\/-1.GRE: -1\/-1.ALL: -1\/-1.
      */
     readonly sourcePortRange?: string | ros.IResolvable;
 
@@ -78,18 +79,13 @@ export interface SecurityGroupIngressProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECS::SecurityGroupIngress`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::SecurityGroupIngress`, which is used to create an inbound rule for a security group.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecurityGroupIngress`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroupingress
  */
 export class SecurityGroupIngress extends ros.Resource {
 
     /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
-
-    /**
-     * Create a new `ALIYUN::ECS::SecurityGroupIngress`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

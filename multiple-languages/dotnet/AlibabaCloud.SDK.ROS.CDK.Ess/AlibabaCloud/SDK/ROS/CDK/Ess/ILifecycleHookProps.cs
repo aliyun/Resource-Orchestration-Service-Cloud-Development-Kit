@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ess
 {
-    /// <summary>Properties for defining a `ALIYUN::ESS::LifecycleHook`.</summary>
+    /// <summary>Properties for defining a `LifecycleHook`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-lifecyclehook
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ILifecycleHookProps), fullyQualifiedName: "@alicloud/ros-cdk-ess.LifecycleHookProps")]
     public interface ILifecycleHookProps
     {
@@ -104,7 +107,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ESS::LifecycleHook`.</summary>
+        /// <summary>Properties for defining a `LifecycleHook`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-lifecyclehook
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ILifecycleHookProps), fullyQualifiedName: "@alicloud/ros-cdk-ess.LifecycleHookProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ess.ILifecycleHookProps
         {

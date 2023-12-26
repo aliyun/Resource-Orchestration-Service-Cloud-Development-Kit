@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Fc
 {
-    /// <summary>Properties for defining a `ALIYUN::FC::Trigger`.</summary>
+    /// <summary>Properties for defining a `RosTrigger`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-trigger
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosTriggerProps), fullyQualifiedName: "@alicloud/ros-cdk-fc.RosTriggerProps")]
     public interface IRosTriggerProps
     {
@@ -57,7 +60,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
 
         /// <remarks>
         /// <strong>Property</strong>: invocationRole: The role grants event source the permission to run function on behalf of user. This is optional for some triggers.
-        /// Example : "acs:ram::1234567890:role/fc-test"
+        /// Example : "acs:ram::1234567890:role\/fc-test"
         /// </remarks>
         [JsiiProperty(name: "invocationRole", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -97,7 +100,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::FC::Trigger`.</summary>
+        /// <summary>Properties for defining a `RosTrigger`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-trigger
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosTriggerProps), fullyQualifiedName: "@alicloud/ros-cdk-fc.RosTriggerProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Fc.IRosTriggerProps
         {
@@ -154,7 +160,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
 
             /// <remarks>
             /// <strong>Property</strong>: invocationRole: The role grants event source the permission to run function on behalf of user. This is optional for some triggers.
-            /// Example : "acs:ram::1234567890:role/fc-test"
+            /// Example : "acs:ram::1234567890:role\/fc-test"
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "invocationRole", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

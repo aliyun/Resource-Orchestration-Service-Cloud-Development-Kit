@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Graphdatabase
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::GraphDatabase::DbInstance`.</summary>
+    /// <summary>Properties for defining a `RosDbInstance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-graphdatabase-dbinstance
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-graphdatabase.RosDbInstanceProps")]
     public class RosDbInstanceProps : AlibabaCloud.SDK.ROS.CDK.Graphdatabase.IRosDbInstanceProps
     {

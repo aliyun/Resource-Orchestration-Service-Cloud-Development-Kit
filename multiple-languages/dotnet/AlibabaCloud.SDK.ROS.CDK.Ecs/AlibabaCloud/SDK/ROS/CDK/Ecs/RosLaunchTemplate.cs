@@ -4,11 +4,16 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>A ROS template type:  `ALIYUN::ECS::LaunchTemplate`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::LaunchTemplate`, which is used to create a launch template.</summary>
+    /// <remarks>
+    /// You can use a launch template to create an Elastic Compute Service (ECS) instance.
+    ///
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `LaunchTemplate` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-launchtemplate
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Ecs.RosLaunchTemplate), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosLaunchTemplate", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-ecs.RosLaunchTemplateProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosLaunchTemplate : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::ECS::LaunchTemplate`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -1270,10 +1275,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         /// <remarks>
         /// <strong>Property</strong>: systemDiskPerformanceLevel: The performance level of the ESSD that is used as the system disk. Valid values:
-        /// PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
-        /// PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
-        /// PL2: A single ESSD can deliver up to 100,000 random read/write IOPS.
-        /// PL3: A single ESSD can deliver up to 1,000,000 random read/write IOPS.
+        /// PL0: A single ESSD can deliver up to 10,000 random read\/write IOPS.
+        /// PL1: A single ESSD can deliver up to 50,000 random read\/write IOPS.
+        /// PL2: A single ESSD can deliver up to 100,000 random read\/write IOPS.
+        /// PL3: A single ESSD can deliver up to 1,000,000 random read\/write IOPS.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "systemDiskPerformanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1637,10 +1642,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
             /// <remarks>
             /// <strong>Property</strong>: performanceLevel: The performance level of the ESSD used as data disk. The value of Valid values:
-            /// PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
-            /// PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
-            /// PL2: A single ESSD can deliver up to 100,000 random read/write IOPS.
-            /// PL3: A single ESSD can deliver up to 1,000,000 random read/write IOPS.
+            /// PL0: A single ESSD can deliver up to 10,000 random read\/write IOPS.
+            /// PL1: A single ESSD can deliver up to 50,000 random read\/write IOPS.
+            /// PL2: A single ESSD can deliver up to 100,000 random read\/write IOPS.
+            /// PL3: A single ESSD can deliver up to 1,000,000 random read\/write IOPS.
             /// </remarks>
             [JsiiProperty(name: "performanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1737,10 +1742,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
                 /// <remarks>
                 /// <strong>Property</strong>: performanceLevel: The performance level of the ESSD used as data disk. The value of Valid values:
-                /// PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
-                /// PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
-                /// PL2: A single ESSD can deliver up to 100,000 random read/write IOPS.
-                /// PL3: A single ESSD can deliver up to 1,000,000 random read/write IOPS.
+                /// PL0: A single ESSD can deliver up to 10,000 random read\/write IOPS.
+                /// PL1: A single ESSD can deliver up to 50,000 random read\/write IOPS.
+                /// PL2: A single ESSD can deliver up to 100,000 random read\/write IOPS.
+                /// PL3: A single ESSD can deliver up to 1,000,000 random read\/write IOPS.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "performanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1942,10 +1947,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
             /// <remarks>
             /// <strong>Property</strong>: performanceLevel: The performance level of the ESSD used as data disk. The value of Valid values:
-            /// PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
-            /// PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
-            /// PL2: A single ESSD can deliver up to 100,000 random read/write IOPS.
-            /// PL3: A single ESSD can deliver up to 1,000,000 random read/write IOPS.
+            /// PL0: A single ESSD can deliver up to 10,000 random read\/write IOPS.
+            /// PL1: A single ESSD can deliver up to 50,000 random read\/write IOPS.
+            /// PL2: A single ESSD can deliver up to 100,000 random read\/write IOPS.
+            /// PL3: A single ESSD can deliver up to 1,000,000 random read\/write IOPS.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "performanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

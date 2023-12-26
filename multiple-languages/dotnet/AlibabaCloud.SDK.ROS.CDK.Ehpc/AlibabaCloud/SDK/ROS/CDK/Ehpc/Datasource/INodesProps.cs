@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ehpc.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::EHPC::Nodes`.</summary>
+    /// <summary>Properties for defining a `Nodes`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ehpc-nodes
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(INodesProps), fullyQualifiedName: "@alicloud/ros-cdk-ehpc.datasource.NodesProps")]
     public interface INodesProps
     {
@@ -85,7 +88,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::EHPC::Nodes`.</summary>
+        /// <summary>Properties for defining a `Nodes`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ehpc-nodes
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(INodesProps), fullyQualifiedName: "@alicloud/ros-cdk-ehpc.datasource.NodesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ehpc.Datasource.INodesProps
         {

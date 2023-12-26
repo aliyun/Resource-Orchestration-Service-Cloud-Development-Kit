@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Dfs
 {
-    /// <summary>A ROS template type:  `ALIYUN::DFS::AccessRule`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::DFS::AccessRule`, which is used to create a rule for a permission group.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `AccessRule` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-accessrule
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Dfs.RosAccessRule), fullyQualifiedName: "@alicloud/ros-cdk-dfs.RosAccessRule", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-dfs.RosAccessRuleProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosAccessRule : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::DFS::AccessRule`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -133,7 +136,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dfs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: rwAccessType: The read/write permission of the authorized object on the file system.
+        /// <strong>Property</strong>: rwAccessType: The read\/write permission of the authorized object on the file system.
         /// Values:
         /// RDWR (default) : read and write.
         /// RDONLY: read-only

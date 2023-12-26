@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ECS::AutoSnapshotPolicies`.</summary>
+    /// <summary>Properties for defining a `RosAutoSnapshotPolicies`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-autosnapshotpolicies
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.datasource.RosAutoSnapshotPoliciesProps")]
     public class RosAutoSnapshotPoliciesProps : AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource.IRosAutoSnapshotPoliciesProps
     {

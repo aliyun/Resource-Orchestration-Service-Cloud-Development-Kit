@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
 {
-    /// <summary>Properties for defining a `ALIYUN::CLOUDFW::AddressBook`.</summary>
+    /// <summary>Properties for defining a `AddressBook`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-addressbook
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IAddressBookProps), fullyQualifiedName: "@alicloud/ros-cdk-cloudfw.AddressBookProps")]
     public interface IAddressBookProps
     {
@@ -100,7 +103,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::CLOUDFW::AddressBook`.</summary>
+        /// <summary>Properties for defining a `AddressBook`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-addressbook
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IAddressBookProps), fullyQualifiedName: "@alicloud/ros-cdk-cloudfw.AddressBookProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cloudfw.IAddressBookProps
         {

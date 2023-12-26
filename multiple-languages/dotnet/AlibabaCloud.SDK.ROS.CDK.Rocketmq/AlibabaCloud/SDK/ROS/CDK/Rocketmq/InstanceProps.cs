@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ROCKETMQ::Instance`.</summary>
+    /// <summary>Properties for defining a `Instance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq-instance
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-rocketmq.InstanceProps")]
     public class InstanceProps : AlibabaCloud.SDK.ROS.CDK.Rocketmq.IInstanceProps
     {

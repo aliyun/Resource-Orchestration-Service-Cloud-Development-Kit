@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::VPC::FlowLog`.</summary>
+    /// <summary>Properties for defining a `FlowLog`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-flowlog
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.FlowLogProps")]
     public class FlowLogProps : AlibabaCloud.SDK.ROS.CDK.Vpc.IFlowLogProps
     {

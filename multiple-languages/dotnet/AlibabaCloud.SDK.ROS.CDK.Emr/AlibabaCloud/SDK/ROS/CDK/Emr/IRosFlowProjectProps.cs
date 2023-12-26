@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Emr
 {
-    /// <summary>Properties for defining a `ALIYUN::EMR::FlowProject`.</summary>
+    /// <summary>Properties for defining a `RosFlowProject`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-flowproject
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosFlowProjectProps), fullyQualifiedName: "@alicloud/ros-cdk-emr.RosFlowProjectProps")]
     public interface IRosFlowProjectProps
     {
@@ -39,7 +42,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::EMR::FlowProject`.</summary>
+        /// <summary>Properties for defining a `RosFlowProject`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-flowproject
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosFlowProjectProps), fullyQualifiedName: "@alicloud/ros-cdk-emr.RosFlowProjectProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Emr.IRosFlowProjectProps
         {

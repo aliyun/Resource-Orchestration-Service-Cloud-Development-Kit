@@ -4,7 +4,8 @@ import { RosDBInstances } from './rds.generated';
 export { RosDBInstances as DBInstancesProperty };
 
 /**
- * Properties for defining a `DATASOURCE::RDS::DBInstances`
+ * Properties for defining a `DBInstances`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-dbinstances
  */
 export interface DBInstancesProps {
 
@@ -110,14 +111,11 @@ export interface DBInstancesProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::RDS::DBInstances`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::RDS::DBInstances`, which is used to query ApsaraDB RDS instances.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBInstances`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-dbinstances
  */
 export class DBInstances extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DBInstanceIds: The list of The RDS Database instance Ids.
@@ -130,8 +128,6 @@ export class DBInstances extends ros.Resource {
     public readonly attrDbInstances: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::RDS::DBInstances`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

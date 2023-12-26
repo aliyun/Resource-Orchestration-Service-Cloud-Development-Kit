@@ -4,7 +4,8 @@ import { RosConsumerGroup } from './rocketmq5.generated';
 export { RosConsumerGroup as ConsumerGroupProperty };
 
 /**
- * Properties for defining a `ALIYUN::ROCKETMQ5::ConsumerGroup`
+ * Properties for defining a `ConsumerGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq5-consumergroup
  */
 export interface ConsumerGroupProps {
 
@@ -38,14 +39,11 @@ export interface ConsumerGroupProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ROCKETMQ5::ConsumerGroup`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ROCKETMQ5::ConsumerGroup`, which is used to create a consumer group in ApsaraMQ for RocketMQ 5.0.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosConsumerGroup`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq5-consumergroup
  */
 export class ConsumerGroup extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ConsumerGroupId: The ID of the consumer group.
@@ -63,8 +61,6 @@ export class ConsumerGroup extends ros.Resource {
     public readonly attrInstanceId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ROCKETMQ5::ConsumerGroup`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

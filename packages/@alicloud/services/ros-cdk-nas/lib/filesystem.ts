@@ -4,7 +4,8 @@ import { RosFileSystem } from './nas.generated';
 export { RosFileSystem as FileSystemProperty };
 
 /**
- * Properties for defining a `ALIYUN::NAS::FileSystem`
+ * Properties for defining a `FileSystem`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-filesystem
  */
 export interface FileSystemProps {
 
@@ -24,7 +25,7 @@ export interface FileSystemProps {
     readonly storageType: string | ros.IResolvable;
 
     /**
-     * Property bandwidth: Maximum file system throughput, unit is MB/s. Required and valid only when FileSystemType=cpfs.
+     * Property bandwidth: Maximum file system throughput, unit is MB\/s. Required and valid only when FileSystemType=cpfs.
      */
     readonly bandwidth?: number | ros.IResolvable;
 
@@ -95,14 +96,11 @@ export interface FileSystemProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::NAS::FileSystem`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::NAS::FileSystem`, which is used to create a file system in Apsara File Storage NAS (NAS).
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFileSystem`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-filesystem
  */
 export class FileSystem extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute FileSystemId: ID of the file system created
@@ -110,8 +108,6 @@ export class FileSystem extends ros.Resource {
     public readonly attrFileSystemId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::NAS::FileSystem`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

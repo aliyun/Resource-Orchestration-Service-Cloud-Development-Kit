@@ -4,20 +4,18 @@ import { RosIpfilters } from './directmail.generated';
 export { RosIpfilters as IpfiltersProperty };
 
 /**
- * Properties for defining a `DATASOURCE::DirectMail::Ipfilters`
+ * Properties for defining a `Ipfilters`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-directmail-ipfilters
  */
 export interface IpfiltersProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::DirectMail::Ipfilters`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::DirectMail::Ipfilters`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosIpfilters`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-directmail-ipfilters
  */
 export class Ipfilters extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute IpfilterIds: The list of ip filter IDs.
@@ -30,8 +28,6 @@ export class Ipfilters extends ros.Resource {
     public readonly attrIpfilters: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::DirectMail::Ipfilters`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

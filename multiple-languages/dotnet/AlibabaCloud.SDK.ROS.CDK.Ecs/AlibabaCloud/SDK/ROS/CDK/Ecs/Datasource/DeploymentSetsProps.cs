@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ECS::DeploymentSets`.</summary>
+    /// <summary>Properties for defining a `DeploymentSets`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-deploymentsets
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.datasource.DeploymentSetsProps")]
     public class DeploymentSetsProps : AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource.IDeploymentSetsProps
     {

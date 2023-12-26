@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vs
 {
-    /// <summary>Properties for defining a `ALIYUN::VS::Group`.</summary>
+    /// <summary>Properties for defining a `Group`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vs-group
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-vs.GroupProps")]
     public interface IGroupProps
     {
@@ -70,7 +73,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vs
             }
         }
 
-        /// <summary>Property callback: Updating the space callback device / flow state.</summary>
+        /// <summary>Property callback: Updating the space callback device \/ flow state.</summary>
         [JsiiProperty(name: "callback", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Callback
@@ -114,7 +117,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::VS::Group`.</summary>
+        /// <summary>Properties for defining a `Group`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vs-group
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-vs.GroupProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vs.IGroupProps
         {
@@ -181,7 +187,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vs
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property callback: Updating the space callback device / flow state.</summary>
+            /// <summary>Property callback: Updating the space callback device \/ flow state.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "callback", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Callback

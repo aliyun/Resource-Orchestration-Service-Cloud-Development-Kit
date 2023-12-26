@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::RDS::DBInstanceClone`.</summary>
+    /// <summary>Properties for defining a `DBInstanceClone`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstanceclone
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-rds.DBInstanceCloneProps")]
     public class DBInstanceCloneProps : AlibabaCloud.SDK.ROS.CDK.Rds.IDBInstanceCloneProps
     {
@@ -1123,7 +1126,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 
         private object? _securityIpList;
 
-        /// <summary>Property securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0/0 means no limitation.</summary>
+        /// <summary>Property securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0\/0 means no limitation.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "securityIpList", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? SecurityIpList

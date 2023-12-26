@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::GA::Acls`
+ * Properties for defining a `RosAcls`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ga-acls
  */
 export interface RosAclsProps {
 
@@ -60,18 +61,15 @@ function rosAclsPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * A ROS template type:  `DATASOURCE::GA::Acls`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::GA::Acls`, which is used to query access control lists (ACLs).
+ * @Note This class does not contain additional functions, so it is recommended to use the `Acls` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ga-acls
  */
 export class RosAcls extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::GA::Acls";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AclIds: The list of acl IDs.
@@ -102,8 +100,6 @@ export class RosAcls extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::GA::Acls`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

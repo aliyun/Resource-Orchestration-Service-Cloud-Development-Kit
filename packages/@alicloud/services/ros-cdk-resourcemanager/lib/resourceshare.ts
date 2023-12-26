@@ -4,7 +4,8 @@ import { RosResourceShare } from './resourcemanager.generated';
 export { RosResourceShare as ResourceShareProperty };
 
 /**
- * Properties for defining a `ALIYUN::ResourceManager::ResourceShare`
+ * Properties for defining a `ResourceShare`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourceshare
  */
 export interface ResourceShareProps {
 
@@ -42,14 +43,11 @@ export interface ResourceShareProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ResourceManager::ResourceShare`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::ResourceShare`, which is used to create a resource share.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosResourceShare`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourceshare
  */
 export class ResourceShare extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ResourceShareId: The ID of the resource share.
@@ -57,8 +55,6 @@ export class ResourceShare extends ros.Resource {
     public readonly attrResourceShareId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ResourceManager::ResourceShare`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

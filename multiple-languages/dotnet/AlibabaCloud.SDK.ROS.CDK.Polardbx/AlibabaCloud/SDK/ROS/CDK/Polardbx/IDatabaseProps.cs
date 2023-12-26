@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Polardbx
 {
-    /// <summary>Properties for defining a `ALIYUN::PolarDBX::Database`.</summary>
+    /// <summary>Properties for defining a `Database`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardbx-database
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IDatabaseProps), fullyQualifiedName: "@alicloud/ros-cdk-polardbx.DatabaseProps")]
     public interface IDatabaseProps
     {
@@ -66,7 +69,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardbx
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::PolarDBX::Database`.</summary>
+        /// <summary>Properties for defining a `Database`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardbx-database
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IDatabaseProps), fullyQualifiedName: "@alicloud/ros-cdk-polardbx.DatabaseProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Polardbx.IDatabaseProps
         {

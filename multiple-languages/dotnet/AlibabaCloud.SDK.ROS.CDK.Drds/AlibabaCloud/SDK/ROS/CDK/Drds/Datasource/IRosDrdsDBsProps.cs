@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Drds.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::DRDS::DrdsDBs`.</summary>
+    /// <summary>Properties for defining a `RosDrdsDBs`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-drds-drdsdbs
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosDrdsDBsProps), fullyQualifiedName: "@alicloud/ros-cdk-drds.datasource.RosDrdsDBsProps")]
     public interface IRosDrdsDBsProps
     {
@@ -17,7 +20,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds.Datasource
             get;
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::DRDS::DrdsDBs`.</summary>
+        /// <summary>Properties for defining a `RosDrdsDBs`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-drds-drdsdbs
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosDrdsDBsProps), fullyQualifiedName: "@alicloud/ros-cdk-drds.datasource.RosDrdsDBsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Drds.Datasource.IRosDrdsDBsProps
         {

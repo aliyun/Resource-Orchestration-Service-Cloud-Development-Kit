@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Redis.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::REDIS::Instances`.</summary>
+    /// <summary>Properties for defining a `RosInstances`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-instances
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosInstancesProps), fullyQualifiedName: "@alicloud/ros-cdk-redis.datasource.RosInstancesProps")]
     public interface IRosInstancesProps
     {
@@ -12,7 +15,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis.Datasource
         /// <strong>Property</strong>: architectureType: The architecture of the instance. Valid values:
         /// cluster: The instance is a cluster instance.
         /// standard: The instance is a standard instance.
-        /// rwsplit: The instance is a read/write splitting instance.
+        /// rwsplit: The instance is a read\/write splitting instance.
         /// </remarks>
         [JsiiProperty(name: "architectureType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -261,7 +264,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::REDIS::Instances`.</summary>
+        /// <summary>Properties for defining a `RosInstances`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-instances
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosInstancesProps), fullyQualifiedName: "@alicloud/ros-cdk-redis.datasource.RosInstancesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Redis.Datasource.IRosInstancesProps
         {
@@ -273,7 +279,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis.Datasource
             /// <strong>Property</strong>: architectureType: The architecture of the instance. Valid values:
             /// cluster: The instance is a cluster instance.
             /// standard: The instance is a standard instance.
-            /// rwsplit: The instance is a read/write splitting instance.
+            /// rwsplit: The instance is a read\/write splitting instance.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "architectureType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

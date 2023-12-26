@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::EdsUser::User`
+ * Properties for defining a `RosUser`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edsuser-user
  */
 export interface RosUserProps {
 
@@ -98,18 +99,15 @@ function rosUserPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * A ROS template type:  `ALIYUN::EdsUser::User`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EdsUser::User`, which is used to create a convenience user.
+ * @Note This class does not contain additional functions, so it is recommended to use the `User` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edsuser-user
  */
 export class RosUser extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EdsUser::User";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute EndUserId: The name of the end user.
@@ -158,8 +156,6 @@ export class RosUser extends ros.RosResource {
     public remark: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::EdsUser::User`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CLOUDFW::VpcFirewallControlPolicy`.</summary>
+    /// <summary>Properties for defining a `VpcFirewallControlPolicy`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-vpcfirewallcontrolpolicy
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cloudfw.VpcFirewallControlPolicyProps")]
     public class VpcFirewallControlPolicyProps : AlibabaCloud.SDK.ROS.CDK.Cloudfw.IVpcFirewallControlPolicyProps
     {

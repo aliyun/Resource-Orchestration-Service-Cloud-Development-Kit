@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::OOS::Template`.</summary>
+    /// <summary>Properties for defining a `Template`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-template
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-oos.TemplateProps")]
     public class TemplateProps : AlibabaCloud.SDK.ROS.CDK.Oos.ITemplateProps
     {

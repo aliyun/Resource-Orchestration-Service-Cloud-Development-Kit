@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Dbs
 {
-    /// <summary>Properties for defining a `ALIYUN::DBS::RestoreTask`.</summary>
+    /// <summary>Properties for defining a `RosRestoreTask`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dbs-restoretask
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosRestoreTaskProps), fullyQualifiedName: "@alicloud/ros-cdk-dbs.RosRestoreTaskProps")]
     public interface IRosRestoreTaskProps
     {
@@ -267,7 +270,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::DBS::RestoreTask`.</summary>
+        /// <summary>Properties for defining a `RosRestoreTask`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dbs-restoretask
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosRestoreTaskProps), fullyQualifiedName: "@alicloud/ros-cdk-dbs.RosRestoreTaskProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Dbs.IRosRestoreTaskProps
         {

@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Iot
 {
-    /// <summary>A ROS template type:  `ALIYUN::IOT::Product`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::Product`, which is used to create a product.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Product` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-product
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Iot.RosProduct), fullyQualifiedName: "@alicloud/ros-cdk-iot.RosProduct", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-iot.RosProductProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosProduct : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::IOT::Product`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -276,7 +279,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// <strong>Property</strong>: dataFormat: You must specify this parameter if the value of AliyunCommodityCode is iothub_senior.
         /// This parameter is only available and required when you create a Pro Edition product.
         /// Options:
-        /// 0: Do not parse/Custom.
+        /// 0: Do not parse\/Custom.
         /// 1: Alink JSON.
         /// </remarks>
         [JsiiOptional]

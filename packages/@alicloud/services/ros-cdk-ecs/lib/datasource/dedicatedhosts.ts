@@ -4,7 +4,8 @@ import { RosDedicatedHosts } from './ecs.generated';
 export { RosDedicatedHosts as DedicatedHostsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::ECS::DedicatedHosts`
+ * Properties for defining a `DedicatedHosts`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-dedicatedhosts
  */
 export interface DedicatedHostsProps {
 
@@ -54,14 +55,11 @@ export interface DedicatedHostsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::ECS::DedicatedHosts`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::DedicatedHosts`, which is used to query dedicated hosts.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDedicatedHosts`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-dedicatedhosts
  */
 export class DedicatedHosts extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DedicatedHostIds: The list of dedicated host ids.
@@ -74,8 +72,6 @@ export class DedicatedHosts extends ros.Resource {
     public readonly attrDedicatedHosts: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::ECS::DedicatedHosts`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::NAS::DataFlow`.</summary>
+    /// <summary>Properties for defining a `RosDataFlow`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-dataflow
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-nas.RosDataFlowProps")]
     public class RosDataFlowProps : AlibabaCloud.SDK.ROS.CDK.Nas.IRosDataFlowProps
     {
@@ -77,14 +80,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         private object _sourceStorage;
 
         /// <remarks>
-        /// <strong>Property</strong>: sourceStorage: Access path stored at the source.Format: <storage Type>: // <PATH>.
+        /// <strong>Property</strong>: sourceStorage: Access path stored at the source.Format: <storage Type>: \/\/ <PATH>.
         /// in:
         /// Storage Type: Currently only supports OSS.
         /// PATH: OSS's bucket name.Limit the following.
         /// Only support the lowercase letters, numbers and short strokes (-) and must start with a lowercase letter or number.
         /// The length is 8 ~ 128 English characters.
         /// Use UTF-8 encoding.
-        /// Can't start with http: // and https: //.
+        /// Can't start with http: \/\/ and https: \/\/.
         /// Explain that the OSS BUCKET must be the bucket that exists in the region.
         /// </remarks>
         [JsiiProperty(name: "sourceStorage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
@@ -117,7 +120,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         private object _throughput;
 
         /// <remarks>
-        /// <strong>Property</strong>: throughput: The upper limit of transmission bandwidth for data flow, unit: MB/s.
+        /// <strong>Property</strong>: throughput: The upper limit of transmission bandwidth for data flow, unit: MB\/s.
         /// Value:
         /// 600
         /// 1200
@@ -317,7 +320,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         /// <strong>Property</strong>: description: Description of data flow.
         /// limit:
         /// The length is 2 to 128 English or Chinese characters.
-        /// Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //.
+        /// Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/.
         /// It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
         /// </remarks>
         [JsiiOptional]

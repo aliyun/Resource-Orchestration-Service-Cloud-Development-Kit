@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>Properties for defining a `ALIYUN::VPC::EIPSegment`.</summary>
+    /// <summary>Properties for defining a `RosEIPSegment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eipsegment
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosEIPSegmentProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosEIPSegmentProps")]
     public interface IRosEIPSegmentProps
     {
@@ -25,7 +28,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: bandwidth: The maximum bandwidth of the contiguous EIPs. Unit: Mbit/s. Default value: 5.
+        /// <strong>Property</strong>: bandwidth: The maximum bandwidth of the contiguous EIPs. Unit: Mbit\/s. Default value: 5.
         /// </remarks>
         [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -85,7 +88,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::VPC::EIPSegment`.</summary>
+        /// <summary>Properties for defining a `RosEIPSegment`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eipsegment
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosEIPSegmentProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosEIPSegmentProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.IRosEIPSegmentProps
         {
@@ -110,7 +116,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: bandwidth: The maximum bandwidth of the contiguous EIPs. Unit: Mbit/s. Default value: 5.
+            /// <strong>Property</strong>: bandwidth: The maximum bandwidth of the contiguous EIPs. Unit: Mbit\/s. Default value: 5.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

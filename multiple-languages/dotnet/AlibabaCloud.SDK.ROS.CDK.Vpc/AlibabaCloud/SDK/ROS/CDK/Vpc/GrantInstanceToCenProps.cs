@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::VPC::GrantInstanceToCen`.</summary>
+    /// <summary>Properties for defining a `GrantInstanceToCen`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-grantinstancetocen
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.GrantInstanceToCenProps")]
     public class GrantInstanceToCenProps : AlibabaCloud.SDK.ROS.CDK.Vpc.IGrantInstanceToCenProps
     {

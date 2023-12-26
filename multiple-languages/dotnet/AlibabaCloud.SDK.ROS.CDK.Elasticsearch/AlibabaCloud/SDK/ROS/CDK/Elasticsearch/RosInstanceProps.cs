@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ElasticSearch::Instance`.</summary>
+    /// <summary>Properties for defining a `RosInstance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-elasticsearch-instance
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-elasticsearch.RosInstanceProps")]
     public class RosInstanceProps : AlibabaCloud.SDK.ROS.CDK.Elasticsearch.IRosInstanceProps
     {
@@ -460,7 +463,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
         private object? _periodUnit;
 
         /// <remarks>
-        /// <strong>Property</strong>: periodUnit: Unit of prepaid time period, it could be Month/Year. Default value is Month.
+        /// <strong>Property</strong>: periodUnit: Unit of prepaid time period, it could be Month\/Year. Default value is Month.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

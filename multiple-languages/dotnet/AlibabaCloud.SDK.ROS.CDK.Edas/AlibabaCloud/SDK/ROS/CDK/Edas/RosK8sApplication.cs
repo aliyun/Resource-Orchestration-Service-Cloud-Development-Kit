@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Edas
 {
-    /// <summary>A ROS template type:  `ALIYUN::EDAS::K8sApplication`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::K8sApplication`, which is used to create an application in a Kubernetes cluster.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `K8sApplication` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-k8sapplication
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Edas.RosK8sApplication), fullyQualifiedName: "@alicloud/ros-cdk-edas.RosK8sApplication", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-edas.RosK8sApplicationProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosK8sApplication : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::EDAS::K8sApplication`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -1043,7 +1046,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: localVolume: The configuration for mounting host files to the container where the application is running. For example, the value can be [{"type":"", "nodePath":"/localfiles", "mountPath":"/app/files"}, {"type":"Directory", "nodePath":"/mnt", "mountPath":"/app/storage"}].
+        /// <strong>Property</strong>: localVolume: The configuration for mounting host files to the container where the application is running. For example, the value can be [{"type":"", "nodePath":"\/localfiles", "mountPath":"\/app\/files"}, {"type":"Directory", "nodePath":"\/mnt", "mountPath":"\/app\/storage"}].
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "localVolume", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-edas.RosK8sApplication.LocalVolumeProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -1122,7 +1125,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: mountDescs: The description of the NAS mounting configuration. For example, the value can be [{"NasPath": "/k8s","MountPath": "/mnt"}, {"NasPath": "/files", "MountPath": "/app/files"}].
+        /// <strong>Property</strong>: mountDescs: The description of the NAS mounting configuration. For example, the value can be [{"NasPath": "\/k8s","MountPath": "\/mnt"}, {"NasPath": "\/files", "MountPath": "\/app\/files"}].
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "mountDescs", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-edas.RosK8sApplication.MountDescsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -1329,7 +1332,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: postStart: The post-start script. For example, {"Exec": {"Command": ["ls", "/"]}}.
+        /// <strong>Property</strong>: postStart: The post-start script. For example, {"Exec": {"Command": ["ls", "\/"]}}.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "postStart", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-edas.RosK8sApplication.PostStartProperty\"}]}}", isOptional: true)]
@@ -1360,7 +1363,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: preStop: The pre-stop script. For example, {"Exec": {"Command": ["ls", "/"]}}.
+        /// <strong>Property</strong>: preStop: The pre-stop script. For example, {"Exec": {"Command": ["ls", "\/"]}}.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "preStop", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-edas.RosK8sApplication.PreStopProperty\"}]}}", isOptional: true)]
@@ -4014,7 +4017,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: newRatio: Old/Young Generation Memory Size Ratio.
+            /// <strong>Property</strong>: newRatio: Old\/Young Generation Memory Size Ratio.
             /// </remarks>
             [JsiiProperty(name: "newRatio", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-edas.RosK8sApplication.NewRatioProperty\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -4105,7 +4108,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: survivorRatio: Eden/Survivor Memory Size Ratio.
+            /// <strong>Property</strong>: survivorRatio: Eden\/Survivor Memory Size Ratio.
             /// </remarks>
             [JsiiProperty(name: "survivorRatio", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-edas.RosK8sApplication.SurvivorRatioProperty\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -4304,7 +4307,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: newRatio: Old/Young Generation Memory Size Ratio.
+                /// <strong>Property</strong>: newRatio: Old\/Young Generation Memory Size Ratio.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "newRatio", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-edas.RosK8sApplication.NewRatioProperty\"}]}}", isOptional: true)]
@@ -4374,7 +4377,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: survivorRatio: Eden/Survivor Memory Size Ratio.
+                /// <strong>Property</strong>: survivorRatio: Eden\/Survivor Memory Size Ratio.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "survivorRatio", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-edas.RosK8sApplication.SurvivorRatioProperty\"}]}}", isOptional: true)]
@@ -4882,7 +4885,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
             private object? _newRatio;
 
             /// <remarks>
-            /// <strong>Property</strong>: newRatio: Old/Young Generation Memory Size Ratio.
+            /// <strong>Property</strong>: newRatio: Old\/Young Generation Memory Size Ratio.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "newRatio", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-edas.RosK8sApplication.NewRatioProperty\"}]}}", isOptional: true)]
@@ -5113,7 +5116,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
             private object? _survivorRatio;
 
             /// <remarks>
-            /// <strong>Property</strong>: survivorRatio: Eden/Survivor Memory Size Ratio.
+            /// <strong>Property</strong>: survivorRatio: Eden\/Survivor Memory Size Ratio.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "survivorRatio", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-edas.RosK8sApplication.SurvivorRatioProperty\"}]}}", isOptional: true)]
@@ -10301,7 +10304,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
         {
             /// <remarks>
             /// <strong>Property</strong>: logDir: If the standard output type is used, the collection path is stdout.log. If the file type is used, the collection path is the path of the collected file. Wildcards(*) are supported. The collection path must match the following regular expression:
-            /// ^/( +)/(. *)^/$.
+            /// ^\/( +)\/(. *)^\/$.
             /// </remarks>
             [JsiiProperty(name: "logDir", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -10350,7 +10353,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
 
                 /// <remarks>
                 /// <strong>Property</strong>: logDir: If the standard output type is used, the collection path is stdout.log. If the file type is used, the collection path is the path of the collected file. Wildcards(*) are supported. The collection path must match the following regular expression:
-                /// ^/( +)/(. *)^/$.
+                /// ^\/( +)\/(. *)^\/$.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "logDir", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -10389,7 +10392,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
 
             /// <remarks>
             /// <strong>Property</strong>: logDir: If the standard output type is used, the collection path is stdout.log. If the file type is used, the collection path is the path of the collected file. Wildcards(*) are supported. The collection path must match the following regular expression:
-            /// ^/( +)/(. *)^/$.
+            /// ^\/( +)\/(. *)^\/$.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "logDir", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -11037,7 +11040,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
             /// <remarks>
             /// <strong>Property</strong>: contextInputType: Specifies whether to customize the access path for the application. Valid values:
             /// war: The application access path is the name of the WAR package. You do not need to enter a custom path.
-            /// root: The application access path is /. You do not need to enter a custom path.
+            /// root: The application access path is \/. You do not need to enter a custom path.
             /// custom: If you select this option, you must set contextPath to a custom path.
             /// </remarks>
             [JsiiProperty(name: "contextInputType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -11166,7 +11169,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
                 /// <remarks>
                 /// <strong>Property</strong>: contextInputType: Specifies whether to customize the access path for the application. Valid values:
                 /// war: The application access path is the name of the WAR package. You do not need to enter a custom path.
-                /// root: The application access path is /. You do not need to enter a custom path.
+                /// root: The application access path is \/. You do not need to enter a custom path.
                 /// custom: If you select this option, you must set contextPath to a custom path.
                 /// </remarks>
                 [JsiiOptional]
@@ -11267,7 +11270,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
             /// <remarks>
             /// <strong>Property</strong>: contextInputType: Specifies whether to customize the access path for the application. Valid values:
             /// war: The application access path is the name of the WAR package. You do not need to enter a custom path.
-            /// root: The application access path is /. You do not need to enter a custom path.
+            /// root: The application access path is \/. You do not need to enter a custom path.
             /// custom: If you select this option, you must set contextPath to a custom path.
             /// </remarks>
             [JsiiOptional]

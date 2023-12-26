@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Slb.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::SLB::Zones`.</summary>
+    /// <summary>Properties for defining a `RosZones`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-zones
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-slb.datasource.RosZonesProps")]
     public class RosZonesProps : AlibabaCloud.SDK.ROS.CDK.Slb.Datasource.IRosZonesProps
     {

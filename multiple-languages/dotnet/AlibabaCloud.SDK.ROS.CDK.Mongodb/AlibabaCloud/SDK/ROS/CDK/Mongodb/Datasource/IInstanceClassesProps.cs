@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Mongodb.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::MONGODB::InstanceClasses`.</summary>
+    /// <summary>Properties for defining a `InstanceClasses`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mongodb-instanceclasses
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IInstanceClassesProps), fullyQualifiedName: "@alicloud/ros-cdk-mongodb.datasource.InstanceClassesProps")]
     public interface IInstanceClassesProps
     {
@@ -64,7 +67,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::MONGODB::InstanceClasses`.</summary>
+        /// <summary>Properties for defining a `InstanceClasses`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mongodb-instanceclasses
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IInstanceClassesProps), fullyQualifiedName: "@alicloud/ros-cdk-mongodb.datasource.InstanceClassesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Mongodb.Datasource.IInstanceClassesProps
         {

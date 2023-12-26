@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::MSE::ServiceSource`.</summary>
+    /// <summary>Properties for defining a `ServiceSource`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-servicesource
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-mse.ServiceSourceProps")]
     public class ServiceSourceProps : AlibabaCloud.SDK.ROS.CDK.Mse.IServiceSourceProps
     {

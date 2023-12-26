@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::RAM::AccessKey`.</summary>
+    /// <summary>Properties for defining a `AccessKey`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-accesskey
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ram.AccessKeyProps")]
     public class AccessKeyProps : AlibabaCloud.SDK.ROS.CDK.Ram.IAccessKeyProps
     {

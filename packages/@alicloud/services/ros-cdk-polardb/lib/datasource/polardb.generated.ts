@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::POLARDB::DBClusters`
+ * Properties for defining a `RosDBClusters`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-dbclusters
  */
 export interface RosDBClustersProps {
 
@@ -104,18 +105,15 @@ function rosDBClustersPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `DATASOURCE::POLARDB::DBClusters`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::POLARDB::DBClusters`, which is used to query the details of PolarDB clusters.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DBClusters` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-dbclusters
  */
 export class RosDBClusters extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::POLARDB::DBClusters";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DBClusters: The list of db clusters.
@@ -172,8 +170,6 @@ export class RosDBClusters extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::POLARDB::DBClusters`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -209,7 +205,8 @@ export class RosDBClusters extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::POLARDB::DBNodeClasses`
+ * Properties for defining a `RosDBNodeClasses`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-dbnodeclasses
  */
 export interface RosDBNodeClassesProps {
 
@@ -294,18 +291,15 @@ function rosDBNodeClassesPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `DATASOURCE::POLARDB::DBNodeClasses`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::POLARDB::DBNodeClasses`DATASOURCE::POLARDB::GlobalDatabaseNetworks is used to query all global database networks (GDNs) within the current Alibaba Cloud account.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DBNodeClasses` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-dbnodeclasses
  */
 export class RosDBNodeClasses extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::POLARDB::DBNodeClasses";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DBNodeClassIds: The list of db node class ids.
@@ -359,8 +353,6 @@ export class RosDBNodeClasses extends ros.RosResource {
     public zoneId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::POLARDB::DBNodeClasses`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -394,7 +386,8 @@ export class RosDBNodeClasses extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::POLARDB::GlobalDatabaseNetworks`
+ * Properties for defining a `RosGlobalDatabaseNetworks`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-globaldatabasenetworks
  */
 export interface RosGlobalDatabaseNetworksProps {
 
@@ -444,18 +437,15 @@ function rosGlobalDatabaseNetworksPropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * A ROS template type:  `DATASOURCE::POLARDB::GlobalDatabaseNetworks`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::POLARDB::GlobalDatabaseNetworks`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `GlobalDatabaseNetworks` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-globaldatabasenetworks
  */
 export class RosGlobalDatabaseNetworks extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::POLARDB::GlobalDatabaseNetworks";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute GdnIds: The list of gdn IDs.
@@ -481,8 +471,6 @@ export class RosGlobalDatabaseNetworks extends ros.RosResource {
     public gdnId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::POLARDB::GlobalDatabaseNetworks`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -510,7 +498,8 @@ export class RosGlobalDatabaseNetworks extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::POLARDB::ParameterGroups`
+ * Properties for defining a `RosParameterGroups`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-parametergroups
  */
 export interface RosParameterGroupsProps {
 
@@ -560,18 +549,15 @@ function rosParameterGroupsPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * A ROS template type:  `DATASOURCE::POLARDB::ParameterGroups`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::POLARDB::ParameterGroups`, which is used to query parameter templates in a specific region.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ParameterGroups` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-parametergroups
  */
 export class RosParameterGroups extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::POLARDB::ParameterGroups";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ParameterGroupIds: The list of parameter group IDs.
@@ -597,8 +583,6 @@ export class RosParameterGroups extends ros.RosResource {
     public dbVersion: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::POLARDB::ParameterGroups`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::VPC::AnycastEIPAssociation`.</summary>
+    /// <summary>Properties for defining a `RosAnycastEIPAssociation`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-anycasteipassociation
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.RosAnycastEIPAssociationProps")]
     public class RosAnycastEIPAssociationProps : AlibabaCloud.SDK.ROS.CDK.Vpc.IRosAnycastEIPAssociationProps
     {

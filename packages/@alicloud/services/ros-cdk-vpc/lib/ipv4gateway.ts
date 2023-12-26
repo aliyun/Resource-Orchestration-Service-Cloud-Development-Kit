@@ -4,7 +4,8 @@ import { RosIpv4Gateway } from './vpc.generated';
 export { RosIpv4Gateway as Ipv4GatewayProperty };
 
 /**
- * Properties for defining a `ALIYUN::VPC::Ipv4Gateway`
+ * Properties for defining a `Ipv4Gateway`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipv4gateway
  */
 export interface Ipv4GatewayProps {
 
@@ -25,14 +26,11 @@ export interface Ipv4GatewayProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::VPC::Ipv4Gateway`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::Ipv4Gateway`, which is used to create an IPv4 gateway.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosIpv4Gateway`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipv4gateway
  */
 export class Ipv4Gateway extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute CreateTime: The creation time of the resource.
@@ -65,8 +63,6 @@ export class Ipv4Gateway extends ros.Resource {
     public readonly attrVpcId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VPC::Ipv4Gateway`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

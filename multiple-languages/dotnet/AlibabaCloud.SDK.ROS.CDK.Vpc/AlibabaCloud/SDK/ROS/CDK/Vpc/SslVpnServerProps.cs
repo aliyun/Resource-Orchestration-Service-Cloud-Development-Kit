@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::VPC::SslVpnServer`.</summary>
+    /// <summary>Properties for defining a `SslVpnServer`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-sslvpnserver
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.SslVpnServerProps")]
     public class SslVpnServerProps : AlibabaCloud.SDK.ROS.CDK.Vpc.ISslVpnServerProps
     {

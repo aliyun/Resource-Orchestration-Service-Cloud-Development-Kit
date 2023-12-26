@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ClickHouse::SynDb`.</summary>
+    /// <summary>Properties for defining a `RosSynDb`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-clickhouse-syndb
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-clickhouse.RosSynDbProps")]
     public class RosSynDbProps : AlibabaCloud.SDK.ROS.CDK.Clickhouse.IRosSynDbProps
     {

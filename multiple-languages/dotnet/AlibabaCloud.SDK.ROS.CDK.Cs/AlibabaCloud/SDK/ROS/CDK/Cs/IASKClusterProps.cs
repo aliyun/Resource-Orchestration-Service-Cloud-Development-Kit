@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cs
 {
-    /// <summary>Properties for defining a `ALIYUN::CS::ASKCluster`.</summary>
+    /// <summary>Properties for defining a `ASKCluster`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-askcluster
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IASKClusterProps), fullyQualifiedName: "@alicloud/ros-cdk-cs.ASKClusterProps")]
     public interface IASKClusterProps
     {
@@ -231,7 +234,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::CS::ASKCluster`.</summary>
+        /// <summary>Properties for defining a `ASKCluster`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-askcluster
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IASKClusterProps), fullyQualifiedName: "@alicloud/ros-cdk-cs.ASKClusterProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cs.IASKClusterProps
         {

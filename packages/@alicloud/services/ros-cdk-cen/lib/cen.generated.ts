@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::CEN::CenBandwidthLimit`
+ * Properties for defining a `RosCenBandwidthLimit`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthlimit
  */
 export interface RosCenBandwidthLimitProps {
 
@@ -78,18 +79,15 @@ function rosCenBandwidthLimitPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * A ROS template type:  `ALIYUN::CEN::CenBandwidthLimit`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenBandwidthLimit`, which is used to configure the cross-region interconnection bandwidth in a bandwidth plan.
+ * @Note This class does not contain additional functions, so it is recommended to use the `CenBandwidthLimit` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthlimit
  */
 export class RosCenBandwidthLimit extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::CenBandwidthLimit";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -115,8 +113,6 @@ export class RosCenBandwidthLimit extends ros.RosResource {
     public oppositeRegionId: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CEN::CenBandwidthLimit`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -146,7 +142,8 @@ export class RosCenBandwidthLimit extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::CEN::CenBandwidthPackage`
+ * Properties for defining a `RosCenBandwidthPackage`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthpackage
  */
 export interface RosCenBandwidthPackageProps {
 
@@ -191,13 +188,13 @@ export interface RosCenBandwidthPackageProps {
 
     /**
      * @Property description: The description of the bandwidth package.
-     * The description can contain [2,256] characters, numbers, underscores, and hyphens, and the name must start with English letters, but cannot start with http:// or https://.
+     * The description can contain [2,256] characters, numbers, underscores, and hyphens, and the name must start with English letters, but cannot start with http:\/\/ or https:\/\/.
      */
     readonly description?: string | ros.IResolvable;
 
     /**
      * @Property name: The name of the bandwidth package.
-     * The name can contain 2-128 characters including a-z, A-Z, 0-9, periods, underlines, and hyphens. It must start with English letters, but cannot start with http:// or https://.
+     * The name can contain 2-128 characters including a-z, A-Z, 0-9, periods, underlines, and hyphens. It must start with English letters, but cannot start with http:\/\/ or https:\/\/.
      */
     readonly name?: string | ros.IResolvable;
 
@@ -312,18 +309,15 @@ function rosCenBandwidthPackagePropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * A ROS template type:  `ALIYUN::CEN::CenBandwidthPackage`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenBandwidthPackage`, which is used to purchase a bandwidth plan before you use Cloud Enterprise Network (CEN) to connect network instances in different regions.
+ * @Note This class does not contain additional functions, so it is recommended to use the `CenBandwidthPackage` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthpackage
  */
 export class RosCenBandwidthPackage extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::CenBandwidthPackage";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CenBandwidthPackageId: The ID of the bandwidth package.
@@ -374,13 +368,13 @@ export class RosCenBandwidthPackage extends ros.RosResource {
 
     /**
      * @Property description: The description of the bandwidth package.
-     * The description can contain [2,256] characters, numbers, underscores, and hyphens, and the name must start with English letters, but cannot start with http:// or https://.
+     * The description can contain [2,256] characters, numbers, underscores, and hyphens, and the name must start with English letters, but cannot start with http:\/\/ or https:\/\/.
      */
     public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property name: The name of the bandwidth package.
-     * The name can contain 2-128 characters including a-z, A-Z, 0-9, periods, underlines, and hyphens. It must start with English letters, but cannot start with http:// or https://.
+     * The name can contain 2-128 characters including a-z, A-Z, 0-9, periods, underlines, and hyphens. It must start with English letters, but cannot start with http:\/\/ or https:\/\/.
      */
     public name: string | ros.IResolvable | undefined;
 
@@ -400,8 +394,6 @@ export class RosCenBandwidthPackage extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CEN::CenBandwidthPackage`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -448,7 +440,8 @@ export class RosCenBandwidthPackage extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::CEN::CenBandwidthPackageAssociation`
+ * Properties for defining a `RosCenBandwidthPackageAssociation`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthpackageassociation
  */
 export interface RosCenBandwidthPackageAssociationProps {
 
@@ -500,18 +493,15 @@ function rosCenBandwidthPackageAssociationPropsToRosTemplate(properties: any, en
 }
 
 /**
- * A ROS template type:  `ALIYUN::CEN::CenBandwidthPackageAssociation`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenBandwidthPackageAssociation`, which is used to bind a bandwidth package to the specified Cloud Enterprise Network (CEN) instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `CenBandwidthPackageAssociation` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthpackageassociation
  */
 export class RosCenBandwidthPackageAssociation extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::CenBandwidthPackageAssociation";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -527,8 +517,6 @@ export class RosCenBandwidthPackageAssociation extends ros.RosResource {
     public cenId: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CEN::CenBandwidthPackageAssociation`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -554,19 +542,20 @@ export class RosCenBandwidthPackageAssociation extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::CEN::CenInstance`
+ * Properties for defining a `RosCenInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-ceninstance
  */
 export interface RosCenInstanceProps {
 
     /**
      * @Property description: The description of the instance.
-     * The name can be 2-256 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:// or https://.
+     * The name can be 2-256 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:\/\/ or https:\/\/.
      */
     readonly description?: string | ros.IResolvable;
 
     /**
      * @Property name: The name of the instance.
-     * The name can be 2-128 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:// or https://.
+     * The name can be 2-128 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:\/\/ or https:\/\/.
      */
     readonly name?: string | ros.IResolvable;
 
@@ -636,18 +625,15 @@ function rosCenInstancePropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `ALIYUN::CEN::CenInstance`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenInstance`, which is used to create a Cloud Enterprise Network (CEN) instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `CenInstance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-ceninstance
  */
 export class RosCenInstance extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::CenInstance";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CenId: The ID of the request.
@@ -659,13 +645,13 @@ export class RosCenInstance extends ros.RosResource {
 
     /**
      * @Property description: The description of the instance.
-     * The name can be 2-256 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:// or https://.
+     * The name can be 2-256 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:\/\/ or https:\/\/.
      */
     public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property name: The name of the instance.
-     * The name can be 2-128 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:// or https://.
+     * The name can be 2-128 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:\/\/ or https:\/\/.
      */
     public name: string | ros.IResolvable | undefined;
 
@@ -687,8 +673,6 @@ export class RosCenInstance extends ros.RosResource {
     public tags: RosCenInstance.TagsProperty[] | undefined;
 
     /**
-     * Create a new `ALIYUN::CEN::CenInstance`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -769,7 +753,8 @@ function rosCenInstanceTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::CEN::CenInstanceAttachment`
+ * Properties for defining a `RosCenInstanceAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-ceninstanceattachment
  */
 export interface RosCenInstanceAttachmentProps {
 
@@ -850,18 +835,15 @@ function rosCenInstanceAttachmentPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * A ROS template type:  `ALIYUN::CEN::CenInstanceAttachment`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenInstanceAttachment`, which is used to attach network instances to a CEN instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `CenInstanceAttachment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-ceninstanceattachment
  */
 export class RosCenInstanceAttachment extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::CenInstanceAttachment";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -892,8 +874,6 @@ export class RosCenInstanceAttachment extends ros.RosResource {
     public childInstanceOwnerId: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CEN::CenInstanceAttachment`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -925,7 +905,8 @@ export class RosCenInstanceAttachment extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::CEN::CenRouteMap`
+ * Properties for defining a `RosCenRouteMap`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenroutemap
  */
 export interface RosCenRouteMapProps {
 
@@ -971,9 +952,9 @@ export interface RosCenRouteMapProps {
     /**
      * @Property cidrMatchMode: Match statements are used to match the prefixes. Valid values: 
      *  Include: uses fuzzy match. If the routing prefix in the condition contains the routing prefix of the route, the match is successful. 
-     *  For example, the 1.1.0.0/16 policy can match the 1.1.1.0/24 route. 
+     *  For example, the 1.1.0.0\/16 policy can match the 1.1.1.0\/24 route. 
      *  Complete: uses exact match. Only when the routing prefix in the condition is the same as the routing prefix of the route, the match is successful. 
-     *  For example, the 1.1.0.0/16 policy can match the 1.1.0.0/16 route.
+     *  For example, the 1.1.0.0\/16 policy can match the 1.1.0.0\/16 route.
      */
     readonly cidrMatchMode?: string | ros.IResolvable;
 
@@ -1201,18 +1182,15 @@ function rosCenRouteMapPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `ALIYUN::CEN::CenRouteMap`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenRouteMap`, which is used to create a routing policy.
+ * @Note This class does not contain additional functions, so it is recommended to use the `CenRouteMap` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenroutemap
  */
 export class RosCenRouteMap extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::CenRouteMap";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute RouteMapId: The ID of the route map.
@@ -1264,9 +1242,9 @@ export class RosCenRouteMap extends ros.RosResource {
     /**
      * @Property cidrMatchMode: Match statements are used to match the prefixes. Valid values: 
      *  Include: uses fuzzy match. If the routing prefix in the condition contains the routing prefix of the route, the match is successful. 
-     *  For example, the 1.1.0.0/16 policy can match the 1.1.1.0/24 route. 
+     *  For example, the 1.1.0.0\/16 policy can match the 1.1.1.0\/24 route. 
      *  Complete: uses exact match. Only when the routing prefix in the condition is the same as the routing prefix of the route, the match is successful. 
-     *  For example, the 1.1.0.0/16 policy can match the 1.1.0.0/16 route.
+     *  For example, the 1.1.0.0\/16 policy can match the 1.1.0.0\/16 route.
      */
     public cidrMatchMode: string | ros.IResolvable | undefined;
 
@@ -1404,8 +1382,6 @@ export class RosCenRouteMap extends ros.RosResource {
     public sourceRouteTableIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CEN::CenRouteMap`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1482,7 +1458,8 @@ export class RosCenRouteMap extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::CEN::CenRouteService`
+ * Properties for defining a `RosCenRouteService`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenrouteservice
  */
 export interface RosCenRouteServiceProps {
 
@@ -1575,18 +1552,15 @@ function rosCenRouteServicePropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * A ROS template type:  `ALIYUN::CEN::CenRouteService`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenRouteService`, which is used to configure the access to an Alibaba Cloud service.
+ * @Note This class does not contain additional functions, so it is recommended to use the `CenRouteService` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenrouteservice
  */
 export class RosCenRouteService extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::CenRouteService";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Id: The ID of the cloud service. It is formatted to {CenId}/{HostRegionId}/{Host}/{AccessRegionId}
@@ -1635,8 +1609,6 @@ export class RosCenRouteService extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CEN::CenRouteService`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1673,7 +1645,8 @@ export class RosCenRouteService extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::CEN::CenVbrHealthCheck`
+ * Properties for defining a `RosCenVbrHealthCheck`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenvbrhealthcheck
  */
 export interface RosCenVbrHealthCheckProps {
 
@@ -1703,7 +1676,7 @@ export interface RosCenVbrHealthCheckProps {
     readonly healthCheckInterval?: number | ros.IResolvable;
 
     /**
-     * @Property healthCheckSourceIp: You can use either of the following methods to specify the source IP address of the health check.  Automatic IP Address: The system automatically assigns an IP address within the CIDR block 100.96.0.0/16 (recommended).  Custom IP Address: You can specify a source IP address that is available within the CIDR block 10.0.0.0/8, 192.168.0.0/16, or 172.16.0.0/12. The specified source IP address must not overlap with the IP addresses of the Alibaba Cloud-facing and client-facing interfaces on the VBR instance, or the IP addresses of the instances with which the VBR instance needs to communicate in the CEN.
+     * @Property healthCheckSourceIp: You can use either of the following methods to specify the source IP address of the health check.  Automatic IP Address: The system automatically assigns an IP address within the CIDR block 100.96.0.0\/16 (recommended).  Custom IP Address: You can specify a source IP address that is available within the CIDR block 10.0.0.0\/8, 192.168.0.0\/16, or 172.16.0.0\/12. The specified source IP address must not overlap with the IP addresses of the Alibaba Cloud-facing and client-facing interfaces on the VBR instance, or the IP addresses of the instances with which the VBR instance needs to communicate in the CEN.
      */
     readonly healthCheckSourceIp?: string | ros.IResolvable;
 
@@ -1769,18 +1742,15 @@ function rosCenVbrHealthCheckPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * A ROS template type:  `ALIYUN::CEN::CenVbrHealthCheck`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenVbrHealthCheck`, which is used to enable the health check feature or modify the health check configuration for a virtual border router (VBR).
+ * @Note This class does not contain additional functions, so it is recommended to use the `CenVbrHealthCheck` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenvbrhealthcheck
  */
 export class RosCenVbrHealthCheck extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::CenVbrHealthCheck";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CenId: The ID of the CEN instance.
@@ -1851,7 +1821,7 @@ export class RosCenVbrHealthCheck extends ros.RosResource {
     public healthCheckInterval: number | ros.IResolvable | undefined;
 
     /**
-     * @Property healthCheckSourceIp: You can use either of the following methods to specify the source IP address of the health check.  Automatic IP Address: The system automatically assigns an IP address within the CIDR block 100.96.0.0/16 (recommended).  Custom IP Address: You can specify a source IP address that is available within the CIDR block 10.0.0.0/8, 192.168.0.0/16, or 172.16.0.0/12. The specified source IP address must not overlap with the IP addresses of the Alibaba Cloud-facing and client-facing interfaces on the VBR instance, or the IP addresses of the instances with which the VBR instance needs to communicate in the CEN.
+     * @Property healthCheckSourceIp: You can use either of the following methods to specify the source IP address of the health check.  Automatic IP Address: The system automatically assigns an IP address within the CIDR block 100.96.0.0\/16 (recommended).  Custom IP Address: You can specify a source IP address that is available within the CIDR block 10.0.0.0\/8, 192.168.0.0\/16, or 172.16.0.0\/12. The specified source IP address must not overlap with the IP addresses of the Alibaba Cloud-facing and client-facing interfaces on the VBR instance, or the IP addresses of the instances with which the VBR instance needs to communicate in the CEN.
      */
     public healthCheckSourceIp: string | ros.IResolvable | undefined;
 
@@ -1866,8 +1836,6 @@ export class RosCenVbrHealthCheck extends ros.RosResource {
     public vbrInstanceOwnerId: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CEN::CenVbrHealthCheck`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1913,7 +1881,8 @@ export class RosCenVbrHealthCheck extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::CEN::ChildInstanceRouteEntryToAttachment`
+ * Properties for defining a `RosChildInstanceRouteEntryToAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-childinstancerouteentrytoattachment
  */
 export interface RosChildInstanceRouteEntryToAttachmentProps {
 
@@ -1981,18 +1950,15 @@ function rosChildInstanceRouteEntryToAttachmentPropsToRosTemplate(properties: an
 }
 
 /**
- * A ROS template type:  `ALIYUN::CEN::ChildInstanceRouteEntryToAttachment`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::ChildInstanceRouteEntryToAttachment`, which is used to add a route to a network instance that is connected to an Enterprise Edition transit router.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ChildInstanceRouteEntryToAttachment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-childinstancerouteentrytoattachment
  */
 export class RosChildInstanceRouteEntryToAttachment extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::ChildInstanceRouteEntryToAttachment";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CenId: The ID of the CEN instance.
@@ -2038,8 +2004,6 @@ export class RosChildInstanceRouteEntryToAttachment extends ros.RosResource {
     public transitRouterAttachmentId: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CEN::ChildInstanceRouteEntryToAttachment`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2073,7 +2037,8 @@ export class RosChildInstanceRouteEntryToAttachment extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::CEN::RouteEntry`
+ * Properties for defining a `RosRouteEntry`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-routeentry
  */
 export interface RosRouteEntryProps {
 
@@ -2163,18 +2128,15 @@ function rosRouteEntryPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::CEN::RouteEntry`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::RouteEntry`, which is used to advertise a routing entry of an attached VPC or VBR to a CEN instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `RouteEntry` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-routeentry
  */
 export class RosRouteEntry extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::RouteEntry";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -2210,8 +2172,6 @@ export class RosRouteEntry extends ros.RosResource {
     public destinationCidrBlock: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CEN::RouteEntry`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2245,7 +2205,8 @@ export class RosRouteEntry extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::CEN::TransitRouter`
+ * Properties for defining a `RosTransitRouter`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouter
  */
 export interface RosTransitRouterProps {
 
@@ -2303,18 +2264,15 @@ function rosTransitRouterPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `ALIYUN::CEN::TransitRouter`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouter`, which is used to create an Enterprise Edition transit router.
+ * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouter` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouter
  */
 export class RosTransitRouter extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::TransitRouter";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AliUid: AliUid
@@ -2370,8 +2328,6 @@ export class RosTransitRouter extends ros.RosResource {
     public transitRouterName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CEN::TransitRouter`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2406,7 +2362,8 @@ export class RosTransitRouter extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::CEN::TransitRouterPeerAttachment`
+ * Properties for defining a `RosTransitRouterPeerAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterpeerattachment
  */
 export interface RosTransitRouterPeerAttachmentProps {
 
@@ -2506,18 +2463,15 @@ function rosTransitRouterPeerAttachmentPropsToRosTemplate(properties: any, enabl
 }
 
 /**
- * A ROS template type:  `ALIYUN::CEN::TransitRouterPeerAttachment`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterPeerAttachment`, which is used to create a cross-region connection for an Enterprise Edition transit router.
+ * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterPeerAttachment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterpeerattachment
  */
 export class RosTransitRouterPeerAttachment extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::TransitRouterPeerAttachment";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AutoPublishRouteEnabled: AutoPublishRouteEnabled
@@ -2638,8 +2592,6 @@ export class RosTransitRouterPeerAttachment extends ros.RosResource {
     public transitRouterId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CEN::TransitRouterPeerAttachment`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2693,7 +2645,8 @@ export class RosTransitRouterPeerAttachment extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::CEN::TransitRouterRouteEntry`
+ * Properties for defining a `RosTransitRouterRouteEntry`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterrouteentry
  */
 export interface RosTransitRouterRouteEntryProps {
 
@@ -2774,18 +2727,15 @@ function rosTransitRouterRouteEntryPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * A ROS template type:  `ALIYUN::CEN::TransitRouterRouteEntry`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterRouteEntry`, which is used to add a route to a route table of an Enterprise Edition transit router.
+ * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterRouteEntry` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterrouteentry
  */
 export class RosTransitRouterRouteEntry extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::TransitRouterRouteEntry";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute TransitRouterRouteEntryDescription: TransitRouterRouteEntryDescription
@@ -2861,8 +2811,6 @@ export class RosTransitRouterRouteEntry extends ros.RosResource {
     public transitRouterRouteEntryNextHopId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CEN::TransitRouterRouteEntry`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2904,7 +2852,8 @@ export class RosTransitRouterRouteEntry extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::CEN::TransitRouterRouteTable`
+ * Properties for defining a `RosTransitRouterRouteTable`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterroutetable
  */
 export interface RosTransitRouterRouteTableProps {
 
@@ -2962,18 +2911,15 @@ function rosTransitRouterRouteTablePropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * A ROS template type:  `ALIYUN::CEN::TransitRouterRouteTable`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterRouteTable`, which is used to create a custom route table for an Enterprise Edition transit router.
+ * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterRouteTable` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterroutetable
  */
 export class RosTransitRouterRouteTable extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::TransitRouterRouteTable";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ClientToken: ClientToken
@@ -3024,8 +2970,6 @@ export class RosTransitRouterRouteTable extends ros.RosResource {
     public transitRouterRouteTableName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CEN::TransitRouterRouteTable`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3059,7 +3003,8 @@ export class RosTransitRouterRouteTable extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::CEN::TransitRouterRouteTableAssociation`
+ * Properties for defining a `RosTransitRouterRouteTableAssociation`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterroutetableassociation
  */
 export interface RosTransitRouterRouteTableAssociationProps {
 
@@ -3111,18 +3056,15 @@ function rosTransitRouterRouteTableAssociationPropsToRosTemplate(properties: any
 }
 
 /**
- * A ROS template type:  `ALIYUN::CEN::TransitRouterRouteTableAssociation`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterRouteTableAssociation`, which is used to create an associated forwarding correlation.
+ * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterRouteTableAssociation` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterroutetableassociation
  */
 export class RosTransitRouterRouteTableAssociation extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::TransitRouterRouteTableAssociation";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ResourceId: ResourceId
@@ -3158,8 +3100,6 @@ export class RosTransitRouterRouteTableAssociation extends ros.RosResource {
     public transitRouterRouteTableId: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CEN::TransitRouterRouteTableAssociation`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3189,7 +3129,8 @@ export class RosTransitRouterRouteTableAssociation extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::CEN::TransitRouterRouteTablePropagation`
+ * Properties for defining a `RosTransitRouterRouteTablePropagation`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterroutetablepropagation
  */
 export interface RosTransitRouterRouteTablePropagationProps {
 
@@ -3241,18 +3182,15 @@ function rosTransitRouterRouteTablePropagationPropsToRosTemplate(properties: any
 }
 
 /**
- * A ROS template type:  `ALIYUN::CEN::TransitRouterRouteTablePropagation`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterRouteTablePropagation`, which is used to create a route learning correlation.
+ * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterRouteTablePropagation` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterroutetablepropagation
  */
 export class RosTransitRouterRouteTablePropagation extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::TransitRouterRouteTablePropagation";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ResourceId: ResourceId
@@ -3288,8 +3226,6 @@ export class RosTransitRouterRouteTablePropagation extends ros.RosResource {
     public transitRouterRouteTableId: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CEN::TransitRouterRouteTablePropagation`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3319,7 +3255,8 @@ export class RosTransitRouterRouteTablePropagation extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::CEN::TransitRouterVbrAttachment`
+ * Properties for defining a `RosTransitRouterVbrAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervbrattachment
  */
 export interface RosTransitRouterVbrAttachmentProps {
 
@@ -3405,18 +3342,15 @@ function rosTransitRouterVbrAttachmentPropsToRosTemplate(properties: any, enable
 }
 
 /**
- * A ROS template type:  `ALIYUN::CEN::TransitRouterVbrAttachment`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterVbrAttachment`, which is used to create a virtual border router (VBR) connection from an Enterprise Edition transit router.
+ * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterVbrAttachment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervbrattachment
  */
 export class RosTransitRouterVbrAttachment extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::TransitRouterVbrAttachment";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AutoPublishRouteEnabled: AutoPublishRouteEnabled
@@ -3507,8 +3441,6 @@ export class RosTransitRouterVbrAttachment extends ros.RosResource {
     public vbrOwnerId: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CEN::TransitRouterVbrAttachment`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3554,7 +3486,8 @@ export class RosTransitRouterVbrAttachment extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::CEN::TransitRouterVpcAttachment`
+ * Properties for defining a `RosTransitRouterVpcAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervpcattachment
  */
 export interface RosTransitRouterVpcAttachmentProps {
 
@@ -3683,18 +3616,15 @@ function rosTransitRouterVpcAttachmentPropsToRosTemplate(properties: any, enable
 }
 
 /**
- * A ROS template type:  `ALIYUN::CEN::TransitRouterVpcAttachment`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterVpcAttachment`, which is used to connect a virtual private cloud (​VPC) to an Enterprise Edition transit router.
+ * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterVpcAttachment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervpcattachment
  */
 export class RosTransitRouterVpcAttachment extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::TransitRouterVpcAttachment";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CenId: CenId
@@ -3805,8 +3735,6 @@ export class RosTransitRouterVpcAttachment extends ros.RosResource {
     public vpcOwnerId: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CEN::TransitRouterVpcAttachment`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3910,7 +3838,8 @@ function rosTransitRouterVpcAttachmentZoneMappingsPropertyToRosTemplate(properti
 }
 
 /**
- * Properties for defining a `ALIYUN::CEN::TransitRouterVpnAttachment`
+ * Properties for defining a `RosTransitRouterVpnAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervpnattachment
  */
 export interface RosTransitRouterVpnAttachmentProps {
 
@@ -4039,18 +3968,15 @@ function rosTransitRouterVpnAttachmentPropsToRosTemplate(properties: any, enable
 }
 
 /**
- * A ROS template type:  `ALIYUN::CEN::TransitRouterVpnAttachment`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterVpnAttachment`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterVpnAttachment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervpnattachment
  */
 export class RosTransitRouterVpnAttachment extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::TransitRouterVpnAttachment";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute TransitRouterAttachmentId: The ID of the VPN connection.
@@ -4121,8 +4047,6 @@ export class RosTransitRouterVpnAttachment extends ros.RosResource {
     public vpnOwnerId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CEN::TransitRouterVpnAttachment`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

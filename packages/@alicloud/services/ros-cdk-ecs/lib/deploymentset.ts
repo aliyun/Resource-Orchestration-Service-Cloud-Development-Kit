@@ -4,22 +4,30 @@ import { RosDeploymentSet } from './ecs.generated';
 export { RosDeploymentSet as DeploymentSetProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECS::DeploymentSet`
+ * Properties for defining a `DeploymentSet`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-deploymentset
  */
 export interface DeploymentSetProps {
 
     /**
      * Property deploymentSetName: The name of the deployment set. It must be 2 to 128 characters in length. It must
-     * start with a letter and cannot start with http:// or https://. It can contain letters,
+     * start with a letter and cannot start with http:\/\/ or https:\/\/. It can contain letters,
      * digits, colons (:), underscores (_), and hyphens (-).
      */
     readonly deploymentSetName?: string | ros.IResolvable;
 
     /**
      * Property description: The description of the deployment set. It must be 2 to 256 characters in length. It
-     * cannot start with http:// or https://.
+     * cannot start with http:\/\/ or https:\/\/.
      */
     readonly description?: string | ros.IResolvable;
+
+    /**
+     * Property groupCount: Set the number of groups for the deployment set group high availability policy. Value range: 1~7.
+     * Default value: 3.
+     * This parameter only takes effect when Strategy=AvailabilityGroup.
+     */
+    readonly groupCount?: number | ros.IResolvable;
 
     /**
      * Property onUnableToRedeployFailedInstance: The emergency solution to redeploy failed instances in the deployment set. Valid values:
@@ -29,17 +37,22 @@ export interface DeploymentSetProps {
      * set is replenished.
      */
     readonly onUnableToRedeployFailedInstance?: string | ros.IResolvable;
+
+    /**
+     * Property strategy: Deployment strategy. Ranges:
+     * Availability: High availability strategy.
+     * AvailabilityGroup: Deployment group high availability strategy.
+     * LowLatency: Network low latency strategy.
+     */
+    readonly strategy?: string | ros.IResolvable;
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECS::DeploymentSet`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::DeploymentSet`, which is used to create a deployment set in a specified region.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDeploymentSet`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-deploymentset
  */
 export class DeploymentSet extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DeploymentSetId: The ID of the deployment set.
@@ -47,8 +60,6 @@ export class DeploymentSet extends ros.Resource {
     public readonly attrDeploymentSetId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ECS::DeploymentSet`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties
@@ -59,6 +70,8 @@ export class DeploymentSet extends ros.Resource {
         const rosDeploymentSet = new RosDeploymentSet(this, id,  {
             onUnableToRedeployFailedInstance: props.onUnableToRedeployFailedInstance,
             description: props.description,
+            groupCount: props.groupCount,
+            strategy: props.strategy,
             deploymentSetName: props.deploymentSetName,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDeploymentSet;

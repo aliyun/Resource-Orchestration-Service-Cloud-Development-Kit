@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>Properties for defining a `ALIYUN::ECS::Snapshot`.</summary>
+    /// <summary>Properties for defining a `Snapshot`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-snapshot
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ISnapshotProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.SnapshotProps")]
     public interface ISnapshotProps
     {
@@ -15,7 +18,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             get;
         }
 
-        /// <summary>Property description: The description of a snapshot can be 2 to 256 characters in length and cannot begin with http:// or https://.</summary>
+        /// <summary>Property description: The description of a snapshot can be 2 to 256 characters in length and cannot begin with http:\/\/ or https:\/\/.</summary>
         /// <remarks>
         /// The description will appear on the console. By default, the value is zero.
         /// </remarks>
@@ -131,7 +134,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ECS::Snapshot`.</summary>
+        /// <summary>Properties for defining a `Snapshot`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-snapshot
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ISnapshotProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.SnapshotProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.ISnapshotProps
         {
@@ -146,7 +152,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property description: The description of a snapshot can be 2 to 256 characters in length and cannot begin with http:// or https://.</summary>
+            /// <summary>Property description: The description of a snapshot can be 2 to 256 characters in length and cannot begin with http:\/\/ or https:\/\/.</summary>
             /// <remarks>
             /// The description will appear on the console. By default, the value is zero.
             /// </remarks>

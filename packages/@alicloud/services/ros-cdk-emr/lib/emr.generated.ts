@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::EMR::Cluster`
+ * Properties for defining a `RosCluster`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-cluster
  */
 export interface RosClusterProps {
 
@@ -106,7 +107,7 @@ export interface RosClusterProps {
     readonly instanceGeneration?: string | ros.IResolvable;
 
     /**
-     * @Property ioOptimized: Indicates wether I/O optimization is enabled. Default value: true.
+     * @Property ioOptimized: Indicates wether I\/O optimization is enabled. Default value: true.
      */
     readonly ioOptimized?: boolean | ros.IResolvable;
 
@@ -140,7 +141,7 @@ export interface RosClusterProps {
     readonly masterPwd?: string | ros.IResolvable;
 
     /**
-     * @Property metaStoreConf: Meta store conf of specific meta store type. If MetaStoreType=user_rds, MetaStoreConf should be like {"dbUrl":"jdbc:mysql://xxxxxx", "dbUserName":"username", "dbPassword":"password"}
+     * @Property metaStoreConf: Meta store conf of specific meta store type. If MetaStoreType=user_rds, MetaStoreConf should be like {"dbUrl":"jdbc:mysql:\/\/xxxxxx", "dbUserName":"username", "dbPassword":"password"}
      */
     readonly metaStoreConf?: string | ros.IResolvable;
 
@@ -379,18 +380,15 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::EMR::Cluster`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EMR::Cluster`, which is used to create an E-MapReduce (EMR) cluster.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Cluster` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-cluster
  */
 export class RosCluster extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EMR::Cluster";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ClusterId: The ID of the cluster.
@@ -514,7 +512,7 @@ export class RosCluster extends ros.RosResource {
     public instanceGeneration: string | ros.IResolvable | undefined;
 
     /**
-     * @Property ioOptimized: Indicates wether I/O optimization is enabled. Default value: true.
+     * @Property ioOptimized: Indicates wether I\/O optimization is enabled. Default value: true.
      */
     public ioOptimized: boolean | ros.IResolvable | undefined;
 
@@ -548,7 +546,7 @@ export class RosCluster extends ros.RosResource {
     public masterPwd: string | ros.IResolvable | undefined;
 
     /**
-     * @Property metaStoreConf: Meta store conf of specific meta store type. If MetaStoreType=user_rds, MetaStoreConf should be like {"dbUrl":"jdbc:mysql://xxxxxx", "dbUserName":"username", "dbPassword":"password"}
+     * @Property metaStoreConf: Meta store conf of specific meta store type. If MetaStoreType=user_rds, MetaStoreConf should be like {"dbUrl":"jdbc:mysql:\/\/xxxxxx", "dbUserName":"username", "dbPassword":"password"}
      */
     public metaStoreConf: string | ros.IResolvable | undefined;
 
@@ -640,8 +638,6 @@ export class RosCluster extends ros.RosResource {
     public whiteListType: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::EMR::Cluster`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1166,7 +1162,8 @@ function rosClusterUserInfoPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::EMR::Cluster2`
+ * Properties for defining a `RosCluster2`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-cluster2
  */
 export interface RosCluster2Props {
 
@@ -1176,7 +1173,7 @@ export interface RosCluster2Props {
     readonly applications: Array<RosCluster2.ApplicationsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property clusterName: Cluster name.The length is 1 ~ 128 characters, and the alphabet or Chinese must be started. It cannot start with http:// and https: //.It can include Chinese, English, numbers, half-horn colons (:), down line (_), half-angle period (.) Or short lines (-)
+     * @Property clusterName: Cluster name.The length is 1 ~ 128 characters, and the alphabet or Chinese must be started. It cannot start with http:\/\/ and https: \/\/.It can include Chinese, English, numbers, half-horn colons (:), down line (_), half-angle period (.) Or short lines (-)
      */
     readonly clusterName: string | ros.IResolvable;
 
@@ -1357,18 +1354,15 @@ function rosCluster2PropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::EMR::Cluster2`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EMR::Cluster2`, which is used to create an E-MapReduce (EMR) cluster.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Cluster2` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-cluster2
  */
 export class RosCluster2 extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EMR::Cluster2";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ApplicationLinks: ApplicationLinks of cluster.
@@ -1389,7 +1383,7 @@ export class RosCluster2 extends ros.RosResource {
     public applications: Array<RosCluster2.ApplicationsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property clusterName: Cluster name.The length is 1 ~ 128 characters, and the alphabet or Chinese must be started. It cannot start with http:// and https: //.It can include Chinese, English, numbers, half-horn colons (:), down line (_), half-angle period (.) Or short lines (-)
+     * @Property clusterName: Cluster name.The length is 1 ~ 128 characters, and the alphabet or Chinese must be started. It cannot start with http:\/\/ and https: \/\/.It can include Chinese, English, numbers, half-horn colons (:), down line (_), half-angle period (.) Or short lines (-)
      */
     public clusterName: string | ros.IResolvable;
 
@@ -1466,8 +1460,6 @@ export class RosCluster2 extends ros.RosResource {
     public tags: RosCluster2.TagsProperty[] | undefined;
 
     /**
-     * Create a new `ALIYUN::EMR::Cluster2`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1650,7 +1642,7 @@ export namespace RosCluster2 {
      */
     export interface BootstrapScriptsProperty {
         /**
-         * @Property scriptPath: The OSS path where the script is located. Required. Start with oss://.
+         * @Property scriptPath: The OSS path where the script is located. Required. Start with oss:\/\/.
          */
         readonly scriptPath: string | ros.IResolvable;
         /**
@@ -1669,7 +1661,7 @@ export namespace RosCluster2 {
          * @Property scriptName: script name. Required. 
      * The length is 1~64 characters. 
      * It must start with a big or small letter or Chinese. 
-     * It cannot start with http:// and https://. 
+     * It cannot start with http:\/\/ and https:\/\/. 
      * It can contain Chinese, English, numbers, underscores (_), or dashes (-)
          */
         readonly scriptName: string | ros.IResolvable;
@@ -1845,10 +1837,10 @@ export namespace RosCluster2 {
         readonly category: string | ros.IResolvable;
         /**
          * @Property performanceLevel: The performance level of the enhanced SSD.Default value: PL1. Valid values:
-     * PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
-     * PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
-     * PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.
-     * PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+     * PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.
+     * PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.
+     * PL2: A single enhanced SSD delivers up to 100,000 random read\/write IOPS.
+     * PL3: A single enhanced SSD delivers up to 1,000,000 random read\/write IOPS.
      * Default is PL1.
          */
         readonly performanceLevel?: string | ros.IResolvable;
@@ -2426,10 +2418,10 @@ export namespace RosCluster2 {
         readonly category: string | ros.IResolvable;
         /**
          * @Property performanceLevel: The performance level of the enhanced SSD.Default value: PL1. Valid values:
-     * PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
-     * PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
-     * PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.
-     * PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+     * PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.
+     * PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.
+     * PL2: A single enhanced SSD delivers up to 100,000 random read\/write IOPS.
+     * PL3: A single enhanced SSD delivers up to 1,000,000 random read\/write IOPS.
      * Default is PL1.
          */
         readonly performanceLevel?: string | ros.IResolvable;
@@ -2537,7 +2529,8 @@ function rosCluster2TagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::EMR::ClusterServiceConfigs`
+ * Properties for defining a `RosClusterServiceConfigs`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-clusterserviceconfigs
  */
 export interface RosClusterServiceConfigsProps {
 
@@ -2589,18 +2582,15 @@ function rosClusterServiceConfigsPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * A ROS template type:  `ALIYUN::EMR::ClusterServiceConfigs`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EMR::ClusterServiceConfigs`, which is used to create or modify the configurations of a specified service in a cluster.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ClusterServiceConfigs` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-clusterserviceconfigs
  */
 export class RosClusterServiceConfigs extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EMR::ClusterServiceConfigs";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ClusterId: The ID of the cluster.
@@ -2621,8 +2611,6 @@ export class RosClusterServiceConfigs extends ros.RosResource {
     public serviceConfigs: Array<RosClusterServiceConfigs.ServiceConfigsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::EMR::ClusterServiceConfigs`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2740,7 +2728,8 @@ function rosClusterServiceConfigsServiceConfigsPropertyToRosTemplate(properties:
 }
 
 /**
- * Properties for defining a `ALIYUN::EMR::FlowProject`
+ * Properties for defining a `RosFlowProject`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-flowproject
  */
 export interface RosFlowProjectProps {
 
@@ -2799,18 +2788,15 @@ function rosFlowProjectPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `ALIYUN::EMR::FlowProject`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EMR::FlowProject`, which is used to create a data development project.
+ * @Note This class does not contain additional functions, so it is recommended to use the `FlowProject` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-flowproject
  */
 export class RosFlowProject extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EMR::FlowProject";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CreateTime: The time when the project was created.
@@ -2861,8 +2847,6 @@ export class RosFlowProject extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::EMR::FlowProject`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

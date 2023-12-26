@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ECS::Zones`.</summary>
+    /// <summary>Properties for defining a `Zones`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-zones
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IZonesProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.datasource.ZonesProps")]
     public interface IZonesProps
     {
@@ -55,7 +58,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
             }
         }
 
-        /// <summary>Property ioOptimized: Specifies whether the instance is I/O optimized.</summary>
+        /// <summary>Property ioOptimized: Specifies whether the instance is I\/O optimized.</summary>
         /// <remarks>
         /// Valid values:
         /// none: non-I/O optimized
@@ -109,7 +112,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::ECS::Zones`.</summary>
+        /// <summary>Properties for defining a `Zones`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-zones
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IZonesProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.datasource.ZonesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource.IZonesProps
         {
@@ -155,7 +161,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property ioOptimized: Specifies whether the instance is I/O optimized.</summary>
+            /// <summary>Property ioOptimized: Specifies whether the instance is I\/O optimized.</summary>
             /// <remarks>
             /// Valid values:
             /// none: non-I/O optimized

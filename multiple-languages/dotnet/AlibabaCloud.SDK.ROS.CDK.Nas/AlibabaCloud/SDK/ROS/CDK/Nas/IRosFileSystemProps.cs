@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Nas
 {
-    /// <summary>Properties for defining a `ALIYUN::NAS::FileSystem`.</summary>
+    /// <summary>Properties for defining a `RosFileSystem`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-filesystem
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosFileSystemProps), fullyQualifiedName: "@alicloud/ros-cdk-nas.RosFileSystemProps")]
     public interface IRosFileSystemProps
     {
@@ -31,7 +34,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: bandwidth: Maximum file system throughput, unit is MB/s. Required and valid only when FileSystemType=cpfs.
+        /// <strong>Property</strong>: bandwidth: Maximum file system throughput, unit is MB\/s. Required and valid only when FileSystemType=cpfs.
         /// </remarks>
         [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -204,7 +207,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::NAS::FileSystem`.</summary>
+        /// <summary>Properties for defining a `RosFileSystem`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-filesystem
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosFileSystemProps), fullyQualifiedName: "@alicloud/ros-cdk-nas.RosFileSystemProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Nas.IRosFileSystemProps
         {
@@ -235,7 +241,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: bandwidth: Maximum file system throughput, unit is MB/s. Required and valid only when FileSystemType=cpfs.
+            /// <strong>Property</strong>: bandwidth: Maximum file system throughput, unit is MB\/s. Required and valid only when FileSystemType=cpfs.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

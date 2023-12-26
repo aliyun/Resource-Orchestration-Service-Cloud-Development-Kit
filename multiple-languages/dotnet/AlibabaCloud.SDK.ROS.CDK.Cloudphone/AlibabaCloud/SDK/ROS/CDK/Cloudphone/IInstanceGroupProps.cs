@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cloudphone
 {
-    /// <summary>Properties for defining a `ALIYUN::CloudPhone::InstanceGroup`.</summary>
+    /// <summary>Properties for defining a `InstanceGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-instancegroup
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IInstanceGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-cloudphone.InstanceGroupProps")]
     public interface IInstanceGroupProps
     {
@@ -159,7 +162,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudphone
             }
         }
 
-        /// <summary>Property periodUnit: Unit of prepaid time period, it could be Month/Year.</summary>
+        /// <summary>Property periodUnit: Unit of prepaid time period, it could be Month\/Year.</summary>
         /// <remarks>
         /// Default value is Month.
         /// </remarks>
@@ -213,7 +216,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudphone
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::CloudPhone::InstanceGroup`.</summary>
+        /// <summary>Properties for defining a `InstanceGroup`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-instancegroup
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IInstanceGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-cloudphone.InstanceGroupProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cloudphone.IInstanceGroupProps
         {
@@ -345,7 +351,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudphone
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property periodUnit: Unit of prepaid time period, it could be Month/Year.</summary>
+            /// <summary>Property periodUnit: Unit of prepaid time period, it could be Month\/Year.</summary>
             /// <remarks>
             /// Default value is Month.
             /// </remarks>

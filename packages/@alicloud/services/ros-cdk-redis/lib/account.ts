@@ -4,7 +4,8 @@ import { RosAccount } from './redis.generated';
 export { RosAccount as AccountProperty };
 
 /**
- * Properties for defining a `ALIYUN::REDIS::Account`
+ * Properties for defining a `Account`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-account
  */
 export interface AccountProps {
 
@@ -31,7 +32,7 @@ export interface AccountProps {
 
     /**
      * Property accountDescription: The description of the account.
-     * The description must start with a letter, and cannot start with http:// or https://.
+     * The description must start with a letter, and cannot start with http:\/\/ or https:\/\/.
      * The description can contain letters, underscores (_), hyphens (-), and digits.
      * It can be 2 to 256 characters in length.
      */
@@ -56,14 +57,11 @@ export interface AccountProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::REDIS::Account`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::Account`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccount`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-account
  */
 export class Account extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AccountName: The name of the account.
@@ -76,8 +74,6 @@ export class Account extends ros.Resource {
     public readonly attrInstanceId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::REDIS::Account`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

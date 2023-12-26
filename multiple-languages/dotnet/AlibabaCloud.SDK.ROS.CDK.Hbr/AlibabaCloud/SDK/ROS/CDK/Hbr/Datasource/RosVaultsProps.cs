@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Hbr.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::HBR::Vaults`.</summary>
+    /// <summary>Properties for defining a `RosVaults`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-hbr-vaults
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-hbr.datasource.RosVaultsProps")]
     public class RosVaultsProps : AlibabaCloud.SDK.ROS.CDK.Hbr.Datasource.IRosVaultsProps
     {

@@ -4,7 +4,8 @@ import { RosDBClusters } from './polardb.generated';
 export { RosDBClusters as DBClustersProperty };
 
 /**
- * Properties for defining a `DATASOURCE::POLARDB::DBClusters`
+ * Properties for defining a `DBClusters`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-dbclusters
  */
 export interface DBClustersProps {
 
@@ -51,14 +52,11 @@ export interface DBClustersProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::POLARDB::DBClusters`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::POLARDB::DBClusters`, which is used to query the details of PolarDB clusters.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBClusters`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-dbclusters
  */
 export class DBClusters extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DBClusters: The list of db clusters.
@@ -71,8 +69,6 @@ export class DBClusters extends ros.Resource {
     public readonly attrDbClusterIds: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::POLARDB::DBClusters`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

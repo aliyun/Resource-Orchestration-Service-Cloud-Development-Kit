@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecd
 {
-    /// <summary>Properties for defining a `ALIYUN::ECD::SimpleOfficeSite`.</summary>
+    /// <summary>Properties for defining a `SimpleOfficeSite`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-simpleofficesite
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ISimpleOfficeSiteProps), fullyQualifiedName: "@alicloud/ros-cdk-ecd.SimpleOfficeSiteProps")]
     public interface ISimpleOfficeSiteProps
     {
@@ -186,7 +189,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecd
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ECD::SimpleOfficeSite`.</summary>
+        /// <summary>Properties for defining a `SimpleOfficeSite`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-simpleofficesite
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ISimpleOfficeSiteProps), fullyQualifiedName: "@alicloud/ros-cdk-ecd.SimpleOfficeSiteProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecd.ISimpleOfficeSiteProps
         {

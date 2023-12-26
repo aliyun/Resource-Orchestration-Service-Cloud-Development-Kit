@@ -4,12 +4,13 @@ import { RosSimpleOfficeSite } from './ecd.generated';
 export { RosSimpleOfficeSite as SimpleOfficeSiteProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECD::SimpleOfficeSite`
+ * Properties for defining a `SimpleOfficeSite`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-simpleofficesite
  */
 export interface SimpleOfficeSiteProps {
 
     /**
-     * Property bandwidth: The maximum public bandwidth. Value range: 10 to 200. Unit: Mbit/s. This parameter is available if you set EnableInternetAccess to true.
+     * Property bandwidth: The maximum public bandwidth. Value range: 10 to 200. Unit: Mbit\/s. This parameter is available if you set EnableInternetAccess to true.
      */
     readonly bandwidth?: number | ros.IResolvable;
 
@@ -27,7 +28,7 @@ export interface SimpleOfficeSiteProps {
     readonly cenOwnerId?: number | ros.IResolvable;
 
     /**
-     * Property cidrBlock: The IPv4 CIDR block in the secure office network of the workspace. The IPv4 CIDR block that the system uses to create a virtual private cloud (VPC) for the workspace. We recommend that you set the IPv4 CIDR block to 10.0.0.0/12, 172.16.0.0/12, 192.168.0.0/16, or a subnet of these CIDR blocks. If you set the IPv4 CIDR block to 10.0.0.0/12 or 172.16.0.0/12, the mask is 1224 bits in length. If you set the IPv4 CIDR block to 192.168.0.0/16, the mask is 1624 bits in length.
+     * Property cidrBlock: The IPv4 CIDR block in the secure office network of the workspace. The IPv4 CIDR block that the system uses to create a virtual private cloud (VPC) for the workspace. We recommend that you set the IPv4 CIDR block to 10.0.0.0\/12, 172.16.0.0\/12, 192.168.0.0\/16, or a subnet of these CIDR blocks. If you set the IPv4 CIDR block to 10.0.0.0\/12 or 172.16.0.0\/12, the mask is 1224 bits in length. If you set the IPv4 CIDR block to 192.168.0.0\/16, the mask is 1624 bits in length.
      */
     readonly cidrBlock?: string | ros.IResolvable;
 
@@ -70,7 +71,7 @@ export interface SimpleOfficeSiteProps {
     readonly needVerifyZeroDevice?: boolean | ros.IResolvable;
 
     /**
-     * Property officeSiteName: The name of the workspace. The name must be 2 to 255 characters in length. It must start with a letter and cannot start with http:// or https://. The name can contain letters, digits, colons (:), underscores (_), and hyphens (-).
+     * Property officeSiteName: The name of the workspace. The name must be 2 to 255 characters in length. It must start with a letter and cannot start with http:\/\/ or https:\/\/. The name can contain letters, digits, colons (:), underscores (_), and hyphens (-).
      */
     readonly officeSiteName?: string | ros.IResolvable;
 
@@ -86,14 +87,11 @@ export interface SimpleOfficeSiteProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECD::SimpleOfficeSite`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECD::SimpleOfficeSite`, which is used to create a workspace of the convenience account type.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSimpleOfficeSite`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-simpleofficesite
  */
 export class SimpleOfficeSite extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute OfficeSiteId: The ID of the workspace.
@@ -101,8 +99,6 @@ export class SimpleOfficeSite extends ros.Resource {
     public readonly attrOfficeSiteId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ECD::SimpleOfficeSite`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

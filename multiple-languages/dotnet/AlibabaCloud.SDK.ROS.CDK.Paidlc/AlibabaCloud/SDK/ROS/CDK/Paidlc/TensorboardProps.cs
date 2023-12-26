@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Paidlc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::PAIDLC::Tensorboard`.</summary>
+    /// <summary>Properties for defining a `Tensorboard`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidlc-tensorboard
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-paidlc.TensorboardProps")]
     public class TensorboardProps : AlibabaCloud.SDK.ROS.CDK.Paidlc.ITensorboardProps
     {
@@ -509,7 +512,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Paidlc
 
         private object? _uri;
 
-        /// <summary>Property uri: URI of a dataset: When DataSourceType is OSS, the format is: OSS: // [OSS-BUCET].</summary>
+        /// <summary>Property uri: URI of a dataset: When DataSourceType is OSS, the format is: OSS: \/\/ [OSS-BUCET].</summary>
         /// <remarks>
         /// [Endpoint]/[Path].
         /// When the DataSourceType is NAS, the format is: nas:// [nas-filesystem-id]. [Region]/[PATH].

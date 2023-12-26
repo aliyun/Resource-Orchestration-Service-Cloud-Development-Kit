@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ess;
 
 /**
- * A ROS resource type:  <code>ALIYUN::ESS::ScalingConfiguration</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ESS::ScalingConfiguration</code>, which is used to create a scaling configuration for a scaling group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:35.523Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.040Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScalingConfiguration")
 public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,11 +16,7 @@ public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ESS::ScalingConfiguration</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -33,11 +29,7 @@ public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ESS::ScalingConfiguration</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -118,6 +110,70 @@ public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property affinity: Specifies whether to associate an ECS instance on a dedicated host with the dedicated host.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><strong>default</strong>: does not associate the ECS instance with the dedicated host. If you start an ECS instance that was stopped in economical mode and the original dedicated host has insufficient resources, the ECS instance is automatically deployed to another dedicated host in the automatic deployment resource pool.</li>
+         * <li><strong>host</strong>: associates the ECS instance with the dedicated host. If you start an ECS instance that was stopped in economical mode, the instance remains on the original dedicated host. If the original dedicated host has insufficient resources, the ECS instance fails to start.
+         * Default value: <strong>default</strong></li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param affinity Property affinity: Specifies whether to associate an ECS instance on a dedicated host with the dedicated host. This parameter is required.
+         */
+        public Builder affinity(final java.lang.String affinity) {
+            this.props.affinity(affinity);
+            return this;
+        }
+        /**
+         * Property affinity: Specifies whether to associate an ECS instance on a dedicated host with the dedicated host.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><strong>default</strong>: does not associate the ECS instance with the dedicated host. If you start an ECS instance that was stopped in economical mode and the original dedicated host has insufficient resources, the ECS instance is automatically deployed to another dedicated host in the automatic deployment resource pool.</li>
+         * <li><strong>host</strong>: associates the ECS instance with the dedicated host. If you start an ECS instance that was stopped in economical mode, the instance remains on the original dedicated host. If the original dedicated host has insufficient resources, the ECS instance fails to start.
+         * Default value: <strong>default</strong></li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param affinity Property affinity: Specifies whether to associate an ECS instance on a dedicated host with the dedicated host. This parameter is required.
+         */
+        public Builder affinity(final com.aliyun.ros.cdk.core.IResolvable affinity) {
+            this.props.affinity(affinity);
+            return this;
+        }
+
+        /**
+         * Property cpu: The number of vCPUs.
+         * <p>
+         * You can specify the number of vCPUs and the memory size to determine the range of instance types. For example, you can set CPU to 2 and Memory to 16 to specify instance types that have 2 vCPUs and 16 GiB of memory. If you specify Cpu and Memory, Auto Scaling determines the available instance types based on factors such as I/O optimization requirements and zones. Then, Auto Scaling preferentially creates instances by using the lowest-priced instance type.
+         * <strong>Note</strong>: You can specify <strong>Cpu</strong> and <strong>Memory</strong> to determine the range of instance types only if you set Scaling Policy to Cost Optimization Policy and you do not specify instance types in the scaling configuration.
+         * <p>
+         * @return {@code this}
+         * @param cpu Property cpu: The number of vCPUs. This parameter is required.
+         */
+        public Builder cpu(final java.lang.Number cpu) {
+            this.props.cpu(cpu);
+            return this;
+        }
+        /**
+         * Property cpu: The number of vCPUs.
+         * <p>
+         * You can specify the number of vCPUs and the memory size to determine the range of instance types. For example, you can set CPU to 2 and Memory to 16 to specify instance types that have 2 vCPUs and 16 GiB of memory. If you specify Cpu and Memory, Auto Scaling determines the available instance types based on factors such as I/O optimization requirements and zones. Then, Auto Scaling preferentially creates instances by using the lowest-priced instance type.
+         * <strong>Note</strong>: You can specify <strong>Cpu</strong> and <strong>Memory</strong> to determine the range of instance types only if you set Scaling Policy to Cost Optimization Policy and you do not specify instance types in the scaling configuration.
+         * <p>
+         * @return {@code this}
+         * @param cpu Property cpu: The number of vCPUs. This parameter is required.
+         */
+        public Builder cpu(final com.aliyun.ros.cdk.core.IResolvable cpu) {
+            this.props.cpu(cpu);
+            return this;
+        }
+
+        /**
          * Property creditSpecification: The performance mode of the burstable instance.
          * <p>
          * Valid values:
@@ -143,6 +199,33 @@ public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder creditSpecification(final com.aliyun.ros.cdk.core.IResolvable creditSpecification) {
             this.props.creditSpecification(creditSpecification);
+            return this;
+        }
+
+        /**
+         * Property dedicatedHostId: The ID of the dedicated host on which you want to create an ECS instance.
+         * <p>
+         * You cannot create preemptible instances on dedicated hosts. If you specify <strong>DedicatedHostId</strong>, <strong>SpotStrategy</strong> and <strong>SpotPriceLimit</strong> are ignored.
+         * You can call the <strong>DescribeDedicatedHosts</strong> operation to query dedicated host IDs.
+         * <p>
+         * @return {@code this}
+         * @param dedicatedHostId Property dedicatedHostId: The ID of the dedicated host on which you want to create an ECS instance. This parameter is required.
+         */
+        public Builder dedicatedHostId(final java.lang.String dedicatedHostId) {
+            this.props.dedicatedHostId(dedicatedHostId);
+            return this;
+        }
+        /**
+         * Property dedicatedHostId: The ID of the dedicated host on which you want to create an ECS instance.
+         * <p>
+         * You cannot create preemptible instances on dedicated hosts. If you specify <strong>DedicatedHostId</strong>, <strong>SpotStrategy</strong> and <strong>SpotPriceLimit</strong> are ignored.
+         * You can call the <strong>DescribeDedicatedHosts</strong> operation to query dedicated host IDs.
+         * <p>
+         * @return {@code this}
+         * @param dedicatedHostId Property dedicatedHostId: The ID of the dedicated host on which you want to create an ECS instance. This parameter is required.
+         */
+        public Builder dedicatedHostId(final com.aliyun.ros.cdk.core.IResolvable dedicatedHostId) {
+            this.props.dedicatedHostId(dedicatedHostId);
             return this;
         }
 
@@ -241,7 +324,7 @@ public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property imageFamily: The name of the image family.
          * <p>
-         * You can configure this parameter to obtain the latest available custom images within the specified image family. The images are used to create ECS instances. If you have set the ImageId parameter, you cannot set the ImageFamily parameter.
+         * You can configure this parameter to obtain the latest available images within the specified image family. The images are used to create ECS instances. If you have set the ImageId parameter, you cannot set the ImageFamily parameter.
          * <p>
          * @return {@code this}
          * @param imageFamily Property imageFamily: The name of the image family. This parameter is required.
@@ -253,7 +336,7 @@ public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property imageFamily: The name of the image family.
          * <p>
-         * You can configure this parameter to obtain the latest available custom images within the specified image family. The images are used to create ECS instances. If you have set the ImageId parameter, you cannot set the ImageFamily parameter.
+         * You can configure this parameter to obtain the latest available images within the specified image family. The images are used to create ECS instances. If you have set the ImageId parameter, you cannot set the ImageFamily parameter.
          * <p>
          * @return {@code this}
          * @param imageFamily Property imageFamily: The name of the image family. This parameter is required.
@@ -281,6 +364,79 @@ public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder imageId(final com.aliyun.ros.cdk.core.IResolvable imageId) {
             this.props.imageId(imageId);
+            return this;
+        }
+
+        /**
+         * Property imageName: The name of the image.
+         * <p>
+         * Each image name must be unique in a region. If you specify <strong>ImageId</strong>, <strong>ImageName</strong> is ignored.
+         * You cannot use <strong>ImageName</strong> to specify images that are purchased from Alibaba Cloud Marketplace.
+         * <p>
+         * @return {@code this}
+         * @param imageName Property imageName: The name of the image. This parameter is required.
+         */
+        public Builder imageName(final java.lang.String imageName) {
+            this.props.imageName(imageName);
+            return this;
+        }
+        /**
+         * Property imageName: The name of the image.
+         * <p>
+         * Each image name must be unique in a region. If you specify <strong>ImageId</strong>, <strong>ImageName</strong> is ignored.
+         * You cannot use <strong>ImageName</strong> to specify images that are purchased from Alibaba Cloud Marketplace.
+         * <p>
+         * @return {@code this}
+         * @param imageName Property imageName: The name of the image. This parameter is required.
+         */
+        public Builder imageName(final com.aliyun.ros.cdk.core.IResolvable imageName) {
+            this.props.imageName(imageName);
+            return this;
+        }
+
+        /**
+         * Property imageOptionsLoginAsNonRoot: Whether the ecs instance is logged in as ecs-user.Valid values: - <strong>true</strong> - <strong>false</strong> Default value: <strong>false</strong>.
+         * <p>
+         * @return {@code this}
+         * @param imageOptionsLoginAsNonRoot Property imageOptionsLoginAsNonRoot: Whether the ecs instance is logged in as ecs-user.Valid values: - <strong>true</strong> - <strong>false</strong> Default value: <strong>false</strong>. This parameter is required.
+         */
+        public Builder imageOptionsLoginAsNonRoot(final java.lang.Boolean imageOptionsLoginAsNonRoot) {
+            this.props.imageOptionsLoginAsNonRoot(imageOptionsLoginAsNonRoot);
+            return this;
+        }
+        /**
+         * Property imageOptionsLoginAsNonRoot: Whether the ecs instance is logged in as ecs-user.Valid values: - <strong>true</strong> - <strong>false</strong> Default value: <strong>false</strong>.
+         * <p>
+         * @return {@code this}
+         * @param imageOptionsLoginAsNonRoot Property imageOptionsLoginAsNonRoot: Whether the ecs instance is logged in as ecs-user.Valid values: - <strong>true</strong> - <strong>false</strong> Default value: <strong>false</strong>. This parameter is required.
+         */
+        public Builder imageOptionsLoginAsNonRoot(final com.aliyun.ros.cdk.core.IResolvable imageOptionsLoginAsNonRoot) {
+            this.props.imageOptionsLoginAsNonRoot(imageOptionsLoginAsNonRoot);
+            return this;
+        }
+
+        /**
+         * Property instanceDescription: The description of the ECS instance.
+         * <p>
+         * The description must be 2 to 256 characters in length. The description can contain letters and cannot start with http:// or https://.
+         * <p>
+         * @return {@code this}
+         * @param instanceDescription Property instanceDescription: The description of the ECS instance. This parameter is required.
+         */
+        public Builder instanceDescription(final java.lang.String instanceDescription) {
+            this.props.instanceDescription(instanceDescription);
+            return this;
+        }
+        /**
+         * Property instanceDescription: The description of the ECS instance.
+         * <p>
+         * The description must be 2 to 256 characters in length. The description can contain letters and cannot start with http:// or https://.
+         * <p>
+         * @return {@code this}
+         * @param instanceDescription Property instanceDescription: The description of the ECS instance. This parameter is required.
+         */
+        public Builder instanceDescription(final com.aliyun.ros.cdk.core.IResolvable instanceDescription) {
+            this.props.instanceDescription(instanceDescription);
             return this;
         }
 
@@ -327,6 +483,27 @@ public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property instancePatternInfos: Details of the intelligent configuration settings that determine the range of instance types that meet the specified criteria.
+         * <p>
+         * @return {@code this}
+         * @param instancePatternInfos Property instancePatternInfos: Details of the intelligent configuration settings that determine the range of instance types that meet the specified criteria. This parameter is required.
+         */
+        public Builder instancePatternInfos(final com.aliyun.ros.cdk.core.IResolvable instancePatternInfos) {
+            this.props.instancePatternInfos(instancePatternInfos);
+            return this;
+        }
+        /**
+         * Property instancePatternInfos: Details of the intelligent configuration settings that determine the range of instance types that meet the specified criteria.
+         * <p>
+         * @return {@code this}
+         * @param instancePatternInfos Property instancePatternInfos: Details of the intelligent configuration settings that determine the range of instance types that meet the specified criteria. This parameter is required.
+         */
+        public Builder instancePatternInfos(final java.util.List<? extends java.lang.Object> instancePatternInfos) {
+            this.props.instancePatternInfos(instancePatternInfos);
+            return this;
+        }
+
+        /**
          * Property instanceType: ecs supported instance type.
          * <p>
          * @return {@code this}
@@ -344,6 +521,27 @@ public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder instanceType(final com.aliyun.ros.cdk.core.IResolvable instanceType) {
             this.props.instanceType(instanceType);
+            return this;
+        }
+
+        /**
+         * Property instanceTypeOverrides: The instance types.
+         * <p>
+         * @return {@code this}
+         * @param instanceTypeOverrides Property instanceTypeOverrides: The instance types. This parameter is required.
+         */
+        public Builder instanceTypeOverrides(final com.aliyun.ros.cdk.core.IResolvable instanceTypeOverrides) {
+            this.props.instanceTypeOverrides(instanceTypeOverrides);
+            return this;
+        }
+        /**
+         * Property instanceTypeOverrides: The instance types.
+         * <p>
+         * @return {@code this}
+         * @param instanceTypeOverrides Property instanceTypeOverrides: The instance types. This parameter is required.
+         */
+        public Builder instanceTypeOverrides(final java.util.List<? extends java.lang.Object> instanceTypeOverrides) {
+            this.props.instanceTypeOverrides(instanceTypeOverrides);
             return this;
         }
 
@@ -540,6 +738,35 @@ public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property memory: The memory size.
+         * <p>
+         * Unit: GiB.
+         * You can specify the number of vCPUs and the memory size to determine the range of instance types. For example, you can set Cpu to 2 and Memory to 16 to specify instance types that have 2 vCPUs and 16 GiB of memory. If you specify Cpu and Memory, Auto Scaling determines the available instance types based on factors such as I/O optimization requirements and zones. Then, Auto Scaling preferentially creates instances by using the lowest-priced instance type.
+         * <strong>Note</strong>: You can specify <strong>Cpu</strong> and <strong>Memory</strong> to determine the range of instance types only if you set Scaling Policy to Cost Optimization Policy and you do not specify instance types in the scaling configuration.
+         * <p>
+         * @return {@code this}
+         * @param memory Property memory: The memory size. This parameter is required.
+         */
+        public Builder memory(final java.lang.Number memory) {
+            this.props.memory(memory);
+            return this;
+        }
+        /**
+         * Property memory: The memory size.
+         * <p>
+         * Unit: GiB.
+         * You can specify the number of vCPUs and the memory size to determine the range of instance types. For example, you can set Cpu to 2 and Memory to 16 to specify instance types that have 2 vCPUs and 16 GiB of memory. If you specify Cpu and Memory, Auto Scaling determines the available instance types based on factors such as I/O optimization requirements and zones. Then, Auto Scaling preferentially creates instances by using the lowest-priced instance type.
+         * <strong>Note</strong>: You can specify <strong>Cpu</strong> and <strong>Memory</strong> to determine the range of instance types only if you set Scaling Policy to Cost Optimization Policy and you do not specify instance types in the scaling configuration.
+         * <p>
+         * @return {@code this}
+         * @param memory Property memory: The memory size. This parameter is required.
+         */
+        public Builder memory(final com.aliyun.ros.cdk.core.IResolvable memory) {
+            this.props.memory(memory);
+            return this;
+        }
+
+        /**
          * Property password: Password of created ecs instance.
          * <p>
          * Must contain at least 3 types of special character, lower character, upper character, number.
@@ -586,6 +813,27 @@ public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder passwordInherit(final com.aliyun.ros.cdk.core.IResolvable passwordInherit) {
             this.props.passwordInherit(passwordInherit);
+            return this;
+        }
+
+        /**
+         * Property privatePoolOptions: Option settings for private pools.
+         * <p>
+         * @return {@code this}
+         * @param privatePoolOptions Property privatePoolOptions: Option settings for private pools. This parameter is required.
+         */
+        public Builder privatePoolOptions(final com.aliyun.ros.cdk.core.IResolvable privatePoolOptions) {
+            this.props.privatePoolOptions(privatePoolOptions);
+            return this;
+        }
+        /**
+         * Property privatePoolOptions: Option settings for private pools.
+         * <p>
+         * @return {@code this}
+         * @param privatePoolOptions Property privatePoolOptions: Option settings for private pools. This parameter is required.
+         */
+        public Builder privatePoolOptions(final com.aliyun.ros.cdk.ess.RosScalingConfiguration.PrivatePoolOptionsProperty privatePoolOptions) {
+            this.props.privatePoolOptions(privatePoolOptions);
             return this;
         }
 
@@ -657,6 +905,41 @@ public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property securityEnhancementStrategy: Specifies whether to enable security hardening.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><strong>Active</strong>: enables security hardening. This value is applicable only to public images.</li>
+         * <li><strong>Deactive</strong>: disables security hardening. This value is applicable to all image types.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param securityEnhancementStrategy Property securityEnhancementStrategy: Specifies whether to enable security hardening. This parameter is required.
+         */
+        public Builder securityEnhancementStrategy(final java.lang.String securityEnhancementStrategy) {
+            this.props.securityEnhancementStrategy(securityEnhancementStrategy);
+            return this;
+        }
+        /**
+         * Property securityEnhancementStrategy: Specifies whether to enable security hardening.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><strong>Active</strong>: enables security hardening. This value is applicable only to public images.</li>
+         * <li><strong>Deactive</strong>: disables security hardening. This value is applicable to all image types.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param securityEnhancementStrategy Property securityEnhancementStrategy: Specifies whether to enable security hardening. This parameter is required.
+         */
+        public Builder securityEnhancementStrategy(final com.aliyun.ros.cdk.core.IResolvable securityEnhancementStrategy) {
+            this.props.securityEnhancementStrategy(securityEnhancementStrategy);
+            return this;
+        }
+
+        /**
          * Property securityGroupId: Security Group to create ecs instance.
          * <p>
          * @return {@code this}
@@ -674,6 +957,87 @@ public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder securityGroupId(final com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
             this.props.securityGroupId(securityGroupId);
+            return this;
+        }
+
+        /**
+         * Property securityGroupIds: The IDs of the security groups with which you want to associate the ECS instances that are created by using the scaling configuration.
+         * <p>
+         * <strong>Note</strong>: If you specify <strong>SecurityGroupId</strong>, you cannot specify <strong>SecurityGroupIds</strong>.
+         * <p>
+         * @return {@code this}
+         * @param securityGroupIds Property securityGroupIds: The IDs of the security groups with which you want to associate the ECS instances that are created by using the scaling configuration. This parameter is required.
+         */
+        public Builder securityGroupIds(final com.aliyun.ros.cdk.core.IResolvable securityGroupIds) {
+            this.props.securityGroupIds(securityGroupIds);
+            return this;
+        }
+        /**
+         * Property securityGroupIds: The IDs of the security groups with which you want to associate the ECS instances that are created by using the scaling configuration.
+         * <p>
+         * <strong>Note</strong>: If you specify <strong>SecurityGroupId</strong>, you cannot specify <strong>SecurityGroupIds</strong>.
+         * <p>
+         * @return {@code this}
+         * @param securityGroupIds Property securityGroupIds: The IDs of the security groups with which you want to associate the ECS instances that are created by using the scaling configuration. This parameter is required.
+         */
+        public Builder securityGroupIds(final java.util.List<? extends java.lang.Object> securityGroupIds) {
+            this.props.securityGroupIds(securityGroupIds);
+            return this;
+        }
+
+        /**
+         * Property spotDuration: The retention period of the preemptible instance.
+         * <p>
+         * Unit: hours. Valid values: 0, 1, 2, 3, 4, 5, and 6.
+         * The following retention periods are available in invitational preview: 2, 3, 4, 5, and 6 hours. If you want to set this parameter to one of these values, submit a ticket.
+         * If you set this parameter to 0, no protection period is specified for the preemptible instance.
+         * Default value: 1
+         * <p>
+         * @return {@code this}
+         * @param spotDuration Property spotDuration: The retention period of the preemptible instance. This parameter is required.
+         */
+        public Builder spotDuration(final java.lang.Number spotDuration) {
+            this.props.spotDuration(spotDuration);
+            return this;
+        }
+        /**
+         * Property spotDuration: The retention period of the preemptible instance.
+         * <p>
+         * Unit: hours. Valid values: 0, 1, 2, 3, 4, 5, and 6.
+         * The following retention periods are available in invitational preview: 2, 3, 4, 5, and 6 hours. If you want to set this parameter to one of these values, submit a ticket.
+         * If you set this parameter to 0, no protection period is specified for the preemptible instance.
+         * Default value: 1
+         * <p>
+         * @return {@code this}
+         * @param spotDuration Property spotDuration: The retention period of the preemptible instance. This parameter is required.
+         */
+        public Builder spotDuration(final com.aliyun.ros.cdk.core.IResolvable spotDuration) {
+            this.props.spotDuration(spotDuration);
+            return this;
+        }
+
+        /**
+         * Property spotInterruptionBehavior: The interruption mode of the preemptible instance.
+         * <p>
+         * Default value: Terminate. Set the value to Terminate. This value specifies that the preemptible instance is to be released.
+         * <p>
+         * @return {@code this}
+         * @param spotInterruptionBehavior Property spotInterruptionBehavior: The interruption mode of the preemptible instance. This parameter is required.
+         */
+        public Builder spotInterruptionBehavior(final java.lang.String spotInterruptionBehavior) {
+            this.props.spotInterruptionBehavior(spotInterruptionBehavior);
+            return this;
+        }
+        /**
+         * Property spotInterruptionBehavior: The interruption mode of the preemptible instance.
+         * <p>
+         * Default value: Terminate. Set the value to Terminate. This value specifies that the preemptible instance is to be released.
+         * <p>
+         * @return {@code this}
+         * @param spotInterruptionBehavior Property spotInterruptionBehavior: The interruption mode of the preemptible instance. This parameter is required.
+         */
+        public Builder spotInterruptionBehavior(final com.aliyun.ros.cdk.core.IResolvable spotInterruptionBehavior) {
+            this.props.spotInterruptionBehavior(spotInterruptionBehavior);
             return this;
         }
 
@@ -794,6 +1158,84 @@ public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property systemDiskBurstingEnabled: Specifies whether to enable the burst feature for the system disk.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><strong>true</strong></li>
+         * <li><strong>false</strong>
+         * <strong>Note</strong>: This parameter is available only if you set <strong>SystemDiskCategory</strong> to <strong>cloud_auto</strong>.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param systemDiskBurstingEnabled Property systemDiskBurstingEnabled: Specifies whether to enable the burst feature for the system disk. This parameter is required.
+         */
+        public Builder systemDiskBurstingEnabled(final java.lang.Boolean systemDiskBurstingEnabled) {
+            this.props.systemDiskBurstingEnabled(systemDiskBurstingEnabled);
+            return this;
+        }
+        /**
+         * Property systemDiskBurstingEnabled: Specifies whether to enable the burst feature for the system disk.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><strong>true</strong></li>
+         * <li><strong>false</strong>
+         * <strong>Note</strong>: This parameter is available only if you set <strong>SystemDiskCategory</strong> to <strong>cloud_auto</strong>.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param systemDiskBurstingEnabled Property systemDiskBurstingEnabled: Specifies whether to enable the burst feature for the system disk. This parameter is required.
+         */
+        public Builder systemDiskBurstingEnabled(final com.aliyun.ros.cdk.core.IResolvable systemDiskBurstingEnabled) {
+            this.props.systemDiskBurstingEnabled(systemDiskBurstingEnabled);
+            return this;
+        }
+
+        /**
+         * Property systemDiskCategories: The categories of the system disks.
+         * <p>
+         * If Auto Scaling cannot create instances by using the disk category that has the highest priority, Auto Scaling creates instances by using the disk category that has the next highest priority. Valid values:
+         * <p>
+         * <ul>
+         * <li><strong>cloud</strong>: basic disk</li>
+         * <li><strong>cloud_efficiency</strong>: ultra disk</li>
+         * <li><strong>cloud_ssd</strong>: standard SSD</li>
+         * <li><strong>cloud_essd</strong>: ESSD
+         * <strong>Note</strong>: If you specify <strong>SystemDiskCategories</strong>, you cannot specify <strong>SystemDiskCategory</strong>.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param systemDiskCategories Property systemDiskCategories: The categories of the system disks. This parameter is required.
+         */
+        public Builder systemDiskCategories(final com.aliyun.ros.cdk.core.IResolvable systemDiskCategories) {
+            this.props.systemDiskCategories(systemDiskCategories);
+            return this;
+        }
+        /**
+         * Property systemDiskCategories: The categories of the system disks.
+         * <p>
+         * If Auto Scaling cannot create instances by using the disk category that has the highest priority, Auto Scaling creates instances by using the disk category that has the next highest priority. Valid values:
+         * <p>
+         * <ul>
+         * <li><strong>cloud</strong>: basic disk</li>
+         * <li><strong>cloud_efficiency</strong>: ultra disk</li>
+         * <li><strong>cloud_ssd</strong>: standard SSD</li>
+         * <li><strong>cloud_essd</strong>: ESSD
+         * <strong>Note</strong>: If you specify <strong>SystemDiskCategories</strong>, you cannot specify <strong>SystemDiskCategory</strong>.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param systemDiskCategories Property systemDiskCategories: The categories of the system disks. This parameter is required.
+         */
+        public Builder systemDiskCategories(final java.util.List<? extends java.lang.Object> systemDiskCategories) {
+            this.props.systemDiskCategories(systemDiskCategories);
+            return this;
+        }
+
+        /**
          * Property systemDiskCategory: Category of system disk.
          * <p>
          * Default is cloud.support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto
@@ -819,6 +1261,151 @@ public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property systemDiskDescription: The description of the system disk.
+         * <p>
+         * The description must be 2 to 256 characters in length. The description can contain letters and cannot start with http:// or https://.
+         * <p>
+         * @return {@code this}
+         * @param systemDiskDescription Property systemDiskDescription: The description of the system disk. This parameter is required.
+         */
+        public Builder systemDiskDescription(final java.lang.String systemDiskDescription) {
+            this.props.systemDiskDescription(systemDiskDescription);
+            return this;
+        }
+        /**
+         * Property systemDiskDescription: The description of the system disk.
+         * <p>
+         * The description must be 2 to 256 characters in length. The description can contain letters and cannot start with http:// or https://.
+         * <p>
+         * @return {@code this}
+         * @param systemDiskDescription Property systemDiskDescription: The description of the system disk. This parameter is required.
+         */
+        public Builder systemDiskDescription(final com.aliyun.ros.cdk.core.IResolvable systemDiskDescription) {
+            this.props.systemDiskDescription(systemDiskDescription);
+            return this;
+        }
+
+        /**
+         * Property systemDiskDiskName: The name of the system disk.
+         * <p>
+         * The name must be 2 to 128 characters in length. The name can contain letters, digits, colons (:), underscores (_), and hyphens (-). The name must start with a letter but cannot start with http:// or https://.
+         * <p>
+         * @return {@code this}
+         * @param systemDiskDiskName Property systemDiskDiskName: The name of the system disk. This parameter is required.
+         */
+        public Builder systemDiskDiskName(final java.lang.String systemDiskDiskName) {
+            this.props.systemDiskDiskName(systemDiskDiskName);
+            return this;
+        }
+        /**
+         * Property systemDiskDiskName: The name of the system disk.
+         * <p>
+         * The name must be 2 to 128 characters in length. The name can contain letters, digits, colons (:), underscores (_), and hyphens (-). The name must start with a letter but cannot start with http:// or https://.
+         * <p>
+         * @return {@code this}
+         * @param systemDiskDiskName Property systemDiskDiskName: The name of the system disk. This parameter is required.
+         */
+        public Builder systemDiskDiskName(final com.aliyun.ros.cdk.core.IResolvable systemDiskDiskName) {
+            this.props.systemDiskDiskName(systemDiskDiskName);
+            return this;
+        }
+
+        /**
+         * Property systemDiskEncryptAlgorithm: The encryption algorithm that you want to use to encrypt the system disk.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><strong>AES-256</strong></li>
+         * <li><strong>SM4-128</strong>
+         * Default value: <strong>AES-256</strong></li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param systemDiskEncryptAlgorithm Property systemDiskEncryptAlgorithm: The encryption algorithm that you want to use to encrypt the system disk. This parameter is required.
+         */
+        public Builder systemDiskEncryptAlgorithm(final java.lang.String systemDiskEncryptAlgorithm) {
+            this.props.systemDiskEncryptAlgorithm(systemDiskEncryptAlgorithm);
+            return this;
+        }
+        /**
+         * Property systemDiskEncryptAlgorithm: The encryption algorithm that you want to use to encrypt the system disk.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><strong>AES-256</strong></li>
+         * <li><strong>SM4-128</strong>
+         * Default value: <strong>AES-256</strong></li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param systemDiskEncryptAlgorithm Property systemDiskEncryptAlgorithm: The encryption algorithm that you want to use to encrypt the system disk. This parameter is required.
+         */
+        public Builder systemDiskEncryptAlgorithm(final com.aliyun.ros.cdk.core.IResolvable systemDiskEncryptAlgorithm) {
+            this.props.systemDiskEncryptAlgorithm(systemDiskEncryptAlgorithm);
+            return this;
+        }
+
+        /**
+         * Property systemDiskEncrypted: Specifies whether to encrypt the system disk.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><strong>true</strong></li>
+         * <li><strong>false</strong>
+         * Default value: <strong>false</strong></li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param systemDiskEncrypted Property systemDiskEncrypted: Specifies whether to encrypt the system disk. This parameter is required.
+         */
+        public Builder systemDiskEncrypted(final java.lang.Boolean systemDiskEncrypted) {
+            this.props.systemDiskEncrypted(systemDiskEncrypted);
+            return this;
+        }
+        /**
+         * Property systemDiskEncrypted: Specifies whether to encrypt the system disk.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><strong>true</strong></li>
+         * <li><strong>false</strong>
+         * Default value: <strong>false</strong></li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param systemDiskEncrypted Property systemDiskEncrypted: Specifies whether to encrypt the system disk. This parameter is required.
+         */
+        public Builder systemDiskEncrypted(final com.aliyun.ros.cdk.core.IResolvable systemDiskEncrypted) {
+            this.props.systemDiskEncrypted(systemDiskEncrypted);
+            return this;
+        }
+
+        /**
+         * Property systemDiskKmsKeyId: The ID of the KMS key that you want to use to encrypt the system disk.
+         * <p>
+         * @return {@code this}
+         * @param systemDiskKmsKeyId Property systemDiskKmsKeyId: The ID of the KMS key that you want to use to encrypt the system disk. This parameter is required.
+         */
+        public Builder systemDiskKmsKeyId(final java.lang.String systemDiskKmsKeyId) {
+            this.props.systemDiskKmsKeyId(systemDiskKmsKeyId);
+            return this;
+        }
+        /**
+         * Property systemDiskKmsKeyId: The ID of the KMS key that you want to use to encrypt the system disk.
+         * <p>
+         * @return {@code this}
+         * @param systemDiskKmsKeyId Property systemDiskKmsKeyId: The ID of the KMS key that you want to use to encrypt the system disk. This parameter is required.
+         */
+        public Builder systemDiskKmsKeyId(final com.aliyun.ros.cdk.core.IResolvable systemDiskKmsKeyId) {
+            this.props.systemDiskKmsKeyId(systemDiskKmsKeyId);
+            return this;
+        }
+
+        /**
          * Property systemDiskPerformanceLevel: The performance level of an ESSD.
          * <p>
          * @return {@code this}
@@ -836,6 +1423,31 @@ public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder systemDiskPerformanceLevel(final com.aliyun.ros.cdk.core.IResolvable systemDiskPerformanceLevel) {
             this.props.systemDiskPerformanceLevel(systemDiskPerformanceLevel);
+            return this;
+        }
+
+        /**
+         * Property systemDiskProvisionedIops: The IOPS metric that is preconfigured for the system disk.
+         * <p>
+         * <strong>Note</strong>: IOPS measures the number of read and write operations that an EBS device can process per second.
+         * <p>
+         * @return {@code this}
+         * @param systemDiskProvisionedIops Property systemDiskProvisionedIops: The IOPS metric that is preconfigured for the system disk. This parameter is required.
+         */
+        public Builder systemDiskProvisionedIops(final java.lang.Number systemDiskProvisionedIops) {
+            this.props.systemDiskProvisionedIops(systemDiskProvisionedIops);
+            return this;
+        }
+        /**
+         * Property systemDiskProvisionedIops: The IOPS metric that is preconfigured for the system disk.
+         * <p>
+         * <strong>Note</strong>: IOPS measures the number of read and write operations that an EBS device can process per second.
+         * <p>
+         * @return {@code this}
+         * @param systemDiskProvisionedIops Property systemDiskProvisionedIops: The IOPS metric that is preconfigured for the system disk. This parameter is required.
+         */
+        public Builder systemDiskProvisionedIops(final com.aliyun.ros.cdk.core.IResolvable systemDiskProvisionedIops) {
+            this.props.systemDiskProvisionedIops(systemDiskProvisionedIops);
             return this;
         }
 
@@ -914,6 +1526,43 @@ public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property tenancy: Specifies whether to create an ECS instance on a dedicated host.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><strong>default</strong>: does not create an ECS instance on a dedicated host.</li>
+         * <li><strong>host</strong>: creates an ECS instance on a dedicated host. If you do not specify <strong>DedicatedHostId</strong>, Alibaba Cloud selects a dedicated host for the ECS instance.
+         * Default value: <strong>default</strong></li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param tenancy Property tenancy: Specifies whether to create an ECS instance on a dedicated host. This parameter is required.
+         */
+        public Builder tenancy(final java.lang.String tenancy) {
+            this.props.tenancy(tenancy);
+            return this;
+        }
+        /**
+         * Property tenancy: Specifies whether to create an ECS instance on a dedicated host.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><strong>default</strong>: does not create an ECS instance on a dedicated host.</li>
+         * <li><strong>host</strong>: creates an ECS instance on a dedicated host. If you do not specify <strong>DedicatedHostId</strong>, Alibaba Cloud selects a dedicated host for the ECS instance.
+         * Default value: <strong>default</strong></li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param tenancy Property tenancy: Specifies whether to create an ECS instance on a dedicated host. This parameter is required.
+         */
+        public Builder tenancy(final com.aliyun.ros.cdk.core.IResolvable tenancy) {
+            this.props.tenancy(tenancy);
+            return this;
+        }
+
+        /**
          * Property userData: User data to pass to instance.
          * <p>
          * [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
@@ -935,6 +1584,27 @@ public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder userData(final com.aliyun.ros.cdk.core.IResolvable userData) {
             this.props.userData(userData);
+            return this;
+        }
+
+        /**
+         * Property zoneId: The zone ID of the ECS instance.
+         * <p>
+         * @return {@code this}
+         * @param zoneId Property zoneId: The zone ID of the ECS instance. This parameter is required.
+         */
+        public Builder zoneId(final java.lang.String zoneId) {
+            this.props.zoneId(zoneId);
+            return this;
+        }
+        /**
+         * Property zoneId: The zone ID of the ECS instance.
+         * <p>
+         * @return {@code this}
+         * @param zoneId Property zoneId: The zone ID of the ECS instance. This parameter is required.
+         */
+        public Builder zoneId(final com.aliyun.ros.cdk.core.IResolvable zoneId) {
+            this.props.zoneId(zoneId);
             return this;
         }
 

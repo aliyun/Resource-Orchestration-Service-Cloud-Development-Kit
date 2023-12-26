@@ -4,7 +4,8 @@ import { RosDBInstanceClone } from './rds.generated';
 export { RosDBInstanceClone as DBInstanceCloneProperty };
 
 /**
- * Properties for defining a `ALIYUN::RDS::DBInstanceClone`
+ * Properties for defining a `DBInstanceClone`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstanceclone
  */
 export interface DBInstanceCloneProps {
 
@@ -195,7 +196,7 @@ export interface DBInstanceCloneProps {
     readonly securityGroupId?: string | ros.IResolvable;
 
     /**
-     * Property securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0/0 means no limitation.
+     * Property securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0\/0 means no limitation.
      */
     readonly securityIpList?: string | ros.IResolvable;
 
@@ -231,12 +232,12 @@ export interface DBInstanceCloneProps {
      * Key
      * It can be up to 64 characters in length.
      * Cannot begin with aliyun.
-     * Cannot begin with http:// or https://.
+     * Cannot begin with http:\/\/ or https:\/\/.
      * Cannot be a null string.
      * Value
      * It can be up to 128 characters in length.
      * Cannot begin with aliyun.
-     * Cannot begin with http:// or https://.
+     * Cannot begin with http:\/\/ or https:\/\/.
      * Can be a null string.
      */
     readonly tags?: { [key: string]: (any) };
@@ -263,14 +264,11 @@ export interface DBInstanceCloneProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::RDS::DBInstanceClone`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::DBInstanceClone`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBInstanceClone`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstanceclone
  */
 export class DBInstanceClone extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DBInstanceId: The instance id of created database instance.
@@ -308,8 +306,6 @@ export class DBInstanceClone extends ros.Resource {
     public readonly attrPublicPort: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::RDS::DBInstanceClone`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

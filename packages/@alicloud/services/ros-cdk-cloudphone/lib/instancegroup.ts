@@ -4,7 +4,8 @@ import { RosInstanceGroup } from './cloudphone.generated';
 export { RosInstanceGroup as InstanceGroupProperty };
 
 /**
- * Properties for defining a `ALIYUN::CloudPhone::InstanceGroup`
+ * Properties for defining a `InstanceGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-instancegroup
  */
 export interface InstanceGroupProps {
 
@@ -54,7 +55,7 @@ export interface InstanceGroupProps {
 
     /**
      * Property description: Description of instance. 
-     * The length is 2~256 English or Chinese characters and cannot start with http:// and https://.
+     * The length is 2~256 English or Chinese characters and cannot start with http:\/\/ and https:\/\/.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -87,7 +88,7 @@ export interface InstanceGroupProps {
     readonly period?: number | ros.IResolvable;
 
     /**
-     * Property periodUnit: Unit of prepaid time period, it could be Month/Year. Default value is Month.
+     * Property periodUnit: Unit of prepaid time period, it could be Month\/Year. Default value is Month.
      */
     readonly periodUnit?: string | ros.IResolvable;
 
@@ -111,14 +112,11 @@ export interface InstanceGroupProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CloudPhone::InstanceGroup`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CloudPhone::InstanceGroup`, which is used to create and start one or more Elastic Cloud Phone (ECP) instances.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstanceGroup`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-instancegroup
  */
 export class InstanceGroup extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute InstanceIds: instance ids
@@ -136,8 +134,6 @@ export class InstanceGroup extends ros.Resource {
     public readonly attrTradePrice: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CloudPhone::InstanceGroup`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

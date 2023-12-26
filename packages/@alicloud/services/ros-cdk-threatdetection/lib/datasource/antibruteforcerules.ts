@@ -4,20 +4,18 @@ import { RosAntiBruteForceRules } from './threatdetection.generated';
 export { RosAntiBruteForceRules as AntiBruteForceRulesProperty };
 
 /**
- * Properties for defining a `DATASOURCE::ThreatDetection::AntiBruteForceRules`
+ * Properties for defining a `AntiBruteForceRules`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-threatdetection-antibruteforcerules
  */
 export interface AntiBruteForceRulesProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::ThreatDetection::AntiBruteForceRules`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ThreatDetection::AntiBruteForceRules`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAntiBruteForceRules`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-threatdetection-antibruteforcerules
  */
 export class AntiBruteForceRules extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AntiBruteForceRuleIds: The list of anti brute force rule IDs.
@@ -30,8 +28,6 @@ export class AntiBruteForceRules extends ros.Resource {
     public readonly attrAntiBruteForceRules: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::ThreatDetection::AntiBruteForceRules`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

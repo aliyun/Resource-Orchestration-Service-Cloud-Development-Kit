@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::RDS::Accounts`
+ * Properties for defining a `RosAccounts`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-accounts
  */
 export interface RosAccountsProps {
 
@@ -54,18 +55,15 @@ function rosAccountsPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `DATASOURCE::RDS::Accounts`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::RDS::Accounts`, which is used to query the database accounts of an ApsaraDB RDS instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Accounts` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-accounts
  */
 export class RosAccounts extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::RDS::Accounts";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AccountNames: The list of The RDS account names.
@@ -91,8 +89,6 @@ export class RosAccounts extends ros.RosResource {
     public accountName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::RDS::Accounts`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -120,7 +116,552 @@ export class RosAccounts extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::RDS::DBInstances`
+ * Properties for defining a `RosDBInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-dbinstance
+ */
+export interface RosDBInstanceProps {
+
+    /**
+     * @Property dbInstanceId: The ID of the instance.
+     */
+    readonly dbInstanceId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosDBInstanceProps`
+ *
+ * @param properties - the TypeScript properties of a `RosDBInstanceProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('dbInstanceId', ros.validateString)(properties.dbInstanceId));
+    return errors.wrap('supplied properties not correct for "RosDBInstanceProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::RDS::DBInstance` resource
+ *
+ * @param properties - the TypeScript properties of a `RosDBInstanceProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::RDS::DBInstance` resource.
+ */
+// @ts-ignore TS6133
+function rosDBInstancePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosDBInstancePropsValidator(properties).assertSuccess();
+    }
+    return {
+      DBInstanceId: ros.stringToRosTemplate(properties.dbInstanceId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::RDS::DBInstance`ALIYUN::REDIS::Account is used to create an account that has the specified permissions on an ApsaraDB for Redis instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DBInstance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-dbinstance
+ */
+export class RosDBInstance extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::RDS::DBInstance";
+
+    /**
+     * @Attribute AccountMaxQuantity: The maximum number of accounts that can be created on the instance.
+     */
+    public readonly attrAccountMaxQuantity: ros.IResolvable;
+
+    /**
+     * @Attribute AdvancedFeatures: The advanced features that are enabled for the instance. If multiple advanced features are enabled, the advanced features are separated by commas (,). This parameter is available only to instances that run SQL Server. Valid values:
+LinkedServer
+DistributeTransaction
+     */
+    public readonly attrAdvancedFeatures: ros.IResolvable;
+
+    /**
+     * @Attribute AutoUpgradeMinorVersion: The method that is used to update the minor engine version of the instance. Valid values:
+Auto: automatic update.
+Manual: manual update. The minor engine version of the instance is forcefully updated only when the in-use minor engine version is phased out.
+     */
+    public readonly attrAutoUpgradeMinorVersion: ros.IResolvable;
+
+    /**
+     * @Attribute AvailabilityValue: The availability status of the instance in percentage.
+     */
+    public readonly attrAvailabilityValue: ros.IResolvable;
+
+    /**
+     * @Attribute BabelfishConfig: The configuration of the Babelfish feature for the ApsaraDB RDS for PostgreSQL instance.
+     */
+    public readonly attrBabelfishConfig: ros.IResolvable;
+
+    /**
+     * @Attribute Category: The RDS edition of the instance. Valid values:
+Basic: RDS Basic Edition
+HighAvailability: RDS High-availability Edition
+cluster: RDS Cluster Edition for ApsaraDB RDS for MySQL
+AlwaysOn: RDS Cluster Edition for ApsaraDB RDS for SQL Server
+Finance: RDS Enterprise Edition
+Serverless_basic: RDS Basic Edition for serverless instances
+     */
+    public readonly attrCategory: ros.IResolvable;
+
+    /**
+     * @Attribute Collation: The character set collation of the instance.
+     */
+    public readonly attrCollation: ros.IResolvable;
+
+    /**
+     * @Attribute ConnectionMode: The connection mode of the instance. Valid values:
+Standard: standard mode
+Safe: database proxy mode
+     */
+    public readonly attrConnectionMode: ros.IResolvable;
+
+    /**
+     * @Attribute ConnectionString: The internal endpoint of the instance.
+     */
+    public readonly attrConnectionString: ros.IResolvable;
+
+    /**
+     * @Attribute ConsoleVersion: The type of the proxy that is used by the instance. Valid values:
+1: shared proxy
+2: dedicated proxy
+     */
+    public readonly attrConsoleVersion: ros.IResolvable;
+
+    /**
+     * @Attribute CreationTime: The creation time. The time follows the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format. The time is displayed in UTC.
+     */
+    public readonly attrCreationTime: ros.IResolvable;
+
+    /**
+     * @Attribute CurrentKernelVersion: The minor engine version of the instance.
+     */
+    public readonly attrCurrentKernelVersion: ros.IResolvable;
+
+    /**
+     * @Attribute DBClusterNodes: The information about the node in the cluster.
+     */
+    public readonly attrDbClusterNodes: ros.IResolvable;
+
+    /**
+     * @Attribute DBInstanceCPU: The number of CPU cores.
+     */
+    public readonly attrDbInstanceCpu: ros.IResolvable;
+
+    /**
+     * @Attribute DBInstanceClass: The instance type of the instance.
+     */
+    public readonly attrDbInstanceClass: ros.IResolvable;
+
+    /**
+     * @Attribute DBInstanceClassType: The instance family to which the instance belongs. Valid values:
+s: shared instance family
+x: general-purpose instance family
+d: dedicated instance family
+h: dedicated host instance family
+     */
+    public readonly attrDbInstanceClassType: ros.IResolvable;
+
+    /**
+     * @Attribute DBInstanceDescription: The description of the instance.
+     */
+    public readonly attrDbInstanceDescription: ros.IResolvable;
+
+    /**
+     * @Attribute DBInstanceDiskUsed: The disk usage of the instance.
+     */
+    public readonly attrDbInstanceDiskUsed: ros.IResolvable;
+
+    /**
+     * @Attribute DBInstanceId: The instance ID.
+     */
+    public readonly attrDbInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute DBInstanceMemory: The memory capacity of the instance. Unit: MB.
+     */
+    public readonly attrDbInstanceMemory: ros.IResolvable;
+
+    /**
+     * @Attribute DBInstanceNetType: The type of the network over which the instance is connected. Valid values:
+Internet: Internet
+Intranet: internal network
+     */
+    public readonly attrDbInstanceNetType: ros.IResolvable;
+
+    /**
+     * @Attribute DBInstanceStatus: The status of the instance.
+     */
+    public readonly attrDbInstanceStatus: ros.IResolvable;
+
+    /**
+     * @Attribute DBInstanceStorage: The storage capacity of the instance. Unit: GB.
+     */
+    public readonly attrDbInstanceStorage: ros.IResolvable;
+
+    /**
+     * @Attribute DBInstanceStorageType: The storage type of the instance. Valid values:
+local_ssd and ephemeral_ssd: local SSD
+cloud_ssd: standard SSD
+cloud_essd: enhanced SSD (ESSD)
+     */
+    public readonly attrDbInstanceStorageType: ros.IResolvable;
+
+    /**
+     * @Attribute DBInstanceType: The type of the instance. Valid values:
+Primary: primary instance
+Readonly: read-only instance
+Guard: disaster recovery instance
+Temp: temporary instance
+     */
+    public readonly attrDbInstanceType: ros.IResolvable;
+
+    /**
+     * @Attribute DBMaxQuantity: The maximum number of databases that can be created on the instance.
+     */
+    public readonly attrDbMaxQuantity: ros.IResolvable;
+
+    /**
+     * @Attribute DedicatedHostGroupId: The ID of the dedicated cluster.
+     */
+    public readonly attrDedicatedHostGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute DeletionProtection: Indicates whether the release protection feature is enabled. Valid values:
+true
+false
+     */
+    public readonly attrDeletionProtection: ros.IResolvable;
+
+    /**
+     * @Attribute Engine: The database engine of the instance. Valid values:
+MySQL
+PostgreSQL
+SQLServer
+MariaDB
+     */
+    public readonly attrEngine: ros.IResolvable;
+
+    /**
+     * @Attribute EngineVersion: The database engine version.
+     */
+    public readonly attrEngineVersion: ros.IResolvable;
+
+    /**
+     * @Attribute ExpireTime: The expiration time. The time follows the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format. The time is displayed in UTC.
+Note: Pay-as-you-go instances never expire.
+     */
+    public readonly attrExpireTime: ros.IResolvable;
+
+    /**
+     * @Attribute Extra: The extended information of the instance.
+     */
+    public readonly attrExtra: ros.IResolvable;
+
+    /**
+     * @Attribute GeneralGroupName: The name of the dedicated cluster to which the instance belongs. This parameter is returned only when the instance is created in an ApsaraDB MyBase cluster that runs MySQL on Standard Edition.
+     */
+    public readonly attrGeneralGroupName: ros.IResolvable;
+
+    /**
+     * @Attribute GuardDBInstanceId: The ID of the disaster recovery instance that is attached to the instance.
+     */
+    public readonly attrGuardDbInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute IPType: The type of the IP address. Only IPv4 addresses are supported.
+     */
+    public readonly attrIpType: ros.IResolvable;
+
+    /**
+     * @Attribute IncrementSourceDBInstanceId: The ID of the instance from which incremental data comes. The incremental data of a disaster recovery instance or read-only instance comes from its primary instance. If this parameter is not returned, the instance is a primary instance.
+     */
+    public readonly attrIncrementSourceDbInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceNetworkType: The network type of the instance. Valid values:
+Classic
+VPC
+     */
+    public readonly attrInstanceNetworkType: ros.IResolvable;
+
+    /**
+     * @Attribute InstructionSetArch: The architecture type of the instance. Valid values:
+x86
+arm
+     */
+    public readonly attrInstructionSetArch: ros.IResolvable;
+
+    /**
+     * @Attribute LatestKernelVersion: The latest minor engine version that is supported by the instance.
+     */
+    public readonly attrLatestKernelVersion: ros.IResolvable;
+
+    /**
+     * @Attribute LockMode: The lock mode of the instance. Valid values:
+Unlock: The instance is not locked.
+ManualLock: The instance is manually locked.
+LockByExpiration: The instance is automatically locked due to instance expiration.
+LockByRestoration: The instance is automatically locked due to instance restoration.
+LockByDiskQuota: The instance is automatically locked due to exhausted storage space.
+LockReadInstanceByDiskQuota: The instance is a read-only instance and is automatically locked due to exhausted storage.
+     */
+    public readonly attrLockMode: ros.IResolvable;
+
+    /**
+     * @Attribute LockReason: The reason why the instance was locked.
+     */
+    public readonly attrLockReason: ros.IResolvable;
+
+    /**
+     * @Attribute MaintainTime: The maintenance window of the instance. The time is displayed in UTC. Take note that the maintenance window displayed in the ApsaraDB RDS console is equal to the value of this parameter plus 8 hours.
+     */
+    public readonly attrMaintainTime: ros.IResolvable;
+
+    /**
+     * @Attribute MasterInstanceId: The ID of the primary instance.
+Note: If this parameter is not returned, the instance is the primary instance.
+     */
+    public readonly attrMasterInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute MasterZone: The zone ID of the primary instance.
+     */
+    public readonly attrMasterZone: ros.IResolvable;
+
+    /**
+     * @Attribute MaxConnections: The maximum number of concurrent connections.
+     */
+    public readonly attrMaxConnections: ros.IResolvable;
+
+    /**
+     * @Attribute MaxIOMBPS: The maximum I/O throughput. Unit: MB/s.
+     */
+    public readonly attrMaxIombps: ros.IResolvable;
+
+    /**
+     * @Attribute MaxIOPS: The maximum number of I/O requests per second.
+     */
+    public readonly attrMaxIops: ros.IResolvable;
+
+    /**
+     * @Attribute PGBouncerEnabled: Indicates whether PgBouncer is enabled.
+     */
+    public readonly attrPgBouncerEnabled: ros.IResolvable;
+
+    /**
+     * @Attribute PayType: The billing method of the instance. Valid values:
+Postpaid: pay-as-you-go
+Prepaid: subscription
+     */
+    public readonly attrPayType: ros.IResolvable;
+
+    /**
+     * @Attribute Port: The port that is used to connect to the instance over an internal network.
+     */
+    public readonly attrPort: ros.IResolvable;
+
+    /**
+     * @Attribute ProxyType: The type of the proxy that is supported by the instance. Valid values:
+0: The instance does not support database proxies.
+1: The instance supports shared proxies, with which the instance runs in multi-tenant mode.
+2: The instance supports dedicated proxies, with which the instance runs in single-tenant mode.
+     */
+    public readonly attrProxyType: ros.IResolvable;
+
+    /**
+     * @Attribute ReadOnlyDBInstanceIds: The IDs of the read-only instances that are attached to the primary instance.
+     */
+    public readonly attrReadOnlyDbInstanceIds: ros.IResolvable;
+
+    /**
+     * @Attribute ReadonlyInstanceSQLDelayedTime: The latency at which the system replicates data to read-only instances. The system replicates data from the primary instance to the read-only instances at the latency that is specified by the ReadonlyInstanceSQLDelayedTime parameter. Unit: seconds.
+     */
+    public readonly attrReadonlyInstanceSqlDelayedTime: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The resource group ID.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute SecurityIPList: The IP addresses in the IP address whitelist.
+     */
+    public readonly attrSecurityIpList: ros.IResolvable;
+
+    /**
+     * @Attribute SecurityIPMode: The whitelist mode of the instance. Valid values:
+normal: standard whitelist mode
+safety: enhanced whitelist mode
+     */
+    public readonly attrSecurityIpMode: ros.IResolvable;
+
+    /**
+     * @Attribute ServerlessConfig: The settings of the serverless instance.
+     */
+    public readonly attrServerlessConfig: ros.IResolvable;
+
+    /**
+     * @Attribute SlaveZones: The information about the zone of the secondary instance.
+     */
+    public readonly attrSlaveZones: ros.IResolvable;
+
+    /**
+     * @Attribute SuperPermissionMode: Indicates whether the instance supports superuser accounts, such as the system administrator (SA) account, the Active Directory (AD) account, and the host account.
+Enable
+Disabled
+     */
+    public readonly attrSuperPermissionMode: ros.IResolvable;
+
+    /**
+     * @Attribute TempDBInstanceId: The ID of the temporary instance that is attached to the instance.
+     */
+    public readonly attrTempDbInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute TimeZone: The time zone of the instance.
+     */
+    public readonly attrTimeZone: ros.IResolvable;
+
+    /**
+     * @Attribute Tips: The information about the exception that is detected on the instance. This parameter is returned only when the instance is created in an ApsaraDB MyBase cluster that runs MySQL on Standard Edition.
+     */
+    public readonly attrTips: ros.IResolvable;
+
+    /**
+     * @Attribute TipsLevel: The severity level of the exception that is detected on the instance. This parameter is returned only when the instance is created in an ApsaraDB MyBase cluster that runs MySQL on Standard Edition. Valid values:
+1: The instance is normal.
+2: The specifications of the read-only instances do not match the specifications of the primary instance. You must adjust the specifications of these instances based on your business requirements.
+     */
+    public readonly attrTipsLevel: ros.IResolvable;
+
+    /**
+     * @Attribute VSwitchId: The vSwitch ID.
+     */
+    public readonly attrVSwitchId: ros.IResolvable;
+
+    /**
+     * @Attribute VpcCloudInstanceId: The VPC ID.
+     */
+    public readonly attrVpcCloudInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute VpcId: The virtual private cloud (VPC) ID of the instance.
+     */
+    public readonly attrVpcId: ros.IResolvable;
+
+    /**
+     * @Attribute ZoneId: The zone ID.
+     */
+    public readonly attrZoneId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property dbInstanceId: The ID of the instance.
+     */
+    public dbInstanceId: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosDBInstanceProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosDBInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAccountMaxQuantity = this.getAtt('AccountMaxQuantity');
+        this.attrAdvancedFeatures = this.getAtt('AdvancedFeatures');
+        this.attrAutoUpgradeMinorVersion = this.getAtt('AutoUpgradeMinorVersion');
+        this.attrAvailabilityValue = this.getAtt('AvailabilityValue');
+        this.attrBabelfishConfig = this.getAtt('BabelfishConfig');
+        this.attrCategory = this.getAtt('Category');
+        this.attrCollation = this.getAtt('Collation');
+        this.attrConnectionMode = this.getAtt('ConnectionMode');
+        this.attrConnectionString = this.getAtt('ConnectionString');
+        this.attrConsoleVersion = this.getAtt('ConsoleVersion');
+        this.attrCreationTime = this.getAtt('CreationTime');
+        this.attrCurrentKernelVersion = this.getAtt('CurrentKernelVersion');
+        this.attrDbClusterNodes = this.getAtt('DBClusterNodes');
+        this.attrDbInstanceCpu = this.getAtt('DBInstanceCPU');
+        this.attrDbInstanceClass = this.getAtt('DBInstanceClass');
+        this.attrDbInstanceClassType = this.getAtt('DBInstanceClassType');
+        this.attrDbInstanceDescription = this.getAtt('DBInstanceDescription');
+        this.attrDbInstanceDiskUsed = this.getAtt('DBInstanceDiskUsed');
+        this.attrDbInstanceId = this.getAtt('DBInstanceId');
+        this.attrDbInstanceMemory = this.getAtt('DBInstanceMemory');
+        this.attrDbInstanceNetType = this.getAtt('DBInstanceNetType');
+        this.attrDbInstanceStatus = this.getAtt('DBInstanceStatus');
+        this.attrDbInstanceStorage = this.getAtt('DBInstanceStorage');
+        this.attrDbInstanceStorageType = this.getAtt('DBInstanceStorageType');
+        this.attrDbInstanceType = this.getAtt('DBInstanceType');
+        this.attrDbMaxQuantity = this.getAtt('DBMaxQuantity');
+        this.attrDedicatedHostGroupId = this.getAtt('DedicatedHostGroupId');
+        this.attrDeletionProtection = this.getAtt('DeletionProtection');
+        this.attrEngine = this.getAtt('Engine');
+        this.attrEngineVersion = this.getAtt('EngineVersion');
+        this.attrExpireTime = this.getAtt('ExpireTime');
+        this.attrExtra = this.getAtt('Extra');
+        this.attrGeneralGroupName = this.getAtt('GeneralGroupName');
+        this.attrGuardDbInstanceId = this.getAtt('GuardDBInstanceId');
+        this.attrIpType = this.getAtt('IPType');
+        this.attrIncrementSourceDbInstanceId = this.getAtt('IncrementSourceDBInstanceId');
+        this.attrInstanceNetworkType = this.getAtt('InstanceNetworkType');
+        this.attrInstructionSetArch = this.getAtt('InstructionSetArch');
+        this.attrLatestKernelVersion = this.getAtt('LatestKernelVersion');
+        this.attrLockMode = this.getAtt('LockMode');
+        this.attrLockReason = this.getAtt('LockReason');
+        this.attrMaintainTime = this.getAtt('MaintainTime');
+        this.attrMasterInstanceId = this.getAtt('MasterInstanceId');
+        this.attrMasterZone = this.getAtt('MasterZone');
+        this.attrMaxConnections = this.getAtt('MaxConnections');
+        this.attrMaxIombps = this.getAtt('MaxIOMBPS');
+        this.attrMaxIops = this.getAtt('MaxIOPS');
+        this.attrPgBouncerEnabled = this.getAtt('PGBouncerEnabled');
+        this.attrPayType = this.getAtt('PayType');
+        this.attrPort = this.getAtt('Port');
+        this.attrProxyType = this.getAtt('ProxyType');
+        this.attrReadOnlyDbInstanceIds = this.getAtt('ReadOnlyDBInstanceIds');
+        this.attrReadonlyInstanceSqlDelayedTime = this.getAtt('ReadonlyInstanceSQLDelayedTime');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrSecurityIpList = this.getAtt('SecurityIPList');
+        this.attrSecurityIpMode = this.getAtt('SecurityIPMode');
+        this.attrServerlessConfig = this.getAtt('ServerlessConfig');
+        this.attrSlaveZones = this.getAtt('SlaveZones');
+        this.attrSuperPermissionMode = this.getAtt('SuperPermissionMode');
+        this.attrTempDbInstanceId = this.getAtt('TempDBInstanceId');
+        this.attrTimeZone = this.getAtt('TimeZone');
+        this.attrTips = this.getAtt('Tips');
+        this.attrTipsLevel = this.getAtt('TipsLevel');
+        this.attrVSwitchId = this.getAtt('VSwitchId');
+        this.attrVpcCloudInstanceId = this.getAtt('VpcCloudInstanceId');
+        this.attrVpcId = this.getAtt('VpcId');
+        this.attrZoneId = this.getAtt('ZoneId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.dbInstanceId = props.dbInstanceId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            dbInstanceId: this.dbInstanceId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosDBInstancePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosDBInstances`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-dbinstances
  */
 export interface RosDBInstancesProps {
 
@@ -332,18 +873,15 @@ function rosDBInstancesPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `DATASOURCE::RDS::DBInstances`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::RDS::DBInstances`, which is used to query ApsaraDB RDS instances.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DBInstances` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-dbinstances
  */
 export class RosDBInstances extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::RDS::DBInstances";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DBInstanceIds: The list of The RDS Database instance Ids.
@@ -459,8 +997,6 @@ export class RosDBInstances extends ros.RosResource {
     public zoneId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::RDS::DBInstances`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -524,7 +1060,8 @@ export class RosDBInstances extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::RDS::Databases`
+ * Properties for defining a `RosDatabases`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-databases
  */
 export interface RosDatabasesProps {
 
@@ -588,18 +1125,15 @@ function rosDatabasesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `DATASOURCE::RDS::Databases`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::RDS::Databases`, which is used to query the details of databases in an ApsaraDB RDS instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Databases` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-databases
  */
 export class RosDatabases extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::RDS::Databases";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DBNames: The list of The RDS database names.
@@ -630,8 +1164,6 @@ export class RosDatabases extends ros.RosResource {
     public dbStatus: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::RDS::Databases`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -661,7 +1193,8 @@ export class RosDatabases extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::RDS::Zones`
+ * Properties for defining a `RosZones`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-zones
  */
 export interface RosZonesProps {
 
@@ -772,18 +1305,15 @@ function rosZonesPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `DATASOURCE::RDS::Zones`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::RDS::Zones`, which is used to query the zones that are available to an ApsaraDB RDS instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Zones` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-zones
  */
 export class RosZones extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::RDS::Zones";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ZoneIds: The list of zone IDs.
@@ -837,8 +1367,6 @@ export class RosZones extends ros.RosResource {
     public zoneId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::RDS::Zones`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

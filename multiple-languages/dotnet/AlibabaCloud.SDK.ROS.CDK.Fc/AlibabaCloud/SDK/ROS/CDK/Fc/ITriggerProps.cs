@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Fc
 {
-    /// <summary>Properties for defining a `ALIYUN::FC::Trigger`.</summary>
+    /// <summary>Properties for defining a `Trigger`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-trigger
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ITriggerProps), fullyQualifiedName: "@alicloud/ros-cdk-fc.TriggerProps")]
     public interface ITriggerProps
     {
@@ -93,7 +96,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::FC::Trigger`.</summary>
+        /// <summary>Properties for defining a `Trigger`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-trigger
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ITriggerProps), fullyQualifiedName: "@alicloud/ros-cdk-fc.TriggerProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Fc.ITriggerProps
         {

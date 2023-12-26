@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::DTS::ConsumerGroup`.</summary>
+    /// <summary>Properties for defining a `ConsumerGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-consumergroup
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-dts.ConsumerGroupProps")]
     public class ConsumerGroupProps : AlibabaCloud.SDK.ROS.CDK.Dts.IConsumerGroupProps
     {

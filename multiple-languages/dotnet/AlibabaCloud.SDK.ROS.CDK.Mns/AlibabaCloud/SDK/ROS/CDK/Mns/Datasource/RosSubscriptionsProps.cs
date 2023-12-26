@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns.Datasource
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `DATASOURCE::MNS::Subscriptions`.</summary>
+    /// <summary>Properties for defining a `RosSubscriptions`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-subscriptions
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-mns.datasource.RosSubscriptionsProps")]
     public class RosSubscriptionsProps : AlibabaCloud.SDK.ROS.CDK.Mns.Datasource.IRosSubscriptionsProps
     {

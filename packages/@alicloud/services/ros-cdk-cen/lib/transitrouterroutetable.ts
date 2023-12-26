@@ -4,7 +4,8 @@ import { RosTransitRouterRouteTable } from './cen.generated';
 export { RosTransitRouterRouteTable as TransitRouterRouteTableProperty };
 
 /**
- * Properties for defining a `ALIYUN::CEN::TransitRouterRouteTable`
+ * Properties for defining a `TransitRouterRouteTable`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterroutetable
  */
 export interface TransitRouterRouteTableProps {
 
@@ -25,14 +26,11 @@ export interface TransitRouterRouteTableProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CEN::TransitRouterRouteTable`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterRouteTable`, which is used to create a custom route table for an Enterprise Edition transit router.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTransitRouterRouteTable`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterroutetable
  */
 export class TransitRouterRouteTable extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ClientToken: ClientToken
@@ -65,8 +63,6 @@ export class TransitRouterRouteTable extends ros.Resource {
     public readonly attrTransitRouterRouteTableType: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CEN::TransitRouterRouteTable`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

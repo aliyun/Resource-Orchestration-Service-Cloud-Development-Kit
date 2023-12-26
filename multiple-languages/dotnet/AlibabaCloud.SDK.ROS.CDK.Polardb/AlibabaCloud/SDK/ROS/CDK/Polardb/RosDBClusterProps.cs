@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::POLARDB::DBCluster`.</summary>
+    /// <summary>Properties for defining a `RosDBCluster`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbcluster
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-polardb.RosDBClusterProps")]
     public class RosDBClusterProps : AlibabaCloud.SDK.ROS.CDK.Polardb.IRosDBClusterProps
     {
@@ -494,7 +497,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <strong>Property</strong>: dbClusterDescription: The description of the cluster. The description must comply with the following rules:
         /// It must start with a Chinese character or an English letter.
         /// It can contain Chinese and English characters, digits, underscores (_), and hyphens (-).
-        /// It cannot start with http:// or https://.
+        /// It cannot start with http:\/\/ or https:\/\/.
         /// It must be 2 to 256 characters in length.
         /// </remarks>
         [JsiiOptional]

@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Alb
 {
-    /// <summary>A ROS template type:  `ALIYUN::ALB::Rule`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::Rule`ALIYUN::Config::Rule is used to create a forwarding rule.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Rule` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-rule
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosRule), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosRule", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-alb.RosRuleProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosRule : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::ALB::Rule`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -417,7 +420,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
             /// <remarks>
             /// <strong>Property</strong>: contentType: The format of the content.
-            /// Valid values: text/plain, text/css, text/html, application/javascript, and application/json.
+            /// Valid values: text\/plain, text\/css, text\/html, application\/javascript, and application\/json.
             /// </remarks>
             [JsiiProperty(name: "contentType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -462,7 +465,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
                 /// <remarks>
                 /// <strong>Property</strong>: contentType: The format of the content.
-                /// Valid values: text/plain, text/css, text/html, application/javascript, and application/json.
+                /// Valid values: text\/plain, text\/css, text\/html, application\/javascript, and application\/json.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "contentType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -523,7 +526,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
             /// <remarks>
             /// <strong>Property</strong>: contentType: The format of the content.
-            /// Valid values: text/plain, text/css, text/html, application/javascript, and application/json.
+            /// Valid values: text\/plain, text\/css, text\/html, application\/javascript, and application\/json.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "contentType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1826,8 +1829,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// the following characters.
             /// To customize the path, make sure that the following requirements are met:
             /// The path must be 1 to 128 characters in length.
-            /// It must start with a forward slash (/). The path can contain letters, digits, and
-            /// the following special characters: $ - _ .+ / & ~
+            /// It must start with a forward slash (\/). The path can contain letters, digits, and
+            /// the following special characters: $ - _ .+ \/ & ~
             /// </remarks>
             [JsiiProperty(name: "path", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1940,8 +1943,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 /// the following characters.
                 /// To customize the path, make sure that the following requirements are met:
                 /// The path must be 1 to 128 characters in length.
-                /// It must start with a forward slash (/). The path can contain letters, digits, and
-                /// the following special characters: $ - _ .+ / & ~
+                /// It must start with a forward slash (\/). The path can contain letters, digits, and
+                /// the following special characters: $ - _ .+ \/ & ~
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "path", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -2107,8 +2110,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// the following characters.
             /// To customize the path, make sure that the following requirements are met:
             /// The path must be 1 to 128 characters in length.
-            /// It must start with a forward slash (/). The path can contain letters, digits, and
-            /// the following special characters: $ - _ .+ / & ~
+            /// It must start with a forward slash (\/). The path can contain letters, digits, and
+            /// the following special characters: $ - _ .+ \/ & ~
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "path", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -2364,8 +2367,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// the following characters.
             /// To customize the path, make sure that the following requirements are met:
             /// The path must be 1 to 128 characters in length.
-            /// It must start with a forward slash (/). The path can contain letters, digits, and
-            /// the following special characters: $ - _ .+ / & ~
+            /// It must start with a forward slash (\/). The path can contain letters, digits, and
+            /// the following special characters: $ - _ .+ \/ & ~
             /// </remarks>
             [JsiiProperty(name: "path", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -2435,8 +2438,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 /// the following characters.
                 /// To customize the path, make sure that the following requirements are met:
                 /// The path must be 1 to 128 characters in length.
-                /// It must start with a forward slash (/). The path can contain letters, digits, and
-                /// the following special characters: $ - _ .+ / & ~
+                /// It must start with a forward slash (\/). The path can contain letters, digits, and
+                /// the following special characters: $ - _ .+ \/ & ~
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "path", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -2522,8 +2525,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// the following characters.
             /// To customize the path, make sure that the following requirements are met:
             /// The path must be 1 to 128 characters in length.
-            /// It must start with a forward slash (/). The path can contain letters, digits, and
-            /// the following special characters: $ - _ .+ / & ~
+            /// It must start with a forward slash (\/). The path can contain letters, digits, and
+            /// the following special characters: $ - _ .+ \/ & ~
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "path", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

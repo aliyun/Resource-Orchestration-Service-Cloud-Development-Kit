@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Fc.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::FC::Aliases`.</summary>
+    /// <summary>Properties for defining a `Aliases`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-aliases
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IAliasesProps), fullyQualifiedName: "@alicloud/ros-cdk-fc.datasource.AliasesProps")]
     public interface IAliasesProps
     {
@@ -29,7 +32,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::FC::Aliases`.</summary>
+        /// <summary>Properties for defining a `Aliases`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-aliases
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IAliasesProps), fullyQualifiedName: "@alicloud/ros-cdk-fc.datasource.AliasesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Fc.Datasource.IAliasesProps
         {

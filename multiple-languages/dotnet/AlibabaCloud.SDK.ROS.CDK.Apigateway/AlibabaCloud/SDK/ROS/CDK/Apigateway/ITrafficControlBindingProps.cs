@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 {
-    /// <summary>Properties for defining a `ALIYUN::ApiGateway::TrafficControlBinding`.</summary>
+    /// <summary>Properties for defining a `TrafficControlBinding`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-trafficcontrolbinding
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ITrafficControlBindingProps), fullyQualifiedName: "@alicloud/ros-cdk-apigateway.TrafficControlBindingProps")]
     public interface ITrafficControlBindingProps
     {
@@ -36,7 +39,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ApiGateway::TrafficControlBinding`.</summary>
+        /// <summary>Properties for defining a `TrafficControlBinding`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-trafficcontrolbinding
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ITrafficControlBindingProps), fullyQualifiedName: "@alicloud/ros-cdk-apigateway.TrafficControlBindingProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Apigateway.ITrafficControlBindingProps
         {

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Alb
 {
-    /// <summary>Properties for defining a `ALIYUN::ALB::HealthCheckTemplate`.</summary>
+    /// <summary>Properties for defining a `HealthCheckTemplate`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-healthchecktemplate
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IHealthCheckTemplateProps), fullyQualifiedName: "@alicloud/ros-cdk-alb.HealthCheckTemplateProps")]
     public interface IHealthCheckTemplateProps
     {
@@ -199,7 +202,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ALB::HealthCheckTemplate`.</summary>
+        /// <summary>Properties for defining a `HealthCheckTemplate`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-healthchecktemplate
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IHealthCheckTemplateProps), fullyQualifiedName: "@alicloud/ros-cdk-alb.HealthCheckTemplateProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Alb.IHealthCheckTemplateProps
         {

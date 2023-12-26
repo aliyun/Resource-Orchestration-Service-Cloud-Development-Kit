@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::FNF::Flows`
+ * Properties for defining a `RosFlows`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fnf-flows
  */
 export interface RosFlowsProps {
 }
@@ -39,18 +40,15 @@ function rosFlowsPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `DATASOURCE::FNF::Flows`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::FNF::Flows`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Flows` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fnf-flows
  */
 export class RosFlows extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::FNF::Flows";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute FlowNames: The list of flow names.
@@ -66,8 +64,6 @@ export class RosFlows extends ros.RosResource {
 
 
     /**
-     * Create a new `DATASOURCE::FNF::Flows`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -91,7 +87,8 @@ export class RosFlows extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::FNF::Schedules`
+ * Properties for defining a `RosSchedules`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fnf-schedules
  */
 export interface RosSchedulesProps {
 
@@ -140,18 +137,15 @@ function rosSchedulesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `DATASOURCE::FNF::Schedules`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::FNF::Schedules`, which is used to query time-based schedules.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Schedules` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fnf-schedules
  */
 export class RosSchedules extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::FNF::Schedules";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ScheduleNames: The list of schedule names.
@@ -177,8 +171,6 @@ export class RosSchedules extends ros.RosResource {
     public flowName: string | ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::FNF::Schedules`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

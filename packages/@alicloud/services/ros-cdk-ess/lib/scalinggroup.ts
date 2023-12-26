@@ -4,17 +4,18 @@ import { RosScalingGroup } from './ess.generated';
 export { RosScalingGroup as ScalingGroupProperty };
 
 /**
- * Properties for defining a `ALIYUN::ESS::ScalingGroup`
+ * Properties for defining a `ScalingGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroup
  */
 export interface ScalingGroupProps {
 
     /**
-     * Property maxSize: Maximum number of ECS instances in the scaling group. Value range: [0, 1000].
+     * Property maxSize: Maximum number of ECS instances in the scaling group. Value range: [0, 2000].
      */
     readonly maxSize: number | ros.IResolvable;
 
     /**
-     * Property minSize: Minimum number of ECS instances in the scaling group. Value range: [0, 1000].
+     * Property minSize: Minimum number of ECS instances in the scaling group. Value range: [0, 2000].
      */
     readonly minSize: number | ros.IResolvable;
 
@@ -169,7 +170,7 @@ export interface ScalingGroupProps {
     readonly removalPolicys?: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property scalingGroupName: Name shown for the scaling group, which must contain 2-40 characters (English or Chinese). The name must begin with a number, an upper/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".". The account name is unique in the same region.
+     * Property scalingGroupName: Name shown for the scaling group, which must contain 2-40 characters (English or Chinese). The name must begin with a number, an upper\/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".". The account name is unique in the same region.
      * If this parameter is not specified, the default value is ScalingGroupId.
      */
     readonly scalingGroupName?: string | ros.IResolvable;
@@ -178,6 +179,7 @@ export interface ScalingGroupProps {
      * Property scalingPolicy: The reclaim mode of the scaling group. Valid values:
      * recycle
      * release
+     * forcerelease
      * ScalingPolicy specifies the reclaim modes of scaling groups, but the policy that is used to remove ECS instances from scaling groups is determined by the RemovePolicy parameter of the RemoveInstances operation.
      */
     readonly scalingPolicy?: string | ros.IResolvable;
@@ -226,14 +228,11 @@ export interface ScalingGroupProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ESS::ScalingGroup`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScalingGroup`, which is used to create a scaling group. A scaling group is a group of Elastic Compute Service (ECS) instances that are dynamically scaled based on the configured scenario. A scaling group does not immediately take effect after it is created. You must use ALIYUN::ESS::ScalingGroupEnable to enable the scaling group to trigger scaling activities and execute scaling rules.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosScalingGroup`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroup
  */
 export class ScalingGroup extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ScalingGroupId: Scaling group Id
@@ -246,8 +245,6 @@ export class ScalingGroup extends ros.Resource {
     public readonly attrScalingGroupName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ESS::ScalingGroup`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

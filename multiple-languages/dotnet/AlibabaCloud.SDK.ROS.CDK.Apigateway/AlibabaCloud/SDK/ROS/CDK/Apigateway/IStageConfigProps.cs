@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 {
-    /// <summary>Properties for defining a `ALIYUN::ApiGateway::StageConfig`.</summary>
+    /// <summary>Properties for defining a `StageConfig`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-stageconfig
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IStageConfigProps), fullyQualifiedName: "@alicloud/ros-cdk-apigateway.StageConfigProps")]
     public interface IStageConfigProps
     {
@@ -29,7 +32,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ApiGateway::StageConfig`.</summary>
+        /// <summary>Properties for defining a `StageConfig`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-stageconfig
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IStageConfigProps), fullyQualifiedName: "@alicloud/ros-cdk-apigateway.StageConfigProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Apigateway.IStageConfigProps
         {

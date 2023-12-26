@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Devops
 {
-    /// <summary>Properties for defining a `ALIYUN::DEVOPS::PipelineRelations`.</summary>
+    /// <summary>Properties for defining a `PipelineRelations`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-pipelinerelations
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IPipelineRelationsProps), fullyQualifiedName: "@alicloud/ros-cdk-devops.PipelineRelationsProps")]
     public interface IPipelineRelationsProps
     {
@@ -48,7 +51,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Devops
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::DEVOPS::PipelineRelations`.</summary>
+        /// <summary>Properties for defining a `PipelineRelations`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-pipelinerelations
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IPipelineRelationsProps), fullyQualifiedName: "@alicloud/ros-cdk-devops.PipelineRelationsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Devops.IPipelineRelationsProps
         {

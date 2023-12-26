@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cms
 {
-    /// <summary>Properties for defining a `ALIYUN::CMS::GroupMetricRule`.</summary>
+    /// <summary>Properties for defining a `GroupMetricRule`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-groupmetricrule
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IGroupMetricRuleProps), fullyQualifiedName: "@alicloud/ros-cdk-cms.GroupMetricRuleProps")]
     public interface IGroupMetricRuleProps
     {
@@ -200,7 +203,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::CMS::GroupMetricRule`.</summary>
+        /// <summary>Properties for defining a `GroupMetricRule`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-groupmetricrule
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IGroupMetricRuleProps), fullyQualifiedName: "@alicloud/ros-cdk-cms.GroupMetricRuleProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cms.IGroupMetricRuleProps
         {

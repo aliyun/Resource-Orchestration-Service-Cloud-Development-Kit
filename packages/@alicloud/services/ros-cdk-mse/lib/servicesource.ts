@@ -4,7 +4,8 @@ import { RosServiceSource } from './mse.generated';
 export { RosServiceSource as ServiceSourceProperty };
 
 /**
- * Properties for defining a `ALIYUN::MSE::ServiceSource`
+ * Properties for defining a `ServiceSource`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-servicesource
  */
 export interface ServiceSourceProps {
 
@@ -52,14 +53,11 @@ export interface ServiceSourceProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::MSE::ServiceSource`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::MSE::ServiceSource`, which is used to create a Nacos service source.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosServiceSource`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-servicesource
  */
 export class ServiceSource extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Address: Registration Address. If not specified, it will be automatically generated based on the selected instance.
@@ -84,8 +82,6 @@ If Type is set to NACOS, this parameter specifies the ID of the Nacos instance.
     public readonly attrName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::MSE::ServiceSource`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

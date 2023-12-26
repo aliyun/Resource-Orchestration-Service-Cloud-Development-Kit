@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::DRDS::DrdsDB`
+ * Properties for defining a `RosDrdsDB`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-drds-drdsdb
  */
 export interface RosDrdsDBProps {
 
@@ -140,18 +141,15 @@ function rosDrdsDBPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * A ROS template type:  `ALIYUN::DRDS::DrdsDB`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DRDS::DrdsDB`, which is used to create a Distributed Relational Database Service (DRDS) instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DrdsDB` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-drds-drdsdb
  */
 export class RosDrdsDB extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DRDS::DrdsDB";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -211,8 +209,6 @@ export class RosDrdsDB extends ros.RosResource {
     public type: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::DRDS::DrdsDB`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -310,7 +306,8 @@ function rosDrdsDBInstDbNamePropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::DRDS::DrdsInstance`
+ * Properties for defining a `RosDrdsInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-drds-drdsinstance
  */
 export interface RosDrdsInstanceProps {
 
@@ -482,18 +479,15 @@ function rosDrdsInstancePropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * A ROS template type:  `ALIYUN::DRDS::DrdsInstance`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DRDS::DrdsInstance`, which is used to create a Distributed Relational Database Service (DRDS) instance of specific specifications.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DrdsInstance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-drds-drdsinstance
  */
 export class RosDrdsInstance extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DRDS::DrdsInstance";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DrdsInstanceId: instance id
@@ -589,8 +583,6 @@ export class RosDrdsInstance extends ros.RosResource {
     public vswitchId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::DRDS::DrdsInstance`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CEN::CenBandwidthPackage`.</summary>
+    /// <summary>Properties for defining a `RosCenBandwidthPackage`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthpackage
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cen.RosCenBandwidthPackageProps")]
     public class RosCenBandwidthPackageProps : AlibabaCloud.SDK.ROS.CDK.Cen.IRosCenBandwidthPackageProps
     {
@@ -286,7 +289,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
 
         /// <remarks>
         /// <strong>Property</strong>: description: The description of the bandwidth package.
-        /// The description can contain [2,256] characters, numbers, underscores, and hyphens, and the name must start with English letters, but cannot start with http:// or https://.
+        /// The description can contain [2,256] characters, numbers, underscores, and hyphens, and the name must start with English letters, but cannot start with http:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -320,7 +323,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
 
         /// <remarks>
         /// <strong>Property</strong>: name: The name of the bandwidth package.
-        /// The name can contain 2-128 characters including a-z, A-Z, 0-9, periods, underlines, and hyphens. It must start with English letters, but cannot start with http:// or https://.
+        /// The name can contain 2-128 characters including a-z, A-Z, 0-9, periods, underlines, and hyphens. It must start with English letters, but cannot start with http:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

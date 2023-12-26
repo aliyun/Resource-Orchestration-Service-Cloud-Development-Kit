@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Edas.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::EDAS::Applications`.</summary>
+    /// <summary>Properties for defining a `Applications`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-edas-applications
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IApplicationsProps), fullyQualifiedName: "@alicloud/ros-cdk-edas.datasource.ApplicationsProps")]
     public interface IApplicationsProps
     {
@@ -52,7 +55,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::EDAS::Applications`.</summary>
+        /// <summary>Properties for defining a `Applications`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-edas-applications
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IApplicationsProps), fullyQualifiedName: "@alicloud/ros-cdk-edas.datasource.ApplicationsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Edas.Datasource.IApplicationsProps
         {

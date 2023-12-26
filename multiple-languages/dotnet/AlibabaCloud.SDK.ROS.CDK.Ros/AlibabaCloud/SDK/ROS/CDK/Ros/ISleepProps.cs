@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ros
 {
-    /// <summary>Properties for defining a `ALIYUN::ROS::Sleep`.</summary>
+    /// <summary>Properties for defining a `Sleep`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-sleep
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ISleepProps), fullyQualifiedName: "@alicloud/ros-cdk-ros.SleepProps")]
     public interface ISleepProps
     {
@@ -69,7 +72,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ROS::Sleep`.</summary>
+        /// <summary>Properties for defining a `Sleep`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-sleep
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ISleepProps), fullyQualifiedName: "@alicloud/ros-cdk-ros.SleepProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ros.ISleepProps
         {

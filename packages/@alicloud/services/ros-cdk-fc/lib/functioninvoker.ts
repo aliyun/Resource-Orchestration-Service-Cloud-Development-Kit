@@ -4,7 +4,8 @@ import { RosFunctionInvoker } from './fc.generated';
 export { RosFunctionInvoker as FunctionInvokerProperty };
 
 /**
- * Properties for defining a `ALIYUN::FC::FunctionInvoker`
+ * Properties for defining a `FunctionInvoker`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-functioninvoker
  */
 export interface FunctionInvokerProps {
 
@@ -53,14 +54,11 @@ export interface FunctionInvokerProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::FC::FunctionInvoker`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::FC::FunctionInvoker`, which is used to invoke a function.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFunctionInvoker`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-functioninvoker
  */
 export class FunctionInvoker extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Result: Depends on result type:
@@ -79,8 +77,6 @@ Failure: Sync invoke fails.
     public readonly attrResultType: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::FC::FunctionInvoker`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

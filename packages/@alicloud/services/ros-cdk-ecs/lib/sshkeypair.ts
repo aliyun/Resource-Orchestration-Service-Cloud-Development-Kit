@@ -4,12 +4,13 @@ import { RosSSHKeyPair } from './ecs.generated';
 export { RosSSHKeyPair as SSHKeyPairProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECS::SSHKeyPair`
+ * Properties for defining a `SSHKeyPair`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-sshkeypair
  */
 export interface SSHKeyPairProps {
 
     /**
-     * Property keyPairName: SSH key pair name. It must be unique. [2, 128] characters. All character sets are supported. Do not start with a special character, digit, http://, or https://. It can contain digits, ".", "_", or "-".
+     * Property keyPairName: SSH key pair name. It must be unique. [2, 128] characters. All character sets are supported. Do not start with a special character, digit, http:\/\/, or https:\/\/. It can contain digits, ".", "_", or "-".
      */
     readonly keyPairName: string | ros.IResolvable;
 
@@ -30,14 +31,11 @@ export interface SSHKeyPairProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECS::SSHKeyPair`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::SSHKeyPair`, which is used to create an SSH key pair or import an existing SSH key pair to access an Elastic Compute Service (ECS) instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSSHKeyPair`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-sshkeypair
  */
 export class SSHKeyPair extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute KeyPairFingerPrint: The fingerprint of the key pair. The public key fingerprint format defined in RFC4716: MD5 message digest algorithm. Refer to http://tools.ietf.org/html/rfc4716.
@@ -55,8 +53,6 @@ export class SSHKeyPair extends ros.Resource {
     public readonly attrPrivateKeyBody: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ECS::SSHKeyPair`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

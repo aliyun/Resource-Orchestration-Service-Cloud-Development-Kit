@@ -11,3 +11,7 @@
 @alicloud/ros-cdk-cloudfw.RosVpcFirewallControlPolicyProps=com.aliyun.ros.cdk.cloudfw.RosVpcFirewallControlPolicyProps
 @alicloud/ros-cdk-cloudfw.VpcFirewallControlPolicy=com.aliyun.ros.cdk.cloudfw.VpcFirewallControlPolicy
 @alicloud/ros-cdk-cloudfw.VpcFirewallControlPolicyProps=com.aliyun.ros.cdk.cloudfw.VpcFirewallControlPolicyProps
+@alicloud/ros-cdk-cloudfw.datasource.AddressBooks=com.aliyun.ros.cdk.cloudfw.datasource.AddressBooks
+@alicloud/ros-cdk-cloudfw.datasource.AddressBooksProps=com.aliyun.ros.cdk.cloudfw.datasource.AddressBooksProps
+@alicloud/ros-cdk-cloudfw.datasource.RosAddressBooks=com.aliyun.ros.cdk.cloudfw.datasource.RosAddressBooks
+@alicloud/ros-cdk-cloudfw.datasource.RosAddressBooksProps=com.aliyun.ros.cdk.cloudfw.datasource.RosAddressBooksProps

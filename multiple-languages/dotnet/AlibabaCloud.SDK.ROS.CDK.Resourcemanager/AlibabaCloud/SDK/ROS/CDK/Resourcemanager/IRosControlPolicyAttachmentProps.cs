@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
 {
-    /// <summary>Properties for defining a `ALIYUN::ResourceManager::ControlPolicyAttachment`.</summary>
+    /// <summary>Properties for defining a `RosControlPolicyAttachment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-controlpolicyattachment
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosControlPolicyAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-resourcemanager.RosControlPolicyAttachmentProps")]
     public interface IRosControlPolicyAttachmentProps
     {
@@ -26,7 +29,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ResourceManager::ControlPolicyAttachment`.</summary>
+        /// <summary>Properties for defining a `RosControlPolicyAttachment`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-controlpolicyattachment
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosControlPolicyAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-resourcemanager.RosControlPolicyAttachmentProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Resourcemanager.IRosControlPolicyAttachmentProps
         {

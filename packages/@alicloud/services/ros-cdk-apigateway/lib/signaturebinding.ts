@@ -4,7 +4,8 @@ import { RosSignatureBinding } from './apigateway.generated';
 export { RosSignatureBinding as SignatureBindingProperty };
 
 /**
- * Properties for defining a `ALIYUN::ApiGateway::SignatureBinding`
+ * Properties for defining a `SignatureBinding`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-signaturebinding
  */
 export interface SignatureBindingProps {
 
@@ -30,18 +31,13 @@ export interface SignatureBindingProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ApiGateway::SignatureBinding`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::SignatureBinding`, which is used to bind backend signatures to APIs.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSignatureBinding`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-signaturebinding
  */
 export class SignatureBinding extends ros.Resource {
 
     /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
-
-    /**
-     * Create a new `ALIYUN::ApiGateway::SignatureBinding`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

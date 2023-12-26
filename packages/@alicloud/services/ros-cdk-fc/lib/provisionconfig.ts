@@ -4,7 +4,8 @@ import { RosProvisionConfig } from './fc.generated';
 export { RosProvisionConfig as ProvisionConfigProperty };
 
 /**
- * Properties for defining a `ALIYUN::FC::ProvisionConfig`
+ * Properties for defining a `ProvisionConfig`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-provisionconfig
  */
 export interface ProvisionConfigProps {
 
@@ -31,14 +32,11 @@ export interface ProvisionConfigProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::FC::ProvisionConfig`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::FC::ProvisionConfig`, which is used to create provisioned instances in Function Compute.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosProvisionConfig`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-provisionconfig
  */
 export class ProvisionConfig extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute FunctionName: The function name
@@ -66,8 +64,6 @@ export class ProvisionConfig extends ros.Resource {
     public readonly attrTarget: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::FC::ProvisionConfig`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

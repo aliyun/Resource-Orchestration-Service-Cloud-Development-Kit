@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ALB::AdditionalCertificateAssociation`.</summary>
+    /// <summary>Properties for defining a `AdditionalCertificateAssociation`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-additionalcertificateassociation
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.AdditionalCertificateAssociationProps")]
     public class AdditionalCertificateAssociationProps : AlibabaCloud.SDK.ROS.CDK.Alb.IAdditionalCertificateAssociationProps
     {

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::EDAS::DeployGroup`.</summary>
+    /// <summary>Properties for defining a `DeployGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-deploygroup
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-edas.DeployGroupProps")]
     public class DeployGroupProps : AlibabaCloud.SDK.ROS.CDK.Edas.IDeployGroupProps
     {

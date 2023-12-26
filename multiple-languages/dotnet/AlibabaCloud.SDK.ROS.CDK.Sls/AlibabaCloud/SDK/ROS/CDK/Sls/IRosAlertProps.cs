@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sls
 {
-    /// <summary>Properties for defining a `ALIYUN::SLS::Alert`.</summary>
+    /// <summary>Properties for defining a `RosAlert`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-alert
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosAlertProps), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosAlertProps")]
     public interface IRosAlertProps
     {
@@ -29,7 +32,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::SLS::Alert`.</summary>
+        /// <summary>Properties for defining a `RosAlert`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-alert
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosAlertProps), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosAlertProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sls.IRosAlertProps
         {

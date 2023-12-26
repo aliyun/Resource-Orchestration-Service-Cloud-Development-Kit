@@ -4,7 +4,8 @@ import { RosRepositories } from './cr.generated';
 export { RosRepositories as RepositoriesProperty };
 
 /**
- * Properties for defining a `DATASOURCE::CR::Repositories`
+ * Properties for defining a `Repositories`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cr-repositories
  */
 export interface RepositoriesProps {
 
@@ -20,14 +21,11 @@ export interface RepositoriesProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::CR::Repositories`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::CR::Repositories`, which is used to query the details of repositories.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRepositories`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cr-repositories
  */
 export class Repositories extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute RepoNames: The list of repository names.
@@ -40,8 +38,6 @@ export class Repositories extends ros.Resource {
     public readonly attrRepos: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::CR::Repositories`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

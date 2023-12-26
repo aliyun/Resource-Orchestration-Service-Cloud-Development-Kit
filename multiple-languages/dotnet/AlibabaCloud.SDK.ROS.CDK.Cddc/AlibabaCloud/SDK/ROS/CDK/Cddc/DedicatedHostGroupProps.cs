@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cddc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CDDC::DedicatedHostGroup`.</summary>
+    /// <summary>Properties for defining a `DedicatedHostGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cddc-dedicatedhostgroup
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cddc.DedicatedHostGroupProps")]
     public class DedicatedHostGroupProps : AlibabaCloud.SDK.ROS.CDK.Cddc.IDedicatedHostGroupProps
     {

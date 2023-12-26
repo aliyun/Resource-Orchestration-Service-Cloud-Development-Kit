@@ -4,7 +4,8 @@ import { RosTransitRouterRouteTables } from './cen.generated';
 export { RosTransitRouterRouteTables as TransitRouterRouteTablesProperty };
 
 /**
- * Properties for defining a `DATASOURCE::CEN::TransitRouterRouteTables`
+ * Properties for defining a `TransitRouterRouteTables`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-transitrouterroutetables
  */
 export interface TransitRouterRouteTablesProps {
 
@@ -43,14 +44,11 @@ export interface TransitRouterRouteTablesProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::CEN::TransitRouterRouteTables`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::CEN::TransitRouterRouteTables`, which is used to query the route tables of an Enterprise Edition transit router.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTransitRouterRouteTables`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-transitrouterroutetables
  */
 export class TransitRouterRouteTables extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute TransitRouterRouteTableIds: The list of TransitRouterRouteTable IDs.
@@ -63,8 +61,6 @@ export class TransitRouterRouteTables extends ros.Resource {
     public readonly attrTransitRouterRouteTables: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::CEN::TransitRouterRouteTables`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

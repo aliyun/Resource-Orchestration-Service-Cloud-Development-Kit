@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Oos
 {
-    /// <summary>Properties for defining a `ALIYUN::OOS::Parameter`.</summary>
+    /// <summary>Properties for defining a `Parameter`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-parameter
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IParameterProps), fullyQualifiedName: "@alicloud/ros-cdk-oos.ParameterProps")]
     public interface IParameterProps
     {
@@ -82,7 +85,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::OOS::Parameter`.</summary>
+        /// <summary>Properties for defining a `Parameter`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-parameter
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IParameterProps), fullyQualifiedName: "@alicloud/ros-cdk-oos.ParameterProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Oos.IParameterProps
         {

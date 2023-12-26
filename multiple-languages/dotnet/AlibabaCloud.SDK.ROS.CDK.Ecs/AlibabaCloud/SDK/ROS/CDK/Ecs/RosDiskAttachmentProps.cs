@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ECS::DiskAttachment`.</summary>
+    /// <summary>Properties for defining a `RosDiskAttachment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-diskattachment
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.RosDiskAttachmentProps")]
     public class RosDiskAttachmentProps : AlibabaCloud.SDK.ROS.CDK.Ecs.IRosDiskAttachmentProps
     {
@@ -143,7 +146,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         private object? _device;
 
         /// <remarks>
-        /// <strong>Property</strong>: device: The device where the volume is exposed on the instance. could be /dev/xvd[b-z]. If not specification, will use default value.
+        /// <strong>Property</strong>: device: The device where the volume is exposed on the instance. could be \/dev\/xvd[b-z]. If not specification, will use default value.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "device", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

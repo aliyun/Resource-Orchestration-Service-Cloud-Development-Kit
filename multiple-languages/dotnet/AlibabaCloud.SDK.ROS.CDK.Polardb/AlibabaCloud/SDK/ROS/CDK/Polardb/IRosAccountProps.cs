@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Polardb
 {
-    /// <summary>Properties for defining a `ALIYUN::POLARDB::Account`.</summary>
+    /// <summary>Properties for defining a `RosAccount`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-account
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosAccountProps), fullyQualifiedName: "@alicloud/ros-cdk-polardb.RosAccountProps")]
     public interface IRosAccountProps
     {
@@ -42,7 +45,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
 
         /// <remarks>
         /// <strong>Property</strong>: accountDescription: The description of the database account. The description must comply with the following rules:
-        /// - It cannot start with http:// or https://.
+        /// - It cannot start with http:\/\/ or https:\/\/.
         /// - It must be 2 to 256 characters in length.
         /// </remarks>
         [JsiiProperty(name: "accountDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -105,7 +108,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::POLARDB::Account`.</summary>
+        /// <summary>Properties for defining a `RosAccount`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-account
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosAccountProps), fullyQualifiedName: "@alicloud/ros-cdk-polardb.RosAccountProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Polardb.IRosAccountProps
         {
@@ -147,7 +153,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
 
             /// <remarks>
             /// <strong>Property</strong>: accountDescription: The description of the database account. The description must comply with the following rules:
-            /// - It cannot start with http:// or https://.
+            /// - It cannot start with http:\/\/ or https:\/\/.
             /// - It must be 2 to 256 characters in length.
             /// </remarks>
             [JsiiOptional]

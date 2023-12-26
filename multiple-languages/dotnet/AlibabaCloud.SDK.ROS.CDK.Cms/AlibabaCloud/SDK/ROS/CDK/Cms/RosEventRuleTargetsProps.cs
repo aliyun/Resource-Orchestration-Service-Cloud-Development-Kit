@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CMS::EventRuleTargets`.</summary>
+    /// <summary>Properties for defining a `RosEventRuleTargets`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-eventruletargets
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cms.RosEventRuleTargetsProps")]
     public class RosEventRuleTargetsProps : AlibabaCloud.SDK.ROS.CDK.Cms.IRosEventRuleTargetsProps
     {

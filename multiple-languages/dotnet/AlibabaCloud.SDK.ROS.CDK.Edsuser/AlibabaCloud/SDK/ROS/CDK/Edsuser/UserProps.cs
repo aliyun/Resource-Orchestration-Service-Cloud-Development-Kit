@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edsuser
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::EdsUser::User`.</summary>
+    /// <summary>Properties for defining a `User`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edsuser-user
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-edsuser.UserProps")]
     public class UserProps : AlibabaCloud.SDK.ROS.CDK.Edsuser.IUserProps
     {

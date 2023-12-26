@@ -4,7 +4,8 @@ import { RosClusterNodePools } from './cs.generated';
 export { RosClusterNodePools as ClusterNodePoolsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::CS::ClusterNodePools`
+ * Properties for defining a `ClusterNodePools`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-clusternodepools
  */
 export interface ClusterNodePoolsProps {
 
@@ -15,14 +16,11 @@ export interface ClusterNodePoolsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::CS::ClusterNodePools`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::CS::ClusterNodePools`, which is used to query the details of all node pools in a cluster.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosClusterNodePools`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-clusternodepools
  */
 export class ClusterNodePools extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute NodePoolIds: The list of node_pool IDs.
@@ -35,8 +33,6 @@ export class ClusterNodePools extends ros.Resource {
     public readonly attrNodePools: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::CS::ClusterNodePools`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

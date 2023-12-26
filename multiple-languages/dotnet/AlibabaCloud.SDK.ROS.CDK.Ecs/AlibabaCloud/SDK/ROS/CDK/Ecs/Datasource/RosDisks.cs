@@ -4,11 +4,16 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
 {
-    /// <summary>A ROS template type:  `DATASOURCE::ECS::Disks`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Disks`, which is used to query the Elastic Block Storage (EBS) devices that you created.</summary>
+    /// <remarks>
+    /// The following EBS devices are supported: cloud disks and local disks.
+    ///
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Disks` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-disks
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource.RosDisks), fullyQualifiedName: "@alicloud/ros-cdk-ecs.datasource.RosDisks", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-ecs.datasource.RosDisksProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosDisks : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `DATASOURCE::ECS::Disks`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -169,7 +174,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
         /// ephemeral: retired local disk
         /// ephemeral_ssd: local SSD
         /// cloud_essd: ESSD
-        /// local_ssd_pro: I/O-intensive local disk
+        /// local_ssd_pro: I\/O-intensive local disk
         /// local_hdd_pro: throughput-intensive local disk
         /// </remarks>
         [JsiiOptional]

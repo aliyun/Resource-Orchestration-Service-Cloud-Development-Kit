@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CS::ClusterAddons`.</summary>
+    /// <summary>Properties for defining a `ClusterAddons`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusteraddons
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cs.ClusterAddonsProps")]
     public class ClusterAddonsProps : AlibabaCloud.SDK.ROS.CDK.Cs.IClusterAddonsProps
     {

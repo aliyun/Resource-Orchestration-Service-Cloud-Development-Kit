@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>Properties for defining a `ALIYUN::ECS::ForwardEntry`.</summary>
+    /// <summary>Properties for defining a `ForwardEntry`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-forwardentry
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IForwardEntryProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.ForwardEntryProps")]
     public interface IForwardEntryProps
     {
@@ -15,7 +18,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             get;
         }
 
-        /// <summary>Property externalPort: Source port, now support [1-65535]|Any|x/y.</summary>
+        /// <summary>Property externalPort: Source port, now support [1-65535]|Any|x\/y.</summary>
         [JsiiProperty(name: "externalPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object ExternalPort
         {
@@ -36,7 +39,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             get;
         }
 
-        /// <summary>Property internalPort: Destination port, now support [1-65535]|Any|x/y.</summary>
+        /// <summary>Property internalPort: Destination port, now support [1-65535]|Any|x\/y.</summary>
         [JsiiProperty(name: "internalPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object InternalPort
         {
@@ -50,7 +53,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             get;
         }
 
-        /// <summary>Property forwardEntryName: the name of the DNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.</summary>
+        /// <summary>Property forwardEntryName: the name of the DNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:\/\/ or https:\/\/.</summary>
         [JsiiProperty(name: "forwardEntryName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ForwardEntryName
@@ -72,7 +75,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ECS::ForwardEntry`.</summary>
+        /// <summary>Properties for defining a `ForwardEntry`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-forwardentry
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IForwardEntryProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.ForwardEntryProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.IForwardEntryProps
         {
@@ -87,7 +93,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property externalPort: Source port, now support [1-65535]|Any|x/y.</summary>
+            /// <summary>Property externalPort: Source port, now support [1-65535]|Any|x\/y.</summary>
             [JsiiProperty(name: "externalPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ExternalPort
             {
@@ -108,7 +114,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property internalPort: Destination port, now support [1-65535]|Any|x/y.</summary>
+            /// <summary>Property internalPort: Destination port, now support [1-65535]|Any|x\/y.</summary>
             [JsiiProperty(name: "internalPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object InternalPort
             {
@@ -122,7 +128,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property forwardEntryName: the name of the DNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.</summary>
+            /// <summary>Property forwardEntryName: the name of the DNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:\/\/ or https:\/\/.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "forwardEntryName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ForwardEntryName

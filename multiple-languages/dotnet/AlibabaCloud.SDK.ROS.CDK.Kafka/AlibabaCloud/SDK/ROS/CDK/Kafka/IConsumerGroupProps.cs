@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Kafka
 {
-    /// <summary>Properties for defining a `ALIYUN::KAFKA::ConsumerGroup`.</summary>
+    /// <summary>Properties for defining a `ConsumerGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-consumergroup
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IConsumerGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-kafka.ConsumerGroupProps")]
     public interface IConsumerGroupProps
     {
@@ -53,7 +56,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::KAFKA::ConsumerGroup`.</summary>
+        /// <summary>Properties for defining a `ConsumerGroup`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-consumergroup
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IConsumerGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-kafka.ConsumerGroupProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Kafka.IConsumerGroupProps
         {

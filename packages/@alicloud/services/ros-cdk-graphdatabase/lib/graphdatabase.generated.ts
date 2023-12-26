@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::GraphDatabase::Account`
+ * Properties for defining a `RosAccount`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-graphdatabase-account
  */
 export interface RosAccountProps {
 
@@ -70,18 +71,15 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::GraphDatabase::Account`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GraphDatabase::Account`, which is used to create an account.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-graphdatabase-account
  */
 export class RosAccount extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::GraphDatabase::Account";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AccountDescription: Account description.
@@ -122,8 +120,6 @@ export class RosAccount extends ros.RosResource {
     public accountDescription: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::GraphDatabase::Account`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -156,7 +152,8 @@ export class RosAccount extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::GraphDatabase::DbInstance`
+ * Properties for defining a `RosDbInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-graphdatabase-dbinstance
  */
 export interface RosDbInstanceProps {
 
@@ -394,18 +391,15 @@ function rosDbInstancePropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::GraphDatabase::DbInstance`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GraphDatabase::DbInstance`, which is used to create a Graph Database (GDB) instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DbInstance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-graphdatabase-dbinstance
  */
 export class RosDbInstance extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::GraphDatabase::DbInstance";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ConnectionString: Virtual Private Cloud (vpc connection such as a VPN connection or leased line domain name.
@@ -682,8 +676,6 @@ export class RosDbInstance extends ros.RosResource {
     public zoneId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::GraphDatabase::DbInstance`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -783,7 +775,7 @@ export namespace RosDbInstance {
      */
     export interface DBInstanceIPArrayProperty {
         /**
-         * @Property securityIps: IP address whitelist addresses in the IP address list, and a maximum of 1000 comma-separated format is as follows: 0.0.0.0/0 and 10.23.12.24(IP) or 10.23.12.24/24(CIDR mode, CIDR (Classless Inter-Domain Routing)/24 represents the address prefixes in the length of the range [1,32]).
+         * @Property securityIps: IP address whitelist addresses in the IP address list, and a maximum of 1000 comma-separated format is as follows: 0.0.0.0\/0 and 10.23.12.24(IP) or 10.23.12.24\/24(CIDR mode, CIDR (Classless Inter-Domain Routing)\/24 represents the address prefixes in the length of the range [1,32]).
          */
         readonly securityIps: string | ros.IResolvable;
         /**

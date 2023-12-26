@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::Lindorm::Instance`
+ * Properties for defining a `RosInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-lindorm-instance
  */
 export interface RosInstanceProps {
 
@@ -323,18 +324,15 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::Lindorm::Instance`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Lindorm::Instance`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-lindorm-instance
  */
 export class RosInstance extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::Lindorm::Instance";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AuthInfos: The list of the Lindorm instance auth infos.
@@ -524,8 +522,6 @@ export class RosInstance extends ros.RosResource {
     public zoneId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::Lindorm::Instance`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -596,7 +592,8 @@ export class RosInstance extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::Lindorm::MultiZoneInstance`
+ * Properties for defining a `RosMultiZoneInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-lindorm-multizoneinstance
  */
 export interface RosMultiZoneInstanceProps {
 
@@ -1023,18 +1020,15 @@ function rosMultiZoneInstancePropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * A ROS template type:  `ALIYUN::Lindorm::MultiZoneInstance`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Lindorm::MultiZoneInstance`, which is used to create a multi-zone Lindorm instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `MultiZoneInstance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-lindorm-multizoneinstance
  */
 export class RosMultiZoneInstance extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::Lindorm::MultiZoneInstance";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AuthInfos: The list of the Lindorm instance auth infos.
@@ -1286,8 +1280,6 @@ export class RosMultiZoneInstance extends ros.RosResource {
     public tsdbSpec: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::Lindorm::MultiZoneInstance`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

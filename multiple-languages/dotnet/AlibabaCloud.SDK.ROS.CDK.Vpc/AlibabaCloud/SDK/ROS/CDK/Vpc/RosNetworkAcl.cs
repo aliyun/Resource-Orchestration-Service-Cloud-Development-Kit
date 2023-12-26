@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>A ROS template type:  `ALIYUN::VPC::NetworkAcl`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::NetworkAcl`.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `NetworkAcl` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-networkacl
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Vpc.RosNetworkAcl), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosNetworkAcl", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-vpc.RosNetworkAclProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosNetworkAcl : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::VPC::NetworkAcl`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -114,7 +117,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// <strong>Property</strong>: description: The description of the network ACL.
         /// The description must be 2 to 256 characters in length. The description must start
-        /// with a letter but cannot start with http:// or https://.
+        /// with a letter but cannot start with http:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -244,7 +247,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <strong>Property</strong>: networkAclName: The name of the network ACL.
         /// The name must be 2 to 128 characters in length and can contain letters, digits, periods
         /// (.), underscores (_), and hyphens (-). The name must start with a letter and cannot
-        /// start with http:// or https://.
+        /// start with http:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "networkAclName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -288,7 +291,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: port: The source ports. The value range is from 1 to 65535; setting formats such as "1/200" and "80/80", where "-1/-1" cannot be set individually, which means that the port is not restricted.
+            /// <strong>Property</strong>: port: The source ports. The value range is from 1 to 65535; setting formats such as "1\/200" and "80\/80", where "-1\/-1" cannot be set individually, which means that the port is not restricted.
             /// </remarks>
             [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             object Port
@@ -383,7 +386,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: port: The source ports. The value range is from 1 to 65535; setting formats such as "1/200" and "80/80", where "-1/-1" cannot be set individually, which means that the port is not restricted.
+                /// <strong>Property</strong>: port: The source ports. The value range is from 1 to 65535; setting formats such as "1\/200" and "80\/80", where "-1\/-1" cannot be set individually, which means that the port is not restricted.
                 /// </remarks>
                 [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
                 public object Port
@@ -490,7 +493,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             private object _port;
 
             /// <remarks>
-            /// <strong>Property</strong>: port: The source ports. The value range is from 1 to 65535; setting formats such as "1/200" and "80/80", where "-1/-1" cannot be set individually, which means that the port is not restricted.
+            /// <strong>Property</strong>: port: The source ports. The value range is from 1 to 65535; setting formats such as "1\/200" and "80\/80", where "-1\/-1" cannot be set individually, which means that the port is not restricted.
             /// </remarks>
             [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Port
@@ -705,7 +708,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: port: The source ports. The value range is from 1 to 65535; setting formats such as "1/200" and "80/80", where "-1/-1" cannot be set individually, which means that the port is not restricted.
+            /// <strong>Property</strong>: port: The source ports. The value range is from 1 to 65535; setting formats such as "1\/200" and "80\/80", where "-1\/-1" cannot be set individually, which means that the port is not restricted.
             /// </remarks>
             [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             object Port
@@ -800,7 +803,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: port: The source ports. The value range is from 1 to 65535; setting formats such as "1/200" and "80/80", where "-1/-1" cannot be set individually, which means that the port is not restricted.
+                /// <strong>Property</strong>: port: The source ports. The value range is from 1 to 65535; setting formats such as "1\/200" and "80\/80", where "-1\/-1" cannot be set individually, which means that the port is not restricted.
                 /// </remarks>
                 [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
                 public object Port
@@ -907,7 +910,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             private object _port;
 
             /// <remarks>
-            /// <strong>Property</strong>: port: The source ports. The value range is from 1 to 65535; setting formats such as "1/200" and "80/80", where "-1/-1" cannot be set individually, which means that the port is not restricted.
+            /// <strong>Property</strong>: port: The source ports. The value range is from 1 to 65535; setting formats such as "1\/200" and "80\/80", where "-1\/-1" cannot be set individually, which means that the port is not restricted.
             /// </remarks>
             [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Port

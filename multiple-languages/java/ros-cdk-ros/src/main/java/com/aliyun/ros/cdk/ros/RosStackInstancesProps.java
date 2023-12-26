@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.ros;
 
 /**
- * Properties for defining a <code>ALIYUN::ROS::StackInstances</code>.
+ * Properties for defining a <code>RosStackInstances</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-stackinstances
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.043Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.891Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.RosStackInstancesProps")
 @software.amazon.jsii.Jsii.Proxy(RosStackInstancesProps.Jsii$Proxy.class)
 public interface RosStackInstancesProps extends software.amazon.jsii.JsiiSerializable {

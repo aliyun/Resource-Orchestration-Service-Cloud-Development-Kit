@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ECS::SSHKeyPairAttachment`.</summary>
+    /// <summary>Properties for defining a `SSHKeyPairAttachment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-sshkeypairattachment
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.SSHKeyPairAttachmentProps")]
     public class SSHKeyPairAttachmentProps : AlibabaCloud.SDK.ROS.CDK.Ecs.ISSHKeyPairAttachmentProps
     {

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
 {
-    /// <summary>Properties for defining a `ALIYUN::ROCKETMQ::Topic`.</summary>
+    /// <summary>Properties for defining a `Topic`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq-topic
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ITopicProps), fullyQualifiedName: "@alicloud/ros-cdk-rocketmq.TopicProps")]
     public interface ITopicProps
     {
@@ -57,7 +60,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ROCKETMQ::Topic`.</summary>
+        /// <summary>Properties for defining a `Topic`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq-topic
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ITopicProps), fullyQualifiedName: "@alicloud/ros-cdk-rocketmq.TopicProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Rocketmq.ITopicProps
         {

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Imm
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::IMM::Project`.</summary>
+    /// <summary>Properties for defining a `Project`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-imm-project
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-imm.ProjectProps")]
     public class ProjectProps : AlibabaCloud.SDK.ROS.CDK.Imm.IProjectProps
     {

@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * Properties for defining a <code>ALIYUN::ECS::DeploymentSet</code>.
+ * Properties for defining a <code>RosDeploymentSet</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-deploymentset
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.892Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.374Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosDeploymentSetProps")
 @software.amazon.jsii.Jsii.Proxy(RosDeploymentSetProps.Jsii$Proxy.class)
 public interface RosDeploymentSetProps extends software.amazon.jsii.JsiiSerializable {
@@ -22,7 +24,19 @@ public interface RosDeploymentSetProps extends software.amazon.jsii.JsiiSerializ
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getGroupCount() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getOnUnableToRedeployFailedInstance() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getStrategy() {
         return null;
     }
 
@@ -38,7 +52,9 @@ public interface RosDeploymentSetProps extends software.amazon.jsii.JsiiSerializ
     public static final class Builder implements software.amazon.jsii.Builder<RosDeploymentSetProps> {
         java.lang.Object deploymentSetName;
         java.lang.Object description;
+        java.lang.Object groupCount;
         java.lang.Object onUnableToRedeployFailedInstance;
+        java.lang.Object strategy;
 
         /**
          * Sets the value of {@link RosDeploymentSetProps#getDeploymentSetName}
@@ -81,6 +97,26 @@ public interface RosDeploymentSetProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosDeploymentSetProps#getGroupCount}
+         * @param groupCount the value to be set.
+         * @return {@code this}
+         */
+        public Builder groupCount(java.lang.Number groupCount) {
+            this.groupCount = groupCount;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDeploymentSetProps#getGroupCount}
+         * @param groupCount the value to be set.
+         * @return {@code this}
+         */
+        public Builder groupCount(com.aliyun.ros.cdk.core.IResolvable groupCount) {
+            this.groupCount = groupCount;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDeploymentSetProps#getOnUnableToRedeployFailedInstance}
          * @param onUnableToRedeployFailedInstance the value to be set.
          * @return {@code this}
@@ -97,6 +133,26 @@ public interface RosDeploymentSetProps extends software.amazon.jsii.JsiiSerializ
          */
         public Builder onUnableToRedeployFailedInstance(com.aliyun.ros.cdk.core.IResolvable onUnableToRedeployFailedInstance) {
             this.onUnableToRedeployFailedInstance = onUnableToRedeployFailedInstance;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDeploymentSetProps#getStrategy}
+         * @param strategy the value to be set.
+         * @return {@code this}
+         */
+        public Builder strategy(java.lang.String strategy) {
+            this.strategy = strategy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDeploymentSetProps#getStrategy}
+         * @param strategy the value to be set.
+         * @return {@code this}
+         */
+        public Builder strategy(com.aliyun.ros.cdk.core.IResolvable strategy) {
+            this.strategy = strategy;
             return this;
         }
 
@@ -118,7 +174,9 @@ public interface RosDeploymentSetProps extends software.amazon.jsii.JsiiSerializ
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosDeploymentSetProps {
         private final java.lang.Object deploymentSetName;
         private final java.lang.Object description;
+        private final java.lang.Object groupCount;
         private final java.lang.Object onUnableToRedeployFailedInstance;
+        private final java.lang.Object strategy;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -128,7 +186,9 @@ public interface RosDeploymentSetProps extends software.amazon.jsii.JsiiSerializ
             super(objRef);
             this.deploymentSetName = software.amazon.jsii.Kernel.get(this, "deploymentSetName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.groupCount = software.amazon.jsii.Kernel.get(this, "groupCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.onUnableToRedeployFailedInstance = software.amazon.jsii.Kernel.get(this, "onUnableToRedeployFailedInstance", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.strategy = software.amazon.jsii.Kernel.get(this, "strategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -138,7 +198,9 @@ public interface RosDeploymentSetProps extends software.amazon.jsii.JsiiSerializ
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.deploymentSetName = builder.deploymentSetName;
             this.description = builder.description;
+            this.groupCount = builder.groupCount;
             this.onUnableToRedeployFailedInstance = builder.onUnableToRedeployFailedInstance;
+            this.strategy = builder.strategy;
         }
 
         @Override
@@ -152,8 +214,18 @@ public interface RosDeploymentSetProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
+        public final java.lang.Object getGroupCount() {
+            return this.groupCount;
+        }
+
+        @Override
         public final java.lang.Object getOnUnableToRedeployFailedInstance() {
             return this.onUnableToRedeployFailedInstance;
+        }
+
+        @Override
+        public final java.lang.Object getStrategy() {
+            return this.strategy;
         }
 
         @Override
@@ -168,8 +240,14 @@ public interface RosDeploymentSetProps extends software.amazon.jsii.JsiiSerializ
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
             }
+            if (this.getGroupCount() != null) {
+                data.set("groupCount", om.valueToTree(this.getGroupCount()));
+            }
             if (this.getOnUnableToRedeployFailedInstance() != null) {
                 data.set("onUnableToRedeployFailedInstance", om.valueToTree(this.getOnUnableToRedeployFailedInstance()));
+            }
+            if (this.getStrategy() != null) {
+                data.set("strategy", om.valueToTree(this.getStrategy()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -191,14 +269,18 @@ public interface RosDeploymentSetProps extends software.amazon.jsii.JsiiSerializ
 
             if (this.deploymentSetName != null ? !this.deploymentSetName.equals(that.deploymentSetName) : that.deploymentSetName != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
-            return this.onUnableToRedeployFailedInstance != null ? this.onUnableToRedeployFailedInstance.equals(that.onUnableToRedeployFailedInstance) : that.onUnableToRedeployFailedInstance == null;
+            if (this.groupCount != null ? !this.groupCount.equals(that.groupCount) : that.groupCount != null) return false;
+            if (this.onUnableToRedeployFailedInstance != null ? !this.onUnableToRedeployFailedInstance.equals(that.onUnableToRedeployFailedInstance) : that.onUnableToRedeployFailedInstance != null) return false;
+            return this.strategy != null ? this.strategy.equals(that.strategy) : that.strategy == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.deploymentSetName != null ? this.deploymentSetName.hashCode() : 0;
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+            result = 31 * result + (this.groupCount != null ? this.groupCount.hashCode() : 0);
             result = 31 * result + (this.onUnableToRedeployFailedInstance != null ? this.onUnableToRedeployFailedInstance.hashCode() : 0);
+            result = 31 * result + (this.strategy != null ? this.strategy.hashCode() : 0);
             return result;
         }
     }

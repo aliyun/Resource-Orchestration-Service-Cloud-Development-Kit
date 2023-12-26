@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::RDS::MigrateTask`.</summary>
+    /// <summary>Properties for defining a `MigrateTask`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-migratetask
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-rds.MigrateTaskProps")]
     public class MigrateTaskProps : AlibabaCloud.SDK.ROS.CDK.Rds.IMigrateTaskProps
     {

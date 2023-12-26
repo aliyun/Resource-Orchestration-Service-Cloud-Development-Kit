@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>Properties for defining a `ALIYUN::VPC::AnycastEIP`.</summary>
+    /// <summary>Properties for defining a `RosAnycastEIP`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-anycasteip
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.RosAnycastEIPProps")]
     public class RosAnycastEIPProps : AlibabaCloud.SDK.ROS.CDK.Vpc.IRosAnycastEIPProps
     {

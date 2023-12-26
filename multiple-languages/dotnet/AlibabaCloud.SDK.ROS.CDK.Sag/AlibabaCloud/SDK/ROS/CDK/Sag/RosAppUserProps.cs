@@ -6,14 +6,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::SAG::AppUser`.</summary>
+    /// <summary>Properties for defining a `RosAppUser`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-appuser
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-sag.RosAppUserProps")]
     public class RosAppUserProps : AlibabaCloud.SDK.ROS.CDK.Sag.IRosAppUserProps
     {
         private object _bandwidth;
 
         /// <remarks>
-        /// <strong>Property</strong>: bandwidth: The bandwidth. Unit: Kbit/s. Maximum bandwidth: 2,000 Kbit/s.
+        /// <strong>Property</strong>: bandwidth: The bandwidth. Unit: Kbit\/s. Maximum bandwidth: 2,000 Kbit\/s.
         /// </remarks>
         [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Bandwidth

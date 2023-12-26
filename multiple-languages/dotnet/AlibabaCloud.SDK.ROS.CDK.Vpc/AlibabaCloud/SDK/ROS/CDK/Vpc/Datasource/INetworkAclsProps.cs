@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::VPC::NetworkAcls`.</summary>
+    /// <summary>Properties for defining a `NetworkAcls`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-networkacls
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(INetworkAclsProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.datasource.NetworkAclsProps")]
     public interface INetworkAclsProps
     {
@@ -70,7 +73,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::VPC::NetworkAcls`.</summary>
+        /// <summary>Properties for defining a `NetworkAcls`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-networkacls
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(INetworkAclsProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.datasource.NetworkAclsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource.INetworkAclsProps
         {

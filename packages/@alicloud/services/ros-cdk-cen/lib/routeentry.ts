@@ -4,7 +4,8 @@ import { RosRouteEntry } from './cen.generated';
 export { RosRouteEntry as RouteEntryProperty };
 
 /**
- * Properties for defining a `ALIYUN::CEN::RouteEntry`
+ * Properties for defining a `RouteEntry`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-routeentry
  */
 export interface RouteEntryProps {
 
@@ -40,18 +41,13 @@ export interface RouteEntryProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CEN::RouteEntry`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::RouteEntry`, which is used to advertise a routing entry of an attached VPC or VBR to a CEN instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRouteEntry`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-routeentry
  */
 export class RouteEntry extends ros.Resource {
 
     /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
-
-    /**
-     * Create a new `ALIYUN::CEN::RouteEntry`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

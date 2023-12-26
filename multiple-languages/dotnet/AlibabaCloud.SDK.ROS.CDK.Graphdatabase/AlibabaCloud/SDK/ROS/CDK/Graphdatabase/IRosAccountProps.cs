@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Graphdatabase
 {
-    /// <summary>Properties for defining a `ALIYUN::GraphDatabase::Account`.</summary>
+    /// <summary>Properties for defining a `RosAccount`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-graphdatabase-account
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosAccountProps), fullyQualifiedName: "@alicloud/ros-cdk-graphdatabase.RosAccountProps")]
     public interface IRosAccountProps
     {
@@ -48,7 +51,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Graphdatabase
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::GraphDatabase::Account`.</summary>
+        /// <summary>Properties for defining a `RosAccount`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-graphdatabase-account
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosAccountProps), fullyQualifiedName: "@alicloud/ros-cdk-graphdatabase.RosAccountProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Graphdatabase.IRosAccountProps
         {

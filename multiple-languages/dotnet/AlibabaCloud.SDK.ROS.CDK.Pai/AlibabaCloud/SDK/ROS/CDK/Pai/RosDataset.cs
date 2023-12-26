@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Pai
 {
-    /// <summary>A ROS template type:  `ALIYUN::PAI::Dataset`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::Dataset`, which is used to create a dataset.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Dataset` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-dataset
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Pai.RosDataset), fullyQualifiedName: "@alicloud/ros-cdk-pai.RosDataset", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-pai.RosDatasetProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosDataset : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::PAI::Dataset`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -306,11 +309,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pai
 
         /// <remarks>
         /// <strong>Property</strong>: uri: The Uri configuration sample is as follows:
-        /// - The data source type is OSS:'oss:// bucket.endpoint/object'
+        /// - The data source type is OSS:'oss:\/\/ bucket.endpoint\/object'
         /// - The data source type is NAS:
-        /// The general NAS format is: 'nas://<nasfisid>.region/subpath/to/dir/';
-        /// CPFS1.0:'nas://<cpfs-fsid>.region/subpath/to/dir /';
-        /// CPFS2.0:'nas://<cpfs-fsid>.region/<protocolserviceid>/'.
+        /// The general NAS format is: 'nas:\/\/<nasfisid>.region\/subpath\/to\/dir\/';
+        /// CPFS1.0:'nas:\/\/<cpfs-fsid>.region\/subpath\/to\/dir \/';
+        /// CPFS2.0:'nas:\/\/<cpfs-fsid>.region\/<protocolserviceid>\/'.
         /// CPFS1.0 and CPFS2.0 are distinguished by the format of fsid: CPFS1.0 is cpfs-<8-bit ascii characters>;CPFS2.0 is cpfs-<16 ascii characters>.
         /// </remarks>
         [JsiiProperty(name: "uri", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]

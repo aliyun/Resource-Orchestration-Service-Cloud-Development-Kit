@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Acm
 {
-    /// <summary>Properties for defining a `ALIYUN::ACM::Namespace`.</summary>
+    /// <summary>Properties for defining a `Namespace`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acm-namespace
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(INamespaceProps), fullyQualifiedName: "@alicloud/ros-cdk-acm.NamespaceProps")]
     public interface INamespaceProps
     {
@@ -15,7 +18,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Acm
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ACM::Namespace`.</summary>
+        /// <summary>Properties for defining a `Namespace`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acm-namespace
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(INamespaceProps), fullyQualifiedName: "@alicloud/ros-cdk-acm.NamespaceProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Acm.INamespaceProps
         {

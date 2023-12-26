@@ -4,7 +4,8 @@ import { RosLoadBalancer } from './alb.generated';
 export { RosLoadBalancer as LoadBalancerProperty };
 
 /**
- * Properties for defining a `ALIYUN::ALB::LoadBalancer`
+ * Properties for defining a `LoadBalancer`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-loadbalancer
  */
 export interface LoadBalancerProps {
 
@@ -90,14 +91,11 @@ export interface LoadBalancerProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ALB::LoadBalancer`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::LoadBalancer`, which is used to create an Application Load Balancer (ALB) instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLoadBalancer`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-loadbalancer
  */
 export class LoadBalancer extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AddressType: The type of IP address that the ALB instance uses to provide services.
@@ -130,8 +128,6 @@ export class LoadBalancer extends ros.Resource {
     public readonly attrZoneMappings: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ALB::LoadBalancer`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

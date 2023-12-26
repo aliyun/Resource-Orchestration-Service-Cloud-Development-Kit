@@ -4,7 +4,8 @@ import { RosDiskReplicaPairs } from './ebs.generated';
 export { RosDiskReplicaPairs as DiskReplicaPairsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::EBS::DiskReplicaPairs`
+ * Properties for defining a `DiskReplicaPairs`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ebs-diskreplicapairs
  */
 export interface DiskReplicaPairsProps {
 
@@ -15,14 +16,11 @@ export interface DiskReplicaPairsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::EBS::DiskReplicaPairs`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::EBS::DiskReplicaPairs`, which is used to query the information about one or more replication pairs.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDiskReplicaPairs`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ebs-diskreplicapairs
  */
 export class DiskReplicaPairs extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DiskReplicaPairs: The list of disk replica pairs.
@@ -35,8 +33,6 @@ export class DiskReplicaPairs extends ros.Resource {
     public readonly attrReplicaPairIds: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::EBS::DiskReplicaPairs`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

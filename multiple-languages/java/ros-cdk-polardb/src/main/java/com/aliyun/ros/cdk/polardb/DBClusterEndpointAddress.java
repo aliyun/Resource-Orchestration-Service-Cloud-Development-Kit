@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.polardb;
 
 /**
- * A ROS resource type:  <code>ALIYUN::POLARDB::DBClusterEndpointAddress</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::POLARDB::DBClusterEndpointAddress</code>, which is used to create a public endpoint for an Apsara PolarDB cluster.
+ * <p>
+ * The public endpoint can be a primary endpoint, the default cluster endpoint, or a custom cluster endpoint.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.458Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.239Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DBClusterEndpointAddress")
 public class DBClusterEndpointAddress extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,11 +18,7 @@ public class DBClusterEndpointAddress extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::POLARDB::DBClusterEndpointAddress</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -33,11 +31,7 @@ public class DBClusterEndpointAddress extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::POLARDB::DBClusterEndpointAddress</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.

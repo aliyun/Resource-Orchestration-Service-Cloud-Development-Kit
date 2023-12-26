@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::OOS::DefaultPatchBaseline`
+ * Properties for defining a `RosDefaultPatchBaseline`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-defaultpatchbaseline
  */
 export interface RosDefaultPatchBaselineProps {
 
@@ -47,18 +48,15 @@ function rosDefaultPatchBaselinePropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * A ROS template type:  `ALIYUN::OOS::DefaultPatchBaseline`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::DefaultPatchBaseline`, which is used to register a default patch baseline.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DefaultPatchBaseline` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-defaultpatchbaseline
  */
 export class RosDefaultPatchBaseline extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OOS::DefaultPatchBaseline";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ApprovalRules: The rules of scanning and installing patches for the specified operating system.
@@ -119,8 +117,6 @@ export class RosDefaultPatchBaseline extends ros.RosResource {
     public patchBaselineName: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::OOS::DefaultPatchBaseline`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -154,7 +150,8 @@ export class RosDefaultPatchBaseline extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::OOS::Execution`
+ * Properties for defining a `RosExecution`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-execution
  */
 export interface RosExecutionProps {
 
@@ -275,18 +272,15 @@ function rosExecutionPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `ALIYUN::OOS::Execution`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Execution`, which is used to start an execution.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Execution` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-execution
  */
 export class RosExecution extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OOS::Execution";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Counters: Task statistics: FailedTasks, SuccessTasks, TotalTasks.
@@ -386,8 +380,6 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
     public templateVersion: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::OOS::Execution`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -508,7 +500,8 @@ function rosExecutionResourceOptionsPropertyToRosTemplate(properties: any): any 
 }
 
 /**
- * Properties for defining a `ALIYUN::OOS::Parameter`
+ * Properties for defining a `RosParameter`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-parameter
  */
 export interface RosParameterProps {
 
@@ -605,18 +598,15 @@ function rosParameterPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `ALIYUN::OOS::Parameter`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Parameter`, which is used to create a common parameter.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Parameter` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-parameter
  */
 export class RosParameter extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OOS::Parameter";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Name: The Name of the parameter.
@@ -672,8 +662,6 @@ export class RosParameter extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::OOS::Parameter`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -709,7 +697,8 @@ export class RosParameter extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::OOS::PatchBaseline`
+ * Properties for defining a `RosPatchBaseline`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-patchbaseline
  */
 export interface RosPatchBaselineProps {
 
@@ -776,18 +765,15 @@ function rosPatchBaselinePropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `ALIYUN::OOS::PatchBaseline`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::PatchBaseline`, which is used to create a patch baseline.
+ * @Note This class does not contain additional functions, so it is recommended to use the `PatchBaseline` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-patchbaseline
  */
 export class RosPatchBaseline extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OOS::PatchBaseline";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ApprovalRules: The rules of scanning and installing patches for the specified operating system.
@@ -868,8 +854,6 @@ export class RosPatchBaseline extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::OOS::PatchBaseline`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -910,7 +894,8 @@ export class RosPatchBaseline extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::OOS::SecretParameter`
+ * Properties for defining a `RosSecretParameter`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-secretparameter
  */
 export interface RosSecretParameterProps {
 
@@ -1004,18 +989,15 @@ function rosSecretParameterPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * A ROS template type:  `ALIYUN::OOS::SecretParameter`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::SecretParameter`, which is used to create an encryption parameter.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SecretParameter` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-secretparameter
  */
 export class RosSecretParameter extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OOS::SecretParameter";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Constraints: The constraints of the encryption parameter.
@@ -1126,8 +1108,6 @@ export class RosSecretParameter extends ros.RosResource {
     public tags: RosSecretParameter.TagsProperty[] | undefined;
 
     /**
-     * Create a new `ALIYUN::OOS::SecretParameter`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1225,7 +1205,8 @@ function rosSecretParameterTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::OOS::Template`
+ * Properties for defining a `RosTemplate`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-template
  */
 export interface RosTemplateProps {
 
@@ -1305,18 +1286,15 @@ function rosTemplatePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::OOS::Template`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Template`, which is used to create a template.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Template` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-template
  */
 export class RosTemplate extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OOS::Template";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ExecutionPolicy: Execution Policy
@@ -1357,8 +1335,6 @@ export class RosTemplate extends ros.RosResource {
     public tags: { [key: string]: (any) } | undefined;
 
     /**
-     * Create a new `ALIYUN::OOS::Template`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

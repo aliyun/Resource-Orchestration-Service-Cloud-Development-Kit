@@ -4,7 +4,8 @@ import { RosMigrationInstances } from './dts.generated';
 export { RosMigrationInstances as MigrationInstancesProperty };
 
 /**
- * Properties for defining a `DATASOURCE::DTS::MigrationInstances`
+ * Properties for defining a `MigrationInstances`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dts-migrationinstances
  */
 export interface MigrationInstancesProps {
 
@@ -15,14 +16,11 @@ export interface MigrationInstancesProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::DTS::MigrationInstances`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::DTS::MigrationInstances`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMigrationInstances`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dts-migrationinstances
  */
 export class MigrationInstances extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DtsInstanceIds: The list of dts instance IDs.
@@ -35,8 +33,6 @@ export class MigrationInstances extends ros.Resource {
     public readonly attrMigrationInstances: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::DTS::MigrationInstances`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

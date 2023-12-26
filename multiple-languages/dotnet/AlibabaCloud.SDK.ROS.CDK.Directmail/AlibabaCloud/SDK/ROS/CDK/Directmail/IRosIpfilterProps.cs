@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Directmail
 {
-    /// <summary>Properties for defining a `ALIYUN::DirectMail::Ipfilter`.</summary>
+    /// <summary>Properties for defining a `RosIpfilter`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-directmail-ipfilter
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosIpfilterProps), fullyQualifiedName: "@alicloud/ros-cdk-directmail.RosIpfilterProps")]
     public interface IRosIpfilterProps
     {
@@ -17,7 +20,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Directmail
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::DirectMail::Ipfilter`.</summary>
+        /// <summary>Properties for defining a `RosIpfilter`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-directmail-ipfilter
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosIpfilterProps), fullyQualifiedName: "@alicloud/ros-cdk-directmail.RosIpfilterProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Directmail.IRosIpfilterProps
         {

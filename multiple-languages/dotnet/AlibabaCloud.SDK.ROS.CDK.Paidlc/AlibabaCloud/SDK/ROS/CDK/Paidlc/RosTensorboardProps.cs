@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Paidlc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::PAIDLC::Tensorboard`.</summary>
+    /// <summary>Properties for defining a `RosTensorboard`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidlc-tensorboard
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-paidlc.RosTensorboardProps")]
     public class RosTensorboardProps : AlibabaCloud.SDK.ROS.CDK.Paidlc.IRosTensorboardProps
     {
@@ -533,8 +536,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Paidlc
 
         /// <remarks>
         /// <strong>Property</strong>: uri: URI of a dataset:
-        /// When DataSourceType is OSS, the format is: OSS: // [OSS-BUCET]. [Endpoint]/[Path].
-        /// When the DataSourceType is NAS, the format is: nas:// [nas-filesystem-id]. [Region]/[PATH].
+        /// When DataSourceType is OSS, the format is: OSS: \/\/ [OSS-BUCET]. [Endpoint]\/[Path].
+        /// When the DataSourceType is NAS, the format is: nas:\/\/ [nas-filesystem-id]. [Region]\/[PATH].
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "uri", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

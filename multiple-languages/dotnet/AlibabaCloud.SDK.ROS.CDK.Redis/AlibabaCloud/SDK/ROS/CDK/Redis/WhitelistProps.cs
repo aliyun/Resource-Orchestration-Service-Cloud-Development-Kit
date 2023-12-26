@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::REDIS::Whitelist`.</summary>
+    /// <summary>Properties for defining a `Whitelist`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-whitelist
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-redis.WhitelistProps")]
     public class WhitelistProps : AlibabaCloud.SDK.ROS.CDK.Redis.IWhitelistProps
     {

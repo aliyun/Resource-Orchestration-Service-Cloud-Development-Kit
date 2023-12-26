@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ApiGateway::TrafficControl`.</summary>
+    /// <summary>Properties for defining a `RosTrafficControl`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-trafficcontrol
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-apigateway.RosTrafficControlProps")]
     public class RosTrafficControlProps : AlibabaCloud.SDK.ROS.CDK.Apigateway.IRosTrafficControlProps
     {
@@ -65,7 +68,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         private object _trafficControlName;
 
         /// <remarks>
-        /// <strong>Property</strong>: trafficControlName: The name of the traffic control.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+        /// <strong>Property</strong>: trafficControlName: The name of the traffic control.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.
         /// </remarks>
         [JsiiProperty(name: "trafficControlName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object TrafficControlName
@@ -97,7 +100,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         private object _trafficControlUnit;
 
         /// <remarks>
-        /// <strong>Property</strong>: trafficControlUnit: Traffic control unit, DAY/HOUR/MINUTE.
+        /// <strong>Property</strong>: trafficControlUnit: Traffic control unit, DAY\/HOUR\/MINUTE.
         /// </remarks>
         [JsiiProperty(name: "trafficControlUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object TrafficControlUnit

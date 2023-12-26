@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.ga;
 
 /**
- * Properties for defining a <code>ALIYUN::GA::EndpointGroup</code>.
+ * Properties for defining a <code>RosEndpointGroup</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-endpointgroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:35.728Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.472Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.RosEndpointGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosEndpointGroupProps.Jsii$Proxy.class)
 public interface RosEndpointGroupProps extends software.amazon.jsii.JsiiSerializable {

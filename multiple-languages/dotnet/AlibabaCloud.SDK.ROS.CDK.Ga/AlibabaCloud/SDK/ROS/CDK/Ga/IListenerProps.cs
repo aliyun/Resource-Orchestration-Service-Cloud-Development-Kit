@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ga
 {
-    /// <summary>Properties for defining a `ALIYUN::GA::Listener`.</summary>
+    /// <summary>Properties for defining a `Listener`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-listener
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IListenerProps), fullyQualifiedName: "@alicloud/ros-cdk-ga.ListenerProps")]
     public interface IListenerProps
     {
@@ -137,7 +140,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::GA::Listener`.</summary>
+        /// <summary>Properties for defining a `Listener`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-listener
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IListenerProps), fullyQualifiedName: "@alicloud/ros-cdk-ga.ListenerProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ga.IListenerProps
         {

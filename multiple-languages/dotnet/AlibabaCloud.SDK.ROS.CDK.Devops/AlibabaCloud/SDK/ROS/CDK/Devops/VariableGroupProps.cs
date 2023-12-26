@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Devops
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::DEVOPS::VariableGroup`.</summary>
+    /// <summary>Properties for defining a `VariableGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-variablegroup
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-devops.VariableGroupProps")]
     public class VariableGroupProps : AlibabaCloud.SDK.ROS.CDK.Devops.IVariableGroupProps
     {

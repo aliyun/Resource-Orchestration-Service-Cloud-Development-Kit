@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
 {
-    /// <summary>Properties for defining a `ALIYUN::ACTIONTRAIL::TrailLogging`.</summary>
+    /// <summary>Properties for defining a `TrailLogging`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-actiontrail-traillogging
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ITrailLoggingProps), fullyQualifiedName: "@alicloud/ros-cdk-actiontrail.TrailLoggingProps")]
     public interface ITrailLoggingProps
     {
@@ -22,7 +25,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ACTIONTRAIL::TrailLogging`.</summary>
+        /// <summary>Properties for defining a `TrailLogging`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-actiontrail-traillogging
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ITrailLoggingProps), fullyQualifiedName: "@alicloud/ros-cdk-actiontrail.TrailLoggingProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Actiontrail.ITrailLoggingProps
         {

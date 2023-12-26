@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cen
 {
-    /// <summary>Properties for defining a `ALIYUN::CEN::CenInstanceAttachment`.</summary>
+    /// <summary>Properties for defining a `RosCenInstanceAttachment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-ceninstanceattachment
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosCenInstanceAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-cen.RosCenInstanceAttachmentProps")]
     public interface IRosCenInstanceAttachmentProps
     {
@@ -57,7 +60,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::CEN::CenInstanceAttachment`.</summary>
+        /// <summary>Properties for defining a `RosCenInstanceAttachment`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-ceninstanceattachment
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosCenInstanceAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-cen.RosCenInstanceAttachmentProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cen.IRosCenInstanceAttachmentProps
         {

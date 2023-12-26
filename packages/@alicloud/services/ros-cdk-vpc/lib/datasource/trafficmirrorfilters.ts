@@ -4,7 +4,8 @@ import { RosTrafficMirrorFilters } from './vpc.generated';
 export { RosTrafficMirrorFilters as TrafficMirrorFiltersProperty };
 
 /**
- * Properties for defining a `DATASOURCE::VPC::TrafficMirrorFilters`
+ * Properties for defining a `TrafficMirrorFilters`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-trafficmirrorfilters
  */
 export interface TrafficMirrorFiltersProps {
 
@@ -15,14 +16,11 @@ export interface TrafficMirrorFiltersProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::VPC::TrafficMirrorFilters`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::TrafficMirrorFilters`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTrafficMirrorFilters`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-trafficmirrorfilters
  */
 export class TrafficMirrorFilters extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute TrafficMirrorFilterIds: The list of traffic mirror filter IDs.
@@ -35,8 +33,6 @@ export class TrafficMirrorFilters extends ros.Resource {
     public readonly attrTrafficMirrorFilters: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::VPC::TrafficMirrorFilters`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

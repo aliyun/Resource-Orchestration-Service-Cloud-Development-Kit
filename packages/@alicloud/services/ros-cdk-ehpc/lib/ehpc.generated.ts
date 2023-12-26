@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::EHPC::AutoScaleConfig`
+ * Properties for defining a `RosAutoScaleConfig`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-autoscaleconfig
  */
 export interface RosAutoScaleConfigProps {
 
@@ -227,18 +228,15 @@ function rosAutoScaleConfigPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * A ROS template type:  `ALIYUN::EHPC::AutoScaleConfig`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EHPC::AutoScaleConfig`, which is used to configure the auto scaling settings of a cluster.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AutoScaleConfig` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-autoscaleconfig
  */
 export class RosAutoScaleConfig extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EHPC::AutoScaleConfig";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ClusterId: Cluster Id.
@@ -344,8 +342,6 @@ export class RosAutoScaleConfig extends ros.RosResource {
     public spotStrategy: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::EHPC::AutoScaleConfig`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -408,10 +404,10 @@ export namespace RosAutoScaleConfig {
         readonly dataDiskKmsKeyId?: string | ros.IResolvable;
         /**
          * @Property dataDiskPerformanceLevel: The performance level of the ESSD used as the data disk. The parameter takes effect only when the Queues.N.DataDisks.M.DataDiskCategory parameter is set to cloud_essd. Valid values:
-     * PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
-     * PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
-     * PL2: A single ESSD can deliver up to 100,000 random read/write IOPS.
-     * PL3: A single ESSD can deliver up to 1,000,000 random read/write IOPS.
+     * PL0: A single ESSD can deliver up to 10,000 random read\/write IOPS.
+     * PL1: A single ESSD can deliver up to 50,000 random read\/write IOPS.
+     * PL2: A single ESSD can deliver up to 100,000 random read\/write IOPS.
+     * PL3: A single ESSD can deliver up to 1,000,000 random read\/write IOPS.
      * Default value: PL1
          */
         readonly dataDiskPerformanceLevel?: string | ros.IResolvable;
@@ -600,10 +596,10 @@ export namespace RosAutoScaleConfig {
         readonly systemDiskSize?: number | ros.IResolvable;
         /**
          * @Property systemDiskLevel: The performance level of the system disk specified for the compute nodes that are added in the queue. Valid values:
-     * PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
-     * PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
-     * PL2: A single ESSD can deliver up to 100,000 random read/write IOPS.
-     * PL3: A single ESSD can deliver up to 1,000,000 random read/write IOPS.
+     * PL0: A single ESSD can deliver up to 10,000 random read\/write IOPS.
+     * PL1: A single ESSD can deliver up to 50,000 random read\/write IOPS.
+     * PL2: A single ESSD can deliver up to 100,000 random read\/write IOPS.
+     * PL3: A single ESSD can deliver up to 1,000,000 random read\/write IOPS.
      * Default value: PL1
          */
         readonly systemDiskLevel?: string | ros.IResolvable;
@@ -789,7 +785,8 @@ function rosAutoScaleConfigQueuesPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::EHPC::Cluster`
+ * Properties for defining a `RosCluster`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-cluster
  */
 export interface RosClusterProps {
 
@@ -964,17 +961,17 @@ export interface RosClusterProps {
     readonly networkInterfaceTrafficMode?: string | ros.IResolvable;
 
     /**
-     * @Property password: Root password of jump server (login node). 8 to 30 characters, must contain three (upper and lower case letters, numbers and special symbols). ! Supports the following special characters :() `~ @ # $% ^ & * - + = | {} []:; '<>, / Be sure to use the HTTPS protocol API call to avoid password leaks that may occur.?.
+     * @Property password: Root password of jump server (login node). 8 to 30 characters, must contain three (upper and lower case letters, numbers and special symbols). ! Supports the following special characters :() `~ @ # $% ^ & * - + = | {} []:; '<>, \/ Be sure to use the HTTPS protocol API call to avoid password leaks that may occur.?.
      */
     readonly password?: string | ros.IResolvable;
 
     /**
-     * @Property period: The purchase of long resources, units: week / month / year. When the value of the parameter EcsChargeType when PrePaid take effect and for the selected value will be.
+     * @Property period: The purchase of long resources, units: week \/ month \/ year. When the value of the parameter EcsChargeType when PrePaid take effect and for the selected value will be.
      */
     readonly period?: number | ros.IResolvable;
 
     /**
-     * @Property periodUnit: The purchase of long-resources unit. Alternatively value Week / Month / year.
+     * @Property periodUnit: The purchase of long-resources unit. Alternatively value Week \/ Month \/ year.
      */
     readonly periodUnit?: string | ros.IResolvable;
 
@@ -998,7 +995,7 @@ export interface RosClusterProps {
     readonly ramRoleName?: string | ros.IResolvable;
 
     /**
-     * @Property remoteDirectory: Mount shared storage remote directory. The final path to the mount point and mount the remote directory composition: NasMountpoint: / RemoteDirectory
+     * @Property remoteDirectory: Mount shared storage remote directory. The final path to the mount point and mount the remote directory composition: NasMountpoint: \/ RemoteDirectory
      */
     readonly remoteDirectory?: string | ros.IResolvable;
 
@@ -1043,10 +1040,10 @@ export interface RosClusterProps {
 
     /**
      * @Property systemDiskLevel: The performance level of the ESSD that is created as the system disk. Valid values:
-     * PL0: A single ESSD can deliver up to 10,000 input/output operations per second (IOPS) of random read/write.
-     * PL1: A single ESSD can deliver up to 50,000 IOPS of random read/write.
-     * PL2: A single ESSD can deliver up to 100,000 IOPS of random read/write.
-     * PL3: A single ESSD can deliver up to 1,000,000 IOPS of random read/write.
+     * PL0: A single ESSD can deliver up to 10,000 input\/output operations per second (IOPS) of random read\/write.
+     * PL1: A single ESSD can deliver up to 50,000 IOPS of random read\/write.
+     * PL2: A single ESSD can deliver up to 100,000 IOPS of random read\/write.
+     * PL3: A single ESSD can deliver up to 1,000,000 IOPS of random read\/write.
      * Default value: PL1
      */
     readonly systemDiskLevel?: string | ros.IResolvable;
@@ -1333,18 +1330,15 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::EHPC::Cluster`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EHPC::Cluster`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Cluster` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-cluster
  */
 export class RosCluster extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EHPC::Cluster";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ClusterId: Cluster Id.
@@ -1541,17 +1535,17 @@ You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2,
     public networkInterfaceTrafficMode: string | ros.IResolvable | undefined;
 
     /**
-     * @Property password: Root password of jump server (login node). 8 to 30 characters, must contain three (upper and lower case letters, numbers and special symbols). ! Supports the following special characters :() `~ @ # $% ^ & * - + = | {} []:; '<>, / Be sure to use the HTTPS protocol API call to avoid password leaks that may occur.?.
+     * @Property password: Root password of jump server (login node). 8 to 30 characters, must contain three (upper and lower case letters, numbers and special symbols). ! Supports the following special characters :() `~ @ # $% ^ & * - + = | {} []:; '<>, \/ Be sure to use the HTTPS protocol API call to avoid password leaks that may occur.?.
      */
     public password: string | ros.IResolvable | undefined;
 
     /**
-     * @Property period: The purchase of long resources, units: week / month / year. When the value of the parameter EcsChargeType when PrePaid take effect and for the selected value will be.
+     * @Property period: The purchase of long resources, units: week \/ month \/ year. When the value of the parameter EcsChargeType when PrePaid take effect and for the selected value will be.
      */
     public period: number | ros.IResolvable | undefined;
 
     /**
-     * @Property periodUnit: The purchase of long-resources unit. Alternatively value Week / Month / year.
+     * @Property periodUnit: The purchase of long-resources unit. Alternatively value Week \/ Month \/ year.
      */
     public periodUnit: string | ros.IResolvable | undefined;
 
@@ -1575,7 +1569,7 @@ You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2,
     public ramRoleName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property remoteDirectory: Mount shared storage remote directory. The final path to the mount point and mount the remote directory composition: NasMountpoint: / RemoteDirectory
+     * @Property remoteDirectory: Mount shared storage remote directory. The final path to the mount point and mount the remote directory composition: NasMountpoint: \/ RemoteDirectory
      */
     public remoteDirectory: string | ros.IResolvable | undefined;
 
@@ -1620,10 +1614,10 @@ You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2,
 
     /**
      * @Property systemDiskLevel: The performance level of the ESSD that is created as the system disk. Valid values:
-     * PL0: A single ESSD can deliver up to 10,000 input/output operations per second (IOPS) of random read/write.
-     * PL1: A single ESSD can deliver up to 50,000 IOPS of random read/write.
-     * PL2: A single ESSD can deliver up to 100,000 IOPS of random read/write.
-     * PL3: A single ESSD can deliver up to 1,000,000 IOPS of random read/write.
+     * PL0: A single ESSD can deliver up to 10,000 input\/output operations per second (IOPS) of random read\/write.
+     * PL1: A single ESSD can deliver up to 50,000 IOPS of random read\/write.
+     * PL2: A single ESSD can deliver up to 100,000 IOPS of random read\/write.
+     * PL3: A single ESSD can deliver up to 1,000,000 IOPS of random read\/write.
      * Default value: PL1
      */
     public systemDiskLevel: string | ros.IResolvable | undefined;
@@ -1685,8 +1679,6 @@ You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2,
     public zoneId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::EHPC::Cluster`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1996,7 +1988,8 @@ function rosClusterPostInstallScriptPropertyToRosTemplate(properties: any): any 
 }
 
 /**
- * Properties for defining a `ALIYUN::EHPC::Users`
+ * Properties for defining a `RosUsers`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-users
  */
 export interface RosUsersProps {
 
@@ -2055,18 +2048,15 @@ function rosUsersPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `ALIYUN::EHPC::Users`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EHPC::Users`DATASOURCE::EHPC::Nodes is used to query nodes in an Elastic High Performance Computing (E-HPC) cluster.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Users` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-users
  */
 export class RosUsers extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EHPC::Users";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -2082,8 +2072,6 @@ export class RosUsers extends ros.RosResource {
     public users: Array<RosUsers.UsersProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::EHPC::Users`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2125,7 +2113,7 @@ export namespace RosUsers {
      * - Uppercase letter
      * - Lowercase letter
      * - Digit
-     * - Special character: ()~!@#$%^&*-_+=|{}[]:;'/<>,.?/
+     * - Special character: ()~!@#$%^&*-_+=|{}[]:;'\/<>,.?\/
      * Valid values of N: 1 to 100.
          */
         readonly password: string | ros.IResolvable;

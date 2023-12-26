@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::EMR::ClusterServiceConfigs`.</summary>
+    /// <summary>Properties for defining a `ClusterServiceConfigs`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-clusterserviceconfigs
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-emr.ClusterServiceConfigsProps")]
     public class ClusterServiceConfigsProps : AlibabaCloud.SDK.ROS.CDK.Emr.IClusterServiceConfigsProps
     {

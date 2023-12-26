@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cas
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CAS::Certificate`.</summary>
+    /// <summary>Properties for defining a `RosCertificate`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cas-certificate
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cas.RosCertificateProps")]
     public class RosCertificateProps : AlibabaCloud.SDK.ROS.CDK.Cas.IRosCertificateProps
     {

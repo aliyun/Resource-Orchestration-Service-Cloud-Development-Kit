@@ -4,7 +4,8 @@ import { RosListener } from './nlb.generated';
 export { RosListener as ListenerProperty };
 
 /**
- * Properties for defining a `ALIYUN::NLB::Listener`
+ * Properties for defining a `Listener`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-listener
  */
 export interface ListenerProps {
 
@@ -105,14 +106,11 @@ export interface ListenerProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::NLB::Listener`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::NLB::Listener`, which is used to create a listener.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosListener`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-listener
  */
 export class Listener extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ListenerId: Id of created Listener
@@ -125,8 +123,6 @@ export class Listener extends ros.Resource {
     public readonly attrListenerPort: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::NLB::Listener`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

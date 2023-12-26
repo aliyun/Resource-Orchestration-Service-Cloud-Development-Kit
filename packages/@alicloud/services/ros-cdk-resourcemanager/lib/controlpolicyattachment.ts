@@ -4,7 +4,8 @@ import { RosControlPolicyAttachment } from './resourcemanager.generated';
 export { RosControlPolicyAttachment as ControlPolicyAttachmentProperty };
 
 /**
- * Properties for defining a `ALIYUN::ResourceManager::ControlPolicyAttachment`
+ * Properties for defining a `ControlPolicyAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-controlpolicyattachment
  */
 export interface ControlPolicyAttachmentProps {
 
@@ -20,14 +21,11 @@ export interface ControlPolicyAttachmentProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ResourceManager::ControlPolicyAttachment`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::ControlPolicyAttachment`, which is used to attach a custom control policy.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosControlPolicyAttachment`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-controlpolicyattachment
  */
 export class ControlPolicyAttachment extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AttachDate: AttachDate
@@ -60,8 +58,6 @@ export class ControlPolicyAttachment extends ros.Resource {
     public readonly attrTargetId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ResourceManager::ControlPolicyAttachment`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -4,7 +4,8 @@ import { RosLoadBalancer } from './slb.generated';
 export { RosLoadBalancer as LoadBalancerProperty };
 
 /**
- * Properties for defining a `ALIYUN::SLB::LoadBalancer`
+ * Properties for defining a `LoadBalancer`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-loadbalancer
  */
 export interface LoadBalancerProps {
 
@@ -72,7 +73,7 @@ export interface LoadBalancerProps {
     readonly internetChargeType?: string | ros.IResolvable;
 
     /**
-     * Property loadBalancerName: Name of created load balancer. Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, /, _,.' When not specified, a default name will be assigned.
+     * Property loadBalancerName: Name of created load balancer. Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, \/, _,.' When not specified, a default name will be assigned.
      */
     readonly loadBalancerName?: string | ros.IResolvable;
 
@@ -146,14 +147,11 @@ export interface LoadBalancerProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::SLB::LoadBalancer`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::LoadBalancer`, which is used to create a Server Load Balancer (SLB) instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLoadBalancer`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-loadbalancer
  */
 export class LoadBalancer extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AddressIPVersion: IP version
@@ -231,8 +229,6 @@ export class LoadBalancer extends ros.Resource {
     public readonly attrVpcId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::SLB::LoadBalancer`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

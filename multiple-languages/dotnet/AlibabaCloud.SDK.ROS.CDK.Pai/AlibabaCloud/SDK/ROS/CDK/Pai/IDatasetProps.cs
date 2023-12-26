@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Pai
 {
-    /// <summary>Properties for defining a `ALIYUN::PAI::Dataset`.</summary>
+    /// <summary>Properties for defining a `Dataset`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-dataset
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IDatasetProps), fullyQualifiedName: "@alicloud/ros-cdk-pai.DatasetProps")]
     public interface IDatasetProps
     {
@@ -54,7 +57,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pai
             get;
         }
 
-        /// <summary>Property uri: The Uri configuration sample is as follows: - The data source type is OSS:'oss:// bucket.endpoint/object' - The data source type is NAS: The general NAS format is: 'nas://&lt;nasfisid&gt;.region/subpath/to/dir/'; CPFS1.0:'nas://&lt;cpfs-fsid&gt;.region/subpath/to/dir /'; CPFS2.0:'nas://&lt;cpfs-fsid&gt;.region/&lt;protocolserviceid&gt;/'. CPFS1.0 and CPFS2.0 are distinguished by the format of fsid: CPFS1.0 is cpfs-&lt;8-bit ascii characters&gt;;CPFS2.0 is cpfs-&lt;16 ascii characters&gt;.</summary>
+        /// <summary>Property uri: The Uri configuration sample is as follows: - The data source type is OSS:'oss:\/\/ bucket.endpoint\/object' - The data source type is NAS: The general NAS format is: 'nas:\/\/&lt;nasfisid&gt;.region\/subpath\/to\/dir\/'; CPFS1.0:'nas:\/\/&lt;cpfs-fsid&gt;.region\/subpath\/to\/dir \/'; CPFS2.0:'nas:\/\/&lt;cpfs-fsid&gt;.region\/&lt;protocolserviceid&gt;\/'. CPFS1.0 and CPFS2.0 are distinguished by the format of fsid: CPFS1.0 is cpfs-&lt;8-bit ascii characters&gt;;CPFS2.0 is cpfs-&lt;16 ascii characters&gt;.</summary>
         [JsiiProperty(name: "uri", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object Uri
         {
@@ -176,7 +179,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pai
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::PAI::Dataset`.</summary>
+        /// <summary>Properties for defining a `Dataset`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-dataset
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IDatasetProps), fullyQualifiedName: "@alicloud/ros-cdk-pai.DatasetProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Pai.IDatasetProps
         {
@@ -230,7 +236,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pai
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property uri: The Uri configuration sample is as follows: - The data source type is OSS:'oss:// bucket.endpoint/object' - The data source type is NAS: The general NAS format is: 'nas://&lt;nasfisid&gt;.region/subpath/to/dir/'; CPFS1.0:'nas://&lt;cpfs-fsid&gt;.region/subpath/to/dir /'; CPFS2.0:'nas://&lt;cpfs-fsid&gt;.region/&lt;protocolserviceid&gt;/'. CPFS1.0 and CPFS2.0 are distinguished by the format of fsid: CPFS1.0 is cpfs-&lt;8-bit ascii characters&gt;;CPFS2.0 is cpfs-&lt;16 ascii characters&gt;.</summary>
+            /// <summary>Property uri: The Uri configuration sample is as follows: - The data source type is OSS:'oss:\/\/ bucket.endpoint\/object' - The data source type is NAS: The general NAS format is: 'nas:\/\/&lt;nasfisid&gt;.region\/subpath\/to\/dir\/'; CPFS1.0:'nas:\/\/&lt;cpfs-fsid&gt;.region\/subpath\/to\/dir \/'; CPFS2.0:'nas:\/\/&lt;cpfs-fsid&gt;.region\/&lt;protocolserviceid&gt;\/'. CPFS1.0 and CPFS2.0 are distinguished by the format of fsid: CPFS1.0 is cpfs-&lt;8-bit ascii characters&gt;;CPFS2.0 is cpfs-&lt;16 ascii characters&gt;.</summary>
             [JsiiProperty(name: "uri", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Uri
             {

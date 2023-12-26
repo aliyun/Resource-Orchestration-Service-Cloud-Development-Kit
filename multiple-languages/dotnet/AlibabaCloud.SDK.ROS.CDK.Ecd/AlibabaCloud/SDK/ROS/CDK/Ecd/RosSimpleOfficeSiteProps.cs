@@ -4,14 +4,17 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecd
 {
-    /// <summary>Properties for defining a `ALIYUN::ECD::SimpleOfficeSite`.</summary>
+    /// <summary>Properties for defining a `RosSimpleOfficeSite`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-simpleofficesite
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecd.RosSimpleOfficeSiteProps")]
     public class RosSimpleOfficeSiteProps : AlibabaCloud.SDK.ROS.CDK.Ecd.IRosSimpleOfficeSiteProps
     {
         private object? _bandwidth;
 
         /// <remarks>
-        /// <strong>Property</strong>: bandwidth: The maximum public bandwidth. Value range: 10 to 200. Unit: Mbit/s. This parameter is available if you set EnableInternetAccess to true.
+        /// <strong>Property</strong>: bandwidth: The maximum public bandwidth. Value range: 10 to 200. Unit: Mbit\/s. This parameter is available if you set EnableInternetAccess to true.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -153,7 +156,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecd
         private object? _cidrBlock;
 
         /// <remarks>
-        /// <strong>Property</strong>: cidrBlock: The IPv4 CIDR block in the secure office network of the workspace. The IPv4 CIDR block that the system uses to create a virtual private cloud (VPC) for the workspace. We recommend that you set the IPv4 CIDR block to 10.0.0.0/12, 172.16.0.0/12, 192.168.0.0/16, or a subnet of these CIDR blocks. If you set the IPv4 CIDR block to 10.0.0.0/12 or 172.16.0.0/12, the mask is 1224 bits in length. If you set the IPv4 CIDR block to 192.168.0.0/16, the mask is 1624 bits in length.
+        /// <strong>Property</strong>: cidrBlock: The IPv4 CIDR block in the secure office network of the workspace. The IPv4 CIDR block that the system uses to create a virtual private cloud (VPC) for the workspace. We recommend that you set the IPv4 CIDR block to 10.0.0.0\/12, 172.16.0.0\/12, 192.168.0.0\/16, or a subnet of these CIDR blocks. If you set the IPv4 CIDR block to 10.0.0.0\/12 or 172.16.0.0\/12, the mask is 1224 bits in length. If you set the IPv4 CIDR block to 192.168.0.0\/16, the mask is 1624 bits in length.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "cidrBlock", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -364,7 +367,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecd
         private object? _officeSiteName;
 
         /// <remarks>
-        /// <strong>Property</strong>: officeSiteName: The name of the workspace. The name must be 2 to 255 characters in length. It must start with a letter and cannot start with http:// or https://. The name can contain letters, digits, colons (:), underscores (_), and hyphens (-).
+        /// <strong>Property</strong>: officeSiteName: The name of the workspace. The name must be 2 to 255 characters in length. It must start with a letter and cannot start with http:\/\/ or https:\/\/. The name can contain letters, digits, colons (:), underscores (_), and hyphens (-).
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "officeSiteName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

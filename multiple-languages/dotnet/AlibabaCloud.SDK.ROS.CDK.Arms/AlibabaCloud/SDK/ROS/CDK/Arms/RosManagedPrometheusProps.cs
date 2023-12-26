@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ARMS::ManagedPrometheus`.</summary>
+    /// <summary>Properties for defining a `RosManagedPrometheus`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-managedprometheus
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-arms.RosManagedPrometheusProps")]
     public class RosManagedPrometheusProps : AlibabaCloud.SDK.ROS.CDK.Arms.IRosManagedPrometheusProps
     {

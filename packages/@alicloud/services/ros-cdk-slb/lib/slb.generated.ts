@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::SLB::AccessControl`
+ * Properties for defining a `RosAccessControl`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-accesscontrol
  */
 export interface RosAccessControlProps {
 
@@ -95,18 +96,15 @@ function rosAccessControlPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `ALIYUN::SLB::AccessControl`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::AccessControl`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AccessControl` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-accesscontrol
  */
 export class RosAccessControl extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLB::AccessControl";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AclId: The ID of the access control list.
@@ -142,8 +140,6 @@ export class RosAccessControl extends ros.RosResource {
     public tags: RosAccessControl.TagsProperty[] | undefined;
 
     /**
-     * Create a new `ALIYUN::SLB::AccessControl`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -185,7 +181,7 @@ export namespace RosAccessControl {
          */
         readonly comment?: string | ros.IResolvable;
         /**
-         * @Property entry: IP addresses or CIDR blocks. For example: "10.0.0.1" or "192.168.0.0/16"
+         * @Property entry: IP addresses or CIDR blocks. For example: "10.0.0.1" or "192.168.0.0\/16"
          */
         readonly entry: string | ros.IResolvable;
     }
@@ -272,7 +268,8 @@ function rosAccessControlTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::SLB::BackendServerAttachment`
+ * Properties for defining a `RosBackendServerAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-backendserverattachment
  */
 export interface RosBackendServerAttachmentProps {
 
@@ -337,18 +334,15 @@ function rosBackendServerAttachmentPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * A ROS template type:  `ALIYUN::SLB::BackendServerAttachment`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::BackendServerAttachment`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `BackendServerAttachment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-backendserverattachment
  */
 export class RosBackendServerAttachment extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLB::BackendServerAttachment";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute BackendServers: The collection of attached backend server.
@@ -384,8 +378,6 @@ export class RosBackendServerAttachment extends ros.RosResource {
     public backendServerWeightList: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::SLB::BackendServerAttachment`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -491,7 +483,8 @@ function rosBackendServerAttachmentBackendServersPropertyToRosTemplate(propertie
 }
 
 /**
- * Properties for defining a `ALIYUN::SLB::BackendServerToVServerGroupAddition`
+ * Properties for defining a `RosBackendServerToVServerGroupAddition`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-backendservertovservergroupaddition
  */
 export interface RosBackendServerToVServerGroupAdditionProps {
 
@@ -543,18 +536,15 @@ function rosBackendServerToVServerGroupAdditionPropsToRosTemplate(properties: an
 }
 
 /**
- * A ROS template type:  `ALIYUN::SLB::BackendServerToVServerGroupAddition`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::BackendServerToVServerGroupAddition`, which is used to add backend servers to an existing server group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `BackendServerToVServerGroupAddition` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-backendservertovservergroupaddition
  */
 export class RosBackendServerToVServerGroupAddition extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLB::BackendServerToVServerGroupAddition";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute VServerGroupId: The ID of virtual server group.
@@ -575,8 +565,6 @@ export class RosBackendServerToVServerGroupAddition extends ros.RosResource {
     public vServerGroupId: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::SLB::BackendServerToVServerGroupAddition`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -615,7 +603,7 @@ export namespace RosBackendServerToVServerGroupAddition {
          */
         readonly type?: string | ros.IResolvable;
         /**
-         * @Property description: The description of the backend server. The description must be 1 to 80 characters in length, and can contain letters, digits, hyphens (-), forward slashes (/), periods (.), and underscores (_).
+         * @Property description: The description of the backend server. The description must be 1 to 80 characters in length, and can contain letters, digits, hyphens (-), forward slashes (\/), periods (.), and underscores (_).
          */
         readonly description?: string | ros.IResolvable;
         /**
@@ -686,7 +674,8 @@ function rosBackendServerToVServerGroupAdditionBackendServersPropertyToRosTempla
 }
 
 /**
- * Properties for defining a `ALIYUN::SLB::Certificate`
+ * Properties for defining a `RosCertificate`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-certificate
  */
 export interface RosCertificateProps {
 
@@ -791,18 +780,15 @@ function rosCertificatePropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `ALIYUN::SLB::Certificate`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::Certificate`, which is used to upload a certificate to a Server Load Balancer (SLB) instance. Server certificates and certificate authority (CA) certificates are supported.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Certificate` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-certificate
  */
 export class RosCertificate extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLB::Certificate";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CertificateId: The ID of the certificate.
@@ -858,8 +844,6 @@ export class RosCertificate extends ros.RosResource {
     public tags: RosCertificate.TagsProperty[] | undefined;
 
     /**
-     * Create a new `ALIYUN::SLB::Certificate`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -947,7 +931,8 @@ function rosCertificateTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::SLB::DomainExtension`
+ * Properties for defining a `RosDomainExtension`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-domainextension
  */
 export interface RosDomainExtensionProps {
 
@@ -1023,18 +1008,15 @@ function rosDomainExtensionPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * A ROS template type:  `ALIYUN::SLB::DomainExtension`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::DomainExtension`, which is used to create a domain extension for an SLB instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DomainExtension` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-domainextension
  */
 export class RosDomainExtension extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLB::DomainExtension";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DomainExtensionId: The ID of the created domain name extension.
@@ -1072,8 +1054,6 @@ export class RosDomainExtension extends ros.RosResource {
     public serverCertificateId: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::SLB::DomainExtension`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1105,7 +1085,8 @@ export class RosDomainExtension extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::SLB::Listener`
+ * Properties for defining a `RosListener`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-listener
  */
 export interface RosListenerProps {
 
@@ -1171,12 +1152,12 @@ export interface RosListenerProps {
     readonly caCertificateId?: string | ros.IResolvable;
 
     /**
-     * @Property description: The description of the listener.It must be 1 to 80 characters in length and can contain letters, digits, hyphens (-), forward slashes (/), periods (.), and underscores (_). Chinese characters are supported.
+     * @Property description: The description of the listener.It must be 1 to 80 characters in length and can contain letters, digits, hyphens (-), forward slashes (\/), periods (.), and underscores (_). Chinese characters are supported.
      */
     readonly description?: string | ros.IResolvable;
 
     /**
-     * @Property enableHttp2: Specifies whether to use HTTP/2. It takes effect when Protocol=https. Valid values:
+     * @Property enableHttp2: Specifies whether to use HTTP\/2. It takes effect when Protocol=https. Valid values:
      * on: yes
      * off: no
      */
@@ -1420,18 +1401,15 @@ function rosListenerPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::SLB::Listener`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::Listener`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Listener` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-listener
  */
 export class RosListener extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLB::Listener";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ListenerPortsAndProtocol: The collection of listener.
@@ -1508,12 +1486,12 @@ export class RosListener extends ros.RosResource {
     public caCertificateId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property description: The description of the listener.It must be 1 to 80 characters in length and can contain letters, digits, hyphens (-), forward slashes (/), periods (.), and underscores (_). Chinese characters are supported.
+     * @Property description: The description of the listener.It must be 1 to 80 characters in length and can contain letters, digits, hyphens (-), forward slashes (\/), periods (.), and underscores (_). Chinese characters are supported.
      */
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * @Property enableHttp2: Specifies whether to use HTTP/2. It takes effect when Protocol=https. Valid values:
+     * @Property enableHttp2: Specifies whether to use HTTP\/2. It takes effect when Protocol=https. Valid values:
      * on: yes
      * off: no
      */
@@ -1593,8 +1571,6 @@ export class RosListener extends ros.RosResource {
     public vServerGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::SLB::Listener`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2098,7 +2074,8 @@ function rosListenerPortRangePropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::SLB::LoadBalancer`
+ * Properties for defining a `RosLoadBalancer`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-loadbalancer
  */
 export interface RosLoadBalancerProps {
 
@@ -2166,7 +2143,7 @@ export interface RosLoadBalancerProps {
     readonly internetChargeType?: string | ros.IResolvable;
 
     /**
-     * @Property loadBalancerName: Name of created load balancer. Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, /, _,.' When not specified, a default name will be assigned.
+     * @Property loadBalancerName: Name of created load balancer. Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, \/, _,.' When not specified, a default name will be assigned.
      */
     readonly loadBalancerName?: string | ros.IResolvable;
 
@@ -2382,18 +2359,15 @@ function rosLoadBalancerPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * A ROS template type:  `ALIYUN::SLB::LoadBalancer`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::LoadBalancer`, which is used to create a Server Load Balancer (SLB) instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `LoadBalancer` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-loadbalancer
  */
 export class RosLoadBalancer extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLB::LoadBalancer";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AddressIPVersion: IP version
@@ -2537,7 +2511,7 @@ export class RosLoadBalancer extends ros.RosResource {
     public internetChargeType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property loadBalancerName: Name of created load balancer. Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, /, _,.' When not specified, a default name will be assigned.
+     * @Property loadBalancerName: Name of created load balancer. Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, \/, _,.' When not specified, a default name will be assigned.
      */
     public loadBalancerName: string | ros.IResolvable | undefined;
 
@@ -2610,8 +2584,6 @@ export class RosLoadBalancer extends ros.RosResource {
     public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::SLB::LoadBalancer`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2740,7 +2712,8 @@ function rosLoadBalancerTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::SLB::LoadBalancerClone`
+ * Properties for defining a `RosLoadBalancerClone`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-loadbalancerclone
  */
 export interface RosLoadBalancerCloneProps {
 
@@ -2767,7 +2740,7 @@ export interface RosLoadBalancerCloneProps {
     readonly instanceChargeType?: string | ros.IResolvable;
 
     /**
-     * @Property loadBalancerName: Name of created load balancer. Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, /, _,.' When not specified, a default name will be assigned.
+     * @Property loadBalancerName: Name of created load balancer. Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, \/, _,.' When not specified, a default name will be assigned.
      */
     readonly loadBalancerName?: string | ros.IResolvable;
 
@@ -2876,18 +2849,15 @@ function rosLoadBalancerClonePropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * A ROS template type:  `ALIYUN::SLB::LoadBalancerClone`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::LoadBalancerClone`, which is used to clone a Server Load Balancer (SLB) instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `LoadBalancerClone` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-loadbalancerclone
  */
 export class RosLoadBalancerClone extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLB::LoadBalancerClone";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute LoadBalancerId: The id of load balance generated
@@ -2920,7 +2890,7 @@ export class RosLoadBalancerClone extends ros.RosResource {
     public instanceChargeType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property loadBalancerName: Name of created load balancer. Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, /, _,.' When not specified, a default name will be assigned.
+     * @Property loadBalancerName: Name of created load balancer. Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, \/, _,.' When not specified, a default name will be assigned.
      */
     public loadBalancerName: string | ros.IResolvable | undefined;
 
@@ -2952,8 +2922,6 @@ export class RosLoadBalancerClone extends ros.RosResource {
     public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::SLB::LoadBalancerClone`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3118,7 +3086,8 @@ function rosLoadBalancerCloneTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::SLB::MasterSlaveServerGroup`
+ * Properties for defining a `RosMasterSlaveServerGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-masterslaveservergroup
  */
 export interface RosMasterSlaveServerGroupProps {
 
@@ -3128,13 +3097,13 @@ export interface RosMasterSlaveServerGroupProps {
     readonly loadBalancerId: string | ros.IResolvable;
 
     /**
-     * @Property masterSlaveBackendServers: A list of active/standby server group.
-     * An active/standby server group can only contain two backend servers.
+     * @Property masterSlaveBackendServers: A list of active\/standby server group.
+     * An active\/standby server group can only contain two backend servers.
      */
     readonly masterSlaveBackendServers: Array<RosMasterSlaveServerGroup.MasterSlaveBackendServersProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property masterSlaveServerGroupName: The name of the active/standby server group.
+     * @Property masterSlaveServerGroupName: The name of the active\/standby server group.
      */
     readonly masterSlaveServerGroupName?: string | ros.IResolvable;
 }
@@ -3185,18 +3154,15 @@ function rosMasterSlaveServerGroupPropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * A ROS template type:  `ALIYUN::SLB::MasterSlaveServerGroup`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::MasterSlaveServerGroup`, which is used to create a primary/secondary server group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `MasterSlaveServerGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-masterslaveservergroup
  */
 export class RosMasterSlaveServerGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLB::MasterSlaveServerGroup";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute MasterSlaveServerGroupId: Active/standby server group ID.
@@ -3212,19 +3178,17 @@ export class RosMasterSlaveServerGroup extends ros.RosResource {
     public loadBalancerId: string | ros.IResolvable;
 
     /**
-     * @Property masterSlaveBackendServers: A list of active/standby server group.
-     * An active/standby server group can only contain two backend servers.
+     * @Property masterSlaveBackendServers: A list of active\/standby server group.
+     * An active\/standby server group can only contain two backend servers.
      */
     public masterSlaveBackendServers: Array<RosMasterSlaveServerGroup.MasterSlaveBackendServersProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property masterSlaveServerGroupName: The name of the active/standby server group.
+     * @Property masterSlaveServerGroupName: The name of the active\/standby server group.
      */
     public masterSlaveServerGroupName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::SLB::MasterSlaveServerGroup`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3349,7 +3313,8 @@ function rosMasterSlaveServerGroupMasterSlaveBackendServersPropertyToRosTemplate
 }
 
 /**
- * Properties for defining a `ALIYUN::SLB::Rule`
+ * Properties for defining a `RosRule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-rule
  */
 export interface RosRuleProps {
 
@@ -3431,18 +3396,15 @@ function rosRulePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * A ROS template type:  `ALIYUN::SLB::Rule`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::Rule`, which is used to add forwarding rules to an HTTP or HTTPS listener.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Rule` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-rule
  */
 export class RosRule extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLB::Rule";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Rules: A list of forwarding rules. Each element of rules contains "RuleId".
@@ -3474,8 +3436,6 @@ export class RosRule extends ros.RosResource {
     public listenerProtocol: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::SLB::Rule`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3736,7 +3696,8 @@ function rosRuleRuleListPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::SLB::VServerGroup`
+ * Properties for defining a `RosVServerGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-vservergroup
  */
 export interface RosVServerGroupProps {
 
@@ -3795,7 +3756,9 @@ function rosVServerGroupPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * A ROS template type:  `ALIYUN::SLB::VServerGroup`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::VServerGroup`, which is used to create a vServer group and attach backend servers to a Server Load Balancer (SLB) instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `VServerGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-vservergroup
  */
 export class RosVServerGroup extends ros.RosResource {
     /**
@@ -3804,14 +3767,14 @@ export class RosVServerGroup extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLB::VServerGroup";
 
     /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
-
-    /**
      * @Attribute BackendServers: Backend server list in this VServerGroup.
      */
     public readonly attrBackendServers: ros.IResolvable;
+
+    /**
+     * @Attribute LoadBalancerId: The id of load balancer.
+     */
+    public readonly attrLoadBalancerId: ros.IResolvable;
 
     /**
      * @Attribute VServerGroupId: The id of VServerGroup created.
@@ -3837,8 +3800,6 @@ export class RosVServerGroup extends ros.RosResource {
     public backendServers: Array<RosVServerGroup.BackendServersProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::SLB::VServerGroup`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3846,6 +3807,7 @@ export class RosVServerGroup extends ros.RosResource {
     constructor(scope: ros.Construct, id: string, props: RosVServerGroupProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosVServerGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrBackendServers = this.getAtt('BackendServers');
+        this.attrLoadBalancerId = this.getAtt('LoadBalancerId');
         this.attrVServerGroupId = this.getAtt('VServerGroupId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
@@ -3880,7 +3842,7 @@ export namespace RosVServerGroup {
          */
         readonly type?: string | ros.IResolvable;
         /**
-         * @Property description: The description of the backend server. The description must be 1 to 80 characters in length, and can contain letters, digits, hyphens (-), forward slashes (/), periods (.), and underscores (_).
+         * @Property description: The description of the backend server. The description must be 1 to 80 characters in length, and can contain letters, digits, hyphens (-), forward slashes (\/), periods (.), and underscores (_).
          */
         readonly description?: string | ros.IResolvable;
         /**

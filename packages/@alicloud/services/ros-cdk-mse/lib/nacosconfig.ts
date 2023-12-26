@@ -4,7 +4,8 @@ import { RosNacosConfig } from './mse.generated';
 export { RosNacosConfig as NacosConfigProperty };
 
 /**
- * Properties for defining a `ALIYUN::MSE::NacosConfig`
+ * Properties for defining a `NacosConfig`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-nacosconfig
  */
 export interface NacosConfigProps {
 
@@ -60,18 +61,13 @@ export interface NacosConfigProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::MSE::NacosConfig`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::MSE::NacosConfig`, which is used to create a Nacos configuration.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNacosConfig`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-nacosconfig
  */
 export class NacosConfig extends ros.Resource {
 
     /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
-
-    /**
-     * Create a new `ALIYUN::MSE::NacosConfig`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

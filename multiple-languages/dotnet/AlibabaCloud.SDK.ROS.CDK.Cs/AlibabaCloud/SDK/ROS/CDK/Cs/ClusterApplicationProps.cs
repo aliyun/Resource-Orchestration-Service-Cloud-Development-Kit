@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CS::ClusterApplication`.</summary>
+    /// <summary>Properties for defining a `ClusterApplication`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterapplication
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cs.ClusterApplicationProps")]
     public class ClusterApplicationProps : AlibabaCloud.SDK.ROS.CDK.Cs.IClusterApplicationProps
     {
@@ -142,6 +145,46 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
                     }
                 }
                 _rolePolicy = value;
+            }
+        }
+
+        private object? _stage;
+
+        /// <summary>Property stage: At what stage to run.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>All: all stages, including create, update, and delete.</description>
+        /// <description>Delete: the delete stage. This means that only in the deletion stage of this resource will apply yaml to the cluster.
+        /// The default is All.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "stage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? Stage
+        {
+            get => _stage;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _stage = value;
             }
         }
     }

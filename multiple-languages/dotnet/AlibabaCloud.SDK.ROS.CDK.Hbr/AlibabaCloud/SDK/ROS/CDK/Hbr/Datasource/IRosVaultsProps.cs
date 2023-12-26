@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Hbr.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::HBR::Vaults`.</summary>
+    /// <summary>Properties for defining a `RosVaults`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-hbr-vaults
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosVaultsProps), fullyQualifiedName: "@alicloud/ros-cdk-hbr.datasource.RosVaultsProps")]
     public interface IRosVaultsProps
     {
@@ -36,7 +39,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::HBR::Vaults`.</summary>
+        /// <summary>Properties for defining a `RosVaults`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-hbr-vaults
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosVaultsProps), fullyQualifiedName: "@alicloud/ros-cdk-hbr.datasource.RosVaultsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Hbr.Datasource.IRosVaultsProps
         {

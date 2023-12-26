@@ -4,7 +4,8 @@ import { RosEventRule } from './cms.generated';
 export { RosEventRule as EventRuleProperty };
 
 /**
- * Properties for defining a `ALIYUN::CMS::EventRule`
+ * Properties for defining a `EventRule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-eventrule
  */
 export interface EventRuleProps {
 
@@ -44,14 +45,11 @@ export interface EventRuleProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CMS::EventRule`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::EventRule`, which is used to create or modify an event-triggered alert rule. If the specified rule name does not exist, an event-triggered alert rule is created. If the specified rule name exists, the specified event-triggered alert rule is modified.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEventRule`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-eventrule
  */
 export class EventRule extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Data: Number of rows affected.
@@ -59,8 +57,6 @@ export class EventRule extends ros.Resource {
     public readonly attrData: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CMS::EventRule`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

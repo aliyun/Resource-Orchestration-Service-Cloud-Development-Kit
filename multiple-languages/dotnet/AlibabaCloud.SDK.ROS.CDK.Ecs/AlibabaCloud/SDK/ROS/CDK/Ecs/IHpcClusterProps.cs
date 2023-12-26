@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>Properties for defining a `ALIYUN::ECS::HpcCluster`.</summary>
+    /// <summary>Properties for defining a `HpcCluster`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-hpccluster
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IHpcClusterProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.HpcClusterProps")]
     public interface IHpcClusterProps
     {
@@ -35,7 +38,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ECS::HpcCluster`.</summary>
+        /// <summary>Properties for defining a `HpcCluster`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-hpccluster
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IHpcClusterProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.HpcClusterProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.IHpcClusterProps
         {

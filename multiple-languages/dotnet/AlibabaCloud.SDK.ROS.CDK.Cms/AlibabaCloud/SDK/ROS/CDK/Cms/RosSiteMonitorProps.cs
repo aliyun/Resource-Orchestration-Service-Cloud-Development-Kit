@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CMS::SiteMonitor`.</summary>
+    /// <summary>Properties for defining a `RosSiteMonitor`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-sitemonitor
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cms.RosSiteMonitorProps")]
     public class RosSiteMonitorProps : AlibabaCloud.SDK.ROS.CDK.Cms.IRosSiteMonitorProps
     {

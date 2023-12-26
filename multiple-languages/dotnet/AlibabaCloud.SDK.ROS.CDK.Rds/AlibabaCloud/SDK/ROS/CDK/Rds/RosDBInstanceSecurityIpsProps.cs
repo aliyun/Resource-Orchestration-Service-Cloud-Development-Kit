@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::RDS::DBInstanceSecurityIps`.</summary>
+    /// <summary>Properties for defining a `RosDBInstanceSecurityIps`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstancesecurityips
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-rds.RosDBInstanceSecurityIpsProps")]
     public class RosDBInstanceSecurityIpsProps : AlibabaCloud.SDK.ROS.CDK.Rds.IRosDBInstanceSecurityIpsProps
     {

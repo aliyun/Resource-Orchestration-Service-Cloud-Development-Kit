@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::MSE::NacosService`.</summary>
+    /// <summary>Properties for defining a `RosNacosService`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-nacosservice
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-mse.RosNacosServiceProps")]
     public class RosNacosServiceProps : AlibabaCloud.SDK.ROS.CDK.Mse.IRosNacosServiceProps
     {

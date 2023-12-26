@@ -1,5 +1,7 @@
 @alicloud/ros-cdk-redis.Account=com.aliyun.ros.cdk.redis.Account
 @alicloud/ros-cdk-redis.AccountProps=com.aliyun.ros.cdk.redis.AccountProps
+@alicloud/ros-cdk-redis.AuditLogConfig=com.aliyun.ros.cdk.redis.AuditLogConfig
+@alicloud/ros-cdk-redis.AuditLogConfigProps=com.aliyun.ros.cdk.redis.AuditLogConfigProps
 @alicloud/ros-cdk-redis.Connection=com.aliyun.ros.cdk.redis.Connection
 @alicloud/ros-cdk-redis.ConnectionProps=com.aliyun.ros.cdk.redis.ConnectionProps
 @alicloud/ros-cdk-redis.Instance=com.aliyun.ros.cdk.redis.Instance
@@ -8,6 +10,8 @@
 @alicloud/ros-cdk-redis.PrepayInstanceProps=com.aliyun.ros.cdk.redis.PrepayInstanceProps
 @alicloud/ros-cdk-redis.RosAccount=com.aliyun.ros.cdk.redis.RosAccount
 @alicloud/ros-cdk-redis.RosAccountProps=com.aliyun.ros.cdk.redis.RosAccountProps
+@alicloud/ros-cdk-redis.RosAuditLogConfig=com.aliyun.ros.cdk.redis.RosAuditLogConfig
+@alicloud/ros-cdk-redis.RosAuditLogConfigProps=com.aliyun.ros.cdk.redis.RosAuditLogConfigProps
 @alicloud/ros-cdk-redis.RosConnection=com.aliyun.ros.cdk.redis.RosConnection
 @alicloud/ros-cdk-redis.RosConnectionProps=com.aliyun.ros.cdk.redis.RosConnectionProps
 @alicloud/ros-cdk-redis.RosInstance=com.aliyun.ros.cdk.redis.RosInstance

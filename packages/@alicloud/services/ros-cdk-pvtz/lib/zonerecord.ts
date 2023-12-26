@@ -4,7 +4,8 @@ import { RosZoneRecord } from './pvtz.generated';
 export { RosZoneRecord as ZoneRecordProperty };
 
 /**
- * Properties for defining a `ALIYUN::PVTZ::ZoneRecord`
+ * Properties for defining a `ZoneRecord`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-zonerecord
  */
 export interface ZoneRecordProps {
 
@@ -45,14 +46,11 @@ export interface ZoneRecordProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::PVTZ::ZoneRecord`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::PVTZ::ZoneRecord`, which is used to add a Domain Name Service (DNS) record to a private zone.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosZoneRecord`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-zonerecord
  */
 export class ZoneRecord extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Record: Record data.
@@ -70,8 +68,6 @@ export class ZoneRecord extends ros.Resource {
     public readonly attrZoneId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::PVTZ::ZoneRecord`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

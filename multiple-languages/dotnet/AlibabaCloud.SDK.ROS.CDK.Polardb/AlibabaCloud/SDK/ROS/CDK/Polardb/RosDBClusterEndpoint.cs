@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Polardb
 {
-    /// <summary>A ROS template type:  `ALIYUN::POLARDB::DBClusterEndpoint`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBClusterEndpoint`, which is used to create a custom endpoint for a PolarDB cluster.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `DBClusterEndpoint` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusterendpoint
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Polardb.RosDBClusterEndpoint), fullyQualifiedName: "@alicloud/ros-cdk-polardb.RosDBClusterEndpoint", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-polardb.RosDBClusterEndpointProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosDBClusterEndpoint : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::POLARDB::DBClusterEndpoint`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -248,7 +251,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: readWriteMode: The read/write mode of the cluster connection point. Valid values:
+        /// <strong>Property</strong>: readWriteMode: The read\/write mode of the cluster connection point. Valid values:
         /// ReadWrite: receives and forwards read and write requests (automatic read-write splitting).
         /// ReadOnly: receives and forwards only read requests.
         /// Default value: ReadOnly.
@@ -360,9 +363,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: enableHtapImci: Set up row/column storage to automatically divert traffic. Valid values:
-            /// on: Turn on the automatic traffic diversion function of row storage/column storage
-            /// off: Turn off the automatic drainage function of row storage/column storage (default)
+            /// <strong>Property</strong>: enableHtapImci: Set up row\/column storage to automatically divert traffic. Valid values:
+            /// on: Turn on the automatic traffic diversion function of row storage\/column storage
+            /// off: Turn off the automatic drainage function of row storage\/column storage (default)
             /// </remarks>
             [JsiiProperty(name: "enableHtapImci", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -503,9 +506,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: enableHtapImci: Set up row/column storage to automatically divert traffic. Valid values:
-                /// on: Turn on the automatic traffic diversion function of row storage/column storage
-                /// off: Turn off the automatic drainage function of row storage/column storage (default)
+                /// <strong>Property</strong>: enableHtapImci: Set up row\/column storage to automatically divert traffic. Valid values:
+                /// on: Turn on the automatic traffic diversion function of row storage\/column storage
+                /// off: Turn off the automatic drainage function of row storage\/column storage (default)
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "enableHtapImci", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -745,9 +748,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             private object? _enableHtapImci;
 
             /// <remarks>
-            /// <strong>Property</strong>: enableHtapImci: Set up row/column storage to automatically divert traffic. Valid values:
-            /// on: Turn on the automatic traffic diversion function of row storage/column storage
-            /// off: Turn off the automatic drainage function of row storage/column storage (default)
+            /// <strong>Property</strong>: enableHtapImci: Set up row\/column storage to automatically divert traffic. Valid values:
+            /// on: Turn on the automatic traffic diversion function of row storage\/column storage
+            /// off: Turn off the automatic drainage function of row storage\/column storage (default)
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "enableHtapImci", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

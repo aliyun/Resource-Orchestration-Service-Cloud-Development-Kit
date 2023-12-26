@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Kms
 {
-    /// <summary>Properties for defining a `ALIYUN::KMS::Secret`.</summary>
+    /// <summary>Properties for defining a `RosSecret`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-secret
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosSecretProps), fullyQualifiedName: "@alicloud/ros-cdk-kms.RosSecretProps")]
     public interface IRosSecretProps
     {
@@ -195,7 +198,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::KMS::Secret`.</summary>
+        /// <summary>Properties for defining a `RosSecret`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-secret
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosSecretProps), fullyQualifiedName: "@alicloud/ros-cdk-kms.RosSecretProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Kms.IRosSecretProps
         {

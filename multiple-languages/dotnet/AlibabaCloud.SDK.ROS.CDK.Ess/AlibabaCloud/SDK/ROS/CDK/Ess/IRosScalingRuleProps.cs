@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ess
 {
-    /// <summary>Properties for defining a `ALIYUN::ESS::ScalingRule`.</summary>
+    /// <summary>Properties for defining a `RosScalingRule`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalingrule
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosScalingRuleProps), fullyQualifiedName: "@alicloud/ros-cdk-ess.RosScalingRuleProps")]
     public interface IRosScalingRuleProps
     {
@@ -288,7 +291,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ESS::ScalingRule`.</summary>
+        /// <summary>Properties for defining a `RosScalingRule`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalingrule
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosScalingRuleProps), fullyQualifiedName: "@alicloud/ros-cdk-ess.RosScalingRuleProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ess.IRosScalingRuleProps
         {

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.rds;
 
 /**
- * A ROS resource type:  <code>ALIYUN::RDS::DBInstance</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::RDS::DBInstance</code>, which is used to create an ApsaraDB RDS instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.693Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.485Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.DBInstance")
 public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,11 +16,7 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::RDS::DBInstance</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -33,11 +29,7 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::RDS::DBInstance</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -1575,6 +1567,69 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder sslSetting(final com.aliyun.ros.cdk.core.IResolvable sslSetting) {
             this.props.sslSetting(sslSetting);
+            return this;
+        }
+
+        /**
+         * Property storageAutoScale: Storage space automatic expansion switch, only supported by MySQL and PostgreSQL.
+         * <p>
+         * @return {@code this}
+         * @param storageAutoScale Property storageAutoScale: Storage space automatic expansion switch, only supported by MySQL and PostgreSQL. This parameter is required.
+         */
+        public Builder storageAutoScale(final java.lang.String storageAutoScale) {
+            this.props.storageAutoScale(storageAutoScale);
+            return this;
+        }
+        /**
+         * Property storageAutoScale: Storage space automatic expansion switch, only supported by MySQL and PostgreSQL.
+         * <p>
+         * @return {@code this}
+         * @param storageAutoScale Property storageAutoScale: Storage space automatic expansion switch, only supported by MySQL and PostgreSQL. This parameter is required.
+         */
+        public Builder storageAutoScale(final com.aliyun.ros.cdk.core.IResolvable storageAutoScale) {
+            this.props.storageAutoScale(storageAutoScale);
+            return this;
+        }
+
+        /**
+         * Property storageThreshold: Storage space automatic expansion trigger threshold (percentage).
+         * <p>
+         * @return {@code this}
+         * @param storageThreshold Property storageThreshold: Storage space automatic expansion trigger threshold (percentage). This parameter is required.
+         */
+        public Builder storageThreshold(final java.lang.Number storageThreshold) {
+            this.props.storageThreshold(storageThreshold);
+            return this;
+        }
+        /**
+         * Property storageThreshold: Storage space automatic expansion trigger threshold (percentage).
+         * <p>
+         * @return {@code this}
+         * @param storageThreshold Property storageThreshold: Storage space automatic expansion trigger threshold (percentage). This parameter is required.
+         */
+        public Builder storageThreshold(final com.aliyun.ros.cdk.core.IResolvable storageThreshold) {
+            this.props.storageThreshold(storageThreshold);
+            return this;
+        }
+
+        /**
+         * Property storageUpperBound: The total storage space upper limit for automatic storage space expansion, that is, automatic expansion will not cause the total storage space of the instance to exceed this value.
+         * <p>
+         * @return {@code this}
+         * @param storageUpperBound Property storageUpperBound: The total storage space upper limit for automatic storage space expansion, that is, automatic expansion will not cause the total storage space of the instance to exceed this value. This parameter is required.
+         */
+        public Builder storageUpperBound(final java.lang.Number storageUpperBound) {
+            this.props.storageUpperBound(storageUpperBound);
+            return this;
+        }
+        /**
+         * Property storageUpperBound: The total storage space upper limit for automatic storage space expansion, that is, automatic expansion will not cause the total storage space of the instance to exceed this value.
+         * <p>
+         * @return {@code this}
+         * @param storageUpperBound Property storageUpperBound: The total storage space upper limit for automatic storage space expansion, that is, automatic expansion will not cause the total storage space of the instance to exceed this value. This parameter is required.
+         */
+        public Builder storageUpperBound(final com.aliyun.ros.cdk.core.IResolvable storageUpperBound) {
+            this.props.storageUpperBound(storageUpperBound);
             return this;
         }
 

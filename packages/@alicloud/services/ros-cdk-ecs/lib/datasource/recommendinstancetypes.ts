@@ -4,7 +4,8 @@ import { RosRecommendInstanceTypes } from './ecs.generated';
 export { RosRecommendInstanceTypes as RecommendInstanceTypesProperty };
 
 /**
- * Properties for defining a `DATASOURCE::ECS::RecommendInstanceTypes`
+ * Properties for defining a `RecommendInstanceTypes`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-recommendinstancetypes
  */
 export interface RecommendInstanceTypesProps {
 
@@ -39,9 +40,9 @@ export interface RecommendInstanceTypesProps {
     readonly instanceTypeFamilies?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property ioOptimized: Specifies whether to match I/O optimized instances. The IoOptimized parameter cannot be specified when the instance is not I/O optimized. Valid values:
-     * optimized: matches I/O optimized instances.
-     * none: matches non-I/O optimized instances.
+     * Property ioOptimized: Specifies whether to match I\/O optimized instances. The IoOptimized parameter cannot be specified when the instance is not I\/O optimized. Valid values:
+     * optimized: matches I\/O optimized instances.
+     * none: matches non-I\/O optimized instances.
      * Default value: optimized.
      * If you query alternative instance types for retired instance types, this parameter is set to none by default. 
      * Default value: none.
@@ -93,8 +94,8 @@ export interface RecommendInstanceTypesProps {
      * cloud_ssd: standard SSD
      * cloud_essd: enhanced SSD (ESSD)
      * cloud: basic disk
-     * For non-I/O optimized instances, the default value is cloud.
-     * For I/O optimized instances, the default value is cloud_efficiency.
+     * For non-I\/O optimized instances, the default value is cloud.
+     * For I\/O optimized instances, the default value is cloud_efficiency.
      */
     readonly systemDiskCategory?: string | ros.IResolvable;
 
@@ -113,14 +114,11 @@ export interface RecommendInstanceTypesProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::ECS::RecommendInstanceTypes`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::RecommendInstanceTypes`, which is used to query the recommended Elastic Compute Service (ECS) instance types.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRecommendInstanceTypes`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-recommendinstancetypes
  */
 export class RecommendInstanceTypes extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute InstanceTypeIds: The list of instance type ids. Note that instance type ids are not unique.
@@ -133,8 +131,6 @@ export class RecommendInstanceTypes extends ros.Resource {
     public readonly attrInstanceTypes: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::ECS::RecommendInstanceTypes`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

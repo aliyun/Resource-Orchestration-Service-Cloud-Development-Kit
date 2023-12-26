@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::OOS::SecretParameter`.</summary>
+    /// <summary>Properties for defining a `SecretParameter`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-secretparameter
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-oos.SecretParameterProps")]
     public class SecretParameterProps : AlibabaCloud.SDK.ROS.CDK.Oos.ISecretParameterProps
     {

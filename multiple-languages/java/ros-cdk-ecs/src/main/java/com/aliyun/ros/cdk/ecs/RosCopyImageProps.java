@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * Properties for defining a <code>ALIYUN::ECS::CopyImage</code>.
+ * Properties for defining a <code>RosCopyImage</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-copyimage
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.880Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.364Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosCopyImageProps")
 @software.amazon.jsii.Jsii.Proxy(RosCopyImageProps.Jsii$Proxy.class)
 public interface RosCopyImageProps extends software.amazon.jsii.JsiiSerializable {
@@ -15,6 +17,12 @@ public interface RosCopyImageProps extends software.amazon.jsii.JsiiSerializable
     /**
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getImageId();
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAllowCopyInSameRegion() {
+        return null;
+    }
 
     /**
      */
@@ -70,6 +78,7 @@ public interface RosCopyImageProps extends software.amazon.jsii.JsiiSerializable
     public static final class Builder implements software.amazon.jsii.Builder<RosCopyImageProps> {
         java.lang.Object destinationRegionId;
         java.lang.Object imageId;
+        java.lang.Object allowCopyInSameRegion;
         java.lang.Object destinationDescription;
         java.lang.Object destinationImageName;
         java.lang.Object encrypted;
@@ -115,6 +124,26 @@ public interface RosCopyImageProps extends software.amazon.jsii.JsiiSerializable
          */
         public Builder imageId(com.aliyun.ros.cdk.core.IResolvable imageId) {
             this.imageId = imageId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCopyImageProps#getAllowCopyInSameRegion}
+         * @param allowCopyInSameRegion the value to be set.
+         * @return {@code this}
+         */
+        public Builder allowCopyInSameRegion(java.lang.Boolean allowCopyInSameRegion) {
+            this.allowCopyInSameRegion = allowCopyInSameRegion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCopyImageProps#getAllowCopyInSameRegion}
+         * @param allowCopyInSameRegion the value to be set.
+         * @return {@code this}
+         */
+        public Builder allowCopyInSameRegion(com.aliyun.ros.cdk.core.IResolvable allowCopyInSameRegion) {
+            this.allowCopyInSameRegion = allowCopyInSameRegion;
             return this;
         }
 
@@ -276,6 +305,7 @@ public interface RosCopyImageProps extends software.amazon.jsii.JsiiSerializable
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosCopyImageProps {
         private final java.lang.Object destinationRegionId;
         private final java.lang.Object imageId;
+        private final java.lang.Object allowCopyInSameRegion;
         private final java.lang.Object destinationDescription;
         private final java.lang.Object destinationImageName;
         private final java.lang.Object encrypted;
@@ -292,6 +322,7 @@ public interface RosCopyImageProps extends software.amazon.jsii.JsiiSerializable
             super(objRef);
             this.destinationRegionId = software.amazon.jsii.Kernel.get(this, "destinationRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.imageId = software.amazon.jsii.Kernel.get(this, "imageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.allowCopyInSameRegion = software.amazon.jsii.Kernel.get(this, "allowCopyInSameRegion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.destinationDescription = software.amazon.jsii.Kernel.get(this, "destinationDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.destinationImageName = software.amazon.jsii.Kernel.get(this, "destinationImageName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.encrypted = software.amazon.jsii.Kernel.get(this, "encrypted", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -308,6 +339,7 @@ public interface RosCopyImageProps extends software.amazon.jsii.JsiiSerializable
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.destinationRegionId = java.util.Objects.requireNonNull(builder.destinationRegionId, "destinationRegionId is required");
             this.imageId = java.util.Objects.requireNonNull(builder.imageId, "imageId is required");
+            this.allowCopyInSameRegion = builder.allowCopyInSameRegion;
             this.destinationDescription = builder.destinationDescription;
             this.destinationImageName = builder.destinationImageName;
             this.encrypted = builder.encrypted;
@@ -325,6 +357,11 @@ public interface RosCopyImageProps extends software.amazon.jsii.JsiiSerializable
         @Override
         public final java.lang.Object getImageId() {
             return this.imageId;
+        }
+
+        @Override
+        public final java.lang.Object getAllowCopyInSameRegion() {
+            return this.allowCopyInSameRegion;
         }
 
         @Override
@@ -370,6 +407,9 @@ public interface RosCopyImageProps extends software.amazon.jsii.JsiiSerializable
 
             data.set("destinationRegionId", om.valueToTree(this.getDestinationRegionId()));
             data.set("imageId", om.valueToTree(this.getImageId()));
+            if (this.getAllowCopyInSameRegion() != null) {
+                data.set("allowCopyInSameRegion", om.valueToTree(this.getAllowCopyInSameRegion()));
+            }
             if (this.getDestinationDescription() != null) {
                 data.set("destinationDescription", om.valueToTree(this.getDestinationDescription()));
             }
@@ -411,6 +451,7 @@ public interface RosCopyImageProps extends software.amazon.jsii.JsiiSerializable
 
             if (!destinationRegionId.equals(that.destinationRegionId)) return false;
             if (!imageId.equals(that.imageId)) return false;
+            if (this.allowCopyInSameRegion != null ? !this.allowCopyInSameRegion.equals(that.allowCopyInSameRegion) : that.allowCopyInSameRegion != null) return false;
             if (this.destinationDescription != null ? !this.destinationDescription.equals(that.destinationDescription) : that.destinationDescription != null) return false;
             if (this.destinationImageName != null ? !this.destinationImageName.equals(that.destinationImageName) : that.destinationImageName != null) return false;
             if (this.encrypted != null ? !this.encrypted.equals(that.encrypted) : that.encrypted != null) return false;
@@ -424,6 +465,7 @@ public interface RosCopyImageProps extends software.amazon.jsii.JsiiSerializable
         public final int hashCode() {
             int result = this.destinationRegionId.hashCode();
             result = 31 * result + (this.imageId.hashCode());
+            result = 31 * result + (this.allowCopyInSameRegion != null ? this.allowCopyInSameRegion.hashCode() : 0);
             result = 31 * result + (this.destinationDescription != null ? this.destinationDescription.hashCode() : 0);
             result = 31 * result + (this.destinationImageName != null ? this.destinationImageName.hashCode() : 0);
             result = 31 * result + (this.encrypted != null ? this.encrypted.hashCode() : 0);

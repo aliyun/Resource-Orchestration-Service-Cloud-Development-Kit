@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.slb.datasource;
 
 /**
- * Properties for defining a <code>DATASOURCE::SLB::Rules</code>.
+ * Properties for defining a <code>RosRules</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-rules
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.312Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:18.134Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.datasource.RosRulesProps")
 @software.amazon.jsii.Jsii.Proxy(RosRulesProps.Jsii$Proxy.class)
 public interface RosRulesProps extends software.amazon.jsii.JsiiSerializable {

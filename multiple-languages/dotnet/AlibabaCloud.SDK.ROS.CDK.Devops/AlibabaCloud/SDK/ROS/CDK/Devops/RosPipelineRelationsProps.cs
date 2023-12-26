@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Devops
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::DEVOPS::PipelineRelations`.</summary>
+    /// <summary>Properties for defining a `RosPipelineRelations`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-pipelinerelations
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-devops.RosPipelineRelationsProps")]
     public class RosPipelineRelationsProps : AlibabaCloud.SDK.ROS.CDK.Devops.IRosPipelineRelationsProps
     {

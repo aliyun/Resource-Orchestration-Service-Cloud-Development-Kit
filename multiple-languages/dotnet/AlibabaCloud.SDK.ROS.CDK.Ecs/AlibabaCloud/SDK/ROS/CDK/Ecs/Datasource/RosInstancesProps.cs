@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ECS::Instances`.</summary>
+    /// <summary>Properties for defining a `RosInstances`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-instances
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.datasource.RosInstancesProps")]
     public class RosInstancesProps : AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource.IRosInstancesProps
     {
@@ -567,7 +570,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
         private object? _ioOptimized;
 
         /// <remarks>
-        /// <strong>Property</strong>: ioOptimized: Specifies whether the instance is I/O optimized.
+        /// <strong>Property</strong>: ioOptimized: Specifies whether the instance is I\/O optimized.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "ioOptimized", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

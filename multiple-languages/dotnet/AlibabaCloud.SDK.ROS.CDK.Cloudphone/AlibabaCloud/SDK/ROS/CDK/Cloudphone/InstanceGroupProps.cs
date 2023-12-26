@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudphone
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CloudPhone::InstanceGroup`.</summary>
+    /// <summary>Properties for defining a `InstanceGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-instancegroup
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cloudphone.InstanceGroupProps")]
     public class InstanceGroupProps : AlibabaCloud.SDK.ROS.CDK.Cloudphone.IInstanceGroupProps
     {
@@ -495,7 +498,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudphone
 
         private object? _periodUnit;
 
-        /// <summary>Property periodUnit: Unit of prepaid time period, it could be Month/Year.</summary>
+        /// <summary>Property periodUnit: Unit of prepaid time period, it could be Month\/Year.</summary>
         /// <remarks>
         /// Default value is Month.
         /// </remarks>

@@ -4,7 +4,8 @@ import { RosSavedsearch } from './sls.generated';
 export { RosSavedsearch as SavedsearchProperty };
 
 /**
- * Properties for defining a `ALIYUN::SLS::Savedsearch`
+ * Properties for defining a `Savedsearch`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-savedsearch
  */
 export interface SavedsearchProps {
 
@@ -20,14 +21,11 @@ export interface SavedsearchProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::SLS::Savedsearch`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Savedsearch`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSavedsearch`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-savedsearch
  */
 export class Savedsearch extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute SavedsearchName: Savedsearch name.
@@ -35,8 +33,6 @@ export class Savedsearch extends ros.Resource {
     public readonly attrSavedsearchName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::SLS::Savedsearch`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -4,7 +4,8 @@ import { RosPlugin } from './apigateway.generated';
 export { RosPlugin as PluginProperty };
 
 /**
- * Properties for defining a `ALIYUN::ApiGateway::Plugin`
+ * Properties for defining a `Plugin`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-plugin
  */
 export interface PluginProps {
 
@@ -35,14 +36,11 @@ export interface PluginProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ApiGateway::Plugin`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Plugin`, which is used to create an API Gateway plug-in.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPlugin`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-plugin
  */
 export class Plugin extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Description: The description of the plug-in, which cannot exceed 200 characters.
@@ -70,8 +68,6 @@ export class Plugin extends ros.Resource {
     public readonly attrPluginType: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ApiGateway::Plugin`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

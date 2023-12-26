@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dfs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::DFS::AccessRule`.</summary>
+    /// <summary>Properties for defining a `AccessRule`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-accessrule
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-dfs.AccessRuleProps")]
     public class AccessRuleProps : AlibabaCloud.SDK.ROS.CDK.Dfs.IAccessRuleProps
     {
@@ -72,7 +75,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dfs
 
         private object _rwAccessType;
 
-        /// <summary>Property rwAccessType: The read/write permission of the authorized object on the file system.</summary>
+        /// <summary>Property rwAccessType: The read\/write permission of the authorized object on the file system.</summary>
         /// <remarks>
         /// Values:
         /// RDWR (default) : read and write.

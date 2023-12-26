@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::RDS::ADInfo`
+ * Properties for defining a `RosADInfo`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-adinfo
  */
 export interface RosADInfoProps {
 
@@ -79,18 +80,15 @@ function rosADInfoPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * A ROS template type:  `ALIYUN::RDS::ADInfo`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::ADInfo`, which is used to configure Active Directory Domain Services (AD DS).
+ * @Note This class does not contain additional functions, so it is recommended to use the `ADInfo` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-adinfo
  */
 export class RosADInfo extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::RDS::ADInfo";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ADDNS: Active directory domain name.
@@ -131,8 +129,6 @@ export class RosADInfo extends ros.RosResource {
     public dbInstanceId: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::RDS::ADInfo`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -166,7 +162,8 @@ export class RosADInfo extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::RDS::Account`
+ * Properties for defining a `RosAccount`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-account
  */
 export interface RosAccountProps {
 
@@ -194,9 +191,9 @@ export interface RosAccountProps {
 
     /**
      * @Property accountDescription: Account remarks.
-     * It cannot begin with http:// or https://.
+     * It cannot begin with http:\/\/ or https:\/\/.
      * It must start with a Chinese character or English letter.
-     * It can include Chinese and English characters/letters, underscores (_), hyphens (-), and digits.
+     * It can include Chinese and English characters\/letters, underscores (_), hyphens (-), and digits.
      * The length may be 2-256 characters.
      */
     readonly accountDescription?: string | ros.IResolvable;
@@ -206,8 +203,8 @@ export interface RosAccountProps {
      * Normal: Common privilege.
      * Super: High privilege. And the default value is Normal.
      * Sysadmin: Super privileges (SA) (only supported by SQL Server)
-     * This parameter is valid for MySQL 5.5/5.6 only.
-     * MySQL 5.7, SQL Server 2012/2016, PostgreSQL, and PPAS each can have only one initial account. Other accounts are created by the initial account that has logged on to the database.
+     * This parameter is valid for MySQL 5.5\/5.6 only.
+     * MySQL 5.7, SQL Server 2012\/2016, PostgreSQL, and PPAS each can have only one initial account. Other accounts are created by the initial account that has logged on to the database.
      */
     readonly accountType?: string | ros.IResolvable;
 }
@@ -269,18 +266,15 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::RDS::Account`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::Account`, which is used to create a database account for an ApsaraDB for RDS instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-account
  */
 export class RosAccount extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::RDS::Account";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AccountName: Account name
@@ -314,9 +308,9 @@ export class RosAccount extends ros.RosResource {
 
     /**
      * @Property accountDescription: Account remarks.
-     * It cannot begin with http:// or https://.
+     * It cannot begin with http:\/\/ or https:\/\/.
      * It must start with a Chinese character or English letter.
-     * It can include Chinese and English characters/letters, underscores (_), hyphens (-), and digits.
+     * It can include Chinese and English characters\/letters, underscores (_), hyphens (-), and digits.
      * The length may be 2-256 characters.
      */
     public accountDescription: string | ros.IResolvable | undefined;
@@ -326,14 +320,12 @@ export class RosAccount extends ros.RosResource {
      * Normal: Common privilege.
      * Super: High privilege. And the default value is Normal.
      * Sysadmin: Super privileges (SA) (only supported by SQL Server)
-     * This parameter is valid for MySQL 5.5/5.6 only.
-     * MySQL 5.7, SQL Server 2012/2016, PostgreSQL, and PPAS each can have only one initial account. Other accounts are created by the initial account that has logged on to the database.
+     * This parameter is valid for MySQL 5.5\/5.6 only.
+     * MySQL 5.7, SQL Server 2012\/2016, PostgreSQL, and PPAS each can have only one initial account. Other accounts are created by the initial account that has logged on to the database.
      */
     public accountType: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::RDS::Account`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -366,7 +358,8 @@ export class RosAccount extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::RDS::AccountPrivilege`
+ * Properties for defining a `RosAccountPrivilege`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-accountprivilege
  */
 export interface RosAccountPrivilegeProps {
 
@@ -440,18 +433,15 @@ function rosAccountPrivilegePropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * A ROS template type:  `ALIYUN::RDS::AccountPrivilege`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::AccountPrivilege`, which is used to authorize an account to access a database.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AccountPrivilege` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-accountprivilege
  */
 export class RosAccountPrivilege extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::RDS::AccountPrivilege";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -477,8 +467,6 @@ export class RosAccountPrivilege extends ros.RosResource {
     public dbName: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::RDS::AccountPrivilege`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -508,7 +496,8 @@ export class RosAccountPrivilege extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::RDS::Connection`
+ * Properties for defining a `RosConnection`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-connection
  */
 export interface RosConnectionProps {
 
@@ -600,18 +589,15 @@ function rosConnectionPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::RDS::Connection`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::Connection`, which is used to apply for a public endpoint.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Connection` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-connection
  */
 export class RosConnection extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::RDS::Connection";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute BabelfishPort: The name of the dedicated cluster to which the instance belongs.
@@ -668,8 +654,6 @@ export class RosConnection extends ros.RosResource {
     public generalGroupName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::RDS::Connection`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -705,7 +689,8 @@ export class RosConnection extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::RDS::DBInstance`
+ * Properties for defining a `RosDBInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstance
  */
 export interface RosDBInstanceProps {
 
@@ -721,7 +706,7 @@ export interface RosDBInstanceProps {
     readonly dbInstanceStorage: number | ros.IResolvable;
 
     /**
-     * @Property engine: Database instance engine type. Support MySQL/SQLServer/PostgreSQL/PPAS/MariaDB now.
+     * @Property engine: Database instance engine type. Support MySQL\/SQLServer\/PostgreSQL\/PPAS\/MariaDB now.
      */
     readonly engine: string | ros.IResolvable;
 
@@ -735,7 +720,7 @@ export interface RosDBInstanceProps {
     readonly engineVersion: string | ros.IResolvable;
 
     /**
-     * @Property securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0/0 means no limitation.
+     * @Property securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0\/0 means no limitation.
      */
     readonly securityIpList: string | ros.IResolvable;
 
@@ -1069,18 +1054,33 @@ export interface RosDBInstanceProps {
     readonly sslSetting?: string | ros.IResolvable;
 
     /**
+     * @Property storageAutoScale: Storage space automatic expansion switch, only supported by MySQL and PostgreSQL
+     */
+    readonly storageAutoScale?: string | ros.IResolvable;
+
+    /**
+     * @Property storageThreshold: Storage space automatic expansion trigger threshold (percentage)
+     */
+    readonly storageThreshold?: number | ros.IResolvable;
+
+    /**
+     * @Property storageUpperBound: The total storage space upper limit for automatic storage space expansion, that is, automatic expansion will not cause the total storage space of the instance to exceed this value.
+     */
+    readonly storageUpperBound?: number | ros.IResolvable;
+
+    /**
      * @Property tags: The tags of an instance.
      * You should input the information of the tag with the format of the Key-Value, such as {"key1":"value1","key2":"value2", ... "key5":"value5"}.
      * At most 20 tags can be specified.
      * Key
      * It can be up to 64 characters in length.
      * Cannot begin with aliyun.
-     * Cannot begin with http:// or https://.
+     * Cannot begin with http:\/\/ or https:\/\/.
      * Cannot be a null string.
      * Value
      * It can be up to 128 characters in length.
      * Cannot begin with aliyun.
-     * Cannot begin with http:// or https://.
+     * Cannot begin with http:\/\/ or https:\/\/.
      * Can be a null string.
      */
     readonly tags?: { [key: string]: (any) };
@@ -1151,6 +1151,14 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
+    errors.collect(ros.propertyValidator('storageThreshold', ros.validateNumber)(properties.storageThreshold));
+    if(properties.storageAutoScale && (typeof properties.storageAutoScale) !== 'object') {
+        errors.collect(ros.propertyValidator('storageAutoScale', ros.validateAllowedValues)({
+          data: properties.storageAutoScale,
+          allowedValues: ["Disable","Enable"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('storageAutoScale', ros.validateString)(properties.storageAutoScale));
     errors.collect(ros.propertyValidator('instanceNetworkType', ros.validateString)(properties.instanceNetworkType));
     if(properties.archiveBackupKeepCount && (typeof properties.archiveBackupKeepCount) !== 'object') {
         errors.collect(ros.propertyValidator('archiveBackupKeepCount', ros.validateRange)({
@@ -1179,6 +1187,7 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('connectionStringPrefix', ros.validateString)(properties.connectionStringPrefix));
     errors.collect(ros.propertyValidator('multiAz', ros.validateBoolean)(properties.multiAz));
+    errors.collect(ros.propertyValidator('tags', ros.hashValidator(ros.validateAny))(properties.tags));
     errors.collect(ros.propertyValidator('engine', ros.requiredValidator)(properties.engine));
     if(properties.engine && (typeof properties.engine) !== 'object') {
         errors.collect(ros.propertyValidator('engine', ros.validateAllowedValues)({
@@ -1187,7 +1196,6 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('engine', ros.validateString)(properties.engine));
-    errors.collect(ros.propertyValidator('tags', ros.hashValidator(ros.validateAny))(properties.tags));
     errors.collect(ros.propertyValidator('dbInstanceDescription', ros.validateString)(properties.dbInstanceDescription));
     errors.collect(ros.propertyValidator('targetDedicatedHostIdForMaster', ros.validateString)(properties.targetDedicatedHostIdForMaster));
     errors.collect(ros.propertyValidator('engineVersion', ros.requiredValidator)(properties.engineVersion));
@@ -1201,7 +1209,6 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('archiveBackupKeepPolicy', ros.validateString)(properties.archiveBackupKeepPolicy));
-    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     if(properties.backupPolicyMode && (typeof properties.backupPolicyMode) !== 'object') {
         errors.collect(ros.propertyValidator('backupPolicyMode', ros.validateAllowedValues)({
           data: properties.backupPolicyMode,
@@ -1209,6 +1216,7 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('backupPolicyMode', ros.validateString)(properties.backupPolicyMode));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
           data: properties.period,
@@ -1265,12 +1273,7 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('localLogRetentionSpace', ros.validateNumber)(properties.localLogRetentionSpace));
-    if(properties.category && (typeof properties.category) !== 'object') {
-        errors.collect(ros.propertyValidator('category', ros.validateAllowedValues)({
-          data: properties.category,
-          allowedValues: ["Basic","HighAvailability","AlwaysOn","Finance","cluster","serverless_basic"],
-        }));
-    }
+    errors.collect(ros.propertyValidator('storageUpperBound', ros.validateNumber)(properties.storageUpperBound));
     errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
     errors.collect(ros.propertyValidator('privateIpAddress', ros.validateString)(properties.privateIpAddress));
     errors.collect(ros.propertyValidator('targetDedicatedHostIdForSlave', ros.validateString)(properties.targetDedicatedHostIdForSlave));
@@ -1316,8 +1319,8 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('targetDedicatedHostIdForLog', ros.validateString)(properties.targetDedicatedHostIdForLog));
     errors.collect(ros.propertyValidator('allocatePublicConnection', ros.validateBoolean)(properties.allocatePublicConnection));
-    errors.collect(ros.propertyValidator('preferredBackupTime', ros.validateString)(properties.preferredBackupTime));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('preferredBackupTime', ros.validateString)(properties.preferredBackupTime));
     errors.collect(ros.propertyValidator('dbInstanceStorageType', ros.validateString)(properties.dbInstanceStorageType));
     if(properties.backUpCategory && (typeof properties.backUpCategory) !== 'object') {
         errors.collect(ros.propertyValidator('backUpCategory', ros.validateAllowedValues)({
@@ -1424,6 +1427,9 @@ function rosDBInstancePropsToRosTemplate(properties: any, enableResourceProperty
       SlaveZoneIds: ros.listMapper(ros.stringToRosTemplate)(properties.slaveZoneIds),
       SQLCollectorStatus: ros.stringToRosTemplate(properties.sqlCollectorStatus),
       SSLSetting: ros.stringToRosTemplate(properties.sslSetting),
+      StorageAutoScale: ros.stringToRosTemplate(properties.storageAutoScale),
+      StorageThreshold: ros.numberToRosTemplate(properties.storageThreshold),
+      StorageUpperBound: ros.numberToRosTemplate(properties.storageUpperBound),
       Tags: ros.hashMapper(ros.objectToRosTemplate)(properties.tags),
       TargetDedicatedHostIdForLog: ros.stringToRosTemplate(properties.targetDedicatedHostIdForLog),
       TargetDedicatedHostIdForMaster: ros.stringToRosTemplate(properties.targetDedicatedHostIdForMaster),
@@ -1435,18 +1441,15 @@ function rosDBInstancePropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::RDS::DBInstance`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBInstance`, which is used to create an ApsaraDB RDS instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DBInstance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstance
  */
 export class RosDBInstance extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::RDS::DBInstance";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DBInstanceId: The instance id of created database instance.
@@ -1498,7 +1501,7 @@ export class RosDBInstance extends ros.RosResource {
     public dbInstanceStorage: number | ros.IResolvable;
 
     /**
-     * @Property engine: Database instance engine type. Support MySQL/SQLServer/PostgreSQL/PPAS/MariaDB now.
+     * @Property engine: Database instance engine type. Support MySQL\/SQLServer\/PostgreSQL\/PPAS\/MariaDB now.
      */
     public engine: string | ros.IResolvable;
 
@@ -1512,7 +1515,7 @@ export class RosDBInstance extends ros.RosResource {
     public engineVersion: string | ros.IResolvable;
 
     /**
-     * @Property securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0/0 means no limitation.
+     * @Property securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0\/0 means no limitation.
      */
     public securityIpList: string | ros.IResolvable;
 
@@ -1846,18 +1849,33 @@ export class RosDBInstance extends ros.RosResource {
     public sslSetting: string | ros.IResolvable | undefined;
 
     /**
+     * @Property storageAutoScale: Storage space automatic expansion switch, only supported by MySQL and PostgreSQL
+     */
+    public storageAutoScale: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property storageThreshold: Storage space automatic expansion trigger threshold (percentage)
+     */
+    public storageThreshold: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property storageUpperBound: The total storage space upper limit for automatic storage space expansion, that is, automatic expansion will not cause the total storage space of the instance to exceed this value.
+     */
+    public storageUpperBound: number | ros.IResolvable | undefined;
+
+    /**
      * @Property tags: The tags of an instance.
      * You should input the information of the tag with the format of the Key-Value, such as {"key1":"value1","key2":"value2", ... "key5":"value5"}.
      * At most 20 tags can be specified.
      * Key
      * It can be up to 64 characters in length.
      * Cannot begin with aliyun.
-     * Cannot begin with http:// or https://.
+     * Cannot begin with http:\/\/ or https:\/\/.
      * Cannot be a null string.
      * Value
      * It can be up to 128 characters in length.
      * Cannot begin with aliyun.
-     * Cannot begin with http:// or https://.
+     * Cannot begin with http:\/\/ or https:\/\/.
      * Can be a null string.
      */
     public tags: { [key: string]: (any) } | undefined;
@@ -1893,8 +1911,6 @@ export class RosDBInstance extends ros.RosResource {
     public zoneId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::RDS::DBInstance`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1965,6 +1981,9 @@ export class RosDBInstance extends ros.RosResource {
         this.slaveZoneIds = props.slaveZoneIds;
         this.sqlCollectorStatus = props.sqlCollectorStatus;
         this.sslSetting = props.sslSetting;
+        this.storageAutoScale = props.storageAutoScale;
+        this.storageThreshold = props.storageThreshold;
+        this.storageUpperBound = props.storageUpperBound;
         this.tags = props.tags;
         this.targetDedicatedHostIdForLog = props.targetDedicatedHostIdForLog;
         this.targetDedicatedHostIdForMaster = props.targetDedicatedHostIdForMaster;
@@ -2032,6 +2051,9 @@ export class RosDBInstance extends ros.RosResource {
             slaveZoneIds: this.slaveZoneIds,
             sqlCollectorStatus: this.sqlCollectorStatus,
             sslSetting: this.sslSetting,
+            storageAutoScale: this.storageAutoScale,
+            storageThreshold: this.storageThreshold,
+            storageUpperBound: this.storageUpperBound,
             tags: this.tags,
             targetDedicatedHostIdForLog: this.targetDedicatedHostIdForLog,
             targetDedicatedHostIdForMaster: this.targetDedicatedHostIdForMaster,
@@ -2188,7 +2210,8 @@ function rosDBInstanceServerlessConfigPropertyToRosTemplate(properties: any): an
 }
 
 /**
- * Properties for defining a `ALIYUN::RDS::DBInstanceClone`
+ * Properties for defining a `RosDBInstanceClone`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstanceclone
  */
 export interface RosDBInstanceCloneProps {
 
@@ -2379,7 +2402,7 @@ export interface RosDBInstanceCloneProps {
     readonly securityGroupId?: string | ros.IResolvable;
 
     /**
-     * @Property securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0/0 means no limitation.
+     * @Property securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0\/0 means no limitation.
      */
     readonly securityIpList?: string | ros.IResolvable;
 
@@ -2415,12 +2438,12 @@ export interface RosDBInstanceCloneProps {
      * Key
      * It can be up to 64 characters in length.
      * Cannot begin with aliyun.
-     * Cannot begin with http:// or https://.
+     * Cannot begin with http:\/\/ or https:\/\/.
      * Cannot be a null string.
      * Value
      * It can be up to 128 characters in length.
      * Cannot begin with aliyun.
-     * Cannot begin with http:// or https://.
+     * Cannot begin with http:\/\/ or https:\/\/.
      * Can be a null string.
      */
     readonly tags?: { [key: string]: (any) };
@@ -2463,12 +2486,6 @@ function RosDBInstanceClonePropsValidator(properties: any): ros.ValidationResult
         }));
     }
     errors.collect(ros.propertyValidator('periodType', ros.validateString)(properties.periodType));
-    if(properties.category && (typeof properties.category) !== 'object') {
-        errors.collect(ros.propertyValidator('category', ros.validateAllowedValues)({
-          data: properties.category,
-          allowedValues: ["Basic","HighAvailability","AlwaysOn","Finance","cluster","serverless_basic"],
-        }));
-    }
     errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
     errors.collect(ros.propertyValidator('privateIpAddress', ros.validateString)(properties.privateIpAddress));
     errors.collect(ros.propertyValidator('dedicatedHostGroupId', ros.validateString)(properties.dedicatedHostGroupId));
@@ -2646,18 +2663,15 @@ function rosDBInstanceClonePropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * A ROS template type:  `ALIYUN::RDS::DBInstanceClone`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBInstanceClone`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DBInstanceClone` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstanceclone
  */
 export class RosDBInstanceClone extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::RDS::DBInstanceClone";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DBInstanceId: The instance id of created database instance.
@@ -2884,7 +2898,7 @@ export class RosDBInstanceClone extends ros.RosResource {
     public securityGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0/0 means no limitation.
+     * @Property securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0\/0 means no limitation.
      */
     public securityIpList: string | ros.IResolvable | undefined;
 
@@ -2920,12 +2934,12 @@ export class RosDBInstanceClone extends ros.RosResource {
      * Key
      * It can be up to 64 characters in length.
      * Cannot begin with aliyun.
-     * Cannot begin with http:// or https://.
+     * Cannot begin with http:\/\/ or https:\/\/.
      * Cannot be a null string.
      * Value
      * It can be up to 128 characters in length.
      * Cannot begin with aliyun.
-     * Cannot begin with http:// or https://.
+     * Cannot begin with http:\/\/ or https:\/\/.
      * Can be a null string.
      */
     public tags: { [key: string]: (any) } | undefined;
@@ -2951,8 +2965,6 @@ export class RosDBInstanceClone extends ros.RosResource {
     public zoneId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::RDS::DBInstanceClone`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3235,7 +3247,8 @@ function rosDBInstanceCloneTablesPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::RDS::DBInstanceParameterGroup`
+ * Properties for defining a `RosDBInstanceParameterGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstanceparametergroup
  */
 export interface RosDBInstanceParameterGroupProps {
 
@@ -3300,18 +3313,15 @@ function rosDBInstanceParameterGroupPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * A ROS template type:  `ALIYUN::RDS::DBInstanceParameterGroup`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBInstanceParameterGroup`, which is used to modify the parameters of an ApsaraDB RDS instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DBInstanceParameterGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstanceparametergroup
  */
 export class RosDBInstanceParameterGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::RDS::DBInstanceParameterGroup";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -3332,8 +3342,6 @@ export class RosDBInstanceParameterGroup extends ros.RosResource {
     public forcerestart: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::RDS::DBInstanceParameterGroup`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3410,7 +3418,8 @@ function rosDBInstanceParameterGroupParametersPropertyToRosTemplate(properties: 
 }
 
 /**
- * Properties for defining a `ALIYUN::RDS::DBInstanceSecurityIps`
+ * Properties for defining a `RosDBInstanceSecurityIps`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstancesecurityips
  */
 export interface RosDBInstanceSecurityIpsProps {
 
@@ -3469,18 +3478,15 @@ function rosDBInstanceSecurityIpsPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * A ROS template type:  `ALIYUN::RDS::DBInstanceSecurityIps`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBInstanceSecurityIps`, which is used to modify an IP address whitelist of an ApsaraDB for RDS instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DBInstanceSecurityIps` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstancesecurityips
  */
 export class RosDBInstanceSecurityIps extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::RDS::DBInstanceSecurityIps";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute SecurityIps: The security ips of selected database instance.
@@ -3506,8 +3512,6 @@ export class RosDBInstanceSecurityIps extends ros.RosResource {
     public dbInstanceIpArrayName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::RDS::DBInstanceSecurityIps`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3536,7 +3540,8 @@ export class RosDBInstanceSecurityIps extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::RDS::Database`
+ * Properties for defining a `RosDatabase`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-database
  */
 export interface RosDatabaseProps {
 
@@ -3573,7 +3578,7 @@ export interface RosDatabaseProps {
      * @Property dbDescription: The description of the database. The description must be 2 to 256 characters in length.
      * The description must start with a letter and can contain letters, digits, underscores
      * (_), and hyphens (-).
-     * Note The description cannot start with http:// or https://.
+     * Note The description cannot start with http:\/\/ or https:\/\/.
      */
     readonly dbDescription?: string | ros.IResolvable;
 }
@@ -3620,18 +3625,15 @@ function rosDatabasePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::RDS::Database`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::Database`, which is used to create a database in an ApsaraDB for RDS instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Database` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-database
  */
 export class RosDatabase extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::RDS::Database";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DBInstanceId: The ID of the instance.
@@ -3679,13 +3681,11 @@ export class RosDatabase extends ros.RosResource {
      * @Property dbDescription: The description of the database. The description must be 2 to 256 characters in length.
      * The description must start with a letter and can contain letters, digits, underscores
      * (_), and hyphens (-).
-     * Note The description cannot start with http:// or https://.
+     * Note The description cannot start with http:\/\/ or https:\/\/.
      */
     public dbDescription: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::RDS::Database`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3717,7 +3717,8 @@ export class RosDatabase extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::RDS::MigrateTask`
+ * Properties for defining a `RosMigrateTask`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-migratetask
  */
 export interface RosMigrateTaskProps {
 
@@ -3835,18 +3836,15 @@ function rosMigrateTaskPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `ALIYUN::RDS::MigrateTask`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::MigrateTask`, which is used to create a migration task to restore backup files from an Object Storage Service (OSS) bucket to an ApsaraDB RDS for SQL Server instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `MigrateTask` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-migratetask
  */
 export class RosMigrateTask extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::RDS::MigrateTask";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DBName: The name of the database that you want to restore.
@@ -3914,8 +3912,6 @@ export class RosMigrateTask extends ros.RosResource {
     public ossUrls: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::RDS::MigrateTask`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3953,7 +3949,8 @@ export class RosMigrateTask extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::RDS::PrepayDBInstance`
+ * Properties for defining a `RosPrepayDBInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-prepaydbinstance
  */
 export interface RosPrepayDBInstanceProps {
 
@@ -3974,7 +3971,7 @@ export interface RosPrepayDBInstanceProps {
     readonly dbInstanceStorage: number | ros.IResolvable;
 
     /**
-     * @Property engine: Database instance engine type. Support MySQL/SQLServer/PostgreSQL/PPAS/MariaDB now.
+     * @Property engine: Database instance engine type. Support MySQL\/SQLServer\/PostgreSQL\/PPAS\/MariaDB now.
      */
     readonly engine: string | ros.IResolvable;
 
@@ -4323,18 +4320,33 @@ export interface RosPrepayDBInstanceProps {
     readonly sslSetting?: string | ros.IResolvable;
 
     /**
+     * @Property storageAutoScale: Storage space automatic expansion switch, only supported by MySQL and PostgreSQL
+     */
+    readonly storageAutoScale?: string | ros.IResolvable;
+
+    /**
+     * @Property storageThreshold: Storage space automatic expansion trigger threshold (percentage)
+     */
+    readonly storageThreshold?: number | ros.IResolvable;
+
+    /**
+     * @Property storageUpperBound: The total storage space upper limit for automatic storage space expansion, that is, automatic expansion will not cause the total storage space of the instance to exceed this value.
+     */
+    readonly storageUpperBound?: number | ros.IResolvable;
+
+    /**
      * @Property tags: The tags of an instance.
      * You should input the information of the tag with the format of the Key-Value, such as {"key1":"value1","key2":"value2", ... "key5":"value5"}.
      * At most 20 tags can be specified.
      * Key
      * It can be up to 64 characters in length.
      * Cannot begin with aliyun.
-     * Cannot begin with http:// or https://.
+     * Cannot begin with http:\/\/ or https:\/\/.
      * Cannot be a null string.
      * Value
      * It can be up to 128 characters in length.
      * Cannot begin with aliyun.
-     * Cannot begin with http:// or https://.
+     * Cannot begin with http:\/\/ or https:\/\/.
      * Can be a null string.
      */
     readonly tags?: { [key: string]: (any) };
@@ -4406,6 +4418,14 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
           }));
     }
     errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
+    errors.collect(ros.propertyValidator('storageThreshold', ros.validateNumber)(properties.storageThreshold));
+    if(properties.storageAutoScale && (typeof properties.storageAutoScale) !== 'object') {
+        errors.collect(ros.propertyValidator('storageAutoScale', ros.validateAllowedValues)({
+          data: properties.storageAutoScale,
+          allowedValues: ["Disable","Enable"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('storageAutoScale', ros.validateString)(properties.storageAutoScale));
     errors.collect(ros.propertyValidator('instanceNetworkType', ros.validateString)(properties.instanceNetworkType));
     if(properties.archiveBackupKeepCount && (typeof properties.archiveBackupKeepCount) !== 'object') {
         errors.collect(ros.propertyValidator('archiveBackupKeepCount', ros.validateRange)({
@@ -4434,6 +4454,8 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
     }
     errors.collect(ros.propertyValidator('connectionStringPrefix', ros.validateString)(properties.connectionStringPrefix));
     errors.collect(ros.propertyValidator('multiAz', ros.validateBoolean)(properties.multiAz));
+    errors.collect(ros.propertyValidator('tags', ros.hashValidator(ros.validateAny))(properties.tags));
+    errors.collect(ros.propertyValidator('dbInstanceDescription', ros.validateString)(properties.dbInstanceDescription));
     errors.collect(ros.propertyValidator('engine', ros.requiredValidator)(properties.engine));
     if(properties.engine && (typeof properties.engine) !== 'object') {
         errors.collect(ros.propertyValidator('engine', ros.validateAllowedValues)({
@@ -4442,8 +4464,6 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
         }));
     }
     errors.collect(ros.propertyValidator('engine', ros.validateString)(properties.engine));
-    errors.collect(ros.propertyValidator('tags', ros.hashValidator(ros.validateAny))(properties.tags));
-    errors.collect(ros.propertyValidator('dbInstanceDescription', ros.validateString)(properties.dbInstanceDescription));
     errors.collect(ros.propertyValidator('targetDedicatedHostIdForMaster', ros.validateString)(properties.targetDedicatedHostIdForMaster));
     errors.collect(ros.propertyValidator('engineVersion', ros.requiredValidator)(properties.engineVersion));
     errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
@@ -4515,12 +4535,7 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
           }));
     }
     errors.collect(ros.propertyValidator('localLogRetentionSpace', ros.validateNumber)(properties.localLogRetentionSpace));
-    if(properties.category && (typeof properties.category) !== 'object') {
-        errors.collect(ros.propertyValidator('category', ros.validateAllowedValues)({
-          data: properties.category,
-          allowedValues: ["Basic","HighAvailability","AlwaysOn","Finance","cluster","serverless_basic"],
-        }));
-    }
+    errors.collect(ros.propertyValidator('storageUpperBound', ros.validateNumber)(properties.storageUpperBound));
     errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
     errors.collect(ros.propertyValidator('privateIpAddress', ros.validateString)(properties.privateIpAddress));
     errors.collect(ros.propertyValidator('targetDedicatedHostIdForSlave', ros.validateString)(properties.targetDedicatedHostIdForSlave));
@@ -4572,8 +4587,8 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('targetDedicatedHostIdForLog', ros.validateString)(properties.targetDedicatedHostIdForLog));
     errors.collect(ros.propertyValidator('allocatePublicConnection', ros.validateBoolean)(properties.allocatePublicConnection));
-    errors.collect(ros.propertyValidator('preferredBackupTime', ros.validateString)(properties.preferredBackupTime));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('preferredBackupTime', ros.validateString)(properties.preferredBackupTime));
     if(properties.quantity && (typeof properties.quantity) !== 'object') {
         errors.collect(ros.propertyValidator('quantity', ros.validateRange)({
             data: properties.quantity,
@@ -4592,7 +4607,6 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
     }
     errors.collect(ros.propertyValidator('backUpCategory', ros.validateString)(properties.backUpCategory));
     errors.collect(ros.propertyValidator('compressType', ros.validateNumber)(properties.compressType));
-    errors.collect(ros.propertyValidator('logBackupFrequency', ros.validateString)(properties.logBackupFrequency));
     if(properties.connectionStringType && (typeof properties.connectionStringType) !== 'object') {
         errors.collect(ros.propertyValidator('connectionStringType', ros.validateAllowedValues)({
           data: properties.connectionStringType,
@@ -4600,6 +4614,7 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
         }));
     }
     errors.collect(ros.propertyValidator('connectionStringType', ros.validateString)(properties.connectionStringType));
+    errors.collect(ros.propertyValidator('logBackupFrequency', ros.validateString)(properties.logBackupFrequency));
     errors.collect(ros.propertyValidator('couponCode', ros.validateString)(properties.couponCode));
     if(properties.masterUserType && (typeof properties.masterUserType) !== 'object') {
         errors.collect(ros.propertyValidator('masterUserType', ros.validateAllowedValues)({
@@ -4692,6 +4707,9 @@ function rosPrepayDBInstancePropsToRosTemplate(properties: any, enableResourcePr
       SlaveZoneIds: ros.listMapper(ros.stringToRosTemplate)(properties.slaveZoneIds),
       SQLCollectorStatus: ros.stringToRosTemplate(properties.sqlCollectorStatus),
       SSLSetting: ros.stringToRosTemplate(properties.sslSetting),
+      StorageAutoScale: ros.stringToRosTemplate(properties.storageAutoScale),
+      StorageThreshold: ros.numberToRosTemplate(properties.storageThreshold),
+      StorageUpperBound: ros.numberToRosTemplate(properties.storageUpperBound),
       Tags: ros.hashMapper(ros.objectToRosTemplate)(properties.tags),
       TargetDedicatedHostIdForLog: ros.stringToRosTemplate(properties.targetDedicatedHostIdForLog),
       TargetDedicatedHostIdForMaster: ros.stringToRosTemplate(properties.targetDedicatedHostIdForMaster),
@@ -4703,18 +4721,15 @@ function rosPrepayDBInstancePropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * A ROS template type:  `ALIYUN::RDS::PrepayDBInstance`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::PrepayDBInstance`, which is used to create a subscription ApsaraDB RDS instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `PrepayDBInstance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-prepaydbinstance
  */
 export class RosPrepayDBInstance extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::RDS::PrepayDBInstance";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DBInstanceId: The instance id of created database instance.
@@ -4776,7 +4791,7 @@ export class RosPrepayDBInstance extends ros.RosResource {
     public dbInstanceStorage: number | ros.IResolvable;
 
     /**
-     * @Property engine: Database instance engine type. Support MySQL/SQLServer/PostgreSQL/PPAS/MariaDB now.
+     * @Property engine: Database instance engine type. Support MySQL\/SQLServer\/PostgreSQL\/PPAS\/MariaDB now.
      */
     public engine: string | ros.IResolvable;
 
@@ -5125,18 +5140,33 @@ export class RosPrepayDBInstance extends ros.RosResource {
     public sslSetting: string | ros.IResolvable | undefined;
 
     /**
+     * @Property storageAutoScale: Storage space automatic expansion switch, only supported by MySQL and PostgreSQL
+     */
+    public storageAutoScale: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property storageThreshold: Storage space automatic expansion trigger threshold (percentage)
+     */
+    public storageThreshold: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property storageUpperBound: The total storage space upper limit for automatic storage space expansion, that is, automatic expansion will not cause the total storage space of the instance to exceed this value.
+     */
+    public storageUpperBound: number | ros.IResolvable | undefined;
+
+    /**
      * @Property tags: The tags of an instance.
      * You should input the information of the tag with the format of the Key-Value, such as {"key1":"value1","key2":"value2", ... "key5":"value5"}.
      * At most 20 tags can be specified.
      * Key
      * It can be up to 64 characters in length.
      * Cannot begin with aliyun.
-     * Cannot begin with http:// or https://.
+     * Cannot begin with http:\/\/ or https:\/\/.
      * Cannot be a null string.
      * Value
      * It can be up to 128 characters in length.
      * Cannot begin with aliyun.
-     * Cannot begin with http:// or https://.
+     * Cannot begin with http:\/\/ or https:\/\/.
      * Can be a null string.
      */
     public tags: { [key: string]: (any) } | undefined;
@@ -5172,8 +5202,6 @@ export class RosPrepayDBInstance extends ros.RosResource {
     public zoneId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::RDS::PrepayDBInstance`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -5247,6 +5275,9 @@ export class RosPrepayDBInstance extends ros.RosResource {
         this.slaveZoneIds = props.slaveZoneIds;
         this.sqlCollectorStatus = props.sqlCollectorStatus;
         this.sslSetting = props.sslSetting;
+        this.storageAutoScale = props.storageAutoScale;
+        this.storageThreshold = props.storageThreshold;
+        this.storageUpperBound = props.storageUpperBound;
         this.tags = props.tags;
         this.targetDedicatedHostIdForLog = props.targetDedicatedHostIdForLog;
         this.targetDedicatedHostIdForMaster = props.targetDedicatedHostIdForMaster;
@@ -5316,6 +5347,9 @@ export class RosPrepayDBInstance extends ros.RosResource {
             slaveZoneIds: this.slaveZoneIds,
             sqlCollectorStatus: this.sqlCollectorStatus,
             sslSetting: this.sslSetting,
+            storageAutoScale: this.storageAutoScale,
+            storageThreshold: this.storageThreshold,
+            storageUpperBound: this.storageUpperBound,
             tags: this.tags,
             targetDedicatedHostIdForLog: this.targetDedicatedHostIdForLog,
             targetDedicatedHostIdForMaster: this.targetDedicatedHostIdForMaster,
@@ -5472,7 +5506,8 @@ function rosPrepayDBInstanceServerlessConfigPropertyToRosTemplate(properties: an
 }
 
 /**
- * Properties for defining a `ALIYUN::RDS::ReadOnlyDBInstance`
+ * Properties for defining a `RosReadOnlyDBInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-readonlydbinstance
  */
 export interface RosReadOnlyDBInstanceProps {
 
@@ -5576,12 +5611,12 @@ export interface RosReadOnlyDBInstanceProps {
      * Key
      * It can be up to 64 characters in length.
      * Cannot begin with aliyun.
-     * Cannot begin with http:// or https://.
+     * Cannot begin with http:\/\/ or https:\/\/.
      * Cannot be a null string.
      * Value
      * It can be up to 128 characters in length.
      * Cannot begin with aliyun.
-     * Cannot begin with http:// or https://.
+     * Cannot begin with http:\/\/ or https:\/\/.
      * Can be a null string.
      */
     readonly tags?: { [key: string]: (any) };
@@ -5702,18 +5737,15 @@ function rosReadOnlyDBInstancePropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * A ROS template type:  `ALIYUN::RDS::ReadOnlyDBInstance`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::ReadOnlyDBInstance`, which is used to create a read-only ApsaraDB RDS instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ReadOnlyDBInstance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-readonlydbinstance
  */
 export class RosReadOnlyDBInstance extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::RDS::ReadOnlyDBInstance";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ConnectionString: DB instance connection url by Intranet.
@@ -5833,12 +5865,12 @@ export class RosReadOnlyDBInstance extends ros.RosResource {
      * Key
      * It can be up to 64 characters in length.
      * Cannot begin with aliyun.
-     * Cannot begin with http:// or https://.
+     * Cannot begin with http:\/\/ or https:\/\/.
      * Cannot be a null string.
      * Value
      * It can be up to 128 characters in length.
      * Cannot begin with aliyun.
-     * Cannot begin with http:// or https://.
+     * Cannot begin with http:\/\/ or https:\/\/.
      * Can be a null string.
      */
     public tags: { [key: string]: (any) } | undefined;
@@ -5859,8 +5891,6 @@ export class RosReadOnlyDBInstance extends ros.RosResource {
     public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::RDS::ReadOnlyDBInstance`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

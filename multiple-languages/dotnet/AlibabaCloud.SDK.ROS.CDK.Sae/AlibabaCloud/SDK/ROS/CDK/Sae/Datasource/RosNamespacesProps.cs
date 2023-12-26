@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sae.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::SAE::Namespaces`.</summary>
+    /// <summary>Properties for defining a `RosNamespaces`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-sae-namespaces
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-sae.datasource.RosNamespacesProps")]
     public class RosNamespacesProps : AlibabaCloud.SDK.ROS.CDK.Sae.Datasource.IRosNamespacesProps
     {

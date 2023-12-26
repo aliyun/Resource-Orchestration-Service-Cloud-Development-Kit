@@ -4,7 +4,8 @@ import { RosWorkspaces } from './pai.generated';
 export { RosWorkspaces as WorkspacesProperty };
 
 /**
- * Properties for defining a `DATASOURCE::PAI::Workspaces`
+ * Properties for defining a `Workspaces`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-workspaces
  */
 export interface WorkspacesProps {
 
@@ -23,14 +24,11 @@ export interface WorkspacesProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::PAI::Workspaces`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::Workspaces`, which is used to query the basic information about workspaces.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosWorkspaces`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-workspaces
  */
 export class Workspaces extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute WorkspaceIds: The list of workspace IDs.
@@ -43,8 +41,6 @@ export class Workspaces extends ros.Resource {
     public readonly attrWorkspaces: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::PAI::Workspaces`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>Properties for defining a `ALIYUN::VPC::HaVip`.</summary>
+    /// <summary>Properties for defining a `RosHaVip`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-havip
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosHaVipProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosHaVipProps")]
     public interface IRosHaVipProps
     {
@@ -19,7 +22,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         /// <remarks>
         /// <strong>Property</strong>: description: The description of the HAVIP.
-        /// The description must be 1 to 256 characters in length and cannot start with http:// or https://.
+        /// The description must be 1 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -46,7 +49,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         /// <remarks>
         /// <strong>Property</strong>: name: The name of the HAVIP.
-        /// The name must be 1 to 128 characters in length, and cannot start with http:// or https://.
+        /// The name must be 1 to 128 characters in length, and cannot start with http:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -84,7 +87,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::VPC::HaVip`.</summary>
+        /// <summary>Properties for defining a `RosHaVip`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-havip
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosHaVipProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosHaVipProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.IRosHaVipProps
         {
@@ -103,7 +109,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
             /// <remarks>
             /// <strong>Property</strong>: description: The description of the HAVIP.
-            /// The description must be 1 to 256 characters in length and cannot start with http:// or https://.
+            /// The description must be 1 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -124,7 +130,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
             /// <remarks>
             /// <strong>Property</strong>: name: The name of the HAVIP.
-            /// The name must be 1 to 128 characters in length, and cannot start with http:// or https://.
+            /// The name must be 1 to 128 characters in length, and cannot start with http:\/\/ or https:\/\/.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

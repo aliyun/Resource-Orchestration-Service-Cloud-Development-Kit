@@ -4,7 +4,8 @@ import { RosPrefixList } from './ecs.generated';
 export { RosPrefixList as PrefixListProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECS::PrefixList`
+ * Properties for defining a `PrefixList`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-prefixlist
  */
 export interface PrefixListProps {
 
@@ -19,12 +20,12 @@ export interface PrefixListProps {
     readonly maxEntries: number | ros.IResolvable;
 
     /**
-     * Property prefixListName: The name of the prefix. The name must be 2 to 128 characters in length. It must start with a letter and cannot start with http://, https://, com.aliyun, or com.alibabacloud. It can contain letters, digits, colons (:), underscores (_), periods (.), and hyphens (-).
+     * Property prefixListName: The name of the prefix. The name must be 2 to 128 characters in length. It must start with a letter and cannot start with http:\/\/, https:\/\/, com.aliyun, or com.alibabacloud. It can contain letters, digits, colons (:), underscores (_), periods (.), and hyphens (-).
      */
     readonly prefixListName: string | ros.IResolvable;
 
     /**
-     * Property description: The description of the prefix list. The description must be 2 to 256 characters in length and cannot start with http:// or https://.
+     * Property description: The description of the prefix list. The description must be 2 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -35,14 +36,11 @@ export interface PrefixListProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECS::PrefixList`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::PrefixList`, which is used to create a prefix list.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPrefixList`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-prefixlist
  */
 export class PrefixList extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute PrefixListId: The ID of the prefix list.
@@ -50,8 +48,6 @@ export class PrefixList extends ros.Resource {
     public readonly attrPrefixListId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ECS::PrefixList`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

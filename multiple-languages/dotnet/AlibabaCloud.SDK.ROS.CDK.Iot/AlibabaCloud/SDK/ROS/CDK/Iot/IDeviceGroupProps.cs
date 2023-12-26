@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Iot
 {
-    /// <summary>Properties for defining a `ALIYUN::IOT::DeviceGroup`.</summary>
+    /// <summary>Properties for defining a `DeviceGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-devicegroup
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IDeviceGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-iot.DeviceGroupProps")]
     public interface IDeviceGroupProps
     {
@@ -60,7 +63,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::IOT::DeviceGroup`.</summary>
+        /// <summary>Properties for defining a `DeviceGroup`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-devicegroup
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IDeviceGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-iot.DeviceGroupProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Iot.IDeviceGroupProps
         {

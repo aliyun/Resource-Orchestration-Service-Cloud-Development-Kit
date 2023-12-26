@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::WAF::AclRule`.</summary>
+    /// <summary>Properties for defining a `AclRule`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-aclrule
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-waf.AclRuleProps")]
     public class AclRuleProps : AlibabaCloud.SDK.ROS.CDK.Waf.IAclRuleProps
     {

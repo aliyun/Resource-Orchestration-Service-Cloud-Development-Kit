@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ga
 {
-    /// <summary>Properties for defining a `ALIYUN::GA::Accelerator`.</summary>
+    /// <summary>Properties for defining a `RosAccelerator`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-accelerator
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ga.RosAcceleratorProps")]
     public class RosAcceleratorProps : AlibabaCloud.SDK.ROS.CDK.Ga.IRosAcceleratorProps
     {

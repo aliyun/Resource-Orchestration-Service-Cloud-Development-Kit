@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Pai.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::PAI::Services`.</summary>
+    /// <summary>Properties for defining a `Services`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-services
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-pai.datasource.ServicesProps")]
     public class ServicesProps : AlibabaCloud.SDK.ROS.CDK.Pai.Datasource.IServicesProps
     {

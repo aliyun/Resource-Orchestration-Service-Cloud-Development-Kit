@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ECS::SecurityGroupClone`.</summary>
+    /// <summary>Properties for defining a `SecurityGroupClone`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroupclone
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.SecurityGroupCloneProps")]
     public class SecurityGroupCloneProps : AlibabaCloud.SDK.ROS.CDK.Ecs.ISecurityGroupCloneProps
     {

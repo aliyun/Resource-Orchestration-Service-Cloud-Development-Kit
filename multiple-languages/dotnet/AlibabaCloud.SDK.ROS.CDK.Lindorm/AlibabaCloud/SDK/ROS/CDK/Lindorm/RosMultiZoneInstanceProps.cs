@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Lindorm
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::Lindorm::MultiZoneInstance`.</summary>
+    /// <summary>Properties for defining a `RosMultiZoneInstance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-lindorm-multizoneinstance
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-lindorm.RosMultiZoneInstanceProps")]
     public class RosMultiZoneInstanceProps : AlibabaCloud.SDK.ROS.CDK.Lindorm.IRosMultiZoneInstanceProps
     {

@@ -4,7 +4,8 @@ import { RosGrantCcnToCen } from './sag.generated';
 export { RosGrantCcnToCen as GrantCcnToCenProperty };
 
 /**
- * Properties for defining a `ALIYUN::SAG::GrantCcnToCen`
+ * Properties for defining a `GrantCcnToCen`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-grantccntocen
  */
 export interface GrantCcnToCenProps {
 
@@ -25,14 +26,11 @@ export interface GrantCcnToCenProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::SAG::GrantCcnToCen`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::GrantCcnToCen`, which is used to grant permissions on a Cloud Connect Network (CCN) instance to a Cloud Enterprise Network (CEN) instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGrantCcnToCen`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-grantccntocen
  */
 export class GrantCcnToCen extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute CcnInstanceId: The ID of the CCN instance.
@@ -45,8 +43,6 @@ export class GrantCcnToCen extends ros.Resource {
     public readonly attrCenInstanceId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::SAG::GrantCcnToCen`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

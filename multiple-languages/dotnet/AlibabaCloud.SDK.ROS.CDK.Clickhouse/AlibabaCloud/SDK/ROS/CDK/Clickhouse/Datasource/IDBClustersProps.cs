@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ClickHouse::DBClusters`.</summary>
+    /// <summary>Properties for defining a `DBClusters`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-clickhouse-dbclusters
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IDBClustersProps), fullyQualifiedName: "@alicloud/ros-cdk-clickhouse.datasource.DBClustersProps")]
     public interface IDBClustersProps
     {
@@ -30,7 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::ClickHouse::DBClusters`.</summary>
+        /// <summary>Properties for defining a `DBClusters`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-clickhouse-dbclusters
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IDBClustersProps), fullyQualifiedName: "@alicloud/ros-cdk-clickhouse.datasource.DBClustersProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Clickhouse.Datasource.IDBClustersProps
         {

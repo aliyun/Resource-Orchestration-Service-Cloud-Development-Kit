@@ -4,7 +4,8 @@ import { RosScalingGroupEnable } from './ess.generated';
 export { RosScalingGroupEnable as ScalingGroupEnableProperty };
 
 /**
- * Properties for defining a `ALIYUN::ESS::ScalingGroupEnable`
+ * Properties for defining a `ScalingGroupEnable`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroupenable
  */
 export interface ScalingGroupEnableProps {
 
@@ -52,14 +53,11 @@ export interface ScalingGroupEnableProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ESS::ScalingGroupEnable`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScalingGroupEnable`, which is used to enable a scaling group.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosScalingGroupEnable`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroupenable
  */
 export class ScalingGroupEnable extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute LifecycleState: The scaling group status
@@ -102,8 +100,6 @@ export class ScalingGroupEnable extends ros.Resource {
     public readonly attrScalingRuleArisExecuteResultNumberOfAddedInstances: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ESS::ScalingGroupEnable`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

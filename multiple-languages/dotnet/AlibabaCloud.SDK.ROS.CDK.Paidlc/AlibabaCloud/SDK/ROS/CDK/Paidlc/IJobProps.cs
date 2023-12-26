@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Paidlc
 {
-    /// <summary>Properties for defining a `ALIYUN::PAIDLC::Job`.</summary>
+    /// <summary>Properties for defining a `Job`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidlc-job
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IJobProps), fullyQualifiedName: "@alicloud/ros-cdk-paidlc.JobProps")]
     public interface IJobProps
     {
@@ -192,7 +195,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Paidlc
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::PAIDLC::Job`.</summary>
+        /// <summary>Properties for defining a `Job`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidlc-job
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IJobProps), fullyQualifiedName: "@alicloud/ros-cdk-paidlc.JobProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Paidlc.IJobProps
         {

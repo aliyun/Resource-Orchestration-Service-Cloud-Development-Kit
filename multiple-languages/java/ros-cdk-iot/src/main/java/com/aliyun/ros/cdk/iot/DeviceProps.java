@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.iot;
 
 /**
- * Properties for defining a <code>ALIYUN::IOT::Device</code>.
+ * Properties for defining a <code>Device</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-device
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:35.886Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.669Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.iot.$Module.class, fqn = "@alicloud/ros-cdk-iot.DeviceProps")
 @software.amazon.jsii.Jsii.Proxy(DeviceProps.Jsii$Proxy.class)
 public interface DeviceProps extends software.amazon.jsii.JsiiSerializable {

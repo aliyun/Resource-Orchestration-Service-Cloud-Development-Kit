@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::ACM::Configuration`
+ * Properties for defining a `RosConfiguration`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acm-configuration
  */
 export interface RosConfigurationProps {
 
@@ -46,7 +47,7 @@ export interface RosConfigurationProps {
 
     /**
      * @Property type: Provisioning content format, optional values as follows:
-     * text, json, xml, yaml, text/html, properties
+     * text, json, xml, yaml, text\/html, properties
      */
     readonly type?: string | ros.IResolvable;
 }
@@ -107,18 +108,15 @@ function rosConfigurationPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `ALIYUN::ACM::Configuration`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ACM::Configuration`, which is used to create a configuration.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Configuration` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acm-configuration
  */
 export class RosConfiguration extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ACM::Configuration";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DataId: The ID of the configuration
@@ -177,13 +175,11 @@ export class RosConfiguration extends ros.RosResource {
 
     /**
      * @Property type: Provisioning content format, optional values as follows:
-     * text, json, xml, yaml, text/html, properties
+     * text, json, xml, yaml, text\/html, properties
      */
     public type: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ACM::Configuration`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -224,7 +220,8 @@ export class RosConfiguration extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ACM::Namespace`
+ * Properties for defining a `RosNamespace`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acm-namespace
  */
 export interface RosNamespaceProps {
 
@@ -268,18 +265,15 @@ function rosNamespacePropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `ALIYUN::ACM::Namespace`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ACM::Namespace`, which is used to create a namespace.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Namespace` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acm-namespace
  */
 export class RosNamespace extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ACM::Namespace";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Endpoint: Endpoint
@@ -300,8 +294,6 @@ export class RosNamespace extends ros.RosResource {
     public name: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ACM::Namespace`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

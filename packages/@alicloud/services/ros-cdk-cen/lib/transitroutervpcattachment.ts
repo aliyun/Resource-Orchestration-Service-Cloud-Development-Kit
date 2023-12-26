@@ -4,7 +4,8 @@ import { RosTransitRouterVpcAttachment } from './cen.generated';
 export { RosTransitRouterVpcAttachment as TransitRouterVpcAttachmentProperty };
 
 /**
- * Properties for defining a `ALIYUN::CEN::TransitRouterVpcAttachment`
+ * Properties for defining a `TransitRouterVpcAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervpcattachment
  */
 export interface TransitRouterVpcAttachmentProps {
 
@@ -70,14 +71,11 @@ export interface TransitRouterVpcAttachmentProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CEN::TransitRouterVpcAttachment`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterVpcAttachment`, which is used to connect a virtual private cloud (​VPC) to an Enterprise Edition transit router.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTransitRouterVpcAttachment`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervpcattachment
  */
 export class TransitRouterVpcAttachment extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute CenId: CenId
@@ -125,8 +123,6 @@ export class TransitRouterVpcAttachment extends ros.Resource {
     public readonly attrVpcOwnerId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CEN::TransitRouterVpcAttachment`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

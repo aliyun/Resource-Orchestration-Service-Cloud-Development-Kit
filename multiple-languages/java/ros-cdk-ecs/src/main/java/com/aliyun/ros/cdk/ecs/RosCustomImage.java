@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * A ROS template type:  <code>ALIYUN::ECS::CustomImage</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ECS::CustomImage</code>, which is used to create a custom image.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.882Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.365Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosCustomImage")
 public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,8 +20,6 @@ public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ECS::CustomImage</code>.
-     * <p>
      * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
      * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
      * @param props <ul><li>resource properties.</li></ul> This parameter is required.
@@ -87,6 +85,24 @@ public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getBootMode() {
+        return software.amazon.jsii.Kernel.get(this, "bootMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setBootMode(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "bootMode", value);
+    }
+
+    /**
+     */
+    public void setBootMode(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "bootMode", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -101,6 +117,24 @@ public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "description", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDetectionStrategy() {
+        return software.amazon.jsii.Kernel.get(this, "detectionStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDetectionStrategy(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "detectionStrategy", value);
+    }
+
+    /**
+     */
+    public void setDetectionStrategy(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "detectionStrategy", value);
     }
 
     /**
@@ -171,6 +205,24 @@ public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setImageName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "imageName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getImageVersion() {
+        return software.amazon.jsii.Kernel.get(this, "imageVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setImageVersion(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "imageVersion", value);
+    }
+
+    /**
+     */
+    public void setImageVersion(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "imageVersion", value);
     }
 
     /**
@@ -772,6 +824,23 @@ public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param bootMode This parameter is required.
+         */
+        public Builder bootMode(final java.lang.String bootMode) {
+            this.props.bootMode(bootMode);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param bootMode This parameter is required.
+         */
+        public Builder bootMode(final com.aliyun.ros.cdk.core.IResolvable bootMode) {
+            this.props.bootMode(bootMode);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param description This parameter is required.
          */
         public Builder description(final java.lang.String description) {
@@ -784,6 +853,23 @@ public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param detectionStrategy This parameter is required.
+         */
+        public Builder detectionStrategy(final java.lang.String detectionStrategy) {
+            this.props.detectionStrategy(detectionStrategy);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param detectionStrategy This parameter is required.
+         */
+        public Builder detectionStrategy(final com.aliyun.ros.cdk.core.IResolvable detectionStrategy) {
+            this.props.detectionStrategy(detectionStrategy);
             return this;
         }
 
@@ -835,6 +921,23 @@ public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder imageName(final com.aliyun.ros.cdk.core.IResolvable imageName) {
             this.props.imageName(imageName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param imageVersion This parameter is required.
+         */
+        public Builder imageVersion(final java.lang.String imageVersion) {
+            this.props.imageVersion(imageVersion);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param imageVersion This parameter is required.
+         */
+        public Builder imageVersion(final com.aliyun.ros.cdk.core.IResolvable imageVersion) {
+            this.props.imageVersion(imageVersion);
             return this;
         }
 

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::REDIS::Account`.</summary>
+    /// <summary>Properties for defining a `RosAccount`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-account
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-redis.RosAccountProps")]
     public class RosAccountProps : AlibabaCloud.SDK.ROS.CDK.Redis.IRosAccountProps
     {
@@ -118,7 +121,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
 
         /// <remarks>
         /// <strong>Property</strong>: accountDescription: The description of the account.
-        /// The description must start with a letter, and cannot start with http:// or https://.
+        /// The description must start with a letter, and cannot start with http:\/\/ or https:\/\/.
         /// The description can contain letters, underscores (_), hyphens (-), and digits.
         /// It can be 2 to 256 characters in length.
         /// </remarks>

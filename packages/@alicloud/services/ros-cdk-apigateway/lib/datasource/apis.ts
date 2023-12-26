@@ -4,7 +4,8 @@ import { RosApis } from './apigateway.generated';
 export { RosApis as ApisProperty };
 
 /**
- * Properties for defining a `DATASOURCE::ApiGateway::Apis`
+ * Properties for defining a `Apis`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-apis
  */
 export interface ApisProps {
 
@@ -40,14 +41,11 @@ export interface ApisProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::ApiGateway::Apis`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ApiGateway::Apis`, which is used to query APIs in API Gateway.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApis`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-apis
  */
 export class Apis extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ApiIds: The list of The ApiGateway api ids.
@@ -60,8 +58,6 @@ export class Apis extends ros.Resource {
     public readonly attrApis: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::ApiGateway::Apis`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

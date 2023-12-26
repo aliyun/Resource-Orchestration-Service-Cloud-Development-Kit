@@ -4,7 +4,8 @@ import { RosAclRule } from './waf.generated';
 export { RosAclRule as AclRuleProperty };
 
 /**
- * Properties for defining a `ALIYUN::WAF::AclRule`
+ * Properties for defining a `AclRule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-aclrule
  */
 export interface AclRuleProps {
 
@@ -38,18 +39,13 @@ export interface AclRuleProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::WAF::AclRule`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::WAF::AclRule`, which is used to add an HTTP access control list (ACL) rule for a specified domain name.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAclRule`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-aclrule
  */
 export class AclRule extends ros.Resource {
 
     /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
-
-    /**
-     * Create a new `ALIYUN::WAF::AclRule`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

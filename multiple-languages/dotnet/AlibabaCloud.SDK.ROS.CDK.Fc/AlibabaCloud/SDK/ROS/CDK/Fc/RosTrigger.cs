@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Fc
 {
-    /// <summary>A ROS template type:  `ALIYUN::FC::Trigger`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Trigger`, which is used to trigger the invocation of a function.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Trigger` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-trigger
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Fc.RosTrigger), fullyQualifiedName: "@alicloud/ros-cdk-fc.RosTrigger", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-fc.RosTriggerProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosTrigger : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::FC::Trigger`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -271,7 +274,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
 
         /// <remarks>
         /// <strong>Property</strong>: invocationRole: The role grants event source the permission to run function on behalf of user. This is optional for some triggers.
-        /// Example : "acs:ram::1234567890:role/fc-test"
+        /// Example : "acs:ram::1234567890:role\/fc-test"
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "invocationRole", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

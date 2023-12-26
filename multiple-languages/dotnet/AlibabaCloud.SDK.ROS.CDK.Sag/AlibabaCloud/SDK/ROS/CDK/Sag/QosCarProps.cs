@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::SAG::QosCar`.</summary>
+    /// <summary>Properties for defining a `QosCar`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-qoscar
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-sag.QosCarProps")]
     public class QosCarProps : AlibabaCloud.SDK.ROS.CDK.Sag.IQosCarProps
     {

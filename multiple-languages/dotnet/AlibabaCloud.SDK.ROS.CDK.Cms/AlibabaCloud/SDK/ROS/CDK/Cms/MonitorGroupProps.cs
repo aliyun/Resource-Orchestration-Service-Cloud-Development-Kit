@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CMS::MonitorGroup`.</summary>
+    /// <summary>Properties for defining a `MonitorGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitorgroup
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cms.MonitorGroupProps")]
     public class MonitorGroupProps : AlibabaCloud.SDK.ROS.CDK.Cms.IMonitorGroupProps
     {

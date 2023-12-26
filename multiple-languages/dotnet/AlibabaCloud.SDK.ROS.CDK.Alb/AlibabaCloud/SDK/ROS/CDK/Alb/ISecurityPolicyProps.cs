@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Alb
 {
-    /// <summary>Properties for defining a `ALIYUN::ALB::SecurityPolicy`.</summary>
+    /// <summary>Properties for defining a `SecurityPolicy`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-securitypolicy
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ISecurityPolicyProps), fullyQualifiedName: "@alicloud/ros-cdk-alb.SecurityPolicyProps")]
     public interface ISecurityPolicyProps
     {
@@ -51,7 +54,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ALB::SecurityPolicy`.</summary>
+        /// <summary>Properties for defining a `SecurityPolicy`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-securitypolicy
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ISecurityPolicyProps), fullyQualifiedName: "@alicloud/ros-cdk-alb.SecurityPolicyProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Alb.ISecurityPolicyProps
         {

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sls
 {
-    /// <summary>Properties for defining a `ALIYUN::SLS::LogtailConfig`.</summary>
+    /// <summary>Properties for defining a `RosLogtailConfig`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-logtailconfig
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosLogtailConfigProps), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosLogtailConfigProps")]
     public interface IRosLogtailConfigProps
     {
@@ -97,7 +100,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         ///   "content"
         /// ],
         /// "localStorage": true,
-        /// "logPath": "/var/log/test",
+        /// "logPath": "\/var\/log\/test",
         /// "logTimezone": "",
         /// "logType": "delimiter_log",
         /// "maxDepth": 100,
@@ -137,7 +140,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::SLS::LogtailConfig`.</summary>
+        /// <summary>Properties for defining a `RosLogtailConfig`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-logtailconfig
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosLogtailConfigProps), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosLogtailConfigProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sls.IRosLogtailConfigProps
         {
@@ -231,7 +237,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             ///   "content"
             /// ],
             /// "localStorage": true,
-            /// "logPath": "/var/log/test",
+            /// "logPath": "\/var\/log\/test",
             /// "logTimezone": "",
             /// "logType": "delimiter_log",
             /// "maxDepth": 100,

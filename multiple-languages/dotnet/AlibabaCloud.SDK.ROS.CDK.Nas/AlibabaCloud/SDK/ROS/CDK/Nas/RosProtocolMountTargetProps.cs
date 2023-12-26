@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::NAS::ProtocolMountTarget`.</summary>
+    /// <summary>Properties for defining a `RosProtocolMountTarget`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-protocolmounttarget
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-nas.RosProtocolMountTargetProps")]
     public class RosProtocolMountTargetProps : AlibabaCloud.SDK.ROS.CDK.Nas.IRosProtocolMountTargetProps
     {
@@ -178,7 +181,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         /// <strong>Property</strong>: description: Description of the protocol service to export the directory.The console is displayed as the export directory name.
         /// limit:
         /// The length is 2 to 128 English or Chinese characters.
-        /// Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //.
+        /// Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/.
         /// It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
         /// </remarks>
         [JsiiOptional]
@@ -257,7 +260,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         /// Format:
         /// The length is 1 to 1024 characters.
         /// Use UTF-8 encoding.
-        /// It must start with the positive oblique line (/), and the root directory must be/.
+        /// It must start with the positive oblique line (\/), and the root directory must be\/.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "path", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

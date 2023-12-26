@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::POLARDB::DBClusterEndpointAddress`.</summary>
+    /// <summary>Properties for defining a `DBClusterEndpointAddress`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusterendpointaddress
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-polardb.DBClusterEndpointAddressProps")]
     public class DBClusterEndpointAddressProps : AlibabaCloud.SDK.ROS.CDK.Polardb.IDBClusterEndpointAddressProps
     {

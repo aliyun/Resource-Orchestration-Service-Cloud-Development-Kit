@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.gpdb;
 
 /**
- * A ROS resource type:  <code>ALIYUN::GPDB::InstancePublicConnection</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::GPDB::InstancePublicConnection</code>, which is used to allocate a public connection string to an instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:35.761Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.539Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.InstancePublicConnection")
 public class InstancePublicConnection extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,11 +16,7 @@ public class InstancePublicConnection extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::GPDB::InstancePublicConnection</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -33,11 +29,7 @@ public class InstancePublicConnection extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::GPDB::InstancePublicConnection</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.

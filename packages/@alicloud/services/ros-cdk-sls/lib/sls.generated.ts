@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::SLS::Alert`
+ * Properties for defining a `RosAlert`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-alert
  */
 export interface RosAlertProps {
 
@@ -71,18 +72,15 @@ function rosAlertPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `ALIYUN::SLS::Alert`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Alert`, which is used to create an alert rule.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Alert` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-alert
  */
 export class RosAlert extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLS::Alert";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Name: Alert name.
@@ -106,8 +104,6 @@ export class RosAlert extends ros.RosResource {
     public project: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::SLS::Alert`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -748,7 +744,7 @@ export namespace RosAlert {
          */
         readonly useDefault?: boolean | ros.IResolvable;
         /**
-         * @Property repeatInterval: Repeat interval. The format is number with suffix s/m/h.
+         * @Property repeatInterval: Repeat interval. The format is number with suffix s\/m\/h.
          */
         readonly repeatInterval?: string | ros.IResolvable;
     }
@@ -1048,7 +1044,8 @@ function rosAlertSeverityConfigurationsPropertyToRosTemplate(properties: any): a
 }
 
 /**
- * Properties for defining a `ALIYUN::SLS::ApplyConfigToMachineGroup`
+ * Properties for defining a `RosApplyConfigToMachineGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-applyconfigtomachinegroup
  */
 export interface RosApplyConfigToMachineGroupProps {
 
@@ -1105,18 +1102,15 @@ function rosApplyConfigToMachineGroupPropsToRosTemplate(properties: any, enableR
 }
 
 /**
- * A ROS template type:  `ALIYUN::SLS::ApplyConfigToMachineGroup`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::ApplyConfigToMachineGroup`, which is used to apply Log Service configurations to machine groups.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ApplyConfigToMachineGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-applyconfigtomachinegroup
  */
 export class RosApplyConfigToMachineGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLS::ApplyConfigToMachineGroup";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1137,8 +1131,6 @@ export class RosApplyConfigToMachineGroup extends ros.RosResource {
     public projectName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::SLS::ApplyConfigToMachineGroup`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1166,7 +1158,8 @@ export class RosApplyConfigToMachineGroup extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::SLS::Audit`
+ * Properties for defining a `RosAudit`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-audit
  */
 export interface RosAuditProps {
 
@@ -1239,18 +1232,15 @@ function rosAuditPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `ALIYUN::SLS::Audit`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Audit`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Audit` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-audit
  */
 export class RosAudit extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLS::Audit";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DisplayName: Name of SLS log audit.
@@ -1276,8 +1266,6 @@ export class RosAudit extends ros.RosResource {
     public multiAccount: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::SLS::Audit`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2175,7 +2163,8 @@ function rosAuditVariableMapPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::SLS::Dashboard`
+ * Properties for defining a `RosDashboard`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-dashboard
  */
 export interface RosDashboardProps {
 
@@ -2279,18 +2268,15 @@ function rosDashboardPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `ALIYUN::SLS::Dashboard`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Dashboard`, which is used to create a dashboard.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Dashboard` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-dashboard
  */
 export class RosDashboard extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLS::Dashboard";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DashboardName: Dashboard name.
@@ -2334,8 +2320,6 @@ export class RosDashboard extends ros.RosResource {
     public displayName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::SLS::Dashboard`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2369,7 +2353,8 @@ export class RosDashboard extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::SLS::Etl`
+ * Properties for defining a `RosEtl`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-etl
  */
 export interface RosEtlProps {
 
@@ -2452,18 +2437,15 @@ function rosEtlPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * A ROS template type:  `ALIYUN::SLS::Etl`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Etl`, which is used to create a data transformation task.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Etl` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-etl
  */
 export class RosEtl extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLS::Etl";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Name: ETL name.
@@ -2504,8 +2486,6 @@ export class RosEtl extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::SLS::Etl`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2744,7 +2724,8 @@ function rosEtlSinksPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::SLS::Index`
+ * Properties for defining a `RosIndex`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-index
  */
 export interface RosIndexProps {
 
@@ -2846,18 +2827,15 @@ function rosIndexPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `ALIYUN::SLS::Index`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Index`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Index` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-index
  */
 export class RosIndex extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLS::Index";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -2896,8 +2874,6 @@ export class RosIndex extends ros.RosResource {
     public logReduce: boolean | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::SLS::Index`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2934,7 +2910,7 @@ export namespace RosIndex {
      */
     export interface FullTextIndexProperty {
         /**
-         * @Property delimiter: Delimiter. Default to (( , '";=()[]{}?@&<>/:\n\t\r )).
+         * @Property delimiter: Delimiter. Default to (( , '";=()[]{}?@&<>\/:\n\t\r )).
          */
         readonly delimiter?: string | ros.IResolvable;
         /**
@@ -3069,7 +3045,7 @@ export namespace RosIndex {
          */
         readonly jsonKeyIndices?: Array<RosIndex.JsonKeyIndicesProperty | ros.IResolvable> | ros.IResolvable;
         /**
-         * @Property delimiter: Delimiter. It takes effect when Type is text or json. Default to (( , '";=()[]{}?@&<>/:\n\t\r )).
+         * @Property delimiter: Delimiter. It takes effect when Type is text or json. Default to (( , '";=()[]{}?@&<>\/:\n\t\r )).
          */
         readonly delimiter?: string | ros.IResolvable;
         /**
@@ -3147,7 +3123,8 @@ function rosIndexKeyIndicesPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::SLS::Logstore`
+ * Properties for defining a `RosLogstore`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-logstore
  */
 export interface RosLogstoreProps {
 
@@ -3180,7 +3157,7 @@ export interface RosLogstoreProps {
     readonly autoSplit?: boolean | ros.IResolvable;
 
     /**
-     * @Property enableTracking: Whether to enable WebTracking, which supports fast capture of various browsers and iOS/Android/APP access information.
+     * @Property enableTracking: Whether to enable WebTracking, which supports fast capture of various browsers and iOS\/Android\/APP access information.
      * Default to false.
      */
     readonly enableTracking?: boolean | ros.IResolvable;
@@ -3310,18 +3287,15 @@ function rosLogstorePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::SLS::Logstore`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Logstore`, which is used to create a Logstore in a Log Service project.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Logstore` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-logstore
  */
 export class RosLogstore extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLS::Logstore";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute LogstoreName: Logstore name.
@@ -3360,7 +3334,7 @@ export class RosLogstore extends ros.RosResource {
     public autoSplit: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property enableTracking: Whether to enable WebTracking, which supports fast capture of various browsers and iOS/Android/APP access information.
+     * @Property enableTracking: Whether to enable WebTracking, which supports fast capture of various browsers and iOS\/Android\/APP access information.
      * Default to false.
      */
     public enableTracking: boolean | ros.IResolvable | undefined;
@@ -3396,8 +3370,6 @@ export class RosLogstore extends ros.RosResource {
     public ttl: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::SLS::Logstore`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3556,7 +3528,8 @@ function rosLogstoreUserCmkInfoPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::SLS::LogtailConfig`
+ * Properties for defining a `RosLogtailConfig`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-logtailconfig
  */
 export interface RosLogtailConfigProps {
 
@@ -3629,7 +3602,7 @@ export interface RosLogtailConfigProps {
      *             "content"
      *         ],
      *         "localStorage": true,
-     *         "logPath": "/var/log/test",
+     *         "logPath": "\/var\/log\/test",
      *         "logTimezone": "",
      *         "logType": "delimiter_log",
      *         "maxDepth": 100,
@@ -3733,18 +3706,15 @@ function rosLogtailConfigPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `ALIYUN::SLS::LogtailConfig`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::LogtailConfig`, which is used to configure Logtail properties for data collection.
+ * @Note This class does not contain additional functions, so it is recommended to use the `LogtailConfig` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-logtailconfig
  */
 export class RosLogtailConfig extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLS::LogtailConfig";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AppliedMachineGroups: Applied machine groups.
@@ -3833,7 +3803,7 @@ export class RosLogtailConfig extends ros.RosResource {
      *             "content"
      *         ],
      *         "localStorage": true,
-     *         "logPath": "/var/log/test",
+     *         "logPath": "\/var\/log\/test",
      *         "logTimezone": "",
      *         "logType": "delimiter_log",
      *         "maxDepth": 100,
@@ -3866,8 +3836,6 @@ export class RosLogtailConfig extends ros.RosResource {
     public rawConfigData: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::SLS::LogtailConfig`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3971,7 +3939,8 @@ function rosLogtailConfigCloneFromPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::SLS::MachineGroup`
+ * Properties for defining a `RosMachineGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-machinegroup
  */
 export interface RosMachineGroupProps {
 
@@ -4061,18 +4030,15 @@ function rosMachineGroupPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * A ROS template type:  `ALIYUN::SLS::MachineGroup`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::MachineGroup`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `MachineGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-machinegroup
  */
 export class RosMachineGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLS::MachineGroup";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute GroupName: GroupName of SLS.
@@ -4118,8 +4084,6 @@ export class RosMachineGroup extends ros.RosResource {
     public projectName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::SLS::MachineGroup`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -4155,7 +4119,8 @@ export class RosMachineGroup extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::SLS::MetricStore`
+ * Properties for defining a `RosMetricStore`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-metricstore
  */
 export interface RosMetricStoreProps {
 
@@ -4272,18 +4237,15 @@ function rosMetricStorePropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `ALIYUN::SLS::MetricStore`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::MetricStore`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `MetricStore` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-metricstore
  */
 export class RosMetricStore extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLS::MetricStore";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute LogstoreName: Metric store name.
@@ -4329,8 +4291,6 @@ export class RosMetricStore extends ros.RosResource {
     public ttl: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::SLS::MetricStore`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -4363,7 +4323,8 @@ export class RosMetricStore extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::SLS::Project`
+ * Properties for defining a `RosProject`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-project
  */
 export interface RosProjectProps {
 
@@ -4451,18 +4412,15 @@ function rosProjectPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::SLS::Project`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Project`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Project` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-project
  */
 export class RosProject extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLS::Project";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Name: Project name.
@@ -4491,8 +4449,6 @@ export class RosProject extends ros.RosResource {
     public tags: RosProject.TagsProperty[] | undefined;
 
     /**
-     * Create a new `ALIYUN::SLS::Project`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -4569,7 +4525,8 @@ function rosProjectTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::SLS::Savedsearch`
+ * Properties for defining a `RosSavedsearch`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-savedsearch
  */
 export interface RosSavedsearchProps {
 
@@ -4621,18 +4578,15 @@ function rosSavedsearchPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `ALIYUN::SLS::Savedsearch`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Savedsearch`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Savedsearch` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-savedsearch
  */
 export class RosSavedsearch extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLS::Savedsearch";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute SavedsearchName: Savedsearch name.
@@ -4653,8 +4607,6 @@ export class RosSavedsearch extends ros.RosResource {
     public project: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::SLS::Savedsearch`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -4747,4 +4699,134 @@ function rosSavedsearchDetailPropertyToRosTemplate(properties: any): any {
       SavedsearchName: ros.stringToRosTemplate(properties.savedsearchName),
       Topic: ros.stringToRosTemplate(properties.topic),
     };
+}
+
+/**
+ * Properties for defining a `RosServiceLog`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-servicelog
+ */
+export interface RosServiceLogProps {
+
+    /**
+     * @Property logStorageLocation: The location of the service log.
+     */
+    readonly logStorageLocation: string | ros.IResolvable;
+
+    /**
+     * @Property projectName: The name of the project that needs to be activated. If it has been activated, it will be reactivated again.
+     */
+    readonly projectName: string | ros.IResolvable;
+
+    /**
+     * @Property serviceLogTypes: Types of service log that needs to be activated.
+     */
+    readonly serviceLogTypes: Array<string | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosServiceLogProps`
+ *
+ * @param properties - the TypeScript properties of a `RosServiceLogProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosServiceLogPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('serviceLogTypes', ros.requiredValidator)(properties.serviceLogTypes));
+    if(properties.serviceLogTypes && (Array.isArray(properties.serviceLogTypes) || (typeof properties.serviceLogTypes) === 'string')) {
+        errors.collect(ros.propertyValidator('serviceLogTypes', ros.validateLength)({
+            data: properties.serviceLogTypes.length,
+            min: 1,
+            max: 3,
+          }));
+    }
+    errors.collect(ros.propertyValidator('serviceLogTypes', ros.listValidator(ros.validateString))(properties.serviceLogTypes));
+    errors.collect(ros.propertyValidator('projectName', ros.requiredValidator)(properties.projectName));
+    errors.collect(ros.propertyValidator('projectName', ros.validateString)(properties.projectName));
+    errors.collect(ros.propertyValidator('logStorageLocation', ros.requiredValidator)(properties.logStorageLocation));
+    errors.collect(ros.propertyValidator('logStorageLocation', ros.validateString)(properties.logStorageLocation));
+    return errors.wrap('supplied properties not correct for "RosServiceLogProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLS::ServiceLog` resource
+ *
+ * @param properties - the TypeScript properties of a `RosServiceLogProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLS::ServiceLog` resource.
+ */
+// @ts-ignore TS6133
+function rosServiceLogPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosServiceLogPropsValidator(properties).assertSuccess();
+    }
+    return {
+      LogStorageLocation: ros.stringToRosTemplate(properties.logStorageLocation),
+      ProjectName: ros.stringToRosTemplate(properties.projectName),
+      ServiceLogTypes: ros.listMapper(ros.stringToRosTemplate)(properties.serviceLogTypes),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::ServiceLog`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ServiceLog` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-servicelog
+ */
+export class RosServiceLog extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLS::ServiceLog";
+
+    /**
+     * @Attribute ProjectName: The name of the project that needs to be activated.
+     */
+    public readonly attrProjectName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property logStorageLocation: The location of the service log.
+     */
+    public logStorageLocation: string | ros.IResolvable;
+
+    /**
+     * @Property projectName: The name of the project that needs to be activated. If it has been activated, it will be reactivated again.
+     */
+    public projectName: string | ros.IResolvable;
+
+    /**
+     * @Property serviceLogTypes: Types of service log that needs to be activated.
+     */
+    public serviceLogTypes: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosServiceLogProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosServiceLog.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrProjectName = this.getAtt('ProjectName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.logStorageLocation = props.logStorageLocation;
+        this.projectName = props.projectName;
+        this.serviceLogTypes = props.serviceLogTypes;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            logStorageLocation: this.logStorageLocation,
+            projectName: this.projectName,
+            serviceLogTypes: this.serviceLogTypes,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosServiceLogPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
 }

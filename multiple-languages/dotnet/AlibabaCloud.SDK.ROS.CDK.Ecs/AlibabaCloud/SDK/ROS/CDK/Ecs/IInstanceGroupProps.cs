@@ -4,17 +4,13 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>Properties for defining a `ALIYUN::ECS::InstanceGroup`.</summary>
+    /// <summary>Properties for defining a `InstanceGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instancegroup
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IInstanceGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.InstanceGroupProps")]
     public interface IInstanceGroupProps
     {
-        /// <summary>Property imageId: Image ID to create ecs instance.</summary>
-        [JsiiProperty(name: "imageId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object ImageId
-        {
-            get;
-        }
-
         /// <summary>Property instanceType: Ecs instance supported instance type, make sure it should be correct.</summary>
         [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object InstanceType
@@ -27,6 +23,26 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         object MaxAmount
         {
             get;
+        }
+
+        /// <summary>Property affinity: Specifies whether to associate the instance on a dedicated host with the dedicated host.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description><strong>default</strong>: does not associate the ECS instance with the dedicated host. When you start an instance that was stopped in economical mode, the instance is automatically deployed to another dedicated host in the automatic deployment resource pool if the available resources of the original dedicated host are insufficient.</description>
+        /// <description><strong>host</strong>: associates the ECS instance with the dedicated host. When you start an instance that was stopped in economical mode, the instance remains on the original dedicated host. If the available resources of the original dedicated host are insufficient, the instance cannot start.
+        /// Default value: <strong>default</strong>.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiProperty(name: "affinity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Affinity
+        {
+            get
+            {
+                return null;
+            }
         }
 
         /// <summary>Property allocatePublicIp: The public ip for ecs instance, if properties is true, will allocate public ip.</summary>
@@ -85,6 +101,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
+        /// <summary>Property creditSpecification: The performance mode of the burstable instance.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description><strong>Standard</strong>: the standard mode.</description>
+        /// <description><strong>Unlimited</strong>: the unlimited mode.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiProperty(name: "creditSpecification", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? CreditSpecification
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property dedicatedHostId: which dedicated host will be deployed.</summary>
         [JsiiProperty(name: "dedicatedHostId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -100,6 +135,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         [JsiiProperty(name: "deletionProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? DeletionProtection
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property deploymentSetGroupNo: The number of the deployment set group to which to deploy the instance.</summary>
+        /// <remarks>
+        /// If the deployment set specified by <strong>DeploymentSetId</strong> uses the high availability group strategy (AvailabilityGroup), you can use <strong>DeploymentSetGroupNo</strong> to specify a deployment set group in the deployment set. Valid values: 1 to 7.
+        /// </remarks>
+        [JsiiProperty(name: "deploymentSetGroupNo", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DeploymentSetGroupNo
         {
             get
             {
@@ -195,6 +244,76 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         [JsiiProperty(name: "hpcClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? HpcClusterId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property httpEndpoint: Specifies whether the access channel is enabled for instance metadata.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description><strong>enabled</strong></description>
+        /// <description><strong>disabled</strong>
+        /// Default value: <strong>enabled</strong>.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiProperty(name: "httpEndpoint", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? HttpEndpoint
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property httpTokens: Specifies whether the security hardening mode (IMDSv2) is forcefully used to access instance metadata.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description><strong>optional</strong>: does not forcefully use the security-enhanced mode (IMDSv2).</description>
+        /// <description><strong>required</strong>: forcefully uses the security-enhanced mode (IMDSv2). After you set this parameter to required, you cannot access instance metadata in normal mode.
+        /// Default value: <strong>optional</strong>.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiProperty(name: "httpTokens", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? HttpTokens
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property imageFamily: The name of the image family.</summary>
+        /// <remarks>
+        /// You can set this parameter to obtain the latest available custom image from the specified image family to create the instance.
+        ///
+        /// <list type="bullet">
+        /// <description><strong>ImageFamily</strong> must be empty if <strong>ImageId</strong> is specified.</description>
+        /// <description><strong>ImageFamily</strong> can be specified if <strong>ImageId</strong> is not specified.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiProperty(name: "imageFamily", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ImageFamily
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property imageId: Image ID to create ecs instance.</summary>
+        [JsiiProperty(name: "imageId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ImageId
         {
             get
             {
@@ -406,7 +525,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year.</summary>
+        /// <summary>Property periodUnit: Unit of prepaid time period, it could be Week\/Month\/Year.</summary>
         /// <remarks>
         /// Default value is Month.Old instances will not be changed.
         /// </remarks>
@@ -427,6 +546,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         [JsiiProperty(name: "privateIpAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? PrivateIpAddress
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property privatePoolOptions: The options of the private pool.</summary>
+        [JsiiProperty(name: "privatePoolOptions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ecs.RosInstanceGroup.PrivatePoolOptionsProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? PrivatePoolOptions
         {
             get
             {
@@ -488,7 +618,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// The valid values of N are based on the maximum number of security groups to which an instance can belong. For more information, see Security group limits.Note: You cannot specify both SecurityGroupId and SecurityGroupIds at the same time.
         /// </remarks>
-        [JsiiProperty(name: "securityGroupIds", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [JsiiProperty(name: "securityGroupIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? SecurityGroupIds
         {
@@ -550,6 +680,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         [JsiiProperty(name: "spotStrategy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? SpotStrategy
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property storageSetId: The storage set ID.</summary>
+        [JsiiProperty(name: "storageSetId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? StorageSetId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property storageSetPartitionNumber: The maximum number of partitions in the storage set.</summary>
+        /// <remarks>
+        /// The value must be greater than or equal to 2.
+        /// </remarks>
+        [JsiiProperty(name: "storageSetPartitionNumber", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? StorageSetPartitionNumber
         {
             get
             {
@@ -666,7 +821,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Property systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.</summary>
+        /// <summary>Property systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read\/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read\/write IOPS.</summary>
         [JsiiProperty(name: "systemDiskPerformanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? SystemDiskPerformanceLevel
@@ -730,6 +885,26 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
+        /// <summary>Property tenancy: Specifies whether to create the instance on a dedicated host.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description><strong>default</strong>: creates the instance on a non-dedicated host.</description>
+        /// <description><strong>host</strong>: creates the instance on a dedicated host. If you do not specify <strong>DedicatedHostId</strong>, Alibaba Cloud selects a dedicated host for the instance.
+        /// Default value: <strong>default</strong>.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiProperty(name: "tenancy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Tenancy
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property updatePolicy: Specify the policy at update.</summary>
         /// <remarks>
         /// The value can be 'ForNewInstances' or 'ForAllInstances'.
@@ -739,6 +914,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         [JsiiProperty(name: "updatePolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? UpdatePolicy
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property useAdditionalService: Specifies whether to use the system configurations for virtual machines provided by Alibaba Cloud.</summary>
+        /// <remarks>
+        /// System configurations for Windows: NTP and KMS. System configurations for Linux: NTP and YUM.
+        /// </remarks>
+        [JsiiProperty(name: "useAdditionalService", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? UseAdditionalService
         {
             get
             {
@@ -809,19 +998,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ECS::InstanceGroup`.</summary>
+        /// <summary>Properties for defining a `InstanceGroup`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instancegroup
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IInstanceGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.InstanceGroupProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.IInstanceGroupProps
         {
             private _Proxy(ByRefValue reference): base(reference)
             {
-            }
-
-            /// <summary>Property imageId: Image ID to create ecs instance.</summary>
-            [JsiiProperty(name: "imageId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object ImageId
-            {
-                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property instanceType: Ecs instance supported instance type, make sure it should be correct.</summary>
@@ -836,6 +1021,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             public object MaxAmount
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property affinity: Specifies whether to associate the instance on a dedicated host with the dedicated host.</summary>
+            /// <remarks>
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description><strong>default</strong>: does not associate the ECS instance with the dedicated host. When you start an instance that was stopped in economical mode, the instance is automatically deployed to another dedicated host in the automatic deployment resource pool if the available resources of the original dedicated host are insufficient.</description>
+            /// <description><strong>host</strong>: associates the ECS instance with the dedicated host. When you start an instance that was stopped in economical mode, the instance remains on the original dedicated host. If the available resources of the original dedicated host are insufficient, the instance cannot start.
+            /// Default value: <strong>default</strong>.</description>
+            /// </list>
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "affinity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Affinity
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property allocatePublicIp: The public ip for ecs instance, if properties is true, will allocate public ip.</summary>
@@ -882,6 +1084,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property creditSpecification: The performance mode of the burstable instance.</summary>
+            /// <remarks>
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description><strong>Standard</strong>: the standard mode.</description>
+            /// <description><strong>Unlimited</strong>: the unlimited mode.</description>
+            /// </list>
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "creditSpecification", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? CreditSpecification
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property dedicatedHostId: which dedicated host will be deployed.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "dedicatedHostId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -894,6 +1112,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             [JsiiOptional]
             [JsiiProperty(name: "deletionProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DeletionProtection
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property deploymentSetGroupNo: The number of the deployment set group to which to deploy the instance.</summary>
+            /// <remarks>
+            /// If the deployment set specified by <strong>DeploymentSetId</strong> uses the high availability group strategy (AvailabilityGroup), you can use <strong>DeploymentSetGroupNo</strong> to specify a deployment set group in the deployment set. Valid values: 1 to 7.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "deploymentSetGroupNo", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DeploymentSetGroupNo
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -971,6 +1200,64 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             [JsiiOptional]
             [JsiiProperty(name: "hpcClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? HpcClusterId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property httpEndpoint: Specifies whether the access channel is enabled for instance metadata.</summary>
+            /// <remarks>
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description><strong>enabled</strong></description>
+            /// <description><strong>disabled</strong>
+            /// Default value: <strong>enabled</strong>.</description>
+            /// </list>
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "httpEndpoint", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? HttpEndpoint
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property httpTokens: Specifies whether the security hardening mode (IMDSv2) is forcefully used to access instance metadata.</summary>
+            /// <remarks>
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description><strong>optional</strong>: does not forcefully use the security-enhanced mode (IMDSv2).</description>
+            /// <description><strong>required</strong>: forcefully uses the security-enhanced mode (IMDSv2). After you set this parameter to required, you cannot access instance metadata in normal mode.
+            /// Default value: <strong>optional</strong>.</description>
+            /// </list>
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "httpTokens", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? HttpTokens
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property imageFamily: The name of the image family.</summary>
+            /// <remarks>
+            /// You can set this parameter to obtain the latest available custom image from the specified image family to create the instance.
+            ///
+            /// <list type="bullet">
+            /// <description><strong>ImageFamily</strong> must be empty if <strong>ImageId</strong> is specified.</description>
+            /// <description><strong>ImageFamily</strong> can be specified if <strong>ImageId</strong> is not specified.</description>
+            /// </list>
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "imageFamily", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ImageFamily
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property imageId: Image ID to create ecs instance.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "imageId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ImageId
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -1134,7 +1421,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year.</summary>
+            /// <summary>Property periodUnit: Unit of prepaid time period, it could be Week\/Month\/Year.</summary>
             /// <remarks>
             /// Default value is Month.Old instances will not be changed.
             /// </remarks>
@@ -1152,6 +1439,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             [JsiiOptional]
             [JsiiProperty(name: "privateIpAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PrivateIpAddress
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property privatePoolOptions: The options of the private pool.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "privatePoolOptions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ecs.RosInstanceGroup.PrivatePoolOptionsProperty\"}]}}", isOptional: true)]
+            public object? PrivatePoolOptions
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -1199,7 +1494,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// The valid values of N are based on the maximum number of security groups to which an instance can belong. For more information, see Security group limits.Note: You cannot specify both SecurityGroupId and SecurityGroupIds at the same time.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "securityGroupIds", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [JsiiProperty(name: "securityGroupIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? SecurityGroupIds
             {
                 get => GetInstanceProperty<object?>();
@@ -1248,6 +1543,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             [JsiiOptional]
             [JsiiProperty(name: "spotStrategy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SpotStrategy
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property storageSetId: The storage set ID.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "storageSetId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? StorageSetId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property storageSetPartitionNumber: The maximum number of partitions in the storage set.</summary>
+            /// <remarks>
+            /// The value must be greater than or equal to 2.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "storageSetPartitionNumber", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? StorageSetPartitionNumber
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -1337,7 +1651,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.</summary>
+            /// <summary>Property systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read\/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read\/write IOPS.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "systemDiskPerformanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SystemDiskPerformanceLevel
@@ -1386,6 +1700,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Ecs.RosInstanceGroup.ITagsProperty[]?>();
             }
 
+            /// <summary>Property tenancy: Specifies whether to create the instance on a dedicated host.</summary>
+            /// <remarks>
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description><strong>default</strong>: creates the instance on a non-dedicated host.</description>
+            /// <description><strong>host</strong>: creates the instance on a dedicated host. If you do not specify <strong>DedicatedHostId</strong>, Alibaba Cloud selects a dedicated host for the instance.
+            /// Default value: <strong>default</strong>.</description>
+            /// </list>
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "tenancy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Tenancy
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property updatePolicy: Specify the policy at update.</summary>
             /// <remarks>
             /// The value can be 'ForNewInstances' or 'ForAllInstances'.
@@ -1395,6 +1726,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             [JsiiOptional]
             [JsiiProperty(name: "updatePolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? UpdatePolicy
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property useAdditionalService: Specifies whether to use the system configurations for virtual machines provided by Alibaba Cloud.</summary>
+            /// <remarks>
+            /// System configurations for Windows: NTP and KMS. System configurations for Linux: NTP and YUM.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "useAdditionalService", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? UseAdditionalService
             {
                 get => GetInstanceProperty<object?>();
             }

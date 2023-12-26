@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
 {
-    /// <summary>Properties for defining a `ALIYUN::EHPC::AutoScaleConfig`.</summary>
+    /// <summary>Properties for defining a `AutoScaleConfig`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-autoscaleconfig
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IAutoScaleConfigProps), fullyQualifiedName: "@alicloud/ros-cdk-ehpc.AutoScaleConfigProps")]
     public interface IAutoScaleConfigProps
     {
@@ -223,7 +226,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::EHPC::AutoScaleConfig`.</summary>
+        /// <summary>Properties for defining a `AutoScaleConfig`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-autoscaleconfig
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IAutoScaleConfigProps), fullyQualifiedName: "@alicloud/ros-cdk-ehpc.AutoScaleConfigProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ehpc.IAutoScaleConfigProps
         {

@@ -4,7 +4,8 @@ import { RosDBCluster } from './adb.generated';
 export { RosDBCluster as DBClusterProperty };
 
 /**
- * Properties for defining a `ALIYUN::ADB::DBCluster`
+ * Properties for defining a `DBCluster`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adb-dbcluster
  */
 export interface DBClusterProps {
 
@@ -123,14 +124,11 @@ export interface DBClusterProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ADB::DBCluster`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ADB::DBCluster`, which is used to create an AnalyticDB for MySQL cluster.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBCluster`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adb-dbcluster
  */
 export class DBCluster extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ConnectionString: Vpc connection string.
@@ -148,8 +146,6 @@ export class DBCluster extends ros.Resource {
     public readonly attrOrderId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ADB::DBCluster`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

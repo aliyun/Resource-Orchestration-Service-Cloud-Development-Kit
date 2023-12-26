@@ -4,7 +4,8 @@ import { RosManagedInstances } from './ecs.generated';
 export { RosManagedInstances as ManagedInstancesProperty };
 
 /**
- * Properties for defining a `DATASOURCE::ECS::ManagedInstances`
+ * Properties for defining a `ManagedInstances`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-managedinstances
  */
 export interface ManagedInstancesProps {
 
@@ -42,14 +43,11 @@ export interface ManagedInstancesProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::ECS::ManagedInstances`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::ManagedInstances`, which is used to query managed instances.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosManagedInstances`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-managedinstances
  */
 export class ManagedInstances extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute InstanceIds: The list of managed instance ids.
@@ -62,8 +60,6 @@ export class ManagedInstances extends ros.Resource {
     public readonly attrInstances: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::ECS::ManagedInstances`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

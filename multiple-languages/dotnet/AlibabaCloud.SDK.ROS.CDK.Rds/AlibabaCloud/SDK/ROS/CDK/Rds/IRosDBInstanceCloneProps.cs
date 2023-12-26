@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Rds
 {
-    /// <summary>Properties for defining a `ALIYUN::RDS::DBInstanceClone`.</summary>
+    /// <summary>Properties for defining a `RosDBInstanceClone`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstanceclone
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosDBInstanceCloneProps), fullyQualifiedName: "@alicloud/ros-cdk-rds.RosDBInstanceCloneProps")]
     public interface IRosDBInstanceCloneProps
     {
@@ -426,7 +429,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0/0 means no limitation.
+        /// <strong>Property</strong>: securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0\/0 means no limitation.
         /// </remarks>
         [JsiiProperty(name: "securityIpList", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -502,12 +505,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// Key
         /// It can be up to 64 characters in length.
         /// Cannot begin with aliyun.
-        /// Cannot begin with http:// or https://.
+        /// Cannot begin with http:\/\/ or https:\/\/.
         /// Cannot be a null string.
         /// Value
         /// It can be up to 128 characters in length.
         /// Cannot begin with aliyun.
-        /// Cannot begin with http:// or https://.
+        /// Cannot begin with http:\/\/ or https:\/\/.
         /// Can be a null string.
         /// </remarks>
         [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}", isOptional: true)]
@@ -572,7 +575,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::RDS::DBInstanceClone`.</summary>
+        /// <summary>Properties for defining a `RosDBInstanceClone`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstanceclone
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosDBInstanceCloneProps), fullyQualifiedName: "@alicloud/ros-cdk-rds.RosDBInstanceCloneProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Rds.IRosDBInstanceCloneProps
         {
@@ -914,7 +920,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0/0 means no limitation.
+            /// <strong>Property</strong>: securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0\/0 means no limitation.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "securityIpList", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -975,12 +981,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             /// Key
             /// It can be up to 64 characters in length.
             /// Cannot begin with aliyun.
-            /// Cannot begin with http:// or https://.
+            /// Cannot begin with http:\/\/ or https:\/\/.
             /// Cannot be a null string.
             /// Value
             /// It can be up to 128 characters in length.
             /// Cannot begin with aliyun.
-            /// Cannot begin with http:// or https://.
+            /// Cannot begin with http:\/\/ or https:\/\/.
             /// Can be a null string.
             /// </remarks>
             [JsiiOptional]

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::OTS::Table`.</summary>
+    /// <summary>Properties for defining a `Table`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-table
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ots.TableProps")]
     public class TableProps : AlibabaCloud.SDK.ROS.CDK.Ots.ITableProps
     {
@@ -278,7 +281,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
 
         private object? _reservedThroughput;
 
-        /// <summary>Property reservedThroughput: The initial reserved read/write throughput setting of the table to be created, the reserved read throughput and reserved write throughput of any table cannot exceed 5000.</summary>
+        /// <summary>Property reservedThroughput: The initial reserved read\/write throughput setting of the table to be created, the reserved read throughput and reserved write throughput of any table cannot exceed 5000.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "reservedThroughput", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ots.RosTable.ReservedThroughputProperty\"}]}}", isOptional: true)]
         public object? ReservedThroughput

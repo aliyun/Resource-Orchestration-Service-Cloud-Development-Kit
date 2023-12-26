@@ -4,12 +4,13 @@ import { RosAppUser } from './sag.generated';
 export { RosAppUser as AppUserProperty };
 
 /**
- * Properties for defining a `ALIYUN::SAG::AppUser`
+ * Properties for defining a `AppUser`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-appuser
  */
 export interface AppUserProps {
 
     /**
-     * Property bandwidth: The bandwidth. Unit: Kbit/s. Maximum bandwidth: 2,000 Kbit/s.
+     * Property bandwidth: The bandwidth. Unit: Kbit\/s. Maximum bandwidth: 2,000 Kbit\/s.
      */
     readonly bandwidth: number | ros.IResolvable;
 
@@ -54,14 +55,11 @@ export interface AppUserProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::SAG::AppUser`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::AppUser`, which is used to create a client account for a Smart Access Gateway (SAG) app instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAppUser`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-appuser
  */
 export class AppUser extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute SmartAGId: The ID of the SAG APP instance.
@@ -69,13 +67,11 @@ export class AppUser extends ros.Resource {
     public readonly attrSmartAgId: ros.IResolvable;
 
     /**
-     * Attribute UserName: <heat.engine.properties.Schema object at 0x7f789e4ada90>
+     * Attribute UserName: <heat.engine.properties.Schema object at 0x7fd9b9b6e1d0>
      */
     public readonly attrUserName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::SAG::AppUser`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

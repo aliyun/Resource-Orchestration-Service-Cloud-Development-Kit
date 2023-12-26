@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::RDS::Account`.</summary>
+    /// <summary>Properties for defining a `RosAccount`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-account
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-rds.RosAccountProps")]
     public class RosAccountProps : AlibabaCloud.SDK.ROS.CDK.Rds.IRosAccountProps
     {
@@ -117,9 +120,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 
         /// <remarks>
         /// <strong>Property</strong>: accountDescription: Account remarks.
-        /// It cannot begin with http:// or https://.
+        /// It cannot begin with http:\/\/ or https:\/\/.
         /// It must start with a Chinese character or English letter.
-        /// It can include Chinese and English characters/letters, underscores (_), hyphens (-), and digits.
+        /// It can include Chinese and English characters\/letters, underscores (_), hyphens (-), and digits.
         /// The length may be 2-256 characters.
         /// </remarks>
         [JsiiOptional]
@@ -157,8 +160,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// Normal: Common privilege.
         /// Super: High privilege. And the default value is Normal.
         /// Sysadmin: Super privileges (SA) (only supported by SQL Server)
-        /// This parameter is valid for MySQL 5.5/5.6 only.
-        /// MySQL 5.7, SQL Server 2012/2016, PostgreSQL, and PPAS each can have only one initial account. Other accounts are created by the initial account that has logged on to the database.
+        /// This parameter is valid for MySQL 5.5\/5.6 only.
+        /// MySQL 5.7, SQL Server 2012\/2016, PostgreSQL, and PPAS each can have only one initial account. Other accounts are created by the initial account that has logged on to the database.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "accountType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

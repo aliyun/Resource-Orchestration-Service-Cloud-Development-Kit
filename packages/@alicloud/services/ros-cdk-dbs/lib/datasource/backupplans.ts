@@ -4,7 +4,8 @@ import { RosBackupPlans } from './dbs.generated';
 export { RosBackupPlans as BackupPlansProperty };
 
 /**
- * Properties for defining a `DATASOURCE::DBS::BackupPlans`
+ * Properties for defining a `BackupPlans`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dbs-backupplans
  */
 export interface BackupPlansProps {
 
@@ -25,14 +26,11 @@ export interface BackupPlansProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::DBS::BackupPlans`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::DBS::BackupPlans`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBackupPlans`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dbs-backupplans
  */
 export class BackupPlans extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute BackupPlanIds: The list of backup plan IDs.
@@ -45,8 +43,6 @@ export class BackupPlans extends ros.Resource {
     public readonly attrBackupPlans: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::DBS::BackupPlans`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Arms
 {
-    /// <summary>Properties for defining a `ALIYUN::ARMS::AlertContact`.</summary>
+    /// <summary>Properties for defining a `AlertContact`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-alertcontact
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IAlertContactProps), fullyQualifiedName: "@alicloud/ros-cdk-arms.AlertContactProps")]
     public interface IAlertContactProps
     {
@@ -84,7 +87,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ARMS::AlertContact`.</summary>
+        /// <summary>Properties for defining a `AlertContact`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-alertcontact
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IAlertContactProps), fullyQualifiedName: "@alicloud/ros-cdk-arms.AlertContactProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Arms.IAlertContactProps
         {

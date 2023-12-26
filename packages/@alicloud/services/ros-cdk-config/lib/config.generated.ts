@@ -3,7 +3,617 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::Config::CompliancePack`
+ * Properties for defining a `RosAggregateCompliancePack`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-aggregatecompliancepack
+ */
+export interface RosAggregateCompliancePackProps {
+
+    /**
+     * @Property aggregatorId: Aggregator id.
+     */
+    readonly aggregatorId: string | ros.IResolvable;
+
+    /**
+     * @Property compliancePackName: Compliance package name.
+     */
+    readonly compliancePackName: string | ros.IResolvable;
+
+    /**
+     * @Property configRules: List of rules in the compliance package.
+     */
+    readonly configRules: Array<RosAggregateCompliancePack.ConfigRulesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property description: The description of compliance pack.
+     */
+    readonly description: string | ros.IResolvable;
+
+    /**
+     * @Property riskLevel: Compliance package risk level. Value:
+     * 1: High risk.
+     * 2: Medium risk.
+     * 3: Low risk.
+     */
+    readonly riskLevel: number | ros.IResolvable;
+
+    /**
+     * @Property compliancePackTemplateId: Compliance package template ID.
+     */
+    readonly compliancePackTemplateId?: string | ros.IResolvable;
+
+    /**
+     * @Property defaultEnable: Whether the rule supports quick activation. Value:
+     * true: This rule will be enabled when the compliance package is quickly enabled.
+     * false (default): disable
+     */
+    readonly defaultEnable?: boolean | ros.IResolvable;
+
+    /**
+     * @Property excludeResourceIdsScope: The compliance package is invalid for the specified resource ID, that is, no evaluation is performed on the resource.
+     */
+    readonly excludeResourceIdsScope?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property regionIdsScope: The compliance package only takes effect for resources in the specified region ID.
+     */
+    readonly regionIdsScope?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupIdsScope: The compliance package only takes effect on resources in the specified resource group ID.
+     */
+    readonly resourceGroupIdsScope?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property tagKeyScope: Compliance packages only take effect on resources bound to the specified tag key.
+     */
+    readonly tagKeyScope?: string | ros.IResolvable;
+
+    /**
+     * @Property tagValueScope: Compliance packages only take effect on resources bound to specified tag key-value pairs.TagValueScope needs to be used in conjunction with TagKeyScope.
+     */
+    readonly tagValueScope?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAggregateCompliancePackProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAggregateCompliancePackProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAggregateCompliancePackPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('tagKeyScope', ros.validateString)(properties.tagKeyScope));
+    errors.collect(ros.propertyValidator('tagValueScope', ros.validateString)(properties.tagValueScope));
+    errors.collect(ros.propertyValidator('description', ros.requiredValidator)(properties.description));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('compliancePackName', ros.requiredValidator)(properties.compliancePackName));
+    errors.collect(ros.propertyValidator('compliancePackName', ros.validateString)(properties.compliancePackName));
+    errors.collect(ros.propertyValidator('excludeResourceIdsScope', ros.listValidator(ros.validateString))(properties.excludeResourceIdsScope));
+    errors.collect(ros.propertyValidator('regionIdsScope', ros.listValidator(ros.validateString))(properties.regionIdsScope));
+    errors.collect(ros.propertyValidator('resourceGroupIdsScope', ros.listValidator(ros.validateString))(properties.resourceGroupIdsScope));
+    errors.collect(ros.propertyValidator('configRules', ros.requiredValidator)(properties.configRules));
+    if(properties.configRules && (Array.isArray(properties.configRules) || (typeof properties.configRules) === 'string')) {
+        errors.collect(ros.propertyValidator('configRules', ros.validateLength)({
+            data: properties.configRules.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('configRules', ros.listValidator(RosAggregateCompliancePack_ConfigRulesPropertyValidator))(properties.configRules));
+    errors.collect(ros.propertyValidator('compliancePackTemplateId', ros.validateString)(properties.compliancePackTemplateId));
+    errors.collect(ros.propertyValidator('riskLevel', ros.requiredValidator)(properties.riskLevel));
+    if(properties.riskLevel && (typeof properties.riskLevel) !== 'object') {
+        errors.collect(ros.propertyValidator('riskLevel', ros.validateAllowedValues)({
+          data: properties.riskLevel,
+          allowedValues: [1,2,3],
+        }));
+    }
+    errors.collect(ros.propertyValidator('riskLevel', ros.validateNumber)(properties.riskLevel));
+    errors.collect(ros.propertyValidator('defaultEnable', ros.validateBoolean)(properties.defaultEnable));
+    errors.collect(ros.propertyValidator('aggregatorId', ros.requiredValidator)(properties.aggregatorId));
+    errors.collect(ros.propertyValidator('aggregatorId', ros.validateString)(properties.aggregatorId));
+    return errors.wrap('supplied properties not correct for "RosAggregateCompliancePackProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::Config::AggregateCompliancePack` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAggregateCompliancePackProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::Config::AggregateCompliancePack` resource.
+ */
+// @ts-ignore TS6133
+function rosAggregateCompliancePackPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAggregateCompliancePackPropsValidator(properties).assertSuccess();
+    }
+    return {
+      AggregatorId: ros.stringToRosTemplate(properties.aggregatorId),
+      CompliancePackName: ros.stringToRosTemplate(properties.compliancePackName),
+      ConfigRules: ros.listMapper(rosAggregateCompliancePackConfigRulesPropertyToRosTemplate)(properties.configRules),
+      Description: ros.stringToRosTemplate(properties.description),
+      RiskLevel: ros.numberToRosTemplate(properties.riskLevel),
+      CompliancePackTemplateId: ros.stringToRosTemplate(properties.compliancePackTemplateId),
+      DefaultEnable: ros.booleanToRosTemplate(properties.defaultEnable),
+      ExcludeResourceIdsScope: ros.listMapper(ros.stringToRosTemplate)(properties.excludeResourceIdsScope),
+      RegionIdsScope: ros.listMapper(ros.stringToRosTemplate)(properties.regionIdsScope),
+      ResourceGroupIdsScope: ros.listMapper(ros.stringToRosTemplate)(properties.resourceGroupIdsScope),
+      TagKeyScope: ros.stringToRosTemplate(properties.tagKeyScope),
+      TagValueScope: ros.stringToRosTemplate(properties.tagValueScope),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Config::AggregateCompliancePack`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AggregateCompliancePack` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-aggregatecompliancepack
+ */
+export class RosAggregateCompliancePack extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::Config::AggregateCompliancePack";
+
+    /**
+     * @Attribute CompliancePackId: The ID of the compliance pack id.
+     */
+    public readonly attrCompliancePackId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property aggregatorId: Aggregator id.
+     */
+    public aggregatorId: string | ros.IResolvable;
+
+    /**
+     * @Property compliancePackName: Compliance package name.
+     */
+    public compliancePackName: string | ros.IResolvable;
+
+    /**
+     * @Property configRules: List of rules in the compliance package.
+     */
+    public configRules: Array<RosAggregateCompliancePack.ConfigRulesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property description: The description of compliance pack.
+     */
+    public description: string | ros.IResolvable;
+
+    /**
+     * @Property riskLevel: Compliance package risk level. Value:
+     * 1: High risk.
+     * 2: Medium risk.
+     * 3: Low risk.
+     */
+    public riskLevel: number | ros.IResolvable;
+
+    /**
+     * @Property compliancePackTemplateId: Compliance package template ID.
+     */
+    public compliancePackTemplateId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property defaultEnable: Whether the rule supports quick activation. Value:
+     * true: This rule will be enabled when the compliance package is quickly enabled.
+     * false (default): disable
+     */
+    public defaultEnable: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property excludeResourceIdsScope: The compliance package is invalid for the specified resource ID, that is, no evaluation is performed on the resource.
+     */
+    public excludeResourceIdsScope: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property regionIdsScope: The compliance package only takes effect for resources in the specified region ID.
+     */
+    public regionIdsScope: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupIdsScope: The compliance package only takes effect on resources in the specified resource group ID.
+     */
+    public resourceGroupIdsScope: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property tagKeyScope: Compliance packages only take effect on resources bound to the specified tag key.
+     */
+    public tagKeyScope: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tagValueScope: Compliance packages only take effect on resources bound to specified tag key-value pairs.TagValueScope needs to be used in conjunction with TagKeyScope.
+     */
+    public tagValueScope: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAggregateCompliancePackProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAggregateCompliancePack.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCompliancePackId = this.getAtt('CompliancePackId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.aggregatorId = props.aggregatorId;
+        this.compliancePackName = props.compliancePackName;
+        this.configRules = props.configRules;
+        this.description = props.description;
+        this.riskLevel = props.riskLevel;
+        this.compliancePackTemplateId = props.compliancePackTemplateId;
+        this.defaultEnable = props.defaultEnable;
+        this.excludeResourceIdsScope = props.excludeResourceIdsScope;
+        this.regionIdsScope = props.regionIdsScope;
+        this.resourceGroupIdsScope = props.resourceGroupIdsScope;
+        this.tagKeyScope = props.tagKeyScope;
+        this.tagValueScope = props.tagValueScope;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            aggregatorId: this.aggregatorId,
+            compliancePackName: this.compliancePackName,
+            configRules: this.configRules,
+            description: this.description,
+            riskLevel: this.riskLevel,
+            compliancePackTemplateId: this.compliancePackTemplateId,
+            defaultEnable: this.defaultEnable,
+            excludeResourceIdsScope: this.excludeResourceIdsScope,
+            regionIdsScope: this.regionIdsScope,
+            resourceGroupIdsScope: this.resourceGroupIdsScope,
+            tagKeyScope: this.tagKeyScope,
+            tagValueScope: this.tagValueScope,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAggregateCompliancePackPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosAggregateCompliancePack {
+    /**
+     * @stability external
+     */
+    export interface ConfigRuleParametersProperty {
+        /**
+         * @Property parameterValue: The value of parameter.
+         */
+        readonly parameterValue: string | ros.IResolvable;
+        /**
+         * @Property parameterName: The name of parameter.
+         */
+        readonly parameterName: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ConfigRuleParametersProperty`
+ *
+ * @param properties - the TypeScript properties of a `ConfigRuleParametersProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosAggregateCompliancePack_ConfigRuleParametersPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('parameterValue', ros.requiredValidator)(properties.parameterValue));
+    errors.collect(ros.propertyValidator('parameterValue', ros.validateString)(properties.parameterValue));
+    errors.collect(ros.propertyValidator('parameterName', ros.requiredValidator)(properties.parameterName));
+    errors.collect(ros.propertyValidator('parameterName', ros.validateString)(properties.parameterName));
+    return errors.wrap('supplied properties not correct for "ConfigRuleParametersProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::Config::AggregateCompliancePack.ConfigRuleParameters` resource
+ *
+ * @param properties - the TypeScript properties of a `ConfigRuleParametersProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::Config::AggregateCompliancePack.ConfigRuleParameters` resource.
+ */
+// @ts-ignore TS6133
+function rosAggregateCompliancePackConfigRuleParametersPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosAggregateCompliancePack_ConfigRuleParametersPropertyValidator(properties).assertSuccess();
+    return {
+      ParameterValue: ros.stringToRosTemplate(properties.parameterValue),
+      ParameterName: ros.stringToRosTemplate(properties.parameterName),
+    };
+}
+
+export namespace RosAggregateCompliancePack {
+    /**
+     * @stability external
+     */
+    export interface ConfigRulesProperty {
+        /**
+         * @Property configRuleId: Rule ID. Configure auditing to add existing rules to the current compliance package.Choose one of ManagedRuleIdentifier and ConfigRuleId. When both parameters are set, ConfigRuleId is the correct one.
+         */
+        readonly configRuleId?: string | ros.IResolvable;
+        /**
+         * @Property description: The description of config rule.
+         */
+        readonly description?: string | ros.IResolvable;
+        /**
+         * @Property configRuleName: The name of config rule.
+         */
+        readonly configRuleName?: string | ros.IResolvable;
+        /**
+         * @Property managedRuleIdentifier: Managed rule ID. Configure auditing to automatically create a rule based on the managed rule ID and add the rule to the current compliance package.Choose one of ManagedRuleIdentifier and ConfigRuleId. When both parameters are set, ConfigRuleId is the correct one.
+         */
+        readonly managedRuleIdentifier?: string | ros.IResolvable;
+        /**
+         * @Property riskLevel: Rule risk level. Value:
+     * 1: High risk.
+     * 2: Medium risk.
+     * 3: Low risk.
+         */
+        readonly riskLevel: number | ros.IResolvable;
+        /**
+         * @Property configRuleParameters: undefined
+         */
+        readonly configRuleParameters?: Array<RosAggregateCompliancePack.ConfigRuleParametersProperty | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ConfigRulesProperty`
+ *
+ * @param properties - the TypeScript properties of a `ConfigRulesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosAggregateCompliancePack_ConfigRulesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('configRuleId', ros.validateString)(properties.configRuleId));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('configRuleName', ros.validateString)(properties.configRuleName));
+    errors.collect(ros.propertyValidator('managedRuleIdentifier', ros.validateString)(properties.managedRuleIdentifier));
+    errors.collect(ros.propertyValidator('riskLevel', ros.requiredValidator)(properties.riskLevel));
+    if(properties.riskLevel && (typeof properties.riskLevel) !== 'object') {
+        errors.collect(ros.propertyValidator('riskLevel', ros.validateAllowedValues)({
+          data: properties.riskLevel,
+          allowedValues: [1,2,3],
+        }));
+    }
+    errors.collect(ros.propertyValidator('riskLevel', ros.validateNumber)(properties.riskLevel));
+    errors.collect(ros.propertyValidator('configRuleParameters', ros.listValidator(RosAggregateCompliancePack_ConfigRuleParametersPropertyValidator))(properties.configRuleParameters));
+    return errors.wrap('supplied properties not correct for "ConfigRulesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::Config::AggregateCompliancePack.ConfigRules` resource
+ *
+ * @param properties - the TypeScript properties of a `ConfigRulesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::Config::AggregateCompliancePack.ConfigRules` resource.
+ */
+// @ts-ignore TS6133
+function rosAggregateCompliancePackConfigRulesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosAggregateCompliancePack_ConfigRulesPropertyValidator(properties).assertSuccess();
+    return {
+      ConfigRuleId: ros.stringToRosTemplate(properties.configRuleId),
+      Description: ros.stringToRosTemplate(properties.description),
+      ConfigRuleName: ros.stringToRosTemplate(properties.configRuleName),
+      ManagedRuleIdentifier: ros.stringToRosTemplate(properties.managedRuleIdentifier),
+      RiskLevel: ros.numberToRosTemplate(properties.riskLevel),
+      ConfigRuleParameters: ros.listMapper(rosAggregateCompliancePackConfigRuleParametersPropertyToRosTemplate)(properties.configRuleParameters),
+    };
+}
+
+/**
+ * Properties for defining a `RosAggregator`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-aggregator
+ */
+export interface RosAggregatorProps {
+
+    /**
+     * @Property aggregatorName: The name of aggregator.
+     */
+    readonly aggregatorName: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of aggregator.
+     */
+    readonly description: string | ros.IResolvable;
+
+    /**
+     * @Property aggregatorAccounts: The member account in aggregator.When the AggregatorType is RD, this parameter can be empty, which means that all accounts in the resource directory will be added to the global account group.
+     */
+    readonly aggregatorAccounts?: Array<RosAggregator.AggregatorAccountsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property aggregatorType: Account group type. Value:
+     * RD: Global account group.CUSTOM: Custom account group (default value).
+     */
+    readonly aggregatorType?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAggregatorProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAggregatorProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAggregatorPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('aggregatorName', ros.requiredValidator)(properties.aggregatorName));
+    errors.collect(ros.propertyValidator('aggregatorName', ros.validateString)(properties.aggregatorName));
+    errors.collect(ros.propertyValidator('description', ros.requiredValidator)(properties.description));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('aggregatorAccounts', ros.listValidator(RosAggregator_AggregatorAccountsPropertyValidator))(properties.aggregatorAccounts));
+    if(properties.aggregatorType && (typeof properties.aggregatorType) !== 'object') {
+        errors.collect(ros.propertyValidator('aggregatorType', ros.validateAllowedValues)({
+          data: properties.aggregatorType,
+          allowedValues: ["RD","CUSTOM"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('aggregatorType', ros.validateString)(properties.aggregatorType));
+    return errors.wrap('supplied properties not correct for "RosAggregatorProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::Config::Aggregator` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAggregatorProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::Config::Aggregator` resource.
+ */
+// @ts-ignore TS6133
+function rosAggregatorPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAggregatorPropsValidator(properties).assertSuccess();
+    }
+    return {
+      AggregatorName: ros.stringToRosTemplate(properties.aggregatorName),
+      Description: ros.stringToRosTemplate(properties.description),
+      AggregatorAccounts: ros.listMapper(rosAggregatorAggregatorAccountsPropertyToRosTemplate)(properties.aggregatorAccounts),
+      AggregatorType: ros.stringToRosTemplate(properties.aggregatorType),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Config::Aggregator`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Aggregator` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-aggregator
+ */
+export class RosAggregator extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::Config::Aggregator";
+
+    /**
+     * @Attribute AggregatorId: The ID of the aggregator.
+     */
+    public readonly attrAggregatorId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property aggregatorName: The name of aggregator.
+     */
+    public aggregatorName: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of aggregator.
+     */
+    public description: string | ros.IResolvable;
+
+    /**
+     * @Property aggregatorAccounts: The member account in aggregator.When the AggregatorType is RD, this parameter can be empty, which means that all accounts in the resource directory will be added to the global account group.
+     */
+    public aggregatorAccounts: Array<RosAggregator.AggregatorAccountsProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property aggregatorType: Account group type. Value:
+     * RD: Global account group.CUSTOM: Custom account group (default value).
+     */
+    public aggregatorType: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAggregatorProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAggregator.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAggregatorId = this.getAtt('AggregatorId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.aggregatorName = props.aggregatorName;
+        this.description = props.description;
+        this.aggregatorAccounts = props.aggregatorAccounts;
+        this.aggregatorType = props.aggregatorType;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            aggregatorName: this.aggregatorName,
+            description: this.description,
+            aggregatorAccounts: this.aggregatorAccounts,
+            aggregatorType: this.aggregatorType,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAggregatorPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosAggregator {
+    /**
+     * @stability external
+     */
+    export interface AggregatorAccountsProperty {
+        /**
+         * @Property accountId: The account id.
+         */
+        readonly accountId: number | ros.IResolvable;
+        /**
+         * @Property accountType: The account type. Only support: ResourceDirectory
+         */
+        readonly accountType?: string | ros.IResolvable;
+        /**
+         * @Property accountName: The account name.
+         */
+        readonly accountName: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `AggregatorAccountsProperty`
+ *
+ * @param properties - the TypeScript properties of a `AggregatorAccountsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosAggregator_AggregatorAccountsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('accountId', ros.requiredValidator)(properties.accountId));
+    errors.collect(ros.propertyValidator('accountId', ros.validateNumber)(properties.accountId));
+    if(properties.accountType && (typeof properties.accountType) !== 'object') {
+        errors.collect(ros.propertyValidator('accountType', ros.validateAllowedValues)({
+          data: properties.accountType,
+          allowedValues: ["ResourceDirectory"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('accountType', ros.validateString)(properties.accountType));
+    errors.collect(ros.propertyValidator('accountName', ros.requiredValidator)(properties.accountName));
+    errors.collect(ros.propertyValidator('accountName', ros.validateString)(properties.accountName));
+    return errors.wrap('supplied properties not correct for "AggregatorAccountsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::Config::Aggregator.AggregatorAccounts` resource
+ *
+ * @param properties - the TypeScript properties of a `AggregatorAccountsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::Config::Aggregator.AggregatorAccounts` resource.
+ */
+// @ts-ignore TS6133
+function rosAggregatorAggregatorAccountsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosAggregator_AggregatorAccountsPropertyValidator(properties).assertSuccess();
+    return {
+      AccountId: ros.numberToRosTemplate(properties.accountId),
+      AccountType: ros.stringToRosTemplate(properties.accountType),
+      AccountName: ros.stringToRosTemplate(properties.accountName),
+    };
+}
+
+/**
+ * Properties for defining a `RosCompliancePack`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-compliancepack
  */
 export interface RosCompliancePackProps {
 
@@ -77,18 +687,15 @@ function rosCompliancePackPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * A ROS template type:  `ALIYUN::Config::CompliancePack`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Config::CompliancePack`, which is used to create a compliance package.
+ * @Note This class does not contain additional functions, so it is recommended to use the `CompliancePack` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-compliancepack
  */
 export class RosCompliancePack extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::Config::CompliancePack";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AccountId: Aliyun User Id
@@ -149,8 +756,6 @@ export class RosCompliancePack extends ros.RosResource {
     public configRules: Array<RosCompliancePack.ConfigRulesProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::Config::CompliancePack`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -300,7 +905,8 @@ function rosCompliancePackConfigRulesPropertyToRosTemplate(properties: any): any
 }
 
 /**
- * Properties for defining a `ALIYUN::Config::DeliveryChannel`
+ * Properties for defining a `RosDeliveryChannel`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-deliverychannel
  */
 export interface RosDeliveryChannelProps {
 
@@ -317,8 +923,8 @@ export interface RosDeliveryChannelProps {
      * @Property deliveryChannelTargetArn: The ARN of the delivery destination. This parameter is required when you create a
      * delivery method. The value must be in one of the following formats:
      * acs:oss:{RegionId}:{Aliuid}:{bucketName} if your delivery destination is an Object Storage Service (OSS) bucket.
-     * acs:mns:{RegionId}:{Aliuid}:/topics/{topicName} if your delivery destination is a Message Service (MNS) topic.
-     * acs:log:{RegionId}:{Aliuid}:project/{projectName}/logstore/{logstoreName} if your delivery destination is a Log Service Logstore.
+     * acs:mns:{RegionId}:{Aliuid}:\/topics\/{topicName} if your delivery destination is a Message Service (MNS) topic.
+     * acs:log:{RegionId}:{Aliuid}:project\/{projectName}\/logstore\/{logstoreName} if your delivery destination is a Log Service Logstore.
      */
     readonly deliveryChannelTargetArn: string | ros.IResolvable;
 
@@ -410,18 +1016,15 @@ function rosDeliveryChannelPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * A ROS template type:  `ALIYUN::Config::DeliveryChannel`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Config::DeliveryChannel`, which is used to create or update a delivery channel.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DeliveryChannel` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-deliverychannel
  */
 export class RosDeliveryChannel extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::Config::DeliveryChannel";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DeliveryChannelId: The ID of the delivery method.
@@ -444,8 +1047,8 @@ export class RosDeliveryChannel extends ros.RosResource {
      * @Property deliveryChannelTargetArn: The ARN of the delivery destination. This parameter is required when you create a
      * delivery method. The value must be in one of the following formats:
      * acs:oss:{RegionId}:{Aliuid}:{bucketName} if your delivery destination is an Object Storage Service (OSS) bucket.
-     * acs:mns:{RegionId}:{Aliuid}:/topics/{topicName} if your delivery destination is a Message Service (MNS) topic.
-     * acs:log:{RegionId}:{Aliuid}:project/{projectName}/logstore/{logstoreName} if your delivery destination is a Log Service Logstore.
+     * acs:mns:{RegionId}:{Aliuid}:\/topics\/{topicName} if your delivery destination is a Message Service (MNS) topic.
+     * acs:log:{RegionId}:{Aliuid}:project\/{projectName}\/logstore\/{logstoreName} if your delivery destination is a Log Service Logstore.
      */
     public deliveryChannelTargetArn: string | ros.IResolvable;
 
@@ -485,8 +1088,6 @@ export class RosDeliveryChannel extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::Config::DeliveryChannel`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -521,7 +1122,8 @@ export class RosDeliveryChannel extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::Config::Rule`
+ * Properties for defining a `RosRule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-rule
  */
 export interface RosRuleProps {
 
@@ -668,18 +1270,15 @@ function rosRulePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * A ROS template type:  `ALIYUN::Config::Rule`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Config::Rule`, which is used to create or modify a rule.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Rule` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-rule
  */
 export class RosRule extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::Config::Rule";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ConfigRuleArn: config rule arn
@@ -845,8 +1444,6 @@ export class RosRule extends ros.RosResource {
     public tagValueScope: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::Config::Rule`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

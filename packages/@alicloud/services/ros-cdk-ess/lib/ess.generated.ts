@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::ESS::AlarmTask`
+ * Properties for defining a `RosAlarmTask`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-alarmtask
  */
 export interface RosAlarmTaskProps {
 
@@ -179,18 +180,15 @@ function rosAlarmTaskPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `ALIYUN::ESS::AlarmTask`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::AlarmTask`, which is used to create a metric-based alarm task.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AlarmTask` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-alarmtask
  */
 export class RosAlarmTask extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ESS::AlarmTask";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AlarmTaskId: The alarm task ID
@@ -266,8 +264,6 @@ export class RosAlarmTask extends ros.RosResource {
     public statistics: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ESS::AlarmTask`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -365,7 +361,8 @@ function rosAlarmTaskDimensionsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ESS::AlarmTaskEnable`
+ * Properties for defining a `RosAlarmTaskEnable`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-alarmtaskenable
  */
 export interface RosAlarmTaskEnableProps {
 
@@ -417,18 +414,15 @@ function rosAlarmTaskEnablePropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * A ROS template type:  `ALIYUN::ESS::AlarmTaskEnable`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::AlarmTaskEnable`, which is used to start an alarm task. You can call this operation to enable alarm tasks when the task is stopped.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AlarmTaskEnable` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-alarmtaskenable
  */
 export class RosAlarmTaskEnable extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ESS::AlarmTaskEnable";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -444,8 +438,6 @@ export class RosAlarmTaskEnable extends ros.RosResource {
     public enable: boolean | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ESS::AlarmTaskEnable`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -471,7 +463,8 @@ export class RosAlarmTaskEnable extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ESS::LifecycleHook`
+ * Properties for defining a `RosLifecycleHook`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-lifecyclehook
  */
 export interface RosLifecycleHookProps {
 
@@ -513,9 +506,9 @@ export interface RosLifecycleHookProps {
      * region: the region to which the scaling group locates
      * account-id: Alibaba Cloud ID
      * For example:
-     * MNS queue: acs:ess:{region}:{account-id}:queue/{queuename}
-     * MNS topic: acs:ess:{region}:{account-id}:topic/{topicname}
-     * OOS template: acs:ess:{region}:{account-id}:oos/{templatename}
+     * MNS queue: acs:ess:{region}:{account-id}:queue\/{queuename}
+     * MNS topic: acs:ess:{region}:{account-id}:topic\/{topicname}
+     * OOS template: acs:ess:{region}:{account-id}:oos\/{templatename}
      */
     readonly notificationArn?: string | ros.IResolvable;
 
@@ -617,18 +610,15 @@ function rosLifecycleHookPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `ALIYUN::ESS::LifecycleHook`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::LifecycleHook`, which is used to create a lifecycle hook for a scaling group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `LifecycleHook` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-lifecyclehook
  */
 export class RosLifecycleHook extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ESS::LifecycleHook";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute LifecycleHookId: The lifecycle hook ID
@@ -681,9 +671,9 @@ export class RosLifecycleHook extends ros.RosResource {
      * region: the region to which the scaling group locates
      * account-id: Alibaba Cloud ID
      * For example:
-     * MNS queue: acs:ess:{region}:{account-id}:queue/{queuename}
-     * MNS topic: acs:ess:{region}:{account-id}:topic/{topicname}
-     * OOS template: acs:ess:{region}:{account-id}:oos/{templatename}
+     * MNS queue: acs:ess:{region}:{account-id}:queue\/{queuename}
+     * MNS topic: acs:ess:{region}:{account-id}:topic\/{topicname}
+     * OOS template: acs:ess:{region}:{account-id}:oos\/{templatename}
      */
     public notificationArn: string | ros.IResolvable | undefined;
 
@@ -693,8 +683,6 @@ export class RosLifecycleHook extends ros.RosResource {
     public notificationMetadata: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ESS::LifecycleHook`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -732,7 +720,8 @@ export class RosLifecycleHook extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ESS::LoadBalancerAttachment`
+ * Properties for defining a `RosLoadBalancerAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-loadbalancerattachment
  */
 export interface RosLoadBalancerAttachmentProps {
 
@@ -814,18 +803,15 @@ function rosLoadBalancerAttachmentPropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * A ROS template type:  `ALIYUN::ESS::LoadBalancerAttachment`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::LoadBalancerAttachment`DATASOURCE::ESS::ScalingConfigurations is used to query the details of scaling configurations.
+ * @Note This class does not contain additional functions, so it is recommended to use the `LoadBalancerAttachment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-loadbalancerattachment
  */
 export class RosLoadBalancerAttachment extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ESS::LoadBalancerAttachment";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -854,8 +840,6 @@ export class RosLoadBalancerAttachment extends ros.RosResource {
     public loadBalancers: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ESS::LoadBalancerAttachment`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -933,7 +917,8 @@ function rosLoadBalancerAttachmentLoadBalancerConfigsPropertyToRosTemplate(prope
 }
 
 /**
- * Properties for defining a `ALIYUN::ESS::ScalingConfiguration`
+ * Properties for defining a `RosScalingConfiguration`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalingconfiguration
  */
 export interface RosScalingConfigurationProps {
 
@@ -943,11 +928,32 @@ export interface RosScalingConfigurationProps {
     readonly scalingGroupId: string | ros.IResolvable;
 
     /**
+     * @Property affinity: Specifies whether to associate an ECS instance on a dedicated host with the dedicated host. Valid values:
+     * - **default**: does not associate the ECS instance with the dedicated host. If you start an ECS instance that was stopped in economical mode and the original dedicated host has insufficient resources, the ECS instance is automatically deployed to another dedicated host in the automatic deployment resource pool.
+     * - **host**: associates the ECS instance with the dedicated host. If you start an ECS instance that was stopped in economical mode, the instance remains on the original dedicated host. If the original dedicated host has insufficient resources, the ECS instance fails to start.
+     * Default value: **default**
+     */
+    readonly affinity?: string | ros.IResolvable;
+
+    /**
+     * @Property cpu: The number of vCPUs.
+     * You can specify the number of vCPUs and the memory size to determine the range of instance types. For example, you can set CPU to 2 and Memory to 16 to specify instance types that have 2 vCPUs and 16 GiB of memory. If you specify Cpu and Memory, Auto Scaling determines the available instance types based on factors such as I\/O optimization requirements and zones. Then, Auto Scaling preferentially creates instances by using the lowest-priced instance type.
+     * **Note**: You can specify **Cpu** and **Memory** to determine the range of instance types only if you set Scaling Policy to Cost Optimization Policy and you do not specify instance types in the scaling configuration.
+     */
+    readonly cpu?: number | ros.IResolvable;
+
+    /**
      * @Property creditSpecification: The performance mode of the burstable instance. Valid values:
      * Standard: the standard mode.
      * Unlimited: the unlimited mode.
      */
     readonly creditSpecification?: string | ros.IResolvable;
+
+    /**
+     * @Property dedicatedHostId: The ID of the dedicated host on which you want to create an ECS instance. You cannot create preemptible instances on dedicated hosts. If you specify **DedicatedHostId**, **SpotStrategy** and **SpotPriceLimit** are ignored.
+     * You can call the **DescribeDedicatedHosts** operation to query dedicated host IDs.
+     */
+    readonly dedicatedHostId?: string | ros.IResolvable;
 
     /**
      * @Property deploymentSetId: Deployment set ID.
@@ -972,7 +978,7 @@ export interface RosScalingConfigurationProps {
     readonly hpcClusterId?: string | ros.IResolvable;
 
     /**
-     * @Property imageFamily: The name of the image family. You can configure this parameter to obtain the latest available custom images within the specified image family. The images are used to create ECS instances. If you have set the ImageId parameter, you cannot set the ImageFamily parameter.
+     * @Property imageFamily: The name of the image family. You can configure this parameter to obtain the latest available images within the specified image family. The images are used to create ECS instances. If you have set the ImageId parameter, you cannot set the ImageFamily parameter.
      */
     readonly imageFamily?: string | ros.IResolvable;
 
@@ -980,6 +986,25 @@ export interface RosScalingConfigurationProps {
      * @Property imageId: Image ID to create ecs instance .
      */
     readonly imageId?: string | ros.IResolvable;
+
+    /**
+     * @Property imageName: The name of the image. Each image name must be unique in a region. If you specify **ImageId**, **ImageName** is ignored.
+     * You cannot use **ImageName** to specify images that are purchased from Alibaba Cloud Marketplace.
+     */
+    readonly imageName?: string | ros.IResolvable;
+
+    /**
+     * @Property imageOptionsLoginAsNonRoot: Whether the ecs instance is logged in as ecs-user.Valid values:
+     * - **true**
+     * - **false**
+     * Default value: **false**.
+     */
+    readonly imageOptionsLoginAsNonRoot?: boolean | ros.IResolvable;
+
+    /**
+     * @Property instanceDescription: The description of the ECS instance. The description must be 2 to 256 characters in length. The description can contain letters and cannot start with http:\/\/ or https:\/\/.
+     */
+    readonly instanceDescription?: string | ros.IResolvable;
 
     /**
      * @Property instanceId: Source ECS instance to copy configuration, if the properties is setting, Which will copy the InstanceType, ImageId, InternetChargeType, IoOptimized,UserData, KeyPairName, RamRoleName, InternetMaxBandwidthIn,InternetMaxBandwidthOut, and first security group id from source instance, you can also specify the relative properties to overwrite the properties copy from source instance id.
@@ -992,9 +1017,19 @@ export interface RosScalingConfigurationProps {
     readonly instanceName?: string | ros.IResolvable;
 
     /**
+     * @Property instancePatternInfos: Details of the intelligent configuration settings that determine the range of instance types that meet the specified criteria.
+     */
+    readonly instancePatternInfos?: Array<RosScalingConfiguration.InstancePatternInfosProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * @Property instanceType: ecs supported instance type.
      */
     readonly instanceType?: string | ros.IResolvable;
+
+    /**
+     * @Property instanceTypeOverrides: The instance types.
+     */
+    readonly instanceTypeOverrides?: Array<RosScalingConfiguration.InstanceTypeOverridesProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property instanceTypes: ecs supported instance types. Length [1,10]. If InstanceTypes is specified,the InstanceType will be ignored.
@@ -1040,6 +1075,13 @@ export interface RosScalingConfigurationProps {
     readonly loadBalancerWeight?: number | ros.IResolvable;
 
     /**
+     * @Property memory: The memory size. Unit: GiB.
+     * You can specify the number of vCPUs and the memory size to determine the range of instance types. For example, you can set Cpu to 2 and Memory to 16 to specify instance types that have 2 vCPUs and 16 GiB of memory. If you specify Cpu and Memory, Auto Scaling determines the available instance types based on factors such as I\/O optimization requirements and zones. Then, Auto Scaling preferentially creates instances by using the lowest-priced instance type.
+     * **Note**: You can specify **Cpu** and **Memory** to determine the range of instance types only if you set Scaling Policy to Cost Optimization Policy and you do not specify instance types in the scaling configuration.
+     */
+    readonly memory?: number | ros.IResolvable;
+
+    /**
      * @Property password: Password of created ecs instance. Must contain at least 3 types of special character, lower character, upper character, number.
      */
     readonly password?: string | ros.IResolvable;
@@ -1048,6 +1090,11 @@ export interface RosScalingConfigurationProps {
      * @Property passwordInherit: Whether to use the password pre-configured in the image you select or not. When PasswordInherit is specified, the Password must be null. For a secure access, make sure that the selected image has password configured.
      */
     readonly passwordInherit?: boolean | ros.IResolvable;
+
+    /**
+     * @Property privatePoolOptions: Option settings for private pools
+     */
+    readonly privatePoolOptions?: RosScalingConfiguration.PrivatePoolOptionsProperty | ros.IResolvable;
 
     /**
      * @Property ramRoleName: Instance RAM role name. The name is provided and maintained by Resource Access Management (RAM) and can be queried using ListRoles. For more information, see RAM API CreateRole and ListRoles.
@@ -1065,9 +1112,35 @@ export interface RosScalingConfigurationProps {
     readonly scalingConfigurationName?: string | ros.IResolvable;
 
     /**
+     * @Property securityEnhancementStrategy: Specifies whether to enable security hardening. Valid values:
+     * - **Active**: enables security hardening. This value is applicable only to public images.
+     * - **Deactive**: disables security hardening. This value is applicable to all image types.
+     */
+    readonly securityEnhancementStrategy?: string | ros.IResolvable;
+
+    /**
      * @Property securityGroupId: Security Group to create ecs instance.
      */
     readonly securityGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property securityGroupIds: The IDs of the security groups with which you want to associate the ECS instances that are created by using the scaling configuration.
+     * **Note**: If you specify **SecurityGroupId**, you cannot specify **SecurityGroupIds**.
+     */
+    readonly securityGroupIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property spotDuration: The retention period of the preemptible instance. Unit: hours. Valid values: 0, 1, 2, 3, 4, 5, and 6.
+     * The following retention periods are available in invitational preview: 2, 3, 4, 5, and 6 hours. If you want to set this parameter to one of these values, submit a ticket.
+     * If you set this parameter to 0, no protection period is specified for the preemptible instance.
+     * Default value: 1
+     */
+    readonly spotDuration?: number | ros.IResolvable;
+
+    /**
+     * @Property spotInterruptionBehavior: The interruption mode of the preemptible instance. Default value: Terminate. Set the value to Terminate. This value specifies that the preemptible instance is to be released.
+     */
+    readonly spotInterruptionBehavior?: string | ros.IResolvable;
 
     /**
      * @Property spotPriceLimit: Set the hourly maximum price for the instance. Supports a maximum of 3 decimal places, and the parameter takes effect only when the value of SpotStrategy is SpotWithPriceLimit.It is a default value for all instance types, and can be overwrite by SpotPriceLimitForInstanceType
@@ -1101,14 +1174,69 @@ export interface RosScalingConfigurationProps {
     readonly systemDiskAutoSnapshotPolicyId?: string | ros.IResolvable;
 
     /**
+     * @Property systemDiskBurstingEnabled: Specifies whether to enable the burst feature for the system disk. Valid values:
+     * - **true**
+     * - **false**
+     * **Note**: This parameter is available only if you set **SystemDiskCategory** to **cloud_auto**.
+     */
+    readonly systemDiskBurstingEnabled?: boolean | ros.IResolvable;
+
+    /**
+     * @Property systemDiskCategories: The categories of the system disks. If Auto Scaling cannot create instances by using the disk category that has the highest priority, Auto Scaling creates instances by using the disk category that has the next highest priority. Valid values:
+     * - **cloud**: basic disk
+     * - **cloud_efficiency**: ultra disk
+     * - **cloud_ssd**: standard SSD
+     * - **cloud_essd**: ESSD
+     * **Note**: If you specify **SystemDiskCategories**, you cannot specify **SystemDiskCategory**.
+     */
+    readonly systemDiskCategories?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * @Property systemDiskCategory: Category of system disk. Default is cloud.support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto
      */
     readonly systemDiskCategory?: string | ros.IResolvable;
 
     /**
+     * @Property systemDiskDescription: The description of the system disk. The description must be 2 to 256 characters in length. The description can contain letters and cannot start with http:\/\/ or https:\/\/.
+     */
+    readonly systemDiskDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property systemDiskDiskName: The name of the system disk. The name must be 2 to 128 characters in length. The name can contain letters, digits, colons (:), underscores (_), and hyphens (-). The name must start with a letter but cannot start with http:\/\/ or https:\/\/.
+     */
+    readonly systemDiskDiskName?: string | ros.IResolvable;
+
+    /**
+     * @Property systemDiskEncryptAlgorithm: The encryption algorithm that you want to use to encrypt the system disk. Valid values:
+     * - **AES-256**
+     * - **SM4-128**
+     * Default value: **AES-256**
+     */
+    readonly systemDiskEncryptAlgorithm?: string | ros.IResolvable;
+
+    /**
+     * @Property systemDiskEncrypted: Specifies whether to encrypt the system disk. Valid values:
+     * - **true**
+     * - **false**
+     * Default value: **false**
+     */
+    readonly systemDiskEncrypted?: boolean | ros.IResolvable;
+
+    /**
+     * @Property systemDiskKmsKeyId: The ID of the KMS key that you want to use to encrypt the system disk.
+     */
+    readonly systemDiskKmsKeyId?: string | ros.IResolvable;
+
+    /**
      * @Property systemDiskPerformanceLevel: The performance level of an ESSD.
      */
     readonly systemDiskPerformanceLevel?: string | ros.IResolvable;
+
+    /**
+     * @Property systemDiskProvisionedIops: The IOPS metric that is preconfigured for the system disk.
+     * **Note**: IOPS measures the number of read and write operations that an EBS device can process per second.
+     */
+    readonly systemDiskProvisionedIops?: number | ros.IResolvable;
 
     /**
      * @Property systemDiskSize: Size of system disk. Unit is GB.
@@ -1123,20 +1251,33 @@ export interface RosScalingConfigurationProps {
      * Key
      * It can be up to 64 characters in length.
      * Cannot begin with aliyun.
-     * Cannot begin with http:// or https://.
+     * Cannot begin with http:\/\/ or https:\/\/.
      * Cannot be a null string.
      * Value
      * It can be up to 128 characters in length.
      * Cannot begin with aliyun.
-     * Cannot begin with http:// or https://.
+     * Cannot begin with http:\/\/ or https:\/\/.
      * Can be a null string.If less then 20 tags are specified, ros will add a tag(Key: "ros-aliyun-created", Value:"<resource_name>_stack_<stack_id>") if possible.
      */
     readonly tagList?: Array<RosScalingConfiguration.TagListProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * @Property tenancy: Specifies whether to create an ECS instance on a dedicated host. Valid values:
+     * - **default**: does not create an ECS instance on a dedicated host.
+     * - **host**: creates an ECS instance on a dedicated host. If you do not specify **DedicatedHostId**, Alibaba Cloud selects a dedicated host for the ECS instance.
+     * Default value: **default**
+     */
+    readonly tenancy?: string | ros.IResolvable;
+
+    /**
      * @Property userData: User data to pass to instance. [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
      */
     readonly userData?: string | ros.IResolvable;
+
+    /**
+     * @Property zoneId: The zone ID of the ECS instance.
+     */
+    readonly zoneId?: string | ros.IResolvable;
 }
 
 /**
@@ -1149,8 +1290,79 @@ export interface RosScalingConfigurationProps {
 function RosScalingConfigurationPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('dedicatedHostId', ros.validateString)(properties.dedicatedHostId));
     errors.collect(ros.propertyValidator('scalingConfigurationName', ros.validateString)(properties.scalingConfigurationName));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('imageOptionsLoginAsNonRoot', ros.validateBoolean)(properties.imageOptionsLoginAsNonRoot));
+    errors.collect(ros.propertyValidator('systemDiskDescription', ros.validateString)(properties.systemDiskDescription));
+    errors.collect(ros.propertyValidator('memory', ros.validateNumber)(properties.memory));
+    errors.collect(ros.propertyValidator('systemDiskProvisionedIops', ros.validateNumber)(properties.systemDiskProvisionedIops));
+    errors.collect(ros.propertyValidator('cpu', ros.validateNumber)(properties.cpu));
+    errors.collect(ros.propertyValidator('systemDiskEncryptAlgorithm', ros.validateString)(properties.systemDiskEncryptAlgorithm));
+    errors.collect(ros.propertyValidator('ramRoleName', ros.validateString)(properties.ramRoleName));
+    errors.collect(ros.propertyValidator('privatePoolOptions', RosScalingConfiguration_PrivatePoolOptionsPropertyValidator)(properties.privatePoolOptions));
+    errors.collect(ros.propertyValidator('systemDiskPerformanceLevel', ros.validateString)(properties.systemDiskPerformanceLevel));
+    errors.collect(ros.propertyValidator('imageId', ros.validateString)(properties.imageId));
+    errors.collect(ros.propertyValidator('systemDiskDiskName', ros.validateString)(properties.systemDiskDiskName));
+    errors.collect(ros.propertyValidator('hostName', ros.validateString)(properties.hostName));
+    if(properties.loadBalancerWeight && (typeof properties.loadBalancerWeight) !== 'object') {
+        errors.collect(ros.propertyValidator('loadBalancerWeight', ros.validateRange)({
+            data: properties.loadBalancerWeight,
+            min: 1,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('loadBalancerWeight', ros.validateNumber)(properties.loadBalancerWeight));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('systemDiskKmsKeyId', ros.validateString)(properties.systemDiskKmsKeyId));
+    errors.collect(ros.propertyValidator('scalingGroupId', ros.requiredValidator)(properties.scalingGroupId));
+    errors.collect(ros.propertyValidator('scalingGroupId', ros.validateString)(properties.scalingGroupId));
+    errors.collect(ros.propertyValidator('imageFamily', ros.validateString)(properties.imageFamily));
+    if(properties.securityGroupIds && (Array.isArray(properties.securityGroupIds) || (typeof properties.securityGroupIds) === 'string')) {
+        errors.collect(ros.propertyValidator('securityGroupIds', ros.validateLength)({
+            data: properties.securityGroupIds.length,
+            min: undefined,
+            max: 16,
+          }));
+    }
+    errors.collect(ros.propertyValidator('securityGroupIds', ros.listValidator(ros.validateString))(properties.securityGroupIds));
+    if(properties.internetChargeType && (typeof properties.internetChargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('internetChargeType', ros.validateAllowedValues)({
+          data: properties.internetChargeType,
+          allowedValues: ["paybytraffic","PayByTraffic","paybybandwidth","PayByBandwidth"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
+    errors.collect(ros.propertyValidator('spotInterruptionBehavior', ros.validateString)(properties.spotInterruptionBehavior));
+    errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
+    errors.collect(ros.propertyValidator('deploymentSetId', ros.validateString)(properties.deploymentSetId));
+    if(properties.internetMaxBandwidthOut && (typeof properties.internetMaxBandwidthOut) !== 'object') {
+        errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateRange)({
+            data: properties.internetMaxBandwidthOut,
+            min: 0,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateNumber)(properties.internetMaxBandwidthOut));
+    errors.collect(ros.propertyValidator('instancePatternInfos', ros.listValidator(RosScalingConfiguration_InstancePatternInfosPropertyValidator))(properties.instancePatternInfos));
+    if(properties.instanceTypeOverrides && (Array.isArray(properties.instanceTypeOverrides) || (typeof properties.instanceTypeOverrides) === 'string')) {
+        errors.collect(ros.propertyValidator('instanceTypeOverrides', ros.validateLength)({
+            data: properties.instanceTypeOverrides.length,
+            min: undefined,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('instanceTypeOverrides', ros.listValidator(RosScalingConfiguration_InstanceTypeOverridesPropertyValidator))(properties.instanceTypeOverrides));
+    errors.collect(ros.propertyValidator('affinity', ros.validateString)(properties.affinity));
+    errors.collect(ros.propertyValidator('securityEnhancementStrategy', ros.validateString)(properties.securityEnhancementStrategy));
+    errors.collect(ros.propertyValidator('tenancy', ros.validateString)(properties.tenancy));
+    if(properties.diskMappings && (Array.isArray(properties.diskMappings) || (typeof properties.diskMappings) === 'string')) {
+        errors.collect(ros.propertyValidator('diskMappings', ros.validateLength)({
+            data: properties.diskMappings.length,
+            min: undefined,
+            max: 16,
+          }));
+    }
     errors.collect(ros.propertyValidator('diskMappings', ros.listValidator(RosScalingConfiguration_DiskMappingsPropertyValidator))(properties.diskMappings));
     if(properties.systemDiskSize && (typeof properties.systemDiskSize) !== 'object') {
         errors.collect(ros.propertyValidator('systemDiskSize', ros.validateRange)({
@@ -1161,9 +1373,15 @@ function RosScalingConfigurationPropsValidator(properties: any): ros.ValidationR
     }
     errors.collect(ros.propertyValidator('systemDiskSize', ros.validateNumber)(properties.systemDiskSize));
     errors.collect(ros.propertyValidator('userData', ros.validateString)(properties.userData));
+    if(properties.spotDuration && (typeof properties.spotDuration) !== 'object') {
+        errors.collect(ros.propertyValidator('spotDuration', ros.validateAllowedValues)({
+          data: properties.spotDuration,
+          allowedValues: [0,1,2,3,4,5,6],
+        }));
+    }
+    errors.collect(ros.propertyValidator('spotDuration', ros.validateNumber)(properties.spotDuration));
+    errors.collect(ros.propertyValidator('systemDiskEncrypted', ros.validateBoolean)(properties.systemDiskEncrypted));
     errors.collect(ros.propertyValidator('systemDiskAutoSnapshotPolicyId', ros.validateString)(properties.systemDiskAutoSnapshotPolicyId));
-    errors.collect(ros.propertyValidator('ramRoleName', ros.validateString)(properties.ramRoleName));
-    errors.collect(ros.propertyValidator('systemDiskPerformanceLevel', ros.validateString)(properties.systemDiskPerformanceLevel));
     errors.collect(ros.propertyValidator('spotPriceLimitForInstanceType', ros.hashValidator(ros.validateAny))(properties.spotPriceLimitForInstanceType));
     if(properties.ipv6AddressCount && (typeof properties.ipv6AddressCount) !== 'object') {
         errors.collect(ros.propertyValidator('ipv6AddressCount', ros.validateRange)({
@@ -1173,7 +1391,14 @@ function RosScalingConfigurationPropsValidator(properties: any): ros.ValidationR
           }));
     }
     errors.collect(ros.propertyValidator('ipv6AddressCount', ros.validateNumber)(properties.ipv6AddressCount));
-    errors.collect(ros.propertyValidator('imageId', ros.validateString)(properties.imageId));
+    if(properties.systemDiskCategories && (Array.isArray(properties.systemDiskCategories) || (typeof properties.systemDiskCategories) === 'string')) {
+        errors.collect(ros.propertyValidator('systemDiskCategories', ros.validateLength)({
+            data: properties.systemDiskCategories.length,
+            min: undefined,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('systemDiskCategories', ros.listValidator(ros.validateString))(properties.systemDiskCategories));
     errors.collect(ros.propertyValidator('spotPriceLimit', ros.validateNumber)(properties.spotPriceLimit));
     if(properties.tagList && (Array.isArray(properties.tagList) || (typeof properties.tagList) === 'string')) {
         errors.collect(ros.propertyValidator('tagList', ros.validateLength)({
@@ -1192,7 +1417,6 @@ function RosScalingConfigurationPropsValidator(properties: any): ros.ValidationR
     }
     errors.collect(ros.propertyValidator('instanceTypes', ros.listValidator(ros.validateAny))(properties.instanceTypes));
     errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
-    errors.collect(ros.propertyValidator('hostName', ros.validateString)(properties.hostName));
     if(properties.spotStrategy && (typeof properties.spotStrategy) !== 'object') {
         errors.collect(ros.propertyValidator('spotStrategy', ros.validateAllowedValues)({
           data: properties.spotStrategy,
@@ -1203,14 +1427,6 @@ function RosScalingConfigurationPropsValidator(properties: any): ros.ValidationR
     errors.collect(ros.propertyValidator('passwordInherit', ros.validateBoolean)(properties.passwordInherit));
     errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
     errors.collect(ros.propertyValidator('keyPairName', ros.validateString)(properties.keyPairName));
-    if(properties.loadBalancerWeight && (typeof properties.loadBalancerWeight) !== 'object') {
-        errors.collect(ros.propertyValidator('loadBalancerWeight', ros.validateRange)({
-            data: properties.loadBalancerWeight,
-            min: 1,
-            max: 100,
-          }));
-    }
-    errors.collect(ros.propertyValidator('loadBalancerWeight', ros.validateNumber)(properties.loadBalancerWeight));
     if(properties.ioOptimized && (typeof properties.ioOptimized) !== 'object') {
         errors.collect(ros.propertyValidator('ioOptimized', ros.validateAllowedValues)({
           data: properties.ioOptimized,
@@ -1218,12 +1434,9 @@ function RosScalingConfigurationPropsValidator(properties: any): ros.ValidationR
         }));
     }
     errors.collect(ros.propertyValidator('ioOptimized', ros.validateString)(properties.ioOptimized));
-    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('hpcClusterId', ros.validateString)(properties.hpcClusterId));
-    errors.collect(ros.propertyValidator('scalingGroupId', ros.requiredValidator)(properties.scalingGroupId));
-    errors.collect(ros.propertyValidator('scalingGroupId', ros.validateString)(properties.scalingGroupId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
-    errors.collect(ros.propertyValidator('imageFamily', ros.validateString)(properties.imageFamily));
     if(properties.systemDiskCategory && (typeof properties.systemDiskCategory) !== 'object') {
         errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateAllowedValues)({
           data: properties.systemDiskCategory,
@@ -1231,23 +1444,8 @@ function RosScalingConfigurationPropsValidator(properties: any): ros.ValidationR
         }));
     }
     errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateString)(properties.systemDiskCategory));
-    if(properties.internetChargeType && (typeof properties.internetChargeType) !== 'object') {
-        errors.collect(ros.propertyValidator('internetChargeType', ros.validateAllowedValues)({
-          data: properties.internetChargeType,
-          allowedValues: ["paybytraffic","PayByTraffic","paybybandwidth","PayByBandwidth"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
-    errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
-    errors.collect(ros.propertyValidator('deploymentSetId', ros.validateString)(properties.deploymentSetId));
-    if(properties.internetMaxBandwidthOut && (typeof properties.internetMaxBandwidthOut) !== 'object') {
-        errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateRange)({
-            data: properties.internetMaxBandwidthOut,
-            min: 0,
-            max: 100,
-          }));
-    }
-    errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateNumber)(properties.internetMaxBandwidthOut));
+    errors.collect(ros.propertyValidator('systemDiskBurstingEnabled', ros.validateBoolean)(properties.systemDiskBurstingEnabled));
+    errors.collect(ros.propertyValidator('imageName', ros.validateString)(properties.imageName));
     if(properties.internetMaxBandwidthIn && (typeof properties.internetMaxBandwidthIn) !== 'object') {
         errors.collect(ros.propertyValidator('internetMaxBandwidthIn', ros.validateRange)({
             data: properties.internetMaxBandwidthIn,
@@ -1256,6 +1454,7 @@ function RosScalingConfigurationPropsValidator(properties: any): ros.ValidationR
           }));
     }
     errors.collect(ros.propertyValidator('internetMaxBandwidthIn', ros.validateNumber)(properties.internetMaxBandwidthIn));
+    errors.collect(ros.propertyValidator('instanceDescription', ros.validateString)(properties.instanceDescription));
     if(properties.creditSpecification && (typeof properties.creditSpecification) !== 'object') {
         errors.collect(ros.propertyValidator('creditSpecification', ros.validateAllowedValues)({
           data: properties.creditSpecification,
@@ -1281,16 +1480,24 @@ function rosScalingConfigurationPropsToRosTemplate(properties: any, enableResour
     }
     return {
       ScalingGroupId: ros.stringToRosTemplate(properties.scalingGroupId),
+      Affinity: ros.stringToRosTemplate(properties.affinity),
+      Cpu: ros.numberToRosTemplate(properties.cpu),
       CreditSpecification: ros.stringToRosTemplate(properties.creditSpecification),
+      DedicatedHostId: ros.stringToRosTemplate(properties.dedicatedHostId),
       DeploymentSetId: ros.stringToRosTemplate(properties.deploymentSetId),
       DiskMappings: ros.listMapper(rosScalingConfigurationDiskMappingsPropertyToRosTemplate)(properties.diskMappings),
       HostName: ros.stringToRosTemplate(properties.hostName),
       HpcClusterId: ros.stringToRosTemplate(properties.hpcClusterId),
       ImageFamily: ros.stringToRosTemplate(properties.imageFamily),
       ImageId: ros.stringToRosTemplate(properties.imageId),
+      ImageName: ros.stringToRosTemplate(properties.imageName),
+      ImageOptionsLoginAsNonRoot: ros.booleanToRosTemplate(properties.imageOptionsLoginAsNonRoot),
+      InstanceDescription: ros.stringToRosTemplate(properties.instanceDescription),
       InstanceId: ros.stringToRosTemplate(properties.instanceId),
       InstanceName: ros.stringToRosTemplate(properties.instanceName),
+      InstancePatternInfos: ros.listMapper(rosScalingConfigurationInstancePatternInfosPropertyToRosTemplate)(properties.instancePatternInfos),
       InstanceType: ros.stringToRosTemplate(properties.instanceType),
+      InstanceTypeOverrides: ros.listMapper(rosScalingConfigurationInstanceTypeOverridesPropertyToRosTemplate)(properties.instanceTypeOverrides),
       InstanceTypes: ros.listMapper(ros.objectToRosTemplate)(properties.instanceTypes),
       InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
       InternetMaxBandwidthIn: ros.numberToRosTemplate(properties.internetMaxBandwidthIn),
@@ -1299,37 +1506,50 @@ function rosScalingConfigurationPropsToRosTemplate(properties: any, enableResour
       Ipv6AddressCount: ros.numberToRosTemplate(properties.ipv6AddressCount),
       KeyPairName: ros.stringToRosTemplate(properties.keyPairName),
       LoadBalancerWeight: ros.numberToRosTemplate(properties.loadBalancerWeight),
+      Memory: ros.numberToRosTemplate(properties.memory),
       Password: ros.stringToRosTemplate(properties.password),
       PasswordInherit: ros.booleanToRosTemplate(properties.passwordInherit),
+      PrivatePoolOptions: rosScalingConfigurationPrivatePoolOptionsPropertyToRosTemplate(properties.privatePoolOptions),
       RamRoleName: ros.stringToRosTemplate(properties.ramRoleName),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       ScalingConfigurationName: ros.stringToRosTemplate(properties.scalingConfigurationName),
+      SecurityEnhancementStrategy: ros.stringToRosTemplate(properties.securityEnhancementStrategy),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
+      SecurityGroupIds: ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupIds),
+      SpotDuration: ros.numberToRosTemplate(properties.spotDuration),
+      SpotInterruptionBehavior: ros.stringToRosTemplate(properties.spotInterruptionBehavior),
       SpotPriceLimit: ros.numberToRosTemplate(properties.spotPriceLimit),
       SpotPriceLimitForInstanceType: ros.hashMapper(ros.objectToRosTemplate)(properties.spotPriceLimitForInstanceType),
       SpotStrategy: ros.stringToRosTemplate(properties.spotStrategy),
       SystemDiskAutoSnapshotPolicyId: ros.stringToRosTemplate(properties.systemDiskAutoSnapshotPolicyId),
+      SystemDiskBurstingEnabled: ros.booleanToRosTemplate(properties.systemDiskBurstingEnabled),
+      SystemDiskCategories: ros.listMapper(ros.stringToRosTemplate)(properties.systemDiskCategories),
       SystemDiskCategory: ros.stringToRosTemplate(properties.systemDiskCategory),
+      SystemDiskDescription: ros.stringToRosTemplate(properties.systemDiskDescription),
+      SystemDiskDiskName: ros.stringToRosTemplate(properties.systemDiskDiskName),
+      SystemDiskEncryptAlgorithm: ros.stringToRosTemplate(properties.systemDiskEncryptAlgorithm),
+      SystemDiskEncrypted: ros.booleanToRosTemplate(properties.systemDiskEncrypted),
+      SystemDiskKMSKeyId: ros.stringToRosTemplate(properties.systemDiskKmsKeyId),
       SystemDiskPerformanceLevel: ros.stringToRosTemplate(properties.systemDiskPerformanceLevel),
+      SystemDiskProvisionedIops: ros.numberToRosTemplate(properties.systemDiskProvisionedIops),
       SystemDiskSize: ros.numberToRosTemplate(properties.systemDiskSize),
       TagList: ros.listMapper(rosScalingConfigurationTagListPropertyToRosTemplate)(properties.tagList),
+      Tenancy: ros.stringToRosTemplate(properties.tenancy),
       UserData: ros.stringToRosTemplate(properties.userData),
+      ZoneId: ros.stringToRosTemplate(properties.zoneId),
     };
 }
 
 /**
- * A ROS template type:  `ALIYUN::ESS::ScalingConfiguration`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingConfiguration`, which is used to create a scaling configuration for a scaling group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ScalingConfiguration` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalingconfiguration
  */
 export class RosScalingConfiguration extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ESS::ScalingConfiguration";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ScalingConfigurationId: The scaling configuration id
@@ -1350,11 +1570,32 @@ export class RosScalingConfiguration extends ros.RosResource {
     public scalingGroupId: string | ros.IResolvable;
 
     /**
+     * @Property affinity: Specifies whether to associate an ECS instance on a dedicated host with the dedicated host. Valid values:
+     * - **default**: does not associate the ECS instance with the dedicated host. If you start an ECS instance that was stopped in economical mode and the original dedicated host has insufficient resources, the ECS instance is automatically deployed to another dedicated host in the automatic deployment resource pool.
+     * - **host**: associates the ECS instance with the dedicated host. If you start an ECS instance that was stopped in economical mode, the instance remains on the original dedicated host. If the original dedicated host has insufficient resources, the ECS instance fails to start.
+     * Default value: **default**
+     */
+    public affinity: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property cpu: The number of vCPUs.
+     * You can specify the number of vCPUs and the memory size to determine the range of instance types. For example, you can set CPU to 2 and Memory to 16 to specify instance types that have 2 vCPUs and 16 GiB of memory. If you specify Cpu and Memory, Auto Scaling determines the available instance types based on factors such as I\/O optimization requirements and zones. Then, Auto Scaling preferentially creates instances by using the lowest-priced instance type.
+     * **Note**: You can specify **Cpu** and **Memory** to determine the range of instance types only if you set Scaling Policy to Cost Optimization Policy and you do not specify instance types in the scaling configuration.
+     */
+    public cpu: number | ros.IResolvable | undefined;
+
+    /**
      * @Property creditSpecification: The performance mode of the burstable instance. Valid values:
      * Standard: the standard mode.
      * Unlimited: the unlimited mode.
      */
     public creditSpecification: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property dedicatedHostId: The ID of the dedicated host on which you want to create an ECS instance. You cannot create preemptible instances on dedicated hosts. If you specify **DedicatedHostId**, **SpotStrategy** and **SpotPriceLimit** are ignored.
+     * You can call the **DescribeDedicatedHosts** operation to query dedicated host IDs.
+     */
+    public dedicatedHostId: string | ros.IResolvable | undefined;
 
     /**
      * @Property deploymentSetId: Deployment set ID.
@@ -1379,7 +1620,7 @@ export class RosScalingConfiguration extends ros.RosResource {
     public hpcClusterId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property imageFamily: The name of the image family. You can configure this parameter to obtain the latest available custom images within the specified image family. The images are used to create ECS instances. If you have set the ImageId parameter, you cannot set the ImageFamily parameter.
+     * @Property imageFamily: The name of the image family. You can configure this parameter to obtain the latest available images within the specified image family. The images are used to create ECS instances. If you have set the ImageId parameter, you cannot set the ImageFamily parameter.
      */
     public imageFamily: string | ros.IResolvable | undefined;
 
@@ -1387,6 +1628,25 @@ export class RosScalingConfiguration extends ros.RosResource {
      * @Property imageId: Image ID to create ecs instance .
      */
     public imageId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property imageName: The name of the image. Each image name must be unique in a region. If you specify **ImageId**, **ImageName** is ignored.
+     * You cannot use **ImageName** to specify images that are purchased from Alibaba Cloud Marketplace.
+     */
+    public imageName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property imageOptionsLoginAsNonRoot: Whether the ecs instance is logged in as ecs-user.Valid values:
+     * - **true**
+     * - **false**
+     * Default value: **false**.
+     */
+    public imageOptionsLoginAsNonRoot: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceDescription: The description of the ECS instance. The description must be 2 to 256 characters in length. The description can contain letters and cannot start with http:\/\/ or https:\/\/.
+     */
+    public instanceDescription: string | ros.IResolvable | undefined;
 
     /**
      * @Property instanceId: Source ECS instance to copy configuration, if the properties is setting, Which will copy the InstanceType, ImageId, InternetChargeType, IoOptimized,UserData, KeyPairName, RamRoleName, InternetMaxBandwidthIn,InternetMaxBandwidthOut, and first security group id from source instance, you can also specify the relative properties to overwrite the properties copy from source instance id.
@@ -1399,9 +1659,19 @@ export class RosScalingConfiguration extends ros.RosResource {
     public instanceName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property instancePatternInfos: Details of the intelligent configuration settings that determine the range of instance types that meet the specified criteria.
+     */
+    public instancePatternInfos: Array<RosScalingConfiguration.InstancePatternInfosProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * @Property instanceType: ecs supported instance type.
      */
     public instanceType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceTypeOverrides: The instance types.
+     */
+    public instanceTypeOverrides: Array<RosScalingConfiguration.InstanceTypeOverridesProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property instanceTypes: ecs supported instance types. Length [1,10]. If InstanceTypes is specified,the InstanceType will be ignored.
@@ -1447,6 +1717,13 @@ export class RosScalingConfiguration extends ros.RosResource {
     public loadBalancerWeight: number | ros.IResolvable | undefined;
 
     /**
+     * @Property memory: The memory size. Unit: GiB.
+     * You can specify the number of vCPUs and the memory size to determine the range of instance types. For example, you can set Cpu to 2 and Memory to 16 to specify instance types that have 2 vCPUs and 16 GiB of memory. If you specify Cpu and Memory, Auto Scaling determines the available instance types based on factors such as I\/O optimization requirements and zones. Then, Auto Scaling preferentially creates instances by using the lowest-priced instance type.
+     * **Note**: You can specify **Cpu** and **Memory** to determine the range of instance types only if you set Scaling Policy to Cost Optimization Policy and you do not specify instance types in the scaling configuration.
+     */
+    public memory: number | ros.IResolvable | undefined;
+
+    /**
      * @Property password: Password of created ecs instance. Must contain at least 3 types of special character, lower character, upper character, number.
      */
     public password: string | ros.IResolvable | undefined;
@@ -1455,6 +1732,11 @@ export class RosScalingConfiguration extends ros.RosResource {
      * @Property passwordInherit: Whether to use the password pre-configured in the image you select or not. When PasswordInherit is specified, the Password must be null. For a secure access, make sure that the selected image has password configured.
      */
     public passwordInherit: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property privatePoolOptions: Option settings for private pools
+     */
+    public privatePoolOptions: RosScalingConfiguration.PrivatePoolOptionsProperty | ros.IResolvable | undefined;
 
     /**
      * @Property ramRoleName: Instance RAM role name. The name is provided and maintained by Resource Access Management (RAM) and can be queried using ListRoles. For more information, see RAM API CreateRole and ListRoles.
@@ -1472,9 +1754,35 @@ export class RosScalingConfiguration extends ros.RosResource {
     public scalingConfigurationName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property securityEnhancementStrategy: Specifies whether to enable security hardening. Valid values:
+     * - **Active**: enables security hardening. This value is applicable only to public images.
+     * - **Deactive**: disables security hardening. This value is applicable to all image types.
+     */
+    public securityEnhancementStrategy: string | ros.IResolvable | undefined;
+
+    /**
      * @Property securityGroupId: Security Group to create ecs instance.
      */
     public securityGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property securityGroupIds: The IDs of the security groups with which you want to associate the ECS instances that are created by using the scaling configuration.
+     * **Note**: If you specify **SecurityGroupId**, you cannot specify **SecurityGroupIds**.
+     */
+    public securityGroupIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property spotDuration: The retention period of the preemptible instance. Unit: hours. Valid values: 0, 1, 2, 3, 4, 5, and 6.
+     * The following retention periods are available in invitational preview: 2, 3, 4, 5, and 6 hours. If you want to set this parameter to one of these values, submit a ticket.
+     * If you set this parameter to 0, no protection period is specified for the preemptible instance.
+     * Default value: 1
+     */
+    public spotDuration: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property spotInterruptionBehavior: The interruption mode of the preemptible instance. Default value: Terminate. Set the value to Terminate. This value specifies that the preemptible instance is to be released.
+     */
+    public spotInterruptionBehavior: string | ros.IResolvable | undefined;
 
     /**
      * @Property spotPriceLimit: Set the hourly maximum price for the instance. Supports a maximum of 3 decimal places, and the parameter takes effect only when the value of SpotStrategy is SpotWithPriceLimit.It is a default value for all instance types, and can be overwrite by SpotPriceLimitForInstanceType
@@ -1508,14 +1816,69 @@ export class RosScalingConfiguration extends ros.RosResource {
     public systemDiskAutoSnapshotPolicyId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property systemDiskBurstingEnabled: Specifies whether to enable the burst feature for the system disk. Valid values:
+     * - **true**
+     * - **false**
+     * **Note**: This parameter is available only if you set **SystemDiskCategory** to **cloud_auto**.
+     */
+    public systemDiskBurstingEnabled: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property systemDiskCategories: The categories of the system disks. If Auto Scaling cannot create instances by using the disk category that has the highest priority, Auto Scaling creates instances by using the disk category that has the next highest priority. Valid values:
+     * - **cloud**: basic disk
+     * - **cloud_efficiency**: ultra disk
+     * - **cloud_ssd**: standard SSD
+     * - **cloud_essd**: ESSD
+     * **Note**: If you specify **SystemDiskCategories**, you cannot specify **SystemDiskCategory**.
+     */
+    public systemDiskCategories: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * @Property systemDiskCategory: Category of system disk. Default is cloud.support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto
      */
     public systemDiskCategory: string | ros.IResolvable | undefined;
 
     /**
+     * @Property systemDiskDescription: The description of the system disk. The description must be 2 to 256 characters in length. The description can contain letters and cannot start with http:\/\/ or https:\/\/.
+     */
+    public systemDiskDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property systemDiskDiskName: The name of the system disk. The name must be 2 to 128 characters in length. The name can contain letters, digits, colons (:), underscores (_), and hyphens (-). The name must start with a letter but cannot start with http:\/\/ or https:\/\/.
+     */
+    public systemDiskDiskName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property systemDiskEncryptAlgorithm: The encryption algorithm that you want to use to encrypt the system disk. Valid values:
+     * - **AES-256**
+     * - **SM4-128**
+     * Default value: **AES-256**
+     */
+    public systemDiskEncryptAlgorithm: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property systemDiskEncrypted: Specifies whether to encrypt the system disk. Valid values:
+     * - **true**
+     * - **false**
+     * Default value: **false**
+     */
+    public systemDiskEncrypted: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property systemDiskKmsKeyId: The ID of the KMS key that you want to use to encrypt the system disk.
+     */
+    public systemDiskKmsKeyId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property systemDiskPerformanceLevel: The performance level of an ESSD.
      */
     public systemDiskPerformanceLevel: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property systemDiskProvisionedIops: The IOPS metric that is preconfigured for the system disk.
+     * **Note**: IOPS measures the number of read and write operations that an EBS device can process per second.
+     */
+    public systemDiskProvisionedIops: number | ros.IResolvable | undefined;
 
     /**
      * @Property systemDiskSize: Size of system disk. Unit is GB.
@@ -1530,15 +1893,23 @@ export class RosScalingConfiguration extends ros.RosResource {
      * Key
      * It can be up to 64 characters in length.
      * Cannot begin with aliyun.
-     * Cannot begin with http:// or https://.
+     * Cannot begin with http:\/\/ or https:\/\/.
      * Cannot be a null string.
      * Value
      * It can be up to 128 characters in length.
      * Cannot begin with aliyun.
-     * Cannot begin with http:// or https://.
+     * Cannot begin with http:\/\/ or https:\/\/.
      * Can be a null string.If less then 20 tags are specified, ros will add a tag(Key: "ros-aliyun-created", Value:"<resource_name>_stack_<stack_id>") if possible.
      */
     public tagList: Array<RosScalingConfiguration.TagListProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property tenancy: Specifies whether to create an ECS instance on a dedicated host. Valid values:
+     * - **default**: does not create an ECS instance on a dedicated host.
+     * - **host**: creates an ECS instance on a dedicated host. If you do not specify **DedicatedHostId**, Alibaba Cloud selects a dedicated host for the ECS instance.
+     * Default value: **default**
+     */
+    public tenancy: string | ros.IResolvable | undefined;
 
     /**
      * @Property userData: User data to pass to instance. [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
@@ -1546,8 +1917,11 @@ export class RosScalingConfiguration extends ros.RosResource {
     public userData: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ESS::ScalingConfiguration`.
-     *
+     * @Property zoneId: The zone ID of the ECS instance.
+     */
+    public zoneId: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1559,16 +1933,24 @@ export class RosScalingConfiguration extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.scalingGroupId = props.scalingGroupId;
+        this.affinity = props.affinity;
+        this.cpu = props.cpu;
         this.creditSpecification = props.creditSpecification;
+        this.dedicatedHostId = props.dedicatedHostId;
         this.deploymentSetId = props.deploymentSetId;
         this.diskMappings = props.diskMappings;
         this.hostName = props.hostName;
         this.hpcClusterId = props.hpcClusterId;
         this.imageFamily = props.imageFamily;
         this.imageId = props.imageId;
+        this.imageName = props.imageName;
+        this.imageOptionsLoginAsNonRoot = props.imageOptionsLoginAsNonRoot;
+        this.instanceDescription = props.instanceDescription;
         this.instanceId = props.instanceId;
         this.instanceName = props.instanceName;
+        this.instancePatternInfos = props.instancePatternInfos;
         this.instanceType = props.instanceType;
+        this.instanceTypeOverrides = props.instanceTypeOverrides;
         this.instanceTypes = props.instanceTypes;
         this.internetChargeType = props.internetChargeType;
         this.internetMaxBandwidthIn = props.internetMaxBandwidthIn;
@@ -1577,37 +1959,61 @@ export class RosScalingConfiguration extends ros.RosResource {
         this.ipv6AddressCount = props.ipv6AddressCount;
         this.keyPairName = props.keyPairName;
         this.loadBalancerWeight = props.loadBalancerWeight;
+        this.memory = props.memory;
         this.password = props.password;
         this.passwordInherit = props.passwordInherit;
+        this.privatePoolOptions = props.privatePoolOptions;
         this.ramRoleName = props.ramRoleName;
         this.resourceGroupId = props.resourceGroupId;
         this.scalingConfigurationName = props.scalingConfigurationName;
+        this.securityEnhancementStrategy = props.securityEnhancementStrategy;
         this.securityGroupId = props.securityGroupId;
+        this.securityGroupIds = props.securityGroupIds;
+        this.spotDuration = props.spotDuration;
+        this.spotInterruptionBehavior = props.spotInterruptionBehavior;
         this.spotPriceLimit = props.spotPriceLimit;
         this.spotPriceLimitForInstanceType = props.spotPriceLimitForInstanceType;
         this.spotStrategy = props.spotStrategy;
         this.systemDiskAutoSnapshotPolicyId = props.systemDiskAutoSnapshotPolicyId;
+        this.systemDiskBurstingEnabled = props.systemDiskBurstingEnabled;
+        this.systemDiskCategories = props.systemDiskCategories;
         this.systemDiskCategory = props.systemDiskCategory;
+        this.systemDiskDescription = props.systemDiskDescription;
+        this.systemDiskDiskName = props.systemDiskDiskName;
+        this.systemDiskEncryptAlgorithm = props.systemDiskEncryptAlgorithm;
+        this.systemDiskEncrypted = props.systemDiskEncrypted;
+        this.systemDiskKmsKeyId = props.systemDiskKmsKeyId;
         this.systemDiskPerformanceLevel = props.systemDiskPerformanceLevel;
+        this.systemDiskProvisionedIops = props.systemDiskProvisionedIops;
         this.systemDiskSize = props.systemDiskSize;
         this.tagList = props.tagList;
+        this.tenancy = props.tenancy;
         this.userData = props.userData;
+        this.zoneId = props.zoneId;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             scalingGroupId: this.scalingGroupId,
+            affinity: this.affinity,
+            cpu: this.cpu,
             creditSpecification: this.creditSpecification,
+            dedicatedHostId: this.dedicatedHostId,
             deploymentSetId: this.deploymentSetId,
             diskMappings: this.diskMappings,
             hostName: this.hostName,
             hpcClusterId: this.hpcClusterId,
             imageFamily: this.imageFamily,
             imageId: this.imageId,
+            imageName: this.imageName,
+            imageOptionsLoginAsNonRoot: this.imageOptionsLoginAsNonRoot,
+            instanceDescription: this.instanceDescription,
             instanceId: this.instanceId,
             instanceName: this.instanceName,
+            instancePatternInfos: this.instancePatternInfos,
             instanceType: this.instanceType,
+            instanceTypeOverrides: this.instanceTypeOverrides,
             instanceTypes: this.instanceTypes,
             internetChargeType: this.internetChargeType,
             internetMaxBandwidthIn: this.internetMaxBandwidthIn,
@@ -1616,21 +2022,37 @@ export class RosScalingConfiguration extends ros.RosResource {
             ipv6AddressCount: this.ipv6AddressCount,
             keyPairName: this.keyPairName,
             loadBalancerWeight: this.loadBalancerWeight,
+            memory: this.memory,
             password: this.password,
             passwordInherit: this.passwordInherit,
+            privatePoolOptions: this.privatePoolOptions,
             ramRoleName: this.ramRoleName,
             resourceGroupId: this.resourceGroupId,
             scalingConfigurationName: this.scalingConfigurationName,
+            securityEnhancementStrategy: this.securityEnhancementStrategy,
             securityGroupId: this.securityGroupId,
+            securityGroupIds: this.securityGroupIds,
+            spotDuration: this.spotDuration,
+            spotInterruptionBehavior: this.spotInterruptionBehavior,
             spotPriceLimit: this.spotPriceLimit,
             spotPriceLimitForInstanceType: this.spotPriceLimitForInstanceType,
             spotStrategy: this.spotStrategy,
             systemDiskAutoSnapshotPolicyId: this.systemDiskAutoSnapshotPolicyId,
+            systemDiskBurstingEnabled: this.systemDiskBurstingEnabled,
+            systemDiskCategories: this.systemDiskCategories,
             systemDiskCategory: this.systemDiskCategory,
+            systemDiskDescription: this.systemDiskDescription,
+            systemDiskDiskName: this.systemDiskDiskName,
+            systemDiskEncryptAlgorithm: this.systemDiskEncryptAlgorithm,
+            systemDiskEncrypted: this.systemDiskEncrypted,
+            systemDiskKmsKeyId: this.systemDiskKmsKeyId,
             systemDiskPerformanceLevel: this.systemDiskPerformanceLevel,
+            systemDiskProvisionedIops: this.systemDiskProvisionedIops,
             systemDiskSize: this.systemDiskSize,
             tagList: this.tagList,
+            tenancy: this.tenancy,
             userData: this.userData,
+            zoneId: this.zoneId,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -1644,11 +2066,22 @@ export namespace RosScalingConfiguration {
      */
     export interface DiskMappingsProperty {
         /**
-         * @Property snapshotId: ID of the snapshot to create the volume.
+         * @Property burstingEnabled: Specifies whether to enable the burst feature for the system disk. Valid values:
+     * - **true**
+     * - **false**
+     * **Note**: This parameter is available only if you set **SystemDisk.Category** to **cloud_auto**.
          */
-        readonly snapshotId?: string | ros.IResolvable;
+        readonly burstingEnabled?: boolean | ros.IResolvable;
         /**
-         * @Property category: The volume type to create.Now support: cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssdDefault is cloud.
+         * @Property category: The category of the data disk. Valid values:
+     * - **cloud**: basic disk. The DeleteWithInstance attribute of a basic disk that is created together with the instance is set to true.
+     * - **cloud_efficiency**: ultra disk.
+     * - **cloud_ssd**: standard SSD.
+     * - **ephemeral_ssd**: local SSD.
+     * - **cloud_essd**: ESSD.
+     * If you specify **Category**, you cannot specify **Categories**. If you do not specify **Category** or **Categories**, the default value of **Category** is used:
+     * - For I\/O optimized instances, the default value is **cloud_efficiency**.
+     * - For non-I\/O optimized instances, the default value is **cloud**.
          */
         readonly category?: string | ros.IResolvable;
         /**
@@ -1660,32 +2093,67 @@ export namespace RosScalingConfiguration {
          */
         readonly kmsKeyId?: string | ros.IResolvable;
         /**
-         * @Property encrypted: Whether the data disk is encrypted or not. Options:
-     * true: Encrypted.
-     * false: Not encrypted.
+         * @Property categories: The categories of the data disks. If Auto Scaling cannot create instances by using the disk category that has the highest priority, Auto Scaling creates instances by using the disk category that has the next highest priority. Valid values:
+     * - **cloud**: basic disk. For a basic disk that is created together with the instance, **DeleteWithInstance** is set to true.
+     * - **cloud_efficiency**: ultra disk.
+     * - **cloud_ssd**: standard SSD.
+     * - **cloud_essd**: ESSD.
+     * **Note**: If you specify **Categories**, you cannot specify **DataDisks.Category**.
+         */
+        readonly categories?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property encrypted: Whether the data disk is encrypted or not. Valid values:
+     * - **true**: Encrypted.
+     * - **false**: Not encrypted.
      * Default value: false.
          */
         readonly encrypted?: string | ros.IResolvable;
         /**
-         * @Property device: A device name where the volume will be attached in the system at /dev/xvd[id]. Range from '/dev/xvdb' to '/dev/xvdz'.
+         * @Property device: A device name where the volume will be attached in the system at \/dev\/xvd[id]. Range from '\/dev\/xvdb' to '\/dev\/xvdz'.
          */
         readonly device?: string | ros.IResolvable;
         /**
-         * @Property performanceLevel: The performance level of an ESSD.
+         * @Property performanceLevel: The PL of the data disk that is an ESSD. Valid values:
+     * - **PL0**: An ESSD can provide up to 10,000 random read\/write IOPS.
+     * - **PL1**: An ESSD can provide up to 50,000 random read\/write IOPS.
+     * - **PL2**: An ESSD can provide up to 100,000 random read\/write IOPS.
+     * - **PL3**: An ESSD can provide up to 1,000,000 random read\/write IOPS.
          */
         readonly performanceLevel?: string | ros.IResolvable;
         /**
-         * @Property size: The size of the volume, in GB. Must be equal or greater than the size of the snapshot. It is safe to leave this blank and have the Compute service infer the size.
+         * @Property size: The size of the data disk. Unit: GiB. Valid values:
+     * - If you set Categories to cloud: 5 to 2000.
+     * - If you set Categories to cloud_efficiency: 20 to 32768.
+     * - If you set Categories to cloud_essd: 20 to 32768.
+     * - If you set Categories to ephemeral_ssd: 5 to 800.
+     * The size of the data disk must be greater than or equal to the size of the snapshot that is specified by SnapshotId.
          */
         readonly size?: string | ros.IResolvable;
         /**
-         * @Property autoSnapshotPolicyId: Auto snapshot policy ID.
+         * @Property deleteWithInstance: Specifies whether to release the data disk when the instance to which the data disk is attached is released. Valid values:
+     * - **true**
+     * - **false**
+     * This parameter is available only for independent disks whose value of **Category** is set to **cloud**, **cloud_efficiency**, **cloud_ssd**, or **cloud_essd**. If you specify this parameter for other disks, an error is reported.
+     * Default value: **true**
+         */
+        readonly deleteWithInstance?: boolean | ros.IResolvable;
+        /**
+         * @Property autoSnapshotPolicyId: The ID of the automatic snapshot policy that you want to apply to the data disk.
          */
         readonly autoSnapshotPolicyId?: string | ros.IResolvable;
+        /**
+         * @Property provisionedIops: The IOPS metric that is preconfigured for the data disk.
+     * **Note**: IOPS measures the number of read and write operations that an EBS device can process per second.
+         */
+        readonly provisionedIops?: number | ros.IResolvable;
         /**
          * @Property diskName: Display name of the disk, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
          */
         readonly diskName?: string | ros.IResolvable;
+        /**
+         * @Property snapshotId: ID of the snapshot to create the volume.
+         */
+        readonly snapshotId?: string | ros.IResolvable;
     }
 }
 /**
@@ -1698,10 +2166,18 @@ export namespace RosScalingConfiguration {
 function RosScalingConfiguration_DiskMappingsPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('snapshotId', ros.validateString)(properties.snapshotId));
+    errors.collect(ros.propertyValidator('burstingEnabled', ros.validateBoolean)(properties.burstingEnabled));
     errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('kmsKeyId', ros.validateString)(properties.kmsKeyId));
+    if(properties.categories && (Array.isArray(properties.categories) || (typeof properties.categories) === 'string')) {
+        errors.collect(ros.propertyValidator('categories', ros.validateLength)({
+            data: properties.categories.length,
+            min: undefined,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('categories', ros.listValidator(ros.validateString))(properties.categories));
     if(properties.encrypted && (typeof properties.encrypted) !== 'object') {
         errors.collect(ros.propertyValidator('encrypted', ros.validateAllowedValues)({
           data: properties.encrypted,
@@ -1712,8 +2188,11 @@ function RosScalingConfiguration_DiskMappingsPropertyValidator(properties: any):
     errors.collect(ros.propertyValidator('device', ros.validateString)(properties.device));
     errors.collect(ros.propertyValidator('performanceLevel', ros.validateString)(properties.performanceLevel));
     errors.collect(ros.propertyValidator('size', ros.validateString)(properties.size));
+    errors.collect(ros.propertyValidator('deleteWithInstance', ros.validateBoolean)(properties.deleteWithInstance));
     errors.collect(ros.propertyValidator('autoSnapshotPolicyId', ros.validateString)(properties.autoSnapshotPolicyId));
+    errors.collect(ros.propertyValidator('provisionedIops', ros.validateNumber)(properties.provisionedIops));
     errors.collect(ros.propertyValidator('diskName', ros.validateString)(properties.diskName));
+    errors.collect(ros.propertyValidator('snapshotId', ros.validateString)(properties.snapshotId));
     return errors.wrap('supplied properties not correct for "DiskMappingsProperty"');
 }
 
@@ -1729,16 +2208,247 @@ function rosScalingConfigurationDiskMappingsPropertyToRosTemplate(properties: an
     if (!ros.canInspect(properties)) { return properties; }
     RosScalingConfiguration_DiskMappingsPropertyValidator(properties).assertSuccess();
     return {
-      SnapshotId: ros.stringToRosTemplate(properties.snapshotId),
+      BurstingEnabled: ros.booleanToRosTemplate(properties.burstingEnabled),
       Category: ros.stringToRosTemplate(properties.category),
       Description: ros.stringToRosTemplate(properties.description),
       KMSKeyId: ros.stringToRosTemplate(properties.kmsKeyId),
+      Categories: ros.listMapper(ros.stringToRosTemplate)(properties.categories),
       Encrypted: ros.stringToRosTemplate(properties.encrypted),
       Device: ros.stringToRosTemplate(properties.device),
       PerformanceLevel: ros.stringToRosTemplate(properties.performanceLevel),
       Size: ros.stringToRosTemplate(properties.size),
+      DeleteWithInstance: ros.booleanToRosTemplate(properties.deleteWithInstance),
       AutoSnapshotPolicyId: ros.stringToRosTemplate(properties.autoSnapshotPolicyId),
+      ProvisionedIops: ros.numberToRosTemplate(properties.provisionedIops),
       DiskName: ros.stringToRosTemplate(properties.diskName),
+      SnapshotId: ros.stringToRosTemplate(properties.snapshotId),
+    };
+}
+
+export namespace RosScalingConfiguration {
+    /**
+     * @stability external
+     */
+    export interface InstancePatternInfosProperty {
+        /**
+         * @Property cores: The number of vCPUs that you want to allocate to an instance type in intelligent configuration mode. This parameter is used to filter the available instance types that meet the specified criteria.
+     * Take note of the following items when you specify Cores:
+     * - InstancePatternInfos is available only for scaling groups that reside in VPCs.
+     * - If you specify InstancePatternInfos, you must specify Cores and Memory.
+     * - If you specify an instance type by using InstanceType or InstanceTypes, Auto Scaling preferentially uses the instance type that is specified by InstanceType or InstanceTypes for scale-outs. If the specified instance type does not have sufficient inventory, Auto Scaling creates instances by using the lowest-priced instance type that is specified by InstancePatternInfos.
+         */
+        readonly cores?: number | ros.IResolvable;
+        /**
+         * @Property memory: The memory size that you want to allocate to an instance type in intelligent configuration mode. Unit: GiB. This parameter is used to filter the available instance types that meet the specified criteria.
+         */
+        readonly memory?: number | ros.IResolvable;
+        /**
+         * @Property instanceFamilyLevel: The level of the instance type, which is used to filter instance types that meet the specified criteria. This parameter takes effect only if you set **CostOptimization** to true. Valid values:
+     * - **EntryLevel**: entry level (shared instance type). Instance types of this level are the most cost-effective but may not provide stable computing performance in a consistent manner. Instance types of this level are suitable for business scenarios in which the CPU utilization is low.
+     * - **EnterpriseLevel**: enterprise level. Instance types of this level provide stable performance and dedicated resources and are suitable for business scenarios that require high stability.
+     * - **CreditEntryLevel**: credit entry level. This value is valid only for burstable instances. CPU credits are used to ensure computing performance. Instance types of this level are suitable for business scenarios in which the CPU utilization is low but may fluctuate in specific cases.
+         */
+        readonly instanceFamilyLevel?: string | ros.IResolvable;
+        /**
+         * @Property maxPrice: The maximum hourly price of a pay-as-you-go or preemptible instance in intelligent configuration mode. This parameter is used to filter the available instance types that meet the specified criteria.
+     * **Note**: If you set **SpotStrategy** to **SpotWithPriceLimit**, you must specify **MaxPrice**. In other cases, **MaxPrice** is optional.
+         */
+        readonly maxPrice?: number | ros.IResolvable;
+        /**
+         * @Property burstablePerformance: Specifies whether to include burstable instance types. Valid values:
+     * - **Exclude**: does not include burstable instance types.
+     * - **Include**: includes burstable instance types.
+     * - **Required**: includes only burstable instance types.
+     * Default value: **Include**
+         */
+        readonly burstablePerformance?: string | ros.IResolvable;
+        /**
+         * @Property excludedInstanceTypes: The instance types that you want to exclude. You can use wildcard characters, such as asterisks (*), to exclude an instance type or an instance family. Examples:
+     * - ecs.c6.large: excludes the ecs.c6.large instance type.
+     * - ecs.c6.*: excludes the c6 instance family.
+         */
+        readonly excludedInstanceTypes?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property architectures: The architectures of the instance types. Valid values:
+     * - **X86**: x86 architecture.
+     * - **Heterogeneous**: heterogeneous architecture, such as GPUs and FPGAs.
+     * - **BareMetal**: ECS Bare Metal Instance architecture.
+     * - **Arm**: ARM architecture.
+     * - **SuperComputeCluster**: Super Computing Cluster architecture.
+     * By default, all values are included.
+         */
+        readonly architectures?: Array<string | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `InstancePatternInfosProperty`
+ *
+ * @param properties - the TypeScript properties of a `InstancePatternInfosProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosScalingConfiguration_InstancePatternInfosPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('cores', ros.validateNumber)(properties.cores));
+    errors.collect(ros.propertyValidator('memory', ros.validateNumber)(properties.memory));
+    errors.collect(ros.propertyValidator('instanceFamilyLevel', ros.validateString)(properties.instanceFamilyLevel));
+    errors.collect(ros.propertyValidator('maxPrice', ros.validateNumber)(properties.maxPrice));
+    errors.collect(ros.propertyValidator('burstablePerformance', ros.validateString)(properties.burstablePerformance));
+    if(properties.excludedInstanceTypes && (Array.isArray(properties.excludedInstanceTypes) || (typeof properties.excludedInstanceTypes) === 'string')) {
+        errors.collect(ros.propertyValidator('excludedInstanceTypes', ros.validateLength)({
+            data: properties.excludedInstanceTypes.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('excludedInstanceTypes', ros.listValidator(ros.validateString))(properties.excludedInstanceTypes));
+    if(properties.architectures && (Array.isArray(properties.architectures) || (typeof properties.architectures) === 'string')) {
+        errors.collect(ros.propertyValidator('architectures', ros.validateLength)({
+            data: properties.architectures.length,
+            min: undefined,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('architectures', ros.listValidator(ros.validateString))(properties.architectures));
+    return errors.wrap('supplied properties not correct for "InstancePatternInfosProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESS::ScalingConfiguration.InstancePatternInfos` resource
+ *
+ * @param properties - the TypeScript properties of a `InstancePatternInfosProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESS::ScalingConfiguration.InstancePatternInfos` resource.
+ */
+// @ts-ignore TS6133
+function rosScalingConfigurationInstancePatternInfosPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosScalingConfiguration_InstancePatternInfosPropertyValidator(properties).assertSuccess();
+    return {
+      Cores: ros.numberToRosTemplate(properties.cores),
+      Memory: ros.numberToRosTemplate(properties.memory),
+      InstanceFamilyLevel: ros.stringToRosTemplate(properties.instanceFamilyLevel),
+      MaxPrice: ros.numberToRosTemplate(properties.maxPrice),
+      BurstablePerformance: ros.stringToRosTemplate(properties.burstablePerformance),
+      ExcludedInstanceTypes: ros.listMapper(ros.stringToRosTemplate)(properties.excludedInstanceTypes),
+      Architectures: ros.listMapper(ros.stringToRosTemplate)(properties.architectures),
+    };
+}
+
+export namespace RosScalingConfiguration {
+    /**
+     * @stability external
+     */
+    export interface InstanceTypeOverridesProperty {
+        /**
+         * @Property weightedCapacity: The weight of instance type N. If you want to trigger scale-outs based on the weighted capacities of instances, you must specify **WeightedCapacity** after you specify **InstanceType**.
+     * The weight of an instance type specifies the capacity of an instance of the instance type in the scaling group. A higher weight specifies that a smaller number of instances of the specified instance type is required to meet the expected capacity requirement.
+     * Performance metrics, such as the number of vCPUs and the memory size of each instance type, may vary. You can specify different weights for different instance types based on your business requirements.
+     * Example:
+     * - Current capacity: 0
+     * Expected capacity: 6
+     * Capacity of ecs.c5.xlarge: 4
+     * To meet the expected capacity requirement, Auto Scaling must create and add two ecs.c5.xlarge instances.
+     * **Note**: The capacity of the scaling group cannot exceed the sum of the maximum number of instances that is specified by MaxSize and the maximum weight of the instance types.
+     * Valid values of WeightedCapacity: 1 to 500.
+         */
+        readonly weightedCapacity?: number | ros.IResolvable;
+        /**
+         * @Property instanceType: Instance type N that you want to use to override the instance type that is specified in the launch template.
+     * If you want to trigger scale-outs based on the weighted capacities of instances, specify **InstanceType** and **WeightedCapacity** at the same time. You can specify N instance types by using the Extended Configurations feature. Valid values of N: 1 to 10.
+     * **Note**: This parameter takes effect only if you specify **LaunchTemplateId**. 
+     * You can specify an instance type that is available for purchase as the value of InstanceType.
+         */
+        readonly instanceType?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `InstanceTypeOverridesProperty`
+ *
+ * @param properties - the TypeScript properties of a `InstanceTypeOverridesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosScalingConfiguration_InstanceTypeOverridesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.weightedCapacity && (typeof properties.weightedCapacity) !== 'object') {
+        errors.collect(ros.propertyValidator('weightedCapacity', ros.validateRange)({
+            data: properties.weightedCapacity,
+            min: 1,
+            max: 500,
+          }));
+    }
+    errors.collect(ros.propertyValidator('weightedCapacity', ros.validateNumber)(properties.weightedCapacity));
+    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
+    return errors.wrap('supplied properties not correct for "InstanceTypeOverridesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESS::ScalingConfiguration.InstanceTypeOverrides` resource
+ *
+ * @param properties - the TypeScript properties of a `InstanceTypeOverridesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESS::ScalingConfiguration.InstanceTypeOverrides` resource.
+ */
+// @ts-ignore TS6133
+function rosScalingConfigurationInstanceTypeOverridesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosScalingConfiguration_InstanceTypeOverridesPropertyValidator(properties).assertSuccess();
+    return {
+      WeightedCapacity: ros.numberToRosTemplate(properties.weightedCapacity),
+      InstanceType: ros.stringToRosTemplate(properties.instanceType),
+    };
+}
+
+export namespace RosScalingConfiguration {
+    /**
+     * @stability external
+     */
+    export interface PrivatePoolOptionsProperty {
+        /**
+         * @Property matchCriteria: The type of the private pool that you want to use to start ECS instances. A private pool is generated when an elasticity assurance or a capacity reservation takes effect. You can select a private pool to create ECS instances. Valid values:
+     * - **Open**: open private pool. Auto Scaling selects a matching open private pool to start instances. If no matching open private pools are found, Auto Scaling uses the resources in the public pool to start instances. In this case, you do not need to specify PrivatePoolOptions.Id.
+     * Target: specified private pool. Auto Scaling uses the resources in the specified private pool to start ECS instances. If the specified private pool is unavailable, Auto Scaling cannot start ECS instances. If you set this parameter to Target, you must specify PrivatePoolOptions.Id.
+     * - **None**: no private pool. Auto Scaling does not use the resources in private pools to start ECS instances.
+         */
+        readonly matchCriteria?: string | ros.IResolvable;
+        /**
+         * @Property id: The ID of the private pool. The ID of a private pool is the same as the ID of the elasticity assurance or capacity reservation for which the private pool is generated.
+         */
+        readonly id?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `PrivatePoolOptionsProperty`
+ *
+ * @param properties - the TypeScript properties of a `PrivatePoolOptionsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosScalingConfiguration_PrivatePoolOptionsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('matchCriteria', ros.validateString)(properties.matchCriteria));
+    errors.collect(ros.propertyValidator('id', ros.validateString)(properties.id));
+    return errors.wrap('supplied properties not correct for "PrivatePoolOptionsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESS::ScalingConfiguration.PrivatePoolOptions` resource
+ *
+ * @param properties - the TypeScript properties of a `PrivatePoolOptionsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESS::ScalingConfiguration.PrivatePoolOptions` resource.
+ */
+// @ts-ignore TS6133
+function rosScalingConfigurationPrivatePoolOptionsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosScalingConfiguration_PrivatePoolOptionsPropertyValidator(properties).assertSuccess();
+    return {
+      MatchCriteria: ros.stringToRosTemplate(properties.matchCriteria),
+      Id: ros.stringToRosTemplate(properties.id),
     };
 }
 
@@ -1791,17 +2501,18 @@ function rosScalingConfigurationTagListPropertyToRosTemplate(properties: any): a
 }
 
 /**
- * Properties for defining a `ALIYUN::ESS::ScalingGroup`
+ * Properties for defining a `RosScalingGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroup
  */
 export interface RosScalingGroupProps {
 
     /**
-     * @Property maxSize: Maximum number of ECS instances in the scaling group. Value range: [0, 1000].
+     * @Property maxSize: Maximum number of ECS instances in the scaling group. Value range: [0, 2000].
      */
     readonly maxSize: number | ros.IResolvable;
 
     /**
-     * @Property minSize: Minimum number of ECS instances in the scaling group. Value range: [0, 1000].
+     * @Property minSize: Minimum number of ECS instances in the scaling group. Value range: [0, 2000].
      */
     readonly minSize: number | ros.IResolvable;
 
@@ -1956,7 +2667,7 @@ export interface RosScalingGroupProps {
     readonly removalPolicys?: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property scalingGroupName: Name shown for the scaling group, which must contain 2-40 characters (English or Chinese). The name must begin with a number, an upper/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".". The account name is unique in the same region.
+     * @Property scalingGroupName: Name shown for the scaling group, which must contain 2-40 characters (English or Chinese). The name must begin with a number, an upper\/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".". The account name is unique in the same region.
      * If this parameter is not specified, the default value is ScalingGroupId.
      */
     readonly scalingGroupName?: string | ros.IResolvable;
@@ -1965,6 +2676,7 @@ export interface RosScalingGroupProps {
      * @Property scalingPolicy: The reclaim mode of the scaling group. Valid values:
      * recycle
      * release
+     * forcerelease
      * ScalingPolicy specifies the reclaim modes of scaling groups, but the policy that is used to remove ECS instances from scaling groups is determined by the RemovePolicy parameter of the RemoveInstances operation.
      */
     readonly scalingPolicy?: string | ros.IResolvable;
@@ -2091,7 +2803,7 @@ function RosScalingGroupPropsValidator(properties: any): ros.ValidationResult {
     if(properties.scalingPolicy && (typeof properties.scalingPolicy) !== 'object') {
         errors.collect(ros.propertyValidator('scalingPolicy', ros.validateAllowedValues)({
           data: properties.scalingPolicy,
-          allowedValues: ["recycle","release"],
+          allowedValues: ["recycle","release","forcerelease"],
         }));
     }
     errors.collect(ros.propertyValidator('scalingPolicy', ros.validateString)(properties.scalingPolicy));
@@ -2129,7 +2841,7 @@ function RosScalingGroupPropsValidator(properties: any): ros.ValidationResult {
         errors.collect(ros.propertyValidator('maxSize', ros.validateRange)({
             data: properties.maxSize,
             min: 0,
-            max: 1000,
+            max: 2000,
           }));
     }
     errors.collect(ros.propertyValidator('maxSize', ros.validateNumber)(properties.maxSize));
@@ -2145,7 +2857,7 @@ function RosScalingGroupPropsValidator(properties: any): ros.ValidationResult {
         errors.collect(ros.propertyValidator('minSize', ros.validateRange)({
             data: properties.minSize,
             min: 0,
-            max: 1000,
+            max: 2000,
           }));
     }
     errors.collect(ros.propertyValidator('minSize', ros.validateNumber)(properties.minSize));
@@ -2260,18 +2972,15 @@ function rosScalingGroupPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * A ROS template type:  `ALIYUN::ESS::ScalingGroup`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingGroup`, which is used to create a scaling group. A scaling group is a group of Elastic Compute Service (ECS) instances that are dynamically scaled based on the configured scenario. A scaling group does not immediately take effect after it is created. You must use ALIYUN::ESS::ScalingGroupEnable to enable the scaling group to trigger scaling activities and execute scaling rules.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ScalingGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroup
  */
 export class RosScalingGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ESS::ScalingGroup";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ScalingGroupId: Scaling group Id
@@ -2287,12 +2996,12 @@ export class RosScalingGroup extends ros.RosResource {
 
 
     /**
-     * @Property maxSize: Maximum number of ECS instances in the scaling group. Value range: [0, 1000].
+     * @Property maxSize: Maximum number of ECS instances in the scaling group. Value range: [0, 2000].
      */
     public maxSize: number | ros.IResolvable;
 
     /**
-     * @Property minSize: Minimum number of ECS instances in the scaling group. Value range: [0, 1000].
+     * @Property minSize: Minimum number of ECS instances in the scaling group. Value range: [0, 2000].
      */
     public minSize: number | ros.IResolvable;
 
@@ -2447,7 +3156,7 @@ export class RosScalingGroup extends ros.RosResource {
     public removalPolicys: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property scalingGroupName: Name shown for the scaling group, which must contain 2-40 characters (English or Chinese). The name must begin with a number, an upper/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".". The account name is unique in the same region.
+     * @Property scalingGroupName: Name shown for the scaling group, which must contain 2-40 characters (English or Chinese). The name must begin with a number, an upper\/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".". The account name is unique in the same region.
      * If this parameter is not specified, the default value is ScalingGroupId.
      */
     public scalingGroupName: string | ros.IResolvable | undefined;
@@ -2456,6 +3165,7 @@ export class RosScalingGroup extends ros.RosResource {
      * @Property scalingPolicy: The reclaim mode of the scaling group. Valid values:
      * recycle
      * release
+     * forcerelease
      * ScalingPolicy specifies the reclaim modes of scaling groups, but the policy that is used to remove ECS instances from scaling groups is determined by the RemovePolicy parameter of the RemoveInstances operation.
      */
     public scalingPolicy: string | ros.IResolvable | undefined;
@@ -2503,8 +3213,6 @@ export class RosScalingGroup extends ros.RosResource {
     public vSwitchIds: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ESS::ScalingGroup`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2665,9 +3373,9 @@ export namespace RosScalingGroup {
      * region: the region to which the scaling group locates
      * account-id: Alibaba Cloud ID
      * For example:
-     * MNS queue: acs:ess:{region}:{account-id}:queue/{queuename}
-     * MNS topic: acs:ess:{region}:{account-id}:topic/{topicname}
-     * Cloud Monitor: acs:ess:{region}:{account-id}:/cloudmonitor
+     * MNS queue: acs:ess:{region}:{account-id}:queue\/{queuename}
+     * MNS topic: acs:ess:{region}:{account-id}:topic\/{topicname}
+     * Cloud Monitor: acs:ess:{region}:{account-id}:\/cloudmonitor
          */
         readonly notificationArn: string | ros.IResolvable;
         /**
@@ -2787,7 +3495,8 @@ function rosScalingGroupTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ESS::ScalingGroupEnable`
+ * Properties for defining a `RosScalingGroupEnable`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroupenable
  */
 export interface RosScalingGroupEnableProps {
 
@@ -2910,18 +3619,15 @@ function rosScalingGroupEnablePropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * A ROS template type:  `ALIYUN::ESS::ScalingGroupEnable`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingGroupEnable`, which is used to enable a scaling group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ScalingGroupEnable` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroupenable
  */
 export class RosScalingGroupEnable extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ESS::ScalingGroupEnable";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute LifecycleState: The scaling group status
@@ -3009,8 +3715,6 @@ export class RosScalingGroupEnable extends ros.RosResource {
     public scalingRuleArisExecuteVersion: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ESS::ScalingGroupEnable`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3170,7 +3874,8 @@ function rosScalingGroupEnableDetachOptionsPropertyToRosTemplate(properties: any
 }
 
 /**
- * Properties for defining a `ALIYUN::ESS::ScalingRule`
+ * Properties for defining a `RosScalingRule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalingrule
  */
 export interface RosScalingRuleProps {
 
@@ -3462,18 +4167,15 @@ function rosScalingRulePropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `ALIYUN::ESS::ScalingRule`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingRule`, which is used to create a scaling rule.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ScalingRule` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalingrule
  */
 export class RosScalingRule extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ESS::ScalingRule";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ScalingRuleAri: Unique identifier of a scaling rule.
@@ -3621,8 +4323,6 @@ export class RosScalingRule extends ros.RosResource {
     public targetValue: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ESS::ScalingRule`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3760,7 +4460,8 @@ function rosScalingRuleStepAdjustmentPropertyToRosTemplate(properties: any): any
 }
 
 /**
- * Properties for defining a `ALIYUN::ESS::ScheduledTask`
+ * Properties for defining a `RosScheduledTask`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scheduledtask
  */
 export interface RosScheduledTaskProps {
 
@@ -3773,14 +4474,14 @@ export interface RosScheduledTaskProps {
     readonly launchTime: string | ros.IResolvable;
 
     /**
-     * @Property scheduledAction: Operations performed when the scheduled task is triggered. Fill in the unique identifier of the scaling rule.
-     */
-    readonly scheduledAction: string | ros.IResolvable;
-
-    /**
      * @Property description: Description of the scheduled task, which is 2-200 characters (English or Chinese) long.
      */
     readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property desiredCapacity: The ID of the scaling group whose number of instances must be modified when the scheduled task is triggered. If you specify the **ScalingGroupId** parameter for a scheduled task, you must specify the minimum, maximum, or expected numbers of instances for a scaling group in the scheduled task. That is, you must specify at least one of the **MinValue**, **MaxValue**, and **DesiredCapacity** parameters.
+     */
+    readonly desiredCapacity?: number | ros.IResolvable;
 
     /**
      * @Property launchExpirationTime: Time period within which the failed scheduled task is retried.
@@ -3788,6 +4489,17 @@ export interface RosScheduledTaskProps {
      * Value range: [0, 21600]
      */
     readonly launchExpirationTime?: number | ros.IResolvable;
+
+    /**
+     * @Property maxValue: The expected number of instances in the scaling group if you specify the ScalingGroupId parameter.
+     * **Note**: You must specify the **DesiredCapacity** parameter when you create a scaling group.
+     */
+    readonly maxValue?: number | ros.IResolvable;
+
+    /**
+     * @Property minValue: The maximum number of instances in the scaling group if you specify the ScalingGroupId parameter.
+     */
+    readonly minValue?: number | ros.IResolvable;
 
     /**
      * @Property recurrenceEndTime: End time of the scheduled task to be repeated.
@@ -3816,7 +4528,19 @@ export interface RosScheduledTaskProps {
     readonly recurrenceValue?: string | ros.IResolvable;
 
     /**
-     * @Property scheduledTaskName: Display name of the scheduled task, which must be 2-40 characters (English or Chinese) long. It must begin with a number, an upper/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".".
+     * @Property scalingGroupId: The globally unique ID of the scheduled task. The globally unique ID is generated by the system.
+     * **Note**: You cannot specify the **ScheduledAction** and **ScalingGroupId** parameters at the same time.
+     */
+    readonly scalingGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property scheduledAction: Operations performed when the scheduled task is triggered. Fill in the unique identifier of the scaling rule.
+     * **Note**: You cannot specify the **ScheduledAction** and **ScalingGroupId** parameters at the same time.
+     */
+    readonly scheduledAction?: string | ros.IResolvable;
+
+    /**
+     * @Property scheduledTaskName: Display name of the scheduled task, which must be 2-40 characters (English or Chinese) long. It must begin with a number, an upper\/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".".
      * The account name is unique in the same region.
      * If this parameter is not specified, the default value ScheduledScalingTaskId is used.
      */
@@ -3841,14 +4565,6 @@ export interface RosScheduledTaskProps {
 function RosScheduledTaskPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
-        errors.collect(ros.propertyValidator('description', ros.validateLength)({
-            data: properties.description.length,
-            min: 2,
-            max: 200,
-          }));
-    }
-    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('launchTime', ros.requiredValidator)(properties.launchTime));
     if(properties.launchTime && (typeof properties.launchTime) !== 'object') {
         errors.collect(ros.propertyValidator('launchTime', ros.validateAllowedPattern)({
@@ -3857,6 +4573,15 @@ function RosScheduledTaskPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('launchTime', ros.validateString)(properties.launchTime));
+    if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
+        errors.collect(ros.propertyValidator('description', ros.validateLength)({
+            data: properties.description.length,
+            min: 2,
+            max: 200,
+          }));
+    }
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('scalingGroupId', ros.validateString)(properties.scalingGroupId));
     if(properties.recurrenceType && (typeof properties.recurrenceType) !== 'object') {
         errors.collect(ros.propertyValidator('recurrenceType', ros.validateAllowedValues)({
           data: properties.recurrenceType,
@@ -3864,6 +4589,7 @@ function RosScheduledTaskPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('recurrenceType', ros.validateString)(properties.recurrenceType));
+    errors.collect(ros.propertyValidator('desiredCapacity', ros.validateNumber)(properties.desiredCapacity));
     if(properties.scheduledTaskName && (typeof properties.scheduledTaskName) !== 'object') {
         errors.collect(ros.propertyValidator('scheduledTaskName', ros.validateAllowedPattern)({
           data: properties.scheduledTaskName,
@@ -3871,7 +4597,16 @@ function RosScheduledTaskPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('scheduledTaskName', ros.validateString)(properties.scheduledTaskName));
-    errors.collect(ros.propertyValidator('scheduledAction', ros.requiredValidator)(properties.scheduledAction));
+    errors.collect(ros.propertyValidator('maxValue', ros.validateNumber)(properties.maxValue));
+    if(properties.launchExpirationTime && (typeof properties.launchExpirationTime) !== 'object') {
+        errors.collect(ros.propertyValidator('launchExpirationTime', ros.validateRange)({
+            data: properties.launchExpirationTime,
+            min: 0,
+            max: 21600,
+          }));
+    }
+    errors.collect(ros.propertyValidator('launchExpirationTime', ros.validateNumber)(properties.launchExpirationTime));
+    errors.collect(ros.propertyValidator('minValue', ros.validateNumber)(properties.minValue));
     if(properties.scheduledAction && (Array.isArray(properties.scheduledAction) || (typeof properties.scheduledAction) === 'string')) {
         errors.collect(ros.propertyValidator('scheduledAction', ros.validateLength)({
             data: properties.scheduledAction.length,
@@ -3902,14 +4637,6 @@ function RosScheduledTaskPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('recurrenceValue', ros.validateString)(properties.recurrenceValue));
     errors.collect(ros.propertyValidator('taskEnabled', ros.validateBoolean)(properties.taskEnabled));
-    if(properties.launchExpirationTime && (typeof properties.launchExpirationTime) !== 'object') {
-        errors.collect(ros.propertyValidator('launchExpirationTime', ros.validateRange)({
-            data: properties.launchExpirationTime,
-            min: 0,
-            max: 21600,
-          }));
-    }
-    errors.collect(ros.propertyValidator('launchExpirationTime', ros.validateNumber)(properties.launchExpirationTime));
     return errors.wrap('supplied properties not correct for "RosScheduledTaskProps"');
 }
 
@@ -3928,30 +4655,31 @@ function rosScheduledTaskPropsToRosTemplate(properties: any, enableResourcePrope
     }
     return {
       LaunchTime: ros.stringToRosTemplate(properties.launchTime),
-      ScheduledAction: ros.stringToRosTemplate(properties.scheduledAction),
       Description: ros.stringToRosTemplate(properties.description),
+      DesiredCapacity: ros.numberToRosTemplate(properties.desiredCapacity),
       LaunchExpirationTime: ros.numberToRosTemplate(properties.launchExpirationTime),
+      MaxValue: ros.numberToRosTemplate(properties.maxValue),
+      MinValue: ros.numberToRosTemplate(properties.minValue),
       RecurrenceEndTime: ros.stringToRosTemplate(properties.recurrenceEndTime),
       RecurrenceType: ros.stringToRosTemplate(properties.recurrenceType),
       RecurrenceValue: ros.stringToRosTemplate(properties.recurrenceValue),
+      ScalingGroupId: ros.stringToRosTemplate(properties.scalingGroupId),
+      ScheduledAction: ros.stringToRosTemplate(properties.scheduledAction),
       ScheduledTaskName: ros.stringToRosTemplate(properties.scheduledTaskName),
       TaskEnabled: ros.booleanToRosTemplate(properties.taskEnabled),
     };
 }
 
 /**
- * A ROS template type:  `ALIYUN::ESS::ScheduledTask`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScheduledTask`, which is used to create a scheduled task based on specified parameters.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ScheduledTask` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scheduledtask
  */
 export class RosScheduledTask extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ESS::ScheduledTask";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ScheduledTaskId: ID of the scheduled task, which is generated by the system and globally unique.
@@ -3970,14 +4698,14 @@ export class RosScheduledTask extends ros.RosResource {
     public launchTime: string | ros.IResolvable;
 
     /**
-     * @Property scheduledAction: Operations performed when the scheduled task is triggered. Fill in the unique identifier of the scaling rule.
-     */
-    public scheduledAction: string | ros.IResolvable;
-
-    /**
      * @Property description: Description of the scheduled task, which is 2-200 characters (English or Chinese) long.
      */
     public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property desiredCapacity: The ID of the scaling group whose number of instances must be modified when the scheduled task is triggered. If you specify the **ScalingGroupId** parameter for a scheduled task, you must specify the minimum, maximum, or expected numbers of instances for a scaling group in the scheduled task. That is, you must specify at least one of the **MinValue**, **MaxValue**, and **DesiredCapacity** parameters.
+     */
+    public desiredCapacity: number | ros.IResolvable | undefined;
 
     /**
      * @Property launchExpirationTime: Time period within which the failed scheduled task is retried.
@@ -3985,6 +4713,17 @@ export class RosScheduledTask extends ros.RosResource {
      * Value range: [0, 21600]
      */
     public launchExpirationTime: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property maxValue: The expected number of instances in the scaling group if you specify the ScalingGroupId parameter.
+     * **Note**: You must specify the **DesiredCapacity** parameter when you create a scaling group.
+     */
+    public maxValue: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property minValue: The maximum number of instances in the scaling group if you specify the ScalingGroupId parameter.
+     */
+    public minValue: number | ros.IResolvable | undefined;
 
     /**
      * @Property recurrenceEndTime: End time of the scheduled task to be repeated.
@@ -4013,7 +4752,19 @@ export class RosScheduledTask extends ros.RosResource {
     public recurrenceValue: string | ros.IResolvable | undefined;
 
     /**
-     * @Property scheduledTaskName: Display name of the scheduled task, which must be 2-40 characters (English or Chinese) long. It must begin with a number, an upper/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".".
+     * @Property scalingGroupId: The globally unique ID of the scheduled task. The globally unique ID is generated by the system.
+     * **Note**: You cannot specify the **ScheduledAction** and **ScalingGroupId** parameters at the same time.
+     */
+    public scalingGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property scheduledAction: Operations performed when the scheduled task is triggered. Fill in the unique identifier of the scaling rule.
+     * **Note**: You cannot specify the **ScheduledAction** and **ScalingGroupId** parameters at the same time.
+     */
+    public scheduledAction: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property scheduledTaskName: Display name of the scheduled task, which must be 2-40 characters (English or Chinese) long. It must begin with a number, an upper\/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".".
      * The account name is unique in the same region.
      * If this parameter is not specified, the default value ScheduledScalingTaskId is used.
      */
@@ -4028,8 +4779,6 @@ export class RosScheduledTask extends ros.RosResource {
     public taskEnabled: boolean | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ESS::ScheduledTask`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -4040,12 +4789,16 @@ export class RosScheduledTask extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.launchTime = props.launchTime;
-        this.scheduledAction = props.scheduledAction;
         this.description = props.description;
+        this.desiredCapacity = props.desiredCapacity;
         this.launchExpirationTime = props.launchExpirationTime;
+        this.maxValue = props.maxValue;
+        this.minValue = props.minValue;
         this.recurrenceEndTime = props.recurrenceEndTime;
         this.recurrenceType = props.recurrenceType;
         this.recurrenceValue = props.recurrenceValue;
+        this.scalingGroupId = props.scalingGroupId;
+        this.scheduledAction = props.scheduledAction;
         this.scheduledTaskName = props.scheduledTaskName;
         this.taskEnabled = props.taskEnabled;
     }
@@ -4054,12 +4807,16 @@ export class RosScheduledTask extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             launchTime: this.launchTime,
-            scheduledAction: this.scheduledAction,
             description: this.description,
+            desiredCapacity: this.desiredCapacity,
             launchExpirationTime: this.launchExpirationTime,
+            maxValue: this.maxValue,
+            minValue: this.minValue,
             recurrenceEndTime: this.recurrenceEndTime,
             recurrenceType: this.recurrenceType,
             recurrenceValue: this.recurrenceValue,
+            scalingGroupId: this.scalingGroupId,
+            scheduledAction: this.scheduledAction,
             scheduledTaskName: this.scheduledTaskName,
             taskEnabled: this.taskEnabled,
         };
@@ -4070,7 +4827,8 @@ export class RosScheduledTask extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ESS::ServerGroupAttachment`
+ * Properties for defining a `RosServerGroupAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-servergroupattachment
  */
 export interface RosServerGroupAttachmentProps {
 
@@ -4139,18 +4897,15 @@ function rosServerGroupAttachmentPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * A ROS template type:  `ALIYUN::ESS::ServerGroupAttachment`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ServerGroupAttachment`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ServerGroupAttachment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-servergroupattachment
  */
 export class RosServerGroupAttachment extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ESS::ServerGroupAttachment";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ScalingActivityId: The ID of the scaling activity during which one or more SLB instances are attached to the scaling group and the ECS instances in the scaling group are added to the backend server groups of the SLB instances.
@@ -4180,8 +4935,6 @@ Note This parameter is returned only after you set the ForceAttach parameter to 
     public forceAttach: boolean | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ESS::ServerGroupAttachment`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -4294,5 +5047,268 @@ function rosServerGroupAttachmentServerGroupsPropertyToRosTemplate(properties: a
       Port: ros.numberToRosTemplate(properties.port),
       ServerGroupId: ros.stringToRosTemplate(properties.serverGroupId),
       Weight: ros.numberToRosTemplate(properties.weight),
+    };
+}
+
+/**
+ * Properties for defining a `RosVServerGroupAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-vservergroupattachment
+ */
+export interface RosVServerGroupAttachmentProps {
+
+    /**
+     * @Property scalingGroupId: The ID of the scaling group.
+     */
+    readonly scalingGroupId: string | ros.IResolvable;
+
+    /**
+     * @Property vServerGroups: A list of vserver groups attached on scaling group
+     */
+    readonly vServerGroups: Array<RosVServerGroupAttachment.VServerGroupsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property forceAttach: If instances of scaling group are attached\/removed from slb backend server when attach\/detach vserver group from scaling group.
+     * Valid values:
+     * true
+     * false
+     * Default value: false.
+     */
+    readonly forceAttach?: boolean | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosVServerGroupAttachmentProps`
+ *
+ * @param properties - the TypeScript properties of a `RosVServerGroupAttachmentProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosVServerGroupAttachmentPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('scalingGroupId', ros.requiredValidator)(properties.scalingGroupId));
+    errors.collect(ros.propertyValidator('scalingGroupId', ros.validateString)(properties.scalingGroupId));
+    errors.collect(ros.propertyValidator('forceAttach', ros.validateBoolean)(properties.forceAttach));
+    errors.collect(ros.propertyValidator('vServerGroups', ros.requiredValidator)(properties.vServerGroups));
+    if(properties.vServerGroups && (Array.isArray(properties.vServerGroups) || (typeof properties.vServerGroups) === 'string')) {
+        errors.collect(ros.propertyValidator('vServerGroups', ros.validateLength)({
+            data: properties.vServerGroups.length,
+            min: 1,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('vServerGroups', ros.listValidator(RosVServerGroupAttachment_VServerGroupsPropertyValidator))(properties.vServerGroups));
+    return errors.wrap('supplied properties not correct for "RosVServerGroupAttachmentProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESS::VServerGroupAttachment` resource
+ *
+ * @param properties - the TypeScript properties of a `RosVServerGroupAttachmentProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESS::VServerGroupAttachment` resource.
+ */
+// @ts-ignore TS6133
+function rosVServerGroupAttachmentPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosVServerGroupAttachmentPropsValidator(properties).assertSuccess();
+    }
+    return {
+      ScalingGroupId: ros.stringToRosTemplate(properties.scalingGroupId),
+      VServerGroups: ros.listMapper(rosVServerGroupAttachmentVServerGroupsPropertyToRosTemplate)(properties.vServerGroups),
+      ForceAttach: ros.booleanToRosTemplate(properties.forceAttach),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::VServerGroupAttachment`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `VServerGroupAttachment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-vservergroupattachment
+ */
+export class RosVServerGroupAttachment extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ESS::VServerGroupAttachment";
+
+    /**
+     * @Attribute ScalingGroupId: The ID of the scaling group.
+     */
+    public readonly attrScalingGroupId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property scalingGroupId: The ID of the scaling group.
+     */
+    public scalingGroupId: string | ros.IResolvable;
+
+    /**
+     * @Property vServerGroups: A list of vserver groups attached on scaling group
+     */
+    public vServerGroups: Array<RosVServerGroupAttachment.VServerGroupsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property forceAttach: If instances of scaling group are attached\/removed from slb backend server when attach\/detach vserver group from scaling group.
+     * Valid values:
+     * true
+     * false
+     * Default value: false.
+     */
+    public forceAttach: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosVServerGroupAttachmentProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosVServerGroupAttachment.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrScalingGroupId = this.getAtt('ScalingGroupId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.scalingGroupId = props.scalingGroupId;
+        this.vServerGroups = props.vServerGroups;
+        this.forceAttach = props.forceAttach;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            scalingGroupId: this.scalingGroupId,
+            vServerGroups: this.vServerGroups,
+            forceAttach: this.forceAttach,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosVServerGroupAttachmentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosVServerGroupAttachment {
+    /**
+     * @stability external
+     */
+    export interface VServerGroupAttributesProperty {
+        /**
+         * @Property vServerGroupId: ID of VServer Group.
+         */
+        readonly vServerGroupId: string | ros.IResolvable;
+        /**
+         * @Property port: The port will be used for VServer Group backend server.
+         */
+        readonly port: number | ros.IResolvable;
+        /**
+         * @Property weight: The weight of an ECS instance attached to the VServer Group.
+     * Default value: 50.
+         */
+        readonly weight?: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `VServerGroupAttributesProperty`
+ *
+ * @param properties - the TypeScript properties of a `VServerGroupAttributesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosVServerGroupAttachment_VServerGroupAttributesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('vServerGroupId', ros.requiredValidator)(properties.vServerGroupId));
+    errors.collect(ros.propertyValidator('vServerGroupId', ros.validateString)(properties.vServerGroupId));
+    errors.collect(ros.propertyValidator('port', ros.requiredValidator)(properties.port));
+    if(properties.port && (typeof properties.port) !== 'object') {
+        errors.collect(ros.propertyValidator('port', ros.validateRange)({
+            data: properties.port,
+            min: 0,
+            max: 65535,
+          }));
+    }
+    errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
+    if(properties.weight && (typeof properties.weight) !== 'object') {
+        errors.collect(ros.propertyValidator('weight', ros.validateRange)({
+            data: properties.weight,
+            min: 0,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('weight', ros.validateNumber)(properties.weight));
+    return errors.wrap('supplied properties not correct for "VServerGroupAttributesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESS::VServerGroupAttachment.VServerGroupAttributes` resource
+ *
+ * @param properties - the TypeScript properties of a `VServerGroupAttributesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESS::VServerGroupAttachment.VServerGroupAttributes` resource.
+ */
+// @ts-ignore TS6133
+function rosVServerGroupAttachmentVServerGroupAttributesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosVServerGroupAttachment_VServerGroupAttributesPropertyValidator(properties).assertSuccess();
+    return {
+      VServerGroupId: ros.stringToRosTemplate(properties.vServerGroupId),
+      Port: ros.numberToRosTemplate(properties.port),
+      Weight: ros.numberToRosTemplate(properties.weight),
+    };
+}
+
+export namespace RosVServerGroupAttachment {
+    /**
+     * @stability external
+     */
+    export interface VServerGroupsProperty {
+        /**
+         * @Property loadBalancerId: Load balancer server ID of VServer Group.
+         */
+        readonly loadBalancerId: string | ros.IResolvable;
+        /**
+         * @Property vServerGroupAttributes: A list of VServer Group attributes.
+         */
+        readonly vServerGroupAttributes: Array<RosVServerGroupAttachment.VServerGroupAttributesProperty | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `VServerGroupsProperty`
+ *
+ * @param properties - the TypeScript properties of a `VServerGroupsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosVServerGroupAttachment_VServerGroupsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('loadBalancerId', ros.requiredValidator)(properties.loadBalancerId));
+    errors.collect(ros.propertyValidator('loadBalancerId', ros.validateString)(properties.loadBalancerId));
+    errors.collect(ros.propertyValidator('vServerGroupAttributes', ros.requiredValidator)(properties.vServerGroupAttributes));
+    if(properties.vServerGroupAttributes && (Array.isArray(properties.vServerGroupAttributes) || (typeof properties.vServerGroupAttributes) === 'string')) {
+        errors.collect(ros.propertyValidator('vServerGroupAttributes', ros.validateLength)({
+            data: properties.vServerGroupAttributes.length,
+            min: 1,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('vServerGroupAttributes', ros.listValidator(RosVServerGroupAttachment_VServerGroupAttributesPropertyValidator))(properties.vServerGroupAttributes));
+    return errors.wrap('supplied properties not correct for "VServerGroupsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESS::VServerGroupAttachment.VServerGroups` resource
+ *
+ * @param properties - the TypeScript properties of a `VServerGroupsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESS::VServerGroupAttachment.VServerGroups` resource.
+ */
+// @ts-ignore TS6133
+function rosVServerGroupAttachmentVServerGroupsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosVServerGroupAttachment_VServerGroupsPropertyValidator(properties).assertSuccess();
+    return {
+      LoadBalancerId: ros.stringToRosTemplate(properties.loadBalancerId),
+      VServerGroupAttributes: ros.listMapper(rosVServerGroupAttachmentVServerGroupAttributesPropertyToRosTemplate)(properties.vServerGroupAttributes),
     };
 }

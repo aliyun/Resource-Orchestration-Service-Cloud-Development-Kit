@@ -3,13 +3,14 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::SAG::ACL`
+ * Properties for defining a `RosACL`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-acl
  */
 export interface RosACLProps {
 
     /**
      * @Property name: Access control name.
-     * The length is 2-128 characters. It must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:// or https://.
+     * The length is 2-128 characters. It must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:\/\/ or https:\/\/.
      */
     readonly name: string | ros.IResolvable;
 }
@@ -48,18 +49,15 @@ function rosACLPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * A ROS template type:  `ALIYUN::SAG::ACL`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::ACL`, which is used to create an access control list (ACL).
+ * @Note This class does not contain additional functions, so it is recommended to use the `ACL` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-acl
  */
 export class RosACL extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SAG::ACL";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AclId: Access control set ID.
@@ -71,13 +69,11 @@ export class RosACL extends ros.RosResource {
 
     /**
      * @Property name: Access control name.
-     * The length is 2-128 characters. It must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:// or https://.
+     * The length is 2-128 characters. It must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:\/\/ or https:\/\/.
      */
     public name: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::SAG::ACL`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -102,7 +98,8 @@ export class RosACL extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::SAG::ACLAssociation`
+ * Properties for defining a `RosACLAssociation`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-aclassociation
  */
 export interface RosACLAssociationProps {
 
@@ -154,18 +151,15 @@ function rosACLAssociationPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * A ROS template type:  `ALIYUN::SAG::ACLAssociation`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::ACLAssociation`, which is used to associate an access control list (ACL) with a Smart Access Gateway (SAG) instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ACLAssociation` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-aclassociation
  */
 export class RosACLAssociation extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SAG::ACLAssociation";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -181,8 +175,6 @@ export class RosACLAssociation extends ros.RosResource {
     public smartAgId: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::SAG::ACLAssociation`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -208,7 +200,8 @@ export class RosACLAssociation extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::SAG::ACLRule`
+ * Properties for defining a `RosACLRule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-aclrule
  */
 export interface RosACLRuleProps {
 
@@ -223,7 +216,7 @@ export interface RosACLRuleProps {
     readonly destCidr: string | ros.IResolvable;
 
     /**
-     * @Property destPortRange: Destination port range, 80/80.
+     * @Property destPortRange: Destination port range, 80\/80.
      */
     readonly destPortRange: string | ros.IResolvable;
 
@@ -249,7 +242,7 @@ export interface RosACLRuleProps {
     readonly sourceCidr: string | ros.IResolvable;
 
     /**
-     * @Property sourcePortRange: Source port range, 80/80.
+     * @Property sourcePortRange: Source port range, 80\/80.
      */
     readonly sourcePortRange: string | ros.IResolvable;
 
@@ -406,18 +399,15 @@ function rosACLRulePropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::SAG::ACLRule`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::ACLRule`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ACLRule` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-aclrule
  */
 export class RosACLRule extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SAG::ACLRule";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AcrId: Access control rule ID.
@@ -438,7 +428,7 @@ export class RosACLRule extends ros.RosResource {
     public destCidr: string | ros.IResolvable;
 
     /**
-     * @Property destPortRange: Destination port range, 80/80.
+     * @Property destPortRange: Destination port range, 80\/80.
      */
     public destPortRange: string | ros.IResolvable;
 
@@ -464,7 +454,7 @@ export class RosACLRule extends ros.RosResource {
     public sourceCidr: string | ros.IResolvable;
 
     /**
-     * @Property sourcePortRange: Source port range, 80/80.
+     * @Property sourcePortRange: Source port range, 80\/80.
      */
     public sourcePortRange: string | ros.IResolvable;
 
@@ -508,8 +498,6 @@ export class RosACLRule extends ros.RosResource {
     public type: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::SAG::ACLRule`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -560,7 +548,8 @@ export class RosACLRule extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::SAG::App`
+ * Properties for defining a `RosApp`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-app
  */
 export interface RosAppProps {
 
@@ -645,18 +634,15 @@ function rosAppPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * A ROS template type:  `ALIYUN::SAG::App`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::App`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `App` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-app
  */
 export class RosApp extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SAG::App";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute OrderId: The ID of the order that you placed to subscribe to the SAG APP instance.
@@ -707,8 +693,6 @@ export class RosApp extends ros.RosResource {
     public chargeType: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::SAG::App`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -742,12 +726,13 @@ export class RosApp extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::SAG::AppUser`
+ * Properties for defining a `RosAppUser`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-appuser
  */
 export interface RosAppUserProps {
 
     /**
-     * @Property bandwidth: The bandwidth. Unit: Kbit/s. Maximum bandwidth: 2,000 Kbit/s.
+     * @Property bandwidth: The bandwidth. Unit: Kbit\/s. Maximum bandwidth: 2,000 Kbit\/s.
      */
     readonly bandwidth: number | ros.IResolvable;
 
@@ -839,7 +824,9 @@ function rosAppUserPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::SAG::AppUser`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::AppUser`, which is used to create a client account for a Smart Access Gateway (SAG) app instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AppUser` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-appuser
  */
 export class RosAppUser extends ros.RosResource {
     /**
@@ -848,17 +835,12 @@ export class RosAppUser extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SAG::AppUser";
 
     /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
-
-    /**
      * @Attribute SmartAGId: The ID of the SAG APP instance.
      */
     public readonly attrSmartAgId: ros.IResolvable;
 
     /**
-     * @Attribute UserName: <heat.engine.properties.Schema object at 0x7f789e4ada90>
+     * @Attribute UserName: <heat.engine.properties.Schema object at 0x7fd9b9b6e1d0>
      */
     public readonly attrUserName: ros.IResolvable;
 
@@ -866,7 +848,7 @@ export class RosAppUser extends ros.RosResource {
 
 
     /**
-     * @Property bandwidth: The bandwidth. Unit: Kbit/s. Maximum bandwidth: 2,000 Kbit/s.
+     * @Property bandwidth: The bandwidth. Unit: Kbit\/s. Maximum bandwidth: 2,000 Kbit\/s.
      */
     public bandwidth: number | ros.IResolvable;
 
@@ -910,8 +892,6 @@ export class RosAppUser extends ros.RosResource {
     public userName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::SAG::AppUser`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -949,13 +929,14 @@ export class RosAppUser extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::SAG::CloudConnectNetwork`
+ * Properties for defining a `RosCloudConnectNetwork`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-cloudconnectnetwork
  */
 export interface RosCloudConnectNetworkProps {
 
     /**
      * @Property description: The description of the CCN instance.
-     * The description can contain 2 to 256 characters. The description cannot start with http:// or https://.
+     * The description can contain 2 to 256 characters. The description cannot start with http:\/\/ or https:\/\/.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -966,7 +947,7 @@ export interface RosCloudConnectNetworkProps {
 
     /**
      * @Property name: The name of the CCN instance.
-     * The name can contain 2 to 128 characters including a-z, A-Z, 0-9, chinese, underlines, and hyphens. The name must start with an English letter, but cannot start with http:// or https://.
+     * The name can contain 2 to 128 characters including a-z, A-Z, 0-9, chinese, underlines, and hyphens. The name must start with an English letter, but cannot start with http:\/\/ or https:\/\/.
      */
     readonly name?: string | ros.IResolvable;
 
@@ -1022,18 +1003,15 @@ function rosCloudConnectNetworkPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * A ROS template type:  `ALIYUN::SAG::CloudConnectNetwork`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::CloudConnectNetwork`, which is used to create a Cloud Connect Network (CCN) instance. CNN is a device access matrix composed of Alibaba Cloud distributed Smart Access Gateways (SAGs). You can add multiple SAGs to a CCN instance and then attach the CCN instance to a Cloud Enterprise Network (CEN) instance. In this way, you can connect your local branches to Alibaba Cloud.
+ * @Note This class does not contain additional functions, so it is recommended to use the `CloudConnectNetwork` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-cloudconnectnetwork
  */
 export class RosCloudConnectNetwork extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SAG::CloudConnectNetwork";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CcnId: The ID of the CCN instance.
@@ -1045,7 +1023,7 @@ export class RosCloudConnectNetwork extends ros.RosResource {
 
     /**
      * @Property description: The description of the CCN instance.
-     * The description can contain 2 to 256 characters. The description cannot start with http:// or https://.
+     * The description can contain 2 to 256 characters. The description cannot start with http:\/\/ or https:\/\/.
      */
     public description: string | ros.IResolvable | undefined;
 
@@ -1056,7 +1034,7 @@ export class RosCloudConnectNetwork extends ros.RosResource {
 
     /**
      * @Property name: The name of the CCN instance.
-     * The name can contain 2 to 128 characters including a-z, A-Z, 0-9, chinese, underlines, and hyphens. The name must start with an English letter, but cannot start with http:// or https://.
+     * The name can contain 2 to 128 characters including a-z, A-Z, 0-9, chinese, underlines, and hyphens. The name must start with an English letter, but cannot start with http:\/\/ or https:\/\/.
      */
     public name: string | ros.IResolvable | undefined;
 
@@ -1066,8 +1044,6 @@ export class RosCloudConnectNetwork extends ros.RosResource {
     public tags: RosCloudConnectNetwork.TagsProperty[] | undefined;
 
     /**
-     * Create a new `ALIYUN::SAG::CloudConnectNetwork`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1146,7 +1122,8 @@ function rosCloudConnectNetworkTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::SAG::GrantCcnToCen`
+ * Properties for defining a `RosGrantCcnToCen`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-grantccntocen
  */
 export interface RosGrantCcnToCenProps {
 
@@ -1206,18 +1183,15 @@ function rosGrantCcnToCenPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `ALIYUN::SAG::GrantCcnToCen`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::GrantCcnToCen`, which is used to grant permissions on a Cloud Connect Network (CCN) instance to a Cloud Enterprise Network (CEN) instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `GrantCcnToCen` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-grantccntocen
  */
 export class RosGrantCcnToCen extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SAG::GrantCcnToCen";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CcnInstanceId: The ID of the CCN instance.
@@ -1248,8 +1222,6 @@ export class RosGrantCcnToCen extends ros.RosResource {
     public cenUid: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::SAG::GrantCcnToCen`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1279,7 +1251,8 @@ export class RosGrantCcnToCen extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::SAG::Qos`
+ * Properties for defining a `RosQos`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-qos
  */
 export interface RosQosProps {
 
@@ -1334,18 +1307,15 @@ function rosQosPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * A ROS template type:  `ALIYUN::SAG::Qos`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::Qos`ALIYUN::SAG::QoS is used to create a quality of service (QoS) policy for a Smart Access Gateway (SAG) instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Qos` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-qos
  */
 export class RosQos extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SAG::Qos";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute QosId: The ID of the QoS policy.
@@ -1370,8 +1340,6 @@ export class RosQos extends ros.RosResource {
     public qosDescription: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::SAG::Qos`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1398,7 +1366,8 @@ export class RosQos extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::SAG::QosAssociation`
+ * Properties for defining a `RosQosAssociation`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-qosassociation
  */
 export interface RosQosAssociationProps {
 
@@ -1450,18 +1419,15 @@ function rosQosAssociationPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * A ROS template type:  `ALIYUN::SAG::QosAssociation`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::QosAssociation`, which is used to associate a quality of service (QoS) policy with a Smart Access Gateway (SAG) instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `QosAssociation` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-qosassociation
  */
 export class RosQosAssociation extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SAG::QosAssociation";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute QosId: The ID of the QoS policy.
@@ -1487,8 +1453,6 @@ export class RosQosAssociation extends ros.RosResource {
     public smartAgId: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::SAG::QosAssociation`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1516,7 +1480,8 @@ export class RosQosAssociation extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::SAG::QosCar`
+ * Properties for defining a `RosQosCar`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-qoscar
  */
 export interface RosQosCarProps {
 
@@ -1657,18 +1622,15 @@ function rosQosCarPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * A ROS template type:  `ALIYUN::SAG::QosCar`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::QosCar`, which is used to create a traffic throttling rule for a quality of service (QoS) policy.
+ * @Note This class does not contain additional functions, so it is recommended to use the `QosCar` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-qoscar
  */
 export class RosQosCar extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SAG::QosCar";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute QosCarId: The ID of the traffic throttling policy.
@@ -1742,8 +1704,6 @@ export class RosQosCar extends ros.RosResource {
     public percentSourceType: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::SAG::QosCar`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1786,13 +1746,14 @@ export class RosQosCar extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::SAG::QosPolicy`
+ * Properties for defining a `RosQosPolicy`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-qospolicy
  */
 export interface RosQosPolicyProps {
 
     /**
      * @Property destCidr: The range of the destination IP addresses.
-     * Specify the value of this parameter in CIDR notation. Example: 192.168.10.0/24.
+     * Specify the value of this parameter in CIDR notation. Example: 192.168.10.0\/24.
      */
     readonly destCidr: string | ros.IResolvable;
 
@@ -1800,9 +1761,9 @@ export interface RosQosPolicyProps {
      * @Property destPortRange: The range of destination ports.
      * Valid values: 1 to 65535 and -1.
      * Set this parameter in one of the following formats:
-     * 1/200: a port range from 1 to 200
-     * 80/80: port 80
-     * -1/-1: all ports
+     * 1\/200: a port range from 1 to 200
+     * 80\/80: port 80
+     * -1\/-1: all ports
      */
     readonly destPortRange: string | ros.IResolvable;
 
@@ -1826,7 +1787,7 @@ export interface RosQosPolicyProps {
 
     /**
      * @Property sourceCidr: The range of the source IP addresses.
-     * Specify the value of this parameter in CIDR notation. Example: 192.168.1.0/24.
+     * Specify the value of this parameter in CIDR notation. Example: 192.168.1.0\/24.
      */
     readonly sourceCidr: string | ros.IResolvable;
 
@@ -1834,9 +1795,9 @@ export interface RosQosPolicyProps {
      * @Property sourcePortRange: The range of source ports.
      * Valid values: 1 to 65535 and -1.
      * Set this parameter in one of the following formats:
-     * 1/200: a port range from 1 to 200
-     * 80/80: port 80
-     * -1/-1: all ports
+     * 1\/200: a port range from 1 to 200
+     * 80\/80: port 80
+     * -1\/-1: all ports
      */
     readonly sourcePortRange: string | ros.IResolvable;
 
@@ -1961,18 +1922,15 @@ function rosQosPolicyPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `ALIYUN::SAG::QosPolicy`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::QosPolicy`, which is used to create a traffic classification rule for a quality of service (QoS) policy.
+ * @Note This class does not contain additional functions, so it is recommended to use the `QosPolicy` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-qospolicy
  */
 export class RosQosPolicy extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SAG::QosPolicy";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute QosPolicyId: The ID of the traffic classification rule.
@@ -1984,7 +1942,7 @@ export class RosQosPolicy extends ros.RosResource {
 
     /**
      * @Property destCidr: The range of the destination IP addresses.
-     * Specify the value of this parameter in CIDR notation. Example: 192.168.10.0/24.
+     * Specify the value of this parameter in CIDR notation. Example: 192.168.10.0\/24.
      */
     public destCidr: string | ros.IResolvable;
 
@@ -1992,9 +1950,9 @@ export class RosQosPolicy extends ros.RosResource {
      * @Property destPortRange: The range of destination ports.
      * Valid values: 1 to 65535 and -1.
      * Set this parameter in one of the following formats:
-     * 1/200: a port range from 1 to 200
-     * 80/80: port 80
-     * -1/-1: all ports
+     * 1\/200: a port range from 1 to 200
+     * 80\/80: port 80
+     * -1\/-1: all ports
      */
     public destPortRange: string | ros.IResolvable;
 
@@ -2018,7 +1976,7 @@ export class RosQosPolicy extends ros.RosResource {
 
     /**
      * @Property sourceCidr: The range of the source IP addresses.
-     * Specify the value of this parameter in CIDR notation. Example: 192.168.1.0/24.
+     * Specify the value of this parameter in CIDR notation. Example: 192.168.1.0\/24.
      */
     public sourceCidr: string | ros.IResolvable;
 
@@ -2026,9 +1984,9 @@ export class RosQosPolicy extends ros.RosResource {
      * @Property sourcePortRange: The range of source ports.
      * Valid values: 1 to 65535 and -1.
      * Set this parameter in one of the following formats:
-     * 1/200: a port range from 1 to 200
-     * 80/80: port 80
-     * -1/-1: all ports
+     * 1\/200: a port range from 1 to 200
+     * 80\/80: port 80
+     * -1\/-1: all ports
      */
     public sourcePortRange: string | ros.IResolvable;
 
@@ -2075,8 +2033,6 @@ export class RosQosPolicy extends ros.RosResource {
     public startTime: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::SAG::QosPolicy`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2125,7 +2081,8 @@ export class RosQosPolicy extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::SAG::SerialNumberBinding`
+ * Properties for defining a `RosSerialNumberBinding`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-serialnumberbinding
  */
 export interface RosSerialNumberBindingProps {
 
@@ -2177,18 +2134,15 @@ function rosSerialNumberBindingPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * A ROS template type:  `ALIYUN::SAG::SerialNumberBinding`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::SerialNumberBinding`, which is used to associate a Smart Access Gateway (SAG) device with an SAG instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SerialNumberBinding` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-serialnumberbinding
  */
 export class RosSerialNumberBinding extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SAG::SerialNumberBinding";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute SmartAGId: The ID of the SAG instance.
@@ -2209,8 +2163,6 @@ export class RosSerialNumberBinding extends ros.RosResource {
     public smartAgId: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::SAG::SerialNumberBinding`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2237,7 +2189,8 @@ export class RosSerialNumberBinding extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::SAG::SmartAccessGateway`
+ * Properties for defining a `RosSmartAccessGateway`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-smartaccessgateway
  */
 export interface RosSmartAccessGatewayProps {
 
@@ -2276,9 +2229,9 @@ export interface RosSmartAccessGatewayProps {
 
     /**
      * @Property maxBandWidth: The bandwidth of the SAG instance.
-     * If you want to create an SAG CPE instance and the model is sag-100wm, valid values of this parameter are 2 to 50. Unit: Mbit/s.
-     * If you want to create an SAG CPE instance and the model is sag-1000, valid values of this parameter are 10 to 500. Unit: Mbit/s.
-     * If you want to create an SAG vCPE instance, valid values of this parameter are 10 to 1000. Unit: Mbit/s.
+     * If you want to create an SAG CPE instance and the model is sag-100wm, valid values of this parameter are 2 to 50. Unit: Mbit\/s.
+     * If you want to create an SAG CPE instance and the model is sag-1000, valid values of this parameter are 10 to 500. Unit: Mbit\/s.
+     * If you want to create an SAG vCPE instance, valid values of this parameter are 10 to 1000. Unit: Mbit\/s.
      */
     readonly maxBandWidth: number | ros.IResolvable;
 
@@ -2512,18 +2465,15 @@ function rosSmartAccessGatewayPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * A ROS template type:  `ALIYUN::SAG::SmartAccessGateway`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::SmartAccessGateway`, which is used to create a Smart Access Gateway (SAG) instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SmartAccessGateway` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-smartaccessgateway
  */
 export class RosSmartAccessGateway extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SAG::SmartAccessGateway";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute OrderId: The ID of the order.
@@ -2573,9 +2523,9 @@ export class RosSmartAccessGateway extends ros.RosResource {
 
     /**
      * @Property maxBandWidth: The bandwidth of the SAG instance.
-     * If you want to create an SAG CPE instance and the model is sag-100wm, valid values of this parameter are 2 to 50. Unit: Mbit/s.
-     * If you want to create an SAG CPE instance and the model is sag-1000, valid values of this parameter are 10 to 500. Unit: Mbit/s.
-     * If you want to create an SAG vCPE instance, valid values of this parameter are 10 to 1000. Unit: Mbit/s.
+     * If you want to create an SAG CPE instance and the model is sag-100wm, valid values of this parameter are 2 to 50. Unit: Mbit\/s.
+     * If you want to create an SAG CPE instance and the model is sag-1000, valid values of this parameter are 10 to 500. Unit: Mbit\/s.
+     * If you want to create an SAG vCPE instance, valid values of this parameter are 10 to 1000. Unit: Mbit\/s.
      */
     public maxBandWidth: number | ros.IResolvable;
 
@@ -2700,8 +2650,6 @@ export class RosSmartAccessGateway extends ros.RosResource {
     public securityLockThreshold: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::SAG::SmartAccessGateway`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2775,7 +2723,8 @@ export class RosSmartAccessGateway extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::SAG::SmartAccessGatewayBinding`
+ * Properties for defining a `RosSmartAccessGatewayBinding`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-smartaccessgatewaybinding
  */
 export interface RosSmartAccessGatewayBindingProps {
 
@@ -2827,18 +2776,15 @@ function rosSmartAccessGatewayBindingPropsToRosTemplate(properties: any, enableR
 }
 
 /**
- * A ROS template type:  `ALIYUN::SAG::SmartAccessGatewayBinding`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::SmartAccessGatewayBinding`, which is used to bind a Smart Access Gateway (SAG) instance to a specified Cloud Connect Network (CCN) instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SmartAccessGatewayBinding` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-smartaccessgatewaybinding
  */
 export class RosSmartAccessGatewayBinding extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SAG::SmartAccessGatewayBinding";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute SmartAGId: The ID of the Smart Access Gateway instance.
@@ -2859,8 +2805,6 @@ export class RosSmartAccessGatewayBinding extends ros.RosResource {
     public smartAgId: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::SAG::SmartAccessGatewayBinding`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

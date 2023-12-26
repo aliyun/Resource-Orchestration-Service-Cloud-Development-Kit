@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Rds
 {
-    /// <summary>Properties for defining a `ALIYUN::RDS::DBInstanceClone`.</summary>
+    /// <summary>Properties for defining a `DBInstanceClone`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstanceclone
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IDBInstanceCloneProps), fullyQualifiedName: "@alicloud/ros-cdk-rds.DBInstanceCloneProps")]
     public interface IDBInstanceCloneProps
     {
@@ -416,7 +419,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             }
         }
 
-        /// <summary>Property securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0/0 means no limitation.</summary>
+        /// <summary>Property securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0\/0 means no limitation.</summary>
         [JsiiProperty(name: "securityIpList", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? SecurityIpList
@@ -565,7 +568,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::RDS::DBInstanceClone`.</summary>
+        /// <summary>Properties for defining a `DBInstanceClone`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstanceclone
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IDBInstanceCloneProps), fullyQualifiedName: "@alicloud/ros-cdk-rds.DBInstanceCloneProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Rds.IDBInstanceCloneProps
         {
@@ -897,7 +903,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0/0 means no limitation.</summary>
+            /// <summary>Property securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0\/0 means no limitation.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "securityIpList", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SecurityIpList

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::EMR::Cluster2`.</summary>
+    /// <summary>Properties for defining a `Cluster2`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-cluster2
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-emr.Cluster2Props")]
     public class Cluster2Props : AlibabaCloud.SDK.ROS.CDK.Emr.ICluster2Props
     {
@@ -59,7 +62,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
 
         private object _clusterName;
 
-        /// <summary>Property clusterName: Cluster name.The length is 1 ~ 128 characters, and the alphabet or Chinese must be started. It cannot start with http:// and https: //.It can include Chinese, English, numbers, half-horn colons (:), down line (_), half-angle period (.) Or short lines (-).</summary>
+        /// <summary>Property clusterName: Cluster name.The length is 1 ~ 128 characters, and the alphabet or Chinese must be started. It cannot start with http:\/\/ and https: \/\/.It can include Chinese, English, numbers, half-horn colons (:), down line (_), half-angle period (.) Or short lines (-).</summary>
         [JsiiProperty(name: "clusterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object ClusterName
         {

@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::DTS::ConsumerGroup`
+ * Properties for defining a `RosConsumerGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-consumergroup
  */
 export interface RosConsumerGroupProps {
 
@@ -71,18 +72,15 @@ function rosConsumerGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `ALIYUN::DTS::ConsumerGroup`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::ConsumerGroup`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ConsumerGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-consumergroup
  */
 export class RosConsumerGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DTS::ConsumerGroup";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ConsumerGroupID: Consumer group ID
@@ -123,8 +121,6 @@ export class RosConsumerGroup extends ros.RosResource {
     public subscriptionInstanceId: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::DTS::ConsumerGroup`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -157,327 +153,1313 @@ export class RosConsumerGroup extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::DTS::MigrationJob`
+ * Properties for defining a `RosInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-instance
  */
-export interface RosMigrationJobProps {
+export interface RosInstanceProps {
 
     /**
-     * @Property migrationJobClass: Migrating instance specifications, which can be:
-     * small, medium, large and so on.
-     * Various specifications of the reference data migration test performance specifications
+     * @Property instanceClass: The instance class.
+     * - DTS supports the following instance classes for a data migration instance: **xxlarge**, **xlarge**, **large**, **medium**, and **small**.
+     * - DTS supports the following instance classes for a data synchronization instance: **large**, **medium**, **small**, and **micro**.
+     * **Note**: Although the instance specification supports modification after creation, the downgrade instance feature is currently in canary release and available only for specific users.
      */
-    readonly migrationJobClass: string | ros.IResolvable;
+    readonly instanceClass: string | ros.IResolvable;
 
     /**
-     * @Property destinationEndpoint: Migration target configuration
+     * @Property payType: The billing method. Valid values:
+     * - **PrePaid**: subscription
+     * - **PostPaid**: pay-as-you-go
      */
-    readonly destinationEndpoint?: RosMigrationJob.DestinationEndpointProperty | ros.IResolvable;
+    readonly payType: string | ros.IResolvable;
 
     /**
-     * @Property migrationJobName: Migrating job name
+     * @Property type: The type of the DTS instance. Valid values:
+     * - **MIGRATION*: data migration instance
+     * - **SYNC**: data synchronization instance
+     * - **SUBSCRIBE**: change tracking instance
      */
-    readonly migrationJobName?: string | ros.IResolvable;
+    readonly type: string | ros.IResolvable;
 
     /**
-     * @Property migrationMode: Migration mode
+     * @Property autoPay: Specifies whether to automatically renew the DTS instance when it expires. Valid values:
+     * - **false**: does not automatically renew the DTS instance when it expires. This is the default value.
+     * - **true**: automatically renews the DTS instance when it expires.
      */
-    readonly migrationMode?: RosMigrationJob.MigrationModeProperty | ros.IResolvable;
+    readonly autoPay?: boolean | ros.IResolvable;
 
     /**
-     * @Property migrationObject: Objects that need to be migrated
+     * @Property autoStart: Specifies whether to automatically start the task after the DTS instance is purchased. Valid values:
+     * - **false**: does not automatically start the task after the DTS instance is purchased. This is the default value.
+     * - **true**: automatically starts the task after the DTS instance is purchased.
      */
-    readonly migrationObject?: Array<RosMigrationJob.MigrationObjectProperty | ros.IResolvable> | ros.IResolvable;
+    readonly autoStart?: boolean | ros.IResolvable;
 
     /**
-     * @Property sourceEndpoint: Migration source configuration
+     * @Property computeUnit: The specifications of the extract, transform, and load (ETL) instance. The unit is compute unit (CU). One CU is equal to 1 vCPU and 4 GB of memory. The value of this parameter must be an integer greater than or equal to 2.
      */
-    readonly sourceEndpoint?: RosMigrationJob.SourceEndpointProperty | ros.IResolvable;
+    readonly computeUnit?: number | ros.IResolvable;
+
+    /**
+     * @Property databaseCount: The number of private custom ApsaraDB RDS instances in a PolarDB-X instance. Default value: **1**.
+     * **Note**: You must specify this parameter only if the **SourceEndpointEngineName** parameter is set to **drds**.
+     */
+    readonly databaseCount?: number | ros.IResolvable;
+
+    /**
+     * @Property destinationEndpointEngineName: The database engine of the destination instance. Valid values:
+     * - **MySQL**: ApsaraDB RDS for MySQL instance or self-managed MySQL database
+     * - **PolarDB**: PolarDB for MySQL cluster
+     * - **polardb_o**: PolarDB for Oracle cluster
+     * - **polardb_pg**: PolarDB for PostgreSQL cluster
+     * - **Redis**: ApsaraDB for Redis instance or self-managed Redis database
+     * - **DRDS**: PolarDB-X 1.0 or PolarDB-X 2.0 instance
+     * - **PostgreSQL**: self-managed PostgreSQL database
+     * - **odps**: MaxCompute project
+     * - **oracle**: self-managed Oracle database
+     * - **mongodb**: ApsaraDB for MongoDB instance or self-managed MongoDB database
+     * - **tidb**: TiDB database
+     * - **ADS**: AnalyticDB for MySQL V2.0 cluster
+     * - **ADB30**: AnalyticDB for MySQL V3.0 cluster
+     * - **Greenplum**: AnalyticDB for PostgreSQL instance
+     * - **MSSQL**: ApsaraDB RDS for SQL Server instance or self-managed SQL Server database
+     * - **kafka**: Message Queue for Apache Kafka instance or self-managed Kafka cluster
+     * - **DataHub**: DataHub project
+     * - **DB2**: self-managed Db2 for LUW database
+     * - **as400**: AS\/400
+     * - **Tablestore**: Tablestore instance
+     * **Note**: The default value is **MySQL**. You must specify one of this parameter and the **JobId** parameter.
+     */
+    readonly destinationEndpointEngineName?: string | ros.IResolvable;
+
+    /**
+     * @Property destinationRegion: The ID of the region in which the destination instance resides.
+     * **Note**: You must specify one of this parameter and the **JobId** parameter.
+     */
+    readonly destinationRegion?: string | ros.IResolvable;
+
+    /**
+     * @Property du: The number of DTS units (DUs) that are assigned to a DTS task that is run on a DTS dedicated cluster. Valid values: **1** to **100**.
+     * **Note**: The value of this parameter must be within the range of the number of DUs available for the DTS dedicated cluster.
+     */
+    readonly du?: number | ros.IResolvable;
+
+    /**
+     * @Property feeType: The billing type for a change tracking instance. Valid values: ONLY_CONFIGURATION_FEE and CONFIGURATION_FEE_AND_DATA_FEE. 
+     * - **ONLY_CONFIGURATION_FEE**: charges only configuration fees. 
+     * - **CONFIGURATION_FEE_AND_DATA_FEE**: charges configuration fees and data traffic fees.
+     */
+    readonly feeType?: string | ros.IResolvable;
+
+    /**
+     * @Property jobId: The ID of the task.
+     * **Note**: If this parameter is specified, you do not need to specify the SourceRegion, DestinationRegion, SourceEndpointEngineName, or DestinationEndpointEngineName parameter. Even if these parameters are specified, the value of the JobId parameter takes precedence.
+     */
+    readonly jobId?: string | ros.IResolvable;
+
+    /**
+     * @Property period: The unit of the subscription duration. Valid values: **Year** and **Month**.
+     * **Note**: You must specify this parameter only if the **PayType** parameter is set to **PrePaid**.
+     */
+    readonly period?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property sourceEndpointEngineName: The database engine of the source instance. Valid values:
+     * - **MySQL**: ApsaraDB RDS for MySQL instance or self-managed MySQL database
+     * - **PolarDB**: PolarDB for MySQL cluster
+     * - **polardb_o**: PolarDB for Oracle cluster
+     * - **polardb_pg**: PolarDB for PostgreSQL cluster
+     * - **Redis**: ApsaraDB for Redis instance or self-managed Redis database
+     * - **DRDS**: PolarDB-X 1.0 or PolarDB-X 2.0 instance
+     * - **PostgreSQL**: self-managed PostgreSQL database
+     * - **odps**: MaxCompute project
+     * - **oracle**: self-managed Oracle database
+     * - **mongodb**: ApsaraDB for MongoDB instance or self-managed MongoDB database
+     * - **tidb**: TiDB database
+     * - **ADS**: AnalyticDB for MySQL V2.0 cluster
+     * - **ADB30**: AnalyticDB for MySQL V3.0 cluster
+     * - **Greenplum**: AnalyticDB for PostgreSQL instance
+     * - **MSSQL**: ApsaraDB RDS for SQL Server instance or self-managed SQL Server database
+     * - **kafka**: Message Queue for Apache Kafka instance or self-managed Kafka cluster
+     * - **DataHub**: DataHub project
+     * - **DB2**: self-managed Db2 for LUW database
+     * - **as400**: AS\/400
+     * - **Tablestore**: Tablestore instance
+     * **Note**: The default value is **MySQL**. You must specify one of this parameter and the **JobId** parameter.
+     */
+    readonly sourceEndpointEngineName?: string | ros.IResolvable;
+
+    /**
+     * @Property sourceRegion: The ID of the region in which the source instance resides.
+     * **Note**: You must specify one of this parameter and the **JobId** parameter.
+     */
+    readonly sourceRegion?: string | ros.IResolvable;
+
+    /**
+     * @Property syncArchitecture: The synchronization topology. Valid values:
+     * - **oneway**: one-way synchronization. This is the default value.
+     * - **bidirectional**: two-way synchronization.
+     */
+    readonly syncArchitecture?: string | ros.IResolvable;
+
+    /**
+     * @Property usedTime: The subscription duration.
+     * - Valid values if the **Period** parameter is set to **Month**: 1, 2, 3, 4, 5, 6, 7, 8, and 9.
+     * - Valid values if the **Period** parameter is set to **Year**: 1, 2, 3, and 5.
+     * **Note**: You must specify this parameter only if the **PayType** parameter is set to **PrePaid**. You can set the **Period** parameter to specify the unit of the subscription duration.
+     */
+    readonly usedTime?: number | ros.IResolvable;
 }
 
 /**
- * Determine whether the given properties match those of a `RosMigrationJobProps`
+ * Determine whether the given properties match those of a `RosInstanceProps`
  *
- * @param properties - the TypeScript properties of a `RosMigrationJobProps`
+ * @param properties - the TypeScript properties of a `RosInstanceProps`
  *
  * @returns the result of the validation.
  */
-function RosMigrationJobPropsValidator(properties: any): ros.ValidationResult {
+function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('migrationObject', ros.listValidator(RosMigrationJob_MigrationObjectPropertyValidator))(properties.migrationObject));
-    errors.collect(ros.propertyValidator('destinationEndpoint', RosMigrationJob_DestinationEndpointPropertyValidator)(properties.destinationEndpoint));
-    errors.collect(ros.propertyValidator('migrationJobClass', ros.requiredValidator)(properties.migrationJobClass));
-    errors.collect(ros.propertyValidator('migrationJobClass', ros.validateString)(properties.migrationJobClass));
-    errors.collect(ros.propertyValidator('sourceEndpoint', RosMigrationJob_SourceEndpointPropertyValidator)(properties.sourceEndpoint));
-    errors.collect(ros.propertyValidator('migrationJobName', ros.validateString)(properties.migrationJobName));
-    errors.collect(ros.propertyValidator('migrationMode', RosMigrationJob_MigrationModePropertyValidator)(properties.migrationMode));
-    return errors.wrap('supplied properties not correct for "RosMigrationJobProps"');
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('feeType', ros.validateString)(properties.feeType));
+    errors.collect(ros.propertyValidator('computeUnit', ros.validateNumber)(properties.computeUnit));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
+          data: properties.period,
+          allowedValues: ["Month","Year"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('period', ros.validateString)(properties.period));
+    errors.collect(ros.propertyValidator('destinationRegion', ros.validateString)(properties.destinationRegion));
+    errors.collect(ros.propertyValidator('instanceClass', ros.requiredValidator)(properties.instanceClass));
+    if(properties.instanceClass && (typeof properties.instanceClass) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceClass', ros.validateAllowedValues)({
+          data: properties.instanceClass,
+          allowedValues: ["xxlarge","xlarge","large","medium","small","micro"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('instanceClass', ros.validateString)(properties.instanceClass));
+    errors.collect(ros.propertyValidator('sourceEndpointEngineName', ros.validateString)(properties.sourceEndpointEngineName));
+    errors.collect(ros.propertyValidator('payType', ros.requiredValidator)(properties.payType));
+    if(properties.payType && (typeof properties.payType) !== 'object') {
+        errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
+          data: properties.payType,
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
+    errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
+    errors.collect(ros.propertyValidator('destinationEndpointEngineName', ros.validateString)(properties.destinationEndpointEngineName));
+    errors.collect(ros.propertyValidator('sourceRegion', ros.validateString)(properties.sourceRegion));
+    if(properties.du && (typeof properties.du) !== 'object') {
+        errors.collect(ros.propertyValidator('du', ros.validateRange)({
+            data: properties.du,
+            min: 1,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('du', ros.validateNumber)(properties.du));
+    errors.collect(ros.propertyValidator('type', ros.requiredValidator)(properties.type));
+    if(properties.type && (typeof properties.type) !== 'object') {
+        errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
+          data: properties.type,
+          allowedValues: ["MIGRATION","SYNC","SUBSCRIBE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('databaseCount', ros.validateNumber)(properties.databaseCount));
+    if(properties.usedTime && (typeof properties.usedTime) !== 'object') {
+        errors.collect(ros.propertyValidator('usedTime', ros.validateAllowedValues)({
+          data: properties.usedTime,
+          allowedValues: [1,2,3,4,5,6,7,8,9],
+        }));
+    }
+    errors.collect(ros.propertyValidator('usedTime', ros.validateNumber)(properties.usedTime));
+    errors.collect(ros.propertyValidator('autoStart', ros.validateBoolean)(properties.autoStart));
+    errors.collect(ros.propertyValidator('jobId', ros.validateString)(properties.jobId));
+    if(properties.syncArchitecture && (typeof properties.syncArchitecture) !== 'object') {
+        errors.collect(ros.propertyValidator('syncArchitecture', ros.validateAllowedValues)({
+          data: properties.syncArchitecture,
+          allowedValues: ["oneway","bidirectional"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('syncArchitecture', ros.validateString)(properties.syncArchitecture));
+    return errors.wrap('supplied properties not correct for "RosInstanceProps"');
 }
 
 /**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::MigrationJob` resource
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::Instance` resource
  *
- * @param properties - the TypeScript properties of a `RosMigrationJobProps`
+ * @param properties - the TypeScript properties of a `RosInstanceProps`
  *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::MigrationJob` resource.
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::Instance` resource.
  */
 // @ts-ignore TS6133
-function rosMigrationJobPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
     if (!ros.canInspect(properties)) { return properties; }
     if(enableResourcePropertyConstraint) {
-        RosMigrationJobPropsValidator(properties).assertSuccess();
+        RosInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      MigrationJobClass: ros.stringToRosTemplate(properties.migrationJobClass),
-      DestinationEndpoint: rosMigrationJobDestinationEndpointPropertyToRosTemplate(properties.destinationEndpoint),
-      MigrationJobName: ros.stringToRosTemplate(properties.migrationJobName),
-      MigrationMode: rosMigrationJobMigrationModePropertyToRosTemplate(properties.migrationMode),
-      MigrationObject: ros.listMapper(rosMigrationJobMigrationObjectPropertyToRosTemplate)(properties.migrationObject),
-      SourceEndpoint: rosMigrationJobSourceEndpointPropertyToRosTemplate(properties.sourceEndpoint),
+      InstanceClass: ros.stringToRosTemplate(properties.instanceClass),
+      PayType: ros.stringToRosTemplate(properties.payType),
+      Type: ros.stringToRosTemplate(properties.type),
+      AutoPay: ros.booleanToRosTemplate(properties.autoPay),
+      AutoStart: ros.booleanToRosTemplate(properties.autoStart),
+      ComputeUnit: ros.numberToRosTemplate(properties.computeUnit),
+      DatabaseCount: ros.numberToRosTemplate(properties.databaseCount),
+      DestinationEndpointEngineName: ros.stringToRosTemplate(properties.destinationEndpointEngineName),
+      DestinationRegion: ros.stringToRosTemplate(properties.destinationRegion),
+      Du: ros.numberToRosTemplate(properties.du),
+      FeeType: ros.stringToRosTemplate(properties.feeType),
+      JobId: ros.stringToRosTemplate(properties.jobId),
+      Period: ros.stringToRosTemplate(properties.period),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      SourceEndpointEngineName: ros.stringToRosTemplate(properties.sourceEndpointEngineName),
+      SourceRegion: ros.stringToRosTemplate(properties.sourceRegion),
+      SyncArchitecture: ros.stringToRosTemplate(properties.syncArchitecture),
+      UsedTime: ros.numberToRosTemplate(properties.usedTime),
     };
 }
 
 /**
- * A ROS template type:  `ALIYUN::DTS::MigrationJob`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::Instance`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-instance
  */
-export class RosMigrationJob extends ros.RosResource {
+export class RosInstance extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
-    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DTS::MigrationJob";
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DTS::Instance";
 
     /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
+     * @Attribute InstanceId: The ID of the DTS instance.
      */
+    public readonly attrInstanceId: ros.IResolvable;
 
     /**
-     * @Attribute MigrationJobId: Migration tasks task ID
+     * @Attribute JobId: The ID of the task.
      */
-    public readonly attrMigrationJobId: ros.IResolvable;
+    public readonly attrJobId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
 
     /**
-     * @Property migrationJobClass: Migrating instance specifications, which can be:
-     * small, medium, large and so on.
-     * Various specifications of the reference data migration test performance specifications
+     * @Property instanceClass: The instance class.
+     * - DTS supports the following instance classes for a data migration instance: **xxlarge**, **xlarge**, **large**, **medium**, and **small**.
+     * - DTS supports the following instance classes for a data synchronization instance: **large**, **medium**, **small**, and **micro**.
+     * **Note**: Although the instance specification supports modification after creation, the downgrade instance feature is currently in canary release and available only for specific users.
      */
-    public migrationJobClass: string | ros.IResolvable;
+    public instanceClass: string | ros.IResolvable;
 
     /**
-     * @Property destinationEndpoint: Migration target configuration
+     * @Property payType: The billing method. Valid values:
+     * - **PrePaid**: subscription
+     * - **PostPaid**: pay-as-you-go
      */
-    public destinationEndpoint: RosMigrationJob.DestinationEndpointProperty | ros.IResolvable | undefined;
+    public payType: string | ros.IResolvable;
 
     /**
-     * @Property migrationJobName: Migrating job name
+     * @Property type: The type of the DTS instance. Valid values:
+     * - **MIGRATION*: data migration instance
+     * - **SYNC**: data synchronization instance
+     * - **SUBSCRIBE**: change tracking instance
      */
-    public migrationJobName: string | ros.IResolvable | undefined;
+    public type: string | ros.IResolvable;
 
     /**
-     * @Property migrationMode: Migration mode
+     * @Property autoPay: Specifies whether to automatically renew the DTS instance when it expires. Valid values:
+     * - **false**: does not automatically renew the DTS instance when it expires. This is the default value.
+     * - **true**: automatically renews the DTS instance when it expires.
      */
-    public migrationMode: RosMigrationJob.MigrationModeProperty | ros.IResolvable | undefined;
+    public autoPay: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property migrationObject: Objects that need to be migrated
+     * @Property autoStart: Specifies whether to automatically start the task after the DTS instance is purchased. Valid values:
+     * - **false**: does not automatically start the task after the DTS instance is purchased. This is the default value.
+     * - **true**: automatically starts the task after the DTS instance is purchased.
      */
-    public migrationObject: Array<RosMigrationJob.MigrationObjectProperty | ros.IResolvable> | ros.IResolvable | undefined;
+    public autoStart: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property sourceEndpoint: Migration source configuration
+     * @Property computeUnit: The specifications of the extract, transform, and load (ETL) instance. The unit is compute unit (CU). One CU is equal to 1 vCPU and 4 GB of memory. The value of this parameter must be an integer greater than or equal to 2.
      */
-    public sourceEndpoint: RosMigrationJob.SourceEndpointProperty | ros.IResolvable | undefined;
+    public computeUnit: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::DTS::MigrationJob`.
-     *
+     * @Property databaseCount: The number of private custom ApsaraDB RDS instances in a PolarDB-X instance. Default value: **1**.
+     * **Note**: You must specify this parameter only if the **SourceEndpointEngineName** parameter is set to **drds**.
+     */
+    public databaseCount: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property destinationEndpointEngineName: The database engine of the destination instance. Valid values:
+     * - **MySQL**: ApsaraDB RDS for MySQL instance or self-managed MySQL database
+     * - **PolarDB**: PolarDB for MySQL cluster
+     * - **polardb_o**: PolarDB for Oracle cluster
+     * - **polardb_pg**: PolarDB for PostgreSQL cluster
+     * - **Redis**: ApsaraDB for Redis instance or self-managed Redis database
+     * - **DRDS**: PolarDB-X 1.0 or PolarDB-X 2.0 instance
+     * - **PostgreSQL**: self-managed PostgreSQL database
+     * - **odps**: MaxCompute project
+     * - **oracle**: self-managed Oracle database
+     * - **mongodb**: ApsaraDB for MongoDB instance or self-managed MongoDB database
+     * - **tidb**: TiDB database
+     * - **ADS**: AnalyticDB for MySQL V2.0 cluster
+     * - **ADB30**: AnalyticDB for MySQL V3.0 cluster
+     * - **Greenplum**: AnalyticDB for PostgreSQL instance
+     * - **MSSQL**: ApsaraDB RDS for SQL Server instance or self-managed SQL Server database
+     * - **kafka**: Message Queue for Apache Kafka instance or self-managed Kafka cluster
+     * - **DataHub**: DataHub project
+     * - **DB2**: self-managed Db2 for LUW database
+     * - **as400**: AS\/400
+     * - **Tablestore**: Tablestore instance
+     * **Note**: The default value is **MySQL**. You must specify one of this parameter and the **JobId** parameter.
+     */
+    public destinationEndpointEngineName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property destinationRegion: The ID of the region in which the destination instance resides.
+     * **Note**: You must specify one of this parameter and the **JobId** parameter.
+     */
+    public destinationRegion: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property du: The number of DTS units (DUs) that are assigned to a DTS task that is run on a DTS dedicated cluster. Valid values: **1** to **100**.
+     * **Note**: The value of this parameter must be within the range of the number of DUs available for the DTS dedicated cluster.
+     */
+    public du: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property feeType: The billing type for a change tracking instance. Valid values: ONLY_CONFIGURATION_FEE and CONFIGURATION_FEE_AND_DATA_FEE. 
+     * - **ONLY_CONFIGURATION_FEE**: charges only configuration fees. 
+     * - **CONFIGURATION_FEE_AND_DATA_FEE**: charges configuration fees and data traffic fees.
+     */
+    public feeType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property jobId: The ID of the task.
+     * **Note**: If this parameter is specified, you do not need to specify the SourceRegion, DestinationRegion, SourceEndpointEngineName, or DestinationEndpointEngineName parameter. Even if these parameters are specified, the value of the JobId parameter takes precedence.
+     */
+    public jobId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property period: The unit of the subscription duration. Valid values: **Year** and **Month**.
+     * **Note**: You must specify this parameter only if the **PayType** parameter is set to **PrePaid**.
+     */
+    public period: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property sourceEndpointEngineName: The database engine of the source instance. Valid values:
+     * - **MySQL**: ApsaraDB RDS for MySQL instance or self-managed MySQL database
+     * - **PolarDB**: PolarDB for MySQL cluster
+     * - **polardb_o**: PolarDB for Oracle cluster
+     * - **polardb_pg**: PolarDB for PostgreSQL cluster
+     * - **Redis**: ApsaraDB for Redis instance or self-managed Redis database
+     * - **DRDS**: PolarDB-X 1.0 or PolarDB-X 2.0 instance
+     * - **PostgreSQL**: self-managed PostgreSQL database
+     * - **odps**: MaxCompute project
+     * - **oracle**: self-managed Oracle database
+     * - **mongodb**: ApsaraDB for MongoDB instance or self-managed MongoDB database
+     * - **tidb**: TiDB database
+     * - **ADS**: AnalyticDB for MySQL V2.0 cluster
+     * - **ADB30**: AnalyticDB for MySQL V3.0 cluster
+     * - **Greenplum**: AnalyticDB for PostgreSQL instance
+     * - **MSSQL**: ApsaraDB RDS for SQL Server instance or self-managed SQL Server database
+     * - **kafka**: Message Queue for Apache Kafka instance or self-managed Kafka cluster
+     * - **DataHub**: DataHub project
+     * - **DB2**: self-managed Db2 for LUW database
+     * - **as400**: AS\/400
+     * - **Tablestore**: Tablestore instance
+     * **Note**: The default value is **MySQL**. You must specify one of this parameter and the **JobId** parameter.
+     */
+    public sourceEndpointEngineName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property sourceRegion: The ID of the region in which the source instance resides.
+     * **Note**: You must specify one of this parameter and the **JobId** parameter.
+     */
+    public sourceRegion: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property syncArchitecture: The synchronization topology. Valid values:
+     * - **oneway**: one-way synchronization. This is the default value.
+     * - **bidirectional**: two-way synchronization.
+     */
+    public syncArchitecture: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property usedTime: The subscription duration.
+     * - Valid values if the **Period** parameter is set to **Month**: 1, 2, 3, 4, 5, 6, 7, 8, and 9.
+     * - Valid values if the **Period** parameter is set to **Year**: 1, 2, 3, and 5.
+     * **Note**: You must specify this parameter only if the **PayType** parameter is set to **PrePaid**. You can set the **Period** parameter to specify the unit of the subscription duration.
+     */
+    public usedTime: number | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
      */
-    constructor(scope: ros.Construct, id: string, props: RosMigrationJobProps, enableResourcePropertyConstraint: boolean) {
-        super(scope, id, { type: RosMigrationJob.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrMigrationJobId = this.getAtt('MigrationJobId');
+    constructor(scope: ros.Construct, id: string, props: RosInstanceProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrInstanceId = this.getAtt('InstanceId');
+        this.attrJobId = this.getAtt('JobId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-        this.migrationJobClass = props.migrationJobClass;
-        this.destinationEndpoint = props.destinationEndpoint;
-        this.migrationJobName = props.migrationJobName;
-        this.migrationMode = props.migrationMode;
-        this.migrationObject = props.migrationObject;
-        this.sourceEndpoint = props.sourceEndpoint;
+        this.instanceClass = props.instanceClass;
+        this.payType = props.payType;
+        this.type = props.type;
+        this.autoPay = props.autoPay;
+        this.autoStart = props.autoStart;
+        this.computeUnit = props.computeUnit;
+        this.databaseCount = props.databaseCount;
+        this.destinationEndpointEngineName = props.destinationEndpointEngineName;
+        this.destinationRegion = props.destinationRegion;
+        this.du = props.du;
+        this.feeType = props.feeType;
+        this.jobId = props.jobId;
+        this.period = props.period;
+        this.resourceGroupId = props.resourceGroupId;
+        this.sourceEndpointEngineName = props.sourceEndpointEngineName;
+        this.sourceRegion = props.sourceRegion;
+        this.syncArchitecture = props.syncArchitecture;
+        this.usedTime = props.usedTime;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
-            migrationJobClass: this.migrationJobClass,
-            destinationEndpoint: this.destinationEndpoint,
-            migrationJobName: this.migrationJobName,
-            migrationMode: this.migrationMode,
-            migrationObject: this.migrationObject,
-            sourceEndpoint: this.sourceEndpoint,
+            instanceClass: this.instanceClass,
+            payType: this.payType,
+            type: this.type,
+            autoPay: this.autoPay,
+            autoStart: this.autoStart,
+            computeUnit: this.computeUnit,
+            databaseCount: this.databaseCount,
+            destinationEndpointEngineName: this.destinationEndpointEngineName,
+            destinationRegion: this.destinationRegion,
+            du: this.du,
+            feeType: this.feeType,
+            jobId: this.jobId,
+            period: this.period,
+            resourceGroupId: this.resourceGroupId,
+            sourceEndpointEngineName: this.sourceEndpointEngineName,
+            sourceRegion: this.sourceRegion,
+            syncArchitecture: this.syncArchitecture,
+            usedTime: this.usedTime,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
-        return rosMigrationJobPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+        return rosInstancePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
 
-export namespace RosMigrationJob {
-    /**
-     * @stability external
-     */
-    export interface ColumnExcludesProperty {
-        /**
-         * @Property columnName: Column names are not migrated in the table to be migrated
-         */
-        readonly columnName?: string | ros.IResolvable;
-    }
-}
 /**
- * Determine whether the given properties match those of a `ColumnExcludesProperty`
+ * Properties for defining a `RosMigrationJob2`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-migrationjob2
+ */
+export interface RosMigrationJob2Props {
+
+    /**
+     * @Property dataInitialization: Specifies whether to perform full data migration or full data synchronization. Default value: **true**. Valid values: **true** and **false**.
+     */
+    readonly dataInitialization: boolean | ros.IResolvable;
+
+    /**
+     * @Property dataSynchronization: Specifies whether to perform incremental data migration or incremental data synchronization. Default value: **false**. Valid values: **true** and **false**.
+     */
+    readonly dataSynchronization: boolean | ros.IResolvable;
+
+    /**
+     * @Property dbList: The objects that you want to migrate or synchronize.
+     */
+    readonly dbList: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property destinationEndpoint: Destination instance configuration.
+     */
+    readonly destinationEndpoint: RosMigrationJob2.DestinationEndpointProperty | ros.IResolvable;
+
+    /**
+     * @Property dtsJobName: The name of the DTS instance.
+     */
+    readonly dtsJobName: string | ros.IResolvable;
+
+    /**
+     * @Property sourceEndpoint: Source instance configuration.
+     */
+    readonly sourceEndpoint: RosMigrationJob2.SourceEndpointProperty | ros.IResolvable;
+
+    /**
+     * @Property structureInitialization: Specifies whether to perform schema migration or schema synchronization. Default value: true. Valid values: **true** and **false**.
+     */
+    readonly structureInitialization: boolean | ros.IResolvable;
+
+    /**
+     * @Property checkpoint: The start offset of incremental data migration or synchronization. This value is a UNIX timestamp representing the number of seconds that have elapsed since January 1, 1970, 00:00:00 UTC.
+     */
+    readonly checkpoint?: string | ros.IResolvable;
+
+    /**
+     * @Property dataCheckConfigure: The data verification task for a data migration or synchronization instance.
+     */
+    readonly dataCheckConfigure?: RosMigrationJob2.DataCheckConfigureProperty | ros.IResolvable;
+
+    /**
+     * @Property dedicatedClusterId: The ID of the DTS dedicated cluster on which the task runs.
+     */
+    readonly dedicatedClusterId?: string | ros.IResolvable;
+
+    /**
+     * @Property delayNotice: Specifies whether to monitor the task latency. Valid values: **true** and **false**
+     */
+    readonly delayNotice?: boolean | ros.IResolvable;
+
+    /**
+     * @Property delayPhone: The mobile numbers that receive latency-related alerts. Separate multiple mobile numbers with commas (,).
+     * **Note**: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+     */
+    readonly delayPhone?: string | ros.IResolvable;
+
+    /**
+     * @Property delayRuleTime: The threshold for latency alerts. Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
+     */
+    readonly delayRuleTime?: number | ros.IResolvable;
+
+    /**
+     * @Property disasterRecoveryJob: Specifies whether the instance is a disaster recovery instance. Valid values: **true** and **false**
+     */
+    readonly disasterRecoveryJob?: boolean | ros.IResolvable;
+
+    /**
+     * @Property dtsBisLabel: The environment tag of the DTS instance. Valid values: **normal** and **online**.
+     */
+    readonly dtsBisLabel?: string | ros.IResolvable;
+
+    /**
+     * @Property dtsInstanceId: The ID of the DTS instance.
+     */
+    readonly dtsInstanceId?: string | ros.IResolvable;
+
+    /**
+     * @Property dtsJobId: The ID of the DTS task.
+     */
+    readonly dtsJobId?: string | ros.IResolvable;
+
+    /**
+     * @Property errorNotice: Specifies whether to monitor the task status. Valid values: **true** and **false**.
+     */
+    readonly errorNotice?: boolean | ros.IResolvable;
+
+    /**
+     * @Property errorPhone: The mobile numbers that receive status-related alerts. Separate multiple mobile numbers with commas (,).
+     * **Note**: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+     */
+    readonly errorPhone?: string | ros.IResolvable;
+
+    /**
+     * @Property fileOssUrl: The URL of the Object Storage Service (OSS) bucket that stores the files related to the DTS task.
+     */
+    readonly fileOssUrl?: string | ros.IResolvable;
+
+    /**
+     * @Property reserve: The reserved parameter of DTS. You can specify this parameter to add more configurations of the source or destination instance to the DTS task. For example, you can specify the data storage format of the destination Kafka database and the ID of the CEN instance.
+     */
+    readonly reserve?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property status: The status of the resource. Valid values:
+     * - **Migrating**: Start the task.
+     * - **Suspending**: Suspend the task.
+     * - **Stopping**: Stop the task.
+     */
+    readonly status?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosMigrationJob2Props`
  *
- * @param properties - the TypeScript properties of a `ColumnExcludesProperty`
+ * @param properties - the TypeScript properties of a `RosMigrationJob2Props`
  *
  * @returns the result of the validation.
  */
-function RosMigrationJob_ColumnExcludesPropertyValidator(properties: any): ros.ValidationResult {
+function RosMigrationJob2PropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('columnName', ros.validateString)(properties.columnName));
-    return errors.wrap('supplied properties not correct for "ColumnExcludesProperty"');
+    if(properties.status && (typeof properties.status) !== 'object') {
+        errors.collect(ros.propertyValidator('status', ros.validateAllowedValues)({
+          data: properties.status,
+          allowedValues: ["Migrating","Suspending","Stopping"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('status', ros.validateString)(properties.status));
+    errors.collect(ros.propertyValidator('reserve', ros.hashValidator(ros.validateAny))(properties.reserve));
+    errors.collect(ros.propertyValidator('dataSynchronization', ros.requiredValidator)(properties.dataSynchronization));
+    errors.collect(ros.propertyValidator('dataSynchronization', ros.validateBoolean)(properties.dataSynchronization));
+    errors.collect(ros.propertyValidator('dedicatedClusterId', ros.validateString)(properties.dedicatedClusterId));
+    errors.collect(ros.propertyValidator('delayPhone', ros.validateString)(properties.delayPhone));
+    errors.collect(ros.propertyValidator('errorNotice', ros.validateBoolean)(properties.errorNotice));
+    errors.collect(ros.propertyValidator('dtsJobName', ros.requiredValidator)(properties.dtsJobName));
+    errors.collect(ros.propertyValidator('dtsJobName', ros.validateString)(properties.dtsJobName));
+    errors.collect(ros.propertyValidator('delayRuleTime', ros.validateNumber)(properties.delayRuleTime));
+    errors.collect(ros.propertyValidator('dtsInstanceId', ros.validateString)(properties.dtsInstanceId));
+    errors.collect(ros.propertyValidator('dbList', ros.requiredValidator)(properties.dbList));
+    errors.collect(ros.propertyValidator('dbList', ros.hashValidator(ros.validateAny))(properties.dbList));
+    errors.collect(ros.propertyValidator('fileOssUrl', ros.validateString)(properties.fileOssUrl));
+    errors.collect(ros.propertyValidator('dataCheckConfigure', RosMigrationJob2_DataCheckConfigurePropertyValidator)(properties.dataCheckConfigure));
+    errors.collect(ros.propertyValidator('dtsBisLabel', ros.validateString)(properties.dtsBisLabel));
+    errors.collect(ros.propertyValidator('checkpoint', ros.validateString)(properties.checkpoint));
+    errors.collect(ros.propertyValidator('disasterRecoveryJob', ros.validateBoolean)(properties.disasterRecoveryJob));
+    errors.collect(ros.propertyValidator('dtsJobId', ros.validateString)(properties.dtsJobId));
+    errors.collect(ros.propertyValidator('delayNotice', ros.validateBoolean)(properties.delayNotice));
+    errors.collect(ros.propertyValidator('dataInitialization', ros.requiredValidator)(properties.dataInitialization));
+    errors.collect(ros.propertyValidator('dataInitialization', ros.validateBoolean)(properties.dataInitialization));
+    errors.collect(ros.propertyValidator('destinationEndpoint', ros.requiredValidator)(properties.destinationEndpoint));
+    errors.collect(ros.propertyValidator('destinationEndpoint', RosMigrationJob2_DestinationEndpointPropertyValidator)(properties.destinationEndpoint));
+    errors.collect(ros.propertyValidator('sourceEndpoint', ros.requiredValidator)(properties.sourceEndpoint));
+    errors.collect(ros.propertyValidator('sourceEndpoint', RosMigrationJob2_SourceEndpointPropertyValidator)(properties.sourceEndpoint));
+    errors.collect(ros.propertyValidator('errorPhone', ros.validateString)(properties.errorPhone));
+    errors.collect(ros.propertyValidator('structureInitialization', ros.requiredValidator)(properties.structureInitialization));
+    errors.collect(ros.propertyValidator('structureInitialization', ros.validateBoolean)(properties.structureInitialization));
+    return errors.wrap('supplied properties not correct for "RosMigrationJob2Props"');
 }
 
 /**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::MigrationJob.ColumnExcludes` resource
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::MigrationJob2` resource
  *
- * @param properties - the TypeScript properties of a `ColumnExcludesProperty`
+ * @param properties - the TypeScript properties of a `RosMigrationJob2Props`
  *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::MigrationJob.ColumnExcludes` resource.
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::MigrationJob2` resource.
  */
 // @ts-ignore TS6133
-function rosMigrationJobColumnExcludesPropertyToRosTemplate(properties: any): any {
+function rosMigrationJob2PropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
     if (!ros.canInspect(properties)) { return properties; }
-    RosMigrationJob_ColumnExcludesPropertyValidator(properties).assertSuccess();
+    if(enableResourcePropertyConstraint) {
+        RosMigrationJob2PropsValidator(properties).assertSuccess();
+    }
     return {
-      ColumnName: ros.stringToRosTemplate(properties.columnName),
+      DataInitialization: ros.booleanToRosTemplate(properties.dataInitialization),
+      DataSynchronization: ros.booleanToRosTemplate(properties.dataSynchronization),
+      DbList: ros.hashMapper(ros.objectToRosTemplate)(properties.dbList),
+      DestinationEndpoint: rosMigrationJob2DestinationEndpointPropertyToRosTemplate(properties.destinationEndpoint),
+      DtsJobName: ros.stringToRosTemplate(properties.dtsJobName),
+      SourceEndpoint: rosMigrationJob2SourceEndpointPropertyToRosTemplate(properties.sourceEndpoint),
+      StructureInitialization: ros.booleanToRosTemplate(properties.structureInitialization),
+      Checkpoint: ros.stringToRosTemplate(properties.checkpoint),
+      DataCheckConfigure: rosMigrationJob2DataCheckConfigurePropertyToRosTemplate(properties.dataCheckConfigure),
+      DedicatedClusterId: ros.stringToRosTemplate(properties.dedicatedClusterId),
+      DelayNotice: ros.booleanToRosTemplate(properties.delayNotice),
+      DelayPhone: ros.stringToRosTemplate(properties.delayPhone),
+      DelayRuleTime: ros.numberToRosTemplate(properties.delayRuleTime),
+      DisasterRecoveryJob: ros.booleanToRosTemplate(properties.disasterRecoveryJob),
+      DtsBisLabel: ros.stringToRosTemplate(properties.dtsBisLabel),
+      DtsInstanceId: ros.stringToRosTemplate(properties.dtsInstanceId),
+      DtsJobId: ros.stringToRosTemplate(properties.dtsJobId),
+      ErrorNotice: ros.booleanToRosTemplate(properties.errorNotice),
+      ErrorPhone: ros.stringToRosTemplate(properties.errorPhone),
+      FileOssUrl: ros.stringToRosTemplate(properties.fileOssUrl),
+      Reserve: ros.hashMapper(ros.objectToRosTemplate)(properties.reserve),
+      Status: ros.stringToRosTemplate(properties.status),
     };
 }
 
-export namespace RosMigrationJob {
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::MigrationJob2`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `MigrationJob2` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-migrationjob2
+ */
+export class RosMigrationJob2 extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DTS::MigrationJob2";
+
+    /**
+     * @Attribute DtsInstanceId: The ID of the DTS instance.
+     */
+    public readonly attrDtsInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute DtsJobId: The ID of the task.
+     */
+    public readonly attrDtsJobId: ros.IResolvable;
+
+    /**
+     * @Attribute DtsJobName: The name of the DTS job.
+     */
+    public readonly attrDtsJobName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property dataInitialization: Specifies whether to perform full data migration or full data synchronization. Default value: **true**. Valid values: **true** and **false**.
+     */
+    public dataInitialization: boolean | ros.IResolvable;
+
+    /**
+     * @Property dataSynchronization: Specifies whether to perform incremental data migration or incremental data synchronization. Default value: **false**. Valid values: **true** and **false**.
+     */
+    public dataSynchronization: boolean | ros.IResolvable;
+
+    /**
+     * @Property dbList: The objects that you want to migrate or synchronize.
+     */
+    public dbList: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property destinationEndpoint: Destination instance configuration.
+     */
+    public destinationEndpoint: RosMigrationJob2.DestinationEndpointProperty | ros.IResolvable;
+
+    /**
+     * @Property dtsJobName: The name of the DTS instance.
+     */
+    public dtsJobName: string | ros.IResolvable;
+
+    /**
+     * @Property sourceEndpoint: Source instance configuration.
+     */
+    public sourceEndpoint: RosMigrationJob2.SourceEndpointProperty | ros.IResolvable;
+
+    /**
+     * @Property structureInitialization: Specifies whether to perform schema migration or schema synchronization. Default value: true. Valid values: **true** and **false**.
+     */
+    public structureInitialization: boolean | ros.IResolvable;
+
+    /**
+     * @Property checkpoint: The start offset of incremental data migration or synchronization. This value is a UNIX timestamp representing the number of seconds that have elapsed since January 1, 1970, 00:00:00 UTC.
+     */
+    public checkpoint: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property dataCheckConfigure: The data verification task for a data migration or synchronization instance.
+     */
+    public dataCheckConfigure: RosMigrationJob2.DataCheckConfigureProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property dedicatedClusterId: The ID of the DTS dedicated cluster on which the task runs.
+     */
+    public dedicatedClusterId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property delayNotice: Specifies whether to monitor the task latency. Valid values: **true** and **false**
+     */
+    public delayNotice: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property delayPhone: The mobile numbers that receive latency-related alerts. Separate multiple mobile numbers with commas (,).
+     * **Note**: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+     */
+    public delayPhone: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property delayRuleTime: The threshold for latency alerts. Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
+     */
+    public delayRuleTime: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property disasterRecoveryJob: Specifies whether the instance is a disaster recovery instance. Valid values: **true** and **false**
+     */
+    public disasterRecoveryJob: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property dtsBisLabel: The environment tag of the DTS instance. Valid values: **normal** and **online**.
+     */
+    public dtsBisLabel: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property dtsInstanceId: The ID of the DTS instance.
+     */
+    public dtsInstanceId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property dtsJobId: The ID of the DTS task.
+     */
+    public dtsJobId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property errorNotice: Specifies whether to monitor the task status. Valid values: **true** and **false**.
+     */
+    public errorNotice: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property errorPhone: The mobile numbers that receive status-related alerts. Separate multiple mobile numbers with commas (,).
+     * **Note**: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+     */
+    public errorPhone: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property fileOssUrl: The URL of the Object Storage Service (OSS) bucket that stores the files related to the DTS task.
+     */
+    public fileOssUrl: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property reserve: The reserved parameter of DTS. You can specify this parameter to add more configurations of the source or destination instance to the DTS task. For example, you can specify the data storage format of the destination Kafka database and the ID of the CEN instance.
+     */
+    public reserve: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @Property status: The status of the resource. Valid values:
+     * - **Migrating**: Start the task.
+     * - **Suspending**: Suspend the task.
+     * - **Stopping**: Stop the task.
+     */
+    public status: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosMigrationJob2Props, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosMigrationJob2.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDtsInstanceId = this.getAtt('DtsInstanceId');
+        this.attrDtsJobId = this.getAtt('DtsJobId');
+        this.attrDtsJobName = this.getAtt('DtsJobName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.dataInitialization = props.dataInitialization;
+        this.dataSynchronization = props.dataSynchronization;
+        this.dbList = props.dbList;
+        this.destinationEndpoint = props.destinationEndpoint;
+        this.dtsJobName = props.dtsJobName;
+        this.sourceEndpoint = props.sourceEndpoint;
+        this.structureInitialization = props.structureInitialization;
+        this.checkpoint = props.checkpoint;
+        this.dataCheckConfigure = props.dataCheckConfigure;
+        this.dedicatedClusterId = props.dedicatedClusterId;
+        this.delayNotice = props.delayNotice;
+        this.delayPhone = props.delayPhone;
+        this.delayRuleTime = props.delayRuleTime;
+        this.disasterRecoveryJob = props.disasterRecoveryJob;
+        this.dtsBisLabel = props.dtsBisLabel;
+        this.dtsInstanceId = props.dtsInstanceId;
+        this.dtsJobId = props.dtsJobId;
+        this.errorNotice = props.errorNotice;
+        this.errorPhone = props.errorPhone;
+        this.fileOssUrl = props.fileOssUrl;
+        this.reserve = props.reserve;
+        this.status = props.status;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            dataInitialization: this.dataInitialization,
+            dataSynchronization: this.dataSynchronization,
+            dbList: this.dbList,
+            destinationEndpoint: this.destinationEndpoint,
+            dtsJobName: this.dtsJobName,
+            sourceEndpoint: this.sourceEndpoint,
+            structureInitialization: this.structureInitialization,
+            checkpoint: this.checkpoint,
+            dataCheckConfigure: this.dataCheckConfigure,
+            dedicatedClusterId: this.dedicatedClusterId,
+            delayNotice: this.delayNotice,
+            delayPhone: this.delayPhone,
+            delayRuleTime: this.delayRuleTime,
+            disasterRecoveryJob: this.disasterRecoveryJob,
+            dtsBisLabel: this.dtsBisLabel,
+            dtsInstanceId: this.dtsInstanceId,
+            dtsJobId: this.dtsJobId,
+            errorNotice: this.errorNotice,
+            errorPhone: this.errorPhone,
+            fileOssUrl: this.fileOssUrl,
+            reserve: this.reserve,
+            status: this.status,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosMigrationJob2PropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosMigrationJob2 {
     /**
      * @stability external
      */
-    export interface ColumnIncludesProperty {
+    export interface DataCheckConfigureProperty {
         /**
-         * @Property newColumnName: The name of the column to be migrated to be mapped in the target instance
+         * @Property fullCheckMaxReadRps: The maximum number of data rows that are read per second. Valid values: integers from 0 to 9007199254740991.
          */
-        readonly newColumnName?: string | ros.IResolvable;
+        readonly fullCheckMaxReadRps?: number | ros.IResolvable;
         /**
-         * @Property columnName: The column name to be migrated in the table to be migrated
+         * @Property dataCheckNoticePhone: The mobile number of the alert contact for a full or incremental data verification task. If an alert is triggered for a verification task, a text message is sent to notify the alert contact.
          */
-        readonly columnName?: string | ros.IResolvable;
+        readonly dataCheckNoticePhone?: string | ros.IResolvable;
+        /**
+         * @Property incrementalCheckDelayNotice: Specifies whether to trigger an alert on the data latency of the incremental data verification task. Valid values: **true** and **false**.
+     * **Note**: For example, you set this parameter to **true**. If the cumulative latency of the incremental data verification task in several statistical periods is greater than or equal to the threshold that you specified, an alert is triggered.
+         */
+        readonly incrementalCheckDelayNotice?: boolean | ros.IResolvable;
+        /**
+         * @Property incrementalCheckDelayNoticeValue: The alert threshold for the data latency of the incremental data verification task. Unit: seconds.
+     * **Note**: This parameter is required if the **incrementalCheckDelayNotice** parameter is set to **true**.
+         */
+        readonly incrementalCheckDelayNoticeValue?: number | ros.IResolvable;
+        /**
+         * @Property incrementalCheckDelayNoticePeriod: The statistical period of an alert on the data latency of the incremental data verification task. Valid values:
+     * - **1**: 1 minute
+     * - **2**: 5 minutes
+     * - **3**: 10 minutes
+     * - **4**: 30 minutes
+     * **Note**: This parameter is required if the **incrementalCheckDelayNotice** parameter is set to **true**.
+         */
+        readonly incrementalCheckDelayNoticePeriod?: number | ros.IResolvable;
+        /**
+         * @Property dataCheckDbList: The objects whose data is to be verified. The value must be a JSON string.
+         */
+        readonly dataCheckDbList?: string | ros.IResolvable;
+        /**
+         * @Property checkMaximumHourEnable: Specifies whether to configure a timeout period for the full data verification task.Valid values:
+     * - **0**: does not configure a timeout period for the full data verification task.
+     * - **1**: configures a timeout period for the full data verification task.
+     * **Note**: This parameter is required if the fullCheckModel parameter is set to 1.
+         */
+        readonly checkMaximumHourEnable?: number | ros.IResolvable;
+        /**
+         * @Property fullCheckRatio: The sampling ratio of the full data verification task. Valid values: integers from 10 to 100. Unit: percent.
+     * **Note**: This parameter is required if the **fullCheckModel** parameter is set to 1.
+         */
+        readonly fullCheckRatio?: number | ros.IResolvable;
+        /**
+         * @Property checkMaximumHour: The timeout period of the full data verification task. Valid values: integers from 1 to 72. Countdown begins the moment the full data verification task is started. If the task is not complete within the specified timeout period, the task is forcibly stopped.
+         */
+        readonly checkMaximumHour?: number | ros.IResolvable;
+        /**
+         * @Property fullCheckFixData: Specifies whether to replace the inconsistent data. Valid values: **true** and **false**. Default value: false.
+     * **Note**: For example, you set this parameter to true. If the destination database has data that is inconsistent with the data in the source database, the data values of the destination database are replaced with those of the source database.
+         */
+        readonly fullCheckFixData?: boolean | ros.IResolvable;
+        /**
+         * @Property fullCheckModel: The mode of the full data verification task. Valid values:
+     * - **1**: verifies the data by sampling ratio.
+     * - **2**: verifies the data by row.
+         */
+        readonly fullCheckModel?: number | ros.IResolvable;
+        /**
+         * @Property incrementalCheckValidFailNoticeValue: The alert threshold for inconsistent data entries detected by the incremental data verification task.
+     * **Note**: This parameter is required if the **incrementalCheckValidFailNotice** parameter is set to **true**.
+         */
+        readonly incrementalCheckValidFailNoticeValue?: number | ros.IResolvable;
+        /**
+         * @Property incrementalDataCheck: Specifies whether to perform an incremental data verification task. Valid values: **true** and **false**.
+         */
+        readonly incrementalDataCheck?: boolean | ros.IResolvable;
+        /**
+         * @Property incrementalCheckValidFailNoticeTimes: The number of statistical periods of an alert on inconsistent data entries detected by the incremental data verification task.
+     * **Note**: This parameter is required if the **incrementalCheckValidFailNotice** parameter is set to **true**.
+         */
+        readonly incrementalCheckValidFailNoticeTimes?: number | ros.IResolvable;
+        /**
+         * @Property fullCheckMaxReadBps: The maximum number of bytes that are read per second. Valid values: integers from 0 to 9007199254740991.
+         */
+        readonly fullCheckMaxReadBps?: number | ros.IResolvable;
+        /**
+         * @Property fullCheckValidFailNotice: Specifies whether to trigger an alert if inconsistent data is detected by the full data verification task. Valid values: **true** and **false**.
+     * **Note**: For example, you set this parameter to true. If the number of inconsistent data entries detected by the full data verification task is greater than or equal to the threshold that you specified, an alert is triggered.
+         */
+        readonly fullCheckValidFailNotice?: boolean | ros.IResolvable;
+        /**
+         * @Property fullCheckErrorNotice: Specifies whether to trigger an alert if the full data verification task fails. Valid values: **true** and **false**.
+     * **Note**: For example, you set this parameter to **true**. If the full data verification task fails, an alert is triggered.
+         */
+        readonly fullCheckErrorNotice?: boolean | ros.IResolvable;
+        /**
+         * @Property incrementalCheckValidFailNoticePeriod: The statistical period of an alert on inconsistent data entries detected by the incremental data verification task. Valid values:
+     * - **1**: 1 minute
+     * - **2**: 5 minutes
+     * - **3**: 10 minutes
+     * - **4**: 30 minutes
+     * **Note**: This parameter is required if the **incrementalCheckValidFailNotice** parameter is set to **true**.
+         */
+        readonly incrementalCheckValidFailNoticePeriod?: number | ros.IResolvable;
+        /**
+         * @Property incrementalCheckDelayNoticeTimes: The number of statistical periods of an alert on the data latency of the incremental data verification task.
+     * **Note**: This parameter is required if the **incrementalCheckDelayNotice** parameter is set to **true**.
+         */
+        readonly incrementalCheckDelayNoticeTimes?: number | ros.IResolvable;
+        /**
+         * @Property fullCheckReferEndpoint: The benchmark for full data verification. Valid values:
+     * - **all**: checks the data consistency between the source and destination databases based on the source and destination databases.
+     * - **src**: checks the data consistency between the source and destination databases based on the source database. Objects that exist in the destination database but do not exist in the source database are not checked.
+     * - **dest**: checks the data consistency between the source and destination databases based on the destination database. Objects that exist in the source database but do not exist in the destination database are not checked.
+         */
+        readonly fullCheckReferEndpoint?: string | ros.IResolvable;
+        /**
+         * @Property fullDataCheck: Specifies whether to perform a full data verification task. Valid values: **true** and **false**.
+         */
+        readonly fullDataCheck?: boolean | ros.IResolvable;
+        /**
+         * @Property incrementalCheckValidFailNotice: Specifies whether to trigger an alert if inconsistent data is detected by the incremental data verification task. Valid values: **true** and **false**.
+     * **Note**: For example, you set this parameter to **true**. If the cumulative number of inconsistent data entries detected by the incremental data verification task in several statistical periods is greater than or equal to the threshold that you specified, an alert is triggered.
+         */
+        readonly incrementalCheckValidFailNotice?: boolean | ros.IResolvable;
+        /**
+         * @Property fullCheckNoticeValue: The alert threshold for inconsistent data entries detected by the full data verification task.
+     * **Note**: This parameter is required if the **fullCheckValidFailNotice** parameter is set to **true**.
+         */
+        readonly fullCheckNoticeValue?: number | ros.IResolvable;
+        /**
+         * @Property incrementalCheckErrorNotice: Specifies whether to trigger an alert if the incremental data verification task fails. Valid values: **true** and **false**.
+     * Note: For example, you set this parameter to **true**. If the incremental data verification task fails, an alert is triggered.
+         */
+        readonly incrementalCheckErrorNotice?: boolean | ros.IResolvable;
     }
 }
 /**
- * Determine whether the given properties match those of a `ColumnIncludesProperty`
+ * Determine whether the given properties match those of a `DataCheckConfigureProperty`
  *
- * @param properties - the TypeScript properties of a `ColumnIncludesProperty`
+ * @param properties - the TypeScript properties of a `DataCheckConfigureProperty`
  *
  * @returns the result of the validation.
  */
-function RosMigrationJob_ColumnIncludesPropertyValidator(properties: any): ros.ValidationResult {
+function RosMigrationJob2_DataCheckConfigurePropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('newColumnName', ros.validateString)(properties.newColumnName));
-    errors.collect(ros.propertyValidator('columnName', ros.validateString)(properties.columnName));
-    return errors.wrap('supplied properties not correct for "ColumnIncludesProperty"');
+    if(properties.fullCheckMaxReadRps && (typeof properties.fullCheckMaxReadRps) !== 'object') {
+        errors.collect(ros.propertyValidator('fullCheckMaxReadRps', ros.validateRange)({
+            data: properties.fullCheckMaxReadRps,
+            min: 0,
+            max: 9007199254740991,
+          }));
+    }
+    errors.collect(ros.propertyValidator('fullCheckMaxReadRps', ros.validateNumber)(properties.fullCheckMaxReadRps));
+    errors.collect(ros.propertyValidator('dataCheckNoticePhone', ros.validateString)(properties.dataCheckNoticePhone));
+    errors.collect(ros.propertyValidator('incrementalCheckDelayNotice', ros.validateBoolean)(properties.incrementalCheckDelayNotice));
+    errors.collect(ros.propertyValidator('incrementalCheckDelayNoticeValue', ros.validateNumber)(properties.incrementalCheckDelayNoticeValue));
+    if(properties.incrementalCheckDelayNoticePeriod && (typeof properties.incrementalCheckDelayNoticePeriod) !== 'object') {
+        errors.collect(ros.propertyValidator('incrementalCheckDelayNoticePeriod', ros.validateAllowedValues)({
+          data: properties.incrementalCheckDelayNoticePeriod,
+          allowedValues: [1,2,3,4],
+        }));
+    }
+    errors.collect(ros.propertyValidator('incrementalCheckDelayNoticePeriod', ros.validateNumber)(properties.incrementalCheckDelayNoticePeriod));
+    errors.collect(ros.propertyValidator('dataCheckDbList', ros.validateString)(properties.dataCheckDbList));
+    if(properties.checkMaximumHourEnable && (typeof properties.checkMaximumHourEnable) !== 'object') {
+        errors.collect(ros.propertyValidator('checkMaximumHourEnable', ros.validateAllowedValues)({
+          data: properties.checkMaximumHourEnable,
+          allowedValues: [0,1],
+        }));
+    }
+    errors.collect(ros.propertyValidator('checkMaximumHourEnable', ros.validateNumber)(properties.checkMaximumHourEnable));
+    if(properties.fullCheckRatio && (typeof properties.fullCheckRatio) !== 'object') {
+        errors.collect(ros.propertyValidator('fullCheckRatio', ros.validateRange)({
+            data: properties.fullCheckRatio,
+            min: 10,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('fullCheckRatio', ros.validateNumber)(properties.fullCheckRatio));
+    if(properties.checkMaximumHour && (typeof properties.checkMaximumHour) !== 'object') {
+        errors.collect(ros.propertyValidator('checkMaximumHour', ros.validateRange)({
+            data: properties.checkMaximumHour,
+            min: 1,
+            max: 72,
+          }));
+    }
+    errors.collect(ros.propertyValidator('checkMaximumHour', ros.validateNumber)(properties.checkMaximumHour));
+    errors.collect(ros.propertyValidator('fullCheckFixData', ros.validateBoolean)(properties.fullCheckFixData));
+    if(properties.fullCheckModel && (typeof properties.fullCheckModel) !== 'object') {
+        errors.collect(ros.propertyValidator('fullCheckModel', ros.validateAllowedValues)({
+          data: properties.fullCheckModel,
+          allowedValues: [1,2],
+        }));
+    }
+    errors.collect(ros.propertyValidator('fullCheckModel', ros.validateNumber)(properties.fullCheckModel));
+    errors.collect(ros.propertyValidator('incrementalCheckValidFailNoticeValue', ros.validateNumber)(properties.incrementalCheckValidFailNoticeValue));
+    errors.collect(ros.propertyValidator('incrementalDataCheck', ros.validateBoolean)(properties.incrementalDataCheck));
+    errors.collect(ros.propertyValidator('incrementalCheckValidFailNoticeTimes', ros.validateNumber)(properties.incrementalCheckValidFailNoticeTimes));
+    if(properties.fullCheckMaxReadBps && (typeof properties.fullCheckMaxReadBps) !== 'object') {
+        errors.collect(ros.propertyValidator('fullCheckMaxReadBps', ros.validateRange)({
+            data: properties.fullCheckMaxReadBps,
+            min: 0,
+            max: 9007199254740991,
+          }));
+    }
+    errors.collect(ros.propertyValidator('fullCheckMaxReadBps', ros.validateNumber)(properties.fullCheckMaxReadBps));
+    errors.collect(ros.propertyValidator('fullCheckValidFailNotice', ros.validateBoolean)(properties.fullCheckValidFailNotice));
+    errors.collect(ros.propertyValidator('fullCheckErrorNotice', ros.validateBoolean)(properties.fullCheckErrorNotice));
+    if(properties.incrementalCheckValidFailNoticePeriod && (typeof properties.incrementalCheckValidFailNoticePeriod) !== 'object') {
+        errors.collect(ros.propertyValidator('incrementalCheckValidFailNoticePeriod', ros.validateAllowedValues)({
+          data: properties.incrementalCheckValidFailNoticePeriod,
+          allowedValues: [1,2,3,4],
+        }));
+    }
+    errors.collect(ros.propertyValidator('incrementalCheckValidFailNoticePeriod', ros.validateNumber)(properties.incrementalCheckValidFailNoticePeriod));
+    errors.collect(ros.propertyValidator('incrementalCheckDelayNoticeTimes', ros.validateNumber)(properties.incrementalCheckDelayNoticeTimes));
+    errors.collect(ros.propertyValidator('fullCheckReferEndpoint', ros.validateString)(properties.fullCheckReferEndpoint));
+    errors.collect(ros.propertyValidator('fullDataCheck', ros.validateBoolean)(properties.fullDataCheck));
+    errors.collect(ros.propertyValidator('incrementalCheckValidFailNotice', ros.validateBoolean)(properties.incrementalCheckValidFailNotice));
+    errors.collect(ros.propertyValidator('fullCheckNoticeValue', ros.validateNumber)(properties.fullCheckNoticeValue));
+    errors.collect(ros.propertyValidator('incrementalCheckErrorNotice', ros.validateBoolean)(properties.incrementalCheckErrorNotice));
+    return errors.wrap('supplied properties not correct for "DataCheckConfigureProperty"');
 }
 
 /**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::MigrationJob.ColumnIncludes` resource
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::MigrationJob2.DataCheckConfigure` resource
  *
- * @param properties - the TypeScript properties of a `ColumnIncludesProperty`
+ * @param properties - the TypeScript properties of a `DataCheckConfigureProperty`
  *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::MigrationJob.ColumnIncludes` resource.
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::MigrationJob2.DataCheckConfigure` resource.
  */
 // @ts-ignore TS6133
-function rosMigrationJobColumnIncludesPropertyToRosTemplate(properties: any): any {
+function rosMigrationJob2DataCheckConfigurePropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
-    RosMigrationJob_ColumnIncludesPropertyValidator(properties).assertSuccess();
+    RosMigrationJob2_DataCheckConfigurePropertyValidator(properties).assertSuccess();
     return {
-      NewColumnName: ros.stringToRosTemplate(properties.newColumnName),
-      ColumnName: ros.stringToRosTemplate(properties.columnName),
+      fullCheckMaxReadRps: ros.numberToRosTemplate(properties.fullCheckMaxReadRps),
+      dataCheckNoticePhone: ros.stringToRosTemplate(properties.dataCheckNoticePhone),
+      incrementalCheckDelayNotice: ros.booleanToRosTemplate(properties.incrementalCheckDelayNotice),
+      incrementalCheckDelayNoticeValue: ros.numberToRosTemplate(properties.incrementalCheckDelayNoticeValue),
+      incrementalCheckDelayNoticePeriod: ros.numberToRosTemplate(properties.incrementalCheckDelayNoticePeriod),
+      dataCheckDbList: ros.stringToRosTemplate(properties.dataCheckDbList),
+      checkMaximumHourEnable: ros.numberToRosTemplate(properties.checkMaximumHourEnable),
+      fullCheckRatio: ros.numberToRosTemplate(properties.fullCheckRatio),
+      checkMaximumHour: ros.numberToRosTemplate(properties.checkMaximumHour),
+      fullCheckFixData: ros.booleanToRosTemplate(properties.fullCheckFixData),
+      fullCheckModel: ros.numberToRosTemplate(properties.fullCheckModel),
+      incrementalCheckValidFailNoticeValue: ros.numberToRosTemplate(properties.incrementalCheckValidFailNoticeValue),
+      incrementalDataCheck: ros.booleanToRosTemplate(properties.incrementalDataCheck),
+      incrementalCheckValidFailNoticeTimes: ros.numberToRosTemplate(properties.incrementalCheckValidFailNoticeTimes),
+      fullCheckMaxReadBps: ros.numberToRosTemplate(properties.fullCheckMaxReadBps),
+      fullCheckValidFailNotice: ros.booleanToRosTemplate(properties.fullCheckValidFailNotice),
+      fullCheckErrorNotice: ros.booleanToRosTemplate(properties.fullCheckErrorNotice),
+      incrementalCheckValidFailNoticePeriod: ros.numberToRosTemplate(properties.incrementalCheckValidFailNoticePeriod),
+      incrementalCheckDelayNoticeTimes: ros.numberToRosTemplate(properties.incrementalCheckDelayNoticeTimes),
+      fullCheckReferEndpoint: ros.stringToRosTemplate(properties.fullCheckReferEndpoint),
+      fullDataCheck: ros.booleanToRosTemplate(properties.fullDataCheck),
+      incrementalCheckValidFailNotice: ros.booleanToRosTemplate(properties.incrementalCheckValidFailNotice),
+      fullCheckNoticeValue: ros.numberToRosTemplate(properties.fullCheckNoticeValue),
+      incrementalCheckErrorNotice: ros.booleanToRosTemplate(properties.incrementalCheckErrorNotice),
     };
 }
 
-export namespace RosMigrationJob {
+export namespace RosMigrationJob2 {
     /**
      * @stability external
      */
     export interface DestinationEndpointProperty {
         /**
-         * @Property role: When the source instance is an RDS instance and the source instance is different from the Alibaba Cloud account to which the target instance belongs, this parameter is the authorization role of the Alibaba Cloud account to which the source instance belongs to the target instance Alibaba Cloud account. For details on the permissions and authorization methods required for this role, see Cross-Account Migration Synchronization.
+         * @Property role: The name of the Resource Access Management (RAM) role configured for the Alibaba Cloud account that owns the destination instance.
+     * **Note**: This parameter is required when you migrate or synchronize data across different Alibaba Cloud accounts.
          */
         readonly role?: string | ros.IResolvable;
         /**
-         * @Property userName: Target instance access account
+         * @Property oracleSid: The system ID (SID) of the Oracle database.
+     * **Note**: This parameter is required only when **EngineName** is set to **ORACLE** and the Oracle database is deployed in an architecture that is not a Real Application Cluster (RAC).
          */
-        readonly userName: string | ros.IResolvable;
+        readonly oracleSid?: string | ros.IResolvable;
         /**
-         * @Property instanceId: Target instance ID
-     * When the DestinationEndpoint.InstanceType value is RDS, this parameter needs to be passed to the RDS instance ID.
-     * When the DestinationEndpoint.InstanceType value is ECS, this parameter needs to be passed to the ECS instance ID.
-     * When the DestinationEndpoint.InstanceType value is MongoDB, this parameter needs to be passed to the MongoDB instance ID.
-     * When the DestinationEndpoint.InstanceType value is Redis, this parameter needs to be passed in the Redis instance ID.
-     * When the DestinationEndpoint.InstanceType value is DRDS, this parameter needs to be passed to the DRDS instance ID.
-     * When the DestinationEndpoint.InstanceType value is PetaData, this parameter needs to pass in the PetaData instance ID.
-     * When the DestinationEndpoint.InstanceType value is OceanBase, this parameter needs to be passed to the OceanBase instance ID.
-     * When the DestinationEndpoint.InstanceType value is POLARDB, this parameter needs to be passed to the POLARDB for MySQL cluster ID.
+         * @Property userName: The database account of the destination database.
+     * **Note**: In most cases, this parameter is required. The permissions that are required for the database account vary with the migration or synchronization scenario.
+         */
+        readonly userName?: string | ros.IResolvable;
+        /**
+         * @Property ownerId: The ID of the Alibaba Cloud account to which the destination database belongs.
+     * **Note**: You can specify this parameter to migrate or synchronize data across different Alibaba Cloud accounts. In this case, you must specify **Role**.
+         */
+        readonly ownerId?: string | ros.IResolvable;
+        /**
+         * @Property instanceId: The ID of the destination instance. If the destination instance is an Alibaba Cloud database instance, you must specify the ID of the database instance. For example, 
+     * - If the destination instance is an ApsaraDB RDS for MySQL instance, you must specify the ID of the ApsaraDB RDS for MySQL instance. 
+     * - If the destination instance is a self-managed database, the value of this parameter varies with the value of SourceEndpointInstanceType.
+     * - If InstanceType is set to ECS, you must specify the ID of the ECS instance.
+     * - If InstanceType is set to DG, you must specify the ID of the database gateway.
+     * - If InstanceType is set to EXPRESS or CEN, you must specify the ID of the VPC that is connected to the destination instance.
+     * **Note**: If DestinationEndpointInstanceType is set to CEN, you must also specify the ID of the CEN instance in the Reserve parameter.
          */
         readonly instanceId?: string | ros.IResolvable;
         /**
-         * @Property ip: The connection address of the target instance. Required when the source instance is a self-built database.
+         * @Property ip: The IP address of the destination instance. 
+     * **Note**: This parameter is required only when **InstanceType** is set to **OTHER**, **EXPRESS**, **DG**, or **CEN**.
          */
         readonly ip?: string | ros.IResolvable;
         /**
-         * @Property port: The listening port of the target instance, which is required when the source instance is a self-built database.
+         * @Property port: The port number of the destination instance.
+     * **Note**: This parameter is required only when the destination instance is a self-managed database.
          */
         readonly port?: string | ros.IResolvable;
         /**
-         * @Property databaseName: The connection database library name of the target instance, which is required if the target instance's database type is: PostgreSQL, PPAS, or MongoDB
+         * @Property databaseName: The name of the database which contains the objects to be migrated in the destination instance.
+     * **Note**: This parameter is required only when the destination instance is a PolarDB for PostgreSQL cluster (compatible with Oracle), a PostgreSQL database, or a MongoDB database.
          */
         readonly databaseName?: string | ros.IResolvable;
         /**
-         * @Property region: The area where the target instance is located. If it is a self-built database, you can select the area closest to the physical distance of the self-built IDC.
+         * @Property region: The ID of the region in which the destination instance resides.
+     * **Note**: If the source instance is an Alibaba Cloud database instance, this parameter is required.
          */
-        readonly region: string | ros.IResolvable;
+        readonly region?: string | ros.IResolvable;
         /**
-         * @Property instanceType: The instance type of the target instance, including:
-     * RDS: Alibaba Cloud RDS instance
-     * ECS: Self-built database on ECS
-     * LocalInstance: Self-built database of local IDC
-     * MongoDB: Alibaba Cloud MongoDB instance
-     * Redis: Alibaba Cloud Redis instance
-     * DRDS: Alibaba Cloud DRDS instance
-     * PetaData: Alibaba Cloud PetaData instance
-     * OceanBase: Alibaba Cloud OceanBase instance
-     * POLARDB: Alibaba Cloud POLARDB for MySQL Cluster
+         * @Property instanceType: The type of the destination instance. Valid values:
+     * Alibaba Cloud database instances
+     * - **RDS**: ApsaraDB RDS for MySQL instance, ApsaraDB RDS for SQL Server instance, ApsaraDB RDS for PostgreSQL instance, or ApsaraDB RDS for MariaDB TX instance
+     * - **PolarDB**: PolarDB for MySQL cluster
+     * - **DISTRIBUTED_POLARDBX10**: PolarDB-X 1.0 (formerly DRDS) instance
+     * - **POLARDBX20**: PolarDB-X 2.0 instance
+     * - **REDIS**: ApsaraDB for Redis instance
+     * - **ADS**: AnalyticDB for MySQL V2.0 cluster or AnalyticDB for MySQL V3.0 cluster
+     * - **MONGODB**: ApsaraDB for MongoDB instance
+     * - **GREENPLUM**: AnalyticDB for PostgreSQL instance
+     * - **DATAHUB**: DataHub project
+     * - **ELK**: Elasticsearch cluster
+     * - **Tablestore**: Tablestore instance
+     * - **ODPS**: MaxCompute project
+     * Self-managed databases
+     * - **OTHER**: self-managed database with a public IP address
+     * - **ECS**: self-managed database hosted on an ECS instance
+     * - **EXPRESS**: self-managed database connected over Express Connect
+     * - **CEN**: self-managed database connected over CEN
+     * - **DG**: self-managed database connected over Database Gateway
+     * **Note**: If the destination instance is a PolarDB for PostgreSQL cluster (compatible with Oracle), you must set this parameter to OTHER or EXPRESS. Then, you can connect the PolarDB for PostgreSQL cluster (compatible with Oracle) to DTS as a self-managed database by using a public IP address or Express Connect.
+     * If the destination instance is a Message Queue for Apache Kafka instance, you must set this parameter to ECS or EXPRESS. Then, you can connect the Message Queue for Apache Kafka instance to DTS as a self-managed database connected over ECS or Express Connect.
+     * If the destination instance is a self-managed database, you must deploy the network environment for the database.
          */
         readonly instanceType: string | ros.IResolvable;
         /**
-         * @Property engineName: The data type of the target instance. It is required when the target instance is a self-built database. The values include:
-     * MySQL, SQLServer, PostgreSQL, PPAS, MongoDB, Redis
+         * @Property engineName: The database engine of the destination instance. Valid values:
+     * - **MYSQL**: ApsaraDB RDS for MySQL instance or self-managed MySQL database
+     * - **MARIADB**: ApsaraDB RDS for MariaDB TX instance
+     * - **PolarDB**: PolarDB for MySQL cluster
+     * - **POLARDB_O**: PolarDB for PostgreSQL cluster (compatible with Oracle)
+     * - **POLARDBX10**: PolarDB-X 1.0 instance
+     * - **POLARDBX20**: PolarDB-X 2.0 instance
+     * - **ORACLE**: self-managed Oracle database
+     * - **POSTGRESQL**: ApsaraDB RDS for PostgreSQL instance or self-managed PostgreSQL database
+     * - **MSSQL**: ApsaraDB RDS for SQL Server instance or self-managed SQL Server database
+     * - **ADS**: AnalyticDB for MySQL V2.0 cluster
+     * - **ADB30**: AnalyticDB for MySQL V3.0 cluster- **MONGODB**: ApsaraDB for MongoDB instance or self-managed MongoDB database
+     * - **GREENPLUM**: AnalyticDB for PostgreSQL instance
+     * - **KAFKA**: Message Queue for Apache Kafka instance or self-managed Kafka cluster
+     * - **DATAHUB**: DataHub project- **DB2**: self-managed Db2 for LUW database
+     * - **AS400**: self-managed Db2 for i database
+     * - **ODPS**: MaxCompute project
+     * - **Tablestore**: Tablestore instance
+     * - **ELK**: Elasticsearch cluster
+     * - **REDIS**: ApsaraDB for Redis instance or self-managed Redis database
+     * **Note**: Default value: **MYSQL**.
+     * If this parameter is set to **KAFKA**, **MONGODB**, or **PolarDB**, you must also specify the database information in the Reserve parameter.
          */
         readonly engineName?: string | ros.IResolvable;
         /**
-         * @Property password: Target instance password
+         * @Property password: The password of the destination database account.
          */
-        readonly password: string | ros.IResolvable;
+        readonly password?: string | ros.IResolvable;
     }
 }
 /**
@@ -487,313 +1469,36 @@ export namespace RosMigrationJob {
  *
  * @returns the result of the validation.
  */
-function RosMigrationJob_DestinationEndpointPropertyValidator(properties: any): ros.ValidationResult {
+function RosMigrationJob2_DestinationEndpointPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('role', ros.validateString)(properties.role));
-    errors.collect(ros.propertyValidator('userName', ros.requiredValidator)(properties.userName));
+    errors.collect(ros.propertyValidator('oracleSid', ros.validateString)(properties.oracleSid));
     errors.collect(ros.propertyValidator('userName', ros.validateString)(properties.userName));
+    errors.collect(ros.propertyValidator('ownerId', ros.validateString)(properties.ownerId));
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
     errors.collect(ros.propertyValidator('ip', ros.validateString)(properties.ip));
     errors.collect(ros.propertyValidator('port', ros.validateString)(properties.port));
     errors.collect(ros.propertyValidator('databaseName', ros.validateString)(properties.databaseName));
-    errors.collect(ros.propertyValidator('region', ros.requiredValidator)(properties.region));
     errors.collect(ros.propertyValidator('region', ros.validateString)(properties.region));
     errors.collect(ros.propertyValidator('instanceType', ros.requiredValidator)(properties.instanceType));
-    if(properties.instanceType && (typeof properties.instanceType) !== 'object') {
-        errors.collect(ros.propertyValidator('instanceType', ros.validateAllowedValues)({
-          data: properties.instanceType,
-          allowedValues: ["RDS","ECS","LocalInstance","MongoDB","Redis","DRDS","PetaData","OceanBase","POLARDB"],
-        }));
-    }
     errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
-    if(properties.engineName && (typeof properties.engineName) !== 'object') {
-        errors.collect(ros.propertyValidator('engineName', ros.validateAllowedValues)({
-          data: properties.engineName,
-          allowedValues: ["MySQL","SQLServer","PostgreSQL","PPAS","MongoDB","Redis"],
-        }));
-    }
     errors.collect(ros.propertyValidator('engineName', ros.validateString)(properties.engineName));
-    errors.collect(ros.propertyValidator('password', ros.requiredValidator)(properties.password));
     errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
     return errors.wrap('supplied properties not correct for "DestinationEndpointProperty"');
 }
 
 /**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::MigrationJob.DestinationEndpoint` resource
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::MigrationJob2.DestinationEndpoint` resource
  *
  * @param properties - the TypeScript properties of a `DestinationEndpointProperty`
  *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::MigrationJob.DestinationEndpoint` resource.
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::MigrationJob2.DestinationEndpoint` resource.
  */
 // @ts-ignore TS6133
-function rosMigrationJobDestinationEndpointPropertyToRosTemplate(properties: any): any {
+function rosMigrationJob2DestinationEndpointPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
-    RosMigrationJob_DestinationEndpointPropertyValidator(properties).assertSuccess();
-    return {
-      Role: ros.stringToRosTemplate(properties.role),
-      UserName: ros.stringToRosTemplate(properties.userName),
-      InstanceID: ros.stringToRosTemplate(properties.instanceId),
-      IP: ros.stringToRosTemplate(properties.ip),
-      Port: ros.stringToRosTemplate(properties.port),
-      DatabaseName: ros.stringToRosTemplate(properties.databaseName),
-      Region: ros.stringToRosTemplate(properties.region),
-      InstanceType: ros.stringToRosTemplate(properties.instanceType),
-      EngineName: ros.stringToRosTemplate(properties.engineName),
-      Password: ros.stringToRosTemplate(properties.password),
-    };
-}
-
-export namespace RosMigrationJob {
-    /**
-     * @stability external
-     */
-    export interface MigrationModeProperty {
-        /**
-         * @Property structureIntialization: Whether the migration task performs structural migration, and the values include:
-     * true: indicates that a structure migration is required.
-     * false: indicates no structural migration
-         */
-        readonly structureIntialization?: boolean | ros.IResolvable;
-        /**
-         * @Property dataSynchronization: Whether the migration task synchronizes incremental data, including:
-     * true: Indicates that incremental data synchronization is required.
-     * false: Indicates that incremental data synchronization is not performed.
-         */
-        readonly dataSynchronization?: boolean | ros.IResolvable;
-        /**
-         * @Property dataIntialization: Whether the migration task performs full data migration, and the values include:
-     * true: indicates that full data migration is required.
-     * false: indicates no structural migration
-         */
-        readonly dataIntialization?: boolean | ros.IResolvable;
-    }
-}
-/**
- * Determine whether the given properties match those of a `MigrationModeProperty`
- *
- * @param properties - the TypeScript properties of a `MigrationModeProperty`
- *
- * @returns the result of the validation.
- */
-function RosMigrationJob_MigrationModePropertyValidator(properties: any): ros.ValidationResult {
-    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
-    const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('structureIntialization', ros.validateBoolean)(properties.structureIntialization));
-    errors.collect(ros.propertyValidator('dataSynchronization', ros.validateBoolean)(properties.dataSynchronization));
-    errors.collect(ros.propertyValidator('dataIntialization', ros.validateBoolean)(properties.dataIntialization));
-    return errors.wrap('supplied properties not correct for "MigrationModeProperty"');
-}
-
-/**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::MigrationJob.MigrationMode` resource
- *
- * @param properties - the TypeScript properties of a `MigrationModeProperty`
- *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::MigrationJob.MigrationMode` resource.
- */
-// @ts-ignore TS6133
-function rosMigrationJobMigrationModePropertyToRosTemplate(properties: any): any {
-    if (!ros.canInspect(properties)) { return properties; }
-    RosMigrationJob_MigrationModePropertyValidator(properties).assertSuccess();
-    return {
-      StructureIntialization: ros.booleanToRosTemplate(properties.structureIntialization),
-      DataSynchronization: ros.booleanToRosTemplate(properties.dataSynchronization),
-      DataIntialization: ros.booleanToRosTemplate(properties.dataIntialization),
-    };
-}
-
-export namespace RosMigrationJob {
-    /**
-     * @stability external
-     */
-    export interface MigrationObjectProperty {
-        /**
-         * @Property tableIncludes: Table configuration
-         */
-        readonly tableIncludes?: Array<RosMigrationJob.TableIncludesProperty | ros.IResolvable> | ros.IResolvable;
-        /**
-         * @Property dbName: db name to be migrated
-         */
-        readonly dbName?: string | ros.IResolvable;
-        /**
-         * @Property tableExcludes: Table excludes configuration
-         */
-        readonly tableExcludes?: Array<RosMigrationJob.TableExcludesProperty | ros.IResolvable> | ros.IResolvable;
-        /**
-         * @Property schemaName: Schema name to be migrated
-         */
-        readonly schemaName?: string | ros.IResolvable;
-        /**
-         * @Property newSchemaName: Schema name to be migrated by Schema in the target instance
-         */
-        readonly newSchemaName?: string | ros.IResolvable;
-        /**
-         * @Property newDbName: The name of the db to be migrated in the target instance.
-         */
-        readonly newDbName?: string | ros.IResolvable;
-    }
-}
-/**
- * Determine whether the given properties match those of a `MigrationObjectProperty`
- *
- * @param properties - the TypeScript properties of a `MigrationObjectProperty`
- *
- * @returns the result of the validation.
- */
-function RosMigrationJob_MigrationObjectPropertyValidator(properties: any): ros.ValidationResult {
-    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
-    const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('tableIncludes', ros.listValidator(RosMigrationJob_TableIncludesPropertyValidator))(properties.tableIncludes));
-    errors.collect(ros.propertyValidator('dbName', ros.validateString)(properties.dbName));
-    errors.collect(ros.propertyValidator('tableExcludes', ros.listValidator(RosMigrationJob_TableExcludesPropertyValidator))(properties.tableExcludes));
-    errors.collect(ros.propertyValidator('schemaName', ros.validateString)(properties.schemaName));
-    errors.collect(ros.propertyValidator('newSchemaName', ros.validateString)(properties.newSchemaName));
-    errors.collect(ros.propertyValidator('newDbName', ros.validateString)(properties.newDbName));
-    return errors.wrap('supplied properties not correct for "MigrationObjectProperty"');
-}
-
-/**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::MigrationJob.MigrationObject` resource
- *
- * @param properties - the TypeScript properties of a `MigrationObjectProperty`
- *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::MigrationJob.MigrationObject` resource.
- */
-// @ts-ignore TS6133
-function rosMigrationJobMigrationObjectPropertyToRosTemplate(properties: any): any {
-    if (!ros.canInspect(properties)) { return properties; }
-    RosMigrationJob_MigrationObjectPropertyValidator(properties).assertSuccess();
-    return {
-      TableIncludes: ros.listMapper(rosMigrationJobTableIncludesPropertyToRosTemplate)(properties.tableIncludes),
-      DBName: ros.stringToRosTemplate(properties.dbName),
-      TableExcludes: ros.listMapper(rosMigrationJobTableExcludesPropertyToRosTemplate)(properties.tableExcludes),
-      SchemaName: ros.stringToRosTemplate(properties.schemaName),
-      NewSchemaName: ros.stringToRosTemplate(properties.newSchemaName),
-      NewDBName: ros.stringToRosTemplate(properties.newDbName),
-    };
-}
-
-export namespace RosMigrationJob {
-    /**
-     * @stability external
-     */
-    export interface SourceEndpointProperty {
-        /**
-         * @Property role: When the source instance is an RDS instance and the source instance is different from the Alibaba Cloud account to which the target instance belongs, this parameter is the authorization role of the Alibaba Cloud account to which the source instance belongs to the target instance Alibaba Cloud account. For details on the permissions and authorization methods required for this role, see Cross-Account Migration Synchronization.
-         */
-        readonly role?: string | ros.IResolvable;
-        /**
-         * @Property oracleSid: When the source instance database type is Oracle, this parameter is Oracle SID
-         */
-        readonly oracleSid?: string | ros.IResolvable;
-        /**
-         * @Property userName: Source instance access account
-         */
-        readonly userName: string | ros.IResolvable;
-        /**
-         * @Property ownerId: When the source instance is an RDS instance and the source instance is different from the Alibaba Cloud account to which the target instance belongs, this parameter is the UID of the Alibaba Cloud account to which the source RDS instance belongs.
-         */
-        readonly ownerId?: string | ros.IResolvable;
-        /**
-         * @Property instanceId: Source instance ID.
-     * When the value of SourceEndpoint.InstanceType is RDS, this parameter needs to be passed in the RDS instance ID.
-     * When the SourceEndpoint.InstanceType value is ECS, this parameter needs to be passed to the ECS instance ID.
-     * When the SourceEndpoint.InstanceType value is Express, this parameter needs to be passed in the VPC ID (ie, the proprietary network ID).
-     * When the SourceEndpoint.InstanceType value is MongoDB, this parameter needs to be passed to the MongoDB instance ID.
-     * When the SourceEndpoint.InstanceType value is POLARDB, this parameter needs to be passed to POLARDB for MySQL cluster ID.
-         */
-        readonly instanceId?: string | ros.IResolvable;
-        /**
-         * @Property ip: The connection address of the source instance. Required when the source instance is a self-built database.
-         */
-        readonly ip?: string | ros.IResolvable;
-        /**
-         * @Property port: The listening port of the source instance, which is required when the source instance is a self-built database.
-         */
-        readonly port?: string | ros.IResolvable;
-        /**
-         * @Property databaseName: When the source instance database type is PostgreSQL or MongoDB, this parameter is the database library name used when creating the connection.
-         */
-        readonly databaseName?: string | ros.IResolvable;
-        /**
-         * @Property region: The area where the source instance is located. If it is a self-built database, you can select the area closest to the physical distance of the self-built IDC.
-         */
-        readonly region: string | ros.IResolvable;
-        /**
-         * @Property instanceType: The instance type of the migration source instance, including:
-     * RDS: Alibaba Cloud RDS instance
-     * ECS: Self-built database on ECS
-     * LocalInstance: Self-built database with public IP address
-     * Express: self-built database accessed via dedicated line
-     * MongoDB: Ali cloud MongoDB instance
-     * POLARDB: Alibaba Cloud POLARDB for MySQL Cluster
-     *
-         */
-        readonly instanceType: string | ros.IResolvable;
-        /**
-         * @Property engineName: The database type of the source instance, which is required when SourceEndpoint.InstanceType is not RDS. Values include:
-     * MySQL, SQLServer, PostgreSQL, Oracle, MongoDB, Redis
-         */
-        readonly engineName?: string | ros.IResolvable;
-        /**
-         * @Property password: Source instance password
-         */
-        readonly password: string | ros.IResolvable;
-    }
-}
-/**
- * Determine whether the given properties match those of a `SourceEndpointProperty`
- *
- * @param properties - the TypeScript properties of a `SourceEndpointProperty`
- *
- * @returns the result of the validation.
- */
-function RosMigrationJob_SourceEndpointPropertyValidator(properties: any): ros.ValidationResult {
-    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
-    const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('role', ros.validateString)(properties.role));
-    errors.collect(ros.propertyValidator('oracleSid', ros.validateString)(properties.oracleSid));
-    errors.collect(ros.propertyValidator('userName', ros.requiredValidator)(properties.userName));
-    errors.collect(ros.propertyValidator('userName', ros.validateString)(properties.userName));
-    errors.collect(ros.propertyValidator('ownerId', ros.validateString)(properties.ownerId));
-    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
-    errors.collect(ros.propertyValidator('ip', ros.validateString)(properties.ip));
-    errors.collect(ros.propertyValidator('port', ros.validateString)(properties.port));
-    errors.collect(ros.propertyValidator('databaseName', ros.validateString)(properties.databaseName));
-    errors.collect(ros.propertyValidator('region', ros.requiredValidator)(properties.region));
-    errors.collect(ros.propertyValidator('region', ros.validateString)(properties.region));
-    errors.collect(ros.propertyValidator('instanceType', ros.requiredValidator)(properties.instanceType));
-    if(properties.instanceType && (typeof properties.instanceType) !== 'object') {
-        errors.collect(ros.propertyValidator('instanceType', ros.validateAllowedValues)({
-          data: properties.instanceType,
-          allowedValues: ["RDS","ECS","LocalInstance","Express","MongoDB","POLARDB"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
-    if(properties.engineName && (typeof properties.engineName) !== 'object') {
-        errors.collect(ros.propertyValidator('engineName', ros.validateAllowedValues)({
-          data: properties.engineName,
-          allowedValues: ["MySQL","SQLServer","PostgreSQL","Oracle","MongoDB","Redis"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('engineName', ros.validateString)(properties.engineName));
-    errors.collect(ros.propertyValidator('password', ros.requiredValidator)(properties.password));
-    errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
-    return errors.wrap('supplied properties not correct for "SourceEndpointProperty"');
-}
-
-/**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::MigrationJob.SourceEndpoint` resource
- *
- * @param properties - the TypeScript properties of a `SourceEndpointProperty`
- *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::MigrationJob.SourceEndpoint` resource.
- */
-// @ts-ignore TS6133
-function rosMigrationJobSourceEndpointPropertyToRosTemplate(properties: any): any {
-    if (!ros.canInspect(properties)) { return properties; }
-    RosMigrationJob_SourceEndpointPropertyValidator(properties).assertSuccess();
+    RosMigrationJob2_DestinationEndpointPropertyValidator(properties).assertSuccess();
     return {
       Role: ros.stringToRosTemplate(properties.role),
       OracleSID: ros.stringToRosTemplate(properties.oracleSid),
@@ -810,470 +1515,596 @@ function rosMigrationJobSourceEndpointPropertyToRosTemplate(properties: any): an
     };
 }
 
-export namespace RosMigrationJob {
+export namespace RosMigrationJob2 {
     /**
      * @stability external
      */
-    export interface TableExcludesProperty {
+    export interface SourceEndpointProperty {
         /**
-         * @Property tableName: The name of the table to be migrated does not require the table name of the migration table.
+         * @Property oracleSid: The system ID (SID) of the Oracle database.
+     * **Note**: This parameter is required only when **EngineName** is set to **ORACLE** and the Oracle database is deployed in an architecture that is not a Real Application Cluster (RAC).
          */
-        readonly tableName?: string | ros.IResolvable;
+        readonly oracleSid?: string | ros.IResolvable;
+        /**
+         * @Property userName: The database account of the source database.
+     * **Note**: In most cases, this parameter is required. The permissions that are required for the database account vary with the migration or synchronization scenario.
+         */
+        readonly userName?: string | ros.IResolvable;
+        /**
+         * @Property instanceId: The ID of the source instance. If the source instance is an Alibaba Cloud database instance, you must specify the ID of the database instance. For example, 
+     * - If the source instance is an ApsaraDB RDS for MySQL instance, you must specify the ID of the ApsaraDB RDS for MySQL instance. 
+     * - If the source instance is a self-managed database, the value of this parameter varies with the value of SourceEndpointInstanceType.
+     * - If InstanceType is set to ECS, you must specify the ID of the ECS instance.
+     * - If InstanceType is set to DG, you must specify the ID of the database gateway.
+     * - If InstanceType is set to EXPRESS or CEN, you must specify the ID of the VPC that is connected to the source instance.
+     * **Note**: If DestinationEndpointInstanceType is set to CEN, you must also specify the ID of the CEN instance in the Reserve parameter.
+         */
+        readonly instanceId?: string | ros.IResolvable;
+        /**
+         * @Property ip: The IP address of the source instance. 
+     * **Note**: This parameter is required only when **InstanceType** is set to **OTHER**, **EXPRESS**, **DG**, or **CEN**.
+         */
+        readonly ip?: string | ros.IResolvable;
+        /**
+         * @Property port: The port number of the source instance.
+     * **Note**: This parameter is required only when the source instance is a self-managed database.
+         */
+        readonly port?: string | ros.IResolvable;
+        /**
+         * @Property vSwitchId: The ID of the vSwitch used for the data shipping link.
+         */
+        readonly vSwitchId?: string | ros.IResolvable;
+        /**
+         * @Property databaseName: The name of the database which contains the objects to be migrated in the source instance.
+     * **Note**: This parameter is required only when the source instance is a PolarDB for PostgreSQL cluster (compatible with Oracle), a PostgreSQL database, or a MongoDB database.
+         */
+        readonly databaseName?: string | ros.IResolvable;
+        /**
+         * @Property engineName: The database engine of the source instance. Valid values:
+     * - **MYSQL**: ApsaraDB RDS for MySQL instance or self-managed MySQL database
+     * - **MARIADB**: ApsaraDB RDS for MariaDB TX instance
+     * - **PolarDB**: PolarDB for MySQL cluster
+     * - **POLARDB_O**: PolarDB for PostgreSQL cluster (compatible with Oracle)
+     * - **POLARDBX10**: PolarDB-X 1.0 instance
+     * - **POLARDBX20**: PolarDB-X 2.0 instance
+     * - **ORACLE**: self-managed Oracle database
+     * - **POSTGRESQL**: ApsaraDB RDS for PostgreSQL instance or self-managed PostgreSQL database
+     * - **MSSQL**: ApsaraDB RDS for SQL Server instance or self-managed SQL Server database
+     * - **MONGODB**: ApsaraDB for MongoDB instance or self-managed MongoDB database
+     * - **DB2**: self-managed Db2 for LUW database
+     * - **AS400**: self-managed Db2 for i database
+     * - **DMSPOLARDB**: DMS logical database
+     * - **HBASE**: self-managed HBase database
+     * - **TERADATA**: Teradata database
+     * - **TiDB**: TiDB database
+     * - **REDIS**: ApsaraDB for Redis instance or self-managed Redis database
+     * **Note**: Default value: **MYSQL**.
+     * If EngineName is set to **MONGODB**, you must also specify the architecture type of the **MongoDB** database in the **Reserve** parameter.
+         */
+        readonly engineName?: string | ros.IResolvable;
+        /**
+         * @Property role: The name of the Resource Access Management (RAM) role configured for the Alibaba Cloud account that owns the source instance.
+     * **Note**: This parameter is required when you migrate or synchronize data across different Alibaba Cloud accounts.
+         */
+        readonly role?: string | ros.IResolvable;
+        /**
+         * @Property ownerId: The ID of the Alibaba Cloud account to which the source database belongs.
+     * **Note**: You can specify this parameter to migrate or synchronize data across different Alibaba Cloud accounts. In this case, you must specify **Role**.
+         */
+        readonly ownerId?: string | ros.IResolvable;
+        /**
+         * @Property region: The ID of the region in which the source instance resides.
+     * **Note**: If the source instance is an Alibaba Cloud database instance, this parameter is required.
+         */
+        readonly region?: string | ros.IResolvable;
+        /**
+         * @Property instanceType: The type of the source instance. Valid values:
+     * Alibaba Cloud database instances:
+     * - **RDS**: ApsaraDB RDS for MySQL instance, ApsaraDB RDS for SQL Server instance, ApsaraDB RDS for PostgreSQL instance, or ApsaraDB RDS for MariaDB TX instance
+     * - **PolarDB**: PolarDB for MySQL cluster
+     * - **REDIS**: ApsaraDB for Redis instance
+     * - **DISTRIBUTED_POLARDBX10**: PolarDB-X 1.0 (formerly DRDS) instance
+     * - **POLARDBX20**: PolarDB-X 2.0 instance
+     * - **MONGODB**: ApsaraDB for MongoDB instance
+     * - **DISTRIBUTED_DMSLOGICDB**: Data Management (DMS) logical database
+     * Self-managed databases:
+     * - **OTHER**: self-managed database with a public IP address
+     * - **ECS**: self-managed database hosted on an Elastic Compute Service (ECS) instance
+     * - **EXPRESS**: self-managed database connected over Express Connect
+     * - **CEN**: self-managed database connected over Cloud Enterprise Network (CEN)
+     * - **DG**: self-managed database connected over Database Gateway
+     * **Note**: If the source instance is a PolarDB for PostgreSQL cluster (compatible with Oracle), you must set this parameter to **OTHER** or **EXPRESS**. Then, you can connect the PolarDB for PostgreSQL cluster to DTS as a self-managed database by using a public IP address or Express Connect. If the source instance is a self-managed database, you must deploy the network environment for the database.
+         */
+        readonly instanceType: string | ros.IResolvable;
+        /**
+         * @Property password: The password of the source database account.
+         */
+        readonly password?: string | ros.IResolvable;
     }
 }
 /**
- * Determine whether the given properties match those of a `TableExcludesProperty`
+ * Determine whether the given properties match those of a `SourceEndpointProperty`
  *
- * @param properties - the TypeScript properties of a `TableExcludesProperty`
+ * @param properties - the TypeScript properties of a `SourceEndpointProperty`
  *
  * @returns the result of the validation.
  */
-function RosMigrationJob_TableExcludesPropertyValidator(properties: any): ros.ValidationResult {
+function RosMigrationJob2_SourceEndpointPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('tableName', ros.validateString)(properties.tableName));
-    return errors.wrap('supplied properties not correct for "TableExcludesProperty"');
+    errors.collect(ros.propertyValidator('oracleSid', ros.validateString)(properties.oracleSid));
+    errors.collect(ros.propertyValidator('userName', ros.validateString)(properties.userName));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('ip', ros.validateString)(properties.ip));
+    errors.collect(ros.propertyValidator('port', ros.validateString)(properties.port));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('databaseName', ros.validateString)(properties.databaseName));
+    errors.collect(ros.propertyValidator('engineName', ros.validateString)(properties.engineName));
+    errors.collect(ros.propertyValidator('role', ros.validateString)(properties.role));
+    errors.collect(ros.propertyValidator('ownerId', ros.validateString)(properties.ownerId));
+    errors.collect(ros.propertyValidator('region', ros.validateString)(properties.region));
+    errors.collect(ros.propertyValidator('instanceType', ros.requiredValidator)(properties.instanceType));
+    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
+    errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
+    return errors.wrap('supplied properties not correct for "SourceEndpointProperty"');
 }
 
 /**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::MigrationJob.TableExcludes` resource
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::MigrationJob2.SourceEndpoint` resource
  *
- * @param properties - the TypeScript properties of a `TableExcludesProperty`
+ * @param properties - the TypeScript properties of a `SourceEndpointProperty`
  *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::MigrationJob.TableExcludes` resource.
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::MigrationJob2.SourceEndpoint` resource.
  */
 // @ts-ignore TS6133
-function rosMigrationJobTableExcludesPropertyToRosTemplate(properties: any): any {
+function rosMigrationJob2SourceEndpointPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
-    RosMigrationJob_TableExcludesPropertyValidator(properties).assertSuccess();
+    RosMigrationJob2_SourceEndpointPropertyValidator(properties).assertSuccess();
     return {
-      TableName: ros.stringToRosTemplate(properties.tableName),
+      OracleSID: ros.stringToRosTemplate(properties.oracleSid),
+      UserName: ros.stringToRosTemplate(properties.userName),
+      InstanceID: ros.stringToRosTemplate(properties.instanceId),
+      IP: ros.stringToRosTemplate(properties.ip),
+      Port: ros.stringToRosTemplate(properties.port),
+      VSwitchID: ros.stringToRosTemplate(properties.vSwitchId),
+      DatabaseName: ros.stringToRosTemplate(properties.databaseName),
+      EngineName: ros.stringToRosTemplate(properties.engineName),
+      Role: ros.stringToRosTemplate(properties.role),
+      OwnerID: ros.stringToRosTemplate(properties.ownerId),
+      Region: ros.stringToRosTemplate(properties.region),
+      InstanceType: ros.stringToRosTemplate(properties.instanceType),
+      Password: ros.stringToRosTemplate(properties.password),
     };
 }
 
-export namespace RosMigrationJob {
-    /**
-     * @stability external
-     */
-    export interface TableIncludesProperty {
-        /**
-         * @Property tableName: Table name to be migrated
-         */
-        readonly tableName?: string | ros.IResolvable;
-        /**
-         * @Property filterCondition: Where condition
-         */
-        readonly filterCondition?: string | ros.IResolvable;
-        /**
-         * @Property columnExcludes: Column excludes configuration
-         */
-        readonly columnExcludes?: Array<RosMigrationJob.ColumnExcludesProperty | ros.IResolvable> | ros.IResolvable;
-        /**
-         * @Property columnIncludes: Column includes configuration
-         */
-        readonly columnIncludes?: Array<RosMigrationJob.ColumnIncludesProperty | ros.IResolvable> | ros.IResolvable;
-        /**
-         * @Property newTableName: The name of the table to be migrated in the target instance mapping
-         */
-        readonly newTableName?: string | ros.IResolvable;
-    }
-}
 /**
- * Determine whether the given properties match those of a `TableIncludesProperty`
+ * Properties for defining a `RosSubscriptionJob2`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-subscriptionjob2
+ */
+export interface RosSubscriptionJob2Props {
+
+    /**
+     * @Property dbList: The objects for which you want to track data changes.
+     */
+    readonly dbList: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property dtsJobName: The name of the DTS instance.
+     */
+    readonly dtsJobName: string | ros.IResolvable;
+
+    /**
+     * @Property sourceEndpoint: Source instance configuration.
+     */
+    readonly sourceEndpoint: RosSubscriptionJob2.SourceEndpointProperty | ros.IResolvable;
+
+    /**
+     * @Property subscriptionInstance: Subscription instance configuration.
+     */
+    readonly subscriptionInstance: RosSubscriptionJob2.SubscriptionInstanceProperty | ros.IResolvable;
+
+    /**
+     * @Property checkpoint: The start offset of incremental data migration or synchronization. This value is a UNIX timestamp representing the number of seconds that have elapsed since January 1, 1970, 00:00:00 UTC.
+     */
+    readonly checkpoint?: string | ros.IResolvable;
+
+    /**
+     * @Property dedicatedClusterId: The ID of the DTS dedicated cluster on which the task runs.
+     */
+    readonly dedicatedClusterId?: string | ros.IResolvable;
+
+    /**
+     * @Property delayNotice: Specifies whether to monitor the task latency. Valid values: **true** and **false**
+     */
+    readonly delayNotice?: boolean | ros.IResolvable;
+
+    /**
+     * @Property delayPhone: The mobile numbers that receive latency-related alerts. Separate multiple mobile numbers with commas (,).
+     * **Note**: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+     */
+    readonly delayPhone?: string | ros.IResolvable;
+
+    /**
+     * @Property delayRuleTime: The threshold for latency alerts. Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
+     */
+    readonly delayRuleTime?: number | ros.IResolvable;
+
+    /**
+     * @Property dtsBisLabel: The environment tag of the DTS instance. Valid values: **normal** and **online**.
+     */
+    readonly dtsBisLabel?: string | ros.IResolvable;
+
+    /**
+     * @Property dtsInstanceId: The ID of the DTS instance.
+     */
+    readonly dtsInstanceId?: string | ros.IResolvable;
+
+    /**
+     * @Property dtsJobId: The ID of the DTS task.
+     */
+    readonly dtsJobId?: string | ros.IResolvable;
+
+    /**
+     * @Property errorNotice: Specifies whether to monitor the task status. Valid values: **true** and **false**.
+     */
+    readonly errorNotice?: boolean | ros.IResolvable;
+
+    /**
+     * @Property errorPhone: The mobile numbers that receive status-related alerts. Separate multiple mobile numbers with commas (,).
+     * **Note**: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+     */
+    readonly errorPhone?: string | ros.IResolvable;
+
+    /**
+     * @Property reserve: The reserved parameter of DTS. You can specify this parameter to add more configurations of the source or destination instance to the DTS task. For example, you can specify the data storage format of the destination Kafka database and the ID of the CEN instance.
+     */
+    readonly reserve?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property status: The status of the resource. Valid values:
+     * - **Subscribing**: Start the task.
+     * - **Suspending**: Suspend the task.
+     * - **Stopping**: Stop the task.
+     */
+    readonly status?: string | ros.IResolvable;
+
+    /**
+     * @Property subscriptionDataType: Subscription data type.
+     */
+    readonly subscriptionDataType?: RosSubscriptionJob2.SubscriptionDataTypeProperty | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSubscriptionJob2Props`
  *
- * @param properties - the TypeScript properties of a `TableIncludesProperty`
+ * @param properties - the TypeScript properties of a `RosSubscriptionJob2Props`
  *
  * @returns the result of the validation.
  */
-function RosMigrationJob_TableIncludesPropertyValidator(properties: any): ros.ValidationResult {
+function RosSubscriptionJob2PropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('tableName', ros.validateString)(properties.tableName));
-    errors.collect(ros.propertyValidator('filterCondition', ros.validateString)(properties.filterCondition));
-    errors.collect(ros.propertyValidator('columnExcludes', ros.listValidator(RosMigrationJob_ColumnExcludesPropertyValidator))(properties.columnExcludes));
-    errors.collect(ros.propertyValidator('columnIncludes', ros.listValidator(RosMigrationJob_ColumnIncludesPropertyValidator))(properties.columnIncludes));
-    errors.collect(ros.propertyValidator('newTableName', ros.validateString)(properties.newTableName));
-    return errors.wrap('supplied properties not correct for "TableIncludesProperty"');
-}
-
-/**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::MigrationJob.TableIncludes` resource
- *
- * @param properties - the TypeScript properties of a `TableIncludesProperty`
- *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::MigrationJob.TableIncludes` resource.
- */
-// @ts-ignore TS6133
-function rosMigrationJobTableIncludesPropertyToRosTemplate(properties: any): any {
-    if (!ros.canInspect(properties)) { return properties; }
-    RosMigrationJob_TableIncludesPropertyValidator(properties).assertSuccess();
-    return {
-      TableName: ros.stringToRosTemplate(properties.tableName),
-      FilterCondition: ros.stringToRosTemplate(properties.filterCondition),
-      ColumnExcludes: ros.listMapper(rosMigrationJobColumnExcludesPropertyToRosTemplate)(properties.columnExcludes),
-      ColumnIncludes: ros.listMapper(rosMigrationJobColumnIncludesPropertyToRosTemplate)(properties.columnIncludes),
-      NewTableName: ros.stringToRosTemplate(properties.newTableName),
-    };
-}
-
-/**
- * Properties for defining a `ALIYUN::DTS::SubscriptionInstance`
- */
-export interface RosSubscriptionInstanceProps {
-
-    /**
-     * @Property configuration: Subscription configuration.
-     */
-    readonly configuration?: RosSubscriptionInstance.ConfigurationProperty | ros.IResolvable;
-
-    /**
-     * @Property payType: Payment type. Valid value:
-     * PostPaid: Pay-as-you-go, which is default value.
-     * PrePaid: subscription.
-     */
-    readonly payType?: string | ros.IResolvable;
-
-    /**
-     * @Property period: The unit of the subscription length. Valid values: Year and Month.
-     * Note: You must specify this parameter only if you set the PayType parameter to PrePaid.
-     */
-    readonly period?: string | ros.IResolvable;
-
-    /**
-     * @Property sourceEndpointInstanceType: Data subscription instance type, value is:MySQL: ApsaraDB RDS for MySQL instance or self-managed MySQL database.
-     * PolarDB: PolarDB for MySQL cluster.
-     * polardb_o: PolarDB O Edition cluster.
-     * polardb_pg: PolarDB for PostgreSQL cluster.
-     * DRDS: PolarDB-X instance V1.0 or V2.0.
-     * PostgreSQL: self-managed PostgreSQL database.
-     * Oracle: self-managed Oracle database.
-     */
-    readonly sourceEndpointInstanceType?: string | ros.IResolvable;
-
-    /**
-     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: RosSubscriptionInstance.TagsProperty[];
-
-    /**
-     * @Property usedTime: The subscription length.
-     * Note: You must specify this parameter only if you set the PayType parameter to PrePaid.
-     * You can set the Period parameter to specify the unit of the subscription length.
-     */
-    readonly usedTime?: number | ros.IResolvable;
-}
-
-/**
- * Determine whether the given properties match those of a `RosSubscriptionInstanceProps`
- *
- * @param properties - the TypeScript properties of a `RosSubscriptionInstanceProps`
- *
- * @returns the result of the validation.
- */
-function RosSubscriptionInstancePropsValidator(properties: any): ros.ValidationResult {
-    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
-    const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('configuration', RosSubscriptionInstance_ConfigurationPropertyValidator)(properties.configuration));
-    errors.collect(ros.propertyValidator('usedTime', ros.validateNumber)(properties.usedTime));
-    if(properties.period && (typeof properties.period) !== 'object') {
-        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
-          data: properties.period,
-          allowedValues: ["Year","Month"],
+    if(properties.status && (typeof properties.status) !== 'object') {
+        errors.collect(ros.propertyValidator('status', ros.validateAllowedValues)({
+          data: properties.status,
+          allowedValues: ["Subscribing","Suspending","Stopping"],
         }));
     }
-    errors.collect(ros.propertyValidator('period', ros.validateString)(properties.period));
-    if(properties.payType && (typeof properties.payType) !== 'object') {
-        errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
-          data: properties.payType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
-    errors.collect(ros.propertyValidator('sourceEndpointInstanceType', ros.validateString)(properties.sourceEndpointInstanceType));
-    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
-        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
-            data: properties.tags.length,
-            min: undefined,
-            max: 20,
-          }));
-    }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosSubscriptionInstance_TagsPropertyValidator))(properties.tags));
-    return errors.wrap('supplied properties not correct for "RosSubscriptionInstanceProps"');
+    errors.collect(ros.propertyValidator('status', ros.validateString)(properties.status));
+    errors.collect(ros.propertyValidator('reserve', ros.hashValidator(ros.validateAny))(properties.reserve));
+    errors.collect(ros.propertyValidator('delayPhone', ros.validateString)(properties.delayPhone));
+    errors.collect(ros.propertyValidator('dedicatedClusterId', ros.validateString)(properties.dedicatedClusterId));
+    errors.collect(ros.propertyValidator('errorNotice', ros.validateBoolean)(properties.errorNotice));
+    errors.collect(ros.propertyValidator('dtsJobName', ros.requiredValidator)(properties.dtsJobName));
+    errors.collect(ros.propertyValidator('dtsJobName', ros.validateString)(properties.dtsJobName));
+    errors.collect(ros.propertyValidator('delayRuleTime', ros.validateNumber)(properties.delayRuleTime));
+    errors.collect(ros.propertyValidator('dtsInstanceId', ros.validateString)(properties.dtsInstanceId));
+    errors.collect(ros.propertyValidator('dbList', ros.requiredValidator)(properties.dbList));
+    errors.collect(ros.propertyValidator('dbList', ros.hashValidator(ros.validateAny))(properties.dbList));
+    errors.collect(ros.propertyValidator('dtsBisLabel', ros.validateString)(properties.dtsBisLabel));
+    errors.collect(ros.propertyValidator('subscriptionDataType', RosSubscriptionJob2_SubscriptionDataTypePropertyValidator)(properties.subscriptionDataType));
+    errors.collect(ros.propertyValidator('checkpoint', ros.validateString)(properties.checkpoint));
+    errors.collect(ros.propertyValidator('delayNotice', ros.validateBoolean)(properties.delayNotice));
+    errors.collect(ros.propertyValidator('dtsJobId', ros.validateString)(properties.dtsJobId));
+    errors.collect(ros.propertyValidator('subscriptionInstance', ros.requiredValidator)(properties.subscriptionInstance));
+    errors.collect(ros.propertyValidator('subscriptionInstance', RosSubscriptionJob2_SubscriptionInstancePropertyValidator)(properties.subscriptionInstance));
+    errors.collect(ros.propertyValidator('sourceEndpoint', ros.requiredValidator)(properties.sourceEndpoint));
+    errors.collect(ros.propertyValidator('sourceEndpoint', RosSubscriptionJob2_SourceEndpointPropertyValidator)(properties.sourceEndpoint));
+    errors.collect(ros.propertyValidator('errorPhone', ros.validateString)(properties.errorPhone));
+    return errors.wrap('supplied properties not correct for "RosSubscriptionJob2Props"');
 }
 
 /**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance` resource
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionJob2` resource
  *
- * @param properties - the TypeScript properties of a `RosSubscriptionInstanceProps`
+ * @param properties - the TypeScript properties of a `RosSubscriptionJob2Props`
  *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance` resource.
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionJob2` resource.
  */
 // @ts-ignore TS6133
-function rosSubscriptionInstancePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+function rosSubscriptionJob2PropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
     if (!ros.canInspect(properties)) { return properties; }
     if(enableResourcePropertyConstraint) {
-        RosSubscriptionInstancePropsValidator(properties).assertSuccess();
+        RosSubscriptionJob2PropsValidator(properties).assertSuccess();
     }
     return {
-      Configuration: rosSubscriptionInstanceConfigurationPropertyToRosTemplate(properties.configuration),
-      PayType: ros.stringToRosTemplate(properties.payType),
-      Period: ros.stringToRosTemplate(properties.period),
-      SourceEndpointInstanceType: ros.stringToRosTemplate(properties.sourceEndpointInstanceType),
-      Tags: ros.listMapper(rosSubscriptionInstanceTagsPropertyToRosTemplate)(properties.tags),
-      UsedTime: ros.numberToRosTemplate(properties.usedTime),
+      DbList: ros.hashMapper(ros.objectToRosTemplate)(properties.dbList),
+      DtsJobName: ros.stringToRosTemplate(properties.dtsJobName),
+      SourceEndpoint: rosSubscriptionJob2SourceEndpointPropertyToRosTemplate(properties.sourceEndpoint),
+      SubscriptionInstance: rosSubscriptionJob2SubscriptionInstancePropertyToRosTemplate(properties.subscriptionInstance),
+      Checkpoint: ros.stringToRosTemplate(properties.checkpoint),
+      DedicatedClusterId: ros.stringToRosTemplate(properties.dedicatedClusterId),
+      DelayNotice: ros.booleanToRosTemplate(properties.delayNotice),
+      DelayPhone: ros.stringToRosTemplate(properties.delayPhone),
+      DelayRuleTime: ros.numberToRosTemplate(properties.delayRuleTime),
+      DtsBisLabel: ros.stringToRosTemplate(properties.dtsBisLabel),
+      DtsInstanceId: ros.stringToRosTemplate(properties.dtsInstanceId),
+      DtsJobId: ros.stringToRosTemplate(properties.dtsJobId),
+      ErrorNotice: ros.booleanToRosTemplate(properties.errorNotice),
+      ErrorPhone: ros.stringToRosTemplate(properties.errorPhone),
+      Reserve: ros.hashMapper(ros.objectToRosTemplate)(properties.reserve),
+      Status: ros.stringToRosTemplate(properties.status),
+      SubscriptionDataType: rosSubscriptionJob2SubscriptionDataTypePropertyToRosTemplate(properties.subscriptionDataType),
     };
 }
 
 /**
- * A ROS template type:  `ALIYUN::DTS::SubscriptionInstance`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::SubscriptionJob2`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SubscriptionJob2` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-subscriptionjob2
  */
-export class RosSubscriptionInstance extends ros.RosResource {
+export class RosSubscriptionJob2 extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
-    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DTS::SubscriptionInstance";
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DTS::SubscriptionJob2";
 
     /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
+     * @Attribute DtsInstanceId: The ID of the DTS instance.
      */
+    public readonly attrDtsInstanceId: ros.IResolvable;
 
     /**
-     * @Attribute PrivateHost: Private host.
+     * @Attribute DtsJobId: The ID of the task.
      */
-    public readonly attrPrivateHost: ros.IResolvable;
+    public readonly attrDtsJobId: ros.IResolvable;
 
     /**
-     * @Attribute PublicHost: Public host.
+     * @Attribute DtsJobName: The name of the DTS job.
      */
-    public readonly attrPublicHost: ros.IResolvable;
-
-    /**
-     * @Attribute SubscribeTopic: The topic of the change tracking instance.
-     */
-    public readonly attrSubscribeTopic: ros.IResolvable;
-
-    /**
-     * @Attribute SubscriptionInstanceId: The ID of Data subscription instance.
-     */
-    public readonly attrSubscriptionInstanceId: ros.IResolvable;
-
-    /**
-     * @Attribute VPCHost: VPC host.
-     */
-    public readonly attrVpcHost: ros.IResolvable;
+    public readonly attrDtsJobName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
 
     /**
-     * @Property configuration: Subscription configuration.
+     * @Property dbList: The objects for which you want to track data changes.
      */
-    public configuration: RosSubscriptionInstance.ConfigurationProperty | ros.IResolvable | undefined;
+    public dbList: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
-     * @Property payType: Payment type. Valid value:
-     * PostPaid: Pay-as-you-go, which is default value.
-     * PrePaid: subscription.
+     * @Property dtsJobName: The name of the DTS instance.
      */
-    public payType: string | ros.IResolvable | undefined;
+    public dtsJobName: string | ros.IResolvable;
 
     /**
-     * @Property period: The unit of the subscription length. Valid values: Year and Month.
-     * Note: You must specify this parameter only if you set the PayType parameter to PrePaid.
+     * @Property sourceEndpoint: Source instance configuration.
      */
-    public period: string | ros.IResolvable | undefined;
+    public sourceEndpoint: RosSubscriptionJob2.SourceEndpointProperty | ros.IResolvable;
 
     /**
-     * @Property sourceEndpointInstanceType: Data subscription instance type, value is:MySQL: ApsaraDB RDS for MySQL instance or self-managed MySQL database.
-     * PolarDB: PolarDB for MySQL cluster.
-     * polardb_o: PolarDB O Edition cluster.
-     * polardb_pg: PolarDB for PostgreSQL cluster.
-     * DRDS: PolarDB-X instance V1.0 or V2.0.
-     * PostgreSQL: self-managed PostgreSQL database.
-     * Oracle: self-managed Oracle database.
+     * @Property subscriptionInstance: Subscription instance configuration.
      */
-    public sourceEndpointInstanceType: string | ros.IResolvable | undefined;
+    public subscriptionInstance: RosSubscriptionJob2.SubscriptionInstanceProperty | ros.IResolvable;
 
     /**
-     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     * @Property checkpoint: The start offset of incremental data migration or synchronization. This value is a UNIX timestamp representing the number of seconds that have elapsed since January 1, 1970, 00:00:00 UTC.
      */
-    public tags: RosSubscriptionInstance.TagsProperty[] | undefined;
+    public checkpoint: string | ros.IResolvable | undefined;
 
     /**
-     * @Property usedTime: The subscription length.
-     * Note: You must specify this parameter only if you set the PayType parameter to PrePaid.
-     * You can set the Period parameter to specify the unit of the subscription length.
+     * @Property dedicatedClusterId: The ID of the DTS dedicated cluster on which the task runs.
      */
-    public usedTime: number | ros.IResolvable | undefined;
+    public dedicatedClusterId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::DTS::SubscriptionInstance`.
-     *
+     * @Property delayNotice: Specifies whether to monitor the task latency. Valid values: **true** and **false**
+     */
+    public delayNotice: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property delayPhone: The mobile numbers that receive latency-related alerts. Separate multiple mobile numbers with commas (,).
+     * **Note**: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+     */
+    public delayPhone: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property delayRuleTime: The threshold for latency alerts. Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
+     */
+    public delayRuleTime: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property dtsBisLabel: The environment tag of the DTS instance. Valid values: **normal** and **online**.
+     */
+    public dtsBisLabel: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property dtsInstanceId: The ID of the DTS instance.
+     */
+    public dtsInstanceId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property dtsJobId: The ID of the DTS task.
+     */
+    public dtsJobId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property errorNotice: Specifies whether to monitor the task status. Valid values: **true** and **false**.
+     */
+    public errorNotice: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property errorPhone: The mobile numbers that receive status-related alerts. Separate multiple mobile numbers with commas (,).
+     * **Note**: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+     */
+    public errorPhone: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property reserve: The reserved parameter of DTS. You can specify this parameter to add more configurations of the source or destination instance to the DTS task. For example, you can specify the data storage format of the destination Kafka database and the ID of the CEN instance.
+     */
+    public reserve: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @Property status: The status of the resource. Valid values:
+     * - **Subscribing**: Start the task.
+     * - **Suspending**: Suspend the task.
+     * - **Stopping**: Stop the task.
+     */
+    public status: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property subscriptionDataType: Subscription data type.
+     */
+    public subscriptionDataType: RosSubscriptionJob2.SubscriptionDataTypeProperty | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
      */
-    constructor(scope: ros.Construct, id: string, props: RosSubscriptionInstanceProps, enableResourcePropertyConstraint: boolean) {
-        super(scope, id, { type: RosSubscriptionInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrPrivateHost = this.getAtt('PrivateHost');
-        this.attrPublicHost = this.getAtt('PublicHost');
-        this.attrSubscribeTopic = this.getAtt('SubscribeTopic');
-        this.attrSubscriptionInstanceId = this.getAtt('SubscriptionInstanceId');
-        this.attrVpcHost = this.getAtt('VPCHost');
+    constructor(scope: ros.Construct, id: string, props: RosSubscriptionJob2Props, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSubscriptionJob2.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDtsInstanceId = this.getAtt('DtsInstanceId');
+        this.attrDtsJobId = this.getAtt('DtsJobId');
+        this.attrDtsJobName = this.getAtt('DtsJobName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-        this.configuration = props.configuration;
-        this.payType = props.payType;
-        this.period = props.period;
-        this.sourceEndpointInstanceType = props.sourceEndpointInstanceType;
-        this.tags = props.tags;
-        this.usedTime = props.usedTime;
+        this.dbList = props.dbList;
+        this.dtsJobName = props.dtsJobName;
+        this.sourceEndpoint = props.sourceEndpoint;
+        this.subscriptionInstance = props.subscriptionInstance;
+        this.checkpoint = props.checkpoint;
+        this.dedicatedClusterId = props.dedicatedClusterId;
+        this.delayNotice = props.delayNotice;
+        this.delayPhone = props.delayPhone;
+        this.delayRuleTime = props.delayRuleTime;
+        this.dtsBisLabel = props.dtsBisLabel;
+        this.dtsInstanceId = props.dtsInstanceId;
+        this.dtsJobId = props.dtsJobId;
+        this.errorNotice = props.errorNotice;
+        this.errorPhone = props.errorPhone;
+        this.reserve = props.reserve;
+        this.status = props.status;
+        this.subscriptionDataType = props.subscriptionDataType;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
-            configuration: this.configuration,
-            payType: this.payType,
-            period: this.period,
-            sourceEndpointInstanceType: this.sourceEndpointInstanceType,
-            tags: this.tags,
-            usedTime: this.usedTime,
+            dbList: this.dbList,
+            dtsJobName: this.dtsJobName,
+            sourceEndpoint: this.sourceEndpoint,
+            subscriptionInstance: this.subscriptionInstance,
+            checkpoint: this.checkpoint,
+            dedicatedClusterId: this.dedicatedClusterId,
+            delayNotice: this.delayNotice,
+            delayPhone: this.delayPhone,
+            delayRuleTime: this.delayRuleTime,
+            dtsBisLabel: this.dtsBisLabel,
+            dtsInstanceId: this.dtsInstanceId,
+            dtsJobId: this.dtsJobId,
+            errorNotice: this.errorNotice,
+            errorPhone: this.errorPhone,
+            reserve: this.reserve,
+            status: this.status,
+            subscriptionDataType: this.subscriptionDataType,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
-        return rosSubscriptionInstancePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+        return rosSubscriptionJob2PropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
 
-export namespace RosSubscriptionInstance {
-    /**
-     * @stability external
-     */
-    export interface ConfigurationProperty {
-        /**
-         * @Property subscriptionDataType: undefined
-         */
-        readonly subscriptionDataType: RosSubscriptionInstance.SubscriptionDataTypeProperty | ros.IResolvable;
-        /**
-         * @Property subscriptionInstanceName: Subscription instance name.
-         */
-        readonly subscriptionInstanceName?: string | ros.IResolvable;
-        /**
-         * @Property subscriptionInstance: undefined
-         */
-        readonly subscriptionInstance?: RosSubscriptionInstance.SubscriptionInstanceProperty | ros.IResolvable;
-        /**
-         * @Property sourceEndpoint: Migration source configuration.
-         */
-        readonly sourceEndpoint: RosSubscriptionInstance.SourceEndpointProperty | ros.IResolvable;
-        /**
-         * @Property dbList: Subscription object, formatted as a JSON string. For detailed definitions, see the description of the migration, synchronization or subscription objects.
-         */
-        readonly dbList?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
-        /**
-         * @Property subscriptionInstanceNetworkType: Network type: classic or vpc.
-         */
-        readonly subscriptionInstanceNetworkType?: string | ros.IResolvable;
-    }
-}
-/**
- * Determine whether the given properties match those of a `ConfigurationProperty`
- *
- * @param properties - the TypeScript properties of a `ConfigurationProperty`
- *
- * @returns the result of the validation.
- */
-function RosSubscriptionInstance_ConfigurationPropertyValidator(properties: any): ros.ValidationResult {
-    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
-    const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('subscriptionDataType', ros.requiredValidator)(properties.subscriptionDataType));
-    errors.collect(ros.propertyValidator('subscriptionDataType', RosSubscriptionInstance_SubscriptionDataTypePropertyValidator)(properties.subscriptionDataType));
-    errors.collect(ros.propertyValidator('subscriptionInstanceName', ros.validateString)(properties.subscriptionInstanceName));
-    errors.collect(ros.propertyValidator('subscriptionInstance', RosSubscriptionInstance_SubscriptionInstancePropertyValidator)(properties.subscriptionInstance));
-    errors.collect(ros.propertyValidator('sourceEndpoint', ros.requiredValidator)(properties.sourceEndpoint));
-    errors.collect(ros.propertyValidator('sourceEndpoint', RosSubscriptionInstance_SourceEndpointPropertyValidator)(properties.sourceEndpoint));
-    errors.collect(ros.propertyValidator('dbList', ros.hashValidator(ros.validateAny))(properties.dbList));
-    errors.collect(ros.propertyValidator('subscriptionInstanceNetworkType', ros.validateString)(properties.subscriptionInstanceNetworkType));
-    return errors.wrap('supplied properties not correct for "ConfigurationProperty"');
-}
-
-/**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance.Configuration` resource
- *
- * @param properties - the TypeScript properties of a `ConfigurationProperty`
- *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance.Configuration` resource.
- */
-// @ts-ignore TS6133
-function rosSubscriptionInstanceConfigurationPropertyToRosTemplate(properties: any): any {
-    if (!ros.canInspect(properties)) { return properties; }
-    RosSubscriptionInstance_ConfigurationPropertyValidator(properties).assertSuccess();
-    return {
-      SubscriptionDataType: rosSubscriptionInstanceSubscriptionDataTypePropertyToRosTemplate(properties.subscriptionDataType),
-      SubscriptionInstanceName: ros.stringToRosTemplate(properties.subscriptionInstanceName),
-      SubscriptionInstance: rosSubscriptionInstanceSubscriptionInstancePropertyToRosTemplate(properties.subscriptionInstance),
-      SourceEndpoint: rosSubscriptionInstanceSourceEndpointPropertyToRosTemplate(properties.sourceEndpoint),
-      DbList: ros.hashMapper(ros.objectToRosTemplate)(properties.dbList),
-      SubscriptionInstanceNetworkType: ros.stringToRosTemplate(properties.subscriptionInstanceNetworkType),
-    };
-}
-
-export namespace RosSubscriptionInstance {
+export namespace RosSubscriptionJob2 {
     /**
      * @stability external
      */
     export interface SourceEndpointProperty {
         /**
-         * @Property role: When the source instance is an RDS instance and the source instance is different from the Alibaba Cloud account to which the target instance belongs, this parameter is the authorization role of the Alibaba Cloud account to which the source instance belongs to the target instance Alibaba Cloud account.
-         */
-        readonly role?: string | ros.IResolvable;
-        /**
-         * @Property oracleSid: When the source instance database type is Oracle, this parameter is Oracle SID
+         * @Property oracleSid: The system ID (SID) of the Oracle database.
+     * **Note**: This parameter is required only when **EngineName** is set to **ORACLE** and the Oracle database is deployed in an architecture that is not a Real Application Cluster (RAC).
          */
         readonly oracleSid?: string | ros.IResolvable;
         /**
-         * @Property userName: Source instance access account
+         * @Property userName: The database account of the source database.
+     * **Note**: In most cases, this parameter is required. The permissions that are required for the database account vary with the migration or synchronization scenario.
          */
-        readonly userName: string | ros.IResolvable;
+        readonly userName?: string | ros.IResolvable;
         /**
-         * @Property ownerId: When the source instance is an RDS instance and the source instance is different from the Alibaba Cloud account to which the target instance belongs, this parameter is the UID of the Alibaba Cloud account to which the source RDS instance belongs.
-         */
-        readonly ownerId?: string | ros.IResolvable;
-        /**
-         * @Property instanceId: Source instance ID.
-     * When the value of SourceEndpoint.InstanceType is RDS, this parameter needs to be passed in the RDS instance ID.
-     * When the SourceEndpoint.InstanceType value is ECS, this parameter needs to be passed to the ECS instance ID.
+         * @Property instanceId: The ID of the source instance. If the source instance is an Alibaba Cloud database instance, you must specify the ID of the database instance. For example, 
+     * - If the source instance is an ApsaraDB RDS for MySQL instance, you must specify the ID of the ApsaraDB RDS for MySQL instance. 
+     * - If the source instance is a self-managed database, the value of this parameter varies with the value of SourceEndpointInstanceType.
+     * - If InstanceType is set to ECS, you must specify the ID of the ECS instance.
+     * - If InstanceType is set to DG, you must specify the ID of the database gateway.
+     * - If InstanceType is set to EXPRESS or CEN, you must specify the ID of the VPC that is connected to the source instance.
+     * **Note**: If DestinationEndpointInstanceType is set to CEN, you must also specify the ID of the CEN instance in the Reserve parameter.
          */
         readonly instanceId?: string | ros.IResolvable;
         /**
-         * @Property ip: The connection address of the source instance. Required when the source instance is a self-built database.
+         * @Property ip: The IP address of the source instance. 
+     * **Note**: This parameter is required only when **InstanceType** is set to **OTHER**, **EXPRESS**, **DG**, or **CEN**.
          */
         readonly ip?: string | ros.IResolvable;
         /**
-         * @Property port: The listening port of the source instance, which is required when the source instance is a self-built database.
+         * @Property port: The port number of the source instance.
+     * **Note**: This parameter is required only when the source instance is a self-managed database.
          */
         readonly port?: string | ros.IResolvable;
         /**
-         * @Property databaseName: The database library name used when creating the connection.
+         * @Property vSwitchId: The ID of the vSwitch used for the data shipping link.
+         */
+        readonly vSwitchId?: string | ros.IResolvable;
+        /**
+         * @Property databaseName: The name of the database which contains the objects to be migrated in the source instance.
+     * **Note**: This parameter is required only when the source instance is a PolarDB for PostgreSQL cluster (compatible with Oracle), a PostgreSQL database, or a MongoDB database.
          */
         readonly databaseName?: string | ros.IResolvable;
         /**
-         * @Property instanceType: The instance type of the subscription source instance, including:
-     * RDS: Alibaba Cloud RDS instance
-     * ECS: Self-built database on ECS
-     * PolarDB: PolarDB for MySQL cluster
-     * LocalInstance: self-managed database with a public IP address
-     * Express: self-managed database that is connected over Express Connect
-     * CEN: self-managed database that is connected over Cloud Enterprise Network (CEN)
-     * dg: self-managed database that is connected over Database Gateway
+         * @Property engineName: The engine of the source database. Valid values: **MySQL**, **PostgreSQL**, and **Oracle**.
+     * **Note**: If the source database is a self-managed database, you must specify this parameter.
          */
-        readonly instanceType: string | ros.IResolvable;
+        readonly engineName?: string | ros.IResolvable;
         /**
-         * @Property password: Source instance password
+         * @Property role: The name of the Resource Access Management (RAM) role configured for the Alibaba Cloud account that owns the source instance.
+     * **Note**: This parameter is required when you migrate or synchronize data across different Alibaba Cloud accounts.
          */
-        readonly password: string | ros.IResolvable;
+        readonly role?: string | ros.IResolvable;
+        /**
+         * @Property ownerId: The ID of the Alibaba Cloud account to which the source database belongs.
+     * **Note**: You can specify this parameter to migrate or synchronize data across different Alibaba Cloud accounts. In this case, you must specify **Role**.
+         */
+        readonly ownerId?: string | ros.IResolvable;
+        /**
+         * @Property region: The ID of the region in which the source instance resides.
+     * **Note**: If the source instance is an Alibaba Cloud database instance, this parameter is required.
+         */
+        readonly region?: string | ros.IResolvable;
+        /**
+         * @Property instanceType: The type of the source instance. Valid values:
+     * - **RDS**: ApsaraDB RDS for MySQL instance
+     * - **PolarDB**: PolarDB for MySQL cluster
+     * - **DRDS**: PolarDB-X 1.0 instance
+     * - **LocalInstance**: self-managed database with a public IP address
+     * - **ECS**: self-managed database hosted on an Elastic Compute Service (ECS) instance
+     * - **Express**: self-managed database connected over Express Connect
+     * - **CEN**: self-managed database connected over Cloud Enterprise Network (CEN)
+     * - **dg**: self-managed database connected over Database Gateway
+         */
+        readonly instanceType?: string | ros.IResolvable;
+        /**
+         * @Property password: The password of the source database account.
+         */
+        readonly password?: string | ros.IResolvable;
     }
 }
 /**
@@ -1283,63 +2114,70 @@ export namespace RosSubscriptionInstance {
  *
  * @returns the result of the validation.
  */
-function RosSubscriptionInstance_SourceEndpointPropertyValidator(properties: any): ros.ValidationResult {
+function RosSubscriptionJob2_SourceEndpointPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('role', ros.validateString)(properties.role));
     errors.collect(ros.propertyValidator('oracleSid', ros.validateString)(properties.oracleSid));
-    errors.collect(ros.propertyValidator('userName', ros.requiredValidator)(properties.userName));
     errors.collect(ros.propertyValidator('userName', ros.validateString)(properties.userName));
-    errors.collect(ros.propertyValidator('ownerId', ros.validateString)(properties.ownerId));
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
     errors.collect(ros.propertyValidator('ip', ros.validateString)(properties.ip));
     errors.collect(ros.propertyValidator('port', ros.validateString)(properties.port));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('databaseName', ros.validateString)(properties.databaseName));
-    errors.collect(ros.propertyValidator('instanceType', ros.requiredValidator)(properties.instanceType));
+    errors.collect(ros.propertyValidator('engineName', ros.validateString)(properties.engineName));
+    errors.collect(ros.propertyValidator('role', ros.validateString)(properties.role));
+    errors.collect(ros.propertyValidator('ownerId', ros.validateString)(properties.ownerId));
+    errors.collect(ros.propertyValidator('region', ros.validateString)(properties.region));
     errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
-    errors.collect(ros.propertyValidator('password', ros.requiredValidator)(properties.password));
     errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
     return errors.wrap('supplied properties not correct for "SourceEndpointProperty"');
 }
 
 /**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance.SourceEndpoint` resource
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionJob2.SourceEndpoint` resource
  *
  * @param properties - the TypeScript properties of a `SourceEndpointProperty`
  *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance.SourceEndpoint` resource.
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionJob2.SourceEndpoint` resource.
  */
 // @ts-ignore TS6133
-function rosSubscriptionInstanceSourceEndpointPropertyToRosTemplate(properties: any): any {
+function rosSubscriptionJob2SourceEndpointPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
-    RosSubscriptionInstance_SourceEndpointPropertyValidator(properties).assertSuccess();
+    RosSubscriptionJob2_SourceEndpointPropertyValidator(properties).assertSuccess();
     return {
-      Role: ros.stringToRosTemplate(properties.role),
       OracleSID: ros.stringToRosTemplate(properties.oracleSid),
       UserName: ros.stringToRosTemplate(properties.userName),
-      OwnerID: ros.stringToRosTemplate(properties.ownerId),
       InstanceID: ros.stringToRosTemplate(properties.instanceId),
       IP: ros.stringToRosTemplate(properties.ip),
       Port: ros.stringToRosTemplate(properties.port),
+      VSwitchID: ros.stringToRosTemplate(properties.vSwitchId),
       DatabaseName: ros.stringToRosTemplate(properties.databaseName),
+      EngineName: ros.stringToRosTemplate(properties.engineName),
+      Role: ros.stringToRosTemplate(properties.role),
+      OwnerID: ros.stringToRosTemplate(properties.ownerId),
+      Region: ros.stringToRosTemplate(properties.region),
       InstanceType: ros.stringToRosTemplate(properties.instanceType),
       Password: ros.stringToRosTemplate(properties.password),
     };
 }
 
-export namespace RosSubscriptionInstance {
+export namespace RosSubscriptionJob2 {
     /**
      * @stability external
      */
     export interface SubscriptionDataTypeProperty {
         /**
-         * @Property dml: Whether to subscribe to DML type data.
+         * @Property dml: Specifies whether to track DML statements. Default value: true. Valid values:
+     * - **true**: tracks DML statements.
+     * - **false**: does not track DML statements.
          */
-        readonly dml: boolean | ros.IResolvable;
+        readonly dml?: boolean | ros.IResolvable;
         /**
-         * @Property ddl: Whether to subscribe to DDL type data.
+         * @Property ddl: Specifies whether to track DDL statements. Default value: true. Valid values:
+     * - **true**: tracks DDL statements.
+     * - **false**: does not track DDL statements.
          */
-        readonly ddl: boolean | ros.IResolvable;
+        readonly ddl?: boolean | ros.IResolvable;
     }
 }
 /**
@@ -1349,46 +2187,52 @@ export namespace RosSubscriptionInstance {
  *
  * @returns the result of the validation.
  */
-function RosSubscriptionInstance_SubscriptionDataTypePropertyValidator(properties: any): ros.ValidationResult {
+function RosSubscriptionJob2_SubscriptionDataTypePropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('dml', ros.requiredValidator)(properties.dml));
     errors.collect(ros.propertyValidator('dml', ros.validateBoolean)(properties.dml));
-    errors.collect(ros.propertyValidator('ddl', ros.requiredValidator)(properties.ddl));
     errors.collect(ros.propertyValidator('ddl', ros.validateBoolean)(properties.ddl));
     return errors.wrap('supplied properties not correct for "SubscriptionDataTypeProperty"');
 }
 
 /**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance.SubscriptionDataType` resource
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionJob2.SubscriptionDataType` resource
  *
  * @param properties - the TypeScript properties of a `SubscriptionDataTypeProperty`
  *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance.SubscriptionDataType` resource.
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionJob2.SubscriptionDataType` resource.
  */
 // @ts-ignore TS6133
-function rosSubscriptionInstanceSubscriptionDataTypePropertyToRosTemplate(properties: any): any {
+function rosSubscriptionJob2SubscriptionDataTypePropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
-    RosSubscriptionInstance_SubscriptionDataTypePropertyValidator(properties).assertSuccess();
+    RosSubscriptionJob2_SubscriptionDataTypePropertyValidator(properties).assertSuccess();
     return {
       DML: ros.booleanToRosTemplate(properties.dml),
       DDL: ros.booleanToRosTemplate(properties.ddl),
     };
 }
 
-export namespace RosSubscriptionInstance {
+export namespace RosSubscriptionJob2 {
     /**
      * @stability external
      */
     export interface SubscriptionInstanceProperty {
         /**
-         * @Property vpcId: undefined
+         * @Property vpcId: The ID of the VPC in which the change tracking instance is deployed.
+     * **Note**: This parameter takes effect and is required only when **NetworkType** is set to **vpc**.
          */
-        readonly vpcId: string | ros.IResolvable;
+        readonly vpcId?: string | ros.IResolvable;
         /**
-         * @Property vSwitchId: undefined
+         * @Property networkType: The network type of the change tracking task. Set the value to **vpc**. A value of vpc indicates the Virtual Private Cloud (VPC) network type.**Note**:
+     * - To use the new version of the change tracking feature, you must specify **NetworkType**. You must also specify **VPCId** and **VSwitchID**. If you do not specify **NetworkType**, the previous version of the change tracking feature is used.
+     * - The previous version of the change tracking feature supports self-managed MySQL databases, ApsaraDB RDS for MySQL instances, and PolarDB-X 1.0 instances. The new version of the change tracking feature supports self-managed MySQL databases, ApsaraDB RDS for MySQL instances, PolarDB for MySQL clusters, and Oracle databases.
          */
-        readonly vSwitchId: string | ros.IResolvable;
+        readonly networkType: string | ros.IResolvable;
+        /**
+         * @Property vSwitchId: The ID of the vSwitch in the specified VPC.
+     * **Note**: This parameter takes effect and is required only when **NetworkType** is set to **vpc**.
+         */
+        readonly vSwitchId?: string | ros.IResolvable;
     }
 }
 /**
@@ -1398,516 +2242,846 @@ export namespace RosSubscriptionInstance {
  *
  * @returns the result of the validation.
  */
-function RosSubscriptionInstance_SubscriptionInstancePropertyValidator(properties: any): ros.ValidationResult {
+function RosSubscriptionJob2_SubscriptionInstancePropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
-    errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('networkType', ros.requiredValidator)(properties.networkType));
+    errors.collect(ros.propertyValidator('networkType', ros.validateString)(properties.networkType));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     return errors.wrap('supplied properties not correct for "SubscriptionInstanceProperty"');
 }
 
 /**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance.SubscriptionInstance` resource
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionJob2.SubscriptionInstance` resource
  *
  * @param properties - the TypeScript properties of a `SubscriptionInstanceProperty`
  *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance.SubscriptionInstance` resource.
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionJob2.SubscriptionInstance` resource.
  */
 // @ts-ignore TS6133
-function rosSubscriptionInstanceSubscriptionInstancePropertyToRosTemplate(properties: any): any {
+function rosSubscriptionJob2SubscriptionInstancePropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
-    RosSubscriptionInstance_SubscriptionInstancePropertyValidator(properties).assertSuccess();
+    RosSubscriptionJob2_SubscriptionInstancePropertyValidator(properties).assertSuccess();
     return {
       VPCId: ros.stringToRosTemplate(properties.vpcId),
+      NetworkType: ros.stringToRosTemplate(properties.networkType),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
     };
 }
 
-export namespace RosSubscriptionInstance {
-    /**
-     * @stability external
-     */
-    export interface TagsProperty {
-        /**
-         * @Property value: undefined
-         */
-        readonly value?: string | ros.IResolvable;
-        /**
-         * @Property key: undefined
-         */
-        readonly key: string | ros.IResolvable;
-    }
-}
 /**
- * Determine whether the given properties match those of a `TagsProperty`
+ * Properties for defining a `RosSynchronizationJob2`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-synchronizationjob2
+ */
+export interface RosSynchronizationJob2Props {
+
+    /**
+     * @Property dataInitialization: Specifies whether to perform full data migration or full data synchronization. Default value: **true**. Valid values: **true** and **false**.
+     */
+    readonly dataInitialization: boolean | ros.IResolvable;
+
+    /**
+     * @Property dataSynchronization: Specifies whether to perform incremental data migration or incremental data synchronization. Default value: **false**. Valid values: **true** and **false**.
+     */
+    readonly dataSynchronization: boolean | ros.IResolvable;
+
+    /**
+     * @Property dbList: The objects that you want to migrate or synchronize.
+     */
+    readonly dbList: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property destinationEndpoint: Destination instance configuration.
+     */
+    readonly destinationEndpoint: RosSynchronizationJob2.DestinationEndpointProperty | ros.IResolvable;
+
+    /**
+     * @Property dtsJobName: The name of the DTS instance.
+     */
+    readonly dtsJobName: string | ros.IResolvable;
+
+    /**
+     * @Property sourceEndpoint: Source instance configuration.
+     */
+    readonly sourceEndpoint: RosSynchronizationJob2.SourceEndpointProperty | ros.IResolvable;
+
+    /**
+     * @Property structureInitialization: Specifies whether to perform schema migration or schema synchronization. Default value: true. Valid values: **true** and **false**.
+     */
+    readonly structureInitialization: boolean | ros.IResolvable;
+
+    /**
+     * @Property checkpoint: The start offset of incremental data migration or synchronization. This value is a UNIX timestamp representing the number of seconds that have elapsed since January 1, 1970, 00:00:00 UTC.
+     */
+    readonly checkpoint?: string | ros.IResolvable;
+
+    /**
+     * @Property dataCheckConfigure: The data verification task for a data migration or synchronization instance.
+     */
+    readonly dataCheckConfigure?: RosSynchronizationJob2.DataCheckConfigureProperty | ros.IResolvable;
+
+    /**
+     * @Property dedicatedClusterId: The ID of the DTS dedicated cluster on which the task runs.
+     */
+    readonly dedicatedClusterId?: string | ros.IResolvable;
+
+    /**
+     * @Property delayNotice: Specifies whether to monitor the task latency. Valid values: **true** and **false**
+     */
+    readonly delayNotice?: boolean | ros.IResolvable;
+
+    /**
+     * @Property delayPhone: The mobile numbers that receive latency-related alerts. Separate multiple mobile numbers with commas (,).
+     * **Note**: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+     */
+    readonly delayPhone?: string | ros.IResolvable;
+
+    /**
+     * @Property delayRuleTime: The threshold for latency alerts. Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
+     */
+    readonly delayRuleTime?: number | ros.IResolvable;
+
+    /**
+     * @Property disasterRecoveryJob: Specifies whether the instance is a disaster recovery instance. Valid values: **true** and **false**
+     */
+    readonly disasterRecoveryJob?: boolean | ros.IResolvable;
+
+    /**
+     * @Property dtsBisLabel: The environment tag of the DTS instance. Valid values: **normal** and **online**.
+     */
+    readonly dtsBisLabel?: string | ros.IResolvable;
+
+    /**
+     * @Property dtsInstanceId: The ID of the DTS instance.
+     */
+    readonly dtsInstanceId?: string | ros.IResolvable;
+
+    /**
+     * @Property dtsJobId: The ID of the DTS task.
+     */
+    readonly dtsJobId?: string | ros.IResolvable;
+
+    /**
+     * @Property errorNotice: Specifies whether to monitor the task status. Valid values: **true** and **false**.
+     */
+    readonly errorNotice?: boolean | ros.IResolvable;
+
+    /**
+     * @Property errorPhone: The mobile numbers that receive status-related alerts. Separate multiple mobile numbers with commas (,).
+     * **Note**: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+     */
+    readonly errorPhone?: string | ros.IResolvable;
+
+    /**
+     * @Property fileOssUrl: The URL of the Object Storage Service (OSS) bucket that stores the files related to the DTS task.
+     */
+    readonly fileOssUrl?: string | ros.IResolvable;
+
+    /**
+     * @Property reserve: The reserved parameter of DTS. You can specify this parameter to add more configurations of the source or destination instance to the DTS task. For example, you can specify the data storage format of the destination Kafka database and the ID of the CEN instance.
+     */
+    readonly reserve?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property status: The status of the resource. Valid values:
+     * - **Synchronizing**: Start the task.
+     * - **Suspending**: Suspend the task.
+     * - **Stopping**: Stop the task.
+     */
+    readonly status?: string | ros.IResolvable;
+
+    /**
+     * @Property synchronizationDirection: The synchronization direction. Default value: Forward. Valid values:
+     * - **Forward**: Data is synchronized from the source database to the destination database.
+     * - **Reverse**: Data is synchronized from the destination database to the source database.
+     * **Note**: The default value is **Forward**.
+     * The value Reverse takes effect only if the topology of the data synchronization task is two-way synchronization.
+     */
+    readonly synchronizationDirection?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSynchronizationJob2Props`
  *
- * @param properties - the TypeScript properties of a `TagsProperty`
+ * @param properties - the TypeScript properties of a `RosSynchronizationJob2Props`
  *
  * @returns the result of the validation.
  */
-function RosSubscriptionInstance_TagsPropertyValidator(properties: any): ros.ValidationResult {
+function RosSynchronizationJob2PropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
-    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
-    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
-    return errors.wrap('supplied properties not correct for "TagsProperty"');
-}
-
-/**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance.Tags` resource
- *
- * @param properties - the TypeScript properties of a `TagsProperty`
- *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance.Tags` resource.
- */
-// @ts-ignore TS6133
-function rosSubscriptionInstanceTagsPropertyToRosTemplate(properties: any): any {
-    if (!ros.canInspect(properties)) { return properties; }
-    RosSubscriptionInstance_TagsPropertyValidator(properties).assertSuccess();
-    return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
-    };
-}
-
-/**
- * Properties for defining a `ALIYUN::DTS::SynchronizationJob`
- */
-export interface RosSynchronizationJobProps {
-
-    /**
-     * @Property destinationEndpoint: Migration target configuration
-     */
-    readonly destinationEndpoint: RosSynchronizationJob.DestinationEndpointProperty | ros.IResolvable;
-
-    /**
-     * @Property destRegion: Region where the synchronization target instance is located.
-     */
-    readonly destRegion: string | ros.IResolvable;
-
-    /**
-     * @Property sourceEndpoint: Migration source configuration
-     */
-    readonly sourceEndpoint: RosSynchronizationJob.SourceEndpointProperty | ros.IResolvable;
-
-    /**
-     * @Property sourceRegion: Region where the synchronization source instance is located.
-     */
-    readonly sourceRegion: string | ros.IResolvable;
-
-    /**
-     * @Property synchronizationJobClass: Synchronous instance specifications, which can be:
-     * micro, small, medium, large and so on. The default value is: small
-     */
-    readonly synchronizationJobClass: string | ros.IResolvable;
-
-    /**
-     * @Property dataInitialization: Whether to perform full data initialization before synchronization. The values include:true: means full data initialization
-     * false: no full data initialization
-     * The default value is: true
-     */
-    readonly dataInitialization?: boolean | ros.IResolvable;
-
-    /**
-     * @Property networkType: When synchronization geographies, the type of data transmission network used. Value include: Internet, Intranet. The default value is: Internet
-     */
-    readonly networkType?: string | ros.IResolvable;
-
-    /**
-     * @Property payType: Payment type, which include:
-     * Postpaid: postpaid type, Prepaid: Prepaid type. Default is Postpaid
-     */
-    readonly payType?: string | ros.IResolvable;
-
-    /**
-     * @Property period: If prepaid payment type, then the parameters specified in the purchase package instance or instances as examples of a monthly subscription, which can be:
-     * Year: Annual, Month: monthly
-     */
-    readonly period?: string | ros.IResolvable;
-
-    /**
-     * @Property structureInitialization: Whether to initialize the structure object before synchronization. The values include:true: indicates that the structure object is initialized
-     * false: no result object initialization
-     * The default value is: true
-     */
-    readonly structureInitialization?: boolean | ros.IResolvable;
-
-    /**
-     * @Property synchronizationObjects: Objects that need to be synchronized
-     */
-    readonly synchronizationObjects?: Array<RosSynchronizationJob.SynchronizationObjectsProperty | ros.IResolvable> | ros.IResolvable;
-
-    /**
-     * @Property topology: Synchronous topology, the value includes: oneway, bidirectional.the default value is: oneway, only MySQL-> MySQL synchronization, this parameter can receive the value bidirectional
-     */
-    readonly topology?: string | ros.IResolvable;
-
-    /**
-     * @Property usedTime: f the payment type is prepaid, then this parameter is the length of the purchase, and parameters such as 1, 2, 3 can be passed in as needed
-     */
-    readonly usedTime?: number | ros.IResolvable;
-}
-
-/**
- * Determine whether the given properties match those of a `RosSynchronizationJobProps`
- *
- * @param properties - the TypeScript properties of a `RosSynchronizationJobProps`
- *
- * @returns the result of the validation.
- */
-function RosSynchronizationJobPropsValidator(properties: any): ros.ValidationResult {
-    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
-    const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('synchronizationObjects', ros.listValidator(RosSynchronizationJob_SynchronizationObjectsPropertyValidator))(properties.synchronizationObjects));
-    if(properties.period && (typeof properties.period) !== 'object') {
-        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
-          data: properties.period,
-          allowedValues: ["Year","Month"],
+    if(properties.status && (typeof properties.status) !== 'object') {
+        errors.collect(ros.propertyValidator('status', ros.validateAllowedValues)({
+          data: properties.status,
+          allowedValues: ["Synchronizing","Suspending","Stopping"],
         }));
     }
-    errors.collect(ros.propertyValidator('period', ros.validateString)(properties.period));
-    if(properties.payType && (typeof properties.payType) !== 'object') {
-        errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
-          data: properties.payType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
-    errors.collect(ros.propertyValidator('topology', ros.validateString)(properties.topology));
-    errors.collect(ros.propertyValidator('sourceRegion', ros.requiredValidator)(properties.sourceRegion));
-    errors.collect(ros.propertyValidator('sourceRegion', ros.validateString)(properties.sourceRegion));
+    errors.collect(ros.propertyValidator('status', ros.validateString)(properties.status));
+    errors.collect(ros.propertyValidator('reserve', ros.hashValidator(ros.validateAny))(properties.reserve));
+    errors.collect(ros.propertyValidator('dataSynchronization', ros.requiredValidator)(properties.dataSynchronization));
+    errors.collect(ros.propertyValidator('dataSynchronization', ros.validateBoolean)(properties.dataSynchronization));
+    errors.collect(ros.propertyValidator('delayPhone', ros.validateString)(properties.delayPhone));
+    errors.collect(ros.propertyValidator('dedicatedClusterId', ros.validateString)(properties.dedicatedClusterId));
+    errors.collect(ros.propertyValidator('errorNotice', ros.validateBoolean)(properties.errorNotice));
+    errors.collect(ros.propertyValidator('dtsJobName', ros.requiredValidator)(properties.dtsJobName));
+    errors.collect(ros.propertyValidator('dtsJobName', ros.validateString)(properties.dtsJobName));
+    errors.collect(ros.propertyValidator('delayRuleTime', ros.validateNumber)(properties.delayRuleTime));
+    errors.collect(ros.propertyValidator('dtsInstanceId', ros.validateString)(properties.dtsInstanceId));
+    errors.collect(ros.propertyValidator('dbList', ros.requiredValidator)(properties.dbList));
+    errors.collect(ros.propertyValidator('dbList', ros.hashValidator(ros.validateAny))(properties.dbList));
+    errors.collect(ros.propertyValidator('fileOssUrl', ros.validateString)(properties.fileOssUrl));
+    errors.collect(ros.propertyValidator('dataCheckConfigure', RosSynchronizationJob2_DataCheckConfigurePropertyValidator)(properties.dataCheckConfigure));
+    errors.collect(ros.propertyValidator('dtsBisLabel', ros.validateString)(properties.dtsBisLabel));
+    errors.collect(ros.propertyValidator('checkpoint', ros.validateString)(properties.checkpoint));
+    errors.collect(ros.propertyValidator('disasterRecoveryJob', ros.validateBoolean)(properties.disasterRecoveryJob));
+    errors.collect(ros.propertyValidator('dtsJobId', ros.validateString)(properties.dtsJobId));
+    errors.collect(ros.propertyValidator('delayNotice', ros.validateBoolean)(properties.delayNotice));
+    errors.collect(ros.propertyValidator('dataInitialization', ros.requiredValidator)(properties.dataInitialization));
     errors.collect(ros.propertyValidator('dataInitialization', ros.validateBoolean)(properties.dataInitialization));
-    if(properties.networkType && (typeof properties.networkType) !== 'object') {
-        errors.collect(ros.propertyValidator('networkType', ros.validateAllowedValues)({
-          data: properties.networkType,
-          allowedValues: ["Internet","Intranet"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('networkType', ros.validateString)(properties.networkType));
     errors.collect(ros.propertyValidator('destinationEndpoint', ros.requiredValidator)(properties.destinationEndpoint));
-    errors.collect(ros.propertyValidator('destinationEndpoint', RosSynchronizationJob_DestinationEndpointPropertyValidator)(properties.destinationEndpoint));
+    errors.collect(ros.propertyValidator('destinationEndpoint', RosSynchronizationJob2_DestinationEndpointPropertyValidator)(properties.destinationEndpoint));
     errors.collect(ros.propertyValidator('sourceEndpoint', ros.requiredValidator)(properties.sourceEndpoint));
-    errors.collect(ros.propertyValidator('sourceEndpoint', RosSynchronizationJob_SourceEndpointPropertyValidator)(properties.sourceEndpoint));
-    errors.collect(ros.propertyValidator('usedTime', ros.validateNumber)(properties.usedTime));
+    errors.collect(ros.propertyValidator('sourceEndpoint', RosSynchronizationJob2_SourceEndpointPropertyValidator)(properties.sourceEndpoint));
+    errors.collect(ros.propertyValidator('errorPhone', ros.validateString)(properties.errorPhone));
+    errors.collect(ros.propertyValidator('structureInitialization', ros.requiredValidator)(properties.structureInitialization));
     errors.collect(ros.propertyValidator('structureInitialization', ros.validateBoolean)(properties.structureInitialization));
-    errors.collect(ros.propertyValidator('synchronizationJobClass', ros.requiredValidator)(properties.synchronizationJobClass));
-    errors.collect(ros.propertyValidator('synchronizationJobClass', ros.validateString)(properties.synchronizationJobClass));
-    errors.collect(ros.propertyValidator('destRegion', ros.requiredValidator)(properties.destRegion));
-    errors.collect(ros.propertyValidator('destRegion', ros.validateString)(properties.destRegion));
-    return errors.wrap('supplied properties not correct for "RosSynchronizationJobProps"');
+    errors.collect(ros.propertyValidator('synchronizationDirection', ros.validateString)(properties.synchronizationDirection));
+    return errors.wrap('supplied properties not correct for "RosSynchronizationJob2Props"');
 }
 
 /**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::SynchronizationJob` resource
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::SynchronizationJob2` resource
  *
- * @param properties - the TypeScript properties of a `RosSynchronizationJobProps`
+ * @param properties - the TypeScript properties of a `RosSynchronizationJob2Props`
  *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::SynchronizationJob` resource.
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::SynchronizationJob2` resource.
  */
 // @ts-ignore TS6133
-function rosSynchronizationJobPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+function rosSynchronizationJob2PropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
     if (!ros.canInspect(properties)) { return properties; }
     if(enableResourcePropertyConstraint) {
-        RosSynchronizationJobPropsValidator(properties).assertSuccess();
+        RosSynchronizationJob2PropsValidator(properties).assertSuccess();
     }
     return {
-      DestinationEndpoint: rosSynchronizationJobDestinationEndpointPropertyToRosTemplate(properties.destinationEndpoint),
-      DestRegion: ros.stringToRosTemplate(properties.destRegion),
-      SourceEndpoint: rosSynchronizationJobSourceEndpointPropertyToRosTemplate(properties.sourceEndpoint),
-      SourceRegion: ros.stringToRosTemplate(properties.sourceRegion),
-      SynchronizationJobClass: ros.stringToRosTemplate(properties.synchronizationJobClass),
       DataInitialization: ros.booleanToRosTemplate(properties.dataInitialization),
-      NetworkType: ros.stringToRosTemplate(properties.networkType),
-      PayType: ros.stringToRosTemplate(properties.payType),
-      Period: ros.stringToRosTemplate(properties.period),
+      DataSynchronization: ros.booleanToRosTemplate(properties.dataSynchronization),
+      DbList: ros.hashMapper(ros.objectToRosTemplate)(properties.dbList),
+      DestinationEndpoint: rosSynchronizationJob2DestinationEndpointPropertyToRosTemplate(properties.destinationEndpoint),
+      DtsJobName: ros.stringToRosTemplate(properties.dtsJobName),
+      SourceEndpoint: rosSynchronizationJob2SourceEndpointPropertyToRosTemplate(properties.sourceEndpoint),
       StructureInitialization: ros.booleanToRosTemplate(properties.structureInitialization),
-      SynchronizationObjects: ros.listMapper(rosSynchronizationJobSynchronizationObjectsPropertyToRosTemplate)(properties.synchronizationObjects),
-      Topology: ros.stringToRosTemplate(properties.topology),
-      UsedTime: ros.numberToRosTemplate(properties.usedTime),
+      Checkpoint: ros.stringToRosTemplate(properties.checkpoint),
+      DataCheckConfigure: rosSynchronizationJob2DataCheckConfigurePropertyToRosTemplate(properties.dataCheckConfigure),
+      DedicatedClusterId: ros.stringToRosTemplate(properties.dedicatedClusterId),
+      DelayNotice: ros.booleanToRosTemplate(properties.delayNotice),
+      DelayPhone: ros.stringToRosTemplate(properties.delayPhone),
+      DelayRuleTime: ros.numberToRosTemplate(properties.delayRuleTime),
+      DisasterRecoveryJob: ros.booleanToRosTemplate(properties.disasterRecoveryJob),
+      DtsBisLabel: ros.stringToRosTemplate(properties.dtsBisLabel),
+      DtsInstanceId: ros.stringToRosTemplate(properties.dtsInstanceId),
+      DtsJobId: ros.stringToRosTemplate(properties.dtsJobId),
+      ErrorNotice: ros.booleanToRosTemplate(properties.errorNotice),
+      ErrorPhone: ros.stringToRosTemplate(properties.errorPhone),
+      FileOssUrl: ros.stringToRosTemplate(properties.fileOssUrl),
+      Reserve: ros.hashMapper(ros.objectToRosTemplate)(properties.reserve),
+      Status: ros.stringToRosTemplate(properties.status),
+      SynchronizationDirection: ros.stringToRosTemplate(properties.synchronizationDirection),
     };
 }
 
 /**
- * A ROS template type:  `ALIYUN::DTS::SynchronizationJob`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::SynchronizationJob2`DATASOURCE::DTS::MigrationInstances is used to query information about Data Transmission Service (DTS) tasks.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SynchronizationJob2` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-synchronizationjob2
  */
-export class RosSynchronizationJob extends ros.RosResource {
+export class RosSynchronizationJob2 extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
-    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DTS::SynchronizationJob";
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DTS::SynchronizationJob2";
 
     /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
+     * @Attribute DtsInstanceId: The ID of the DTS instance.
      */
+    public readonly attrDtsInstanceId: ros.IResolvable;
 
     /**
-     * @Attribute SynchronizationJobId: Synchronization instance ID
+     * @Attribute DtsJobId: The ID of the task.
      */
-    public readonly attrSynchronizationJobId: ros.IResolvable;
+    public readonly attrDtsJobId: ros.IResolvable;
+
+    /**
+     * @Attribute DtsJobName: The name of the DTS job.
+     */
+    public readonly attrDtsJobName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
 
     /**
-     * @Property destinationEndpoint: Migration target configuration
+     * @Property dataInitialization: Specifies whether to perform full data migration or full data synchronization. Default value: **true**. Valid values: **true** and **false**.
      */
-    public destinationEndpoint: RosSynchronizationJob.DestinationEndpointProperty | ros.IResolvable;
+    public dataInitialization: boolean | ros.IResolvable;
 
     /**
-     * @Property destRegion: Region where the synchronization target instance is located.
+     * @Property dataSynchronization: Specifies whether to perform incremental data migration or incremental data synchronization. Default value: **false**. Valid values: **true** and **false**.
      */
-    public destRegion: string | ros.IResolvable;
+    public dataSynchronization: boolean | ros.IResolvable;
 
     /**
-     * @Property sourceEndpoint: Migration source configuration
+     * @Property dbList: The objects that you want to migrate or synchronize.
      */
-    public sourceEndpoint: RosSynchronizationJob.SourceEndpointProperty | ros.IResolvable;
+    public dbList: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
-     * @Property sourceRegion: Region where the synchronization source instance is located.
+     * @Property destinationEndpoint: Destination instance configuration.
      */
-    public sourceRegion: string | ros.IResolvable;
+    public destinationEndpoint: RosSynchronizationJob2.DestinationEndpointProperty | ros.IResolvable;
 
     /**
-     * @Property synchronizationJobClass: Synchronous instance specifications, which can be:
-     * micro, small, medium, large and so on. The default value is: small
+     * @Property dtsJobName: The name of the DTS instance.
      */
-    public synchronizationJobClass: string | ros.IResolvable;
+    public dtsJobName: string | ros.IResolvable;
 
     /**
-     * @Property dataInitialization: Whether to perform full data initialization before synchronization. The values include:true: means full data initialization
-     * false: no full data initialization
-     * The default value is: true
+     * @Property sourceEndpoint: Source instance configuration.
      */
-    public dataInitialization: boolean | ros.IResolvable | undefined;
+    public sourceEndpoint: RosSynchronizationJob2.SourceEndpointProperty | ros.IResolvable;
 
     /**
-     * @Property networkType: When synchronization geographies, the type of data transmission network used. Value include: Internet, Intranet. The default value is: Internet
+     * @Property structureInitialization: Specifies whether to perform schema migration or schema synchronization. Default value: true. Valid values: **true** and **false**.
      */
-    public networkType: string | ros.IResolvable | undefined;
+    public structureInitialization: boolean | ros.IResolvable;
 
     /**
-     * @Property payType: Payment type, which include:
-     * Postpaid: postpaid type, Prepaid: Prepaid type. Default is Postpaid
+     * @Property checkpoint: The start offset of incremental data migration or synchronization. This value is a UNIX timestamp representing the number of seconds that have elapsed since January 1, 1970, 00:00:00 UTC.
      */
-    public payType: string | ros.IResolvable | undefined;
+    public checkpoint: string | ros.IResolvable | undefined;
 
     /**
-     * @Property period: If prepaid payment type, then the parameters specified in the purchase package instance or instances as examples of a monthly subscription, which can be:
-     * Year: Annual, Month: monthly
+     * @Property dataCheckConfigure: The data verification task for a data migration or synchronization instance.
      */
-    public period: string | ros.IResolvable | undefined;
+    public dataCheckConfigure: RosSynchronizationJob2.DataCheckConfigureProperty | ros.IResolvable | undefined;
 
     /**
-     * @Property structureInitialization: Whether to initialize the structure object before synchronization. The values include:true: indicates that the structure object is initialized
-     * false: no result object initialization
-     * The default value is: true
+     * @Property dedicatedClusterId: The ID of the DTS dedicated cluster on which the task runs.
      */
-    public structureInitialization: boolean | ros.IResolvable | undefined;
+    public dedicatedClusterId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property synchronizationObjects: Objects that need to be synchronized
+     * @Property delayNotice: Specifies whether to monitor the task latency. Valid values: **true** and **false**
      */
-    public synchronizationObjects: Array<RosSynchronizationJob.SynchronizationObjectsProperty | ros.IResolvable> | ros.IResolvable | undefined;
+    public delayNotice: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property topology: Synchronous topology, the value includes: oneway, bidirectional.the default value is: oneway, only MySQL-> MySQL synchronization, this parameter can receive the value bidirectional
+     * @Property delayPhone: The mobile numbers that receive latency-related alerts. Separate multiple mobile numbers with commas (,).
+     * **Note**: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
      */
-    public topology: string | ros.IResolvable | undefined;
+    public delayPhone: string | ros.IResolvable | undefined;
 
     /**
-     * @Property usedTime: f the payment type is prepaid, then this parameter is the length of the purchase, and parameters such as 1, 2, 3 can be passed in as needed
+     * @Property delayRuleTime: The threshold for latency alerts. Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
      */
-    public usedTime: number | ros.IResolvable | undefined;
+    public delayRuleTime: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::DTS::SynchronizationJob`.
-     *
+     * @Property disasterRecoveryJob: Specifies whether the instance is a disaster recovery instance. Valid values: **true** and **false**
+     */
+    public disasterRecoveryJob: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property dtsBisLabel: The environment tag of the DTS instance. Valid values: **normal** and **online**.
+     */
+    public dtsBisLabel: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property dtsInstanceId: The ID of the DTS instance.
+     */
+    public dtsInstanceId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property dtsJobId: The ID of the DTS task.
+     */
+    public dtsJobId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property errorNotice: Specifies whether to monitor the task status. Valid values: **true** and **false**.
+     */
+    public errorNotice: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property errorPhone: The mobile numbers that receive status-related alerts. Separate multiple mobile numbers with commas (,).
+     * **Note**: This parameter is available only for users of the China site (aliyun.com). Only mobile numbers in the Chinese mainland are supported. You can specify up to 10 mobile numbers. Users of the international site (alibabacloud.com) cannot receive alerts by using mobile numbers, but can configure alert rules for DTS tasks in the CloudMonitor console.
+     */
+    public errorPhone: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property fileOssUrl: The URL of the Object Storage Service (OSS) bucket that stores the files related to the DTS task.
+     */
+    public fileOssUrl: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property reserve: The reserved parameter of DTS. You can specify this parameter to add more configurations of the source or destination instance to the DTS task. For example, you can specify the data storage format of the destination Kafka database and the ID of the CEN instance.
+     */
+    public reserve: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @Property status: The status of the resource. Valid values:
+     * - **Synchronizing**: Start the task.
+     * - **Suspending**: Suspend the task.
+     * - **Stopping**: Stop the task.
+     */
+    public status: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property synchronizationDirection: The synchronization direction. Default value: Forward. Valid values:
+     * - **Forward**: Data is synchronized from the source database to the destination database.
+     * - **Reverse**: Data is synchronized from the destination database to the source database.
+     * **Note**: The default value is **Forward**.
+     * The value Reverse takes effect only if the topology of the data synchronization task is two-way synchronization.
+     */
+    public synchronizationDirection: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
      */
-    constructor(scope: ros.Construct, id: string, props: RosSynchronizationJobProps, enableResourcePropertyConstraint: boolean) {
-        super(scope, id, { type: RosSynchronizationJob.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrSynchronizationJobId = this.getAtt('SynchronizationJobId');
+    constructor(scope: ros.Construct, id: string, props: RosSynchronizationJob2Props, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSynchronizationJob2.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDtsInstanceId = this.getAtt('DtsInstanceId');
+        this.attrDtsJobId = this.getAtt('DtsJobId');
+        this.attrDtsJobName = this.getAtt('DtsJobName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-        this.destinationEndpoint = props.destinationEndpoint;
-        this.destRegion = props.destRegion;
-        this.sourceEndpoint = props.sourceEndpoint;
-        this.sourceRegion = props.sourceRegion;
-        this.synchronizationJobClass = props.synchronizationJobClass;
         this.dataInitialization = props.dataInitialization;
-        this.networkType = props.networkType;
-        this.payType = props.payType;
-        this.period = props.period;
+        this.dataSynchronization = props.dataSynchronization;
+        this.dbList = props.dbList;
+        this.destinationEndpoint = props.destinationEndpoint;
+        this.dtsJobName = props.dtsJobName;
+        this.sourceEndpoint = props.sourceEndpoint;
         this.structureInitialization = props.structureInitialization;
-        this.synchronizationObjects = props.synchronizationObjects;
-        this.topology = props.topology;
-        this.usedTime = props.usedTime;
+        this.checkpoint = props.checkpoint;
+        this.dataCheckConfigure = props.dataCheckConfigure;
+        this.dedicatedClusterId = props.dedicatedClusterId;
+        this.delayNotice = props.delayNotice;
+        this.delayPhone = props.delayPhone;
+        this.delayRuleTime = props.delayRuleTime;
+        this.disasterRecoveryJob = props.disasterRecoveryJob;
+        this.dtsBisLabel = props.dtsBisLabel;
+        this.dtsInstanceId = props.dtsInstanceId;
+        this.dtsJobId = props.dtsJobId;
+        this.errorNotice = props.errorNotice;
+        this.errorPhone = props.errorPhone;
+        this.fileOssUrl = props.fileOssUrl;
+        this.reserve = props.reserve;
+        this.status = props.status;
+        this.synchronizationDirection = props.synchronizationDirection;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
-            destinationEndpoint: this.destinationEndpoint,
-            destRegion: this.destRegion,
-            sourceEndpoint: this.sourceEndpoint,
-            sourceRegion: this.sourceRegion,
-            synchronizationJobClass: this.synchronizationJobClass,
             dataInitialization: this.dataInitialization,
-            networkType: this.networkType,
-            payType: this.payType,
-            period: this.period,
+            dataSynchronization: this.dataSynchronization,
+            dbList: this.dbList,
+            destinationEndpoint: this.destinationEndpoint,
+            dtsJobName: this.dtsJobName,
+            sourceEndpoint: this.sourceEndpoint,
             structureInitialization: this.structureInitialization,
-            synchronizationObjects: this.synchronizationObjects,
-            topology: this.topology,
-            usedTime: this.usedTime,
+            checkpoint: this.checkpoint,
+            dataCheckConfigure: this.dataCheckConfigure,
+            dedicatedClusterId: this.dedicatedClusterId,
+            delayNotice: this.delayNotice,
+            delayPhone: this.delayPhone,
+            delayRuleTime: this.delayRuleTime,
+            disasterRecoveryJob: this.disasterRecoveryJob,
+            dtsBisLabel: this.dtsBisLabel,
+            dtsInstanceId: this.dtsInstanceId,
+            dtsJobId: this.dtsJobId,
+            errorNotice: this.errorNotice,
+            errorPhone: this.errorPhone,
+            fileOssUrl: this.fileOssUrl,
+            reserve: this.reserve,
+            status: this.status,
+            synchronizationDirection: this.synchronizationDirection,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
-        return rosSynchronizationJobPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+        return rosSynchronizationJob2PropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
 
-export namespace RosSynchronizationJob {
+export namespace RosSynchronizationJob2 {
     /**
      * @stability external
      */
-    export interface ColumnExcludesProperty {
+    export interface DataCheckConfigureProperty {
         /**
-         * @Property columnName: Column names are not synchronized in the table to be synchronized
+         * @Property fullCheckMaxReadRps: The maximum number of data rows that are read per second. Valid values: integers from 0 to 9007199254740991.
          */
-        readonly columnName?: string | ros.IResolvable;
+        readonly fullCheckMaxReadRps?: number | ros.IResolvable;
+        /**
+         * @Property dataCheckNoticePhone: The mobile number of the alert contact for a full or incremental data verification task. If an alert is triggered for a verification task, a text message is sent to notify the alert contact.
+         */
+        readonly dataCheckNoticePhone?: string | ros.IResolvable;
+        /**
+         * @Property incrementalCheckDelayNotice: Specifies whether to trigger an alert on the data latency of the incremental data verification task. Valid values: **true** and **false**.
+     * **Note**: For example, you set this parameter to **true**. If the cumulative latency of the incremental data verification task in several statistical periods is greater than or equal to the threshold that you specified, an alert is triggered.
+         */
+        readonly incrementalCheckDelayNotice?: boolean | ros.IResolvable;
+        /**
+         * @Property incrementalCheckDelayNoticeValue: The alert threshold for the data latency of the incremental data verification task. Unit: seconds.
+     * **Note**: This parameter is required if the **incrementalCheckDelayNotice** parameter is set to **true**.
+         */
+        readonly incrementalCheckDelayNoticeValue?: number | ros.IResolvable;
+        /**
+         * @Property incrementalCheckDelayNoticePeriod: The statistical period of an alert on the data latency of the incremental data verification task. Valid values:
+     * - **1**: 1 minute
+     * - **2**: 5 minutes
+     * - **3**: 10 minutes
+     * - **4**: 30 minutes
+     * **Note**: This parameter is required if the **incrementalCheckDelayNotice** parameter is set to **true**.
+         */
+        readonly incrementalCheckDelayNoticePeriod?: number | ros.IResolvable;
+        /**
+         * @Property dataCheckDbList: The objects whose data is to be verified. The value must be a JSON string.
+         */
+        readonly dataCheckDbList?: string | ros.IResolvable;
+        /**
+         * @Property checkMaximumHourEnable: Specifies whether to configure a timeout period for the full data verification task.Valid values:
+     * - **0**: does not configure a timeout period for the full data verification task.
+     * - **1**: configures a timeout period for the full data verification task.
+     * **Note**: This parameter is required if the fullCheckModel parameter is set to 1.
+         */
+        readonly checkMaximumHourEnable?: number | ros.IResolvable;
+        /**
+         * @Property fullCheckRatio: The sampling ratio of the full data verification task. Valid values: integers from 10 to 100. Unit: percent.
+     * **Note**: This parameter is required if the **fullCheckModel** parameter is set to 1.
+         */
+        readonly fullCheckRatio?: number | ros.IResolvable;
+        /**
+         * @Property checkMaximumHour: The timeout period of the full data verification task. Valid values: integers from 1 to 72. Countdown begins the moment the full data verification task is started. If the task is not complete within the specified timeout period, the task is forcibly stopped.
+         */
+        readonly checkMaximumHour?: number | ros.IResolvable;
+        /**
+         * @Property fullCheckFixData: Specifies whether to replace the inconsistent data. Valid values: **true** and **false**. Default value: false.
+     * **Note**: For example, you set this parameter to true. If the destination database has data that is inconsistent with the data in the source database, the data values of the destination database are replaced with those of the source database.
+         */
+        readonly fullCheckFixData?: boolean | ros.IResolvable;
+        /**
+         * @Property fullCheckModel: The mode of the full data verification task. Valid values:
+     * - **1**: verifies the data by sampling ratio.
+     * - **2**: verifies the data by row.
+         */
+        readonly fullCheckModel?: number | ros.IResolvable;
+        /**
+         * @Property incrementalCheckValidFailNoticeValue: The alert threshold for inconsistent data entries detected by the incremental data verification task.
+     * **Note**: This parameter is required if the **incrementalCheckValidFailNotice** parameter is set to **true**.
+         */
+        readonly incrementalCheckValidFailNoticeValue?: number | ros.IResolvable;
+        /**
+         * @Property incrementalDataCheck: Specifies whether to perform an incremental data verification task. Valid values: **true** and **false**.
+         */
+        readonly incrementalDataCheck?: boolean | ros.IResolvable;
+        /**
+         * @Property incrementalCheckValidFailNoticeTimes: The number of statistical periods of an alert on inconsistent data entries detected by the incremental data verification task.
+     * **Note**: This parameter is required if the **incrementalCheckValidFailNotice** parameter is set to **true**.
+         */
+        readonly incrementalCheckValidFailNoticeTimes?: number | ros.IResolvable;
+        /**
+         * @Property fullCheckMaxReadBps: The maximum number of bytes that are read per second. Valid values: integers from 0 to 9007199254740991.
+         */
+        readonly fullCheckMaxReadBps?: number | ros.IResolvable;
+        /**
+         * @Property fullCheckValidFailNotice: Specifies whether to trigger an alert if inconsistent data is detected by the full data verification task. Valid values: **true** and **false**.
+     * **Note**: For example, you set this parameter to true. If the number of inconsistent data entries detected by the full data verification task is greater than or equal to the threshold that you specified, an alert is triggered.
+         */
+        readonly fullCheckValidFailNotice?: boolean | ros.IResolvable;
+        /**
+         * @Property fullCheckErrorNotice: Specifies whether to trigger an alert if the full data verification task fails. Valid values: **true** and **false**.
+     * **Note**: For example, you set this parameter to **true**. If the full data verification task fails, an alert is triggered.
+         */
+        readonly fullCheckErrorNotice?: boolean | ros.IResolvable;
+        /**
+         * @Property incrementalCheckValidFailNoticePeriod: The statistical period of an alert on inconsistent data entries detected by the incremental data verification task. Valid values:
+     * - **1**: 1 minute
+     * - **2**: 5 minutes
+     * - **3**: 10 minutes
+     * - **4**: 30 minutes
+     * **Note**: This parameter is required if the **incrementalCheckValidFailNotice** parameter is set to **true**.
+         */
+        readonly incrementalCheckValidFailNoticePeriod?: number | ros.IResolvable;
+        /**
+         * @Property incrementalCheckDelayNoticeTimes: The number of statistical periods of an alert on the data latency of the incremental data verification task.
+     * **Note**: This parameter is required if the **incrementalCheckDelayNotice** parameter is set to **true**.
+         */
+        readonly incrementalCheckDelayNoticeTimes?: number | ros.IResolvable;
+        /**
+         * @Property fullCheckReferEndpoint: The benchmark for full data verification. Valid values:
+     * - **all**: checks the data consistency between the source and destination databases based on the source and destination databases.
+     * - **src**: checks the data consistency between the source and destination databases based on the source database. Objects that exist in the destination database but do not exist in the source database are not checked.
+     * - **dest**: checks the data consistency between the source and destination databases based on the destination database. Objects that exist in the source database but do not exist in the destination database are not checked.
+         */
+        readonly fullCheckReferEndpoint?: string | ros.IResolvable;
+        /**
+         * @Property fullDataCheck: Specifies whether to perform a full data verification task. Valid values: **true** and **false**.
+         */
+        readonly fullDataCheck?: boolean | ros.IResolvable;
+        /**
+         * @Property incrementalCheckValidFailNotice: Specifies whether to trigger an alert if inconsistent data is detected by the incremental data verification task. Valid values: **true** and **false**.
+     * **Note**: For example, you set this parameter to **true**. If the cumulative number of inconsistent data entries detected by the incremental data verification task in several statistical periods is greater than or equal to the threshold that you specified, an alert is triggered.
+         */
+        readonly incrementalCheckValidFailNotice?: boolean | ros.IResolvable;
+        /**
+         * @Property fullCheckNoticeValue: The alert threshold for inconsistent data entries detected by the full data verification task.
+     * **Note**: This parameter is required if the **fullCheckValidFailNotice** parameter is set to **true**.
+         */
+        readonly fullCheckNoticeValue?: number | ros.IResolvable;
+        /**
+         * @Property incrementalCheckErrorNotice: Specifies whether to trigger an alert if the incremental data verification task fails. Valid values: **true** and **false**.
+     * Note: For example, you set this parameter to **true**. If the incremental data verification task fails, an alert is triggered.
+         */
+        readonly incrementalCheckErrorNotice?: boolean | ros.IResolvable;
     }
 }
 /**
- * Determine whether the given properties match those of a `ColumnExcludesProperty`
+ * Determine whether the given properties match those of a `DataCheckConfigureProperty`
  *
- * @param properties - the TypeScript properties of a `ColumnExcludesProperty`
+ * @param properties - the TypeScript properties of a `DataCheckConfigureProperty`
  *
  * @returns the result of the validation.
  */
-function RosSynchronizationJob_ColumnExcludesPropertyValidator(properties: any): ros.ValidationResult {
+function RosSynchronizationJob2_DataCheckConfigurePropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('columnName', ros.validateString)(properties.columnName));
-    return errors.wrap('supplied properties not correct for "ColumnExcludesProperty"');
-}
-
-/**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::SynchronizationJob.ColumnExcludes` resource
- *
- * @param properties - the TypeScript properties of a `ColumnExcludesProperty`
- *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::SynchronizationJob.ColumnExcludes` resource.
- */
-// @ts-ignore TS6133
-function rosSynchronizationJobColumnExcludesPropertyToRosTemplate(properties: any): any {
-    if (!ros.canInspect(properties)) { return properties; }
-    RosSynchronizationJob_ColumnExcludesPropertyValidator(properties).assertSuccess();
-    return {
-      ColumnName: ros.stringToRosTemplate(properties.columnName),
-    };
-}
-
-export namespace RosSynchronizationJob {
-    /**
-     * @stability external
-     */
-    export interface ColumnIncludesProperty {
-        /**
-         * @Property newColumnName: The name of the column to be synchronized to be mapped in the target instance
-         */
-        readonly newColumnName?: string | ros.IResolvable;
-        /**
-         * @Property columnName: The column name to be synchronized in the table to be synchronized
-         */
-        readonly columnName?: string | ros.IResolvable;
+    if(properties.fullCheckMaxReadRps && (typeof properties.fullCheckMaxReadRps) !== 'object') {
+        errors.collect(ros.propertyValidator('fullCheckMaxReadRps', ros.validateRange)({
+            data: properties.fullCheckMaxReadRps,
+            min: 0,
+            max: 9007199254740991,
+          }));
     }
-}
-/**
- * Determine whether the given properties match those of a `ColumnIncludesProperty`
- *
- * @param properties - the TypeScript properties of a `ColumnIncludesProperty`
- *
- * @returns the result of the validation.
- */
-function RosSynchronizationJob_ColumnIncludesPropertyValidator(properties: any): ros.ValidationResult {
-    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
-    const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('newColumnName', ros.validateString)(properties.newColumnName));
-    errors.collect(ros.propertyValidator('columnName', ros.validateString)(properties.columnName));
-    return errors.wrap('supplied properties not correct for "ColumnIncludesProperty"');
+    errors.collect(ros.propertyValidator('fullCheckMaxReadRps', ros.validateNumber)(properties.fullCheckMaxReadRps));
+    errors.collect(ros.propertyValidator('dataCheckNoticePhone', ros.validateString)(properties.dataCheckNoticePhone));
+    errors.collect(ros.propertyValidator('incrementalCheckDelayNotice', ros.validateBoolean)(properties.incrementalCheckDelayNotice));
+    errors.collect(ros.propertyValidator('incrementalCheckDelayNoticeValue', ros.validateNumber)(properties.incrementalCheckDelayNoticeValue));
+    if(properties.incrementalCheckDelayNoticePeriod && (typeof properties.incrementalCheckDelayNoticePeriod) !== 'object') {
+        errors.collect(ros.propertyValidator('incrementalCheckDelayNoticePeriod', ros.validateAllowedValues)({
+          data: properties.incrementalCheckDelayNoticePeriod,
+          allowedValues: [1,2,3,4],
+        }));
+    }
+    errors.collect(ros.propertyValidator('incrementalCheckDelayNoticePeriod', ros.validateNumber)(properties.incrementalCheckDelayNoticePeriod));
+    errors.collect(ros.propertyValidator('dataCheckDbList', ros.validateString)(properties.dataCheckDbList));
+    if(properties.checkMaximumHourEnable && (typeof properties.checkMaximumHourEnable) !== 'object') {
+        errors.collect(ros.propertyValidator('checkMaximumHourEnable', ros.validateAllowedValues)({
+          data: properties.checkMaximumHourEnable,
+          allowedValues: [0,1],
+        }));
+    }
+    errors.collect(ros.propertyValidator('checkMaximumHourEnable', ros.validateNumber)(properties.checkMaximumHourEnable));
+    if(properties.fullCheckRatio && (typeof properties.fullCheckRatio) !== 'object') {
+        errors.collect(ros.propertyValidator('fullCheckRatio', ros.validateRange)({
+            data: properties.fullCheckRatio,
+            min: 10,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('fullCheckRatio', ros.validateNumber)(properties.fullCheckRatio));
+    if(properties.checkMaximumHour && (typeof properties.checkMaximumHour) !== 'object') {
+        errors.collect(ros.propertyValidator('checkMaximumHour', ros.validateRange)({
+            data: properties.checkMaximumHour,
+            min: 1,
+            max: 72,
+          }));
+    }
+    errors.collect(ros.propertyValidator('checkMaximumHour', ros.validateNumber)(properties.checkMaximumHour));
+    errors.collect(ros.propertyValidator('fullCheckFixData', ros.validateBoolean)(properties.fullCheckFixData));
+    if(properties.fullCheckModel && (typeof properties.fullCheckModel) !== 'object') {
+        errors.collect(ros.propertyValidator('fullCheckModel', ros.validateAllowedValues)({
+          data: properties.fullCheckModel,
+          allowedValues: [1,2],
+        }));
+    }
+    errors.collect(ros.propertyValidator('fullCheckModel', ros.validateNumber)(properties.fullCheckModel));
+    errors.collect(ros.propertyValidator('incrementalCheckValidFailNoticeValue', ros.validateNumber)(properties.incrementalCheckValidFailNoticeValue));
+    errors.collect(ros.propertyValidator('incrementalDataCheck', ros.validateBoolean)(properties.incrementalDataCheck));
+    errors.collect(ros.propertyValidator('incrementalCheckValidFailNoticeTimes', ros.validateNumber)(properties.incrementalCheckValidFailNoticeTimes));
+    if(properties.fullCheckMaxReadBps && (typeof properties.fullCheckMaxReadBps) !== 'object') {
+        errors.collect(ros.propertyValidator('fullCheckMaxReadBps', ros.validateRange)({
+            data: properties.fullCheckMaxReadBps,
+            min: 0,
+            max: 9007199254740991,
+          }));
+    }
+    errors.collect(ros.propertyValidator('fullCheckMaxReadBps', ros.validateNumber)(properties.fullCheckMaxReadBps));
+    errors.collect(ros.propertyValidator('fullCheckValidFailNotice', ros.validateBoolean)(properties.fullCheckValidFailNotice));
+    errors.collect(ros.propertyValidator('fullCheckErrorNotice', ros.validateBoolean)(properties.fullCheckErrorNotice));
+    if(properties.incrementalCheckValidFailNoticePeriod && (typeof properties.incrementalCheckValidFailNoticePeriod) !== 'object') {
+        errors.collect(ros.propertyValidator('incrementalCheckValidFailNoticePeriod', ros.validateAllowedValues)({
+          data: properties.incrementalCheckValidFailNoticePeriod,
+          allowedValues: [1,2,3,4],
+        }));
+    }
+    errors.collect(ros.propertyValidator('incrementalCheckValidFailNoticePeriod', ros.validateNumber)(properties.incrementalCheckValidFailNoticePeriod));
+    errors.collect(ros.propertyValidator('incrementalCheckDelayNoticeTimes', ros.validateNumber)(properties.incrementalCheckDelayNoticeTimes));
+    errors.collect(ros.propertyValidator('fullCheckReferEndpoint', ros.validateString)(properties.fullCheckReferEndpoint));
+    errors.collect(ros.propertyValidator('fullDataCheck', ros.validateBoolean)(properties.fullDataCheck));
+    errors.collect(ros.propertyValidator('incrementalCheckValidFailNotice', ros.validateBoolean)(properties.incrementalCheckValidFailNotice));
+    errors.collect(ros.propertyValidator('fullCheckNoticeValue', ros.validateNumber)(properties.fullCheckNoticeValue));
+    errors.collect(ros.propertyValidator('incrementalCheckErrorNotice', ros.validateBoolean)(properties.incrementalCheckErrorNotice));
+    return errors.wrap('supplied properties not correct for "DataCheckConfigureProperty"');
 }
 
 /**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::SynchronizationJob.ColumnIncludes` resource
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::SynchronizationJob2.DataCheckConfigure` resource
  *
- * @param properties - the TypeScript properties of a `ColumnIncludesProperty`
+ * @param properties - the TypeScript properties of a `DataCheckConfigureProperty`
  *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::SynchronizationJob.ColumnIncludes` resource.
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::SynchronizationJob2.DataCheckConfigure` resource.
  */
 // @ts-ignore TS6133
-function rosSynchronizationJobColumnIncludesPropertyToRosTemplate(properties: any): any {
+function rosSynchronizationJob2DataCheckConfigurePropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
-    RosSynchronizationJob_ColumnIncludesPropertyValidator(properties).assertSuccess();
+    RosSynchronizationJob2_DataCheckConfigurePropertyValidator(properties).assertSuccess();
     return {
-      NewColumnName: ros.stringToRosTemplate(properties.newColumnName),
-      ColumnName: ros.stringToRosTemplate(properties.columnName),
+      fullCheckMaxReadRps: ros.numberToRosTemplate(properties.fullCheckMaxReadRps),
+      dataCheckNoticePhone: ros.stringToRosTemplate(properties.dataCheckNoticePhone),
+      incrementalCheckDelayNotice: ros.booleanToRosTemplate(properties.incrementalCheckDelayNotice),
+      incrementalCheckDelayNoticeValue: ros.numberToRosTemplate(properties.incrementalCheckDelayNoticeValue),
+      incrementalCheckDelayNoticePeriod: ros.numberToRosTemplate(properties.incrementalCheckDelayNoticePeriod),
+      dataCheckDbList: ros.stringToRosTemplate(properties.dataCheckDbList),
+      checkMaximumHourEnable: ros.numberToRosTemplate(properties.checkMaximumHourEnable),
+      fullCheckRatio: ros.numberToRosTemplate(properties.fullCheckRatio),
+      checkMaximumHour: ros.numberToRosTemplate(properties.checkMaximumHour),
+      fullCheckFixData: ros.booleanToRosTemplate(properties.fullCheckFixData),
+      fullCheckModel: ros.numberToRosTemplate(properties.fullCheckModel),
+      incrementalCheckValidFailNoticeValue: ros.numberToRosTemplate(properties.incrementalCheckValidFailNoticeValue),
+      incrementalDataCheck: ros.booleanToRosTemplate(properties.incrementalDataCheck),
+      incrementalCheckValidFailNoticeTimes: ros.numberToRosTemplate(properties.incrementalCheckValidFailNoticeTimes),
+      fullCheckMaxReadBps: ros.numberToRosTemplate(properties.fullCheckMaxReadBps),
+      fullCheckValidFailNotice: ros.booleanToRosTemplate(properties.fullCheckValidFailNotice),
+      fullCheckErrorNotice: ros.booleanToRosTemplate(properties.fullCheckErrorNotice),
+      incrementalCheckValidFailNoticePeriod: ros.numberToRosTemplate(properties.incrementalCheckValidFailNoticePeriod),
+      incrementalCheckDelayNoticeTimes: ros.numberToRosTemplate(properties.incrementalCheckDelayNoticeTimes),
+      fullCheckReferEndpoint: ros.stringToRosTemplate(properties.fullCheckReferEndpoint),
+      fullDataCheck: ros.booleanToRosTemplate(properties.fullDataCheck),
+      incrementalCheckValidFailNotice: ros.booleanToRosTemplate(properties.incrementalCheckValidFailNotice),
+      fullCheckNoticeValue: ros.numberToRosTemplate(properties.fullCheckNoticeValue),
+      incrementalCheckErrorNotice: ros.booleanToRosTemplate(properties.incrementalCheckErrorNotice),
     };
 }
 
-export namespace RosSynchronizationJob {
+export namespace RosSynchronizationJob2 {
     /**
      * @stability external
      */
     export interface DestinationEndpointProperty {
         /**
-         * @Property userName: Target instance access account
+         * @Property role: The name of the Resource Access Management (RAM) role configured for the Alibaba Cloud account that owns the destination instance.
+     * **Note**: This parameter is required when you migrate or synchronize data across different Alibaba Cloud accounts.
+         */
+        readonly role?: string | ros.IResolvable;
+        /**
+         * @Property oracleSid: The system ID (SID) of the Oracle database.
+     * **Note**: This parameter is required only when **EngineName** is set to **ORACLE** and the Oracle database is deployed in an architecture that is not a Real Application Cluster (RAC).
+         */
+        readonly oracleSid?: string | ros.IResolvable;
+        /**
+         * @Property userName: The database account of the destination database.
+     * **Note**: In most cases, this parameter is required. The permissions that are required for the database account vary with the migration or synchronization scenario.
          */
         readonly userName?: string | ros.IResolvable;
         /**
-         * @Property instanceId: Target instance ID.
+         * @Property ownerId: The ID of the Alibaba Cloud account to which the destination database belongs.
+     * **Note**: You can specify this parameter to migrate or synchronize data across different Alibaba Cloud accounts. In this case, you must specify **Role**.
+         */
+        readonly ownerId?: string | ros.IResolvable;
+        /**
+         * @Property instanceId: The ID of the destination instance. If the destination instance is an Alibaba Cloud database instance, you must specify the ID of the database instance. For example, 
+     * - If the destination instance is an ApsaraDB RDS for MySQL instance, you must specify the ID of the ApsaraDB RDS for MySQL instance. 
+     * - If the destination instance is a self-managed database, the value of this parameter varies with the value of SourceEndpointInstanceType.
+     * - If InstanceType is set to ECS, you must specify the ID of the ECS instance.
+     * - If InstanceType is set to DG, you must specify the ID of the database gateway.
+     * - If InstanceType is set to EXPRESS or CEN, you must specify the ID of the VPC that is connected to the destination instance.
+     * **Note**: If DestinationEndpointInstanceType is set to CEN, you must also specify the ID of the CEN instance in the Reserve parameter.
          */
         readonly instanceId?: string | ros.IResolvable;
         /**
-         * @Property ip: The connection address of the target instance. Required if the target instance is a local DB accessed through a dedicated line.
+         * @Property ip: The IP address of the destination instance. 
+     * **Note**: This parameter is required only when **InstanceType** is set to **OTHER**, **EXPRESS**, **DG**, or **CEN**.
          */
         readonly ip?: string | ros.IResolvable;
         /**
-         * @Property port: Listening port of the target instance. Required when the target instance is ECS or a local DB accessed through a dedicated line.
+         * @Property port: The port number of the destination instance.
+     * **Note**: This parameter is required only when the destination instance is a self-managed database.
          */
         readonly port?: string | ros.IResolvable;
         /**
-         * @Property instanceType: The instance type of the synchronization target instance for configuration, including:
-     * Redis: Alibaba Cloud Redis instance
-     * RDS: Alibaba Cloud RDS instance
-     * POLARDB: Alibaba Cloud POLARDB for MySQL Cluster
-     * ECS: Self-built database on ECS
-     * Express: self-built database accessed via dedicated line
-     * MaxCompute: Alibaba Cloud MaxCompute instance
-     * DataHub: Alibaba Cloud DataHub instance
-     * AnalyticDB: Alibaba Cloud Analytic Database MySQL Version (2.0)
-     * AnalyticDB30: Alibaba Cloud Analytic Database MySQL Version (3.0)
-     * Greenplum: Cloud-native data warehouse ADB PostgreSQL version (formerly analytical database PostgreSQL version).
-     * The default value is RDS
+         * @Property databaseName: The name of the database which contains the objects to be migrated in the destination instance.
+     * **Note**: This parameter is required only when the destination instance is a PolarDB for PostgreSQL cluster (compatible with Oracle), a PostgreSQL database, or a MongoDB database.
+         */
+        readonly databaseName?: string | ros.IResolvable;
+        /**
+         * @Property region: The ID of the region in which the destination instance resides.
+     * **Note**: If the source instance is an Alibaba Cloud database instance, this parameter is required.
+         */
+        readonly region?: string | ros.IResolvable;
+        /**
+         * @Property instanceType: The type of the destination instance. Valid values:
+     * Alibaba Cloud database instances
+     * - **RDS**: ApsaraDB RDS for MySQL instance, ApsaraDB RDS for SQL Server instance, ApsaraDB RDS for PostgreSQL instance, or ApsaraDB RDS for MariaDB TX instance
+     * - **PolarDB**: PolarDB for MySQL cluster
+     * - **DISTRIBUTED_POLARDBX10**: PolarDB-X 1.0 (formerly DRDS) instance
+     * - **POLARDBX20**: PolarDB-X 2.0 instance
+     * - **REDIS**: ApsaraDB for Redis instance
+     * - **ADS**: AnalyticDB for MySQL V2.0 cluster or AnalyticDB for MySQL V3.0 cluster
+     * - **MONGODB**: ApsaraDB for MongoDB instance
+     * - **GREENPLUM**: AnalyticDB for PostgreSQL instance
+     * - **DATAHUB**: DataHub project
+     * - **ELK**: Elasticsearch cluster
+     * - **Tablestore**: Tablestore instance
+     * - **ODPS**: MaxCompute project
+     * Self-managed databases
+     * - **OTHER**: self-managed database with a public IP address
+     * - **ECS**: self-managed database hosted on an ECS instance
+     * - **EXPRESS**: self-managed database connected over Express Connect
+     * - **CEN**: self-managed database connected over CEN
+     * - **DG**: self-managed database connected over Database Gateway
+     * **Note**: If the destination instance is a PolarDB for PostgreSQL cluster (compatible with Oracle), you must set this parameter to OTHER or EXPRESS. Then, you can connect the PolarDB for PostgreSQL cluster (compatible with Oracle) to DTS as a self-managed database by using a public IP address or Express Connect.
+     * If the destination instance is a Message Queue for Apache Kafka instance, you must set this parameter to ECS or EXPRESS. Then, you can connect the Message Queue for Apache Kafka instance to DTS as a self-managed database connected over ECS or Express Connect.
+     * If the destination instance is a self-managed database, you must deploy the network environment for the database.
          */
         readonly instanceType: string | ros.IResolvable;
         /**
-         * @Property instanceTypeForCreation: The instance type of the synchronization target instance for creation, including:
-     * MySQL: Alibaba Cloud MySQL instance
-     * PolarDB: Alibaba Cloud POLARDB for MySQL Cluster
-     * MaxCompute: Alibaba Cloud MaxCompute instance.
-     * If this property is not specified, it will be same with InstanceType
+         * @Property engineName: The database engine of the destination instance. Valid values:
+     * - **MYSQL**: ApsaraDB RDS for MySQL instance or self-managed MySQL database
+     * - **MARIADB**: ApsaraDB RDS for MariaDB TX instance
+     * - **PolarDB**: PolarDB for MySQL cluster
+     * - **POLARDB_O**: PolarDB for PostgreSQL cluster (compatible with Oracle)
+     * - **POLARDBX10**: PolarDB-X 1.0 instance
+     * - **POLARDBX20**: PolarDB-X 2.0 instance
+     * - **ORACLE**: self-managed Oracle database
+     * - **POSTGRESQL**: ApsaraDB RDS for PostgreSQL instance or self-managed PostgreSQL database
+     * - **MSSQL**: ApsaraDB RDS for SQL Server instance or self-managed SQL Server database
+     * - **ADS**: AnalyticDB for MySQL V2.0 cluster
+     * - **ADB30**: AnalyticDB for MySQL V3.0 cluster- **MONGODB**: ApsaraDB for MongoDB instance or self-managed MongoDB database
+     * - **GREENPLUM**: AnalyticDB for PostgreSQL instance
+     * - **KAFKA**: Message Queue for Apache Kafka instance or self-managed Kafka cluster
+     * - **DATAHUB**: DataHub project- **DB2**: self-managed Db2 for LUW database
+     * - **AS400**: self-managed Db2 for i database
+     * - **ODPS**: MaxCompute project
+     * - **Tablestore**: Tablestore instance
+     * - **ELK**: Elasticsearch cluster
+     * - **REDIS**: ApsaraDB for Redis instance or self-managed Redis database
+     * **Note**: Default value: **MYSQL**.
+     * If this parameter is set to **KAFKA**, **MONGODB**, or **PolarDB**, you must also specify the database information in the Reserve parameter.
          */
-        readonly instanceTypeForCreation?: string | ros.IResolvable;
+        readonly engineName?: string | ros.IResolvable;
         /**
-         * @Property password: Target instance password
+         * @Property password: The password of the destination database account.
          */
         readonly password?: string | ros.IResolvable;
     }
@@ -1919,93 +3093,155 @@ export namespace RosSynchronizationJob {
  *
  * @returns the result of the validation.
  */
-function RosSynchronizationJob_DestinationEndpointPropertyValidator(properties: any): ros.ValidationResult {
+function RosSynchronizationJob2_DestinationEndpointPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('role', ros.validateString)(properties.role));
+    errors.collect(ros.propertyValidator('oracleSid', ros.validateString)(properties.oracleSid));
     errors.collect(ros.propertyValidator('userName', ros.validateString)(properties.userName));
+    errors.collect(ros.propertyValidator('ownerId', ros.validateString)(properties.ownerId));
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
     errors.collect(ros.propertyValidator('ip', ros.validateString)(properties.ip));
     errors.collect(ros.propertyValidator('port', ros.validateString)(properties.port));
+    errors.collect(ros.propertyValidator('databaseName', ros.validateString)(properties.databaseName));
+    errors.collect(ros.propertyValidator('region', ros.validateString)(properties.region));
     errors.collect(ros.propertyValidator('instanceType', ros.requiredValidator)(properties.instanceType));
     errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
-    errors.collect(ros.propertyValidator('instanceTypeForCreation', ros.validateString)(properties.instanceTypeForCreation));
+    errors.collect(ros.propertyValidator('engineName', ros.validateString)(properties.engineName));
     errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
     return errors.wrap('supplied properties not correct for "DestinationEndpointProperty"');
 }
 
 /**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::SynchronizationJob.DestinationEndpoint` resource
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::SynchronizationJob2.DestinationEndpoint` resource
  *
  * @param properties - the TypeScript properties of a `DestinationEndpointProperty`
  *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::SynchronizationJob.DestinationEndpoint` resource.
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::SynchronizationJob2.DestinationEndpoint` resource.
  */
 // @ts-ignore TS6133
-function rosSynchronizationJobDestinationEndpointPropertyToRosTemplate(properties: any): any {
+function rosSynchronizationJob2DestinationEndpointPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
-    RosSynchronizationJob_DestinationEndpointPropertyValidator(properties).assertSuccess();
+    RosSynchronizationJob2_DestinationEndpointPropertyValidator(properties).assertSuccess();
     return {
+      Role: ros.stringToRosTemplate(properties.role),
+      OracleSID: ros.stringToRosTemplate(properties.oracleSid),
       UserName: ros.stringToRosTemplate(properties.userName),
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+      OwnerID: ros.stringToRosTemplate(properties.ownerId),
+      InstanceID: ros.stringToRosTemplate(properties.instanceId),
       IP: ros.stringToRosTemplate(properties.ip),
       Port: ros.stringToRosTemplate(properties.port),
+      DatabaseName: ros.stringToRosTemplate(properties.databaseName),
+      Region: ros.stringToRosTemplate(properties.region),
       InstanceType: ros.stringToRosTemplate(properties.instanceType),
-      InstanceTypeForCreation: ros.stringToRosTemplate(properties.instanceTypeForCreation),
+      EngineName: ros.stringToRosTemplate(properties.engineName),
       Password: ros.stringToRosTemplate(properties.password),
     };
 }
 
-export namespace RosSynchronizationJob {
+export namespace RosSynchronizationJob2 {
     /**
      * @stability external
      */
     export interface SourceEndpointProperty {
         /**
-         * @Property role: When the synchronization source instance and the target instance do not belong to the same Alibaba Cloud account, this parameter is the authorized role of the account to which the source instance belongs to the Alibaba Cloud account to which the target instance belongs, and the relevant permissions and authorization steps of the reference.
+         * @Property oracleSid: The system ID (SID) of the Oracle database.
+     * **Note**: This parameter is required only when **EngineName** is set to **ORACLE** and the Oracle database is deployed in an architecture that is not a Real Application Cluster (RAC).
          */
-        readonly role?: string | ros.IResolvable;
+        readonly oracleSid?: string | ros.IResolvable;
         /**
-         * @Property userName: Source instance access account
+         * @Property userName: The database account of the source database.
+     * **Note**: In most cases, this parameter is required. The permissions that are required for the database account vary with the migration or synchronization scenario.
          */
         readonly userName?: string | ros.IResolvable;
         /**
-         * @Property ownerId: When the source instance and the target instance do not belong to the same Alibaba Cloud account, this parameter is the UID of the Alibaba Cloud account to which the source instance belongs.
-         */
-        readonly ownerId?: string | ros.IResolvable;
-        /**
-         * @Property instanceId: Source instance ID.
+         * @Property instanceId: The ID of the source instance. If the source instance is an Alibaba Cloud database instance, you must specify the ID of the database instance. For example, 
+     * - If the source instance is an ApsaraDB RDS for MySQL instance, you must specify the ID of the ApsaraDB RDS for MySQL instance. 
+     * - If the source instance is a self-managed database, the value of this parameter varies with the value of SourceEndpointInstanceType.
+     * - If InstanceType is set to ECS, you must specify the ID of the ECS instance.
+     * - If InstanceType is set to DG, you must specify the ID of the database gateway.
+     * - If InstanceType is set to EXPRESS or CEN, you must specify the ID of the VPC that is connected to the source instance.
+     * **Note**: If DestinationEndpointInstanceType is set to CEN, you must also specify the ID of the CEN instance in the Reserve parameter.
          */
         readonly instanceId?: string | ros.IResolvable;
         /**
-         * @Property ip: The connection address of the source instance. Required if the source instance is a local DB accessed through a dedicated line.
+         * @Property ip: The IP address of the source instance. 
+     * **Note**: This parameter is required only when **InstanceType** is set to **OTHER**, **EXPRESS**, **DG**, or **CEN**.
          */
         readonly ip?: string | ros.IResolvable;
         /**
-         * @Property port: Listening port of the source instance. Required when the source instance is ECS or a local DB accessed through a dedicated line.
+         * @Property port: The port number of the source instance.
+     * **Note**: This parameter is required only when the source instance is a self-managed database.
          */
         readonly port?: string | ros.IResolvable;
         /**
-         * @Property instanceType: The instance type of the synchronization source instance for configuration, including:
-     * Redis: Alibaba Cloud Redis instance
-     * RDS: Alibaba Cloud RDS instance
-     * POLARDB: Alibaba Cloud POLARDB for MySQL Cluster
-     * ECS: Self-built database on ECS
-     * Express: Self-built database accessed via dedicated line
-     * dg: Self-built database accessed via the database gateway DG
-     * cen: Self-built database accessed via the cloud enterprise network CEN.
-     * The default value is RDS.
+         * @Property vSwitchId: The ID of the vSwitch used for the data shipping link.
+         */
+        readonly vSwitchId?: string | ros.IResolvable;
+        /**
+         * @Property databaseName: The name of the database which contains the objects to be migrated in the source instance.
+     * **Note**: This parameter is required only when the source instance is a PolarDB for PostgreSQL cluster (compatible with Oracle), a PostgreSQL database, or a MongoDB database.
+         */
+        readonly databaseName?: string | ros.IResolvable;
+        /**
+         * @Property engineName: The database engine of the source instance. Valid values:
+     * - **MYSQL**: ApsaraDB RDS for MySQL instance or self-managed MySQL database
+     * - **MARIADB**: ApsaraDB RDS for MariaDB TX instance
+     * - **PolarDB**: PolarDB for MySQL cluster
+     * - **POLARDB_O**: PolarDB for PostgreSQL cluster (compatible with Oracle)
+     * - **POLARDBX10**: PolarDB-X 1.0 instance
+     * - **POLARDBX20**: PolarDB-X 2.0 instance
+     * - **ORACLE**: self-managed Oracle database
+     * - **POSTGRESQL**: ApsaraDB RDS for PostgreSQL instance or self-managed PostgreSQL database
+     * - **MSSQL**: ApsaraDB RDS for SQL Server instance or self-managed SQL Server database
+     * - **MONGODB**: ApsaraDB for MongoDB instance or self-managed MongoDB database
+     * - **DB2**: self-managed Db2 for LUW database
+     * - **AS400**: self-managed Db2 for i database
+     * - **DMSPOLARDB**: DMS logical database
+     * - **HBASE**: self-managed HBase database
+     * - **TERADATA**: Teradata database
+     * - **TiDB**: TiDB database
+     * - **REDIS**: ApsaraDB for Redis instance or self-managed Redis database
+     * **Note**: Default value: **MYSQL**.
+     * If EngineName is set to **MONGODB**, you must also specify the architecture type of the **MongoDB** database in the **Reserve** parameter.
+         */
+        readonly engineName?: string | ros.IResolvable;
+        /**
+         * @Property role: The name of the Resource Access Management (RAM) role configured for the Alibaba Cloud account that owns the source instance.
+     * **Note**: This parameter is required when you migrate or synchronize data across different Alibaba Cloud accounts.
+         */
+        readonly role?: string | ros.IResolvable;
+        /**
+         * @Property ownerId: The ID of the Alibaba Cloud account to which the source database belongs.
+     * **Note**: You can specify this parameter to migrate or synchronize data across different Alibaba Cloud accounts. In this case, you must specify **Role**.
+         */
+        readonly ownerId?: string | ros.IResolvable;
+        /**
+         * @Property region: The ID of the region in which the source instance resides.
+     * **Note**: If the source instance is an Alibaba Cloud database instance, this parameter is required.
+         */
+        readonly region?: string | ros.IResolvable;
+        /**
+         * @Property instanceType: The type of the source instance. Valid values:
+     * Alibaba Cloud database instances:
+     * - **RDS**: ApsaraDB RDS for MySQL instance, ApsaraDB RDS for SQL Server instance, ApsaraDB RDS for PostgreSQL instance, or ApsaraDB RDS for MariaDB TX instance
+     * - **PolarDB**: PolarDB for MySQL cluster
+     * - **REDIS**: ApsaraDB for Redis instance
+     * - **DISTRIBUTED_POLARDBX10**: PolarDB-X 1.0 (formerly DRDS) instance
+     * - **POLARDBX20**: PolarDB-X 2.0 instance
+     * - **MONGODB**: ApsaraDB for MongoDB instance
+     * - **DISTRIBUTED_DMSLOGICDB**: Data Management (DMS) logical database
+     * Self-managed databases:
+     * - **OTHER**: self-managed database with a public IP address
+     * - **ECS**: self-managed database hosted on an Elastic Compute Service (ECS) instance
+     * - **EXPRESS**: self-managed database connected over Express Connect
+     * - **CEN**: self-managed database connected over Cloud Enterprise Network (CEN)
+     * - **DG**: self-managed database connected over Database Gateway
+     * **Note**: If the source instance is a PolarDB for PostgreSQL cluster (compatible with Oracle), you must set this parameter to **OTHER** or **EXPRESS**. Then, you can connect the PolarDB for PostgreSQL cluster to DTS as a self-managed database by using a public IP address or Express Connect. If the source instance is a self-managed database, you must deploy the network environment for the database.
          */
         readonly instanceType: string | ros.IResolvable;
         /**
-         * @Property instanceTypeForCreation: The instance type of the synchronization source instance for creation, including:
-     * MySQL: Alibaba Cloud MySQL instance
-     * PolarDB: Alibaba Cloud POLARDB for MySQL Cluster
-     * Redis: Alibaba Cloud Redis instance.
-     * If this property is not specified, it will be same with InstanceType.
-         */
-        readonly instanceTypeForCreation?: string | ros.IResolvable;
-        /**
-         * @Property password: Source instance password
+         * @Property password: The password of the source database account.
          */
         readonly password?: string | ros.IResolvable;
     }
@@ -2017,219 +3253,50 @@ export namespace RosSynchronizationJob {
  *
  * @returns the result of the validation.
  */
-function RosSynchronizationJob_SourceEndpointPropertyValidator(properties: any): ros.ValidationResult {
+function RosSynchronizationJob2_SourceEndpointPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('role', ros.validateString)(properties.role));
+    errors.collect(ros.propertyValidator('oracleSid', ros.validateString)(properties.oracleSid));
     errors.collect(ros.propertyValidator('userName', ros.validateString)(properties.userName));
-    errors.collect(ros.propertyValidator('ownerId', ros.validateString)(properties.ownerId));
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
     errors.collect(ros.propertyValidator('ip', ros.validateString)(properties.ip));
     errors.collect(ros.propertyValidator('port', ros.validateString)(properties.port));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('databaseName', ros.validateString)(properties.databaseName));
+    errors.collect(ros.propertyValidator('engineName', ros.validateString)(properties.engineName));
+    errors.collect(ros.propertyValidator('role', ros.validateString)(properties.role));
+    errors.collect(ros.propertyValidator('ownerId', ros.validateString)(properties.ownerId));
+    errors.collect(ros.propertyValidator('region', ros.validateString)(properties.region));
     errors.collect(ros.propertyValidator('instanceType', ros.requiredValidator)(properties.instanceType));
     errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
-    errors.collect(ros.propertyValidator('instanceTypeForCreation', ros.validateString)(properties.instanceTypeForCreation));
     errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
     return errors.wrap('supplied properties not correct for "SourceEndpointProperty"');
 }
 
 /**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::SynchronizationJob.SourceEndpoint` resource
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::SynchronizationJob2.SourceEndpoint` resource
  *
  * @param properties - the TypeScript properties of a `SourceEndpointProperty`
  *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::SynchronizationJob.SourceEndpoint` resource.
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::SynchronizationJob2.SourceEndpoint` resource.
  */
 // @ts-ignore TS6133
-function rosSynchronizationJobSourceEndpointPropertyToRosTemplate(properties: any): any {
+function rosSynchronizationJob2SourceEndpointPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
-    RosSynchronizationJob_SourceEndpointPropertyValidator(properties).assertSuccess();
+    RosSynchronizationJob2_SourceEndpointPropertyValidator(properties).assertSuccess();
     return {
-      Role: ros.stringToRosTemplate(properties.role),
+      OracleSID: ros.stringToRosTemplate(properties.oracleSid),
       UserName: ros.stringToRosTemplate(properties.userName),
-      OwnerID: ros.stringToRosTemplate(properties.ownerId),
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+      InstanceID: ros.stringToRosTemplate(properties.instanceId),
       IP: ros.stringToRosTemplate(properties.ip),
       Port: ros.stringToRosTemplate(properties.port),
+      VSwitchID: ros.stringToRosTemplate(properties.vSwitchId),
+      DatabaseName: ros.stringToRosTemplate(properties.databaseName),
+      EngineName: ros.stringToRosTemplate(properties.engineName),
+      Role: ros.stringToRosTemplate(properties.role),
+      OwnerID: ros.stringToRosTemplate(properties.ownerId),
+      Region: ros.stringToRosTemplate(properties.region),
       InstanceType: ros.stringToRosTemplate(properties.instanceType),
-      InstanceTypeForCreation: ros.stringToRosTemplate(properties.instanceTypeForCreation),
       Password: ros.stringToRosTemplate(properties.password),
-    };
-}
-
-export namespace RosSynchronizationJob {
-    /**
-     * @stability external
-     */
-    export interface SynchronizationObjectsProperty {
-        /**
-         * @Property tableIncludes: Table configuration
-         */
-        readonly tableIncludes?: Array<RosSynchronizationJob.TableIncludesProperty | ros.IResolvable> | ros.IResolvable;
-        /**
-         * @Property dbName: db name to be synchronized
-         */
-        readonly dbName?: string | ros.IResolvable;
-        /**
-         * @Property tableExcludes: Table excludes configuration
-         */
-        readonly tableExcludes?: Array<RosSynchronizationJob.TableExcludesProperty | ros.IResolvable> | ros.IResolvable;
-        /**
-         * @Property schemaName: Schema name to be synchronized
-         */
-        readonly schemaName?: string | ros.IResolvable;
-        /**
-         * @Property newSchemaName: Schema name to be synchronized by Schema in the target instance
-         */
-        readonly newSchemaName?: string | ros.IResolvable;
-        /**
-         * @Property newDbName: The name of the db to be synchronized in the target instance.
-         */
-        readonly newDbName?: string | ros.IResolvable;
-    }
-}
-/**
- * Determine whether the given properties match those of a `SynchronizationObjectsProperty`
- *
- * @param properties - the TypeScript properties of a `SynchronizationObjectsProperty`
- *
- * @returns the result of the validation.
- */
-function RosSynchronizationJob_SynchronizationObjectsPropertyValidator(properties: any): ros.ValidationResult {
-    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
-    const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('tableIncludes', ros.listValidator(RosSynchronizationJob_TableIncludesPropertyValidator))(properties.tableIncludes));
-    errors.collect(ros.propertyValidator('dbName', ros.validateString)(properties.dbName));
-    errors.collect(ros.propertyValidator('tableExcludes', ros.listValidator(RosSynchronizationJob_TableExcludesPropertyValidator))(properties.tableExcludes));
-    errors.collect(ros.propertyValidator('schemaName', ros.validateString)(properties.schemaName));
-    errors.collect(ros.propertyValidator('newSchemaName', ros.validateString)(properties.newSchemaName));
-    errors.collect(ros.propertyValidator('newDbName', ros.validateString)(properties.newDbName));
-    return errors.wrap('supplied properties not correct for "SynchronizationObjectsProperty"');
-}
-
-/**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::SynchronizationJob.SynchronizationObjects` resource
- *
- * @param properties - the TypeScript properties of a `SynchronizationObjectsProperty`
- *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::SynchronizationJob.SynchronizationObjects` resource.
- */
-// @ts-ignore TS6133
-function rosSynchronizationJobSynchronizationObjectsPropertyToRosTemplate(properties: any): any {
-    if (!ros.canInspect(properties)) { return properties; }
-    RosSynchronizationJob_SynchronizationObjectsPropertyValidator(properties).assertSuccess();
-    return {
-      TableIncludes: ros.listMapper(rosSynchronizationJobTableIncludesPropertyToRosTemplate)(properties.tableIncludes),
-      DBName: ros.stringToRosTemplate(properties.dbName),
-      TableExcludes: ros.listMapper(rosSynchronizationJobTableExcludesPropertyToRosTemplate)(properties.tableExcludes),
-      SchemaName: ros.stringToRosTemplate(properties.schemaName),
-      NewSchemaName: ros.stringToRosTemplate(properties.newSchemaName),
-      NewDBName: ros.stringToRosTemplate(properties.newDbName),
-    };
-}
-
-export namespace RosSynchronizationJob {
-    /**
-     * @stability external
-     */
-    export interface TableExcludesProperty {
-        /**
-         * @Property tableName: The name of the table to be synchronized does not require the table name of the migration table.
-         */
-        readonly tableName?: string | ros.IResolvable;
-    }
-}
-/**
- * Determine whether the given properties match those of a `TableExcludesProperty`
- *
- * @param properties - the TypeScript properties of a `TableExcludesProperty`
- *
- * @returns the result of the validation.
- */
-function RosSynchronizationJob_TableExcludesPropertyValidator(properties: any): ros.ValidationResult {
-    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
-    const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('tableName', ros.validateString)(properties.tableName));
-    return errors.wrap('supplied properties not correct for "TableExcludesProperty"');
-}
-
-/**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::SynchronizationJob.TableExcludes` resource
- *
- * @param properties - the TypeScript properties of a `TableExcludesProperty`
- *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::SynchronizationJob.TableExcludes` resource.
- */
-// @ts-ignore TS6133
-function rosSynchronizationJobTableExcludesPropertyToRosTemplate(properties: any): any {
-    if (!ros.canInspect(properties)) { return properties; }
-    RosSynchronizationJob_TableExcludesPropertyValidator(properties).assertSuccess();
-    return {
-      TableName: ros.stringToRosTemplate(properties.tableName),
-    };
-}
-
-export namespace RosSynchronizationJob {
-    /**
-     * @stability external
-     */
-    export interface TableIncludesProperty {
-        /**
-         * @Property tableName: Table name to be synchronized
-         */
-        readonly tableName?: string | ros.IResolvable;
-        /**
-         * @Property filterCondition: Where condition
-         */
-        readonly filterCondition?: string | ros.IResolvable;
-        /**
-         * @Property columnExcludes: Column excludes configuration
-         */
-        readonly columnExcludes?: Array<RosSynchronizationJob.ColumnExcludesProperty | ros.IResolvable> | ros.IResolvable;
-        /**
-         * @Property columnIncludes: Column includes configuration
-         */
-        readonly columnIncludes?: Array<RosSynchronizationJob.ColumnIncludesProperty | ros.IResolvable> | ros.IResolvable;
-        /**
-         * @Property newTableName: The name of the table to be synchronized in the target instance mapping
-         */
-        readonly newTableName?: string | ros.IResolvable;
-    }
-}
-/**
- * Determine whether the given properties match those of a `TableIncludesProperty`
- *
- * @param properties - the TypeScript properties of a `TableIncludesProperty`
- *
- * @returns the result of the validation.
- */
-function RosSynchronizationJob_TableIncludesPropertyValidator(properties: any): ros.ValidationResult {
-    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
-    const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('tableName', ros.validateString)(properties.tableName));
-    errors.collect(ros.propertyValidator('filterCondition', ros.validateString)(properties.filterCondition));
-    errors.collect(ros.propertyValidator('columnExcludes', ros.listValidator(RosSynchronizationJob_ColumnExcludesPropertyValidator))(properties.columnExcludes));
-    errors.collect(ros.propertyValidator('columnIncludes', ros.listValidator(RosSynchronizationJob_ColumnIncludesPropertyValidator))(properties.columnIncludes));
-    errors.collect(ros.propertyValidator('newTableName', ros.validateString)(properties.newTableName));
-    return errors.wrap('supplied properties not correct for "TableIncludesProperty"');
-}
-
-/**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::SynchronizationJob.TableIncludes` resource
- *
- * @param properties - the TypeScript properties of a `TableIncludesProperty`
- *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::SynchronizationJob.TableIncludes` resource.
- */
-// @ts-ignore TS6133
-function rosSynchronizationJobTableIncludesPropertyToRosTemplate(properties: any): any {
-    if (!ros.canInspect(properties)) { return properties; }
-    RosSynchronizationJob_TableIncludesPropertyValidator(properties).assertSuccess();
-    return {
-      TableName: ros.stringToRosTemplate(properties.tableName),
-      FilterCondition: ros.stringToRosTemplate(properties.filterCondition),
-      ColumnExcludes: ros.listMapper(rosSynchronizationJobColumnExcludesPropertyToRosTemplate)(properties.columnExcludes),
-      ColumnIncludes: ros.listMapper(rosSynchronizationJobColumnIncludesPropertyToRosTemplate)(properties.columnIncludes),
-      NewTableName: ros.stringToRosTemplate(properties.newTableName),
     };
 }

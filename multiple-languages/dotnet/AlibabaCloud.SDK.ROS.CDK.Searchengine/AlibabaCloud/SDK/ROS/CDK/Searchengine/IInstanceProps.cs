@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Searchengine
 {
-    /// <summary>Properties for defining a `ALIYUN::SearchEngine::Instance`.</summary>
+    /// <summary>Properties for defining a `Instance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-searchengine-instance
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-searchengine.InstanceProps")]
     public interface IInstanceProps
     {
@@ -88,7 +91,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Searchengine
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::SearchEngine::Instance`.</summary>
+        /// <summary>Properties for defining a `Instance`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-searchengine-instance
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-searchengine.InstanceProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Searchengine.IInstanceProps
         {

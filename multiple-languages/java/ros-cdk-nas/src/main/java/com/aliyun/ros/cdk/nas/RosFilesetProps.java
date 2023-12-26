@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.nas;
 
 /**
- * Properties for defining a <code>ALIYUN::NAS::Fileset</code>.
+ * Properties for defining a <code>RosFileset</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-fileset
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.199Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.976Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.RosFilesetProps")
 @software.amazon.jsii.Jsii.Proxy(RosFilesetProps.Jsii$Proxy.class)
 public interface RosFilesetProps extends software.amazon.jsii.JsiiSerializable {

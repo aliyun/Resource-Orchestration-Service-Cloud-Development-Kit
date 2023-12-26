@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
 {
-    /// <summary>Properties for defining a `ALIYUN::PVTZ::UserVpcAuthorization`.</summary>
+    /// <summary>Properties for defining a `UserVpcAuthorization`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-uservpcauthorization
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IUserVpcAuthorizationProps), fullyQualifiedName: "@alicloud/ros-cdk-pvtz.UserVpcAuthorizationProps")]
     public interface IUserVpcAuthorizationProps
     {
@@ -64,7 +67,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::PVTZ::UserVpcAuthorization`.</summary>
+        /// <summary>Properties for defining a `UserVpcAuthorization`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-uservpcauthorization
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IUserVpcAuthorizationProps), fullyQualifiedName: "@alicloud/ros-cdk-pvtz.UserVpcAuthorizationProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Pvtz.IUserVpcAuthorizationProps
         {

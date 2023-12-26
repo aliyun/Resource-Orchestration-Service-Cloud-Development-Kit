@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ros
 {
-    /// <summary>Properties for defining a `ALIYUN::ROS::WaitConditionHandle`.</summary>
+    /// <summary>Properties for defining a `WaitConditionHandle`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-waitconditionhandle
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IWaitConditionHandleProps), fullyQualifiedName: "@alicloud/ros-cdk-ros.WaitConditionHandleProps")]
     public interface IWaitConditionHandleProps
     {
@@ -42,7 +45,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ROS::WaitConditionHandle`.</summary>
+        /// <summary>Properties for defining a `WaitConditionHandle`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-waitconditionhandle
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IWaitConditionHandleProps), fullyQualifiedName: "@alicloud/ros-cdk-ros.WaitConditionHandleProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ros.IWaitConditionHandleProps
         {

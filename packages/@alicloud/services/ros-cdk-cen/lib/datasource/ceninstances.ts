@@ -4,7 +4,8 @@ import { RosCenInstances } from './cen.generated';
 export { RosCenInstances as CenInstancesProperty };
 
 /**
- * Properties for defining a `DATASOURCE::CEN::CenInstances`
+ * Properties for defining a `CenInstances`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-ceninstances
  */
 export interface CenInstancesProps {
 
@@ -15,14 +16,11 @@ export interface CenInstancesProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::CEN::CenInstances`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::CEN::CenInstances`, which is used to query the details of Cloud Enterprise Network (CEN) instances within the current Alibaba Cloud account.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCenInstances`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-ceninstances
  */
 export class CenInstances extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute CenIds: The list of The Cen instance ids.
@@ -35,8 +33,6 @@ export class CenInstances extends ros.Resource {
     public readonly attrCens: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::CEN::CenInstances`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

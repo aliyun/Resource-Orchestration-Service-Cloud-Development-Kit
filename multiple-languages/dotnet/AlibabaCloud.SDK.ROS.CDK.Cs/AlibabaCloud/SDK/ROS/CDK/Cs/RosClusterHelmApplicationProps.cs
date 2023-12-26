@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CS::ClusterHelmApplication`.</summary>
+    /// <summary>Properties for defining a `RosClusterHelmApplication`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterhelmapplication
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cs.RosClusterHelmApplicationProps")]
     public class RosClusterHelmApplicationProps : AlibabaCloud.SDK.ROS.CDK.Cs.IRosClusterHelmApplicationProps
     {
@@ -176,7 +179,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
 
         /// <remarks>
         /// <strong>Property</strong>: namespace: Namespace to use with helm. Default is default.
-        /// If the DefaultNamespace does not exist, ROS will automatically create it and delete it during the deletion phase.
+        /// If the Namespace does not exist, ROS will automatically create it and delete it during the deletion phase.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "namespace", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -203,6 +206,42 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
                     }
                 }
                 _namespace = value;
+            }
+        }
+
+        private object? _rolePolicy;
+
+        /// <remarks>
+        /// <strong>Property</strong>: rolePolicy: Before deploying the application, check the policies associated with the roles of the current user. Valid values:
+        /// - EnsureAdminRoleAndBinding: Automatically create a role named "ros:application-admin:${user-id}" with administrator permissions and bind it to the current user.
+        /// - None: Do nothing.
+        /// The default value is EnsureAdminRoleAndBinding.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "rolePolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? RolePolicy
+        {
+            get => _rolePolicy;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _rolePolicy = value;
             }
         }
     }

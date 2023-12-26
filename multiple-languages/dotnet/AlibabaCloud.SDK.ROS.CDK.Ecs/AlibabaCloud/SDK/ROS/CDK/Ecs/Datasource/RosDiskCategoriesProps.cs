@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `DATASOURCE::ECS::DiskCategories`.</summary>
+    /// <summary>Properties for defining a `RosDiskCategories`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-diskcategories
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.datasource.RosDiskCategoriesProps")]
     public class RosDiskCategoriesProps : AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource.IRosDiskCategoriesProps
     {

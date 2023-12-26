@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Slb.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::SLB::VServerGroups`.</summary>
+    /// <summary>Properties for defining a `VServerGroups`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-vservergroups
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IVServerGroupsProps), fullyQualifiedName: "@alicloud/ros-cdk-slb.datasource.VServerGroupsProps")]
     public interface IVServerGroupsProps
     {
@@ -15,7 +18,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb.Datasource
             get;
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::SLB::VServerGroups`.</summary>
+        /// <summary>Properties for defining a `VServerGroups`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-vservergroups
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IVServerGroupsProps), fullyQualifiedName: "@alicloud/ros-cdk-slb.datasource.VServerGroupsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Slb.Datasource.IVServerGroupsProps
         {

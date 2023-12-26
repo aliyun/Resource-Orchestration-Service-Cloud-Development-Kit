@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>Properties for defining a `ALIYUN::VPC::FlowLog`.</summary>
+    /// <summary>Properties for defining a `RosFlowLog`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-flowlog
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosFlowLogProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosFlowLogProps")]
     public interface IRosFlowLogProps
     {
@@ -79,7 +82,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::VPC::FlowLog`.</summary>
+        /// <summary>Properties for defining a `RosFlowLog`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-flowlog
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosFlowLogProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosFlowLogProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.IRosFlowLogProps
         {

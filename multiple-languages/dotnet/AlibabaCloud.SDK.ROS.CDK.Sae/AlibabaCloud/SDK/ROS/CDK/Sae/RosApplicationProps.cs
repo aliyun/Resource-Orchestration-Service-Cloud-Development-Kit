@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::SAE::Application`.</summary>
+    /// <summary>Properties for defining a `RosApplication`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-application
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-sae.RosApplicationProps")]
     public class RosApplicationProps : AlibabaCloud.SDK.ROS.CDK.Sae.IRosApplicationProps
     {
@@ -530,7 +533,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         private object? _jarStartArgs;
 
         /// <remarks>
-        /// <strong>Property</strong>: jarStartArgs: Jar package startup application parameters. Apply the default startup command: $ JAVA_HOME / bin / java $ JarStartOptions -jar $ CATALINA_OPTS "$ package_path"
+        /// <strong>Property</strong>: jarStartArgs: Jar package startup application parameters. Apply the default startup command: $ JAVA_HOME \/ bin \/ java $ JarStartOptions -jar $ CATALINA_OPTS "$ package_path"
         /// $ JarStartArgs
         /// </remarks>
         [JsiiOptional]
@@ -564,7 +567,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         private object? _jarStartOptions;
 
         /// <remarks>
-        /// <strong>Property</strong>: jarStartOptions: Jar start the application package option. Apply the default startup command: $ JAVA_HOME / bin / java $ JarStartOptions -jar $ CATALINA_OPTS "$ package_path"
+        /// <strong>Property</strong>: jarStartOptions: Jar start the application package option. Apply the default startup command: $ JAVA_HOME \/ bin \/ java $ JarStartOptions -jar $ CATALINA_OPTS "$ package_path"
         /// $ JarStartArgs
         /// </remarks>
         [JsiiOptional]
@@ -829,7 +832,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         private object? _postStart;
 
         /// <remarks>
-        /// <strong>Property</strong>: postStart: Executing the script, such as after starting the format: { "exec": { "command": "cat", "/ etc / group"}}
+        /// <strong>Property</strong>: postStart: Executing the script, such as after starting the format: { "exec": { "command": "cat", "\/ etc \/ group"}}
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "postStart", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -862,7 +865,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         private object? _preStop;
 
         /// <remarks>
-        /// <strong>Property</strong>: preStop: Script is executed before stopping the format as: { "exec": { "command": "cat", "/ etc / group"}}
+        /// <strong>Property</strong>: preStop: Script is executed before stopping the format as: { "exec": { "command": "cat", "\/ etc \/ group"}}
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "preStop", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1005,7 +1008,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         private object? _timezone;
 
         /// <remarks>
-        /// <strong>Property</strong>: timezone: Application time zone. Default Asia/Shanghai.
+        /// <strong>Property</strong>: timezone: Application time zone. Default Asia\/Shanghai.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "timezone", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

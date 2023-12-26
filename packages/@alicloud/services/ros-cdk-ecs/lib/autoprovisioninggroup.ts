@@ -4,7 +4,8 @@ import { RosAutoProvisioningGroup } from './ecs.generated';
 export { RosAutoProvisioningGroup as AutoProvisioningGroupProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECS::AutoProvisioningGroup`
+ * Properties for defining a `AutoProvisioningGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-autoprovisioninggroup
  */
 export interface AutoProvisioningGroupProps {
 
@@ -19,7 +20,7 @@ export interface AutoProvisioningGroupProps {
 
     /**
      * Property autoProvisioningGroupName: The name of the auto provisioning group to be created. It must be 2 to 128 characters
-     * in length. It must start with a letter but cannot start with http:// or https://.
+     * in length. It must start with a letter but cannot start with http:\/\/ or https:\/\/.
      * It can contain letters, digits, colons (:), underscores (_), and hyphens (-).
      */
     readonly autoProvisioningGroupName?: string | ros.IResolvable;
@@ -176,14 +177,11 @@ export interface AutoProvisioningGroupProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECS::AutoProvisioningGroup`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::AutoProvisioningGroup`, which is used to create an auto provisioning group.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAutoProvisioningGroup`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-autoprovisioninggroup
  */
 export class AutoProvisioningGroup extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AutoProvisioningGroupId: The ID of the auto provisioning group.
@@ -196,8 +194,6 @@ export class AutoProvisioningGroup extends ros.Resource {
     public readonly attrAutoProvisioningGroupName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ECS::AutoProvisioningGroup`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ECS::Zones`.</summary>
+    /// <summary>Properties for defining a `RosZones`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-zones
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosZonesProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.datasource.RosZonesProps")]
     public interface IRosZonesProps
     {
@@ -56,9 +59,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: ioOptimized: Specifies whether the instance is I/O optimized. Valid values:
-        /// none: non-I/O optimized
-        /// optimized: I/O optimized
+        /// <strong>Property</strong>: ioOptimized: Specifies whether the instance is I\/O optimized. Valid values:
+        /// none: non-I\/O optimized
+        /// optimized: I\/O optimized
         /// Default value: optimized.
         /// </remarks>
         [JsiiProperty(name: "ioOptimized", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -106,7 +109,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::ECS::Zones`.</summary>
+        /// <summary>Properties for defining a `RosZones`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-zones
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosZonesProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.datasource.RosZonesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource.IRosZonesProps
         {
@@ -153,9 +159,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: ioOptimized: Specifies whether the instance is I/O optimized. Valid values:
-            /// none: non-I/O optimized
-            /// optimized: I/O optimized
+            /// <strong>Property</strong>: ioOptimized: Specifies whether the instance is I\/O optimized. Valid values:
+            /// none: non-I\/O optimized
+            /// optimized: I\/O optimized
             /// Default value: optimized.
             /// </remarks>
             [JsiiOptional]

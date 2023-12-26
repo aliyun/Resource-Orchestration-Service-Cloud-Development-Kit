@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Hbr
 {
-    /// <summary>Properties for defining a `ALIYUN::HBR::RestoreJob`.</summary>
+    /// <summary>Properties for defining a `RestoreJob`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-restorejob
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRestoreJobProps), fullyQualifiedName: "@alicloud/ros-cdk-hbr.RestoreJobProps")]
     public interface IRestoreJobProps
     {
@@ -86,7 +89,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::HBR::RestoreJob`.</summary>
+        /// <summary>Properties for defining a `RestoreJob`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-restorejob
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRestoreJobProps), fullyQualifiedName: "@alicloud/ros-cdk-hbr.RestoreJobProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Hbr.IRestoreJobProps
         {

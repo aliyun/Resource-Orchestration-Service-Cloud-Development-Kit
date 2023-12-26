@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Acm.Datasource
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `DATASOURCE::ACM::Configurations`.</summary>
+    /// <summary>Properties for defining a `Configurations`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-acm-configurations
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-acm.datasource.ConfigurationsProps")]
     public class ConfigurationsProps : AlibabaCloud.SDK.ROS.CDK.Acm.Datasource.IConfigurationsProps
     {

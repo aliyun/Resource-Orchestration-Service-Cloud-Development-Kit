@@ -4,11 +4,16 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Eci
 {
-    /// <summary>A ROS template type:  `ALIYUN::ECI::ContainerGroup`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ECI::ContainerGroup`, which is used to create a container group.</summary>
+    /// <remarks>
+    /// A container group is an elastic container instance.
+    ///
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `ContainerGroup` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eci-containergroup
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Eci.RosContainerGroup), fullyQualifiedName: "@alicloud/ros-cdk-eci.RosContainerGroup", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroupProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosContainerGroup : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::ECI::ContainerGroup`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -1077,7 +1082,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: tag: The list of container group tags in the form of key/value pairs. You can define a maximum of 20 tags for each container group.
+        /// <strong>Property</strong>: tag: The list of container group tags in the form of key\/value pairs. You can define a maximum of 20 tags for each container group.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "tag", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-core.RosTag\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -1720,7 +1725,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: environmentVar: Environment variables in the operating system of the container. Each environment variable is a key/value pair, and both the key and value are strings. A maximum of 100 environment variables are supported. The key indicates the name of a variable. The value indicates the value of the variable.
+            /// <strong>Property</strong>: environmentVar: Environment variables in the operating system of the container. Each environment variable is a key\/value pair, and both the key and value are strings. A maximum of 100 environment variables are supported. The key indicates the name of a variable. The value indicates the value of the variable.
             /// </remarks>
             [JsiiProperty(name: "environmentVar", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroup.EnvironmentVarProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1931,7 +1936,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: environmentVar: Environment variables in the operating system of the container. Each environment variable is a key/value pair, and both the key and value are strings. A maximum of 100 environment variables are supported. The key indicates the name of a variable. The value indicates the value of the variable.
+                /// <strong>Property</strong>: environmentVar: Environment variables in the operating system of the container. Each environment variable is a key\/value pair, and both the key and value are strings. A maximum of 100 environment variables are supported. The key indicates the name of a variable. The value indicates the value of the variable.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "environmentVar", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroup.EnvironmentVarProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -2276,7 +2281,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             private object? _environmentVar;
 
             /// <remarks>
-            /// <strong>Property</strong>: environmentVar: Environment variables in the operating system of the container. Each environment variable is a key/value pair, and both the key and value are strings. A maximum of 100 environment variables are supported. The key indicates the name of a variable. The value indicates the value of the variable.
+            /// <strong>Property</strong>: environmentVar: Environment variables in the operating system of the container. Each environment variable is a key\/value pair, and both the key and value are strings. A maximum of 100 environment variables are supported. The key indicates the name of a variable. The value indicates the value of the variable.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "environmentVar", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroup.EnvironmentVarProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -3311,7 +3316,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: server: The IP address of the image repository. This address does not include a protocol prefix, such as http:// or https://.
+            /// <strong>Property</strong>: server: The IP address of the image repository. This address does not include a protocol prefix, such as http:\/\/ or https:\/\/.
             /// </remarks>
             [JsiiProperty(name: "server", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             object Server
@@ -3345,7 +3350,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: server: The IP address of the image repository. This address does not include a protocol prefix, such as http:// or https://.
+                /// <strong>Property</strong>: server: The IP address of the image repository. This address does not include a protocol prefix, such as http:\/\/ or https:\/\/.
                 /// </remarks>
                 [JsiiProperty(name: "server", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
                 public object Server
@@ -3403,7 +3408,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             private object _server;
 
             /// <remarks>
-            /// <strong>Property</strong>: server: The IP address of the image repository. This address does not include a protocol prefix, such as http:// or https://.
+            /// <strong>Property</strong>: server: The IP address of the image repository. This address does not include a protocol prefix, such as http:\/\/ or https:\/\/.
             /// </remarks>
             [JsiiProperty(name: "server", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Server
@@ -3835,7 +3840,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: environmentVar: Environment variables in the operating system of the container. Each environment variable is a key/value pair, and both the key and value are strings. A maximum of 100 environment variables are supported. The key indicates the name of a variable. The value indicates the value of the variable.
+            /// <strong>Property</strong>: environmentVar: Environment variables in the operating system of the container. Each environment variable is a key\/value pair, and both the key and value are strings. A maximum of 100 environment variables are supported. The key indicates the name of a variable. The value indicates the value of the variable.
             /// </remarks>
             [JsiiProperty(name: "environmentVar", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerEnvironmentVarProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -3989,7 +3994,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: environmentVar: Environment variables in the operating system of the container. Each environment variable is a key/value pair, and both the key and value are strings. A maximum of 100 environment variables are supported. The key indicates the name of a variable. The value indicates the value of the variable.
+                /// <strong>Property</strong>: environmentVar: Environment variables in the operating system of the container. Each environment variable is a key\/value pair, and both the key and value are strings. A maximum of 100 environment variables are supported. The key indicates the name of a variable. The value indicates the value of the variable.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "environmentVar", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerEnvironmentVarProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -4238,7 +4243,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             private object? _environmentVar;
 
             /// <remarks>
-            /// <strong>Property</strong>: environmentVar: Environment variables in the operating system of the container. Each environment variable is a key/value pair, and both the key and value are strings. A maximum of 100 environment variables are supported. The key indicates the name of a variable. The value indicates the value of the variable.
+            /// <strong>Property</strong>: environmentVar: Environment variables in the operating system of the container. Each environment variable is a key\/value pair, and both the key and value are strings. A maximum of 100 environment variables are supported. The key indicates the name of a variable. The value indicates the value of the variable.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "environmentVar", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerEnvironmentVarProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]

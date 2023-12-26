@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ECS::Images`.</summary>
+    /// <summary>Properties for defining a `RosImages`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-images
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.datasource.RosImagesProps")]
     public class RosImagesProps : AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource.IRosImagesProps
     {
@@ -324,7 +327,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
         private object? _isSupportIoOptimized;
 
         /// <remarks>
-        /// <strong>Property</strong>: isSupportIoOptimized: Specifies whether the image can be used on I/O optimized instances.
+        /// <strong>Property</strong>: isSupportIoOptimized: Specifies whether the image can be used on I\/O optimized instances.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "isSupportIoOptimized", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Oss
 {
-    /// <summary>Properties for defining a `ALIYUN::OSS::Bucket`.</summary>
+    /// <summary>Properties for defining a `RosBucket`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucket
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosBucketProps), fullyQualifiedName: "@alicloud/ros-cdk-oss.RosBucketProps")]
     public interface IRosBucketProps
     {
@@ -49,6 +52,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
         [JsiiProperty(name: "deletionForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? DeletionForce
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: enableOssHdfsService: Whether enable OSS-HDFS service.
+        /// **Note**: Once it's enabled, it can't be disabled again.
+        /// </remarks>
+        [JsiiProperty(name: "enableOssHdfsService", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? EnableOssHdfsService
         {
             get
             {
@@ -201,7 +218,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::OSS::Bucket`.</summary>
+        /// <summary>Properties for defining a `RosBucket`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucket
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosBucketProps), fullyQualifiedName: "@alicloud/ros-cdk-oss.RosBucketProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Oss.IRosBucketProps
         {
@@ -244,6 +264,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
             [JsiiOptional]
             [JsiiProperty(name: "deletionForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DeletionForce
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: enableOssHdfsService: Whether enable OSS-HDFS service.
+            /// **Note**: Once it's enabled, it can't be disabled again.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "enableOssHdfsService", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EnableOssHdfsService
             {
                 get => GetInstanceProperty<object?>();
             }

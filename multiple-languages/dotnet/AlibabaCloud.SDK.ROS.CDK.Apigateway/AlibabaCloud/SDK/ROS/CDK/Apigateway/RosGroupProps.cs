@@ -6,14 +6,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ApiGateway::Group`.</summary>
+    /// <summary>Properties for defining a `RosGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-group
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-apigateway.RosGroupProps")]
     public class RosGroupProps : AlibabaCloud.SDK.ROS.CDK.Apigateway.IRosGroupProps
     {
         private object _groupName;
 
         /// <remarks>
-        /// <strong>Property</strong>: groupName: The name of the Group.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+        /// <strong>Property</strong>: groupName: The name of the Group.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.
         /// </remarks>
         [JsiiProperty(name: "groupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object GroupName

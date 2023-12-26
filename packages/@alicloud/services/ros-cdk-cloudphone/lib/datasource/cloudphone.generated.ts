@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::CloudPhone::Images`
+ * Properties for defining a `RosImages`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudphone-images
  */
 export interface RosImagesProps {
 
@@ -60,18 +61,15 @@ function rosImagesPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * A ROS template type:  `DATASOURCE::CloudPhone::Images`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CloudPhone::Images`, which is used to query the information about available images.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Images` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudphone-images
  */
 export class RosImages extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::CloudPhone::Images";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ImageIds: The list of image IDs.
@@ -102,8 +100,6 @@ export class RosImages extends ros.RosResource {
     public imageName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::CloudPhone::Images`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -133,7 +129,8 @@ export class RosImages extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::CloudPhone::KeyPairs`
+ * Properties for defining a `RosKeyPairs`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudphone-keypairs
  */
 export interface RosKeyPairsProps {
 
@@ -183,18 +180,15 @@ function rosKeyPairsPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `DATASOURCE::CloudPhone::KeyPairs`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CloudPhone::KeyPairs`, which is used to query the information about key pairs.
+ * @Note This class does not contain additional functions, so it is recommended to use the `KeyPairs` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudphone-keypairs
  */
 export class RosKeyPairs extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::CloudPhone::KeyPairs";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute KeyPairNames: The list of key pair names.
@@ -220,8 +214,6 @@ export class RosKeyPairs extends ros.RosResource {
     public keyPairName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::CloudPhone::KeyPairs`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

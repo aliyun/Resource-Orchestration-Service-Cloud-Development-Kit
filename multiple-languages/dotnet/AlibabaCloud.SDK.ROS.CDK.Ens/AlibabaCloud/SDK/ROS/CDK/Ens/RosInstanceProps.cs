@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ENS::Instance`.</summary>
+    /// <summary>Properties for defining a `RosInstance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-instance
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ens.RosInstanceProps")]
     public class RosInstanceProps : AlibabaCloud.SDK.ROS.CDK.Ens.IRosInstanceProps
     {

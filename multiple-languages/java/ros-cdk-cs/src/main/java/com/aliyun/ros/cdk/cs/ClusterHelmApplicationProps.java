@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.cs;
 
 /**
- * Properties for defining a <code>ALIYUN::CS::ClusterHelmApplication</code>.
+ * Properties for defining a <code>ClusterHelmApplication</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterhelmapplication
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.186Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.580Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ClusterHelmApplicationProps")
 @software.amazon.jsii.Jsii.Proxy(ClusterHelmApplicationProps.Jsii$Proxy.class)
 public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSerializable {
@@ -45,9 +47,24 @@ public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSe
      * Property namespace: Namespace to use with helm.
      * <p>
      * Default is default.
-     * If the DefaultNamespace does not exist, ROS will automatically create it and delete it during the deletion phase.
+     * If the Namespace does not exist, ROS will automatically create it and delete it during the deletion phase.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNamespace() {
+        return null;
+    }
+
+    /**
+     * Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>EnsureAdminRoleAndBinding: Automatically create a role named "ros:application-admin:${user-id}" with administrator permissions and bind it to the current user.</li>
+     * <li>None: Do nothing.
+     * The default value is EnsureAdminRoleAndBinding.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRolePolicy() {
         return null;
     }
 
@@ -67,6 +84,7 @@ public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSe
         java.lang.Object chartValues;
         java.lang.Object credential;
         java.lang.Object namespace;
+        java.lang.Object rolePolicy;
 
         /**
          * Sets the value of {@link ClusterHelmApplicationProps#getChartUrl}
@@ -176,7 +194,7 @@ public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSe
          * Sets the value of {@link ClusterHelmApplicationProps#getNamespace}
          * @param namespace Property namespace: Namespace to use with helm.
          *                  Default is default.
-         *                  If the DefaultNamespace does not exist, ROS will automatically create it and delete it during the deletion phase.
+         *                  If the Namespace does not exist, ROS will automatically create it and delete it during the deletion phase.
          * @return {@code this}
          */
         public Builder namespace(java.lang.String namespace) {
@@ -188,11 +206,45 @@ public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSe
          * Sets the value of {@link ClusterHelmApplicationProps#getNamespace}
          * @param namespace Property namespace: Namespace to use with helm.
          *                  Default is default.
-         *                  If the DefaultNamespace does not exist, ROS will automatically create it and delete it during the deletion phase.
+         *                  If the Namespace does not exist, ROS will automatically create it and delete it during the deletion phase.
          * @return {@code this}
          */
         public Builder namespace(com.aliyun.ros.cdk.core.IResolvable namespace) {
             this.namespace = namespace;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ClusterHelmApplicationProps#getRolePolicy}
+         * @param rolePolicy Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user.
+         *                   Valid values:
+         *                   <p>
+         *                   <ul>
+         *                   <li>EnsureAdminRoleAndBinding: Automatically create a role named "ros:application-admin:${user-id}" with administrator permissions and bind it to the current user.</li>
+         *                   <li>None: Do nothing.
+         *                   The default value is EnsureAdminRoleAndBinding.</li>
+         *                   </ul>
+         * @return {@code this}
+         */
+        public Builder rolePolicy(java.lang.String rolePolicy) {
+            this.rolePolicy = rolePolicy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ClusterHelmApplicationProps#getRolePolicy}
+         * @param rolePolicy Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user.
+         *                   Valid values:
+         *                   <p>
+         *                   <ul>
+         *                   <li>EnsureAdminRoleAndBinding: Automatically create a role named "ros:application-admin:${user-id}" with administrator permissions and bind it to the current user.</li>
+         *                   <li>None: Do nothing.
+         *                   The default value is EnsureAdminRoleAndBinding.</li>
+         *                   </ul>
+         * @return {@code this}
+         */
+        public Builder rolePolicy(com.aliyun.ros.cdk.core.IResolvable rolePolicy) {
+            this.rolePolicy = rolePolicy;
             return this;
         }
 
@@ -218,6 +270,7 @@ public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSe
         private final java.lang.Object chartValues;
         private final java.lang.Object credential;
         private final java.lang.Object namespace;
+        private final java.lang.Object rolePolicy;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -231,6 +284,7 @@ public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSe
             this.chartValues = software.amazon.jsii.Kernel.get(this, "chartValues", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.credential = software.amazon.jsii.Kernel.get(this, "credential", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.namespace = software.amazon.jsii.Kernel.get(this, "namespace", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.rolePolicy = software.amazon.jsii.Kernel.get(this, "rolePolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -244,6 +298,7 @@ public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSe
             this.chartValues = builder.chartValues;
             this.credential = builder.credential;
             this.namespace = builder.namespace;
+            this.rolePolicy = builder.rolePolicy;
         }
 
         @Override
@@ -277,6 +332,11 @@ public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSe
         }
 
         @Override
+        public final java.lang.Object getRolePolicy() {
+            return this.rolePolicy;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -293,6 +353,9 @@ public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSe
             }
             if (this.getNamespace() != null) {
                 data.set("namespace", om.valueToTree(this.getNamespace()));
+            }
+            if (this.getRolePolicy() != null) {
+                data.set("rolePolicy", om.valueToTree(this.getRolePolicy()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -317,7 +380,8 @@ public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSe
             if (!name.equals(that.name)) return false;
             if (this.chartValues != null ? !this.chartValues.equals(that.chartValues) : that.chartValues != null) return false;
             if (this.credential != null ? !this.credential.equals(that.credential) : that.credential != null) return false;
-            return this.namespace != null ? this.namespace.equals(that.namespace) : that.namespace == null;
+            if (this.namespace != null ? !this.namespace.equals(that.namespace) : that.namespace != null) return false;
+            return this.rolePolicy != null ? this.rolePolicy.equals(that.rolePolicy) : that.rolePolicy == null;
         }
 
         @Override
@@ -328,6 +392,7 @@ public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSe
             result = 31 * result + (this.chartValues != null ? this.chartValues.hashCode() : 0);
             result = 31 * result + (this.credential != null ? this.credential.hashCode() : 0);
             result = 31 * result + (this.namespace != null ? this.namespace.hashCode() : 0);
+            result = 31 * result + (this.rolePolicy != null ? this.rolePolicy.hashCode() : 0);
             return result;
         }
     }

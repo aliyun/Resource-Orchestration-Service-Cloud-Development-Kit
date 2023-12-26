@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::VPC::VirtualBorderRouter`.</summary>
+    /// <summary>Properties for defining a `RosVirtualBorderRouter`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-virtualborderrouter
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.RosVirtualBorderRouterProps")]
     public class RosVirtualBorderRouterProps : AlibabaCloud.SDK.ROS.CDK.Vpc.IRosVirtualBorderRouterProps
     {
@@ -237,7 +240,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// <strong>Property</strong>: description: The description of the VBR.
         /// The description must be 2 to 256 characters in length. It must start with a letter
-        /// but cannot start with http:// or https://.
+        /// but cannot start with http:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -272,7 +275,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// <strong>Property</strong>: name: The name of the VBR.
         /// The name must be 2 to 128 characters in length, and can contain, digits, periods (.),
-        /// underscores (_), and hyphens (-). The name cannot start with http:// or https://.
+        /// underscores (_), and hyphens (-). The name cannot start with http:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

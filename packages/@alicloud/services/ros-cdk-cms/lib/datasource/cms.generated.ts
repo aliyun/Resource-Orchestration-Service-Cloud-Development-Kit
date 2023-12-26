@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::CMS::AlarmContacts`
+ * Properties for defining a `RosAlarmContacts`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-alarmcontacts
  */
 export interface RosAlarmContactsProps {
 
@@ -46,18 +47,15 @@ function rosAlarmContactsPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `DATASOURCE::CMS::AlarmContacts`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::AlarmContacts`, which is used to query the basic information about alert contacts.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AlarmContacts` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-alarmcontacts
  */
 export class RosAlarmContacts extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::CMS::AlarmContacts";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AlarmContactNames: The list of alarm contact names.
@@ -78,8 +76,6 @@ export class RosAlarmContacts extends ros.RosResource {
     public alarmContactName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::CMS::AlarmContacts`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -105,7 +101,8 @@ export class RosAlarmContacts extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::CMS::MonitorGroups`
+ * Properties for defining a `RosMonitorGroups`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-monitorgroups
  */
 export interface RosMonitorGroupsProps {
 
@@ -172,18 +169,15 @@ function rosMonitorGroupsPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `DATASOURCE::CMS::MonitorGroups`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::MonitorGroups`, which is used to query the basic information about application groups.
+ * @Note This class does not contain additional functions, so it is recommended to use the `MonitorGroups` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-monitorgroups
  */
 export class RosMonitorGroups extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::CMS::MonitorGroups";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute GroupIds: The list of group IDs.
@@ -222,8 +216,6 @@ export class RosMonitorGroups extends ros.RosResource {
     public type: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::CMS::MonitorGroups`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -255,7 +247,8 @@ export class RosMonitorGroups extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::CMS::Namespaces`
+ * Properties for defining a `RosNamespaces`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-namespaces
  */
 export interface RosNamespacesProps {
 
@@ -298,18 +291,15 @@ function rosNamespacesPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `DATASOURCE::CMS::Namespaces`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::Namespaces`, which is used to query the basic information about namespaces.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Namespaces` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-namespaces
  */
 export class RosNamespaces extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::CMS::Namespaces";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Namespaces: The list of namespaces.
@@ -325,8 +315,6 @@ export class RosNamespaces extends ros.RosResource {
     public namespace: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::CMS::Namespaces`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -351,7 +339,8 @@ export class RosNamespaces extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::CMS::SlsGroups`
+ * Properties for defining a `RosSlsGroups`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-slsgroups
  */
 export interface RosSlsGroupsProps {
 
@@ -394,18 +383,15 @@ function rosSlsGroupsPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `DATASOURCE::CMS::SlsGroups`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::SlsGroups`, which is used to query the basic information about Logstore groups.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SlsGroups` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-slsgroups
  */
 export class RosSlsGroups extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::CMS::SlsGroups";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute SlsGroupNames: The list of sls group names.
@@ -426,8 +412,6 @@ export class RosSlsGroups extends ros.RosResource {
     public slsGroupName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::CMS::SlsGroups`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

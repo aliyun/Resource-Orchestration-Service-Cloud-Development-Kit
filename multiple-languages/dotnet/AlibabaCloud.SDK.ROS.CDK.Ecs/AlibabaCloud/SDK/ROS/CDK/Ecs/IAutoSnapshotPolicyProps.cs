@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>Properties for defining a `ALIYUN::ECS::AutoSnapshotPolicy`.</summary>
+    /// <summary>Properties for defining a `AutoSnapshotPolicy`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-autosnapshotpolicy
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IAutoSnapshotPolicyProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.AutoSnapshotPolicyProps")]
     public interface IAutoSnapshotPolicyProps
     {
@@ -101,7 +104,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ECS::AutoSnapshotPolicy`.</summary>
+        /// <summary>Properties for defining a `AutoSnapshotPolicy`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-autosnapshotpolicy
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IAutoSnapshotPolicyProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.AutoSnapshotPolicyProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.IAutoSnapshotPolicyProps
         {

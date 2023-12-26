@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Nlb
 {
-    /// <summary>Properties for defining a `ALIYUN::NLB::SecurityGroupAttachment`.</summary>
+    /// <summary>Properties for defining a `SecurityGroupAttachment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-securitygroupattachment
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ISecurityGroupAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-nlb.SecurityGroupAttachmentProps")]
     public interface ISecurityGroupAttachmentProps
     {
@@ -22,7 +25,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::NLB::SecurityGroupAttachment`.</summary>
+        /// <summary>Properties for defining a `SecurityGroupAttachment`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-securitygroupattachment
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ISecurityGroupAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-nlb.SecurityGroupAttachmentProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Nlb.ISecurityGroupAttachmentProps
         {

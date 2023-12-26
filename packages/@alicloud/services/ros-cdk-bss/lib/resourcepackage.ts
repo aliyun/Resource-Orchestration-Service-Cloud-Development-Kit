@@ -4,7 +4,8 @@ import { RosResourcePackage } from './bss.generated';
 export { RosResourcePackage as ResourcePackageProperty };
 
 /**
- * Properties for defining a `ALIYUN::BSS::ResourcePackage`
+ * Properties for defining a `ResourcePackage`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bss-resourcepackage
  */
 export interface ResourcePackageProps {
 
@@ -40,14 +41,11 @@ export interface ResourcePackageProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::BSS::ResourcePackage`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::BSS::ResourcePackage`, which is used to create an instance that uses a resource plan.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosResourcePackage`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bss-resourcepackage
  */
 export class ResourcePackage extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute InstanceId: The ID of the specified instance.
@@ -60,8 +58,6 @@ export class ResourcePackage extends ros.Resource {
     public readonly attrOrderId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::BSS::ResourcePackage`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

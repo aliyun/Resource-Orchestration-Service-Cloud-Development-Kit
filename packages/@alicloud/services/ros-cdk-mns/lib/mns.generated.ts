@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::MNS::Queue`
+ * Properties for defining a `RosQueue`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-queue
  */
 export interface RosQueueProps {
 
@@ -137,18 +138,15 @@ function rosQueuePropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `ALIYUN::MNS::Queue`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MNS::Queue`, which is used to create a queue to contain messages. Queues can be classified into standard and delayed queues.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Queue` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-queue
  */
 export class RosQueue extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::MNS::Queue";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ARN.WithSlash: The ARN: acs:mns:$region:$accountid:/queues/$queueName
@@ -210,8 +208,6 @@ export class RosQueue extends ros.RosResource {
     public visibilityTimeout: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::MNS::Queue`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -250,15 +246,16 @@ export class RosQueue extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::MNS::Subscription`
+ * Properties for defining a `RosSubscription`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-subscription
  */
 export interface RosSubscriptionProps {
 
     /**
      * @Property endpoint: Terminal address of the message recipient for the created subscription.
      * Currently, four types of endpoints are supported: 
-     * 1. HttpEndpoint, which must be prefixed with "http://"; 
-     * 2. QueueEndpoint, in the format of acs:mns:{REGION}:{AccountID}:queues/{QueueName}; 
+     * 1. HttpEndpoint, which must be prefixed with "http:\/\/"; 
+     * 2. QueueEndpoint, in the format of acs:mns:{REGION}:{AccountID}:queues\/{QueueName}; 
      * 3. MailEndpoint, in the format of mail:directmail:{MailAddress}; 
      * 4. SmsEndpoint, in the format of sms:directsms:anonymous or sms:directsms:{Phone}.
      */
@@ -282,13 +279,13 @@ export interface RosSubscriptionProps {
 
     /**
      * @Property notifyContentFormat: Format of the message content pushed to the endpoint.
-     * XML, JSON, or SIMPLIFIED; default value: XML. For details about message formats, refer to Basic Concepts/NotifyContentFormat.
+     * XML, JSON, or SIMPLIFIED; default value: XML. For details about message formats, refer to Basic Concepts\/NotifyContentFormat.
      */
     readonly notifyContentFormat?: string | ros.IResolvable;
 
     /**
      * @Property notifyStrategy: Retry policy that will be applied when an error occurs during message push to the endpoint.
-     * BACKOFF_RETRY or EXPONENTIAL_DECAY_RETRY; default value: BACKOFF_RETRY. For details about retry policies, refer to Basic Concepts/NotifyStrategy.
+     * BACKOFF_RETRY or EXPONENTIAL_DECAY_RETRY; default value: BACKOFF_RETRY. For details about retry policies, refer to Basic Concepts\/NotifyStrategy.
      */
     readonly notifyStrategy?: string | ros.IResolvable;
 }
@@ -372,18 +369,15 @@ function rosSubscriptionPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * A ROS template type:  `ALIYUN::MNS::Subscription`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MNS::Subscription`, which is used to subscribe an endpoint to an Alibaba Cloud Message Service (MNS) topic. For a subscription to be created, the owner of the endpoint must confirm the subscription.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Subscription` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-subscription
  */
 export class RosSubscription extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::MNS::Subscription";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute SubscriptionName: Subscription name
@@ -406,8 +400,8 @@ export class RosSubscription extends ros.RosResource {
     /**
      * @Property endpoint: Terminal address of the message recipient for the created subscription.
      * Currently, four types of endpoints are supported: 
-     * 1. HttpEndpoint, which must be prefixed with "http://"; 
-     * 2. QueueEndpoint, in the format of acs:mns:{REGION}:{AccountID}:queues/{QueueName}; 
+     * 1. HttpEndpoint, which must be prefixed with "http:\/\/"; 
+     * 2. QueueEndpoint, in the format of acs:mns:{REGION}:{AccountID}:queues\/{QueueName}; 
      * 3. MailEndpoint, in the format of mail:directmail:{MailAddress}; 
      * 4. SmsEndpoint, in the format of sms:directsms:anonymous or sms:directsms:{Phone}.
      */
@@ -431,19 +425,17 @@ export class RosSubscription extends ros.RosResource {
 
     /**
      * @Property notifyContentFormat: Format of the message content pushed to the endpoint.
-     * XML, JSON, or SIMPLIFIED; default value: XML. For details about message formats, refer to Basic Concepts/NotifyContentFormat.
+     * XML, JSON, or SIMPLIFIED; default value: XML. For details about message formats, refer to Basic Concepts\/NotifyContentFormat.
      */
     public notifyContentFormat: string | ros.IResolvable | undefined;
 
     /**
      * @Property notifyStrategy: Retry policy that will be applied when an error occurs during message push to the endpoint.
-     * BACKOFF_RETRY or EXPONENTIAL_DECAY_RETRY; default value: BACKOFF_RETRY. For details about retry policies, refer to Basic Concepts/NotifyStrategy.
+     * BACKOFF_RETRY or EXPONENTIAL_DECAY_RETRY; default value: BACKOFF_RETRY. For details about retry policies, refer to Basic Concepts\/NotifyStrategy.
      */
     public notifyStrategy: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::MNS::Subscription`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -480,7 +472,8 @@ export class RosSubscription extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::MNS::Topic`
+ * Properties for defining a `RosTopic`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-topic
  */
 export interface RosTopicProps {
 
@@ -554,18 +547,15 @@ function rosTopicPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `ALIYUN::MNS::Topic`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MNS::Topic`, which is used to create a topic.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Topic` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-topic
  */
 export class RosTopic extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::MNS::Topic";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ARN.WithSlash: The ARN: acs:mns:$region:$accountid:/topics/$topicName
@@ -603,8 +593,6 @@ export class RosTopic extends ros.RosResource {
     public maximumMessageSize: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::MNS::Topic`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

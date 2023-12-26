@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::EBS::DiskReplicaGroup`
+ * Properties for defining a `RosDiskReplicaGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ebs-diskreplicagroup
  */
 export interface RosDiskReplicaGroupProps {
 
@@ -113,18 +114,15 @@ function rosDiskReplicaGroupPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * A ROS template type:  `ALIYUN::EBS::DiskReplicaGroup`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EBS::DiskReplicaGroup`, which is used to create a replication pair-consistent group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DiskReplicaGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ebs-diskreplicagroup
  */
 export class RosDiskReplicaGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EBS::DiskReplicaGroup";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Description: The description of the consistent replication group.
@@ -265,8 +263,6 @@ export class RosDiskReplicaGroup extends ros.RosResource {
     public tags: RosDiskReplicaGroup.TagsProperty[] | undefined;
 
     /**
-     * Create a new `ALIYUN::EBS::DiskReplicaGroup`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -372,7 +368,8 @@ function rosDiskReplicaGroupTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::EBS::DiskReplicaPair`
+ * Properties for defining a `RosDiskReplicaPair`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ebs-diskreplicapair
  */
 export interface RosDiskReplicaPairProps {
 
@@ -413,12 +410,12 @@ export interface RosDiskReplicaPairProps {
     readonly bandwidth?: number | ros.IResolvable;
 
     /**
-     * @Property description: The description of the asynchronous replication relationship. 2 to 256 English or Chinese characters in length and cannot start with' http:// 'or' https.
+     * @Property description: The description of the asynchronous replication relationship. 2 to 256 English or Chinese characters in length and cannot start with' http:\/\/ 'or' https.
      */
     readonly description?: string | ros.IResolvable;
 
     /**
-     * @Property diskReplicaPairName: The name of the asynchronous replication relationship. The length must be 2 to 128 characters in length and must start with a letter or Chinese name. It cannot start with http:// or https. It can contain Chinese, English, numbers, half-width colons (:), underscores (_), half-width periods (.), or dashes (-).
+     * @Property diskReplicaPairName: The name of the asynchronous replication relationship. The length must be 2 to 128 characters in length and must start with a letter or Chinese name. It cannot start with http:\/\/ or https. It can contain Chinese, English, numbers, half-width colons (:), underscores (_), half-width periods (.), or dashes (-).
      */
     readonly diskReplicaPairName?: string | ros.IResolvable;
 
@@ -544,18 +541,15 @@ function rosDiskReplicaPairPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * A ROS template type:  `ALIYUN::EBS::DiskReplicaPair`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EBS::DiskReplicaPair`, which is used to create a replication pair.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DiskReplicaPair` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ebs-diskreplicapair
  */
 export class RosDiskReplicaPair extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EBS::DiskReplicaPair";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Bandwidth: The bandwidth for asynchronous data replication between cloud disks.
@@ -667,12 +661,12 @@ export class RosDiskReplicaPair extends ros.RosResource {
     public bandwidth: number | ros.IResolvable | undefined;
 
     /**
-     * @Property description: The description of the asynchronous replication relationship. 2 to 256 English or Chinese characters in length and cannot start with' http:// 'or' https.
+     * @Property description: The description of the asynchronous replication relationship. 2 to 256 English or Chinese characters in length and cannot start with' http:\/\/ 'or' https.
      */
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * @Property diskReplicaPairName: The name of the asynchronous replication relationship. The length must be 2 to 128 characters in length and must start with a letter or Chinese name. It cannot start with http:// or https. It can contain Chinese, English, numbers, half-width colons (:), underscores (_), half-width periods (.), or dashes (-).
+     * @Property diskReplicaPairName: The name of the asynchronous replication relationship. The length must be 2 to 128 characters in length and must start with a letter or Chinese name. It cannot start with http:\/\/ or https. It can contain Chinese, English, numbers, half-width colons (:), underscores (_), half-width periods (.), or dashes (-).
      */
     public diskReplicaPairName: string | ros.IResolvable | undefined;
 
@@ -709,8 +703,6 @@ export class RosDiskReplicaPair extends ros.RosResource {
     public tags: RosDiskReplicaPair.TagsProperty[] | undefined;
 
     /**
-     * Create a new `ALIYUN::EBS::DiskReplicaPair`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -822,7 +814,8 @@ function rosDiskReplicaPairTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::EBS::DiskReplicaPairAddition`
+ * Properties for defining a `RosDiskReplicaPairAddition`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ebs-diskreplicapairaddition
  */
 export interface RosDiskReplicaPairAdditionProps {
 
@@ -874,18 +867,15 @@ function rosDiskReplicaPairAdditionPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * A ROS template type:  `ALIYUN::EBS::DiskReplicaPairAddition`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EBS::DiskReplicaPairAddition`, which is used to add a replication pair to a replication pair-consistent group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DiskReplicaPairAddition` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ebs-diskreplicapairaddition
  */
 export class RosDiskReplicaPairAddition extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EBS::DiskReplicaPairAddition";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ReplicaGroupId: The ID of the replication pair-consistent group.
@@ -911,8 +901,6 @@ export class RosDiskReplicaPairAddition extends ros.RosResource {
     public replicaPairId: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::EBS::DiskReplicaPairAddition`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

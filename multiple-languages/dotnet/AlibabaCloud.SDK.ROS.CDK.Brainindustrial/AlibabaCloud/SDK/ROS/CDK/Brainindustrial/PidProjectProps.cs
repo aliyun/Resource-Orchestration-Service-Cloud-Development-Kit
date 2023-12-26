@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Brainindustrial
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::BrainIndustrial::PidProject`.</summary>
+    /// <summary>Properties for defining a `PidProject`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-brainindustrial-pidproject
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-brainindustrial.PidProjectProps")]
     public class PidProjectProps : AlibabaCloud.SDK.ROS.CDK.Brainindustrial.IPidProjectProps
     {

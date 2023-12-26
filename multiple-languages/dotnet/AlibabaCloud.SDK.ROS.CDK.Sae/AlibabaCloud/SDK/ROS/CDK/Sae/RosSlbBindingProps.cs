@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::SAE::SlbBinding`.</summary>
+    /// <summary>Properties for defining a `RosSlbBinding`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-slbbinding
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-sae.RosSlbBindingProps")]
     public class RosSlbBindingProps : AlibabaCloud.SDK.ROS.CDK.Sae.IRosSlbBindingProps
     {

@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::Flink::Instance`
+ * Properties for defining a `RosInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-instance
  */
 export interface RosInstanceProps {
 
@@ -163,18 +164,15 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::Flink::Instance`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::Instance`, which is used to create a subscription or pay-as-you-go Realtime Compute for Apache Flink instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-instance
  */
 export class RosInstance extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::Flink::Instance";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute InstanceId: Instance ID.
@@ -260,8 +258,6 @@ export class RosInstance extends ros.RosResource {
     public usePromotionCode: boolean | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::Flink::Instance`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -357,7 +353,8 @@ function rosInstanceResourceSpecPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::Flink::Namespace`
+ * Properties for defining a `RosNamespace`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-namespace
  */
 export interface RosNamespaceProps {
 
@@ -422,18 +419,15 @@ function rosNamespacePropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `ALIYUN::Flink::Namespace`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::Namespace`, which is used to create a project.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Namespace` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-namespace
  */
 export class RosNamespace extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::Flink::Namespace";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute InstanceId: Instance ID.
@@ -464,8 +458,6 @@ export class RosNamespace extends ros.RosResource {
     public resourceSpec: RosNamespace.ResourceSpecProperty | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::Flink::Namespace`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

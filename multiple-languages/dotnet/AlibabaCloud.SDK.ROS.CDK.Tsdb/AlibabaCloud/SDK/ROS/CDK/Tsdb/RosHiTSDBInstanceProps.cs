@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Tsdb
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::TSDB::HiTSDBInstance`.</summary>
+    /// <summary>Properties for defining a `RosHiTSDBInstance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-tsdb-hitsdbinstance
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-tsdb.RosHiTSDBInstanceProps")]
     public class RosHiTSDBInstanceProps : AlibabaCloud.SDK.ROS.CDK.Tsdb.IRosHiTSDBInstanceProps
     {
@@ -379,7 +382,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Tsdb
         private object? _securityIpList;
 
         /// <remarks>
-        /// <strong>Property</strong>: securityIpList: List of the IP patterns.For example, ["127.0.0.1", "192.168.0.1/24"]
+        /// <strong>Property</strong>: securityIpList: List of the IP patterns.For example, ["127.0.0.1", "192.168.0.1\/24"]
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "securityIpList", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]

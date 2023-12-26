@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::SLB::BackendServerToVServerGroupAddition`.</summary>
+    /// <summary>Properties for defining a `BackendServerToVServerGroupAddition`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-backendservertovservergroupaddition
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-slb.BackendServerToVServerGroupAdditionProps")]
     public class BackendServerToVServerGroupAdditionProps : AlibabaCloud.SDK.ROS.CDK.Slb.IBackendServerToVServerGroupAdditionProps
     {

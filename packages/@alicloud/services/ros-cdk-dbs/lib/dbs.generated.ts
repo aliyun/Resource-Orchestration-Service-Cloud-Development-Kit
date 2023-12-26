@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::DBS::Download`
+ * Properties for defining a `RosDownload`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dbs-download
  */
 export interface RosDownloadProps {
 
@@ -149,18 +150,15 @@ function rosDownloadPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::DBS::Download`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DBS::Download`DATASOURCE::DBS::BackupPlans is used to query the information about backup schedules.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Download` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dbs-download
  */
 export class RosDownload extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DBS::Download";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute BakSetId: The ID of the backup set.
@@ -263,8 +261,6 @@ export class RosDownload extends ros.RosResource {
     public targetType: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::DBS::Download`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -314,7 +310,8 @@ export class RosDownload extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::DBS::RestoreTask`
+ * Properties for defining a `RosRestoreTask`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dbs-restoretask
  */
 export interface RosRestoreTaskProps {
 
@@ -516,18 +513,15 @@ function rosRestoreTaskPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `ALIYUN::DBS::RestoreTask`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DBS::RestoreTask`, which is used to create a restore task.
+ * @Note This class does not contain additional functions, so it is recommended to use the `RestoreTask` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dbs-restoretask
  */
 export class RosRestoreTask extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DBS::RestoreTask";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute RestoreTaskId: The ID of the restoration task.
@@ -657,8 +651,6 @@ export class RosRestoreTask extends ros.RosResource {
     public startTask: boolean | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::DBS::RestoreTask`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

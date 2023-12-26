@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.cs;
 
 /**
- * Properties for defining a <code>ALIYUN::CS::ClusterApplication</code>.
+ * Properties for defining a <code>ClusterApplication</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterapplication
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.184Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.577Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ClusterApplicationProps")
 @software.amazon.jsii.Jsii.Proxy(ClusterApplicationProps.Jsii$Proxy.class)
 public interface ClusterApplicationProps extends software.amazon.jsii.JsiiSerializable {
@@ -44,6 +46,21 @@ public interface ClusterApplicationProps extends software.amazon.jsii.JsiiSerial
     }
 
     /**
+     * Property stage: At what stage to run.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>All: all stages, including create, update, and delete.</li>
+     * <li>Delete: the delete stage. This means that only in the deletion stage of this resource will apply yaml to the cluster.
+     * The default is All.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getStage() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link ClusterApplicationProps}
      */
     static Builder builder() {
@@ -57,6 +74,7 @@ public interface ClusterApplicationProps extends software.amazon.jsii.JsiiSerial
         java.lang.Object yamlContent;
         java.lang.Object defaultNamespace;
         java.lang.Object rolePolicy;
+        java.lang.Object stage;
 
         /**
          * Sets the value of {@link ClusterApplicationProps#getClusterId}
@@ -157,6 +175,40 @@ public interface ClusterApplicationProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link ClusterApplicationProps#getStage}
+         * @param stage Property stage: At what stage to run.
+         *              Valid values:
+         *              <p>
+         *              <ul>
+         *              <li>All: all stages, including create, update, and delete.</li>
+         *              <li>Delete: the delete stage. This means that only in the deletion stage of this resource will apply yaml to the cluster.
+         *              The default is All.</li>
+         *              </ul>
+         * @return {@code this}
+         */
+        public Builder stage(java.lang.String stage) {
+            this.stage = stage;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ClusterApplicationProps#getStage}
+         * @param stage Property stage: At what stage to run.
+         *              Valid values:
+         *              <p>
+         *              <ul>
+         *              <li>All: all stages, including create, update, and delete.</li>
+         *              <li>Delete: the delete stage. This means that only in the deletion stage of this resource will apply yaml to the cluster.
+         *              The default is All.</li>
+         *              </ul>
+         * @return {@code this}
+         */
+        public Builder stage(com.aliyun.ros.cdk.core.IResolvable stage) {
+            this.stage = stage;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link ClusterApplicationProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -176,6 +228,7 @@ public interface ClusterApplicationProps extends software.amazon.jsii.JsiiSerial
         private final java.lang.Object yamlContent;
         private final java.lang.Object defaultNamespace;
         private final java.lang.Object rolePolicy;
+        private final java.lang.Object stage;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -187,6 +240,7 @@ public interface ClusterApplicationProps extends software.amazon.jsii.JsiiSerial
             this.yamlContent = software.amazon.jsii.Kernel.get(this, "yamlContent", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.defaultNamespace = software.amazon.jsii.Kernel.get(this, "defaultNamespace", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.rolePolicy = software.amazon.jsii.Kernel.get(this, "rolePolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.stage = software.amazon.jsii.Kernel.get(this, "stage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -198,6 +252,7 @@ public interface ClusterApplicationProps extends software.amazon.jsii.JsiiSerial
             this.yamlContent = java.util.Objects.requireNonNull(builder.yamlContent, "yamlContent is required");
             this.defaultNamespace = builder.defaultNamespace;
             this.rolePolicy = builder.rolePolicy;
+            this.stage = builder.stage;
         }
 
         @Override
@@ -221,6 +276,11 @@ public interface ClusterApplicationProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
+        public final java.lang.Object getStage() {
+            return this.stage;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -233,6 +293,9 @@ public interface ClusterApplicationProps extends software.amazon.jsii.JsiiSerial
             }
             if (this.getRolePolicy() != null) {
                 data.set("rolePolicy", om.valueToTree(this.getRolePolicy()));
+            }
+            if (this.getStage() != null) {
+                data.set("stage", om.valueToTree(this.getStage()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -255,7 +318,8 @@ public interface ClusterApplicationProps extends software.amazon.jsii.JsiiSerial
             if (!clusterId.equals(that.clusterId)) return false;
             if (!yamlContent.equals(that.yamlContent)) return false;
             if (this.defaultNamespace != null ? !this.defaultNamespace.equals(that.defaultNamespace) : that.defaultNamespace != null) return false;
-            return this.rolePolicy != null ? this.rolePolicy.equals(that.rolePolicy) : that.rolePolicy == null;
+            if (this.rolePolicy != null ? !this.rolePolicy.equals(that.rolePolicy) : that.rolePolicy != null) return false;
+            return this.stage != null ? this.stage.equals(that.stage) : that.stage == null;
         }
 
         @Override
@@ -264,6 +328,7 @@ public interface ClusterApplicationProps extends software.amazon.jsii.JsiiSerial
             result = 31 * result + (this.yamlContent.hashCode());
             result = 31 * result + (this.defaultNamespace != null ? this.defaultNamespace.hashCode() : 0);
             result = 31 * result + (this.rolePolicy != null ? this.rolePolicy.hashCode() : 0);
+            result = 31 * result + (this.stage != null ? this.stage.hashCode() : 0);
             return result;
         }
     }

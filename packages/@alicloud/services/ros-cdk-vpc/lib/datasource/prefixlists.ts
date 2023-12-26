@@ -4,7 +4,8 @@ import { RosPrefixLists } from './vpc.generated';
 export { RosPrefixLists as PrefixListsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::VPC::PrefixLists`
+ * Properties for defining a `PrefixLists`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-prefixlists
  */
 export interface PrefixListsProps {
 
@@ -20,14 +21,11 @@ export interface PrefixListsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::VPC::PrefixLists`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::PrefixLists`, which is used to query the details of prefix lists.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPrefixLists`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-prefixlists
  */
 export class PrefixLists extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute PrefixListIds: The list of prefix list IDs.
@@ -40,8 +38,6 @@ export class PrefixLists extends ros.Resource {
     public readonly attrPrefixLists: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::VPC::PrefixLists`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

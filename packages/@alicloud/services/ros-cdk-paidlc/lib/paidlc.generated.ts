@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::PAIDLC::Job`
+ * Properties for defining a `RosJob`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidlc-job
  */
 export interface RosJobProps {
 
@@ -178,18 +179,15 @@ function rosJobPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * A ROS template type:  `ALIYUN::PAIDLC::Job`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIDLC::Job`, which is used to create a Machine Learning Platform for AI (PAI) job to run in a cluster.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Job` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidlc-job
  */
 export class RosJob extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PAIDLC::Job";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute JobId: The task ID created this time.
@@ -294,8 +292,6 @@ export class RosJob extends ros.RosResource {
     public userVpc: RosJob.UserVpcProperty | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::PAIDLC::Job`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -617,7 +613,8 @@ function rosJobUserVpcPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::PAIDLC::Tensorboard`
+ * Properties for defining a `RosTensorboard`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidlc-tensorboard
  */
 export interface RosTensorboardProps {
 
@@ -693,8 +690,8 @@ export interface RosTensorboardProps {
 
     /**
      * @Property uri: URI of a dataset:
-     * When DataSourceType is OSS, the format is: OSS: // [OSS-BUCET]. [Endpoint]/[Path].
-     * When the DataSourceType is NAS, the format is: nas:// [nas-filesystem-id]. [Region]/[PATH].
+     * When DataSourceType is OSS, the format is: OSS: \/\/ [OSS-BUCET]. [Endpoint]\/[Path].
+     * When the DataSourceType is NAS, the format is: nas:\/\/ [nas-filesystem-id]. [Region]\/[PATH].
      */
     readonly uri?: string | ros.IResolvable;
 }
@@ -769,18 +766,15 @@ function rosTensorboardPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `ALIYUN::PAIDLC::Tensorboard`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIDLC::Tensorboard`, which is used to create a TensorBoard instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Tensorboard` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidlc-tensorboard
  */
 export class RosTensorboard extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PAIDLC::Tensorboard";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute TensorboardId: Tensorboard id.
@@ -867,14 +861,12 @@ export class RosTensorboard extends ros.RosResource {
 
     /**
      * @Property uri: URI of a dataset:
-     * When DataSourceType is OSS, the format is: OSS: // [OSS-BUCET]. [Endpoint]/[Path].
-     * When the DataSourceType is NAS, the format is: nas:// [nas-filesystem-id]. [Region]/[PATH].
+     * When DataSourceType is OSS, the format is: OSS: \/\/ [OSS-BUCET]. [Endpoint]\/[Path].
+     * When the DataSourceType is NAS, the format is: nas:\/\/ [nas-filesystem-id]. [Region]\/[PATH].
      */
     public uri: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::PAIDLC::Tensorboard`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ARMS::RetcodeApp`.</summary>
+    /// <summary>Properties for defining a `RosRetcodeApp`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-retcodeapp
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-arms.RosRetcodeAppProps")]
     public class RosRetcodeAppProps : AlibabaCloud.SDK.ROS.CDK.Arms.IRosRetcodeAppProps
     {

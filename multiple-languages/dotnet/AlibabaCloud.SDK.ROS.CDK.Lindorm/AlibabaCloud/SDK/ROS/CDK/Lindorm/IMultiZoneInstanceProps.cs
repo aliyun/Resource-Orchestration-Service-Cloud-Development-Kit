@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Lindorm
 {
-    /// <summary>Properties for defining a `ALIYUN::Lindorm::MultiZoneInstance`.</summary>
+    /// <summary>Properties for defining a `MultiZoneInstance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-lindorm-multizoneinstance
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IMultiZoneInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-lindorm.MultiZoneInstanceProps")]
     public interface IMultiZoneInstanceProps
     {
@@ -496,7 +499,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Lindorm
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::Lindorm::MultiZoneInstance`.</summary>
+        /// <summary>Properties for defining a `MultiZoneInstance`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-lindorm-multizoneinstance
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IMultiZoneInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-lindorm.MultiZoneInstanceProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Lindorm.IMultiZoneInstanceProps
         {

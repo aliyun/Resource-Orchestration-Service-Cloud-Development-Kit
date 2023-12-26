@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ess.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ESS::ScalingConfigurations`.</summary>
+    /// <summary>Properties for defining a `RosScalingConfigurations`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ess-scalingconfigurations
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosScalingConfigurationsProps), fullyQualifiedName: "@alicloud/ros-cdk-ess.datasource.RosScalingConfigurationsProps")]
     public interface IRosScalingConfigurationsProps
     {
@@ -47,7 +50,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::ESS::ScalingConfigurations`.</summary>
+        /// <summary>Properties for defining a `RosScalingConfigurations`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ess-scalingconfigurations
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosScalingConfigurationsProps), fullyQualifiedName: "@alicloud/ros-cdk-ess.datasource.RosScalingConfigurationsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ess.Datasource.IRosScalingConfigurationsProps
         {

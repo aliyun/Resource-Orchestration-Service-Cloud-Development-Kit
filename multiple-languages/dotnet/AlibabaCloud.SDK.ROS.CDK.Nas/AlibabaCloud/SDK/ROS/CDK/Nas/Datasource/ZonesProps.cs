@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Nas.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::NAS::Zones`.</summary>
+    /// <summary>Properties for defining a `Zones`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-zones
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-nas.datasource.ZonesProps")]
     public class ZonesProps : AlibabaCloud.SDK.ROS.CDK.Nas.Datasource.IZonesProps
     {

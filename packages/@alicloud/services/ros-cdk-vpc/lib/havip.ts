@@ -4,7 +4,8 @@ import { RosHaVip } from './vpc.generated';
 export { RosHaVip as HaVipProperty };
 
 /**
- * Properties for defining a `ALIYUN::VPC::HaVip`
+ * Properties for defining a `HaVip`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-havip
  */
 export interface HaVipProps {
 
@@ -15,7 +16,7 @@ export interface HaVipProps {
 
     /**
      * Property description: The description of the HAVIP.
-     * The description must be 1 to 256 characters in length and cannot start with http:// or https://.
+     * The description must be 1 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -26,7 +27,7 @@ export interface HaVipProps {
 
     /**
      * Property name: The name of the HAVIP.
-     * The name must be 1 to 128 characters in length, and cannot start with http:// or https://.
+     * The name must be 1 to 128 characters in length, and cannot start with http:\/\/ or https:\/\/.
      */
     readonly name?: string | ros.IResolvable;
 
@@ -42,14 +43,11 @@ export interface HaVipProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::VPC::HaVip`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::HaVip`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosHaVip`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-havip
  */
 export class HaVip extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute HaVipId: Assigned HaVip ID.
@@ -62,8 +60,6 @@ export class HaVip extends ros.Resource {
     public readonly attrIpAddress: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VPC::HaVip`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

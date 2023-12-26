@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::PAI::Datasets`
+ * Properties for defining a `RosDatasets`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-datasets
  */
 export interface RosDatasetsProps {
 
@@ -58,18 +59,15 @@ function rosDatasetsPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `DATASOURCE::PAI::Datasets`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::PAI::Datasets`, which is used to query the basic information about datasets.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Datasets` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-datasets
  */
 export class RosDatasets extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::PAI::Datasets";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DatasetIds: The list of dataset IDs.
@@ -99,8 +97,6 @@ export class RosDatasets extends ros.RosResource {
     public sourceId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::PAI::Datasets`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -128,7 +124,8 @@ export class RosDatasets extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::PAI::Services`
+ * Properties for defining a `RosServices`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-services
  */
 export interface RosServicesProps {
 
@@ -178,18 +175,15 @@ function rosServicesPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `DATASOURCE::PAI::Services`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::PAI::Services`, which is used to query the information about Elastic Algorithm Service (EAS) services of Machine Learning Platform for AI (PAI).
+ * @Note This class does not contain additional functions, so it is recommended to use the `Services` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-services
  */
 export class RosServices extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::PAI::Services";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ServiceNames: The list of service names.
@@ -215,8 +209,6 @@ export class RosServices extends ros.RosResource {
     public serviceName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::PAI::Services`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -244,7 +236,8 @@ export class RosServices extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::PAI::Workspaces`
+ * Properties for defining a `RosWorkspaces`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-workspaces
  */
 export interface RosWorkspacesProps {
 
@@ -297,18 +290,15 @@ function rosWorkspacesPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `DATASOURCE::PAI::Workspaces`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::PAI::Workspaces`, which is used to query the basic information about workspaces.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Workspaces` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-workspaces
  */
 export class RosWorkspaces extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::PAI::Workspaces";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute WorkspaceIds: The list of workspace IDs.
@@ -337,8 +327,6 @@ export class RosWorkspaces extends ros.RosResource {
     public workspaceName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::PAI::Workspaces`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

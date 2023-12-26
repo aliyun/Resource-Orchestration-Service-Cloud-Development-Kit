@@ -4,7 +4,8 @@ import { RosTriggers } from './fc.generated';
 export { RosTriggers as TriggersProperty };
 
 /**
- * Properties for defining a `DATASOURCE::FC::Triggers`
+ * Properties for defining a `Triggers`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-triggers
  */
 export interface TriggersProps {
 
@@ -25,14 +26,11 @@ export interface TriggersProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::FC::Triggers`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::FC::Triggers`, which is used to query triggers.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTriggers`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-triggers
  */
 export class Triggers extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute TriggerNames: The list of trigger names.
@@ -45,8 +43,6 @@ export class Triggers extends ros.Resource {
     public readonly attrTriggers: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::FC::Triggers`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

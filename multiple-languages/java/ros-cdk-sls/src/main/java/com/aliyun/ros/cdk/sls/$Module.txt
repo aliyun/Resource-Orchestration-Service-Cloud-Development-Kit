@@ -68,8 +68,12 @@
 @alicloud/ros-cdk-sls.RosSavedsearch=com.aliyun.ros.cdk.sls.RosSavedsearch
 @alicloud/ros-cdk-sls.RosSavedsearch.DetailProperty=com.aliyun.ros.cdk.sls.RosSavedsearch$DetailProperty
 @alicloud/ros-cdk-sls.RosSavedsearchProps=com.aliyun.ros.cdk.sls.RosSavedsearchProps
+@alicloud/ros-cdk-sls.RosServiceLog=com.aliyun.ros.cdk.sls.RosServiceLog
+@alicloud/ros-cdk-sls.RosServiceLogProps=com.aliyun.ros.cdk.sls.RosServiceLogProps
 @alicloud/ros-cdk-sls.Savedsearch=com.aliyun.ros.cdk.sls.Savedsearch
 @alicloud/ros-cdk-sls.SavedsearchProps=com.aliyun.ros.cdk.sls.SavedsearchProps
+@alicloud/ros-cdk-sls.ServiceLog=com.aliyun.ros.cdk.sls.ServiceLog
+@alicloud/ros-cdk-sls.ServiceLogProps=com.aliyun.ros.cdk.sls.ServiceLogProps
 @alicloud/ros-cdk-sls.datasource.Logstores=com.aliyun.ros.cdk.sls.datasource.Logstores
 @alicloud/ros-cdk-sls.datasource.LogstoresProps=com.aliyun.ros.cdk.sls.datasource.LogstoresProps
 @alicloud/ros-cdk-sls.datasource.Projects=com.aliyun.ros.cdk.sls.datasource.Projects

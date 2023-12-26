@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Mns.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::MNS::Queues`.</summary>
+    /// <summary>Properties for defining a `Queues`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-queues
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IQueuesProps), fullyQualifiedName: "@alicloud/ros-cdk-mns.datasource.QueuesProps")]
     public interface IQueuesProps
     {
@@ -19,7 +22,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::MNS::Queues`.</summary>
+        /// <summary>Properties for defining a `Queues`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-queues
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IQueuesProps), fullyQualifiedName: "@alicloud/ros-cdk-mns.datasource.QueuesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Mns.Datasource.IQueuesProps
         {

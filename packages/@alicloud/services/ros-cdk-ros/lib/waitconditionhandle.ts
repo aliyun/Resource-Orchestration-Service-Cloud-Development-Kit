@@ -4,7 +4,8 @@ import { RosWaitConditionHandle } from './ros.generated';
 export { RosWaitConditionHandle as WaitConditionHandleProperty };
 
 /**
- * Properties for defining a `ALIYUN::ROS::WaitConditionHandle`
+ * Properties for defining a `WaitConditionHandle`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-waitconditionhandle
  */
 export interface WaitConditionHandleProps {
 
@@ -31,14 +32,11 @@ export interface WaitConditionHandleProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ROS::WaitConditionHandle`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ROS::WaitConditionHandle`, which is used to receive signals. You can use ALIYUN::ROS::WaitConditionHandle together with ALIYUN::ROS::WaitCondition to manage the execution process of a stack. When you create an Elastic Compute Service (ECS) instance, a signal is sent during the execution of the user data.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosWaitConditionHandle`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-waitconditionhandle
  */
 export class WaitConditionHandle extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute CurlCli: Convenience attribute, provides curl CLI command prefix, which can be used for signalling handle completion or failure.  You can signal success by adding --data-binary '{"status": "SUCCESS"}' , or signal failure by adding --data-binary '{"status": "FAILURE"}'
@@ -66,8 +64,6 @@ export class WaitConditionHandle extends ros.Resource {
     public readonly attrWindowsCurlCli: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ROS::WaitConditionHandle`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

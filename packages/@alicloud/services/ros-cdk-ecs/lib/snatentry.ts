@@ -4,7 +4,8 @@ import { RosSNatEntry } from './ecs.generated';
 export { RosSNatEntry as SNatEntryProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECS::SNatEntry`
+ * Properties for defining a `SNatEntry`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-snatentry
  */
 export interface SNatEntryProps {
 
@@ -19,12 +20,12 @@ export interface SNatEntryProps {
     readonly sNatTableId: string | ros.IResolvable;
 
     /**
-     * Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.
+     * Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:\/\/ or https:\/\/.
      */
     readonly snatEntryName?: string | ros.IResolvable;
 
     /**
-     * Property sourceCidr: Specifies the network segment of the switch. For example, 10.0.0.1/24. This parameter and the SourceVSwtichId parameter are mutually exclusive and cannot appear at the same time.
+     * Property sourceCidr: Specifies the network segment of the switch. For example, 10.0.0.1\/24. This parameter and the SourceVSwtichId parameter are mutually exclusive and cannot appear at the same time.
      */
     readonly sourceCidr?: string | ros.IResolvable;
 
@@ -35,14 +36,11 @@ export interface SNatEntryProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECS::SNatEntry`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::SNatEntry`, which is used to configure the Source Network Address Translation (SNAT) table of a NAT gateway.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSNatEntry`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-snatentry
  */
 export class SNatEntry extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute SNatEntryId: The id of created SNAT entry.
@@ -50,8 +48,6 @@ export class SNatEntry extends ros.Resource {
     public readonly attrSNatEntryId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ECS::SNatEntry`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

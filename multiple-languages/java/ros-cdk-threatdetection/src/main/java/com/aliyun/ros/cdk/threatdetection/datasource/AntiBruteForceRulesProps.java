@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.threatdetection.datasource;
 
 /**
- * Properties for defining a <code>DATASOURCE::ThreatDetection::AntiBruteForceRules</code>.
+ * Properties for defining a <code>AntiBruteForceRules</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-threatdetection-antibruteforcerules
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.470Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:18.292Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.threatdetection.$Module.class, fqn = "@alicloud/ros-cdk-threatdetection.datasource.AntiBruteForceRulesProps")
 @software.amazon.jsii.Jsii.Proxy(AntiBruteForceRulesProps.Jsii$Proxy.class)
 public interface AntiBruteForceRulesProps extends software.amazon.jsii.JsiiSerializable {

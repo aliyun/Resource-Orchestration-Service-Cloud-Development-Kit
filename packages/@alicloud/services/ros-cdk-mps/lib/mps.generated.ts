@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::MPS::Pipeline`
+ * Properties for defining a `RosPipeline`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mps-pipeline
  */
 export interface RosPipelineProps {
 
@@ -99,18 +100,15 @@ function rosPipelinePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::MPS::Pipeline`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MPS::Pipeline`, which is used to create an ApsaraVideo Media Processing (MPS) queue.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Pipeline` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mps-pipeline
  */
 export class RosPipeline extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::MPS::Pipeline";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute PipelineId: The ID of the MPS queue.
@@ -162,8 +160,6 @@ export class RosPipeline extends ros.RosResource {
     public state: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::MPS::Pipeline`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

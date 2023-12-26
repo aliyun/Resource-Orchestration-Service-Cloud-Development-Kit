@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ESS::ScalingGroupEnable`.</summary>
+    /// <summary>Properties for defining a `ScalingGroupEnable`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroupenable
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ess.ScalingGroupEnableProps")]
     public class ScalingGroupEnableProps : AlibabaCloud.SDK.ROS.CDK.Ess.IScalingGroupEnableProps
     {

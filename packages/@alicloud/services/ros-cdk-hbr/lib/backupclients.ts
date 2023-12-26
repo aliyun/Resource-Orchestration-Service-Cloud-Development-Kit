@@ -4,7 +4,8 @@ import { RosBackupClients } from './hbr.generated';
 export { RosBackupClients as BackupClientsProperty };
 
 /**
- * Properties for defining a `ALIYUN::HBR::BackupClients`
+ * Properties for defining a `BackupClients`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-backupclients
  */
 export interface BackupClientsProps {
 
@@ -20,14 +21,11 @@ export interface BackupClientsProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::HBR::BackupClients`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::HBR::BackupClients`, which is used to install backup clients on Elastic Compute Service (ECS) instances.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBackupClients`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-backupclients
  */
 export class BackupClients extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ClientIds: ID list of clients installed in instances
@@ -40,8 +38,6 @@ export class BackupClients extends ros.Resource {
     public readonly attrInstanceIds: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::HBR::BackupClients`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

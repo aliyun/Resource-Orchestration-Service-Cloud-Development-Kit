@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ess
 {
-    /// <summary>A ROS template type:  `ALIYUN::ESS::LifecycleHook`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::LifecycleHook`, which is used to create a lifecycle hook for a scaling group.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `LifecycleHook` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-lifecyclehook
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Ess.RosLifecycleHook), fullyQualifiedName: "@alicloud/ros-cdk-ess.RosLifecycleHook", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-ess.RosLifecycleHookProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosLifecycleHook : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::ESS::LifecycleHook`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -267,9 +270,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// region: the region to which the scaling group locates
         /// account-id: Alibaba Cloud ID
         /// For example:
-        /// MNS queue: acs:ess:{region}:{account-id}:queue/{queuename}
-        /// MNS topic: acs:ess:{region}:{account-id}:topic/{topicname}
-        /// OOS template: acs:ess:{region}:{account-id}:oos/{templatename}
+        /// MNS queue: acs:ess:{region}:{account-id}:queue\/{queuename}
+        /// MNS topic: acs:ess:{region}:{account-id}:topic\/{topicname}
+        /// OOS template: acs:ess:{region}:{account-id}:oos\/{templatename}
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "notificationArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -26,6 +26,8 @@
 @alicloud/ros-cdk-ecs.ForwardEntryProps=com.aliyun.ros.cdk.ecs.ForwardEntryProps
 @alicloud/ros-cdk-ecs.HpcCluster=com.aliyun.ros.cdk.ecs.HpcCluster
 @alicloud/ros-cdk-ecs.HpcClusterProps=com.aliyun.ros.cdk.ecs.HpcClusterProps
+@alicloud/ros-cdk-ecs.ImageSharePermission=com.aliyun.ros.cdk.ecs.ImageSharePermission
+@alicloud/ros-cdk-ecs.ImageSharePermissionProps=com.aliyun.ros.cdk.ecs.ImageSharePermissionProps
 @alicloud/ros-cdk-ecs.Instance=com.aliyun.ros.cdk.ecs.Instance
 @alicloud/ros-cdk-ecs.InstanceClone=com.aliyun.ros.cdk.ecs.InstanceClone
 @alicloud/ros-cdk-ecs.InstanceCloneProps=com.aliyun.ros.cdk.ecs.InstanceCloneProps
@@ -90,8 +92,11 @@
 @alicloud/ros-cdk-ecs.RosForwardEntryProps=com.aliyun.ros.cdk.ecs.RosForwardEntryProps
 @alicloud/ros-cdk-ecs.RosHpcCluster=com.aliyun.ros.cdk.ecs.RosHpcCluster
 @alicloud/ros-cdk-ecs.RosHpcClusterProps=com.aliyun.ros.cdk.ecs.RosHpcClusterProps
+@alicloud/ros-cdk-ecs.RosImageSharePermission=com.aliyun.ros.cdk.ecs.RosImageSharePermission
+@alicloud/ros-cdk-ecs.RosImageSharePermissionProps=com.aliyun.ros.cdk.ecs.RosImageSharePermissionProps
 @alicloud/ros-cdk-ecs.RosInstance=com.aliyun.ros.cdk.ecs.RosInstance
 @alicloud/ros-cdk-ecs.RosInstance.DiskMappingsProperty=com.aliyun.ros.cdk.ecs.RosInstance$DiskMappingsProperty
+@alicloud/ros-cdk-ecs.RosInstance.PrivatePoolOptionsProperty=com.aliyun.ros.cdk.ecs.RosInstance$PrivatePoolOptionsProperty
 @alicloud/ros-cdk-ecs.RosInstance.TagsProperty=com.aliyun.ros.cdk.ecs.RosInstance$TagsProperty
 @alicloud/ros-cdk-ecs.RosInstanceClone=com.aliyun.ros.cdk.ecs.RosInstanceClone
 @alicloud/ros-cdk-ecs.RosInstanceClone.DiskMappingsProperty=com.aliyun.ros.cdk.ecs.RosInstanceClone$DiskMappingsProperty
@@ -100,6 +105,7 @@
 @alicloud/ros-cdk-ecs.RosInstanceGroup=com.aliyun.ros.cdk.ecs.RosInstanceGroup
 @alicloud/ros-cdk-ecs.RosInstanceGroup.DiskMappingsProperty=com.aliyun.ros.cdk.ecs.RosInstanceGroup$DiskMappingsProperty
 @alicloud/ros-cdk-ecs.RosInstanceGroup.EniMappingsProperty=com.aliyun.ros.cdk.ecs.RosInstanceGroup$EniMappingsProperty
+@alicloud/ros-cdk-ecs.RosInstanceGroup.PrivatePoolOptionsProperty=com.aliyun.ros.cdk.ecs.RosInstanceGroup$PrivatePoolOptionsProperty
 @alicloud/ros-cdk-ecs.RosInstanceGroup.TagsProperty=com.aliyun.ros.cdk.ecs.RosInstanceGroup$TagsProperty
 @alicloud/ros-cdk-ecs.RosInstanceGroupClone=com.aliyun.ros.cdk.ecs.RosInstanceGroupClone
 @alicloud/ros-cdk-ecs.RosInstanceGroupClone.DiskMappingsProperty=com.aliyun.ros.cdk.ecs.RosInstanceGroupClone$DiskMappingsProperty
@@ -109,6 +115,7 @@
 @alicloud/ros-cdk-ecs.RosInstanceGroupProps=com.aliyun.ros.cdk.ecs.RosInstanceGroupProps
 @alicloud/ros-cdk-ecs.RosInstanceProps=com.aliyun.ros.cdk.ecs.RosInstanceProps
 @alicloud/ros-cdk-ecs.RosInvocation=com.aliyun.ros.cdk.ecs.RosInvocation
+@alicloud/ros-cdk-ecs.RosInvocation.TagsProperty=com.aliyun.ros.cdk.ecs.RosInvocation$TagsProperty
 @alicloud/ros-cdk-ecs.RosInvocationProps=com.aliyun.ros.cdk.ecs.RosInvocationProps
 @alicloud/ros-cdk-ecs.RosJoinSecurityGroup=com.aliyun.ros.cdk.ecs.RosJoinSecurityGroup
 @alicloud/ros-cdk-ecs.RosJoinSecurityGroupProps=com.aliyun.ros.cdk.ecs.RosJoinSecurityGroupProps

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cen
 {
-    /// <summary>Properties for defining a `ALIYUN::CEN::CenRouteMap`.</summary>
+    /// <summary>Properties for defining a `RosCenRouteMap`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenroutemap
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosCenRouteMapProps), fullyQualifiedName: "@alicloud/ros-cdk-cen.RosCenRouteMapProps")]
     public interface IRosCenRouteMapProps
     {
@@ -78,9 +81,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <remarks>
         /// <strong>Property</strong>: cidrMatchMode: Match statements are used to match the prefixes. Valid values:
         /// Include: uses fuzzy match. If the routing prefix in the condition contains the routing prefix of the route, the match is successful.
-        /// For example, the 1.1.0.0/16 policy can match the 1.1.1.0/24 route.
+        /// For example, the 1.1.0.0\/16 policy can match the 1.1.1.0\/24 route.
         /// Complete: uses exact match. Only when the routing prefix in the condition is the same as the routing prefix of the route, the match is successful.
-        /// For example, the 1.1.0.0/16 policy can match the 1.1.0.0/16 route.
+        /// For example, the 1.1.0.0\/16 policy can match the 1.1.0.0\/16 route.
         /// </remarks>
         [JsiiProperty(name: "cidrMatchMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -385,7 +388,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::CEN::CenRouteMap`.</summary>
+        /// <summary>Properties for defining a `RosCenRouteMap`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenroutemap
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosCenRouteMapProps), fullyQualifiedName: "@alicloud/ros-cdk-cen.RosCenRouteMapProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cen.IRosCenRouteMapProps
         {
@@ -460,9 +466,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             /// <remarks>
             /// <strong>Property</strong>: cidrMatchMode: Match statements are used to match the prefixes. Valid values:
             /// Include: uses fuzzy match. If the routing prefix in the condition contains the routing prefix of the route, the match is successful.
-            /// For example, the 1.1.0.0/16 policy can match the 1.1.1.0/24 route.
+            /// For example, the 1.1.0.0\/16 policy can match the 1.1.1.0\/24 route.
             /// Complete: uses exact match. Only when the routing prefix in the condition is the same as the routing prefix of the route, the match is successful.
-            /// For example, the 1.1.0.0/16 policy can match the 1.1.0.0/16 route.
+            /// For example, the 1.1.0.0\/16 policy can match the 1.1.0.0\/16 route.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "cidrMatchMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

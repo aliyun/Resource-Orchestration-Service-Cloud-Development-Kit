@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::RAM::Group`.</summary>
+    /// <summary>Properties for defining a `RosGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-group
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ram.RosGroupProps")]
     public class RosGroupProps : AlibabaCloud.SDK.ROS.CDK.Ram.IRosGroupProps
     {

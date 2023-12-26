@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cen
 {
-    /// <summary>Properties for defining a `ALIYUN::CEN::CenVbrHealthCheck`.</summary>
+    /// <summary>Properties for defining a `CenVbrHealthCheck`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenvbrhealthcheck
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ICenVbrHealthCheckProps), fullyQualifiedName: "@alicloud/ros-cdk-cen.CenVbrHealthCheckProps")]
     public interface ICenVbrHealthCheckProps
     {
@@ -95,7 +98,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::CEN::CenVbrHealthCheck`.</summary>
+        /// <summary>Properties for defining a `CenVbrHealthCheck`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenvbrhealthcheck
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ICenVbrHealthCheckProps), fullyQualifiedName: "@alicloud/ros-cdk-cen.CenVbrHealthCheckProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cen.ICenVbrHealthCheckProps
         {

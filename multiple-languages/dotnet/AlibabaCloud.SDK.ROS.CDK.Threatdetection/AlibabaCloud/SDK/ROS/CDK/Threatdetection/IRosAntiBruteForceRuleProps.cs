@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Threatdetection
 {
-    /// <summary>Properties for defining a `ALIYUN::ThreatDetection::AntiBruteForceRule`.</summary>
+    /// <summary>Properties for defining a `RosAntiBruteForceRule`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-threatdetection-antibruteforcerule
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosAntiBruteForceRuleProps), fullyQualifiedName: "@alicloud/ros-cdk-threatdetection.RosAntiBruteForceRuleProps")]
     public interface IRosAntiBruteForceRuleProps
     {
@@ -87,7 +90,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Threatdetection
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ThreatDetection::AntiBruteForceRule`.</summary>
+        /// <summary>Properties for defining a `RosAntiBruteForceRule`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-threatdetection-antibruteforcerule
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosAntiBruteForceRuleProps), fullyQualifiedName: "@alicloud/ros-cdk-threatdetection.RosAntiBruteForceRuleProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Threatdetection.IRosAntiBruteForceRuleProps
         {

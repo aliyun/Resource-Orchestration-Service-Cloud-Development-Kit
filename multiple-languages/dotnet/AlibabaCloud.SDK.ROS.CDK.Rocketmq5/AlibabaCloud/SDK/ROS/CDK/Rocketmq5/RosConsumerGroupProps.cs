@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq5
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ROCKETMQ5::ConsumerGroup`.</summary>
+    /// <summary>Properties for defining a `RosConsumerGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq5-consumergroup
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-rocketmq5.RosConsumerGroupProps")]
     public class RosConsumerGroupProps : AlibabaCloud.SDK.ROS.CDK.Rocketmq5.IRosConsumerGroupProps
     {

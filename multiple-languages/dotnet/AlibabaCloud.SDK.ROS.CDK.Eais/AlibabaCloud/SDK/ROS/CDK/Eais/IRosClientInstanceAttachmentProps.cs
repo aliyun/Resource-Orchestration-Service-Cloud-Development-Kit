@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Eais
 {
-    /// <summary>Properties for defining a `ALIYUN::EAIS::ClientInstanceAttachment`.</summary>
+    /// <summary>Properties for defining a `RosClientInstanceAttachment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eais-clientinstanceattachment
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosClientInstanceAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-eais.RosClientInstanceAttachmentProps")]
     public interface IRosClientInstanceAttachmentProps
     {
@@ -26,7 +29,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eais
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::EAIS::ClientInstanceAttachment`.</summary>
+        /// <summary>Properties for defining a `RosClientInstanceAttachment`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eais-clientinstanceattachment
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosClientInstanceAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-eais.RosClientInstanceAttachmentProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Eais.IRosClientInstanceAttachmentProps
         {

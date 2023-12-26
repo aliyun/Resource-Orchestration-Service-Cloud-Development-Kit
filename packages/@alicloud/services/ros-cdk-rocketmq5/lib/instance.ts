@@ -4,7 +4,8 @@ import { RosInstance } from './rocketmq5.generated';
 export { RosInstance as InstanceProperty };
 
 /**
- * Properties for defining a `ALIYUN::ROCKETMQ5::Instance`
+ * Properties for defining a `Instance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq5-instance
  */
 export interface InstanceProps {
 
@@ -77,14 +78,11 @@ export interface InstanceProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ROCKETMQ5::Instance`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ROCKETMQ5::Instance`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq5-instance
  */
 export class Instance extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute InstanceId: Instance ID created.
@@ -107,8 +105,6 @@ export class Instance extends ros.Resource {
     public readonly attrVpcEndpoint: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ROCKETMQ5::Instance`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::ENS::Instances`
+ * Properties for defining a `RosInstances`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ens-instances
  */
 export interface RosInstancesProps {
 
@@ -105,18 +106,15 @@ function rosInstancesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `DATASOURCE::ENS::Instances`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ENS::Instances`, which is used to query the details of Edge Node Service (ENS) instances.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Instances` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ens-instances
  */
 export class RosInstances extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ENS::Instances";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute InstanceIds: The list of instance IDs.
@@ -170,8 +168,6 @@ export class RosInstances extends ros.RosResource {
     public status: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::ENS::Instances`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

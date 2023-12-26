@@ -4,7 +4,8 @@ import { RosPipeline } from './devops.generated';
 export { RosPipeline as PipelineProperty };
 
 /**
- * Properties for defining a `ALIYUN::DEVOPS::Pipeline`
+ * Properties for defining a `Pipeline`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-pipeline
  */
 export interface PipelineProps {
 
@@ -25,14 +26,11 @@ export interface PipelineProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::DEVOPS::Pipeline`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DEVOPS::Pipeline`ALIYUN::DFS::AccessGroup is used to create a permission group.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPipeline`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-pipeline
  */
 export class Pipeline extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute PipelineId: Pipeline id.
@@ -40,8 +38,6 @@ export class Pipeline extends ros.Resource {
     public readonly attrPipelineId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::DEVOPS::Pipeline`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

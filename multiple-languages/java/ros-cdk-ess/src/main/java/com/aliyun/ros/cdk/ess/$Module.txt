@@ -18,6 +18,9 @@
 @alicloud/ros-cdk-ess.RosLoadBalancerAttachmentProps=com.aliyun.ros.cdk.ess.RosLoadBalancerAttachmentProps
 @alicloud/ros-cdk-ess.RosScalingConfiguration=com.aliyun.ros.cdk.ess.RosScalingConfiguration
 @alicloud/ros-cdk-ess.RosScalingConfiguration.DiskMappingsProperty=com.aliyun.ros.cdk.ess.RosScalingConfiguration$DiskMappingsProperty
+@alicloud/ros-cdk-ess.RosScalingConfiguration.InstancePatternInfosProperty=com.aliyun.ros.cdk.ess.RosScalingConfiguration$InstancePatternInfosProperty
+@alicloud/ros-cdk-ess.RosScalingConfiguration.InstanceTypeOverridesProperty=com.aliyun.ros.cdk.ess.RosScalingConfiguration$InstanceTypeOverridesProperty
+@alicloud/ros-cdk-ess.RosScalingConfiguration.PrivatePoolOptionsProperty=com.aliyun.ros.cdk.ess.RosScalingConfiguration$PrivatePoolOptionsProperty
 @alicloud/ros-cdk-ess.RosScalingConfiguration.TagListProperty=com.aliyun.ros.cdk.ess.RosScalingConfiguration$TagListProperty
 @alicloud/ros-cdk-ess.RosScalingConfigurationProps=com.aliyun.ros.cdk.ess.RosScalingConfigurationProps
 @alicloud/ros-cdk-ess.RosScalingGroup=com.aliyun.ros.cdk.ess.RosScalingGroup
@@ -37,6 +40,10 @@
 @alicloud/ros-cdk-ess.RosServerGroupAttachment=com.aliyun.ros.cdk.ess.RosServerGroupAttachment
 @alicloud/ros-cdk-ess.RosServerGroupAttachment.ServerGroupsProperty=com.aliyun.ros.cdk.ess.RosServerGroupAttachment$ServerGroupsProperty
 @alicloud/ros-cdk-ess.RosServerGroupAttachmentProps=com.aliyun.ros.cdk.ess.RosServerGroupAttachmentProps
+@alicloud/ros-cdk-ess.RosVServerGroupAttachment=com.aliyun.ros.cdk.ess.RosVServerGroupAttachment
+@alicloud/ros-cdk-ess.RosVServerGroupAttachment.VServerGroupAttributesProperty=com.aliyun.ros.cdk.ess.RosVServerGroupAttachment$VServerGroupAttributesProperty
+@alicloud/ros-cdk-ess.RosVServerGroupAttachment.VServerGroupsProperty=com.aliyun.ros.cdk.ess.RosVServerGroupAttachment$VServerGroupsProperty
+@alicloud/ros-cdk-ess.RosVServerGroupAttachmentProps=com.aliyun.ros.cdk.ess.RosVServerGroupAttachmentProps
 @alicloud/ros-cdk-ess.ScalingConfiguration=com.aliyun.ros.cdk.ess.ScalingConfiguration
 @alicloud/ros-cdk-ess.ScalingConfigurationProps=com.aliyun.ros.cdk.ess.ScalingConfigurationProps
 @alicloud/ros-cdk-ess.ScalingGroup=com.aliyun.ros.cdk.ess.ScalingGroup
@@ -49,6 +56,8 @@
 @alicloud/ros-cdk-ess.ScheduledTaskProps=com.aliyun.ros.cdk.ess.ScheduledTaskProps
 @alicloud/ros-cdk-ess.ServerGroupAttachment=com.aliyun.ros.cdk.ess.ServerGroupAttachment
 @alicloud/ros-cdk-ess.ServerGroupAttachmentProps=com.aliyun.ros.cdk.ess.ServerGroupAttachmentProps
+@alicloud/ros-cdk-ess.VServerGroupAttachment=com.aliyun.ros.cdk.ess.VServerGroupAttachment
+@alicloud/ros-cdk-ess.VServerGroupAttachmentProps=com.aliyun.ros.cdk.ess.VServerGroupAttachmentProps
 @alicloud/ros-cdk-ess.datasource.RosScalingConfigurations=com.aliyun.ros.cdk.ess.datasource.RosScalingConfigurations
 @alicloud/ros-cdk-ess.datasource.RosScalingConfigurationsProps=com.aliyun.ros.cdk.ess.datasource.RosScalingConfigurationsProps
 @alicloud/ros-cdk-ess.datasource.RosScalingGroups=com.aliyun.ros.cdk.ess.datasource.RosScalingGroups

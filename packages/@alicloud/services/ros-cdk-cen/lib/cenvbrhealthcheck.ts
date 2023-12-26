@@ -4,7 +4,8 @@ import { RosCenVbrHealthCheck } from './cen.generated';
 export { RosCenVbrHealthCheck as CenVbrHealthCheckProperty };
 
 /**
- * Properties for defining a `ALIYUN::CEN::CenVbrHealthCheck`
+ * Properties for defining a `CenVbrHealthCheck`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenvbrhealthcheck
  */
 export interface CenVbrHealthCheckProps {
 
@@ -34,7 +35,7 @@ export interface CenVbrHealthCheckProps {
     readonly healthCheckInterval?: number | ros.IResolvable;
 
     /**
-     * Property healthCheckSourceIp: You can use either of the following methods to specify the source IP address of the health check.  Automatic IP Address: The system automatically assigns an IP address within the CIDR block 100.96.0.0/16 (recommended).  Custom IP Address: You can specify a source IP address that is available within the CIDR block 10.0.0.0/8, 192.168.0.0/16, or 172.16.0.0/12. The specified source IP address must not overlap with the IP addresses of the Alibaba Cloud-facing and client-facing interfaces on the VBR instance, or the IP addresses of the instances with which the VBR instance needs to communicate in the CEN.
+     * Property healthCheckSourceIp: You can use either of the following methods to specify the source IP address of the health check.  Automatic IP Address: The system automatically assigns an IP address within the CIDR block 100.96.0.0\/16 (recommended).  Custom IP Address: You can specify a source IP address that is available within the CIDR block 10.0.0.0\/8, 192.168.0.0\/16, or 172.16.0.0\/12. The specified source IP address must not overlap with the IP addresses of the Alibaba Cloud-facing and client-facing interfaces on the VBR instance, or the IP addresses of the instances with which the VBR instance needs to communicate in the CEN.
      */
     readonly healthCheckSourceIp?: string | ros.IResolvable;
 
@@ -50,14 +51,11 @@ export interface CenVbrHealthCheckProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CEN::CenVbrHealthCheck`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenVbrHealthCheck`, which is used to enable the health check feature or modify the health check configuration for a virtual border router (VBR).
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCenVbrHealthCheck`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenvbrhealthcheck
  */
 export class CenVbrHealthCheck extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute CenId: The ID of the CEN instance.
@@ -100,8 +98,6 @@ export class CenVbrHealthCheck extends ros.Resource {
     public readonly attrVbrInstanceRegionId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CEN::CenVbrHealthCheck`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

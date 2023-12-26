@@ -4,7 +4,8 @@ import { RosPipelineRun } from './devops.generated';
 export { RosPipelineRun as PipelineRunProperty };
 
 /**
- * Properties for defining a `ALIYUN::DEVOPS::PipelineRun`
+ * Properties for defining a `PipelineRun`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-pipelinerun
  */
 export interface PipelineRunProps {
 
@@ -40,14 +41,11 @@ export interface PipelineRunProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::DEVOPS::PipelineRun`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DEVOPS::PipelineRun`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPipelineRun`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-pipelinerun
  */
 export class PipelineRun extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute PipelineRunId: Pipeline run id.
@@ -55,8 +53,6 @@ export class PipelineRun extends ros.Resource {
     public readonly attrPipelineRunId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::DEVOPS::PipelineRun`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

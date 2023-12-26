@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::AMQP::Instance`.</summary>
+    /// <summary>Properties for defining a `RosInstance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-instance
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-amqp.RosInstanceProps")]
     public class RosInstanceProps : AlibabaCloud.SDK.ROS.CDK.Amqp.IRosInstanceProps
     {

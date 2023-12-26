@@ -4,7 +4,8 @@ import { RosDBClusters } from './clickhouse.generated';
 export { RosDBClusters as DBClustersProperty };
 
 /**
- * Properties for defining a `DATASOURCE::ClickHouse::DBClusters`
+ * Properties for defining a `DBClusters`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-clickhouse-dbclusters
  */
 export interface DBClustersProps {
 
@@ -20,14 +21,11 @@ export interface DBClustersProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::ClickHouse::DBClusters`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ClickHouse::DBClusters`, which is used to query the information about ApsaraDB for ClickHouse clusters.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBClusters`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-clickhouse-dbclusters
  */
 export class DBClusters extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DBClusterIds: The list of db cluster IDs.
@@ -40,8 +38,6 @@ export class DBClusters extends ros.Resource {
     public readonly attrDbClusters: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::ClickHouse::DBClusters`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

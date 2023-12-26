@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.alb;
 
 /**
- * Properties for defining a <code>ALIYUN::ALB::ServerGroup</code>.
+ * Properties for defining a <code>ServerGroup</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-servergroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:33.292Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:13.774Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.ServerGroupProps")
 @software.amazon.jsii.Jsii.Proxy(ServerGroupProps.Jsii$Proxy.class)
 public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable {

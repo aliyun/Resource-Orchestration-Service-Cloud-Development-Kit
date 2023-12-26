@@ -4,20 +4,18 @@ import { RosProjects } from './sls.generated';
 export { RosProjects as ProjectsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::SLS::Projects`
+ * Properties for defining a `Projects`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-sls-projects
  */
 export interface ProjectsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::SLS::Projects`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::SLS::Projects`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosProjects`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-sls-projects
  */
 export class Projects extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ProjectNames: The list of project names.
@@ -30,8 +28,6 @@ export class Projects extends ros.Resource {
     public readonly attrProjects: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::SLS::Projects`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

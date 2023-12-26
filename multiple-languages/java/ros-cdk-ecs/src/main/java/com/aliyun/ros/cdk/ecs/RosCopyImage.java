@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * A ROS template type:  <code>ALIYUN::ECS::CopyImage</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ECS::CopyImage</code>, which is used to copy a custom image from one region to another region.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.879Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.362Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosCopyImage")
 public class RosCopyImage extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,8 +20,6 @@ public class RosCopyImage extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ECS::CopyImage</code>.
-     * <p>
      * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
      * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
      * @param props <ul><li>resource properties.</li></ul> This parameter is required.
@@ -107,6 +105,24 @@ public class RosCopyImage extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setImageId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "imageId", java.util.Objects.requireNonNull(value, "imageId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAllowCopyInSameRegion() {
+        return software.amazon.jsii.Kernel.get(this, "allowCopyInSameRegion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAllowCopyInSameRegion(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "allowCopyInSameRegion", value);
+    }
+
+    /**
+     */
+    public void setAllowCopyInSameRegion(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "allowCopyInSameRegion", value);
     }
 
     /**
@@ -480,6 +496,23 @@ public class RosCopyImage extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder imageId(final com.aliyun.ros.cdk.core.IResolvable imageId) {
             this.props.imageId(imageId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param allowCopyInSameRegion This parameter is required.
+         */
+        public Builder allowCopyInSameRegion(final java.lang.Boolean allowCopyInSameRegion) {
+            this.props.allowCopyInSameRegion(allowCopyInSameRegion);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param allowCopyInSameRegion This parameter is required.
+         */
+        public Builder allowCopyInSameRegion(final com.aliyun.ros.cdk.core.IResolvable allowCopyInSameRegion) {
+            this.props.allowCopyInSameRegion(allowCopyInSameRegion);
             return this;
         }
 

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Dfs
 {
-    /// <summary>Properties for defining a `ALIYUN::DFS::FileSystem`.</summary>
+    /// <summary>Properties for defining a `RosFileSystem`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-filesystem
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosFileSystemProps), fullyQualifiedName: "@alicloud/ros-cdk-dfs.RosFileSystemProps")]
     public interface IRosFileSystemProps
     {
@@ -109,7 +112,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dfs
 
         /// <remarks>
         /// <strong>Property</strong>: provisionedThroughputInMiBps: Preset handling capacity.
-        /// Unit: MB/sdata range: 1-5120
+        /// Unit: MB\/sdata range: 1-5120
         /// </remarks>
         [JsiiProperty(name: "provisionedThroughputInMiBps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -149,7 +152,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dfs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::DFS::FileSystem`.</summary>
+        /// <summary>Properties for defining a `RosFileSystem`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-filesystem
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosFileSystemProps), fullyQualifiedName: "@alicloud/ros-cdk-dfs.RosFileSystemProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Dfs.IRosFileSystemProps
         {
@@ -246,7 +252,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dfs
 
             /// <remarks>
             /// <strong>Property</strong>: provisionedThroughputInMiBps: Preset handling capacity.
-            /// Unit: MB/sdata range: 1-5120
+            /// Unit: MB\/sdata range: 1-5120
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "provisionedThroughputInMiBps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

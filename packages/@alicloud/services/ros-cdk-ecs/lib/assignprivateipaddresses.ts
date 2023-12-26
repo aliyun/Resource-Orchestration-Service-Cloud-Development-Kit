@@ -4,7 +4,8 @@ import { RosAssignPrivateIpAddresses } from './ecs.generated';
 export { RosAssignPrivateIpAddresses as AssignPrivateIpAddressesProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECS::AssignPrivateIpAddresses`
+ * Properties for defining a `AssignPrivateIpAddresses`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-assignprivateipaddresses
  */
 export interface AssignPrivateIpAddressesProps {
 
@@ -30,14 +31,11 @@ export interface AssignPrivateIpAddressesProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECS::AssignPrivateIpAddresses`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::AssignPrivateIpAddresses`, which is used to assign one or more secondary private IP addresses to an ENI. You can specify private IP addresses within the CIDR block of the vSwitch that hosts the ENI. You can also specify the number of private IP addresses for ECS to assign them automatically.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAssignPrivateIpAddresses`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-assignprivateipaddresses
  */
 export class AssignPrivateIpAddresses extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute NetworkInterfaceId: The ID of the ENI.
@@ -50,8 +48,6 @@ export class AssignPrivateIpAddresses extends ros.Resource {
     public readonly attrPrivateIpAddresses: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ECS::AssignPrivateIpAddresses`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

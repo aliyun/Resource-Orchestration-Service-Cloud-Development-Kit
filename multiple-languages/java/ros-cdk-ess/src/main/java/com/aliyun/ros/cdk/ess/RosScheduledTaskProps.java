@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.ess;
 
 /**
- * Properties for defining a <code>ALIYUN::ESS::ScheduledTask</code>.
+ * Properties for defining a <code>RosScheduledTask</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scheduledtask
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:35.520Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.035Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScheduledTaskProps")
 @software.amazon.jsii.Jsii.Proxy(RosScheduledTaskProps.Jsii$Proxy.class)
 public interface RosScheduledTaskProps extends software.amazon.jsii.JsiiSerializable {
@@ -14,17 +16,31 @@ public interface RosScheduledTaskProps extends software.amazon.jsii.JsiiSerializ
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Object getScheduledAction();
-
-    /**
-     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDesiredCapacity() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getLaunchExpirationTime() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMaxValue() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMinValue() {
         return null;
     }
 
@@ -43,6 +59,18 @@ public interface RosScheduledTaskProps extends software.amazon.jsii.JsiiSerializ
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRecurrenceValue() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getScalingGroupId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getScheduledAction() {
         return null;
     }
 
@@ -69,12 +97,16 @@ public interface RosScheduledTaskProps extends software.amazon.jsii.JsiiSerializ
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosScheduledTaskProps> {
         java.lang.Object launchTime;
-        java.lang.Object scheduledAction;
         java.lang.Object description;
+        java.lang.Object desiredCapacity;
         java.lang.Object launchExpirationTime;
+        java.lang.Object maxValue;
+        java.lang.Object minValue;
         java.lang.Object recurrenceEndTime;
         java.lang.Object recurrenceType;
         java.lang.Object recurrenceValue;
+        java.lang.Object scalingGroupId;
+        java.lang.Object scheduledAction;
         java.lang.Object scheduledTaskName;
         java.lang.Object taskEnabled;
 
@@ -99,26 +131,6 @@ public interface RosScheduledTaskProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
-         * Sets the value of {@link RosScheduledTaskProps#getScheduledAction}
-         * @param scheduledAction the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder scheduledAction(java.lang.String scheduledAction) {
-            this.scheduledAction = scheduledAction;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosScheduledTaskProps#getScheduledAction}
-         * @param scheduledAction the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder scheduledAction(com.aliyun.ros.cdk.core.IResolvable scheduledAction) {
-            this.scheduledAction = scheduledAction;
-            return this;
-        }
-
-        /**
          * Sets the value of {@link RosScheduledTaskProps#getDescription}
          * @param description the value to be set.
          * @return {@code this}
@@ -139,6 +151,26 @@ public interface RosScheduledTaskProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosScheduledTaskProps#getDesiredCapacity}
+         * @param desiredCapacity the value to be set.
+         * @return {@code this}
+         */
+        public Builder desiredCapacity(java.lang.Number desiredCapacity) {
+            this.desiredCapacity = desiredCapacity;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScheduledTaskProps#getDesiredCapacity}
+         * @param desiredCapacity the value to be set.
+         * @return {@code this}
+         */
+        public Builder desiredCapacity(com.aliyun.ros.cdk.core.IResolvable desiredCapacity) {
+            this.desiredCapacity = desiredCapacity;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosScheduledTaskProps#getLaunchExpirationTime}
          * @param launchExpirationTime the value to be set.
          * @return {@code this}
@@ -155,6 +187,46 @@ public interface RosScheduledTaskProps extends software.amazon.jsii.JsiiSerializ
          */
         public Builder launchExpirationTime(com.aliyun.ros.cdk.core.IResolvable launchExpirationTime) {
             this.launchExpirationTime = launchExpirationTime;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScheduledTaskProps#getMaxValue}
+         * @param maxValue the value to be set.
+         * @return {@code this}
+         */
+        public Builder maxValue(java.lang.Number maxValue) {
+            this.maxValue = maxValue;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScheduledTaskProps#getMaxValue}
+         * @param maxValue the value to be set.
+         * @return {@code this}
+         */
+        public Builder maxValue(com.aliyun.ros.cdk.core.IResolvable maxValue) {
+            this.maxValue = maxValue;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScheduledTaskProps#getMinValue}
+         * @param minValue the value to be set.
+         * @return {@code this}
+         */
+        public Builder minValue(java.lang.Number minValue) {
+            this.minValue = minValue;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScheduledTaskProps#getMinValue}
+         * @param minValue the value to be set.
+         * @return {@code this}
+         */
+        public Builder minValue(com.aliyun.ros.cdk.core.IResolvable minValue) {
+            this.minValue = minValue;
             return this;
         }
 
@@ -219,6 +291,46 @@ public interface RosScheduledTaskProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosScheduledTaskProps#getScalingGroupId}
+         * @param scalingGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder scalingGroupId(java.lang.String scalingGroupId) {
+            this.scalingGroupId = scalingGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScheduledTaskProps#getScalingGroupId}
+         * @param scalingGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder scalingGroupId(com.aliyun.ros.cdk.core.IResolvable scalingGroupId) {
+            this.scalingGroupId = scalingGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScheduledTaskProps#getScheduledAction}
+         * @param scheduledAction the value to be set.
+         * @return {@code this}
+         */
+        public Builder scheduledAction(java.lang.String scheduledAction) {
+            this.scheduledAction = scheduledAction;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScheduledTaskProps#getScheduledAction}
+         * @param scheduledAction the value to be set.
+         * @return {@code this}
+         */
+        public Builder scheduledAction(com.aliyun.ros.cdk.core.IResolvable scheduledAction) {
+            this.scheduledAction = scheduledAction;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosScheduledTaskProps#getScheduledTaskName}
          * @param scheduledTaskName the value to be set.
          * @return {@code this}
@@ -275,12 +387,16 @@ public interface RosScheduledTaskProps extends software.amazon.jsii.JsiiSerializ
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosScheduledTaskProps {
         private final java.lang.Object launchTime;
-        private final java.lang.Object scheduledAction;
         private final java.lang.Object description;
+        private final java.lang.Object desiredCapacity;
         private final java.lang.Object launchExpirationTime;
+        private final java.lang.Object maxValue;
+        private final java.lang.Object minValue;
         private final java.lang.Object recurrenceEndTime;
         private final java.lang.Object recurrenceType;
         private final java.lang.Object recurrenceValue;
+        private final java.lang.Object scalingGroupId;
+        private final java.lang.Object scheduledAction;
         private final java.lang.Object scheduledTaskName;
         private final java.lang.Object taskEnabled;
 
@@ -291,12 +407,16 @@ public interface RosScheduledTaskProps extends software.amazon.jsii.JsiiSerializ
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.launchTime = software.amazon.jsii.Kernel.get(this, "launchTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.scheduledAction = software.amazon.jsii.Kernel.get(this, "scheduledAction", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.desiredCapacity = software.amazon.jsii.Kernel.get(this, "desiredCapacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.launchExpirationTime = software.amazon.jsii.Kernel.get(this, "launchExpirationTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.maxValue = software.amazon.jsii.Kernel.get(this, "maxValue", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.minValue = software.amazon.jsii.Kernel.get(this, "minValue", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.recurrenceEndTime = software.amazon.jsii.Kernel.get(this, "recurrenceEndTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.recurrenceType = software.amazon.jsii.Kernel.get(this, "recurrenceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.recurrenceValue = software.amazon.jsii.Kernel.get(this, "recurrenceValue", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.scalingGroupId = software.amazon.jsii.Kernel.get(this, "scalingGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.scheduledAction = software.amazon.jsii.Kernel.get(this, "scheduledAction", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.scheduledTaskName = software.amazon.jsii.Kernel.get(this, "scheduledTaskName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.taskEnabled = software.amazon.jsii.Kernel.get(this, "taskEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -307,12 +427,16 @@ public interface RosScheduledTaskProps extends software.amazon.jsii.JsiiSerializ
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.launchTime = java.util.Objects.requireNonNull(builder.launchTime, "launchTime is required");
-            this.scheduledAction = java.util.Objects.requireNonNull(builder.scheduledAction, "scheduledAction is required");
             this.description = builder.description;
+            this.desiredCapacity = builder.desiredCapacity;
             this.launchExpirationTime = builder.launchExpirationTime;
+            this.maxValue = builder.maxValue;
+            this.minValue = builder.minValue;
             this.recurrenceEndTime = builder.recurrenceEndTime;
             this.recurrenceType = builder.recurrenceType;
             this.recurrenceValue = builder.recurrenceValue;
+            this.scalingGroupId = builder.scalingGroupId;
+            this.scheduledAction = builder.scheduledAction;
             this.scheduledTaskName = builder.scheduledTaskName;
             this.taskEnabled = builder.taskEnabled;
         }
@@ -323,18 +447,28 @@ public interface RosScheduledTaskProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
-        public final java.lang.Object getScheduledAction() {
-            return this.scheduledAction;
-        }
-
-        @Override
         public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
+        public final java.lang.Object getDesiredCapacity() {
+            return this.desiredCapacity;
+        }
+
+        @Override
         public final java.lang.Object getLaunchExpirationTime() {
             return this.launchExpirationTime;
+        }
+
+        @Override
+        public final java.lang.Object getMaxValue() {
+            return this.maxValue;
+        }
+
+        @Override
+        public final java.lang.Object getMinValue() {
+            return this.minValue;
         }
 
         @Override
@@ -350,6 +484,16 @@ public interface RosScheduledTaskProps extends software.amazon.jsii.JsiiSerializ
         @Override
         public final java.lang.Object getRecurrenceValue() {
             return this.recurrenceValue;
+        }
+
+        @Override
+        public final java.lang.Object getScalingGroupId() {
+            return this.scalingGroupId;
+        }
+
+        @Override
+        public final java.lang.Object getScheduledAction() {
+            return this.scheduledAction;
         }
 
         @Override
@@ -369,12 +513,20 @@ public interface RosScheduledTaskProps extends software.amazon.jsii.JsiiSerializ
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
             data.set("launchTime", om.valueToTree(this.getLaunchTime()));
-            data.set("scheduledAction", om.valueToTree(this.getScheduledAction()));
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
             }
+            if (this.getDesiredCapacity() != null) {
+                data.set("desiredCapacity", om.valueToTree(this.getDesiredCapacity()));
+            }
             if (this.getLaunchExpirationTime() != null) {
                 data.set("launchExpirationTime", om.valueToTree(this.getLaunchExpirationTime()));
+            }
+            if (this.getMaxValue() != null) {
+                data.set("maxValue", om.valueToTree(this.getMaxValue()));
+            }
+            if (this.getMinValue() != null) {
+                data.set("minValue", om.valueToTree(this.getMinValue()));
             }
             if (this.getRecurrenceEndTime() != null) {
                 data.set("recurrenceEndTime", om.valueToTree(this.getRecurrenceEndTime()));
@@ -384,6 +536,12 @@ public interface RosScheduledTaskProps extends software.amazon.jsii.JsiiSerializ
             }
             if (this.getRecurrenceValue() != null) {
                 data.set("recurrenceValue", om.valueToTree(this.getRecurrenceValue()));
+            }
+            if (this.getScalingGroupId() != null) {
+                data.set("scalingGroupId", om.valueToTree(this.getScalingGroupId()));
+            }
+            if (this.getScheduledAction() != null) {
+                data.set("scheduledAction", om.valueToTree(this.getScheduledAction()));
             }
             if (this.getScheduledTaskName() != null) {
                 data.set("scheduledTaskName", om.valueToTree(this.getScheduledTaskName()));
@@ -410,12 +568,16 @@ public interface RosScheduledTaskProps extends software.amazon.jsii.JsiiSerializ
             RosScheduledTaskProps.Jsii$Proxy that = (RosScheduledTaskProps.Jsii$Proxy) o;
 
             if (!launchTime.equals(that.launchTime)) return false;
-            if (!scheduledAction.equals(that.scheduledAction)) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
+            if (this.desiredCapacity != null ? !this.desiredCapacity.equals(that.desiredCapacity) : that.desiredCapacity != null) return false;
             if (this.launchExpirationTime != null ? !this.launchExpirationTime.equals(that.launchExpirationTime) : that.launchExpirationTime != null) return false;
+            if (this.maxValue != null ? !this.maxValue.equals(that.maxValue) : that.maxValue != null) return false;
+            if (this.minValue != null ? !this.minValue.equals(that.minValue) : that.minValue != null) return false;
             if (this.recurrenceEndTime != null ? !this.recurrenceEndTime.equals(that.recurrenceEndTime) : that.recurrenceEndTime != null) return false;
             if (this.recurrenceType != null ? !this.recurrenceType.equals(that.recurrenceType) : that.recurrenceType != null) return false;
             if (this.recurrenceValue != null ? !this.recurrenceValue.equals(that.recurrenceValue) : that.recurrenceValue != null) return false;
+            if (this.scalingGroupId != null ? !this.scalingGroupId.equals(that.scalingGroupId) : that.scalingGroupId != null) return false;
+            if (this.scheduledAction != null ? !this.scheduledAction.equals(that.scheduledAction) : that.scheduledAction != null) return false;
             if (this.scheduledTaskName != null ? !this.scheduledTaskName.equals(that.scheduledTaskName) : that.scheduledTaskName != null) return false;
             return this.taskEnabled != null ? this.taskEnabled.equals(that.taskEnabled) : that.taskEnabled == null;
         }
@@ -423,12 +585,16 @@ public interface RosScheduledTaskProps extends software.amazon.jsii.JsiiSerializ
         @Override
         public final int hashCode() {
             int result = this.launchTime.hashCode();
-            result = 31 * result + (this.scheduledAction.hashCode());
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+            result = 31 * result + (this.desiredCapacity != null ? this.desiredCapacity.hashCode() : 0);
             result = 31 * result + (this.launchExpirationTime != null ? this.launchExpirationTime.hashCode() : 0);
+            result = 31 * result + (this.maxValue != null ? this.maxValue.hashCode() : 0);
+            result = 31 * result + (this.minValue != null ? this.minValue.hashCode() : 0);
             result = 31 * result + (this.recurrenceEndTime != null ? this.recurrenceEndTime.hashCode() : 0);
             result = 31 * result + (this.recurrenceType != null ? this.recurrenceType.hashCode() : 0);
             result = 31 * result + (this.recurrenceValue != null ? this.recurrenceValue.hashCode() : 0);
+            result = 31 * result + (this.scalingGroupId != null ? this.scalingGroupId.hashCode() : 0);
+            result = 31 * result + (this.scheduledAction != null ? this.scheduledAction.hashCode() : 0);
             result = 31 * result + (this.scheduledTaskName != null ? this.scheduledTaskName.hashCode() : 0);
             result = 31 * result + (this.taskEnabled != null ? this.taskEnabled.hashCode() : 0);
             return result;

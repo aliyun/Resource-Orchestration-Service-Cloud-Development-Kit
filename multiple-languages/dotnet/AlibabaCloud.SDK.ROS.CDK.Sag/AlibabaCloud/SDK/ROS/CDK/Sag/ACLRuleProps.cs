@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::SAG::ACLRule`.</summary>
+    /// <summary>Properties for defining a `ACLRule`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-aclrule
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-sag.ACLRuleProps")]
     public class ACLRuleProps : AlibabaCloud.SDK.ROS.CDK.Sag.IACLRuleProps
     {
@@ -72,7 +75,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
 
         private object _destPortRange;
 
-        /// <summary>Property destPortRange: Destination port range, 80/80.</summary>
+        /// <summary>Property destPortRange: Destination port range, 80\/80.</summary>
         [JsiiProperty(name: "destPortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object DestPortRange
         {
@@ -225,7 +228,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
 
         private object _sourcePortRange;
 
-        /// <summary>Property sourcePortRange: Source port range, 80/80.</summary>
+        /// <summary>Property sourcePortRange: Source port range, 80\/80.</summary>
         [JsiiProperty(name: "sourcePortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object SourcePortRange
         {

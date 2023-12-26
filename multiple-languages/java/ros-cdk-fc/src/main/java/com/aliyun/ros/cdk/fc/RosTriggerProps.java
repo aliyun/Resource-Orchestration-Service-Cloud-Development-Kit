@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.fc;
 
 /**
- * Properties for defining a <code>ALIYUN::FC::Trigger</code>.
+ * Properties for defining a <code>RosTrigger</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-trigger
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:35.630Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.181Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosTriggerProps")
 @software.amazon.jsii.Jsii.Proxy(RosTriggerProps.Jsii$Proxy.class)
 public interface RosTriggerProps extends software.amazon.jsii.JsiiSerializable {

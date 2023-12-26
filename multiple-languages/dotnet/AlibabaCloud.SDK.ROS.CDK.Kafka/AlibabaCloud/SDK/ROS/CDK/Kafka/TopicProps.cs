@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::KAFKA::Topic`.</summary>
+    /// <summary>Properties for defining a `Topic`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-topic
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-kafka.TopicProps")]
     public class TopicProps : AlibabaCloud.SDK.ROS.CDK.Kafka.ITopicProps
     {

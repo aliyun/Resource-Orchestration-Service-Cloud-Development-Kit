@@ -4,7 +4,8 @@ import { RosDeliveryChannel } from './config.generated';
 export { RosDeliveryChannel as DeliveryChannelProperty };
 
 /**
- * Properties for defining a `ALIYUN::Config::DeliveryChannel`
+ * Properties for defining a `DeliveryChannel`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-deliverychannel
  */
 export interface DeliveryChannelProps {
 
@@ -21,8 +22,8 @@ export interface DeliveryChannelProps {
      * Property deliveryChannelTargetArn: The ARN of the delivery destination. This parameter is required when you create a
      * delivery method. The value must be in one of the following formats:
      * acs:oss:{RegionId}:{Aliuid}:{bucketName} if your delivery destination is an Object Storage Service (OSS) bucket.
-     * acs:mns:{RegionId}:{Aliuid}:/topics/{topicName} if your delivery destination is a Message Service (MNS) topic.
-     * acs:log:{RegionId}:{Aliuid}:project/{projectName}/logstore/{logstoreName} if your delivery destination is a Log Service Logstore.
+     * acs:mns:{RegionId}:{Aliuid}:\/topics\/{topicName} if your delivery destination is a Message Service (MNS) topic.
+     * acs:log:{RegionId}:{Aliuid}:project\/{projectName}\/logstore\/{logstoreName} if your delivery destination is a Log Service Logstore.
      */
     readonly deliveryChannelTargetArn: string | ros.IResolvable;
 
@@ -63,14 +64,11 @@ export interface DeliveryChannelProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::Config::DeliveryChannel`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::Config::DeliveryChannel`, which is used to create or update a delivery channel.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDeliveryChannel`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-deliverychannel
  */
 export class DeliveryChannel extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DeliveryChannelId: The ID of the delivery method.
@@ -78,8 +76,6 @@ export class DeliveryChannel extends ros.Resource {
     public readonly attrDeliveryChannelId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::Config::DeliveryChannel`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

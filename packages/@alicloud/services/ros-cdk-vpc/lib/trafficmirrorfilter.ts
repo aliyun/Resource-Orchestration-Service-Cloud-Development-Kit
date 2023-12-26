@@ -4,7 +4,8 @@ import { RosTrafficMirrorFilter } from './vpc.generated';
 export { RosTrafficMirrorFilter as TrafficMirrorFilterProperty };
 
 /**
- * Properties for defining a `ALIYUN::VPC::TrafficMirrorFilter`
+ * Properties for defining a `TrafficMirrorFilter`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-trafficmirrorfilter
  */
 export interface TrafficMirrorFilterProps {
 
@@ -19,25 +20,22 @@ export interface TrafficMirrorFilterProps {
     readonly ingressRules?: Array<RosTrafficMirrorFilter.IngressRulesProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property trafficMirrorFilterDescription: The description of the filter. The description must be 1 to 256 characters in length and cannot start with http:// or https://.
+     * Property trafficMirrorFilterDescription: The description of the filter. The description must be 1 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
      */
     readonly trafficMirrorFilterDescription?: string | ros.IResolvable;
 
     /**
-     * Property trafficMirrorFilterName: The name of the filter.The name must be 1 to 128 characters in length and cannot start with http:// or https://.
+     * Property trafficMirrorFilterName: The name of the filter.The name must be 1 to 128 characters in length and cannot start with http:\/\/ or https:\/\/.
      */
     readonly trafficMirrorFilterName?: string | ros.IResolvable;
 }
 
 /**
- * A ROS resource type:  `ALIYUN::VPC::TrafficMirrorFilter`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::TrafficMirrorFilter`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTrafficMirrorFilter`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-trafficmirrorfilter
  */
 export class TrafficMirrorFilter extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute EgressRules: Egress rules.
@@ -65,8 +63,6 @@ export class TrafficMirrorFilter extends ros.Resource {
     public readonly attrTrafficMirrorFilterName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VPC::TrafficMirrorFilter`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

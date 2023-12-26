@@ -4,7 +4,8 @@ import { RosControlPolicy } from './cloudfw.generated';
 export { RosControlPolicy as ControlPolicyProperty };
 
 /**
- * Properties for defining a `ALIYUN::CLOUDFW::ControlPolicy`
+ * Properties for defining a `ControlPolicy`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-controlpolicy
  */
 export interface ControlPolicyProps {
 
@@ -30,7 +31,7 @@ export interface ControlPolicyProps {
 
     /**
      * Property destination: Security Access Control destination address policy.
-     * When DestinationType is net, Destination purpose CIDR. For example: 1.2.3.4/24
+     * When DestinationType is net, Destination purpose CIDR. For example: 1.2.3.4\/24
      * When DestinationType as a group, Destination for the purpose of the address book name. For example: db_group
      * When DestinationType for the domain, Destination for the purpose of a domain name. For example:. * Aliyuncs.com
      * When DestinationType as location, Destination area for the purpose (see below position encoding specific regions). For example: [ "BJ11", "ZB"]
@@ -67,7 +68,7 @@ export interface ControlPolicyProps {
 
     /**
      * Property source: Security access control source address policy.
-     * When SourceType for the net, Source is the source CIDR. For example: 1.2.3.0/24
+     * When SourceType for the net, Source is the source CIDR. For example: 1.2.3.0\/24
      * When SourceType as a group, Source name for the source address book. For example: db_group
      * When SourceType as location, Source source region (specific region position encoder see below). For example, [ "BJ11", "ZB"]
      */
@@ -107,14 +108,11 @@ export interface ControlPolicyProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CLOUDFW::ControlPolicy`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::ControlPolicy`, which is used to add an access control policy.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosControlPolicy`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-controlpolicy
  */
 export class ControlPolicy extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AclUuid: Security access control ID that uniquely identifies the policy.
@@ -122,8 +120,6 @@ export class ControlPolicy extends ros.Resource {
     public readonly attrAclUuid: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CLOUDFW::ControlPolicy`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

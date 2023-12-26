@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Tsdb
 {
-    /// <summary>A ROS template type:  `ALIYUN::TSDB::HiTSDBInstance`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::TSDB::HiTSDBInstance`, which is used to create a Time Series Database (TSDB) instance.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `HiTSDBInstance` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-tsdb-hitsdbinstance
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Tsdb.RosHiTSDBInstance), fullyQualifiedName: "@alicloud/ros-cdk-tsdb.RosHiTSDBInstance", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-tsdb.RosHiTSDBInstanceProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosHiTSDBInstance : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::TSDB::HiTSDBInstance`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -473,7 +476,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Tsdb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: securityIpList: List of the IP patterns.For example, ["127.0.0.1", "192.168.0.1/24"]
+        /// <strong>Property</strong>: securityIpList: List of the IP patterns.For example, ["127.0.0.1", "192.168.0.1\/24"]
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "securityIpList", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]

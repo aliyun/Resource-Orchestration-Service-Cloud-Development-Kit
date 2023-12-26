@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sag
 {
-    /// <summary>Properties for defining a `ALIYUN::SAG::SerialNumberBinding`.</summary>
+    /// <summary>Properties for defining a `RosSerialNumberBinding`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-serialnumberbinding
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosSerialNumberBindingProps), fullyQualifiedName: "@alicloud/ros-cdk-sag.RosSerialNumberBindingProps")]
     public interface IRosSerialNumberBindingProps
     {
@@ -26,7 +29,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::SAG::SerialNumberBinding`.</summary>
+        /// <summary>Properties for defining a `RosSerialNumberBinding`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-serialnumberbinding
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosSerialNumberBindingProps), fullyQualifiedName: "@alicloud/ros-cdk-sag.RosSerialNumberBindingProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sag.IRosSerialNumberBindingProps
         {

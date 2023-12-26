@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sae.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::SAE::Applications`.</summary>
+    /// <summary>Properties for defining a `Applications`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-sae-applications
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IApplicationsProps), fullyQualifiedName: "@alicloud/ros-cdk-sae.datasource.ApplicationsProps")]
     public interface IApplicationsProps
     {
@@ -59,7 +62,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::SAE::Applications`.</summary>
+        /// <summary>Properties for defining a `Applications`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-sae-applications
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IApplicationsProps), fullyQualifiedName: "@alicloud/ros-cdk-sae.datasource.ApplicationsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sae.Datasource.IApplicationsProps
         {

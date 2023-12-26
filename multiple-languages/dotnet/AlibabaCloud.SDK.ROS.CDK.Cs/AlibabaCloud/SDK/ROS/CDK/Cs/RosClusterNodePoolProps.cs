@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CS::ClusterNodePool`.</summary>
+    /// <summary>Properties for defining a `RosClusterNodePool`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusternodepool
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cs.RosClusterNodePoolProps")]
     public class RosClusterNodePoolProps : AlibabaCloud.SDK.ROS.CDK.Cs.IRosClusterNodePoolProps
     {

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::FC::Trigger`.</summary>
+    /// <summary>Properties for defining a `Trigger`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-trigger
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-fc.TriggerProps")]
     public class TriggerProps : AlibabaCloud.SDK.ROS.CDK.Fc.ITriggerProps
     {

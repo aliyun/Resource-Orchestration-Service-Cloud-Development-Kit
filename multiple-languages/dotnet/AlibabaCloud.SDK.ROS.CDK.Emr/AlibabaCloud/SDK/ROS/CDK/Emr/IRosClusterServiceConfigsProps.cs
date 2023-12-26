@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Emr
 {
-    /// <summary>Properties for defining a `ALIYUN::EMR::ClusterServiceConfigs`.</summary>
+    /// <summary>Properties for defining a `RosClusterServiceConfigs`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-clusterserviceconfigs
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosClusterServiceConfigsProps), fullyQualifiedName: "@alicloud/ros-cdk-emr.RosClusterServiceConfigsProps")]
     public interface IRosClusterServiceConfigsProps
     {
@@ -26,7 +29,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::EMR::ClusterServiceConfigs`.</summary>
+        /// <summary>Properties for defining a `RosClusterServiceConfigs`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-clusterserviceconfigs
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosClusterServiceConfigsProps), fullyQualifiedName: "@alicloud/ros-cdk-emr.RosClusterServiceConfigsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Emr.IRosClusterServiceConfigsProps
         {

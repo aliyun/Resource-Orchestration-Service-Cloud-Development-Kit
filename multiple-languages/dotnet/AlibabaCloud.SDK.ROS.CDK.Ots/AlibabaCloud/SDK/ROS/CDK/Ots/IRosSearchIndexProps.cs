@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ots
 {
-    /// <summary>Properties for defining a `ALIYUN::OTS::SearchIndex`.</summary>
+    /// <summary>Properties for defining a `RosSearchIndex`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-searchindex
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosSearchIndexProps), fullyQualifiedName: "@alicloud/ros-cdk-ots.RosSearchIndexProps")]
     public interface IRosSearchIndexProps
     {
@@ -72,7 +75,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::OTS::SearchIndex`.</summary>
+        /// <summary>Properties for defining a `RosSearchIndex`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-searchindex
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosSearchIndexProps), fullyQualifiedName: "@alicloud/ros-cdk-ots.RosSearchIndexProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ots.IRosSearchIndexProps
         {

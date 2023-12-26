@@ -4,14 +4,10 @@ import { RosInstanceGroup } from './ecs.generated';
 export { RosInstanceGroup as InstanceGroupProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECS::InstanceGroup`
+ * Properties for defining a `InstanceGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instancegroup
  */
 export interface InstanceGroupProps {
-
-    /**
-     * Property imageId: Image ID to create ecs instance.
-     */
-    readonly imageId: string | ros.IResolvable;
 
     /**
      * Property instanceType: Ecs instance supported instance type, make sure it should be correct.
@@ -22,6 +18,14 @@ export interface InstanceGroupProps {
      * Property maxAmount: Max number of instances to create, should be bigger than 'MinAmount' and smaller than 1000.
      */
     readonly maxAmount: number | ros.IResolvable;
+
+    /**
+     * Property affinity: Specifies whether to associate the instance on a dedicated host with the dedicated host. Valid values:
+     * - **default**: does not associate the ECS instance with the dedicated host. When you start an instance that was stopped in economical mode, the instance is automatically deployed to another dedicated host in the automatic deployment resource pool if the available resources of the original dedicated host are insufficient.
+     * - **host**: associates the ECS instance with the dedicated host. When you start an instance that was stopped in economical mode, the instance remains on the original dedicated host. If the available resources of the original dedicated host are insufficient, the instance cannot start.
+     * Default value: **default**.
+     */
+    readonly affinity?: string | ros.IResolvable;
 
     /**
      * Property allocatePublicIp: The public ip for ecs instance, if properties is true, will allocate public ip. If property InternetMaxBandwidthOut set to 0, it will not assign public ip.
@@ -44,6 +48,13 @@ export interface InstanceGroupProps {
     readonly autoRenewPeriod?: number | ros.IResolvable;
 
     /**
+     * Property creditSpecification: The performance mode of the burstable instance. Valid values:
+     * - **Standard**: the standard mode.
+     * - **Unlimited**: the unlimited mode.
+     */
+    readonly creditSpecification?: string | ros.IResolvable;
+
+    /**
      * Property dedicatedHostId: which dedicated host will be deployed
      */
     readonly dedicatedHostId?: string | ros.IResolvable;
@@ -52,6 +63,11 @@ export interface InstanceGroupProps {
      * Property deletionProtection: Whether an instance can be released manually through the console or API, deletion protection only support postPaid instance
      */
     readonly deletionProtection?: boolean | ros.IResolvable;
+
+    /**
+     * Property deploymentSetGroupNo: The number of the deployment set group to which to deploy the instance. If the deployment set specified by **DeploymentSetId** uses the high availability group strategy (AvailabilityGroup), you can use **DeploymentSetGroupNo** to specify a deployment set group in the deployment set. Valid values: 1 to 7.
+     */
+    readonly deploymentSetGroupNo?: number | ros.IResolvable;
 
     /**
      * Property deploymentSetId: Deployment set ID. The change of the property does not affect existing instances.
@@ -93,6 +109,34 @@ export interface InstanceGroupProps {
      * Property hpcClusterId: The HPC cluster ID to which the instance belongs.The change of the property does not affect existing instances.
      */
     readonly hpcClusterId?: string | ros.IResolvable;
+
+    /**
+     * Property httpEndpoint: Specifies whether the access channel is enabled for instance metadata. Valid values:
+     * - **enabled**
+     * - **disabled**
+     * Default value: **enabled**.
+     */
+    readonly httpEndpoint?: string | ros.IResolvable;
+
+    /**
+     * Property httpTokens: Specifies whether the security hardening mode (IMDSv2) is forcefully used to access instance metadata. Valid values:
+     * - **optional**: does not forcefully use the security-enhanced mode (IMDSv2).
+     * - **required**: forcefully uses the security-enhanced mode (IMDSv2). After you set this parameter to required, you cannot access instance metadata in normal mode.
+     * Default value: **optional**.
+     */
+    readonly httpTokens?: string | ros.IResolvable;
+
+    /**
+     * Property imageFamily: The name of the image family. You can set this parameter to obtain the latest available custom image from the specified image family to create the instance.
+     * - **ImageFamily** must be empty if **ImageId** is specified.
+     * - **ImageFamily** can be specified if **ImageId** is not specified.
+     */
+    readonly imageFamily?: string | ros.IResolvable;
+
+    /**
+     * Property imageId: Image ID to create ecs instance.
+     */
+    readonly imageId?: string | ros.IResolvable;
 
     /**
      * Property instanceChargeType: Instance Charge type, allowed value: Prepaid and Postpaid. If specified Prepaid, please ensure you have sufficient balance in your account. Or instance creation will be failure. Default value is Postpaid.Old instances will not be changed.
@@ -184,7 +228,7 @@ export interface InstanceGroupProps {
     readonly period?: number | ros.IResolvable;
 
     /**
-     * Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year. Default value is Month.Old instances will not be changed.
+     * Property periodUnit: Unit of prepaid time period, it could be Week\/Month\/Year. Default value is Month.Old instances will not be changed.
      */
     readonly periodUnit?: string | ros.IResolvable;
 
@@ -192,6 +236,11 @@ export interface InstanceGroupProps {
      * Property privateIpAddress: Private IP for the instance created. Only works for VPC instance and cannot duplicated with existing instance.
      */
     readonly privateIpAddress?: string | ros.IResolvable;
+
+    /**
+     * Property privatePoolOptions: The options of the private pool.
+     */
+    readonly privatePoolOptions?: RosInstanceGroup.PrivatePoolOptionsProperty | ros.IResolvable;
 
     /**
      * Property ramRoleName: Instance RAM role name. The name is provided and maintained by Resource Access Management (RAM) and can be queried using ListRoles. For more information, see RAM API CreateRole and ListRoles.
@@ -216,7 +265,7 @@ export interface InstanceGroupProps {
     /**
      * Property securityGroupIds: The IDs of security groups N to which the instance belongs. The valid values of N are based on the maximum number of security groups to which an instance can belong. For more information, see Security group limits.Note: You cannot specify both SecurityGroupId and SecurityGroupIds at the same time.
      */
-    readonly securityGroupIds?: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly securityGroupIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property spotDuration: The protection period of the preemptible instance. Unit: hours. Valid values: 0, 1, 2, 3, 4, 5, and 6.
@@ -240,6 +289,16 @@ export interface InstanceGroupProps {
      * Property spotStrategy: The spot strategy of a Pay-As-You-Go instance, and it takes effect only when parameter InstanceChargeType is PostPaid. Value range: "NoSpot: A regular Pay-As-You-Go instance", "SpotWithPriceLimit: A price threshold for a spot instance, ""SpotAsPriceGo: A price that is based on the highest Pay-As-You-Go instance. "Default value: NoSpot.
      */
     readonly spotStrategy?: string | ros.IResolvable;
+
+    /**
+     * Property storageSetId: The storage set ID.
+     */
+    readonly storageSetId?: string | ros.IResolvable;
+
+    /**
+     * Property storageSetPartitionNumber: The maximum number of partitions in the storage set. The value must be greater than or equal to 2.
+     */
+    readonly storageSetPartitionNumber?: number | ros.IResolvable;
 
     /**
      * Property systemDiskAutoSnapshotPolicyId: Auto snapshot policy ID.
@@ -288,7 +347,7 @@ export interface InstanceGroupProps {
     readonly systemDiskKmsKeyId?: string | ros.IResolvable;
 
     /**
-     * Property systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+     * Property systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read\/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read\/write IOPS.
      */
     readonly systemDiskPerformanceLevel?: string | ros.IResolvable;
 
@@ -313,12 +372,25 @@ export interface InstanceGroupProps {
     readonly tags?: RosInstanceGroup.TagsProperty[];
 
     /**
+     * Property tenancy: Specifies whether to create the instance on a dedicated host. Valid values:
+     * - **default**: creates the instance on a non-dedicated host.
+     * - **host**: creates the instance on a dedicated host. If you do not specify **DedicatedHostId**, Alibaba Cloud selects a dedicated host for the instance.
+     * Default value: **default**.
+     */
+    readonly tenancy?: string | ros.IResolvable;
+
+    /**
      * Property updatePolicy: Specify the policy at update. 
      * The value can be 'ForNewInstances' or 'ForAllInstances'.
      * If UpdatePolicy is 'ForAllInstance', The updatable parameters are InstanceType, ImageId, SystemDiskSize, SystemDiskCategory, Password, UserData,InternetChargeType, InternetMaxBandwidthOut, InternetMaxBandwidthIn.
      * The default is 'ForNewInstances'
      */
     readonly updatePolicy?: string | ros.IResolvable;
+
+    /**
+     * Property useAdditionalService: Specifies whether to use the system configurations for virtual machines provided by Alibaba Cloud. System configurations for Windows: NTP and KMS. System configurations for Linux: NTP and YUM.
+     */
+    readonly useAdditionalService?: boolean | ros.IResolvable;
 
     /**
      * Property userData: User data to pass to instance. [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
@@ -349,14 +421,11 @@ export interface InstanceGroupProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECS::InstanceGroup`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::InstanceGroup`, which is used to create a group of Elastic Compute Service (ECS) instances that have the same configurations.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstanceGroup`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instancegroup
  */
 export class InstanceGroup extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute HostNames: Host names of created instances.
@@ -404,8 +473,6 @@ export class InstanceGroup extends ros.Resource {
     public readonly attrZoneIds: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ECS::InstanceGroup`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties
@@ -421,9 +488,12 @@ export class InstanceGroup extends ros.Resource {
             systemDiskProvisionedIops: props.systemDiskProvisionedIops,
             systemDiskEncryptAlgorithm: props.systemDiskEncryptAlgorithm,
             ramRoleName: props.ramRoleName,
+            privatePoolOptions: props.privatePoolOptions,
             systemDiskPerformanceLevel: props.systemDiskPerformanceLevel,
             imageId: props.imageId,
             systemDiskDiskName: props.systemDiskDiskName,
+            storageSetId: props.storageSetId,
+            useAdditionalService: props.useAdditionalService,
             tags: props.tags,
             hostName: props.hostName,
             systemDiskStorageClusterId: props.systemDiskStorageClusterId,
@@ -432,19 +502,23 @@ export class InstanceGroup extends ros.Resource {
             systemDiskKmsKeyId: props.systemDiskKmsKeyId,
             vSwitchId: props.vSwitchId,
             period: props.period === undefined || props.period === null ? 1 : props.period,
+            imageFamily: props.imageFamily,
             launchTemplateId: props.launchTemplateId,
             deletionProtection: props.deletionProtection,
+            httpEndpoint: props.httpEndpoint,
             securityGroupIds: props.securityGroupIds,
             internetChargeType: props.internetChargeType === undefined || props.internetChargeType === null ? 'PayByTraffic' : props.internetChargeType,
+            spotInterruptionBehavior: props.spotInterruptionBehavior === undefined || props.spotInterruptionBehavior === null ? 'Terminate' : props.spotInterruptionBehavior,
             instanceName: props.instanceName,
-            spotInterruptionBehavior: props.spotInterruptionBehavior,
             deploymentSetId: props.deploymentSetId,
             internetMaxBandwidthOut: props.internetMaxBandwidthOut === undefined || props.internetMaxBandwidthOut === null ? 1 : props.internetMaxBandwidthOut,
             vpcId: props.vpcId,
             launchTemplateVersion: props.launchTemplateVersion,
+            affinity: props.affinity,
             securityEnhancementStrategy: props.securityEnhancementStrategy,
             autoReleaseTime: props.autoReleaseTime,
             periodUnit: props.periodUnit === undefined || props.periodUnit === null ? 'Month' : props.periodUnit,
+            tenancy: props.tenancy,
             privateIpAddress: props.privateIpAddress,
             description: props.description,
             diskMappings: props.diskMappings,
@@ -452,6 +526,7 @@ export class InstanceGroup extends ros.Resource {
             systemDiskSize: props.systemDiskSize,
             autoRenew: props.autoRenew === undefined || props.autoRenew === null ? 'False' : props.autoRenew,
             spotDuration: props.spotDuration,
+            storageSetPartitionNumber: props.storageSetPartitionNumber,
             ipv6Addresses: props.ipv6Addresses,
             systemDiskEncrypted: props.systemDiskEncrypted,
             maxAmount: props.maxAmount,
@@ -471,9 +546,12 @@ export class InstanceGroup extends ros.Resource {
             zoneId: props.zoneId,
             hpcClusterId: props.hpcClusterId,
             securityGroupId: props.securityGroupId,
+            deploymentSetGroupNo: props.deploymentSetGroupNo,
             systemDiskCategory: props.systemDiskCategory === undefined || props.systemDiskCategory === null ? 'cloud_efficiency' : props.systemDiskCategory,
-            eniMappings: props.eniMappings,
             systemDiskBurstingEnabled: props.systemDiskBurstingEnabled,
+            eniMappings: props.eniMappings,
+            httpTokens: props.httpTokens,
+            creditSpecification: props.creditSpecification,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstanceGroup;
         this.attrHostNames = rosInstanceGroup.attrHostNames;

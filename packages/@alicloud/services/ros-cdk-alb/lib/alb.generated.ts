@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::ALB::Acl`
+ * Properties for defining a `RosAcl`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-acl
  */
 export interface RosAclProps {
 
@@ -75,18 +76,15 @@ function rosAclPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * A ROS template type:  `ALIYUN::ALB::Acl`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::Acl`, which is used to create an access control list (ACL).
+ * @Note This class does not contain additional functions, so it is recommended to use the `Acl` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-acl
  */
 export class RosAcl extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ALB::Acl";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AclId: The ID of the ACL.
@@ -113,8 +111,6 @@ export class RosAcl extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ALB::Acl`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -152,7 +148,7 @@ export namespace RosAcl {
          */
         readonly entry: string | ros.IResolvable;
         /**
-         * @Property description: The description of ACL entries. The description must be 2 to 256 characters in length, and can contain only the characters specified by the following expression:/^([^\x00-\xff]|[\w.,;/@-]){2,256}$/.
+         * @Property description: The description of ACL entries. The description must be 2 to 256 characters in length, and can contain only the characters specified by the following expression:\/^([^\x00-\xff]|[\w.,;\/@-]){2,256}$\/.
          */
         readonly description?: string | ros.IResolvable;
     }
@@ -198,7 +194,8 @@ function rosAclAclEntriesPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ALB::AclAssociation`
+ * Properties for defining a `RosAclAssociation`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-aclassociation
  */
 export interface RosAclAssociationProps {
 
@@ -271,18 +268,15 @@ function rosAclAssociationPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * A ROS template type:  `ALIYUN::ALB::AclAssociation`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::AclAssociation`, which is used to associate access control lists (ACLs) with a listener.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AclAssociation` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-aclassociation
  */
 export class RosAclAssociation extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ALB::AclAssociation";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ListenerId: The ID of the listener.
@@ -308,8 +302,6 @@ export class RosAclAssociation extends ros.RosResource {
     public listenerId: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ALB::AclAssociation`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -338,7 +330,8 @@ export class RosAclAssociation extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ALB::AdditionalCertificateAssociation`
+ * Properties for defining a `RosAdditionalCertificateAssociation`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-additionalcertificateassociation
  */
 export interface RosAdditionalCertificateAssociationProps {
 
@@ -397,18 +390,15 @@ function rosAdditionalCertificateAssociationPropsToRosTemplate(properties: any, 
 }
 
 /**
- * A ROS template type:  `ALIYUN::ALB::AdditionalCertificateAssociation`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::AdditionalCertificateAssociation`, which is used to add additional certificates to a listener.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AdditionalCertificateAssociation` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-additionalcertificateassociation
  */
 export class RosAdditionalCertificateAssociation extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ALB::AdditionalCertificateAssociation";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ListenerId: The ID of the listener.
@@ -429,8 +419,6 @@ export class RosAdditionalCertificateAssociation extends ros.RosResource {
     public listenerId: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ALB::AdditionalCertificateAssociation`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -499,7 +487,8 @@ function rosAdditionalCertificateAssociationCertificatesPropertyToRosTemplate(pr
 }
 
 /**
- * Properties for defining a `ALIYUN::ALB::BackendServerAttachment`
+ * Properties for defining a `RosBackendServerAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-backendserverattachment
  */
 export interface RosBackendServerAttachmentProps {
 
@@ -559,18 +548,15 @@ function rosBackendServerAttachmentPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * A ROS template type:  `ALIYUN::ALB::BackendServerAttachment`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::BackendServerAttachment`, which is used to add backend servers to a server group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `BackendServerAttachment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-backendserverattachment
  */
 export class RosBackendServerAttachment extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ALB::BackendServerAttachment";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ServerGroupId: The ID of the server group.
@@ -592,8 +578,6 @@ export class RosBackendServerAttachment extends ros.RosResource {
     public servers: Array<RosBackendServerAttachment.ServersProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ALB::BackendServerAttachment`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -635,7 +619,7 @@ export namespace RosBackendServerAttachment {
         /**
          * @Property description: The description of the backend server. The description must be 2 to 256 characters
      * in length, and can contain only the characters specified by the following expression:
-     * /^([^\x00-\xff]|[\w.,;/@-]){2,256}$/.
+     * \/^([^\x00-\xff]|[\w.,;\/@-]){2,256}$\/.
          */
         readonly description?: string | ros.IResolvable;
         /**
@@ -710,7 +694,8 @@ function rosBackendServerAttachmentServersPropertyToRosTemplate(properties: any)
 }
 
 /**
- * Properties for defining a `ALIYUN::ALB::HealthCheckTemplate`
+ * Properties for defining a `RosHealthCheckTemplate`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-healthchecktemplate
  */
 export interface RosHealthCheckTemplateProps {
 
@@ -772,9 +757,9 @@ export interface RosHealthCheckTemplateProps {
     /**
      * @Property healthCheckPath: The URL path that is used for health checks.
      * It must be 1 to 80 characters in length, and can contain letters, digits, hyphens
-     * (-), forward slashes (/), periods (.), percent signs (%), question marks (?), number
+     * (-), forward slashes (\/), periods (.), percent signs (%), question marks (?), number
      * signs (#), and ampersands (&). It can also contain the following extended characters:
-     * _ ; ~ ! ( ) * [ ] @ $ ^ : ' , +. The URL path must start with a forward slash (/).
+     * _ ; ~ ! ( ) * [ ] @ $ ^ : ' , +. The URL path must start with a forward slash (\/).
      * Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
      */
     readonly healthCheckPath?: string | ros.IResolvable;
@@ -891,18 +876,15 @@ function rosHealthCheckTemplatePropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * A ROS template type:  `ALIYUN::ALB::HealthCheckTemplate`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::HealthCheckTemplate`, which is used to create a health check template.
+ * @Note This class does not contain additional functions, so it is recommended to use the `HealthCheckTemplate` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-healthchecktemplate
  */
 export class RosHealthCheckTemplate extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ALB::HealthCheckTemplate";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute HealthCheckTemplateId: The ID of the health check template.
@@ -970,9 +952,9 @@ export class RosHealthCheckTemplate extends ros.RosResource {
     /**
      * @Property healthCheckPath: The URL path that is used for health checks.
      * It must be 1 to 80 characters in length, and can contain letters, digits, hyphens
-     * (-), forward slashes (/), periods (.), percent signs (%), question marks (?), number
+     * (-), forward slashes (\/), periods (.), percent signs (%), question marks (?), number
      * signs (#), and ampersands (&). It can also contain the following extended characters:
-     * _ ; ~ ! ( ) * [ ] @ $ ^ : ' , +. The URL path must start with a forward slash (/).
+     * _ ; ~ ! ( ) * [ ] @ $ ^ : ' , +. The URL path must start with a forward slash (\/).
      * Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
      */
     public healthCheckPath: string | ros.IResolvable | undefined;
@@ -1016,8 +998,6 @@ export class RosHealthCheckTemplate extends ros.RosResource {
     public unhealthyThreshold: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ALB::HealthCheckTemplate`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1062,7 +1042,8 @@ export class RosHealthCheckTemplate extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ALB::Listener`
+ * Properties for defining a `RosListener`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-listener
  */
 export interface RosListenerProps {
 
@@ -1111,7 +1092,7 @@ export interface RosListenerProps {
     readonly gzipEnabled?: boolean | ros.IResolvable;
 
     /**
-     * @Property http2Enabled: Specifies whether to enable HTTP/2. Default value: on.
+     * @Property http2Enabled: Specifies whether to enable HTTP\/2. Default value: on.
      * Valid values: true and false.
      * Default value: true.
      * Note Only HTTPS listeners support this parameter.
@@ -1273,18 +1254,15 @@ function rosListenerPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::ALB::Listener`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::Listener`, which is used to create an HTTP, HTTPS, or Quick UDP Internet Connections (QUIC) listener.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Listener` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-listener
  */
 export class RosListener extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ALB::Listener";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ListenerId: The ID of the listener.
@@ -1339,7 +1317,7 @@ export class RosListener extends ros.RosResource {
     public gzipEnabled: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property http2Enabled: Specifies whether to enable HTTP/2. Default value: on.
+     * @Property http2Enabled: Specifies whether to enable HTTP\/2. Default value: on.
      * Valid values: true and false.
      * Default value: true.
      * Note Only HTTPS listeners support this parameter.
@@ -1394,8 +1372,6 @@ export class RosListener extends ros.RosResource {
     public xForwardedForConfig: RosListener.XForwardedForConfigProperty | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ALB::Listener`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1908,7 +1884,8 @@ function rosListenerXForwardedForConfigPropertyToRosTemplate(properties: any): a
 }
 
 /**
- * Properties for defining a `ALIYUN::ALB::LoadBalancer`
+ * Properties for defining a `RosLoadBalancer`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-loadbalancer
  */
 export interface RosLoadBalancerProps {
 
@@ -2096,18 +2073,15 @@ function rosLoadBalancerPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * A ROS template type:  `ALIYUN::ALB::LoadBalancer`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::LoadBalancer`, which is used to create an Application Load Balancer (ALB) instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `LoadBalancer` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-loadbalancer
  */
 export class RosLoadBalancer extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ALB::LoadBalancer";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AddressType: The type of IP address that the ALB instance uses to provide services.
@@ -2223,8 +2197,6 @@ export class RosLoadBalancer extends ros.RosResource {
     public tags: RosLoadBalancer.TagsProperty[] | undefined;
 
     /**
-     * Create a new `ALIYUN::ALB::LoadBalancer`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2588,7 +2560,8 @@ function rosLoadBalancerZoneMappingsPropertyToRosTemplate(properties: any): any 
 }
 
 /**
- * Properties for defining a `ALIYUN::ALB::Rule`
+ * Properties for defining a `RosRule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-rule
  */
 export interface RosRuleProps {
 
@@ -2703,18 +2676,15 @@ function rosRulePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * A ROS template type:  `ALIYUN::ALB::Rule`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::Rule`ALIYUN::Config::Rule is used to create a forwarding rule.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Rule` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-rule
  */
 export class RosRule extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ALB::Rule";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute RuleId: The ID of the forwarding rules.
@@ -2760,8 +2730,6 @@ export class RosRule extends ros.RosResource {
     public direction: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ALB::Rule`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2847,7 +2815,7 @@ export namespace RosRule {
         readonly httpCode?: string | ros.IResolvable;
         /**
          * @Property contentType: The format of the content.
-     * Valid values: text/plain, text/css, text/html, application/javascript, and application/json.
+     * Valid values: text\/plain, text\/css, text\/html, application\/javascript, and application\/json.
          */
         readonly contentType?: string | ros.IResolvable;
         /**
@@ -3402,8 +3370,8 @@ export namespace RosRule {
      * the following characters.
      * To customize the path, make sure that the following requirements are met:
      * The path must be 1 to 128 characters in length.
-     * It must start with a forward slash (/). The path can contain letters, digits, and
-     * the following special characters: $ - _ .+ / & ~ @ :. It cannot contain the following special characters: " % # ; ! ( ) [ ]^ , ". It can also contain asterisks (*) and question marks (?) as wildcard characters.
+     * It must start with a forward slash (\/). The path can contain letters, digits, and
+     * the following special characters: $ - _ .+ \/ & ~ @ :. It cannot contain the following special characters: " % # ; ! ( ) [ ]^ , ". It can also contain asterisks (*) and question marks (?) as wildcard characters.
      * The value is case-sensitive.
          */
         readonly path?: string | ros.IResolvable;
@@ -3562,8 +3530,8 @@ export namespace RosRule {
      * the following characters.
      * To customize the path, make sure that the following requirements are met:
      * The path must be 1 to 128 characters in length.
-     * It must start with a forward slash (/). The path can contain letters, digits, and
-     * the following special characters: $ - _ .+ / & ~ @ :. It cannot contain the following special characters: " % # ; ! ( ) [ ]^ , ". It can also contain asterisks (*) and question marks (?) as wildcard characters.
+     * It must start with a forward slash (\/). The path can contain letters, digits, and
+     * the following special characters: $ - _ .+ \/ & ~ @ :. It cannot contain the following special characters: " % # ; ! ( ) [ ]^ , ". It can also contain asterisks (*) and question marks (?) as wildcard characters.
      * The value is case-sensitive.
          */
         readonly path?: string | ros.IResolvable;
@@ -4175,7 +4143,8 @@ function rosRuleValuesPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ALB::SecurityPolicy`
+ * Properties for defining a `RosSecurityPolicy`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-securitypolicy
  */
 export interface RosSecurityPolicyProps {
 
@@ -4260,18 +4229,15 @@ function rosSecurityPolicyPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * A ROS template type:  `ALIYUN::ALB::SecurityPolicy`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::SecurityPolicy`, which is used to create a custom security policy.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SecurityPolicy` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-securitypolicy
  */
 export class RosSecurityPolicy extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ALB::SecurityPolicy";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute SecurityPolicyId: The ID of the security policy.
@@ -4306,8 +4272,6 @@ export class RosSecurityPolicy extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ALB::SecurityPolicy`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -4338,7 +4302,8 @@ export class RosSecurityPolicy extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ALB::ServerGroup`
+ * Properties for defining a `RosServerGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-servergroup
  */
 export interface RosServerGroupProps {
 
@@ -4489,18 +4454,15 @@ function rosServerGroupPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `ALIYUN::ALB::ServerGroup`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::ServerGroup`, which is used to create a server group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ServerGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-servergroup
  */
 export class RosServerGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ALB::ServerGroup";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ServerGroupId: The ID of the server group.
@@ -4578,8 +4540,6 @@ export class RosServerGroup extends ros.RosResource {
     public tags: RosServerGroup.TagsProperty[] | undefined;
 
     /**
-     * Create a new `ALIYUN::ALB::ServerGroup`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -4664,10 +4624,10 @@ export namespace RosServerGroup {
          * @Property healthCheckPath: The URL that is used for health checks.
      * The URL must be 1 to 80 characters in length, and can contain letters, digits, and
      * the following special characters:
-     * - / .% ?# & =.
+     * - \/ .% ?# & =.
      * It can also contain the following extended characters:
      * _ ; ~ ! ( )* [ ] @ $ ^ : ' , +.
-     * The URL must start with a forward slash (/).
+     * The URL must start with a forward slash (\/).
      * Note: This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
          */
         readonly healthCheckPath?: string | ros.IResolvable;

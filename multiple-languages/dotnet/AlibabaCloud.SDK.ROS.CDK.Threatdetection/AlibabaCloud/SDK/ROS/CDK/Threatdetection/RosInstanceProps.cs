@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Threatdetection
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ThreatDetection::Instance`.</summary>
+    /// <summary>Properties for defining a `RosInstance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-threatdetection-instance
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-threatdetection.RosInstanceProps")]
     public class RosInstanceProps : AlibabaCloud.SDK.ROS.CDK.Threatdetection.IRosInstanceProps
     {

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ram.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::RAM::Groups`.</summary>
+    /// <summary>Properties for defining a `RosGroups`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-groups
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ram.datasource.RosGroupsProps")]
     public class RosGroupsProps : AlibabaCloud.SDK.ROS.CDK.Ram.Datasource.IRosGroupsProps
     {

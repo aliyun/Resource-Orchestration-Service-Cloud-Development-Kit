@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.cs;
 
 /**
- * Properties for defining a <code>ALIYUN::CS::ManagedEdgeKubernetesCluster</code>.
+ * Properties for defining a <code>RosManagedEdgeKubernetesCluster</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managededgekubernetescluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.303Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.709Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedEdgeKubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosManagedEdgeKubernetesClusterProps.Jsii$Proxy.class)
 public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {

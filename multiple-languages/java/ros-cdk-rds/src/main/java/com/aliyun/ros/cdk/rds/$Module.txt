@@ -56,12 +56,16 @@
 @alicloud/ros-cdk-rds.RosReadOnlyDBInstanceProps=com.aliyun.ros.cdk.rds.RosReadOnlyDBInstanceProps
 @alicloud/ros-cdk-rds.datasource.Accounts=com.aliyun.ros.cdk.rds.datasource.Accounts
 @alicloud/ros-cdk-rds.datasource.AccountsProps=com.aliyun.ros.cdk.rds.datasource.AccountsProps
+@alicloud/ros-cdk-rds.datasource.DBInstance=com.aliyun.ros.cdk.rds.datasource.DBInstance
+@alicloud/ros-cdk-rds.datasource.DBInstanceProps=com.aliyun.ros.cdk.rds.datasource.DBInstanceProps
 @alicloud/ros-cdk-rds.datasource.DBInstances=com.aliyun.ros.cdk.rds.datasource.DBInstances
 @alicloud/ros-cdk-rds.datasource.DBInstancesProps=com.aliyun.ros.cdk.rds.datasource.DBInstancesProps
 @alicloud/ros-cdk-rds.datasource.Databases=com.aliyun.ros.cdk.rds.datasource.Databases
 @alicloud/ros-cdk-rds.datasource.DatabasesProps=com.aliyun.ros.cdk.rds.datasource.DatabasesProps
 @alicloud/ros-cdk-rds.datasource.RosAccounts=com.aliyun.ros.cdk.rds.datasource.RosAccounts
 @alicloud/ros-cdk-rds.datasource.RosAccountsProps=com.aliyun.ros.cdk.rds.datasource.RosAccountsProps
+@alicloud/ros-cdk-rds.datasource.RosDBInstance=com.aliyun.ros.cdk.rds.datasource.RosDBInstance
+@alicloud/ros-cdk-rds.datasource.RosDBInstanceProps=com.aliyun.ros.cdk.rds.datasource.RosDBInstanceProps
 @alicloud/ros-cdk-rds.datasource.RosDBInstances=com.aliyun.ros.cdk.rds.datasource.RosDBInstances
 @alicloud/ros-cdk-rds.datasource.RosDBInstancesProps=com.aliyun.ros.cdk.rds.datasource.RosDBInstancesProps
 @alicloud/ros-cdk-rds.datasource.RosDatabases=com.aliyun.ros.cdk.rds.datasource.RosDatabases

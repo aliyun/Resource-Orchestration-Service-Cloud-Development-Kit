@@ -4,7 +4,8 @@ import { RosKeyPairs } from './cloudphone.generated';
 export { RosKeyPairs as KeyPairsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::CloudPhone::KeyPairs`
+ * Properties for defining a `KeyPairs`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudphone-keypairs
  */
 export interface KeyPairsProps {
 
@@ -20,14 +21,11 @@ export interface KeyPairsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::CloudPhone::KeyPairs`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::CloudPhone::KeyPairs`, which is used to query the information about key pairs.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosKeyPairs`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudphone-keypairs
  */
 export class KeyPairs extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute KeyPairNames: The list of key pair names.
@@ -40,8 +38,6 @@ export class KeyPairs extends ros.Resource {
     public readonly attrKeyPairs: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::CloudPhone::KeyPairs`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

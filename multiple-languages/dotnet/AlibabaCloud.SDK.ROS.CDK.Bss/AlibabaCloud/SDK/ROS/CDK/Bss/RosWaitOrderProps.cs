@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Bss
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::BSS::WaitOrder`.</summary>
+    /// <summary>Properties for defining a `RosWaitOrder`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bss-waitorder
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-bss.RosWaitOrderProps")]
     public class RosWaitOrderProps : AlibabaCloud.SDK.ROS.CDK.Bss.IRosWaitOrderProps
     {
