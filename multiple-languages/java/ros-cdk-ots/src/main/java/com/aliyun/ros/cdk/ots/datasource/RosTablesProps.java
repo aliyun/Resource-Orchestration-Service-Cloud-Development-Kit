@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ots.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ots-tables
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.146Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-02-28T02:53:29.899Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.datasource.RosTablesProps")
 @software.amazon.jsii.Jsii.Proxy(RosTablesProps.Jsii$Proxy.class)
 public interface RosTablesProps extends software.amazon.jsii.JsiiSerializable {

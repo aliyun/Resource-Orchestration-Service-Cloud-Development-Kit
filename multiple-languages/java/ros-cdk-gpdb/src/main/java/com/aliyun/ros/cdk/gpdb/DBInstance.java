@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.gpdb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::GPDB::DBInstance</code>, which is used to create an AnalyticDB for PostgreSQL instance in reserved storage mode.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.499Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-02-28T02:53:29.263Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.DBInstance")
 public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
 

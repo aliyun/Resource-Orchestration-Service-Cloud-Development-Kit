@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.edas;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::EDAS::K8sSlbBinding</code>, which is used to bind a Server Load Balancer (SLB) instance to an application in a Container Service for Kubernetes (ACK) cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.752Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-02-28T02:53:28.736Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.K8sSlbBinding")
 public class K8sSlbBinding extends com.aliyun.ros.cdk.core.Resource {
 

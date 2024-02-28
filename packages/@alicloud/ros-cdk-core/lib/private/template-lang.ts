@@ -236,6 +236,42 @@ export function minimalRosTemplateJoin(
 }
 
 /**
+ * Do an intelligent ROS merge list on the given values, producing a minimal expression
+ */
+export function minimalRosTemplateListMerge(
+    values: any[]
+): any[] {
+  let i = 0;
+  while (i < values.length) {
+    const el = values[i];
+    if (isSplicableFnListMergeIntrinsic(el)) {
+      values.splice(i, 1, ...el["Fn::ListMerge"]);
+    } else {
+      i += 1;
+    }
+  }
+
+  return values;
+
+  function isSplicableFnListMergeIntrinsic(obj: any): boolean {
+    if (!isIntrinsic(obj)) {
+      return false;
+    }
+    if (Object.keys(obj)[0] !== "Fn::ListMerge") {
+      return false;
+    }
+
+    const list = obj["Fn::ListMerge"];
+
+    if (Token.isUnresolved(list)) {
+      return false;
+    }
+
+    return Array.isArray(list);
+  }
+}
+
+/**
  * Return whether the given value represents a ROS intrinsic
  */
 function isIntrinsic(x: any) {

@@ -3,6 +3,7 @@ import { CodeMaker } from 'codemaker';
 import * as genspec from './genspec';
 import { itemTypeNames, scalarTypeNames, SpecName } from './spec-utils';
 import { upcaseFirst } from './util';
+import * as fs from "fs";
 
 const CORE = genspec.CORE_NAMESPACE;
 const RESOURCE_CLASS_PREFIX = genspec.RESOURCE_CLASS_PREFIX;
@@ -61,6 +62,15 @@ export default class ResourceCodeGenerator {
     const rosName = SpecName.parse(resourceName);
     const rosReourceName = genspec.CodeName.forRosResource(rosName, this.affix);
     const resourceCodeName = genspec.CodeName.forResource(rosName, this.affix);
+    const extensionFilePath = `../@alicloud/extension/ros-cdk-${resourceCodeName.packageName}/lib/${rosName.resourceName.toLowerCase()}.ts`
+    let data = undefined;
+    let extensionCodes : string[] = [];
+    if (fs.existsSync(extensionFilePath)) {
+      console.log('add extension: ', extensionFilePath);
+      data = fs.readFileSync(extensionFilePath, 'utf8');
+      extensionCodes = data.split('\n');
+    }
+
     if (resourceCodeName.packageName === 'eip') {
       // 处理DATASOURCE::EIP::Addresses 这个原属于VPC的特殊资源
       this.code.line(
@@ -72,10 +82,35 @@ export default class ResourceCodeGenerator {
           `import { ${RESOURCE_CLASS_PREFIX}${rosName.resourceName} } from './${resourceCodeName.packageName}.generated';`,
       );
     }
+    while (extensionCodes.length > 0) {
+      if (extensionCodes[0].trimLeft() !== '' && !extensionCodes[0].startsWith('import')) {
+        break;
+      }
+      const codeLine = extensionCodes.shift();
+      if (codeLine && codeLine.includes(`@alicloud/ros-cdk-${resourceCodeName.packageName}`)) {
+        const matches = codeLine.match(/{(.*?)}/);
+        if (matches && matches[1]) {
+          const importResourceNames = matches[1].split(',').map((element) => element.trim());
+          for (const importResourceName of importResourceNames) {
+            if (importResourceName === rosName.resourceName
+                || importResourceName === `${rosName.resourceName}Props`
+                || importResourceName === `Ros${rosName.resourceName}`) {
+              continue;
+            }
+            this.code.line(
+                `import { ${importResourceName} } from './${importResourceName.toLowerCase()}';`,
+            );
+          }
+        }
+      } else if (codeLine && !codeLine.includes('@alicloud/ros-cdk-core')) {
+        this.code.line(codeLine);
+      }
+    }
+
     this.code.line('// Generated from the AliCloud ROS Resource Specification');
     this.code.line(`export { ${RESOURCE_CLASS_PREFIX}${rosName.resourceName} as ${rosName.resourceName}Property };`);
     this.code.line();
-    this.emitResourceType(resourceCodeName, rosReourceName, resourceSpec);
+    this.emitResourceType(resourceCodeName, rosReourceName, resourceSpec, extensionCodes);
     // this.emitPropertyTypes(resourceName, rosReourceName);
   }
 
@@ -173,6 +208,7 @@ export default class ResourceCodeGenerator {
     resourceName: genspec.CodeName,
     rosResourceName: genspec.CodeName,
     spec: schema.ResourceType,
+    extensionCodes: string[]
   ): void {
     this.beginNamespace(resourceName);
 
@@ -196,6 +232,12 @@ export default class ResourceCodeGenerator {
     const note = `@Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of \`Ros${resourceName.className}\`for a more convenient development experience.`;
     this.docLink(spec.Documentation, specificDescription, note);
     this.openClass(resourceName, RESOURCE_BASE_CLASS);
+    this.code.line(`protected scope: ros.Construct;`);
+    this.code.line(`protected id: string;`);
+    if (propsType) {
+      this.code.line(`protected props: ${propsType.className};`);
+    }
+    this.code.line(`protected enableResourcePropertyConstraint: boolean;`);
 
     //
     // Attributes
@@ -238,6 +280,12 @@ export default class ResourceCodeGenerator {
       `constructor(scope: ${CONSTRUCT_CLASS}, id: string${propsArgument}, enableResourcePropertyConstraint:boolean = true)`,
     );
     this.code.line(`super(scope, id);`);
+    this.code.line(`this.scope = scope;`);
+    this.code.line(`this.id = id;`);
+    if (propsType) {
+      this.code.line(`this.props = props;`);
+    }
+    this.code.line(`this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;`);
 
     // initialize all property class members
     if (propsType) {
@@ -275,6 +323,31 @@ export default class ResourceCodeGenerator {
     }
     this.code.closeBlockFormatter = () => `}`;
     this.code.closeBlock();
+
+    // extension functions for l2
+    if (extensionCodes.length > 0) {
+      this.code.line();
+      let leftBracket = 0;
+      const leftBracketRegex = /{/g;
+      const rightBracketRegex = /}/g;
+      while (extensionCodes.length > 0) {
+        const codeLine = extensionCodes.shift();
+        if (leftBracket === 0 && (!codeLine || codeLine.startsWith('class'))) {
+          if (codeLine && codeLine.includes('{')) {
+            leftBracket++;
+          }
+          continue;
+        }
+        if (codeLine) {
+          leftBracket += codeLine.match(leftBracketRegex)?.length || 0;
+          leftBracket -= codeLine.match(rightBracketRegex)?.length || 0;
+        }
+        if (leftBracket === 0) {
+          break;
+        }
+        this.code.line(codeLine?.replace(/^\s{4}/, ''));
+      }
+    }
     this.code.closeBlock();
   }
 

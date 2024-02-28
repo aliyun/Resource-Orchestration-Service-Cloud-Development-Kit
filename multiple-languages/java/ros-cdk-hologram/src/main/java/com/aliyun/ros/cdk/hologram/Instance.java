@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hologram;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::Hologram::Instance</code>ALIYUN::IMM::Project is used to create an Intelligent Media Management (IMM) project.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.638Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-02-28T02:53:29.387Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hologram.$Module.class, fqn = "@alicloud/ros-cdk-hologram.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 

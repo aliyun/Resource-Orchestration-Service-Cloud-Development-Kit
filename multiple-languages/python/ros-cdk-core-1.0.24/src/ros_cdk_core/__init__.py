@@ -1046,7 +1046,7 @@ class Fn(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Fn"):
     def join(
         cls,
         delimiter: builtins.str,
-        list_of_values: typing.Sequence[builtins.str],
+        list_of_values: typing.Sequence[typing.Union[builtins.str, "IResolvable"]],
     ) -> builtins.str:
         '''The intrinsic function ``Fn::Join`` appends a set of values into a single value, separated by the specified delimiter.
 
@@ -1088,7 +1088,7 @@ class Fn(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Fn"):
     @builtins.classmethod
     def list_merge(
         cls,
-        value_list: typing.Sequence[typing.Sequence[typing.Any]],
+        value_list: typing.Sequence[typing.Union[typing.Sequence[typing.Any], "IResolvable"]],
     ) -> "IResolvable":
         '''
         :param value_list: -
@@ -4952,20 +4952,54 @@ class FnJq(Intrinsic, metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core
         jsii.create(self.__class__, self, [value])
 
 
+@jsii.implements(IResolvable)
 class FnListMerge(
-    Intrinsic,
     metaclass=jsii.JSIIMeta,
     jsii_type="@alicloud/ros-cdk-core.FnListMerge",
 ):
-    def __init__(self, value: typing.Any) -> None:
+    '''Returns true if a specified string matches all values in a list.'''
+
+    def __init__(self, list_of_values: typing.Sequence[typing.Any]) -> None:
         '''Creates an ``ListMerge`` function.
 
-        :param value: -
+        :param list_of_values: -
         '''
         if __debug__:
             type_hints = typing.get_type_hints(_typecheckingstub__e8c35bdce19ff8d2ea687c9a63e379a6babcc6ff8119fd475f25f1b5ea1c25ee)
-            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
-        jsii.create(self.__class__, self, [value])
+            check_type(argname="argument list_of_values", value=list_of_values, expected_type=type_hints["list_of_values"])
+        jsii.create(self.__class__, self, [list_of_values])
+
+    @jsii.member(jsii_name="resolve")
+    def resolve(self, context: IResolveContext) -> typing.Any:
+        '''Produce the Token's value at resolution time.
+
+        :param context: -
+        '''
+        if __debug__:
+            type_hints = typing.get_type_hints(_typecheckingstub__ceda63847d74b36185490f53ff9b8aaada86c97e8019f200dcc7086445d3b88c)
+            check_type(argname="argument context", value=context, expected_type=type_hints["context"])
+        return typing.cast(typing.Any, jsii.invoke(self, "resolve", [context]))
+
+    @jsii.member(jsii_name="toJSON")
+    def to_json(self) -> builtins.str:
+        return typing.cast(builtins.str, jsii.invoke(self, "toJSON", []))
+
+    @jsii.member(jsii_name="toString")
+    def to_string(self) -> builtins.str:
+        '''Return a string representation of this resolvable object.
+
+        Returns a reversible string representation.
+        '''
+        return typing.cast(builtins.str, jsii.invoke(self, "toString", []))
+
+    @builtins.property
+    @jsii.member(jsii_name="creationStack")
+    def creation_stack(self) -> typing.List[builtins.str]:
+        '''The creation stack of this resolvable which will be appended to errors thrown during resolution.
+
+        If this returns an empty array the stack will not be attached.
+        '''
+        return typing.cast(typing.List[builtins.str], jsii.get(self, "creationStack"))
 
 
 class FnMax(
@@ -8209,7 +8243,7 @@ def _typecheckingstub__ffa0ab99cd7d646eb78d61ad0b07aa230afdb88914c828db09aaab14c
 
 def _typecheckingstub__88f3fc6721043fc599f60ea05b463881dcf4075d5127c09179c02a1690454ef0(
     delimiter: builtins.str,
-    list_of_values: typing.Sequence[builtins.str],
+    list_of_values: typing.Sequence[typing.Union[builtins.str, IResolvable]],
 ) -> None:
     """Type checking stubs"""
     pass
@@ -8223,7 +8257,7 @@ def _typecheckingstub__0bf918016f24f24d6d8d161b6d860b5a0b5506fe4d57b968ce44fea47
     pass
 
 def _typecheckingstub__418ce724afaaaf93016caa6baae8868b58470039ae7a0209173008f801bd0cce(
-    value_list: typing.Sequence[typing.Sequence[typing.Any]],
+    value_list: typing.Sequence[typing.Union[typing.Sequence[typing.Any], IResolvable]],
 ) -> None:
     """Type checking stubs"""
     pass
@@ -9025,7 +9059,13 @@ def _typecheckingstub__8eb62c800fcae67b10a7b5c30ccb3c039f73b92a81033996681078533
     pass
 
 def _typecheckingstub__e8c35bdce19ff8d2ea687c9a63e379a6babcc6ff8119fd475f25f1b5ea1c25ee(
-    value: typing.Any,
+    list_of_values: typing.Sequence[typing.Any],
+) -> None:
+    """Type checking stubs"""
+    pass
+
+def _typecheckingstub__ceda63847d74b36185490f53ff9b8aaada86c97e8019f200dcc7086445d3b88c(
+    context: IResolveContext,
 ) -> None:
     """Type checking stubs"""
     pass

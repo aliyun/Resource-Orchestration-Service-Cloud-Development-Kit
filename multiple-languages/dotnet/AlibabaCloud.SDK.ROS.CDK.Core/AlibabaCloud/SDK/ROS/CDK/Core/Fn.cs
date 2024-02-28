@@ -289,10 +289,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// If a delimiter is the empty
         /// string, the set of values are concatenated with no delimiter.
         /// </remarks>
-        [JsiiMethod(name: "join", returnsJson: "{\"type\":{\"primitive\":\"string\"}}", parametersJson: "[{\"docs\":{\"remarks\":\"The\ndelimiter will occur between fragments only. It will not terminate the\nfinal value.\",\"summary\":\"The value you want to occur between fragments.\"},\"name\":\"delimiter\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"The list of values you want combined.\"},\"name\":\"listOfValues\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}}]")]
-        public static string Join(string delimiter, string[] listOfValues)
+        [JsiiMethod(name: "join", returnsJson: "{\"type\":{\"primitive\":\"string\"}}", parametersJson: "[{\"docs\":{\"remarks\":\"The\ndelimiter will occur between fragments only. It will not terminate the\nfinal value.\",\"summary\":\"The value you want to occur between fragments.\"},\"name\":\"delimiter\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"The list of values you want combined.\"},\"name\":\"listOfValues\",\"type\":{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}}]")]
+        public static string Join(string delimiter, object[] listOfValues)
         {
-            return InvokeStaticMethod<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.Fn), new System.Type[]{typeof(string), typeof(string[])}, new object[]{delimiter, listOfValues})!;
+            if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+            {
+                for (var __idx_7506d4 = 0 ; __idx_7506d4 < listOfValues.Length ; __idx_7506d4++)
+                {
+                    switch (listOfValues[__idx_7506d4])
+                    {
+                        case string cast_171a22:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_171a22:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_171a22:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            throw new System.ArgumentException($"Expected argument {nameof(listOfValues)}[{__idx_7506d4}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(listOfValues));
+                        default:
+                            throw new System.ArgumentException($"Expected argument {nameof(listOfValues)}[{__idx_7506d4}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {listOfValues[__idx_7506d4].GetType().FullName}", nameof(listOfValues));
+                    }
+                }
+            }
+            return InvokeStaticMethod<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.Fn), new System.Type[]{typeof(string), typeof(object[])}, new object[]{delimiter, listOfValues})!;
         }
 
         [JsiiMethod(name: "jq", returnsJson: "{\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}}", parametersJson: "[{\"name\":\"method\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"script\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"inputString\",\"type\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}}]")]
@@ -315,10 +335,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             return InvokeStaticMethod<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.Fn), new System.Type[]{typeof(string), typeof(string), typeof(object)}, new object[]{method, script, inputString})!;
         }
 
-        [JsiiMethod(name: "listMerge", returnsJson: "{\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}}", parametersJson: "[{\"name\":\"valueList\",\"type\":{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},\"kind\":\"array\"}}}]")]
-        public static AlibabaCloud.SDK.ROS.CDK.Core.IResolvable ListMerge(object[][] valueList)
+        [JsiiMethod(name: "listMerge", returnsJson: "{\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}}", parametersJson: "[{\"name\":\"valueList\",\"type\":{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}}]")]
+        public static AlibabaCloud.SDK.ROS.CDK.Core.IResolvable ListMerge(object[] valueList)
         {
-            return InvokeStaticMethod<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.Fn), new System.Type[]{typeof(object[][])}, new object[]{valueList})!;
+            if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+            {
+                for (var __idx_7313ea = 0 ; __idx_7313ea < valueList.Length ; __idx_7313ea++)
+                {
+                    switch (valueList[__idx_7313ea])
+                    {
+                        case object[] cast_0a7939:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_0a7939:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_0a7939:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            throw new System.ArgumentException($"Expected argument {nameof(valueList)}[{__idx_7313ea}] to be one of: object[], {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(valueList));
+                        default:
+                            throw new System.ArgumentException($"Expected argument {nameof(valueList)}[{__idx_7313ea}] to be one of: object[], {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {valueList[__idx_7313ea].GetType().FullName}", nameof(valueList));
+                    }
+                }
+            }
+            return InvokeStaticMethod<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.Fn), new System.Type[]{typeof(object[])}, new object[]{valueList})!;
         }
 
         [JsiiMethod(name: "max", returnsJson: "{\"type\":{\"primitive\":\"number\"}}", parametersJson: "[{\"name\":\"values\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"number\"},\"kind\":\"array\"}}}]")]

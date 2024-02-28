@@ -3416,6 +3416,57 @@ class Instance(
             check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
+    @jsii.member(jsii_name="addSecurityGroups")
+    def add_security_groups(
+        self,
+        *security_groups: typing.Union[builtins.str, "SecurityGroup"],
+    ) -> None:
+        '''Add one or more security groups to an ECS instance.
+
+        :param security_groups: Security groups or security group IDs.
+        '''
+        if __debug__:
+            type_hints = typing.get_type_hints(_typecheckingstub__15ff589216e7b748dc01f3b3c0a9495ec2c944cf9d618d8bb1942482ea78aeae)
+            check_type(argname="argument security_groups", value=security_groups, expected_type=typing.Tuple[type_hints["security_groups"], ...]) # pyright: ignore [reportGeneralTypeIssues]
+        return typing.cast(None, jsii.invoke(self, "addSecurityGroups", [*security_groups]))
+
+    @jsii.member(jsii_name="addUserDataCommands")
+    def add_user_data_commands(
+        self,
+        *commands: typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable],
+    ) -> None:
+        '''Add one or more commands to the userdata of an ECS instance.
+
+        :param commands: Commands to be added.
+        '''
+        if __debug__:
+            type_hints = typing.get_type_hints(_typecheckingstub__ae2dd983e7cbdd515ee23d1c5a44cff2b6df9dda927387aa0a26c2de3e512888)
+            check_type(argname="argument commands", value=commands, expected_type=typing.Tuple[type_hints["commands"], ...]) # pyright: ignore [reportGeneralTypeIssues]
+        return typing.cast(None, jsii.invoke(self, "addUserDataCommands", [*commands]))
+
+    @jsii.member(jsii_name="autoCreateDependencies")
+    def auto_create_dependencies(
+        self,
+        zone_id: typing.Optional[typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable]] = None,
+        vpc_cidr_block: typing.Optional[builtins.str] = None,
+        v_switch_cidr_block: typing.Optional[builtins.str] = None,
+        whether_create_security_group: typing.Optional[builtins.bool] = None,
+    ) -> typing.List[typing.Any]:
+        '''Create prerequisite resource(s) required to an ECS instance: VPC, VSwitch, and(or) security group.
+
+        :param zone_id: Required when creating a VSwitch.
+        :param vpc_cidr_block: Optional when creating a VPC. Default value is 192.168.0.0/16.
+        :param v_switch_cidr_block: Optional when creating a VSwitch. Default value is 192.168.0.0/24.
+        :param whether_create_security_group: Whether to create a security group. Default value is true.
+        '''
+        if __debug__:
+            type_hints = typing.get_type_hints(_typecheckingstub__680327cab652cd084705f7c5a4cc28d6c9094cac4a50cfb03256dd1ce068f6a1)
+            check_type(argname="argument zone_id", value=zone_id, expected_type=type_hints["zone_id"])
+            check_type(argname="argument vpc_cidr_block", value=vpc_cidr_block, expected_type=type_hints["vpc_cidr_block"])
+            check_type(argname="argument v_switch_cidr_block", value=v_switch_cidr_block, expected_type=type_hints["v_switch_cidr_block"])
+            check_type(argname="argument whether_create_security_group", value=whether_create_security_group, expected_type=type_hints["whether_create_security_group"])
+        return typing.cast(typing.List[typing.Any], jsii.invoke(self, "autoCreateDependencies", [zone_id, vpc_cidr_block, v_switch_cidr_block, whether_create_security_group]))
+
     @builtins.property
     @jsii.member(jsii_name="attrHostName")
     def attr_host_name(self) -> _ros_cdk_core_7adfd82f.IResolvable:
@@ -3469,6 +3520,54 @@ class Instance(
     def attr_zone_id(self) -> _ros_cdk_core_7adfd82f.IResolvable:
         '''Attribute ZoneId: Zone ID of created instance.'''
         return typing.cast(_ros_cdk_core_7adfd82f.IResolvable, jsii.get(self, "attrZoneId"))
+
+    @builtins.property
+    @jsii.member(jsii_name="enableResourcePropertyConstraint")
+    def _enable_resource_property_constraint(self) -> builtins.bool:
+        return typing.cast(builtins.bool, jsii.get(self, "enableResourcePropertyConstraint"))
+
+    @_enable_resource_property_constraint.setter
+    def _enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(_typecheckingstub__37d552814444095d1ae7d647447e79450a3153f284b3bcae2565a60c6ed90797)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
+        jsii.set(self, "enableResourcePropertyConstraint", value)
+
+    @builtins.property
+    @jsii.member(jsii_name="id")
+    def _id(self) -> builtins.str:
+        return typing.cast(builtins.str, jsii.get(self, "id"))
+
+    @_id.setter
+    def _id(self, value: builtins.str) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(_typecheckingstub__3cecd6b839112ba735e5bf738613f8ebadd28f35fd4ef33f3f024f92e1700e8a)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
+        jsii.set(self, "id", value)
+
+    @builtins.property
+    @jsii.member(jsii_name="props")
+    def _props(self) -> "InstanceProps":
+        return typing.cast("InstanceProps", jsii.get(self, "props"))
+
+    @_props.setter
+    def _props(self, value: "InstanceProps") -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(_typecheckingstub__d4bc2e8f1575e6a07e30ecee94fdbcc185d15acf16decac004dd0c222eb93a85)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
+        jsii.set(self, "props", value)
+
+    @builtins.property
+    @jsii.member(jsii_name="scope")
+    def _scope(self) -> _ros_cdk_core_7adfd82f.Construct:
+        return typing.cast(_ros_cdk_core_7adfd82f.Construct, jsii.get(self, "scope"))
+
+    @_scope.setter
+    def _scope(self, value: _ros_cdk_core_7adfd82f.Construct) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(_typecheckingstub__08975983583818b6b774568cb2c41b7478d0f7635868466f3edecd03479c56de)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
+        jsii.set(self, "scope", value)
 
 
 class InstanceClone(
@@ -41297,6 +41396,51 @@ def _typecheckingstub__af8f7b1e44337a436b3787b6c210b4164f0d58e8395d4d5cece6c5fbc
     id: builtins.str,
     props: typing.Union[InstanceProps, typing.Dict[builtins.str, typing.Any]],
     enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
+) -> None:
+    """Type checking stubs"""
+    pass
+
+def _typecheckingstub__15ff589216e7b748dc01f3b3c0a9495ec2c944cf9d618d8bb1942482ea78aeae(
+    *security_groups: typing.Union[builtins.str, SecurityGroup],
+) -> None:
+    """Type checking stubs"""
+    pass
+
+def _typecheckingstub__ae2dd983e7cbdd515ee23d1c5a44cff2b6df9dda927387aa0a26c2de3e512888(
+    *commands: typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable],
+) -> None:
+    """Type checking stubs"""
+    pass
+
+def _typecheckingstub__680327cab652cd084705f7c5a4cc28d6c9094cac4a50cfb03256dd1ce068f6a1(
+    zone_id: typing.Optional[typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable]] = None,
+    vpc_cidr_block: typing.Optional[builtins.str] = None,
+    v_switch_cidr_block: typing.Optional[builtins.str] = None,
+    whether_create_security_group: typing.Optional[builtins.bool] = None,
+) -> None:
+    """Type checking stubs"""
+    pass
+
+def _typecheckingstub__37d552814444095d1ae7d647447e79450a3153f284b3bcae2565a60c6ed90797(
+    value: builtins.bool,
+) -> None:
+    """Type checking stubs"""
+    pass
+
+def _typecheckingstub__3cecd6b839112ba735e5bf738613f8ebadd28f35fd4ef33f3f024f92e1700e8a(
+    value: builtins.str,
+) -> None:
+    """Type checking stubs"""
+    pass
+
+def _typecheckingstub__d4bc2e8f1575e6a07e30ecee94fdbcc185d15acf16decac004dd0c222eb93a85(
+    value: InstanceProps,
+) -> None:
+    """Type checking stubs"""
+    pass
+
+def _typecheckingstub__08975983583818b6b774568cb2c41b7478d0f7635868466f3edecd03479c56de(
+    value: _ros_cdk_core_7adfd82f.Construct,
 ) -> None:
     """Type checking stubs"""
     pass

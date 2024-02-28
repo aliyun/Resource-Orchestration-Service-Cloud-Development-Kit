@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.config;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-deliverychannel
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.501Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-02-28T02:53:27.506Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.config.$Module.class, fqn = "@alicloud/ros-cdk-config.RosDeliveryChannelProps")
 @software.amazon.jsii.Jsii.Proxy(RosDeliveryChannelProps.Jsii$Proxy.class)
 public interface RosDeliveryChannelProps extends software.amazon.jsii.JsiiSerializable {

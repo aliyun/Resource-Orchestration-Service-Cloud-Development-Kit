@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CMS::ContactGroup</code>, which is used to create an alert contact group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.342Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-02-28T02:53:27.345Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.ContactGroup")
 public class ContactGroup extends com.aliyun.ros.cdk.core.Resource {
 

@@ -6,6 +6,12 @@ export interface ResourceType extends Documented {
      */
     Description?: string;
     /**
+     * Mapping of CDK's property names to ROS's property names.
+     */
+    PropsToRosName?: {
+        [name: string]: string;
+    };
+    /**
      * The attributes exposed by the resource type, if any.
      */
     Attributes?: {

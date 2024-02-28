@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nlb.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::NLB::LoadBalancers</code>ALIYUN::NLPAUTOML::Dataset is used to create a dataset.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.030Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-02-28T02:53:29.791Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.datasource.RosLoadBalancers")
 public class RosLoadBalancers extends com.aliyun.ros.cdk.core.RosResource {
 

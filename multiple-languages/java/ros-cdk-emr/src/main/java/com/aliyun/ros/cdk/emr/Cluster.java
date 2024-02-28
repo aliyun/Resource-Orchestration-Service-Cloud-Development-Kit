@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.emr;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::EMR::Cluster</code>, which is used to create an E-MapReduce (EMR) cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.888Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-02-28T02:53:28.872Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.emr.$Module.class, fqn = "@alicloud/ros-cdk-emr.Cluster")
 public class Cluster extends com.aliyun.ros.cdk.core.Resource {
 

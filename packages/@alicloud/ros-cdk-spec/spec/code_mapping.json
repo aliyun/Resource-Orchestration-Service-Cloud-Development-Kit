@@ -100,6 +100,11 @@
     "SWAS": "SWAS-OPEN",
     "Hologram": "Hologram",
     "DEVOPS": "devops",
-    "HBase": "HBase"
+    "HBase": "HBase",
+    "CloudSSO": "cloudsso",
+    "CloudStorageGateway": "sgw",
+    "DDoSPro":"ddoscoo",
+    "SAS": "Sas",
+    "WAF3": "waf-openapi"
   }
 }

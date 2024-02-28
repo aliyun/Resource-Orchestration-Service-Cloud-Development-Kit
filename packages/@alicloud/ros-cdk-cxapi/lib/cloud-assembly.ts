@@ -49,7 +49,7 @@ export class CloudAssembly {
   constructor(directory: string) {
     this.directory = directory;
 
-    this.manifest = cxschema.Manifest.load(path.join(directory, MANIFEST_FILE));
+    this.manifest = cxschema.Manifest.loadAssemblyManifest(path.join(directory, MANIFEST_FILE));
     this.version = this.manifest.version;
     this.artifacts = this.renderArtifacts();
     this.runtime = this.manifest.runtime || { libraries: {} };

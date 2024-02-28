@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SLB::LoadBalancer</code>, which is used to create a Server Load Balancer (SLB) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:18.053Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-02-28T02:53:30.760Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.LoadBalancer")
 public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource {
 

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.mns;
  * <p>
  * For a subscription to be created, the owner of the endpoint must confirm the subscription.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.833Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-02-28T02:53:29.595Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.Subscription")
 public class Subscription extends com.aliyun.ros.cdk.core.Resource {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ebs;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::EBS::DiskReplicaPairAddition</code>, which is used to add a replication pair to a replication pair-consistent group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.073Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-02-28T02:53:28.080Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ebs.$Module.class, fqn = "@alicloud/ros-cdk-ebs.RosDiskReplicaPairAddition")
 public class RosDiskReplicaPairAddition extends com.aliyun.ros.cdk.core.RosResource {
 

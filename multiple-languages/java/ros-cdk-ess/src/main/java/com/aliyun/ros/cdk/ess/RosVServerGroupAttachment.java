@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ESS::VServerGroupAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.038Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-02-28T02:53:29.012Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosVServerGroupAttachment")
 public class RosVServerGroupAttachment extends com.aliyun.ros.cdk.core.RosResource {
 

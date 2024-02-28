@@ -8,6 +8,8 @@
 @alicloud/ros-cdk-mse.NacosServiceProps=com.aliyun.ros.cdk.mse.NacosServiceProps
 @alicloud/ros-cdk-mse.RosCluster=com.aliyun.ros.cdk.mse.RosCluster
 @alicloud/ros-cdk-mse.RosClusterProps=com.aliyun.ros.cdk.mse.RosClusterProps
+@alicloud/ros-cdk-mse.RosEngineNamespace=com.aliyun.ros.cdk.mse.RosEngineNamespace
+@alicloud/ros-cdk-mse.RosEngineNamespaceProps=com.aliyun.ros.cdk.mse.RosEngineNamespaceProps
 @alicloud/ros-cdk-mse.RosGateway=com.aliyun.ros.cdk.mse.RosGateway
 @alicloud/ros-cdk-mse.RosGatewayProps=com.aliyun.ros.cdk.mse.RosGatewayProps
 @alicloud/ros-cdk-mse.RosNacosConfig=com.aliyun.ros.cdk.mse.RosNacosConfig

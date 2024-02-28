@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cloudfw.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudfw-addressbooks
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.307Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-02-28T02:53:27.324Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.datasource.AddressBooksProps")
 @software.amazon.jsii.Jsii.Proxy(AddressBooksProps.Jsii$Proxy.class)
 public interface AddressBooksProps extends software.amazon.jsii.JsiiSerializable {

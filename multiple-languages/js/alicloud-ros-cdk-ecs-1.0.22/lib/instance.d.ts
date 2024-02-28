@@ -1,5 +1,6 @@
 import * as ros from '@alicloud/ros-cdk-core';
 import { RosInstance } from './ecs.generated';
+import { SecurityGroup } from './securitygroup';
 export { RosInstance as InstanceProperty };
 /**
  * Properties for defining a `Instance`.
@@ -251,6 +252,10 @@ export interface InstanceProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instance
  */
 export declare class Instance extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: InstanceProps;
+    protected enableResourcePropertyConstraint: boolean;
     /**
      * Attribute HostName: Host name of created instance.
      */
@@ -289,4 +294,22 @@ export declare class Instance extends ros.Resource {
      * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: InstanceProps, enableResourcePropertyConstraint?: boolean);
+    /**
+     * Create prerequisite resource(s) required to an ECS instance: VPC, VSwitch, and(or) security group.
+     * @param zoneId Required when creating a VSwitch.
+     * @param vpcCidrBlock Optional when creating a VPC. Default value is 192.168.0.0/16.
+     * @param vSwitchCidrBlock Optional when creating a VSwitch. Default value is 192.168.0.0/24.
+     * @param whetherCreateSecurityGroup Whether to create a security group. Default value is true.
+     */
+    autoCreateDependencies(zoneId?: string | ros.IResolvable | undefined, vpcCidrBlock?: string | undefined, vSwitchCidrBlock?: string | undefined, whetherCreateSecurityGroup?: Boolean): any[];
+    /**
+     * Add one or more security groups to an ECS instance.
+     * @param securityGroups Security groups or security group IDs.
+     */
+    addSecurityGroups(...securityGroups: (SecurityGroup | string)[]): void;
+    /**
+     * Add one or more commands to the userdata of an ECS instance.
+     * @param commands Commands to be added.
+     */
+    addUserDataCommands(...commands: (string | ros.IResolvable)[]): void;
 }

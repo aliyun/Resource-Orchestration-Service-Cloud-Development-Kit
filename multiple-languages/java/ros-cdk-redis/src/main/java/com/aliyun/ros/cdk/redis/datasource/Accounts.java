@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.redis.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::REDIS::Accounts</code>ALIYUN::ResourceManager::Account is used to create a resource account as a member account.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.729Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-02-28T02:53:30.475Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.datasource.Accounts")
 public class Accounts extends com.aliyun.ros.cdk.core.Resource {
 

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cen.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-cenbandwidthpackages
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.233Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-02-28T02:53:27.242Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.datasource.CenBandwidthPackagesProps")
 @software.amazon.jsii.Jsii.Proxy(CenBandwidthPackagesProps.Jsii$Proxy.class)
 public interface CenBandwidthPackagesProps extends software.amazon.jsii.JsiiSerializable {

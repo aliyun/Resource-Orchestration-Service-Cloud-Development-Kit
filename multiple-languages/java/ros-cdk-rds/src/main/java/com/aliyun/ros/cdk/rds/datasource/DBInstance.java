@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::RDS::DBInstance</code>ALIYUN::REDIS::Account is used to create an account that has the specified permissions on an ApsaraDB for Redis instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.617Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-02-28T02:53:30.373Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.datasource.DBInstance")
 public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
 

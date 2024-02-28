@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.core;
  * <p>
  * This class will disappear in a future release and should not be used.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:13.578Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-02-28T02:53:26.446Z")
 @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Experimental)
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Intrinsic")
 public class Intrinsic extends software.amazon.jsii.JsiiObject implements com.aliyun.ros.cdk.core.IResolvable {

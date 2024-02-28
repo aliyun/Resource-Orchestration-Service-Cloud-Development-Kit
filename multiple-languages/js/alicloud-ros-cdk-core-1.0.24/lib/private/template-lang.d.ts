@@ -30,4 +30,8 @@ export declare const ROS_TOKEN_RESOLVER: DefaultTokenResolver;
  * Do an intelligent ROS join on the given values, producing a minimal expression
  */
 export declare function minimalRosTemplateJoin(delimiter: string, values: any[]): any[];
+/**
+ * Do an intelligent ROS merge list on the given values, producing a minimal expression
+ */
+export declare function minimalRosTemplateListMerge(values: any[]): any[];
 export declare function isNameOfRosIntrinsic(name: string): boolean;

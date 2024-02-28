@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.brainindustrial;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-brainindustrial-pidorganization
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.000Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-02-28T02:53:26.888Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.brainindustrial.$Module.class, fqn = "@alicloud/ros-cdk-brainindustrial.RosPidOrganizationProps")
 @software.amazon.jsii.Jsii.Proxy(RosPidOrganizationProps.Jsii$Proxy.class)
 public interface RosPidOrganizationProps extends software.amazon.jsii.JsiiSerializable {

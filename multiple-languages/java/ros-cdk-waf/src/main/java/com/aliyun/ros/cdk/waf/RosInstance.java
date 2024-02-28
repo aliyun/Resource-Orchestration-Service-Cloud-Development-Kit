@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.waf;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::WAF::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:18.711Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-02-28T02:53:31.408Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.waf.$Module.class, fqn = "@alicloud/ros-cdk-waf.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 

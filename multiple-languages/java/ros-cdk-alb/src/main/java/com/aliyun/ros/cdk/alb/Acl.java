@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ALB::Acl</code>, which is used to create an access control list (ACL).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:13.668Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-02-28T02:53:26.542Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.Acl")
 public class Acl extends com.aliyun.ros.cdk.core.Resource {
 

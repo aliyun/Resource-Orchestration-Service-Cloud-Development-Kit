@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ots;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::OTS::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.109Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-02-28T02:53:29.867Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 

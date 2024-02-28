@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.kms;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-key
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.725Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-02-28T02:53:29.490Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.KeyProps")
 @software.amazon.jsii.Jsii.Proxy(KeyProps.Jsii$Proxy.class)
 public interface KeyProps extends software.amazon.jsii.JsiiSerializable {

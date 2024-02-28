@@ -2172,6 +2172,258 @@ class RosClusterProps:
         )
 
 
+class RosEngineNamespace(
+    _ros_cdk_core_7adfd82f.RosResource,
+    metaclass=jsii.JSIIMeta,
+    jsii_type="@alicloud/ros-cdk-mse.RosEngineNamespace",
+):
+    '''This class is a base encapsulation around the ROS resource type ``ALIYUN::MSE::EngineNamespace``.
+
+    :Note:
+
+    This class does not contain additional functions, so it is recommended to use the ``EngineNamespace`` class instead of this class for a more convenient development experience.
+    See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-enginenamespace
+    '''
+
+    def __init__(
+        self,
+        scope: _ros_cdk_core_7adfd82f.Construct,
+        id: builtins.str,
+        props: typing.Union["RosEngineNamespaceProps", typing.Dict[builtins.str, typing.Any]],
+        enable_resource_property_constraint: builtins.bool,
+    ) -> None:
+        '''
+        :param scope: - scope in which this resource is defined.
+        :param id: - scoped id of the resource.
+        :param props: - resource properties.
+        :param enable_resource_property_constraint: -
+        '''
+        if __debug__:
+            type_hints = typing.get_type_hints(_typecheckingstub__956619f383d5dff09236b8f679814d92e54a8b3b14b792e0a5c491f53df4d9a5)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
+        jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
+
+    @jsii.member(jsii_name="renderProperties")
+    def _render_properties(
+        self,
+        props: typing.Mapping[builtins.str, typing.Any],
+    ) -> typing.Mapping[builtins.str, typing.Any]:
+        '''
+        :param props: -
+        '''
+        if __debug__:
+            type_hints = typing.get_type_hints(_typecheckingstub__39eff009aa4ba3280465d5d299dd453d03d556199eb4b7044708e7ccf3fbc972)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+        return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
+
+    @jsii.python.classproperty
+    @jsii.member(jsii_name="ROS_RESOURCE_TYPE_NAME")
+    def ROS_RESOURCE_TYPE_NAME(cls) -> builtins.str:
+        '''The resource type name for this resource class.'''
+        return typing.cast(builtins.str, jsii.sget(cls, "ROS_RESOURCE_TYPE_NAME"))
+
+    @builtins.property
+    @jsii.member(jsii_name="attrNamespaceId")
+    def attr_namespace_id(self) -> _ros_cdk_core_7adfd82f.IResolvable:
+        '''
+        :Attribute: NamespaceId: The ID of the namespace.
+        '''
+        return typing.cast(_ros_cdk_core_7adfd82f.IResolvable, jsii.get(self, "attrNamespaceId"))
+
+    @builtins.property
+    @jsii.member(jsii_name="rosProperties")
+    def _ros_properties(self) -> typing.Mapping[builtins.str, typing.Any]:
+        return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.get(self, "rosProperties"))
+
+    @builtins.property
+    @jsii.member(jsii_name="enableResourcePropertyConstraint")
+    def enable_resource_property_constraint(self) -> builtins.bool:
+        return typing.cast(builtins.bool, jsii.get(self, "enableResourcePropertyConstraint"))
+
+    @enable_resource_property_constraint.setter
+    def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(_typecheckingstub__f9510e546ce3e7990c360d4f33d591d536c601a97514078b50658125144ea9f9)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
+        jsii.set(self, "enableResourcePropertyConstraint", value)
+
+    @builtins.property
+    @jsii.member(jsii_name="instanceId")
+    def instance_id(
+        self,
+    ) -> typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable]:
+        '''
+        :Property: instanceId: The ID of the instance.
+        '''
+        return typing.cast(typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable], jsii.get(self, "instanceId"))
+
+    @instance_id.setter
+    def instance_id(
+        self,
+        value: typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable],
+    ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(_typecheckingstub__3d52e2250ba38230e996cb859933422955376049e9707f24139bd01a02579edb)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
+        jsii.set(self, "instanceId", value)
+
+    @builtins.property
+    @jsii.member(jsii_name="name")
+    def name(self) -> typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable]:
+        '''
+        :Property: name: The display name of the namespace.
+        '''
+        return typing.cast(typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable], jsii.get(self, "name"))
+
+    @name.setter
+    def name(
+        self,
+        value: typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable],
+    ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(_typecheckingstub__0272e0296f6b89689de6382955f0185020815a5aec4875c87ff7c1a761d54219)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
+        jsii.set(self, "name", value)
+
+    @builtins.property
+    @jsii.member(jsii_name="desc")
+    def desc(
+        self,
+    ) -> typing.Optional[typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable]]:
+        '''
+        :Property: desc: The description of the namespace.
+        '''
+        return typing.cast(typing.Optional[typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable]], jsii.get(self, "desc"))
+
+    @desc.setter
+    def desc(
+        self,
+        value: typing.Optional[typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable]],
+    ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(_typecheckingstub__234948a278a365520de1f340d5b725171f62a5f41aa4d5587e2def031429de37)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
+        jsii.set(self, "desc", value)
+
+    @builtins.property
+    @jsii.member(jsii_name="identity")
+    def identity(
+        self,
+    ) -> typing.Optional[typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable]]:
+        '''
+        :Property: identity: The custom ID of the namespace. If you do not specify this parameter, the automatically generated Universally Unique Identifier (UUID) is returned.
+        '''
+        return typing.cast(typing.Optional[typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable]], jsii.get(self, "identity"))
+
+    @identity.setter
+    def identity(
+        self,
+        value: typing.Optional[typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable]],
+    ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(_typecheckingstub__878e4a05e8f809fb83a86815f99b52c2ca48e74bc86e3d56f1737a45c4a293a7)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
+        jsii.set(self, "identity", value)
+
+
+@jsii.data_type(
+    jsii_type="@alicloud/ros-cdk-mse.RosEngineNamespaceProps",
+    jsii_struct_bases=[],
+    name_mapping={
+        "instance_id": "instanceId",
+        "name": "name",
+        "desc": "desc",
+        "identity": "identity",
+    },
+)
+class RosEngineNamespaceProps:
+    def __init__(
+        self,
+        *,
+        instance_id: typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable],
+        name: typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable],
+        desc: typing.Optional[typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable]] = None,
+        identity: typing.Optional[typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable]] = None,
+    ) -> None:
+        '''Properties for defining a ``RosEngineNamespace``.
+
+        See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-enginenamespace
+
+        :param instance_id: 
+        :param name: 
+        :param desc: 
+        :param identity: 
+        '''
+        if __debug__:
+            type_hints = typing.get_type_hints(_typecheckingstub__61a2f7d7e1a72c5f44e1478fec5c629b1132f5c1a46f7de10adf2895dd2cc35b)
+            check_type(argname="argument instance_id", value=instance_id, expected_type=type_hints["instance_id"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument desc", value=desc, expected_type=type_hints["desc"])
+            check_type(argname="argument identity", value=identity, expected_type=type_hints["identity"])
+        self._values: typing.Dict[builtins.str, typing.Any] = {
+            "instance_id": instance_id,
+            "name": name,
+        }
+        if desc is not None:
+            self._values["desc"] = desc
+        if identity is not None:
+            self._values["identity"] = identity
+
+    @builtins.property
+    def instance_id(
+        self,
+    ) -> typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable]:
+        '''
+        :Property: instanceId: The ID of the instance.
+        '''
+        result = self._values.get("instance_id")
+        assert result is not None, "Required property 'instance_id' is missing"
+        return typing.cast(typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable], result)
+
+    @builtins.property
+    def name(self) -> typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable]:
+        '''
+        :Property: name: The display name of the namespace.
+        '''
+        result = self._values.get("name")
+        assert result is not None, "Required property 'name' is missing"
+        return typing.cast(typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable], result)
+
+    @builtins.property
+    def desc(
+        self,
+    ) -> typing.Optional[typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable]]:
+        '''
+        :Property: desc: The description of the namespace.
+        '''
+        result = self._values.get("desc")
+        return typing.cast(typing.Optional[typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable]], result)
+
+    @builtins.property
+    def identity(
+        self,
+    ) -> typing.Optional[typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable]]:
+        '''
+        :Property: identity: The custom ID of the namespace. If you do not specify this parameter, the automatically generated Universally Unique Identifier (UUID) is returned.
+        '''
+        result = self._values.get("identity")
+        return typing.cast(typing.Optional[typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable]], result)
+
+    def __eq__(self, rhs: typing.Any) -> builtins.bool:
+        return isinstance(rhs, self.__class__) and rhs._values == self._values
+
+    def __ne__(self, rhs: typing.Any) -> builtins.bool:
+        return not (rhs == self)
+
+    def __repr__(self) -> str:
+        return "RosEngineNamespaceProps(%s)" % ", ".join(
+            k + "=" + repr(v) for k, v in self._values.items()
+        )
+
+
 class RosGateway(
     _ros_cdk_core_7adfd82f.RosResource,
     metaclass=jsii.JSIIMeta,
@@ -4142,6 +4394,8 @@ __all__ = [
     "NacosServiceProps",
     "RosCluster",
     "RosClusterProps",
+    "RosEngineNamespace",
+    "RosEngineNamespaceProps",
     "RosGateway",
     "RosGatewayProps",
     "RosNacosConfig",
@@ -4404,6 +4658,61 @@ def _typecheckingstub__ea3094298a1692db46aec7c3683b0834575762465a6778c6f0f6d830e
     request_pars: typing.Optional[typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable]] = None,
     vpc_id: typing.Optional[typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable]] = None,
     v_switch_id: typing.Optional[typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable]] = None,
+) -> None:
+    """Type checking stubs"""
+    pass
+
+def _typecheckingstub__956619f383d5dff09236b8f679814d92e54a8b3b14b792e0a5c491f53df4d9a5(
+    scope: _ros_cdk_core_7adfd82f.Construct,
+    id: builtins.str,
+    props: typing.Union[RosEngineNamespaceProps, typing.Dict[builtins.str, typing.Any]],
+    enable_resource_property_constraint: builtins.bool,
+) -> None:
+    """Type checking stubs"""
+    pass
+
+def _typecheckingstub__39eff009aa4ba3280465d5d299dd453d03d556199eb4b7044708e7ccf3fbc972(
+    props: typing.Mapping[builtins.str, typing.Any],
+) -> None:
+    """Type checking stubs"""
+    pass
+
+def _typecheckingstub__f9510e546ce3e7990c360d4f33d591d536c601a97514078b50658125144ea9f9(
+    value: builtins.bool,
+) -> None:
+    """Type checking stubs"""
+    pass
+
+def _typecheckingstub__3d52e2250ba38230e996cb859933422955376049e9707f24139bd01a02579edb(
+    value: typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable],
+) -> None:
+    """Type checking stubs"""
+    pass
+
+def _typecheckingstub__0272e0296f6b89689de6382955f0185020815a5aec4875c87ff7c1a761d54219(
+    value: typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable],
+) -> None:
+    """Type checking stubs"""
+    pass
+
+def _typecheckingstub__234948a278a365520de1f340d5b725171f62a5f41aa4d5587e2def031429de37(
+    value: typing.Optional[typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable]],
+) -> None:
+    """Type checking stubs"""
+    pass
+
+def _typecheckingstub__878e4a05e8f809fb83a86815f99b52c2ca48e74bc86e3d56f1737a45c4a293a7(
+    value: typing.Optional[typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable]],
+) -> None:
+    """Type checking stubs"""
+    pass
+
+def _typecheckingstub__61a2f7d7e1a72c5f44e1478fec5c629b1132f5c1a46f7de10adf2895dd2cc35b(
+    *,
+    instance_id: typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable],
+    name: typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable],
+    desc: typing.Optional[typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable]] = None,
+    identity: typing.Optional[typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable]] = None,
 ) -> None:
     """Type checking stubs"""
     pass

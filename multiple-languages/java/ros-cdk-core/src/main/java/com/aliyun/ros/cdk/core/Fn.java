@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.core;
  * <p>
  * https://help.aliyun.com/document_detail/28852.html
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:13.550Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-02-28T02:53:26.416Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Fn")
 public class Fn extends software.amazon.jsii.JsiiObject {
 
@@ -279,7 +279,23 @@ public class Fn extends software.amazon.jsii.JsiiObject {
      * @param delimiter The value you want to occur between fragments. This parameter is required.
      * @param listOfValues The list of values you want combined. This parameter is required.
      */
-    public static @org.jetbrains.annotations.NotNull java.lang.String join(final @org.jetbrains.annotations.NotNull java.lang.String delimiter, final @org.jetbrains.annotations.NotNull java.util.List<java.lang.String> listOfValues) {
+    public static @org.jetbrains.annotations.NotNull java.lang.String join(final @org.jetbrains.annotations.NotNull java.lang.String delimiter, final @org.jetbrains.annotations.NotNull java.util.List<? extends java.lang.Object> listOfValues) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_fb0356 = 0; __idx_fb0356 < listOfValues.size(); __idx_fb0356++) {
+                final java.lang.Object __val_fb0356 = listOfValues.get(__idx_fb0356);
+                if (
+                     !(__val_fb0356 instanceof java.lang.String)
+                    && !(__val_fb0356 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_fb0356.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("listOfValues").append(".get(").append(__idx_fb0356).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_fb0356.getClass()).toString());
+                }
+            }
+        }
         return software.amazon.jsii.JsiiObject.jsiiStaticCall(com.aliyun.ros.cdk.core.Fn.class, "join", software.amazon.jsii.NativeType.forClass(java.lang.String.class), new Object[] { java.util.Objects.requireNonNull(delimiter, "delimiter is required"), java.util.Objects.requireNonNull(listOfValues, "listOfValues is required") });
     }
 
@@ -313,7 +329,30 @@ public class Fn extends software.amazon.jsii.JsiiObject {
         return software.amazon.jsii.JsiiObject.jsiiStaticCall(com.aliyun.ros.cdk.core.Fn.class, "jq", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class), new Object[] { java.util.Objects.requireNonNull(method, "method is required"), java.util.Objects.requireNonNull(script, "script is required"), java.util.Objects.requireNonNull(inputString, "inputString is required") });
     }
 
-    public static @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable listMerge(final @org.jetbrains.annotations.NotNull java.util.List<? extends java.util.List<? extends java.lang.Object>> valueList) {
+    public static @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable listMerge(final @org.jetbrains.annotations.NotNull java.util.List<? extends java.lang.Object> valueList) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_dfc316 = 0; __idx_dfc316 < valueList.size(); __idx_dfc316++) {
+                final java.lang.Object __val_dfc316 = valueList.get(__idx_dfc316);
+                if (
+                     !(__val_dfc316 instanceof java.util.List)
+                    && !(__val_dfc316 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_dfc316.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("valueList").append(".get(").append(__idx_dfc316).append(")")
+                            .append(" to be one of: java.util.List<java.lang.Object>, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_dfc316.getClass()).toString());
+                }
+                if (__val_dfc316 instanceof java.util.List) {
+                    @SuppressWarnings("unchecked")
+                    final java.util.List<java.lang.Object> __cast_2a5aee = (java.util.List<java.lang.Object>)__val_dfc316;
+                    for (int __idx_78e089 = 0; __idx_78e089 < __cast_2a5aee.size(); __idx_78e089++) {
+                        final java.lang.Object __val_78e089 = __cast_2a5aee.get(__idx_78e089);
+                    }
+                }
+            }
+        }
         return software.amazon.jsii.JsiiObject.jsiiStaticCall(com.aliyun.ros.cdk.core.Fn.class, "listMerge", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class), new Object[] { java.util.Objects.requireNonNull(valueList, "valueList is required") });
     }
 

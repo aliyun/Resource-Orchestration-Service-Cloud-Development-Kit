@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.acm;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ACM::Namespace</code>, which is used to create a namespace.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:13.622Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-02-28T02:53:26.484Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.acm.$Module.class, fqn = "@alicloud/ros-cdk-acm.RosNamespace")
 public class RosNamespace extends com.aliyun.ros.cdk.core.RosResource {
 

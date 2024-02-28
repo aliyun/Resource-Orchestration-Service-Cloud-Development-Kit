@@ -61,14 +61,13 @@ export declare class CdkToolkit {
     resource(options: ResourceOptions): Promise<void>;
     generateStackInfo(options: GenerateStackInfoOptions): Promise<void>;
     private getStackByName;
-    private getStackById;
     listStacks(options: ListStackOptions): Promise<void>;
     destroy(options: DestroyOptions): Promise<void>;
     private syncStackInfo;
     private updateStackInfo;
     private findStackInfo;
-    private selectStacksForList;
-    private selectStacksForDestroy;
+    private selectAllStacksForDefault;
+    private selectOnlySingleStackForDefault;
     private selectStacksForDeploy;
     private selectStacksForDiff;
     /**
@@ -77,13 +76,11 @@ export declare class CdkToolkit {
     private validateStacks;
     private assembly;
     private getCliConfig;
-    private syncDeployStack;
+    private rosDeployStack;
     private static getResources;
     private static withDefaultPrinter;
-    private syncUpdateStack;
-    private syncDestroyStack;
     private rosUpdateStack;
-    private rosCreateStack;
+    private syncDestroyStack;
 }
 export interface DiffOptions {
     stackNames: string[];
@@ -104,6 +101,7 @@ export interface DeployOptions {
     };
     timeout: string;
     sync: boolean;
+    regionId: string;
     outputsFile: boolean;
     skipIfNoChanges: boolean;
     disableRollback: boolean;
@@ -116,13 +114,13 @@ export interface DestroyOptions {
     sync: boolean;
 }
 export interface EventOptions {
-    stackName: string[];
+    stackNames: string[];
     logicalResourceId: string;
     pageNumber: string;
     pageSize: string;
 }
 export interface OutPutOptions {
-    stackName: string;
+    stackNames: string[];
 }
 export interface ResourceOptions {
     stackNames: string[];
@@ -136,6 +134,7 @@ export interface ListStackOptions {
     pageSize: string;
     all: string;
     resourceGroupId: string;
+    region: string;
 }
 export interface ConfigSetOptions {
     global: string;

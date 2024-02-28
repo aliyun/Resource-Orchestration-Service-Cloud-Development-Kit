@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.lindorm.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::Lindorm::Instances</code>ALIYUN::MarketPlace::Order is used to purchase resources from Alibaba Cloud Marketplace.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.788Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-02-28T02:53:29.548Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.lindorm.$Module.class, fqn = "@alicloud/ros-cdk-lindorm.datasource.RosInstances")
 public class RosInstances extends com.aliyun.ros.cdk.core.RosResource {
 

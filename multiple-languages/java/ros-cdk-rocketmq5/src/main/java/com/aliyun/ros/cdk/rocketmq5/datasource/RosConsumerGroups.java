@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rocketmq5.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::ROCKETMQ5::ConsumerGroups</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.854Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-02-28T02:53:30.571Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq5.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq5.datasource.RosConsumerGroups")
 public class RosConsumerGroups extends com.aliyun.ros.cdk.core.RosResource {
 

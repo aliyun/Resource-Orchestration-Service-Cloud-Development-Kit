@@ -323,6 +323,74 @@ Optional parameters:
     };
 }
 /**
+ * Properties for defining a `RosEngineNamespace`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-enginenamespace
+ */
+export interface RosEngineNamespaceProps {
+    /**
+     * @Property instanceId: The ID of the instance.
+     */
+    readonly instanceId: string | ros.IResolvable;
+    /**
+     * @Property name: The display name of the namespace.
+     */
+    readonly name: string | ros.IResolvable;
+    /**
+     * @Property desc: The description of the namespace.
+     */
+    readonly desc?: string | ros.IResolvable;
+    /**
+     * @Property identity: The custom ID of the namespace. If you do not specify this parameter, the automatically generated Universally Unique Identifier (UUID) is returned.
+     */
+    readonly identity?: string | ros.IResolvable;
+}
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::EngineNamespace`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `EngineNamespace` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-enginenamespace
+ */
+export declare class RosEngineNamespace extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::MSE::EngineNamespace";
+    /**
+     * @Attribute NamespaceId: The ID of the namespace.
+     */
+    readonly attrNamespaceId: ros.IResolvable;
+    enableResourcePropertyConstraint: boolean;
+    /**
+     * @Property instanceId: The ID of the instance.
+     */
+    instanceId: string | ros.IResolvable;
+    /**
+     * @Property name: The display name of the namespace.
+     */
+    name: string | ros.IResolvable;
+    /**
+     * @Property desc: The description of the namespace.
+     */
+    desc: string | ros.IResolvable | undefined;
+    /**
+     * @Property identity: The custom ID of the namespace. If you do not specify this parameter, the automatically generated Universally Unique Identifier (UUID) is returned.
+     */
+    identity: string | ros.IResolvable | undefined;
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosEngineNamespaceProps, enableResourcePropertyConstraint: boolean);
+    protected get rosProperties(): {
+        [key: string]: any;
+    };
+    protected renderProperties(props: {
+        [key: string]: any;
+    }): {
+        [key: string]: any;
+    };
+}
+/**
  * Properties for defining a `RosGateway`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-gateway
  */

@@ -3,15 +3,10 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as readlineSync from 'readline-sync';
 import * as util from 'util';
-import {decipher, cipher} from './util/cipher';
-import {format} from 'util';
+import {format, promisify} from 'util';
+import {cipher, decipher} from './util/cipher';
 import {RewritableBlock} from './util/display';
-import {isString, isNumber} from 'lodash';
-
-const rosClient = require('@alicloud/ros-2019-09-10');
-const os = require('os');
-const http = require('http');
-const https = require('https');
+import {isNumber, isString} from 'lodash';
 import {exec as _exec} from 'child_process';
 import Credentials, {Config} from '@alicloud/credentials';
 import {CloudAssembly, DefaultSelection, ExtendedStackSelection, StackCollection} from './api/cloud-assembly';
@@ -21,7 +16,11 @@ import {Configuration, PROJECT_CONFIG} from './settings';
 import {exit} from 'process';
 import {printStackDiff} from './diff';
 import {deserializeStructure} from './serialize';
-import {promisify} from 'util';
+
+const rosClient = require('@alicloud/ros-2019-09-10');
+const os = require('os');
+const http = require('http');
+const https = require('https');
 
 const generateSafeId = require('generate-safe-id');
 
@@ -535,7 +534,7 @@ export class CdkToolkit {
 
     public async list(selectors: string[]) {
         await this.syncStackInfo();
-        const stacks = await this.selectStacksForList(selectors);
+        const stacks = await this.selectAllStacksForDefault(selectors);
         for (const stack of stacks.stackArtifacts) {
             let stackInfo = await this.findStackInfo(stack.id);
             let status = stackInfo.status
@@ -558,11 +557,11 @@ export class CdkToolkit {
 
         // if we have a single stack, print it to STDOUT
         if (stacks.stackCount === 1) {
-            await this.updateStackInfo(stacks.firstStack.id, SYNTH_STACK);
+            await this.updateStackInfo(stacks.firstStack.id, SYNTH_STACK, undefined);
             return stacks.firstStack.template;
         } else {
             for (let stack of stacks.stackArtifacts) {
-                await this.updateStackInfo(stack.id, SYNTH_STACK);
+                await this.updateStackInfo(stack.id, SYNTH_STACK, undefined);
             }
         }
 
@@ -582,259 +581,260 @@ export class CdkToolkit {
 
     public async deploy(options: DeployOptions) {
         let templateBody: any;
-        await this.syncStackInfo();
-        const stacks = await this.selectStacksForDeploy(options.stackNames, options.exclusively);
-        const stackName = options.stackNames.length !== 0 ? options.stackNames[0] : stacks.stackArtifacts[0].id;
-        let region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId', true);
-        region = region ? region : process.env.REGION_ID;
-        const client = await this.getRosClient();
-        let templateFileBody = fs.readFileSync(`./cdk.out/${stackName}.template.json`);
-        let ClientToken = generateSafeId();
-        let disableRollback = options.disableRollback
-        let templateBodyBase64Data = templateFileBody.toString('base64').trim();
-        if (Buffer.byteLength(templateFileBody, 'utf8') < 524273) {
-            templateBody = `@Base64Encoded: ${templateBodyBase64Data}`
-        } else {
-            templateBody = templateFileBody
-        }
-        let content: { [name: string]: any } = {
-            StackName: stackName.toString(),
-            RegionId: region,
-            TimeoutInMinutes: options.timeout,
-            TemplateBody: templateBody,
-            ClientToken: ClientToken,
-            DisableRollback: disableRollback
-        };
         let sync = options.sync
         let outputs = options.outputsFile
         let skipIfNoChanges = options.skipIfNoChanges
         let resourceGroupId = options.resourceGroupId
         let detailLog = options.detailLog
-        requestOptions['method'] = 'POST'
+        let disableRollback = options.disableRollback
+        let config_region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId', true);
+        config_region = config_region ? config_region : process.env.REGION_ID;
 
-        if (resourceGroupId) {
-            content['ResourceGroupId'] = resourceGroupId
-        }
-
-        if (stacks.stackArtifacts[0].tags) {
-            let count: number = 1;
-            let paras = stacks.stackArtifacts[0].tags;
-            for (let key in paras) {
-                content['Tags.' + count.toString() + '.Key'] = key;
-                content['Tags.' + count.toString() + '.Value'] = paras[key];
-                count++;
+        await this.syncStackInfo();
+        const stacks = await this.selectStacksForDeploy(options.stackNames, options.exclusively);
+        const client = await this.getRosClient();
+        let exitSignal = 0;
+        for (let stack of stacks.stackArtifacts) {
+            let stackName = stack.stackName;
+            let regionId = options.regionId;
+            if (regionId === 'default') {
+                regionId = config_region;
             }
-        }
-
-        if (options.parameters) {
-            let count: number = 1;
-            let paras = options.parameters;
-            for (let key in paras) {
-                content['Parameters.' + count.toString() + '.ParameterKey'] = key;
-                content['Parameters.' + count.toString() + '.ParameterValue'] = paras[key];
-                count++;
+            let templateFileBody = fs.readFileSync(`./cdk.out/${stackName}.template.json`);
+            let ClientToken = generateSafeId();
+            let templateBodyBase64Data = templateFileBody.toString('base64').trim();
+            let tmpSignal = 0;
+            if (Buffer.byteLength(templateFileBody, 'utf8') < 524273) {
+                templateBody = `@Base64Encoded: ${templateBodyBase64Data}`
+            } else {
+                templateBody = templateFileBody
             }
-        }
-        const localStackInfo = await this.findStackInfo(stackName)
-        if (localStackInfo.stackId) {
-            const stackInfo = await this.getStackById(localStackInfo.stackId)
-            if (stackInfo !== null) {
-                // update stack
-                if (localStackInfo.stackId !== stackInfo.StackId) {
-                    error('fail to update stack, because stack local info dose not match the remote server.')
-                    exit(1);
+            let content: { [name: string]: any } = {
+                StackName: stackName.toString(),
+                TimeoutInMinutes: options.timeout,
+                TemplateBody: templateBody,
+                ClientToken: ClientToken,
+                DisableRollback: disableRollback
+            };
+            requestOptions['method'] = 'POST'
+
+            if (resourceGroupId) {
+                content['ResourceGroupId'] = resourceGroupId
+            }
+
+            if (stack.tags) {
+                let count: number = 1;
+                let paras = stack.tags;
+                for (let key in paras) {
+                    content['Tags.' + count.toString() + '.Key'] = key;
+                    content['Tags.' + count.toString() + '.Value'] = paras[key];
+                    count++;
                 }
-                {
-                    content['StackId'] = stackInfo.StackId;
-                    let stackStatus = stackInfo.Status
-                    let stackUpdateTime = stackInfo.UpdateTime ? stackInfo.UpdateTime : stackInfo.CreateTime
-                    if (stackStatus.indexOf("IN_PROGRESS") == -1) {
-                        try {
-                            if (sync) {
-                                print('%s: deploying...', colors.bold(stackName));
-                                await this.syncUpdateStack(client, content, requestOptions, outputs, skipIfNoChanges, stackName, localStackInfo, stackUpdateTime, detailLog)
-                            }
-                            await this.rosUpdateStack(client, content, requestOptions, stackName, localStackInfo, stackUpdateTime, detailLog, skipIfNoChanges)
-                            exit(0)
-                        } catch (e) {
-                            if (e.code == 'NotSupported' && e.message.startsWith('Update the completely same stack') && skipIfNoChanges) {
-                                await this.updateStackInfo(stackName, stackInfo.StackId);
-                                success('The stack is completely the same, there is no need to update.')
-                                exit(0)
-                            } else {
-                                if (detailLog) {
-                                    error('update stack error info is %s', e);
-                                }
-                                error('fail to update stack: ErrorCode: %s\nRequestedId: %s\nErrorMessage:%s', e.code, e.data.RequestId, e.message)
-                                exit(1)
-                            }
-                        }
+            }
+
+            if (options.parameters) {
+                let count: number = 1;
+                let paras = options.parameters;
+                for (let key in paras) {
+                    content['Parameters.' + count.toString() + '.ParameterKey'] = key;
+                    content['Parameters.' + count.toString() + '.ParameterValue'] = paras[key];
+                    count++;
+                }
+            }
+            const localStackInfo = await this.findStackInfo(stackName)
+            if (localStackInfo.regionId) {
+                regionId = localStackInfo.regionId
+            }
+            content['RegionId'] = regionId
+            if (localStackInfo.stackId) {
+                const stackInfo = await this.getStackByName(stackName, undefined, regionId)
+                if (stackInfo !== null) {
+                    // update stack
+                    if (localStackInfo.stackId !== stackInfo.StackId) {
+                        error(`❌ Fail to update stack, because the locally recorded stackId(${localStackInfo.stackId}) and the remote stackId(${stackInfo.StackId}) are inconsistent.`)
+                        tmpSignal = 1;
                     } else {
-                        error('fail to update stack, because stack status is %s', stackStatus)
-                        exit(1)
+                        content['StackId'] = stackInfo.StackId;
+                        let stackStatus = stackInfo.Status
+                        let stackUpdateTime = stackInfo.UpdateTime ? stackInfo.UpdateTime : stackInfo.CreateTime
+                        if (stackStatus.indexOf("IN_PROGRESS") == -1) {
+                            try {
+                                if (sync) {
+                                    print('%s: deploying...', colors.bold(stackName));
+                                }
+                                tmpSignal = await this.rosUpdateStack(client, content, requestOptions, outputs, skipIfNoChanges, stackUpdateTime, detailLog, sync)
+                            } catch (e) {
+                                tmpSignal = 1;
+                            }
+                        } else {
+                            error('fail to update stack, because stack status is %s', stackStatus)
+                            tmpSignal = 1;
+                        }
+                    }
+                } else {
+                    // create stack
+                    try {
+                        if (sync) {
+                            print('%s: deploying...', colors.bold(stackName));
+                        }
+                        tmpSignal = await this.rosDeployStack(client, content, requestOptions, outputs, resourceGroupId, stackName, detailLog, sync)
+                    } catch (e) {
+                        tmpSignal = 1;
                     }
                 }
             } else {
-                // create stack
-                try {
-                    if (sync) {
-                        print('%s: deploying...', colors.bold(stackName));
-                        await this.syncDeployStack(client, content, requestOptions, outputs, resourceGroupId, stackName, detailLog)
+                const stackInfo = await this.getStackByName(stackName, resourceGroupId, regionId)
+                if (stackInfo !== null) {
+                    // stack is exist send error message
+                    error('Fail to create stack, because stack %s already exists in this region.', stackName)
+                    tmpSignal = 1;
+                } else {
+                    // create stack
+                    try {
+                        if (sync) {
+                            print('%s: deploying...', colors.bold(stackName));
+                        }
+                        tmpSignal = await this.rosDeployStack(client, content, requestOptions, outputs, resourceGroupId, stackName, detailLog, sync)
+                    } catch (e) {
+                        tmpSignal = 1;
                     }
-                    await this.rosCreateStack(client, content, requestOptions, resourceGroupId, stackName, detailLog)
-                    exit(0)
-                } catch (e) {
-                    if (detailLog) {
-                        error('create stack error info is %s', e);
-                    }
-                    error('fail to create stack: ErrorCode: %s\nRequestedId: %s\nErrorMessage:%s', e.code, e.data.RequestId, e.message)
-                    exit(1)
                 }
             }
-        } else {
-            const stackInfo = await this.getStackByName(stackName, resourceGroupId)
-            if (stackInfo !== null) {
-                // stack is exist send error message
-                error('fail to create stack, because stack  %s is exist in this region.', stackName)
-                exit(1)
-            } else {
-                // create stack
-                try {
-                    if (sync) {
-                        print('%s: deploying...', colors.bold(stackName));
-                        await this.syncDeployStack(client, content, requestOptions, outputs, resourceGroupId, stackName, detailLog)
-                    }
-                    await this.rosCreateStack(client, content, requestOptions, resourceGroupId, stackName, detailLog)
-                    exit(0)
-                } catch (e) {
-                    if (detailLog) {
-                        error('create stack error info is %s', e);
-                    }
-                    error('fail to create stack: ErrorCode: %s\nRequestedId: %s\nErrorMessage:%s', e.code, e.data.RequestId, e.message)
-                    exit(1)
-                }
-            }
+            exitSignal = exitSignal | tmpSignal;
         }
+        exit(exitSignal)
     }
 
     public async diff(options: DiffOptions) {
-        let stacks = await this.selectStacksForDestroy(options.stackNames);
+        let stacks = await this.selectAllStacksForDefault(options.stackNames);
         const client = await this.getRosClient();
         let regionInLocal = await CdkToolkit.getJson(CONFIG_NAME, 'regionId', true);
         regionInLocal = regionInLocal ? regionInLocal : process.env.REGION_ID;
         const stream = options.stream || process.stderr;
         const contextLines = options.contextLines || 3;
+        let exitSignal = 0;
+        let requests = [];
         for (let stack of stacks.stackArtifacts) {
             let stackInfo = await this.findStackInfo(stack.id);
+            let regionId = stackInfo.regionId ? stackInfo.regionId : regionInLocal;
             if (!stackInfo.stackId) {
                 stream.write(format('Stack %s has not been deployed or stack doesn\'t exist in the stack.info.json file \n', colors.bold(stack.displayName)));
                 continue;
             }
-            client.getTemplate({RegionId: regionInLocal, StackId: stackInfo.stackId}, requestOptions)
+            requests.push(client.getTemplate({RegionId: regionId, StackId: stackInfo.stackId}, requestOptions)
                 .then((res: any) => {
                     const template = deserializeStructure(res.TemplateBody);
                     stream.write(format('Stack %s\n', colors.bold(stack.displayName)));
                     printStackDiff(template, stack, contextLines, stream);
-                    exit(0)
                 }, (ex: any) => {
                     if (ex.code == 'StackNotFound') {
                         warning(`\n ❌ The specific stack doesn't exit and it's local status will be set to synth.`);
-                        this.updateStackInfo(stack.id, SYNTH_STACK);
+                        this.updateStackInfo(stack.id, SYNTH_STACK, undefined);
                     } else {
                         error('fail to get template: %s %s', ex.code, ex.message);
                     }
-                    exit(1)
-                });
+                    exitSignal = 1;
+                }));
         }
+        await Promise.all(requests)
+        exit(exitSignal)
     }
 
     public async event(options: EventOptions) {
         await this.syncStackInfo();
-        let stacks = await this.selectStacksForDestroy([]);
-        let stackId = (await this.findStackInfo(options.stackName[0])).stackId
-        if (!options.stackName) {
-            error('If want to get resource stack events, stack name must be Specified!')
-            exit(1)
-        }
-        if (!stacks.stackIds.includes(options.stackName[0])) {
-            error(`The specific stack doesn't exist, Please check the accuracy of the input stack name!`)
-            exit(1)
-        }
-        if (!stackId) {
-            error(`The specific stack doesn't exist in the stack.info.json file, Please check the accuracy of the stack: %s!`, options.stackName[0])
-            exit(1)
-        }
-        let LogicalResourceIds: string[] = [];
+        let stacks = await this.selectOnlySingleStackForDefault(options.stackNames);
+        const stackNames = stacks.stackIds
+        let exitSignal = 0;
         const client = await this.getRosClient();
+        let LogicalResourceIds: string[] = [];
         if (options.logicalResourceId) {
             LogicalResourceIds.push(options.logicalResourceId)
         }
-        let region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId', true);
-        region = region ? region : process.env.REGION_ID;
-        client
-            .listStackEvents({
-                StackId: stackId,
-                RegionId: region,
-                LogicalResourceId: LogicalResourceIds,
-                PageSize: options.pageSize ? Number(options.pageSize) : 10,
-                PageNumber: options.pageNumber ? Number(options.pageNumber) : 1
-            }, requestOptions)
-            .then((res: any) => {
-                success(`\n ✅ The Stack %s \n Events is: \n %s \n`, colors.blue(options.stackName[0]), colors.blue(JSON.stringify(res.Events, null, "\t")));
-                exit(0)
-            }, (ex: any) => {
-                if (ex.code == 'StackNotFound') {
-                    warning(`\n ❌ The specific stack doesn't exit and it's local status will be set to destroy.`);
-                    this.updateStackInfo(options.stackName[0], DESTROY_STACK);
-                } else {
-                    error('fail to get stack events: %s %s', ex.code, ex.message)
-                }
-                exit(1)
-            });
+        let requests = [];
+        for (let stackName of stackNames) {
+            let stackInfo = await this.findStackInfo(stackName);
+            let stackId = stackInfo.stackId
+            let region = stackInfo.regionId;
+            if (!region) {
+                region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId', true);
+                region = region ? region : process.env.REGION_ID;
+            }
+            if (!stackId) {
+                error(`The stack id of the specific stack(${stackName}) doesn't exist in the stack.info.json file.`)
+                exitSignal = 1;
+                continue
+            }
+            requests.push(client
+                .listStackEvents({
+                    StackId: stackId,
+                    RegionId: region,
+                    LogicalResourceId: LogicalResourceIds,
+                    PageSize: options.pageSize ? Number(options.pageSize) : 10,
+                    PageNumber: options.pageNumber ? Number(options.pageNumber) : 1
+                }, requestOptions)
+                .then((res: any) => {
+                    success(`\n ✅ The events of the stack %s are: \n %s \n`, colors.blue(stackName),
+                        colors.blue(JSON.stringify(res.Events, null, "\t")));
+                }, (ex: any) => {
+                    if (ex.code == 'StackNotFound') {
+                        warning(`\n ❌ The specific stack doesn't exit and it's local status will be set to destroy.`);
+                        this.updateStackInfo(stackName, DESTROY_STACK, undefined);
+                    } else {
+                        error('fail to get stack events: %s %s', ex.code, ex.message)
+                    }
+                    exitSignal = 1;
+                }));
+        }
+        await Promise.all(requests)
+        exit(exitSignal);
     }
 
     public async output(options: OutPutOptions) {
         await this.syncStackInfo();
-        let stacks = await this.selectStacksForDestroy([]);
-        let stackId = (await this.findStackInfo(options.stackName[0])).stackId
-        if (!options.stackName) {
-            error('If want to get resource stack output, stack name must be Specified!')
-            exit(1)
-        }
-        if (!stacks.stackIds.includes(options.stackName[0])) {
-            error(`The specific stack doesn't exist, Please check the accuracy of the input stack name!`)
-            exit(1)
-        }
-        if (!stackId) {
-            error(`The specific stack doesn't exist in the stack.info.json file, Please check the accuracy of the stack: %s!`, options.stackName[0])
-            exit(1)
-        }
+        let stacks = await this.selectAllStacksForDefault(options.stackNames);
+        const stackNames = stacks.stackIds
         const client = await this.getRosClient();
-        let region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId', true);
-        region = region ? region : process.env.REGION_ID;
-        client
-            .getStack({
-                StackId: stackId,
-                RegionId: region
-            }, requestOptions)
-            .then((res: any) => {
-                success(`\n ✅ The Stack %s \n Output is: \n %s \n`, colors.blue(options.stackName[0]), colors.blue(JSON.stringify(res.Outputs, null, "\t")));
-                exit(0)
-            }, (ex: any) => {
-                if (ex.code == 'StackNotFound') {
-                    warning(`\n ❌ The specific stack doesn't exit and it's local status will be set to destroy.`);
-                    this.updateStackInfo(options.stackName[0], DESTROY_STACK);
-                } else {
-                    error('fail to get stack outputs: %s %s', ex.code, ex.message)
-                }
-                exit(1)
-            });
+        let exitSignal = 0;
+        let requests = [];
+        for (let stackName of stackNames) {
+            let stackInfo = await this.findStackInfo(stackName);
+            let stackId = stackInfo.stackId
+            let region = stackInfo.regionId;
+            if (!region) {
+                region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId', true);
+                region = region ? region : process.env.REGION_ID;
+            }
+            if (!stackId) {
+                error(`The specific stack doesn't exist in the stack.info.json file, Please check the accuracy of the stack: %s!`, stackName)
+                exitSignal = 1;
+                continue
+            }
+            requests.push(client
+                .getStack({
+                    StackId: stackId,
+                    RegionId: region
+                }, requestOptions)
+                .then((res: any) => {
+                    success(`\n ✅ The outputs of the stack %s are: \n %s \n`, colors.blue(stackName),
+                        colors.blue(JSON.stringify(res.Outputs, null, "\t")));
+                }, (ex: any) => {
+                    if (ex.code == 'StackNotFound') {
+                        warning(`\n ❌ The specific stack doesn't exit and it's local status will be set to destroy.`);
+                        this.updateStackInfo(stackName, DESTROY_STACK, undefined);
+                    } else {
+                        error('fail to get stack outputs: %s %s', ex.code, ex.message)
+                    }
+                    exitSignal = 1;
+                }));
+        }
+        await Promise.all(requests)
+        exit(exitSignal);
     }
 
 
     public async resource(options: ResourceOptions) {
         await this.syncStackInfo();
-        let stacks = await this.selectStacksForDestroy(options.stackNames);
+        let stacks = await this.selectAllStacksForDefault(options.stackNames);
         let stackNames: string[] = [];
         for (let stack of stacks.stackArtifacts) {
             if ((await this.findStackInfo(stack.id)).stackId) {
@@ -843,47 +843,56 @@ export class CdkToolkit {
                 error(`The specific stack doesn't exist in the stack.info.json file, Please check the accuracy of the stack: %s!`, stack.id)
             }
         }
-        let region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId', true);
-        region = region ? region : process.env.REGION_ID;
         const client = await this.getRosClient();
+        let exitSignal = 0;
+        let requests = [];
         for (let stackName of stackNames) {
-            client
+            let stackInfo = await this.findStackInfo(stackName);
+            let region = stackInfo.regionId;
+            if (!region) {
+                region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId', true);
+                region = region ? region : process.env.REGION_ID;
+            }
+            requests.push(client
                 .listStackResources({
                     StackId: (await this.findStackInfo(stackName)).stackId,
                     RegionId: region,
                 }, requestOptions)
                 .then((res: any) => {
-                    success(`\n ✅ The Stack %s \n Resource is: \n %s \n`, colors.blue(stackName), colors.blue(JSON.stringify(res.Resources, null, "\t")));
-                    exit(0)
+                    success(`\n ✅ The list of resources in the stack %s is: \n %s \n`, colors.blue(stackName), colors.blue(JSON.stringify(res.Resources, null, "\t")));
                 }, (ex: any) => {
                     if (ex.code == 'StackNotFound') {
                         warning(`\n ❌ The specific stack doesn't exit and it's local status will be set to destroy.`);
-                        this.updateStackInfo(stackName, DESTROY_STACK);
+                        this.updateStackInfo(stackName, DESTROY_STACK, undefined);
                     } else {
                         error('fail to get stack resource: %s %s', ex.code, ex.message)
                     }
-                    exit(1)
-                });
+                    exitSignal = 1;
+                }));
         }
+        await Promise.all(requests)
+        exit(exitSignal);
     }
 
     public async generateStackInfo(options: GenerateStackInfoOptions) {
         let filePath = path.join(LOCAL_PATH + STACK_INFO);
-        let stacks = await this.selectStacksForList([]);
+        let stacks = await this.selectAllStacksForDefault([]);
         let stackNames: string[] = [];
         let StackInfos: { [key: string]: any } = {};
         stackNames = stacks.stackIds
         for (let stackName of stackNames) {
-            const stackInfo = await this.getStackByName(stackName, options.resourceGroupId)
+            const stackInfo = await this.getStackByName(stackName, options.resourceGroupId, undefined)
             if (stackInfo !== null) {
                 StackInfos[stackName] = {
                     status: DEPLOY_STACK,
-                    stackId: stackInfo.StackId
+                    stackId: stackInfo.StackId,
+                    regionId: stackInfo.RegionId
                 }
             } else {
                 StackInfos[stackName] = {
                     status: INIT_STACK,
-                    stackId: null
+                    stackId: null,
+                    regionId: null
                 };
             }
         }
@@ -895,10 +904,12 @@ export class CdkToolkit {
     }
 
 
-    private async getStackByName(stackName: string, resourceGroupId: any) {
+    private async getStackByName(stackName: string, resourceGroupId: any, region: string | undefined) {
         const client = await this.getRosClient();
-        let region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId', true);
-        region = region ? region : process.env.REGION_ID;
+        if (!region) {
+            region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId', true);
+            region = region ? region : process.env.REGION_ID;
+        }
         let params: { [name: string]: any } = {
             RegionId: region,
             PageSize: 10,
@@ -920,59 +931,64 @@ export class CdkToolkit {
         }
     }
 
-
-    private async getStackById(stackId: string) {
-        const client = await this.getRosClient();
-        let region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId', true);
-        region = region ? region : process.env.REGION_ID;
-        let params: { [name: string]: any } = {
-            RegionId: region,
-            StackId: stackId
-        };
-        try {
-            return await client.getStack(params, requestOptions)
-        } catch (e) {
-            error('fail to get stack: %s %s', e.code, e.message)
-            return null
-        }
-    }
-
-
     public async listStacks(options: ListStackOptions) {
         await this.syncStackInfo();
         const client = await this.getRosClient();
-        let stacks = await this.selectStacksForList([]);
         let params: any = {};
-        let region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId', true);
-        region = region ? region : process.env.REGION_ID;
+        let region = options.region;
         params = {
-            RegionId: region,
             PageSize: options.pageSize ? Number(options.pageSize) : 10,
             PageNumber: options.pageNumber ? Number(options.pageNumber) : 1
         };
-        if (!options.all) {
-            if (options.stackNames.length === 0) {
-                params.StackName = stacks.stackIds
-            } else {
-                params.StackName = options.stackNames
-            }
-        }
         if (options.resourceGroupId) {
             params.ResourceGroupId = options.resourceGroupId
         }
-        client.listStacks(params, requestOptions)
-            .then((res: any) => {
-                success(`\n ✅ The Stacks list is:\n %s \n`, colors.blue(JSON.stringify(res.Stacks, null, "\t")));
-                exit(0)
-            }, (ex: any) => {
-                error('fail to list stacks: %s %s', ex.code, ex.message)
-                exit(1)
-            });
+        let exitSignal = 0;
+        let requests = [];
+        if (!options.all) {
+            let stacks = await this.selectAllStacksForDefault(options.stackNames);
+            let regionMap: Map<string, string[]> = new Map<string, string[]>();
+            for (const stack of stacks.stackArtifacts) {
+                let stackInfo = await this.findStackInfo(stack.id);
+                if (region && stackInfo.regionId !== region) {continue}
+                if (regionMap.has(stackInfo.regionId)) {
+                    regionMap.get(stackInfo.regionId)!.push(stack.id)
+                } else {
+                    regionMap.set(stackInfo.regionId, [stack.id])
+                }
+            }
+            regionMap.forEach((stackNames, r) => {
+                params.StackName = stackNames;
+                params.RegionId = r;
+                requests.push(client.listStacks(params, requestOptions)
+                    .then((res: any) => {
+                        success(`\n ✅ The Stacks list in ${r} is:\n ${colors.blue(JSON.stringify(res.Stacks, null, "\t"))} \n`);
+                    }, (ex: any) => {
+                        error('❌ Fail to list stacks in ${r}: %s %s', ex.code, ex.message)
+                        exitSignal = 1;
+                    }));
+            })
+        } else {
+            if (!region) {
+                let config_region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId', true);
+                region = config_region ? config_region : process.env.REGION_ID;
+            }
+            params.RegionId = region;
+            requests.push(client.listStacks(params, requestOptions)
+                .then((res: any) => {
+                    success(`\n ✅ The Stacks list in ${region} is:\n ${colors.blue(JSON.stringify(res.Stacks, null, "\t"))} \n`);
+                }, (ex: any) => {
+                    error('❌ Fail to list stacks in %s: %s %s', region, ex.code, ex.message)
+                    exitSignal = 1;
+                }));
+        }
+        await Promise.all(requests)
+        exit(exitSignal);
     }
 
     public async destroy(options: DestroyOptions) {
         await this.syncStackInfo();
-        let stacks = await this.selectStacksForDestroy(options.stackNames);
+        let stacks = await this.selectAllStacksForDefault(options.stackNames);
         let stackNames: string[] = [];
         let sync = options.sync
         for (let stack of stacks.stackArtifacts) {
@@ -995,33 +1011,36 @@ export class CdkToolkit {
                 }
             }
         }
-        let region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId', true);
-        region = region ? region : process.env.REGION_ID;
+        let config_region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId', true);
+        config_region = config_region ? config_region : process.env.REGION_ID;
         const client = await this.getRosClient();
+        let exitSignal = 0;
         for (let stackName of stackNames) {
+            let stackInfo = await this.findStackInfo(stackName);
             let content: { [name: string]: any } = {
-                StackId: (await this.findStackInfo(stackName)).stackId,
-                RegionId: region,
+                StackId: stackInfo.stackId,
+                RegionId: stackInfo.regionId ? stackInfo.regionId : config_region,
             };
             if (sync) {
                 print('%s: destroying...', colors.bold(stackName));
-                await this.syncDestroyStack(client, content, requestOptions)
+                exitSignal = await this.syncDestroyStack(client, content, requestOptions)
+            } else {
+                await client.deleteStack(content, requestOptions)
+                    .then((res: any) => {
+                        this.updateStackInfo(stackName, DESTROY_STACK, undefined);
+                        success(`\n ✅ Deleted\nRequestedId: %s`, colors.blue(res.RequestId));
+                    }, (ex: any) => {
+                        if (ex.code == 'StackNotFound') {
+                            warning(`\n ❌ The specific stack doesn't exit and it's local status will be set to destroy.`);
+                            this.updateStackInfo(stackName, DESTROY_STACK, undefined);
+                        } else {
+                            error('fail to delete stack: %s %s', ex.code, ex.message)
+                            exitSignal = 1;
+                        }
+                    });
             }
-            client.deleteStack(content, requestOptions)
-                .then((res: any) => {
-                    this.updateStackInfo(stackName, DESTROY_STACK);
-                    success(`\n ✅ Deleted\nRequestedId: %s`, colors.blue(res.RequestId));
-                    exit(0)
-                }, (ex: any) => {
-                    if (ex.code == 'StackNotFound') {
-                        warning(`\n ❌ The specific stack doesn't exit and it's local status will be set to destroy.`);
-                        this.updateStackInfo(stackName, DESTROY_STACK);
-                    } else {
-                        error('fail to delete stack: %s %s', ex.code, ex.message)
-                    }
-                    exit(1)
-                });
         }
+        exit(exitSignal);
     }
 
     private async syncStackInfo() {
@@ -1034,7 +1053,7 @@ export class CdkToolkit {
         }
         let temp: { [key: string]: any } = {};
         // selector.length = 0 means select all stacks from this app
-        const stacks = await this.selectStacksForList([]);
+        const stacks = await this.selectAllStacksForDefault([]);
         for (const stack of stacks.stackArtifacts) {
             let value = await CdkToolkit.getJson(STACK_INFO, stack.id);
             // if the stack has no info, then add init tag for it
@@ -1043,7 +1062,8 @@ export class CdkToolkit {
             } else {
                 temp[stack.id] = {
                     status: INIT_STACK,
-                    stackId: null
+                    stackId: null,
+                    regionId: null
                 };
             }
         }
@@ -1051,7 +1071,7 @@ export class CdkToolkit {
         fs.writeFileSync(filePath, JSON.stringify(temp, null, '\t'));
     }
 
-    private async updateStackInfo(stackName: string, value: string) {
+    private async updateStackInfo(stackName: string, value: string, regionId:string | undefined) {
         let filePath = path.join(LOCAL_PATH + STACK_INFO);
         let fileContent = fs.readFileSync(filePath).toString();
         let info = JSON.parse(fileContent);
@@ -1061,11 +1081,13 @@ export class CdkToolkit {
         }
         if (value.length === DEPLOY_STACK_ID_LENGTH) {
             stackInfo.status = DEPLOY_STACK;
-            stackInfo.stackId = value
+            stackInfo.stackId = value;
+            stackInfo.regionId = regionId;
         } else {
             stackInfo.status = value;
             if (value === DESTROY_STACK) {
                 stackInfo.stackId = null;
+                stackInfo.regionId = null;
             }
         }
         fs.writeFileSync(filePath, JSON.stringify(info, null, '\t'));
@@ -1077,19 +1099,22 @@ export class CdkToolkit {
         return JSON.parse(fileContent)[stackName];
     }
 
-    private async selectStacksForList(selectors: string[]) {
+
+    private async selectAllStacksForDefault(stackNames: string[]) {
         const assembly = await this.assembly();
-        const stacks = await assembly.selectStacks(selectors, {defaultBehavior: DefaultSelection.AllStacks});
+        const stacks = await assembly.selectStacks(stackNames, {
+            defaultBehavior: DefaultSelection.AllStacks,
+        });
 
         // No validation
 
         return stacks;
     }
 
-    private async selectStacksForDestroy(stackNames: string[]) {
+    private async selectOnlySingleStackForDefault(stackNames: string[]) {
         const assembly = await this.assembly();
         const stacks = await assembly.selectStacks(stackNames, {
-            defaultBehavior: DefaultSelection.AllStacks,
+            defaultBehavior: DefaultSelection.OnlySingle,
         });
 
         // No validation
@@ -1190,93 +1215,54 @@ export class CdkToolkit {
         }
     }
 
-    private async syncDeployStack(client: any, content: any, requestOptions: any, outputsFile: boolean, resourceGroupId: any, stackName: any, detailLog: boolean) {
-        try {
-            let createResultRequestId: any;
-            let createErrorRequestId: any;
-            let networkErrorException: any;
-            let createResult: any;
-            const stackOutputs: { [key: string]: any } = {};
+    private async rosDeployStack(client: any, content: any, requestOptions: any, outputsFile: boolean, resourceGroupId: any, stackName: any, detailLog: boolean, sync: boolean) {
+        const stackOutputs: { [key: string]: any } = {};
+        let sleepTime = 0;
+        let stackId: any;
+        for (let i = 0; i < 10; i++) {
             try {
-                createResult = await client.createStack(content, requestOptions)
-                createResultRequestId = createResult.RequestId
+                let createStackResult = await client.createStack(content, requestOptions)
+                stackId = createStackResult.StackId;
+                break;
             } catch (e) {
                 if (detailLog) {
-                    error('sync create stack error info is %s', e);
+                    error(`The ${i}th deployment attempt failed, as detailed in ${e}`);
                 }
-                createErrorRequestId = e.data.RequestId
-                if (e.code == 'ServiceUnavailable' || e.code == 'LastTokenProcessing') {
-                    networkErrorException = true;
-                } else if (createErrorRequestId) {
-                    error('fail to sync create stack: ErrorCode: %s\nRequestedId: %s\nErrorMessage:%s', e.code, createErrorRequestId, e.message)
-                    exit(1)
-                }
-            }
-            if ((!createResultRequestId && !createErrorRequestId) || networkErrorException) {
-                let sleepTime = 5000;
-                await sleep(sleepTime);
-                let i = 0;
-                while (i < 11) {
-                    let createResultRequestId: any;
-                    let createErrorRequestId: any;
-                    let networkErrorException: any;
-                    let createResult: any;
-                    try {
-                        createResult = await client.createStack(content, requestOptions)
-                        createResultRequestId = createResult.RequestId
-                    } catch (e) {
-                        if (detailLog) {
-                            error('retry sync create stack error info is %s', e);
-                        }
-                        createErrorRequestId = e.data.RequestId
-                        if (e.code == 'ServiceUnavailable' || e.code == 'LastTokenProcessing') {
-                            networkErrorException = true;
-                        } else if (createErrorRequestId) {
-                            error('fail to sync create stack: ErrorCode: %s\nRequestedId: %s\nErrorMessage:%s', e.code, createErrorRequestId, e.message)
-                            exit(1)
-                        }
+                if (!e.data || !("RequestId" in e.data) || e.code === 'ServiceUnavailable') {
+                    if (sleepTime < 20000) {
+                        sleepTime = sleepTime + 5000;
                     }
-                    if ((!createResultRequestId && !createErrorRequestId) || networkErrorException) {
-                        if (sleepTime < 20000) {
-                            sleepTime = sleepTime + 5000
-                        }
-                        await sleep(sleepTime);
-                        i++;
-                        continue;
-                    }
-                    await this.updateStackInfo(stackName, createResult.StackId);
-                    success(
-                        `\n ✅ The deployment(create stack) has completed!\nRequestedId: %s\nStackId: %s`,
-                        colors.blue(createResult.RequestId),
-                        colors.blue(createResult.StackId),
-                    );
-                    exit(0)
-                }
-                if (i >= 11) {
-                    const newStackIdInfo = await this.getStackByName(stackName, resourceGroupId)
+                    await sleep(sleepTime);
+                } else if (e.code === 'LastTokenProcessing') {
+                    const newStackIdInfo = await this.getStackByName(stackName, resourceGroupId, content['RegionId'])
                     if (newStackIdInfo) {
-                        await this.updateStackInfo(stackName, newStackIdInfo.StackId);
-                        success(
-                            `\n ✅ The deployment(create stack) has completed!\nStackId: %s`,
-                            colors.blue(newStackIdInfo.StackId),
-                        );
-                        exit(0)
-                    } else {
-                        error('fail to create stack, please check you service endpoint.')
-                        exit(1)
+                        stackId = newStackIdInfo.StackId;
                     }
+                    break
+                } else {
+                    error('❌ Fail to create stack: ErrorCode: %s\nRequestedId: %s\nErrorMessage:%s',
+                        e.code, e.data["RequestId"], e.message)
+                    throw e;
                 }
             }
+        }
+
+        if (!stackId) {
+            error('❌ Fail to create stack, please check your service endpoint.')
+            throw new NetworkError('An unknown network error occurs, please check the endpoint and try again later.');
+        }
+
+        if (sync) {
             const block = new RewritableBlock(stream);
             withDefaultPrinterObj = setInterval(async function () {
-                await CdkToolkit.withDefaultPrinter(client, content, requestOptions, createResult.StackId, block, 'deploy')
+                await CdkToolkit.withDefaultPrinter(client, content, requestOptions, stackId, block, 'deploy')
             }, 5000);
             while (true) {
                 try {
                     await sleep(1000)
                     let params = {
                         RegionId: content['RegionId'],
-                        StackId: createResult.StackId
+                        StackId: stackId
                     };
                     const getStackResult = await client.getStack(params, requestOptions)
                     const status = getStackResult.Status
@@ -1287,7 +1273,7 @@ export class CdkToolkit {
                     const regFailed = RegExp(/FAILED/)
                     if (regComplete.exec(status) || regFailed.exec(status)) {
                         clearInterval(withDefaultPrinterObj);
-                        await CdkToolkit.withDefaultPrinter(client, content, requestOptions, createResult.StackId, block, 'deploy')
+                        await CdkToolkit.withDefaultPrinter(client, content, requestOptions, stackId, block, 'deploy')
                         if (outputs !== undefined) {
                             print('\nOutputs:');
                             stackOutputs[stackName] = outputs;
@@ -1301,43 +1287,39 @@ export class CdkToolkit {
                                 fs.writeFileSync(path.join(LOCAL_PATH + OUTPUTS_JSON), JSON.stringify(stackOutputs, null, '\t'));
                             }
                         }
-                        success(
-                            `\n ✅ The deployment(sync deploy stack) has finished!\nstatus: %s\nStatusReason: %s\nStackId: %s`,
-                            colors.blue(status),
-                            colors.blue(statusReason),
-                            colors.blue(getStackResult.StackId)
-                        );
-                        await this.updateStackInfo(stackName, createResult.StackId);
-                        if (regComplete.exec(status)) {
-                            if (status.toString() == 'CREATE_ROLLBACK_COMPLETE') {
-                                exit(2)
-                            }
-                            exit(0)
-                        } else if (regFailed.exec(status)) {
-                            exit(2)
+                        if (status.toString() == 'CREATE_COMPLETE') {
+                            await this.updateStackInfo(stackName, stackId, content['RegionId']);
+                            success(
+                                `\n ✅ The deployment(sync create stack) has completed!\nstatus: %s\nStatusReason: %s\nStackId: %s`,
+                                colors.blue(status),
+                                colors.blue(statusReason),
+                                colors.blue(stackId)
+                            );
+                            return 0;
+                        } else {
+                            return 1;
                         }
-                        break
                     }
                 } catch (e) {
                     if (detailLog) {
-                        error('retry sync create stack error info is %s', e);
+                        error('An error occurs trying to get the resource stack details: %s', e);
                     }
                     if (e.code == 'Throttling.User' || e.code == 'Throttling' || e.code == 'Throttling.API') {
                         await sleep(30000)
                     } else {
-                        error('fail to sync create stack: %s %s', e.code, e.message)
+                        error('❌ Fail to sync create stack: ErrorCode: %s\nErrorMessage:%s', e.code, e.message)
                         clearInterval(withDefaultPrinterObj);
-                        exit(1)
+                        throw e;
                     }
                 }
             }
-        } catch (e) {
-            if (detailLog) {
-                error('retry sync create stack error info is %s', e);
-            }
-            error('fail to sync create stack: %s %s', e.code, e.message)
-            clearInterval(withDefaultPrinterObj);
-            exit(1)
+        } else {
+            await this.updateStackInfo(stackName, stackId, content['RegionId']);
+            success(
+                `\n ✅ The deployment(create stack) has completed!\nStackId: %s`,
+                colors.blue(stackId)
+            );
+            return 0;
         }
     }
 
@@ -1381,114 +1363,46 @@ export class CdkToolkit {
     }
 
 
-    private async syncUpdateStack(client: any, content: any, requestOptions: any, outputsFile: boolean, skipIfNoChanges: boolean, stackName: any, localStackInfo: any, stackUpdateTime: any, detailLog: boolean) {
-        try {
-            let params = {
-                RegionId: content['RegionId'],
-                StackId: content['StackId']
-            };
-            let updateResultRequestId: any;
-            let updateErrorRequestId: any;
-            let networkErrorException: any;
-            let updateResult: any;
-            const stackOutputs: { [key: string]: any } = {};
-            const getOriginalStackResult = await client.getStack(params, requestOptions)
-            const originalUpdateTime = getOriginalStackResult.UpdateTime ? getOriginalStackResult.UpdateTime : ""
+    private async rosUpdateStack(client: any, content: any, requestOptions: any, outputsFile: boolean, skipIfNoChanges: boolean, stackUpdateTime: any, detailLog: boolean, sync: boolean) {
+        let sleepTime = 0;
+        const stackId = content['StackId'];
+        for (let i = 0; i < 10; i++) {
             try {
-                updateResult = await client.updateStack(content, requestOptions)
-                updateResultRequestId = updateResult.RequestId
+                await client.updateStack(content, requestOptions)
+                break;
             } catch (e) {
                 if (detailLog) {
-                    error('sync update stack error info is %s', e);
+                    error(`The ${i}th update attempt failed, as detailed in ${e}`);
                 }
-                if (e.code == 'NotSupported' && e.message.startsWith('Update the completely same stack') && skipIfNoChanges) {
-                    await this.updateStackInfo(content['StackName'], content['StackId']);
+                if (!e.data || !("RequestId" in e.data) || e.code === 'ServiceUnavailable') {
+                    if (sleepTime < 20000) {
+                        sleepTime = sleepTime + 5000;
+                    }
+                    await sleep(sleepTime);
+                } else if (e.code === 'LastTokenProcessing') {
+                    break
+                } else if (e.code == 'NotSupported' && e.message.startsWith('Update the completely same stack') && skipIfNoChanges) {
                     success('The stack is completely the same, there is no need to update.')
-                    exit(0)
-                }
-                updateErrorRequestId = e.data.RequestId
-                if (e.code == 'ServiceUnavailable' || e.code == 'LastTokenProcessing') {
-                    networkErrorException = true;
-                } else if (updateErrorRequestId) {
-                    error('fail to sync update stack: ErrorCode: %s\nRequestedId: %s\nErrorMessage:%s', e.code, updateErrorRequestId, e.message)
-                    exit(1)
+                    return 0
+                } else {
+                    error('❌ Fail to update stack: ErrorCode: %s\nRequestedId: %s\nErrorMessage:%s',
+                        e.code, e.data["RequestId"], e.message)
+                    throw e;
                 }
             }
+        }
 
-            if ((!updateResultRequestId && !updateErrorRequestId) || networkErrorException) {
-                let sleepTime = 5000;
-                await sleep(sleepTime);
-                let i = 0;
-                while (i < 11) {
-                    let updateResultRequestId: any;
-                    let updateErrorRequestId: any;
-                    let networkErrorException: any;
-                    let updateResult: any;
-                    try {
-                        updateResult = await client.updateStack(content, requestOptions)
-                        updateResultRequestId = updateResult.RequestId
-                    } catch (e) {
-                        if (detailLog) {
-                            error('retry sync update stack error info is %s', e);
-                        }
-                        if (e.code == 'NotSupported' && e.message.startsWith('Update the completely same stack') && skipIfNoChanges) {
-                            await this.updateStackInfo(content['StackName'], content['StackId']);
-                            success('The stack is completely the same, there is no need to update.')
-                            exit(0)
-                        }
-                        updateErrorRequestId = e.data.RequestId
-                        if (e.code == 'ServiceUnavailable' || e.code == 'LastTokenProcessing') {
-                            networkErrorException = true;
-                        } else if (updateErrorRequestId) {
-                            error('fail to sync update stack: ErrorCode: %s\nRequestedId: %s\nErrorMessage:%s', e.code, updateErrorRequestId, e.message)
-                            exit(1)
-                        }
-                    }
-                    if ((!updateResultRequestId && !updateErrorRequestId) || networkErrorException) {
-                        if (sleepTime < 20000) {
-                            sleepTime = sleepTime + 5000
-                        }
-                        await sleep(sleepTime);
-                        i++;
-                        continue;
-                    }
-                    await this.updateStackInfo(stackName, updateResult.StackId);
-                    success(
-                        `\n ✅ The deployment(update stack) has completed!\nRequestedId: %s\nStackId: %s`,
-                        colors.blue(updateResult.RequestId),
-                        colors.blue(updateResult.StackId),
-                    );
-                    exit(0)
-                }
-                if (i >= 11) {
-                    let statusArray = ["UPDATE_FAILED", "UPDATE_COMPLETE", "ROLLBACK_FAILED", "ROLLBACK_COMPLETE"]
-                    const newStackIdInfo = await this.getStackById(localStackInfo.stackId)
-                    let newStackIdInfoUpdateTime = newStackIdInfo.UpdateTime ? newStackIdInfo.UpdateTime : newStackIdInfo.CreateTime
-                    if (newStackIdInfo.Status == 'UPDATE_IN_PROGRESS' || newStackIdInfo.Status == 'ROLLBACK_IN_PROGRESS') {
-                        await this.updateStackInfo(stackName, newStackIdInfo.StackId);
-                        success(
-                            `\n ✅ The deployment(update stack) has completed!\nStackId: %s`,
-                            colors.blue(newStackIdInfo.StackId),
-                        );
-                        exit(0)
-                    } else if (statusArray.includes(newStackIdInfo.Status) && newStackIdInfoUpdateTime != stackUpdateTime) {
-                        await this.updateStackInfo(stackName, newStackIdInfo.StackId);
-                        success(
-                            `\n ✅ The deployment(update stack) has completed!\nStackId: %s`,
-                            colors.blue(newStackIdInfo.StackId),
-                        );
-                        exit(0)
-                    } else {
-                        error('fail to update stack, please check you service endpoint.')
-                        exit(1)
-                    }
-                }
-            }
+        if (sync) {
+            let params = {
+                RegionId: content['RegionId'],
+                StackId: stackId
+            };
+            const stackOutputs: { [key: string]: any } = {};
             // Wait for the stack state to change after updating it
             await sleep(5000);
             const block = new RewritableBlock(stream);
             withDefaultPrinterObj = setInterval(async function () {
-                await CdkToolkit.withDefaultPrinter(client, content, requestOptions, updateResult.StackId, block, 'update')
+                await CdkToolkit.withDefaultPrinter(client, content, requestOptions, stackId, block, 'update')
             }, 5000);
             while (true) {
                 try {
@@ -1499,7 +1413,7 @@ export class CdkToolkit {
                     const stackName = getNewStackResult.StackName
                     const outputs = getNewStackResult.Outputs
                     const newUpdateTime = getNewStackResult.UpdateTime ? getNewStackResult.UpdateTime : ""
-                    if (newUpdateTime == originalUpdateTime) {
+                    if (newUpdateTime == stackUpdateTime) {
                         // stack update in progress or update did not begin
                         continue
                     }
@@ -1507,7 +1421,7 @@ export class CdkToolkit {
                     const regFailed = RegExp(/FAILED/)
                     if (regComplete.exec(status) || regFailed.exec(status)) {
                         clearInterval(withDefaultPrinterObj);
-                        await CdkToolkit.withDefaultPrinter(client, content, requestOptions, updateResult.StackId, block, 'update')
+                        await CdkToolkit.withDefaultPrinter(client, content, requestOptions, stackId, block, 'update')
                         if (outputs !== undefined) {
                             print('\nOutputs:');
                             stackOutputs[stackName] = outputs;
@@ -1521,63 +1435,38 @@ export class CdkToolkit {
                                 fs.writeFileSync(path.join(LOCAL_PATH + OUTPUTS_JSON), JSON.stringify(stackOutputs, null, '\t'));
                             }
                         }
-
-                        success(
-                            `\n ✅ The deployment(sync update stack) has finished!\nstatus: %s\nStatusReason: %s\nStackId: %s`,
-                            colors.blue(status),
-                            colors.blue(statusReason),
-                            colors.blue(getNewStackResult.StackId),
-                        );
-                        await this.updateStackInfo(stackName, updateResult.StackId);
-                        if (regComplete.exec(status)) {
-                            if (status.toString() == 'ROLLBACK_COMPLETE') {
-                                exit(2)
-                            }
-                            exit(0)
-                        } else if (regFailed.exec(status)) {
-                            exit(2)
+                        if (status.toString() == 'UPDATE_COMPLETE') {
+                            await this.updateStackInfo(stackName, stackId, content['RegionId']);
+                            success(
+                                `\n ✅ The deployment(sync update stack) has completed!\nstatus: %s\nStatusReason: %s\nStackId: %s`,
+                                colors.blue(status),
+                                colors.blue(statusReason),
+                                colors.blue(stackId)
+                            );
+                            return 0;
+                        } else {
+                            return 1;
                         }
-                        break
-                    } else {
-                        await sleep(5000);
                     }
                 } catch (e) {
                     if (detailLog) {
-                        error('retry sync update stack error info is %s', e);
-                    }
-                    if (e.code == 'NotSupported' && e.message.startsWith('Update the completely same stack') && skipIfNoChanges) {
-                        await this.updateStackInfo(content['StackName'], content['StackId']);
-                        success('The stack is completely the same, there is no need to update.')
-                        exit(0)
+                        error('An error occurs trying to get the resource stack details: %s', e);
                     }
                     if (e.code == 'Throttling.User' || e.code == 'Throttling' || e.code == 'Throttling.API') {
                         await sleep(30000)
                     } else {
-                        error('fail to sync update stack: %s %s', e.code, e.message)
+                        error('❌ Fail to sync update stack: ErrorCode: %s\nErrorMessage:%s', e.code, e.message)
                         clearInterval(withDefaultPrinterObj);
-                        exit(1)
+                        throw e;
                     }
                 }
             }
-
-        } catch (e) {
-            if (detailLog) {
-                error('sync update stack error info is %s', e);
-            }
-            if (e.code == 'NotSupported' && e.message.startsWith('Update the completely same stack') && skipIfNoChanges) {
-                await this.updateStackInfo(content['StackName'], content['StackId']);
-                success('The stack is completely the same, there is no need to update.')
-                exit(0)
-            }
-            if (e.code == 'NotSupported' && e.message.startsWith('Update the completely same stack') && skipIfNoChanges) {
-                await this.updateStackInfo(content['StackName'], content['StackId']);
-                success('The stack is completely the same, there is no need to update.')
-                exit(0)
-            } else {
-                error('fail to sync update stack: %s %s', e.code, e.message)
-                clearInterval(withDefaultPrinterObj);
-                exit(1)
-            }
+        } else {
+            success(
+                `\n ✅ The deployment(update stack) has completed!\nStackId: %s`,
+                colors.blue(stackId),
+            );
+            return 0;
         }
     }
 
@@ -1610,13 +1499,12 @@ export class CdkToolkit {
                             colors.blue(statusReason),
                             colors.blue(getStackResult.StackId)
                         );
-                        await this.updateStackInfo(stackName, DESTROY_STACK);
+                        await this.updateStackInfo(stackName, DESTROY_STACK, undefined);
                         if (regComplete.exec(status)) {
-                            exit(0)
-                        } else if (regFailed.exec(status)) {
-                            exit(2)
+                            return 0
+                        } else {
+                            return 1
                         }
-                        break
                     }
                 } catch (e) {
                     if (e.code == 'Throttling.User' || e.code == 'Throttling' || e.code == 'Throttling.API') {
@@ -1624,200 +1512,15 @@ export class CdkToolkit {
                     } else {
                         error('fail to sync destroy stack: %s %s', e.code, e.message)
                         clearInterval(withDefaultPrinterObj);
-                        exit(1)
+                        return 1
                     }
                 }
             }
         } catch (e) {
             error('fail to sync destroy stack: %s %s', e.code, e.message)
             clearInterval(withDefaultPrinterObj);
-            exit(1)
+            return 1
         }
-    }
-
-    private async rosUpdateStack(client: any, content: any, requestOptions: any, stackName: any, localStackInfo: any, stackUpdateTime: any, detailLog: any, skipIfNoChanges: any) {
-        let updateResultRequestId: any;
-        let updateErrorRequestId: any;
-        let networkErrorException: any;
-        let updateResult: any;
-        try {
-            updateResult = await client.updateStack(content, requestOptions)
-            updateResultRequestId = updateResult.RequestId
-        } catch (e) {
-            if (detailLog) {
-                error('update stack error info is %s', e);
-            }
-            if (e.code == 'NotSupported' && e.message.startsWith('Update the completely same stack') && skipIfNoChanges) {
-                await this.updateStackInfo(content['StackName'], content['StackId']);
-                success('The stack is completely the same, there is no need to update.')
-                exit(0)
-            }
-            updateErrorRequestId = e.data.RequestId
-            if (e.code == 'ServiceUnavailable' || e.code == 'LastTokenProcessing') {
-                networkErrorException = true;
-            } else if (updateErrorRequestId) {
-                error('fail to sync update stack: ErrorCode: %s\nRequestedId: %s\nErrorMessage:%s', e.code, updateErrorRequestId, e.message)
-                exit(1)
-            }
-        }
-        if ((!updateResultRequestId && !updateErrorRequestId) || networkErrorException) {
-            let sleepTime = 5000;
-            await sleep(sleepTime);
-            let i = 0;
-            while (i < 11) {
-                let updateResultRequestId: any;
-                let updateErrorRequestId: any;
-                let networkErrorException: any;
-                let updateResult: any;
-                try {
-                    updateResult = await client.updateStack(content, requestOptions)
-                    updateResultRequestId = updateResult.RequestId
-                } catch (e) {
-                    if (detailLog) {
-                        error('retry update stack error info is %s', e);
-                    }
-                    if (e.code == 'NotSupported' && e.message.startsWith('Update the completely same stack') && skipIfNoChanges) {
-                        await this.updateStackInfo(content['StackName'], content['StackId']);
-                        success('The stack is completely the same, there is no need to update.')
-                        exit(0)
-                    }
-                    updateErrorRequestId = e.data.RequestId
-                    if (e.code == 'ServiceUnavailable' || e.code == 'LastTokenProcessing') {
-                        networkErrorException = true;
-                    } else if (updateErrorRequestId) {
-                        error('fail to sync update stack: ErrorCode: %s\nRequestedId: %s\nErrorMessage:%s', e.code, updateErrorRequestId, e.message)
-                        exit(1)
-                    }
-                }
-                if ((!updateResultRequestId && !updateErrorRequestId) || networkErrorException) {
-                    if (sleepTime < 20000) {
-                        sleepTime = sleepTime + 5000
-                    }
-                    await sleep(sleepTime);
-                    i++;
-                    continue;
-                }
-                await this.updateStackInfo(stackName, updateResult.StackId);
-                success(
-                    `\n ✅ The deployment(update stack) has completed!\nRequestedId: %s\nStackId: %s`,
-                    colors.blue(updateResult.RequestId),
-                    colors.blue(updateResult.StackId),
-                );
-                exit(0)
-            }
-            if (i >= 11) {
-                let statusArray = ["UPDATE_FAILED", "UPDATE_COMPLETE", "ROLLBACK_FAILED", "ROLLBACK_COMPLETE"]
-                const newStackIdInfo = await this.getStackById(localStackInfo.stackId)
-                let newStackIdInfoUpdateTime = newStackIdInfo.UpdateTime ? newStackIdInfo.UpdateTime : newStackIdInfo.CreateTime
-                if (newStackIdInfo.Status == 'UPDATE_IN_PROGRESS' || newStackIdInfo.Status == 'ROLLBACK_IN_PROGRESS') {
-                    await this.updateStackInfo(stackName, newStackIdInfo.StackId);
-                    success(
-                        `\n ✅ The deployment(update stack) has completed!\nStackId: %s`,
-                        colors.blue(newStackIdInfo.StackId),
-                    );
-                    exit(0)
-                } else if (statusArray.includes(newStackIdInfo.Status) && newStackIdInfoUpdateTime != stackUpdateTime) {
-                    await this.updateStackInfo(stackName, newStackIdInfo.StackId);
-                    success(
-                        `\n ✅ The deployment(update stack) has completed!\nStackId: %s`,
-                        colors.blue(newStackIdInfo.StackId),
-                    );
-                    exit(0)
-                } else {
-                    error('fail to update stack, please check you service endpoint.')
-                    exit(1)
-                }
-            }
-        }
-        await this.updateStackInfo(stackName, updateResult.StackId);
-        success(
-            `\n ✅ The deployment(update stack) has completed!\nRequestedId: %s\nStackId: %s`,
-            colors.blue(updateResult.RequestId),
-            colors.blue(updateResult.StackId),
-        );
-    }
-
-    private async rosCreateStack(client: any, content: any, requestOptions: any, resourceGroupId: any, stackName: any, detailLog: any) {
-        let createResultRequestId: any;
-        let createErrorRequestId: any;
-        let networkErrorException: any;
-        let createResult: any;
-        try {
-            createResult = await client.createStack(content, requestOptions)
-            createResultRequestId = createResult.RequestId
-        } catch (e) {
-            if (detailLog) {
-                error('create stack error info is %s', e);
-            }
-            createErrorRequestId = e.data.RequestId
-            if (e.code == 'ServiceUnavailable' || e.code == 'LastTokenProcessing') {
-                networkErrorException = true;
-            } else if (createErrorRequestId) {
-                error('fail to create stack: ErrorCode: %s\nRequestedId: %s\nErrorMessage:%s', e.code, createErrorRequestId, e.message)
-                exit(1)
-            }
-        }
-        if ((!createResultRequestId && !createErrorRequestId) || networkErrorException) {
-            let sleepTime = 5000;
-            await sleep(sleepTime);
-            let i = 0;
-            while (i < 11) {
-                let createResultRequestId: any;
-                let createErrorRequestId: any;
-                let networkErrorException: any;
-                let createResult: any;
-                try {
-                    createResult = await client.createStack(content, requestOptions)
-                    createResultRequestId = createResult.RequestId
-                } catch (e) {
-                    if (detailLog) {
-                        error('retry create stack error info is %s', e);
-                    }
-                    createErrorRequestId = e.data.RequestId
-                    if (e.code == 'ServiceUnavailable' || e.code == 'LastTokenProcessing') {
-                        networkErrorException = true;
-                    } else if (createErrorRequestId) {
-                        error('fail to create stack: ErrorCode: %s\nRequestedId: %s\nErrorMessage:%s', e.code, createErrorRequestId, e.message)
-                        exit(1)
-                    }
-                }
-                if ((!createResultRequestId && !createErrorRequestId) || networkErrorException) {
-                    if (sleepTime < 20000) {
-                        sleepTime = sleepTime + 5000
-                    }
-                    await sleep(sleepTime);
-                    i++;
-                    continue;
-                }
-                await this.updateStackInfo(stackName, createResult.StackId);
-                success(
-                    `\n ✅ The deployment(create stack) has completed!\nRequestedId: %s\nStackId: %s`,
-                    colors.blue(createResult.RequestId),
-                    colors.blue(createResult.StackId),
-                );
-                exit(0)
-            }
-            if (i >= 11) {
-                const newStackIdInfo = await this.getStackByName(stackName, resourceGroupId)
-                if (newStackIdInfo) {
-                    await this.updateStackInfo(stackName, newStackIdInfo.StackId);
-                    success(
-                        `\n ✅ The deployment(create stack) has completed!\nStackId: %s`,
-                        colors.blue(newStackIdInfo.StackId),
-                    );
-                    exit(0)
-                } else {
-                    error('fail to create stack, please check you service endpoint.')
-                    exit(1)
-                }
-            }
-        }
-        await this.updateStackInfo(stackName, createResult.StackId);
-        success(
-            `\n ✅ The deployment(create stack) has completed!\nRequestedId: %s\nStackId: %s`,
-            colors.blue(createResult.RequestId),
-            colors.blue(createResult.StackId),
-        );
     }
 }
 
@@ -1840,6 +1543,7 @@ export interface DeployOptions {
     parameters?: { [name: string]: string | undefined };
     timeout: string;
     sync: boolean;
+    regionId: string;
     outputsFile: boolean;
     skipIfNoChanges: boolean;
     disableRollback: boolean;
@@ -1854,14 +1558,14 @@ export interface DestroyOptions {
 }
 
 export interface EventOptions {
-    stackName: string[];
+    stackNames: string[];
     logicalResourceId: string;
     pageNumber: string;
     pageSize: string;
 }
 
 export interface OutPutOptions {
-    stackName: string;
+    stackNames: string[];
 }
 
 export interface ResourceOptions {
@@ -1878,6 +1582,7 @@ export interface ListStackOptions {
     pageSize: string;
     all: string;
     resourceGroupId: string;
+    region: string;
 }
 
 export interface ConfigSetOptions {

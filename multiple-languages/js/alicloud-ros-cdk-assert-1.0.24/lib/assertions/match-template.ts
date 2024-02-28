@@ -1,6 +1,7 @@
 import * as rosDiff from '@alicloud/ros-cdk-template-diff';
 import { Assertion } from '../assertion';
 import { StackInspector } from '../inspector';
+import * as colors from 'colors/safe';
 
 export enum MatchStyle {
   /** Requires an exact match */
@@ -46,8 +47,8 @@ class StackMatchesTemplateAssertion extends Assertion<StackInspector> {
       rosDiff.formatDifferences(process.stderr, diff);
 
       // Print the actual template
-      process.stdout.write('--------------------------------------------------------------------------------------\n');
-      process.stdout.write(JSON.stringify(inspector.value, undefined, 2) + '\n');
+      process.stderr.write(colors.rainbow('--------------------------------------------------------------------------------------\n'));
+      process.stderr.write(colors.white((JSON.stringify(inspector.value, undefined, 2) + '\n')));
     }
 
     return acceptable;

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vod.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::VOD::EditingProjects</code>, which is used to query the basic information about online editing projects.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:18.331Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-02-28T02:53:31.023Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vod.$Module.class, fqn = "@alicloud/ros-cdk-vod.datasource.RosEditingProjects")
 public class RosEditingProjects extends com.aliyun.ros.cdk.core.RosResource {
 

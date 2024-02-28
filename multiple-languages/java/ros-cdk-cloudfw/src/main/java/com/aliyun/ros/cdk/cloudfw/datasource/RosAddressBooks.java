@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cloudfw.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::CLOUDFW::AddressBooks</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.308Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-02-28T02:53:27.325Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.datasource.RosAddressBooks")
 public class RosAddressBooks extends com.aliyun.ros.cdk.core.RosResource {
 

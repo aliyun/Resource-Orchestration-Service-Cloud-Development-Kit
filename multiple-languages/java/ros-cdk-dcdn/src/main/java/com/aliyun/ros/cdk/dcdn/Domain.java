@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dcdn;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::DCDN::Domain</code>, which is used to add a Dynamic Route for CDN (DCDN) domain name.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.795Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-02-28T02:53:27.796Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dcdn.$Module.class, fqn = "@alicloud/ros-cdk-dcdn.Domain")
 public class Domain extends com.aliyun.ros.cdk.core.Resource {
 

@@ -1,3 +1,4 @@
+export declare function compare(a: any, b: any): number;
 /**
  * Compares two objects for equality, deeply. The function handles arguments that are
  * +null+, +undefined+, arrays and objects. For objects, the function will not take the

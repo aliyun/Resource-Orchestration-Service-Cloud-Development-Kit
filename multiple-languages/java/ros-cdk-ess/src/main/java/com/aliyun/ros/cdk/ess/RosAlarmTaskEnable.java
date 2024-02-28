@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ess;
  * <p>
  * You can call this operation to enable alarm tasks when the task is stopped.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.987Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-02-28T02:53:28.961Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosAlarmTaskEnable")
 public class RosAlarmTaskEnable extends com.aliyun.ros.cdk.core.RosResource {
 

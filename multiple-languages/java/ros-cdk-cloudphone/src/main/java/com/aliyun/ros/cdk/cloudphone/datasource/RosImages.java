@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cloudphone.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::CloudPhone::Images</code>, which is used to query the information about available images.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.336Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-02-28T02:53:27.340Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudphone.$Module.class, fqn = "@alicloud/ros-cdk-cloudphone.datasource.RosImages")
 public class RosImages extends com.aliyun.ros.cdk.core.RosResource {
 

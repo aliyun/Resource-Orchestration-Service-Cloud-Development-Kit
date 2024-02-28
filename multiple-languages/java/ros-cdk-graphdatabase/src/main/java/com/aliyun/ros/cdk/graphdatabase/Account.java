@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.graphdatabase;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::GraphDatabase::Account</code>, which is used to create an account.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.551Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-02-28T02:53:29.298Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.graphdatabase.$Module.class, fqn = "@alicloud/ros-cdk-graphdatabase.Account")
 public class Account extends com.aliyun.ros.cdk.core.Resource {
 

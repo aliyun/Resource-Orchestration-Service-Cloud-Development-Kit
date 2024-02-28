@@ -1,6 +1,7 @@
 import { IRosConditionExpression } from "./ros-condition";
 import { Intrinsic } from "./private/intrinsic";
 import { IResolveContext, IResolvable } from "./resolvable";
+import * as ros from "./index";
 /**
  * Resource Orchestration Service intrinsic functions.
  * https://help.aliyun.com/document_detail/28852.html
@@ -11,7 +12,7 @@ export declare class Fn {
     static replace(replaceData: {
         [key: string]: any;
     }, content: string): string;
-    static listMerge(valueList: any[][]): IResolvable;
+    static listMerge(valueList: (any[] | ros.IResolvable)[]): IResolvable;
     static getJsonValue(key: string, jsonData: any): string;
     static avg(ndigits: number, values: number[]): number;
     static add(values: number | any[] | {
@@ -58,7 +59,7 @@ export declare class Fn {
      * @param listOfValues The list of values you want combined.
      * @returns a token represented as a string
      */
-    static join(delimiter: string, listOfValues: string[]): string;
+    static join(delimiter: string, listOfValues: (string | ros.IResolvable)[]): string;
     /**
      * To split a string into a list of string values so that you can select an element from the
      * resulting string list, use the ``Fn::Split`` intrinsic function. Specify the location of splits
@@ -201,12 +202,6 @@ export declare class FnBase64Decode extends FnBase {
 export declare class FnReplace extends FnBase {
     /**
      * Creates an ``Replace`` function.
-     */
-    constructor(value: any);
-}
-export declare class FnListMerge extends FnBase {
-    /**
-     * Creates an ``ListMerge`` function.
      */
     constructor(value: any);
 }
@@ -435,6 +430,21 @@ export declare class FnOr extends FnConditionBase {
 /**
  * Returns true if a specified string matches all values in a list.
  */
+export declare class FnListMerge implements IResolvable {
+    readonly creationStack: string[];
+    private readonly listOfValues;
+    /**
+     * Creates an ``ListMerge`` function.
+     */
+    constructor(listOfValues: any[]);
+    resolve(context: IResolveContext): any;
+    toString(): string;
+    toJSON(): string;
+    /**
+     * Optimization: if an Fn::ListMerge is nested in another one, then flatten it up.
+     */
+    private resolveValues;
+}
 /**
  * The intrinsic function ``Fn::Join`` appends a set of values into a single value, separated by
  * the specified delimiter. If a delimiter is the empty string, the set of values are concatenated

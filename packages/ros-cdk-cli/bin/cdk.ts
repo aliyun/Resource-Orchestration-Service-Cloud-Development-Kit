@@ -54,7 +54,10 @@ async function parseCommandLineArguments() {
                             'If true, only generates project files, without executing additional operations such as setting up a git repo, installing dependencies or compiling the project',
                     }),
         )
-        .command(['list [STACKS..]', 'ls [STACKS..]'], 'Lists all stacks in the app', (yargs) =>
+        .command(
+            ['list [STACKS..]', 'ls [STACKS..]'],
+            'Lists stack(s) in the app. Invoked without the specified stack(s), all stacks in the app will be listed.',
+            (yargs) =>
             yargs.option('long', {
                 type: 'boolean',
                 default: false,
@@ -64,7 +67,7 @@ async function parseCommandLineArguments() {
         )
         .command(
             ['synthesize [STACKS..]', 'synth [STACKS..]'],
-            'Synthesizes and prints the ROS template for this stack',
+            'Synthesizes and prints the ROS template for the stack(s). Invoked without the specified stack(s), all stacks in the app will be synthesized.',
             (yargs) =>
                 yargs.option('exclusively', {
                     type: 'boolean',
@@ -72,7 +75,10 @@ async function parseCommandLineArguments() {
                     desc: "Only synthesize requested stacks, don't include dependencies",
                 }),
         )
-        .command('deploy [STACKS..]', 'Deploys the stack(s) named STACKS to ROS into your alicloud account', (yargs) =>
+        .command(
+            'deploy [STACKS..]',
+            'Deploys the stack(s) through ROS into your alicloud account. If there\'s only one stack in your app, you can invoke it without specifying stack.',
+            (yargs) =>
             yargs
                 .option('parameters', {
                     type: 'array',
@@ -86,6 +92,7 @@ async function parseCommandLineArguments() {
                     alias: 'e',
                     desc: "Only deploy requested stacks, don't include dependencies",
                 })
+                .option('region', {type: 'string', desc:'The region where you want to deploy.', default: 'default'})
                 .option('timeoutMinutes', { type: 'number', alias: 't', desc: 'The timeout minutes', default: 20 })
                 .option('resource-group-id', { type: 'string', desc: 'Resource group ID. If this parameter is not specified, the resource stack will be added to the default resource group'})
                 .option('sync', { type: 'boolean', desc: 'Sync deploy stack', default: false })
@@ -96,7 +103,7 @@ async function parseCommandLineArguments() {
         )
         .command(
             'diff [STACKS..]',
-            'Compares the specified stack with the deployed stack or a local template file, and returns with status 1 if any difference is found',
+            'Compares the specified stack with the deployed stack or a local template file, and returns with status 1 if any difference is found. Invoked without the specified stack(s), all stacks in the app will be compared.',
             (yargs) =>
                 yargs
                     .option('path', {
@@ -111,7 +118,10 @@ async function parseCommandLineArguments() {
                         default: 3,
                     }),
         )
-        .command('destroy [STACKS..]', 'Destroy the stack(s) named STACKS', (yargs) =>
+        .command(
+            'destroy [STACKS..]',
+            'Destroy the stack(s) in the app. Invoked without the specified stack(s), all stacks in the app will be destroyed after confirmation.',
+            (yargs) =>
             yargs
                 .option('quiet', {
                     type: 'boolean',
@@ -121,7 +131,10 @@ async function parseCommandLineArguments() {
                 })
                 .option('sync', { type: 'boolean', desc: 'sync destroy stack', default: false }),
         )
-        .command('event [STACK..]', 'Get resource events within the resource STACK', (yargs) =>
+        .command(
+            'event [STACKS..]',
+            'Get the stack(s) events. If there\'s only one stack in your app, you can invoke it without specifying stack.',
+            (yargs) =>
             yargs
                 .option('logical-resource-id', {
                     type: 'string',
@@ -139,8 +152,13 @@ async function parseCommandLineArguments() {
                     desc: 'The number of entries to return on each page, Maximum value: 50. Default value: 10',
                 })
         )
-        .command('output [STACK..]', 'Get the output information of resource stack')
-        .command('resource [STACKS..]', 'Get resources in the resource STACKS')
+        .command(
+            'output [STACKS..]',
+            'Get the output information of the stack(s). Invoked without the specified stack(s), all outputs from all stacks in the app will be displayed.'
+        )
+        .command(
+            'resource [STACKS..]',
+            'Get resources in the stack(s).  Invoked without the specified stack(s), all resources from all stacks in the app will be displayed.')
         .command('list-stacks [STACKS..]', 'Get resources in the resource STACKS', (yargs) =>
             yargs
                 .option('all', {
@@ -148,6 +166,10 @@ async function parseCommandLineArguments() {
                     alias: 'a',
                     desc: 'Get all Stacks in account set config Region.',
                     default: false,
+                })
+                .option('region', {
+                    type: 'string',
+                    desc: 'The region where you want to get stacks from.'
                 })
                 .option('page-number', {
                     type: 'string',
@@ -254,7 +276,6 @@ async function parseCommandLineArguments() {
         .alias('h', 'help')
         .epilogue(
             [
-                'If your app has a single stack, there is no need to specify the stack name',
                 'If one of cdk.json or ~/.cdk.json exists, options specified there will be used as defaults. Settings in cdk.json take precedence.',
             ].join('\n\n'),
         ).argv;
@@ -352,6 +373,7 @@ async function initCommandLine() {
                 await cli.deploy({
                     stackNames: args.STACKS,
                     parameters: parameterMap,
+                    regionId: args['region'],
                     exclusively: args.exclusively,
                     timeout: args.timeoutMinutes,
                     sync: args.sync,
@@ -373,7 +395,7 @@ async function initCommandLine() {
 
             case 'event':
                 await cli.event({
-                    stackName: args['STACK'],
+                    stackNames: args.STACKS,
                     logicalResourceId: args['logical-resource-id'],
                     pageNumber: args['page-number'],
                     pageSize: args['page-size']
@@ -382,7 +404,7 @@ async function initCommandLine() {
 
             case 'output':
                 await cli.output({
-                    stackName: args['STACK']
+                    stackNames: args.STACKS
                 });
                 return;
 
@@ -398,7 +420,8 @@ async function initCommandLine() {
                     all: args.all,
                     pageNumber: args['page-number'],
                     pageSize: args['page-size'],
-                    resourceGroupId: args['resource-group-id']
+                    resourceGroupId: args['resource-group-id'],
+                    region: args.region
                 });
                 return;
 

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cddc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cddc-mybase
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.046Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-02-28T02:53:26.957Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cddc.$Module.class, fqn = "@alicloud/ros-cdk-cddc.MyBaseProps")
 @software.amazon.jsii.Jsii.Proxy(MyBaseProps.Jsii$Proxy.class)
 public interface MyBaseProps extends software.amazon.jsii.JsiiSerializable {

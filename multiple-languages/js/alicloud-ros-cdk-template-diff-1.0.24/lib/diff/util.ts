@@ -1,3 +1,33 @@
+function convertAnyToString(value: any): string {
+  if (value === null) {
+    return 'null';
+  }
+  if (value === undefined) {
+    return 'undefined';
+  }
+  if (typeof value === 'string') {
+    return value;
+  }
+  if (typeof value === 'number') {
+    return value.toString();
+  }
+  if (typeof value === 'boolean') {
+    return value.toString();
+  }
+  if (typeof value === 'object') {
+    return JSON.stringify(value);
+  }
+  if (Array.isArray(value)) {
+    return value.sort(compare).join(',');
+  }
+  return value.toString();
+}
+
+
+export function compare(a: any, b: any) {
+  return convertAnyToString(a).localeCompare(convertAnyToString(b));
+}
+
 /**
  * Compares two objects for equality, deeply. The function handles arguments that are
  * +null+, +undefined+, arrays and objects. For objects, the function will not take the

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::FC::ProvisionConfig</code>, which is used to create provisioned instances in Function Compute.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.158Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-02-28T02:53:29.136Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosProvisionConfig")
 public class RosProvisionConfig extends com.aliyun.ros.cdk.core.RosResource {
 

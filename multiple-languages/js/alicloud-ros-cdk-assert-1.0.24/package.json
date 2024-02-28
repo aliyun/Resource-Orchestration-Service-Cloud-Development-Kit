@@ -26,6 +26,7 @@
     "pack": "npm pack"
   },
   "dependencies": {
+    "colors": "^1.4.0",
     "@alicloud/ros-cdk-core": "^1.0.24",
     "@alicloud/ros-cdk-assembly-schema": "^1.0.24",
     "@alicloud/ros-cdk-cxapi": "^1.0.24",
