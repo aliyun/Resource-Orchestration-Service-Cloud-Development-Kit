@@ -15,6 +15,11 @@ export interface AccountProps {
     readonly displayName: string | ros.IResolvable;
 
     /**
+     * Property deleteAccount: Whether delete the account. Default value is false.
+     */
+    readonly deleteAccount?: boolean | ros.IResolvable;
+
+    /**
      * Property folderId: The ID of the parent folder
      */
     readonly folderId?: string | ros.IResolvable;
@@ -26,11 +31,15 @@ export interface AccountProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::Account`ALIYUN::ResourceManager::ControlPolicy is used to create a custom control policy.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::Account`, which is used to create a resource account as a member account.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccount`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-account
  */
 export class Account extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AccountProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AccountId: This ID of Resource Manager Account
@@ -69,11 +78,16 @@ export class Account extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AccountProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAccount = new RosAccount(this, id,  {
             payerAccountId: props.payerAccountId,
             displayName: props.displayName,
             folderId: props.folderId,
+            deleteAccount: props.deleteAccount,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosAccount;
         this.attrAccountId = rosAccount.attrAccountId;

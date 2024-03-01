@@ -62,6 +62,10 @@ export interface AutoSnapshotPolicyProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-autosnapshotpolicy
  */
 export class AutoSnapshotPolicy extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AutoSnapshotPolicyProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AutoSnapshotPolicyId: The automatic snapshot policy ID.
@@ -75,6 +79,10 @@ export class AutoSnapshotPolicy extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AutoSnapshotPolicyProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAutoSnapshotPolicy = new RosAutoSnapshotPolicy(this, id,  {
             timePoints: props.timePoints,

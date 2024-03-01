@@ -38,11 +38,15 @@ export interface Ipv6InternetBandwidthProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::Ipv6InternetBandwidth`, which is used to purchase Internet bandwidth for an IPv6 address.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::Ipv6InternetBandwidth`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosIpv6InternetBandwidth`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipv6internetbandwidth
  */
 export class Ipv6InternetBandwidth extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: Ipv6InternetBandwidthProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InternetBandwidthId: Purchase of public network bandwidth.
@@ -56,6 +60,10 @@ export class Ipv6InternetBandwidth extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: Ipv6InternetBandwidthProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosIpv6InternetBandwidth = new RosIpv6InternetBandwidth(this, id,  {
             bandwidth: props.bandwidth,

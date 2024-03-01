@@ -117,6 +117,10 @@ export interface InstanceGroupProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-instancegroup
  */
 export class InstanceGroup extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: InstanceGroupProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceIds: instance ids
@@ -127,6 +131,11 @@ export class InstanceGroup extends ros.Resource {
      * Attribute OrderId: oder id
      */
     public readonly attrOrderId: ros.IResolvable;
+
+    /**
+     * Attribute PrivateIps: Private IP address list of created cloud phone instances. Only for VPC instance.
+     */
+    public readonly attrPrivateIps: ros.IResolvable;
 
     /**
      * Attribute TradePrice: price
@@ -140,6 +149,10 @@ export class InstanceGroup extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: InstanceGroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosInstanceGroup = new RosInstanceGroup(this, id,  {
             keyPairName: props.keyPairName,
@@ -163,6 +176,7 @@ export class InstanceGroup extends ros.Resource {
         this.resource = rosInstanceGroup;
         this.attrInstanceIds = rosInstanceGroup.attrInstanceIds;
         this.attrOrderId = rosInstanceGroup.attrOrderId;
+        this.attrPrivateIps = rosInstanceGroup.attrPrivateIps;
         this.attrTradePrice = rosInstanceGroup.attrTradePrice;
     }
 }

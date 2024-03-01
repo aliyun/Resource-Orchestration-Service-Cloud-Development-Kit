@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ots;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::OTS::Table</code>, which is used to create a table based on a specified schema.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::OTS::Table</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.116Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:53.512Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.RosTable")
 public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
 

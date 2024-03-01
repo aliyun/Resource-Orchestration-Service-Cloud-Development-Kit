@@ -59,6 +59,10 @@ export interface ExchangeProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-exchange
  */
 export class Exchange extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ExchangeProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ExchangeName: The name of the exchange.
@@ -72,6 +76,10 @@ export class Exchange extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ExchangeProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosExchange = new RosExchange(this, id,  {
             instanceId: props.instanceId,

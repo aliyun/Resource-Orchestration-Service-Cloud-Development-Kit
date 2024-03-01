@@ -36,6 +36,10 @@ export interface NetworkInterfaceAttachmentProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-networkinterfaceattachment
  */
 export class NetworkInterfaceAttachment extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: NetworkInterfaceAttachmentProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceId: ID of ECS instance.
@@ -59,6 +63,10 @@ export class NetworkInterfaceAttachment extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: NetworkInterfaceAttachmentProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosNetworkInterfaceAttachment = new RosNetworkInterfaceAttachment(this, id,  {
             trunkNetworkInstanceId: props.trunkNetworkInstanceId,

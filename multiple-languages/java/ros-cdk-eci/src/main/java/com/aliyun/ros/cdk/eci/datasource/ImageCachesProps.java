@@ -1,0 +1,292 @@
+package com.aliyun.ros.cdk.eci.datasource;
+
+/**
+ * Properties for defining a <code>ImageCaches</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eci-imagecaches
+ */
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:51.538Z")
+@software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.datasource.ImageCachesProps")
+@software.amazon.jsii.Jsii.Proxy(ImageCachesProps.Jsii$Proxy.class)
+public interface ImageCachesProps extends software.amazon.jsii.JsiiSerializable {
+
+    /**
+     * Property imageCacheId: ImageCacheId.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getImageCacheId() {
+        return null;
+    }
+
+    /**
+     * Property imageCacheName: ImageCacheName.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getImageCacheName() {
+        return null;
+    }
+
+    /**
+     * Property limit: Number of pages.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLimit() {
+        return null;
+    }
+
+    /**
+     * Property resourceGroupId: ResourceGroupId.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
+     * Property snapshotId: SnapshotId.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSnapshotId() {
+        return null;
+    }
+
+    /**
+     * @return a {@link Builder} of {@link ImageCachesProps}
+     */
+    static Builder builder() {
+        return new Builder();
+    }
+    /**
+     * A builder for {@link ImageCachesProps}
+     */
+    public static final class Builder implements software.amazon.jsii.Builder<ImageCachesProps> {
+        java.lang.Object imageCacheId;
+        java.lang.Object imageCacheName;
+        java.lang.Object limit;
+        java.lang.Object resourceGroupId;
+        java.lang.Object snapshotId;
+
+        /**
+         * Sets the value of {@link ImageCachesProps#getImageCacheId}
+         * @param imageCacheId Property imageCacheId: ImageCacheId.
+         * @return {@code this}
+         */
+        public Builder imageCacheId(java.lang.String imageCacheId) {
+            this.imageCacheId = imageCacheId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ImageCachesProps#getImageCacheId}
+         * @param imageCacheId Property imageCacheId: ImageCacheId.
+         * @return {@code this}
+         */
+        public Builder imageCacheId(com.aliyun.ros.cdk.core.IResolvable imageCacheId) {
+            this.imageCacheId = imageCacheId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ImageCachesProps#getImageCacheName}
+         * @param imageCacheName Property imageCacheName: ImageCacheName.
+         * @return {@code this}
+         */
+        public Builder imageCacheName(java.lang.String imageCacheName) {
+            this.imageCacheName = imageCacheName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ImageCachesProps#getImageCacheName}
+         * @param imageCacheName Property imageCacheName: ImageCacheName.
+         * @return {@code this}
+         */
+        public Builder imageCacheName(com.aliyun.ros.cdk.core.IResolvable imageCacheName) {
+            this.imageCacheName = imageCacheName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ImageCachesProps#getLimit}
+         * @param limit Property limit: Number of pages.
+         * @return {@code this}
+         */
+        public Builder limit(java.lang.Number limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ImageCachesProps#getLimit}
+         * @param limit Property limit: Number of pages.
+         * @return {@code this}
+         */
+        public Builder limit(com.aliyun.ros.cdk.core.IResolvable limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ImageCachesProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: ResourceGroupId.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ImageCachesProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: ResourceGroupId.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ImageCachesProps#getSnapshotId}
+         * @param snapshotId Property snapshotId: SnapshotId.
+         * @return {@code this}
+         */
+        public Builder snapshotId(java.lang.String snapshotId) {
+            this.snapshotId = snapshotId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ImageCachesProps#getSnapshotId}
+         * @param snapshotId Property snapshotId: SnapshotId.
+         * @return {@code this}
+         */
+        public Builder snapshotId(com.aliyun.ros.cdk.core.IResolvable snapshotId) {
+            this.snapshotId = snapshotId;
+            return this;
+        }
+
+        /**
+         * Builds the configured instance.
+         * @return a new instance of {@link ImageCachesProps}
+         * @throws NullPointerException if any required attribute was not provided
+         */
+        @Override
+        public ImageCachesProps build() {
+            return new Jsii$Proxy(this);
+        }
+    }
+
+    /**
+     * An implementation for {@link ImageCachesProps}
+     */
+    @software.amazon.jsii.Internal
+    final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ImageCachesProps {
+        private final java.lang.Object imageCacheId;
+        private final java.lang.Object imageCacheName;
+        private final java.lang.Object limit;
+        private final java.lang.Object resourceGroupId;
+        private final java.lang.Object snapshotId;
+
+        /**
+         * Constructor that initializes the object based on values retrieved from the JsiiObject.
+         * @param objRef Reference to the JSII managed object.
+         */
+        protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+            super(objRef);
+            this.imageCacheId = software.amazon.jsii.Kernel.get(this, "imageCacheId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.imageCacheName = software.amazon.jsii.Kernel.get(this, "imageCacheName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.limit = software.amazon.jsii.Kernel.get(this, "limit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.snapshotId = software.amazon.jsii.Kernel.get(this, "snapshotId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+         */
+        protected Jsii$Proxy(final Builder builder) {
+            super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+            this.imageCacheId = builder.imageCacheId;
+            this.imageCacheName = builder.imageCacheName;
+            this.limit = builder.limit;
+            this.resourceGroupId = builder.resourceGroupId;
+            this.snapshotId = builder.snapshotId;
+        }
+
+        @Override
+        public final java.lang.Object getImageCacheId() {
+            return this.imageCacheId;
+        }
+
+        @Override
+        public final java.lang.Object getImageCacheName() {
+            return this.imageCacheName;
+        }
+
+        @Override
+        public final java.lang.Object getLimit() {
+            return this.limit;
+        }
+
+        @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
+        }
+
+        @Override
+        public final java.lang.Object getSnapshotId() {
+            return this.snapshotId;
+        }
+
+        @Override
+        @software.amazon.jsii.Internal
+        public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+            final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+            final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+            if (this.getImageCacheId() != null) {
+                data.set("imageCacheId", om.valueToTree(this.getImageCacheId()));
+            }
+            if (this.getImageCacheName() != null) {
+                data.set("imageCacheName", om.valueToTree(this.getImageCacheName()));
+            }
+            if (this.getLimit() != null) {
+                data.set("limit", om.valueToTree(this.getLimit()));
+            }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
+            if (this.getSnapshotId() != null) {
+                data.set("snapshotId", om.valueToTree(this.getSnapshotId()));
+            }
+
+            final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+            struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-eci.datasource.ImageCachesProps"));
+            struct.set("data", data);
+
+            final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+            obj.set("$jsii.struct", struct);
+
+            return obj;
+        }
+
+        @Override
+        public final boolean equals(final Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+
+            ImageCachesProps.Jsii$Proxy that = (ImageCachesProps.Jsii$Proxy) o;
+
+            if (this.imageCacheId != null ? !this.imageCacheId.equals(that.imageCacheId) : that.imageCacheId != null) return false;
+            if (this.imageCacheName != null ? !this.imageCacheName.equals(that.imageCacheName) : that.imageCacheName != null) return false;
+            if (this.limit != null ? !this.limit.equals(that.limit) : that.limit != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
+            return this.snapshotId != null ? this.snapshotId.equals(that.snapshotId) : that.snapshotId == null;
+        }
+
+        @Override
+        public final int hashCode() {
+            int result = this.imageCacheId != null ? this.imageCacheId.hashCode() : 0;
+            result = 31 * result + (this.imageCacheName != null ? this.imageCacheName.hashCode() : 0);
+            result = 31 * result + (this.limit != null ? this.limit.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
+            result = 31 * result + (this.snapshotId != null ? this.snapshotId.hashCode() : 0);
+            return result;
+        }
+    }
+}

@@ -67,6 +67,10 @@ export interface VpcEndpointServiceProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpointservice
  */
 export class VpcEndpointService extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: VpcEndpointServiceProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute MaxBandwidth: The maximum bandwidth of the endpoint connection.
@@ -105,6 +109,10 @@ export class VpcEndpointService extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: VpcEndpointServiceProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosVpcEndpointService = new RosVpcEndpointService(this, id,  {
             payer: props.payer,

@@ -38,11 +38,15 @@ export interface NetworkAclsProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::NetworkAcls`, which is used to query created network access control lists (ACLs).
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::NetworkAcls`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNetworkAcls`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-networkacls
  */
 export class NetworkAcls extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: NetworkAclsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute NetworkAclIds: The list of The network acl ids.
@@ -61,6 +65,10 @@ export class NetworkAcls extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: NetworkAclsProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosNetworkAcls = new RosNetworkAcls(this, id,  {
             networkAclId: props.networkAclId,

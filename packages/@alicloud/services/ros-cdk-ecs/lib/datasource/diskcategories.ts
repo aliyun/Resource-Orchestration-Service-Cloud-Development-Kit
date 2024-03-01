@@ -57,6 +57,10 @@ export interface DiskCategoriesProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-diskcategories
  */
 export class DiskCategories extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DiskCategoriesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DiskCategories: The list of disk categories.
@@ -75,6 +79,10 @@ export class DiskCategories extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DiskCategoriesProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDiskCategories = new RosDiskCategories(this, id,  {
             type: props.type,

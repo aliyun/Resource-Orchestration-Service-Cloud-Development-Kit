@@ -21,11 +21,15 @@ export interface InfluxDBDatabaseProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::TSDB::InfluxDBDatabase`, which is used to create a Time Series Database (TSDB) database.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::TSDB::InfluxDBDatabase`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInfluxDBDatabase`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-tsdb-influxdbdatabase
  */
 export class InfluxDBDatabase extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: InfluxDBDatabaseProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DBName: The name of database.
@@ -44,6 +48,10 @@ export class InfluxDBDatabase extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: InfluxDBDatabaseProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosInfluxDBDatabase = new RosInfluxDBDatabase(this, id,  {
             instanceId: props.instanceId,

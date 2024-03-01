@@ -110,6 +110,10 @@ export interface ClusterProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-cluster
  */
 export class Cluster extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ClusterProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AclEntryList: The public network whitelist list is used only when the public network is enabled.
@@ -287,6 +291,10 @@ Optional parameters:
      */
     constructor(scope: ros.Construct, id: string, props: ClusterProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCluster = new RosCluster(this, id,  {
             mseVersion: props.mseVersion,

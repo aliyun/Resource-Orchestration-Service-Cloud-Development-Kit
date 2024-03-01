@@ -138,6 +138,10 @@ export interface ProductProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-product
  */
 export class Product extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ProductProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute IotInstanceId: IOT instance ID.
@@ -156,6 +160,10 @@ export class Product extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ProductProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosProduct = new RosProduct(this, id,  {
             publishAuto: props.publishAuto,

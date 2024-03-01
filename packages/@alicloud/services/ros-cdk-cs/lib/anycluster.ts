@@ -21,6 +21,10 @@ export interface AnyClusterProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-anycluster
  */
 export class AnyCluster extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AnyClusterProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute APIServerSLBId: The id of API server SLB
@@ -79,6 +83,10 @@ export class AnyCluster extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AnyClusterProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAnyCluster = new RosAnyCluster(this, id,  {
             clusterConfig: props.clusterConfig,

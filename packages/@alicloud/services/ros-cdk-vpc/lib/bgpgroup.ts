@@ -56,6 +56,10 @@ export interface BgpGroupProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-bgpgroup
  */
 export class BgpGroup extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: BgpGroupProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute BgpGroupId: The ID of the BGP group.
@@ -74,6 +78,10 @@ export class BgpGroup extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: BgpGroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosBgpGroup = new RosBgpGroup(this, id,  {
             description: props.description,

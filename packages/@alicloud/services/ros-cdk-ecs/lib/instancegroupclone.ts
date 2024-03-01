@@ -40,6 +40,11 @@ export interface InstanceGroupCloneProps {
     readonly backendServerWeight?: number | ros.IResolvable;
 
     /**
+     * Property cpuOptions: Cpu options.
+     */
+    readonly cpuOptions?: RosInstanceGroupClone.CpuOptionsProperty | ros.IResolvable;
+
+    /**
      * Property deletionProtection: Whether an instance can be released manually through the console or API, deletion protection only support postPaid instance
      */
     readonly deletionProtection?: boolean | ros.IResolvable;
@@ -61,9 +66,19 @@ export interface InstanceGroupCloneProps {
     readonly diskMappings?: Array<RosInstanceGroupClone.DiskMappingsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property eniMappings: NetworkInterface to attach to instance. Max support 1 ENI.
+     * Property eniMappings: NetworkInterface to attach to instance. Max support 2 ENIs.
      */
     readonly eniMappings?: Array<RosInstanceGroupClone.EniMappingsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property hostNames: The hostname of instance N. You can use this parameter to specify different hostnames for multiple instances. Take note of the following items:
+     * - The maximum value of N must be the same as the Amount value. For example, if you set Amount to 2, you can use HostNames.1 and HostNames.2 to specify hostnames for the individual instances. Examples: HostNames.1=test1 and HostNames.2=test2.
+     * - You cannot specify both HostName and HostNames.N.
+     * - The hostname cannot start or end with a period (.) or hyphen (-). The hostname cannot contain consecutive periods (.) or hyphens (-).
+     * - For Windows instances, the hostname must be 2 to 15 characters in length and cannot contain periods (.) or contain only digits. The hostname can contain letters, digits, and hyphens (-).
+     * - For instances that run other operating systems such as Linux, the hostname must be 2 to 64 characters in length. You can use periods (.) to separate a hostname into multiple segments. Each segment can contain letters, digits, and hyphens (-).
+     */
+    readonly hostNames?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property hpcClusterId: The HPC cluster ID to which the instance belongs.The change of the property does not affect existing instances.
@@ -74,6 +89,11 @@ export interface InstanceGroupCloneProps {
      * Property imageId: Image ID to create ecs instance.
      */
     readonly imageId?: string | ros.IResolvable;
+
+    /**
+     * Property imageOptions: Image options.
+     */
+    readonly imageOptions?: RosInstanceGroupClone.ImageOptionsProperty | ros.IResolvable;
 
     /**
      * Property instanceName: Display name of the instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'. 
@@ -140,6 +160,19 @@ export interface InstanceGroupCloneProps {
     readonly loadBalancerIdToAttach?: string | ros.IResolvable;
 
     /**
+     * Property networkInterfaceQueueNumber: The number of queues supported by the primary ENI. Take note of the following items:
+     * - The value of this parameter cannot exceed the maximum number of queues per ENI allowed for the instance type.
+     * - The total number of queues for all ENIs on the instance cannot exceed the queue quota for the instance type.
+     * - If NetworkInterface.N.InstanceType is set to Primary, you cannot specify NetworkInterfaceQueueNumber but can specify NetworkInterface.N.QueueNumber
+     */
+    readonly networkInterfaceQueueNumber?: number | ros.IResolvable;
+
+    /**
+     * Property networkOptions: Network options.
+     */
+    readonly networkOptions?: RosInstanceGroupClone.NetworkOptionsProperty | ros.IResolvable;
+
+    /**
      * Property password: Password of created ecs instance. Must contain at least 3 types of special character, lower character, upper character, number.
      */
     readonly password?: string | ros.IResolvable;
@@ -178,6 +211,11 @@ export interface InstanceGroupCloneProps {
      * Property securityGroupIds: The IDs of security groups N to which the instance belongs. The valid values of N are based on the maximum number of security groups to which an instance can belong. For more information, see Security group limits.Note: You cannot specify both SecurityGroupId and SecurityGroupIds at the same time.
      */
     readonly securityGroupIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property securityOptions: Security options.
+     */
+    readonly securityOptions?: RosInstanceGroupClone.SecurityOptionsProperty | ros.IResolvable;
 
     /**
      * Property spotPriceLimit: The hourly price threshold of a instance, and it takes effect only when parameter InstanceChargeType is PostPaid. Three decimals is allowed at most.
@@ -251,6 +289,15 @@ export interface InstanceGroupCloneProps {
     readonly tags?: RosInstanceGroupClone.TagsProperty[];
 
     /**
+     * Property uniqueSuffix: Specifies whether to automatically append incremental suffixes to the hostname specified by the **HostName** parameter and to the instance name specified by the **InstanceName** parameter when you batch create instances. The incremental suffixes can range from 001 to 999. Valid values:
+     * - **true**: appends incremental suffixes to the hostname and the instance name.
+     * - **false**: does not append incremental suffixes to the hostname or the instance name.
+     * Default value: **false**.
+     * When the **HostName** or **InstanceName** value is set in the name_prefix[begin_number,bits] format without a suffix (name_suffix), the **UniqueSuffix** parameter does not take effect. The names are sorted in the specified sequence.
+     */
+    readonly uniqueSuffix?: boolean | ros.IResolvable;
+
+    /**
      * Property updatePolicy: Specify the policy at update. 
      * The value can be 'ForNewInstances' or 'ForAllInstances'.
      * If UpdatePolicy is 'ForAllInstance', The updatable parameters are InstanceType, ImageId, SystemDiskSize, SystemDiskCategory, Password, UserData,InternetChargeType, InternetMaxBandwidthOut, InternetMaxBandwidthIn.
@@ -272,6 +319,10 @@ export interface InstanceGroupCloneProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instancegroupclone
  */
 export class InstanceGroupClone extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: InstanceGroupCloneProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute HostNames: Host names of created instances.
@@ -314,6 +365,11 @@ export class InstanceGroupClone extends ros.Resource {
     public readonly attrPublicIps: ros.IResolvable;
 
     /**
+     * Attribute RelatedOrderIds: The related order id list of created ecs instances
+     */
+    public readonly attrRelatedOrderIds: ros.IResolvable;
+
+    /**
      * Attribute ZoneIds: Zone id of created instances.
      */
     public readonly attrZoneIds: ros.IResolvable;
@@ -325,54 +381,65 @@ export class InstanceGroupClone extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: InstanceGroupCloneProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosInstanceGroupClone = new RosInstanceGroupClone(this, id,  {
-            description: props.description,
-            diskMappings: props.diskMappings,
             resourceGroupId: props.resourceGroupId,
             systemDiskDescription: props.systemDiskDescription,
             systemDiskProvisionedIops: props.systemDiskProvisionedIops,
-            autoRenew: props.autoRenew === undefined || props.autoRenew === null ? 'False' : props.autoRenew,
-            ipv6Addresses: props.ipv6Addresses,
             sourceInstanceId: props.sourceInstanceId,
-            systemDiskEncrypted: props.systemDiskEncrypted,
-            maxAmount: props.maxAmount,
-            systemDiskAutoSnapshotPolicyId: props.systemDiskAutoSnapshotPolicyId,
             systemDiskEncryptAlgorithm: props.systemDiskEncryptAlgorithm,
             ramRoleName: props.ramRoleName,
-            ipv6AddressCount: props.ipv6AddressCount,
             imageId: props.imageId,
-            spotPriceLimit: props.spotPriceLimit,
+            imageOptions: props.imageOptions,
             systemDiskDiskName: props.systemDiskDiskName,
             tags: props.tags,
-            spotStrategy: props.spotStrategy,
-            passwordInherit: props.passwordInherit,
-            password: props.password,
             systemDiskStorageClusterId: props.systemDiskStorageClusterId,
-            autoRenewPeriod: props.autoRenewPeriod === undefined || props.autoRenewPeriod === null ? 1 : props.autoRenewPeriod,
             backendServerWeight: props.backendServerWeight === undefined || props.backendServerWeight === null ? 100 : props.backendServerWeight,
-            keyPairName: props.keyPairName,
             launchTemplateName: props.launchTemplateName,
             updatePolicy: props.updatePolicy === undefined || props.updatePolicy === null ? 'ForNewInstances' : props.updatePolicy,
-            zoneId: props.zoneId,
             systemDiskKmsKeyId: props.systemDiskKmsKeyId,
-            hpcClusterId: props.hpcClusterId,
-            securityGroupId: props.securityGroupId,
+            cpuOptions: props.cpuOptions,
             period: props.period === undefined || props.period === null ? 1 : props.period,
             launchTemplateId: props.launchTemplateId,
             deletionProtection: props.deletionProtection,
             securityGroupIds: props.securityGroupIds,
-            loadBalancerIdToAttach: props.loadBalancerIdToAttach,
-            systemDiskCategory: props.systemDiskCategory === undefined || props.systemDiskCategory === null ? 'cloud_efficiency' : props.systemDiskCategory,
             instanceName: props.instanceName,
-            eniMappings: props.eniMappings,
-            systemDiskBurstingEnabled: props.systemDiskBurstingEnabled,
             deploymentSetId: props.deploymentSetId,
             internetMaxBandwidthOut: props.internetMaxBandwidthOut,
-            internetMaxBandwidthIn: props.internetMaxBandwidthIn === undefined || props.internetMaxBandwidthIn === null ? 200 : props.internetMaxBandwidthIn,
+            uniqueSuffix: props.uniqueSuffix === undefined || props.uniqueSuffix === null ? false : props.uniqueSuffix,
+            securityOptions: props.securityOptions,
             launchTemplateVersion: props.launchTemplateVersion,
             periodUnit: props.periodUnit === undefined || props.periodUnit === null ? 'Month' : props.periodUnit,
             autoReleaseTime: props.autoReleaseTime,
+            description: props.description,
+            diskMappings: props.diskMappings,
+            autoRenew: props.autoRenew === undefined || props.autoRenew === null ? 'False' : props.autoRenew,
+            ipv6Addresses: props.ipv6Addresses,
+            systemDiskEncrypted: props.systemDiskEncrypted,
+            maxAmount: props.maxAmount,
+            systemDiskAutoSnapshotPolicyId: props.systemDiskAutoSnapshotPolicyId,
+            ipv6AddressCount: props.ipv6AddressCount,
+            spotPriceLimit: props.spotPriceLimit,
+            hostNames: props.hostNames,
+            spotStrategy: props.spotStrategy,
+            passwordInherit: props.passwordInherit,
+            password: props.password,
+            autoRenewPeriod: props.autoRenewPeriod === undefined || props.autoRenewPeriod === null ? 1 : props.autoRenewPeriod,
+            keyPairName: props.keyPairName,
+            zoneId: props.zoneId,
+            hpcClusterId: props.hpcClusterId,
+            securityGroupId: props.securityGroupId,
+            loadBalancerIdToAttach: props.loadBalancerIdToAttach,
+            systemDiskCategory: props.systemDiskCategory === undefined || props.systemDiskCategory === null ? 'cloud_efficiency' : props.systemDiskCategory,
+            eniMappings: props.eniMappings,
+            systemDiskBurstingEnabled: props.systemDiskBurstingEnabled,
+            networkOptions: props.networkOptions,
+            networkInterfaceQueueNumber: props.networkInterfaceQueueNumber,
+            internetMaxBandwidthIn: props.internetMaxBandwidthIn === undefined || props.internetMaxBandwidthIn === null ? 200 : props.internetMaxBandwidthIn,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstanceGroupClone;
         this.attrHostNames = rosInstanceGroupClone.attrHostNames;
@@ -383,6 +450,7 @@ export class InstanceGroupClone extends ros.Resource {
         this.attrOrderId = rosInstanceGroupClone.attrOrderId;
         this.attrPrivateIps = rosInstanceGroupClone.attrPrivateIps;
         this.attrPublicIps = rosInstanceGroupClone.attrPublicIps;
+        this.attrRelatedOrderIds = rosInstanceGroupClone.attrRelatedOrderIds;
         this.attrZoneIds = rosInstanceGroupClone.attrZoneIds;
     }
 }

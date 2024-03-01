@@ -61,6 +61,10 @@ export interface TransitRouterPeerAttachmentProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterpeerattachment
  */
 export class TransitRouterPeerAttachment extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: TransitRouterPeerAttachmentProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AutoPublishRouteEnabled: AutoPublishRouteEnabled
@@ -139,6 +143,10 @@ export class TransitRouterPeerAttachment extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: TransitRouterPeerAttachmentProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosTransitRouterPeerAttachment = new RosTransitRouterPeerAttachment(this, id,  {
             autoPublishRouteEnabled: props.autoPublishRouteEnabled,

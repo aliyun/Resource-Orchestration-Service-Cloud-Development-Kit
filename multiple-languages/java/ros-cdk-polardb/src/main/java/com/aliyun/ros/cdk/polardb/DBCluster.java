@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::POLARDB::DBCluster</code>, which is used to create a PolarDB cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.221Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:53.748Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DBCluster")
 public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -124,6 +124,38 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
         return software.amazon.jsii.Kernel.get(this, "attrPrimaryEndpointIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
+    protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
+        return software.amazon.jsii.Kernel.get(this, "enableResourcePropertyConstraint", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
+    }
+
+    protected void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
+    }
+
+    protected @org.jetbrains.annotations.NotNull java.lang.String getId() {
+        return software.amazon.jsii.Kernel.get(this, "id", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    }
+
+    protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
+    }
+
+    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.polardb.DBClusterProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.polardb.DBClusterProps.class));
+    }
+
+    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.polardb.DBClusterProps value) {
+        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
+    }
+
+    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {
+        return software.amazon.jsii.Kernel.get(this, "scope", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.Construct.class));
+    }
+
+    protected void setScope(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct value) {
+        software.amazon.jsii.Kernel.set(this, "scope", java.util.Objects.requireNonNull(value, "scope is required"));
+    }
+
     /**
      * A fluent builder for {@link com.aliyun.ros.cdk.polardb.DBCluster}.
      */
@@ -209,8 +241,8 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
          * <p>
          * Valid values:
          * MySQL: 5.6, 5.7 or 8.0
-         * PostgreSQL: 11
-         * Oracle: 11
+         * PostgreSQL: 11, 14
+         * Oracle: 11, 14
          * <p>
          * @return {@code this}
          * @param dbVersion Property dbVersion: The version of the database. This parameter is required.
@@ -224,8 +256,8 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
          * <p>
          * Valid values:
          * MySQL: 5.6, 5.7 or 8.0
-         * PostgreSQL: 11
-         * Oracle: 11
+         * PostgreSQL: 11, 14
+         * Oracle: 11, 14
          * <p>
          * @return {@code this}
          * @param dbVersion Property dbVersion: The version of the database. This parameter is required.

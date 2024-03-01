@@ -16,11 +16,15 @@ export interface InstancesProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::Hologram::Instances`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::Hologram::Instances`, which is used to query Hologres instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstances`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-hologram-instances
  */
 export class Instances extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: InstancesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceIds: The list of instance IDs.
@@ -39,6 +43,10 @@ export class Instances extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: InstancesProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosInstances = new RosInstances(this, id,  {
             resourceGroupId: props.resourceGroupId,

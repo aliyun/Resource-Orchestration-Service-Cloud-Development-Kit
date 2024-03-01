@@ -172,11 +172,15 @@ export interface SmartAccessGatewayProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::SmartAccessGateway`, which is used to create a Smart Access Gateway (SAG) instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::SmartAccessGateway`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSmartAccessGateway`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-smartaccessgateway
  */
 export class SmartAccessGateway extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: SmartAccessGatewayProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute OrderId: The ID of the order.
@@ -195,6 +199,10 @@ export class SmartAccessGateway extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: SmartAccessGatewayProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosSmartAccessGateway = new RosSmartAccessGateway(this, id,  {
             receiverCountry: props.receiverCountry,

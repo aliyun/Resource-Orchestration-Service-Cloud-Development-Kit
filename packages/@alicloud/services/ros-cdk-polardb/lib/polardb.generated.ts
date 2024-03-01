@@ -73,7 +73,7 @@ function rosAITaskPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::AITask`DATASOURCE::POLARDB::DBNodeClasses is used to query the available resources of a PolarDB cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::AITask`, which is used to enable the PolarDB for AI feature.
  * @Note This class does not contain additional functions, so it is recommended to use the `AITask` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-aitask
  */
@@ -570,8 +570,8 @@ export interface RosDBClusterProps {
     /**
      * @Property dbVersion: The version of the database. Valid values:
      * MySQL: 5.6, 5.7 or 8.0
-     * PostgreSQL: 11
-     * Oracle: 11
+     * PostgreSQL: 11, 14
+     * Oracle: 11, 14
      */
     readonly dbVersion: string | ros.IResolvable;
 
@@ -1000,7 +1000,7 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
           data: properties.payType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE","Serverless"],
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
@@ -1264,8 +1264,8 @@ export class RosDBCluster extends ros.RosResource {
     /**
      * @Property dbVersion: The version of the database. Valid values:
      * MySQL: 5.6, 5.7 or 8.0
-     * PostgreSQL: 11
-     * Oracle: 11
+     * PostgreSQL: 11, 14
+     * Oracle: 11, 14
      */
     public dbVersion: string | ros.IResolvable;
 
@@ -2006,7 +2006,7 @@ function rosDBClusterAccessWhiteListPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBClusterAccessWhiteList`, which is used to modify the list of IP addresses that are allowed to access an ApsaraDB for POLARDB cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBClusterAccessWhiteList`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBClusterAccessWhiteList` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusteraccesswhitelist
  */

@@ -48,6 +48,11 @@ export interface InstanceGroupProps {
     readonly autoRenewPeriod?: number | ros.IResolvable;
 
     /**
+     * Property cpuOptions: Cpu options.
+     */
+    readonly cpuOptions?: RosInstanceGroup.CpuOptionsProperty | ros.IResolvable;
+
+    /**
      * Property creditSpecification: The performance mode of the burstable instance. Valid values:
      * - **Standard**: the standard mode.
      * - **Unlimited**: the unlimited mode.
@@ -58,6 +63,11 @@ export interface InstanceGroupProps {
      * Property dedicatedHostId: which dedicated host will be deployed
      */
     readonly dedicatedHostId?: string | ros.IResolvable;
+
+    /**
+     * Property deletionForce: Whether force delete the instance. Default value is false.
+     */
+    readonly deletionForce?: boolean | ros.IResolvable;
 
     /**
      * Property deletionProtection: Whether an instance can be released manually through the console or API, deletion protection only support postPaid instance
@@ -86,7 +96,7 @@ export interface InstanceGroupProps {
     readonly diskMappings?: Array<RosInstanceGroup.DiskMappingsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property eniMappings: NetworkInterface to attach to instance. Max support 1 ENI.
+     * Property eniMappings: NetworkInterface to attach to instance. Max support 2 ENIs.
      */
     readonly eniMappings?: Array<RosInstanceGroup.EniMappingsProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -104,6 +114,16 @@ export interface InstanceGroupProps {
      * The host name is specified by regular expression works after restart instance manually.
      */
     readonly hostName?: string | ros.IResolvable;
+
+    /**
+     * Property hostNames: The hostname of instance N. You can use this parameter to specify different hostnames for multiple instances. Take note of the following items:
+     * - The maximum value of N must be the same as the Amount value. For example, if you set Amount to 2, you can use HostNames.1 and HostNames.2 to specify hostnames for the individual instances. Examples: HostNames.1=test1 and HostNames.2=test2.
+     * - You cannot specify both HostName and HostNames.N.
+     * - The hostname cannot start or end with a period (.) or hyphen (-). The hostname cannot contain consecutive periods (.) or hyphens (-).
+     * - For Windows instances, the hostname must be 2 to 15 characters in length and cannot contain periods (.) or contain only digits. The hostname can contain letters, digits, and hyphens (-).
+     * - For instances that run other operating systems such as Linux, the hostname must be 2 to 64 characters in length. You can use periods (.) to separate a hostname into multiple segments. Each segment can contain letters, digits, and hyphens (-).
+     */
+    readonly hostNames?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property hpcClusterId: The HPC cluster ID to which the instance belongs.The change of the property does not affect existing instances.
@@ -137,6 +157,11 @@ export interface InstanceGroupProps {
      * Property imageId: Image ID to create ecs instance.
      */
     readonly imageId?: string | ros.IResolvable;
+
+    /**
+     * Property imageOptions: Image options.
+     */
+    readonly imageOptions?: RosInstanceGroup.ImageOptionsProperty | ros.IResolvable;
 
     /**
      * Property instanceChargeType: Instance Charge type, allowed value: Prepaid and Postpaid. If specified Prepaid, please ensure you have sufficient balance in your account. Or instance creation will be failure. Default value is Postpaid.Old instances will not be changed.
@@ -208,6 +233,19 @@ export interface InstanceGroupProps {
     readonly launchTemplateVersion?: string | ros.IResolvable;
 
     /**
+     * Property networkInterfaceQueueNumber: The number of queues supported by the primary ENI. Take note of the following items:
+     * - The value of this parameter cannot exceed the maximum number of queues per ENI allowed for the instance type.
+     * - The total number of queues for all ENIs on the instance cannot exceed the queue quota for the instance type.
+     * - If NetworkInterface.N.InstanceType is set to Primary, you cannot specify NetworkInterfaceQueueNumber but can specify NetworkInterface.N.QueueNumber
+     */
+    readonly networkInterfaceQueueNumber?: number | ros.IResolvable;
+
+    /**
+     * Property networkOptions: Network options.
+     */
+    readonly networkOptions?: RosInstanceGroup.NetworkOptionsProperty | ros.IResolvable;
+
+    /**
      * Property networkType: Instance network type. Support 'vpc' and 'classic', for compatible reason, default is 'classic'. If vswitch id and vpc id is specified, the property will be forced to be set to 'vpc'
      */
     readonly networkType?: string | ros.IResolvable;
@@ -253,6 +291,11 @@ export interface InstanceGroupProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
+     * Property schedulerOptions: undefined
+     */
+    readonly schedulerOptions?: RosInstanceGroup.SchedulerOptionsProperty | ros.IResolvable;
+
+    /**
      * Property securityEnhancementStrategy:
      */
     readonly securityEnhancementStrategy?: string | ros.IResolvable;
@@ -266,6 +309,11 @@ export interface InstanceGroupProps {
      * Property securityGroupIds: The IDs of security groups N to which the instance belongs. The valid values of N are based on the maximum number of security groups to which an instance can belong. For more information, see Security group limits.Note: You cannot specify both SecurityGroupId and SecurityGroupIds at the same time.
      */
     readonly securityGroupIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property securityOptions: Security options.
+     */
+    readonly securityOptions?: RosInstanceGroup.SecurityOptionsProperty | ros.IResolvable;
 
     /**
      * Property spotDuration: The protection period of the preemptible instance. Unit: hours. Valid values: 0, 1, 2, 3, 4, 5, and 6.
@@ -380,6 +428,15 @@ export interface InstanceGroupProps {
     readonly tenancy?: string | ros.IResolvable;
 
     /**
+     * Property uniqueSuffix: Specifies whether to automatically append incremental suffixes to the hostname specified by the **HostName** parameter and to the instance name specified by the **InstanceName** parameter when you batch create instances. The incremental suffixes can range from 001 to 999. Valid values:
+     * - **true**: appends incremental suffixes to the hostname and the instance name.
+     * - **false**: does not append incremental suffixes to the hostname or the instance name.
+     * Default value: **false**.
+     * When the **HostName** or **InstanceName** value is set in the name_prefix[begin_number,bits] format without a suffix (name_suffix), the **UniqueSuffix** parameter does not take effect. The names are sorted in the specified sequence.
+     */
+    readonly uniqueSuffix?: boolean | ros.IResolvable;
+
+    /**
      * Property updatePolicy: Specify the policy at update. 
      * The value can be 'ForNewInstances' or 'ForAllInstances'.
      * If UpdatePolicy is 'ForAllInstance', The updatable parameters are InstanceType, ImageId, SystemDiskSize, SystemDiskCategory, Password, UserData,InternetChargeType, InternetMaxBandwidthOut, InternetMaxBandwidthIn.
@@ -426,6 +483,10 @@ export interface InstanceGroupProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instancegroup
  */
 export class InstanceGroup extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: InstanceGroupProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute HostNames: Host names of created instances.
@@ -479,6 +540,10 @@ export class InstanceGroup extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: InstanceGroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosInstanceGroup = new RosInstanceGroup(this, id,  {
             dedicatedHostId: props.dedicatedHostId,
@@ -491,6 +556,7 @@ export class InstanceGroup extends ros.Resource {
             privatePoolOptions: props.privatePoolOptions,
             systemDiskPerformanceLevel: props.systemDiskPerformanceLevel,
             imageId: props.imageId,
+            imageOptions: props.imageOptions,
             systemDiskDiskName: props.systemDiskDiskName,
             storageSetId: props.storageSetId,
             useAdditionalService: props.useAdditionalService,
@@ -500,6 +566,7 @@ export class InstanceGroup extends ros.Resource {
             launchTemplateName: props.launchTemplateName,
             updatePolicy: props.updatePolicy === undefined || props.updatePolicy === null ? 'ForNewInstances' : props.updatePolicy,
             systemDiskKmsKeyId: props.systemDiskKmsKeyId,
+            cpuOptions: props.cpuOptions,
             vSwitchId: props.vSwitchId,
             period: props.period === undefined || props.period === null ? 1 : props.period,
             imageFamily: props.imageFamily,
@@ -508,12 +575,14 @@ export class InstanceGroup extends ros.Resource {
             httpEndpoint: props.httpEndpoint,
             securityGroupIds: props.securityGroupIds,
             internetChargeType: props.internetChargeType === undefined || props.internetChargeType === null ? 'PayByTraffic' : props.internetChargeType,
+            deploymentSetId: props.deploymentSetId,
             spotInterruptionBehavior: props.spotInterruptionBehavior === undefined || props.spotInterruptionBehavior === null ? 'Terminate' : props.spotInterruptionBehavior,
             instanceName: props.instanceName,
-            deploymentSetId: props.deploymentSetId,
             internetMaxBandwidthOut: props.internetMaxBandwidthOut === undefined || props.internetMaxBandwidthOut === null ? 1 : props.internetMaxBandwidthOut,
             vpcId: props.vpcId,
+            uniqueSuffix: props.uniqueSuffix === undefined || props.uniqueSuffix === null ? false : props.uniqueSuffix,
             launchTemplateVersion: props.launchTemplateVersion,
+            securityOptions: props.securityOptions,
             affinity: props.affinity,
             securityEnhancementStrategy: props.securityEnhancementStrategy,
             autoReleaseTime: props.autoReleaseTime,
@@ -522,8 +591,8 @@ export class InstanceGroup extends ros.Resource {
             privateIpAddress: props.privateIpAddress,
             description: props.description,
             diskMappings: props.diskMappings,
-            userData: props.userData,
             systemDiskSize: props.systemDiskSize,
+            userData: props.userData,
             autoRenew: props.autoRenew === undefined || props.autoRenew === null ? 'False' : props.autoRenew,
             spotDuration: props.spotDuration,
             storageSetPartitionNumber: props.storageSetPartitionNumber,
@@ -531,9 +600,12 @@ export class InstanceGroup extends ros.Resource {
             systemDiskEncrypted: props.systemDiskEncrypted,
             maxAmount: props.maxAmount,
             systemDiskAutoSnapshotPolicyId: props.systemDiskAutoSnapshotPolicyId,
+            deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
             networkType: props.networkType,
             ipv6AddressCount: props.ipv6AddressCount,
+            schedulerOptions: props.schedulerOptions,
             spotPriceLimit: props.spotPriceLimit,
+            hostNames: props.hostNames,
             zoneIds: props.zoneIds,
             instanceType: props.instanceType,
             allocatePublicIp: props.allocatePublicIp === undefined || props.allocatePublicIp === null ? true : props.allocatePublicIp,
@@ -550,7 +622,9 @@ export class InstanceGroup extends ros.Resource {
             systemDiskCategory: props.systemDiskCategory === undefined || props.systemDiskCategory === null ? 'cloud_efficiency' : props.systemDiskCategory,
             systemDiskBurstingEnabled: props.systemDiskBurstingEnabled,
             eniMappings: props.eniMappings,
+            networkOptions: props.networkOptions,
             httpTokens: props.httpTokens,
+            networkInterfaceQueueNumber: props.networkInterfaceQueueNumber,
             creditSpecification: props.creditSpecification,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstanceGroup;

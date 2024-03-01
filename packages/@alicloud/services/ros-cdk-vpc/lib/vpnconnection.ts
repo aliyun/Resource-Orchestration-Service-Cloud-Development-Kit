@@ -110,11 +110,15 @@ export interface VpnConnectionProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpnConnection`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpnConnection`, which is used to create an IPsec-VPN connection.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpnConnection`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnconnection
  */
 export class VpnConnection extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: VpnConnectionProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute PeerVpnConnectionConfig: Peer vpc connection config.
@@ -138,6 +142,10 @@ export class VpnConnection extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: VpnConnectionProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosVpnConnection = new RosVpnConnection(this, id,  {
             localSubnet: props.localSubnet,

@@ -29,11 +29,15 @@ export interface AccessGroupProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DFS::AccessGroup`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DFS::AccessGroup`, which is used to create a permission group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccessGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-accessgroup
  */
 export class AccessGroup extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AccessGroupProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AccessGroupId: The ID of the access_group.
@@ -47,6 +51,10 @@ export class AccessGroup extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AccessGroupProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAccessGroup = new RosAccessGroup(this, id,  {
             description: props.description,

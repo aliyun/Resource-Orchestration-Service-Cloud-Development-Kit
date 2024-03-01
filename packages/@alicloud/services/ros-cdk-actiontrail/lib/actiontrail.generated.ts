@@ -14,24 +14,24 @@ export interface RosTrailProps {
     readonly name: string | ros.IResolvable;
 
     /**
-     * @Property ossBucketName: The OSS bucket to which the trail delivers logs. Ensure that this is an existing OSS bucket.
-     */
-    readonly ossBucketName: string | ros.IResolvable;
-
-    /**
-     * @Property roleName: The RAM role in ActionTrail permitted by the user.
-     */
-    readonly roleName: string | ros.IResolvable;
-
-    /**
      * @Property eventRw: Indicates whether the event is a read or a write event. Valid values: Read, Write, and All. Default value: Write.
      */
     readonly eventRw?: string | ros.IResolvable;
 
     /**
+     * @Property ossBucketName: The OSS bucket to which the trail delivers logs. Ensure that this is an existing OSS bucket.
+     */
+    readonly ossBucketName?: string | ros.IResolvable;
+
+    /**
      * @Property ossKeyPrefix: The prefix of the specified OSS bucket name. This parameter can be left empty.
      */
     readonly ossKeyPrefix?: string | ros.IResolvable;
+
+    /**
+     * @Property roleName: The RAM role in ActionTrail permitted by the user.
+     */
+    readonly roleName?: string | ros.IResolvable;
 
     /**
      * @Property slsProjectArn: The unique ARN of the Log Service project.
@@ -55,7 +55,6 @@ function RosTrailPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('slsProjectArn', ros.validateString)(properties.slsProjectArn));
-    errors.collect(ros.propertyValidator('roleName', ros.requiredValidator)(properties.roleName));
     errors.collect(ros.propertyValidator('roleName', ros.validateString)(properties.roleName));
     if(properties.eventRw && (typeof properties.eventRw) !== 'object') {
         errors.collect(ros.propertyValidator('eventRw', ros.validateAllowedValues)({
@@ -65,7 +64,6 @@ function RosTrailPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('eventRw', ros.validateString)(properties.eventRw));
     errors.collect(ros.propertyValidator('ossKeyPrefix', ros.validateString)(properties.ossKeyPrefix));
-    errors.collect(ros.propertyValidator('ossBucketName', ros.requiredValidator)(properties.ossBucketName));
     errors.collect(ros.propertyValidator('ossBucketName', ros.validateString)(properties.ossBucketName));
     errors.collect(ros.propertyValidator('slsWriteRoleArn', ros.validateString)(properties.slsWriteRoleArn));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
@@ -88,10 +86,10 @@ function rosTrailPropsToRosTemplate(properties: any, enableResourcePropertyConst
     }
     return {
       Name: ros.stringToRosTemplate(properties.name),
-      OssBucketName: ros.stringToRosTemplate(properties.ossBucketName),
-      RoleName: ros.stringToRosTemplate(properties.roleName),
       EventRW: ros.stringToRosTemplate(properties.eventRw),
+      OssBucketName: ros.stringToRosTemplate(properties.ossBucketName),
       OssKeyPrefix: ros.stringToRosTemplate(properties.ossKeyPrefix),
+      RoleName: ros.stringToRosTemplate(properties.roleName),
       SlsProjectArn: ros.stringToRosTemplate(properties.slsProjectArn),
       SlsWriteRoleArn: ros.stringToRosTemplate(properties.slsWriteRoleArn),
     };
@@ -122,24 +120,24 @@ export class RosTrail extends ros.RosResource {
     public name: string | ros.IResolvable;
 
     /**
-     * @Property ossBucketName: The OSS bucket to which the trail delivers logs. Ensure that this is an existing OSS bucket.
-     */
-    public ossBucketName: string | ros.IResolvable;
-
-    /**
-     * @Property roleName: The RAM role in ActionTrail permitted by the user.
-     */
-    public roleName: string | ros.IResolvable;
-
-    /**
      * @Property eventRw: Indicates whether the event is a read or a write event. Valid values: Read, Write, and All. Default value: Write.
      */
     public eventRw: string | ros.IResolvable | undefined;
 
     /**
+     * @Property ossBucketName: The OSS bucket to which the trail delivers logs. Ensure that this is an existing OSS bucket.
+     */
+    public ossBucketName: string | ros.IResolvable | undefined;
+
+    /**
      * @Property ossKeyPrefix: The prefix of the specified OSS bucket name. This parameter can be left empty.
      */
     public ossKeyPrefix: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property roleName: The RAM role in ActionTrail permitted by the user.
+     */
+    public roleName: string | ros.IResolvable | undefined;
 
     /**
      * @Property slsProjectArn: The unique ARN of the Log Service project.
@@ -162,10 +160,10 @@ export class RosTrail extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.name = props.name;
-        this.ossBucketName = props.ossBucketName;
-        this.roleName = props.roleName;
         this.eventRw = props.eventRw;
+        this.ossBucketName = props.ossBucketName;
         this.ossKeyPrefix = props.ossKeyPrefix;
+        this.roleName = props.roleName;
         this.slsProjectArn = props.slsProjectArn;
         this.slsWriteRoleArn = props.slsWriteRoleArn;
     }
@@ -174,10 +172,10 @@ export class RosTrail extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             name: this.name,
-            ossBucketName: this.ossBucketName,
-            roleName: this.roleName,
             eventRw: this.eventRw,
+            ossBucketName: this.ossBucketName,
             ossKeyPrefix: this.ossKeyPrefix,
+            roleName: this.roleName,
             slsProjectArn: this.slsProjectArn,
             slsWriteRoleArn: this.slsWriteRoleArn,
         };

@@ -52,6 +52,10 @@ export interface MountPointProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-mountpoint
  */
 export class MountPoint extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: MountPointProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute MountPointId: The ID of the mount point.
@@ -65,6 +69,10 @@ export class MountPoint extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: MountPointProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosMountPoint = new RosMountPoint(this, id,  {
             status: props.status,

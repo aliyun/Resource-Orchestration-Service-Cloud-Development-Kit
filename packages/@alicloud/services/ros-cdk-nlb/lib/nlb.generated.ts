@@ -102,6 +102,11 @@ export interface RosListenerProps {
      * @Property startPort: StartPort of the portRange
      */
     readonly startPort?: number | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosListener.TagsProperty[];
 }
 
 /**
@@ -204,6 +209,14 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('certificateIds', ros.listValidator(ros.validateString))(properties.certificateIds));
     errors.collect(ros.propertyValidator('secSensorEnabled', ros.validateBoolean)(properties.secSensorEnabled));
     errors.collect(ros.propertyValidator('enable', ros.validateBoolean)(properties.enable));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosListener_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('alpnEnabled', ros.validateBoolean)(properties.alpnEnabled));
     return errors.wrap('supplied properties not correct for "RosListenerProps"');
 }
@@ -241,6 +254,7 @@ function rosListenerPropsToRosTemplate(properties: any, enableResourcePropertyCo
       SecSensorEnabled: ros.booleanToRosTemplate(properties.secSensorEnabled),
       SecurityPolicyId: ros.stringToRosTemplate(properties.securityPolicyId),
       StartPort: ros.numberToRosTemplate(properties.startPort),
+      Tags: ros.listMapper(rosListenerTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -364,6 +378,11 @@ export class RosListener extends ros.RosResource {
     public startPort: number | ros.IResolvable | undefined;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosListener.TagsProperty[] | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -393,6 +412,7 @@ export class RosListener extends ros.RosResource {
         this.secSensorEnabled = props.secSensorEnabled;
         this.securityPolicyId = props.securityPolicyId;
         this.startPort = props.startPort;
+        this.tags = props.tags;
     }
 
 
@@ -417,11 +437,60 @@ export class RosListener extends ros.RosResource {
             secSensorEnabled: this.secSensorEnabled,
             securityPolicyId: this.securityPolicyId,
             startPort: this.startPort,
+            tags: this.tags,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosListenerPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosListener {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosListener_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::NLB::Listener.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::NLB::Listener.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosListenerTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosListener_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**
@@ -1156,7 +1225,7 @@ function rosSecurityGroupAttachmentPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::SecurityGroupAttachment`DATASOURCE::NLB::LoadBalancers is used to query the basic information about created Network Load Balancer (NLB) instances.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::SecurityGroupAttachment`, which is used to bind a security group to a Network Load Balancer (NLB) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecurityGroupAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-securitygroupattachment
  */
@@ -1205,15 +1274,231 @@ export class RosSecurityGroupAttachment extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosSecurityPolicy`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-securitypolicy
+ */
+export interface RosSecurityPolicyProps {
+
+    /**
+     * @Property ciphers: TThe supported cipher suites, which are determined by the TLS protocol version. You can specify at most 32 cipher suites.
+     */
+    readonly ciphers: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property tlsVersions: The supported versions of the Transport Layer Security (TLS) protocol. Valid values: TLSv1.0, TLSv1.1, TLSv1.2, and TLSv1.3.
+     */
+    readonly tlsVersions: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property securityPolicyName: The name of the security policy.
+     * The name must be 1 to 200 characters in length, and can contain letters, digits, periods (.), underscores (_), and hyphens (-).
+     */
+    readonly securityPolicyName?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosSecurityPolicy.TagsProperty[];
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSecurityPolicyProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSecurityPolicyProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSecurityPolicyPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('ciphers', ros.requiredValidator)(properties.ciphers));
+    if(properties.ciphers && (Array.isArray(properties.ciphers) || (typeof properties.ciphers) === 'string')) {
+        errors.collect(ros.propertyValidator('ciphers', ros.validateLength)({
+            data: properties.ciphers.length,
+            min: 1,
+            max: 32,
+          }));
+    }
+    errors.collect(ros.propertyValidator('ciphers', ros.listValidator(ros.validateString))(properties.ciphers));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('securityPolicyName', ros.validateString)(properties.securityPolicyName));
+    errors.collect(ros.propertyValidator('tlsVersions', ros.requiredValidator)(properties.tlsVersions));
+    if(properties.tlsVersions && (Array.isArray(properties.tlsVersions) || (typeof properties.tlsVersions) === 'string')) {
+        errors.collect(ros.propertyValidator('tlsVersions', ros.validateLength)({
+            data: properties.tlsVersions.length,
+            min: 1,
+            max: 4,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tlsVersions', ros.listValidator(ros.validateString))(properties.tlsVersions));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosSecurityPolicy_TagsPropertyValidator))(properties.tags));
+    return errors.wrap('supplied properties not correct for "RosSecurityPolicyProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::NLB::SecurityPolicy` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSecurityPolicyProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::NLB::SecurityPolicy` resource.
+ */
+// @ts-ignore TS6133
+function rosSecurityPolicyPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSecurityPolicyPropsValidator(properties).assertSuccess();
+    }
+    return {
+      Ciphers: ros.listMapper(ros.stringToRosTemplate)(properties.ciphers),
+      TlsVersions: ros.listMapper(ros.stringToRosTemplate)(properties.tlsVersions),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      SecurityPolicyName: ros.stringToRosTemplate(properties.securityPolicyName),
+      Tags: ros.listMapper(rosSecurityPolicyTagsPropertyToRosTemplate)(properties.tags),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::SecurityPolicy`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SecurityPolicy` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-securitypolicy
+ */
+export class RosSecurityPolicy extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::NLB::SecurityPolicy";
+
+    /**
+     * @Attribute SecurityPolicyId: The ID of the security policy.
+     */
+    public readonly attrSecurityPolicyId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property ciphers: TThe supported cipher suites, which are determined by the TLS protocol version. You can specify at most 32 cipher suites.
+     */
+    public ciphers: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property tlsVersions: The supported versions of the Transport Layer Security (TLS) protocol. Valid values: TLSv1.0, TLSv1.1, TLSv1.2, and TLSv1.3.
+     */
+    public tlsVersions: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property securityPolicyName: The name of the security policy.
+     * The name must be 1 to 200 characters in length, and can contain letters, digits, periods (.), underscores (_), and hyphens (-).
+     */
+    public securityPolicyName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosSecurityPolicy.TagsProperty[] | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSecurityPolicyProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSecurityPolicy.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrSecurityPolicyId = this.getAtt('SecurityPolicyId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.ciphers = props.ciphers;
+        this.tlsVersions = props.tlsVersions;
+        this.resourceGroupId = props.resourceGroupId;
+        this.securityPolicyName = props.securityPolicyName;
+        this.tags = props.tags;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            ciphers: this.ciphers,
+            tlsVersions: this.tlsVersions,
+            resourceGroupId: this.resourceGroupId,
+            securityPolicyName: this.securityPolicyName,
+            tags: this.tags,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSecurityPolicyPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosSecurityPolicy {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSecurityPolicy_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::NLB::SecurityPolicy.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::NLB::SecurityPolicy.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosSecurityPolicyTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSecurityPolicy_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
  * Properties for defining a `RosServerGroup`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-servergroup
  */
 export interface RosServerGroupProps {
-
-    /**
-     * @Property healthCheckConfig: Health Check Config
-     */
-    readonly healthCheckConfig: RosServerGroup.HealthCheckConfigProperty | ros.IResolvable;
 
     /**
      * @Property serverGroupName: Name of ServerGroup
@@ -1231,6 +1516,13 @@ export interface RosServerGroupProps {
     readonly addressIpVersion?: string | ros.IResolvable;
 
     /**
+     * @Property anyPortEnabled: Specifies whether to enable all-port forwarding. Valid values:
+     * true
+     * false (default)
+     */
+    readonly anyPortEnabled?: boolean | ros.IResolvable;
+
+    /**
      * @Property connectionDrainEnabled: Whether to enable graceful connection interruption
      */
     readonly connectionDrainEnabled?: boolean | ros.IResolvable;
@@ -1239,6 +1531,11 @@ export interface RosServerGroupProps {
      * @Property connectionDrainTimeout: Time of graceful connection interruption
      */
     readonly connectionDrainTimeout?: number | ros.IResolvable;
+
+    /**
+     * @Property healthCheckConfig: Health Check Config
+     */
+    readonly healthCheckConfig?: RosServerGroup.HealthCheckConfigProperty | ros.IResolvable;
 
     /**
      * @Property persistenceEnabled: Whether to enable session persistence
@@ -1279,6 +1576,11 @@ export interface RosServerGroupProps {
      * @Property servers: undefined
      */
     readonly servers?: Array<RosServerGroup.ServersProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosServerGroup.TagsProperty[];
 }
 
 /**
@@ -1299,18 +1601,12 @@ function RosServerGroupPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('scheduler', ros.validateString)(properties.scheduler));
-    if(properties.addressIpVersion && (typeof properties.addressIpVersion) !== 'object') {
-        errors.collect(ros.propertyValidator('addressIpVersion', ros.validateAllowedValues)({
-          data: properties.addressIpVersion,
-          allowedValues: ["Ipv4","Ipv6"],
-        }));
-    }
     errors.collect(ros.propertyValidator('addressIpVersion', ros.validateString)(properties.addressIpVersion));
     if(properties.servers && (Array.isArray(properties.servers) || (typeof properties.servers) === 'string')) {
         errors.collect(ros.propertyValidator('servers', ros.validateLength)({
             data: properties.servers.length,
             min: undefined,
-            max: 20,
+            max: 1000,
           }));
     }
     errors.collect(ros.propertyValidator('servers', ros.listValidator(RosServerGroup_ServersPropertyValidator))(properties.servers));
@@ -1327,7 +1623,7 @@ function RosServerGroupPropsValidator(properties: any): ros.ValidationResult {
     if(properties.connectionDrainTimeout && (typeof properties.connectionDrainTimeout) !== 'object') {
         errors.collect(ros.propertyValidator('connectionDrainTimeout', ros.validateRange)({
             data: properties.connectionDrainTimeout,
-            min: 10,
+            min: 0,
             max: 900,
           }));
     }
@@ -1342,7 +1638,7 @@ function RosServerGroupPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('persistenceTimeout', ros.validateNumber)(properties.persistenceTimeout));
     errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
-    errors.collect(ros.propertyValidator('healthCheckConfig', ros.requiredValidator)(properties.healthCheckConfig));
+    errors.collect(ros.propertyValidator('anyPortEnabled', ros.validateBoolean)(properties.anyPortEnabled));
     errors.collect(ros.propertyValidator('healthCheckConfig', RosServerGroup_HealthCheckConfigPropertyValidator)(properties.healthCheckConfig));
     if(properties.protocol && (typeof properties.protocol) !== 'object') {
         errors.collect(ros.propertyValidator('protocol', ros.validateAllowedValues)({
@@ -1351,6 +1647,14 @@ function RosServerGroupPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('protocol', ros.validateString)(properties.protocol));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosServerGroup_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('serverGroupName', ros.requiredValidator)(properties.serverGroupName));
     errors.collect(ros.propertyValidator('serverGroupName', ros.validateString)(properties.serverGroupName));
     return errors.wrap('supplied properties not correct for "RosServerGroupProps"');
@@ -1370,12 +1674,13 @@ function rosServerGroupPropsToRosTemplate(properties: any, enableResourcePropert
         RosServerGroupPropsValidator(properties).assertSuccess();
     }
     return {
-      HealthCheckConfig: rosServerGroupHealthCheckConfigPropertyToRosTemplate(properties.healthCheckConfig),
       ServerGroupName: ros.stringToRosTemplate(properties.serverGroupName),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       AddressIPVersion: ros.stringToRosTemplate(properties.addressIpVersion),
+      AnyPortEnabled: ros.booleanToRosTemplate(properties.anyPortEnabled),
       ConnectionDrainEnabled: ros.booleanToRosTemplate(properties.connectionDrainEnabled),
       ConnectionDrainTimeout: ros.numberToRosTemplate(properties.connectionDrainTimeout),
+      HealthCheckConfig: rosServerGroupHealthCheckConfigPropertyToRosTemplate(properties.healthCheckConfig),
       PersistenceEnabled: ros.booleanToRosTemplate(properties.persistenceEnabled),
       PersistenceTimeout: ros.numberToRosTemplate(properties.persistenceTimeout),
       PreserveClientIpEnabled: ros.booleanToRosTemplate(properties.preserveClientIpEnabled),
@@ -1384,6 +1689,7 @@ function rosServerGroupPropsToRosTemplate(properties: any, enableResourcePropert
       Scheduler: ros.stringToRosTemplate(properties.scheduler),
       ServerGroupType: ros.stringToRosTemplate(properties.serverGroupType),
       Servers: ros.listMapper(rosServerGroupServersPropertyToRosTemplate)(properties.servers),
+      Tags: ros.listMapper(rosServerGroupTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -1407,11 +1713,6 @@ export class RosServerGroup extends ros.RosResource {
 
 
     /**
-     * @Property healthCheckConfig: Health Check Config
-     */
-    public healthCheckConfig: RosServerGroup.HealthCheckConfigProperty | ros.IResolvable;
-
-    /**
      * @Property serverGroupName: Name of ServerGroup
      */
     public serverGroupName: string | ros.IResolvable;
@@ -1427,6 +1728,13 @@ export class RosServerGroup extends ros.RosResource {
     public addressIpVersion: string | ros.IResolvable | undefined;
 
     /**
+     * @Property anyPortEnabled: Specifies whether to enable all-port forwarding. Valid values:
+     * true
+     * false (default)
+     */
+    public anyPortEnabled: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property connectionDrainEnabled: Whether to enable graceful connection interruption
      */
     public connectionDrainEnabled: boolean | ros.IResolvable | undefined;
@@ -1435,6 +1743,11 @@ export class RosServerGroup extends ros.RosResource {
      * @Property connectionDrainTimeout: Time of graceful connection interruption
      */
     public connectionDrainTimeout: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property healthCheckConfig: Health Check Config
+     */
+    public healthCheckConfig: RosServerGroup.HealthCheckConfigProperty | ros.IResolvable | undefined;
 
     /**
      * @Property persistenceEnabled: Whether to enable session persistence
@@ -1477,6 +1790,11 @@ export class RosServerGroup extends ros.RosResource {
     public servers: Array<RosServerGroup.ServersProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosServerGroup.TagsProperty[] | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1486,12 +1804,13 @@ export class RosServerGroup extends ros.RosResource {
         this.attrServerGroupId = this.getAtt('ServerGroupId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-        this.healthCheckConfig = props.healthCheckConfig;
         this.serverGroupName = props.serverGroupName;
         this.vpcId = props.vpcId;
         this.addressIpVersion = props.addressIpVersion;
+        this.anyPortEnabled = props.anyPortEnabled;
         this.connectionDrainEnabled = props.connectionDrainEnabled;
         this.connectionDrainTimeout = props.connectionDrainTimeout;
+        this.healthCheckConfig = props.healthCheckConfig;
         this.persistenceEnabled = props.persistenceEnabled;
         this.persistenceTimeout = props.persistenceTimeout;
         this.preserveClientIpEnabled = props.preserveClientIpEnabled;
@@ -1500,17 +1819,19 @@ export class RosServerGroup extends ros.RosResource {
         this.scheduler = props.scheduler;
         this.serverGroupType = props.serverGroupType;
         this.servers = props.servers;
+        this.tags = props.tags;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
-            healthCheckConfig: this.healthCheckConfig,
             serverGroupName: this.serverGroupName,
             vpcId: this.vpcId,
             addressIpVersion: this.addressIpVersion,
+            anyPortEnabled: this.anyPortEnabled,
             connectionDrainEnabled: this.connectionDrainEnabled,
             connectionDrainTimeout: this.connectionDrainTimeout,
+            healthCheckConfig: this.healthCheckConfig,
             persistenceEnabled: this.persistenceEnabled,
             persistenceTimeout: this.persistenceTimeout,
             preserveClientIpEnabled: this.preserveClientIpEnabled,
@@ -1519,6 +1840,7 @@ export class RosServerGroup extends ros.RosResource {
             scheduler: this.scheduler,
             serverGroupType: this.serverGroupType,
             servers: this.servers,
+            tags: this.tags,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -1599,7 +1921,7 @@ function RosServerGroup_HealthCheckConfigPropertyValidator(properties: any): ros
     if(properties.healthCheckConnectPort && (typeof properties.healthCheckConnectPort) !== 'object') {
         errors.collect(ros.propertyValidator('healthCheckConnectPort', ros.validateRange)({
             data: properties.healthCheckConnectPort,
-            min: 1,
+            min: 0,
             max: 65535,
           }));
     }
@@ -1767,5 +2089,53 @@ function rosServerGroupServersPropertyToRosTemplate(properties: any): any {
       ServerIp: ros.stringToRosTemplate(properties.serverIp),
       Port: ros.numberToRosTemplate(properties.port),
       Weight: ros.numberToRosTemplate(properties.weight),
+    };
+}
+
+export namespace RosServerGroup {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosServerGroup_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::NLB::ServerGroup.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::NLB::ServerGroup.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosServerGroupTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosServerGroup_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
     };
 }

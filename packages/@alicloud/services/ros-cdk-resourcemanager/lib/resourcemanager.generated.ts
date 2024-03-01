@@ -14,6 +14,11 @@ export interface RosAccountProps {
     readonly displayName: string | ros.IResolvable;
 
     /**
+     * @Property deleteAccount: Whether delete the account. Default value is false.
+     */
+    readonly deleteAccount?: boolean | ros.IResolvable;
+
+    /**
      * @Property folderId: The ID of the parent folder
      */
     readonly folderId?: string | ros.IResolvable;
@@ -38,6 +43,7 @@ function RosAccountPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('displayName', ros.requiredValidator)(properties.displayName));
     errors.collect(ros.propertyValidator('displayName', ros.validateString)(properties.displayName));
     errors.collect(ros.propertyValidator('folderId', ros.validateString)(properties.folderId));
+    errors.collect(ros.propertyValidator('deleteAccount', ros.validateBoolean)(properties.deleteAccount));
     return errors.wrap('supplied properties not correct for "RosAccountProps"');
 }
 
@@ -56,13 +62,14 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
     }
     return {
       DisplayName: ros.stringToRosTemplate(properties.displayName),
+      DeleteAccount: ros.booleanToRosTemplate(properties.deleteAccount),
       FolderId: ros.stringToRosTemplate(properties.folderId),
       PayerAccountId: ros.stringToRosTemplate(properties.payerAccountId),
     };
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::Account`ALIYUN::ResourceManager::ControlPolicy is used to create a custom control policy.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::Account`, which is used to create a resource account as a member account.
  * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-account
  */
@@ -111,6 +118,11 @@ export class RosAccount extends ros.RosResource {
     public displayName: string | ros.IResolvable;
 
     /**
+     * @Property deleteAccount: Whether delete the account. Default value is false.
+     */
+    public deleteAccount: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property folderId: The ID of the parent folder
      */
     public folderId: string | ros.IResolvable | undefined;
@@ -136,6 +148,7 @@ export class RosAccount extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.displayName = props.displayName;
+        this.deleteAccount = props.deleteAccount;
         this.folderId = props.folderId;
         this.payerAccountId = props.payerAccountId;
     }
@@ -144,6 +157,7 @@ export class RosAccount extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             displayName: this.displayName,
+            deleteAccount: this.deleteAccount,
             folderId: this.folderId,
             payerAccountId: this.payerAccountId,
         };
@@ -222,7 +236,7 @@ function rosControlPolicyPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::ControlPolicy`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::ControlPolicy`, which is used to create a custom control policy.
  * @Note This class does not contain additional functions, so it is recommended to use the `ControlPolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-controlpolicy
  */
@@ -1265,7 +1279,7 @@ function rosResourceSharePropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::ResourceShare`, which is used to create a resource share.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::ResourceShare`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ResourceShare` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourceshare
  */
@@ -1493,7 +1507,7 @@ function rosResourceShareAssociationPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::ResourceShareAssociation`ALIYUN::ROCKETMQ::Instance is used to create a Standard Edition instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::ResourceShareAssociation`, which is used to associate a shared resource or a resource user.
  * @Note This class does not contain additional functions, so it is recommended to use the `ResourceShareAssociation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourceshareassociation
  */

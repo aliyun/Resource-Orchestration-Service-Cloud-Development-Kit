@@ -26,6 +26,10 @@ export interface AlarmTaskEnableProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-alarmtaskenable
  */
 export class AlarmTaskEnable extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AlarmTaskEnableProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -34,6 +38,10 @@ export class AlarmTaskEnable extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AlarmTaskEnableProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAlarmTaskEnable = new RosAlarmTaskEnable(this, id,  {
             enable: props.enable,

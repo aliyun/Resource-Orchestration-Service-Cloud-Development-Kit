@@ -119,6 +119,10 @@ export interface HealthCheckTemplateProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-healthchecktemplate
  */
 export class HealthCheckTemplate extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: HealthCheckTemplateProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute HealthCheckTemplateId: The ID of the health check template.
@@ -132,6 +136,10 @@ export class HealthCheckTemplate extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: HealthCheckTemplateProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosHealthCheckTemplate = new RosHealthCheckTemplate(this, id,  {
             healthCheckInterval: props.healthCheckInterval,

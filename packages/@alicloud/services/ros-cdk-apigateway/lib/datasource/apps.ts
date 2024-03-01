@@ -26,6 +26,10 @@ export interface AppsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-apps
  */
 export class Apps extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AppsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AppIds: The list of The ApiGateway app ids.
@@ -44,6 +48,10 @@ export class Apps extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AppsProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosApps = new RosApps(this, id,  {
             appOwner: props.appOwner,

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::RAM::SAMLProvider</code>, which is used to create an identity provider (IdP) for role-based single sign-on (SSO).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.442Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:53.975Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.SAMLProvider")
 public class SAMLProvider extends com.aliyun.ros.cdk.core.Resource {
 
@@ -52,6 +52,38 @@ public class SAMLProvider extends com.aliyun.ros.cdk.core.Resource {
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSamlProviderName() {
         return software.amazon.jsii.Kernel.get(this, "attrSamlProviderName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
+        return software.amazon.jsii.Kernel.get(this, "enableResourcePropertyConstraint", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
+    }
+
+    protected void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
+    }
+
+    protected @org.jetbrains.annotations.NotNull java.lang.String getId() {
+        return software.amazon.jsii.Kernel.get(this, "id", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    }
+
+    protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
+    }
+
+    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.SAMLProviderProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ram.SAMLProviderProps.class));
+    }
+
+    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.SAMLProviderProps value) {
+        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
+    }
+
+    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {
+        return software.amazon.jsii.Kernel.get(this, "scope", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.Construct.class));
+    }
+
+    protected void setScope(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct value) {
+        software.amazon.jsii.Kernel.set(this, "scope", java.util.Objects.requireNonNull(value, "scope is required"));
     }
 
     /**
@@ -135,9 +167,31 @@ public class SAMLProvider extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property encodedSamlMetadataDocument: SAML metadata document.Base64 encoded. Provided by an identity provider that supports the SAML2.0 protocol. Only one of the three properties SAMLMetadataDocument, SAMLMetadataDocumentURL, EncodedSAMLMetadataDocument can be set.
+         * <p>
+         * @return {@code this}
+         * @param encodedSamlMetadataDocument Property encodedSamlMetadataDocument: SAML metadata document.Base64 encoded. Provided by an identity provider that supports the SAML2.0 protocol. Only one of the three properties SAMLMetadataDocument, SAMLMetadataDocumentURL, EncodedSAMLMetadataDocument can be set. This parameter is required.
+         */
+        public Builder encodedSamlMetadataDocument(final java.lang.String encodedSamlMetadataDocument) {
+            this.props.encodedSamlMetadataDocument(encodedSamlMetadataDocument);
+            return this;
+        }
+        /**
+         * Property encodedSamlMetadataDocument: SAML metadata document.Base64 encoded. Provided by an identity provider that supports the SAML2.0 protocol. Only one of the three properties SAMLMetadataDocument, SAMLMetadataDocumentURL, EncodedSAMLMetadataDocument can be set.
+         * <p>
+         * @return {@code this}
+         * @param encodedSamlMetadataDocument Property encodedSamlMetadataDocument: SAML metadata document.Base64 encoded. Provided by an identity provider that supports the SAML2.0 protocol. Only one of the three properties SAMLMetadataDocument, SAMLMetadataDocumentURL, EncodedSAMLMetadataDocument can be set. This parameter is required.
+         */
+        public Builder encodedSamlMetadataDocument(final com.aliyun.ros.cdk.core.IResolvable encodedSamlMetadataDocument) {
+            this.props.encodedSamlMetadataDocument(encodedSamlMetadataDocument);
+            return this;
+        }
+
+        /**
          * Property samlMetadataDocument: SAML metadata document.
          * <p>
-         * The content must be 1 to 102,400 bytes in length.You must specify one of the SAMLMetadataDocument and SAMLMetadataDocumentURL properties, but you cannot specify both of them.
+         * The content must be 1 to 102,400 bytes in length.
+         * Only one of the three properties SAMLMetadataDocument, SAMLMetadataDocumentURL, EncodedSAMLMetadataDocument can be set.
          * <p>
          * @return {@code this}
          * @param samlMetadataDocument Property samlMetadataDocument: SAML metadata document. This parameter is required.
@@ -149,7 +203,8 @@ public class SAMLProvider extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property samlMetadataDocument: SAML metadata document.
          * <p>
-         * The content must be 1 to 102,400 bytes in length.You must specify one of the SAMLMetadataDocument and SAMLMetadataDocumentURL properties, but you cannot specify both of them.
+         * The content must be 1 to 102,400 bytes in length.
+         * Only one of the three properties SAMLMetadataDocument, SAMLMetadataDocumentURL, EncodedSAMLMetadataDocument can be set.
          * <p>
          * @return {@code this}
          * @param samlMetadataDocument Property samlMetadataDocument: SAML metadata document. This parameter is required.
@@ -163,6 +218,7 @@ public class SAMLProvider extends com.aliyun.ros.cdk.core.Resource {
          * Property samlMetadataDocumentUrl: The URL for the file that contains the SAML metadata document.
          * <p>
          * The URL must point to a document located in an HTTP or HTTPS web server or an Alibaba Cloud OSS bucket. Examples: oss://ros/document/demo and oss://ros/document/demo?RegionId=cn-hangzhou. The URL can be up to 1,024 bytes in length.
+         * Only one of the three properties SAMLMetadataDocument, SAMLMetadataDocumentURL, EncodedSAMLMetadataDocument can be set.
          * <p>
          * @return {@code this}
          * @param samlMetadataDocumentUrl Property samlMetadataDocumentUrl: The URL for the file that contains the SAML metadata document. This parameter is required.
@@ -175,6 +231,7 @@ public class SAMLProvider extends com.aliyun.ros.cdk.core.Resource {
          * Property samlMetadataDocumentUrl: The URL for the file that contains the SAML metadata document.
          * <p>
          * The URL must point to a document located in an HTTP or HTTPS web server or an Alibaba Cloud OSS bucket. Examples: oss://ros/document/demo and oss://ros/document/demo?RegionId=cn-hangzhou. The URL can be up to 1,024 bytes in length.
+         * Only one of the three properties SAMLMetadataDocument, SAMLMetadataDocumentURL, EncodedSAMLMetadataDocument can be set.
          * <p>
          * @return {@code this}
          * @param samlMetadataDocumentUrl Property samlMetadataDocumentUrl: The URL for the file that contains the SAML metadata document. This parameter is required.

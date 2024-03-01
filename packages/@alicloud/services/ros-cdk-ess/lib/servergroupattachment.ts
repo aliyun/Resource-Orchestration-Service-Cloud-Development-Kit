@@ -29,11 +29,15 @@ export interface ServerGroupAttachmentProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ServerGroupAttachment`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ServerGroupAttachment`, which is used to add one or more Server Load Balancer (SLB) server groups to a scaling group. Supported SLB server groups include Application Load Balancer (ALB) server groups and Network Load Balancer (NLB) server groups.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosServerGroupAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-servergroupattachment
  */
 export class ServerGroupAttachment extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ServerGroupAttachmentProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ScalingActivityId: The ID of the scaling activity during which one or more SLB instances are attached to the scaling group and the ECS instances in the scaling group are added to the backend server groups of the SLB instances.
@@ -48,6 +52,10 @@ Note This parameter is returned only after you set the ForceAttach parameter to 
      */
     constructor(scope: ros.Construct, id: string, props: ServerGroupAttachmentProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosServerGroupAttachment = new RosServerGroupAttachment(this, id,  {
             serverGroups: props.serverGroups,

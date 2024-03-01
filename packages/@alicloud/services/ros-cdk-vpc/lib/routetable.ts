@@ -33,11 +33,15 @@ export interface RouteTableProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::RouteTable`, which is used to create a custom route table.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::RouteTable`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRouteTable`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-routetable
  */
 export class RouteTable extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: RouteTableProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute RouteTableId: The ID of the route table.
@@ -71,6 +75,10 @@ export class RouteTable extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: RouteTableProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosRouteTable = new RosRouteTable(this, id,  {
             description: props.description,

@@ -44,6 +44,10 @@ export interface AccountPrivilegeProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-accountprivilege
  */
 export class AccountPrivilege extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AccountPrivilegeProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -52,6 +56,10 @@ export class AccountPrivilege extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AccountPrivilegeProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAccountPrivilege = new RosAccountPrivilege(this, id,  {
             accountPrivilege: props.accountPrivilege,

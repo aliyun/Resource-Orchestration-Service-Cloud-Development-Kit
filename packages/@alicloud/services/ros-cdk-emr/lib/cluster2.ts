@@ -98,6 +98,10 @@ export interface Cluster2Props {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-cluster2
  */
 export class Cluster2 extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: Cluster2Props;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ApplicationLinks: ApplicationLinks of cluster.
@@ -116,6 +120,10 @@ export class Cluster2 extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: Cluster2Props, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCluster2 = new RosCluster2(this, id,  {
             applications: props.applications,

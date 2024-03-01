@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instancegroupclone
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.256Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:51.669Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceGroupCloneProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceGroupCloneProps.Jsii$Proxy.class)
 public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerializable {
@@ -59,6 +59,13 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
     }
 
     /**
+     * Property cpuOptions: Cpu options.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCpuOptions() {
+        return null;
+    }
+
+    /**
      * Property deletionProtection: Whether an instance can be released manually through the console or API, deletion protection only support postPaid instance.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDeletionProtection() {
@@ -96,9 +103,26 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
     /**
      * Property eniMappings: NetworkInterface to attach to instance.
      * <p>
-     * Max support 1 ENI.
+     * Max support 2 ENIs.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEniMappings() {
+        return null;
+    }
+
+    /**
+     * Property hostNames: The hostname of instance N.
+     * <p>
+     * You can use this parameter to specify different hostnames for multiple instances. Take note of the following items:
+     * <p>
+     * <ul>
+     * <li>The maximum value of N must be the same as the Amount value. For example, if you set Amount to 2, you can use HostNames.1 and HostNames.2 to specify hostnames for the individual instances. Examples: HostNames.1=test1 and HostNames.2=test2.</li>
+     * <li>You cannot specify both HostName and HostNames.N.</li>
+     * <li>The hostname cannot start or end with a period (.) or hyphen (-). The hostname cannot contain consecutive periods (.) or hyphens (-).</li>
+     * <li>For Windows instances, the hostname must be 2 to 15 characters in length and cannot contain periods (.) or contain only digits. The hostname can contain letters, digits, and hyphens (-).</li>
+     * <li>For instances that run other operating systems such as Linux, the hostname must be 2 to 64 characters in length. You can use periods (.) to separate a hostname into multiple segments. Each segment can contain letters, digits, and hyphens (-).</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHostNames() {
         return null;
     }
 
@@ -113,6 +137,13 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
      * Property imageId: Image ID to create ecs instance.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getImageId() {
+        return null;
+    }
+
+    /**
+     * Property imageOptions: Image options.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getImageOptions() {
         return null;
     }
 
@@ -206,6 +237,28 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
     }
 
     /**
+     * Property networkInterfaceQueueNumber: The number of queues supported by the primary ENI.
+     * <p>
+     * Take note of the following items:
+     * <p>
+     * <ul>
+     * <li>The value of this parameter cannot exceed the maximum number of queues per ENI allowed for the instance type.</li>
+     * <li>The total number of queues for all ENIs on the instance cannot exceed the queue quota for the instance type.</li>
+     * <li>If NetworkInterface.N.InstanceType is set to Primary, you cannot specify NetworkInterfaceQueueNumber but can specify NetworkInterface.N.QueueNumber</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNetworkInterfaceQueueNumber() {
+        return null;
+    }
+
+    /**
+     * Property networkOptions: Network options.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNetworkOptions() {
+        return null;
+    }
+
+    /**
      * Property password: Password of created ecs instance.
      * <p>
      * Must contain at least 3 types of special character, lower character, upper character, number.
@@ -272,6 +325,13 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
      * The valid values of N are based on the maximum number of security groups to which an instance can belong. For more information, see Security group limits.Note: You cannot specify both SecurityGroupId and SecurityGroupIds at the same time.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupIds() {
+        return null;
+    }
+
+    /**
+     * Property securityOptions: Security options.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityOptions() {
         return null;
     }
 
@@ -393,6 +453,22 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
     }
 
     /**
+     * Property uniqueSuffix: Specifies whether to automatically append incremental suffixes to the hostname specified by the <strong>HostName</strong> parameter and to the instance name specified by the <strong>InstanceName</strong> parameter when you batch create instances.
+     * <p>
+     * The incremental suffixes can range from 001 to 999. Valid values:
+     * <p>
+     * <ul>
+     * <li><strong>true</strong>: appends incremental suffixes to the hostname and the instance name.</li>
+     * <li><strong>false</strong>: does not append incremental suffixes to the hostname or the instance name.
+     * Default value: <strong>false</strong>.
+     * When the <strong>HostName</strong> or <strong>InstanceName</strong> value is set in the name_prefix[begin_number,bits] format without a suffix (name_suffix), the <strong>UniqueSuffix</strong> parameter does not take effect. The names are sorted in the specified sequence.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getUniqueSuffix() {
+        return null;
+    }
+
+    /**
      * Property updatePolicy: Specify the policy at update.
      * <p>
      * The value can be 'ForNewInstances' or 'ForAllInstances'.
@@ -430,13 +506,16 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
         java.lang.Object autoRenew;
         java.lang.Object autoRenewPeriod;
         java.lang.Object backendServerWeight;
+        java.lang.Object cpuOptions;
         java.lang.Object deletionProtection;
         java.lang.Object deploymentSetId;
         java.lang.Object description;
         java.lang.Object diskMappings;
         java.lang.Object eniMappings;
+        java.lang.Object hostNames;
         java.lang.Object hpcClusterId;
         java.lang.Object imageId;
+        java.lang.Object imageOptions;
         java.lang.Object instanceName;
         java.lang.Object internetMaxBandwidthIn;
         java.lang.Object internetMaxBandwidthOut;
@@ -447,6 +526,8 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
         java.lang.Object launchTemplateName;
         java.lang.Object launchTemplateVersion;
         java.lang.Object loadBalancerIdToAttach;
+        java.lang.Object networkInterfaceQueueNumber;
+        java.lang.Object networkOptions;
         java.lang.Object password;
         java.lang.Object passwordInherit;
         java.lang.Object period;
@@ -455,6 +536,7 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
         java.lang.Object resourceGroupId;
         java.lang.Object securityGroupId;
         java.lang.Object securityGroupIds;
+        java.lang.Object securityOptions;
         java.lang.Object spotPriceLimit;
         java.lang.Object spotStrategy;
         java.lang.Object systemDiskAutoSnapshotPolicyId;
@@ -468,6 +550,7 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
         java.lang.Object systemDiskProvisionedIops;
         java.lang.Object systemDiskStorageClusterId;
         java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.TagsProperty> tags;
+        java.lang.Object uniqueSuffix;
         java.lang.Object updatePolicy;
         java.lang.Object zoneId;
 
@@ -602,6 +685,26 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link InstanceGroupCloneProps#getCpuOptions}
+         * @param cpuOptions Property cpuOptions: Cpu options.
+         * @return {@code this}
+         */
+        public Builder cpuOptions(com.aliyun.ros.cdk.core.IResolvable cpuOptions) {
+            this.cpuOptions = cpuOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupCloneProps#getCpuOptions}
+         * @param cpuOptions Property cpuOptions: Cpu options.
+         * @return {@code this}
+         */
+        public Builder cpuOptions(com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.CpuOptionsProperty cpuOptions) {
+            this.cpuOptions = cpuOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceGroupCloneProps#getDeletionProtection}
          * @param deletionProtection Property deletionProtection: Whether an instance can be released manually through the console or API, deletion protection only support postPaid instance.
          * @return {@code this}
@@ -692,7 +795,7 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
         /**
          * Sets the value of {@link InstanceGroupCloneProps#getEniMappings}
          * @param eniMappings Property eniMappings: NetworkInterface to attach to instance.
-         *                    Max support 1 ENI.
+         *                    Max support 2 ENIs.
          * @return {@code this}
          */
         public Builder eniMappings(com.aliyun.ros.cdk.core.IResolvable eniMappings) {
@@ -703,11 +806,49 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
         /**
          * Sets the value of {@link InstanceGroupCloneProps#getEniMappings}
          * @param eniMappings Property eniMappings: NetworkInterface to attach to instance.
-         *                    Max support 1 ENI.
+         *                    Max support 2 ENIs.
          * @return {@code this}
          */
         public Builder eniMappings(java.util.List<? extends java.lang.Object> eniMappings) {
             this.eniMappings = eniMappings;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupCloneProps#getHostNames}
+         * @param hostNames Property hostNames: The hostname of instance N.
+         *                  You can use this parameter to specify different hostnames for multiple instances. Take note of the following items:
+         *                  <p>
+         *                  <ul>
+         *                  <li>The maximum value of N must be the same as the Amount value. For example, if you set Amount to 2, you can use HostNames.1 and HostNames.2 to specify hostnames for the individual instances. Examples: HostNames.1=test1 and HostNames.2=test2.</li>
+         *                  <li>You cannot specify both HostName and HostNames.N.</li>
+         *                  <li>The hostname cannot start or end with a period (.) or hyphen (-). The hostname cannot contain consecutive periods (.) or hyphens (-).</li>
+         *                  <li>For Windows instances, the hostname must be 2 to 15 characters in length and cannot contain periods (.) or contain only digits. The hostname can contain letters, digits, and hyphens (-).</li>
+         *                  <li>For instances that run other operating systems such as Linux, the hostname must be 2 to 64 characters in length. You can use periods (.) to separate a hostname into multiple segments. Each segment can contain letters, digits, and hyphens (-).</li>
+         *                  </ul>
+         * @return {@code this}
+         */
+        public Builder hostNames(com.aliyun.ros.cdk.core.IResolvable hostNames) {
+            this.hostNames = hostNames;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupCloneProps#getHostNames}
+         * @param hostNames Property hostNames: The hostname of instance N.
+         *                  You can use this parameter to specify different hostnames for multiple instances. Take note of the following items:
+         *                  <p>
+         *                  <ul>
+         *                  <li>The maximum value of N must be the same as the Amount value. For example, if you set Amount to 2, you can use HostNames.1 and HostNames.2 to specify hostnames for the individual instances. Examples: HostNames.1=test1 and HostNames.2=test2.</li>
+         *                  <li>You cannot specify both HostName and HostNames.N.</li>
+         *                  <li>The hostname cannot start or end with a period (.) or hyphen (-). The hostname cannot contain consecutive periods (.) or hyphens (-).</li>
+         *                  <li>For Windows instances, the hostname must be 2 to 15 characters in length and cannot contain periods (.) or contain only digits. The hostname can contain letters, digits, and hyphens (-).</li>
+         *                  <li>For instances that run other operating systems such as Linux, the hostname must be 2 to 64 characters in length. You can use periods (.) to separate a hostname into multiple segments. Each segment can contain letters, digits, and hyphens (-).</li>
+         *                  </ul>
+         * @return {@code this}
+         */
+        public Builder hostNames(java.util.List<? extends java.lang.Object> hostNames) {
+            this.hostNames = hostNames;
             return this;
         }
 
@@ -748,6 +889,26 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
          */
         public Builder imageId(com.aliyun.ros.cdk.core.IResolvable imageId) {
             this.imageId = imageId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupCloneProps#getImageOptions}
+         * @param imageOptions Property imageOptions: Image options.
+         * @return {@code this}
+         */
+        public Builder imageOptions(com.aliyun.ros.cdk.core.IResolvable imageOptions) {
+            this.imageOptions = imageOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupCloneProps#getImageOptions}
+         * @param imageOptions Property imageOptions: Image options.
+         * @return {@code this}
+         */
+        public Builder imageOptions(com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.ImageOptionsProperty imageOptions) {
+            this.imageOptions = imageOptions;
             return this;
         }
 
@@ -974,6 +1135,60 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link InstanceGroupCloneProps#getNetworkInterfaceQueueNumber}
+         * @param networkInterfaceQueueNumber Property networkInterfaceQueueNumber: The number of queues supported by the primary ENI.
+         *                                    Take note of the following items:
+         *                                    <p>
+         *                                    <ul>
+         *                                    <li>The value of this parameter cannot exceed the maximum number of queues per ENI allowed for the instance type.</li>
+         *                                    <li>The total number of queues for all ENIs on the instance cannot exceed the queue quota for the instance type.</li>
+         *                                    <li>If NetworkInterface.N.InstanceType is set to Primary, you cannot specify NetworkInterfaceQueueNumber but can specify NetworkInterface.N.QueueNumber</li>
+         *                                    </ul>
+         * @return {@code this}
+         */
+        public Builder networkInterfaceQueueNumber(java.lang.Number networkInterfaceQueueNumber) {
+            this.networkInterfaceQueueNumber = networkInterfaceQueueNumber;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupCloneProps#getNetworkInterfaceQueueNumber}
+         * @param networkInterfaceQueueNumber Property networkInterfaceQueueNumber: The number of queues supported by the primary ENI.
+         *                                    Take note of the following items:
+         *                                    <p>
+         *                                    <ul>
+         *                                    <li>The value of this parameter cannot exceed the maximum number of queues per ENI allowed for the instance type.</li>
+         *                                    <li>The total number of queues for all ENIs on the instance cannot exceed the queue quota for the instance type.</li>
+         *                                    <li>If NetworkInterface.N.InstanceType is set to Primary, you cannot specify NetworkInterfaceQueueNumber but can specify NetworkInterface.N.QueueNumber</li>
+         *                                    </ul>
+         * @return {@code this}
+         */
+        public Builder networkInterfaceQueueNumber(com.aliyun.ros.cdk.core.IResolvable networkInterfaceQueueNumber) {
+            this.networkInterfaceQueueNumber = networkInterfaceQueueNumber;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupCloneProps#getNetworkOptions}
+         * @param networkOptions Property networkOptions: Network options.
+         * @return {@code this}
+         */
+        public Builder networkOptions(com.aliyun.ros.cdk.core.IResolvable networkOptions) {
+            this.networkOptions = networkOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupCloneProps#getNetworkOptions}
+         * @param networkOptions Property networkOptions: Network options.
+         * @return {@code this}
+         */
+        public Builder networkOptions(com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.NetworkOptionsProperty networkOptions) {
+            this.networkOptions = networkOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceGroupCloneProps#getPassword}
          * @param password Property password: Password of created ecs instance.
          *                 Must contain at least 3 types of special character, lower character, upper character, number.
@@ -1144,6 +1359,26 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
          */
         public Builder securityGroupIds(java.util.List<? extends java.lang.Object> securityGroupIds) {
             this.securityGroupIds = securityGroupIds;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupCloneProps#getSecurityOptions}
+         * @param securityOptions Property securityOptions: Security options.
+         * @return {@code this}
+         */
+        public Builder securityOptions(com.aliyun.ros.cdk.core.IResolvable securityOptions) {
+            this.securityOptions = securityOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupCloneProps#getSecurityOptions}
+         * @param securityOptions Property securityOptions: Security options.
+         * @return {@code this}
+         */
+        public Builder securityOptions(com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.SecurityOptionsProperty securityOptions) {
+            this.securityOptions = securityOptions;
             return this;
         }
 
@@ -1436,6 +1671,42 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link InstanceGroupCloneProps#getUniqueSuffix}
+         * @param uniqueSuffix Property uniqueSuffix: Specifies whether to automatically append incremental suffixes to the hostname specified by the <strong>HostName</strong> parameter and to the instance name specified by the <strong>InstanceName</strong> parameter when you batch create instances.
+         *                     The incremental suffixes can range from 001 to 999. Valid values:
+         *                     <p>
+         *                     <ul>
+         *                     <li><strong>true</strong>: appends incremental suffixes to the hostname and the instance name.</li>
+         *                     <li><strong>false</strong>: does not append incremental suffixes to the hostname or the instance name.
+         *                     Default value: <strong>false</strong>.
+         *                     When the <strong>HostName</strong> or <strong>InstanceName</strong> value is set in the name_prefix[begin_number,bits] format without a suffix (name_suffix), the <strong>UniqueSuffix</strong> parameter does not take effect. The names are sorted in the specified sequence.</li>
+         *                     </ul>
+         * @return {@code this}
+         */
+        public Builder uniqueSuffix(java.lang.Boolean uniqueSuffix) {
+            this.uniqueSuffix = uniqueSuffix;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupCloneProps#getUniqueSuffix}
+         * @param uniqueSuffix Property uniqueSuffix: Specifies whether to automatically append incremental suffixes to the hostname specified by the <strong>HostName</strong> parameter and to the instance name specified by the <strong>InstanceName</strong> parameter when you batch create instances.
+         *                     The incremental suffixes can range from 001 to 999. Valid values:
+         *                     <p>
+         *                     <ul>
+         *                     <li><strong>true</strong>: appends incremental suffixes to the hostname and the instance name.</li>
+         *                     <li><strong>false</strong>: does not append incremental suffixes to the hostname or the instance name.
+         *                     Default value: <strong>false</strong>.
+         *                     When the <strong>HostName</strong> or <strong>InstanceName</strong> value is set in the name_prefix[begin_number,bits] format without a suffix (name_suffix), the <strong>UniqueSuffix</strong> parameter does not take effect. The names are sorted in the specified sequence.</li>
+         *                     </ul>
+         * @return {@code this}
+         */
+        public Builder uniqueSuffix(com.aliyun.ros.cdk.core.IResolvable uniqueSuffix) {
+            this.uniqueSuffix = uniqueSuffix;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceGroupCloneProps#getUpdatePolicy}
          * @param updatePolicy Property updatePolicy: Specify the policy at update.
          *                     The value can be 'ForNewInstances' or 'ForAllInstances'.
@@ -1509,13 +1780,16 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
         private final java.lang.Object autoRenew;
         private final java.lang.Object autoRenewPeriod;
         private final java.lang.Object backendServerWeight;
+        private final java.lang.Object cpuOptions;
         private final java.lang.Object deletionProtection;
         private final java.lang.Object deploymentSetId;
         private final java.lang.Object description;
         private final java.lang.Object diskMappings;
         private final java.lang.Object eniMappings;
+        private final java.lang.Object hostNames;
         private final java.lang.Object hpcClusterId;
         private final java.lang.Object imageId;
+        private final java.lang.Object imageOptions;
         private final java.lang.Object instanceName;
         private final java.lang.Object internetMaxBandwidthIn;
         private final java.lang.Object internetMaxBandwidthOut;
@@ -1526,6 +1800,8 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
         private final java.lang.Object launchTemplateName;
         private final java.lang.Object launchTemplateVersion;
         private final java.lang.Object loadBalancerIdToAttach;
+        private final java.lang.Object networkInterfaceQueueNumber;
+        private final java.lang.Object networkOptions;
         private final java.lang.Object password;
         private final java.lang.Object passwordInherit;
         private final java.lang.Object period;
@@ -1534,6 +1810,7 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object securityGroupId;
         private final java.lang.Object securityGroupIds;
+        private final java.lang.Object securityOptions;
         private final java.lang.Object spotPriceLimit;
         private final java.lang.Object spotStrategy;
         private final java.lang.Object systemDiskAutoSnapshotPolicyId;
@@ -1547,6 +1824,7 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
         private final java.lang.Object systemDiskProvisionedIops;
         private final java.lang.Object systemDiskStorageClusterId;
         private final java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.TagsProperty> tags;
+        private final java.lang.Object uniqueSuffix;
         private final java.lang.Object updatePolicy;
         private final java.lang.Object zoneId;
 
@@ -1562,13 +1840,16 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
             this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoRenewPeriod = software.amazon.jsii.Kernel.get(this, "autoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.backendServerWeight = software.amazon.jsii.Kernel.get(this, "backendServerWeight", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.cpuOptions = software.amazon.jsii.Kernel.get(this, "cpuOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deploymentSetId = software.amazon.jsii.Kernel.get(this, "deploymentSetId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.diskMappings = software.amazon.jsii.Kernel.get(this, "diskMappings", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.eniMappings = software.amazon.jsii.Kernel.get(this, "eniMappings", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.hostNames = software.amazon.jsii.Kernel.get(this, "hostNames", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.hpcClusterId = software.amazon.jsii.Kernel.get(this, "hpcClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.imageId = software.amazon.jsii.Kernel.get(this, "imageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.imageOptions = software.amazon.jsii.Kernel.get(this, "imageOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.internetMaxBandwidthIn = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthIn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.internetMaxBandwidthOut = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthOut", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1579,6 +1860,8 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
             this.launchTemplateName = software.amazon.jsii.Kernel.get(this, "launchTemplateName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.launchTemplateVersion = software.amazon.jsii.Kernel.get(this, "launchTemplateVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loadBalancerIdToAttach = software.amazon.jsii.Kernel.get(this, "loadBalancerIdToAttach", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.networkInterfaceQueueNumber = software.amazon.jsii.Kernel.get(this, "networkInterfaceQueueNumber", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.networkOptions = software.amazon.jsii.Kernel.get(this, "networkOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.passwordInherit = software.amazon.jsii.Kernel.get(this, "passwordInherit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1587,6 +1870,7 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupIds = software.amazon.jsii.Kernel.get(this, "securityGroupIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityOptions = software.amazon.jsii.Kernel.get(this, "securityOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.spotPriceLimit = software.amazon.jsii.Kernel.get(this, "spotPriceLimit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.spotStrategy = software.amazon.jsii.Kernel.get(this, "spotStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskAutoSnapshotPolicyId = software.amazon.jsii.Kernel.get(this, "systemDiskAutoSnapshotPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1600,6 +1884,7 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
             this.systemDiskProvisionedIops = software.amazon.jsii.Kernel.get(this, "systemDiskProvisionedIops", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskStorageClusterId = software.amazon.jsii.Kernel.get(this, "systemDiskStorageClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.TagsProperty.class)));
+            this.uniqueSuffix = software.amazon.jsii.Kernel.get(this, "uniqueSuffix", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.updatePolicy = software.amazon.jsii.Kernel.get(this, "updatePolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -1616,13 +1901,16 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
             this.autoRenew = builder.autoRenew;
             this.autoRenewPeriod = builder.autoRenewPeriod;
             this.backendServerWeight = builder.backendServerWeight;
+            this.cpuOptions = builder.cpuOptions;
             this.deletionProtection = builder.deletionProtection;
             this.deploymentSetId = builder.deploymentSetId;
             this.description = builder.description;
             this.diskMappings = builder.diskMappings;
             this.eniMappings = builder.eniMappings;
+            this.hostNames = builder.hostNames;
             this.hpcClusterId = builder.hpcClusterId;
             this.imageId = builder.imageId;
+            this.imageOptions = builder.imageOptions;
             this.instanceName = builder.instanceName;
             this.internetMaxBandwidthIn = builder.internetMaxBandwidthIn;
             this.internetMaxBandwidthOut = builder.internetMaxBandwidthOut;
@@ -1633,6 +1921,8 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
             this.launchTemplateName = builder.launchTemplateName;
             this.launchTemplateVersion = builder.launchTemplateVersion;
             this.loadBalancerIdToAttach = builder.loadBalancerIdToAttach;
+            this.networkInterfaceQueueNumber = builder.networkInterfaceQueueNumber;
+            this.networkOptions = builder.networkOptions;
             this.password = builder.password;
             this.passwordInherit = builder.passwordInherit;
             this.period = builder.period;
@@ -1641,6 +1931,7 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
             this.resourceGroupId = builder.resourceGroupId;
             this.securityGroupId = builder.securityGroupId;
             this.securityGroupIds = builder.securityGroupIds;
+            this.securityOptions = builder.securityOptions;
             this.spotPriceLimit = builder.spotPriceLimit;
             this.spotStrategy = builder.spotStrategy;
             this.systemDiskAutoSnapshotPolicyId = builder.systemDiskAutoSnapshotPolicyId;
@@ -1654,6 +1945,7 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
             this.systemDiskProvisionedIops = builder.systemDiskProvisionedIops;
             this.systemDiskStorageClusterId = builder.systemDiskStorageClusterId;
             this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.TagsProperty>)builder.tags;
+            this.uniqueSuffix = builder.uniqueSuffix;
             this.updatePolicy = builder.updatePolicy;
             this.zoneId = builder.zoneId;
         }
@@ -1689,6 +1981,11 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
+        public final java.lang.Object getCpuOptions() {
+            return this.cpuOptions;
+        }
+
+        @Override
         public final java.lang.Object getDeletionProtection() {
             return this.deletionProtection;
         }
@@ -1714,6 +2011,11 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
+        public final java.lang.Object getHostNames() {
+            return this.hostNames;
+        }
+
+        @Override
         public final java.lang.Object getHpcClusterId() {
             return this.hpcClusterId;
         }
@@ -1721,6 +2023,11 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
         @Override
         public final java.lang.Object getImageId() {
             return this.imageId;
+        }
+
+        @Override
+        public final java.lang.Object getImageOptions() {
+            return this.imageOptions;
         }
 
         @Override
@@ -1774,6 +2081,16 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
+        public final java.lang.Object getNetworkInterfaceQueueNumber() {
+            return this.networkInterfaceQueueNumber;
+        }
+
+        @Override
+        public final java.lang.Object getNetworkOptions() {
+            return this.networkOptions;
+        }
+
+        @Override
         public final java.lang.Object getPassword() {
             return this.password;
         }
@@ -1811,6 +2128,11 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
         @Override
         public final java.lang.Object getSecurityGroupIds() {
             return this.securityGroupIds;
+        }
+
+        @Override
+        public final java.lang.Object getSecurityOptions() {
+            return this.securityOptions;
         }
 
         @Override
@@ -1879,6 +2201,11 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
+        public final java.lang.Object getUniqueSuffix() {
+            return this.uniqueSuffix;
+        }
+
+        @Override
         public final java.lang.Object getUpdatePolicy() {
             return this.updatePolicy;
         }
@@ -1908,6 +2235,9 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
             if (this.getBackendServerWeight() != null) {
                 data.set("backendServerWeight", om.valueToTree(this.getBackendServerWeight()));
             }
+            if (this.getCpuOptions() != null) {
+                data.set("cpuOptions", om.valueToTree(this.getCpuOptions()));
+            }
             if (this.getDeletionProtection() != null) {
                 data.set("deletionProtection", om.valueToTree(this.getDeletionProtection()));
             }
@@ -1923,11 +2253,17 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
             if (this.getEniMappings() != null) {
                 data.set("eniMappings", om.valueToTree(this.getEniMappings()));
             }
+            if (this.getHostNames() != null) {
+                data.set("hostNames", om.valueToTree(this.getHostNames()));
+            }
             if (this.getHpcClusterId() != null) {
                 data.set("hpcClusterId", om.valueToTree(this.getHpcClusterId()));
             }
             if (this.getImageId() != null) {
                 data.set("imageId", om.valueToTree(this.getImageId()));
+            }
+            if (this.getImageOptions() != null) {
+                data.set("imageOptions", om.valueToTree(this.getImageOptions()));
             }
             if (this.getInstanceName() != null) {
                 data.set("instanceName", om.valueToTree(this.getInstanceName()));
@@ -1959,6 +2295,12 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
             if (this.getLoadBalancerIdToAttach() != null) {
                 data.set("loadBalancerIdToAttach", om.valueToTree(this.getLoadBalancerIdToAttach()));
             }
+            if (this.getNetworkInterfaceQueueNumber() != null) {
+                data.set("networkInterfaceQueueNumber", om.valueToTree(this.getNetworkInterfaceQueueNumber()));
+            }
+            if (this.getNetworkOptions() != null) {
+                data.set("networkOptions", om.valueToTree(this.getNetworkOptions()));
+            }
             if (this.getPassword() != null) {
                 data.set("password", om.valueToTree(this.getPassword()));
             }
@@ -1982,6 +2324,9 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
             }
             if (this.getSecurityGroupIds() != null) {
                 data.set("securityGroupIds", om.valueToTree(this.getSecurityGroupIds()));
+            }
+            if (this.getSecurityOptions() != null) {
+                data.set("securityOptions", om.valueToTree(this.getSecurityOptions()));
             }
             if (this.getSpotPriceLimit() != null) {
                 data.set("spotPriceLimit", om.valueToTree(this.getSpotPriceLimit()));
@@ -2022,6 +2367,9 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
             }
+            if (this.getUniqueSuffix() != null) {
+                data.set("uniqueSuffix", om.valueToTree(this.getUniqueSuffix()));
+            }
             if (this.getUpdatePolicy() != null) {
                 data.set("updatePolicy", om.valueToTree(this.getUpdatePolicy()));
             }
@@ -2052,13 +2400,16 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
             if (this.autoRenew != null ? !this.autoRenew.equals(that.autoRenew) : that.autoRenew != null) return false;
             if (this.autoRenewPeriod != null ? !this.autoRenewPeriod.equals(that.autoRenewPeriod) : that.autoRenewPeriod != null) return false;
             if (this.backendServerWeight != null ? !this.backendServerWeight.equals(that.backendServerWeight) : that.backendServerWeight != null) return false;
+            if (this.cpuOptions != null ? !this.cpuOptions.equals(that.cpuOptions) : that.cpuOptions != null) return false;
             if (this.deletionProtection != null ? !this.deletionProtection.equals(that.deletionProtection) : that.deletionProtection != null) return false;
             if (this.deploymentSetId != null ? !this.deploymentSetId.equals(that.deploymentSetId) : that.deploymentSetId != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.diskMappings != null ? !this.diskMappings.equals(that.diskMappings) : that.diskMappings != null) return false;
             if (this.eniMappings != null ? !this.eniMappings.equals(that.eniMappings) : that.eniMappings != null) return false;
+            if (this.hostNames != null ? !this.hostNames.equals(that.hostNames) : that.hostNames != null) return false;
             if (this.hpcClusterId != null ? !this.hpcClusterId.equals(that.hpcClusterId) : that.hpcClusterId != null) return false;
             if (this.imageId != null ? !this.imageId.equals(that.imageId) : that.imageId != null) return false;
+            if (this.imageOptions != null ? !this.imageOptions.equals(that.imageOptions) : that.imageOptions != null) return false;
             if (this.instanceName != null ? !this.instanceName.equals(that.instanceName) : that.instanceName != null) return false;
             if (this.internetMaxBandwidthIn != null ? !this.internetMaxBandwidthIn.equals(that.internetMaxBandwidthIn) : that.internetMaxBandwidthIn != null) return false;
             if (this.internetMaxBandwidthOut != null ? !this.internetMaxBandwidthOut.equals(that.internetMaxBandwidthOut) : that.internetMaxBandwidthOut != null) return false;
@@ -2069,6 +2420,8 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
             if (this.launchTemplateName != null ? !this.launchTemplateName.equals(that.launchTemplateName) : that.launchTemplateName != null) return false;
             if (this.launchTemplateVersion != null ? !this.launchTemplateVersion.equals(that.launchTemplateVersion) : that.launchTemplateVersion != null) return false;
             if (this.loadBalancerIdToAttach != null ? !this.loadBalancerIdToAttach.equals(that.loadBalancerIdToAttach) : that.loadBalancerIdToAttach != null) return false;
+            if (this.networkInterfaceQueueNumber != null ? !this.networkInterfaceQueueNumber.equals(that.networkInterfaceQueueNumber) : that.networkInterfaceQueueNumber != null) return false;
+            if (this.networkOptions != null ? !this.networkOptions.equals(that.networkOptions) : that.networkOptions != null) return false;
             if (this.password != null ? !this.password.equals(that.password) : that.password != null) return false;
             if (this.passwordInherit != null ? !this.passwordInherit.equals(that.passwordInherit) : that.passwordInherit != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
@@ -2077,6 +2430,7 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
             if (this.securityGroupIds != null ? !this.securityGroupIds.equals(that.securityGroupIds) : that.securityGroupIds != null) return false;
+            if (this.securityOptions != null ? !this.securityOptions.equals(that.securityOptions) : that.securityOptions != null) return false;
             if (this.spotPriceLimit != null ? !this.spotPriceLimit.equals(that.spotPriceLimit) : that.spotPriceLimit != null) return false;
             if (this.spotStrategy != null ? !this.spotStrategy.equals(that.spotStrategy) : that.spotStrategy != null) return false;
             if (this.systemDiskAutoSnapshotPolicyId != null ? !this.systemDiskAutoSnapshotPolicyId.equals(that.systemDiskAutoSnapshotPolicyId) : that.systemDiskAutoSnapshotPolicyId != null) return false;
@@ -2090,6 +2444,7 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
             if (this.systemDiskProvisionedIops != null ? !this.systemDiskProvisionedIops.equals(that.systemDiskProvisionedIops) : that.systemDiskProvisionedIops != null) return false;
             if (this.systemDiskStorageClusterId != null ? !this.systemDiskStorageClusterId.equals(that.systemDiskStorageClusterId) : that.systemDiskStorageClusterId != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
+            if (this.uniqueSuffix != null ? !this.uniqueSuffix.equals(that.uniqueSuffix) : that.uniqueSuffix != null) return false;
             if (this.updatePolicy != null ? !this.updatePolicy.equals(that.updatePolicy) : that.updatePolicy != null) return false;
             return this.zoneId != null ? this.zoneId.equals(that.zoneId) : that.zoneId == null;
         }
@@ -2102,13 +2457,16 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
             result = 31 * result + (this.autoRenew != null ? this.autoRenew.hashCode() : 0);
             result = 31 * result + (this.autoRenewPeriod != null ? this.autoRenewPeriod.hashCode() : 0);
             result = 31 * result + (this.backendServerWeight != null ? this.backendServerWeight.hashCode() : 0);
+            result = 31 * result + (this.cpuOptions != null ? this.cpuOptions.hashCode() : 0);
             result = 31 * result + (this.deletionProtection != null ? this.deletionProtection.hashCode() : 0);
             result = 31 * result + (this.deploymentSetId != null ? this.deploymentSetId.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.diskMappings != null ? this.diskMappings.hashCode() : 0);
             result = 31 * result + (this.eniMappings != null ? this.eniMappings.hashCode() : 0);
+            result = 31 * result + (this.hostNames != null ? this.hostNames.hashCode() : 0);
             result = 31 * result + (this.hpcClusterId != null ? this.hpcClusterId.hashCode() : 0);
             result = 31 * result + (this.imageId != null ? this.imageId.hashCode() : 0);
+            result = 31 * result + (this.imageOptions != null ? this.imageOptions.hashCode() : 0);
             result = 31 * result + (this.instanceName != null ? this.instanceName.hashCode() : 0);
             result = 31 * result + (this.internetMaxBandwidthIn != null ? this.internetMaxBandwidthIn.hashCode() : 0);
             result = 31 * result + (this.internetMaxBandwidthOut != null ? this.internetMaxBandwidthOut.hashCode() : 0);
@@ -2119,6 +2477,8 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
             result = 31 * result + (this.launchTemplateName != null ? this.launchTemplateName.hashCode() : 0);
             result = 31 * result + (this.launchTemplateVersion != null ? this.launchTemplateVersion.hashCode() : 0);
             result = 31 * result + (this.loadBalancerIdToAttach != null ? this.loadBalancerIdToAttach.hashCode() : 0);
+            result = 31 * result + (this.networkInterfaceQueueNumber != null ? this.networkInterfaceQueueNumber.hashCode() : 0);
+            result = 31 * result + (this.networkOptions != null ? this.networkOptions.hashCode() : 0);
             result = 31 * result + (this.password != null ? this.password.hashCode() : 0);
             result = 31 * result + (this.passwordInherit != null ? this.passwordInherit.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
@@ -2127,6 +2487,7 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
             result = 31 * result + (this.securityGroupIds != null ? this.securityGroupIds.hashCode() : 0);
+            result = 31 * result + (this.securityOptions != null ? this.securityOptions.hashCode() : 0);
             result = 31 * result + (this.spotPriceLimit != null ? this.spotPriceLimit.hashCode() : 0);
             result = 31 * result + (this.spotStrategy != null ? this.spotStrategy.hashCode() : 0);
             result = 31 * result + (this.systemDiskAutoSnapshotPolicyId != null ? this.systemDiskAutoSnapshotPolicyId.hashCode() : 0);
@@ -2140,6 +2501,7 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
             result = 31 * result + (this.systemDiskProvisionedIops != null ? this.systemDiskProvisionedIops.hashCode() : 0);
             result = 31 * result + (this.systemDiskStorageClusterId != null ? this.systemDiskStorageClusterId.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
+            result = 31 * result + (this.uniqueSuffix != null ? this.uniqueSuffix.hashCode() : 0);
             result = 31 * result + (this.updatePolicy != null ? this.updatePolicy.hashCode() : 0);
             result = 31 * result + (this.zoneId != null ? this.zoneId.hashCode() : 0);
             return result;

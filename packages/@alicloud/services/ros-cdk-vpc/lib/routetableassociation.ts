@@ -26,6 +26,10 @@ export interface RouteTableAssociationProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-routetableassociation
  */
 export class RouteTableAssociation extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: RouteTableAssociationProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute RouteTableId: The ID of the route table.
@@ -44,6 +48,10 @@ export class RouteTableAssociation extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: RouteTableAssociationProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosRouteTableAssociation = new RosRouteTableAssociation(this, id,  {
             routeTableId: props.routeTableId,

@@ -123,6 +123,10 @@ export interface ASKClusterProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-askcluster
  */
 export class ASKCluster extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ASKClusterProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute APIServerSLBId: The id of API server SLB
@@ -181,6 +185,10 @@ export class ASKCluster extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ASKClusterProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosASKCluster = new RosASKCluster(this, id,  {
             kubernetesVersion: props.kubernetesVersion,

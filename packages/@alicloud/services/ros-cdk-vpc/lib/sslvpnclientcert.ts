@@ -27,6 +27,10 @@ export interface SslVpnClientCertProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-sslvpnclientcert
  */
 export class SslVpnClientCert extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: SslVpnClientCertProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SslVpnClientCertId: The ID of the client certificate.
@@ -40,6 +44,10 @@ export class SslVpnClientCert extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: SslVpnClientCertProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosSslVpnClientCert = new RosSslVpnClientCert(this, id,  {
             sslVpnServerId: props.sslVpnServerId,

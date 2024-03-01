@@ -41,6 +41,10 @@ export interface PluginProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-plugin
  */
 export class Plugin extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: PluginProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Description: The description of the plug-in, which cannot exceed 200 characters.
@@ -74,6 +78,10 @@ export class Plugin extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: PluginProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosPlugin = new RosPlugin(this, id,  {
             pluginName: props.pluginName,

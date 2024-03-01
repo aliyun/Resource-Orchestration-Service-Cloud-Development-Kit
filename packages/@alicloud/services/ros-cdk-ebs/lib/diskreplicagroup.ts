@@ -61,6 +61,10 @@ export interface DiskReplicaGroupProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ebs-diskreplicagroup
  */
 export class DiskReplicaGroup extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DiskReplicaGroupProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Description: The description of the consistent replication group.
@@ -159,6 +163,10 @@ export class DiskReplicaGroup extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DiskReplicaGroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDiskReplicaGroup = new RosDiskReplicaGroup(this, id,  {
             rpo: props.rpo,

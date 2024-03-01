@@ -42,11 +42,15 @@ export interface Ipv6GatewayProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::Ipv6Gateway`, which is used to create an IPv6 gateway.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::Ipv6Gateway`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosIpv6Gateway`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipv6gateway
  */
 export class Ipv6Gateway extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: Ipv6GatewayProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Ipv6GatewayId: ID IPv6 gateway.
@@ -60,6 +64,10 @@ export class Ipv6Gateway extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: Ipv6GatewayProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosIpv6Gateway = new RosIpv6Gateway(this, id,  {
             description: props.description,

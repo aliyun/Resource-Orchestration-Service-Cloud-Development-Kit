@@ -133,6 +133,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             }
         }
 
+        /// <summary>Property connectionDrain: Whether to enable graceful connection interruption.</summary>
+        /// <remarks>
+        /// Value:on: turn on
+        /// off: Not turned on
+        /// Note: Only effective TCP listener.
+        /// </remarks>
+        [JsiiProperty(name: "connectionDrain", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ConnectionDrain
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property connectionDrainTimeout: Set the connection graceful interruption timeout.</summary>
+        /// <remarks>
+        /// Unit: seconds. Value range: 10-900.
+        /// Note: Only effective for TCP listener. When ConnectionDrain is on, this option is required.
+        /// </remarks>
+        [JsiiProperty(name: "connectionDrainTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ConnectionDrainTimeout
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property description: The description of the listener.It must be 1 to 80 characters in length and can contain letters, digits, hyphens (-), forward slashes (\/), periods (.), and underscores (_). Chinese characters are supported.</summary>
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -248,6 +279,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             }
         }
 
+        /// <summary>Property proxyProtocolV2Enabled: Whether to support carrying the client source address to the backend server through the Proxy Protocol.</summary>
+        /// <remarks>
+        /// Value:
+        /// true: Yes
+        /// false (default): No
+        /// Note: Only effective TCP or UDP listener.
+        /// </remarks>
+        [JsiiProperty(name: "proxyProtocolV2Enabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ProxyProtocolV2Enabled
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property requestTimeout: Specify the request timeout in seconds.</summary>
         /// <remarks>
         /// Valid value: 1-180 If no response is received from the backend server during the specified timeout period, Server Load Balancer will stop waiting and send an HTTP 504 error to the client.
@@ -300,6 +348,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         [JsiiProperty(name: "startListener", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? StartListener
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property tags: Tags to attach to instance.</summary>
+        /// <remarks>
+        /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-slb.RosListener.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        AlibabaCloud.SDK.ROS.CDK.Slb.RosListener.ITagsProperty[]? Tags
         {
             get
             {
@@ -447,6 +509,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property connectionDrain: Whether to enable graceful connection interruption.</summary>
+            /// <remarks>
+            /// Value:on: turn on
+            /// off: Not turned on
+            /// Note: Only effective TCP listener.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "connectionDrain", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ConnectionDrain
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property connectionDrainTimeout: Set the connection graceful interruption timeout.</summary>
+            /// <remarks>
+            /// Unit: seconds. Value range: 10-900.
+            /// Note: Only effective for TCP listener. When ConnectionDrain is on, this option is required.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "connectionDrainTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ConnectionDrainTimeout
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property description: The description of the listener.It must be 1 to 80 characters in length and can contain letters, digits, hyphens (-), forward slashes (\/), periods (.), and underscores (_). Chinese characters are supported.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -535,6 +622,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property proxyProtocolV2Enabled: Whether to support carrying the client source address to the backend server through the Proxy Protocol.</summary>
+            /// <remarks>
+            /// Value:
+            /// true: Yes
+            /// false (default): No
+            /// Note: Only effective TCP or UDP listener.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "proxyProtocolV2Enabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ProxyProtocolV2Enabled
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property requestTimeout: Specify the request timeout in seconds.</summary>
             /// <remarks>
             /// Valid value: 1-180 If no response is received from the backend server during the specified timeout period, Server Load Balancer will stop waiting and send an HTTP 504 error to the client.
@@ -580,6 +681,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             public object? StartListener
             {
                 get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property tags: Tags to attach to instance.</summary>
+            /// <remarks>
+            /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-slb.RosListener.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+            public AlibabaCloud.SDK.ROS.CDK.Slb.RosListener.ITagsProperty[]? Tags
+            {
+                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Slb.RosListener.ITagsProperty[]?>();
             }
 
             /// <summary>Property tlsCipherPolicy: The Transport Layer Security (TLS) security policy.</summary>

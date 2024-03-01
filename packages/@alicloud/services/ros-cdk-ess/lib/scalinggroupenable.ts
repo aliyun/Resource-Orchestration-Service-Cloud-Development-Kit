@@ -58,6 +58,10 @@ export interface ScalingGroupEnableProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroupenable
  */
 export class ScalingGroupEnable extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ScalingGroupEnableProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute LifecycleState: The scaling group status
@@ -106,6 +110,10 @@ export class ScalingGroupEnable extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ScalingGroupEnableProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosScalingGroupEnable = new RosScalingGroupEnable(this, id,  {
             attachOptions: props.attachOptions,

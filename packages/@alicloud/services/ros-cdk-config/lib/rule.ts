@@ -91,6 +91,10 @@ export interface RuleProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-rule
  */
 export class Rule extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: RuleProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ConfigRuleArn: config rule arn
@@ -184,6 +188,10 @@ export class Rule extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: RuleProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosRule = new RosRule(this, id,  {
             tagKeyScope: props.tagKeyScope,

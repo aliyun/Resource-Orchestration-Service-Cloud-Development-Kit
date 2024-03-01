@@ -91,11 +91,15 @@ export interface ACLRuleProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::ACLRule`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::ACLRule`, which is used to add an access control list (ACL) rule.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosACLRule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-aclrule
  */
 export class ACLRule extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ACLRuleProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AcrId: Access control rule ID.
@@ -109,6 +113,10 @@ export class ACLRule extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ACLRuleProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosACLRule = new RosACLRule(this, id,  {
             policy: props.policy,

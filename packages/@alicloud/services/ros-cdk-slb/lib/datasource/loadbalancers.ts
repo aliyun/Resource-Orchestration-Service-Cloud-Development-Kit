@@ -86,6 +86,10 @@ export interface LoadBalancersProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-loadbalancers
  */
 export class LoadBalancers extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: LoadBalancersProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute LoadBalancerIds: The list of load balancer IDs.
@@ -104,6 +108,10 @@ export class LoadBalancers extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: LoadBalancersProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosLoadBalancers = new RosLoadBalancers(this, id,  {
             status: props.status,

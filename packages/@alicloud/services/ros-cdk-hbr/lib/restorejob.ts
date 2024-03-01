@@ -61,6 +61,10 @@ export interface RestoreJobProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-restorejob
  */
 export class RestoreJob extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: RestoreJobProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ErrorMessage: Error message of restore job
@@ -94,6 +98,10 @@ export class RestoreJob extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: RestoreJobProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosRestoreJob = new RosRestoreJob(this, id,  {
             snapshotId: props.snapshotId,

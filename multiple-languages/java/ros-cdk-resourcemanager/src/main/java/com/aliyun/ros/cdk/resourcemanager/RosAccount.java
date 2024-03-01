@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.resourcemanager;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ResourceManager::Account</code>ALIYUN::ResourceManager::ControlPolicy is used to create a custom control policy.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ResourceManager::Account</code>, which is used to create a resource account as a member account.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.786Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:54.282Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.resourcemanager.$Module.class, fqn = "@alicloud/ros-cdk-resourcemanager.RosAccount")
 public class RosAccount extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -109,6 +109,24 @@ public class RosAccount extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDeleteAccount() {
+        return software.amazon.jsii.Kernel.get(this, "deleteAccount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDeleteAccount(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "deleteAccount", value);
+    }
+
+    /**
+     */
+    public void setDeleteAccount(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "deleteAccount", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getFolderId() {
         return software.amazon.jsii.Kernel.get(this, "folderId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -183,6 +201,23 @@ public class RosAccount extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder displayName(final com.aliyun.ros.cdk.core.IResolvable displayName) {
             this.props.displayName(displayName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param deleteAccount This parameter is required.
+         */
+        public Builder deleteAccount(final java.lang.Boolean deleteAccount) {
+            this.props.deleteAccount(deleteAccount);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param deleteAccount This parameter is required.
+         */
+        public Builder deleteAccount(final com.aliyun.ros.cdk.core.IResolvable deleteAccount) {
+            this.props.deleteAccount(deleteAccount);
             return this;
         }
 

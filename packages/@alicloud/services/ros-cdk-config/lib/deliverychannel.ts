@@ -69,6 +69,10 @@ export interface DeliveryChannelProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-deliverychannel
  */
 export class DeliveryChannel extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DeliveryChannelProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DeliveryChannelId: The ID of the delivery method.
@@ -82,6 +86,10 @@ export class DeliveryChannel extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DeliveryChannelProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDeliveryChannel = new RosDeliveryChannel(this, id,  {
             description: props.description,

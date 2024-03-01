@@ -21,6 +21,10 @@ export interface CustomDomainsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-customdomains
  */
 export class CustomDomains extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: CustomDomainsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CustomDomains: The list of custom_domain.
@@ -39,6 +43,10 @@ export class CustomDomains extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: CustomDomainsProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCustomDomains = new RosCustomDomains(this, id,  {
             prefix: props.prefix,

@@ -21,6 +21,10 @@ export interface NamespacesProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cr-namespaces
  */
 export class Namespaces extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: NamespacesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute NamespaceNames: The list of namespace names.
@@ -39,6 +43,10 @@ export class Namespaces extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: NamespacesProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosNamespaces = new RosNamespaces(this, id,  {
             status: props.status,

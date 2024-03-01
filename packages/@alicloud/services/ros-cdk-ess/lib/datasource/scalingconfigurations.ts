@@ -26,11 +26,15 @@ export interface ScalingConfigurationsProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ESS::ScalingConfigurations`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ESS::ScalingConfigurations`, which is used to query the details of scaling configurations.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosScalingConfigurations`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ess-scalingconfigurations
  */
 export class ScalingConfigurations extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ScalingConfigurationsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ScalingConfigurationIds: The list of scaling configuration IDs.
@@ -49,6 +53,10 @@ export class ScalingConfigurations extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ScalingConfigurationsProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosScalingConfigurations = new RosScalingConfigurations(this, id,  {
             scalingGroupId: props.scalingGroupId,

@@ -46,6 +46,10 @@ export interface ApisProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-apis
  */
 export class Apis extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ApisProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ApiIds: The list of The ApiGateway api ids.
@@ -64,6 +68,10 @@ export class Apis extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ApisProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosApis = new RosApis(this, id,  {
             enableTagAuth: props.enableTagAuth,

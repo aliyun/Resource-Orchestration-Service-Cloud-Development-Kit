@@ -90,6 +90,10 @@ export interface TopicProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-topic
  */
 export class Topic extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: TopicProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceId: The ID of the Message Queue for Apache Kafka instance where the topic is located.
@@ -109,6 +113,10 @@ You can call the GetInstanceList operation to query instances.
      */
     constructor(scope: ros.Construct, id: string, props: TopicProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosTopic = new RosTopic(this, id,  {
             partitionNum: props.partitionNum,

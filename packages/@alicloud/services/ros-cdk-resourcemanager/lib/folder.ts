@@ -26,6 +26,10 @@ export interface FolderProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-folder
  */
 export class Folder extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: FolderProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute FolderId: The ID of the folder
@@ -49,6 +53,10 @@ export class Folder extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: FolderProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosFolder = new RosFolder(this, id,  {
             folderName: props.folderName,

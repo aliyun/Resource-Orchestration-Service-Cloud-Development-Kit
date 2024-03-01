@@ -54,11 +54,15 @@ export interface ManagedPolicyProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::ManagedPolicy`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::ManagedPolicy`, which is used to create a Resource Access Management (RAM) policy.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosManagedPolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-managedpolicy
  */
 export class ManagedPolicy extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ManagedPolicyProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute PolicyName: When the logical ID of this resource is provided to the Ref intrinsic function, Ref returns the ARN.
@@ -72,6 +76,10 @@ export class ManagedPolicy extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ManagedPolicyProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosManagedPolicy = new RosManagedPolicy(this, id,  {
             ignoreExisting: props.ignoreExisting === undefined || props.ignoreExisting === null ? false : props.ignoreExisting,

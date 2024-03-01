@@ -66,6 +66,10 @@ export interface KeyProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-key
  */
 export class Key extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: KeyProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute KeyId: The globally unique identifier for the CMK.
@@ -79,6 +83,10 @@ export class Key extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: KeyProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosKey = new RosKey(this, id,  {
             protectionLevel: props.protectionLevel,

@@ -30,6 +30,10 @@ export interface FileSystemsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-filesystems
  */
 export class FileSystems extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: FileSystemsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute FileSystemIds: The list of file system IDs.
@@ -48,6 +52,10 @@ export class FileSystems extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: FileSystemsProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosFileSystems = new RosFileSystems(this, id,  {
             fileSystemType: props.fileSystemType,

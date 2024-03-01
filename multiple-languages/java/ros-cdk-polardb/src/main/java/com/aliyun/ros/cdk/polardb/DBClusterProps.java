@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.polardb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbcluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.241Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:53.761Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DBClusterProps")
 @software.amazon.jsii.Jsii.Proxy(DBClusterProps.Jsii$Proxy.class)
 public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -27,8 +27,8 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
      * <p>
      * Valid values:
      * MySQL: 5.6, 5.7 or 8.0
-     * PostgreSQL: 11
-     * Oracle: 11
+     * PostgreSQL: 11, 14
+     * Oracle: 11, 14
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getDbVersion();
 
@@ -635,8 +635,8 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
          * @param dbVersion Property dbVersion: The version of the database. This parameter is required.
          *                  Valid values:
          *                  MySQL: 5.6, 5.7 or 8.0
-         *                  PostgreSQL: 11
-         *                  Oracle: 11
+         *                  PostgreSQL: 11, 14
+         *                  Oracle: 11, 14
          * @return {@code this}
          */
         public Builder dbVersion(java.lang.String dbVersion) {
@@ -649,8 +649,8 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
          * @param dbVersion Property dbVersion: The version of the database. This parameter is required.
          *                  Valid values:
          *                  MySQL: 5.6, 5.7 or 8.0
-         *                  PostgreSQL: 11
-         *                  Oracle: 11
+         *                  PostgreSQL: 11, 14
+         *                  Oracle: 11, 14
          * @return {@code this}
          */
         public Builder dbVersion(com.aliyun.ros.cdk.core.IResolvable dbVersion) {

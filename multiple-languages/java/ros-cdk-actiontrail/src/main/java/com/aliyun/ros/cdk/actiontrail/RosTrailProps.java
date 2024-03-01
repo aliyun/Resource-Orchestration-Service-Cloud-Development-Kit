@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.actiontrail;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-actiontrail-trail
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:13.637Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:49.741Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.actiontrail.$Module.class, fqn = "@alicloud/ros-cdk-actiontrail.RosTrailProps")
 @software.amazon.jsii.Jsii.Proxy(RosTrailProps.Jsii$Proxy.class)
 public interface RosTrailProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,21 +16,25 @@ public interface RosTrailProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Object getOssBucketName();
-
-    /**
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getRoleName();
-
-    /**
-     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEventRw() {
         return null;
     }
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getOssBucketName() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getOssKeyPrefix() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRoleName() {
         return null;
     }
 
@@ -57,10 +61,10 @@ public interface RosTrailProps extends software.amazon.jsii.JsiiSerializable {
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosTrailProps> {
         java.lang.Object name;
-        java.lang.Object ossBucketName;
-        java.lang.Object roleName;
         java.lang.Object eventRw;
+        java.lang.Object ossBucketName;
         java.lang.Object ossKeyPrefix;
+        java.lang.Object roleName;
         java.lang.Object slsProjectArn;
         java.lang.Object slsWriteRoleArn;
 
@@ -85,46 +89,6 @@ public interface RosTrailProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
-         * Sets the value of {@link RosTrailProps#getOssBucketName}
-         * @param ossBucketName the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder ossBucketName(java.lang.String ossBucketName) {
-            this.ossBucketName = ossBucketName;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosTrailProps#getOssBucketName}
-         * @param ossBucketName the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder ossBucketName(com.aliyun.ros.cdk.core.IResolvable ossBucketName) {
-            this.ossBucketName = ossBucketName;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosTrailProps#getRoleName}
-         * @param roleName the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder roleName(java.lang.String roleName) {
-            this.roleName = roleName;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosTrailProps#getRoleName}
-         * @param roleName the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder roleName(com.aliyun.ros.cdk.core.IResolvable roleName) {
-            this.roleName = roleName;
-            return this;
-        }
-
-        /**
          * Sets the value of {@link RosTrailProps#getEventRw}
          * @param eventRw the value to be set.
          * @return {@code this}
@@ -145,6 +109,26 @@ public interface RosTrailProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosTrailProps#getOssBucketName}
+         * @param ossBucketName the value to be set.
+         * @return {@code this}
+         */
+        public Builder ossBucketName(java.lang.String ossBucketName) {
+            this.ossBucketName = ossBucketName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosTrailProps#getOssBucketName}
+         * @param ossBucketName the value to be set.
+         * @return {@code this}
+         */
+        public Builder ossBucketName(com.aliyun.ros.cdk.core.IResolvable ossBucketName) {
+            this.ossBucketName = ossBucketName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosTrailProps#getOssKeyPrefix}
          * @param ossKeyPrefix the value to be set.
          * @return {@code this}
@@ -161,6 +145,26 @@ public interface RosTrailProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder ossKeyPrefix(com.aliyun.ros.cdk.core.IResolvable ossKeyPrefix) {
             this.ossKeyPrefix = ossKeyPrefix;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosTrailProps#getRoleName}
+         * @param roleName the value to be set.
+         * @return {@code this}
+         */
+        public Builder roleName(java.lang.String roleName) {
+            this.roleName = roleName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosTrailProps#getRoleName}
+         * @param roleName the value to be set.
+         * @return {@code this}
+         */
+        public Builder roleName(com.aliyun.ros.cdk.core.IResolvable roleName) {
+            this.roleName = roleName;
             return this;
         }
 
@@ -221,10 +225,10 @@ public interface RosTrailProps extends software.amazon.jsii.JsiiSerializable {
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosTrailProps {
         private final java.lang.Object name;
-        private final java.lang.Object ossBucketName;
-        private final java.lang.Object roleName;
         private final java.lang.Object eventRw;
+        private final java.lang.Object ossBucketName;
         private final java.lang.Object ossKeyPrefix;
+        private final java.lang.Object roleName;
         private final java.lang.Object slsProjectArn;
         private final java.lang.Object slsWriteRoleArn;
 
@@ -235,10 +239,10 @@ public interface RosTrailProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.ossBucketName = software.amazon.jsii.Kernel.get(this, "ossBucketName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.roleName = software.amazon.jsii.Kernel.get(this, "roleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.eventRw = software.amazon.jsii.Kernel.get(this, "eventRw", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ossBucketName = software.amazon.jsii.Kernel.get(this, "ossBucketName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ossKeyPrefix = software.amazon.jsii.Kernel.get(this, "ossKeyPrefix", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.roleName = software.amazon.jsii.Kernel.get(this, "roleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.slsProjectArn = software.amazon.jsii.Kernel.get(this, "slsProjectArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.slsWriteRoleArn = software.amazon.jsii.Kernel.get(this, "slsWriteRoleArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -249,10 +253,10 @@ public interface RosTrailProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
-            this.ossBucketName = java.util.Objects.requireNonNull(builder.ossBucketName, "ossBucketName is required");
-            this.roleName = java.util.Objects.requireNonNull(builder.roleName, "roleName is required");
             this.eventRw = builder.eventRw;
+            this.ossBucketName = builder.ossBucketName;
             this.ossKeyPrefix = builder.ossKeyPrefix;
+            this.roleName = builder.roleName;
             this.slsProjectArn = builder.slsProjectArn;
             this.slsWriteRoleArn = builder.slsWriteRoleArn;
         }
@@ -263,23 +267,23 @@ public interface RosTrailProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Object getOssBucketName() {
-            return this.ossBucketName;
-        }
-
-        @Override
-        public final java.lang.Object getRoleName() {
-            return this.roleName;
-        }
-
-        @Override
         public final java.lang.Object getEventRw() {
             return this.eventRw;
         }
 
         @Override
+        public final java.lang.Object getOssBucketName() {
+            return this.ossBucketName;
+        }
+
+        @Override
         public final java.lang.Object getOssKeyPrefix() {
             return this.ossKeyPrefix;
+        }
+
+        @Override
+        public final java.lang.Object getRoleName() {
+            return this.roleName;
         }
 
         @Override
@@ -299,13 +303,17 @@ public interface RosTrailProps extends software.amazon.jsii.JsiiSerializable {
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
             data.set("name", om.valueToTree(this.getName()));
-            data.set("ossBucketName", om.valueToTree(this.getOssBucketName()));
-            data.set("roleName", om.valueToTree(this.getRoleName()));
             if (this.getEventRw() != null) {
                 data.set("eventRw", om.valueToTree(this.getEventRw()));
             }
+            if (this.getOssBucketName() != null) {
+                data.set("ossBucketName", om.valueToTree(this.getOssBucketName()));
+            }
             if (this.getOssKeyPrefix() != null) {
                 data.set("ossKeyPrefix", om.valueToTree(this.getOssKeyPrefix()));
+            }
+            if (this.getRoleName() != null) {
+                data.set("roleName", om.valueToTree(this.getRoleName()));
             }
             if (this.getSlsProjectArn() != null) {
                 data.set("slsProjectArn", om.valueToTree(this.getSlsProjectArn()));
@@ -332,10 +340,10 @@ public interface RosTrailProps extends software.amazon.jsii.JsiiSerializable {
             RosTrailProps.Jsii$Proxy that = (RosTrailProps.Jsii$Proxy) o;
 
             if (!name.equals(that.name)) return false;
-            if (!ossBucketName.equals(that.ossBucketName)) return false;
-            if (!roleName.equals(that.roleName)) return false;
             if (this.eventRw != null ? !this.eventRw.equals(that.eventRw) : that.eventRw != null) return false;
+            if (this.ossBucketName != null ? !this.ossBucketName.equals(that.ossBucketName) : that.ossBucketName != null) return false;
             if (this.ossKeyPrefix != null ? !this.ossKeyPrefix.equals(that.ossKeyPrefix) : that.ossKeyPrefix != null) return false;
+            if (this.roleName != null ? !this.roleName.equals(that.roleName) : that.roleName != null) return false;
             if (this.slsProjectArn != null ? !this.slsProjectArn.equals(that.slsProjectArn) : that.slsProjectArn != null) return false;
             return this.slsWriteRoleArn != null ? this.slsWriteRoleArn.equals(that.slsWriteRoleArn) : that.slsWriteRoleArn == null;
         }
@@ -343,10 +351,10 @@ public interface RosTrailProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final int hashCode() {
             int result = this.name.hashCode();
-            result = 31 * result + (this.ossBucketName.hashCode());
-            result = 31 * result + (this.roleName.hashCode());
             result = 31 * result + (this.eventRw != null ? this.eventRw.hashCode() : 0);
+            result = 31 * result + (this.ossBucketName != null ? this.ossBucketName.hashCode() : 0);
             result = 31 * result + (this.ossKeyPrefix != null ? this.ossKeyPrefix.hashCode() : 0);
+            result = 31 * result + (this.roleName != null ? this.roleName.hashCode() : 0);
             result = 31 * result + (this.slsProjectArn != null ? this.slsProjectArn.hashCode() : 0);
             result = 31 * result + (this.slsWriteRoleArn != null ? this.slsWriteRoleArn.hashCode() : 0);
             return result;

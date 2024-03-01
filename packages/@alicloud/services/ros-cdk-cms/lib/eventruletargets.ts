@@ -46,6 +46,10 @@ export interface EventRuleTargetsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-eventruletargets
  */
 export class EventRuleTargets extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: EventRuleTargetsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -54,6 +58,10 @@ export class EventRuleTargets extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: EventRuleTargetsProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosEventRuleTargets = new RosEventRuleTargets(this, id,  {
             contactParameters: props.contactParameters,

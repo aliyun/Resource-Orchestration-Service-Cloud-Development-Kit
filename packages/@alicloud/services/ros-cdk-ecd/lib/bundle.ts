@@ -78,6 +78,10 @@ export interface BundleProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-bundle
  */
 export class Bundle extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: BundleProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute BundleId: Desktop bundle ID.
@@ -91,6 +95,10 @@ export class Bundle extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: BundleProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosBundle = new RosBundle(this, id,  {
             description: props.description,

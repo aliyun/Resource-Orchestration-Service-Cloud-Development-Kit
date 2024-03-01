@@ -31,6 +31,10 @@ export interface AclsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ga-acls
  */
 export class Acls extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AclsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AclIds: The list of acl IDs.
@@ -49,6 +53,10 @@ export class Acls extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AclsProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAcls = new RosAcls(this, id,  {
             resourceGroupId: props.resourceGroupId,

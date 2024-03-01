@@ -35,6 +35,10 @@ export interface ClusterUserKubeconfigProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-clusteruserkubeconfig
  */
 export class ClusterUserKubeconfig extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ClusterUserKubeconfigProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterId: The ID of the ACK cluster.
@@ -58,6 +62,10 @@ export class ClusterUserKubeconfig extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ClusterUserKubeconfigProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosClusterUserKubeconfig = new RosClusterUserKubeconfig(this, id,  {
             privateIpAddress: props.privateIpAddress,

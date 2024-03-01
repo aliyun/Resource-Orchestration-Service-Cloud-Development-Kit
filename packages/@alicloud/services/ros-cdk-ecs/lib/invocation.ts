@@ -116,6 +116,10 @@ export interface InvocationProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-invocation
  */
 export class Invocation extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: InvocationProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InvokeId: The id of command execution.
@@ -139,6 +143,10 @@ export class Invocation extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: InvocationProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosInvocation = new RosInvocation(this, id,  {
             parameters: props.parameters,

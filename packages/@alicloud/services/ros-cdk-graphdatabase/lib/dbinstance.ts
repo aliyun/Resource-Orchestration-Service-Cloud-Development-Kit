@@ -122,6 +122,10 @@ export interface DbInstanceProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-graphdatabase-dbinstance
  */
 export class DbInstance extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DbInstanceProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ConnectionString: Virtual Private Cloud (vpc connection such as a VPN connection or leased line domain name.
@@ -295,6 +299,10 @@ export class DbInstance extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DbInstanceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDbInstance = new RosDbInstance(this, id,  {
             zoneId: props.zoneId,

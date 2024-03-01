@@ -501,3 +501,273 @@ export class RosDomainRecord extends ros.RosResource {
         return rosDomainRecordPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
+
+/**
+ * Properties for defining a `RosInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dns-instance
+ */
+export interface RosInstanceProps {
+
+    /**
+     * @Property dnsSecurity: The DNS security policy. Valid values:
+     * - no: No protection against DNS attacks is provided.
+     * - basic: Basic protection against DNS attacks is provided.
+     * - advanced: Advanced protection against DNS attacks is provided.
+     */
+    readonly dnsSecurity: string | ros.IResolvable;
+
+    /**
+     * @Property domainNumbers: The number of domain names.
+     */
+    readonly domainNumbers: number | ros.IResolvable;
+
+    /**
+     * @Property period: The subscription duration. Valid values:
+     * - If unit is month: 1, 2, 3, 6
+     * - If unit is year: 1, 2
+     */
+    readonly period: number | ros.IResolvable;
+
+    /**
+     * @Property periodUnit: The subscription duration unit.
+     */
+    readonly periodUnit: string | ros.IResolvable;
+
+    /**
+     * @Property version: The edition of Alibaba Cloud DNS. Valid values:
+     * If create hosted public zone:
+     * - version_personal: Personal Edition. 
+     * - version_enterprise_basic: Enterprise Standard Edition. 
+     * - version_enterprise_advanced: Enterprise Ultimate Edition.
+     * If create cached public zone:
+     * - version_cached_basic**Note**: Only upgrade operations are supported after instance creation.
+     */
+    readonly version: string | ros.IResolvable;
+
+    /**
+     * @Property domain: The domain name that you want to bind to the instance. If you want to bind multiple domain names to the instance, separate these domain names with commas (,).
+     */
+    readonly domain?: string | ros.IResolvable;
+
+    /**
+     * @Property instanceType: The type of the instance. Valid values:
+     * - HostedPublicZone: Hosted Public Zone
+     * - CachedPublicZone: Cached Public Zone.
+     */
+    readonly instanceType?: string | ros.IResolvable;
+
+    /**
+     * @Property renewalStatus: The renewal method. Valid values:
+     * - AutoRenewal: The instance is automatically renewed.
+     * - ManualRenewal: The instance is manually renewed.
+     * Default value: ManualRenewal.
+     */
+    readonly renewalStatus?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosInstanceProps`
+ *
+ * @param properties - the TypeScript properties of a `RosInstanceProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstancePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('domainNumbers', ros.requiredValidator)(properties.domainNumbers));
+    if(properties.domainNumbers && (typeof properties.domainNumbers) !== 'object') {
+        errors.collect(ros.propertyValidator('domainNumbers', ros.validateRange)({
+            data: properties.domainNumbers,
+            min: 1,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('domainNumbers', ros.validateNumber)(properties.domainNumbers));
+    errors.collect(ros.propertyValidator('dnsSecurity', ros.requiredValidator)(properties.dnsSecurity));
+    if(properties.dnsSecurity && (typeof properties.dnsSecurity) !== 'object') {
+        errors.collect(ros.propertyValidator('dnsSecurity', ros.validateAllowedValues)({
+          data: properties.dnsSecurity,
+          allowedValues: ["no","basic","advanced"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('dnsSecurity', ros.validateString)(properties.dnsSecurity));
+    errors.collect(ros.propertyValidator('version', ros.requiredValidator)(properties.version));
+    if(properties.version && (typeof properties.version) !== 'object') {
+        errors.collect(ros.propertyValidator('version', ros.validateAllowedValues)({
+          data: properties.version,
+          allowedValues: ["version_personal","version_enterprise_basic","version_enterprise_advanced","version_cached_basic"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('version', ros.validateString)(properties.version));
+    if(properties.renewalStatus && (typeof properties.renewalStatus) !== 'object') {
+        errors.collect(ros.propertyValidator('renewalStatus', ros.validateAllowedValues)({
+          data: properties.renewalStatus,
+          allowedValues: ["AutoRenewal","ManualRenewal"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('renewalStatus', ros.validateString)(properties.renewalStatus));
+    errors.collect(ros.propertyValidator('period', ros.requiredValidator)(properties.period));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
+          data: properties.period,
+          allowedValues: [1,2,3,6],
+        }));
+    }
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    errors.collect(ros.propertyValidator('domain', ros.validateString)(properties.domain));
+    if(properties.instanceType && (typeof properties.instanceType) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceType', ros.validateAllowedValues)({
+          data: properties.instanceType,
+          allowedValues: ["HostedPublicZone","CachedPublicZone"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
+    errors.collect(ros.propertyValidator('periodUnit', ros.requiredValidator)(properties.periodUnit));
+    if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
+        errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
+          data: properties.periodUnit,
+          allowedValues: ["Year","Month"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
+    return errors.wrap('supplied properties not correct for "RosInstanceProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DNS::Instance` resource
+ *
+ * @param properties - the TypeScript properties of a `RosInstanceProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DNS::Instance` resource.
+ */
+// @ts-ignore TS6133
+function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosInstancePropsValidator(properties).assertSuccess();
+    }
+    return {
+      DNSSecurity: ros.stringToRosTemplate(properties.dnsSecurity),
+      DomainNumbers: ros.numberToRosTemplate(properties.domainNumbers),
+      Period: ros.numberToRosTemplate(properties.period),
+      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
+      Version: ros.stringToRosTemplate(properties.version),
+      Domain: ros.stringToRosTemplate(properties.domain),
+      InstanceType: ros.stringToRosTemplate(properties.instanceType),
+      RenewalStatus: ros.stringToRosTemplate(properties.renewalStatus),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DNS::Instance`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dns-instance
+ */
+export class RosInstance extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DNS::Instance";
+
+    /**
+     * @Attribute InstanceId: DNS instance id.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property dnsSecurity: The DNS security policy. Valid values:
+     * - no: No protection against DNS attacks is provided.
+     * - basic: Basic protection against DNS attacks is provided.
+     * - advanced: Advanced protection against DNS attacks is provided.
+     */
+    public dnsSecurity: string | ros.IResolvable;
+
+    /**
+     * @Property domainNumbers: The number of domain names.
+     */
+    public domainNumbers: number | ros.IResolvable;
+
+    /**
+     * @Property period: The subscription duration. Valid values:
+     * - If unit is month: 1, 2, 3, 6
+     * - If unit is year: 1, 2
+     */
+    public period: number | ros.IResolvable;
+
+    /**
+     * @Property periodUnit: The subscription duration unit.
+     */
+    public periodUnit: string | ros.IResolvable;
+
+    /**
+     * @Property version: The edition of Alibaba Cloud DNS. Valid values:
+     * If create hosted public zone:
+     * - version_personal: Personal Edition. 
+     * - version_enterprise_basic: Enterprise Standard Edition. 
+     * - version_enterprise_advanced: Enterprise Ultimate Edition.
+     * If create cached public zone:
+     * - version_cached_basic**Note**: Only upgrade operations are supported after instance creation.
+     */
+    public version: string | ros.IResolvable;
+
+    /**
+     * @Property domain: The domain name that you want to bind to the instance. If you want to bind multiple domain names to the instance, separate these domain names with commas (,).
+     */
+    public domain: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceType: The type of the instance. Valid values:
+     * - HostedPublicZone: Hosted Public Zone
+     * - CachedPublicZone: Cached Public Zone.
+     */
+    public instanceType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property renewalStatus: The renewal method. Valid values:
+     * - AutoRenewal: The instance is automatically renewed.
+     * - ManualRenewal: The instance is manually renewed.
+     * Default value: ManualRenewal.
+     */
+    public renewalStatus: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosInstanceProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrInstanceId = this.getAtt('InstanceId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.dnsSecurity = props.dnsSecurity;
+        this.domainNumbers = props.domainNumbers;
+        this.period = props.period;
+        this.periodUnit = props.periodUnit;
+        this.version = props.version;
+        this.domain = props.domain;
+        this.instanceType = props.instanceType;
+        this.renewalStatus = props.renewalStatus;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            dnsSecurity: this.dnsSecurity,
+            domainNumbers: this.domainNumbers,
+            period: this.period,
+            periodUnit: this.periodUnit,
+            version: this.version,
+            domain: this.domain,
+            instanceType: this.instanceType,
+            renewalStatus: this.renewalStatus,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosInstancePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}

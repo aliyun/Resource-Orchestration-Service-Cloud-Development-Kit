@@ -62,11 +62,15 @@ export interface AntiBruteForceRuleProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ThreatDetection::AntiBruteForceRule`, which is used to create a defense rule against brute-force attacks.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ThreatDetection::AntiBruteForceRule`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAntiBruteForceRule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-threatdetection-antibruteforcerule
  */
 export class AntiBruteForceRule extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AntiBruteForceRuleProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AntiBruteForceRuleId: The ID of the defense rule.
@@ -113,6 +117,10 @@ Valid values:
      */
     constructor(scope: ros.Construct, id: string, props: AntiBruteForceRuleProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAntiBruteForceRule = new RosAntiBruteForceRule(this, id,  {
             defaultRule: props.defaultRule,

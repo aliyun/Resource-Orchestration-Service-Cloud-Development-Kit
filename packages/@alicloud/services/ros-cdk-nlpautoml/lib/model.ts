@@ -52,6 +52,10 @@ export interface ModelProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlpautoml-model
  */
 export class Model extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ModelProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ModelId: The ID of model.
@@ -70,6 +74,10 @@ export class Model extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ModelProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosModel = new RosModel(this, id,  {
             datasetIdList: props.datasetIdList,

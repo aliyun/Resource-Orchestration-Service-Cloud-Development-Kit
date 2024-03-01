@@ -66,6 +66,10 @@ export interface AddressBookProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-addressbook
  */
 export class AddressBook extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AddressBookProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute GroupUuid: After a successful return to the address book to add unique identification ID.
@@ -79,6 +83,10 @@ export class AddressBook extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AddressBookProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAddressBook = new RosAddressBook(this, id,  {
             groupName: props.groupName,

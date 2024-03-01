@@ -107,11 +107,15 @@ export interface NatGatewayProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::NatGateway`, which is used to create a NAT gateway.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::NatGateway`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNatGateway`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-natgateway
  */
 export class NatGateway extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: NatGatewayProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ForwardTableId: The forward table id.
@@ -135,6 +139,10 @@ export class NatGateway extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: NatGatewayProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosNatGateway = new RosNatGateway(this, id,  {
             description: props.description,

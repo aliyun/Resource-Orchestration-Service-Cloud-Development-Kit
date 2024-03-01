@@ -44,11 +44,15 @@ export interface NodesProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::EHPC::Nodes`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::EHPC::Nodes`, which is used to query nodes in an Elastic High Performance Computing (E-HPC) cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNodes`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ehpc-nodes
  */
 export class Nodes extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: NodesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute NodeIds: The list of node IDs.
@@ -67,6 +71,10 @@ export class Nodes extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: NodesProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosNodes = new RosNodes(this, id,  {
             role: props.role,

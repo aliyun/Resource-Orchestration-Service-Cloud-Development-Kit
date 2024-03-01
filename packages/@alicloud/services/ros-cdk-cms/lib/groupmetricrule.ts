@@ -129,6 +129,10 @@ export interface GroupMetricRuleProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-groupmetricrule
  */
 export class GroupMetricRule extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: GroupMetricRuleProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute RuleId: Rule ID.
@@ -142,6 +146,10 @@ export class GroupMetricRule extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: GroupMetricRuleProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosGroupMetricRule = new RosGroupMetricRule(this, id,  {
             noEffectiveInterval: props.noEffectiveInterval,

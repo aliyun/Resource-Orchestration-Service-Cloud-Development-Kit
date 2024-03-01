@@ -103,6 +103,10 @@ export interface SecretProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-secret
  */
 export class Secret extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: SecretProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
@@ -121,6 +125,10 @@ export class Secret extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: SecretProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosSecret = new RosSecret(this, id,  {
             versionId: props.versionId,

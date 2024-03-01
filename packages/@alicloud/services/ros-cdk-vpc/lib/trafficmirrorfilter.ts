@@ -36,6 +36,10 @@ export interface TrafficMirrorFilterProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-trafficmirrorfilter
  */
 export class TrafficMirrorFilter extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: TrafficMirrorFilterProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute EgressRules: Egress rules.
@@ -69,6 +73,10 @@ export class TrafficMirrorFilter extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: TrafficMirrorFilterProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosTrafficMirrorFilter = new RosTrafficMirrorFilter(this, id,  {
             trafficMirrorFilterDescription: props.trafficMirrorFilterDescription,

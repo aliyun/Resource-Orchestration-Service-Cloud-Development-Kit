@@ -114,6 +114,11 @@ export interface DBInstanceProps {
     readonly privateIpAddress?: string | ros.IResolvable;
 
     /**
+     * Property prodType: Prod type. The value can be: standard, cost-effective. The default value is standard.
+     */
+    readonly prodType?: string | ros.IResolvable;
+
+    /**
      * Property securityIpList: The whitelist of IP addresses that are allowed to access the instance. Default value:
      * 127.0.0.1.
      */
@@ -159,7 +164,8 @@ export interface DBInstanceProps {
     readonly storageSize?: number | ros.IResolvable;
 
     /**
-     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     * Property tags: The list of instance tags in the form of key\/value pairs.
+     * You can define a maximum of 20 tags for instance.
      */
     readonly tags?: RosDBInstance.TagsProperty[];
 
@@ -182,6 +188,10 @@ export interface DBInstanceProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-dbinstance
  */
 export class DBInstance extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DBInstanceProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ConnectionString: The endpoint of the instance.
@@ -210,6 +220,10 @@ export class DBInstance extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DBInstanceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDBInstance = new RosDBInstance(this, id,  {
             masterNodeNum: props.masterNodeNum,
@@ -233,6 +247,7 @@ export class DBInstance extends ros.Resource {
             zoneId: props.zoneId,
             vpcId: props.vpcId,
             dbInstanceClass: props.dbInstanceClass,
+            prodType: props.prodType === undefined || props.prodType === null ? 'standard' : props.prodType,
             vSwitchId: props.vSwitchId,
             period: props.period,
             storageSize: props.storageSize,

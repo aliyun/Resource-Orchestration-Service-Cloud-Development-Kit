@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::InstanceGroup</code>, which is used to create a group of Elastic Compute Service (ECS) instances that have the same configurations.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.228Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:51.640Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceGroup")
 public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
 
@@ -109,6 +109,38 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrZoneIds() {
         return software.amazon.jsii.Kernel.get(this, "attrZoneIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
+        return software.amazon.jsii.Kernel.get(this, "enableResourcePropertyConstraint", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
+    }
+
+    protected void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
+    }
+
+    protected @org.jetbrains.annotations.NotNull java.lang.String getId() {
+        return software.amazon.jsii.Kernel.get(this, "id", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    }
+
+    protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
+    }
+
+    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.InstanceGroupProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.InstanceGroupProps.class));
+    }
+
+    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.InstanceGroupProps value) {
+        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
+    }
+
+    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {
+        return software.amazon.jsii.Kernel.get(this, "scope", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.Construct.class));
+    }
+
+    protected void setScope(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct value) {
+        software.amazon.jsii.Kernel.set(this, "scope", java.util.Objects.requireNonNull(value, "scope is required"));
     }
 
     /**
@@ -325,6 +357,27 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property cpuOptions: Cpu options.
+         * <p>
+         * @return {@code this}
+         * @param cpuOptions Property cpuOptions: Cpu options. This parameter is required.
+         */
+        public Builder cpuOptions(final com.aliyun.ros.cdk.core.IResolvable cpuOptions) {
+            this.props.cpuOptions(cpuOptions);
+            return this;
+        }
+        /**
+         * Property cpuOptions: Cpu options.
+         * <p>
+         * @return {@code this}
+         * @param cpuOptions Property cpuOptions: Cpu options. This parameter is required.
+         */
+        public Builder cpuOptions(final com.aliyun.ros.cdk.ecs.RosInstanceGroup.CpuOptionsProperty cpuOptions) {
+            this.props.cpuOptions(cpuOptions);
+            return this;
+        }
+
+        /**
          * Property creditSpecification: The performance mode of the burstable instance.
          * <p>
          * Valid values:
@@ -377,6 +430,31 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder dedicatedHostId(final com.aliyun.ros.cdk.core.IResolvable dedicatedHostId) {
             this.props.dedicatedHostId(dedicatedHostId);
+            return this;
+        }
+
+        /**
+         * Property deletionForce: Whether force delete the instance.
+         * <p>
+         * Default value is false.
+         * <p>
+         * @return {@code this}
+         * @param deletionForce Property deletionForce: Whether force delete the instance. This parameter is required.
+         */
+        public Builder deletionForce(final java.lang.Boolean deletionForce) {
+            this.props.deletionForce(deletionForce);
+            return this;
+        }
+        /**
+         * Property deletionForce: Whether force delete the instance.
+         * <p>
+         * Default value is false.
+         * <p>
+         * @return {@code this}
+         * @param deletionForce Property deletionForce: Whether force delete the instance. This parameter is required.
+         */
+        public Builder deletionForce(final com.aliyun.ros.cdk.core.IResolvable deletionForce) {
+            this.props.deletionForce(deletionForce);
             return this;
         }
 
@@ -506,7 +584,7 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property eniMappings: NetworkInterface to attach to instance.
          * <p>
-         * Max support 1 ENI.
+         * Max support 2 ENIs.
          * <p>
          * @return {@code this}
          * @param eniMappings Property eniMappings: NetworkInterface to attach to instance. This parameter is required.
@@ -518,7 +596,7 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property eniMappings: NetworkInterface to attach to instance.
          * <p>
-         * Max support 1 ENI.
+         * Max support 2 ENIs.
          * <p>
          * @return {@code this}
          * @param eniMappings Property eniMappings: NetworkInterface to attach to instance. This parameter is required.
@@ -576,6 +654,47 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder hostName(final com.aliyun.ros.cdk.core.IResolvable hostName) {
             this.props.hostName(hostName);
+            return this;
+        }
+
+        /**
+         * Property hostNames: The hostname of instance N.
+         * <p>
+         * You can use this parameter to specify different hostnames for multiple instances. Take note of the following items:
+         * <p>
+         * <ul>
+         * <li>The maximum value of N must be the same as the Amount value. For example, if you set Amount to 2, you can use HostNames.1 and HostNames.2 to specify hostnames for the individual instances. Examples: HostNames.1=test1 and HostNames.2=test2.</li>
+         * <li>You cannot specify both HostName and HostNames.N.</li>
+         * <li>The hostname cannot start or end with a period (.) or hyphen (-). The hostname cannot contain consecutive periods (.) or hyphens (-).</li>
+         * <li>For Windows instances, the hostname must be 2 to 15 characters in length and cannot contain periods (.) or contain only digits. The hostname can contain letters, digits, and hyphens (-).</li>
+         * <li>For instances that run other operating systems such as Linux, the hostname must be 2 to 64 characters in length. You can use periods (.) to separate a hostname into multiple segments. Each segment can contain letters, digits, and hyphens (-).</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param hostNames Property hostNames: The hostname of instance N. This parameter is required.
+         */
+        public Builder hostNames(final com.aliyun.ros.cdk.core.IResolvable hostNames) {
+            this.props.hostNames(hostNames);
+            return this;
+        }
+        /**
+         * Property hostNames: The hostname of instance N.
+         * <p>
+         * You can use this parameter to specify different hostnames for multiple instances. Take note of the following items:
+         * <p>
+         * <ul>
+         * <li>The maximum value of N must be the same as the Amount value. For example, if you set Amount to 2, you can use HostNames.1 and HostNames.2 to specify hostnames for the individual instances. Examples: HostNames.1=test1 and HostNames.2=test2.</li>
+         * <li>You cannot specify both HostName and HostNames.N.</li>
+         * <li>The hostname cannot start or end with a period (.) or hyphen (-). The hostname cannot contain consecutive periods (.) or hyphens (-).</li>
+         * <li>For Windows instances, the hostname must be 2 to 15 characters in length and cannot contain periods (.) or contain only digits. The hostname can contain letters, digits, and hyphens (-).</li>
+         * <li>For instances that run other operating systems such as Linux, the hostname must be 2 to 64 characters in length. You can use periods (.) to separate a hostname into multiple segments. Each segment can contain letters, digits, and hyphens (-).</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param hostNames Property hostNames: The hostname of instance N. This parameter is required.
+         */
+        public Builder hostNames(final java.util.List<? extends java.lang.Object> hostNames) {
+            this.props.hostNames(hostNames);
             return this;
         }
 
@@ -727,6 +846,27 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder imageId(final com.aliyun.ros.cdk.core.IResolvable imageId) {
             this.props.imageId(imageId);
+            return this;
+        }
+
+        /**
+         * Property imageOptions: Image options.
+         * <p>
+         * @return {@code this}
+         * @param imageOptions Property imageOptions: Image options. This parameter is required.
+         */
+        public Builder imageOptions(final com.aliyun.ros.cdk.core.IResolvable imageOptions) {
+            this.props.imageOptions(imageOptions);
+            return this;
+        }
+        /**
+         * Property imageOptions: Image options.
+         * <p>
+         * @return {@code this}
+         * @param imageOptions Property imageOptions: Image options. This parameter is required.
+         */
+        public Builder imageOptions(final com.aliyun.ros.cdk.ecs.RosInstanceGroup.ImageOptionsProperty imageOptions) {
+            this.props.imageOptions(imageOptions);
             return this;
         }
 
@@ -1000,6 +1140,64 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property networkInterfaceQueueNumber: The number of queues supported by the primary ENI.
+         * <p>
+         * Take note of the following items:
+         * <p>
+         * <ul>
+         * <li>The value of this parameter cannot exceed the maximum number of queues per ENI allowed for the instance type.</li>
+         * <li>The total number of queues for all ENIs on the instance cannot exceed the queue quota for the instance type.</li>
+         * <li>If NetworkInterface.N.InstanceType is set to Primary, you cannot specify NetworkInterfaceQueueNumber but can specify NetworkInterface.N.QueueNumber</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param networkInterfaceQueueNumber Property networkInterfaceQueueNumber: The number of queues supported by the primary ENI. This parameter is required.
+         */
+        public Builder networkInterfaceQueueNumber(final java.lang.Number networkInterfaceQueueNumber) {
+            this.props.networkInterfaceQueueNumber(networkInterfaceQueueNumber);
+            return this;
+        }
+        /**
+         * Property networkInterfaceQueueNumber: The number of queues supported by the primary ENI.
+         * <p>
+         * Take note of the following items:
+         * <p>
+         * <ul>
+         * <li>The value of this parameter cannot exceed the maximum number of queues per ENI allowed for the instance type.</li>
+         * <li>The total number of queues for all ENIs on the instance cannot exceed the queue quota for the instance type.</li>
+         * <li>If NetworkInterface.N.InstanceType is set to Primary, you cannot specify NetworkInterfaceQueueNumber but can specify NetworkInterface.N.QueueNumber</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param networkInterfaceQueueNumber Property networkInterfaceQueueNumber: The number of queues supported by the primary ENI. This parameter is required.
+         */
+        public Builder networkInterfaceQueueNumber(final com.aliyun.ros.cdk.core.IResolvable networkInterfaceQueueNumber) {
+            this.props.networkInterfaceQueueNumber(networkInterfaceQueueNumber);
+            return this;
+        }
+
+        /**
+         * Property networkOptions: Network options.
+         * <p>
+         * @return {@code this}
+         * @param networkOptions Property networkOptions: Network options. This parameter is required.
+         */
+        public Builder networkOptions(final com.aliyun.ros.cdk.core.IResolvable networkOptions) {
+            this.props.networkOptions(networkOptions);
+            return this;
+        }
+        /**
+         * Property networkOptions: Network options.
+         * <p>
+         * @return {@code this}
+         * @param networkOptions Property networkOptions: Network options. This parameter is required.
+         */
+        public Builder networkOptions(final com.aliyun.ros.cdk.ecs.RosInstanceGroup.NetworkOptionsProperty networkOptions) {
+            this.props.networkOptions(networkOptions);
+            return this;
+        }
+
+        /**
          * Property networkType: Instance network type.
          * <p>
          * Support 'vpc' and 'classic', for compatible reason, default is 'classic'. If vswitch id and vpc id is specified, the property will be forced to be set to 'vpc'
@@ -1217,6 +1415,27 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property schedulerOptions: undefined.
+         * <p>
+         * @return {@code this}
+         * @param schedulerOptions Property schedulerOptions: undefined. This parameter is required.
+         */
+        public Builder schedulerOptions(final com.aliyun.ros.cdk.core.IResolvable schedulerOptions) {
+            this.props.schedulerOptions(schedulerOptions);
+            return this;
+        }
+        /**
+         * Property schedulerOptions: undefined.
+         * <p>
+         * @return {@code this}
+         * @param schedulerOptions Property schedulerOptions: undefined. This parameter is required.
+         */
+        public Builder schedulerOptions(final com.aliyun.ros.cdk.ecs.RosInstanceGroup.SchedulerOptionsProperty schedulerOptions) {
+            this.props.schedulerOptions(schedulerOptions);
+            return this;
+        }
+
+        /**
          * Property securityEnhancementStrategy:.
          * <p>
          * @return {@code this}
@@ -1284,6 +1503,27 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder securityGroupIds(final java.util.List<? extends java.lang.Object> securityGroupIds) {
             this.props.securityGroupIds(securityGroupIds);
+            return this;
+        }
+
+        /**
+         * Property securityOptions: Security options.
+         * <p>
+         * @return {@code this}
+         * @param securityOptions Property securityOptions: Security options. This parameter is required.
+         */
+        public Builder securityOptions(final com.aliyun.ros.cdk.core.IResolvable securityOptions) {
+            this.props.securityOptions(securityOptions);
+            return this;
+        }
+        /**
+         * Property securityOptions: Security options.
+         * <p>
+         * @return {@code this}
+         * @param securityOptions Property securityOptions: Security options. This parameter is required.
+         */
+        public Builder securityOptions(final com.aliyun.ros.cdk.ecs.RosInstanceGroup.SecurityOptionsProperty securityOptions) {
+            this.props.securityOptions(securityOptions);
             return this;
         }
 
@@ -1782,6 +2022,45 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder tenancy(final com.aliyun.ros.cdk.core.IResolvable tenancy) {
             this.props.tenancy(tenancy);
+            return this;
+        }
+
+        /**
+         * Property uniqueSuffix: Specifies whether to automatically append incremental suffixes to the hostname specified by the <strong>HostName</strong> parameter and to the instance name specified by the <strong>InstanceName</strong> parameter when you batch create instances.
+         * <p>
+         * The incremental suffixes can range from 001 to 999. Valid values:
+         * <p>
+         * <ul>
+         * <li><strong>true</strong>: appends incremental suffixes to the hostname and the instance name.</li>
+         * <li><strong>false</strong>: does not append incremental suffixes to the hostname or the instance name.
+         * Default value: <strong>false</strong>.
+         * When the <strong>HostName</strong> or <strong>InstanceName</strong> value is set in the name_prefix[begin_number,bits] format without a suffix (name_suffix), the <strong>UniqueSuffix</strong> parameter does not take effect. The names are sorted in the specified sequence.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param uniqueSuffix Property uniqueSuffix: Specifies whether to automatically append incremental suffixes to the hostname specified by the <strong>HostName</strong> parameter and to the instance name specified by the <strong>InstanceName</strong> parameter when you batch create instances. This parameter is required.
+         */
+        public Builder uniqueSuffix(final java.lang.Boolean uniqueSuffix) {
+            this.props.uniqueSuffix(uniqueSuffix);
+            return this;
+        }
+        /**
+         * Property uniqueSuffix: Specifies whether to automatically append incremental suffixes to the hostname specified by the <strong>HostName</strong> parameter and to the instance name specified by the <strong>InstanceName</strong> parameter when you batch create instances.
+         * <p>
+         * The incremental suffixes can range from 001 to 999. Valid values:
+         * <p>
+         * <ul>
+         * <li><strong>true</strong>: appends incremental suffixes to the hostname and the instance name.</li>
+         * <li><strong>false</strong>: does not append incremental suffixes to the hostname or the instance name.
+         * Default value: <strong>false</strong>.
+         * When the <strong>HostName</strong> or <strong>InstanceName</strong> value is set in the name_prefix[begin_number,bits] format without a suffix (name_suffix), the <strong>UniqueSuffix</strong> parameter does not take effect. The names are sorted in the specified sequence.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param uniqueSuffix Property uniqueSuffix: Specifies whether to automatically append incremental suffixes to the hostname specified by the <strong>HostName</strong> parameter and to the instance name specified by the <strong>InstanceName</strong> parameter when you batch create instances. This parameter is required.
+         */
+        public Builder uniqueSuffix(final com.aliyun.ros.cdk.core.IResolvable uniqueSuffix) {
+            this.props.uniqueSuffix(uniqueSuffix);
             return this;
         }
 

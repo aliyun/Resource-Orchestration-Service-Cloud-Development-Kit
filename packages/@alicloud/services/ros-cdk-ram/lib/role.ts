@@ -61,6 +61,10 @@ export interface RoleProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-role
  */
 export class Role extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: RoleProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Arn: Name of alicloud resource.
@@ -84,6 +88,10 @@ export class Role extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: RoleProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosRole = new RosRole(this, id,  {
             ignoreExisting: props.ignoreExisting === undefined || props.ignoreExisting === null ? false : props.ignoreExisting,

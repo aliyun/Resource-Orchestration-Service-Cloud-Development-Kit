@@ -21,6 +21,10 @@ export interface CustomerGatewaysProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-customergateways
  */
 export class CustomerGateways extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: CustomerGatewaysProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CustomerGatewayIds: The list of customer gateway IDs.
@@ -39,6 +43,10 @@ export class CustomerGateways extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: CustomerGatewaysProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCustomerGateways = new RosCustomerGateways(this, id,  {
             customerGatewayId: props.customerGatewayId,

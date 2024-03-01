@@ -11,13 +11,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
     [JsiiInterface(nativeType: typeof(IServerGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-nlb.ServerGroupProps")]
     public interface IServerGroupProps
     {
-        /// <summary>Property healthCheckConfig: Health Check Config.</summary>
-        [JsiiProperty(name: "healthCheckConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-nlb.RosServerGroup.HealthCheckConfigProperty\"}]}}")]
-        object HealthCheckConfig
-        {
-            get;
-        }
-
         /// <summary>Property serverGroupName: Name of ServerGroup.</summary>
         [JsiiProperty(name: "serverGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object ServerGroupName
@@ -43,6 +36,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             }
         }
 
+        /// <summary>Property anyPortEnabled: Specifies whether to enable all-port forwarding.</summary>
+        /// <remarks>
+        /// Valid values:
+        /// true
+        /// false (default)
+        /// </remarks>
+        [JsiiProperty(name: "anyPortEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AnyPortEnabled
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property connectionDrainEnabled: Whether to enable graceful connection interruption.</summary>
         [JsiiProperty(name: "connectionDrainEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -58,6 +67,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
         [JsiiProperty(name: "connectionDrainTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ConnectionDrainTimeout
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property healthCheckConfig: Health Check Config.</summary>
+        [JsiiProperty(name: "healthCheckConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-nlb.RosServerGroup.HealthCheckConfigProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? HealthCheckConfig
         {
             get
             {
@@ -153,6 +173,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             }
         }
 
+        /// <summary>Property tags: Tags to attach to instance.</summary>
+        /// <remarks>
+        /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-nlb.RosServerGroup.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        AlibabaCloud.SDK.ROS.CDK.Nlb.RosServerGroup.ITagsProperty[]? Tags
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `ServerGroup`.</summary>
         /// <remarks>
         /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-servergroup
@@ -162,13 +196,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
         {
             private _Proxy(ByRefValue reference): base(reference)
             {
-            }
-
-            /// <summary>Property healthCheckConfig: Health Check Config.</summary>
-            [JsiiProperty(name: "healthCheckConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-nlb.RosServerGroup.HealthCheckConfigProperty\"}]}}")]
-            public object HealthCheckConfig
-            {
-                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property serverGroupName: Name of ServerGroup.</summary>
@@ -193,6 +220,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property anyPortEnabled: Specifies whether to enable all-port forwarding.</summary>
+            /// <remarks>
+            /// Valid values:
+            /// true
+            /// false (default)
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "anyPortEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AnyPortEnabled
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property connectionDrainEnabled: Whether to enable graceful connection interruption.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "connectionDrainEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -205,6 +245,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             [JsiiOptional]
             [JsiiProperty(name: "connectionDrainTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ConnectionDrainTimeout
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property healthCheckConfig: Health Check Config.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "healthCheckConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-nlb.RosServerGroup.HealthCheckConfigProperty\"}]}}", isOptional: true)]
+            public object? HealthCheckConfig
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -271,6 +319,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             public object? Servers
             {
                 get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property tags: Tags to attach to instance.</summary>
+            /// <remarks>
+            /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-nlb.RosServerGroup.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+            public AlibabaCloud.SDK.ROS.CDK.Nlb.RosServerGroup.ITagsProperty[]? Tags
+            {
+                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Nlb.RosServerGroup.ITagsProperty[]?>();
             }
         }
     }

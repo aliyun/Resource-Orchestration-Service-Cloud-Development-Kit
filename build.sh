@@ -24,7 +24,6 @@ setup_dependency() {
       ;;
     esac
 
-    rm -rf "$root/packages/@alicloud/test"
     lerna link
     lerna bootstrap
     npm install

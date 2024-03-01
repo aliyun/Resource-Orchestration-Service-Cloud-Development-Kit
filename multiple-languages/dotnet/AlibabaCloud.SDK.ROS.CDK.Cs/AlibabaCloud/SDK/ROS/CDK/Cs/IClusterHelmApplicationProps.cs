@@ -95,6 +95,33 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
+        /// <summary>Property validationMode: Validation modes include: - Basic: basic validation, such as verifying the existence of a cluster.</summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <description>Strict: in addition to basic validation, also validate the legality of WaitUntil.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiProperty(name: "validationMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ValidationMode
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property waitUntil: After starting a creation or update, wait until all conditions are met.</summary>
+        [JsiiProperty(name: "waitUntil", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosClusterHelmApplication.WaitUntilProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? WaitUntil
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `ClusterHelmApplication`.</summary>
         /// <remarks>
         /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterhelmapplication
@@ -174,6 +201,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             [JsiiOptional]
             [JsiiProperty(name: "rolePolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RolePolicy
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property validationMode: Validation modes include: - Basic: basic validation, such as verifying the existence of a cluster.</summary>
+            /// <remarks>
+            /// <list type="bullet">
+            /// <description>Strict: in addition to basic validation, also validate the legality of WaitUntil.</description>
+            /// </list>
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "validationMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ValidationMode
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property waitUntil: After starting a creation or update, wait until all conditions are met.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "waitUntil", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosClusterHelmApplication.WaitUntilProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? WaitUntil
             {
                 get => GetInstanceProperty<object?>();
             }

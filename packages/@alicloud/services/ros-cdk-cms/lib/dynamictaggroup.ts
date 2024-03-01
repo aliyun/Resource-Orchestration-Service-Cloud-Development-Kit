@@ -60,6 +60,10 @@ export interface DynamicTagGroupProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-dynamictaggroup
  */
 export class DynamicTagGroup extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DynamicTagGroupProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DynamicTagRuleId: Dynamic tag rule ID.
@@ -78,6 +82,10 @@ export class DynamicTagGroup extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DynamicTagGroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDynamicTagGroup = new RosDynamicTagGroup(this, id,  {
             contactGroupList: props.contactGroupList,

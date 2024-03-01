@@ -57,6 +57,10 @@ export interface PipelineProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mps-pipeline
  */
 export class Pipeline extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: PipelineProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute PipelineId: The ID of the MPS queue.
@@ -70,6 +74,10 @@ export class Pipeline extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: PipelineProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosPipeline = new RosPipeline(this, id,  {
             role: props.role,

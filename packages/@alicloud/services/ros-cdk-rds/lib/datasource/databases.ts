@@ -31,6 +31,10 @@ export interface DatabasesProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-databases
  */
 export class Databases extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DatabasesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DBNames: The list of The RDS database names.
@@ -49,6 +53,10 @@ export class Databases extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DatabasesProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDatabases = new RosDatabases(this, id,  {
             dbInstanceId: props.dbInstanceId,

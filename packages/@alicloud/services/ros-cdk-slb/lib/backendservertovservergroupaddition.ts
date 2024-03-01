@@ -26,6 +26,10 @@ export interface BackendServerToVServerGroupAdditionProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-backendservertovservergroupaddition
  */
 export class BackendServerToVServerGroupAddition extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: BackendServerToVServerGroupAdditionProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute VServerGroupId: The ID of virtual server group.
@@ -39,6 +43,10 @@ export class BackendServerToVServerGroupAddition extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: BackendServerToVServerGroupAdditionProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosBackendServerToVServerGroupAddition = new RosBackendServerToVServerGroupAddition(this, id,  {
             vServerGroupId: props.vServerGroupId,

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.slb;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::SLB::Listener</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::SLB::Listener</code>, which is used to create a Server Load Balancer (SLB) listener.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:18.047Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:54.554Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.Listener")
 public class Listener extends com.aliyun.ros.cdk.core.Resource {
 
@@ -52,6 +52,38 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource {
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrLoadBalancerId() {
         return software.amazon.jsii.Kernel.get(this, "attrLoadBalancerId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
+        return software.amazon.jsii.Kernel.get(this, "enableResourcePropertyConstraint", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
+    }
+
+    protected void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
+    }
+
+    protected @org.jetbrains.annotations.NotNull java.lang.String getId() {
+        return software.amazon.jsii.Kernel.get(this, "id", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    }
+
+    protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
+    }
+
+    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.slb.ListenerProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.slb.ListenerProps.class));
+    }
+
+    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.slb.ListenerProps value) {
+        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
+    }
+
+    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {
+        return software.amazon.jsii.Kernel.get(this, "scope", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.Construct.class));
+    }
+
+    protected void setScope(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct value) {
+        software.amazon.jsii.Kernel.set(this, "scope", java.util.Objects.requireNonNull(value, "scope is required"));
     }
 
     /**
@@ -343,6 +375,62 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property connectionDrain: Whether to enable graceful connection interruption.
+         * <p>
+         * Value:on: turn on
+         * off: Not turned on
+         * Note: Only effective TCP listener.
+         * <p>
+         * @return {@code this}
+         * @param connectionDrain Property connectionDrain: Whether to enable graceful connection interruption. This parameter is required.
+         */
+        public Builder connectionDrain(final java.lang.String connectionDrain) {
+            this.props.connectionDrain(connectionDrain);
+            return this;
+        }
+        /**
+         * Property connectionDrain: Whether to enable graceful connection interruption.
+         * <p>
+         * Value:on: turn on
+         * off: Not turned on
+         * Note: Only effective TCP listener.
+         * <p>
+         * @return {@code this}
+         * @param connectionDrain Property connectionDrain: Whether to enable graceful connection interruption. This parameter is required.
+         */
+        public Builder connectionDrain(final com.aliyun.ros.cdk.core.IResolvable connectionDrain) {
+            this.props.connectionDrain(connectionDrain);
+            return this;
+        }
+
+        /**
+         * Property connectionDrainTimeout: Set the connection graceful interruption timeout.
+         * <p>
+         * Unit: seconds. Value range: 10-900.
+         * Note: Only effective for TCP listener. When ConnectionDrain is on, this option is required.
+         * <p>
+         * @return {@code this}
+         * @param connectionDrainTimeout Property connectionDrainTimeout: Set the connection graceful interruption timeout. This parameter is required.
+         */
+        public Builder connectionDrainTimeout(final java.lang.Number connectionDrainTimeout) {
+            this.props.connectionDrainTimeout(connectionDrainTimeout);
+            return this;
+        }
+        /**
+         * Property connectionDrainTimeout: Set the connection graceful interruption timeout.
+         * <p>
+         * Unit: seconds. Value range: 10-900.
+         * Note: Only effective for TCP listener. When ConnectionDrain is on, this option is required.
+         * <p>
+         * @return {@code this}
+         * @param connectionDrainTimeout Property connectionDrainTimeout: Set the connection graceful interruption timeout. This parameter is required.
+         */
+        public Builder connectionDrainTimeout(final com.aliyun.ros.cdk.core.IResolvable connectionDrainTimeout) {
+            this.props.connectionDrainTimeout(connectionDrainTimeout);
+            return this;
+        }
+
+        /**
          * Property description: The description of the listener.It must be 1 to 80 characters in length and can contain letters, digits, hyphens (-), forward slashes (/), periods (.), and underscores (_). Chinese characters are supported.
          * <p>
          * @return {@code this}
@@ -556,6 +644,37 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property proxyProtocolV2Enabled: Whether to support carrying the client source address to the backend server through the Proxy Protocol.
+         * <p>
+         * Value:
+         * true: Yes
+         * false (default): No
+         * Note: Only effective TCP or UDP listener.
+         * <p>
+         * @return {@code this}
+         * @param proxyProtocolV2Enabled Property proxyProtocolV2Enabled: Whether to support carrying the client source address to the backend server through the Proxy Protocol. This parameter is required.
+         */
+        public Builder proxyProtocolV2Enabled(final java.lang.Boolean proxyProtocolV2Enabled) {
+            this.props.proxyProtocolV2Enabled(proxyProtocolV2Enabled);
+            return this;
+        }
+        /**
+         * Property proxyProtocolV2Enabled: Whether to support carrying the client source address to the backend server through the Proxy Protocol.
+         * <p>
+         * Value:
+         * true: Yes
+         * false (default): No
+         * Note: Only effective TCP or UDP listener.
+         * <p>
+         * @return {@code this}
+         * @param proxyProtocolV2Enabled Property proxyProtocolV2Enabled: Whether to support carrying the client source address to the backend server through the Proxy Protocol. This parameter is required.
+         */
+        public Builder proxyProtocolV2Enabled(final com.aliyun.ros.cdk.core.IResolvable proxyProtocolV2Enabled) {
+            this.props.proxyProtocolV2Enabled(proxyProtocolV2Enabled);
+            return this;
+        }
+
+        /**
          * Property requestTimeout: Specify the request timeout in seconds.
          * <p>
          * Valid value: 1-180 If no response is received from the backend server during the specified timeout period, Server Load Balancer will stop waiting and send an HTTP 504 error to the client.
@@ -660,6 +779,19 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder startListener(final com.aliyun.ros.cdk.core.IResolvable startListener) {
             this.props.startListener(startListener);
+            return this;
+        }
+
+        /**
+         * Property tags: Tags to attach to instance.
+         * <p>
+         * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+         * <p>
+         * @return {@code this}
+         * @param tags Property tags: Tags to attach to instance. This parameter is required.
+         */
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.slb.RosListener.TagsProperty> tags) {
+            this.props.tags(tags);
             return this;
         }
 

@@ -54,6 +54,10 @@ export interface DeviceProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-device
  */
 export class Device extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DeviceProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DeviceName: Device name.
@@ -108,6 +112,10 @@ Description Keep, do not leak.
      */
     constructor(scope: ros.Construct, id: string, props: DeviceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDevice = new RosDevice(this, id,  {
             iotInstanceId: props.iotInstanceId,

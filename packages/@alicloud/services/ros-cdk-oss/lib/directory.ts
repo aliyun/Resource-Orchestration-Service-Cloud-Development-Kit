@@ -26,11 +26,15 @@ export interface DirectoryProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::OSS::Directory`DATASOURCE::OSS::Buckets is used to query an Object Storage Service (OSS) bucket.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::OSS::Directory`, which is used to create a directory for a specified bucket.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDirectory`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-directory
  */
 export class Directory extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DirectoryProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute BucketName: The name of Bucket
@@ -49,6 +53,10 @@ export class Directory extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DirectoryProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDirectory = new RosDirectory(this, id,  {
             bucketName: props.bucketName,

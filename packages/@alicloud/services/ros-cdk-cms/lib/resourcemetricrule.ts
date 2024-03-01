@@ -131,6 +131,10 @@ export interface ResourceMetricRuleProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-resourcemetricrule
  */
 export class ResourceMetricRule extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ResourceMetricRuleProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute RuleId: The ID of the alert rule.
@@ -149,6 +153,10 @@ export class ResourceMetricRule extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ResourceMetricRuleProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosResourceMetricRule = new RosResourceMetricRule(this, id,  {
             noEffectiveInterval: props.noEffectiveInterval,

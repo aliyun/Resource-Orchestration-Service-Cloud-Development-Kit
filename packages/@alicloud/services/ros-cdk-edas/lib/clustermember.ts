@@ -31,6 +31,10 @@ export interface ClusterMemberProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-clustermember
  */
 export class ClusterMember extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ClusterMemberProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterId: Cluster ID.
@@ -59,6 +63,10 @@ export class ClusterMember extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ClusterMemberProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosClusterMember = new RosClusterMember(this, id,  {
             clusterId: props.clusterId,

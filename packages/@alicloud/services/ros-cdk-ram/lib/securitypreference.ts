@@ -76,6 +76,10 @@ export interface SecurityPreferenceProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-securitypreference
  */
 export class SecurityPreference extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: SecurityPreferenceProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AllowUserToChangePassword: Specifies whether RAM users can change their passwords.
@@ -119,6 +123,10 @@ export class SecurityPreference extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: SecurityPreferenceProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosSecurityPreference = new RosSecurityPreference(this, id,  {
             loginSessionDuration: props.loginSessionDuration,

@@ -57,6 +57,10 @@ export interface QueueProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-queue
  */
 export class Queue extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: QueueProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ARN.WithSlash: The ARN: acs:mns:$region:$accountid:/queues/$queueName
@@ -80,6 +84,10 @@ export class Queue extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: QueueProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosQueue = new RosQueue(this, id,  {
             delaySeconds: props.delaySeconds === undefined || props.delaySeconds === null ? 0 : props.delaySeconds,

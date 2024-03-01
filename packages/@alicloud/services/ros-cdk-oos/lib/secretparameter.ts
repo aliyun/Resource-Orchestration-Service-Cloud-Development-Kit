@@ -51,6 +51,10 @@ export interface SecretParameterProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-secretparameter
  */
 export class SecretParameter extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: SecretParameterProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Constraints: The constraints of the encryption parameter.
@@ -129,6 +133,10 @@ export class SecretParameter extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: SecretParameterProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosSecretParameter = new RosSecretParameter(this, id,  {
             description: props.description,

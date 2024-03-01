@@ -21,6 +21,10 @@ export interface UserInfoProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-userinfo
  */
 export class UserInfo extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: UserInfoProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute LoginName: Login name.
@@ -39,6 +43,10 @@ export class UserInfo extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: UserInfoProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosUserInfo = new RosUserInfo(this, id,  {
             user: props.user,

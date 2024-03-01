@@ -37,6 +37,10 @@ export interface WaitConditionHandleProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-waitconditionhandle
  */
 export class WaitConditionHandle extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: WaitConditionHandleProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CurlCli: Convenience attribute, provides curl CLI command prefix, which can be used for signalling handle completion or failure.  You can signal success by adding --data-binary '{"status": "SUCCESS"}' , or signal failure by adding --data-binary '{"status": "FAILURE"}'
@@ -70,6 +74,10 @@ export class WaitConditionHandle extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: WaitConditionHandleProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosWaitConditionHandle = new RosWaitConditionHandle(this, id,  {
             mode: props.mode === undefined || props.mode === null ? 'Full' : props.mode,

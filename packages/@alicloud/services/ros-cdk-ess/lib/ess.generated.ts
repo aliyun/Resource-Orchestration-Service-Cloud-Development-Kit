@@ -463,6 +463,2062 @@ export class RosAlarmTaskEnable extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosEciScalingConfiguration`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-eciscalingconfiguration
+ */
+export interface RosEciScalingConfigurationProps {
+
+    /**
+     * @Property containerGroupName: The name of the elastic container instance.
+     */
+    readonly containerGroupName: string | ros.IResolvable;
+
+    /**
+     * @Property scalingConfigurationName: The name of the scaling configuration. The name must be 2 to 64 characters in length and can contain letters, digits, underscores (_), hyphens (-), and periods (.). The name must start with a letter or a digit.
+     * The name of the scaling configuration must be unique in a region. If you do not specify this parameter, the scaling configuration ID is used.
+     */
+    readonly scalingConfigurationName: string | ros.IResolvable;
+
+    /**
+     * @Property scalingGroupId: The ID of the scaling group for which you want to create the scaling configuration.
+     */
+    readonly scalingGroupId: string | ros.IResolvable;
+
+    /**
+     * @Property securityGroupId: The ID of the security group with which you want to associate the elastic container instance. Elastic container instances that are associated with the same security group can access each other.
+     * If you do not specify a security group, the system uses the default security group in the region that you selected. Make sure that the inbound rules of the security group contain the protocols and the port numbers of the containers that you want to expose. If you do not have a default security group in the region, the system creates a default security group and adds the declared container protocols and port numbers to the inbound rules of the security group.
+     */
+    readonly securityGroupId: string | ros.IResolvable;
+
+    /**
+     * @Property acrRegistryInfos:
+     */
+    readonly acrRegistryInfos?: Array<RosEciScalingConfiguration.AcrRegistryInfosProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property activeDeadlineSeconds: The validity period of the scaling configuration. Unit: seconds.
+     */
+    readonly activeDeadlineSeconds?: number | ros.IResolvable;
+
+    /**
+     * @Property autoCreateEip: Specifies whether to automatically create an elastic IP address (EIP) and bind the EIP to the elastic container instance.
+     */
+    readonly autoCreateEip?: boolean | ros.IResolvable;
+
+    /**
+     * @Property autoMatchImageCache: Specifies whether to automatically match the image cache. Valid values:
+     * true
+     * false
+     * Default value: false.
+     */
+    readonly autoMatchImageCache?: boolean | ros.IResolvable;
+
+    /**
+     * @Property containers:
+     */
+    readonly containers?: Array<RosEciScalingConfiguration.ContainersProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property costOptimization: Specifies whether to enable the Cost Optimization feature. Valid values:
+     * true
+     * false
+     * Default value: false.
+     */
+    readonly costOptimization?: boolean | ros.IResolvable;
+
+    /**
+     * @Property cpu: The number of vCPUs that you want to allocate to the elastic container instance.
+     */
+    readonly cpu?: number | ros.IResolvable;
+
+    /**
+     * @Property cpuOptionsCore: The number of physical CPU cores. You can specify this parameter for only specific instance types. For more information, see Specify custom CPU options.
+     */
+    readonly cpuOptionsCore?: number | ros.IResolvable;
+
+    /**
+     * @Property cpuOptionsThreadsPerCore: The number of threads per core. You can specify this parameter for only specific instance types. If you set this parameter to 1, Hyper-Threading is disabled. For more information, see Specify custom CPU options.
+     */
+    readonly cpuOptionsThreadsPerCore?: number | ros.IResolvable;
+
+    /**
+     * @Property dataCacheBucket: The bucket that stores data caches.
+     */
+    readonly dataCacheBucket?: string | ros.IResolvable;
+
+    /**
+     * @Property dataCacheBurstingEnabled: Specifies whether to enable the Performance Burst feature for the ESSD AutoPL disk used for data caching. Valid values:
+     * true
+     * false
+     * Default value: false.
+     * Note
+     * For more information about ESSD AutoPL disks, see ESSD AutoPL disks.
+     */
+    readonly dataCacheBurstingEnabled?: boolean | ros.IResolvable;
+
+    /**
+     * @Property dataCachePl: The performance level (PL) of the disk used for data caching. We recommend that you use ESSDs. Valid values if you use ESSDs:
+     * PL0: An ESSD can provide up to 10,000 random read\/write IOPS.
+     * PL1: An ESSD can provide up to 50,000 random read\/write IOPS.
+     * PL2: An ESSD can provide up to 100,000 random read\/write IOPS.
+     * PL3: An ESSD can provide up to 1,000,000 random read\/write IOPS.
+     * Default value: PL1.
+     * Note
+     * For more information about ESSDs, see ESSDs.
+     */
+    readonly dataCachePl?: string | ros.IResolvable;
+
+    /**
+     * @Property dataCacheProvisionedIops: The IOPS provisioned for the ESSD AutoPL disk used for data caching. Valid values: 0 to min{50000, 1000 × Capacity - Baseline IOPS}, where Baseline IOPS = min{1800 + 50 × Capacity - 50000}.
+     * Note
+     * For more information about ESSD AutoPL disks, see ESSD AutoPL disks.
+     */
+    readonly dataCacheProvisionedIops?: number | ros.IResolvable;
+
+    /**
+     * @Property dnsConfigNameServers: The IP addresses of the DNS servers.
+     */
+    readonly dnsConfigNameServers?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property dnsConfigOptions:
+     */
+    readonly dnsConfigOptions?: Array<RosEciScalingConfiguration.DnsConfigOptionsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property dnsConfigSearches: The search domains of the DNS server.
+     */
+    readonly dnsConfigSearches?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property dnsPolicy: The Domain Name System (DNS) policy. Valid values:
+     * None: uses the DNS that is specified by DnsConfig.
+     * Default: uses the DNS that is specified for the runtime environment.
+     */
+    readonly dnsPolicy?: string | ros.IResolvable;
+
+    /**
+     * @Property egressBandwidth: The maximum outbound bandwidth. Unit: bytes.
+     */
+    readonly egressBandwidth?: number | ros.IResolvable;
+
+    /**
+     * @Property eipBandwidth: The bandwidth of the EIP. Default value: 5. Unit: Mbit\/s.
+     */
+    readonly eipBandwidth?: number | ros.IResolvable;
+
+    /**
+     * @Property ephemeralStorage: The size of the temporary storage space. By default, an enhanced SSD (ESSD) of the PL1 level is used. Unit: GiB.
+     */
+    readonly ephemeralStorage?: number | ros.IResolvable;
+
+    /**
+     * @Property hostAliases:
+     */
+    readonly hostAliases?: Array<RosEciScalingConfiguration.HostAliasesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property hostName: The hostname of the elastic container instance.
+     */
+    readonly hostName?: string | ros.IResolvable;
+
+    /**
+     * @Property imageRegistryCredentials:
+     */
+    readonly imageRegistryCredentials?: Array<RosEciScalingConfiguration.ImageRegistryCredentialsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property imageSnapshotId: The ID of the image cache snapshot.
+     */
+    readonly imageSnapshotId?: string | ros.IResolvable;
+
+    /**
+     * @Property ingressBandwidth: The maximum inbound bandwidth. Unit: bytes.
+     */
+    readonly ingressBandwidth?: number | ros.IResolvable;
+
+    /**
+     * @Property initContainers:
+     */
+    readonly initContainers?: Array<RosEciScalingConfiguration.InitContainersProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property instanceFamilyLevel: The level of the instance family. You can use this parameter to filter instance types that meet the specified criteria. This parameter takes effect only if you set CostOptimization to true. Valid values:
+     * EntryLevel: entry level (shared instance types) Instance types of this level are the most cost-effective but may not provide stable computing performance. Instance types of this level are suitable for scenarios in which CPU utilization is low. For more information, see Shared instance families.
+     * EnterpriseLevel: enterprise level. Instance types of this level provide stable performance and dedicated resources and are suitable for business scenarios that require high stability. For more information, see Overview of instance families.
+     * CreditEntryLevel: credit entry level (burstable instance types). CPU credits are used to ensure computing performance. Instance types of this level are suitable for business scenarios in which CPU utilization is low but may fluctuate in specific scenarios. For more information, see Overview of burstable instances.
+     */
+    readonly instanceFamilyLevel?: string | ros.IResolvable;
+
+    /**
+     * @Property instanceTypes: The specified ECS instance types. You can specify up to five ECS instance types. For more information, see Specify ECS instance types to create an elastic container instance.
+     */
+    readonly instanceTypes?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property ipv6AddressCount: The number of IPv6 addresses.
+     */
+    readonly ipv6AddressCount?: number | ros.IResolvable;
+
+    /**
+     * @Property loadBalancerWeight: The weight of the elastic container instance as a backend server. Valid values: 1 to 100.
+     * Default value: 50.
+     */
+    readonly loadBalancerWeight?: number | ros.IResolvable;
+
+    /**
+     * @Property memory: The memory size that you want to allocate to the elastic container instance. Unit: GiB.
+     */
+    readonly memory?: number | ros.IResolvable;
+
+    /**
+     * @Property ntpServers: The Network Time Protocol (NTP) server.
+     */
+    readonly ntpServers?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property ramRoleName: The name of the Resource Access Management (RAM) role that you want to assign to the elastic container instance. Elastic container instances and Elastic Compute Service (ECS) instances can share the same RAM role. For more information, see Use an instance RAM role by calling API operations.
+     */
+    readonly ramRoleName?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property restartPolicy: The restart policy of the elastic container instance. Valid values:
+     * Always: always restarts the elastic container instance.
+     * Never: never restarts the elastic container instance.
+     * OnFailure: restarts the elastic container instance upon failures.
+     * Default value: Always.
+     */
+    readonly restartPolicy?: string | ros.IResolvable;
+
+    /**
+     * @Property securityContextSysctls:
+     */
+    readonly securityContextSysctls?: Array<RosEciScalingConfiguration.SecurityContextSysctlsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property spotPriceLimit: The maximum hourly price of the preemptible elastic container instance. The value can be accurate to three decimal places.
+     * If you set SpotStrategy to SpotWithPriceLimit, you must specify SpotPriceLimit.
+     */
+    readonly spotPriceLimit?: number | ros.IResolvable;
+
+    /**
+     * @Property spotStrategy: The bidding policy of the instance. Valid values:
+     * NoSpot: The instance is created as a pay-as-you-go instance.
+     * SpotWithPriceLimit: The instance is created as a preemptible instance with a user-defined maximum hourly price.
+     * SpotAsPriceGo: The instance is created as a preemptible instance for which the market price at the time of purchase is used as the bid price.
+     * Default value: NoSpot.
+     */
+    readonly spotStrategy?: string | ros.IResolvable;
+
+    /**
+     * @Property tags:
+     */
+    readonly tags?: RosEciScalingConfiguration.TagsProperty[];
+
+    /**
+     * @Property terminationGracePeriodSeconds: The buffer period during which a program handles operations before the program is stopped. Unit: seconds.
+     */
+    readonly terminationGracePeriodSeconds?: number | ros.IResolvable;
+
+    /**
+     * @Property volumes:
+     */
+    readonly volumes?: Array<RosEciScalingConfiguration.VolumesProperty | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosEciScalingConfigurationProps`
+ *
+ * @param properties - the TypeScript properties of a `RosEciScalingConfigurationProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosEciScalingConfigurationPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('scalingConfigurationName', ros.requiredValidator)(properties.scalingConfigurationName));
+    errors.collect(ros.propertyValidator('scalingConfigurationName', ros.validateString)(properties.scalingConfigurationName));
+    errors.collect(ros.propertyValidator('ntpServers', ros.listValidator(ros.validateString))(properties.ntpServers));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('memory', ros.validateNumber)(properties.memory));
+    errors.collect(ros.propertyValidator('dnsConfigSearches', ros.listValidator(ros.validateString))(properties.dnsConfigSearches));
+    errors.collect(ros.propertyValidator('dataCachePl', ros.validateString)(properties.dataCachePl));
+    if(properties.containers && (Array.isArray(properties.containers) || (typeof properties.containers) === 'string')) {
+        errors.collect(ros.propertyValidator('containers', ros.validateLength)({
+            data: properties.containers.length,
+            min: undefined,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('containers', ros.listValidator(RosEciScalingConfiguration_ContainersPropertyValidator))(properties.containers));
+    errors.collect(ros.propertyValidator('cpu', ros.validateNumber)(properties.cpu));
+    errors.collect(ros.propertyValidator('containerGroupName', ros.requiredValidator)(properties.containerGroupName));
+    errors.collect(ros.propertyValidator('containerGroupName', ros.validateString)(properties.containerGroupName));
+    errors.collect(ros.propertyValidator('ingressBandwidth', ros.validateNumber)(properties.ingressBandwidth));
+    errors.collect(ros.propertyValidator('imageSnapshotId', ros.validateString)(properties.imageSnapshotId));
+    errors.collect(ros.propertyValidator('dataCacheProvisionedIops', ros.validateNumber)(properties.dataCacheProvisionedIops));
+    errors.collect(ros.propertyValidator('egressBandwidth', ros.validateNumber)(properties.egressBandwidth));
+    errors.collect(ros.propertyValidator('volumes', ros.listValidator(RosEciScalingConfiguration_VolumesPropertyValidator))(properties.volumes));
+    errors.collect(ros.propertyValidator('ramRoleName', ros.validateString)(properties.ramRoleName));
+    errors.collect(ros.propertyValidator('autoMatchImageCache', ros.validateBoolean)(properties.autoMatchImageCache));
+    errors.collect(ros.propertyValidator('dataCacheBucket', ros.validateString)(properties.dataCacheBucket));
+    errors.collect(ros.propertyValidator('ipv6AddressCount', ros.validateNumber)(properties.ipv6AddressCount));
+    errors.collect(ros.propertyValidator('dnsConfigOptions', ros.listValidator(RosEciScalingConfiguration_DnsConfigOptionsPropertyValidator))(properties.dnsConfigOptions));
+    errors.collect(ros.propertyValidator('spotPriceLimit', ros.validateNumber)(properties.spotPriceLimit));
+    if(properties.instanceTypes && (Array.isArray(properties.instanceTypes) || (typeof properties.instanceTypes) === 'string')) {
+        errors.collect(ros.propertyValidator('instanceTypes', ros.validateLength)({
+            data: properties.instanceTypes.length,
+            min: undefined,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('instanceTypes', ros.listValidator(ros.validateString))(properties.instanceTypes));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 128,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosEciScalingConfiguration_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('hostName', ros.validateString)(properties.hostName));
+    if(properties.spotStrategy && (typeof properties.spotStrategy) !== 'object') {
+        errors.collect(ros.propertyValidator('spotStrategy', ros.validateAllowedValues)({
+          data: properties.spotStrategy,
+          allowedValues: ["NoSpot","SpotAsPriceGo","SpotWithPriceLimit"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('spotStrategy', ros.validateString)(properties.spotStrategy));
+    errors.collect(ros.propertyValidator('dnsConfigNameServers', ros.listValidator(ros.validateString))(properties.dnsConfigNameServers));
+    errors.collect(ros.propertyValidator('activeDeadlineSeconds', ros.validateNumber)(properties.activeDeadlineSeconds));
+    errors.collect(ros.propertyValidator('acrRegistryInfos', ros.listValidator(RosEciScalingConfiguration_AcrRegistryInfosPropertyValidator))(properties.acrRegistryInfos));
+    errors.collect(ros.propertyValidator('initContainers', ros.listValidator(RosEciScalingConfiguration_InitContainersPropertyValidator))(properties.initContainers));
+    errors.collect(ros.propertyValidator('loadBalancerWeight', ros.validateNumber)(properties.loadBalancerWeight));
+    errors.collect(ros.propertyValidator('cpuOptionsThreadsPerCore', ros.validateNumber)(properties.cpuOptionsThreadsPerCore));
+    errors.collect(ros.propertyValidator('dataCacheBurstingEnabled', ros.validateBoolean)(properties.dataCacheBurstingEnabled));
+    errors.collect(ros.propertyValidator('terminationGracePeriodSeconds', ros.validateNumber)(properties.terminationGracePeriodSeconds));
+    errors.collect(ros.propertyValidator('scalingGroupId', ros.requiredValidator)(properties.scalingGroupId));
+    errors.collect(ros.propertyValidator('scalingGroupId', ros.validateString)(properties.scalingGroupId));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.requiredValidator)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    if(properties.restartPolicy && (typeof properties.restartPolicy) !== 'object') {
+        errors.collect(ros.propertyValidator('restartPolicy', ros.validateAllowedValues)({
+          data: properties.restartPolicy,
+          allowedValues: ["Always","Never","OnFailure"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('restartPolicy', ros.validateString)(properties.restartPolicy));
+    errors.collect(ros.propertyValidator('cpuOptionsCore', ros.validateNumber)(properties.cpuOptionsCore));
+    errors.collect(ros.propertyValidator('autoCreateEip', ros.validateBoolean)(properties.autoCreateEip));
+    errors.collect(ros.propertyValidator('costOptimization', ros.validateBoolean)(properties.costOptimization));
+    errors.collect(ros.propertyValidator('hostAliases', ros.listValidator(RosEciScalingConfiguration_HostAliasesPropertyValidator))(properties.hostAliases));
+    errors.collect(ros.propertyValidator('securityContextSysctls', ros.listValidator(RosEciScalingConfiguration_SecurityContextSysctlsPropertyValidator))(properties.securityContextSysctls));
+    errors.collect(ros.propertyValidator('eipBandwidth', ros.validateNumber)(properties.eipBandwidth));
+    errors.collect(ros.propertyValidator('imageRegistryCredentials', ros.listValidator(RosEciScalingConfiguration_ImageRegistryCredentialsPropertyValidator))(properties.imageRegistryCredentials));
+    if(properties.dnsPolicy && (typeof properties.dnsPolicy) !== 'object') {
+        errors.collect(ros.propertyValidator('dnsPolicy', ros.validateAllowedValues)({
+          data: properties.dnsPolicy,
+          allowedValues: ["Default","None"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('dnsPolicy', ros.validateString)(properties.dnsPolicy));
+    if(properties.instanceFamilyLevel && (typeof properties.instanceFamilyLevel) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceFamilyLevel', ros.validateAllowedValues)({
+          data: properties.instanceFamilyLevel,
+          allowedValues: ["CreditEntryLevel","EnterpriseLevel","EntryLevel"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('instanceFamilyLevel', ros.validateString)(properties.instanceFamilyLevel));
+    errors.collect(ros.propertyValidator('ephemeralStorage', ros.validateNumber)(properties.ephemeralStorage));
+    return errors.wrap('supplied properties not correct for "RosEciScalingConfigurationProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESS::EciScalingConfiguration` resource
+ *
+ * @param properties - the TypeScript properties of a `RosEciScalingConfigurationProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESS::EciScalingConfiguration` resource.
+ */
+// @ts-ignore TS6133
+function rosEciScalingConfigurationPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosEciScalingConfigurationPropsValidator(properties).assertSuccess();
+    }
+    return {
+      ContainerGroupName: ros.stringToRosTemplate(properties.containerGroupName),
+      ScalingConfigurationName: ros.stringToRosTemplate(properties.scalingConfigurationName),
+      ScalingGroupId: ros.stringToRosTemplate(properties.scalingGroupId),
+      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
+      AcrRegistryInfos: ros.listMapper(rosEciScalingConfigurationAcrRegistryInfosPropertyToRosTemplate)(properties.acrRegistryInfos),
+      ActiveDeadlineSeconds: ros.numberToRosTemplate(properties.activeDeadlineSeconds),
+      AutoCreateEip: ros.booleanToRosTemplate(properties.autoCreateEip),
+      AutoMatchImageCache: ros.booleanToRosTemplate(properties.autoMatchImageCache),
+      Containers: ros.listMapper(rosEciScalingConfigurationContainersPropertyToRosTemplate)(properties.containers),
+      CostOptimization: ros.booleanToRosTemplate(properties.costOptimization),
+      Cpu: ros.numberToRosTemplate(properties.cpu),
+      CpuOptionsCore: ros.numberToRosTemplate(properties.cpuOptionsCore),
+      CpuOptionsThreadsPerCore: ros.numberToRosTemplate(properties.cpuOptionsThreadsPerCore),
+      DataCacheBucket: ros.stringToRosTemplate(properties.dataCacheBucket),
+      DataCacheBurstingEnabled: ros.booleanToRosTemplate(properties.dataCacheBurstingEnabled),
+      DataCachePL: ros.stringToRosTemplate(properties.dataCachePl),
+      DataCacheProvisionedIops: ros.numberToRosTemplate(properties.dataCacheProvisionedIops),
+      DnsConfigNameServers: ros.listMapper(ros.stringToRosTemplate)(properties.dnsConfigNameServers),
+      DnsConfigOptions: ros.listMapper(rosEciScalingConfigurationDnsConfigOptionsPropertyToRosTemplate)(properties.dnsConfigOptions),
+      DnsConfigSearches: ros.listMapper(ros.stringToRosTemplate)(properties.dnsConfigSearches),
+      DnsPolicy: ros.stringToRosTemplate(properties.dnsPolicy),
+      EgressBandwidth: ros.numberToRosTemplate(properties.egressBandwidth),
+      EipBandwidth: ros.numberToRosTemplate(properties.eipBandwidth),
+      EphemeralStorage: ros.numberToRosTemplate(properties.ephemeralStorage),
+      HostAliases: ros.listMapper(rosEciScalingConfigurationHostAliasesPropertyToRosTemplate)(properties.hostAliases),
+      HostName: ros.stringToRosTemplate(properties.hostName),
+      ImageRegistryCredentials: ros.listMapper(rosEciScalingConfigurationImageRegistryCredentialsPropertyToRosTemplate)(properties.imageRegistryCredentials),
+      ImageSnapshotId: ros.stringToRosTemplate(properties.imageSnapshotId),
+      IngressBandwidth: ros.numberToRosTemplate(properties.ingressBandwidth),
+      InitContainers: ros.listMapper(rosEciScalingConfigurationInitContainersPropertyToRosTemplate)(properties.initContainers),
+      InstanceFamilyLevel: ros.stringToRosTemplate(properties.instanceFamilyLevel),
+      InstanceTypes: ros.listMapper(ros.stringToRosTemplate)(properties.instanceTypes),
+      Ipv6AddressCount: ros.numberToRosTemplate(properties.ipv6AddressCount),
+      LoadBalancerWeight: ros.numberToRosTemplate(properties.loadBalancerWeight),
+      Memory: ros.numberToRosTemplate(properties.memory),
+      NtpServers: ros.listMapper(ros.stringToRosTemplate)(properties.ntpServers),
+      RamRoleName: ros.stringToRosTemplate(properties.ramRoleName),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      RestartPolicy: ros.stringToRosTemplate(properties.restartPolicy),
+      SecurityContextSysctls: ros.listMapper(rosEciScalingConfigurationSecurityContextSysctlsPropertyToRosTemplate)(properties.securityContextSysctls),
+      SpotPriceLimit: ros.numberToRosTemplate(properties.spotPriceLimit),
+      SpotStrategy: ros.stringToRosTemplate(properties.spotStrategy),
+      Tags: ros.listMapper(rosEciScalingConfigurationTagsPropertyToRosTemplate)(properties.tags),
+      TerminationGracePeriodSeconds: ros.numberToRosTemplate(properties.terminationGracePeriodSeconds),
+      Volumes: ros.listMapper(rosEciScalingConfigurationVolumesPropertyToRosTemplate)(properties.volumes),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::EciScalingConfiguration`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `EciScalingConfiguration` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-eciscalingconfiguration
+ */
+export class RosEciScalingConfiguration extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ESS::EciScalingConfiguration";
+
+    /**
+     * @Attribute ScalingConfigurationId: The ID of the elastic container instance.
+     */
+    public readonly attrScalingConfigurationId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property containerGroupName: The name of the elastic container instance.
+     */
+    public containerGroupName: string | ros.IResolvable;
+
+    /**
+     * @Property scalingConfigurationName: The name of the scaling configuration. The name must be 2 to 64 characters in length and can contain letters, digits, underscores (_), hyphens (-), and periods (.). The name must start with a letter or a digit.
+     * The name of the scaling configuration must be unique in a region. If you do not specify this parameter, the scaling configuration ID is used.
+     */
+    public scalingConfigurationName: string | ros.IResolvable;
+
+    /**
+     * @Property scalingGroupId: The ID of the scaling group for which you want to create the scaling configuration.
+     */
+    public scalingGroupId: string | ros.IResolvable;
+
+    /**
+     * @Property securityGroupId: The ID of the security group with which you want to associate the elastic container instance. Elastic container instances that are associated with the same security group can access each other.
+     * If you do not specify a security group, the system uses the default security group in the region that you selected. Make sure that the inbound rules of the security group contain the protocols and the port numbers of the containers that you want to expose. If you do not have a default security group in the region, the system creates a default security group and adds the declared container protocols and port numbers to the inbound rules of the security group.
+     */
+    public securityGroupId: string | ros.IResolvable;
+
+    /**
+     * @Property acrRegistryInfos:
+     */
+    public acrRegistryInfos: Array<RosEciScalingConfiguration.AcrRegistryInfosProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property activeDeadlineSeconds: The validity period of the scaling configuration. Unit: seconds.
+     */
+    public activeDeadlineSeconds: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property autoCreateEip: Specifies whether to automatically create an elastic IP address (EIP) and bind the EIP to the elastic container instance.
+     */
+    public autoCreateEip: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property autoMatchImageCache: Specifies whether to automatically match the image cache. Valid values:
+     * true
+     * false
+     * Default value: false.
+     */
+    public autoMatchImageCache: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property containers:
+     */
+    public containers: Array<RosEciScalingConfiguration.ContainersProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property costOptimization: Specifies whether to enable the Cost Optimization feature. Valid values:
+     * true
+     * false
+     * Default value: false.
+     */
+    public costOptimization: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property cpu: The number of vCPUs that you want to allocate to the elastic container instance.
+     */
+    public cpu: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property cpuOptionsCore: The number of physical CPU cores. You can specify this parameter for only specific instance types. For more information, see Specify custom CPU options.
+     */
+    public cpuOptionsCore: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property cpuOptionsThreadsPerCore: The number of threads per core. You can specify this parameter for only specific instance types. If you set this parameter to 1, Hyper-Threading is disabled. For more information, see Specify custom CPU options.
+     */
+    public cpuOptionsThreadsPerCore: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property dataCacheBucket: The bucket that stores data caches.
+     */
+    public dataCacheBucket: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property dataCacheBurstingEnabled: Specifies whether to enable the Performance Burst feature for the ESSD AutoPL disk used for data caching. Valid values:
+     * true
+     * false
+     * Default value: false.
+     * Note
+     * For more information about ESSD AutoPL disks, see ESSD AutoPL disks.
+     */
+    public dataCacheBurstingEnabled: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property dataCachePl: The performance level (PL) of the disk used for data caching. We recommend that you use ESSDs. Valid values if you use ESSDs:
+     * PL0: An ESSD can provide up to 10,000 random read\/write IOPS.
+     * PL1: An ESSD can provide up to 50,000 random read\/write IOPS.
+     * PL2: An ESSD can provide up to 100,000 random read\/write IOPS.
+     * PL3: An ESSD can provide up to 1,000,000 random read\/write IOPS.
+     * Default value: PL1.
+     * Note
+     * For more information about ESSDs, see ESSDs.
+     */
+    public dataCachePl: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property dataCacheProvisionedIops: The IOPS provisioned for the ESSD AutoPL disk used for data caching. Valid values: 0 to min{50000, 1000 × Capacity - Baseline IOPS}, where Baseline IOPS = min{1800 + 50 × Capacity - 50000}.
+     * Note
+     * For more information about ESSD AutoPL disks, see ESSD AutoPL disks.
+     */
+    public dataCacheProvisionedIops: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property dnsConfigNameServers: The IP addresses of the DNS servers.
+     */
+    public dnsConfigNameServers: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property dnsConfigOptions:
+     */
+    public dnsConfigOptions: Array<RosEciScalingConfiguration.DnsConfigOptionsProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property dnsConfigSearches: The search domains of the DNS server.
+     */
+    public dnsConfigSearches: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property dnsPolicy: The Domain Name System (DNS) policy. Valid values:
+     * None: uses the DNS that is specified by DnsConfig.
+     * Default: uses the DNS that is specified for the runtime environment.
+     */
+    public dnsPolicy: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property egressBandwidth: The maximum outbound bandwidth. Unit: bytes.
+     */
+    public egressBandwidth: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property eipBandwidth: The bandwidth of the EIP. Default value: 5. Unit: Mbit\/s.
+     */
+    public eipBandwidth: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property ephemeralStorage: The size of the temporary storage space. By default, an enhanced SSD (ESSD) of the PL1 level is used. Unit: GiB.
+     */
+    public ephemeralStorage: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property hostAliases:
+     */
+    public hostAliases: Array<RosEciScalingConfiguration.HostAliasesProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property hostName: The hostname of the elastic container instance.
+     */
+    public hostName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property imageRegistryCredentials:
+     */
+    public imageRegistryCredentials: Array<RosEciScalingConfiguration.ImageRegistryCredentialsProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property imageSnapshotId: The ID of the image cache snapshot.
+     */
+    public imageSnapshotId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ingressBandwidth: The maximum inbound bandwidth. Unit: bytes.
+     */
+    public ingressBandwidth: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property initContainers:
+     */
+    public initContainers: Array<RosEciScalingConfiguration.InitContainersProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceFamilyLevel: The level of the instance family. You can use this parameter to filter instance types that meet the specified criteria. This parameter takes effect only if you set CostOptimization to true. Valid values:
+     * EntryLevel: entry level (shared instance types) Instance types of this level are the most cost-effective but may not provide stable computing performance. Instance types of this level are suitable for scenarios in which CPU utilization is low. For more information, see Shared instance families.
+     * EnterpriseLevel: enterprise level. Instance types of this level provide stable performance and dedicated resources and are suitable for business scenarios that require high stability. For more information, see Overview of instance families.
+     * CreditEntryLevel: credit entry level (burstable instance types). CPU credits are used to ensure computing performance. Instance types of this level are suitable for business scenarios in which CPU utilization is low but may fluctuate in specific scenarios. For more information, see Overview of burstable instances.
+     */
+    public instanceFamilyLevel: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceTypes: The specified ECS instance types. You can specify up to five ECS instance types. For more information, see Specify ECS instance types to create an elastic container instance.
+     */
+    public instanceTypes: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipv6AddressCount: The number of IPv6 addresses.
+     */
+    public ipv6AddressCount: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property loadBalancerWeight: The weight of the elastic container instance as a backend server. Valid values: 1 to 100.
+     * Default value: 50.
+     */
+    public loadBalancerWeight: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property memory: The memory size that you want to allocate to the elastic container instance. Unit: GiB.
+     */
+    public memory: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property ntpServers: The Network Time Protocol (NTP) server.
+     */
+    public ntpServers: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property ramRoleName: The name of the Resource Access Management (RAM) role that you want to assign to the elastic container instance. Elastic container instances and Elastic Compute Service (ECS) instances can share the same RAM role. For more information, see Use an instance RAM role by calling API operations.
+     */
+    public ramRoleName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property restartPolicy: The restart policy of the elastic container instance. Valid values:
+     * Always: always restarts the elastic container instance.
+     * Never: never restarts the elastic container instance.
+     * OnFailure: restarts the elastic container instance upon failures.
+     * Default value: Always.
+     */
+    public restartPolicy: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property securityContextSysctls:
+     */
+    public securityContextSysctls: Array<RosEciScalingConfiguration.SecurityContextSysctlsProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property spotPriceLimit: The maximum hourly price of the preemptible elastic container instance. The value can be accurate to three decimal places.
+     * If you set SpotStrategy to SpotWithPriceLimit, you must specify SpotPriceLimit.
+     */
+    public spotPriceLimit: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property spotStrategy: The bidding policy of the instance. Valid values:
+     * NoSpot: The instance is created as a pay-as-you-go instance.
+     * SpotWithPriceLimit: The instance is created as a preemptible instance with a user-defined maximum hourly price.
+     * SpotAsPriceGo: The instance is created as a preemptible instance for which the market price at the time of purchase is used as the bid price.
+     * Default value: NoSpot.
+     */
+    public spotStrategy: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags:
+     */
+    public tags: RosEciScalingConfiguration.TagsProperty[] | undefined;
+
+    /**
+     * @Property terminationGracePeriodSeconds: The buffer period during which a program handles operations before the program is stopped. Unit: seconds.
+     */
+    public terminationGracePeriodSeconds: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property volumes:
+     */
+    public volumes: Array<RosEciScalingConfiguration.VolumesProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosEciScalingConfigurationProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosEciScalingConfiguration.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrScalingConfigurationId = this.getAtt('ScalingConfigurationId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.containerGroupName = props.containerGroupName;
+        this.scalingConfigurationName = props.scalingConfigurationName;
+        this.scalingGroupId = props.scalingGroupId;
+        this.securityGroupId = props.securityGroupId;
+        this.acrRegistryInfos = props.acrRegistryInfos;
+        this.activeDeadlineSeconds = props.activeDeadlineSeconds;
+        this.autoCreateEip = props.autoCreateEip;
+        this.autoMatchImageCache = props.autoMatchImageCache;
+        this.containers = props.containers;
+        this.costOptimization = props.costOptimization;
+        this.cpu = props.cpu;
+        this.cpuOptionsCore = props.cpuOptionsCore;
+        this.cpuOptionsThreadsPerCore = props.cpuOptionsThreadsPerCore;
+        this.dataCacheBucket = props.dataCacheBucket;
+        this.dataCacheBurstingEnabled = props.dataCacheBurstingEnabled;
+        this.dataCachePl = props.dataCachePl;
+        this.dataCacheProvisionedIops = props.dataCacheProvisionedIops;
+        this.dnsConfigNameServers = props.dnsConfigNameServers;
+        this.dnsConfigOptions = props.dnsConfigOptions;
+        this.dnsConfigSearches = props.dnsConfigSearches;
+        this.dnsPolicy = props.dnsPolicy;
+        this.egressBandwidth = props.egressBandwidth;
+        this.eipBandwidth = props.eipBandwidth;
+        this.ephemeralStorage = props.ephemeralStorage;
+        this.hostAliases = props.hostAliases;
+        this.hostName = props.hostName;
+        this.imageRegistryCredentials = props.imageRegistryCredentials;
+        this.imageSnapshotId = props.imageSnapshotId;
+        this.ingressBandwidth = props.ingressBandwidth;
+        this.initContainers = props.initContainers;
+        this.instanceFamilyLevel = props.instanceFamilyLevel;
+        this.instanceTypes = props.instanceTypes;
+        this.ipv6AddressCount = props.ipv6AddressCount;
+        this.loadBalancerWeight = props.loadBalancerWeight;
+        this.memory = props.memory;
+        this.ntpServers = props.ntpServers;
+        this.ramRoleName = props.ramRoleName;
+        this.resourceGroupId = props.resourceGroupId;
+        this.restartPolicy = props.restartPolicy;
+        this.securityContextSysctls = props.securityContextSysctls;
+        this.spotPriceLimit = props.spotPriceLimit;
+        this.spotStrategy = props.spotStrategy;
+        this.tags = props.tags;
+        this.terminationGracePeriodSeconds = props.terminationGracePeriodSeconds;
+        this.volumes = props.volumes;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            containerGroupName: this.containerGroupName,
+            scalingConfigurationName: this.scalingConfigurationName,
+            scalingGroupId: this.scalingGroupId,
+            securityGroupId: this.securityGroupId,
+            acrRegistryInfos: this.acrRegistryInfos,
+            activeDeadlineSeconds: this.activeDeadlineSeconds,
+            autoCreateEip: this.autoCreateEip,
+            autoMatchImageCache: this.autoMatchImageCache,
+            containers: this.containers,
+            costOptimization: this.costOptimization,
+            cpu: this.cpu,
+            cpuOptionsCore: this.cpuOptionsCore,
+            cpuOptionsThreadsPerCore: this.cpuOptionsThreadsPerCore,
+            dataCacheBucket: this.dataCacheBucket,
+            dataCacheBurstingEnabled: this.dataCacheBurstingEnabled,
+            dataCachePl: this.dataCachePl,
+            dataCacheProvisionedIops: this.dataCacheProvisionedIops,
+            dnsConfigNameServers: this.dnsConfigNameServers,
+            dnsConfigOptions: this.dnsConfigOptions,
+            dnsConfigSearches: this.dnsConfigSearches,
+            dnsPolicy: this.dnsPolicy,
+            egressBandwidth: this.egressBandwidth,
+            eipBandwidth: this.eipBandwidth,
+            ephemeralStorage: this.ephemeralStorage,
+            hostAliases: this.hostAliases,
+            hostName: this.hostName,
+            imageRegistryCredentials: this.imageRegistryCredentials,
+            imageSnapshotId: this.imageSnapshotId,
+            ingressBandwidth: this.ingressBandwidth,
+            initContainers: this.initContainers,
+            instanceFamilyLevel: this.instanceFamilyLevel,
+            instanceTypes: this.instanceTypes,
+            ipv6AddressCount: this.ipv6AddressCount,
+            loadBalancerWeight: this.loadBalancerWeight,
+            memory: this.memory,
+            ntpServers: this.ntpServers,
+            ramRoleName: this.ramRoleName,
+            resourceGroupId: this.resourceGroupId,
+            restartPolicy: this.restartPolicy,
+            securityContextSysctls: this.securityContextSysctls,
+            spotPriceLimit: this.spotPriceLimit,
+            spotStrategy: this.spotStrategy,
+            tags: this.tags,
+            terminationGracePeriodSeconds: this.terminationGracePeriodSeconds,
+            volumes: this.volumes,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosEciScalingConfigurationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosEciScalingConfiguration {
+    /**
+     * @stability external
+     */
+    export interface AcrRegistryInfosProperty {
+        /**
+         * @Property domains: The domain names of the Container Registry Enterprise Edition instance. By default, all domain names of the instance are displayed. You can specify one or more domain names. Separate multiple domain names with commas (,).
+         */
+        readonly domains?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property instanceName: The name of the Container Registry Enterprise Edition instance.
+         */
+        readonly instanceName?: string | ros.IResolvable;
+        /**
+         * @Property instanceId: The ID of the Container Registry Enterprise Edition instance.
+         */
+        readonly instanceId: string | ros.IResolvable;
+        /**
+         * @Property regionId: The region ID of the Container Registry Enterprise Edition instance.
+         */
+        readonly regionId?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `AcrRegistryInfosProperty`
+ *
+ * @param properties - the TypeScript properties of a `AcrRegistryInfosProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosEciScalingConfiguration_AcrRegistryInfosPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('domains', ros.listValidator(ros.validateString))(properties.domains));
+    errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('regionId', ros.validateString)(properties.regionId));
+    return errors.wrap('supplied properties not correct for "AcrRegistryInfosProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESS::EciScalingConfiguration.AcrRegistryInfos` resource
+ *
+ * @param properties - the TypeScript properties of a `AcrRegistryInfosProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESS::EciScalingConfiguration.AcrRegistryInfos` resource.
+ */
+// @ts-ignore TS6133
+function rosEciScalingConfigurationAcrRegistryInfosPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosEciScalingConfiguration_AcrRegistryInfosPropertyValidator(properties).assertSuccess();
+    return {
+      Domains: ros.listMapper(ros.stringToRosTemplate)(properties.domains),
+      InstanceName: ros.stringToRosTemplate(properties.instanceName),
+      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+      RegionId: ros.stringToRosTemplate(properties.regionId),
+    };
+}
+
+export namespace RosEciScalingConfiguration {
+    /**
+     * @stability external
+     */
+    export interface ConfigFileVolumeConfigFileToPathsProperty {
+        /**
+         * @Property path: The relative path to the configuration file.
+         */
+        readonly path: string | ros.IResolvable;
+        /**
+         * @Property content: The content of the configuration file (32 KB).
+         */
+        readonly content?: string | ros.IResolvable;
+        /**
+         * @Property mode: The permissions on the ConfigFileVolume directory.
+         */
+        readonly mode?: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ConfigFileVolumeConfigFileToPathsProperty`
+ *
+ * @param properties - the TypeScript properties of a `ConfigFileVolumeConfigFileToPathsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosEciScalingConfiguration_ConfigFileVolumeConfigFileToPathsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('path', ros.requiredValidator)(properties.path));
+    errors.collect(ros.propertyValidator('path', ros.validateString)(properties.path));
+    errors.collect(ros.propertyValidator('content', ros.validateString)(properties.content));
+    errors.collect(ros.propertyValidator('mode', ros.validateNumber)(properties.mode));
+    return errors.wrap('supplied properties not correct for "ConfigFileVolumeConfigFileToPathsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESS::EciScalingConfiguration.ConfigFileVolumeConfigFileToPaths` resource
+ *
+ * @param properties - the TypeScript properties of a `ConfigFileVolumeConfigFileToPathsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESS::EciScalingConfiguration.ConfigFileVolumeConfigFileToPaths` resource.
+ */
+// @ts-ignore TS6133
+function rosEciScalingConfigurationConfigFileVolumeConfigFileToPathsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosEciScalingConfiguration_ConfigFileVolumeConfigFileToPathsPropertyValidator(properties).assertSuccess();
+    return {
+      Path: ros.stringToRosTemplate(properties.path),
+      Content: ros.stringToRosTemplate(properties.content),
+      Mode: ros.numberToRosTemplate(properties.mode),
+    };
+}
+
+export namespace RosEciScalingConfiguration {
+    /**
+     * @stability external
+     */
+    export interface ContainersProperty {
+        /**
+         * @Property environmentVars:
+         */
+        readonly environmentVars?: Array<RosEciScalingConfiguration.EnvironmentVarsProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property readinessProbeExecCommands: The command that you want to run by using the command line interface (CLI) in the container to perform readiness probes.
+         */
+        readonly readinessProbeExecCommands?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property memory: The memory size that you want to allocate to the container. Unit: GiB.
+         */
+        readonly memory?: number | ros.IResolvable;
+        /**
+         * @Property readinessProbeTcpSocketPort: The port that is detected by TCP sockets when you use the TCP sockets to perform readiness probes.
+         */
+        readonly readinessProbeTcpSocketPort?: number | ros.IResolvable;
+        /**
+         * @Property cpu: The number of CPU cores that you want to allocate to the container.
+         */
+        readonly cpu?: number | ros.IResolvable;
+        /**
+         * @Property readinessProbeHttpGetPath: The path to which HTTP GET requests are sent when you use the HTTP GET requests to perform readiness probes.
+         */
+        readonly readinessProbeHttpGetPath?: string | ros.IResolvable;
+        /**
+         * @Property readinessProbeHttpGetScheme: The protocol type of the HTTP GET requests that you use to perform readiness probes. Valid values:
+     * HTTP
+     * HTTPS
+         */
+        readonly readinessProbeHttpGetScheme?: string | ros.IResolvable;
+        /**
+         * @Property image: The image of the container.
+         */
+        readonly image: string | ros.IResolvable;
+        /**
+         * @Property gpu: The number of GPUs that you want to allocate to the container.
+         */
+        readonly gpu?: number | ros.IResolvable;
+        /**
+         * @Property stdinOnce: Specifies whether standard input streams remain connected during multiple sessions when Container.N.StdinOnce is set to true.
+     * If you set Container.N.StdinOnce to true, standard input streams are connected after the container is started and remain idle until a client is connected to receive data. After the client is disconnected, the standard input streams are also disconnected and remain disconnected until the container is restarted.
+         */
+        readonly stdinOnce?: boolean | ros.IResolvable;
+        /**
+         * @Property name: The image name of the container.
+         */
+        readonly name: string | ros.IResolvable;
+        /**
+         * @Property livenessProbeHttpGetScheme: The protocol type of the HTTP GET requests that you use to perform liveness probes. Valid values:
+     * HTTP
+     * HTTPS
+         */
+        readonly livenessProbeHttpGetScheme?: string | ros.IResolvable;
+        /**
+         * @Property livenessProbeTimeoutSeconds: The timeout period for a liveness probe. Unit: seconds. Default value: 1. Minimum value: 1.
+         */
+        readonly livenessProbeTimeoutSeconds?: number | ros.IResolvable;
+        /**
+         * @Property livenessProbeFailureThreshold: The minimum number of consecutive failures before a successful liveness probe is considered failed.
+     * Default value: 3.
+         */
+        readonly livenessProbeFailureThreshold?: number | ros.IResolvable;
+        /**
+         * @Property livenessProbeHttpGetPath: The path to which HTTP GET requests are sent when you use the HTTP GET requests to perform liveness probes.
+         */
+        readonly livenessProbeHttpGetPath?: string | ros.IResolvable;
+        /**
+         * @Property volumeMounts:
+         */
+        readonly volumeMounts?: Array<RosEciScalingConfiguration.VolumeMountsProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property livenessProbeInitialDelaySeconds: The number of seconds that elapses from the startup of the container to the start time of a liveness probe. Unit: seconds.
+         */
+        readonly livenessProbeInitialDelaySeconds?: number | ros.IResolvable;
+        /**
+         * @Property securityContextRunAsUser: The ID of the user that runs the container.
+         */
+        readonly securityContextRunAsUser?: number | ros.IResolvable;
+        /**
+         * @Property livenessProbeTcpSocketPort: The port detected by TCP sockets when you use the TCP sockets to perform liveness probes.
+         */
+        readonly livenessProbeTcpSocketPort?: number | ros.IResolvable;
+        /**
+         * @Property commands: The container startup commands. You can specify up to 20 commands. Each command can contain up to 256 characters.
+         */
+        readonly commands?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property tty: Specifies whether to enable interaction. Valid values:
+     * true
+     * false
+     * Default value: false.
+     * If the command is a \/bin\/bash command, set the value to true.
+         */
+        readonly tty?: boolean | ros.IResolvable;
+        /**
+         * @Property readinessProbePeriodSeconds: The interval at which readiness probes are performed. Unit: seconds. Default value: 10. Minimum value: 1.
+         */
+        readonly readinessProbePeriodSeconds?: number | ros.IResolvable;
+        /**
+         * @Property livenessProbePeriodSeconds: The interval at which liveness probes are performed. Unit: seconds. Default value: 10. Minimum value: 1.
+         */
+        readonly livenessProbePeriodSeconds?: number | ros.IResolvable;
+        /**
+         * @Property livenessProbeExecCommands: The command that you want to run by using the CLI in the container to perform liveness probes.
+         */
+        readonly livenessProbeExecCommands?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property livenessProbeSuccessThreshold: The minimum number of consecutive successes before a failed liveness probe is considered successful. Default value: 1. Set the value to 1.
+         */
+        readonly livenessProbeSuccessThreshold?: number | ros.IResolvable;
+        /**
+         * @Property readinessProbeSuccessThreshold: The minimum number of consecutive successes before a failed readiness probe is considered successful. Default value: 1. Set the value to 1.
+         */
+        readonly readinessProbeSuccessThreshold?: number | ros.IResolvable;
+        /**
+         * @Property readinessProbeInitialDelaySeconds: The number of seconds that elapses from the startup of the container to the start time of a readiness probe. Unit: seconds.
+         */
+        readonly readinessProbeInitialDelaySeconds?: number | ros.IResolvable;
+        /**
+         * @Property args: The container startup arguments. You can specify up to 10 arguments.
+         */
+        readonly args?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property readinessProbeFailureThreshold: The minimum number of consecutive failures before a successful readiness probe is considered failed. Default value: 3.
+         */
+        readonly readinessProbeFailureThreshold?: number | ros.IResolvable;
+        /**
+         * @Property securityContextCapabilitiesAdd: The permissions that are granted to the processes in the container. Only NET_ADMIN and NET_RAW are supported.
+     * Note
+     * If you want to use NET_RAW, submit a ticket.
+         */
+        readonly securityContextCapabilitiesAdd?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property ports:
+         */
+        readonly ports?: Array<RosEciScalingConfiguration.PortsProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property readinessProbeHttpGetPort: The port to which HTTP GET requests are sent when you use the HTTP GET requests to perform readiness probes.
+         */
+        readonly readinessProbeHttpGetPort?: number | ros.IResolvable;
+        /**
+         * @Property stdin: Specifies whether the container allocates buffer resources to standard input streams when the container is running. If you do not specify this parameter, an end-of-file (EOF) error occurs.
+     * Default value: false.
+         */
+        readonly stdin?: boolean | ros.IResolvable;
+        /**
+         * @Property workingDir: The working directory of the container.
+         */
+        readonly workingDir?: string | ros.IResolvable;
+        /**
+         * @Property imagePullPolicy: The image pulling policy. Valid values:
+     * Always: Each time instances are created, image pulling is performed.
+     * IfNotPresent: Image pulling is performed as needed. On-premises images are preferentially used. If no on-premises images are available, image pulling is performed.
+     * Never: Image pulling is not performed. On-premises images are always used.
+         */
+        readonly imagePullPolicy?: string | ros.IResolvable;
+        /**
+         * @Property livenessProbeHttpGetPort: The port to which HTTP GET requests are sent when you use the HTTP GET requests to perform liveness probes.
+         */
+        readonly livenessProbeHttpGetPort?: number | ros.IResolvable;
+        /**
+         * @Property readinessProbeTimeoutSeconds: The timeout period for a readiness probe. Unit: seconds. Default value: 1. Minimum value: 1.
+         */
+        readonly readinessProbeTimeoutSeconds?: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ContainersProperty`
+ *
+ * @param properties - the TypeScript properties of a `ContainersProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosEciScalingConfiguration_ContainersPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('environmentVars', ros.listValidator(RosEciScalingConfiguration_EnvironmentVarsPropertyValidator))(properties.environmentVars));
+    errors.collect(ros.propertyValidator('readinessProbeExecCommands', ros.listValidator(ros.validateString))(properties.readinessProbeExecCommands));
+    errors.collect(ros.propertyValidator('memory', ros.validateNumber)(properties.memory));
+    errors.collect(ros.propertyValidator('readinessProbeTcpSocketPort', ros.validateNumber)(properties.readinessProbeTcpSocketPort));
+    errors.collect(ros.propertyValidator('cpu', ros.validateNumber)(properties.cpu));
+    errors.collect(ros.propertyValidator('readinessProbeHttpGetPath', ros.validateString)(properties.readinessProbeHttpGetPath));
+    if(properties.readinessProbeHttpGetScheme && (typeof properties.readinessProbeHttpGetScheme) !== 'object') {
+        errors.collect(ros.propertyValidator('readinessProbeHttpGetScheme', ros.validateAllowedValues)({
+          data: properties.readinessProbeHttpGetScheme,
+          allowedValues: ["HTTP","HTTPS"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('readinessProbeHttpGetScheme', ros.validateString)(properties.readinessProbeHttpGetScheme));
+    errors.collect(ros.propertyValidator('image', ros.requiredValidator)(properties.image));
+    errors.collect(ros.propertyValidator('image', ros.validateString)(properties.image));
+    errors.collect(ros.propertyValidator('gpu', ros.validateNumber)(properties.gpu));
+    errors.collect(ros.propertyValidator('stdinOnce', ros.validateBoolean)(properties.stdinOnce));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    if(properties.livenessProbeHttpGetScheme && (typeof properties.livenessProbeHttpGetScheme) !== 'object') {
+        errors.collect(ros.propertyValidator('livenessProbeHttpGetScheme', ros.validateAllowedValues)({
+          data: properties.livenessProbeHttpGetScheme,
+          allowedValues: ["HTTP","HTTPS"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('livenessProbeHttpGetScheme', ros.validateString)(properties.livenessProbeHttpGetScheme));
+    errors.collect(ros.propertyValidator('livenessProbeTimeoutSeconds', ros.validateNumber)(properties.livenessProbeTimeoutSeconds));
+    errors.collect(ros.propertyValidator('livenessProbeFailureThreshold', ros.validateNumber)(properties.livenessProbeFailureThreshold));
+    errors.collect(ros.propertyValidator('livenessProbeHttpGetPath', ros.validateString)(properties.livenessProbeHttpGetPath));
+    errors.collect(ros.propertyValidator('volumeMounts', ros.listValidator(RosEciScalingConfiguration_VolumeMountsPropertyValidator))(properties.volumeMounts));
+    errors.collect(ros.propertyValidator('livenessProbeInitialDelaySeconds', ros.validateNumber)(properties.livenessProbeInitialDelaySeconds));
+    errors.collect(ros.propertyValidator('securityContextRunAsUser', ros.validateNumber)(properties.securityContextRunAsUser));
+    errors.collect(ros.propertyValidator('livenessProbeTcpSocketPort', ros.validateNumber)(properties.livenessProbeTcpSocketPort));
+    errors.collect(ros.propertyValidator('commands', ros.listValidator(ros.validateString))(properties.commands));
+    errors.collect(ros.propertyValidator('tty', ros.validateBoolean)(properties.tty));
+    errors.collect(ros.propertyValidator('readinessProbePeriodSeconds', ros.validateNumber)(properties.readinessProbePeriodSeconds));
+    errors.collect(ros.propertyValidator('livenessProbePeriodSeconds', ros.validateNumber)(properties.livenessProbePeriodSeconds));
+    errors.collect(ros.propertyValidator('livenessProbeExecCommands', ros.listValidator(ros.validateString))(properties.livenessProbeExecCommands));
+    errors.collect(ros.propertyValidator('livenessProbeSuccessThreshold', ros.validateNumber)(properties.livenessProbeSuccessThreshold));
+    errors.collect(ros.propertyValidator('readinessProbeSuccessThreshold', ros.validateNumber)(properties.readinessProbeSuccessThreshold));
+    errors.collect(ros.propertyValidator('readinessProbeInitialDelaySeconds', ros.validateNumber)(properties.readinessProbeInitialDelaySeconds));
+    errors.collect(ros.propertyValidator('args', ros.listValidator(ros.validateString))(properties.args));
+    errors.collect(ros.propertyValidator('readinessProbeFailureThreshold', ros.validateNumber)(properties.readinessProbeFailureThreshold));
+    errors.collect(ros.propertyValidator('securityContextCapabilitiesAdd', ros.listValidator(ros.validateString))(properties.securityContextCapabilitiesAdd));
+    errors.collect(ros.propertyValidator('ports', ros.listValidator(RosEciScalingConfiguration_PortsPropertyValidator))(properties.ports));
+    errors.collect(ros.propertyValidator('readinessProbeHttpGetPort', ros.validateNumber)(properties.readinessProbeHttpGetPort));
+    errors.collect(ros.propertyValidator('stdin', ros.validateBoolean)(properties.stdin));
+    errors.collect(ros.propertyValidator('workingDir', ros.validateString)(properties.workingDir));
+    if(properties.imagePullPolicy && (typeof properties.imagePullPolicy) !== 'object') {
+        errors.collect(ros.propertyValidator('imagePullPolicy', ros.validateAllowedValues)({
+          data: properties.imagePullPolicy,
+          allowedValues: ["Always","IfNotPresent","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('imagePullPolicy', ros.validateString)(properties.imagePullPolicy));
+    errors.collect(ros.propertyValidator('livenessProbeHttpGetPort', ros.validateNumber)(properties.livenessProbeHttpGetPort));
+    errors.collect(ros.propertyValidator('readinessProbeTimeoutSeconds', ros.validateNumber)(properties.readinessProbeTimeoutSeconds));
+    return errors.wrap('supplied properties not correct for "ContainersProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESS::EciScalingConfiguration.Containers` resource
+ *
+ * @param properties - the TypeScript properties of a `ContainersProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESS::EciScalingConfiguration.Containers` resource.
+ */
+// @ts-ignore TS6133
+function rosEciScalingConfigurationContainersPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosEciScalingConfiguration_ContainersPropertyValidator(properties).assertSuccess();
+    return {
+      EnvironmentVars: ros.listMapper(rosEciScalingConfigurationEnvironmentVarsPropertyToRosTemplate)(properties.environmentVars),
+      ReadinessProbeExecCommands: ros.listMapper(ros.stringToRosTemplate)(properties.readinessProbeExecCommands),
+      Memory: ros.numberToRosTemplate(properties.memory),
+      ReadinessProbeTcpSocketPort: ros.numberToRosTemplate(properties.readinessProbeTcpSocketPort),
+      Cpu: ros.numberToRosTemplate(properties.cpu),
+      ReadinessProbeHttpGetPath: ros.stringToRosTemplate(properties.readinessProbeHttpGetPath),
+      ReadinessProbeHttpGetScheme: ros.stringToRosTemplate(properties.readinessProbeHttpGetScheme),
+      Image: ros.stringToRosTemplate(properties.image),
+      Gpu: ros.numberToRosTemplate(properties.gpu),
+      StdinOnce: ros.booleanToRosTemplate(properties.stdinOnce),
+      Name: ros.stringToRosTemplate(properties.name),
+      LivenessProbeHttpGetScheme: ros.stringToRosTemplate(properties.livenessProbeHttpGetScheme),
+      LivenessProbeTimeoutSeconds: ros.numberToRosTemplate(properties.livenessProbeTimeoutSeconds),
+      LivenessProbeFailureThreshold: ros.numberToRosTemplate(properties.livenessProbeFailureThreshold),
+      LivenessProbeHttpGetPath: ros.stringToRosTemplate(properties.livenessProbeHttpGetPath),
+      VolumeMounts: ros.listMapper(rosEciScalingConfigurationVolumeMountsPropertyToRosTemplate)(properties.volumeMounts),
+      LivenessProbeInitialDelaySeconds: ros.numberToRosTemplate(properties.livenessProbeInitialDelaySeconds),
+      SecurityContextRunAsUser: ros.numberToRosTemplate(properties.securityContextRunAsUser),
+      LivenessProbeTcpSocketPort: ros.numberToRosTemplate(properties.livenessProbeTcpSocketPort),
+      Commands: ros.listMapper(ros.stringToRosTemplate)(properties.commands),
+      Tty: ros.booleanToRosTemplate(properties.tty),
+      ReadinessProbePeriodSeconds: ros.numberToRosTemplate(properties.readinessProbePeriodSeconds),
+      LivenessProbePeriodSeconds: ros.numberToRosTemplate(properties.livenessProbePeriodSeconds),
+      LivenessProbeExecCommands: ros.listMapper(ros.stringToRosTemplate)(properties.livenessProbeExecCommands),
+      LivenessProbeSuccessThreshold: ros.numberToRosTemplate(properties.livenessProbeSuccessThreshold),
+      ReadinessProbeSuccessThreshold: ros.numberToRosTemplate(properties.readinessProbeSuccessThreshold),
+      ReadinessProbeInitialDelaySeconds: ros.numberToRosTemplate(properties.readinessProbeInitialDelaySeconds),
+      Args: ros.listMapper(ros.stringToRosTemplate)(properties.args),
+      ReadinessProbeFailureThreshold: ros.numberToRosTemplate(properties.readinessProbeFailureThreshold),
+      SecurityContextCapabilitiesAdd: ros.listMapper(ros.stringToRosTemplate)(properties.securityContextCapabilitiesAdd),
+      Ports: ros.listMapper(rosEciScalingConfigurationPortsPropertyToRosTemplate)(properties.ports),
+      ReadinessProbeHttpGetPort: ros.numberToRosTemplate(properties.readinessProbeHttpGetPort),
+      Stdin: ros.booleanToRosTemplate(properties.stdin),
+      WorkingDir: ros.stringToRosTemplate(properties.workingDir),
+      ImagePullPolicy: ros.stringToRosTemplate(properties.imagePullPolicy),
+      LivenessProbeHttpGetPort: ros.numberToRosTemplate(properties.livenessProbeHttpGetPort),
+      ReadinessProbeTimeoutSeconds: ros.numberToRosTemplate(properties.readinessProbeTimeoutSeconds),
+    };
+}
+
+export namespace RosEciScalingConfiguration {
+    /**
+     * @stability external
+     */
+    export interface DnsConfigOptionsProperty {
+        /**
+         * @Property value: The variable value of the option.
+         */
+        readonly value: string | ros.IResolvable;
+        /**
+         * @Property name: The variable name of the option.
+         */
+        readonly name: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DnsConfigOptionsProperty`
+ *
+ * @param properties - the TypeScript properties of a `DnsConfigOptionsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosEciScalingConfiguration_DnsConfigOptionsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.requiredValidator)(properties.value));
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "DnsConfigOptionsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESS::EciScalingConfiguration.DnsConfigOptions` resource
+ *
+ * @param properties - the TypeScript properties of a `DnsConfigOptionsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESS::EciScalingConfiguration.DnsConfigOptions` resource.
+ */
+// @ts-ignore TS6133
+function rosEciScalingConfigurationDnsConfigOptionsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosEciScalingConfiguration_DnsConfigOptionsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Name: ros.stringToRosTemplate(properties.name),
+    };
+}
+
+export namespace RosEciScalingConfiguration {
+    /**
+     * @stability external
+     */
+    export interface EnvironmentVarsProperty {
+        /**
+         * @Property value: The value of the environment variable. The value can be up to 256 characters in length.
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: The name of the environment variable. The name must be 1 to 128 characters in length. Specify the value in the [0-9a-zA-Z] format. The name can contain underscores and cannot start with a digit.
+         */
+        readonly key?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `EnvironmentVarsProperty`
+ *
+ * @param properties - the TypeScript properties of a `EnvironmentVarsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosEciScalingConfiguration_EnvironmentVarsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "EnvironmentVarsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESS::EciScalingConfiguration.EnvironmentVars` resource
+ *
+ * @param properties - the TypeScript properties of a `EnvironmentVarsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESS::EciScalingConfiguration.EnvironmentVars` resource.
+ */
+// @ts-ignore TS6133
+function rosEciScalingConfigurationEnvironmentVarsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosEciScalingConfiguration_EnvironmentVarsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+export namespace RosEciScalingConfiguration {
+    /**
+     * @stability external
+     */
+    export interface HostAliasesProperty {
+        /**
+         * @Property ip: The IP address of the host that you want to add.
+         */
+        readonly ip: string | ros.IResolvable;
+        /**
+         * @Property hostnames: The name of the host that you want to add.
+         */
+        readonly hostnames?: Array<string | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `HostAliasesProperty`
+ *
+ * @param properties - the TypeScript properties of a `HostAliasesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosEciScalingConfiguration_HostAliasesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('ip', ros.requiredValidator)(properties.ip));
+    errors.collect(ros.propertyValidator('ip', ros.validateString)(properties.ip));
+    errors.collect(ros.propertyValidator('hostnames', ros.listValidator(ros.validateString))(properties.hostnames));
+    return errors.wrap('supplied properties not correct for "HostAliasesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESS::EciScalingConfiguration.HostAliases` resource
+ *
+ * @param properties - the TypeScript properties of a `HostAliasesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESS::EciScalingConfiguration.HostAliases` resource.
+ */
+// @ts-ignore TS6133
+function rosEciScalingConfigurationHostAliasesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosEciScalingConfiguration_HostAliasesPropertyValidator(properties).assertSuccess();
+    return {
+      Ip: ros.stringToRosTemplate(properties.ip),
+      Hostnames: ros.listMapper(ros.stringToRosTemplate)(properties.hostnames),
+    };
+}
+
+export namespace RosEciScalingConfiguration {
+    /**
+     * @stability external
+     */
+    export interface ImageRegistryCredentialsProperty {
+        /**
+         * @Property userName: The username of the image repository.
+         */
+        readonly userName: string | ros.IResolvable;
+        /**
+         * @Property server: The registered address of the image repository.
+         */
+        readonly server: string | ros.IResolvable;
+        /**
+         * @Property password: The password of the image repository.
+         */
+        readonly password: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ImageRegistryCredentialsProperty`
+ *
+ * @param properties - the TypeScript properties of a `ImageRegistryCredentialsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosEciScalingConfiguration_ImageRegistryCredentialsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('userName', ros.requiredValidator)(properties.userName));
+    errors.collect(ros.propertyValidator('userName', ros.validateString)(properties.userName));
+    errors.collect(ros.propertyValidator('server', ros.requiredValidator)(properties.server));
+    errors.collect(ros.propertyValidator('server', ros.validateString)(properties.server));
+    errors.collect(ros.propertyValidator('password', ros.requiredValidator)(properties.password));
+    errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
+    return errors.wrap('supplied properties not correct for "ImageRegistryCredentialsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESS::EciScalingConfiguration.ImageRegistryCredentials` resource
+ *
+ * @param properties - the TypeScript properties of a `ImageRegistryCredentialsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESS::EciScalingConfiguration.ImageRegistryCredentials` resource.
+ */
+// @ts-ignore TS6133
+function rosEciScalingConfigurationImageRegistryCredentialsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosEciScalingConfiguration_ImageRegistryCredentialsPropertyValidator(properties).assertSuccess();
+    return {
+      UserName: ros.stringToRosTemplate(properties.userName),
+      Server: ros.stringToRosTemplate(properties.server),
+      Password: ros.stringToRosTemplate(properties.password),
+    };
+}
+
+export namespace RosEciScalingConfiguration {
+    /**
+     * @stability external
+     */
+    export interface InitContainerEnvironmentVarsProperty {
+        /**
+         * @Property value: The value of the environment variable. The value can be up to 256 characters in length.
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: The name of the environment variable. The name must be 1 to 128 characters in length. Specify the name in the [0-9a-zA-Z] format. The name can contain underscores and cannot start with a digit.
+         */
+        readonly key?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `InitContainerEnvironmentVarsProperty`
+ *
+ * @param properties - the TypeScript properties of a `InitContainerEnvironmentVarsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosEciScalingConfiguration_InitContainerEnvironmentVarsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "InitContainerEnvironmentVarsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESS::EciScalingConfiguration.InitContainerEnvironmentVars` resource
+ *
+ * @param properties - the TypeScript properties of a `InitContainerEnvironmentVarsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESS::EciScalingConfiguration.InitContainerEnvironmentVars` resource.
+ */
+// @ts-ignore TS6133
+function rosEciScalingConfigurationInitContainerEnvironmentVarsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosEciScalingConfiguration_InitContainerEnvironmentVarsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+export namespace RosEciScalingConfiguration {
+    /**
+     * @stability external
+     */
+    export interface InitContainerVolumeMountsProperty {
+        /**
+         * @Property readOnly: Specifies whether the mount directory is read-only.
+     * Default value: false.
+         */
+        readonly readOnly?: boolean | ros.IResolvable;
+        /**
+         * @Property mountPath: The directory on which the volume is mounted. Data in this directory is overwritten by the data of the volume.
+         */
+        readonly mountPath?: string | ros.IResolvable;
+        /**
+         * @Property subPath: The subdirectory of the volume. The pod can mount different directories of the same volume to different directories of the init container.
+         */
+        readonly subPath?: string | ros.IResolvable;
+        /**
+         * @Property mountPropagation: The mount propagation setting of the volume. Mount propagation allows volumes that are mounted on one container to be shared with other containers in the same pod, or even with other pods on the same node. Valid values:
+     * None: The volume mount does not receive subsequent mounts that are mounted to the volume or the subdirectories of the volume.
+     * HostToCotainer: The volume mount receives all subsequent mounts that are mounted to the volume or the subdirectories of the volume.
+     * Bidirectional: This value is similar to HostToCotainer. The volume mount receives all subsequent mounts that are mounted to the volume or its subdirectories. In addition, all volume mounts that are mounted on the container are propagated back to the instance and to all containers of all pods that use the same volume.
+         */
+        readonly mountPropagation?: string | ros.IResolvable;
+        /**
+         * @Property name: The name of the mounted volume.
+         */
+        readonly name: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `InitContainerVolumeMountsProperty`
+ *
+ * @param properties - the TypeScript properties of a `InitContainerVolumeMountsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosEciScalingConfiguration_InitContainerVolumeMountsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('readOnly', ros.validateBoolean)(properties.readOnly));
+    errors.collect(ros.propertyValidator('mountPath', ros.validateString)(properties.mountPath));
+    errors.collect(ros.propertyValidator('subPath', ros.validateString)(properties.subPath));
+    errors.collect(ros.propertyValidator('mountPropagation', ros.validateString)(properties.mountPropagation));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "InitContainerVolumeMountsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESS::EciScalingConfiguration.InitContainerVolumeMounts` resource
+ *
+ * @param properties - the TypeScript properties of a `InitContainerVolumeMountsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESS::EciScalingConfiguration.InitContainerVolumeMounts` resource.
+ */
+// @ts-ignore TS6133
+function rosEciScalingConfigurationInitContainerVolumeMountsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosEciScalingConfiguration_InitContainerVolumeMountsPropertyValidator(properties).assertSuccess();
+    return {
+      ReadOnly: ros.booleanToRosTemplate(properties.readOnly),
+      MountPath: ros.stringToRosTemplate(properties.mountPath),
+      SubPath: ros.stringToRosTemplate(properties.subPath),
+      MountPropagation: ros.stringToRosTemplate(properties.mountPropagation),
+      Name: ros.stringToRosTemplate(properties.name),
+    };
+}
+
+export namespace RosEciScalingConfiguration {
+    /**
+     * @stability external
+     */
+    export interface InitContainersProperty {
+        /**
+         * @Property args: The container startup arguments.
+         */
+        readonly args?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property securityContextCapabilitiesAdd: The permissions that are granted to the processes in the init container. Only NET_ADMIN and NET_RAW are supported.
+     * Note
+     * If you want to use NET_RAW, submit a ticket.
+         */
+        readonly securityContextCapabilitiesAdd?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property memory: The memory size that you want to allocate to the init container. Unit: GiB.
+         */
+        readonly memory?: number | ros.IResolvable;
+        /**
+         * @Property cpu: The number of vCPUs that you want to allocate to the init container.
+         */
+        readonly cpu?: number | ros.IResolvable;
+        /**
+         * @Property image: The image of the init container.
+         */
+        readonly image: string | ros.IResolvable;
+        /**
+         * @Property gpu: The number of GPUs that you want to allocate to the init container.
+         */
+        readonly gpu?: number | ros.IResolvable;
+        /**
+         * @Property name: The name of the init container.
+         */
+        readonly name: string | ros.IResolvable;
+        /**
+         * @Property initContainerEnvironmentVars:
+         */
+        readonly initContainerEnvironmentVars?: Array<RosEciScalingConfiguration.InitContainerEnvironmentVarsProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property workingDir: The working directory of the init container.
+         */
+        readonly workingDir?: string | ros.IResolvable;
+        /**
+         * @Property imagePullPolicy: The image pulling policy.
+         */
+        readonly imagePullPolicy?: string | ros.IResolvable;
+        /**
+         * @Property commands: The container startup commands.
+         */
+        readonly commands?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property securityContextRunAsUser: The ID of the user that runs the init container.
+         */
+        readonly securityContextRunAsUser?: number | ros.IResolvable;
+        /**
+         * @Property initContainerVolumeMounts:
+         */
+        readonly initContainerVolumeMounts?: Array<RosEciScalingConfiguration.InitContainerVolumeMountsProperty | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `InitContainersProperty`
+ *
+ * @param properties - the TypeScript properties of a `InitContainersProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosEciScalingConfiguration_InitContainersPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('args', ros.listValidator(ros.validateString))(properties.args));
+    errors.collect(ros.propertyValidator('securityContextCapabilitiesAdd', ros.listValidator(ros.validateString))(properties.securityContextCapabilitiesAdd));
+    errors.collect(ros.propertyValidator('memory', ros.validateNumber)(properties.memory));
+    errors.collect(ros.propertyValidator('cpu', ros.validateNumber)(properties.cpu));
+    errors.collect(ros.propertyValidator('image', ros.requiredValidator)(properties.image));
+    errors.collect(ros.propertyValidator('image', ros.validateString)(properties.image));
+    errors.collect(ros.propertyValidator('gpu', ros.validateNumber)(properties.gpu));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    errors.collect(ros.propertyValidator('initContainerEnvironmentVars', ros.listValidator(RosEciScalingConfiguration_InitContainerEnvironmentVarsPropertyValidator))(properties.initContainerEnvironmentVars));
+    errors.collect(ros.propertyValidator('workingDir', ros.validateString)(properties.workingDir));
+    errors.collect(ros.propertyValidator('imagePullPolicy', ros.validateString)(properties.imagePullPolicy));
+    errors.collect(ros.propertyValidator('commands', ros.listValidator(ros.validateString))(properties.commands));
+    errors.collect(ros.propertyValidator('securityContextRunAsUser', ros.validateNumber)(properties.securityContextRunAsUser));
+    errors.collect(ros.propertyValidator('initContainerVolumeMounts', ros.listValidator(RosEciScalingConfiguration_InitContainerVolumeMountsPropertyValidator))(properties.initContainerVolumeMounts));
+    return errors.wrap('supplied properties not correct for "InitContainersProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESS::EciScalingConfiguration.InitContainers` resource
+ *
+ * @param properties - the TypeScript properties of a `InitContainersProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESS::EciScalingConfiguration.InitContainers` resource.
+ */
+// @ts-ignore TS6133
+function rosEciScalingConfigurationInitContainersPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosEciScalingConfiguration_InitContainersPropertyValidator(properties).assertSuccess();
+    return {
+      Args: ros.listMapper(ros.stringToRosTemplate)(properties.args),
+      SecurityContextCapabilitiesAdd: ros.listMapper(ros.stringToRosTemplate)(properties.securityContextCapabilitiesAdd),
+      Memory: ros.numberToRosTemplate(properties.memory),
+      Cpu: ros.numberToRosTemplate(properties.cpu),
+      Image: ros.stringToRosTemplate(properties.image),
+      Gpu: ros.numberToRosTemplate(properties.gpu),
+      Name: ros.stringToRosTemplate(properties.name),
+      InitContainerEnvironmentVars: ros.listMapper(rosEciScalingConfigurationInitContainerEnvironmentVarsPropertyToRosTemplate)(properties.initContainerEnvironmentVars),
+      WorkingDir: ros.stringToRosTemplate(properties.workingDir),
+      ImagePullPolicy: ros.stringToRosTemplate(properties.imagePullPolicy),
+      Commands: ros.listMapper(ros.stringToRosTemplate)(properties.commands),
+      SecurityContextRunAsUser: ros.numberToRosTemplate(properties.securityContextRunAsUser),
+      InitContainerVolumeMounts: ros.listMapper(rosEciScalingConfigurationInitContainerVolumeMountsPropertyToRosTemplate)(properties.initContainerVolumeMounts),
+    };
+}
+
+export namespace RosEciScalingConfiguration {
+    /**
+     * @stability external
+     */
+    export interface PortsProperty {
+        /**
+         * @Property port: The port number. Valid values: 1 to 65535.
+         */
+        readonly port: number | ros.IResolvable;
+        /**
+         * @Property protocol: The protocol type. Valid values:
+     * TCP
+     * UDP
+         */
+        readonly protocol: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `PortsProperty`
+ *
+ * @param properties - the TypeScript properties of a `PortsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosEciScalingConfiguration_PortsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('port', ros.requiredValidator)(properties.port));
+    errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
+    errors.collect(ros.propertyValidator('protocol', ros.requiredValidator)(properties.protocol));
+    if(properties.protocol && (typeof properties.protocol) !== 'object') {
+        errors.collect(ros.propertyValidator('protocol', ros.validateAllowedValues)({
+          data: properties.protocol,
+          allowedValues: ["TCP","UDP"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('protocol', ros.validateString)(properties.protocol));
+    return errors.wrap('supplied properties not correct for "PortsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESS::EciScalingConfiguration.Ports` resource
+ *
+ * @param properties - the TypeScript properties of a `PortsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESS::EciScalingConfiguration.Ports` resource.
+ */
+// @ts-ignore TS6133
+function rosEciScalingConfigurationPortsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosEciScalingConfiguration_PortsPropertyValidator(properties).assertSuccess();
+    return {
+      Port: ros.numberToRosTemplate(properties.port),
+      Protocol: ros.stringToRosTemplate(properties.protocol),
+    };
+}
+
+export namespace RosEciScalingConfiguration {
+    /**
+     * @stability external
+     */
+    export interface SecurityContextSysctlsProperty {
+        /**
+         * @Property value: The variable value of the security context in which the elastic container instance runs.
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property name: The system name of the security context in which the elastic container instance runs.
+         */
+        readonly name: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `SecurityContextSysctlsProperty`
+ *
+ * @param properties - the TypeScript properties of a `SecurityContextSysctlsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosEciScalingConfiguration_SecurityContextSysctlsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "SecurityContextSysctlsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESS::EciScalingConfiguration.SecurityContextSysctls` resource
+ *
+ * @param properties - the TypeScript properties of a `SecurityContextSysctlsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESS::EciScalingConfiguration.SecurityContextSysctls` resource.
+ */
+// @ts-ignore TS6133
+function rosEciScalingConfigurationSecurityContextSysctlsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosEciScalingConfiguration_SecurityContextSysctlsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Name: ros.stringToRosTemplate(properties.name),
+    };
+}
+
+export namespace RosEciScalingConfiguration {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: The tag value of the elastic container instance. You can specify 1 to 20 tags.
+     * You can specify an empty string as a tag value. The tag value can be up to 128 characters in length and cannot contain http:\/\/ or https:\/\/. The tag value cannot start with acs:.
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: The tag key of the elastic container instance. You can specify 1 to 20 tags.
+     * You cannot specify an empty string as a tag key. The tag key can be up to 128 characters in length and cannot contain http:\/\/ or https:\/\/. The tag key cannot start with acs: or aliyun.
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosEciScalingConfiguration_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESS::EciScalingConfiguration.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESS::EciScalingConfiguration.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosEciScalingConfigurationTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosEciScalingConfiguration_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+export namespace RosEciScalingConfiguration {
+    /**
+     * @stability external
+     */
+    export interface VolumeMountsProperty {
+        /**
+         * @Property readOnly: Specifies whether the volume is read-only. Valid values:
+     * true
+     * false
+     * Default value: false.
+         */
+        readonly readOnly?: boolean | ros.IResolvable;
+        /**
+         * @Property mountPath: The directory on which the volume is mounted.
+     * Note
+     * Data in this directory is overwritten by the data on the volume. Proceed with caution if you specify this parameter.
+         */
+        readonly mountPath?: string | ros.IResolvable;
+        /**
+         * @Property subPath: The subdirectory of the volume.
+         */
+        readonly subPath?: string | ros.IResolvable;
+        /**
+         * @Property mountPropagation: The mount propagation setting of the volume. Mount propagation allows volumes that are mounted on one container to be shared with other containers in the same pod, or even with other pods on the same node. Valid values:
+     * None: The volume mount does not receive subsequent mounts that are mounted to the volume or the subdirectories of the volume.
+     * HostToCotainer: The volume mount receives all subsequent mounts that are mounted to the volume or its subdirectories.
+     * Bidirectional: This value is similar to HostToCotainer. The volume mount receives all subsequent mounts that are mounted to the volume or its subdirectories. In addition, all volume mounts that are mounted on the container are propagated back to the instance and to all containers of all pods that use the same volume.
+     * Default value: None.
+         */
+        readonly mountPropagation?: string | ros.IResolvable;
+        /**
+         * @Property name: The volume name. The value of this parameter is the same as the value of Volume.N.Name.
+         */
+        readonly name?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `VolumeMountsProperty`
+ *
+ * @param properties - the TypeScript properties of a `VolumeMountsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosEciScalingConfiguration_VolumeMountsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('readOnly', ros.validateBoolean)(properties.readOnly));
+    errors.collect(ros.propertyValidator('mountPath', ros.validateString)(properties.mountPath));
+    errors.collect(ros.propertyValidator('subPath', ros.validateString)(properties.subPath));
+    if(properties.mountPropagation && (typeof properties.mountPropagation) !== 'object') {
+        errors.collect(ros.propertyValidator('mountPropagation', ros.validateAllowedValues)({
+          data: properties.mountPropagation,
+          allowedValues: ["None","HostToCotainer","Bidirectional"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('mountPropagation', ros.validateString)(properties.mountPropagation));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "VolumeMountsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESS::EciScalingConfiguration.VolumeMounts` resource
+ *
+ * @param properties - the TypeScript properties of a `VolumeMountsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESS::EciScalingConfiguration.VolumeMounts` resource.
+ */
+// @ts-ignore TS6133
+function rosEciScalingConfigurationVolumeMountsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosEciScalingConfiguration_VolumeMountsPropertyValidator(properties).assertSuccess();
+    return {
+      ReadOnly: ros.booleanToRosTemplate(properties.readOnly),
+      MountPath: ros.stringToRosTemplate(properties.mountPath),
+      SubPath: ros.stringToRosTemplate(properties.subPath),
+      MountPropagation: ros.stringToRosTemplate(properties.mountPropagation),
+      Name: ros.stringToRosTemplate(properties.name),
+    };
+}
+
+export namespace RosEciScalingConfiguration {
+    /**
+     * @stability external
+     */
+    export interface VolumesProperty {
+        /**
+         * @Property hostPathVolumeType: The type of the Host directory. Examples: File, Directory, and Socket.
+         */
+        readonly hostPathVolumeType?: string | ros.IResolvable;
+        /**
+         * @Property emptyDirVolumeSizeLimit: The storage size of the EmptyDirVolume-typed volume. Unit: GiB or MiB.
+         */
+        readonly emptyDirVolumeSizeLimit?: string | ros.IResolvable;
+        /**
+         * @Property flexVolumeFsType: The file system type of the FlexVolume-typed volume. The default value is determined by the script of the FlexVolume plug-in.
+         */
+        readonly flexVolumeFsType?: string | ros.IResolvable;
+        /**
+         * @Property nfsVolumeServer: The address of the NFS server.
+         */
+        readonly nfsVolumeServer?: string | ros.IResolvable;
+        /**
+         * @Property diskVolumeDiskSize: The storage size of the DiskVolume-typed volume. Unit: GiB.
+         */
+        readonly diskVolumeDiskSize?: number | ros.IResolvable;
+        /**
+         * @Property configFileVolumeConfigFileToPaths:
+         */
+        readonly configFileVolumeConfigFileToPaths?: Array<RosEciScalingConfiguration.ConfigFileVolumeConfigFileToPathsProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property name: The volume name.
+         */
+        readonly name: string | ros.IResolvable;
+        /**
+         * @Property nfsVolumeReadOnly: Specifies whether the NFSVolume-typed volume is read-only. Valid values:
+     * true
+     * false
+     * Default value: false.
+         */
+        readonly nfsVolumeReadOnly?: boolean | ros.IResolvable;
+        /**
+         * @Property hostPathVolumePath: The absolute path on the host.
+         */
+        readonly hostPathVolumePath?: string | ros.IResolvable;
+        /**
+         * @Property nfsVolumePath: The path to the NFSVolume-typed volume.
+         */
+        readonly nfsVolumePath?: string | ros.IResolvable;
+        /**
+         * @Property type: The volume type. Valid values:
+     * EmptyDirVolume: an empty volume.
+     * NFSVolume: a network file system (NFS) volume.
+     * ConfigFileVolume: a configuration file.
+     * FlexVolume: a volume that uses the FlexVolume plug-in to extend storage and supports disks.
+     * HostPathVolume: a file or path of the host node.
+     * DiskVolume: a disk volume. This value is not recommended. We recommend that you set Volume.N.Type to FlexVolume.
+         */
+        readonly type: string | ros.IResolvable;
+        /**
+         * @Property flexVolumeDriver: The driver name of the FlexVolume-typed volume.
+         */
+        readonly flexVolumeDriver?: string | ros.IResolvable;
+        /**
+         * @Property diskVolumeDiskId: The ID of the DiskVolume-typed volume.
+         */
+        readonly diskVolumeDiskId?: string | ros.IResolvable;
+        /**
+         * @Property configFileVolumeDefaultMode: The default permissions on the ConfigFileVolume-typed volume.
+         */
+        readonly configFileVolumeDefaultMode?: number | ros.IResolvable;
+        /**
+         * @Property flexVolumeOptions: The options of the FlexVolume-typed volume. Each option is a key-value pair contained in a JSON string.
+     * When you use the FlexVolume plug-in to mount a disk, specify the options in the {"volumeId":"d-2zehdahrwoa7srg****","performanceLevel": "PL2"} format.
+         */
+        readonly flexVolumeOptions?: string | ros.IResolvable;
+        /**
+         * @Property emptyDirVolumeMedium: The storage medium of the EmptyDirVolume-typed volume. If you leave this parameter empty, the file system that backs the node is used as the storage medium. If you set this parameter to memory, the memory is used as the storage medium.
+         */
+        readonly emptyDirVolumeMedium?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `VolumesProperty`
+ *
+ * @param properties - the TypeScript properties of a `VolumesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosEciScalingConfiguration_VolumesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('hostPathVolumeType', ros.validateString)(properties.hostPathVolumeType));
+    errors.collect(ros.propertyValidator('emptyDirVolumeSizeLimit', ros.validateString)(properties.emptyDirVolumeSizeLimit));
+    errors.collect(ros.propertyValidator('flexVolumeFsType', ros.validateString)(properties.flexVolumeFsType));
+    errors.collect(ros.propertyValidator('nfsVolumeServer', ros.validateString)(properties.nfsVolumeServer));
+    errors.collect(ros.propertyValidator('diskVolumeDiskSize', ros.validateNumber)(properties.diskVolumeDiskSize));
+    errors.collect(ros.propertyValidator('configFileVolumeConfigFileToPaths', ros.listValidator(RosEciScalingConfiguration_ConfigFileVolumeConfigFileToPathsPropertyValidator))(properties.configFileVolumeConfigFileToPaths));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    errors.collect(ros.propertyValidator('nfsVolumeReadOnly', ros.validateBoolean)(properties.nfsVolumeReadOnly));
+    errors.collect(ros.propertyValidator('hostPathVolumePath', ros.validateString)(properties.hostPathVolumePath));
+    errors.collect(ros.propertyValidator('nfsVolumePath', ros.validateString)(properties.nfsVolumePath));
+    errors.collect(ros.propertyValidator('type', ros.requiredValidator)(properties.type));
+    if(properties.type && (typeof properties.type) !== 'object') {
+        errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
+          data: properties.type,
+          allowedValues: ["EmptyDirVolume","NFSVolume","ConfigFileVolume","FlexVolume","HostPathVolume"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('flexVolumeDriver', ros.validateString)(properties.flexVolumeDriver));
+    errors.collect(ros.propertyValidator('diskVolumeDiskId', ros.validateString)(properties.diskVolumeDiskId));
+    errors.collect(ros.propertyValidator('configFileVolumeDefaultMode', ros.validateNumber)(properties.configFileVolumeDefaultMode));
+    errors.collect(ros.propertyValidator('flexVolumeOptions', ros.validateString)(properties.flexVolumeOptions));
+    errors.collect(ros.propertyValidator('emptyDirVolumeMedium', ros.validateString)(properties.emptyDirVolumeMedium));
+    return errors.wrap('supplied properties not correct for "VolumesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESS::EciScalingConfiguration.Volumes` resource
+ *
+ * @param properties - the TypeScript properties of a `VolumesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESS::EciScalingConfiguration.Volumes` resource.
+ */
+// @ts-ignore TS6133
+function rosEciScalingConfigurationVolumesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosEciScalingConfiguration_VolumesPropertyValidator(properties).assertSuccess();
+    return {
+      HostPathVolumeType: ros.stringToRosTemplate(properties.hostPathVolumeType),
+      EmptyDirVolumeSizeLimit: ros.stringToRosTemplate(properties.emptyDirVolumeSizeLimit),
+      FlexVolumeFsType: ros.stringToRosTemplate(properties.flexVolumeFsType),
+      NFSVolumeServer: ros.stringToRosTemplate(properties.nfsVolumeServer),
+      DiskVolumeDiskSize: ros.numberToRosTemplate(properties.diskVolumeDiskSize),
+      ConfigFileVolumeConfigFileToPaths: ros.listMapper(rosEciScalingConfigurationConfigFileVolumeConfigFileToPathsPropertyToRosTemplate)(properties.configFileVolumeConfigFileToPaths),
+      Name: ros.stringToRosTemplate(properties.name),
+      NFSVolumeReadOnly: ros.booleanToRosTemplate(properties.nfsVolumeReadOnly),
+      HostPathVolumePath: ros.stringToRosTemplate(properties.hostPathVolumePath),
+      NFSVolumePath: ros.stringToRosTemplate(properties.nfsVolumePath),
+      Type: ros.stringToRosTemplate(properties.type),
+      FlexVolumeDriver: ros.stringToRosTemplate(properties.flexVolumeDriver),
+      DiskVolumeDiskId: ros.stringToRosTemplate(properties.diskVolumeDiskId),
+      ConfigFileVolumeDefaultMode: ros.numberToRosTemplate(properties.configFileVolumeDefaultMode),
+      FlexVolumeOptions: ros.stringToRosTemplate(properties.flexVolumeOptions),
+      EmptyDirVolumeMedium: ros.stringToRosTemplate(properties.emptyDirVolumeMedium),
+    };
+}
+
+/**
  * Properties for defining a `RosLifecycleHook`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-lifecyclehook
  */
@@ -803,7 +2859,7 @@ function rosLoadBalancerAttachmentPropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::LoadBalancerAttachment`DATASOURCE::ESS::ScalingConfigurations is used to query the details of scaling configurations.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::LoadBalancerAttachment`, which is used to add one or more Server Load Balancer (SLB) instances.
  * @Note This class does not contain additional functions, so it is recommended to use the `LoadBalancerAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-loadbalancerattachment
  */
@@ -4897,7 +6953,7 @@ function rosServerGroupAttachmentPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ServerGroupAttachment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ServerGroupAttachment`, which is used to add one or more Server Load Balancer (SLB) server groups to a scaling group. Supported SLB server groups include Application Load Balancer (ALB) server groups and Network Load Balancer (NLB) server groups.
  * @Note This class does not contain additional functions, so it is recommended to use the `ServerGroupAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-servergroupattachment
  */
@@ -5122,7 +7178,7 @@ function rosVServerGroupAttachmentPropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::VServerGroupAttachment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::VServerGroupAttachment`, which is used to associate vServer groups of a Sever Load Balancer (SLB) instance with a scaling group.
  * @Note This class does not contain additional functions, so it is recommended to use the `VServerGroupAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-vservergroupattachment
  */

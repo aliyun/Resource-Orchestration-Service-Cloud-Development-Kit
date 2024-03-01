@@ -31,6 +31,10 @@ export interface FlowProjectProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-flowproject
  */
 export class FlowProject extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: FlowProjectProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CreateTime: The time when the project was created.
@@ -69,6 +73,10 @@ export class FlowProject extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: FlowProjectProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosFlowProject = new RosFlowProject(this, id,  {
             description: props.description,

@@ -62,6 +62,10 @@ export interface SecurityGroupsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-securitygroups
  */
 export class SecurityGroups extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: SecurityGroupsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SecurityGroupIds: The list of security group ids.
@@ -80,6 +84,10 @@ export class SecurityGroups extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: SecurityGroupsProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosSecurityGroups = new RosSecurityGroups(this, id,  {
             vpcId: props.vpcId,

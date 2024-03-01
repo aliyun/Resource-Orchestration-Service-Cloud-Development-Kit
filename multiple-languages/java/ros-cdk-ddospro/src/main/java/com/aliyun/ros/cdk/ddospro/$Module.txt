@@ -1,0 +1,8 @@
+@alicloud/ros-cdk-ddospro.PremiumInstance=com.aliyun.ros.cdk.ddospro.PremiumInstance
+@alicloud/ros-cdk-ddospro.PremiumInstanceProps=com.aliyun.ros.cdk.ddospro.PremiumInstanceProps
+@alicloud/ros-cdk-ddospro.ProInstance=com.aliyun.ros.cdk.ddospro.ProInstance
+@alicloud/ros-cdk-ddospro.ProInstanceProps=com.aliyun.ros.cdk.ddospro.ProInstanceProps
+@alicloud/ros-cdk-ddospro.RosPremiumInstance=com.aliyun.ros.cdk.ddospro.RosPremiumInstance
+@alicloud/ros-cdk-ddospro.RosPremiumInstanceProps=com.aliyun.ros.cdk.ddospro.RosPremiumInstanceProps
+@alicloud/ros-cdk-ddospro.RosProInstance=com.aliyun.ros.cdk.ddospro.RosProInstance
+@alicloud/ros-cdk-ddospro.RosProInstanceProps=com.aliyun.ros.cdk.ddospro.RosProInstanceProps

@@ -3,6 +3,7 @@
 @alicloud/ros-cdk-nlb.LoadBalancer=com.aliyun.ros.cdk.nlb.LoadBalancer
 @alicloud/ros-cdk-nlb.LoadBalancerProps=com.aliyun.ros.cdk.nlb.LoadBalancerProps
 @alicloud/ros-cdk-nlb.RosListener=com.aliyun.ros.cdk.nlb.RosListener
+@alicloud/ros-cdk-nlb.RosListener.TagsProperty=com.aliyun.ros.cdk.nlb.RosListener$TagsProperty
 @alicloud/ros-cdk-nlb.RosListenerProps=com.aliyun.ros.cdk.nlb.RosListenerProps
 @alicloud/ros-cdk-nlb.RosLoadBalancer=com.aliyun.ros.cdk.nlb.RosLoadBalancer
 @alicloud/ros-cdk-nlb.RosLoadBalancer.DeletionProtectionConfigProperty=com.aliyun.ros.cdk.nlb.RosLoadBalancer$DeletionProtectionConfigProperty
@@ -14,12 +15,18 @@
 @alicloud/ros-cdk-nlb.RosLoadBalancerProps=com.aliyun.ros.cdk.nlb.RosLoadBalancerProps
 @alicloud/ros-cdk-nlb.RosSecurityGroupAttachment=com.aliyun.ros.cdk.nlb.RosSecurityGroupAttachment
 @alicloud/ros-cdk-nlb.RosSecurityGroupAttachmentProps=com.aliyun.ros.cdk.nlb.RosSecurityGroupAttachmentProps
+@alicloud/ros-cdk-nlb.RosSecurityPolicy=com.aliyun.ros.cdk.nlb.RosSecurityPolicy
+@alicloud/ros-cdk-nlb.RosSecurityPolicy.TagsProperty=com.aliyun.ros.cdk.nlb.RosSecurityPolicy$TagsProperty
+@alicloud/ros-cdk-nlb.RosSecurityPolicyProps=com.aliyun.ros.cdk.nlb.RosSecurityPolicyProps
 @alicloud/ros-cdk-nlb.RosServerGroup=com.aliyun.ros.cdk.nlb.RosServerGroup
 @alicloud/ros-cdk-nlb.RosServerGroup.HealthCheckConfigProperty=com.aliyun.ros.cdk.nlb.RosServerGroup$HealthCheckConfigProperty
 @alicloud/ros-cdk-nlb.RosServerGroup.ServersProperty=com.aliyun.ros.cdk.nlb.RosServerGroup$ServersProperty
+@alicloud/ros-cdk-nlb.RosServerGroup.TagsProperty=com.aliyun.ros.cdk.nlb.RosServerGroup$TagsProperty
 @alicloud/ros-cdk-nlb.RosServerGroupProps=com.aliyun.ros.cdk.nlb.RosServerGroupProps
 @alicloud/ros-cdk-nlb.SecurityGroupAttachment=com.aliyun.ros.cdk.nlb.SecurityGroupAttachment
 @alicloud/ros-cdk-nlb.SecurityGroupAttachmentProps=com.aliyun.ros.cdk.nlb.SecurityGroupAttachmentProps
+@alicloud/ros-cdk-nlb.SecurityPolicy=com.aliyun.ros.cdk.nlb.SecurityPolicy
+@alicloud/ros-cdk-nlb.SecurityPolicyProps=com.aliyun.ros.cdk.nlb.SecurityPolicyProps
 @alicloud/ros-cdk-nlb.ServerGroup=com.aliyun.ros.cdk.nlb.ServerGroup
 @alicloud/ros-cdk-nlb.ServerGroupProps=com.aliyun.ros.cdk.nlb.ServerGroupProps
 @alicloud/ros-cdk-nlb.datasource.LoadBalancers=com.aliyun.ros.cdk.nlb.datasource.LoadBalancers

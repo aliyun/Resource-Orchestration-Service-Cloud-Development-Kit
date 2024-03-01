@@ -56,6 +56,10 @@ export interface ParameterProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-parameter
  */
 export class Parameter extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ParameterProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Name: The Name of the parameter.
@@ -74,6 +78,10 @@ export class Parameter extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ParameterProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosParameter = new RosParameter(this, id,  {
             type: props.type,

@@ -123,6 +123,10 @@ export interface ImagesProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-images
  */
 export class Images extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ImagesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ImageIds: The list of image IDs.
@@ -141,6 +145,10 @@ export class Images extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ImagesProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosImages = new RosImages(this, id,  {
             status: props.status,

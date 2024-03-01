@@ -21,6 +21,10 @@ export interface ServicesProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-services
  */
 export class Services extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ServicesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ServiceNames: The list of service names.
@@ -39,6 +43,10 @@ export class Services extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ServicesProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosServices = new RosServices(this, id,  {
             prefix: props.prefix,

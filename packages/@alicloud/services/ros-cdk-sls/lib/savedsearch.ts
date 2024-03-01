@@ -26,6 +26,10 @@ export interface SavedsearchProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-savedsearch
  */
 export class Savedsearch extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: SavedsearchProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SavedsearchName: Savedsearch name.
@@ -39,6 +43,10 @@ export class Savedsearch extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: SavedsearchProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosSavedsearch = new RosSavedsearch(this, id,  {
             project: props.project,

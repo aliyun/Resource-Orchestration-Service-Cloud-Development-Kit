@@ -6,6 +6,8 @@
 @alicloud/ros-cdk-cdn.RosDomain.OriginServersProperty=com.aliyun.ros.cdk.cdn.RosDomain$OriginServersProperty
 @alicloud/ros-cdk-cdn.RosDomain.TagsProperty=com.aliyun.ros.cdk.cdn.RosDomain$TagsProperty
 @alicloud/ros-cdk-cdn.RosDomainConfig=com.aliyun.ros.cdk.cdn.RosDomainConfig
+@alicloud/ros-cdk-cdn.RosDomainConfig.FunctionArgsProperty=com.aliyun.ros.cdk.cdn.RosDomainConfig$FunctionArgsProperty
+@alicloud/ros-cdk-cdn.RosDomainConfig.FunctionListProperty=com.aliyun.ros.cdk.cdn.RosDomainConfig$FunctionListProperty
 @alicloud/ros-cdk-cdn.RosDomainConfigProps=com.aliyun.ros.cdk.cdn.RosDomainConfigProps
 @alicloud/ros-cdk-cdn.RosDomainProps=com.aliyun.ros.cdk.cdn.RosDomainProps
 @alicloud/ros-cdk-cdn.datasource.Domains=com.aliyun.ros.cdk.cdn.datasource.Domains

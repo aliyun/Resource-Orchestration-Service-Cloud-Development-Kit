@@ -46,11 +46,15 @@ export interface OrderProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::MarketPlace::Order`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::MarketPlace::Order`, which is used to purchase resources from Alibaba Cloud Marketplace.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosOrder`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-marketplace-order
  */
 export class Order extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: OrderProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute OrderId: Order ID of created instance.
@@ -64,6 +68,10 @@ export class Order extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: OrderProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosOrder = new RosOrder(this, id,  {
             productCode: props.productCode,

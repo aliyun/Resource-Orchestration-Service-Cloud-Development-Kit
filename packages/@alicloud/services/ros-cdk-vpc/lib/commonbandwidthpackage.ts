@@ -15,6 +15,12 @@ export interface CommonBandwidthPackageProps {
     readonly bandwidth: number | ros.IResolvable;
 
     /**
+     * Property deletionProtection: Whether to enable deletion protection.
+     * Default to False.
+     */
+    readonly deletionProtection?: boolean | ros.IResolvable;
+
+    /**
      * Property description: The description of the Internet Shared Bandwidth instance.
      * The description must be 2 to 256 characters in length. It must start with a letter,
      * and cannot start with http:\/\/ or https:\/\/.
@@ -64,11 +70,15 @@ export interface CommonBandwidthPackageProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::CommonBandwidthPackage`, which is used to create an elastic IP address (EIP) bandwidth plan.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::CommonBandwidthPackage`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCommonBandwidthPackage`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-commonbandwidthpackage
  */
 export class CommonBandwidthPackage extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: CommonBandwidthPackageProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute BandwidthPackageId: The ID of the Internet Shared Bandwidth instance.
@@ -82,6 +92,10 @@ export class CommonBandwidthPackage extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: CommonBandwidthPackageProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCommonBandwidthPackage = new RosCommonBandwidthPackage(this, id,  {
             description: props.description,
@@ -90,6 +104,7 @@ export class CommonBandwidthPackage extends ros.Resource {
             isp: props.isp === undefined || props.isp === null ? 'BGP' : props.isp,
             bandwidth: props.bandwidth,
             ratio: props.ratio === undefined || props.ratio === null ? 100 : props.ratio,
+            deletionProtection: props.deletionProtection === undefined || props.deletionProtection === null ? false : props.deletionProtection,
             tags: props.tags,
             internetChargeType: props.internetChargeType,
             name: props.name,

@@ -37,6 +37,10 @@ export interface DeviceGroupProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-devicegroup
  */
 export class DeviceGroup extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DeviceGroupProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute GroupId: Packet, ID, System for the globally unique identifier generated packet.
@@ -55,6 +59,10 @@ export class DeviceGroup extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DeviceGroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDeviceGroup = new RosDeviceGroup(this, id,  {
             groupName: props.groupName,

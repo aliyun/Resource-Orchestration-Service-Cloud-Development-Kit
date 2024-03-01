@@ -46,6 +46,10 @@ export interface EtlProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-etl
  */
 export class Etl extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: EtlProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Name: ETL name.
@@ -59,6 +63,10 @@ export class Etl extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: EtlProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosEtl = new RosEtl(this, id,  {
             description: props.description,

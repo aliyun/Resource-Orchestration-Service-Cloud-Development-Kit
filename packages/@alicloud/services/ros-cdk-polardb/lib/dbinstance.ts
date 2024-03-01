@@ -72,6 +72,10 @@ export interface DBInstanceProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbinstance
  */
 export class DBInstance extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DBInstanceProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -80,6 +84,10 @@ export class DBInstance extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DBInstanceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDBInstance = new RosDBInstance(this, id,  {
             characterSetName: props.characterSetName,

@@ -56,11 +56,15 @@ export interface TableProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::OTS::Table`, which is used to create a table based on a specified schema.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::OTS::Table`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTable`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-table
  */
 export class Table extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: TableProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute TableName: Table name
@@ -74,6 +78,10 @@ export class Table extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: TableProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosTable = new RosTable(this, id,  {
             instanceName: props.instanceName,

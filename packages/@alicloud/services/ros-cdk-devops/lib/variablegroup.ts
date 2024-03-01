@@ -31,11 +31,15 @@ export interface VariableGroupProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DEVOPS::VariableGroup`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DEVOPS::VariableGroup`, which is used to create a variable group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVariableGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-variablegroup
  */
 export class VariableGroup extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: VariableGroupProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute VariableGroupId: Variable group id.
@@ -49,6 +53,10 @@ export class VariableGroup extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: VariableGroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosVariableGroup = new RosVariableGroup(this, id,  {
             variables: props.variables,

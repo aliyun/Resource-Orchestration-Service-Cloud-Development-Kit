@@ -136,6 +136,10 @@ export interface FunctionProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-function
  */
 export class Function extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: FunctionProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ARN: The ARN for ALIYUN::ROS::CustomResource
@@ -169,6 +173,10 @@ export class Function extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: FunctionProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosFunction = new RosFunction(this, id,  {
             memorySize: props.memorySize === undefined || props.memorySize === null ? 128 : props.memorySize,

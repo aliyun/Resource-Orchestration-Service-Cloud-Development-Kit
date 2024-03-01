@@ -16,11 +16,15 @@ export interface VServerGroupsProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::VServerGroups`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::VServerGroups`, which is used to query the server groups of a Classic Load Balancer (CLB) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVServerGroups`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-vservergroups
  */
 export class VServerGroups extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: VServerGroupsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute VServerGroupIds: The list of VServer group IDs.
@@ -39,6 +43,10 @@ export class VServerGroups extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: VServerGroupsProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosVServerGroups = new RosVServerGroups(this, id,  {
             loadBalancerId: props.loadBalancerId,

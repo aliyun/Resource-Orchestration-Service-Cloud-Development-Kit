@@ -29,6 +29,10 @@ export interface WorkspacesProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-workspaces
  */
 export class Workspaces extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: WorkspacesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute WorkspaceIds: The list of workspace IDs.
@@ -47,6 +51,10 @@ export class Workspaces extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: WorkspacesProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosWorkspaces = new RosWorkspaces(this, id,  {
             workspaceId: props.workspaceId,

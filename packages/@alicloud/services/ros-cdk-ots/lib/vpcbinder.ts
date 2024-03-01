@@ -26,6 +26,10 @@ export interface VpcBinderProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-vpcbinder
  */
 export class VpcBinder extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: VpcBinderProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Domains: The domain names used to access the OTS instance in the VPC.
@@ -44,6 +48,10 @@ export class VpcBinder extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: VpcBinderProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosVpcBinder = new RosVpcBinder(this, id,  {
             instanceName: props.instanceName,

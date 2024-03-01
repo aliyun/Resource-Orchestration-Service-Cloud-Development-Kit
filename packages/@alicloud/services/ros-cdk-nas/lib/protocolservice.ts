@@ -59,6 +59,10 @@ export interface ProtocolServiceProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-protocolservice
  */
 export class ProtocolService extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ProtocolServiceProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute FileSystemId: File system ID.
@@ -77,6 +81,10 @@ export class ProtocolService extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ProtocolServiceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosProtocolService = new RosProtocolService(this, id,  {
             description: props.description,

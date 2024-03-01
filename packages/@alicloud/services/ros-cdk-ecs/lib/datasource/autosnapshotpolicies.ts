@@ -26,11 +26,15 @@ export interface AutoSnapshotPoliciesProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::AutoSnapshotPolicies`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::AutoSnapshotPolicies`, which is used to query automatic snapshot policies.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAutoSnapshotPolicies`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-autosnapshotpolicies
  */
 export class AutoSnapshotPolicies extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AutoSnapshotPoliciesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AutoSnapshotPolicies: The list of auto snapshot policies.
@@ -49,6 +53,10 @@ export class AutoSnapshotPolicies extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AutoSnapshotPoliciesProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAutoSnapshotPolicies = new RosAutoSnapshotPolicies(this, id,  {
             resourceGroupId: props.resourceGroupId,

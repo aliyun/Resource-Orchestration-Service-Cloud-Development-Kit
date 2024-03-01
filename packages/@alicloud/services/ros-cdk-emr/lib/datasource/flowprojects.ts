@@ -26,6 +26,10 @@ export interface FlowProjectsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-emr-flowprojects
  */
 export class FlowProjects extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: FlowProjectsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute FlowProjectIds: The list of flow project IDs.
@@ -44,6 +48,10 @@ export class FlowProjects extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: FlowProjectsProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosFlowProjects = new RosFlowProjects(this, id,  {
             flowProjectName: props.flowProjectName,

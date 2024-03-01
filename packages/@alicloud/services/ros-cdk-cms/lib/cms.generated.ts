@@ -3067,6 +3067,149 @@ function rosMonitorGroupInstancesInstancesPropertyToRosTemplate(properties: any)
 }
 
 /**
+ * Properties for defining a `RosMonitoringAgent`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitoringagent
+ */
+export interface RosMonitoringAgentProps {
+
+    /**
+     * @Property force: Specifies whether to install the CloudMonitor agent. Valid values:
+     * true (default value): yes
+     * false: no
+     */
+    readonly force?: boolean | ros.IResolvable;
+
+    /**
+     * @Property installCommand: Specifies whether to install the CloudMonitor agent on all ECS instances that belong to the current Alibaba Cloud account. Valid values:
+     * onlyInstallNotHasAgent: installs the latest version of the CloudMonitor agent only on ECS instances on which the agent is not installed.
+     * onlyUpgradeAgent: upgrades the CloudMonitor agent to the latest version only for ECS instances on which an earlier version of the agent is installed.
+     * installAndUpgrade: installs the latest version of the CloudMonitor agent on ECS instances on which the agent is not installed, and upgrades the CloudMonitor agent to the latest version for ECS instances on which an earlier version of the agent is installed.
+     * Note If you set the InstallCommand parameter, the InstanceIds parameter does not take effect.
+     */
+    readonly installCommand?: string | ros.IResolvable;
+
+    /**
+     * @Property instanceIds: Alibaba Cloud host ID.
+     * The range of n: 1 ~ 10.
+     * Explain that InstallCommand and InstanceIds must be selected one by one.
+     */
+    readonly instanceIds?: Array<any | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosMonitoringAgentProps`
+ *
+ * @param properties - the TypeScript properties of a `RosMonitoringAgentProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosMonitoringAgentPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('force', ros.validateBoolean)(properties.force));
+    if(properties.installCommand && (typeof properties.installCommand) !== 'object') {
+        errors.collect(ros.propertyValidator('installCommand', ros.validateAllowedValues)({
+          data: properties.installCommand,
+          allowedValues: ["installAndUpgrade","onlyInstallNotHasAgent","onlyUpgradeAgent"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('installCommand', ros.validateString)(properties.installCommand));
+    if(properties.instanceIds && (Array.isArray(properties.instanceIds) || (typeof properties.instanceIds) === 'string')) {
+        errors.collect(ros.propertyValidator('instanceIds', ros.validateLength)({
+            data: properties.instanceIds.length,
+            min: 1,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('instanceIds', ros.listValidator(ros.validateAny))(properties.instanceIds));
+    return errors.wrap('supplied properties not correct for "RosMonitoringAgentProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CMS::MonitoringAgent` resource
+ *
+ * @param properties - the TypeScript properties of a `RosMonitoringAgentProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CMS::MonitoringAgent` resource.
+ */
+// @ts-ignore TS6133
+function rosMonitoringAgentPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosMonitoringAgentPropsValidator(properties).assertSuccess();
+    }
+    return {
+      Force: ros.booleanToRosTemplate(properties.force),
+      InstallCommand: ros.stringToRosTemplate(properties.installCommand),
+      InstanceIds: ros.listMapper(ros.objectToRosTemplate)(properties.instanceIds),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MonitoringAgent`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `MonitoringAgent` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitoringagent
+ */
+export class RosMonitoringAgent extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CMS::MonitoringAgent";
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property force: Specifies whether to install the CloudMonitor agent. Valid values:
+     * true (default value): yes
+     * false: no
+     */
+    public force: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property installCommand: Specifies whether to install the CloudMonitor agent on all ECS instances that belong to the current Alibaba Cloud account. Valid values:
+     * onlyInstallNotHasAgent: installs the latest version of the CloudMonitor agent only on ECS instances on which the agent is not installed.
+     * onlyUpgradeAgent: upgrades the CloudMonitor agent to the latest version only for ECS instances on which an earlier version of the agent is installed.
+     * installAndUpgrade: installs the latest version of the CloudMonitor agent on ECS instances on which the agent is not installed, and upgrades the CloudMonitor agent to the latest version for ECS instances on which an earlier version of the agent is installed.
+     * Note If you set the InstallCommand parameter, the InstanceIds parameter does not take effect.
+     */
+    public installCommand: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceIds: Alibaba Cloud host ID.
+     * The range of n: 1 ~ 10.
+     * Explain that InstallCommand and InstanceIds must be selected one by one.
+     */
+    public instanceIds: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosMonitoringAgentProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosMonitoringAgent.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.force = props.force;
+        this.installCommand = props.installCommand;
+        this.instanceIds = props.instanceIds;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            force: this.force,
+            installCommand: this.installCommand,
+            instanceIds: this.instanceIds,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosMonitoringAgentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosMonitoringAgentProcess`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitoringagentprocess
  */

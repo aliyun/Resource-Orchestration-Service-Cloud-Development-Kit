@@ -26,6 +26,10 @@ export interface TablesProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ots-tables
  */
 export class Tables extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: TablesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute TableNames: The list of table names.
@@ -44,6 +48,10 @@ export class Tables extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: TablesProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosTables = new RosTables(this, id,  {
             instanceName: props.instanceName,

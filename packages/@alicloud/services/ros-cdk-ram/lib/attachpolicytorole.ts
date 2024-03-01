@@ -31,6 +31,10 @@ export interface AttachPolicyToRoleProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-attachpolicytorole
  */
 export class AttachPolicyToRole extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AttachPolicyToRoleProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -39,6 +43,10 @@ export class AttachPolicyToRole extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AttachPolicyToRoleProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAttachPolicyToRole = new RosAttachPolicyToRole(this, id,  {
             policyType: props.policyType,

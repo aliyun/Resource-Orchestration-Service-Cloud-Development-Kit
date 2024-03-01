@@ -15,9 +15,9 @@ export interface DomainConfigProps {
     readonly domainNames: string | ros.IResolvable;
 
     /**
-     * Property functions: function list, please refer to the CDN documentation for details.
+     * Property functionList: Function list. This property is required.
      */
-    readonly functions: string | ros.IResolvable;
+    readonly functionList?: Array<RosDomainConfig.FunctionListProperty | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
@@ -26,6 +26,10 @@ export interface DomainConfigProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cdn-domainconfig
  */
 export class DomainConfig extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DomainConfigProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -34,9 +38,13 @@ export class DomainConfig extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DomainConfigProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDomainConfig = new RosDomainConfig(this, id,  {
-            functions: props.functions,
+            functionList: props.functionList,
             domainNames: props.domainNames,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDomainConfig;

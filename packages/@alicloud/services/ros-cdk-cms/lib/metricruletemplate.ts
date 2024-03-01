@@ -43,6 +43,10 @@ export interface MetricRuleTemplateProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-metricruletemplate
  */
 export class MetricRuleTemplate extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: MetricRuleTemplateProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Id: Alarm template ID.
@@ -56,6 +60,10 @@ export class MetricRuleTemplate extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: MetricRuleTemplateProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosMetricRuleTemplate = new RosMetricRuleTemplate(this, id,  {
             alertTemplates: props.alertTemplates,

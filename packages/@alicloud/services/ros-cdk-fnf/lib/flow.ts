@@ -41,6 +41,10 @@ export interface FlowProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fnf-flow
  */
 export class Flow extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: FlowProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CreatedTime: Flow creation time.
@@ -69,6 +73,10 @@ export class Flow extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: FlowProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosFlow = new RosFlow(this, id,  {
             description: props.description,

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.gpdb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-dbinstance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.510Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:52.752Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.DBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(DBInstanceProps.Jsii$Proxy.class)
 public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -174,6 +174,15 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property prodType: Prod type.
+     * <p>
+     * The value can be: standard, cost-effective. The default value is standard.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getProdType() {
+        return null;
+    }
+
+    /**
      * Property securityIpList: The whitelist of IP addresses that are allowed to access the instance.
      * <p>
      * Default value:
@@ -250,9 +259,9 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property tags: Tags to attach to instance.
+     * Property tags: The list of instance tags in the form of key/value pairs.
      * <p>
-     * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     * You can define a maximum of 20 tags for instance.
      */
     default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.gpdb.RosDBInstance.TagsProperty> getTags() {
         return null;
@@ -306,6 +315,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object period;
         java.lang.Object periodUnit;
         java.lang.Object privateIpAddress;
+        java.lang.Object prodType;
         java.lang.Object securityIpList;
         java.lang.Object segDiskPerformanceLevel;
         java.lang.Object segNodeNum;
@@ -734,6 +744,28 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link DBInstanceProps#getProdType}
+         * @param prodType Property prodType: Prod type.
+         *                 The value can be: standard, cost-effective. The default value is standard.
+         * @return {@code this}
+         */
+        public Builder prodType(java.lang.String prodType) {
+            this.prodType = prodType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBInstanceProps#getProdType}
+         * @param prodType Property prodType: Prod type.
+         *                 The value can be: standard, cost-effective. The default value is standard.
+         * @return {@code this}
+         */
+        public Builder prodType(com.aliyun.ros.cdk.core.IResolvable prodType) {
+            this.prodType = prodType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DBInstanceProps#getSecurityIpList}
          * @param securityIpList Property securityIpList: The whitelist of IP addresses that are allowed to access the instance.
          *                       Default value:
@@ -915,8 +947,8 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getTags}
-         * @param tags Property tags: Tags to attach to instance.
-         *             Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+         * @param tags Property tags: The list of instance tags in the form of key/value pairs.
+         *             You can define a maximum of 20 tags for instance.
          * @return {@code this}
          */
         @SuppressWarnings("unchecked")
@@ -1007,6 +1039,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object period;
         private final java.lang.Object periodUnit;
         private final java.lang.Object privateIpAddress;
+        private final java.lang.Object prodType;
         private final java.lang.Object securityIpList;
         private final java.lang.Object segDiskPerformanceLevel;
         private final java.lang.Object segNodeNum;
@@ -1042,6 +1075,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.privateIpAddress = software.amazon.jsii.Kernel.get(this, "privateIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.prodType = software.amazon.jsii.Kernel.get(this, "prodType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityIpList = software.amazon.jsii.Kernel.get(this, "securityIpList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.segDiskPerformanceLevel = software.amazon.jsii.Kernel.get(this, "segDiskPerformanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.segNodeNum = software.amazon.jsii.Kernel.get(this, "segNodeNum", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1078,6 +1112,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.period = builder.period;
             this.periodUnit = builder.periodUnit;
             this.privateIpAddress = builder.privateIpAddress;
+            this.prodType = builder.prodType;
             this.securityIpList = builder.securityIpList;
             this.segDiskPerformanceLevel = builder.segDiskPerformanceLevel;
             this.segNodeNum = builder.segNodeNum;
@@ -1178,6 +1213,11 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getPrivateIpAddress() {
             return this.privateIpAddress;
+        }
+
+        @Override
+        public final java.lang.Object getProdType() {
+            return this.prodType;
         }
 
         @Override
@@ -1284,6 +1324,9 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getPrivateIpAddress() != null) {
                 data.set("privateIpAddress", om.valueToTree(this.getPrivateIpAddress()));
             }
+            if (this.getProdType() != null) {
+                data.set("prodType", om.valueToTree(this.getProdType()));
+            }
             if (this.getSecurityIpList() != null) {
                 data.set("securityIpList", om.valueToTree(this.getSecurityIpList()));
             }
@@ -1350,6 +1393,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
             if (this.periodUnit != null ? !this.periodUnit.equals(that.periodUnit) : that.periodUnit != null) return false;
             if (this.privateIpAddress != null ? !this.privateIpAddress.equals(that.privateIpAddress) : that.privateIpAddress != null) return false;
+            if (this.prodType != null ? !this.prodType.equals(that.prodType) : that.prodType != null) return false;
             if (this.securityIpList != null ? !this.securityIpList.equals(that.securityIpList) : that.securityIpList != null) return false;
             if (this.segDiskPerformanceLevel != null ? !this.segDiskPerformanceLevel.equals(that.segDiskPerformanceLevel) : that.segDiskPerformanceLevel != null) return false;
             if (this.segNodeNum != null ? !this.segNodeNum.equals(that.segNodeNum) : that.segNodeNum != null) return false;
@@ -1382,6 +1426,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
             result = 31 * result + (this.periodUnit != null ? this.periodUnit.hashCode() : 0);
             result = 31 * result + (this.privateIpAddress != null ? this.privateIpAddress.hashCode() : 0);
+            result = 31 * result + (this.prodType != null ? this.prodType.hashCode() : 0);
             result = 31 * result + (this.securityIpList != null ? this.securityIpList.hashCode() : 0);
             result = 31 * result + (this.segDiskPerformanceLevel != null ? this.segDiskPerformanceLevel.hashCode() : 0);
             result = 31 * result + (this.segNodeNum != null ? this.segNodeNum.hashCode() : 0);

@@ -66,6 +66,10 @@ export interface NacosConfigProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-nacosconfig
  */
 export class NacosConfig extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: NacosConfigProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -74,6 +78,10 @@ export class NacosConfig extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: NacosConfigProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosNacosConfig = new RosNacosConfig(this, id,  {
             group: props.group,

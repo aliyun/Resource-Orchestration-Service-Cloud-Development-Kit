@@ -49,6 +49,10 @@ export interface VpcsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-vpcs
  */
 export class Vpcs extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: VpcsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute VpcIds: The list of The VPC IDs.
@@ -67,6 +71,10 @@ export class Vpcs extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: VpcsProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosVpcs = new RosVpcs(this, id,  {
             isDefault: props.isDefault,

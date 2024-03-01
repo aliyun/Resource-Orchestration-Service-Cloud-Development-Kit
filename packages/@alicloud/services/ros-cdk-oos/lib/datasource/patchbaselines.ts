@@ -31,6 +31,10 @@ export interface PatchBaselinesProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-patchbaselines
  */
 export class PatchBaselines extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: PatchBaselinesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute PatchBaselineNames: The list of patch baseline names.
@@ -49,6 +53,10 @@ export class PatchBaselines extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: PatchBaselinesProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosPatchBaselines = new RosPatchBaselines(this, id,  {
             patchBaselineName: props.patchBaselineName,

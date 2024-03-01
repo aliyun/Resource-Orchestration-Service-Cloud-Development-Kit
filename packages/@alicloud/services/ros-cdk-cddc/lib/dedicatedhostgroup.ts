@@ -61,6 +61,10 @@ export interface DedicatedHostGroupProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cddc-dedicatedhostgroup
  */
 export class DedicatedHostGroup extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DedicatedHostGroupProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AllocationPolicy: Allocation Policy
@@ -194,6 +198,10 @@ export class DedicatedHostGroup extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DedicatedHostGroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDedicatedHostGroup = new RosDedicatedHostGroup(this, id,  {
             diskAllocationRatio: props.diskAllocationRatio,

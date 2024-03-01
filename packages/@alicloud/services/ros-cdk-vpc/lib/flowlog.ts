@@ -46,11 +46,15 @@ export interface FlowLogProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::FlowLog`, which is used to create a flow log.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::FlowLog`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFlowLog`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-flowlog
  */
 export class FlowLog extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: FlowLogProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Description: The Description of flow log.
@@ -99,6 +103,10 @@ export class FlowLog extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: FlowLogProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosFlowLog = new RosFlowLog(this, id,  {
             flowLogName: props.flowLogName,

@@ -49,11 +49,15 @@ export interface DBNodeClassesProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::POLARDB::DBNodeClasses`DATASOURCE::POLARDB::GlobalDatabaseNetworks is used to query all global database networks (GDNs) within the current Alibaba Cloud account.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::POLARDB::DBNodeClasses`, which is used to query the available resources of a PolarDB cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBNodeClasses`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-dbnodeclasses
  */
 export class DBNodeClasses extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DBNodeClassesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DBNodeClassIds: The list of db node class ids.
@@ -72,6 +76,10 @@ export class DBNodeClasses extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DBNodeClassesProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDBNodeClasses = new RosDBNodeClasses(this, id,  {
             dbVersion: props.dbVersion,

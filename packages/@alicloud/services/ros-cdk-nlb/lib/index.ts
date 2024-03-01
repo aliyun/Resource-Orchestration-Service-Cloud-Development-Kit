@@ -1,6 +1,7 @@
 export * from './listener';
 export * from './loadbalancer';
 export * from './securitygroupattachment';
+export * from './securitypolicy';
 export * from './servergroup';
 
 // ALIYUN::NLB Resources:

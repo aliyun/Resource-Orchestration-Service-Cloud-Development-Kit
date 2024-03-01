@@ -36,6 +36,10 @@ export interface CenBandwidthLimitProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthlimit
  */
 export class CenBandwidthLimit extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: CenBandwidthLimitProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -44,6 +48,10 @@ export class CenBandwidthLimit extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: CenBandwidthLimitProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCenBandwidthLimit = new RosCenBandwidthLimit(this, id,  {
             oppositeRegionId: props.oppositeRegionId,

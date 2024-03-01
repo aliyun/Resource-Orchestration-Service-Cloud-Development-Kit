@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Dts
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::DTS::SynchronizationJob2`DATASOURCE::DTS::MigrationInstances is used to query information about Data Transmission Service (DTS) tasks.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::DTS::SynchronizationJob2`, which is used to configure a data synchronization task.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSynchronizationJob2`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-synchronizationjob2
@@ -56,6 +56,34 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDtsJobName
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
+        protected virtual bool EnableResourcePropertyConstraint
+        {
+            get => GetInstanceProperty<bool>()!;
+            set => SetInstanceProperty(value);
+        }
+
+        [JsiiProperty(name: "id", typeJson: "{\"primitive\":\"string\"}")]
+        protected virtual string Id
+        {
+            get => GetInstanceProperty<string>()!;
+            set => SetInstanceProperty(value);
+        }
+
+        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-dts.SynchronizationJob2Props\"}")]
+        protected virtual AlibabaCloud.SDK.ROS.CDK.Dts.ISynchronizationJob2Props Props
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Dts.ISynchronizationJob2Props>()!;
+            set => SetInstanceProperty(value);
+        }
+
+        [JsiiProperty(name: "scope", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}")]
+        protected virtual AlibabaCloud.SDK.ROS.CDK.Core.Construct Scope
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.Construct>()!;
+            set => SetInstanceProperty(value);
         }
     }
 }

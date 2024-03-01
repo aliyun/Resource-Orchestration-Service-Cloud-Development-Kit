@@ -1,3 +1,4 @@
+export * from './patchbaseline';
 export * from './patchbaselines';
 export * from './secretparameters';
 

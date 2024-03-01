@@ -31,6 +31,10 @@ export interface InstancePublicConnectionProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-instancepublicconnection
  */
 export class InstancePublicConnection extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: InstancePublicConnectionProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ConnectionString: The connection string of the instance.
@@ -49,6 +53,10 @@ export class InstancePublicConnection extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: InstancePublicConnectionProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosInstancePublicConnection = new RosInstancePublicConnection(this, id,  {
             dbInstanceId: props.dbInstanceId,

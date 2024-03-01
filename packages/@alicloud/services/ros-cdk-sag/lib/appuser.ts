@@ -60,6 +60,10 @@ export interface AppUserProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-appuser
  */
 export class AppUser extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AppUserProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SmartAGId: The ID of the SAG APP instance.
@@ -67,7 +71,7 @@ export class AppUser extends ros.Resource {
     public readonly attrSmartAgId: ros.IResolvable;
 
     /**
-     * Attribute UserName: <heat.engine.properties.Schema object at 0x7fd9b9b6e1d0>
+     * Attribute UserName: <heat.engine.properties.Schema object at 0x7f370e560750>
      */
     public readonly attrUserName: ros.IResolvable;
 
@@ -78,6 +82,10 @@ export class AppUser extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AppUserProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAppUser = new RosAppUser(this, id,  {
             userName: props.userName,

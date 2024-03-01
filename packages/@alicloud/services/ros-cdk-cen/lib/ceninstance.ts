@@ -45,6 +45,10 @@ export interface CenInstanceProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-ceninstance
  */
 export class CenInstance extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: CenInstanceProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CenId: The ID of the request.
@@ -58,6 +62,10 @@ export class CenInstance extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: CenInstanceProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCenInstance = new RosCenInstance(this, id,  {
             protectionLevel: props.protectionLevel,

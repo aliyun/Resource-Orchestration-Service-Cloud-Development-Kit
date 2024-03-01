@@ -264,11 +264,15 @@ export interface DBInstanceCloneProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::DBInstanceClone`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::DBInstanceClone`, which is used to restore historical data of an instance to a new instance. The new instance is the clone of the instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBInstanceClone`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstanceclone
  */
 export class DBInstanceClone extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DBInstanceCloneProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DBInstanceId: The instance id of created database instance.
@@ -312,6 +316,10 @@ export class DBInstanceClone extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DBInstanceCloneProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDBInstanceClone = new RosDBInstanceClone(this, id,  {
             periodType: props.periodType === undefined || props.periodType === null ? 'Month' : props.periodType,

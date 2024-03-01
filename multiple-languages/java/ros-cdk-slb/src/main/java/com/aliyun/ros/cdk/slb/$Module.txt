@@ -36,6 +36,7 @@
 @alicloud/ros-cdk-slb.RosListener.HttpConfigProperty=com.aliyun.ros.cdk.slb.RosListener$HttpConfigProperty
 @alicloud/ros-cdk-slb.RosListener.PersistenceProperty=com.aliyun.ros.cdk.slb.RosListener$PersistenceProperty
 @alicloud/ros-cdk-slb.RosListener.PortRangeProperty=com.aliyun.ros.cdk.slb.RosListener$PortRangeProperty
+@alicloud/ros-cdk-slb.RosListener.TagsProperty=com.aliyun.ros.cdk.slb.RosListener$TagsProperty
 @alicloud/ros-cdk-slb.RosListenerProps=com.aliyun.ros.cdk.slb.RosListenerProps
 @alicloud/ros-cdk-slb.RosLoadBalancer=com.aliyun.ros.cdk.slb.RosLoadBalancer
 @alicloud/ros-cdk-slb.RosLoadBalancer.TagsProperty=com.aliyun.ros.cdk.slb.RosLoadBalancer$TagsProperty
@@ -53,6 +54,7 @@
 @alicloud/ros-cdk-slb.RosRuleProps=com.aliyun.ros.cdk.slb.RosRuleProps
 @alicloud/ros-cdk-slb.RosVServerGroup=com.aliyun.ros.cdk.slb.RosVServerGroup
 @alicloud/ros-cdk-slb.RosVServerGroup.BackendServersProperty=com.aliyun.ros.cdk.slb.RosVServerGroup$BackendServersProperty
+@alicloud/ros-cdk-slb.RosVServerGroup.TagsProperty=com.aliyun.ros.cdk.slb.RosVServerGroup$TagsProperty
 @alicloud/ros-cdk-slb.RosVServerGroupProps=com.aliyun.ros.cdk.slb.RosVServerGroupProps
 @alicloud/ros-cdk-slb.Rule=com.aliyun.ros.cdk.slb.Rule
 @alicloud/ros-cdk-slb.RuleProps=com.aliyun.ros.cdk.slb.RuleProps

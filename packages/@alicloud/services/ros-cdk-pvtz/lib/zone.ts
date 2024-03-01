@@ -58,6 +58,10 @@ export interface ZoneProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-zone
  */
 export class Zone extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ZoneProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ZoneId: Zone ID.
@@ -86,6 +90,10 @@ export class Zone extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ZoneProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosZone = new RosZone(this, id,  {
             zoneName: props.zoneName,

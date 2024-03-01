@@ -26,6 +26,10 @@ export interface DomainGroupsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dns-domaingroups
  */
 export class DomainGroups extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DomainGroupsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DomainGroupIds: The list of The DNS domain group ids.
@@ -44,6 +48,10 @@ export class DomainGroups extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DomainGroupsProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDomainGroups = new RosDomainGroups(this, id,  {
             keyWord: props.keyWord,

@@ -56,6 +56,10 @@ export interface CertificateProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-certificate
  */
 export class Certificate extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: CertificateProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CertificateId: The ID of the certificate.
@@ -74,6 +78,10 @@ export class Certificate extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: CertificateProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCertificate = new RosCertificate(this, id,  {
             certificateType: props.certificateType === undefined || props.certificateType === null ? 'Server' : props.certificateType,

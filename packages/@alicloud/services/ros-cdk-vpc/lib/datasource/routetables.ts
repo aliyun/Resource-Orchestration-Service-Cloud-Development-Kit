@@ -49,6 +49,10 @@ export interface RouteTablesProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-routetables
  */
 export class RouteTables extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: RouteTablesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute RouteTableIds: the list of the route table ids.
@@ -67,6 +71,10 @@ export class RouteTables extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: RouteTablesProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosRouteTables = new RosRouteTables(this, id,  {
             routeTableId: props.routeTableId,

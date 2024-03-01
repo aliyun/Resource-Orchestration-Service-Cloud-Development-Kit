@@ -36,6 +36,10 @@ export interface LayerProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-layer
  */
 export class Layer extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: LayerProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Arn: The name of the layer resource.
@@ -59,6 +63,10 @@ export class Layer extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: LayerProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosLayer = new RosLayer(this, id,  {
             compatibleRuntime: props.compatibleRuntime,

@@ -16,11 +16,15 @@ export interface KubernetesClusterProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::CS::KubernetesCluster`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::CS::KubernetesCluster`, which is used to query the information about a Container Service for Kubernetes (ACK) cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosKubernetesCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-kubernetescluster
  */
 export class KubernetesCluster extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: KubernetesClusterProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterId: Cluster instance ID.
@@ -212,6 +216,10 @@ The RAM role is assigned to the worker nodes of the cluster and allows the worke
      */
     constructor(scope: ros.Construct, id: string, props: KubernetesClusterProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosKubernetesCluster = new RosKubernetesCluster(this, id,  {
             clusterId: props.clusterId,

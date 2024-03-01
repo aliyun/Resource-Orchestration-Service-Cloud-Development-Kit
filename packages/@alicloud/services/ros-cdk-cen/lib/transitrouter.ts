@@ -31,6 +31,10 @@ export interface TransitRouterProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouter
  */
 export class TransitRouter extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: TransitRouterProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AliUid: AliUid
@@ -74,6 +78,10 @@ export class TransitRouter extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: TransitRouterProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosTransitRouter = new RosTransitRouter(this, id,  {
             cenId: props.cenId,

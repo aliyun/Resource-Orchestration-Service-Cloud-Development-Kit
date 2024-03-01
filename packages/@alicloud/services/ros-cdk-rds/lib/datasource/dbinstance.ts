@@ -16,11 +16,15 @@ export interface DBInstanceProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::RDS::DBInstance`ALIYUN::REDIS::Account is used to create an account that has the specified permissions on an ApsaraDB for Redis instance.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::RDS::DBInstance`, which is used to query an ApsaraDB RDS instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-dbinstance
  */
 export class DBInstance extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DBInstanceProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AccountMaxQuantity: The maximum number of accounts that can be created on the instance.
@@ -420,6 +424,10 @@ Disabled
      */
     constructor(scope: ros.Construct, id: string, props: DBInstanceProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDBInstance = new RosDBInstance(this, id,  {
             dbInstanceId: props.dbInstanceId,

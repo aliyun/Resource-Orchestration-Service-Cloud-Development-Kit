@@ -24,11 +24,14 @@
 @alicloud/ros-cdk-cs.RosAnyClusterProps=com.aliyun.ros.cdk.cs.RosAnyClusterProps
 @alicloud/ros-cdk-cs.RosClusterAddons=com.aliyun.ros.cdk.cs.RosClusterAddons
 @alicloud/ros-cdk-cs.RosClusterAddons.AddonsProperty=com.aliyun.ros.cdk.cs.RosClusterAddons$AddonsProperty
+@alicloud/ros-cdk-cs.RosClusterAddons.WaitUntilProperty=com.aliyun.ros.cdk.cs.RosClusterAddons$WaitUntilProperty
 @alicloud/ros-cdk-cs.RosClusterAddonsProps=com.aliyun.ros.cdk.cs.RosClusterAddonsProps
 @alicloud/ros-cdk-cs.RosClusterApplication=com.aliyun.ros.cdk.cs.RosClusterApplication
+@alicloud/ros-cdk-cs.RosClusterApplication.WaitUntilProperty=com.aliyun.ros.cdk.cs.RosClusterApplication$WaitUntilProperty
 @alicloud/ros-cdk-cs.RosClusterApplicationProps=com.aliyun.ros.cdk.cs.RosClusterApplicationProps
 @alicloud/ros-cdk-cs.RosClusterHelmApplication=com.aliyun.ros.cdk.cs.RosClusterHelmApplication
 @alicloud/ros-cdk-cs.RosClusterHelmApplication.CredentialProperty=com.aliyun.ros.cdk.cs.RosClusterHelmApplication$CredentialProperty
+@alicloud/ros-cdk-cs.RosClusterHelmApplication.WaitUntilProperty=com.aliyun.ros.cdk.cs.RosClusterHelmApplication$WaitUntilProperty
 @alicloud/ros-cdk-cs.RosClusterHelmApplicationProps=com.aliyun.ros.cdk.cs.RosClusterHelmApplicationProps
 @alicloud/ros-cdk-cs.RosClusterNodePool=com.aliyun.ros.cdk.cs.RosClusterNodePool
 @alicloud/ros-cdk-cs.RosClusterNodePool.AutoScalingProperty=com.aliyun.ros.cdk.cs.RosClusterNodePool$AutoScalingProperty

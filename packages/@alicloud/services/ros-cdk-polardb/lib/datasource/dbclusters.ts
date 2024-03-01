@@ -52,11 +52,15 @@ export interface DBClustersProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::POLARDB::DBClusters`, which is used to query the details of PolarDB clusters.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::POLARDB::DBClusters`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBClusters`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-dbclusters
  */
 export class DBClusters extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DBClustersProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DBClusters: The list of db clusters.
@@ -75,6 +79,10 @@ export class DBClusters extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DBClustersProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDBClusters = new RosDBClusters(this, id,  {
             description: props.description,

@@ -36,6 +36,10 @@ export interface WaitConditionProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-waitcondition
  */
 export class WaitCondition extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: WaitConditionProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Data: JSON serialized dict containing data associated with wait condition signals sent to the handle.
@@ -59,6 +63,10 @@ export class WaitCondition extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: WaitConditionProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosWaitCondition = new RosWaitCondition(this, id,  {
             showProgressEvent: props.showProgressEvent,

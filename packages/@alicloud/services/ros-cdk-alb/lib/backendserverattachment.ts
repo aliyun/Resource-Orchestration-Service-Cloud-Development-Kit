@@ -27,6 +27,10 @@ export interface BackendServerAttachmentProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-backendserverattachment
  */
 export class BackendServerAttachment extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: BackendServerAttachmentProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ServerGroupId: The ID of the server group.
@@ -40,6 +44,10 @@ export class BackendServerAttachment extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: BackendServerAttachmentProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosBackendServerAttachment = new RosBackendServerAttachment(this, id,  {
             serverGroupId: props.serverGroupId,

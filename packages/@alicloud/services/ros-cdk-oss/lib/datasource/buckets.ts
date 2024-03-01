@@ -16,6 +16,10 @@ export interface BucketsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oss-buckets
  */
 export class Buckets extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: BucketsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute BucketNames: The list of bucket names.
@@ -34,6 +38,10 @@ export class Buckets extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: BucketsProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosBuckets = new RosBuckets(this, id,  {
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

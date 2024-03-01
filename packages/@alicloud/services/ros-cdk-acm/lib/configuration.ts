@@ -59,6 +59,10 @@ export interface ConfigurationProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acm-configuration
  */
 export class Configuration extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ConfigurationProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DataId: The ID of the configuration
@@ -82,6 +86,10 @@ export class Configuration extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ConfigurationProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosConfiguration = new RosConfiguration(this, id,  {
             group: props.group === undefined || props.group === null ? 'DEFAULT_GROUP' : props.group,

@@ -32,6 +32,10 @@ export interface RamRoleAttachmentProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-ramroleattachment
  */
 export class RamRoleAttachment extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: RamRoleAttachmentProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceIds: The list of ecs instance id
@@ -50,6 +54,10 @@ export class RamRoleAttachment extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: RamRoleAttachmentProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosRamRoleAttachment = new RosRamRoleAttachment(this, id,  {
             policy: props.policy,

@@ -56,6 +56,10 @@ export interface CenVbrHealthCheckProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenvbrhealthcheck
  */
 export class CenVbrHealthCheck extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: CenVbrHealthCheckProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CenId: The ID of the CEN instance.
@@ -104,6 +108,10 @@ export class CenVbrHealthCheck extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: CenVbrHealthCheckProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCenVbrHealthCheck = new RosCenVbrHealthCheck(this, id,  {
             vbrInstanceRegionId: props.vbrInstanceRegionId,

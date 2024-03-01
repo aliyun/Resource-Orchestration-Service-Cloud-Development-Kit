@@ -51,6 +51,10 @@ export interface TrafficControlProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-trafficcontrol
  */
 export class TrafficControl extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: TrafficControlProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute TrafficControlId: The id of the traffic control
@@ -64,6 +68,10 @@ export class TrafficControl extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: TrafficControlProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosTrafficControl = new RosTrafficControl(this, id,  {
             description: props.description,

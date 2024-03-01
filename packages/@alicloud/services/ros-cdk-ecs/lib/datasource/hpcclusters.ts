@@ -21,6 +21,10 @@ export interface HpcClustersProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-hpcclusters
  */
 export class HpcClusters extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: HpcClustersProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute HpcClusterIds: the list of hpc cluster ids
@@ -39,6 +43,10 @@ export class HpcClusters extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: HpcClustersProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosHpcClusters = new RosHpcClusters(this, id,  {
             hpcClusterIds: props.hpcClusterIds,

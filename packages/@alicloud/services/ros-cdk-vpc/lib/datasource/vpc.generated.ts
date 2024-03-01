@@ -128,7 +128,7 @@ function rosAddressesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::EIP::Addresses`, which is used to query the information about elastic IP addresses (EIPs).
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::EIP::Addresses`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Addresses` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eip-addresses
  */
@@ -383,6 +383,135 @@ export class RosCommonBandwidthPackages extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosCustomerGateway`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-customergateway
+ */
+export interface RosCustomerGatewayProps {
+
+    /**
+     * @Property customerGatewayId: The ID of the customer gateway.
+     */
+    readonly customerGatewayId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosCustomerGatewayProps`
+ *
+ * @param properties - the TypeScript properties of a `RosCustomerGatewayProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosCustomerGatewayPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('customerGatewayId', ros.requiredValidator)(properties.customerGatewayId));
+    errors.collect(ros.propertyValidator('customerGatewayId', ros.validateString)(properties.customerGatewayId));
+    return errors.wrap('supplied properties not correct for "RosCustomerGatewayProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::VPC::CustomerGateway` resource
+ *
+ * @param properties - the TypeScript properties of a `RosCustomerGatewayProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::VPC::CustomerGateway` resource.
+ */
+// @ts-ignore TS6133
+function rosCustomerGatewayPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosCustomerGatewayPropsValidator(properties).assertSuccess();
+    }
+    return {
+      CustomerGatewayId: ros.stringToRosTemplate(properties.customerGatewayId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::CustomerGateway`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `CustomerGateway` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-customergateway
+ */
+export class RosCustomerGateway extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::VPC::CustomerGateway";
+
+    /**
+     * @Attribute Asn: Asn.
+     */
+    public readonly attrAsn: ros.IResolvable;
+
+    /**
+     * @Attribute AuthKey: The authentication key of the local data center gateway device BGP routing protocol.
+     */
+    public readonly attrAuthKey: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: The time when the customer gateway was created.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute CustomerGatewayId: The ID of the customer gateway.
+     */
+    public readonly attrCustomerGatewayId: ros.IResolvable;
+
+    /**
+     * @Attribute CustomerGatewayName: The name of the customer gateway.
+     */
+    public readonly attrCustomerGatewayName: ros.IResolvable;
+
+    /**
+     * @Attribute Description: The description of the customer gateway.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute IpAddress: The IP address of the customer gateway.
+     */
+    public readonly attrIpAddress: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property customerGatewayId: The ID of the customer gateway.
+     */
+    public customerGatewayId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosCustomerGatewayProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosCustomerGateway.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAsn = this.getAtt('Asn');
+        this.attrAuthKey = this.getAtt('AuthKey');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrCustomerGatewayId = this.getAtt('CustomerGatewayId');
+        this.attrCustomerGatewayName = this.getAtt('CustomerGatewayName');
+        this.attrDescription = this.getAtt('Description');
+        this.attrIpAddress = this.getAtt('IpAddress');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.customerGatewayId = props.customerGatewayId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            customerGatewayId: this.customerGatewayId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosCustomerGatewayPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosCustomerGateways`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-customergateways
  */
@@ -477,6 +606,159 @@ export class RosCustomerGateways extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosCustomerGatewaysPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosFlowLog`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-flowlog
+ */
+export interface RosFlowLogProps {
+
+    /**
+     * @Property flowLogId: The flow log ID.
+     */
+    readonly flowLogId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosFlowLogProps`
+ *
+ * @param properties - the TypeScript properties of a `RosFlowLogProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosFlowLogPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('flowLogId', ros.requiredValidator)(properties.flowLogId));
+    errors.collect(ros.propertyValidator('flowLogId', ros.validateString)(properties.flowLogId));
+    return errors.wrap('supplied properties not correct for "RosFlowLogProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::VPC::FlowLog` resource
+ *
+ * @param properties - the TypeScript properties of a `RosFlowLogProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::VPC::FlowLog` resource.
+ */
+// @ts-ignore TS6133
+function rosFlowLogPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosFlowLogPropsValidator(properties).assertSuccess();
+    }
+    return {
+      FlowLogId: ros.stringToRosTemplate(properties.flowLogId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::FlowLog`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `FlowLog` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-flowlog
+ */
+export class RosFlowLog extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::VPC::FlowLog";
+
+    /**
+     * @Attribute AggregationInterval: Data aggregation interval.
+     */
+    public readonly attrAggregationInterval: ros.IResolvable;
+
+    /**
+     * @Attribute BusinessStatus: Business status.
+     */
+    public readonly attrBusinessStatus: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: the time of creation.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute Description: The Description of flow log.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute FlowLogId: The flow log ID.
+     */
+    public readonly attrFlowLogId: ros.IResolvable;
+
+    /**
+     * @Attribute FlowLogName: The flow log name.
+     */
+    public readonly attrFlowLogName: ros.IResolvable;
+
+    /**
+     * @Attribute LogStoreName: The log store name.
+     */
+    public readonly attrLogStoreName: ros.IResolvable;
+
+    /**
+     * @Attribute ProjectName: The project name.
+     */
+    public readonly attrProjectName: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceId: The resource id.
+     */
+    public readonly attrResourceId: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceType: The resource type.
+     */
+    public readonly attrResourceType: ros.IResolvable;
+
+    /**
+     * @Attribute TrafficType: The traffic type.
+     */
+    public readonly attrTrafficType: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property flowLogId: The flow log ID.
+     */
+    public flowLogId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosFlowLogProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosFlowLog.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAggregationInterval = this.getAtt('AggregationInterval');
+        this.attrBusinessStatus = this.getAtt('BusinessStatus');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDescription = this.getAtt('Description');
+        this.attrFlowLogId = this.getAtt('FlowLogId');
+        this.attrFlowLogName = this.getAtt('FlowLogName');
+        this.attrLogStoreName = this.getAtt('LogStoreName');
+        this.attrProjectName = this.getAtt('ProjectName');
+        this.attrResourceId = this.getAtt('ResourceId');
+        this.attrResourceType = this.getAtt('ResourceType');
+        this.attrTrafficType = this.getAtt('TrafficType');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.flowLogId = props.flowLogId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            flowLogId: this.flowLogId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosFlowLogPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
 
@@ -795,6 +1077,135 @@ export class RosHaVips extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosHaVipsPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosIpv4Gateway`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-ipv4gateway
+ */
+export interface RosIpv4GatewayProps {
+
+    /**
+     * @Property ipv4GatewayId: The resource attribute field that represents the resource level 1 ID.
+     */
+    readonly ipv4GatewayId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosIpv4GatewayProps`
+ *
+ * @param properties - the TypeScript properties of a `RosIpv4GatewayProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosIpv4GatewayPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('ipv4GatewayId', ros.requiredValidator)(properties.ipv4GatewayId));
+    errors.collect(ros.propertyValidator('ipv4GatewayId', ros.validateString)(properties.ipv4GatewayId));
+    return errors.wrap('supplied properties not correct for "RosIpv4GatewayProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::VPC::Ipv4Gateway` resource
+ *
+ * @param properties - the TypeScript properties of a `RosIpv4GatewayProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::VPC::Ipv4Gateway` resource.
+ */
+// @ts-ignore TS6133
+function rosIpv4GatewayPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosIpv4GatewayPropsValidator(properties).assertSuccess();
+    }
+    return {
+      Ipv4GatewayId: ros.stringToRosTemplate(properties.ipv4GatewayId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::Ipv4Gateway`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Ipv4Gateway` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-ipv4gateway
+ */
+export class RosIpv4Gateway extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::VPC::Ipv4Gateway";
+
+    /**
+     * @Attribute CreateTime: The creation time of the resource.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute Enabled: Enabled.
+     */
+    public readonly attrEnabled: ros.IResolvable;
+
+    /**
+     * @Attribute Ipv4GatewayDescription: Description information.
+     */
+    public readonly attrIpv4GatewayDescription: ros.IResolvable;
+
+    /**
+     * @Attribute Ipv4GatewayId: The resource attribute field that represents the resource level 1 ID.
+     */
+    public readonly attrIpv4GatewayId: ros.IResolvable;
+
+    /**
+     * @Attribute Ipv4GatewayName: Resource name.
+     */
+    public readonly attrIpv4GatewayName: ros.IResolvable;
+
+    /**
+     * @Attribute Ipv4GatewayRouteTableId: ID of the route table associated with IPv4 Gateway.
+     */
+    public readonly attrIpv4GatewayRouteTableId: ros.IResolvable;
+
+    /**
+     * @Attribute VpcId: The ID of the VPC associated with the IPv4 Gateway.
+     */
+    public readonly attrVpcId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property ipv4GatewayId: The resource attribute field that represents the resource level 1 ID.
+     */
+    public ipv4GatewayId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosIpv4GatewayProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosIpv4Gateway.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrEnabled = this.getAtt('Enabled');
+        this.attrIpv4GatewayDescription = this.getAtt('Ipv4GatewayDescription');
+        this.attrIpv4GatewayId = this.getAtt('Ipv4GatewayId');
+        this.attrIpv4GatewayName = this.getAtt('Ipv4GatewayName');
+        this.attrIpv4GatewayRouteTableId = this.getAtt('Ipv4GatewayRouteTableId');
+        this.attrVpcId = this.getAtt('VpcId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.ipv4GatewayId = props.ipv4GatewayId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            ipv4GatewayId: this.ipv4GatewayId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosIpv4GatewayPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
 
@@ -1279,7 +1690,7 @@ function rosNatIpCidrsPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::NatIpCidrs`, which is used to query the CIDR blocks of a NAT gateway.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::NatIpCidrs`.
  * @Note This class does not contain additional functions, so it is recommended to use the `NatIpCidrs` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-natipcidrs
  */
@@ -1414,7 +1825,7 @@ function rosNetworkAclsPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::NetworkAcls`, which is used to query created network access control lists (ACLs).
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::NetworkAcls`.
  * @Note This class does not contain additional functions, so it is recommended to use the `NetworkAcls` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-networkacls
  */
@@ -1494,6 +1905,159 @@ export class RosNetworkAcls extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosNetworkAclsPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosPrefixList`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-prefixlist
+ */
+export interface RosPrefixListProps {
+
+    /**
+     * @Property prefixListId: The ID of the query Prefix List.
+     */
+    readonly prefixListId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosPrefixListProps`
+ *
+ * @param properties - the TypeScript properties of a `RosPrefixListProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosPrefixListPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('prefixListId', ros.requiredValidator)(properties.prefixListId));
+    errors.collect(ros.propertyValidator('prefixListId', ros.validateString)(properties.prefixListId));
+    return errors.wrap('supplied properties not correct for "RosPrefixListProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::VPC::PrefixList` resource
+ *
+ * @param properties - the TypeScript properties of a `RosPrefixListProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::VPC::PrefixList` resource.
+ */
+// @ts-ignore TS6133
+function rosPrefixListPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosPrefixListPropsValidator(properties).assertSuccess();
+    }
+    return {
+      PrefixListId: ros.stringToRosTemplate(properties.prefixListId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::PrefixList`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `PrefixList` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-prefixlist
+ */
+export class RosPrefixList extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::VPC::PrefixList";
+
+    /**
+     * @Attribute CreateTime: The time when the prefix list was created.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute Entries: The CIDR address block list of the prefix list.
+     */
+    public readonly attrEntries: ros.IResolvable;
+
+    /**
+     * @Attribute IpVersion: The IP version of the prefix list.
+     */
+    public readonly attrIpVersion: ros.IResolvable;
+
+    /**
+     * @Attribute MaxEntries: The maximum number of entries for CIDR address blocks in the prefix list.
+     */
+    public readonly attrMaxEntries: ros.IResolvable;
+
+    /**
+     * @Attribute OwnerId: The Alibaba Cloud account (primary account) to which the prefix list belongs.
+     */
+    public readonly attrOwnerId: ros.IResolvable;
+
+    /**
+     * @Attribute PrefixListDescription: The description of the prefix list.
+     */
+    public readonly attrPrefixListDescription: ros.IResolvable;
+
+    /**
+     * @Attribute PrefixListId: The ID of the query Prefix List.
+     */
+    public readonly attrPrefixListId: ros.IResolvable;
+
+    /**
+     * @Attribute PrefixListName: The name of the prefix list.
+     */
+    public readonly attrPrefixListName: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The ID of the resource group to which the VPC belongs.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute ShareType: The share type of the prefix list.
+     */
+    public readonly attrShareType: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: The tags of PrefixList.
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property prefixListId: The ID of the query Prefix List.
+     */
+    public prefixListId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosPrefixListProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosPrefixList.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrEntries = this.getAtt('Entries');
+        this.attrIpVersion = this.getAtt('IpVersion');
+        this.attrMaxEntries = this.getAtt('MaxEntries');
+        this.attrOwnerId = this.getAtt('OwnerId');
+        this.attrPrefixListDescription = this.getAtt('PrefixListDescription');
+        this.attrPrefixListId = this.getAtt('PrefixListId');
+        this.attrPrefixListName = this.getAtt('PrefixListName');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrShareType = this.getAtt('ShareType');
+        this.attrTags = this.getAtt('Tags');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.prefixListId = props.prefixListId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            prefixListId: this.prefixListId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosPrefixListPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
 
@@ -2171,6 +2735,123 @@ export class RosRouteTables extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosTrafficMirrorFilter`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-trafficmirrorfilter
+ */
+export interface RosTrafficMirrorFilterProps {
+
+    /**
+     * @Property trafficMirrorFilterId: The first ID of the resource.
+     */
+    readonly trafficMirrorFilterId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosTrafficMirrorFilterProps`
+ *
+ * @param properties - the TypeScript properties of a `RosTrafficMirrorFilterProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosTrafficMirrorFilterPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('trafficMirrorFilterId', ros.requiredValidator)(properties.trafficMirrorFilterId));
+    errors.collect(ros.propertyValidator('trafficMirrorFilterId', ros.validateString)(properties.trafficMirrorFilterId));
+    return errors.wrap('supplied properties not correct for "RosTrafficMirrorFilterProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::VPC::TrafficMirrorFilter` resource
+ *
+ * @param properties - the TypeScript properties of a `RosTrafficMirrorFilterProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::VPC::TrafficMirrorFilter` resource.
+ */
+// @ts-ignore TS6133
+function rosTrafficMirrorFilterPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosTrafficMirrorFilterPropsValidator(properties).assertSuccess();
+    }
+    return {
+      TrafficMirrorFilterId: ros.stringToRosTemplate(properties.trafficMirrorFilterId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::TrafficMirrorFilter`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `TrafficMirrorFilter` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-trafficmirrorfilter
+ */
+export class RosTrafficMirrorFilter extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::VPC::TrafficMirrorFilter";
+
+    /**
+     * @Attribute EgressRules: EgressRules.
+     */
+    public readonly attrEgressRules: ros.IResolvable;
+
+    /**
+     * @Attribute IngressRules: IngressRules.
+     */
+    public readonly attrIngressRules: ros.IResolvable;
+
+    /**
+     * @Attribute TrafficMirrorFilterDescription: The description of the TrafficMirrorFilter.
+     */
+    public readonly attrTrafficMirrorFilterDescription: ros.IResolvable;
+
+    /**
+     * @Attribute TrafficMirrorFilterId: The first ID of the resource.
+     */
+    public readonly attrTrafficMirrorFilterId: ros.IResolvable;
+
+    /**
+     * @Attribute TrafficMirrorFilterName: The name of the TrafficMirrorFilter.
+     */
+    public readonly attrTrafficMirrorFilterName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property trafficMirrorFilterId: The first ID of the resource.
+     */
+    public trafficMirrorFilterId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosTrafficMirrorFilterProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosTrafficMirrorFilter.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrEgressRules = this.getAtt('EgressRules');
+        this.attrIngressRules = this.getAtt('IngressRules');
+        this.attrTrafficMirrorFilterDescription = this.getAtt('TrafficMirrorFilterDescription');
+        this.attrTrafficMirrorFilterId = this.getAtt('TrafficMirrorFilterId');
+        this.attrTrafficMirrorFilterName = this.getAtt('TrafficMirrorFilterName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.trafficMirrorFilterId = props.trafficMirrorFilterId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            trafficMirrorFilterId: this.trafficMirrorFilterId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosTrafficMirrorFilterPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosTrafficMirrorFilters`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-trafficmirrorfilters
  */
@@ -2372,7 +3053,7 @@ function rosVSwitchesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::VSwitches`, which is used to query created vSwitches.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::VSwitches`.
  * @Note This class does not contain additional functions, so it is recommended to use the `VSwitches` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-vswitches
  */

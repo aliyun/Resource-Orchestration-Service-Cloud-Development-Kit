@@ -39,6 +39,10 @@ export interface MonitorGroupsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-monitorgroups
  */
 export class MonitorGroups extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: MonitorGroupsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute GroupIds: The list of group IDs.
@@ -57,6 +61,10 @@ export class MonitorGroups extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: MonitorGroupsProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosMonitorGroups = new RosMonitorGroups(this, id,  {
             type: props.type,

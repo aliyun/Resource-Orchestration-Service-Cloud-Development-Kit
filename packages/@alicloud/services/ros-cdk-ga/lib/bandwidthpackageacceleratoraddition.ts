@@ -27,6 +27,10 @@ export interface BandwidthPackageAcceleratorAdditionProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-bandwidthpackageacceleratoraddition
  */
 export class BandwidthPackageAcceleratorAddition extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: BandwidthPackageAcceleratorAdditionProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AcceleratorId: The ID of the Global Accelerator instance
@@ -45,6 +49,10 @@ export class BandwidthPackageAcceleratorAddition extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: BandwidthPackageAcceleratorAdditionProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosBandwidthPackageAcceleratorAddition = new RosBandwidthPackageAcceleratorAddition(this, id,  {
             bandwidthPackageId: props.bandwidthPackageId,

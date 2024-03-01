@@ -36,6 +36,10 @@ export interface DomainProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dns-domain
  */
 export class Domain extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DomainProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DnsServers: The DNS list for the domain name under resolution
@@ -74,6 +78,10 @@ export class Domain extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DomainProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDomain = new RosDomain(this, id,  {
             resourceGroupId: props.resourceGroupId,

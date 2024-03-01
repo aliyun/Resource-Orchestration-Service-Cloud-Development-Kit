@@ -3,6 +3,193 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosImage`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-image
+ */
+export interface RosImageProps {
+
+    /**
+     * @Property instanceId: The ID of the mobile phone instance.
+     */
+    readonly instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property description: The image description. The description must be 2 to 256 characters in length. It cannot start with http:\/\/ or https:\/\/.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property imageName: The image name. The name must be 2 to 128 characters in length. It can contain letters, digits, colons (:), underscores (_), and hyphens (-). The name must start with a letter but cannot start with http:\/\/ or https:\/\/.
+     */
+    readonly imageName?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosImageProps`
+ *
+ * @param properties - the TypeScript properties of a `RosImageProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosImagePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('imageName', ros.validateString)(properties.imageName));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    return errors.wrap('supplied properties not correct for "RosImageProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CloudPhone::Image` resource
+ *
+ * @param properties - the TypeScript properties of a `RosImageProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CloudPhone::Image` resource.
+ */
+// @ts-ignore TS6133
+function rosImagePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosImagePropsValidator(properties).assertSuccess();
+    }
+    return {
+      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+      Description: ros.stringToRosTemplate(properties.description),
+      ImageName: ros.stringToRosTemplate(properties.imageName),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudPhone::Image`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Image` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-image
+ */
+export class RosImage extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CloudPhone::Image";
+
+    /**
+     * @Attribute CreateTime: The time when the image was created. The time follows the ISO 8601 standard.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute Description: The image description.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute ImageCategory: The image type.
+     */
+    public readonly attrImageCategory: ros.IResolvable;
+
+    /**
+     * @Attribute ImageId: The image ID.
+     */
+    public readonly attrImageId: ros.IResolvable;
+
+    /**
+     * @Attribute ImageName: The image name.
+     */
+    public readonly attrImageName: ros.IResolvable;
+
+    /**
+     * @Attribute IsSelfShared: Indicates whether the image is shared with other Alibaba Cloud accounts.
+     */
+    public readonly attrIsSelfShared: ros.IResolvable;
+
+    /**
+     * @Attribute OsName: The display name of the OS in Chinese.
+     */
+    public readonly attrOsName: ros.IResolvable;
+
+    /**
+     * @Attribute OsNameEn: The display name of the OS in English.
+     */
+    public readonly attrOsNameEn: ros.IResolvable;
+
+    /**
+     * @Attribute OsType: The image OS.
+     */
+    public readonly attrOsType: ros.IResolvable;
+
+    /**
+     * @Attribute Platform: The OS distribution.
+     */
+    public readonly attrPlatform: ros.IResolvable;
+
+    /**
+     * @Attribute Progress: The progress of image creation.
+     */
+    public readonly attrProgress: ros.IResolvable;
+
+    /**
+     * @Attribute Usage: Whether the image is already running in the cloud phone instance.
+     */
+    public readonly attrUsage: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property instanceId: The ID of the mobile phone instance.
+     */
+    public instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property description: The image description. The description must be 2 to 256 characters in length. It cannot start with http:\/\/ or https:\/\/.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property imageName: The image name. The name must be 2 to 128 characters in length. It can contain letters, digits, colons (:), underscores (_), and hyphens (-). The name must start with a letter but cannot start with http:\/\/ or https:\/\/.
+     */
+    public imageName: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosImageProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosImage.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDescription = this.getAtt('Description');
+        this.attrImageCategory = this.getAtt('ImageCategory');
+        this.attrImageId = this.getAtt('ImageId');
+        this.attrImageName = this.getAtt('ImageName');
+        this.attrIsSelfShared = this.getAtt('IsSelfShared');
+        this.attrOsName = this.getAtt('OsName');
+        this.attrOsNameEn = this.getAtt('OsNameEn');
+        this.attrOsType = this.getAtt('OsType');
+        this.attrPlatform = this.getAtt('Platform');
+        this.attrProgress = this.getAtt('Progress');
+        this.attrUsage = this.getAtt('Usage');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.instanceId = props.instanceId;
+        this.description = props.description;
+        this.imageName = props.imageName;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            instanceId: this.instanceId,
+            description: this.description,
+            imageName: this.imageName,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosImagePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosInstanceGroup`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-instancegroup
  */
@@ -226,6 +413,11 @@ export class RosInstanceGroup extends ros.RosResource {
     public readonly attrOrderId: ros.IResolvable;
 
     /**
+     * @Attribute PrivateIps: Private IP address list of created cloud phone instances. Only for VPC instance.
+     */
+    public readonly attrPrivateIps: ros.IResolvable;
+
+    /**
      * @Attribute TradePrice: price
      */
     public readonly attrTradePrice: ros.IResolvable;
@@ -343,6 +535,7 @@ export class RosInstanceGroup extends ros.RosResource {
         super(scope, id, { type: RosInstanceGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrInstanceIds = this.getAtt('InstanceIds');
         this.attrOrderId = this.getAtt('OrderId');
+        this.attrPrivateIps = this.getAtt('PrivateIps');
         this.attrTradePrice = this.getAtt('TradePrice');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
@@ -438,4 +631,237 @@ function rosInstanceGroupTagPropertyToRosTemplate(properties: any): any {
       Value: ros.stringToRosTemplate(properties.value),
       Key: ros.stringToRosTemplate(properties.key),
     };
+}
+
+/**
+ * Properties for defining a `RosKeyPair`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-keypair
+ */
+export interface RosKeyPairProps {
+
+    /**
+     * @Property keyPairName: The name of the key pair. The name must be globally unique. The name must be 2 to 128 characters in length. The name must start with a letter but cannot start with http:\/\/ or https:\/\/. The name can contain letters, digits, colons (:), underscores (_), and hyphens (-).
+     */
+    readonly keyPairName: string | ros.IResolvable;
+
+    /**
+     * @Property publicKeyBody: The public key content of the key pair.
+     */
+    readonly publicKeyBody: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosKeyPairProps`
+ *
+ * @param properties - the TypeScript properties of a `RosKeyPairProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosKeyPairPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('keyPairName', ros.requiredValidator)(properties.keyPairName));
+    errors.collect(ros.propertyValidator('keyPairName', ros.validateString)(properties.keyPairName));
+    errors.collect(ros.propertyValidator('publicKeyBody', ros.requiredValidator)(properties.publicKeyBody));
+    errors.collect(ros.propertyValidator('publicKeyBody', ros.validateString)(properties.publicKeyBody));
+    return errors.wrap('supplied properties not correct for "RosKeyPairProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CloudPhone::KeyPair` resource
+ *
+ * @param properties - the TypeScript properties of a `RosKeyPairProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CloudPhone::KeyPair` resource.
+ */
+// @ts-ignore TS6133
+function rosKeyPairPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosKeyPairPropsValidator(properties).assertSuccess();
+    }
+    return {
+      KeyPairName: ros.stringToRosTemplate(properties.keyPairName),
+      PublicKeyBody: ros.stringToRosTemplate(properties.publicKeyBody),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudPhone::KeyPair`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `KeyPair` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-keypair
+ */
+export class RosKeyPair extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CloudPhone::KeyPair";
+
+    /**
+     * @Attribute CreateTime: The creation time of the resource.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute KeyPairFingerPrint: The fingerprint of the key pair. The message-digest algorithm 5 (MD5) is used based on the public key fingerprint format defined in RFC 4716.
+     */
+    public readonly attrKeyPairFingerPrint: ros.IResolvable;
+
+    /**
+     * @Attribute KeyPairName: The name of the key pair.
+     */
+    public readonly attrKeyPairName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property keyPairName: The name of the key pair. The name must be globally unique. The name must be 2 to 128 characters in length. The name must start with a letter but cannot start with http:\/\/ or https:\/\/. The name can contain letters, digits, colons (:), underscores (_), and hyphens (-).
+     */
+    public keyPairName: string | ros.IResolvable;
+
+    /**
+     * @Property publicKeyBody: The public key content of the key pair.
+     */
+    public publicKeyBody: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosKeyPairProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosKeyPair.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrKeyPairFingerPrint = this.getAtt('KeyPairFingerPrint');
+        this.attrKeyPairName = this.getAtt('KeyPairName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.keyPairName = props.keyPairName;
+        this.publicKeyBody = props.publicKeyBody;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            keyPairName: this.keyPairName,
+            publicKeyBody: this.publicKeyBody,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosKeyPairPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosRunCommand`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-runcommand
+ */
+export interface RosRunCommandProps {
+
+    /**
+     * @Property command: The command to be executed.
+     * The maximum length of a command is 1024 bytes, and only supports lowercase letters, numbers, downline (_), points (.), Slanting (\/), colon (:), medium line (-).
+     */
+    readonly command: string | ros.IResolvable;
+
+    /**
+     * @Property instanceIds: ID of the instance executing the command.
+     * Range of n: 1 ~ 10
+     */
+    readonly instanceIds: Array<string | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosRunCommandProps`
+ *
+ * @param properties - the TypeScript properties of a `RosRunCommandProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosRunCommandPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('command', ros.requiredValidator)(properties.command));
+    errors.collect(ros.propertyValidator('command', ros.validateString)(properties.command));
+    errors.collect(ros.propertyValidator('instanceIds', ros.requiredValidator)(properties.instanceIds));
+    if(properties.instanceIds && (Array.isArray(properties.instanceIds) || (typeof properties.instanceIds) === 'string')) {
+        errors.collect(ros.propertyValidator('instanceIds', ros.validateLength)({
+            data: properties.instanceIds.length,
+            min: 1,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('instanceIds', ros.listValidator(ros.validateString))(properties.instanceIds));
+    return errors.wrap('supplied properties not correct for "RosRunCommandProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CloudPhone::RunCommand` resource
+ *
+ * @param properties - the TypeScript properties of a `RosRunCommandProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CloudPhone::RunCommand` resource.
+ */
+// @ts-ignore TS6133
+function rosRunCommandPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosRunCommandPropsValidator(properties).assertSuccess();
+    }
+    return {
+      Command: ros.stringToRosTemplate(properties.command),
+      InstanceIds: ros.listMapper(ros.stringToRosTemplate)(properties.instanceIds),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudPhone::RunCommand`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `RunCommand` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-runcommand
+ */
+export class RosRunCommand extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CloudPhone::RunCommand";
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property command: The command to be executed.
+     * The maximum length of a command is 1024 bytes, and only supports lowercase letters, numbers, downline (_), points (.), Slanting (\/), colon (:), medium line (-).
+     */
+    public command: string | ros.IResolvable;
+
+    /**
+     * @Property instanceIds: ID of the instance executing the command.
+     * Range of n: 1 ~ 10
+     */
+    public instanceIds: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosRunCommandProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosRunCommand.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.command = props.command;
+        this.instanceIds = props.instanceIds;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            command: this.command,
+            instanceIds: this.instanceIds,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosRunCommandPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
 }

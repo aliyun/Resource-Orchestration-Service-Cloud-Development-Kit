@@ -148,7 +148,7 @@ function rosHiTSDBInstancePropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::TSDB::HiTSDBInstance`, which is used to create a Time Series Database (TSDB) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::TSDB::HiTSDBInstance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `HiTSDBInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-tsdb-hitsdbinstance
  */
@@ -363,7 +363,7 @@ function rosInfluxDBDatabasePropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::TSDB::InfluxDBDatabase`, which is used to create a Time Series Database (TSDB) database.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::TSDB::InfluxDBDatabase`.
  * @Note This class does not contain additional functions, so it is recommended to use the `InfluxDBDatabase` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-tsdb-influxdbdatabase
  */
@@ -522,7 +522,7 @@ function rosInfluxDBUserPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::TSDB::InfluxDBUser`, which is used to create a Time Series Database (TSDB) database account.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::TSDB::InfluxDBUser`.
  * @Note This class does not contain additional functions, so it is recommended to use the `InfluxDBUser` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-tsdb-influxdbuser
  */

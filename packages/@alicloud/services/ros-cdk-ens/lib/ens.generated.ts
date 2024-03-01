@@ -3,6 +3,142 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosDiskInstanceAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-diskinstanceattachment
+ */
+export interface RosDiskInstanceAttachmentProps {
+
+    /**
+     * @Property diskId: The ID of the cloud disk to be mounted. The Cloud Disk (DiskId) and the instance (InstanceId) must be on the same node.
+     */
+    readonly diskId: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: Instance ID.
+     */
+    readonly instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property deleteWithInstance: Whether the cloud disk to be mounted is released with the instance
+     * Value:
+     * true: When the instance is released, the cloud disk is released together with the instance.
+     * false: When the instance is released, the cloud disk is retained and is not released together with the instance.
+     *  Empty means false by default.
+     */
+    readonly deleteWithInstance?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosDiskInstanceAttachmentProps`
+ *
+ * @param properties - the TypeScript properties of a `RosDiskInstanceAttachmentProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosDiskInstanceAttachmentPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('deleteWithInstance', ros.validateString)(properties.deleteWithInstance));
+    errors.collect(ros.propertyValidator('diskId', ros.requiredValidator)(properties.diskId));
+    errors.collect(ros.propertyValidator('diskId', ros.validateString)(properties.diskId));
+    return errors.wrap('supplied properties not correct for "RosDiskInstanceAttachmentProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ENS::DiskInstanceAttachment` resource
+ *
+ * @param properties - the TypeScript properties of a `RosDiskInstanceAttachmentProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ENS::DiskInstanceAttachment` resource.
+ */
+// @ts-ignore TS6133
+function rosDiskInstanceAttachmentPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosDiskInstanceAttachmentPropsValidator(properties).assertSuccess();
+    }
+    return {
+      DiskId: ros.stringToRosTemplate(properties.diskId),
+      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+      DeleteWithInstance: ros.stringToRosTemplate(properties.deleteWithInstance),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::DiskInstanceAttachment`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DiskInstanceAttachment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-diskinstanceattachment
+ */
+export class RosDiskInstanceAttachment extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ENS::DiskInstanceAttachment";
+
+    /**
+     * @Attribute DiskId: The ID of the cloud disk to be mounted. The Cloud Disk (DiskId) and the instance (InstanceId) must be on the same node.
+     */
+    public readonly attrDiskId: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceId: Instance ID.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property diskId: The ID of the cloud disk to be mounted. The Cloud Disk (DiskId) and the instance (InstanceId) must be on the same node.
+     */
+    public diskId: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: Instance ID.
+     */
+    public instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property deleteWithInstance: Whether the cloud disk to be mounted is released with the instance
+     * Value:
+     * true: When the instance is released, the cloud disk is released together with the instance.
+     * false: When the instance is released, the cloud disk is retained and is not released together with the instance.
+     *  Empty means false by default.
+     */
+    public deleteWithInstance: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosDiskInstanceAttachmentProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosDiskInstanceAttachment.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDiskId = this.getAtt('DiskId');
+        this.attrInstanceId = this.getAtt('InstanceId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.diskId = props.diskId;
+        this.instanceId = props.instanceId;
+        this.deleteWithInstance = props.deleteWithInstance;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            diskId: this.diskId,
+            instanceId: this.instanceId,
+            deleteWithInstance: this.deleteWithInstance,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosDiskInstanceAttachmentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosInstance`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-instance
  */
@@ -187,7 +323,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Instance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Instance`, which is used to create an Edge Node Service (ENS) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-instance
  */
@@ -490,5 +626,118 @@ export class RosInstance extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosInstancePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosInstanceSecurityGroupAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-instancesecuritygroupattachment
+ */
+export interface RosInstanceSecurityGroupAttachmentProps {
+
+    /**
+     * @Property securityGroupId: Security group ID.
+     */
+    readonly securityGroupId: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: Instance ID.
+     */
+    readonly instanceId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosInstanceSecurityGroupAttachmentProps`
+ *
+ * @param properties - the TypeScript properties of a `RosInstanceSecurityGroupAttachmentProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstanceSecurityGroupAttachmentPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.requiredValidator)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    return errors.wrap('supplied properties not correct for "RosInstanceSecurityGroupAttachmentProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ENS::InstanceSecurityGroupAttachment` resource
+ *
+ * @param properties - the TypeScript properties of a `RosInstanceSecurityGroupAttachmentProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ENS::InstanceSecurityGroupAttachment` resource.
+ */
+// @ts-ignore TS6133
+function rosInstanceSecurityGroupAttachmentPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosInstanceSecurityGroupAttachmentPropsValidator(properties).assertSuccess();
+    }
+    return {
+      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
+      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::InstanceSecurityGroupAttachment`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `InstanceSecurityGroupAttachment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-instancesecuritygroupattachment
+ */
+export class RosInstanceSecurityGroupAttachment extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ENS::InstanceSecurityGroupAttachment";
+
+    /**
+     * @Attribute InstanceId: Instance ID.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute SecurityGroupId: Security group ID.
+     */
+    public readonly attrSecurityGroupId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property securityGroupId: Security group ID.
+     */
+    public securityGroupId: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: Instance ID.
+     */
+    public instanceId: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosInstanceSecurityGroupAttachmentProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosInstanceSecurityGroupAttachment.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrInstanceId = this.getAtt('InstanceId');
+        this.attrSecurityGroupId = this.getAtt('SecurityGroupId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.securityGroupId = props.securityGroupId;
+        this.instanceId = props.instanceId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            securityGroupId: this.securityGroupId,
+            instanceId: this.instanceId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosInstanceSecurityGroupAttachmentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }

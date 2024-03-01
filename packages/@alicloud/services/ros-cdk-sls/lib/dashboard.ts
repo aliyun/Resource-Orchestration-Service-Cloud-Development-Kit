@@ -44,6 +44,10 @@ export interface DashboardProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-dashboard
  */
 export class Dashboard extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DashboardProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DashboardName: Dashboard name.
@@ -62,6 +66,10 @@ export class Dashboard extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DashboardProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDashboard = new RosDashboard(this, id,  {
             dashboardName: props.dashboardName,

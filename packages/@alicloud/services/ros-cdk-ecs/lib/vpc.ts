@@ -75,6 +75,10 @@ export interface VPCProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-vpc
  */
 export class Vpc extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: VPCProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute RouteTableId: The router table id of created VPC.
@@ -98,6 +102,10 @@ export class Vpc extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: VPCProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosVPC = new RosVPC(this, id,  {
             ipv6Isp: props.ipv6Isp,

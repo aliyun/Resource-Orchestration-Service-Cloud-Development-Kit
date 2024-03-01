@@ -46,11 +46,15 @@ export interface Cluster2Props {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::EMR::Cluster2`ALIYUN::ENS::Instance is used to create an Edge Node Service (ENS) instance.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::EMR::Cluster2`, which is used to query E-MapReduce (EMR) clusters.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster2`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-emr-cluster2
  */
 export class Cluster2 extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: Cluster2Props;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterIds: The list of the cluster id.
@@ -69,6 +73,10 @@ export class Cluster2 extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: Cluster2Props = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCluster2 = new RosCluster2(this, id,  {
             paymentTypes: props.paymentTypes,

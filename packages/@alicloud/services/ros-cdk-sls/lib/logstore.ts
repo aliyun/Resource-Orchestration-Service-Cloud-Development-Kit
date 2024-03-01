@@ -80,6 +80,10 @@ export interface LogstoreProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-logstore
  */
 export class Logstore extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: LogstoreProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute LogstoreName: Logstore name.
@@ -93,6 +97,10 @@ export class Logstore extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: LogstoreProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosLogstore = new RosLogstore(this, id,  {
             logstoreName: props.logstoreName,

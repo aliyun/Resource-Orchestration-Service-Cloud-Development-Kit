@@ -48,7 +48,7 @@ function rosDefaultPatchBaselinePropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::DefaultPatchBaseline`, which is used to register a default patch baseline.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::DefaultPatchBaseline`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DefaultPatchBaseline` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-defaultpatchbaseline
  */
@@ -718,9 +718,44 @@ export interface RosPatchBaselineProps {
     readonly patchBaselineName: string | ros.IResolvable;
 
     /**
+     * @Property approvedPatches: Approved patch list.
+     */
+    readonly approvedPatches?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property approvedPatchesEnableNonSecurity: Approve whether the patch includes updates other than security.
+     */
+    readonly approvedPatchesEnableNonSecurity?: boolean | ros.IResolvable;
+
+    /**
      * @Property description: The description of the patch baseline.
      */
     readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property rejectedPatches: Rejected patch list.
+     */
+    readonly rejectedPatches?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property rejectedPatchesAction: The operation of rejecting the patch.
+     */
+    readonly rejectedPatchesAction?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: Resource group id
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property sources: Patch source configuration list.
+     */
+    readonly sources?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags of patch baseline.
+     */
+    readonly tags?: RosPatchBaseline.TagsProperty[];
 }
 
 /**
@@ -733,13 +768,27 @@ export interface RosPatchBaselineProps {
 function RosPatchBaselinePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('approvedPatches', ros.listValidator(ros.validateString))(properties.approvedPatches));
+    errors.collect(ros.propertyValidator('rejectedPatchesAction', ros.validateString)(properties.rejectedPatchesAction));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('patchBaselineName', ros.requiredValidator)(properties.patchBaselineName));
     errors.collect(ros.propertyValidator('patchBaselineName', ros.validateString)(properties.patchBaselineName));
+    errors.collect(ros.propertyValidator('approvedPatchesEnableNonSecurity', ros.validateBoolean)(properties.approvedPatchesEnableNonSecurity));
     errors.collect(ros.propertyValidator('operationSystem', ros.requiredValidator)(properties.operationSystem));
     errors.collect(ros.propertyValidator('operationSystem', ros.validateString)(properties.operationSystem));
     errors.collect(ros.propertyValidator('approvalRules', ros.requiredValidator)(properties.approvalRules));
     errors.collect(ros.propertyValidator('approvalRules', ros.hashValidator(ros.validateAny))(properties.approvalRules));
+    errors.collect(ros.propertyValidator('sources', ros.listValidator(ros.validateString))(properties.sources));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosPatchBaseline_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('rejectedPatches', ros.listValidator(ros.validateString))(properties.rejectedPatches));
     return errors.wrap('supplied properties not correct for "RosPatchBaselineProps"');
 }
 
@@ -760,7 +809,14 @@ function rosPatchBaselinePropsToRosTemplate(properties: any, enableResourcePrope
       ApprovalRules: ros.hashMapper(ros.objectToRosTemplate)(properties.approvalRules),
       OperationSystem: ros.stringToRosTemplate(properties.operationSystem),
       PatchBaselineName: ros.stringToRosTemplate(properties.patchBaselineName),
+      ApprovedPatches: ros.listMapper(ros.stringToRosTemplate)(properties.approvedPatches),
+      ApprovedPatchesEnableNonSecurity: ros.booleanToRosTemplate(properties.approvedPatchesEnableNonSecurity),
       Description: ros.stringToRosTemplate(properties.description),
+      RejectedPatches: ros.listMapper(ros.stringToRosTemplate)(properties.rejectedPatches),
+      RejectedPatchesAction: ros.stringToRosTemplate(properties.rejectedPatchesAction),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      Sources: ros.listMapper(ros.stringToRosTemplate)(properties.sources),
+      Tags: ros.listMapper(rosPatchBaselineTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -779,6 +835,16 @@ export class RosPatchBaseline extends ros.RosResource {
      * @Attribute ApprovalRules: The rules of scanning and installing patches for the specified operating system.
      */
     public readonly attrApprovalRules: ros.IResolvable;
+
+    /**
+     * @Attribute ApprovedPatches: Approved patch list.
+     */
+    public readonly attrApprovedPatches: ros.IResolvable;
+
+    /**
+     * @Attribute ApprovedPatchesEnableNonSecurity: Approve whether the patch includes updates other than security.
+     */
+    public readonly attrApprovedPatchesEnableNonSecurity: ros.IResolvable;
 
     /**
      * @Attribute CreateTime: The time when the patch baseline was created.
@@ -816,9 +882,34 @@ export class RosPatchBaseline extends ros.RosResource {
     public readonly attrPatchBaselineName: ros.IResolvable;
 
     /**
+     * @Attribute RejectedPatches: Reject the name of the patch.
+     */
+    public readonly attrRejectedPatches: ros.IResolvable;
+
+    /**
+     * @Attribute RejectedPatchesAction: The ID of the resource group.
+     */
+    public readonly attrRejectedPatchesAction: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: Approve whether the patch includes updates other than security
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
      * @Attribute ShareType: The share type of the patch baseline.
      */
     public readonly attrShareType: ros.IResolvable;
+
+    /**
+     * @Attribute Sources: Patch source configuration list.
+     */
+    public readonly attrSources: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: Tags of patch baseline.
+     */
+    public readonly attrTags: ros.IResolvable;
 
     /**
      * @Attribute UpdatedBy: The user who last modified the patch baseline.
@@ -849,9 +940,44 @@ export class RosPatchBaseline extends ros.RosResource {
     public patchBaselineName: string | ros.IResolvable;
 
     /**
+     * @Property approvedPatches: Approved patch list.
+     */
+    public approvedPatches: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property approvedPatchesEnableNonSecurity: Approve whether the patch includes updates other than security.
+     */
+    public approvedPatchesEnableNonSecurity: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property description: The description of the patch baseline.
      */
     public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property rejectedPatches: Rejected patch list.
+     */
+    public rejectedPatches: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property rejectedPatchesAction: The operation of rejecting the patch.
+     */
+    public rejectedPatchesAction: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: Resource group id
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property sources: Patch source configuration list.
+     */
+    public sources: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags of patch baseline.
+     */
+    public tags: RosPatchBaseline.TagsProperty[] | undefined;
 
     /**
      * @param scope - scope in which this resource is defined
@@ -861,6 +987,8 @@ export class RosPatchBaseline extends ros.RosResource {
     constructor(scope: ros.Construct, id: string, props: RosPatchBaselineProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosPatchBaseline.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrApprovalRules = this.getAtt('ApprovalRules');
+        this.attrApprovedPatches = this.getAtt('ApprovedPatches');
+        this.attrApprovedPatchesEnableNonSecurity = this.getAtt('ApprovedPatchesEnableNonSecurity');
         this.attrCreateTime = this.getAtt('CreateTime');
         this.attrCreatedBy = this.getAtt('CreatedBy');
         this.attrDescription = this.getAtt('Description');
@@ -868,7 +996,12 @@ export class RosPatchBaseline extends ros.RosResource {
         this.attrOperationSystem = this.getAtt('OperationSystem');
         this.attrPatchBaselineId = this.getAtt('PatchBaselineId');
         this.attrPatchBaselineName = this.getAtt('PatchBaselineName');
+        this.attrRejectedPatches = this.getAtt('RejectedPatches');
+        this.attrRejectedPatchesAction = this.getAtt('RejectedPatchesAction');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
         this.attrShareType = this.getAtt('ShareType');
+        this.attrSources = this.getAtt('Sources');
+        this.attrTags = this.getAtt('Tags');
         this.attrUpdatedBy = this.getAtt('UpdatedBy');
         this.attrUpdatedDate = this.getAtt('UpdatedDate');
 
@@ -876,7 +1009,14 @@ export class RosPatchBaseline extends ros.RosResource {
         this.approvalRules = props.approvalRules;
         this.operationSystem = props.operationSystem;
         this.patchBaselineName = props.patchBaselineName;
+        this.approvedPatches = props.approvedPatches;
+        this.approvedPatchesEnableNonSecurity = props.approvedPatchesEnableNonSecurity;
         this.description = props.description;
+        this.rejectedPatches = props.rejectedPatches;
+        this.rejectedPatchesAction = props.rejectedPatchesAction;
+        this.resourceGroupId = props.resourceGroupId;
+        this.sources = props.sources;
+        this.tags = props.tags;
     }
 
 
@@ -885,12 +1025,67 @@ export class RosPatchBaseline extends ros.RosResource {
             approvalRules: this.approvalRules,
             operationSystem: this.operationSystem,
             patchBaselineName: this.patchBaselineName,
+            approvedPatches: this.approvedPatches,
+            approvedPatchesEnableNonSecurity: this.approvedPatchesEnableNonSecurity,
             description: this.description,
+            rejectedPatches: this.rejectedPatches,
+            rejectedPatchesAction: this.rejectedPatchesAction,
+            resourceGroupId: this.resourceGroupId,
+            sources: this.sources,
+            tags: this.tags,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosPatchBaselinePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosPatchBaseline {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosPatchBaseline_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OOS::PatchBaseline.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OOS::PatchBaseline.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosPatchBaselineTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosPatchBaseline_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**
@@ -1202,6 +1397,228 @@ function rosSecretParameterTagsPropertyToRosTemplate(properties: any): any {
       Value: ros.stringToRosTemplate(properties.value),
       Key: ros.stringToRosTemplate(properties.key),
     };
+}
+
+/**
+ * Properties for defining a `RosStateConfiguration`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-stateconfiguration
+ */
+export interface RosStateConfigurationProps {
+
+    /**
+     * @Property scheduleExpression: The schedule expression. The interval between two schedules must be a minimum of 30 minutes.
+     */
+    readonly scheduleExpression: string | ros.IResolvable;
+
+    /**
+     * @Property scheduleType: The schedule type. Set the value to rate.
+     */
+    readonly scheduleType: string | ros.IResolvable;
+
+    /**
+     * @Property targets: The resources to be queried.
+     */
+    readonly targets: string | ros.IResolvable;
+
+    /**
+     * @Property templateName: The name of the template. The name must be 1 to 200 characters in length and can contain letters, digits, hyphens (-), and underscores (_).
+     */
+    readonly templateName: string | ros.IResolvable;
+
+    /**
+     * @Property configureMode: The configuration mode. Valid values: ApplyOnce: The configuration is applied only once. After a configuration is updated, the new configuration is applied. ApplyAndMonitor: The configuration is applied only once. After the configuration is applied, the system only checks whether the configuration is migrated in the future. ApplyAndAutoCorrect: The configuration is always applied.
+     */
+    readonly configureMode?: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the desired-state configuration.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property parameters: The parameters.
+     */
+    readonly parameters?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The resource group ID.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tag value and the key mapping, the label of the key number can be up to 20.
+     */
+    readonly tags?: { [key: string]: (any) };
+
+    /**
+     * @Property templateVersion: The version number of the template. If you do not specify this parameter, the latest version of the template is used.
+     */
+    readonly templateVersion?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosStateConfigurationProps`
+ *
+ * @param properties - the TypeScript properties of a `RosStateConfigurationProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosStateConfigurationPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('configureMode', ros.validateString)(properties.configureMode));
+    errors.collect(ros.propertyValidator('scheduleExpression', ros.requiredValidator)(properties.scheduleExpression));
+    errors.collect(ros.propertyValidator('scheduleExpression', ros.validateString)(properties.scheduleExpression));
+    errors.collect(ros.propertyValidator('scheduleType', ros.requiredValidator)(properties.scheduleType));
+    errors.collect(ros.propertyValidator('scheduleType', ros.validateString)(properties.scheduleType));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('parameters', ros.validateString)(properties.parameters));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('templateName', ros.requiredValidator)(properties.templateName));
+    errors.collect(ros.propertyValidator('templateName', ros.validateString)(properties.templateName));
+    errors.collect(ros.propertyValidator('templateVersion', ros.validateString)(properties.templateVersion));
+    errors.collect(ros.propertyValidator('targets', ros.requiredValidator)(properties.targets));
+    errors.collect(ros.propertyValidator('targets', ros.validateString)(properties.targets));
+    errors.collect(ros.propertyValidator('tags', ros.hashValidator(ros.validateAny))(properties.tags));
+    return errors.wrap('supplied properties not correct for "RosStateConfigurationProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OOS::StateConfiguration` resource
+ *
+ * @param properties - the TypeScript properties of a `RosStateConfigurationProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OOS::StateConfiguration` resource.
+ */
+// @ts-ignore TS6133
+function rosStateConfigurationPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosStateConfigurationPropsValidator(properties).assertSuccess();
+    }
+    return {
+      ScheduleExpression: ros.stringToRosTemplate(properties.scheduleExpression),
+      ScheduleType: ros.stringToRosTemplate(properties.scheduleType),
+      Targets: ros.stringToRosTemplate(properties.targets),
+      TemplateName: ros.stringToRosTemplate(properties.templateName),
+      ConfigureMode: ros.stringToRosTemplate(properties.configureMode),
+      Description: ros.stringToRosTemplate(properties.description),
+      Parameters: ros.stringToRosTemplate(properties.parameters),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      Tags: ros.hashMapper(ros.objectToRosTemplate)(properties.tags),
+      TemplateVersion: ros.stringToRosTemplate(properties.templateVersion),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::StateConfiguration`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `StateConfiguration` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-stateconfiguration
+ */
+export class RosStateConfiguration extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OOS::StateConfiguration";
+
+    /**
+     * @Attribute StateConfigurationId: The ID of the desired-state configuration.
+     */
+    public readonly attrStateConfigurationId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property scheduleExpression: The schedule expression. The interval between two schedules must be a minimum of 30 minutes.
+     */
+    public scheduleExpression: string | ros.IResolvable;
+
+    /**
+     * @Property scheduleType: The schedule type. Set the value to rate.
+     */
+    public scheduleType: string | ros.IResolvable;
+
+    /**
+     * @Property targets: The resources to be queried.
+     */
+    public targets: string | ros.IResolvable;
+
+    /**
+     * @Property templateName: The name of the template. The name must be 1 to 200 characters in length and can contain letters, digits, hyphens (-), and underscores (_).
+     */
+    public templateName: string | ros.IResolvable;
+
+    /**
+     * @Property configureMode: The configuration mode. Valid values: ApplyOnce: The configuration is applied only once. After a configuration is updated, the new configuration is applied. ApplyAndMonitor: The configuration is applied only once. After the configuration is applied, the system only checks whether the configuration is migrated in the future. ApplyAndAutoCorrect: The configuration is always applied.
+     */
+    public configureMode: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property description: The description of the desired-state configuration.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property parameters: The parameters.
+     */
+    public parameters: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The resource group ID.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tag value and the key mapping, the label of the key number can be up to 20.
+     */
+    public tags: { [key: string]: (any) } | undefined;
+
+    /**
+     * @Property templateVersion: The version number of the template. If you do not specify this parameter, the latest version of the template is used.
+     */
+    public templateVersion: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosStateConfigurationProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosStateConfiguration.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrStateConfigurationId = this.getAtt('StateConfigurationId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.scheduleExpression = props.scheduleExpression;
+        this.scheduleType = props.scheduleType;
+        this.targets = props.targets;
+        this.templateName = props.templateName;
+        this.configureMode = props.configureMode;
+        this.description = props.description;
+        this.parameters = props.parameters;
+        this.resourceGroupId = props.resourceGroupId;
+        this.tags = props.tags;
+        this.templateVersion = props.templateVersion;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            scheduleExpression: this.scheduleExpression,
+            scheduleType: this.scheduleType,
+            targets: this.targets,
+            templateName: this.templateName,
+            configureMode: this.configureMode,
+            description: this.description,
+            parameters: this.parameters,
+            resourceGroupId: this.resourceGroupId,
+            tags: this.tags,
+            templateVersion: this.templateVersion,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosStateConfigurationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
 }
 
 /**

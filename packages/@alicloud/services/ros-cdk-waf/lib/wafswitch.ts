@@ -41,6 +41,10 @@ export interface WafSwitchProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-wafswitch
  */
 export class WafSwitch extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: WafSwitchProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -49,6 +53,10 @@ export class WafSwitch extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: WafSwitchProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosWafSwitch = new RosWafSwitch(this, id,  {
             instanceId: props.instanceId,

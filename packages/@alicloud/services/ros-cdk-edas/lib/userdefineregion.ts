@@ -36,6 +36,10 @@ export interface UserDefineRegionProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-userdefineregion
  */
 export class UserDefineRegion extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: UserDefineRegionProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute BelongRegion: Under the physical region ID
@@ -69,6 +73,10 @@ export class UserDefineRegion extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: UserDefineRegionProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosUserDefineRegion = new RosUserDefineRegion(this, id,  {
             description: props.description,

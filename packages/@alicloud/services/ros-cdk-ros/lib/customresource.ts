@@ -50,11 +50,15 @@ export interface CustomResourceProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ROS::CustomResource`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ROS::CustomResource`, which is used to create a custom resource.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCustomResource`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-customresource
  */
 export class CustomResource extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: CustomResourceProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Outputs: Output data received from service provider.
@@ -68,6 +72,10 @@ export class CustomResource extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: CustomResourceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCustomResource = new RosCustomResource(this, id,  {
             serviceToken: props.serviceToken,

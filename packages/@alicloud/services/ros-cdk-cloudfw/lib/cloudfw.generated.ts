@@ -709,6 +709,435 @@ export class RosControlPolicy extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-instance
+ */
+export interface RosInstanceProps {
+
+    /**
+     * @Property payType: The billing method of the firewall instance. Valid values:
+     * PayAsYouGo: pay-as-you-go
+     * Subscription: subscription
+     */
+    readonly payType: string | ros.IResolvable;
+
+    /**
+     * @Property accountNum: The number of multi-account management and control is the number of member accounts that you need to uniformly control.
+     */
+    readonly accountNum?: number | ros.IResolvable;
+
+    /**
+     * @Property aclExtension: When the default access control authorization specifications of your version are not enough, you can purchase global extension specifications of access control. This extension supports shared occupancy with Internet and VPC boundary ACL specifications.
+     */
+    readonly aclExtension?: number | ros.IResolvable;
+
+    /**
+     * @Property autoPay: Whether to auto pay the bill.
+     */
+    readonly autoPay?: boolean | ros.IResolvable;
+
+    /**
+     * @Property autoRenew: Whether to auto renew the prepay instance.
+     */
+    readonly autoRenew?: boolean | ros.IResolvable;
+
+    /**
+     * @Property bandwidth: Public network processing capability. Valid values: 10 to 15000. Unit: Mbps.
+     */
+    readonly bandwidth?: number | ros.IResolvable;
+
+    /**
+     * @Property ignoreExisting: Whether to ignore existing cloud firewall instance
+     * False: ROS will perform a uniqueness check.If the cloud firewall instance exists, an error will be reported when creating it.
+     * True: ROS will not check the uniqueness.If the cloud firewall instance exists, the creation process will be ignored.
+     * If the cloud firewall instance is not created by ROS, it will be ignored during update and delete stage.
+     */
+    readonly ignoreExisting?: boolean | ros.IResolvable;
+
+    /**
+     * @Property ipNum: The number of public IPs that can be protected. Valid values: 20 to 4000.PremiumVersion: [20, 1000]
+     */
+    readonly ipNum?: number | ros.IResolvable;
+
+    /**
+     * @Property logAnalysis: The cloud firewall includes 7 days of free log storage and auditing by default. If you need longer storage time or meet the requirements for equal protection, it is recommended to purchase the log analysis service.
+     */
+    readonly logAnalysis?: boolean | ros.IResolvable;
+
+    /**
+     * @Property logStorage: Reference for purchasing storage capacity: 10M public network bandwidth, 6 months of log storage, recommended purchase of 1000GB log storage capacity
+     */
+    readonly logStorage?: number | ros.IResolvable;
+
+    /**
+     * @Property multiAccountManagement: Multiple accounts on the enterprise cloud can be managed centrally on the cloud firewall, including asset inventory, ACL policies, attack protection, log reports, etc. After the member account is managed by the current account, there will be no need to purchase it separately.
+     */
+    readonly multiAccountManagement?: boolean | ros.IResolvable;
+
+    /**
+     * @Property natBandwidth: The bandwidth of private network traffic processed by the NAT firewall. The premium version does not include it by default, the enterprise version has 10Mbps by default, and the ultimate version has 20Mbps by default.
+     */
+    readonly natBandwidth?: number | ros.IResolvable;
+
+    /**
+     * @Property natFirewallNum: The number of NAT gateway instances of the NAT firewall you need to enable. Each NAT gateway instance corresponds to one NAT firewall instance. The premium version does not include it by default, the enterprise version comes with 1 specification by default,and the ultimate version comes with 2 specifications by default.
+     */
+    readonly natFirewallNum?: number | ros.IResolvable;
+
+    /**
+     * @Property period: The subscription period of the firewallIf PeriodUnit is month, the valid range is 1, 3, 6
+     * If periodUnit is year, the valid range is 1, 2, 3
+     */
+    readonly period?: number | ros.IResolvable;
+
+    /**
+     * @Property periodUnit: The unit of the subscription duration. Valid values:
+     * Month
+     * Year
+     * Default value: Month.
+     */
+    readonly periodUnit?: string | ros.IResolvable;
+
+    /**
+     * @Property spec: The version of Cloud Firewall.
+     */
+    readonly spec?: string | ros.IResolvable;
+
+    /**
+     * @Property vpcBandwidth: VPC network processing capability. Valid values: 1000 to 15000. Unit: Mbps.
+     */
+    readonly vpcBandwidth?: number | ros.IResolvable;
+
+    /**
+     * @Property vpcFirewallNum: The number of protected VPCs. It will be ignored when spec = "premium_version". Valid values between 2 and 500.
+     */
+    readonly vpcFirewallNum?: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosInstanceProps`
+ *
+ * @param properties - the TypeScript properties of a `RosInstanceProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstancePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('ignoreExisting', ros.validateBoolean)(properties.ignoreExisting));
+    if(properties.vpcBandwidth && (typeof properties.vpcBandwidth) !== 'object') {
+        errors.collect(ros.propertyValidator('vpcBandwidth', ros.validateRange)({
+            data: properties.vpcBandwidth,
+            min: 1000,
+            max: 15000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('vpcBandwidth', ros.validateNumber)(properties.vpcBandwidth));
+    if(properties.aclExtension && (typeof properties.aclExtension) !== 'object') {
+        errors.collect(ros.propertyValidator('aclExtension', ros.validateRange)({
+            data: properties.aclExtension,
+            min: 0,
+            max: 50000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('aclExtension', ros.validateNumber)(properties.aclExtension));
+    if(properties.natFirewallNum && (typeof properties.natFirewallNum) !== 'object') {
+        errors.collect(ros.propertyValidator('natFirewallNum', ros.validateRange)({
+            data: properties.natFirewallNum,
+            min: 0,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('natFirewallNum', ros.validateNumber)(properties.natFirewallNum));
+    if(properties.natBandwidth && (typeof properties.natBandwidth) !== 'object') {
+        errors.collect(ros.propertyValidator('natBandwidth', ros.validateRange)({
+            data: properties.natBandwidth,
+            min: 0,
+            max: 1000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('natBandwidth', ros.validateNumber)(properties.natBandwidth));
+    if(properties.ipNum && (typeof properties.ipNum) !== 'object') {
+        errors.collect(ros.propertyValidator('ipNum', ros.validateRange)({
+            data: properties.ipNum,
+            min: 20,
+            max: 4000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('ipNum', ros.validateNumber)(properties.ipNum));
+    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
+          data: properties.period,
+          allowedValues: [1,2,3,6],
+        }));
+    }
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    errors.collect(ros.propertyValidator('payType', ros.requiredValidator)(properties.payType));
+    if(properties.payType && (typeof properties.payType) !== 'object') {
+        errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
+          data: properties.payType,
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
+    errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
+    if(properties.logStorage && (typeof properties.logStorage) !== 'object') {
+        errors.collect(ros.propertyValidator('logStorage', ros.validateRange)({
+            data: properties.logStorage,
+            min: 1000,
+            max: 500000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('logStorage', ros.validateNumber)(properties.logStorage));
+    errors.collect(ros.propertyValidator('logAnalysis', ros.validateBoolean)(properties.logAnalysis));
+    if(properties.vpcFirewallNum && (typeof properties.vpcFirewallNum) !== 'object') {
+        errors.collect(ros.propertyValidator('vpcFirewallNum', ros.validateRange)({
+            data: properties.vpcFirewallNum,
+            min: 2,
+            max: 500,
+          }));
+    }
+    errors.collect(ros.propertyValidator('vpcFirewallNum', ros.validateNumber)(properties.vpcFirewallNum));
+    errors.collect(ros.propertyValidator('accountNum', ros.validateNumber)(properties.accountNum));
+    errors.collect(ros.propertyValidator('multiAccountManagement', ros.validateBoolean)(properties.multiAccountManagement));
+    if(properties.bandwidth && (typeof properties.bandwidth) !== 'object') {
+        errors.collect(ros.propertyValidator('bandwidth', ros.validateRange)({
+            data: properties.bandwidth,
+            min: 10,
+            max: 15000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));
+    if(properties.spec && (typeof properties.spec) !== 'object') {
+        errors.collect(ros.propertyValidator('spec', ros.validateAllowedValues)({
+          data: properties.spec,
+          allowedValues: ["PremiumVersion","EnterpriseVersion","UltimateVersion"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('spec', ros.validateString)(properties.spec));
+    if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
+        errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
+          data: properties.periodUnit,
+          allowedValues: ["Month","Year"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
+    return errors.wrap('supplied properties not correct for "RosInstanceProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CLOUDFW::Instance` resource
+ *
+ * @param properties - the TypeScript properties of a `RosInstanceProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CLOUDFW::Instance` resource.
+ */
+// @ts-ignore TS6133
+function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosInstancePropsValidator(properties).assertSuccess();
+    }
+    return {
+      PayType: ros.stringToRosTemplate(properties.payType),
+      AccountNum: ros.numberToRosTemplate(properties.accountNum),
+      AclExtension: ros.numberToRosTemplate(properties.aclExtension),
+      AutoPay: ros.booleanToRosTemplate(properties.autoPay),
+      AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
+      Bandwidth: ros.numberToRosTemplate(properties.bandwidth),
+      IgnoreExisting: ros.booleanToRosTemplate(properties.ignoreExisting),
+      IpNum: ros.numberToRosTemplate(properties.ipNum),
+      LogAnalysis: ros.booleanToRosTemplate(properties.logAnalysis),
+      LogStorage: ros.numberToRosTemplate(properties.logStorage),
+      MultiAccountManagement: ros.booleanToRosTemplate(properties.multiAccountManagement),
+      NatBandwidth: ros.numberToRosTemplate(properties.natBandwidth),
+      NatFirewallNum: ros.numberToRosTemplate(properties.natFirewallNum),
+      Period: ros.numberToRosTemplate(properties.period),
+      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
+      Spec: ros.stringToRosTemplate(properties.spec),
+      VpcBandwidth: ros.numberToRosTemplate(properties.vpcBandwidth),
+      VpcFirewallNum: ros.numberToRosTemplate(properties.vpcFirewallNum),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::Instance`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-instance
+ */
+export class RosInstance extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CLOUDFW::Instance";
+
+    /**
+     * @Attribute InstanceId: Instance Id.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property payType: The billing method of the firewall instance. Valid values:
+     * PayAsYouGo: pay-as-you-go
+     * Subscription: subscription
+     */
+    public payType: string | ros.IResolvable;
+
+    /**
+     * @Property accountNum: The number of multi-account management and control is the number of member accounts that you need to uniformly control.
+     */
+    public accountNum: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property aclExtension: When the default access control authorization specifications of your version are not enough, you can purchase global extension specifications of access control. This extension supports shared occupancy with Internet and VPC boundary ACL specifications.
+     */
+    public aclExtension: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property autoPay: Whether to auto pay the bill.
+     */
+    public autoPay: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property autoRenew: Whether to auto renew the prepay instance.
+     */
+    public autoRenew: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property bandwidth: Public network processing capability. Valid values: 10 to 15000. Unit: Mbps.
+     */
+    public bandwidth: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property ignoreExisting: Whether to ignore existing cloud firewall instance
+     * False: ROS will perform a uniqueness check.If the cloud firewall instance exists, an error will be reported when creating it.
+     * True: ROS will not check the uniqueness.If the cloud firewall instance exists, the creation process will be ignored.
+     * If the cloud firewall instance is not created by ROS, it will be ignored during update and delete stage.
+     */
+    public ignoreExisting: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipNum: The number of public IPs that can be protected. Valid values: 20 to 4000.PremiumVersion: [20, 1000]
+     */
+    public ipNum: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property logAnalysis: The cloud firewall includes 7 days of free log storage and auditing by default. If you need longer storage time or meet the requirements for equal protection, it is recommended to purchase the log analysis service.
+     */
+    public logAnalysis: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property logStorage: Reference for purchasing storage capacity: 10M public network bandwidth, 6 months of log storage, recommended purchase of 1000GB log storage capacity
+     */
+    public logStorage: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property multiAccountManagement: Multiple accounts on the enterprise cloud can be managed centrally on the cloud firewall, including asset inventory, ACL policies, attack protection, log reports, etc. After the member account is managed by the current account, there will be no need to purchase it separately.
+     */
+    public multiAccountManagement: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property natBandwidth: The bandwidth of private network traffic processed by the NAT firewall. The premium version does not include it by default, the enterprise version has 10Mbps by default, and the ultimate version has 20Mbps by default.
+     */
+    public natBandwidth: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property natFirewallNum: The number of NAT gateway instances of the NAT firewall you need to enable. Each NAT gateway instance corresponds to one NAT firewall instance. The premium version does not include it by default, the enterprise version comes with 1 specification by default,and the ultimate version comes with 2 specifications by default.
+     */
+    public natFirewallNum: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property period: The subscription period of the firewallIf PeriodUnit is month, the valid range is 1, 3, 6
+     * If periodUnit is year, the valid range is 1, 2, 3
+     */
+    public period: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property periodUnit: The unit of the subscription duration. Valid values:
+     * Month
+     * Year
+     * Default value: Month.
+     */
+    public periodUnit: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property spec: The version of Cloud Firewall.
+     */
+    public spec: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property vpcBandwidth: VPC network processing capability. Valid values: 1000 to 15000. Unit: Mbps.
+     */
+    public vpcBandwidth: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property vpcFirewallNum: The number of protected VPCs. It will be ignored when spec = "premium_version". Valid values between 2 and 500.
+     */
+    public vpcFirewallNum: number | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosInstanceProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrInstanceId = this.getAtt('InstanceId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.payType = props.payType;
+        this.accountNum = props.accountNum;
+        this.aclExtension = props.aclExtension;
+        this.autoPay = props.autoPay;
+        this.autoRenew = props.autoRenew;
+        this.bandwidth = props.bandwidth;
+        this.ignoreExisting = props.ignoreExisting;
+        this.ipNum = props.ipNum;
+        this.logAnalysis = props.logAnalysis;
+        this.logStorage = props.logStorage;
+        this.multiAccountManagement = props.multiAccountManagement;
+        this.natBandwidth = props.natBandwidth;
+        this.natFirewallNum = props.natFirewallNum;
+        this.period = props.period;
+        this.periodUnit = props.periodUnit;
+        this.spec = props.spec;
+        this.vpcBandwidth = props.vpcBandwidth;
+        this.vpcFirewallNum = props.vpcFirewallNum;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            payType: this.payType,
+            accountNum: this.accountNum,
+            aclExtension: this.aclExtension,
+            autoPay: this.autoPay,
+            autoRenew: this.autoRenew,
+            bandwidth: this.bandwidth,
+            ignoreExisting: this.ignoreExisting,
+            ipNum: this.ipNum,
+            logAnalysis: this.logAnalysis,
+            logStorage: this.logStorage,
+            multiAccountManagement: this.multiAccountManagement,
+            natBandwidth: this.natBandwidth,
+            natFirewallNum: this.natFirewallNum,
+            period: this.period,
+            periodUnit: this.periodUnit,
+            spec: this.spec,
+            vpcBandwidth: this.vpcBandwidth,
+            vpcFirewallNum: this.vpcFirewallNum,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosInstancePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosVpcFirewallControlPolicy`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-vpcfirewallcontrolpolicy
  */

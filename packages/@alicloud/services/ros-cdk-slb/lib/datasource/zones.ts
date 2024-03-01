@@ -25,11 +25,15 @@ export interface ZonesProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::Zones`, which is used to query the zones in which Server Load Balancer (SLB) instances are deployed.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::Zones`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosZones`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-zones
  */
 export class Zones extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ZonesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ZoneIds: The list of The primary zone Ids.
@@ -48,6 +52,10 @@ export class Zones extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ZonesProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosZones = new RosZones(this, id,  {
             addressIpVersion: props.addressIpVersion,

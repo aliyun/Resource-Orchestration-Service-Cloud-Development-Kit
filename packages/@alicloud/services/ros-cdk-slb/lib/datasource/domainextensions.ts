@@ -27,11 +27,15 @@ export interface DomainExtensionsProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::DomainExtensions`, which is used to query the domain name extensions that are added to a listener of a Server Load Balancer (SLB) instance.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::DomainExtensions`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomainExtensions`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-domainextensions
  */
 export class DomainExtensions extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DomainExtensionsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DomainExtensionIds: The list of domain extension IDs.
@@ -50,6 +54,10 @@ export class DomainExtensions extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DomainExtensionsProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDomainExtensions = new RosDomainExtensions(this, id,  {
             listenerPort: props.listenerPort,

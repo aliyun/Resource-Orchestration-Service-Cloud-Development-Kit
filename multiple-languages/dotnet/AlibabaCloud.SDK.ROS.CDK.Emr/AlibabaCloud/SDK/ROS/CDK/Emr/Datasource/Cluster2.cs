@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Emr.Datasource
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::EMR::Cluster2`ALIYUN::ENS::Instance is used to create an Edge Node Service (ENS) instance.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::EMR::Cluster2`, which is used to query E-MapReduce (EMR) clusters.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster2`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-emr-cluster2
@@ -49,6 +49,34 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr.Datasource
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClusters
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
+        protected virtual bool EnableResourcePropertyConstraint
+        {
+            get => GetInstanceProperty<bool>()!;
+            set => SetInstanceProperty(value);
+        }
+
+        [JsiiProperty(name: "id", typeJson: "{\"primitive\":\"string\"}")]
+        protected virtual string Id
+        {
+            get => GetInstanceProperty<string>()!;
+            set => SetInstanceProperty(value);
+        }
+
+        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-emr.datasource.Cluster2Props\"}")]
+        protected virtual AlibabaCloud.SDK.ROS.CDK.Emr.Datasource.ICluster2Props Props
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Emr.Datasource.ICluster2Props>()!;
+            set => SetInstanceProperty(value);
+        }
+
+        [JsiiProperty(name: "scope", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}")]
+        protected virtual AlibabaCloud.SDK.ROS.CDK.Core.Construct Scope
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.Construct>()!;
+            set => SetInstanceProperty(value);
         }
     }
 }

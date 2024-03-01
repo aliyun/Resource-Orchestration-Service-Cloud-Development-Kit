@@ -57,6 +57,10 @@ export interface CommandProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-command
  */
 export class Command extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: CommandProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CommandId: The id of command created.
@@ -70,6 +74,10 @@ export class Command extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: CommandProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCommand = new RosCommand(this, id,  {
             workingDir: props.workingDir,

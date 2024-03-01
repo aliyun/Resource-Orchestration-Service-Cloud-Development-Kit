@@ -70,6 +70,10 @@ export interface LoadBalancerCloneProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-loadbalancerclone
  */
 export class LoadBalancerClone extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: LoadBalancerCloneProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute LoadBalancerId: The id of load balance generated
@@ -83,6 +87,10 @@ export class LoadBalancerClone extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: LoadBalancerCloneProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosLoadBalancerClone = new RosLoadBalancerClone(this, id,  {
             loadBalancerName: props.loadBalancerName,

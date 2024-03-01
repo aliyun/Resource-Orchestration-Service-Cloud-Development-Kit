@@ -247,6 +247,10 @@ export interface MultiZoneInstanceProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-lindorm-multizoneinstance
  */
 export class MultiZoneInstance extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: MultiZoneInstanceProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AuthInfos: The list of the Lindorm instance auth infos.
@@ -270,6 +274,10 @@ export class MultiZoneInstance extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: MultiZoneInstanceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosMultiZoneInstance = new RosMultiZoneInstance(this, id,  {
             standbyZoneId: props.standbyZoneId,

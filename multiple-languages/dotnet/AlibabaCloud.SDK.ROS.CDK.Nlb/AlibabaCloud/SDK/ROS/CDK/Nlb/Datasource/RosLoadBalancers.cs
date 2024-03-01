@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Nlb.Datasource
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `DATASOURCE::NLB::LoadBalancers`ALIYUN::NLPAUTOML::Dataset is used to create a dataset.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `DATASOURCE::NLB::LoadBalancers`, which is used to query the basic information about created Network Load Balancer (NLB) instances.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `LoadBalancers` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nlb-loadbalancers

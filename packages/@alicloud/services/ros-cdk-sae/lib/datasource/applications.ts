@@ -35,11 +35,15 @@ export interface ApplicationsProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::SAE::Applications`, which is used to query applications.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::SAE::Applications`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApplications`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-sae-applications
  */
 export class Applications extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ApplicationsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ApplicationIds: The list of application IDs.
@@ -58,6 +62,10 @@ export class Applications extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ApplicationsProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosApplications = new RosApplications(this, id,  {
             namespaceId: props.namespaceId,

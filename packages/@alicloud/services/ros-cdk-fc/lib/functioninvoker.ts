@@ -59,6 +59,10 @@ export interface FunctionInvokerProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-functioninvoker
  */
 export class FunctionInvoker extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: FunctionInvokerProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Result: Depends on result type:
@@ -83,6 +87,10 @@ Failure: Sync invoke fails.
      */
     constructor(scope: ros.Construct, id: string, props: FunctionInvokerProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosFunctionInvoker = new RosFunctionInvoker(this, id,  {
             functionName: props.functionName,

@@ -46,6 +46,10 @@ export interface ResourcePackageProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bss-resourcepackage
  */
 export class ResourcePackage extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ResourcePackageProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceId: The ID of the specified instance.
@@ -64,6 +68,10 @@ export class ResourcePackage extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ResourcePackageProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosResourcePackage = new RosResourcePackage(this, id,  {
             productCode: props.productCode,

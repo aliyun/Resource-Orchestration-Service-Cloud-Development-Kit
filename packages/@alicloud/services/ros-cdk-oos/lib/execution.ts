@@ -63,6 +63,10 @@ export interface ExecutionProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-execution
  */
 export class Execution extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ExecutionProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Counters: Task statistics: FailedTasks, SuccessTasks, TotalTasks.
@@ -118,6 +122,10 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
      */
     constructor(scope: ros.Construct, id: string, props: ExecutionProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosExecution = new RosExecution(this, id,  {
             parentExecutionId: props.parentExecutionId,

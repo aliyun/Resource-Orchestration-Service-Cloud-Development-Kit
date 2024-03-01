@@ -27,6 +27,10 @@ export interface BgpNetworkProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-bgpnetwork
  */
 export class BgpNetwork extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: BgpNetworkProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DstCidrBlock: The CIDR block of the virtual private cloud (VPC) or vSwitch that you want to connect
@@ -46,6 +50,10 @@ to a data center.
      */
     constructor(scope: ros.Construct, id: string, props: BgpNetworkProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosBgpNetwork = new RosBgpNetwork(this, id,  {
             dstCidrBlock: props.dstCidrBlock,

@@ -26,6 +26,10 @@ export interface DBClustersProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-clickhouse-dbclusters
  */
 export class DBClusters extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DBClustersProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DBClusterIds: The list of db cluster IDs.
@@ -44,6 +48,10 @@ export class DBClusters extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DBClustersProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDBClusters = new RosDBClusters(this, id,  {
             dbClusterName: props.dbClusterName,

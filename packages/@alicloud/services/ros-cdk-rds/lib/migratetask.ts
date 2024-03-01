@@ -68,6 +68,10 @@ export interface MigrateTaskProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-migratetask
  */
 export class MigrateTask extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: MigrateTaskProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DBName: The name of the database that you want to restore.
@@ -86,6 +90,10 @@ export class MigrateTask extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: MigrateTaskProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosMigrateTask = new RosMigrateTask(this, id,  {
             isOnlineDb: props.isOnlineDb,

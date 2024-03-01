@@ -113,6 +113,10 @@ export interface ControlPolicyProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-controlpolicy
  */
 export class ControlPolicy extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ControlPolicyProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AclUuid: Security access control ID that uniquely identifies the policy.
@@ -126,6 +130,10 @@ export class ControlPolicy extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ControlPolicyProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosControlPolicy = new RosControlPolicy(this, id,  {
             destination: props.destination,

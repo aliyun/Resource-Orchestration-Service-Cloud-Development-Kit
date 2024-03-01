@@ -31,6 +31,10 @@ export interface GlobalDatabaseNetworkProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-globaldatabasenetwork
  */
 export class GlobalDatabaseNetwork extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: GlobalDatabaseNetworkProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Connections: The information about the connection to the cluster.
@@ -74,6 +78,10 @@ export class GlobalDatabaseNetwork extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: GlobalDatabaseNetworkProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosGlobalDatabaseNetwork = new RosGlobalDatabaseNetwork(this, id,  {
             resourceGroupId: props.resourceGroupId,

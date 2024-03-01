@@ -39,6 +39,10 @@ export interface CommandsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-commands
  */
 export class Commands extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: CommandsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CommandIds: The list of command IDs.
@@ -57,6 +61,10 @@ export class Commands extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: CommandsProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCommands = new RosCommands(this, id,  {
             type: props.type,

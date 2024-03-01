@@ -1,3 +1,7 @@
+@alicloud/ros-cdk-computenest.IntranetConnectorEndpoint=com.aliyun.ros.cdk.computenest.IntranetConnectorEndpoint
+@alicloud/ros-cdk-computenest.IntranetConnectorEndpointProps=com.aliyun.ros.cdk.computenest.IntranetConnectorEndpointProps
+@alicloud/ros-cdk-computenest.RosIntranetConnectorEndpoint=com.aliyun.ros.cdk.computenest.RosIntranetConnectorEndpoint
+@alicloud/ros-cdk-computenest.RosIntranetConnectorEndpointProps=com.aliyun.ros.cdk.computenest.RosIntranetConnectorEndpointProps
 @alicloud/ros-cdk-computenest.RosServiceInstance=com.aliyun.ros.cdk.computenest.RosServiceInstance
 @alicloud/ros-cdk-computenest.RosServiceInstance.CommodityProperty=com.aliyun.ros.cdk.computenest.RosServiceInstance$CommodityProperty
 @alicloud/ros-cdk-computenest.RosServiceInstance.ServiceProperty=com.aliyun.ros.cdk.computenest.RosServiceInstance$ServiceProperty

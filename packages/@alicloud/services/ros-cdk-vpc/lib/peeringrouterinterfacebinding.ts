@@ -31,11 +31,15 @@ export interface PeeringRouterInterfaceBindingProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::PeeringRouterInterfaceBinding`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::PeeringRouterInterfaceBinding`, which is used to bind a router interface with another router interface.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPeeringRouterInterfaceBinding`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-peeringrouterinterfacebinding
  */
 export class PeeringRouterInterfaceBinding extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: PeeringRouterInterfaceBindingProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute RouterInterfaceId: The RouterInterface ID.
@@ -49,6 +53,10 @@ export class PeeringRouterInterfaceBinding extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: PeeringRouterInterfaceBindingProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosPeeringRouterInterfaceBinding = new RosPeeringRouterInterfaceBinding(this, id,  {
             oppositeInterfaceId: props.oppositeInterfaceId,

@@ -41,6 +41,10 @@ export interface DbVaultProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbvault
  */
 export class DbVault extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DbVaultProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Description: Description of the vault.
@@ -74,6 +78,10 @@ export class DbVault extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DbVaultProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDbVault = new RosDbVault(this, id,  {
             description: props.description,

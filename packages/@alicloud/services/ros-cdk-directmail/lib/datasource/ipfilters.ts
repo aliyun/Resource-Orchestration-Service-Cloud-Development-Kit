@@ -16,6 +16,10 @@ export interface IpfiltersProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-directmail-ipfilters
  */
 export class Ipfilters extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: IpfiltersProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute IpfilterIds: The list of ip filter IDs.
@@ -34,6 +38,10 @@ export class Ipfilters extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: IpfiltersProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosIpfilters = new RosIpfilters(this, id,  {
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

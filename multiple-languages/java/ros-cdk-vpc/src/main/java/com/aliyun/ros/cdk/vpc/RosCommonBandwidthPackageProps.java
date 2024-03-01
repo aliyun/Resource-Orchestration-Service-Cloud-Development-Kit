@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-commonbandwidthpackage
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:18.425Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:54.958Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosCommonBandwidthPackageProps")
 @software.amazon.jsii.Jsii.Proxy(RosCommonBandwidthPackageProps.Jsii$Proxy.class)
 public interface RosCommonBandwidthPackageProps extends software.amazon.jsii.JsiiSerializable {
@@ -13,6 +13,12 @@ public interface RosCommonBandwidthPackageProps extends software.amazon.jsii.Jsi
     /**
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getBandwidth();
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeletionProtection() {
+        return null;
+    }
 
     /**
      */
@@ -73,6 +79,7 @@ public interface RosCommonBandwidthPackageProps extends software.amazon.jsii.Jsi
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosCommonBandwidthPackageProps> {
         java.lang.Object bandwidth;
+        java.lang.Object deletionProtection;
         java.lang.Object description;
         java.lang.Object internetChargeType;
         java.lang.Object isp;
@@ -99,6 +106,26 @@ public interface RosCommonBandwidthPackageProps extends software.amazon.jsii.Jsi
          */
         public Builder bandwidth(com.aliyun.ros.cdk.core.IResolvable bandwidth) {
             this.bandwidth = bandwidth;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCommonBandwidthPackageProps#getDeletionProtection}
+         * @param deletionProtection the value to be set.
+         * @return {@code this}
+         */
+        public Builder deletionProtection(java.lang.Boolean deletionProtection) {
+            this.deletionProtection = deletionProtection;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCommonBandwidthPackageProps#getDeletionProtection}
+         * @param deletionProtection the value to be set.
+         * @return {@code this}
+         */
+        public Builder deletionProtection(com.aliyun.ros.cdk.core.IResolvable deletionProtection) {
+            this.deletionProtection = deletionProtection;
             return this;
         }
 
@@ -270,6 +297,7 @@ public interface RosCommonBandwidthPackageProps extends software.amazon.jsii.Jsi
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosCommonBandwidthPackageProps {
         private final java.lang.Object bandwidth;
+        private final java.lang.Object deletionProtection;
         private final java.lang.Object description;
         private final java.lang.Object internetChargeType;
         private final java.lang.Object isp;
@@ -286,6 +314,7 @@ public interface RosCommonBandwidthPackageProps extends software.amazon.jsii.Jsi
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.bandwidth = software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.isp = software.amazon.jsii.Kernel.get(this, "isp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -303,6 +332,7 @@ public interface RosCommonBandwidthPackageProps extends software.amazon.jsii.Jsi
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.bandwidth = java.util.Objects.requireNonNull(builder.bandwidth, "bandwidth is required");
+            this.deletionProtection = builder.deletionProtection;
             this.description = builder.description;
             this.internetChargeType = builder.internetChargeType;
             this.isp = builder.isp;
@@ -316,6 +346,11 @@ public interface RosCommonBandwidthPackageProps extends software.amazon.jsii.Jsi
         @Override
         public final java.lang.Object getBandwidth() {
             return this.bandwidth;
+        }
+
+        @Override
+        public final java.lang.Object getDeletionProtection() {
+            return this.deletionProtection;
         }
 
         @Override
@@ -365,6 +400,9 @@ public interface RosCommonBandwidthPackageProps extends software.amazon.jsii.Jsi
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
             data.set("bandwidth", om.valueToTree(this.getBandwidth()));
+            if (this.getDeletionProtection() != null) {
+                data.set("deletionProtection", om.valueToTree(this.getDeletionProtection()));
+            }
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
             }
@@ -408,6 +446,7 @@ public interface RosCommonBandwidthPackageProps extends software.amazon.jsii.Jsi
             RosCommonBandwidthPackageProps.Jsii$Proxy that = (RosCommonBandwidthPackageProps.Jsii$Proxy) o;
 
             if (!bandwidth.equals(that.bandwidth)) return false;
+            if (this.deletionProtection != null ? !this.deletionProtection.equals(that.deletionProtection) : that.deletionProtection != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.internetChargeType != null ? !this.internetChargeType.equals(that.internetChargeType) : that.internetChargeType != null) return false;
             if (this.isp != null ? !this.isp.equals(that.isp) : that.isp != null) return false;
@@ -421,6 +460,7 @@ public interface RosCommonBandwidthPackageProps extends software.amazon.jsii.Jsi
         @Override
         public final int hashCode() {
             int result = this.bandwidth.hashCode();
+            result = 31 * result + (this.deletionProtection != null ? this.deletionProtection.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.internetChargeType != null ? this.internetChargeType.hashCode() : 0);
             result = 31 * result + (this.isp != null ? this.isp.hashCode() : 0);

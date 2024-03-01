@@ -53,6 +53,10 @@ export interface BindingProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-binding
  */
 export class Binding extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: BindingProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -61,6 +65,10 @@ export class Binding extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: BindingProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosBinding = new RosBinding(this, id,  {
             argument: props.argument,

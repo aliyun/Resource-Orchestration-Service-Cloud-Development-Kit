@@ -32,6 +32,10 @@ export interface WaitOrderProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bss-waitorder
  */
 export class WaitOrder extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: WaitOrderProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -40,6 +44,10 @@ export class WaitOrder extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: WaitOrderProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosWaitOrder = new RosWaitOrder(this, id,  {
             cancelOnDelete: props.cancelOnDelete === undefined || props.cancelOnDelete === null ? true : props.cancelOnDelete,

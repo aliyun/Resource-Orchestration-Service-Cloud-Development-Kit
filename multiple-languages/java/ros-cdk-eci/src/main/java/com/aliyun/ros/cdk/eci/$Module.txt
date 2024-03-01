@@ -28,3 +28,11 @@
 @alicloud/ros-cdk-eci.RosImageCache=com.aliyun.ros.cdk.eci.RosImageCache
 @alicloud/ros-cdk-eci.RosImageCache.AcrRegistryInfoProperty=com.aliyun.ros.cdk.eci.RosImageCache$AcrRegistryInfoProperty
 @alicloud/ros-cdk-eci.RosImageCacheProps=com.aliyun.ros.cdk.eci.RosImageCacheProps
+@alicloud/ros-cdk-eci.datasource.ImageCache=com.aliyun.ros.cdk.eci.datasource.ImageCache
+@alicloud/ros-cdk-eci.datasource.ImageCacheProps=com.aliyun.ros.cdk.eci.datasource.ImageCacheProps
+@alicloud/ros-cdk-eci.datasource.ImageCaches=com.aliyun.ros.cdk.eci.datasource.ImageCaches
+@alicloud/ros-cdk-eci.datasource.ImageCachesProps=com.aliyun.ros.cdk.eci.datasource.ImageCachesProps
+@alicloud/ros-cdk-eci.datasource.RosImageCache=com.aliyun.ros.cdk.eci.datasource.RosImageCache
+@alicloud/ros-cdk-eci.datasource.RosImageCacheProps=com.aliyun.ros.cdk.eci.datasource.RosImageCacheProps
+@alicloud/ros-cdk-eci.datasource.RosImageCaches=com.aliyun.ros.cdk.eci.datasource.RosImageCaches
+@alicloud/ros-cdk-eci.datasource.RosImageCachesProps=com.aliyun.ros.cdk.eci.datasource.RosImageCachesProps

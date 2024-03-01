@@ -73,11 +73,15 @@ export interface InstanceClassesProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::REDIS::InstanceClasses`DATASOURCE::REDIS::Instances is used to query the information about ApsaraDB for Redis instances.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::REDIS::InstanceClasses`, which is used to query the types of ApsaraDB for Redis instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstanceClasses`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-instanceclasses
  */
 export class InstanceClasses extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: InstanceClassesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceClassIds: The list of db instance class ids.
@@ -96,6 +100,10 @@ export class InstanceClasses extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: InstanceClassesProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosInstanceClasses = new RosInstanceClasses(this, id,  {
             orderType: props.orderType,

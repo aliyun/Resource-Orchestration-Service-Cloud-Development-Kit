@@ -46,6 +46,10 @@ export interface AliasProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-alias
  */
 export class Alias extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AliasProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AliasName: The alias name
@@ -69,6 +73,10 @@ export class Alias extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AliasProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAlias = new RosAlias(this, id,  {
             versionId: props.versionId,

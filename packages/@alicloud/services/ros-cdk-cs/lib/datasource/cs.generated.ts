@@ -53,12 +53,6 @@ function RosClusterApplicationResourcesPropsValidator(properties: any): ros.Vali
     errors.collect(ros.propertyValidator('clusterId', ros.requiredValidator)(properties.clusterId));
     errors.collect(ros.propertyValidator('clusterId', ros.validateString)(properties.clusterId));
     errors.collect(ros.propertyValidator('kind', ros.requiredValidator)(properties.kind));
-    if(properties.kind && (typeof properties.kind) !== 'object') {
-        errors.collect(ros.propertyValidator('kind', ros.validateAllowedValues)({
-          data: properties.kind,
-          allowedValues: ["ConfigMap","Service","PodTemplate","Namespace","Secret","Node","ComponentStatus","ReplicationController","LimitRange","ResourceQuota","PersistentVolumeClaim","ServiceAccount","PersistentVolume","Endpoints","Binding","Pod","Event","Ingress"],
-        }));
-    }
     errors.collect(ros.propertyValidator('kind', ros.validateString)(properties.kind));
     errors.collect(ros.propertyValidator('jsonPath', ros.validateString)(properties.jsonPath));
     errors.collect(ros.propertyValidator('namespace', ros.validateString)(properties.namespace));
@@ -464,7 +458,7 @@ function rosKubernetesClusterPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CS::KubernetesCluster`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CS::KubernetesCluster`, which is used to query the information about a Container Service for Kubernetes (ACK) cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `KubernetesCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-kubernetescluster
  */

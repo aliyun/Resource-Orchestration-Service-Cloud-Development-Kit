@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::EIP::Addresses</code>, which is used to query the information about elastic IP addresses (EIPs).
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::EIP::Addresses</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:18.622Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:55.178Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.RosAddresses")
 public class RosAddresses extends com.aliyun.ros.cdk.core.RosResource {
 

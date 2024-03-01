@@ -141,6 +141,10 @@ export interface ReadOnlyDBInstanceProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-readonlydbinstance
  */
 export class ReadOnlyDBInstance extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ReadOnlyDBInstanceProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ConnectionString: DB instance connection url by Intranet.
@@ -164,6 +168,10 @@ export class ReadOnlyDBInstance extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ReadOnlyDBInstanceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosReadOnlyDBInstance = new RosReadOnlyDBInstance(this, id,  {
             periodType: props.periodType === undefined || props.periodType === null ? 'Month' : props.periodType,

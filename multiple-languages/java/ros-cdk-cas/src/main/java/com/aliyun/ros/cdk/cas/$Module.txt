@@ -1,4 +1,12 @@
 @alicloud/ros-cdk-cas.Certificate=com.aliyun.ros.cdk.cas.Certificate
 @alicloud/ros-cdk-cas.CertificateProps=com.aliyun.ros.cdk.cas.CertificateProps
+@alicloud/ros-cdk-cas.Order=com.aliyun.ros.cdk.cas.Order
+@alicloud/ros-cdk-cas.OrderProps=com.aliyun.ros.cdk.cas.OrderProps
 @alicloud/ros-cdk-cas.RosCertificate=com.aliyun.ros.cdk.cas.RosCertificate
 @alicloud/ros-cdk-cas.RosCertificateProps=com.aliyun.ros.cdk.cas.RosCertificateProps
+@alicloud/ros-cdk-cas.RosOrder=com.aliyun.ros.cdk.cas.RosOrder
+@alicloud/ros-cdk-cas.RosOrderProps=com.aliyun.ros.cdk.cas.RosOrderProps
+@alicloud/ros-cdk-cas.RosSslCertificate=com.aliyun.ros.cdk.cas.RosSslCertificate
+@alicloud/ros-cdk-cas.RosSslCertificateProps=com.aliyun.ros.cdk.cas.RosSslCertificateProps
+@alicloud/ros-cdk-cas.SslCertificate=com.aliyun.ros.cdk.cas.SslCertificate
+@alicloud/ros-cdk-cas.SslCertificateProps=com.aliyun.ros.cdk.cas.SslCertificateProps

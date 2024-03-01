@@ -42,11 +42,15 @@ export interface ProjectProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::MaxCompute::Project`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::MaxCompute::Project`, which is used to create a MaxCompute project.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosProject`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-maxcompute-project
  */
 export class Project extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ProjectProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Name: The name of the project.
@@ -60,6 +64,10 @@ export class Project extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ProjectProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosProject = new RosProject(this, id,  {
             comment: props.comment,

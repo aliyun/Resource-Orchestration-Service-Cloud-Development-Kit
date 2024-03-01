@@ -49,6 +49,10 @@ export interface IndexProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-index
  */
 export class Index extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: IndexProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -57,6 +61,10 @@ export class Index extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: IndexProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosIndex = new RosIndex(this, id,  {
             logstoreName: props.logstoreName,

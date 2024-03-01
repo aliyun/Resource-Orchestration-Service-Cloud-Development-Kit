@@ -67,6 +67,10 @@ export interface CopyImageProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-copyimage
  */
 export class CopyImage extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: CopyImageProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DestinationRegionId: ID of the region to where the destination custom image belongs.
@@ -90,6 +94,10 @@ export class CopyImage extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: CopyImageProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCopyImage = new RosCopyImage(this, id,  {
             sourceRegionId: props.sourceRegionId,

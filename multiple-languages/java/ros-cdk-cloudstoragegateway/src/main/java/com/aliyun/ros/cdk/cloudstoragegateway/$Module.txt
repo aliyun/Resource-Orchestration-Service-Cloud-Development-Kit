@@ -1,0 +1,4 @@
+@alicloud/ros-cdk-cloudstoragegateway.RosStorageBundle=com.aliyun.ros.cdk.cloudstoragegateway.RosStorageBundle
+@alicloud/ros-cdk-cloudstoragegateway.RosStorageBundleProps=com.aliyun.ros.cdk.cloudstoragegateway.RosStorageBundleProps
+@alicloud/ros-cdk-cloudstoragegateway.StorageBundle=com.aliyun.ros.cdk.cloudstoragegateway.StorageBundle
+@alicloud/ros-cdk-cloudstoragegateway.StorageBundleProps=com.aliyun.ros.cdk.cloudstoragegateway.StorageBundleProps

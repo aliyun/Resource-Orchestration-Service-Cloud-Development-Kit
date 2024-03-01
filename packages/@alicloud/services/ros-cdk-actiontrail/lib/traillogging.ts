@@ -26,6 +26,10 @@ export interface TrailLoggingProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-actiontrail-traillogging
  */
 export class TrailLogging extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: TrailLoggingProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute IsLogging: Indicates whether the trail is logging API invocations.
@@ -59,6 +63,10 @@ export class TrailLogging extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: TrailLoggingProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosTrailLogging = new RosTrailLogging(this, id,  {
             enable: props.enable,

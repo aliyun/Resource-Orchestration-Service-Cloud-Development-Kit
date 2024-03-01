@@ -23,14 +23,23 @@ export interface VServerGroupProps {
      * Property backendServers: The list of a combination of ECS Instance-Port-Weight.Same ecs instance with different port is allowed, but same ecs instance with same port isn't.
      */
     readonly backendServers?: Array<RosVServerGroup.BackendServersProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosVServerGroup.TagsProperty[];
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::VServerGroup`, which is used to create a vServer group and attach backend servers to a Server Load Balancer (SLB) instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::VServerGroup`, which is used to create a server group and attach backend servers to a Server Load Balancer (SLB) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVServerGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-vservergroup
  */
 export class VServerGroup extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: VServerGroupProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute BackendServers: Backend server list in this VServerGroup.
@@ -54,11 +63,16 @@ export class VServerGroup extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: VServerGroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosVServerGroup = new RosVServerGroup(this, id,  {
             vServerGroupName: props.vServerGroupName,
             loadBalancerId: props.loadBalancerId,
             backendServers: props.backendServers,
+            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosVServerGroup;
         this.attrBackendServers = rosVServerGroup.attrBackendServers;

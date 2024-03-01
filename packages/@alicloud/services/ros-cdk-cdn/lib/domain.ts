@@ -61,6 +61,10 @@ export interface DomainProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cdn-domain
  */
 export class Domain extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DomainProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Cname: The CNAME generated for the CDN domain.You must add a CNAME record with your DNS provider to map the CDN domain name to the CNAME.
@@ -79,6 +83,10 @@ export class Domain extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DomainProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDomain = new RosDomain(this, id,  {
             checkUrl: props.checkUrl,

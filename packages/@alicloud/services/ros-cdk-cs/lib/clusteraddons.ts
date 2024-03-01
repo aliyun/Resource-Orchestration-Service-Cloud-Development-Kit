@@ -27,6 +27,26 @@ export interface ClusterAddonsProps {
      * Default false.
      */
     readonly installedIgnore?: boolean | ros.IResolvable;
+
+    /**
+     * Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user. Valid values:
+     * - EnsureAdminRoleAndBinding: Automatically create a role named "ros:application-admin:${user-id}" with administrator permissions and bind it to the current user.
+     * - None: Do nothing.
+     * The default value is EnsureAdminRoleAndBinding.
+     */
+    readonly rolePolicy?: string | ros.IResolvable;
+
+    /**
+     * Property validationMode: Validation modes include:
+     * - Basic: basic validation, such as verifying the existence of a cluster.
+     * - Strict: in addition to basic validation, also validate the legality of WaitUntil.
+     */
+    readonly validationMode?: string | ros.IResolvable;
+
+    /**
+     * Property waitUntil: After starting a creation or update, wait until all conditions are met.
+     */
+    readonly waitUntil?: Array<RosClusterAddons.WaitUntilProperty | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
@@ -35,11 +55,20 @@ export interface ClusterAddonsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusteraddons
  */
 export class ClusterAddons extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ClusterAddonsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
-     * Attribute ClusterId: Cluster ID.
+     * Attribute ClusterId: The ID of the cluster.
      */
     public readonly attrClusterId: ros.IResolvable;
+
+    /**
+     * Attribute WaitUntilData: A list of values for each JsonPath in WaitUntil.
+     */
+    public readonly attrWaitUntilData: ros.IResolvable;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -48,13 +77,21 @@ export class ClusterAddons extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ClusterAddonsProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosClusterAddons = new RosClusterAddons(this, id,  {
+            rolePolicy: props.rolePolicy === undefined || props.rolePolicy === null ? 'EnsureAdminRoleAndBinding' : props.rolePolicy,
             clusterId: props.clusterId,
             addons: props.addons,
+            validationMode: props.validationMode === undefined || props.validationMode === null ? 'Strict' : props.validationMode,
+            waitUntil: props.waitUntil,
             installedIgnore: props.installedIgnore === undefined || props.installedIgnore === null ? false : props.installedIgnore,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosClusterAddons;
         this.attrClusterId = rosClusterAddons.attrClusterId;
+        this.attrWaitUntilData = rosClusterAddons.attrWaitUntilData;
     }
 }

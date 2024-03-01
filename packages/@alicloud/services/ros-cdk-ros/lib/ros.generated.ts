@@ -49,6 +49,10 @@ export interface RosAutoEnableServiceProps {
      * CDTCb: Cloud Data Transfer for Cross Border
      * TransitRouter: Cen Transit Router
      * PAI: Platform of Artificial Intelligence
+     * Config: Cloud Config
+     * TrustedService\/ROS: Trusted Service for ROS
+     * CloudSSO: Cloud SSO
+     *
      */
     readonly serviceName: string | ros.IResolvable;
 }
@@ -67,7 +71,7 @@ function RosAutoEnableServicePropsValidator(properties: any): ros.ValidationResu
     if(properties.serviceName && (typeof properties.serviceName) !== 'object') {
         errors.collect(ros.propertyValidator('serviceName', ros.validateAllowedValues)({
           data: properties.serviceName,
-          allowedValues: ["IOT","EMAS","MaxCompute","BatchCompute","IMM","Xtrace","DataWorks","FNF","FC","KMS","TransitRouter","PAI","CS","CR","DataHub","EDAS","CMS","RocketMQ","HBR","ApiGateway","NLP","SLS","NAS","CDTCb","OSS","MNS","TrafficMirror","ARMS","SAE","CloudStorageGateway","PrivateZone","DCDN","VS","CDT","AHAS","BrainIndustrial","OTS","CDN","PrivateLink"],
+          allowedValues: ["IOT","EMAS","MaxCompute","CloudSSO","Config","BatchCompute","IMM","Xtrace","DataWorks","FNF","FC","KMS","TransitRouter","PAI","CS","CR","DataHub","EDAS","CMS","RocketMQ","HBR","ApiGateway","NLP","SLS","NAS","CDTCb","OSS","MNS","TrafficMirror","ARMS","SAE","CloudStorageGateway","PrivateZone","DCDN","VS","CDT","AHAS","BrainIndustrial","OTS","CDN","PrivateLink","TrustedService/ROS"],
         }));
     }
     errors.collect(ros.propertyValidator('serviceName', ros.validateString)(properties.serviceName));
@@ -93,7 +97,7 @@ function rosAutoEnableServicePropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::AutoEnableService`ALIYUN::ROS::CustomResource is used to create a custom resource.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::AutoEnableService`, which is used to activate an Alibaba Cloud service.
  * @Note This class does not contain additional functions, so it is recommended to use the `AutoEnableService` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-autoenableservice
  */
@@ -147,6 +151,10 @@ export class RosAutoEnableService extends ros.RosResource {
      * CDTCb: Cloud Data Transfer for Cross Border
      * TransitRouter: Cen Transit Router
      * PAI: Platform of Artificial Intelligence
+     * Config: Cloud Config
+     * TrustedService\/ROS: Trusted Service for ROS
+     * CloudSSO: Cloud SSO
+     *
      */
     public serviceName: string | ros.IResolvable;
 
@@ -274,7 +282,7 @@ function rosCustomResourcePropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::CustomResource`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::CustomResource`, which is used to create a custom resource.
  * @Note This class does not contain additional functions, so it is recommended to use the `CustomResource` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-customresource
  */
@@ -667,7 +675,7 @@ function rosResourceCleanerPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::ResourceCleaner`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::ResourceCleaner`, which is used to create a resource cleaner.
  * @Note This class does not contain additional functions, so it is recommended to use the `ResourceCleaner` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-resourcecleaner
  */

@@ -36,6 +36,10 @@ export interface VpcAccessConfigProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-vpcaccessconfig
  */
 export class VpcAccessConfig extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: VpcAccessConfigProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -44,6 +48,10 @@ export class VpcAccessConfig extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: VpcAccessConfigProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosVpcAccessConfig = new RosVpcAccessConfig(this, id,  {
             vpcId: props.vpcId,

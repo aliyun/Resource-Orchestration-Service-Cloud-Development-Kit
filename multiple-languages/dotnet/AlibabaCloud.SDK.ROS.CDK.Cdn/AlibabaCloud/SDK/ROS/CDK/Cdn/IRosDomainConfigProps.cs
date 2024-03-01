@@ -21,12 +21,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: functions: function list, please refer to the CDN documentation for details.
+        /// <strong>Property</strong>: functionList: Function list. This property is required.
         /// </remarks>
-        [JsiiProperty(name: "functions", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object Functions
+        [JsiiProperty(name: "functionList", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cdn.RosDomainConfig.FunctionListProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? FunctionList
         {
-            get;
+            get
+            {
+                return null;
+            }
         }
 
         /// <summary>Properties for defining a `RosDomainConfig`.</summary>
@@ -50,12 +54,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: functions: function list, please refer to the CDN documentation for details.
+            /// <strong>Property</strong>: functionList: Function list. This property is required.
             /// </remarks>
-            [JsiiProperty(name: "functions", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object Functions
+            [JsiiOptional]
+            [JsiiProperty(name: "functionList", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cdn.RosDomainConfig.FunctionListProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? FunctionList
             {
-                get => GetInstanceProperty<object>()!;
+                get => GetInstanceProperty<object?>();
             }
         }
     }

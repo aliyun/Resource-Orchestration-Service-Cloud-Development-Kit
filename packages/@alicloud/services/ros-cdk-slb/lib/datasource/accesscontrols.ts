@@ -31,6 +31,10 @@ export interface AccessControlsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-accesscontrols
  */
 export class AccessControls extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AccessControlsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AccessControls: The list of access controls.
@@ -49,6 +53,10 @@ export class AccessControls extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AccessControlsProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAccessControls = new RosAccessControls(this, id,  {
             addressIpVersion: props.addressIpVersion,

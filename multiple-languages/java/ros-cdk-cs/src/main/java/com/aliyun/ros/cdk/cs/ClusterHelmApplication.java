@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CS::ClusterHelmApplication</code>, which is used to deploy an application by using Helm.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.578Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:50.924Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ClusterHelmApplication")
 public class ClusterHelmApplication extends com.aliyun.ros.cdk.core.Resource {
 
@@ -45,6 +45,45 @@ public class ClusterHelmApplication extends com.aliyun.ros.cdk.core.Resource {
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrClusterId() {
         return software.amazon.jsii.Kernel.get(this, "attrClusterId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute WaitUntilData: A list of values for each JsonPath in WaitUntil.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrWaitUntilData() {
+        return software.amazon.jsii.Kernel.get(this, "attrWaitUntilData", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
+        return software.amazon.jsii.Kernel.get(this, "enableResourcePropertyConstraint", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
+    }
+
+    protected void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
+    }
+
+    protected @org.jetbrains.annotations.NotNull java.lang.String getId() {
+        return software.amazon.jsii.Kernel.get(this, "id", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    }
+
+    protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
+    }
+
+    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cs.ClusterHelmApplicationProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cs.ClusterHelmApplicationProps.class));
+    }
+
+    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cs.ClusterHelmApplicationProps value) {
+        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
+    }
+
+    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {
+        return software.amazon.jsii.Kernel.get(this, "scope", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.Construct.class));
+    }
+
+    protected void setScope(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct value) {
+        software.amazon.jsii.Kernel.set(this, "scope", java.util.Objects.requireNonNull(value, "scope is required"));
     }
 
     /**
@@ -255,6 +294,56 @@ public class ClusterHelmApplication extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder rolePolicy(final com.aliyun.ros.cdk.core.IResolvable rolePolicy) {
             this.props.rolePolicy(rolePolicy);
+            return this;
+        }
+
+        /**
+         * Property validationMode: Validation modes include: - Basic: basic validation, such as verifying the existence of a cluster.
+         * <p>
+         * <ul>
+         * <li>Strict: in addition to basic validation, also validate the legality of WaitUntil.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param validationMode Property validationMode: Validation modes include: - Basic: basic validation, such as verifying the existence of a cluster. This parameter is required.
+         */
+        public Builder validationMode(final java.lang.String validationMode) {
+            this.props.validationMode(validationMode);
+            return this;
+        }
+        /**
+         * Property validationMode: Validation modes include: - Basic: basic validation, such as verifying the existence of a cluster.
+         * <p>
+         * <ul>
+         * <li>Strict: in addition to basic validation, also validate the legality of WaitUntil.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param validationMode Property validationMode: Validation modes include: - Basic: basic validation, such as verifying the existence of a cluster. This parameter is required.
+         */
+        public Builder validationMode(final com.aliyun.ros.cdk.core.IResolvable validationMode) {
+            this.props.validationMode(validationMode);
+            return this;
+        }
+
+        /**
+         * Property waitUntil: After starting a creation or update, wait until all conditions are met.
+         * <p>
+         * @return {@code this}
+         * @param waitUntil Property waitUntil: After starting a creation or update, wait until all conditions are met. This parameter is required.
+         */
+        public Builder waitUntil(final com.aliyun.ros.cdk.core.IResolvable waitUntil) {
+            this.props.waitUntil(waitUntil);
+            return this;
+        }
+        /**
+         * Property waitUntil: After starting a creation or update, wait until all conditions are met.
+         * <p>
+         * @return {@code this}
+         * @param waitUntil Property waitUntil: After starting a creation or update, wait until all conditions are met. This parameter is required.
+         */
+        public Builder waitUntil(final java.util.List<? extends java.lang.Object> waitUntil) {
+            this.props.waitUntil(waitUntil);
             return this;
         }
 

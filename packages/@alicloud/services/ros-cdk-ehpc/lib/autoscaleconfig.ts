@@ -111,6 +111,10 @@ export interface AutoScaleConfigProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-autoscaleconfig
  */
 export class AutoScaleConfig extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AutoScaleConfigProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterId: Cluster Id.
@@ -124,6 +128,10 @@ export class AutoScaleConfig extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AutoScaleConfigProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAutoScaleConfig = new RosAutoScaleConfig(this, id,  {
             extraNodesGrowRatio: props.extraNodesGrowRatio,

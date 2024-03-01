@@ -117,6 +117,10 @@ export interface LogtailConfigProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-logtailconfig
  */
 export class LogtailConfig extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: LogtailConfigProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AppliedMachineGroups: Applied machine groups.
@@ -140,6 +144,10 @@ export class LogtailConfig extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: LogtailConfigProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosLogtailConfig = new RosLogtailConfig(this, id,  {
             logtailConfigName: props.logtailConfigName,

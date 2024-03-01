@@ -26,6 +26,10 @@ export interface SerialNumberBindingProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-serialnumberbinding
  */
 export class SerialNumberBinding extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: SerialNumberBindingProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SmartAGId: The ID of the SAG instance.
@@ -39,6 +43,10 @@ export class SerialNumberBinding extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: SerialNumberBindingProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosSerialNumberBinding = new RosSerialNumberBinding(this, id,  {
             serialNumber: props.serialNumber,

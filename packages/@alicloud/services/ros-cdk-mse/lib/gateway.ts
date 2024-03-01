@@ -61,6 +61,10 @@ export interface GatewayProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-gateway
  */
 export class Gateway extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: GatewayProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute BackupVSwitchId: VSwitchId For Backup
@@ -104,6 +108,10 @@ export class Gateway extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: GatewayProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosGateway = new RosGateway(this, id,  {
             backupVSwitchId: props.backupVSwitchId,

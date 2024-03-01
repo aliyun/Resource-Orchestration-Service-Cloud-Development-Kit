@@ -21,11 +21,15 @@ export interface ACLAssociationProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::ACLAssociation`, which is used to associate an access control list (ACL) with a Smart Access Gateway (SAG) instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::ACLAssociation`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosACLAssociation`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-aclassociation
  */
 export class ACLAssociation extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ACLAssociationProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -34,6 +38,10 @@ export class ACLAssociation extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ACLAssociationProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosACLAssociation = new RosACLAssociation(this, id,  {
             aclId: props.aclId,

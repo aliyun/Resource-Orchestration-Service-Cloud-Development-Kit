@@ -31,6 +31,10 @@ export interface RetcodeAppProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-retcodeapp
  */
 export class RetcodeApp extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: RetcodeAppProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AppId: The ID of the application for which you created the browser monitoring job.
@@ -49,6 +53,10 @@ export class RetcodeApp extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: RetcodeAppProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosRetcodeApp = new RosRetcodeApp(this, id,  {
             retcodeAppType: props.retcodeAppType,

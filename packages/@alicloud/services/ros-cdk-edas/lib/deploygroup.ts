@@ -26,6 +26,10 @@ export interface DeployGroupProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-deploygroup
  */
 export class DeployGroup extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DeployGroupProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AppId: Application ID
@@ -49,6 +53,10 @@ export class DeployGroup extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DeployGroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDeployGroup = new RosDeployGroup(this, id,  {
             groupName: props.groupName,

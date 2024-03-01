@@ -36,6 +36,10 @@ export interface InstancesProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-paidswapi-instances
  */
 export class Instances extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: InstancesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceIds: The list of instance IDs.
@@ -54,6 +58,10 @@ export class Instances extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: InstancesProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosInstances = new RosInstances(this, id,  {
             instanceName: props.instanceName,

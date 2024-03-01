@@ -59,6 +59,10 @@ export interface StackProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-stack
  */
 export class Stack extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: StackProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -67,6 +71,10 @@ export class Stack extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: StackProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosStack = new RosStack(this, id,  {
             templateUrl: props.templateUrl,

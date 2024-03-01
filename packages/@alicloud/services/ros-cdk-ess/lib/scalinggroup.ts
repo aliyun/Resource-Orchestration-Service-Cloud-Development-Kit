@@ -233,6 +233,10 @@ export interface ScalingGroupProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroup
  */
 export class ScalingGroup extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ScalingGroupProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ScalingGroupId: Scaling group Id
@@ -251,6 +255,10 @@ export class ScalingGroup extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ScalingGroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosScalingGroup = new RosScalingGroup(this, id,  {
             spotInstanceRemedy: props.spotInstanceRemedy,

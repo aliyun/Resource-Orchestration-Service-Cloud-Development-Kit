@@ -27,11 +27,15 @@ export interface EditingProjectProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VOD::EditingProject`, which is used to create an online editing project.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VOD::EditingProject`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEditingProject`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vod-editingproject
  */
 export class EditingProject extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: EditingProjectProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CreateTime: The time when the online editing project was created.
@@ -72,6 +76,10 @@ The time follows the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format. The t
      */
     constructor(scope: ros.Construct, id: string, props: EditingProjectProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosEditingProject = new RosEditingProject(this, id,  {
             editingProjectName: props.editingProjectName,

@@ -34,6 +34,10 @@ export interface VpcEndpointServiceAttachmentProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpointserviceattachment
  */
 export class VpcEndpointServiceAttachment extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: VpcEndpointServiceAttachmentProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ResourceId: The resource id.
@@ -57,6 +61,10 @@ export class VpcEndpointServiceAttachment extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: VpcEndpointServiceAttachmentProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosVpcEndpointServiceAttachment = new RosVpcEndpointServiceAttachment(this, id,  {
             resourceId: props.resourceId,

@@ -76,6 +76,10 @@ export interface BandwidthPackageProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-bandwidthpackage
  */
 export class BandwidthPackage extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: BandwidthPackageProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AutoPay: The AutoPay of the bandwidth
@@ -149,6 +153,10 @@ export class BandwidthPackage extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: BandwidthPackageProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosBandwidthPackage = new RosBandwidthPackage(this, id,  {
             bandwidthType: props.bandwidthType,

@@ -26,6 +26,10 @@ export interface AccountsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-accounts
  */
 export class Accounts extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AccountsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AccountNames: The list of The RDS account names.
@@ -44,6 +48,10 @@ export class Accounts extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AccountsProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAccounts = new RosAccounts(this, id,  {
             dbInstanceId: props.dbInstanceId,

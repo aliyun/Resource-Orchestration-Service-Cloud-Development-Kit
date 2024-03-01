@@ -153,7 +153,7 @@ function rosAppSecretPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::AppSecret`ALIYUN::RAM::ManagedPolicy is used to create a Resource Access Management (RAM) policy.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::AppSecret`, which is used to create an application secret.
  * @Note This class does not contain additional functions, so it is recommended to use the `AppSecret` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-appsecret
  */
@@ -359,7 +359,7 @@ function rosApplicationPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::Application`ALIYUN::RAM::Group is used to create a Resource Access Management (RAM) user group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::Application`, which is used to create an application.
  * @Note This class does not contain additional functions, so it is recommended to use the `Application` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-application
  */
@@ -827,7 +827,7 @@ function rosGroupPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::Group`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::Group`, which is used to create a Resource Access Management (RAM) user group.
  * @Note This class does not contain additional functions, so it is recommended to use the `Group` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-group
  */
@@ -1257,7 +1257,7 @@ function rosManagedPolicyPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::ManagedPolicy`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::ManagedPolicy`, which is used to create a Resource Access Management (RAM) policy.
  * @Note This class does not contain additional functions, so it is recommended to use the `ManagedPolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-managedpolicy
  */
@@ -2385,12 +2385,20 @@ export interface RosSAMLProviderProps {
     readonly description?: string | ros.IResolvable;
 
     /**
-     * @Property samlMetadataDocument: SAML metadata document. The content must be 1 to 102,400 bytes in length.You must specify one of the SAMLMetadataDocument and SAMLMetadataDocumentURL properties, but you cannot specify both of them.
+     * @Property encodedSamlMetadataDocument: SAML metadata document.Base64 encoded. Provided by an identity provider that supports the SAML2.0 protocol.
+     * Only one of the three properties SAMLMetadataDocument, SAMLMetadataDocumentURL, EncodedSAMLMetadataDocument can be set.
+     */
+    readonly encodedSamlMetadataDocument?: string | ros.IResolvable;
+
+    /**
+     * @Property samlMetadataDocument: SAML metadata document. The content must be 1 to 102,400 bytes in length.
+     * Only one of the three properties SAMLMetadataDocument, SAMLMetadataDocumentURL, EncodedSAMLMetadataDocument can be set.
      */
     readonly samlMetadataDocument?: string | ros.IResolvable;
 
     /**
      * @Property samlMetadataDocumentUrl: The URL for the file that contains the SAML metadata document. The URL must point to a document located in an HTTP or HTTPS web server or an Alibaba Cloud OSS bucket. Examples: oss:\/\/ros\/document\/demo and oss:\/\/ros\/document\/demo?RegionId=cn-hangzhou. The URL can be up to 1,024 bytes in length.
+     * Only one of the three properties SAMLMetadataDocument, SAMLMetadataDocumentURL, EncodedSAMLMetadataDocument can be set.
      */
     readonly samlMetadataDocumentUrl?: string | ros.IResolvable;
 }
@@ -2430,6 +2438,14 @@ function RosSAMLProviderPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('samlMetadataDocumentUrl', ros.validateString)(properties.samlMetadataDocumentUrl));
+    if(properties.encodedSamlMetadataDocument && (Array.isArray(properties.encodedSamlMetadataDocument) || (typeof properties.encodedSamlMetadataDocument) === 'string')) {
+        errors.collect(ros.propertyValidator('encodedSamlMetadataDocument', ros.validateLength)({
+            data: properties.encodedSamlMetadataDocument.length,
+            min: undefined,
+            max: 102400,
+          }));
+    }
+    errors.collect(ros.propertyValidator('encodedSamlMetadataDocument', ros.validateString)(properties.encodedSamlMetadataDocument));
     if(properties.samlMetadataDocument && (Array.isArray(properties.samlMetadataDocument) || (typeof properties.samlMetadataDocument) === 'string')) {
         errors.collect(ros.propertyValidator('samlMetadataDocument', ros.validateLength)({
             data: properties.samlMetadataDocument.length,
@@ -2457,6 +2473,7 @@ function rosSAMLProviderPropsToRosTemplate(properties: any, enableResourceProper
     return {
       SAMLProviderName: ros.stringToRosTemplate(properties.samlProviderName),
       Description: ros.stringToRosTemplate(properties.description),
+      EncodedSAMLMetadataDocument: ros.stringToRosTemplate(properties.encodedSamlMetadataDocument),
       SAMLMetadataDocument: ros.stringToRosTemplate(properties.samlMetadataDocument),
       SAMLMetadataDocumentURL: ros.stringToRosTemplate(properties.samlMetadataDocumentUrl),
     };
@@ -2497,12 +2514,20 @@ export class RosSAMLProvider extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * @Property samlMetadataDocument: SAML metadata document. The content must be 1 to 102,400 bytes in length.You must specify one of the SAMLMetadataDocument and SAMLMetadataDocumentURL properties, but you cannot specify both of them.
+     * @Property encodedSamlMetadataDocument: SAML metadata document.Base64 encoded. Provided by an identity provider that supports the SAML2.0 protocol.
+     * Only one of the three properties SAMLMetadataDocument, SAMLMetadataDocumentURL, EncodedSAMLMetadataDocument can be set.
+     */
+    public encodedSamlMetadataDocument: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property samlMetadataDocument: SAML metadata document. The content must be 1 to 102,400 bytes in length.
+     * Only one of the three properties SAMLMetadataDocument, SAMLMetadataDocumentURL, EncodedSAMLMetadataDocument can be set.
      */
     public samlMetadataDocument: string | ros.IResolvable | undefined;
 
     /**
      * @Property samlMetadataDocumentUrl: The URL for the file that contains the SAML metadata document. The URL must point to a document located in an HTTP or HTTPS web server or an Alibaba Cloud OSS bucket. Examples: oss:\/\/ros\/document\/demo and oss:\/\/ros\/document\/demo?RegionId=cn-hangzhou. The URL can be up to 1,024 bytes in length.
+     * Only one of the three properties SAMLMetadataDocument, SAMLMetadataDocumentURL, EncodedSAMLMetadataDocument can be set.
      */
     public samlMetadataDocumentUrl: string | ros.IResolvable | undefined;
 
@@ -2519,6 +2544,7 @@ export class RosSAMLProvider extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.samlProviderName = props.samlProviderName;
         this.description = props.description;
+        this.encodedSamlMetadataDocument = props.encodedSamlMetadataDocument;
         this.samlMetadataDocument = props.samlMetadataDocument;
         this.samlMetadataDocumentUrl = props.samlMetadataDocumentUrl;
     }
@@ -2528,6 +2554,7 @@ export class RosSAMLProvider extends ros.RosResource {
         return {
             samlProviderName: this.samlProviderName,
             description: this.description,
+            encodedSamlMetadataDocument: this.encodedSamlMetadataDocument,
             samlMetadataDocument: this.samlMetadataDocument,
             samlMetadataDocumentUrl: this.samlMetadataDocumentUrl,
         };

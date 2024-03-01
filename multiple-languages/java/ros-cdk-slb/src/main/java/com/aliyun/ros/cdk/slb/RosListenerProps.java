@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.slb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-listener
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:18.086Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:54.614Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosListenerProps")
 @software.amazon.jsii.Jsii.Proxy(RosListenerProps.Jsii$Proxy.class)
 public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable {
@@ -59,6 +59,18 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCaCertificateId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getConnectionDrain() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getConnectionDrainTimeout() {
         return null;
     }
 
@@ -118,6 +130,12 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getProxyProtocolV2Enabled() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRequestTimeout() {
         return null;
     }
@@ -137,6 +155,12 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getStartListener() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.slb.RosListener.TagsProperty> getTags() {
         return null;
     }
 
@@ -172,6 +196,8 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object aclType;
         java.lang.Object backendServerPort;
         java.lang.Object caCertificateId;
+        java.lang.Object connectionDrain;
+        java.lang.Object connectionDrainTimeout;
         java.lang.Object description;
         java.lang.Object enableHttp2;
         java.lang.Object gzip;
@@ -181,10 +207,12 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object masterSlaveServerGroupId;
         java.lang.Object persistence;
         java.lang.Object portRange;
+        java.lang.Object proxyProtocolV2Enabled;
         java.lang.Object requestTimeout;
         java.lang.Object scheduler;
         java.lang.Object serverCertificateId;
         java.lang.Object startListener;
+        java.util.List<com.aliyun.ros.cdk.slb.RosListener.TagsProperty> tags;
         java.lang.Object tlsCipherPolicy;
         java.lang.Object vServerGroupId;
 
@@ -389,6 +417,46 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosListenerProps#getConnectionDrain}
+         * @param connectionDrain the value to be set.
+         * @return {@code this}
+         */
+        public Builder connectionDrain(java.lang.String connectionDrain) {
+            this.connectionDrain = connectionDrain;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosListenerProps#getConnectionDrain}
+         * @param connectionDrain the value to be set.
+         * @return {@code this}
+         */
+        public Builder connectionDrain(com.aliyun.ros.cdk.core.IResolvable connectionDrain) {
+            this.connectionDrain = connectionDrain;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosListenerProps#getConnectionDrainTimeout}
+         * @param connectionDrainTimeout the value to be set.
+         * @return {@code this}
+         */
+        public Builder connectionDrainTimeout(java.lang.Number connectionDrainTimeout) {
+            this.connectionDrainTimeout = connectionDrainTimeout;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosListenerProps#getConnectionDrainTimeout}
+         * @param connectionDrainTimeout the value to be set.
+         * @return {@code this}
+         */
+        public Builder connectionDrainTimeout(com.aliyun.ros.cdk.core.IResolvable connectionDrainTimeout) {
+            this.connectionDrainTimeout = connectionDrainTimeout;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosListenerProps#getDescription}
          * @param description the value to be set.
          * @return {@code this}
@@ -569,6 +637,26 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosListenerProps#getProxyProtocolV2Enabled}
+         * @param proxyProtocolV2Enabled the value to be set.
+         * @return {@code this}
+         */
+        public Builder proxyProtocolV2Enabled(java.lang.Boolean proxyProtocolV2Enabled) {
+            this.proxyProtocolV2Enabled = proxyProtocolV2Enabled;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosListenerProps#getProxyProtocolV2Enabled}
+         * @param proxyProtocolV2Enabled the value to be set.
+         * @return {@code this}
+         */
+        public Builder proxyProtocolV2Enabled(com.aliyun.ros.cdk.core.IResolvable proxyProtocolV2Enabled) {
+            this.proxyProtocolV2Enabled = proxyProtocolV2Enabled;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosListenerProps#getRequestTimeout}
          * @param requestTimeout the value to be set.
          * @return {@code this}
@@ -649,6 +737,17 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosListenerProps#getTags}
+         * @param tags the value to be set.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.slb.RosListener.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.slb.RosListener.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosListenerProps#getTlsCipherPolicy}
          * @param tlsCipherPolicy the value to be set.
          * @return {@code this}
@@ -714,6 +813,8 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object aclType;
         private final java.lang.Object backendServerPort;
         private final java.lang.Object caCertificateId;
+        private final java.lang.Object connectionDrain;
+        private final java.lang.Object connectionDrainTimeout;
         private final java.lang.Object description;
         private final java.lang.Object enableHttp2;
         private final java.lang.Object gzip;
@@ -723,10 +824,12 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object masterSlaveServerGroupId;
         private final java.lang.Object persistence;
         private final java.lang.Object portRange;
+        private final java.lang.Object proxyProtocolV2Enabled;
         private final java.lang.Object requestTimeout;
         private final java.lang.Object scheduler;
         private final java.lang.Object serverCertificateId;
         private final java.lang.Object startListener;
+        private final java.util.List<com.aliyun.ros.cdk.slb.RosListener.TagsProperty> tags;
         private final java.lang.Object tlsCipherPolicy;
         private final java.lang.Object vServerGroupId;
 
@@ -746,6 +849,8 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             this.aclType = software.amazon.jsii.Kernel.get(this, "aclType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.backendServerPort = software.amazon.jsii.Kernel.get(this, "backendServerPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.caCertificateId = software.amazon.jsii.Kernel.get(this, "caCertificateId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.connectionDrain = software.amazon.jsii.Kernel.get(this, "connectionDrain", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.connectionDrainTimeout = software.amazon.jsii.Kernel.get(this, "connectionDrainTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enableHttp2 = software.amazon.jsii.Kernel.get(this, "enableHttp2", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.gzip = software.amazon.jsii.Kernel.get(this, "gzip", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -755,10 +860,12 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             this.masterSlaveServerGroupId = software.amazon.jsii.Kernel.get(this, "masterSlaveServerGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.persistence = software.amazon.jsii.Kernel.get(this, "persistence", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.portRange = software.amazon.jsii.Kernel.get(this, "portRange", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.proxyProtocolV2Enabled = software.amazon.jsii.Kernel.get(this, "proxyProtocolV2Enabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.requestTimeout = software.amazon.jsii.Kernel.get(this, "requestTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.scheduler = software.amazon.jsii.Kernel.get(this, "scheduler", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serverCertificateId = software.amazon.jsii.Kernel.get(this, "serverCertificateId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.startListener = software.amazon.jsii.Kernel.get(this, "startListener", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.slb.RosListener.TagsProperty.class)));
             this.tlsCipherPolicy = software.amazon.jsii.Kernel.get(this, "tlsCipherPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vServerGroupId = software.amazon.jsii.Kernel.get(this, "vServerGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -766,6 +873,7 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
+        @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.bandwidth = java.util.Objects.requireNonNull(builder.bandwidth, "bandwidth is required");
@@ -778,6 +886,8 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             this.aclType = builder.aclType;
             this.backendServerPort = builder.backendServerPort;
             this.caCertificateId = builder.caCertificateId;
+            this.connectionDrain = builder.connectionDrain;
+            this.connectionDrainTimeout = builder.connectionDrainTimeout;
             this.description = builder.description;
             this.enableHttp2 = builder.enableHttp2;
             this.gzip = builder.gzip;
@@ -787,10 +897,12 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             this.masterSlaveServerGroupId = builder.masterSlaveServerGroupId;
             this.persistence = builder.persistence;
             this.portRange = builder.portRange;
+            this.proxyProtocolV2Enabled = builder.proxyProtocolV2Enabled;
             this.requestTimeout = builder.requestTimeout;
             this.scheduler = builder.scheduler;
             this.serverCertificateId = builder.serverCertificateId;
             this.startListener = builder.startListener;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.slb.RosListener.TagsProperty>)builder.tags;
             this.tlsCipherPolicy = builder.tlsCipherPolicy;
             this.vServerGroupId = builder.vServerGroupId;
         }
@@ -846,6 +958,16 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.lang.Object getConnectionDrain() {
+            return this.connectionDrain;
+        }
+
+        @Override
+        public final java.lang.Object getConnectionDrainTimeout() {
+            return this.connectionDrainTimeout;
+        }
+
+        @Override
         public final java.lang.Object getDescription() {
             return this.description;
         }
@@ -891,6 +1013,11 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.lang.Object getProxyProtocolV2Enabled() {
+            return this.proxyProtocolV2Enabled;
+        }
+
+        @Override
         public final java.lang.Object getRequestTimeout() {
             return this.requestTimeout;
         }
@@ -908,6 +1035,11 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         @Override
         public final java.lang.Object getStartListener() {
             return this.startListener;
+        }
+
+        @Override
+        public final java.util.List<com.aliyun.ros.cdk.slb.RosListener.TagsProperty> getTags() {
+            return this.tags;
         }
 
         @Override
@@ -948,6 +1080,12 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getCaCertificateId() != null) {
                 data.set("caCertificateId", om.valueToTree(this.getCaCertificateId()));
             }
+            if (this.getConnectionDrain() != null) {
+                data.set("connectionDrain", om.valueToTree(this.getConnectionDrain()));
+            }
+            if (this.getConnectionDrainTimeout() != null) {
+                data.set("connectionDrainTimeout", om.valueToTree(this.getConnectionDrainTimeout()));
+            }
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
             }
@@ -975,6 +1113,9 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getPortRange() != null) {
                 data.set("portRange", om.valueToTree(this.getPortRange()));
             }
+            if (this.getProxyProtocolV2Enabled() != null) {
+                data.set("proxyProtocolV2Enabled", om.valueToTree(this.getProxyProtocolV2Enabled()));
+            }
             if (this.getRequestTimeout() != null) {
                 data.set("requestTimeout", om.valueToTree(this.getRequestTimeout()));
             }
@@ -986,6 +1127,9 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             }
             if (this.getStartListener() != null) {
                 data.set("startListener", om.valueToTree(this.getStartListener()));
+            }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
             }
             if (this.getTlsCipherPolicy() != null) {
                 data.set("tlsCipherPolicy", om.valueToTree(this.getTlsCipherPolicy()));
@@ -1021,6 +1165,8 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             if (this.aclType != null ? !this.aclType.equals(that.aclType) : that.aclType != null) return false;
             if (this.backendServerPort != null ? !this.backendServerPort.equals(that.backendServerPort) : that.backendServerPort != null) return false;
             if (this.caCertificateId != null ? !this.caCertificateId.equals(that.caCertificateId) : that.caCertificateId != null) return false;
+            if (this.connectionDrain != null ? !this.connectionDrain.equals(that.connectionDrain) : that.connectionDrain != null) return false;
+            if (this.connectionDrainTimeout != null ? !this.connectionDrainTimeout.equals(that.connectionDrainTimeout) : that.connectionDrainTimeout != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.enableHttp2 != null ? !this.enableHttp2.equals(that.enableHttp2) : that.enableHttp2 != null) return false;
             if (this.gzip != null ? !this.gzip.equals(that.gzip) : that.gzip != null) return false;
@@ -1030,10 +1176,12 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             if (this.masterSlaveServerGroupId != null ? !this.masterSlaveServerGroupId.equals(that.masterSlaveServerGroupId) : that.masterSlaveServerGroupId != null) return false;
             if (this.persistence != null ? !this.persistence.equals(that.persistence) : that.persistence != null) return false;
             if (this.portRange != null ? !this.portRange.equals(that.portRange) : that.portRange != null) return false;
+            if (this.proxyProtocolV2Enabled != null ? !this.proxyProtocolV2Enabled.equals(that.proxyProtocolV2Enabled) : that.proxyProtocolV2Enabled != null) return false;
             if (this.requestTimeout != null ? !this.requestTimeout.equals(that.requestTimeout) : that.requestTimeout != null) return false;
             if (this.scheduler != null ? !this.scheduler.equals(that.scheduler) : that.scheduler != null) return false;
             if (this.serverCertificateId != null ? !this.serverCertificateId.equals(that.serverCertificateId) : that.serverCertificateId != null) return false;
             if (this.startListener != null ? !this.startListener.equals(that.startListener) : that.startListener != null) return false;
+            if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.tlsCipherPolicy != null ? !this.tlsCipherPolicy.equals(that.tlsCipherPolicy) : that.tlsCipherPolicy != null) return false;
             return this.vServerGroupId != null ? this.vServerGroupId.equals(that.vServerGroupId) : that.vServerGroupId == null;
         }
@@ -1050,6 +1198,8 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.aclType != null ? this.aclType.hashCode() : 0);
             result = 31 * result + (this.backendServerPort != null ? this.backendServerPort.hashCode() : 0);
             result = 31 * result + (this.caCertificateId != null ? this.caCertificateId.hashCode() : 0);
+            result = 31 * result + (this.connectionDrain != null ? this.connectionDrain.hashCode() : 0);
+            result = 31 * result + (this.connectionDrainTimeout != null ? this.connectionDrainTimeout.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.enableHttp2 != null ? this.enableHttp2.hashCode() : 0);
             result = 31 * result + (this.gzip != null ? this.gzip.hashCode() : 0);
@@ -1059,10 +1209,12 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.masterSlaveServerGroupId != null ? this.masterSlaveServerGroupId.hashCode() : 0);
             result = 31 * result + (this.persistence != null ? this.persistence.hashCode() : 0);
             result = 31 * result + (this.portRange != null ? this.portRange.hashCode() : 0);
+            result = 31 * result + (this.proxyProtocolV2Enabled != null ? this.proxyProtocolV2Enabled.hashCode() : 0);
             result = 31 * result + (this.requestTimeout != null ? this.requestTimeout.hashCode() : 0);
             result = 31 * result + (this.scheduler != null ? this.scheduler.hashCode() : 0);
             result = 31 * result + (this.serverCertificateId != null ? this.serverCertificateId.hashCode() : 0);
             result = 31 * result + (this.startListener != null ? this.startListener.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.tlsCipherPolicy != null ? this.tlsCipherPolicy.hashCode() : 0);
             result = 31 * result + (this.vServerGroupId != null ? this.vServerGroupId.hashCode() : 0);
             return result;

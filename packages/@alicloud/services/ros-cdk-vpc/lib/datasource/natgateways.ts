@@ -68,6 +68,10 @@ export interface NatGatewaysProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-natgateways
  */
 export class NatGateways extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: NatGatewaysProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute NatGatewayIds: The list of The nat gateway ids.
@@ -86,6 +90,10 @@ export class NatGateways extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: NatGatewaysProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosNatGateways = new RosNatGateways(this, id,  {
             status: props.status,

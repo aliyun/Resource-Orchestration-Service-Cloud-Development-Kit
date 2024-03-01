@@ -26,6 +26,10 @@ export interface RepositoriesProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cr-repositories
  */
 export class Repositories extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: RepositoriesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute RepoNames: The list of repository names.
@@ -44,6 +48,10 @@ export class Repositories extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: RepositoriesProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosRepositories = new RosRepositories(this, id,  {
             status: props.status,

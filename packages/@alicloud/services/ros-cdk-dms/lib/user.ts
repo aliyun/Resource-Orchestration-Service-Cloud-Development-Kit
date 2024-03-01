@@ -46,6 +46,10 @@ export interface UserProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dms-user
  */
 export class User extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: UserProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Mobile: UserMobile
@@ -89,6 +93,10 @@ export class User extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: UserProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosUser = new RosUser(this, id,  {
             status: props.status,

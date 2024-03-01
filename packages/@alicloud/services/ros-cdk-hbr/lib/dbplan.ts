@@ -86,6 +86,10 @@ export interface DbPlanProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbplan
  */
 export class DbPlan extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DbPlanProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ContinuousPlan: Continuous backup plan schedule. Use {   "type": "continuous" }.
@@ -194,6 +198,10 @@ export class DbPlan extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DbPlanProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDbPlan = new RosDbPlan(this, id,  {
             options: props.options,

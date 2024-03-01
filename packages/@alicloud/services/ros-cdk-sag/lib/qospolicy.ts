@@ -108,6 +108,10 @@ export interface QosPolicyProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-qospolicy
  */
 export class QosPolicy extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: QosPolicyProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute QosPolicyId: The ID of the traffic classification rule.
@@ -121,6 +125,10 @@ export class QosPolicy extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: QosPolicyProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosQosPolicy = new RosQosPolicy(this, id,  {
             description: props.description,

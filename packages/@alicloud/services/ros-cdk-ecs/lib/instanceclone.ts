@@ -119,6 +119,10 @@ export interface InstanceCloneProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instanceclone
  */
 export class InstanceClone extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: InstanceCloneProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute HostName: Host name of created instance.
@@ -167,6 +171,10 @@ export class InstanceClone extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: InstanceCloneProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosInstanceClone = new RosInstanceClone(this, id,  {
             backendServerWeight: props.backendServerWeight === undefined || props.backendServerWeight === null ? 100 : props.backendServerWeight,

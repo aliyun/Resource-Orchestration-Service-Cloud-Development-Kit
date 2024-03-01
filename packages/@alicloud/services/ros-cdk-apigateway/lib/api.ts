@@ -157,6 +157,10 @@ export interface ApiProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-api
  */
 export class Api extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ApiProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ApiId: The id of the API.
@@ -170,6 +174,10 @@ export class Api extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ApiProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosApi = new RosApi(this, id,  {
             description: props.description,

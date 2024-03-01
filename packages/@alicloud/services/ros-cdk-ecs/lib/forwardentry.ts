@@ -56,6 +56,10 @@ export interface ForwardEntryProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-forwardentry
  */
 export class ForwardEntry extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ForwardEntryProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ForwardEntryId: The id of created forward entry.
@@ -69,6 +73,10 @@ export class ForwardEntry extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ForwardEntryProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosForwardEntry = new RosForwardEntry(this, id,  {
             externalPort: props.externalPort,

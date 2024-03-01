@@ -101,11 +101,15 @@ export interface SubscriptionJob2Props {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DTS::SubscriptionJob2`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DTS::SubscriptionJob2`, which is used to configure a change tracking task.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSubscriptionJob2`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-subscriptionjob2
  */
 export class SubscriptionJob2 extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: SubscriptionJob2Props;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DtsInstanceId: The ID of the DTS instance.
@@ -129,6 +133,10 @@ export class SubscriptionJob2 extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: SubscriptionJob2Props, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosSubscriptionJob2 = new RosSubscriptionJob2(this, id,  {
             status: props.status,

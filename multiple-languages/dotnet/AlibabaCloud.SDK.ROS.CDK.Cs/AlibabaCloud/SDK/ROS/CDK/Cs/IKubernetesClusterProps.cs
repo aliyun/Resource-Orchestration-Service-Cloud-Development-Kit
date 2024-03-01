@@ -117,24 +117,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
-        /// <summary>Property cisEnabled: Specifies whether to enable Center for Internet Security (CIS) reinforcement.</summary>
-        /// <remarks>
-        /// For more information, see CIS reinforcement.
-        /// Valid values:
-        /// true: enables CIS reinforcement.
-        /// false: disables CIS reinforcement.
-        /// Default value: false.
-        /// </remarks>
-        [JsiiProperty(name: "cisEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? CisEnabled
-        {
-            get
-            {
-                return null;
-            }
-        }
-
         /// <summary>Property cloudMonitorFlags: Whether to install the cloud monitoring plugin: true: indicates installation false: Do not install Default to false.</summary>
         [JsiiProperty(name: "cloudMonitorFlags", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -988,21 +970,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             [JsiiOptional]
             [JsiiProperty(name: "chargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ChargeType
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <summary>Property cisEnabled: Specifies whether to enable Center for Internet Security (CIS) reinforcement.</summary>
-            /// <remarks>
-            /// For more information, see CIS reinforcement.
-            /// Valid values:
-            /// true: enables CIS reinforcement.
-            /// false: disables CIS reinforcement.
-            /// Default value: false.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "cisEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? CisEnabled
             {
                 get => GetInstanceProperty<object?>();
             }

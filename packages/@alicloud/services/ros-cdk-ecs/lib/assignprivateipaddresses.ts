@@ -36,6 +36,10 @@ export interface AssignPrivateIpAddressesProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-assignprivateipaddresses
  */
 export class AssignPrivateIpAddresses extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AssignPrivateIpAddressesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute NetworkInterfaceId: The ID of the ENI.
@@ -54,6 +58,10 @@ export class AssignPrivateIpAddresses extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AssignPrivateIpAddressesProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAssignPrivateIpAddresses = new RosAssignPrivateIpAddresses(this, id,  {
             secondaryPrivateIpAddressCount: props.secondaryPrivateIpAddressCount,

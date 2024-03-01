@@ -30,6 +30,10 @@ export interface QosProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-qos
  */
 export class Qos extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: QosProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute QosId: The ID of the QoS policy.
@@ -43,6 +47,10 @@ export class Qos extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: QosProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosQos = new RosQos(this, id,  {
             qosName: props.qosName,

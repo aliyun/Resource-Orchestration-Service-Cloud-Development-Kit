@@ -32,6 +32,10 @@ export interface SSHKeyPairAttachmentProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-sshkeypairattachment
  */
 export class SSHKeyPairAttachment extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: SSHKeyPairAttachmentProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -40,6 +44,10 @@ export class SSHKeyPairAttachment extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: SSHKeyPairAttachmentProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosSSHKeyPairAttachment = new RosSSHKeyPairAttachment(this, id,  {
             keyPairName: props.keyPairName,

@@ -31,11 +31,15 @@ export interface ControlPolicyProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::ControlPolicy`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::ControlPolicy`, which is used to create a custom control policy.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosControlPolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-controlpolicy
  */
 export class ControlPolicy extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ControlPolicyProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AttachmentCount: AttachmentCount
@@ -79,6 +83,10 @@ export class ControlPolicy extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ControlPolicyProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosControlPolicy = new RosControlPolicy(this, id,  {
             description: props.description,

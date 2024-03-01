@@ -26,6 +26,10 @@ export interface AdditionalCertificateAssociationProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-additionalcertificateassociation
  */
 export class AdditionalCertificateAssociation extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AdditionalCertificateAssociationProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ListenerId: The ID of the listener.
@@ -39,6 +43,10 @@ export class AdditionalCertificateAssociation extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AdditionalCertificateAssociationProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAdditionalCertificateAssociation = new RosAdditionalCertificateAssociation(this, id,  {
             certificates: props.certificates,

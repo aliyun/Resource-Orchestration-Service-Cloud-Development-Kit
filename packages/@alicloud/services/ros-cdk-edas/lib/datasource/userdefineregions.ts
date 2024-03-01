@@ -16,6 +16,10 @@ export interface UserDefineRegionsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-edas-userdefineregions
  */
 export class UserDefineRegions extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: UserDefineRegionsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Ids: The list of user define region IDs.
@@ -34,6 +38,10 @@ export class UserDefineRegions extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: UserDefineRegionsProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosUserDefineRegions = new RosUserDefineRegions(this, id,  {
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

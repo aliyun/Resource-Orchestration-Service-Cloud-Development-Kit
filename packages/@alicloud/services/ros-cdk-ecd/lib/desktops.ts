@@ -178,6 +178,10 @@ export interface DesktopsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-desktops
  */
 export class Desktops extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DesktopsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DesktopId: The ID of the cloud desktop. If multiple cloud desktops are created in a call, the
@@ -198,6 +202,10 @@ Note This parameter is returned only when the ChargeType parameter is set to Pre
      */
     constructor(scope: ros.Construct, id: string, props: DesktopsProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDesktops = new RosDesktops(this, id,  {
             userAssignMode: props.userAssignMode,

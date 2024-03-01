@@ -62,6 +62,10 @@ export interface FlowLogsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-flowlogs
  */
 export class FlowLogs extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: FlowLogsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute FlowLogIds: The list of flow log IDs.
@@ -80,6 +84,10 @@ export class FlowLogs extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: FlowLogsProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosFlowLogs = new RosFlowLogs(this, id,  {
             flowLogName: props.flowLogName,

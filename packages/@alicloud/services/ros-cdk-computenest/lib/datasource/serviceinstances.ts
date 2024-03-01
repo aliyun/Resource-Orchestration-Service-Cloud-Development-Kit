@@ -16,11 +16,15 @@ export interface ServiceInstancesProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ComputeNest::ServiceInstances`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ComputeNest::ServiceInstances`, which is used to query the information about service instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosServiceInstances`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-computenest-serviceinstances
  */
 export class ServiceInstances extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ServiceInstancesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ServiceInstanceIds: The list of service instance IDs.
@@ -39,6 +43,10 @@ export class ServiceInstances extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ServiceInstancesProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosServiceInstances = new RosServiceInstances(this, id,  {
             resourceGroupId: props.resourceGroupId,

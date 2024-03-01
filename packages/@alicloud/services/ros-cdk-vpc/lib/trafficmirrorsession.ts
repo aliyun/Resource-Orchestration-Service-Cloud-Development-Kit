@@ -79,11 +79,15 @@ export interface TrafficMirrorSessionProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::TrafficMirrorSession`DATASOURCE::VPC::NatGateways is used to query NAT gateways.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::TrafficMirrorSession`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTrafficMirrorSession`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-trafficmirrorsession
  */
 export class TrafficMirrorSession extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: TrafficMirrorSessionProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute TrafficMirrorSessionId: The ID of the traffic mirror session.
@@ -97,6 +101,10 @@ export class TrafficMirrorSession extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: TrafficMirrorSessionProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosTrafficMirrorSession = new RosTrafficMirrorSession(this, id,  {
             trafficMirrorTargetId: props.trafficMirrorTargetId,

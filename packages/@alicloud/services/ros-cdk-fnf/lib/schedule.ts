@@ -46,6 +46,10 @@ export interface ScheduleProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fnf-schedule
  */
 export class Schedule extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ScheduleProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute FlowName: Flow name.
@@ -69,6 +73,10 @@ export class Schedule extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ScheduleProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosSchedule = new RosSchedule(this, id,  {
             description: props.description,

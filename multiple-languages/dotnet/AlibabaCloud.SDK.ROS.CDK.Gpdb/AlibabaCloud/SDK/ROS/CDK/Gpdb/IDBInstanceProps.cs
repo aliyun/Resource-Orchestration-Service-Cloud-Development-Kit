@@ -255,6 +255,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
         }
 
+        /// <summary>Property prodType: Prod type.</summary>
+        /// <remarks>
+        /// The value can be: standard, cost-effective. The default value is standard.
+        /// </remarks>
+        [JsiiProperty(name: "prodType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ProdType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property securityIpList: The whitelist of IP addresses that are allowed to access the instance.</summary>
         /// <remarks>
         /// Default value:
@@ -366,9 +380,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
         }
 
-        /// <summary>Property tags: Tags to attach to instance.</summary>
+        /// <summary>Property tags: The list of instance tags in the form of key\/value pairs.</summary>
         /// <remarks>
-        /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+        /// You can define a maximum of 20 tags for instance.
         /// </remarks>
         [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-gpdb.RosDBInstance.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -620,6 +634,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property prodType: Prod type.</summary>
+            /// <remarks>
+            /// The value can be: standard, cost-effective. The default value is standard.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "prodType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ProdType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property securityIpList: The whitelist of IP addresses that are allowed to access the instance.</summary>
             /// <remarks>
             /// Default value:
@@ -710,9 +735,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property tags: Tags to attach to instance.</summary>
+            /// <summary>Property tags: The list of instance tags in the form of key\/value pairs.</summary>
             /// <remarks>
-            /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+            /// You can define a maximum of 20 tags for instance.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-gpdb.RosDBInstance.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]

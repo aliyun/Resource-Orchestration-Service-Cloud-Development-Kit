@@ -21,6 +21,10 @@ export interface QueuesProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-queues
  */
 export class Queues extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: QueuesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute QueueNames: The list of queue names.
@@ -39,6 +43,10 @@ export class Queues extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: QueuesProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosQueues = new RosQueues(this, id,  {
             queueName: props.queueName,

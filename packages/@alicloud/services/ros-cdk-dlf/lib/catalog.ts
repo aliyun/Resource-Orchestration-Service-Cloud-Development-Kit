@@ -36,6 +36,10 @@ export interface CatalogProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dlf-catalog
  */
 export class Catalog extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: CatalogProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CatalogId: Catalog ID
@@ -49,6 +53,10 @@ export class Catalog extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: CatalogProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCatalog = new RosCatalog(this, id,  {
             owner: props.owner,

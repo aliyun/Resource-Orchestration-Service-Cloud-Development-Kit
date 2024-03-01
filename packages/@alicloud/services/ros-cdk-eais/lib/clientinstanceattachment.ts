@@ -26,6 +26,10 @@ export interface ClientInstanceAttachmentProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eais-clientinstanceattachment
  */
 export class ClientInstanceAttachment extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ClientInstanceAttachmentProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClientInstanceId: The ID of the ECS or ECI instance bound to the EAIS instance.
@@ -49,6 +53,10 @@ export class ClientInstanceAttachment extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ClientInstanceAttachmentProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosClientInstanceAttachment = new RosClientInstanceAttachment(this, id,  {
             instanceId: props.instanceId,

@@ -41,6 +41,10 @@ export interface SNatEntryProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-snatentry
  */
 export class SNatEntry extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: SNatEntryProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SNatEntryId: The id of created SNAT entry.
@@ -54,6 +58,10 @@ export class SNatEntry extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: SNatEntryProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosSNatEntry = new RosSNatEntry(this, id,  {
             sourceVSwitchId: props.sourceVSwitchId,

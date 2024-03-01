@@ -18,6 +18,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
             get;
         }
 
+        /// <summary>Property deleteAccount: Whether delete the account.</summary>
+        /// <remarks>
+        /// Default value is false.
+        /// </remarks>
+        [JsiiProperty(name: "deleteAccount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DeleteAccount
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property folderId: The ID of the parent folder.</summary>
         [JsiiProperty(name: "folderId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -56,6 +70,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
             public object DisplayName
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property deleteAccount: Whether delete the account.</summary>
+            /// <remarks>
+            /// Default value is false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "deleteAccount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DeleteAccount
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property folderId: The ID of the parent folder.</summary>

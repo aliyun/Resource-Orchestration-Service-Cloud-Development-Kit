@@ -92,6 +92,10 @@ export interface SimpleOfficeSiteProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-simpleofficesite
  */
 export class SimpleOfficeSite extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: SimpleOfficeSiteProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute OfficeSiteId: The ID of the workspace.
@@ -105,6 +109,10 @@ export class SimpleOfficeSite extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: SimpleOfficeSiteProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosSimpleOfficeSite = new RosSimpleOfficeSite(this, id,  {
             verifyCode: props.verifyCode,

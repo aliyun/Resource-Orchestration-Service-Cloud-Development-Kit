@@ -26,6 +26,10 @@ export interface NetworkAclAssociationProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-networkaclassociation
  */
 export class NetworkAclAssociation extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: NetworkAclAssociationProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute NetworkAclId: The ID of the network ACL.
@@ -39,6 +43,10 @@ export class NetworkAclAssociation extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: NetworkAclAssociationProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosNetworkAclAssociation = new RosNetworkAclAssociation(this, id,  {
             networkAclId: props.networkAclId,

@@ -26,6 +26,10 @@ export interface DhcpOptionsSetAttachmentProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-dhcpoptionssetattachment
  */
 export class DhcpOptionsSetAttachment extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DhcpOptionsSetAttachmentProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DhcpOptionsSetId: The ID of the DHCP options set.
@@ -44,6 +48,10 @@ export class DhcpOptionsSetAttachment extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DhcpOptionsSetAttachmentProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDhcpOptionsSetAttachment = new RosDhcpOptionsSetAttachment(this, id,  {
             dhcpOptionsSetId: props.dhcpOptionsSetId,

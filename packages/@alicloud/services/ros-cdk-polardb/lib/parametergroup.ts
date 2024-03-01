@@ -46,6 +46,10 @@ export interface ParameterGroupProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-parametergroup
  */
 export class ParameterGroup extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ParameterGroupProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CreateTime: The time when the parameter template was created.
@@ -104,6 +108,10 @@ export class ParameterGroup extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ParameterGroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosParameterGroup = new RosParameterGroup(this, id,  {
             parameters: props.parameters,

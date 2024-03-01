@@ -93,6 +93,10 @@ export interface TensorboardProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidlc-tensorboard
  */
 export class Tensorboard extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: TensorboardProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute TensorboardId: Tensorboard id.
@@ -111,6 +115,10 @@ export class Tensorboard extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: TensorboardProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosTensorboard = new RosTensorboard(this, id,  {
             maxRunningTimeMinutes: props.maxRunningTimeMinutes,

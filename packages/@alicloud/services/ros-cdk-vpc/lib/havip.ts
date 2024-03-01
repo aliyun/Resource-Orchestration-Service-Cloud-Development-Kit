@@ -48,6 +48,10 @@ export interface HaVipProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-havip
  */
 export class HaVip extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: HaVipProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute HaVipId: Assigned HaVip ID.
@@ -66,6 +70,10 @@ export class HaVip extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: HaVipProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosHaVip = new RosHaVip(this, id,  {
             description: props.description,

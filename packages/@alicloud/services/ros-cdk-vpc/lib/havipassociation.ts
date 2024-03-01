@@ -33,6 +33,10 @@ export interface HaVipAssociationProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-havipassociation
  */
 export class HaVipAssociation extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: HaVipAssociationProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -41,6 +45,10 @@ export class HaVipAssociation extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: HaVipAssociationProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosHaVipAssociation = new RosHaVipAssociation(this, id,  {
             instanceId: props.instanceId,

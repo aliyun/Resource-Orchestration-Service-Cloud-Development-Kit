@@ -97,11 +97,15 @@ export interface EIPProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::EIP`, which is used to apply for an elastic IP address (EIP).
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::EIP`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEIP`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eip
  */
 export class Eip extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: EIPProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AllocationId: ID that Aliyun assigns to represent the allocation of the address for use with VPC. Returned only for VPC elastic IP addresses.
@@ -130,6 +134,10 @@ export class Eip extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: EIPProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosEIP = new RosEIP(this, id,  {
             description: props.description,

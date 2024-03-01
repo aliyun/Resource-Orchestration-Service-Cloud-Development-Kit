@@ -65,6 +65,10 @@ export interface RuleActionProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-ruleaction
  */
 export class RuleAction extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: RuleActionProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ActionId: The ID of the rule action.
@@ -78,6 +82,10 @@ export class RuleAction extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: RuleActionProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosRuleAction = new RosRuleAction(this, id,  {
             errorActionFlag: props.errorActionFlag,

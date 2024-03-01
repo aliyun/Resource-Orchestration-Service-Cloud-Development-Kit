@@ -26,6 +26,10 @@ export interface SubscriptionsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-subscriptions
  */
 export class Subscriptions extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: SubscriptionsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SubscriptionIds: The list of subscription names.
@@ -44,6 +48,10 @@ export class Subscriptions extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: SubscriptionsProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosSubscriptions = new RosSubscriptions(this, id,  {
             subscriptionName: props.subscriptionName,

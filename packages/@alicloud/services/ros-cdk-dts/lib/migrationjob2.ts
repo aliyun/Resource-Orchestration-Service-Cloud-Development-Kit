@@ -126,11 +126,15 @@ export interface MigrationJob2Props {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DTS::MigrationJob2`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DTS::MigrationJob2`, which is used to purchase a data migration instance and configure a data migration task of the new version.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMigrationJob2`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-migrationjob2
  */
 export class MigrationJob2 extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: MigrationJob2Props;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DtsInstanceId: The ID of the DTS instance.
@@ -154,6 +158,10 @@ export class MigrationJob2 extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: MigrationJob2Props, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosMigrationJob2 = new RosMigrationJob2(this, id,  {
             status: props.status,

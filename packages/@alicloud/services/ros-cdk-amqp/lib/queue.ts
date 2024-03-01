@@ -82,6 +82,10 @@ export interface QueueProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-queue
  */
 export class Queue extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: QueueProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute QueueName: The name of the queue.
@@ -95,6 +99,10 @@ export class Queue extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: QueueProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosQueue = new RosQueue(this, id,  {
             deadLetterExchange: props.deadLetterExchange,

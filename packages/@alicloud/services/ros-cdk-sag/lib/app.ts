@@ -46,11 +46,15 @@ export interface AppProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::App`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::App`, which is used to create a Smart Access Gateway (SAG) app instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApp`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-app
  */
 export class App extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AppProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute OrderId: The ID of the order that you placed to subscribe to the SAG APP instance.
@@ -69,6 +73,10 @@ export class App extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AppProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosApp = new RosApp(this, id,  {
             chargeType: props.chargeType === undefined || props.chargeType === null ? 'PREPAY' : props.chargeType,

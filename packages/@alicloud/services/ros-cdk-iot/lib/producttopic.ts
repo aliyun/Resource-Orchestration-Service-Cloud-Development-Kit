@@ -45,6 +45,10 @@ export interface ProductTopicProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-producttopic
  */
 export class ProductTopic extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ProductTopicProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute TopicId: Topic ID
@@ -58,6 +62,10 @@ export class ProductTopic extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ProductTopicProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosProductTopic = new RosProductTopic(this, id,  {
             desc: props.desc,

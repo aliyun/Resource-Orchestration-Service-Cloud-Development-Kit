@@ -97,6 +97,10 @@ export interface CustomImageProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-customimage
  */
 export class CustomImage extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: CustomImageProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ImageId: Image ID
@@ -115,6 +119,10 @@ export class CustomImage extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: CustomImageProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCustomImage = new RosCustomImage(this, id,  {
             detectionStrategy: props.detectionStrategy,

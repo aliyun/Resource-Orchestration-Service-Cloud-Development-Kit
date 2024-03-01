@@ -69,6 +69,10 @@ export interface AccountProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-account
  */
 export class Account extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AccountProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -77,6 +81,10 @@ export class Account extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AccountProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAccount = new RosAccount(this, id,  {
             accountDescription: props.accountDescription,

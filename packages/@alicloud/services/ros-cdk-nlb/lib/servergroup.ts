@@ -10,11 +10,6 @@ export { RosServerGroup as ServerGroupProperty };
 export interface ServerGroupProps {
 
     /**
-     * Property healthCheckConfig: Health Check Config
-     */
-    readonly healthCheckConfig: RosServerGroup.HealthCheckConfigProperty | ros.IResolvable;
-
-    /**
      * Property serverGroupName: Name of ServerGroup
      */
     readonly serverGroupName: string | ros.IResolvable;
@@ -30,6 +25,13 @@ export interface ServerGroupProps {
     readonly addressIpVersion?: string | ros.IResolvable;
 
     /**
+     * Property anyPortEnabled: Specifies whether to enable all-port forwarding. Valid values:
+     * true
+     * false (default)
+     */
+    readonly anyPortEnabled?: boolean | ros.IResolvable;
+
+    /**
      * Property connectionDrainEnabled: Whether to enable graceful connection interruption
      */
     readonly connectionDrainEnabled?: boolean | ros.IResolvable;
@@ -38,6 +40,11 @@ export interface ServerGroupProps {
      * Property connectionDrainTimeout: Time of graceful connection interruption
      */
     readonly connectionDrainTimeout?: number | ros.IResolvable;
+
+    /**
+     * Property healthCheckConfig: Health Check Config
+     */
+    readonly healthCheckConfig?: RosServerGroup.HealthCheckConfigProperty | ros.IResolvable;
 
     /**
      * Property persistenceEnabled: Whether to enable session persistence
@@ -78,6 +85,11 @@ export interface ServerGroupProps {
      * Property servers: undefined
      */
     readonly servers?: Array<RosServerGroup.ServersProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosServerGroup.TagsProperty[];
 }
 
 /**
@@ -86,6 +98,10 @@ export interface ServerGroupProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-servergroup
  */
 export class ServerGroup extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ServerGroupProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ServerGroupId: ID of ServerGroup
@@ -99,6 +115,10 @@ export class ServerGroup extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ServerGroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosServerGroup = new RosServerGroup(this, id,  {
             resourceGroupId: props.resourceGroupId,
@@ -112,8 +132,10 @@ export class ServerGroup extends ros.Resource {
             connectionDrainTimeout: props.connectionDrainTimeout,
             persistenceTimeout: props.persistenceTimeout,
             vpcId: props.vpcId,
+            anyPortEnabled: props.anyPortEnabled,
             healthCheckConfig: props.healthCheckConfig,
             protocol: props.protocol,
+            tags: props.tags,
             serverGroupName: props.serverGroupName,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosServerGroup;

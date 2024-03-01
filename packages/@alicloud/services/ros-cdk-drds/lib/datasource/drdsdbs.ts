@@ -21,6 +21,10 @@ export interface DrdsDBsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-drds-drdsdbs
  */
 export class DrdsDBs extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DrdsDBsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Databases: The list of drds databases.
@@ -39,6 +43,10 @@ export class DrdsDBs extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DrdsDBsProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDrdsDBs = new RosDrdsDBs(this, id,  {
             instanceId: props.instanceId,

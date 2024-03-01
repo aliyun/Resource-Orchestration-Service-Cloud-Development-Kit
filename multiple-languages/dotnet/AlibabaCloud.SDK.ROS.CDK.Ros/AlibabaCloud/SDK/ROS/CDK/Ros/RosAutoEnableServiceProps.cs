@@ -56,6 +56,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// CDTCb: Cloud Data Transfer for Cross Border
         /// TransitRouter: Cen Transit Router
         /// PAI: Platform of Artificial Intelligence
+        /// Config: Cloud Config
+        /// TrustedService\/ROS: Trusted Service for ROS
+        /// CloudSSO: Cloud SSO
         /// </remarks>
         [JsiiProperty(name: "serviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object ServiceName

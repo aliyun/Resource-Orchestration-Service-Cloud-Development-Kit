@@ -37,6 +37,10 @@ export interface ProvisionConfigProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-provisionconfig
  */
 export class ProvisionConfig extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ProvisionConfigProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute FunctionName: The function name
@@ -70,6 +74,10 @@ export class ProvisionConfig extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ProvisionConfigProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosProvisionConfig = new RosProvisionConfig(this, id,  {
             functionName: props.functionName,

@@ -26,6 +26,10 @@ export interface MetricRuleTargetsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-metricruletargets
  */
 export class MetricRuleTargets extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: MetricRuleTargetsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Arns: The ARN list of targets
@@ -44,6 +48,10 @@ export class MetricRuleTargets extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: MetricRuleTargetsProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosMetricRuleTargets = new RosMetricRuleTargets(this, id,  {
             ruleId: props.ruleId,
