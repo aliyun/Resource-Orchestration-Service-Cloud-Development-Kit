@@ -103,6 +103,10 @@ export interface VpnAttachmentProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnattachment
  */
 export class VpnAttachment extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: VpnAttachmentProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InternetIp: The gateway IP address of the IPsec connection.
@@ -126,6 +130,10 @@ export class VpnAttachment extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: VpnAttachmentProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosVpnAttachment = new RosVpnAttachment(this, id,  {
             localSubnet: props.localSubnet,

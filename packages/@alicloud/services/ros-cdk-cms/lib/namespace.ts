@@ -38,6 +38,10 @@ export interface NamespaceProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-namespace
  */
 export class Namespace extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: NamespaceProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CreateTime: The timestamp that was generated when the namespace was created.
@@ -78,6 +82,10 @@ Unit: milliseconds.
      */
     constructor(scope: ros.Construct, id: string, props: NamespaceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosNamespace = new RosNamespace(this, id,  {
             description: props.description,

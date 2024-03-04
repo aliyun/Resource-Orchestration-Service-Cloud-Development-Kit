@@ -26,6 +26,10 @@ export interface ControlPolicyAttachmentProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-controlpolicyattachment
  */
 export class ControlPolicyAttachment extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ControlPolicyAttachmentProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AttachDate: AttachDate
@@ -64,6 +68,10 @@ export class ControlPolicyAttachment extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ControlPolicyAttachmentProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosControlPolicyAttachment = new RosControlPolicyAttachment(this, id,  {
             targetId: props.targetId,

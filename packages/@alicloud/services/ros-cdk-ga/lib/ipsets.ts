@@ -26,6 +26,10 @@ export interface IpSetsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-ipsets
  */
 export class IpSets extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: IpSetsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AccelerateRegionIds: The ID list of the accelerate region.
@@ -49,6 +53,10 @@ export class IpSets extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: IpSetsProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosIpSets = new RosIpSets(this, id,  {
             accelerateRegion: props.accelerateRegion,

@@ -51,6 +51,10 @@ export interface ZoneRecordProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-zonerecord
  */
 export class ZoneRecord extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ZoneRecordProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Record: Record data.
@@ -74,6 +78,10 @@ export class ZoneRecord extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ZoneRecordProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosZoneRecord = new RosZoneRecord(this, id,  {
             status: props.status === undefined || props.status === null ? 'ENABLE' : props.status,

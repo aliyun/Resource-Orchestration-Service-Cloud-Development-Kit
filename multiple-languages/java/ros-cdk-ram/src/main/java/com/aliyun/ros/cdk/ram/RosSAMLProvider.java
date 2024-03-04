@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::RAM::SAMLProvider</code>, which is used to create an identity provider (IdP) for role-based single sign-on (SSO).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.434Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:53.967Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosSAMLProvider")
 public class RosSAMLProvider extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -103,6 +103,24 @@ public class RosSAMLProvider extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEncodedSamlMetadataDocument() {
+        return software.amazon.jsii.Kernel.get(this, "encodedSamlMetadataDocument", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setEncodedSamlMetadataDocument(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "encodedSamlMetadataDocument", value);
+    }
+
+    /**
+     */
+    public void setEncodedSamlMetadataDocument(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "encodedSamlMetadataDocument", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getSamlMetadataDocument() {
         return software.amazon.jsii.Kernel.get(this, "samlMetadataDocument", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -194,6 +212,23 @@ public class RosSAMLProvider extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param encodedSamlMetadataDocument This parameter is required.
+         */
+        public Builder encodedSamlMetadataDocument(final java.lang.String encodedSamlMetadataDocument) {
+            this.props.encodedSamlMetadataDocument(encodedSamlMetadataDocument);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param encodedSamlMetadataDocument This parameter is required.
+         */
+        public Builder encodedSamlMetadataDocument(final com.aliyun.ros.cdk.core.IResolvable encodedSamlMetadataDocument) {
+            this.props.encodedSamlMetadataDocument(encodedSamlMetadataDocument);
             return this;
         }
 

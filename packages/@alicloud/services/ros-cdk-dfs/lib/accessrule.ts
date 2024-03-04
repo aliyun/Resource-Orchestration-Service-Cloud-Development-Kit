@@ -46,6 +46,10 @@ export interface AccessRuleProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-accessrule
  */
 export class AccessRule extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AccessRuleProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AccessRuleId: The ID of the access_rule.
@@ -59,6 +63,10 @@ export class AccessRule extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AccessRuleProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAccessRule = new RosAccessRule(this, id,  {
             description: props.description,

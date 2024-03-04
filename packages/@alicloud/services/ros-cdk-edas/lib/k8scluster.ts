@@ -31,6 +31,10 @@ export interface K8sClusterProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-k8scluster
  */
 export class K8sCluster extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: K8sClusterProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterId: The ID of the cluster.
@@ -88,6 +92,10 @@ export class K8sCluster extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: K8sClusterProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosK8sCluster = new RosK8sCluster(this, id,  {
             enableAsm: props.enableAsm,

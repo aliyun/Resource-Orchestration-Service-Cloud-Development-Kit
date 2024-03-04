@@ -325,11 +325,15 @@ export interface ClusterProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::EHPC::Cluster`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EHPC::Cluster`, which is used to create an Elastic High Performance Computing (E-HPC) cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-cluster
  */
 export class Cluster extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ClusterProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterId: Cluster Id.
@@ -359,6 +363,10 @@ You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2,
      */
     constructor(scope: ros.Construct, id: string, props: ClusterProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCluster = new RosCluster(this, id,  {
             volumeProtocol: props.volumeProtocol,

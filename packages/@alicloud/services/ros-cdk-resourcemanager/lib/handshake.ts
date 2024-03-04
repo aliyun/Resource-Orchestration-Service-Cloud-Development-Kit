@@ -31,6 +31,10 @@ export interface HandshakeProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-handshake
  */
 export class Handshake extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: HandshakeProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute HandshakeId: This ID of Resource Manager handshake
@@ -74,6 +78,10 @@ export class Handshake extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: HandshakeProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosHandshake = new RosHandshake(this, id,  {
             note: props.note,

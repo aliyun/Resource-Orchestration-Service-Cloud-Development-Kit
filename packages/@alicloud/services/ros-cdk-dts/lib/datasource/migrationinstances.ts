@@ -16,11 +16,15 @@ export interface MigrationInstancesProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::DTS::MigrationInstances`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::DTS::MigrationInstances`, which is used to query information about Data Transmission Service (DTS) tasks.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMigrationInstances`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dts-migrationinstances
  */
 export class MigrationInstances extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: MigrationInstancesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DtsInstanceIds: The list of dts instance IDs.
@@ -39,6 +43,10 @@ export class MigrationInstances extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: MigrationInstancesProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosMigrationInstances = new RosMigrationInstances(this, id,  {
             dtsInstanceId: props.dtsInstanceId,

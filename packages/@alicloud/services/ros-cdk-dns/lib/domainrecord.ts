@@ -51,6 +51,10 @@ export interface DomainRecordProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dns-domainrecord
  */
 export class DomainRecord extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DomainRecordProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute RecordId: Parse the ID of the record
@@ -64,6 +68,10 @@ export class DomainRecord extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DomainRecordProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDomainRecord = new RosDomainRecord(this, id,  {
             rr: props.rr,

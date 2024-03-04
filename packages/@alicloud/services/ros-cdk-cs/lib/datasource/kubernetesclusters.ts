@@ -48,6 +48,10 @@ export interface KubernetesClustersProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-kubernetesclusters
  */
 export class KubernetesClusters extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: KubernetesClustersProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterIds: The list of cluster IDs.
@@ -66,6 +70,10 @@ export class KubernetesClusters extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: KubernetesClustersProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosKubernetesClusters = new RosKubernetesClusters(this, id,  {
             clusterSpec: props.clusterSpec,

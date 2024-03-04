@@ -26,6 +26,10 @@ export interface ParameterGroupsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-parametergroups
  */
 export class ParameterGroups extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ParameterGroupsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ParameterGroupIds: The list of parameter group IDs.
@@ -44,6 +48,10 @@ export class ParameterGroups extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ParameterGroupsProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosParameterGroups = new RosParameterGroups(this, id,  {
             dbVersion: props.dbVersion,

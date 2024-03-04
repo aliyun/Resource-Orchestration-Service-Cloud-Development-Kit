@@ -81,6 +81,10 @@ export interface StackGroupProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-stackgroup
  */
 export class StackGroup extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: StackGroupProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute StackGroupId: undefined
@@ -94,6 +98,10 @@ export class StackGroup extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: StackGroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosStackGroup = new RosStackGroup(this, id,  {
             description: props.description,

@@ -119,6 +119,10 @@ export interface RecommendInstanceTypesProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-recommendinstancetypes
  */
 export class RecommendInstanceTypes extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: RecommendInstanceTypesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceTypeIds: The list of instance type ids. Note that instance type ids are not unique.
@@ -137,6 +141,10 @@ export class RecommendInstanceTypes extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: RecommendInstanceTypesProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosRecommendInstanceTypes = new RosRecommendInstanceTypes(this, id,  {
             zoneMatchMode: props.zoneMatchMode,

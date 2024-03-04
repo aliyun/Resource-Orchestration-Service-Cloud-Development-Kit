@@ -246,6 +246,10 @@ export interface LaunchTemplateProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-launchtemplate
  */
 export class LaunchTemplate extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: LaunchTemplateProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DefaultVersionNumber: The default version number of launch template.
@@ -274,6 +278,10 @@ export class LaunchTemplate extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: LaunchTemplateProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosLaunchTemplate = new RosLaunchTemplate(this, id,  {
             imageOwnerAlias: props.imageOwnerAlias,

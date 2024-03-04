@@ -52,11 +52,15 @@ export interface EIPSegmentProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::EIPSegment`, which is used to apply for contiguous elastic IP addresses (EIPs).
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::EIPSegment`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEIPSegment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eipsegment
  */
 export class EIPSegment extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: EIPSegmentProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute EipAddresses: List of EIP addresses. like [{"AllocationId": "eip-xxx", "IpAddress": "xx.xx.xx.xx"}]
@@ -75,6 +79,10 @@ export class EIPSegment extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: EIPSegmentProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosEIPSegment = new RosEIPSegment(this, id,  {
             eipMask: props.eipMask,

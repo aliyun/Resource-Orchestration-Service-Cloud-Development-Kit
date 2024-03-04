@@ -36,6 +36,10 @@ export interface WhitelistProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-memcache-whitelist
  */
 export class Whitelist extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: WhitelistProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SecurityIpGroupAttribute: The default is empty. For distinguishing between different attribute values, the console will not display the value of hidden whitelist packet.
@@ -59,6 +63,10 @@ export class Whitelist extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: WhitelistProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosWhitelist = new RosWhitelist(this, id,  {
             securityIpGroupAttribute: props.securityIpGroupAttribute,

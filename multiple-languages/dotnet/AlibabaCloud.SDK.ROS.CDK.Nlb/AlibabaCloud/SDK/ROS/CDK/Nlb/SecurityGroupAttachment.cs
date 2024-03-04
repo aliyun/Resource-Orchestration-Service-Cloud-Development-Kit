@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Nlb
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::NLB::SecurityGroupAttachment`DATASOURCE::NLB::LoadBalancers is used to query the basic information about created Network Load Balancer (NLB) instances.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::NLB::SecurityGroupAttachment`, which is used to bind a security group to a Network Load Balancer (NLB) instance.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecurityGroupAttachment`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-securitygroupattachment
@@ -35,6 +35,34 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         protected SecurityGroupAttachment(DeputyProps props): base(props)
         {
+        }
+
+        [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
+        protected virtual bool EnableResourcePropertyConstraint
+        {
+            get => GetInstanceProperty<bool>()!;
+            set => SetInstanceProperty(value);
+        }
+
+        [JsiiProperty(name: "id", typeJson: "{\"primitive\":\"string\"}")]
+        protected virtual string Id
+        {
+            get => GetInstanceProperty<string>()!;
+            set => SetInstanceProperty(value);
+        }
+
+        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-nlb.SecurityGroupAttachmentProps\"}")]
+        protected virtual AlibabaCloud.SDK.ROS.CDK.Nlb.ISecurityGroupAttachmentProps Props
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Nlb.ISecurityGroupAttachmentProps>()!;
+            set => SetInstanceProperty(value);
+        }
+
+        [JsiiProperty(name: "scope", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}")]
+        protected virtual AlibabaCloud.SDK.ROS.CDK.Core.Construct Scope
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.Construct>()!;
+            set => SetInstanceProperty(value);
         }
     }
 }

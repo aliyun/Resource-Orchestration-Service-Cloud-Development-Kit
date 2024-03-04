@@ -26,11 +26,15 @@ export interface ServiceLogProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::ServiceLog`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::ServiceLog`, which is used to enable the service log feature.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosServiceLog`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-servicelog
  */
 export class ServiceLog extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ServiceLogProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ProjectName: The name of the project that needs to be activated.
@@ -44,6 +48,10 @@ export class ServiceLog extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ServiceLogProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosServiceLog = new RosServiceLog(this, id,  {
             serviceLogTypes: props.serviceLogTypes,

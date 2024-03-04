@@ -109,6 +109,10 @@ export interface DiskProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-disk
  */
 export class Disk extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DiskProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DiskId: Id of created disk.
@@ -127,6 +131,10 @@ export class Disk extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DiskProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDisk = new RosDisk(this, id,  {
             burstingEnabled: props.burstingEnabled,

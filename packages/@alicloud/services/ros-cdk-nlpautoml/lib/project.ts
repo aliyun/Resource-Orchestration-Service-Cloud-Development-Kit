@@ -31,6 +31,10 @@ export interface ProjectProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlpautoml-project
  */
 export class Project extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ProjectProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ProjectId: The project ID
@@ -44,6 +48,10 @@ export class Project extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ProjectProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosProject = new RosProject(this, id,  {
             projectName: props.projectName,

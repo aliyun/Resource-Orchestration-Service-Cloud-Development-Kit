@@ -26,6 +26,10 @@ export interface UserToGroupAdditionProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-usertogroupaddition
  */
 export class UserToGroupAddition extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: UserToGroupAdditionProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -34,6 +38,10 @@ export class UserToGroupAddition extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: UserToGroupAdditionProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosUserToGroupAddition = new RosUserToGroupAddition(this, id,  {
             groupName: props.groupName,

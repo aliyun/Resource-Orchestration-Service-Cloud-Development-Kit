@@ -71,11 +71,15 @@ export interface TransitRouterVpnAttachmentProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterVpnAttachment`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterVpnAttachment`, which is used to create a VPN attachment.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTransitRouterVpnAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervpnattachment
  */
 export class TransitRouterVpnAttachment extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: TransitRouterVpnAttachmentProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute TransitRouterAttachmentId: The ID of the VPN connection.
@@ -89,6 +93,10 @@ export class TransitRouterVpnAttachment extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: TransitRouterVpnAttachmentProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosTransitRouterVpnAttachment = new RosTransitRouterVpnAttachment(this, id,  {
             autoPublishRouteEnabled: props.autoPublishRouteEnabled,

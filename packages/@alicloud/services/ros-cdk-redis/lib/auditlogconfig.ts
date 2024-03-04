@@ -22,11 +22,15 @@ export interface AuditLogConfigProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::AuditLogConfig`DATASOURCE::REDIS::InstanceClasses is used to query the types of ApsaraDB for Redis instances.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::AuditLogConfig`, which is used to modify the audit log settings of an ApsaraDB for Redis instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAuditLogConfig`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-auditlogconfig
  */
 export class AuditLogConfig extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AuditLogConfigProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceId: IP address whitelist to be modified
@@ -40,6 +44,10 @@ export class AuditLogConfig extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AuditLogConfigProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAuditLogConfig = new RosAuditLogConfig(this, id,  {
             instanceId: props.instanceId,

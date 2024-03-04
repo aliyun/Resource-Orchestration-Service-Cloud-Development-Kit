@@ -26,6 +26,10 @@ export interface PrefixListsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-prefixlists
  */
 export class PrefixLists extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: PrefixListsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute PrefixListIds: The list of prefix list IDs.
@@ -44,6 +48,10 @@ export class PrefixLists extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: PrefixListsProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosPrefixLists = new RosPrefixLists(this, id,  {
             resourceGroupId: props.resourceGroupId,

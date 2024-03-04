@@ -40,6 +40,10 @@ export interface KeyPairsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-keypairs
  */
 export class KeyPairs extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: KeyPairsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute KeyPairNames: The list of key pair names.
@@ -58,6 +62,10 @@ export class KeyPairs extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: KeyPairsProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosKeyPairs = new RosKeyPairs(this, id,  {
             keyPairFingerPrint: props.keyPairFingerPrint,

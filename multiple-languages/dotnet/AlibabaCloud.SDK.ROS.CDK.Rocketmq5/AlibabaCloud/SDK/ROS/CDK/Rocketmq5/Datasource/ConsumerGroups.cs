@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq5.Datasource
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::ROCKETMQ5::ConsumerGroups`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::ROCKETMQ5::ConsumerGroups`, which is used to query consumer groups in ApsaraMQ for RocketMQ 5.0.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosConsumerGroups`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rocketmq5-consumergroups
@@ -49,6 +49,34 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq5.Datasource
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrConsumerGroups
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
+        protected virtual bool EnableResourcePropertyConstraint
+        {
+            get => GetInstanceProperty<bool>()!;
+            set => SetInstanceProperty(value);
+        }
+
+        [JsiiProperty(name: "id", typeJson: "{\"primitive\":\"string\"}")]
+        protected virtual string Id
+        {
+            get => GetInstanceProperty<string>()!;
+            set => SetInstanceProperty(value);
+        }
+
+        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-rocketmq5.datasource.ConsumerGroupsProps\"}")]
+        protected virtual AlibabaCloud.SDK.ROS.CDK.Rocketmq5.Datasource.IConsumerGroupsProps Props
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Rocketmq5.Datasource.IConsumerGroupsProps>()!;
+            set => SetInstanceProperty(value);
+        }
+
+        [JsiiProperty(name: "scope", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}")]
+        protected virtual AlibabaCloud.SDK.ROS.CDK.Core.Construct Scope
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.Construct>()!;
+            set => SetInstanceProperty(value);
         }
     }
 }

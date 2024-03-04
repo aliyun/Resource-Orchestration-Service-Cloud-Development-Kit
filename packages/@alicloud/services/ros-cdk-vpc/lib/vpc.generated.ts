@@ -730,7 +730,7 @@ function rosBgpPeerPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::BgpPeer`, which is used to add a Border Gateway Protocol (BGP) peer to a specific BGP group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::BgpPeer`.
  * @Note This class does not contain additional functions, so it is recommended to use the `BgpPeer` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-bgppeer
  */
@@ -804,6 +804,12 @@ export interface RosCommonBandwidthPackageProps {
      * @Property bandwidth: The peak bandwidth of the Internet Shared Bandwidth instance. Unit: Mbit\/s.
      */
     readonly bandwidth: number | ros.IResolvable;
+
+    /**
+     * @Property deletionProtection: Whether to enable deletion protection.
+     * Default to False.
+     */
+    readonly deletionProtection?: boolean | ros.IResolvable;
 
     /**
      * @Property description: The description of the Internet Shared Bandwidth instance.
@@ -892,6 +898,7 @@ function RosCommonBandwidthPackagePropsValidator(properties: any): ros.Validatio
           }));
     }
     errors.collect(ros.propertyValidator('ratio', ros.validateNumber)(properties.ratio));
+    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -927,6 +934,7 @@ function rosCommonBandwidthPackagePropsToRosTemplate(properties: any, enableReso
     }
     return {
       Bandwidth: ros.numberToRosTemplate(properties.bandwidth),
+      DeletionProtection: ros.booleanToRosTemplate(properties.deletionProtection),
       Description: ros.stringToRosTemplate(properties.description),
       InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
       ISP: ros.stringToRosTemplate(properties.isp),
@@ -939,7 +947,7 @@ function rosCommonBandwidthPackagePropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::CommonBandwidthPackage`, which is used to create an elastic IP address (EIP) bandwidth plan.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::CommonBandwidthPackage`.
  * @Note This class does not contain additional functions, so it is recommended to use the `CommonBandwidthPackage` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-commonbandwidthpackage
  */
@@ -961,6 +969,12 @@ export class RosCommonBandwidthPackage extends ros.RosResource {
      * @Property bandwidth: The peak bandwidth of the Internet Shared Bandwidth instance. Unit: Mbit\/s.
      */
     public bandwidth: number | ros.IResolvable;
+
+    /**
+     * @Property deletionProtection: Whether to enable deletion protection.
+     * Default to False.
+     */
+    public deletionProtection: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property description: The description of the Internet Shared Bandwidth instance.
@@ -1021,6 +1035,7 @@ export class RosCommonBandwidthPackage extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.bandwidth = props.bandwidth;
+        this.deletionProtection = props.deletionProtection;
         this.description = props.description;
         this.internetChargeType = props.internetChargeType;
         this.isp = props.isp;
@@ -1035,6 +1050,7 @@ export class RosCommonBandwidthPackage extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             bandwidth: this.bandwidth,
+            deletionProtection: this.deletionProtection,
             description: this.description,
             internetChargeType: this.internetChargeType,
             isp: this.isp,
@@ -1359,7 +1375,7 @@ function rosCustomerGatewayPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::CustomerGateway`, which is used to create a customer gateway.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::CustomerGateway`.
  * @Note This class does not contain additional functions, so it is recommended to use the `CustomerGateway` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-customergateway
  */
@@ -1884,7 +1900,7 @@ function rosEIPPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::EIP`, which is used to apply for an elastic IP address (EIP).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::EIP`.
  * @Note This class does not contain additional functions, so it is recommended to use the `EIP` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eip
  */
@@ -2194,7 +2210,7 @@ function rosEIPAssociationPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::EIPAssociation`, which is used to associate an elastic IP address (EIP) with a cloud service instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::EIPAssociation`.
  * @Note This class does not contain additional functions, so it is recommended to use the `EIPAssociation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eipassociation
  */
@@ -2474,7 +2490,7 @@ function rosEIPProPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::EIPPro`, which is used to create an elastic IP address (EIP).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::EIPPro`.
  * @Note This class does not contain additional functions, so it is recommended to use the `EIPPro` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eippro
  */
@@ -2813,7 +2829,7 @@ function rosEIPSegmentPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::EIPSegment`, which is used to apply for contiguous elastic IP addresses (EIPs).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::EIPSegment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `EIPSegment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eipsegment
  */
@@ -3002,7 +3018,7 @@ function rosFlowLogPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::FlowLog`, which is used to create a flow log.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::FlowLog`.
  * @Note This class does not contain additional functions, so it is recommended to use the `FlowLog` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-flowlog
  */
@@ -3336,6 +3352,229 @@ export class RosForwardEntry extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosFullNatEntry`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-fullnatentry
+ */
+export interface RosFullNatEntryProps {
+
+    /**
+     * @Property accessIp: The backend IP address to be modified in FULLNAT address translation.
+     */
+    readonly accessIp: string | ros.IResolvable;
+
+    /**
+     * @Property accessPort: The backend port to be modified in the mapping of FULLNAT port. Valid values: 1 to 65535.
+     */
+    readonly accessPort: string | ros.IResolvable;
+
+    /**
+     * @Property fullNatTableId: The ID of the FULLNAT table to which the FULLNAT entry belongs.
+     */
+    readonly fullNatTableId: string | ros.IResolvable;
+
+    /**
+     * @Property ipProtocol: The protocol of the packets that are forwarded by the port. Valid values:
+     * TCP
+     * UDP
+     */
+    readonly ipProtocol: string | ros.IResolvable;
+
+    /**
+     * @Property natIp: The NAT IP address that provides address translation.
+     */
+    readonly natIp: string | ros.IResolvable;
+
+    /**
+     * @Property natIpPort: The frontend port to be modified in the mapping of FULLNAT port. Valid values: 1 to 65535.
+     */
+    readonly natIpPort: string | ros.IResolvable;
+
+    /**
+     * @Property networkInterfaceId: The elastic network interface (ENI) ID.
+     */
+    readonly networkInterfaceId: string | ros.IResolvable;
+
+    /**
+     * @Property fullNatEntryDescription: The description of the FULLNAT entry.
+     * This parameter is optional. If you enter a description, the description must be 2 to 256 characters in length, and cannot start with http:\/\/ or https:\/\/.
+     */
+    readonly fullNatEntryDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property fullNatEntryName: The FULLNAT entry name. The name must be 2 to 128 characters in length. It must start with a letter but cannot start with http:\/\/ or https:\/\/.
+     */
+    readonly fullNatEntryName?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosFullNatEntryProps`
+ *
+ * @param properties - the TypeScript properties of a `RosFullNatEntryProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosFullNatEntryPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('natIp', ros.requiredValidator)(properties.natIp));
+    errors.collect(ros.propertyValidator('natIp', ros.validateString)(properties.natIp));
+    errors.collect(ros.propertyValidator('fullNatEntryDescription', ros.validateString)(properties.fullNatEntryDescription));
+    errors.collect(ros.propertyValidator('accessIp', ros.requiredValidator)(properties.accessIp));
+    errors.collect(ros.propertyValidator('accessIp', ros.validateString)(properties.accessIp));
+    errors.collect(ros.propertyValidator('fullNatTableId', ros.requiredValidator)(properties.fullNatTableId));
+    errors.collect(ros.propertyValidator('fullNatTableId', ros.validateString)(properties.fullNatTableId));
+    errors.collect(ros.propertyValidator('fullNatEntryName', ros.validateString)(properties.fullNatEntryName));
+    errors.collect(ros.propertyValidator('natIpPort', ros.requiredValidator)(properties.natIpPort));
+    errors.collect(ros.propertyValidator('natIpPort', ros.validateString)(properties.natIpPort));
+    errors.collect(ros.propertyValidator('ipProtocol', ros.requiredValidator)(properties.ipProtocol));
+    if(properties.ipProtocol && (typeof properties.ipProtocol) !== 'object') {
+        errors.collect(ros.propertyValidator('ipProtocol', ros.validateAllowedValues)({
+          data: properties.ipProtocol,
+          allowedValues: ["TCP","UDP"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ipProtocol', ros.validateString)(properties.ipProtocol));
+    errors.collect(ros.propertyValidator('accessPort', ros.requiredValidator)(properties.accessPort));
+    errors.collect(ros.propertyValidator('accessPort', ros.validateString)(properties.accessPort));
+    errors.collect(ros.propertyValidator('networkInterfaceId', ros.requiredValidator)(properties.networkInterfaceId));
+    errors.collect(ros.propertyValidator('networkInterfaceId', ros.validateString)(properties.networkInterfaceId));
+    return errors.wrap('supplied properties not correct for "RosFullNatEntryProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::FullNatEntry` resource
+ *
+ * @param properties - the TypeScript properties of a `RosFullNatEntryProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::FullNatEntry` resource.
+ */
+// @ts-ignore TS6133
+function rosFullNatEntryPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosFullNatEntryPropsValidator(properties).assertSuccess();
+    }
+    return {
+      AccessIp: ros.stringToRosTemplate(properties.accessIp),
+      AccessPort: ros.stringToRosTemplate(properties.accessPort),
+      FullNatTableId: ros.stringToRosTemplate(properties.fullNatTableId),
+      IpProtocol: ros.stringToRosTemplate(properties.ipProtocol),
+      NatIp: ros.stringToRosTemplate(properties.natIp),
+      NatIpPort: ros.stringToRosTemplate(properties.natIpPort),
+      NetworkInterfaceId: ros.stringToRosTemplate(properties.networkInterfaceId),
+      FullNatEntryDescription: ros.stringToRosTemplate(properties.fullNatEntryDescription),
+      FullNatEntryName: ros.stringToRosTemplate(properties.fullNatEntryName),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::FullNatEntry`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `FullNatEntry` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-fullnatentry
+ */
+export class RosFullNatEntry extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::FullNatEntry";
+
+    /**
+     * @Attribute FullNatEntryId: The FULLNAT entry ID.
+     */
+    public readonly attrFullNatEntryId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property accessIp: The backend IP address to be modified in FULLNAT address translation.
+     */
+    public accessIp: string | ros.IResolvable;
+
+    /**
+     * @Property accessPort: The backend port to be modified in the mapping of FULLNAT port. Valid values: 1 to 65535.
+     */
+    public accessPort: string | ros.IResolvable;
+
+    /**
+     * @Property fullNatTableId: The ID of the FULLNAT table to which the FULLNAT entry belongs.
+     */
+    public fullNatTableId: string | ros.IResolvable;
+
+    /**
+     * @Property ipProtocol: The protocol of the packets that are forwarded by the port. Valid values:
+     * TCP
+     * UDP
+     */
+    public ipProtocol: string | ros.IResolvable;
+
+    /**
+     * @Property natIp: The NAT IP address that provides address translation.
+     */
+    public natIp: string | ros.IResolvable;
+
+    /**
+     * @Property natIpPort: The frontend port to be modified in the mapping of FULLNAT port. Valid values: 1 to 65535.
+     */
+    public natIpPort: string | ros.IResolvable;
+
+    /**
+     * @Property networkInterfaceId: The elastic network interface (ENI) ID.
+     */
+    public networkInterfaceId: string | ros.IResolvable;
+
+    /**
+     * @Property fullNatEntryDescription: The description of the FULLNAT entry.
+     * This parameter is optional. If you enter a description, the description must be 2 to 256 characters in length, and cannot start with http:\/\/ or https:\/\/.
+     */
+    public fullNatEntryDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property fullNatEntryName: The FULLNAT entry name. The name must be 2 to 128 characters in length. It must start with a letter but cannot start with http:\/\/ or https:\/\/.
+     */
+    public fullNatEntryName: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosFullNatEntryProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosFullNatEntry.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrFullNatEntryId = this.getAtt('FullNatEntryId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.accessIp = props.accessIp;
+        this.accessPort = props.accessPort;
+        this.fullNatTableId = props.fullNatTableId;
+        this.ipProtocol = props.ipProtocol;
+        this.natIp = props.natIp;
+        this.natIpPort = props.natIpPort;
+        this.networkInterfaceId = props.networkInterfaceId;
+        this.fullNatEntryDescription = props.fullNatEntryDescription;
+        this.fullNatEntryName = props.fullNatEntryName;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            accessIp: this.accessIp,
+            accessPort: this.accessPort,
+            fullNatTableId: this.fullNatTableId,
+            ipProtocol: this.ipProtocol,
+            natIp: this.natIp,
+            natIpPort: this.natIpPort,
+            networkInterfaceId: this.networkInterfaceId,
+            fullNatEntryDescription: this.fullNatEntryDescription,
+            fullNatEntryName: this.fullNatEntryName,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosFullNatEntryPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosGrantInstanceToCen`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-grantinstancetocen
  */
@@ -3414,7 +3653,7 @@ function rosGrantInstanceToCenPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::GrantInstanceToCen`, which is used to authorize a CEN instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::GrantInstanceToCen`.
  * @Note This class does not contain additional functions, so it is recommended to use the `GrantInstanceToCen` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-grantinstancetocen
  */
@@ -4256,7 +4495,7 @@ function rosIpv4GatewayPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::Ipv4Gateway`, which is used to create an IPv4 gateway.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::Ipv4Gateway`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Ipv4Gateway` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipv4gateway
  */
@@ -4434,7 +4673,7 @@ function rosIpv6GatewayPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::Ipv6Gateway`, which is used to create an IPv6 gateway.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::Ipv6Gateway`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Ipv6Gateway` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipv6gateway
  */
@@ -4652,7 +4891,7 @@ function rosIpv6InternetBandwidthPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::Ipv6InternetBandwidth`, which is used to purchase Internet bandwidth for an IPv6 address.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::Ipv6InternetBandwidth`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Ipv6InternetBandwidth` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipv6internetbandwidth
  */
@@ -4940,7 +5179,7 @@ function rosNatGatewayPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::NatGateway`, which is used to create a NAT gateway.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::NatGateway`.
  * @Note This class does not contain additional functions, so it is recommended to use the `NatGateway` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-natgateway
  */
@@ -5276,7 +5515,7 @@ function rosNatIpPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::NatIp`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::NatIp`, which is used to create a NAT IP address.
  * @Note This class does not contain additional functions, so it is recommended to use the `NatIp` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-natip
  */
@@ -5369,6 +5608,158 @@ export class RosNatIp extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosNatIpPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosNatIpCidr`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-natipcidr
+ */
+export interface RosNatIpCidrProps {
+
+    /**
+     * @Property natGatewayId: The ID of the Virtual Private Cloud (VPC) NAT gateway with which you want to associate the CIDR block.
+     */
+    readonly natGatewayId: string | ros.IResolvable;
+
+    /**
+     * @Property natIpCidr: The NAT CIDR block that you want to associate with the NAT gateway.
+     * The new CIDR block must meet the following conditions:
+     * The NAT CIDR block must fall within 10.0.0.0\/8, 172.16.0.0\/12, 192.168.0.0\/16, or their subnets.
+     * The subnet mask must be 16 to 32 bits in length.
+     * The NAT CIDR block cannot overlap with the private CIDR block of the VPC to which the NAT gateway belongs. If you want to use other IP addresses from the private CIDR block of the VPC to provide NAT services, create a vSwitch and attach the vSwitch to another VPC NAT gateway.
+     * If you want to use public IP addresses to provide NAT services, make sure that the public IP addresses fall within a customer CIDR block of the VPC to which the VPC NAT gateway belongs. For more information, see What is customer CIDR block?.
+     */
+    readonly natIpCidr: string | ros.IResolvable;
+
+    /**
+     * @Property natIpCidrDescription: The description of the NAT CIDR block.
+     * The description must be 2 to 256 characters in length and start with a letter. The description cannot start with http:\/\/ or https:\/\/.
+     */
+    readonly natIpCidrDescription: string | ros.IResolvable;
+
+    /**
+     * @Property natIpCidrName: The name of the CIDR block.
+     * The name must be 2 to 128 characters in length, and can contain letters, digits, periods (.), underscores (_), and hyphens (-). It must start with a letter. The name must start with a letter and cannot start with http:\/\/ or https:\/\/.
+     */
+    readonly natIpCidrName: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosNatIpCidrProps`
+ *
+ * @param properties - the TypeScript properties of a `RosNatIpCidrProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosNatIpCidrPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('natIpCidr', ros.requiredValidator)(properties.natIpCidr));
+    errors.collect(ros.propertyValidator('natIpCidr', ros.validateString)(properties.natIpCidr));
+    errors.collect(ros.propertyValidator('natIpCidrDescription', ros.requiredValidator)(properties.natIpCidrDescription));
+    errors.collect(ros.propertyValidator('natIpCidrDescription', ros.validateString)(properties.natIpCidrDescription));
+    errors.collect(ros.propertyValidator('natIpCidrName', ros.requiredValidator)(properties.natIpCidrName));
+    errors.collect(ros.propertyValidator('natIpCidrName', ros.validateString)(properties.natIpCidrName));
+    errors.collect(ros.propertyValidator('natGatewayId', ros.requiredValidator)(properties.natGatewayId));
+    errors.collect(ros.propertyValidator('natGatewayId', ros.validateString)(properties.natGatewayId));
+    return errors.wrap('supplied properties not correct for "RosNatIpCidrProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::NatIpCidr` resource
+ *
+ * @param properties - the TypeScript properties of a `RosNatIpCidrProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::NatIpCidr` resource.
+ */
+// @ts-ignore TS6133
+function rosNatIpCidrPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosNatIpCidrPropsValidator(properties).assertSuccess();
+    }
+    return {
+      NatGatewayId: ros.stringToRosTemplate(properties.natGatewayId),
+      NatIpCidr: ros.stringToRosTemplate(properties.natIpCidr),
+      NatIpCidrDescription: ros.stringToRosTemplate(properties.natIpCidrDescription),
+      NatIpCidrName: ros.stringToRosTemplate(properties.natIpCidrName),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::NatIpCidr`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `NatIpCidr` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-natipcidr
+ */
+export class RosNatIpCidr extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::NatIpCidr";
+
+    /**
+     * @Attribute NatIpCidrId: The ID of the NAT CIDR block.
+     */
+    public readonly attrNatIpCidrId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property natGatewayId: The ID of the Virtual Private Cloud (VPC) NAT gateway with which you want to associate the CIDR block.
+     */
+    public natGatewayId: string | ros.IResolvable;
+
+    /**
+     * @Property natIpCidr: The NAT CIDR block that you want to associate with the NAT gateway.
+     * The new CIDR block must meet the following conditions:
+     * The NAT CIDR block must fall within 10.0.0.0\/8, 172.16.0.0\/12, 192.168.0.0\/16, or their subnets.
+     * The subnet mask must be 16 to 32 bits in length.
+     * The NAT CIDR block cannot overlap with the private CIDR block of the VPC to which the NAT gateway belongs. If you want to use other IP addresses from the private CIDR block of the VPC to provide NAT services, create a vSwitch and attach the vSwitch to another VPC NAT gateway.
+     * If you want to use public IP addresses to provide NAT services, make sure that the public IP addresses fall within a customer CIDR block of the VPC to which the VPC NAT gateway belongs. For more information, see What is customer CIDR block?.
+     */
+    public natIpCidr: string | ros.IResolvable;
+
+    /**
+     * @Property natIpCidrDescription: The description of the NAT CIDR block.
+     * The description must be 2 to 256 characters in length and start with a letter. The description cannot start with http:\/\/ or https:\/\/.
+     */
+    public natIpCidrDescription: string | ros.IResolvable;
+
+    /**
+     * @Property natIpCidrName: The name of the CIDR block.
+     * The name must be 2 to 128 characters in length, and can contain letters, digits, periods (.), underscores (_), and hyphens (-). It must start with a letter. The name must start with a letter and cannot start with http:\/\/ or https:\/\/.
+     */
+    public natIpCidrName: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosNatIpCidrProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosNatIpCidr.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrNatIpCidrId = this.getAtt('NatIpCidrId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.natGatewayId = props.natGatewayId;
+        this.natIpCidr = props.natIpCidr;
+        this.natIpCidrDescription = props.natIpCidrDescription;
+        this.natIpCidrName = props.natIpCidrName;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            natGatewayId: this.natGatewayId,
+            natIpCidr: this.natIpCidr,
+            natIpCidrDescription: this.natIpCidrDescription,
+            natIpCidrName: this.natIpCidrName,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosNatIpCidrPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
 
@@ -6002,7 +6393,7 @@ function rosPeeringRouterInterfaceBindingPropsToRosTemplate(properties: any, ena
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::PeeringRouterInterfaceBinding`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::PeeringRouterInterfaceBinding`, which is used to bind a router interface with another router interface.
  * @Note This class does not contain additional functions, so it is recommended to use the `PeeringRouterInterfaceBinding` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-peeringrouterinterfacebinding
  */
@@ -6124,7 +6515,7 @@ function rosPeeringRouterInterfaceConnectionPropsToRosTemplate(properties: any, 
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::PeeringRouterInterfaceConnection`, which is used to initiate a router interface connection.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::PeeringRouterInterfaceConnection`.
  * @Note This class does not contain additional functions, so it is recommended to use the `PeeringRouterInterfaceConnection` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-peeringrouterinterfaceconnection
  */
@@ -6618,7 +7009,7 @@ function rosRouteTablePropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::RouteTable`, which is used to create a custom route table.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::RouteTable`.
  * @Note This class does not contain additional functions, so it is recommended to use the `RouteTable` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-routetable
  */
@@ -8307,7 +8698,7 @@ function rosTrafficMirrorSessionPropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::TrafficMirrorSession`DATASOURCE::VPC::NatGateways is used to query NAT gateways.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::TrafficMirrorSession`.
  * @Note This class does not contain additional functions, so it is recommended to use the `TrafficMirrorSession` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-trafficmirrorsession
  */
@@ -8540,7 +8931,7 @@ function rosTrafficMirrorSessionSourcesAdditionPropsToRosTemplate(properties: an
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::TrafficMirrorSessionSourcesAddition`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::TrafficMirrorSessionSourcesAddition`, which is used to add traffic mirror sources to traffic mirror sessions.
  * @Note This class does not contain additional functions, so it is recommended to use the `TrafficMirrorSessionSourcesAddition` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-trafficmirrorsessionsourcesaddition
  */
@@ -8586,6 +8977,285 @@ export class RosTrafficMirrorSessionSourcesAddition extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosTrafficMirrorSessionSourcesAdditionPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+/**
+ * Properties for defining a `RosVSwitchCidrReservation`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vswitchcidrreservation
+ */
+export interface RosVSwitchCidrReservationProps {
+
+    /**
+     * @Property vSwitchId: The ID of the vSwitch to which the reserved CIDR block belongs.
+     */
+    readonly vSwitchId: string | ros.IResolvable;
+
+    /**
+     * @Property ipVersion: The IP version of the reserved CIDR block. Valid values:
+     * IPv4 (default)
+     * IPv6
+     */
+    readonly ipVersion?: string | ros.IResolvable;
+
+    /**
+     * @Property tags:
+     */
+    readonly tags?: RosVSwitchCidrReservation.TagsProperty[];
+
+    /**
+     * @Property vSwitchCidrReservationCidr: The reserved CIDR block of the vSwitch.
+     * When IpVersion is set to IPv4, the reserved CIDR block must be a proper subset of the IPv4 CIDR block of the vSwitch and the subnet mask length of the reserved CIDR block cannot be greater than 28.
+     * When IpVersion is set to IPv6, the reserved CIDR block must be a proper subset of the IPv6 CIDR block of the vSwitch and the subnet mask length of the reserved CIDR block cannot be greater than 80.
+     * Note You must specify one of VSwitchCidrReservationMask and VSwitchCidrReservationCidr.
+     */
+    readonly vSwitchCidrReservationCidr?: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchCidrReservationDescription: The description of the reserved CIDR block. This parameter is empty by default.
+     * The description must be 2 to 256 characters in length. It must start with a letter and cannot start with http:\/\/ or https:\/\/.
+     */
+    readonly vSwitchCidrReservationDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchCidrReservationMask: The subnet mask of the reserved CIDR block.
+     * When IpVersion is set to IPv4, the subnet mask length of the CIDR block must be greater than the IPv4 subnet mask length of the vSwitch and cannot be greater than 28.
+     * When IpVersion is set to IPv6, the subnet mask length of the CIDR block must be greater than the IPv6 subnet mask length of the vSwitch and cannot be greater than 80.
+     * Note You must specify one of VSwitchCidrReservationMask and VSwitchCidrReservationCidr.
+     */
+    readonly vSwitchCidrReservationMask?: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchCidrReservationName: The name of the reserved CIDR block.
+     * The name must be 2 to 128 characters in length and can contain digits, underscores (_), and hyphens (-). It must start with a letter.
+     */
+    readonly vSwitchCidrReservationName?: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchCidrReservationType: The type of reserved CIDR block. Set the value to prefix.
+     * Note When a user or a cloud service allocates a CIDR block to an elastic network interface (ENI), the CIDR block must be allocated from the reserved CIDR block. If the reserved CIDR block is exhausted, an error is returned.
+     */
+    readonly vSwitchCidrReservationType?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosVSwitchCidrReservationProps`
+ *
+ * @param properties - the TypeScript properties of a `RosVSwitchCidrReservationProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosVSwitchCidrReservationPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.vSwitchCidrReservationType && (typeof properties.vSwitchCidrReservationType) !== 'object') {
+        errors.collect(ros.propertyValidator('vSwitchCidrReservationType', ros.validateAllowedValues)({
+          data: properties.vSwitchCidrReservationType,
+          allowedValues: ["prefix"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('vSwitchCidrReservationType', ros.validateString)(properties.vSwitchCidrReservationType));
+    errors.collect(ros.propertyValidator('vSwitchCidrReservationCidr', ros.validateString)(properties.vSwitchCidrReservationCidr));
+    errors.collect(ros.propertyValidator('vSwitchCidrReservationDescription', ros.validateString)(properties.vSwitchCidrReservationDescription));
+    if(properties.ipVersion && (typeof properties.ipVersion) !== 'object') {
+        errors.collect(ros.propertyValidator('ipVersion', ros.validateAllowedValues)({
+          data: properties.ipVersion,
+          allowedValues: ["IPv6","IPv4"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ipVersion', ros.validateString)(properties.ipVersion));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('vSwitchCidrReservationName', ros.validateString)(properties.vSwitchCidrReservationName));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosVSwitchCidrReservation_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('vSwitchCidrReservationMask', ros.validateString)(properties.vSwitchCidrReservationMask));
+    return errors.wrap('supplied properties not correct for "RosVSwitchCidrReservationProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::VSwitchCidrReservation` resource
+ *
+ * @param properties - the TypeScript properties of a `RosVSwitchCidrReservationProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::VSwitchCidrReservation` resource.
+ */
+// @ts-ignore TS6133
+function rosVSwitchCidrReservationPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosVSwitchCidrReservationPropsValidator(properties).assertSuccess();
+    }
+    return {
+      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
+      IpVersion: ros.stringToRosTemplate(properties.ipVersion),
+      Tags: ros.listMapper(rosVSwitchCidrReservationTagsPropertyToRosTemplate)(properties.tags),
+      VSwitchCidrReservationCidr: ros.stringToRosTemplate(properties.vSwitchCidrReservationCidr),
+      VSwitchCidrReservationDescription: ros.stringToRosTemplate(properties.vSwitchCidrReservationDescription),
+      VSwitchCidrReservationMask: ros.stringToRosTemplate(properties.vSwitchCidrReservationMask),
+      VSwitchCidrReservationName: ros.stringToRosTemplate(properties.vSwitchCidrReservationName),
+      VSwitchCidrReservationType: ros.stringToRosTemplate(properties.vSwitchCidrReservationType),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VSwitchCidrReservation`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `VSwitchCidrReservation` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vswitchcidrreservation
+ */
+export class RosVSwitchCidrReservation extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::VSwitchCidrReservation";
+
+    /**
+     * @Attribute VSwitchCidrReservationId: The ID of the reserved CIDR block.
+     */
+    public readonly attrVSwitchCidrReservationId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property vSwitchId: The ID of the vSwitch to which the reserved CIDR block belongs.
+     */
+    public vSwitchId: string | ros.IResolvable;
+
+    /**
+     * @Property ipVersion: The IP version of the reserved CIDR block. Valid values:
+     * IPv4 (default)
+     * IPv6
+     */
+    public ipVersion: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags:
+     */
+    public tags: RosVSwitchCidrReservation.TagsProperty[] | undefined;
+
+    /**
+     * @Property vSwitchCidrReservationCidr: The reserved CIDR block of the vSwitch.
+     * When IpVersion is set to IPv4, the reserved CIDR block must be a proper subset of the IPv4 CIDR block of the vSwitch and the subnet mask length of the reserved CIDR block cannot be greater than 28.
+     * When IpVersion is set to IPv6, the reserved CIDR block must be a proper subset of the IPv6 CIDR block of the vSwitch and the subnet mask length of the reserved CIDR block cannot be greater than 80.
+     * Note You must specify one of VSwitchCidrReservationMask and VSwitchCidrReservationCidr.
+     */
+    public vSwitchCidrReservationCidr: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property vSwitchCidrReservationDescription: The description of the reserved CIDR block. This parameter is empty by default.
+     * The description must be 2 to 256 characters in length. It must start with a letter and cannot start with http:\/\/ or https:\/\/.
+     */
+    public vSwitchCidrReservationDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property vSwitchCidrReservationMask: The subnet mask of the reserved CIDR block.
+     * When IpVersion is set to IPv4, the subnet mask length of the CIDR block must be greater than the IPv4 subnet mask length of the vSwitch and cannot be greater than 28.
+     * When IpVersion is set to IPv6, the subnet mask length of the CIDR block must be greater than the IPv6 subnet mask length of the vSwitch and cannot be greater than 80.
+     * Note You must specify one of VSwitchCidrReservationMask and VSwitchCidrReservationCidr.
+     */
+    public vSwitchCidrReservationMask: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property vSwitchCidrReservationName: The name of the reserved CIDR block.
+     * The name must be 2 to 128 characters in length and can contain digits, underscores (_), and hyphens (-). It must start with a letter.
+     */
+    public vSwitchCidrReservationName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property vSwitchCidrReservationType: The type of reserved CIDR block. Set the value to prefix.
+     * Note When a user or a cloud service allocates a CIDR block to an elastic network interface (ENI), the CIDR block must be allocated from the reserved CIDR block. If the reserved CIDR block is exhausted, an error is returned.
+     */
+    public vSwitchCidrReservationType: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosVSwitchCidrReservationProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosVSwitchCidrReservation.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrVSwitchCidrReservationId = this.getAtt('VSwitchCidrReservationId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.vSwitchId = props.vSwitchId;
+        this.ipVersion = props.ipVersion;
+        this.tags = props.tags;
+        this.vSwitchCidrReservationCidr = props.vSwitchCidrReservationCidr;
+        this.vSwitchCidrReservationDescription = props.vSwitchCidrReservationDescription;
+        this.vSwitchCidrReservationMask = props.vSwitchCidrReservationMask;
+        this.vSwitchCidrReservationName = props.vSwitchCidrReservationName;
+        this.vSwitchCidrReservationType = props.vSwitchCidrReservationType;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            vSwitchId: this.vSwitchId,
+            ipVersion: this.ipVersion,
+            tags: this.tags,
+            vSwitchCidrReservationCidr: this.vSwitchCidrReservationCidr,
+            vSwitchCidrReservationDescription: this.vSwitchCidrReservationDescription,
+            vSwitchCidrReservationMask: this.vSwitchCidrReservationMask,
+            vSwitchCidrReservationName: this.vSwitchCidrReservationName,
+            vSwitchCidrReservationType: this.vSwitchCidrReservationType,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosVSwitchCidrReservationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosVSwitchCidrReservation {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: The value of tag N to add to the capacity reservation. Valid values of N: 1 to 20. The tag value can be an empty string. The tag value can be up to 128 characters in length and cannot start with acs:. The tag value cannot contain http:\/\/ or https:\/\/.
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: The key of tag N to add to the capacity reservation. Valid values of N: 1 to 20. The tag key cannot be an empty string. The tag key can be up to 128 characters in length and cannot contain http:\/\/ or https:\/\/. It cannot start with acs: or aliyun.
+         */
+        readonly key?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosVSwitchCidrReservation_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::VSwitchCidrReservation.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::VSwitchCidrReservation.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosVSwitchCidrReservationTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosVSwitchCidrReservation_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**
@@ -8939,7 +9609,7 @@ function rosVpcPeerConnectionPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpcPeerConnection`, which is used to create a peering connection between virtual private clouds (VPCs).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpcPeerConnection`.
  * @Note This class does not contain additional functions, so it is recommended to use the `VpcPeerConnection` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpcpeerconnection
  */
@@ -9937,7 +10607,7 @@ function rosVpnConnectionPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpnConnection`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpnConnection`, which is used to create an IPsec-VPN connection.
  * @Note This class does not contain additional functions, so it is recommended to use the `VpnConnection` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnconnection
  */

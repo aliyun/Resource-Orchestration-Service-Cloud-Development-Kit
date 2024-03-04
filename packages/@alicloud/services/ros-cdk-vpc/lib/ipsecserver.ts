@@ -62,6 +62,10 @@ export interface IpsecServerProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipsecserver
  */
 export class IpsecServer extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: IpsecServerProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute IpsecServerId: IPsec server ID.
@@ -80,6 +84,10 @@ export class IpsecServer extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: IpsecServerProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosIpsecServer = new RosIpsecServer(this, id,  {
             localSubnet: props.localSubnet,

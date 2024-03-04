@@ -65,6 +65,10 @@ export interface LifecycleHookProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-lifecyclehook
  */
 export class LifecycleHook extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: LifecycleHookProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute LifecycleHookId: The lifecycle hook ID
@@ -83,6 +87,10 @@ export class LifecycleHook extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: LifecycleHookProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosLifecycleHook = new RosLifecycleHook(this, id,  {
             lifecycleHookName: props.lifecycleHookName,

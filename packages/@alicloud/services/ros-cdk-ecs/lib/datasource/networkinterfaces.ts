@@ -100,6 +100,10 @@ export interface NetworkInterfacesProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-networkinterfaces
  */
 export class NetworkInterfaces extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: NetworkInterfacesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute NetworkInterfaceIds: The list of NetworkInterfaceIds.
@@ -118,6 +122,10 @@ export class NetworkInterfaces extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: NetworkInterfacesProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosNetworkInterfaces = new RosNetworkInterfaces(this, id,  {
             status: props.status,

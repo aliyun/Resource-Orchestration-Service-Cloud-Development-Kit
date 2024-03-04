@@ -36,6 +36,10 @@ export interface TemplateProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-template
  */
 export class Template extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: TemplateProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ExecutionPolicy: Execution Policy
@@ -59,6 +63,10 @@ export class Template extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: TemplateProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosTemplate = new RosTemplate(this, id,  {
             resourceGroupId: props.resourceGroupId,

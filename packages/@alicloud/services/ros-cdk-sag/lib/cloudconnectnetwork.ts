@@ -38,6 +38,10 @@ export interface CloudConnectNetworkProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-cloudconnectnetwork
  */
 export class CloudConnectNetwork extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: CloudConnectNetworkProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CcnId: The ID of the CCN instance.
@@ -51,6 +55,10 @@ export class CloudConnectNetwork extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: CloudConnectNetworkProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCloudConnectNetwork = new RosCloudConnectNetwork(this, id,  {
             isDefault: props.isDefault === undefined || props.isDefault === null ? false : props.isDefault,

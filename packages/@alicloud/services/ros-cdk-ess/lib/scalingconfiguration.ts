@@ -373,6 +373,10 @@ export interface ScalingConfigurationProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalingconfiguration
  */
 export class ScalingConfiguration extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ScalingConfigurationProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ScalingConfigurationId: The scaling configuration id
@@ -391,6 +395,10 @@ export class ScalingConfiguration extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ScalingConfigurationProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosScalingConfiguration = new RosScalingConfiguration(this, id,  {
             dedicatedHostId: props.dedicatedHostId,

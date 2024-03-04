@@ -41,6 +41,10 @@ export interface DeploymentProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-deployment
  */
 export class Deployment extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DeploymentProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -49,6 +53,10 @@ export class Deployment extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DeploymentProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDeployment = new RosDeployment(this, id,  {
             description: props.description,

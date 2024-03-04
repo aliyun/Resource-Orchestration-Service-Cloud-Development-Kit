@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instancegroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.263Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:51.679Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceGroupProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceGroupProps.Jsii$Proxy.class)
 public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -72,6 +72,13 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
+     * Property cpuOptions: Cpu options.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCpuOptions() {
+        return null;
+    }
+
+    /**
      * Property creditSpecification: The performance mode of the burstable instance.
      * <p>
      * Valid values:
@@ -89,6 +96,15 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
      * Property dedicatedHostId: which dedicated host will be deployed.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDedicatedHostId() {
+        return null;
+    }
+
+    /**
+     * Property deletionForce: Whether force delete the instance.
+     * <p>
+     * Default value is false.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeletionForce() {
         return null;
     }
 
@@ -139,7 +155,7 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
     /**
      * Property eniMappings: NetworkInterface to attach to instance.
      * <p>
-     * Max support 1 ENI.
+     * Max support 2 ENIs.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEniMappings() {
         return null;
@@ -164,6 +180,23 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
      * </ol>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getHostName() {
+        return null;
+    }
+
+    /**
+     * Property hostNames: The hostname of instance N.
+     * <p>
+     * You can use this parameter to specify different hostnames for multiple instances. Take note of the following items:
+     * <p>
+     * <ul>
+     * <li>The maximum value of N must be the same as the Amount value. For example, if you set Amount to 2, you can use HostNames.1 and HostNames.2 to specify hostnames for the individual instances. Examples: HostNames.1=test1 and HostNames.2=test2.</li>
+     * <li>You cannot specify both HostName and HostNames.N.</li>
+     * <li>The hostname cannot start or end with a period (.) or hyphen (-). The hostname cannot contain consecutive periods (.) or hyphens (-).</li>
+     * <li>For Windows instances, the hostname must be 2 to 15 characters in length and cannot contain periods (.) or contain only digits. The hostname can contain letters, digits, and hyphens (-).</li>
+     * <li>For instances that run other operating systems such as Linux, the hostname must be 2 to 64 characters in length. You can use periods (.) to separate a hostname into multiple segments. Each segment can contain letters, digits, and hyphens (-).</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHostNames() {
         return null;
     }
 
@@ -222,6 +255,13 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
      * Property imageId: Image ID to create ecs instance.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getImageId() {
+        return null;
+    }
+
+    /**
+     * Property imageOptions: Image options.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getImageOptions() {
         return null;
     }
 
@@ -322,6 +362,28 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
+     * Property networkInterfaceQueueNumber: The number of queues supported by the primary ENI.
+     * <p>
+     * Take note of the following items:
+     * <p>
+     * <ul>
+     * <li>The value of this parameter cannot exceed the maximum number of queues per ENI allowed for the instance type.</li>
+     * <li>The total number of queues for all ENIs on the instance cannot exceed the queue quota for the instance type.</li>
+     * <li>If NetworkInterface.N.InstanceType is set to Primary, you cannot specify NetworkInterfaceQueueNumber but can specify NetworkInterface.N.QueueNumber</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNetworkInterfaceQueueNumber() {
+        return null;
+    }
+
+    /**
+     * Property networkOptions: Network options.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNetworkOptions() {
+        return null;
+    }
+
+    /**
      * Property networkType: Instance network type.
      * <p>
      * Support 'vpc' and 'classic', for compatible reason, default is 'classic'. If vswitch id and vpc id is specified, the property will be forced to be set to 'vpc'
@@ -399,6 +461,13 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
+     * Property schedulerOptions: undefined.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSchedulerOptions() {
+        return null;
+    }
+
+    /**
      * Property securityEnhancementStrategy:.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityEnhancementStrategy() {
@@ -420,6 +489,13 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
      * The valid values of N are based on the maximum number of security groups to which an instance can belong. For more information, see Security group limits.Note: You cannot specify both SecurityGroupId and SecurityGroupIds at the same time.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupIds() {
+        return null;
+    }
+
+    /**
+     * Property securityOptions: Security options.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityOptions() {
         return null;
     }
 
@@ -609,6 +685,22 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
+     * Property uniqueSuffix: Specifies whether to automatically append incremental suffixes to the hostname specified by the <strong>HostName</strong> parameter and to the instance name specified by the <strong>InstanceName</strong> parameter when you batch create instances.
+     * <p>
+     * The incremental suffixes can range from 001 to 999. Valid values:
+     * <p>
+     * <ul>
+     * <li><strong>true</strong>: appends incremental suffixes to the hostname and the instance name.</li>
+     * <li><strong>false</strong>: does not append incremental suffixes to the hostname or the instance name.
+     * Default value: <strong>false</strong>.
+     * When the <strong>HostName</strong> or <strong>InstanceName</strong> value is set in the name_prefix[begin_number,bits] format without a suffix (name_suffix), the <strong>UniqueSuffix</strong> parameter does not take effect. The names are sorted in the specified sequence.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getUniqueSuffix() {
+        return null;
+    }
+
+    /**
      * Property updatePolicy: Specify the policy at update.
      * <p>
      * The value can be 'ForNewInstances' or 'ForAllInstances'.
@@ -686,8 +778,10 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object autoReleaseTime;
         java.lang.Object autoRenew;
         java.lang.Object autoRenewPeriod;
+        java.lang.Object cpuOptions;
         java.lang.Object creditSpecification;
         java.lang.Object dedicatedHostId;
+        java.lang.Object deletionForce;
         java.lang.Object deletionProtection;
         java.lang.Object deploymentSetGroupNo;
         java.lang.Object deploymentSetId;
@@ -695,11 +789,13 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object diskMappings;
         java.lang.Object eniMappings;
         java.lang.Object hostName;
+        java.lang.Object hostNames;
         java.lang.Object hpcClusterId;
         java.lang.Object httpEndpoint;
         java.lang.Object httpTokens;
         java.lang.Object imageFamily;
         java.lang.Object imageId;
+        java.lang.Object imageOptions;
         java.lang.Object instanceChargeType;
         java.lang.Object instanceName;
         java.lang.Object internetChargeType;
@@ -711,6 +807,8 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object launchTemplateId;
         java.lang.Object launchTemplateName;
         java.lang.Object launchTemplateVersion;
+        java.lang.Object networkInterfaceQueueNumber;
+        java.lang.Object networkOptions;
         java.lang.Object networkType;
         java.lang.Object password;
         java.lang.Object passwordInherit;
@@ -720,9 +818,11 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object privatePoolOptions;
         java.lang.Object ramRoleName;
         java.lang.Object resourceGroupId;
+        java.lang.Object schedulerOptions;
         java.lang.Object securityEnhancementStrategy;
         java.lang.Object securityGroupId;
         java.lang.Object securityGroupIds;
+        java.lang.Object securityOptions;
         java.lang.Object spotDuration;
         java.lang.Object spotInterruptionBehavior;
         java.lang.Object spotPriceLimit;
@@ -743,6 +843,7 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object systemDiskStorageClusterId;
         java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroup.TagsProperty> tags;
         java.lang.Object tenancy;
+        java.lang.Object uniqueSuffix;
         java.lang.Object updatePolicy;
         java.lang.Object useAdditionalService;
         java.lang.Object userData;
@@ -914,6 +1015,26 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link InstanceGroupProps#getCpuOptions}
+         * @param cpuOptions Property cpuOptions: Cpu options.
+         * @return {@code this}
+         */
+        public Builder cpuOptions(com.aliyun.ros.cdk.core.IResolvable cpuOptions) {
+            this.cpuOptions = cpuOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupProps#getCpuOptions}
+         * @param cpuOptions Property cpuOptions: Cpu options.
+         * @return {@code this}
+         */
+        public Builder cpuOptions(com.aliyun.ros.cdk.ecs.RosInstanceGroup.CpuOptionsProperty cpuOptions) {
+            this.cpuOptions = cpuOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceGroupProps#getCreditSpecification}
          * @param creditSpecification Property creditSpecification: The performance mode of the burstable instance.
          *                            Valid values:
@@ -962,6 +1083,28 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
          */
         public Builder dedicatedHostId(com.aliyun.ros.cdk.core.IResolvable dedicatedHostId) {
             this.dedicatedHostId = dedicatedHostId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupProps#getDeletionForce}
+         * @param deletionForce Property deletionForce: Whether force delete the instance.
+         *                      Default value is false.
+         * @return {@code this}
+         */
+        public Builder deletionForce(java.lang.Boolean deletionForce) {
+            this.deletionForce = deletionForce;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupProps#getDeletionForce}
+         * @param deletionForce Property deletionForce: Whether force delete the instance.
+         *                      Default value is false.
+         * @return {@code this}
+         */
+        public Builder deletionForce(com.aliyun.ros.cdk.core.IResolvable deletionForce) {
+            this.deletionForce = deletionForce;
             return this;
         }
 
@@ -1078,7 +1221,7 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         /**
          * Sets the value of {@link InstanceGroupProps#getEniMappings}
          * @param eniMappings Property eniMappings: NetworkInterface to attach to instance.
-         *                    Max support 1 ENI.
+         *                    Max support 2 ENIs.
          * @return {@code this}
          */
         public Builder eniMappings(com.aliyun.ros.cdk.core.IResolvable eniMappings) {
@@ -1089,7 +1232,7 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         /**
          * Sets the value of {@link InstanceGroupProps#getEniMappings}
          * @param eniMappings Property eniMappings: NetworkInterface to attach to instance.
-         *                    Max support 1 ENI.
+         *                    Max support 2 ENIs.
          * @return {@code this}
          */
         public Builder eniMappings(java.util.List<? extends java.lang.Object> eniMappings) {
@@ -1142,6 +1285,44 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
          */
         public Builder hostName(com.aliyun.ros.cdk.core.IResolvable hostName) {
             this.hostName = hostName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupProps#getHostNames}
+         * @param hostNames Property hostNames: The hostname of instance N.
+         *                  You can use this parameter to specify different hostnames for multiple instances. Take note of the following items:
+         *                  <p>
+         *                  <ul>
+         *                  <li>The maximum value of N must be the same as the Amount value. For example, if you set Amount to 2, you can use HostNames.1 and HostNames.2 to specify hostnames for the individual instances. Examples: HostNames.1=test1 and HostNames.2=test2.</li>
+         *                  <li>You cannot specify both HostName and HostNames.N.</li>
+         *                  <li>The hostname cannot start or end with a period (.) or hyphen (-). The hostname cannot contain consecutive periods (.) or hyphens (-).</li>
+         *                  <li>For Windows instances, the hostname must be 2 to 15 characters in length and cannot contain periods (.) or contain only digits. The hostname can contain letters, digits, and hyphens (-).</li>
+         *                  <li>For instances that run other operating systems such as Linux, the hostname must be 2 to 64 characters in length. You can use periods (.) to separate a hostname into multiple segments. Each segment can contain letters, digits, and hyphens (-).</li>
+         *                  </ul>
+         * @return {@code this}
+         */
+        public Builder hostNames(com.aliyun.ros.cdk.core.IResolvable hostNames) {
+            this.hostNames = hostNames;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupProps#getHostNames}
+         * @param hostNames Property hostNames: The hostname of instance N.
+         *                  You can use this parameter to specify different hostnames for multiple instances. Take note of the following items:
+         *                  <p>
+         *                  <ul>
+         *                  <li>The maximum value of N must be the same as the Amount value. For example, if you set Amount to 2, you can use HostNames.1 and HostNames.2 to specify hostnames for the individual instances. Examples: HostNames.1=test1 and HostNames.2=test2.</li>
+         *                  <li>You cannot specify both HostName and HostNames.N.</li>
+         *                  <li>The hostname cannot start or end with a period (.) or hyphen (-). The hostname cannot contain consecutive periods (.) or hyphens (-).</li>
+         *                  <li>For Windows instances, the hostname must be 2 to 15 characters in length and cannot contain periods (.) or contain only digits. The hostname can contain letters, digits, and hyphens (-).</li>
+         *                  <li>For instances that run other operating systems such as Linux, the hostname must be 2 to 64 characters in length. You can use periods (.) to separate a hostname into multiple segments. Each segment can contain letters, digits, and hyphens (-).</li>
+         *                  </ul>
+         * @return {@code this}
+         */
+        public Builder hostNames(java.util.List<? extends java.lang.Object> hostNames) {
+            this.hostNames = hostNames;
             return this;
         }
 
@@ -1282,6 +1463,26 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
          */
         public Builder imageId(com.aliyun.ros.cdk.core.IResolvable imageId) {
             this.imageId = imageId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupProps#getImageOptions}
+         * @param imageOptions Property imageOptions: Image options.
+         * @return {@code this}
+         */
+        public Builder imageOptions(com.aliyun.ros.cdk.core.IResolvable imageOptions) {
+            this.imageOptions = imageOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupProps#getImageOptions}
+         * @param imageOptions Property imageOptions: Image options.
+         * @return {@code this}
+         */
+        public Builder imageOptions(com.aliyun.ros.cdk.ecs.RosInstanceGroup.ImageOptionsProperty imageOptions) {
+            this.imageOptions = imageOptions;
             return this;
         }
 
@@ -1528,6 +1729,60 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link InstanceGroupProps#getNetworkInterfaceQueueNumber}
+         * @param networkInterfaceQueueNumber Property networkInterfaceQueueNumber: The number of queues supported by the primary ENI.
+         *                                    Take note of the following items:
+         *                                    <p>
+         *                                    <ul>
+         *                                    <li>The value of this parameter cannot exceed the maximum number of queues per ENI allowed for the instance type.</li>
+         *                                    <li>The total number of queues for all ENIs on the instance cannot exceed the queue quota for the instance type.</li>
+         *                                    <li>If NetworkInterface.N.InstanceType is set to Primary, you cannot specify NetworkInterfaceQueueNumber but can specify NetworkInterface.N.QueueNumber</li>
+         *                                    </ul>
+         * @return {@code this}
+         */
+        public Builder networkInterfaceQueueNumber(java.lang.Number networkInterfaceQueueNumber) {
+            this.networkInterfaceQueueNumber = networkInterfaceQueueNumber;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupProps#getNetworkInterfaceQueueNumber}
+         * @param networkInterfaceQueueNumber Property networkInterfaceQueueNumber: The number of queues supported by the primary ENI.
+         *                                    Take note of the following items:
+         *                                    <p>
+         *                                    <ul>
+         *                                    <li>The value of this parameter cannot exceed the maximum number of queues per ENI allowed for the instance type.</li>
+         *                                    <li>The total number of queues for all ENIs on the instance cannot exceed the queue quota for the instance type.</li>
+         *                                    <li>If NetworkInterface.N.InstanceType is set to Primary, you cannot specify NetworkInterfaceQueueNumber but can specify NetworkInterface.N.QueueNumber</li>
+         *                                    </ul>
+         * @return {@code this}
+         */
+        public Builder networkInterfaceQueueNumber(com.aliyun.ros.cdk.core.IResolvable networkInterfaceQueueNumber) {
+            this.networkInterfaceQueueNumber = networkInterfaceQueueNumber;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupProps#getNetworkOptions}
+         * @param networkOptions Property networkOptions: Network options.
+         * @return {@code this}
+         */
+        public Builder networkOptions(com.aliyun.ros.cdk.core.IResolvable networkOptions) {
+            this.networkOptions = networkOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupProps#getNetworkOptions}
+         * @param networkOptions Property networkOptions: Network options.
+         * @return {@code this}
+         */
+        public Builder networkOptions(com.aliyun.ros.cdk.ecs.RosInstanceGroup.NetworkOptionsProperty networkOptions) {
+            this.networkOptions = networkOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceGroupProps#getNetworkType}
          * @param networkType Property networkType: Instance network type.
          *                    Support 'vpc' and 'classic', for compatible reason, default is 'classic'. If vswitch id and vpc id is specified, the property will be forced to be set to 'vpc'
@@ -1722,6 +1977,26 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link InstanceGroupProps#getSchedulerOptions}
+         * @param schedulerOptions Property schedulerOptions: undefined.
+         * @return {@code this}
+         */
+        public Builder schedulerOptions(com.aliyun.ros.cdk.core.IResolvable schedulerOptions) {
+            this.schedulerOptions = schedulerOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupProps#getSchedulerOptions}
+         * @param schedulerOptions Property schedulerOptions: undefined.
+         * @return {@code this}
+         */
+        public Builder schedulerOptions(com.aliyun.ros.cdk.ecs.RosInstanceGroup.SchedulerOptionsProperty schedulerOptions) {
+            this.schedulerOptions = schedulerOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceGroupProps#getSecurityEnhancementStrategy}
          * @param securityEnhancementStrategy Property securityEnhancementStrategy:.
          * @return {@code this}
@@ -1782,6 +2057,26 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
          */
         public Builder securityGroupIds(java.util.List<? extends java.lang.Object> securityGroupIds) {
             this.securityGroupIds = securityGroupIds;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupProps#getSecurityOptions}
+         * @param securityOptions Property securityOptions: Security options.
+         * @return {@code this}
+         */
+        public Builder securityOptions(com.aliyun.ros.cdk.core.IResolvable securityOptions) {
+            this.securityOptions = securityOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupProps#getSecurityOptions}
+         * @param securityOptions Property securityOptions: Security options.
+         * @return {@code this}
+         */
+        public Builder securityOptions(com.aliyun.ros.cdk.ecs.RosInstanceGroup.SecurityOptionsProperty securityOptions) {
+            this.securityOptions = securityOptions;
             return this;
         }
 
@@ -2242,6 +2537,42 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link InstanceGroupProps#getUniqueSuffix}
+         * @param uniqueSuffix Property uniqueSuffix: Specifies whether to automatically append incremental suffixes to the hostname specified by the <strong>HostName</strong> parameter and to the instance name specified by the <strong>InstanceName</strong> parameter when you batch create instances.
+         *                     The incremental suffixes can range from 001 to 999. Valid values:
+         *                     <p>
+         *                     <ul>
+         *                     <li><strong>true</strong>: appends incremental suffixes to the hostname and the instance name.</li>
+         *                     <li><strong>false</strong>: does not append incremental suffixes to the hostname or the instance name.
+         *                     Default value: <strong>false</strong>.
+         *                     When the <strong>HostName</strong> or <strong>InstanceName</strong> value is set in the name_prefix[begin_number,bits] format without a suffix (name_suffix), the <strong>UniqueSuffix</strong> parameter does not take effect. The names are sorted in the specified sequence.</li>
+         *                     </ul>
+         * @return {@code this}
+         */
+        public Builder uniqueSuffix(java.lang.Boolean uniqueSuffix) {
+            this.uniqueSuffix = uniqueSuffix;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupProps#getUniqueSuffix}
+         * @param uniqueSuffix Property uniqueSuffix: Specifies whether to automatically append incremental suffixes to the hostname specified by the <strong>HostName</strong> parameter and to the instance name specified by the <strong>InstanceName</strong> parameter when you batch create instances.
+         *                     The incremental suffixes can range from 001 to 999. Valid values:
+         *                     <p>
+         *                     <ul>
+         *                     <li><strong>true</strong>: appends incremental suffixes to the hostname and the instance name.</li>
+         *                     <li><strong>false</strong>: does not append incremental suffixes to the hostname or the instance name.
+         *                     Default value: <strong>false</strong>.
+         *                     When the <strong>HostName</strong> or <strong>InstanceName</strong> value is set in the name_prefix[begin_number,bits] format without a suffix (name_suffix), the <strong>UniqueSuffix</strong> parameter does not take effect. The names are sorted in the specified sequence.</li>
+         *                     </ul>
+         * @return {@code this}
+         */
+        public Builder uniqueSuffix(com.aliyun.ros.cdk.core.IResolvable uniqueSuffix) {
+            this.uniqueSuffix = uniqueSuffix;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceGroupProps#getUpdatePolicy}
          * @param updatePolicy Property updatePolicy: Specify the policy at update.
          *                     The value can be 'ForNewInstances' or 'ForAllInstances'.
@@ -2420,8 +2751,10 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object autoReleaseTime;
         private final java.lang.Object autoRenew;
         private final java.lang.Object autoRenewPeriod;
+        private final java.lang.Object cpuOptions;
         private final java.lang.Object creditSpecification;
         private final java.lang.Object dedicatedHostId;
+        private final java.lang.Object deletionForce;
         private final java.lang.Object deletionProtection;
         private final java.lang.Object deploymentSetGroupNo;
         private final java.lang.Object deploymentSetId;
@@ -2429,11 +2762,13 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object diskMappings;
         private final java.lang.Object eniMappings;
         private final java.lang.Object hostName;
+        private final java.lang.Object hostNames;
         private final java.lang.Object hpcClusterId;
         private final java.lang.Object httpEndpoint;
         private final java.lang.Object httpTokens;
         private final java.lang.Object imageFamily;
         private final java.lang.Object imageId;
+        private final java.lang.Object imageOptions;
         private final java.lang.Object instanceChargeType;
         private final java.lang.Object instanceName;
         private final java.lang.Object internetChargeType;
@@ -2445,6 +2780,8 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object launchTemplateId;
         private final java.lang.Object launchTemplateName;
         private final java.lang.Object launchTemplateVersion;
+        private final java.lang.Object networkInterfaceQueueNumber;
+        private final java.lang.Object networkOptions;
         private final java.lang.Object networkType;
         private final java.lang.Object password;
         private final java.lang.Object passwordInherit;
@@ -2454,9 +2791,11 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object privatePoolOptions;
         private final java.lang.Object ramRoleName;
         private final java.lang.Object resourceGroupId;
+        private final java.lang.Object schedulerOptions;
         private final java.lang.Object securityEnhancementStrategy;
         private final java.lang.Object securityGroupId;
         private final java.lang.Object securityGroupIds;
+        private final java.lang.Object securityOptions;
         private final java.lang.Object spotDuration;
         private final java.lang.Object spotInterruptionBehavior;
         private final java.lang.Object spotPriceLimit;
@@ -2477,6 +2816,7 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object systemDiskStorageClusterId;
         private final java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroup.TagsProperty> tags;
         private final java.lang.Object tenancy;
+        private final java.lang.Object uniqueSuffix;
         private final java.lang.Object updatePolicy;
         private final java.lang.Object useAdditionalService;
         private final java.lang.Object userData;
@@ -2498,8 +2838,10 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             this.autoReleaseTime = software.amazon.jsii.Kernel.get(this, "autoReleaseTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoRenewPeriod = software.amazon.jsii.Kernel.get(this, "autoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.cpuOptions = software.amazon.jsii.Kernel.get(this, "cpuOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.creditSpecification = software.amazon.jsii.Kernel.get(this, "creditSpecification", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dedicatedHostId = software.amazon.jsii.Kernel.get(this, "dedicatedHostId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.deletionForce = software.amazon.jsii.Kernel.get(this, "deletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deploymentSetGroupNo = software.amazon.jsii.Kernel.get(this, "deploymentSetGroupNo", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deploymentSetId = software.amazon.jsii.Kernel.get(this, "deploymentSetId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -2507,11 +2849,13 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             this.diskMappings = software.amazon.jsii.Kernel.get(this, "diskMappings", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.eniMappings = software.amazon.jsii.Kernel.get(this, "eniMappings", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.hostName = software.amazon.jsii.Kernel.get(this, "hostName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.hostNames = software.amazon.jsii.Kernel.get(this, "hostNames", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.hpcClusterId = software.amazon.jsii.Kernel.get(this, "hpcClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.httpEndpoint = software.amazon.jsii.Kernel.get(this, "httpEndpoint", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.httpTokens = software.amazon.jsii.Kernel.get(this, "httpTokens", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.imageFamily = software.amazon.jsii.Kernel.get(this, "imageFamily", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.imageId = software.amazon.jsii.Kernel.get(this, "imageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.imageOptions = software.amazon.jsii.Kernel.get(this, "imageOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -2523,6 +2867,8 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             this.launchTemplateId = software.amazon.jsii.Kernel.get(this, "launchTemplateId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.launchTemplateName = software.amazon.jsii.Kernel.get(this, "launchTemplateName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.launchTemplateVersion = software.amazon.jsii.Kernel.get(this, "launchTemplateVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.networkInterfaceQueueNumber = software.amazon.jsii.Kernel.get(this, "networkInterfaceQueueNumber", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.networkOptions = software.amazon.jsii.Kernel.get(this, "networkOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.passwordInherit = software.amazon.jsii.Kernel.get(this, "passwordInherit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -2532,9 +2878,11 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             this.privatePoolOptions = software.amazon.jsii.Kernel.get(this, "privatePoolOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ramRoleName = software.amazon.jsii.Kernel.get(this, "ramRoleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.schedulerOptions = software.amazon.jsii.Kernel.get(this, "schedulerOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityEnhancementStrategy = software.amazon.jsii.Kernel.get(this, "securityEnhancementStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupIds = software.amazon.jsii.Kernel.get(this, "securityGroupIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityOptions = software.amazon.jsii.Kernel.get(this, "securityOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.spotDuration = software.amazon.jsii.Kernel.get(this, "spotDuration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.spotInterruptionBehavior = software.amazon.jsii.Kernel.get(this, "spotInterruptionBehavior", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.spotPriceLimit = software.amazon.jsii.Kernel.get(this, "spotPriceLimit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -2555,6 +2903,7 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             this.systemDiskStorageClusterId = software.amazon.jsii.Kernel.get(this, "systemDiskStorageClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosInstanceGroup.TagsProperty.class)));
             this.tenancy = software.amazon.jsii.Kernel.get(this, "tenancy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.uniqueSuffix = software.amazon.jsii.Kernel.get(this, "uniqueSuffix", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.updatePolicy = software.amazon.jsii.Kernel.get(this, "updatePolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.useAdditionalService = software.amazon.jsii.Kernel.get(this, "useAdditionalService", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.userData = software.amazon.jsii.Kernel.get(this, "userData", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -2577,8 +2926,10 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             this.autoReleaseTime = builder.autoReleaseTime;
             this.autoRenew = builder.autoRenew;
             this.autoRenewPeriod = builder.autoRenewPeriod;
+            this.cpuOptions = builder.cpuOptions;
             this.creditSpecification = builder.creditSpecification;
             this.dedicatedHostId = builder.dedicatedHostId;
+            this.deletionForce = builder.deletionForce;
             this.deletionProtection = builder.deletionProtection;
             this.deploymentSetGroupNo = builder.deploymentSetGroupNo;
             this.deploymentSetId = builder.deploymentSetId;
@@ -2586,11 +2937,13 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             this.diskMappings = builder.diskMappings;
             this.eniMappings = builder.eniMappings;
             this.hostName = builder.hostName;
+            this.hostNames = builder.hostNames;
             this.hpcClusterId = builder.hpcClusterId;
             this.httpEndpoint = builder.httpEndpoint;
             this.httpTokens = builder.httpTokens;
             this.imageFamily = builder.imageFamily;
             this.imageId = builder.imageId;
+            this.imageOptions = builder.imageOptions;
             this.instanceChargeType = builder.instanceChargeType;
             this.instanceName = builder.instanceName;
             this.internetChargeType = builder.internetChargeType;
@@ -2602,6 +2955,8 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             this.launchTemplateId = builder.launchTemplateId;
             this.launchTemplateName = builder.launchTemplateName;
             this.launchTemplateVersion = builder.launchTemplateVersion;
+            this.networkInterfaceQueueNumber = builder.networkInterfaceQueueNumber;
+            this.networkOptions = builder.networkOptions;
             this.networkType = builder.networkType;
             this.password = builder.password;
             this.passwordInherit = builder.passwordInherit;
@@ -2611,9 +2966,11 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             this.privatePoolOptions = builder.privatePoolOptions;
             this.ramRoleName = builder.ramRoleName;
             this.resourceGroupId = builder.resourceGroupId;
+            this.schedulerOptions = builder.schedulerOptions;
             this.securityEnhancementStrategy = builder.securityEnhancementStrategy;
             this.securityGroupId = builder.securityGroupId;
             this.securityGroupIds = builder.securityGroupIds;
+            this.securityOptions = builder.securityOptions;
             this.spotDuration = builder.spotDuration;
             this.spotInterruptionBehavior = builder.spotInterruptionBehavior;
             this.spotPriceLimit = builder.spotPriceLimit;
@@ -2634,6 +2991,7 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             this.systemDiskStorageClusterId = builder.systemDiskStorageClusterId;
             this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroup.TagsProperty>)builder.tags;
             this.tenancy = builder.tenancy;
+            this.uniqueSuffix = builder.uniqueSuffix;
             this.updatePolicy = builder.updatePolicy;
             this.useAdditionalService = builder.useAdditionalService;
             this.userData = builder.userData;
@@ -2679,6 +3037,11 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
+        public final java.lang.Object getCpuOptions() {
+            return this.cpuOptions;
+        }
+
+        @Override
         public final java.lang.Object getCreditSpecification() {
             return this.creditSpecification;
         }
@@ -2686,6 +3049,11 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         @Override
         public final java.lang.Object getDedicatedHostId() {
             return this.dedicatedHostId;
+        }
+
+        @Override
+        public final java.lang.Object getDeletionForce() {
+            return this.deletionForce;
         }
 
         @Override
@@ -2724,6 +3092,11 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
+        public final java.lang.Object getHostNames() {
+            return this.hostNames;
+        }
+
+        @Override
         public final java.lang.Object getHpcClusterId() {
             return this.hpcClusterId;
         }
@@ -2746,6 +3119,11 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         @Override
         public final java.lang.Object getImageId() {
             return this.imageId;
+        }
+
+        @Override
+        public final java.lang.Object getImageOptions() {
+            return this.imageOptions;
         }
 
         @Override
@@ -2804,6 +3182,16 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
+        public final java.lang.Object getNetworkInterfaceQueueNumber() {
+            return this.networkInterfaceQueueNumber;
+        }
+
+        @Override
+        public final java.lang.Object getNetworkOptions() {
+            return this.networkOptions;
+        }
+
+        @Override
         public final java.lang.Object getNetworkType() {
             return this.networkType;
         }
@@ -2849,6 +3237,11 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
+        public final java.lang.Object getSchedulerOptions() {
+            return this.schedulerOptions;
+        }
+
+        @Override
         public final java.lang.Object getSecurityEnhancementStrategy() {
             return this.securityEnhancementStrategy;
         }
@@ -2861,6 +3254,11 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         @Override
         public final java.lang.Object getSecurityGroupIds() {
             return this.securityGroupIds;
+        }
+
+        @Override
+        public final java.lang.Object getSecurityOptions() {
+            return this.securityOptions;
         }
 
         @Override
@@ -2964,6 +3362,11 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
+        public final java.lang.Object getUniqueSuffix() {
+            return this.uniqueSuffix;
+        }
+
+        @Override
         public final java.lang.Object getUpdatePolicy() {
             return this.updatePolicy;
         }
@@ -3021,11 +3424,17 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getAutoRenewPeriod() != null) {
                 data.set("autoRenewPeriod", om.valueToTree(this.getAutoRenewPeriod()));
             }
+            if (this.getCpuOptions() != null) {
+                data.set("cpuOptions", om.valueToTree(this.getCpuOptions()));
+            }
             if (this.getCreditSpecification() != null) {
                 data.set("creditSpecification", om.valueToTree(this.getCreditSpecification()));
             }
             if (this.getDedicatedHostId() != null) {
                 data.set("dedicatedHostId", om.valueToTree(this.getDedicatedHostId()));
+            }
+            if (this.getDeletionForce() != null) {
+                data.set("deletionForce", om.valueToTree(this.getDeletionForce()));
             }
             if (this.getDeletionProtection() != null) {
                 data.set("deletionProtection", om.valueToTree(this.getDeletionProtection()));
@@ -3048,6 +3457,9 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getHostName() != null) {
                 data.set("hostName", om.valueToTree(this.getHostName()));
             }
+            if (this.getHostNames() != null) {
+                data.set("hostNames", om.valueToTree(this.getHostNames()));
+            }
             if (this.getHpcClusterId() != null) {
                 data.set("hpcClusterId", om.valueToTree(this.getHpcClusterId()));
             }
@@ -3062,6 +3474,9 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             }
             if (this.getImageId() != null) {
                 data.set("imageId", om.valueToTree(this.getImageId()));
+            }
+            if (this.getImageOptions() != null) {
+                data.set("imageOptions", om.valueToTree(this.getImageOptions()));
             }
             if (this.getInstanceChargeType() != null) {
                 data.set("instanceChargeType", om.valueToTree(this.getInstanceChargeType()));
@@ -3096,6 +3511,12 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getLaunchTemplateVersion() != null) {
                 data.set("launchTemplateVersion", om.valueToTree(this.getLaunchTemplateVersion()));
             }
+            if (this.getNetworkInterfaceQueueNumber() != null) {
+                data.set("networkInterfaceQueueNumber", om.valueToTree(this.getNetworkInterfaceQueueNumber()));
+            }
+            if (this.getNetworkOptions() != null) {
+                data.set("networkOptions", om.valueToTree(this.getNetworkOptions()));
+            }
             if (this.getNetworkType() != null) {
                 data.set("networkType", om.valueToTree(this.getNetworkType()));
             }
@@ -3123,6 +3544,9 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
+            if (this.getSchedulerOptions() != null) {
+                data.set("schedulerOptions", om.valueToTree(this.getSchedulerOptions()));
+            }
             if (this.getSecurityEnhancementStrategy() != null) {
                 data.set("securityEnhancementStrategy", om.valueToTree(this.getSecurityEnhancementStrategy()));
             }
@@ -3131,6 +3555,9 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             }
             if (this.getSecurityGroupIds() != null) {
                 data.set("securityGroupIds", om.valueToTree(this.getSecurityGroupIds()));
+            }
+            if (this.getSecurityOptions() != null) {
+                data.set("securityOptions", om.valueToTree(this.getSecurityOptions()));
             }
             if (this.getSpotDuration() != null) {
                 data.set("spotDuration", om.valueToTree(this.getSpotDuration()));
@@ -3192,6 +3619,9 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getTenancy() != null) {
                 data.set("tenancy", om.valueToTree(this.getTenancy()));
             }
+            if (this.getUniqueSuffix() != null) {
+                data.set("uniqueSuffix", om.valueToTree(this.getUniqueSuffix()));
+            }
             if (this.getUpdatePolicy() != null) {
                 data.set("updatePolicy", om.valueToTree(this.getUpdatePolicy()));
             }
@@ -3238,8 +3668,10 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             if (this.autoReleaseTime != null ? !this.autoReleaseTime.equals(that.autoReleaseTime) : that.autoReleaseTime != null) return false;
             if (this.autoRenew != null ? !this.autoRenew.equals(that.autoRenew) : that.autoRenew != null) return false;
             if (this.autoRenewPeriod != null ? !this.autoRenewPeriod.equals(that.autoRenewPeriod) : that.autoRenewPeriod != null) return false;
+            if (this.cpuOptions != null ? !this.cpuOptions.equals(that.cpuOptions) : that.cpuOptions != null) return false;
             if (this.creditSpecification != null ? !this.creditSpecification.equals(that.creditSpecification) : that.creditSpecification != null) return false;
             if (this.dedicatedHostId != null ? !this.dedicatedHostId.equals(that.dedicatedHostId) : that.dedicatedHostId != null) return false;
+            if (this.deletionForce != null ? !this.deletionForce.equals(that.deletionForce) : that.deletionForce != null) return false;
             if (this.deletionProtection != null ? !this.deletionProtection.equals(that.deletionProtection) : that.deletionProtection != null) return false;
             if (this.deploymentSetGroupNo != null ? !this.deploymentSetGroupNo.equals(that.deploymentSetGroupNo) : that.deploymentSetGroupNo != null) return false;
             if (this.deploymentSetId != null ? !this.deploymentSetId.equals(that.deploymentSetId) : that.deploymentSetId != null) return false;
@@ -3247,11 +3679,13 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             if (this.diskMappings != null ? !this.diskMappings.equals(that.diskMappings) : that.diskMappings != null) return false;
             if (this.eniMappings != null ? !this.eniMappings.equals(that.eniMappings) : that.eniMappings != null) return false;
             if (this.hostName != null ? !this.hostName.equals(that.hostName) : that.hostName != null) return false;
+            if (this.hostNames != null ? !this.hostNames.equals(that.hostNames) : that.hostNames != null) return false;
             if (this.hpcClusterId != null ? !this.hpcClusterId.equals(that.hpcClusterId) : that.hpcClusterId != null) return false;
             if (this.httpEndpoint != null ? !this.httpEndpoint.equals(that.httpEndpoint) : that.httpEndpoint != null) return false;
             if (this.httpTokens != null ? !this.httpTokens.equals(that.httpTokens) : that.httpTokens != null) return false;
             if (this.imageFamily != null ? !this.imageFamily.equals(that.imageFamily) : that.imageFamily != null) return false;
             if (this.imageId != null ? !this.imageId.equals(that.imageId) : that.imageId != null) return false;
+            if (this.imageOptions != null ? !this.imageOptions.equals(that.imageOptions) : that.imageOptions != null) return false;
             if (this.instanceChargeType != null ? !this.instanceChargeType.equals(that.instanceChargeType) : that.instanceChargeType != null) return false;
             if (this.instanceName != null ? !this.instanceName.equals(that.instanceName) : that.instanceName != null) return false;
             if (this.internetChargeType != null ? !this.internetChargeType.equals(that.internetChargeType) : that.internetChargeType != null) return false;
@@ -3263,6 +3697,8 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             if (this.launchTemplateId != null ? !this.launchTemplateId.equals(that.launchTemplateId) : that.launchTemplateId != null) return false;
             if (this.launchTemplateName != null ? !this.launchTemplateName.equals(that.launchTemplateName) : that.launchTemplateName != null) return false;
             if (this.launchTemplateVersion != null ? !this.launchTemplateVersion.equals(that.launchTemplateVersion) : that.launchTemplateVersion != null) return false;
+            if (this.networkInterfaceQueueNumber != null ? !this.networkInterfaceQueueNumber.equals(that.networkInterfaceQueueNumber) : that.networkInterfaceQueueNumber != null) return false;
+            if (this.networkOptions != null ? !this.networkOptions.equals(that.networkOptions) : that.networkOptions != null) return false;
             if (this.networkType != null ? !this.networkType.equals(that.networkType) : that.networkType != null) return false;
             if (this.password != null ? !this.password.equals(that.password) : that.password != null) return false;
             if (this.passwordInherit != null ? !this.passwordInherit.equals(that.passwordInherit) : that.passwordInherit != null) return false;
@@ -3272,9 +3708,11 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             if (this.privatePoolOptions != null ? !this.privatePoolOptions.equals(that.privatePoolOptions) : that.privatePoolOptions != null) return false;
             if (this.ramRoleName != null ? !this.ramRoleName.equals(that.ramRoleName) : that.ramRoleName != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
+            if (this.schedulerOptions != null ? !this.schedulerOptions.equals(that.schedulerOptions) : that.schedulerOptions != null) return false;
             if (this.securityEnhancementStrategy != null ? !this.securityEnhancementStrategy.equals(that.securityEnhancementStrategy) : that.securityEnhancementStrategy != null) return false;
             if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
             if (this.securityGroupIds != null ? !this.securityGroupIds.equals(that.securityGroupIds) : that.securityGroupIds != null) return false;
+            if (this.securityOptions != null ? !this.securityOptions.equals(that.securityOptions) : that.securityOptions != null) return false;
             if (this.spotDuration != null ? !this.spotDuration.equals(that.spotDuration) : that.spotDuration != null) return false;
             if (this.spotInterruptionBehavior != null ? !this.spotInterruptionBehavior.equals(that.spotInterruptionBehavior) : that.spotInterruptionBehavior != null) return false;
             if (this.spotPriceLimit != null ? !this.spotPriceLimit.equals(that.spotPriceLimit) : that.spotPriceLimit != null) return false;
@@ -3295,6 +3733,7 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             if (this.systemDiskStorageClusterId != null ? !this.systemDiskStorageClusterId.equals(that.systemDiskStorageClusterId) : that.systemDiskStorageClusterId != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.tenancy != null ? !this.tenancy.equals(that.tenancy) : that.tenancy != null) return false;
+            if (this.uniqueSuffix != null ? !this.uniqueSuffix.equals(that.uniqueSuffix) : that.uniqueSuffix != null) return false;
             if (this.updatePolicy != null ? !this.updatePolicy.equals(that.updatePolicy) : that.updatePolicy != null) return false;
             if (this.useAdditionalService != null ? !this.useAdditionalService.equals(that.useAdditionalService) : that.useAdditionalService != null) return false;
             if (this.userData != null ? !this.userData.equals(that.userData) : that.userData != null) return false;
@@ -3313,8 +3752,10 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.autoReleaseTime != null ? this.autoReleaseTime.hashCode() : 0);
             result = 31 * result + (this.autoRenew != null ? this.autoRenew.hashCode() : 0);
             result = 31 * result + (this.autoRenewPeriod != null ? this.autoRenewPeriod.hashCode() : 0);
+            result = 31 * result + (this.cpuOptions != null ? this.cpuOptions.hashCode() : 0);
             result = 31 * result + (this.creditSpecification != null ? this.creditSpecification.hashCode() : 0);
             result = 31 * result + (this.dedicatedHostId != null ? this.dedicatedHostId.hashCode() : 0);
+            result = 31 * result + (this.deletionForce != null ? this.deletionForce.hashCode() : 0);
             result = 31 * result + (this.deletionProtection != null ? this.deletionProtection.hashCode() : 0);
             result = 31 * result + (this.deploymentSetGroupNo != null ? this.deploymentSetGroupNo.hashCode() : 0);
             result = 31 * result + (this.deploymentSetId != null ? this.deploymentSetId.hashCode() : 0);
@@ -3322,11 +3763,13 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.diskMappings != null ? this.diskMappings.hashCode() : 0);
             result = 31 * result + (this.eniMappings != null ? this.eniMappings.hashCode() : 0);
             result = 31 * result + (this.hostName != null ? this.hostName.hashCode() : 0);
+            result = 31 * result + (this.hostNames != null ? this.hostNames.hashCode() : 0);
             result = 31 * result + (this.hpcClusterId != null ? this.hpcClusterId.hashCode() : 0);
             result = 31 * result + (this.httpEndpoint != null ? this.httpEndpoint.hashCode() : 0);
             result = 31 * result + (this.httpTokens != null ? this.httpTokens.hashCode() : 0);
             result = 31 * result + (this.imageFamily != null ? this.imageFamily.hashCode() : 0);
             result = 31 * result + (this.imageId != null ? this.imageId.hashCode() : 0);
+            result = 31 * result + (this.imageOptions != null ? this.imageOptions.hashCode() : 0);
             result = 31 * result + (this.instanceChargeType != null ? this.instanceChargeType.hashCode() : 0);
             result = 31 * result + (this.instanceName != null ? this.instanceName.hashCode() : 0);
             result = 31 * result + (this.internetChargeType != null ? this.internetChargeType.hashCode() : 0);
@@ -3338,6 +3781,8 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.launchTemplateId != null ? this.launchTemplateId.hashCode() : 0);
             result = 31 * result + (this.launchTemplateName != null ? this.launchTemplateName.hashCode() : 0);
             result = 31 * result + (this.launchTemplateVersion != null ? this.launchTemplateVersion.hashCode() : 0);
+            result = 31 * result + (this.networkInterfaceQueueNumber != null ? this.networkInterfaceQueueNumber.hashCode() : 0);
+            result = 31 * result + (this.networkOptions != null ? this.networkOptions.hashCode() : 0);
             result = 31 * result + (this.networkType != null ? this.networkType.hashCode() : 0);
             result = 31 * result + (this.password != null ? this.password.hashCode() : 0);
             result = 31 * result + (this.passwordInherit != null ? this.passwordInherit.hashCode() : 0);
@@ -3347,9 +3792,11 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.privatePoolOptions != null ? this.privatePoolOptions.hashCode() : 0);
             result = 31 * result + (this.ramRoleName != null ? this.ramRoleName.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
+            result = 31 * result + (this.schedulerOptions != null ? this.schedulerOptions.hashCode() : 0);
             result = 31 * result + (this.securityEnhancementStrategy != null ? this.securityEnhancementStrategy.hashCode() : 0);
             result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
             result = 31 * result + (this.securityGroupIds != null ? this.securityGroupIds.hashCode() : 0);
+            result = 31 * result + (this.securityOptions != null ? this.securityOptions.hashCode() : 0);
             result = 31 * result + (this.spotDuration != null ? this.spotDuration.hashCode() : 0);
             result = 31 * result + (this.spotInterruptionBehavior != null ? this.spotInterruptionBehavior.hashCode() : 0);
             result = 31 * result + (this.spotPriceLimit != null ? this.spotPriceLimit.hashCode() : 0);
@@ -3370,6 +3817,7 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.systemDiskStorageClusterId != null ? this.systemDiskStorageClusterId.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.tenancy != null ? this.tenancy.hashCode() : 0);
+            result = 31 * result + (this.uniqueSuffix != null ? this.uniqueSuffix.hashCode() : 0);
             result = 31 * result + (this.updatePolicy != null ? this.updatePolicy.hashCode() : 0);
             result = 31 * result + (this.useAdditionalService != null ? this.useAdditionalService.hashCode() : 0);
             result = 31 * result + (this.userData != null ? this.userData.hashCode() : 0);

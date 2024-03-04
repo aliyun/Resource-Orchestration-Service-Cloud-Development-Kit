@@ -134,11 +134,15 @@ export interface InstanceProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::Hologram::Instance`ALIYUN::IMM::Project is used to create an Intelligent Media Management (IMM) project.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::Hologram::Instance`, which is used to create a Hologres instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hologram-instance
  */
 export class Instance extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: InstanceProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AutoRenewal: Whether automatic renewal is enabled.
@@ -267,6 +271,10 @@ export class Instance extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: InstanceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosInstance = new RosInstance(this, id,  {
             coldStorageSize: props.coldStorageSize,

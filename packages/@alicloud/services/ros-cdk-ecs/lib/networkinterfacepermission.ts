@@ -31,6 +31,10 @@ export interface NetworkInterfacePermissionProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-networkinterfacepermission
  */
 export class NetworkInterfacePermission extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: NetworkInterfacePermissionProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute NetworkInterfacePermissionId: the network interface permission id
@@ -44,6 +48,10 @@ export class NetworkInterfacePermission extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: NetworkInterfacePermissionProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosNetworkInterfacePermission = new RosNetworkInterfacePermission(this, id,  {
             accountId: props.accountId,

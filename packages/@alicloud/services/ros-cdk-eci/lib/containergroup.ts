@@ -168,6 +168,10 @@ export interface ContainerGroupProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eci-containergroup
  */
 export class ContainerGroup extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ContainerGroupProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ContainerGroupId: The ID of the container group.
@@ -226,6 +230,10 @@ export class ContainerGroup extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ContainerGroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosContainerGroup = new RosContainerGroup(this, id,  {
             resourceGroupId: props.resourceGroupId,

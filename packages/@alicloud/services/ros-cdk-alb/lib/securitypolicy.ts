@@ -40,6 +40,10 @@ export interface SecurityPolicyProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-securitypolicy
  */
 export class SecurityPolicy extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: SecurityPolicyProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SecurityPolicyId: The ID of the security policy.
@@ -53,6 +57,10 @@ export class SecurityPolicy extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: SecurityPolicyProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosSecurityPolicy = new RosSecurityPolicy(this, id,  {
             ciphers: props.ciphers,

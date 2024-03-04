@@ -182,6 +182,10 @@ export interface AutoProvisioningGroupProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-autoprovisioninggroup
  */
 export class AutoProvisioningGroup extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AutoProvisioningGroupProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AutoProvisioningGroupId: The ID of the auto provisioning group.
@@ -200,6 +204,10 @@ export class AutoProvisioningGroup extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AutoProvisioningGroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAutoProvisioningGroup = new RosAutoProvisioningGroup(this, id,  {
             totalTargetCapacity: props.totalTargetCapacity,

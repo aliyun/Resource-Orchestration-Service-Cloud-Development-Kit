@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.hologram.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::Hologram::Instance</code>.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::Hologram::Instance</code>, which is used to query the detailed information about a Hologres instance by instance ID.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.661Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:52.897Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hologram.$Module.class, fqn = "@alicloud/ros-cdk-hologram.datasource.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -86,6 +86,10 @@ export interface DrdsInstanceProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-drds-drdsinstance
  */
 export class DrdsInstance extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DrdsInstanceProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DrdsInstanceId: instance id
@@ -114,6 +118,10 @@ export class DrdsInstance extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DrdsInstanceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDrdsInstance = new RosDrdsInstance(this, id,  {
             description: props.description,

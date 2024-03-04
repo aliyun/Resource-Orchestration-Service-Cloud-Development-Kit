@@ -21,6 +21,10 @@ export interface AccessGroupsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-accessgroups
  */
 export class AccessGroups extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AccessGroupsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AccessGroupNames: The list of access group names.
@@ -39,6 +43,10 @@ export class AccessGroups extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AccessGroupsProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAccessGroups = new RosAccessGroups(this, id,  {
             accessGroupName: props.accessGroupName,

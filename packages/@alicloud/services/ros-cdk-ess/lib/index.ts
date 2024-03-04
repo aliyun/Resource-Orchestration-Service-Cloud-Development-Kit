@@ -1,5 +1,6 @@
 export * from './alarmtask';
 export * from './alarmtaskenable';
+export * from './eciscalingconfiguration';
 export * from './lifecyclehook';
 export * from './loadbalancerattachment';
 export * from './scalingconfiguration';

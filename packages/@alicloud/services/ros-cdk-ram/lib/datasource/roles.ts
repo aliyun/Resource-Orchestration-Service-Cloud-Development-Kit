@@ -21,6 +21,10 @@ export interface RolesProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-roles
  */
 export class Roles extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: RolesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute RoleNames: The list of role names.
@@ -39,6 +43,10 @@ export class Roles extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: RolesProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosRoles = new RosRoles(this, id,  {
             roleName: props.roleName,

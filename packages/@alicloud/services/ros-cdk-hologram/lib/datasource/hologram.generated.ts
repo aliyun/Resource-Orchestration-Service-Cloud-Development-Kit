@@ -48,7 +48,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::Hologram::Instance`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::Hologram::Instance`, which is used to query the detailed information about a Hologres instance by instance ID.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-hologram-instance
  */
@@ -140,7 +140,7 @@ function rosInstancesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::Hologram::Instances`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::Hologram::Instances`, which is used to query Hologres instances.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instances` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-hologram-instances
  */

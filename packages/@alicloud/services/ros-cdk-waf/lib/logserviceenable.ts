@@ -27,6 +27,10 @@ export interface LogServiceEnableProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-logserviceenable
  */
 export class LogServiceEnable extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: LogServiceEnableProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Domain: The domain name that is added to WAF.
@@ -46,6 +50,10 @@ You can call the DescribeInstanceInfo operation to query the ID of the WAF insta
      */
     constructor(scope: ros.Construct, id: string, props: LogServiceEnableProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosLogServiceEnable = new RosLogServiceEnable(this, id,  {
             instanceId: props.instanceId,

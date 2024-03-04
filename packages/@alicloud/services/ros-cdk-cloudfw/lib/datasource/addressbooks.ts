@@ -27,11 +27,15 @@ export interface AddressBooksProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::CLOUDFW::AddressBooks`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::CLOUDFW::AddressBooks`, which is used to query the information about address books that are used for access control in Cloud Firewall (CFW).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAddressBooks`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudfw-addressbooks
  */
 export class AddressBooks extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AddressBooksProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AddressBooks: The list of address books.
@@ -50,6 +54,10 @@ export class AddressBooks extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AddressBooksProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAddressBooks = new RosAddressBooks(this, id,  {
             groupType: props.groupType,

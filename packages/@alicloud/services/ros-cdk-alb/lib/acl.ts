@@ -32,6 +32,10 @@ export interface AclProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-acl
  */
 export class Acl extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AclProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AclId: The ID of the ACL.
@@ -45,6 +49,10 @@ export class Acl extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AclProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAcl = new RosAcl(this, id,  {
             aclEntries: props.aclEntries,

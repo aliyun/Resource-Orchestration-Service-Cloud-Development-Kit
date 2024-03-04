@@ -16,11 +16,15 @@ export interface ConsumerGroupsProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ROCKETMQ5::ConsumerGroups`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ROCKETMQ5::ConsumerGroups`, which is used to query consumer groups in ApsaraMQ for RocketMQ 5.0.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosConsumerGroups`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rocketmq5-consumergroups
  */
 export class ConsumerGroups extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ConsumerGroupsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ConsumerGroupIds: The list of consumer group IDs.
@@ -39,6 +43,10 @@ export class ConsumerGroups extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ConsumerGroupsProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosConsumerGroups = new RosConsumerGroups(this, id,  {
             instanceId: props.instanceId,

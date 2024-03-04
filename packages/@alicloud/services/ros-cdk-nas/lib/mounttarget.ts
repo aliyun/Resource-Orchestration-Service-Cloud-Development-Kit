@@ -59,6 +59,10 @@ export interface MountTargetProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-mounttarget
  */
 export class MountTarget extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: MountTargetProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute MountTargetDomain: Mount point domain name
@@ -72,6 +76,10 @@ export class MountTarget extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: MountTargetProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosMountTarget = new RosMountTarget(this, id,  {
             status: props.status,

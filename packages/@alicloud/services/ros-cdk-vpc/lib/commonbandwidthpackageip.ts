@@ -26,6 +26,10 @@ export interface CommonBandwidthPackageIpProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-commonbandwidthpackageip
  */
 export class CommonBandwidthPackageIp extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: CommonBandwidthPackageIpProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AllocationIds: All eip allocation ids of common bandwidth package.
@@ -44,6 +48,10 @@ export class CommonBandwidthPackageIp extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: CommonBandwidthPackageIpProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCommonBandwidthPackageIp = new RosCommonBandwidthPackageIp(this, id,  {
             eips: props.eips,

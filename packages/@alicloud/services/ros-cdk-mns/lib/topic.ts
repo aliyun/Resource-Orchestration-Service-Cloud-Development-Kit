@@ -33,6 +33,10 @@ export interface TopicProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-topic
  */
 export class Topic extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: TopicProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ARN.WithSlash: The ARN: acs:mns:$region:$accountid:/topics/$topicName
@@ -56,6 +60,10 @@ export class Topic extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: TopicProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosTopic = new RosTopic(this, id,  {
             maximumMessageSize: props.maximumMessageSize === undefined || props.maximumMessageSize === null ? 65536 : props.maximumMessageSize,

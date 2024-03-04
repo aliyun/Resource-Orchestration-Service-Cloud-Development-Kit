@@ -168,11 +168,15 @@ export interface InstanceProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DTS::Instance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DTS::Instance`, which is a new resource type that is used to create a Data Transmission Service (DTS) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-instance
  */
 export class Instance extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: InstanceProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceId: The ID of the DTS instance.
@@ -191,6 +195,10 @@ export class Instance extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: InstanceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosInstance = new RosInstance(this, id,  {
             resourceGroupId: props.resourceGroupId,

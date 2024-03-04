@@ -3,6 +3,218 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosIntranetConnectorEndpoint`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-computenest-intranetconnectorendpoint
+ */
+export interface RosIntranetConnectorEndpointProps {
+
+    /**
+     * @Property endpointRegionId: The region ID of the endpoint.
+     */
+    readonly endpointRegionId: string | ros.IResolvable;
+
+    /**
+     * @Property vpcId: The ID of the VPC to which the endpoint belongs.
+     */
+    readonly vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the endpoint, supporting full character set. The length must not exceed 500 characters.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property enablePrivateZone: Whether to enable the private zone.
+     * This parameter is only valid when the access point type is Managed.
+     */
+    readonly enablePrivateZone?: boolean | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the endpoint, supporting full character set except space. The length must not exceed 200 characters. If not, it will be filled in with EndpointId automatically.
+     */
+    readonly name?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceIds: Endpoint instance ID, when using ECS as an access point, fill in the instance ID of this ECS. Multiple instances can be specified up to a maximum of 2. The instance is required to be under the passed VPC.
+     * Hosted access points do not require incoming.
+     */
+    readonly resourceIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property type: The type of the endpoint.
+     * - Private (default) : private access point
+     * - Managed: managed access point.
+     */
+    readonly type?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosIntranetConnectorEndpointProps`
+ *
+ * @param properties - the TypeScript properties of a `RosIntranetConnectorEndpointProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosIntranetConnectorEndpointPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('enablePrivateZone', ros.validateBoolean)(properties.enablePrivateZone));
+    if(properties.type && (typeof properties.type) !== 'object') {
+        errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
+          data: properties.type,
+          allowedValues: ["Private","Managed"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('endpointRegionId', ros.requiredValidator)(properties.endpointRegionId));
+    errors.collect(ros.propertyValidator('endpointRegionId', ros.validateString)(properties.endpointRegionId));
+    if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
+        errors.collect(ros.propertyValidator('description', ros.validateLength)({
+            data: properties.description.length,
+            min: undefined,
+            max: 500,
+          }));
+    }
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    if(properties.resourceIds && (Array.isArray(properties.resourceIds) || (typeof properties.resourceIds) === 'string')) {
+        errors.collect(ros.propertyValidator('resourceIds', ros.validateLength)({
+            data: properties.resourceIds.length,
+            min: undefined,
+            max: 2,
+          }));
+    }
+    errors.collect(ros.propertyValidator('resourceIds', ros.listValidator(ros.validateString))(properties.resourceIds));
+    if(properties.name && (typeof properties.name) !== 'object') {
+        errors.collect(ros.propertyValidator('name', ros.validateAllowedPattern)({
+          data: properties.name,
+          reg: /^[^\s]{1,200}$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "RosIntranetConnectorEndpointProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ComputeNest::IntranetConnectorEndpoint` resource
+ *
+ * @param properties - the TypeScript properties of a `RosIntranetConnectorEndpointProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ComputeNest::IntranetConnectorEndpoint` resource.
+ */
+// @ts-ignore TS6133
+function rosIntranetConnectorEndpointPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosIntranetConnectorEndpointPropsValidator(properties).assertSuccess();
+    }
+    return {
+      EndpointRegionId: ros.stringToRosTemplate(properties.endpointRegionId),
+      VpcId: ros.stringToRosTemplate(properties.vpcId),
+      Description: ros.stringToRosTemplate(properties.description),
+      EnablePrivateZone: ros.booleanToRosTemplate(properties.enablePrivateZone),
+      Name: ros.stringToRosTemplate(properties.name),
+      ResourceIds: ros.listMapper(ros.stringToRosTemplate)(properties.resourceIds),
+      Type: ros.stringToRosTemplate(properties.type),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ComputeNest::IntranetConnectorEndpoint`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `IntranetConnectorEndpoint` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-computenest-intranetconnectorendpoint
+ */
+export class RosIntranetConnectorEndpoint extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ComputeNest::IntranetConnectorEndpoint";
+
+    /**
+     * @Attribute EndpointId: The ID of the endpoint.
+     */
+    public readonly attrEndpointId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property endpointRegionId: The region ID of the endpoint.
+     */
+    public endpointRegionId: string | ros.IResolvable;
+
+    /**
+     * @Property vpcId: The ID of the VPC to which the endpoint belongs.
+     */
+    public vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the endpoint, supporting full character set. The length must not exceed 500 characters.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property enablePrivateZone: Whether to enable the private zone.
+     * This parameter is only valid when the access point type is Managed.
+     */
+    public enablePrivateZone: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property name: The name of the endpoint, supporting full character set except space. The length must not exceed 200 characters. If not, it will be filled in with EndpointId automatically.
+     */
+    public name: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceIds: Endpoint instance ID, when using ECS as an access point, fill in the instance ID of this ECS. Multiple instances can be specified up to a maximum of 2. The instance is required to be under the passed VPC.
+     * Hosted access points do not require incoming.
+     */
+    public resourceIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property type: The type of the endpoint.
+     * - Private (default) : private access point
+     * - Managed: managed access point.
+     */
+    public type: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosIntranetConnectorEndpointProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosIntranetConnectorEndpoint.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrEndpointId = this.getAtt('EndpointId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.endpointRegionId = props.endpointRegionId;
+        this.vpcId = props.vpcId;
+        this.description = props.description;
+        this.enablePrivateZone = props.enablePrivateZone;
+        this.name = props.name;
+        this.resourceIds = props.resourceIds;
+        this.type = props.type;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            endpointRegionId: this.endpointRegionId,
+            vpcId: this.vpcId,
+            description: this.description,
+            enablePrivateZone: this.enablePrivateZone,
+            name: this.name,
+            resourceIds: this.resourceIds,
+            type: this.type,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosIntranetConnectorEndpointPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosServiceInstance`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-computenest-serviceinstance
  */

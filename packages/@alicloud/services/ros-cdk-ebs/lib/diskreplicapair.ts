@@ -94,6 +94,10 @@ export interface DiskReplicaPairProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ebs-diskreplicapair
  */
 export class DiskReplicaPair extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DiskReplicaPairProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Bandwidth: The bandwidth for asynchronous data replication between cloud disks.
@@ -172,6 +176,10 @@ export class DiskReplicaPair extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DiskReplicaPairProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDiskReplicaPair = new RosDiskReplicaPair(this, id,  {
             diskReplicaPairName: props.diskReplicaPairName,

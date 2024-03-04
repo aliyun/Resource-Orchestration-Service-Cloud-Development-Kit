@@ -26,6 +26,10 @@ export interface VirtualHostProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-virtualhost
  */
 export class VirtualHost extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: VirtualHostProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute VirtualHost: The name of the virtual host.
@@ -39,6 +43,10 @@ export class VirtualHost extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: VirtualHostProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosVirtualHost = new RosVirtualHost(this, id,  {
             instanceId: props.instanceId,

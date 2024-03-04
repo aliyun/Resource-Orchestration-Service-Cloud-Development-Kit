@@ -36,6 +36,10 @@ export interface ConfigurationsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-acm-configurations
  */
 export class Configurations extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ConfigurationsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Configurations: The list of configurations.
@@ -54,6 +58,10 @@ export class Configurations extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ConfigurationsProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosConfigurations = new RosConfigurations(this, id,  {
             group: props.group,

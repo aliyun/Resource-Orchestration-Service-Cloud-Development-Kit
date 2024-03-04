@@ -31,6 +31,10 @@ export interface StageConfigProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-stageconfig
  */
 export class StageConfig extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: StageConfigProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -39,6 +43,10 @@ export class StageConfig extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: StageConfigProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosStageConfig = new RosStageConfig(this, id,  {
             variables: props.variables,

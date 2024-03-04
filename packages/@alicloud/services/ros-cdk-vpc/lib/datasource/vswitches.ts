@@ -54,11 +54,15 @@ export interface VSwitchesProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::VSwitches`, which is used to query created vSwitches.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::VSwitches`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVSwitches`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-vswitches
  */
 export class VSwitches extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: VSwitchesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute VSwitchIds: The list of The vSwitch Ids.
@@ -77,6 +81,10 @@ export class VSwitches extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: VSwitchesProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosVSwitches = new RosVSwitches(this, id,  {
             isDefault: props.isDefault,

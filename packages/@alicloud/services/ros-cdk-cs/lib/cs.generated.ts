@@ -704,6 +704,26 @@ export interface RosClusterAddonsProps {
      * Default false.
      */
     readonly installedIgnore?: boolean | ros.IResolvable;
+
+    /**
+     * @Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user. Valid values:
+     * - EnsureAdminRoleAndBinding: Automatically create a role named "ros:application-admin:${user-id}" with administrator permissions and bind it to the current user.
+     * - None: Do nothing.
+     * The default value is EnsureAdminRoleAndBinding.
+     */
+    readonly rolePolicy?: string | ros.IResolvable;
+
+    /**
+     * @Property validationMode: Validation modes include:
+     * - Basic: basic validation, such as verifying the existence of a cluster.
+     * - Strict: in addition to basic validation, also validate the legality of WaitUntil.
+     */
+    readonly validationMode?: string | ros.IResolvable;
+
+    /**
+     * @Property waitUntil: After starting a creation or update, wait until all conditions are met.
+     */
+    readonly waitUntil?: Array<RosClusterAddons.WaitUntilProperty | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
@@ -716,6 +736,13 @@ export interface RosClusterAddonsProps {
 function RosClusterAddonsPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    if(properties.rolePolicy && (typeof properties.rolePolicy) !== 'object') {
+        errors.collect(ros.propertyValidator('rolePolicy', ros.validateAllowedValues)({
+          data: properties.rolePolicy,
+          allowedValues: ["EnsureAdminRoleAndBinding","None"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('rolePolicy', ros.validateString)(properties.rolePolicy));
     errors.collect(ros.propertyValidator('clusterId', ros.requiredValidator)(properties.clusterId));
     errors.collect(ros.propertyValidator('clusterId', ros.validateString)(properties.clusterId));
     errors.collect(ros.propertyValidator('addons', ros.requiredValidator)(properties.addons));
@@ -727,6 +754,21 @@ function RosClusterAddonsPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('addons', ros.listValidator(RosClusterAddons_AddonsPropertyValidator))(properties.addons));
+    if(properties.validationMode && (typeof properties.validationMode) !== 'object') {
+        errors.collect(ros.propertyValidator('validationMode', ros.validateAllowedValues)({
+          data: properties.validationMode,
+          allowedValues: ["Basic","Strict"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('validationMode', ros.validateString)(properties.validationMode));
+    if(properties.waitUntil && (Array.isArray(properties.waitUntil) || (typeof properties.waitUntil) === 'string')) {
+        errors.collect(ros.propertyValidator('waitUntil', ros.validateLength)({
+            data: properties.waitUntil.length,
+            min: 1,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('waitUntil', ros.listValidator(RosClusterAddons_WaitUntilPropertyValidator))(properties.waitUntil));
     errors.collect(ros.propertyValidator('installedIgnore', ros.validateBoolean)(properties.installedIgnore));
     return errors.wrap('supplied properties not correct for "RosClusterAddonsProps"');
 }
@@ -748,6 +790,9 @@ function rosClusterAddonsPropsToRosTemplate(properties: any, enableResourcePrope
       Addons: ros.listMapper(rosClusterAddonsAddonsPropertyToRosTemplate)(properties.addons),
       ClusterId: ros.stringToRosTemplate(properties.clusterId),
       InstalledIgnore: ros.booleanToRosTemplate(properties.installedIgnore),
+      RolePolicy: ros.stringToRosTemplate(properties.rolePolicy),
+      ValidationMode: ros.stringToRosTemplate(properties.validationMode),
+      WaitUntil: ros.listMapper(rosClusterAddonsWaitUntilPropertyToRosTemplate)(properties.waitUntil),
     };
 }
 
@@ -763,9 +808,14 @@ export class RosClusterAddons extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CS::ClusterAddons";
 
     /**
-     * @Attribute ClusterId: Cluster ID.
+     * @Attribute ClusterId: The ID of the cluster.
      */
     public readonly attrClusterId: ros.IResolvable;
+
+    /**
+     * @Attribute WaitUntilData: A list of values for each JsonPath in WaitUntil.
+     */
+    public readonly attrWaitUntilData: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -790,6 +840,26 @@ export class RosClusterAddons extends ros.RosResource {
     public installedIgnore: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user. Valid values:
+     * - EnsureAdminRoleAndBinding: Automatically create a role named "ros:application-admin:${user-id}" with administrator permissions and bind it to the current user.
+     * - None: Do nothing.
+     * The default value is EnsureAdminRoleAndBinding.
+     */
+    public rolePolicy: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property validationMode: Validation modes include:
+     * - Basic: basic validation, such as verifying the existence of a cluster.
+     * - Strict: in addition to basic validation, also validate the legality of WaitUntil.
+     */
+    public validationMode: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property waitUntil: After starting a creation or update, wait until all conditions are met.
+     */
+    public waitUntil: Array<RosClusterAddons.WaitUntilProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -797,11 +867,15 @@ export class RosClusterAddons extends ros.RosResource {
     constructor(scope: ros.Construct, id: string, props: RosClusterAddonsProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosClusterAddons.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrClusterId = this.getAtt('ClusterId');
+        this.attrWaitUntilData = this.getAtt('WaitUntilData');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.addons = props.addons;
         this.clusterId = props.clusterId;
         this.installedIgnore = props.installedIgnore;
+        this.rolePolicy = props.rolePolicy;
+        this.validationMode = props.validationMode;
+        this.waitUntil = props.waitUntil;
     }
 
 
@@ -810,6 +884,9 @@ export class RosClusterAddons extends ros.RosResource {
             addons: this.addons,
             clusterId: this.clusterId,
             installedIgnore: this.installedIgnore,
+            rolePolicy: this.rolePolicy,
+            validationMode: this.validationMode,
+            waitUntil: this.waitUntil,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -871,6 +948,132 @@ function rosClusterAddonsAddonsPropertyToRosTemplate(properties: any): any {
     };
 }
 
+export namespace RosClusterAddons {
+    /**
+     * @stability external
+     */
+    export interface WaitUntilProperty {
+        /**
+         * @Property operator: The operator to compare the value with the result of jsonpath expression.
+         */
+        readonly operator: string | ros.IResolvable;
+        /**
+         * @Property firstMatch: Only the first matching result in jsonpath's filtered results is returned. Default False
+         */
+        readonly firstMatch?: boolean | ros.IResolvable;
+        /**
+         * @Property valueType: The type of value. Default value is String.
+         */
+        readonly valueType?: string | ros.IResolvable;
+        /**
+         * @Property timeout: The timeout of waiting for the condition to be met. The unit is seconds.
+         */
+        readonly timeout?: number | ros.IResolvable;
+        /**
+         * @Property kind: The kind of kubernetes resources to query.
+         */
+        readonly kind: string | ros.IResolvable;
+        /**
+         * @Property value: The value to compare with the result of jsonpath expression.
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property stage: At what stage to wait. Valid values:
+     * - Create\/Update: the create and update stage.
+     * - Delete: the delete stage.
+     * The default is Create\/Update.
+         */
+        readonly stage?: string | ros.IResolvable;
+        /**
+         * @Property jsonPath: Json path expression to filter the output.
+         */
+        readonly jsonPath?: string | ros.IResolvable;
+        /**
+         * @Property namespace: The namespace of kubernetes containing the resource. Default value is DefaultNamespace
+         */
+        readonly namespace?: string | ros.IResolvable;
+        /**
+         * @Property name: The name of the kubernetes resource to query.
+         */
+        readonly name: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `WaitUntilProperty`
+ *
+ * @param properties - the TypeScript properties of a `WaitUntilProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterAddons_WaitUntilPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('operator', ros.requiredValidator)(properties.operator));
+    if(properties.operator && (typeof properties.operator) !== 'object') {
+        errors.collect(ros.propertyValidator('operator', ros.validateAllowedValues)({
+          data: properties.operator,
+          allowedValues: ["Empty","NotEmpty","Equals","NotEquals"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('operator', ros.validateString)(properties.operator));
+    errors.collect(ros.propertyValidator('firstMatch', ros.validateBoolean)(properties.firstMatch));
+    if(properties.valueType && (typeof properties.valueType) !== 'object') {
+        errors.collect(ros.propertyValidator('valueType', ros.validateAllowedValues)({
+          data: properties.valueType,
+          allowedValues: ["String","Json"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('valueType', ros.validateString)(properties.valueType));
+    if(properties.timeout && (typeof properties.timeout) !== 'object') {
+        errors.collect(ros.propertyValidator('timeout', ros.validateRange)({
+            data: properties.timeout,
+            min: 10,
+            max: 3600,
+          }));
+    }
+    errors.collect(ros.propertyValidator('timeout', ros.validateNumber)(properties.timeout));
+    errors.collect(ros.propertyValidator('kind', ros.requiredValidator)(properties.kind));
+    errors.collect(ros.propertyValidator('kind', ros.validateString)(properties.kind));
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    if(properties.stage && (typeof properties.stage) !== 'object') {
+        errors.collect(ros.propertyValidator('stage', ros.validateAllowedValues)({
+          data: properties.stage,
+          allowedValues: ["Create/Update","Create","Update","Delete"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('stage', ros.validateString)(properties.stage));
+    errors.collect(ros.propertyValidator('jsonPath', ros.validateString)(properties.jsonPath));
+    errors.collect(ros.propertyValidator('namespace', ros.validateString)(properties.namespace));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "WaitUntilProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterAddons.WaitUntil` resource
+ *
+ * @param properties - the TypeScript properties of a `WaitUntilProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterAddons.WaitUntil` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterAddonsWaitUntilPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosClusterAddons_WaitUntilPropertyValidator(properties).assertSuccess();
+    return {
+      Operator: ros.stringToRosTemplate(properties.operator),
+      FirstMatch: ros.booleanToRosTemplate(properties.firstMatch),
+      ValueType: ros.stringToRosTemplate(properties.valueType),
+      Timeout: ros.numberToRosTemplate(properties.timeout),
+      Kind: ros.stringToRosTemplate(properties.kind),
+      Value: ros.stringToRosTemplate(properties.value),
+      Stage: ros.stringToRosTemplate(properties.stage),
+      JsonPath: ros.stringToRosTemplate(properties.jsonPath),
+      Namespace: ros.stringToRosTemplate(properties.namespace),
+      Name: ros.stringToRosTemplate(properties.name),
+    };
+}
+
 /**
  * Properties for defining a `RosClusterApplication`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterapplication
@@ -909,6 +1112,18 @@ export interface RosClusterApplicationProps {
      * The default is All.
      */
     readonly stage?: string | ros.IResolvable;
+
+    /**
+     * @Property validationMode: Validation modes include:
+     * - Basic: basic validation, such as verifying the existence of a cluster.
+     * - Strict: in addition to basic validation, also validate the legality of YamlContent and WaitUntil.
+     */
+    readonly validationMode?: string | ros.IResolvable;
+
+    /**
+     * @Property waitUntil: After starting a creation or update, wait until all conditions are met.
+     */
+    readonly waitUntil?: Array<RosClusterApplication.WaitUntilProperty | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
@@ -928,8 +1143,6 @@ function RosClusterApplicationPropsValidator(properties: any): ros.ValidationRes
         }));
     }
     errors.collect(ros.propertyValidator('rolePolicy', ros.validateString)(properties.rolePolicy));
-    errors.collect(ros.propertyValidator('clusterId', ros.requiredValidator)(properties.clusterId));
-    errors.collect(ros.propertyValidator('clusterId', ros.validateString)(properties.clusterId));
     errors.collect(ros.propertyValidator('yamlContent', ros.requiredValidator)(properties.yamlContent));
     if(properties.yamlContent && (Array.isArray(properties.yamlContent) || (typeof properties.yamlContent) === 'string')) {
         errors.collect(ros.propertyValidator('yamlContent', ros.validateLength)({
@@ -939,6 +1152,8 @@ function RosClusterApplicationPropsValidator(properties: any): ros.ValidationRes
           }));
     }
     errors.collect(ros.propertyValidator('yamlContent', ros.validateString)(properties.yamlContent));
+    errors.collect(ros.propertyValidator('clusterId', ros.requiredValidator)(properties.clusterId));
+    errors.collect(ros.propertyValidator('clusterId', ros.validateString)(properties.clusterId));
     errors.collect(ros.propertyValidator('defaultNamespace', ros.validateString)(properties.defaultNamespace));
     if(properties.stage && (typeof properties.stage) !== 'object') {
         errors.collect(ros.propertyValidator('stage', ros.validateAllowedValues)({
@@ -947,6 +1162,21 @@ function RosClusterApplicationPropsValidator(properties: any): ros.ValidationRes
         }));
     }
     errors.collect(ros.propertyValidator('stage', ros.validateString)(properties.stage));
+    if(properties.validationMode && (typeof properties.validationMode) !== 'object') {
+        errors.collect(ros.propertyValidator('validationMode', ros.validateAllowedValues)({
+          data: properties.validationMode,
+          allowedValues: ["Basic","Strict"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('validationMode', ros.validateString)(properties.validationMode));
+    if(properties.waitUntil && (Array.isArray(properties.waitUntil) || (typeof properties.waitUntil) === 'string')) {
+        errors.collect(ros.propertyValidator('waitUntil', ros.validateLength)({
+            data: properties.waitUntil.length,
+            min: 1,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('waitUntil', ros.listValidator(RosClusterApplication_WaitUntilPropertyValidator))(properties.waitUntil));
     return errors.wrap('supplied properties not correct for "RosClusterApplicationProps"');
 }
 
@@ -969,6 +1199,8 @@ function rosClusterApplicationPropsToRosTemplate(properties: any, enableResource
       DefaultNamespace: ros.stringToRosTemplate(properties.defaultNamespace),
       RolePolicy: ros.stringToRosTemplate(properties.rolePolicy),
       Stage: ros.stringToRosTemplate(properties.stage),
+      ValidationMode: ros.stringToRosTemplate(properties.validationMode),
+      WaitUntil: ros.listMapper(rosClusterApplicationWaitUntilPropertyToRosTemplate)(properties.waitUntil),
     };
 }
 
@@ -987,6 +1219,11 @@ export class RosClusterApplication extends ros.RosResource {
      * @Attribute ClusterId: The ID of the cluster.
      */
     public readonly attrClusterId: ros.IResolvable;
+
+    /**
+     * @Attribute WaitUntilData: A list of values for each JsonPath in WaitUntil.
+     */
+    public readonly attrWaitUntilData: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1025,6 +1262,18 @@ export class RosClusterApplication extends ros.RosResource {
     public stage: string | ros.IResolvable | undefined;
 
     /**
+     * @Property validationMode: Validation modes include:
+     * - Basic: basic validation, such as verifying the existence of a cluster.
+     * - Strict: in addition to basic validation, also validate the legality of YamlContent and WaitUntil.
+     */
+    public validationMode: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property waitUntil: After starting a creation or update, wait until all conditions are met.
+     */
+    public waitUntil: Array<RosClusterApplication.WaitUntilProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1032,6 +1281,7 @@ export class RosClusterApplication extends ros.RosResource {
     constructor(scope: ros.Construct, id: string, props: RosClusterApplicationProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosClusterApplication.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrClusterId = this.getAtt('ClusterId');
+        this.attrWaitUntilData = this.getAtt('WaitUntilData');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.clusterId = props.clusterId;
@@ -1039,6 +1289,8 @@ export class RosClusterApplication extends ros.RosResource {
         this.defaultNamespace = props.defaultNamespace;
         this.rolePolicy = props.rolePolicy;
         this.stage = props.stage;
+        this.validationMode = props.validationMode;
+        this.waitUntil = props.waitUntil;
     }
 
 
@@ -1049,11 +1301,139 @@ export class RosClusterApplication extends ros.RosResource {
             defaultNamespace: this.defaultNamespace,
             rolePolicy: this.rolePolicy,
             stage: this.stage,
+            validationMode: this.validationMode,
+            waitUntil: this.waitUntil,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosClusterApplicationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosClusterApplication {
+    /**
+     * @stability external
+     */
+    export interface WaitUntilProperty {
+        /**
+         * @Property operator: The operator to compare the value with the result of jsonpath expression.
+         */
+        readonly operator: string | ros.IResolvable;
+        /**
+         * @Property firstMatch: Only the first matching result in jsonpath's filtered results is returned. Default False
+         */
+        readonly firstMatch?: boolean | ros.IResolvable;
+        /**
+         * @Property valueType: The type of value. Default value is String.
+         */
+        readonly valueType?: string | ros.IResolvable;
+        /**
+         * @Property timeout: The timeout of waiting for the condition to be met. The unit is seconds.
+         */
+        readonly timeout?: number | ros.IResolvable;
+        /**
+         * @Property kind: The kind of kubernetes resources to query.
+         */
+        readonly kind: string | ros.IResolvable;
+        /**
+         * @Property value: The value to compare with the result of jsonpath expression.
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property stage: At what stage to wait. Valid values:
+     * - Create\/Update: the create and update stage.
+     * - Delete: the delete stage.
+     * The default is Create\/Update.
+         */
+        readonly stage?: string | ros.IResolvable;
+        /**
+         * @Property jsonPath: Json path expression to filter the output.
+         */
+        readonly jsonPath?: string | ros.IResolvable;
+        /**
+         * @Property namespace: The namespace of kubernetes containing the resource. Default value is DefaultNamespace
+         */
+        readonly namespace?: string | ros.IResolvable;
+        /**
+         * @Property name: The name of the kubernetes resource to query.
+         */
+        readonly name: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `WaitUntilProperty`
+ *
+ * @param properties - the TypeScript properties of a `WaitUntilProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterApplication_WaitUntilPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('operator', ros.requiredValidator)(properties.operator));
+    if(properties.operator && (typeof properties.operator) !== 'object') {
+        errors.collect(ros.propertyValidator('operator', ros.validateAllowedValues)({
+          data: properties.operator,
+          allowedValues: ["Empty","NotEmpty","Equals","NotEquals"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('operator', ros.validateString)(properties.operator));
+    errors.collect(ros.propertyValidator('firstMatch', ros.validateBoolean)(properties.firstMatch));
+    if(properties.valueType && (typeof properties.valueType) !== 'object') {
+        errors.collect(ros.propertyValidator('valueType', ros.validateAllowedValues)({
+          data: properties.valueType,
+          allowedValues: ["String","Json"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('valueType', ros.validateString)(properties.valueType));
+    if(properties.timeout && (typeof properties.timeout) !== 'object') {
+        errors.collect(ros.propertyValidator('timeout', ros.validateRange)({
+            data: properties.timeout,
+            min: 10,
+            max: 3600,
+          }));
+    }
+    errors.collect(ros.propertyValidator('timeout', ros.validateNumber)(properties.timeout));
+    errors.collect(ros.propertyValidator('kind', ros.requiredValidator)(properties.kind));
+    errors.collect(ros.propertyValidator('kind', ros.validateString)(properties.kind));
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    if(properties.stage && (typeof properties.stage) !== 'object') {
+        errors.collect(ros.propertyValidator('stage', ros.validateAllowedValues)({
+          data: properties.stage,
+          allowedValues: ["Create/Update","Create","Update","Delete"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('stage', ros.validateString)(properties.stage));
+    errors.collect(ros.propertyValidator('jsonPath', ros.validateString)(properties.jsonPath));
+    errors.collect(ros.propertyValidator('namespace', ros.validateString)(properties.namespace));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "WaitUntilProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterApplication.WaitUntil` resource
+ *
+ * @param properties - the TypeScript properties of a `WaitUntilProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterApplication.WaitUntil` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterApplicationWaitUntilPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosClusterApplication_WaitUntilPropertyValidator(properties).assertSuccess();
+    return {
+      Operator: ros.stringToRosTemplate(properties.operator),
+      FirstMatch: ros.booleanToRosTemplate(properties.firstMatch),
+      ValueType: ros.stringToRosTemplate(properties.valueType),
+      Timeout: ros.numberToRosTemplate(properties.timeout),
+      Kind: ros.stringToRosTemplate(properties.kind),
+      Value: ros.stringToRosTemplate(properties.value),
+      Stage: ros.stringToRosTemplate(properties.stage),
+      JsonPath: ros.stringToRosTemplate(properties.jsonPath),
+      Namespace: ros.stringToRosTemplate(properties.namespace),
+      Name: ros.stringToRosTemplate(properties.name),
+    };
 }
 
 /**
@@ -1100,6 +1480,18 @@ export interface RosClusterHelmApplicationProps {
      * The default value is EnsureAdminRoleAndBinding.
      */
     readonly rolePolicy?: string | ros.IResolvable;
+
+    /**
+     * @Property validationMode: Validation modes include:
+     * - Basic: basic validation, such as verifying the existence of a cluster.
+     * - Strict: in addition to basic validation, also validate the legality of WaitUntil.
+     */
+    readonly validationMode?: string | ros.IResolvable;
+
+    /**
+     * @Property waitUntil: After starting a creation or update, wait until all conditions are met.
+     */
+    readonly waitUntil?: Array<RosClusterHelmApplication.WaitUntilProperty | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
@@ -1119,8 +1511,8 @@ function RosClusterHelmApplicationPropsValidator(properties: any): ros.Validatio
         }));
     }
     errors.collect(ros.propertyValidator('rolePolicy', ros.validateString)(properties.rolePolicy));
-    errors.collect(ros.propertyValidator('credential', RosClusterHelmApplication_CredentialPropertyValidator)(properties.credential));
     errors.collect(ros.propertyValidator('chartValues', ros.hashValidator(ros.validateAny))(properties.chartValues));
+    errors.collect(ros.propertyValidator('credential', RosClusterHelmApplication_CredentialPropertyValidator)(properties.credential));
     errors.collect(ros.propertyValidator('clusterId', ros.requiredValidator)(properties.clusterId));
     errors.collect(ros.propertyValidator('clusterId', ros.validateString)(properties.clusterId));
     errors.collect(ros.propertyValidator('chartUrl', ros.requiredValidator)(properties.chartUrl));
@@ -1131,6 +1523,21 @@ function RosClusterHelmApplicationPropsValidator(properties: any): ros.Validatio
         }));
     }
     errors.collect(ros.propertyValidator('chartUrl', ros.validateString)(properties.chartUrl));
+    if(properties.validationMode && (typeof properties.validationMode) !== 'object') {
+        errors.collect(ros.propertyValidator('validationMode', ros.validateAllowedValues)({
+          data: properties.validationMode,
+          allowedValues: ["Basic","Strict"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('validationMode', ros.validateString)(properties.validationMode));
+    if(properties.waitUntil && (Array.isArray(properties.waitUntil) || (typeof properties.waitUntil) === 'string')) {
+        errors.collect(ros.propertyValidator('waitUntil', ros.validateLength)({
+            data: properties.waitUntil.length,
+            min: 1,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('waitUntil', ros.listValidator(RosClusterHelmApplication_WaitUntilPropertyValidator))(properties.waitUntil));
     errors.collect(ros.propertyValidator('namespace', ros.validateString)(properties.namespace));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
@@ -1158,6 +1565,8 @@ function rosClusterHelmApplicationPropsToRosTemplate(properties: any, enableReso
       Credential: rosClusterHelmApplicationCredentialPropertyToRosTemplate(properties.credential),
       Namespace: ros.stringToRosTemplate(properties.namespace),
       RolePolicy: ros.stringToRosTemplate(properties.rolePolicy),
+      ValidationMode: ros.stringToRosTemplate(properties.validationMode),
+      WaitUntil: ros.listMapper(rosClusterHelmApplicationWaitUntilPropertyToRosTemplate)(properties.waitUntil),
     };
 }
 
@@ -1176,6 +1585,11 @@ export class RosClusterHelmApplication extends ros.RosResource {
      * @Attribute ClusterId: The ID of the cluster.
      */
     public readonly attrClusterId: ros.IResolvable;
+
+    /**
+     * @Attribute WaitUntilData: A list of values for each JsonPath in WaitUntil.
+     */
+    public readonly attrWaitUntilData: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1220,6 +1634,18 @@ export class RosClusterHelmApplication extends ros.RosResource {
     public rolePolicy: string | ros.IResolvable | undefined;
 
     /**
+     * @Property validationMode: Validation modes include:
+     * - Basic: basic validation, such as verifying the existence of a cluster.
+     * - Strict: in addition to basic validation, also validate the legality of WaitUntil.
+     */
+    public validationMode: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property waitUntil: After starting a creation or update, wait until all conditions are met.
+     */
+    public waitUntil: Array<RosClusterHelmApplication.WaitUntilProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1227,6 +1653,7 @@ export class RosClusterHelmApplication extends ros.RosResource {
     constructor(scope: ros.Construct, id: string, props: RosClusterHelmApplicationProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosClusterHelmApplication.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrClusterId = this.getAtt('ClusterId');
+        this.attrWaitUntilData = this.getAtt('WaitUntilData');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.chartUrl = props.chartUrl;
@@ -1236,6 +1663,8 @@ export class RosClusterHelmApplication extends ros.RosResource {
         this.credential = props.credential;
         this.namespace = props.namespace;
         this.rolePolicy = props.rolePolicy;
+        this.validationMode = props.validationMode;
+        this.waitUntil = props.waitUntil;
     }
 
 
@@ -1248,6 +1677,8 @@ export class RosClusterHelmApplication extends ros.RosResource {
             credential: this.credential,
             namespace: this.namespace,
             rolePolicy: this.rolePolicy,
+            validationMode: this.validationMode,
+            waitUntil: this.waitUntil,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -1301,6 +1732,132 @@ function rosClusterHelmApplicationCredentialPropertyToRosTemplate(properties: an
     return {
       UserName: ros.stringToRosTemplate(properties.userName),
       Password: ros.stringToRosTemplate(properties.password),
+    };
+}
+
+export namespace RosClusterHelmApplication {
+    /**
+     * @stability external
+     */
+    export interface WaitUntilProperty {
+        /**
+         * @Property operator: The operator to compare the value with the result of jsonpath expression.
+         */
+        readonly operator: string | ros.IResolvable;
+        /**
+         * @Property firstMatch: Only the first matching result in jsonpath's filtered results is returned. Default False
+         */
+        readonly firstMatch?: boolean | ros.IResolvable;
+        /**
+         * @Property valueType: The type of value. Default value is String.
+         */
+        readonly valueType?: string | ros.IResolvable;
+        /**
+         * @Property timeout: The timeout of waiting for the condition to be met. The unit is seconds.
+         */
+        readonly timeout?: number | ros.IResolvable;
+        /**
+         * @Property kind: The kind of kubernetes resources to query.
+         */
+        readonly kind: string | ros.IResolvable;
+        /**
+         * @Property value: The value to compare with the result of jsonpath expression.
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property stage: At what stage to wait. Valid values:
+     * - Create\/Update: the create and update stage.
+     * - Delete: the delete stage.
+     * The default is Create\/Update.
+         */
+        readonly stage?: string | ros.IResolvable;
+        /**
+         * @Property jsonPath: Json path expression to filter the output.
+         */
+        readonly jsonPath?: string | ros.IResolvable;
+        /**
+         * @Property namespace: The namespace of kubernetes containing the resource. Default value is DefaultNamespace
+         */
+        readonly namespace?: string | ros.IResolvable;
+        /**
+         * @Property name: The name of the kubernetes resource to query.
+         */
+        readonly name: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `WaitUntilProperty`
+ *
+ * @param properties - the TypeScript properties of a `WaitUntilProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterHelmApplication_WaitUntilPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('operator', ros.requiredValidator)(properties.operator));
+    if(properties.operator && (typeof properties.operator) !== 'object') {
+        errors.collect(ros.propertyValidator('operator', ros.validateAllowedValues)({
+          data: properties.operator,
+          allowedValues: ["Empty","NotEmpty","Equals","NotEquals"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('operator', ros.validateString)(properties.operator));
+    errors.collect(ros.propertyValidator('firstMatch', ros.validateBoolean)(properties.firstMatch));
+    if(properties.valueType && (typeof properties.valueType) !== 'object') {
+        errors.collect(ros.propertyValidator('valueType', ros.validateAllowedValues)({
+          data: properties.valueType,
+          allowedValues: ["String","Json"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('valueType', ros.validateString)(properties.valueType));
+    if(properties.timeout && (typeof properties.timeout) !== 'object') {
+        errors.collect(ros.propertyValidator('timeout', ros.validateRange)({
+            data: properties.timeout,
+            min: 10,
+            max: 3600,
+          }));
+    }
+    errors.collect(ros.propertyValidator('timeout', ros.validateNumber)(properties.timeout));
+    errors.collect(ros.propertyValidator('kind', ros.requiredValidator)(properties.kind));
+    errors.collect(ros.propertyValidator('kind', ros.validateString)(properties.kind));
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    if(properties.stage && (typeof properties.stage) !== 'object') {
+        errors.collect(ros.propertyValidator('stage', ros.validateAllowedValues)({
+          data: properties.stage,
+          allowedValues: ["Create/Update","Create","Update","Delete"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('stage', ros.validateString)(properties.stage));
+    errors.collect(ros.propertyValidator('jsonPath', ros.validateString)(properties.jsonPath));
+    errors.collect(ros.propertyValidator('namespace', ros.validateString)(properties.namespace));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "WaitUntilProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterHelmApplication.WaitUntil` resource
+ *
+ * @param properties - the TypeScript properties of a `WaitUntilProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterHelmApplication.WaitUntil` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterHelmApplicationWaitUntilPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosClusterHelmApplication_WaitUntilPropertyValidator(properties).assertSuccess();
+    return {
+      Operator: ros.stringToRosTemplate(properties.operator),
+      FirstMatch: ros.booleanToRosTemplate(properties.firstMatch),
+      ValueType: ros.stringToRosTemplate(properties.valueType),
+      Timeout: ros.numberToRosTemplate(properties.timeout),
+      Kind: ros.stringToRosTemplate(properties.kind),
+      Value: ros.stringToRosTemplate(properties.value),
+      Stage: ros.stringToRosTemplate(properties.stage),
+      JsonPath: ros.stringToRosTemplate(properties.jsonPath),
+      Namespace: ros.stringToRosTemplate(properties.namespace),
+      Name: ros.stringToRosTemplate(properties.name),
     };
 }
 
@@ -2605,16 +3162,6 @@ export interface RosKubernetesClusterProps {
     readonly chargeType?: string | ros.IResolvable;
 
     /**
-     * @Property cisEnabled: Specifies whether to enable Center for Internet Security (CIS) reinforcement. 
-     * For more information, see CIS reinforcement.
-     * Valid values:
-     * true: enables CIS reinforcement.
-     * false: disables CIS reinforcement.
-     * Default value: false.
-     */
-    readonly cisEnabled?: boolean | ros.IResolvable;
-
-    /**
      * @Property cloudMonitorFlags: Whether to install the cloud monitoring plugin:
      * true: indicates installation
      * false: Do not install
@@ -3102,7 +3649,6 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
     errors.collect(ros.propertyValidator('workerDataDisks', ros.listValidator(RosKubernetesCluster_WorkerDataDisksPropertyValidator))(properties.workerDataDisks));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('timeoutMins', ros.validateNumber)(properties.timeoutMins));
-    errors.collect(ros.propertyValidator('cisEnabled', ros.validateBoolean)(properties.cisEnabled));
     errors.collect(ros.propertyValidator('workerDataDisk', ros.validateBoolean)(properties.workerDataDisk));
     if(properties.numOfNodes && (typeof properties.numOfNodes) !== 'object') {
         errors.collect(ros.propertyValidator('numOfNodes', ros.validateRange)({
@@ -3156,7 +3702,6 @@ function rosKubernetesClusterPropsToRosTemplate(properties: any, enableResourceP
       AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
       AutoRenewPeriod: ros.numberToRosTemplate(properties.autoRenewPeriod),
       ChargeType: ros.stringToRosTemplate(properties.chargeType),
-      CisEnabled: ros.booleanToRosTemplate(properties.cisEnabled),
       CloudMonitorFlags: ros.booleanToRosTemplate(properties.cloudMonitorFlags),
       ContainerCidr: ros.stringToRosTemplate(properties.containerCidr),
       CpuPolicy: ros.stringToRosTemplate(properties.cpuPolicy),
@@ -3333,16 +3878,6 @@ export class RosKubernetesCluster extends ros.RosResource {
      * Default to PostPaid.
      */
     public chargeType: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property cisEnabled: Specifies whether to enable Center for Internet Security (CIS) reinforcement. 
-     * For more information, see CIS reinforcement.
-     * Valid values:
-     * true: enables CIS reinforcement.
-     * false: disables CIS reinforcement.
-     * Default value: false.
-     */
-    public cisEnabled: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property cloudMonitorFlags: Whether to install the cloud monitoring plugin:
@@ -3718,7 +4253,6 @@ export class RosKubernetesCluster extends ros.RosResource {
         this.autoRenew = props.autoRenew;
         this.autoRenewPeriod = props.autoRenewPeriod;
         this.chargeType = props.chargeType;
-        this.cisEnabled = props.cisEnabled;
         this.cloudMonitorFlags = props.cloudMonitorFlags;
         this.containerCidr = props.containerCidr;
         this.cpuPolicy = props.cpuPolicy;
@@ -3785,7 +4319,6 @@ export class RosKubernetesCluster extends ros.RosResource {
             autoRenew: this.autoRenew,
             autoRenewPeriod: this.autoRenewPeriod,
             chargeType: this.chargeType,
-            cisEnabled: this.cisEnabled,
             cloudMonitorFlags: this.cloudMonitorFlags,
             containerCidr: this.containerCidr,
             cpuPolicy: this.cpuPolicy,
@@ -5763,16 +6296,6 @@ export interface RosManagedKubernetesClusterProps {
     readonly chargeType?: string | ros.IResolvable;
 
     /**
-     * @Property cisEnabled: Specifies whether to enable Center for Internet Security (CIS) reinforcement. 
-     * For more information, see CIS reinforcement.
-     * Valid values:
-     * true: enables CIS reinforcement.
-     * false: disables CIS reinforcement.
-     * Default value: false.
-     */
-    readonly cisEnabled?: boolean | ros.IResolvable;
-
-    /**
      * @Property cloudMonitorFlags: Whether to install the cloud monitoring plugin:
      * true: indicates installation
      * false: Do not install
@@ -6141,7 +6664,6 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     errors.collect(ros.propertyValidator('clusterSpec', ros.validateString)(properties.clusterSpec));
     errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
-    errors.collect(ros.propertyValidator('cisEnabled', ros.validateBoolean)(properties.cisEnabled));
     errors.collect(ros.propertyValidator('workerDataDisk', ros.validateBoolean)(properties.workerDataDisk));
     errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
@@ -6202,7 +6724,6 @@ function rosManagedKubernetesClusterPropsToRosTemplate(properties: any, enableRe
       AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
       AutoRenewPeriod: ros.numberToRosTemplate(properties.autoRenewPeriod),
       ChargeType: ros.stringToRosTemplate(properties.chargeType),
-      CisEnabled: ros.booleanToRosTemplate(properties.cisEnabled),
       CloudMonitorFlags: ros.booleanToRosTemplate(properties.cloudMonitorFlags),
       ClusterSpec: ros.stringToRosTemplate(properties.clusterSpec),
       ContainerCidr: ros.stringToRosTemplate(properties.containerCidr),
@@ -6356,16 +6877,6 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
      * Default to PostPaid.
      */
     public chargeType: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property cisEnabled: Specifies whether to enable Center for Internet Security (CIS) reinforcement. 
-     * For more information, see CIS reinforcement.
-     * Valid values:
-     * true: enables CIS reinforcement.
-     * false: disables CIS reinforcement.
-     * Default value: false.
-     */
-    public cisEnabled: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property cloudMonitorFlags: Whether to install the cloud monitoring plugin:
@@ -6672,7 +7183,6 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
         this.autoRenew = props.autoRenew;
         this.autoRenewPeriod = props.autoRenewPeriod;
         this.chargeType = props.chargeType;
-        this.cisEnabled = props.cisEnabled;
         this.cloudMonitorFlags = props.cloudMonitorFlags;
         this.clusterSpec = props.clusterSpec;
         this.containerCidr = props.containerCidr;
@@ -6725,7 +7235,6 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
             autoRenew: this.autoRenew,
             autoRenewPeriod: this.autoRenewPeriod,
             chargeType: this.chargeType,
-            cisEnabled: this.cisEnabled,
             cloudMonitorFlags: this.cloudMonitorFlags,
             clusterSpec: this.clusterSpec,
             containerCidr: this.containerCidr,

@@ -240,6 +240,10 @@ export interface ClusterProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-cluster
  */
 export class Cluster extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ClusterProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterId: The ID of the cluster.
@@ -268,6 +272,10 @@ export class Cluster extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ClusterProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCluster = new RosCluster(this, id,  {
             bootstrapAction: props.bootstrapAction,
@@ -285,8 +293,8 @@ export class Cluster extends ros.Resource {
             sshEnable: props.sshEnable,
             useCustomHiveMetaDb: props.useCustomHiveMetaDb,
             isOpenPublicIp: props.isOpenPublicIp,
-            configurations: props.configurations,
             authorizeContent: props.authorizeContent,
+            configurations: props.configurations,
             netType: props.netType,
             userDefinedEmrEcsRole: props.userDefinedEmrEcsRole,
             tags: props.tags,

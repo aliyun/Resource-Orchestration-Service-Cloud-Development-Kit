@@ -21,6 +21,10 @@ export interface AccessKeyProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-accesskey
  */
 export class AccessKey extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AccessKeyProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AccessKeyId: Id of access key.
@@ -44,6 +48,10 @@ export class AccessKey extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AccessKeyProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAccessKey = new RosAccessKey(this, id,  {
             userName: props.userName,

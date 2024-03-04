@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ECS::InstanceGroupClone</code>, which is used to create clones of an Elastic Compute Service (ECS) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.424Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:51.847Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInstanceGroupClone")
 public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -86,6 +86,12 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPublicIps() {
         return software.amazon.jsii.Kernel.get(this, "attrPublicIps", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrRelatedOrderIds() {
+        return software.amazon.jsii.Kernel.get(this, "attrRelatedOrderIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -217,6 +223,24 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCpuOptions() {
+        return software.amazon.jsii.Kernel.get(this, "cpuOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setCpuOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "cpuOptions", value);
+    }
+
+    /**
+     */
+    public void setCpuOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.CpuOptionsProperty value) {
+        software.amazon.jsii.Kernel.set(this, "cpuOptions", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getDeletionProtection() {
         return software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -339,6 +363,40 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getHostNames() {
+        return software.amazon.jsii.Kernel.get(this, "hostNames", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setHostNames(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "hostNames", value);
+    }
+
+    /**
+     */
+    public void setHostNames(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "hostNames", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getHpcClusterId() {
         return software.amazon.jsii.Kernel.get(this, "hpcClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -371,6 +429,24 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setImageId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "imageId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getImageOptions() {
+        return software.amazon.jsii.Kernel.get(this, "imageOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setImageOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "imageOptions", value);
+    }
+
+    /**
+     */
+    public void setImageOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.ImageOptionsProperty value) {
+        software.amazon.jsii.Kernel.set(this, "imageOptions", value);
     }
 
     /**
@@ -560,6 +636,42 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getNetworkInterfaceQueueNumber() {
+        return software.amazon.jsii.Kernel.get(this, "networkInterfaceQueueNumber", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setNetworkInterfaceQueueNumber(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "networkInterfaceQueueNumber", value);
+    }
+
+    /**
+     */
+    public void setNetworkInterfaceQueueNumber(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "networkInterfaceQueueNumber", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getNetworkOptions() {
+        return software.amazon.jsii.Kernel.get(this, "networkOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setNetworkOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "networkOptions", value);
+    }
+
+    /**
+     */
+    public void setNetworkOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.NetworkOptionsProperty value) {
+        software.amazon.jsii.Kernel.set(this, "networkOptions", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getPassword() {
         return software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -716,6 +828,24 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
             }
         }
         software.amazon.jsii.Kernel.set(this, "securityGroupIds", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSecurityOptions() {
+        return software.amazon.jsii.Kernel.get(this, "securityOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSecurityOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "securityOptions", value);
+    }
+
+    /**
+     */
+    public void setSecurityOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.SecurityOptionsProperty value) {
+        software.amazon.jsii.Kernel.set(this, "securityOptions", value);
     }
 
     /**
@@ -948,6 +1078,24 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getUniqueSuffix() {
+        return software.amazon.jsii.Kernel.get(this, "uniqueSuffix", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setUniqueSuffix(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "uniqueSuffix", value);
+    }
+
+    /**
+     */
+    public void setUniqueSuffix(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "uniqueSuffix", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getUpdatePolicy() {
         return software.amazon.jsii.Kernel.get(this, "updatePolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -980,6 +1128,178 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setZoneId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "zoneId", value);
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInstanceGroupClone.CpuOptionsProperty")
+    @software.amazon.jsii.Jsii.Proxy(CpuOptionsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface CpuOptionsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCore() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getThreadsPerCore() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link CpuOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link CpuOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<CpuOptionsProperty> {
+            java.lang.Object core;
+            java.lang.Object threadsPerCore;
+
+            /**
+             * Sets the value of {@link CpuOptionsProperty#getCore}
+             * @param core the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder core(java.lang.Number core) {
+                this.core = core;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CpuOptionsProperty#getCore}
+             * @param core the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder core(com.aliyun.ros.cdk.core.IResolvable core) {
+                this.core = core;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CpuOptionsProperty#getThreadsPerCore}
+             * @param threadsPerCore the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder threadsPerCore(java.lang.Number threadsPerCore) {
+                this.threadsPerCore = threadsPerCore;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CpuOptionsProperty#getThreadsPerCore}
+             * @param threadsPerCore the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder threadsPerCore(com.aliyun.ros.cdk.core.IResolvable threadsPerCore) {
+                this.threadsPerCore = threadsPerCore;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link CpuOptionsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public CpuOptionsProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link CpuOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements CpuOptionsProperty {
+            private final java.lang.Object core;
+            private final java.lang.Object threadsPerCore;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.core = software.amazon.jsii.Kernel.get(this, "core", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.threadsPerCore = software.amazon.jsii.Kernel.get(this, "threadsPerCore", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.core = builder.core;
+                this.threadsPerCore = builder.threadsPerCore;
+            }
+
+            @Override
+            public final java.lang.Object getCore() {
+                return this.core;
+            }
+
+            @Override
+            public final java.lang.Object getThreadsPerCore() {
+                return this.threadsPerCore;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getCore() != null) {
+                    data.set("core", om.valueToTree(this.getCore()));
+                }
+                if (this.getThreadsPerCore() != null) {
+                    data.set("threadsPerCore", om.valueToTree(this.getThreadsPerCore()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ecs.RosInstanceGroupClone.CpuOptionsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                CpuOptionsProperty.Jsii$Proxy that = (CpuOptionsProperty.Jsii$Proxy) o;
+
+                if (this.core != null ? !this.core.equals(that.core) : that.core != null) return false;
+                return this.threadsPerCore != null ? this.threadsPerCore.equals(that.threadsPerCore) : that.threadsPerCore == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.core != null ? this.core.hashCode() : 0;
+                result = 31 * result + (this.threadsPerCore != null ? this.threadsPerCore.hashCode() : 0);
+                return result;
+            }
+        }
     }
     /**
      */
@@ -1071,6 +1391,13 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
         }
 
         /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getStorageClusterId() {
+            return null;
+        }
+
+        /**
          * @return a {@link Builder} of {@link DiskMappingsProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -1094,6 +1421,7 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object performanceLevel;
             java.lang.Object provisionedIops;
             java.lang.Object snapshotId;
+            java.lang.Object storageClusterId;
 
             /**
              * Sets the value of {@link DiskMappingsProperty#getSize}
@@ -1360,6 +1688,28 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link DiskMappingsProperty#getStorageClusterId}
+             * @param storageClusterId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder storageClusterId(java.lang.String storageClusterId) {
+                this.storageClusterId = storageClusterId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DiskMappingsProperty#getStorageClusterId}
+             * @param storageClusterId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder storageClusterId(com.aliyun.ros.cdk.core.IResolvable storageClusterId) {
+                this.storageClusterId = storageClusterId;
+                return this;
+            }
+
+            /**
              * Builds the configured instance.
              * @return a new instance of {@link DiskMappingsProperty}
              * @throws NullPointerException if any required attribute was not provided
@@ -1389,6 +1739,7 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object performanceLevel;
             private final java.lang.Object provisionedIops;
             private final java.lang.Object snapshotId;
+            private final java.lang.Object storageClusterId;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -1408,6 +1759,7 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
                 this.performanceLevel = software.amazon.jsii.Kernel.get(this, "performanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.provisionedIops = software.amazon.jsii.Kernel.get(this, "provisionedIops", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.snapshotId = software.amazon.jsii.Kernel.get(this, "snapshotId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.storageClusterId = software.amazon.jsii.Kernel.get(this, "storageClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -1427,6 +1779,7 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
                 this.performanceLevel = builder.performanceLevel;
                 this.provisionedIops = builder.provisionedIops;
                 this.snapshotId = builder.snapshotId;
+                this.storageClusterId = builder.storageClusterId;
             }
 
             @Override
@@ -1490,6 +1843,11 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getStorageClusterId() {
+                return this.storageClusterId;
+            }
+
+            @Override
             @software.amazon.jsii.Internal
             public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -1529,6 +1887,9 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.getSnapshotId() != null) {
                     data.set("snapshotId", om.valueToTree(this.getSnapshotId()));
                 }
+                if (this.getStorageClusterId() != null) {
+                    data.set("storageClusterId", om.valueToTree(this.getStorageClusterId()));
+                }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
                 struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ecs.RosInstanceGroupClone.DiskMappingsProperty"));
@@ -1558,7 +1919,8 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.kmsKeyId != null ? !this.kmsKeyId.equals(that.kmsKeyId) : that.kmsKeyId != null) return false;
                 if (this.performanceLevel != null ? !this.performanceLevel.equals(that.performanceLevel) : that.performanceLevel != null) return false;
                 if (this.provisionedIops != null ? !this.provisionedIops.equals(that.provisionedIops) : that.provisionedIops != null) return false;
-                return this.snapshotId != null ? this.snapshotId.equals(that.snapshotId) : that.snapshotId == null;
+                if (this.snapshotId != null ? !this.snapshotId.equals(that.snapshotId) : that.snapshotId != null) return false;
+                return this.storageClusterId != null ? this.storageClusterId.equals(that.storageClusterId) : that.storageClusterId == null;
             }
 
             @Override
@@ -1575,6 +1937,7 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.performanceLevel != null ? this.performanceLevel.hashCode() : 0);
                 result = 31 * result + (this.provisionedIops != null ? this.provisionedIops.hashCode() : 0);
                 result = 31 * result + (this.snapshotId != null ? this.snapshotId.hashCode() : 0);
+                result = 31 * result + (this.storageClusterId != null ? this.storageClusterId.hashCode() : 0);
                 return result;
             }
         }
@@ -1589,7 +1952,9 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Object getVSwitchId();
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDeleteOnRelease() {
+            return null;
+        }
 
         /**
          */
@@ -1616,6 +1981,20 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getIpv6Addresses() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getNetworkCardIndex() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getNetworkInterfaceId() {
             return null;
         }
 
@@ -1650,6 +2029,13 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getQueuePairNumber() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupId() {
             return null;
         }
@@ -1658,6 +2044,13 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupIds() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
             return null;
         }
 
@@ -1673,37 +2066,41 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<EniMappingsProperty> {
-            java.lang.Object vSwitchId;
+            java.lang.Object deleteOnRelease;
             java.lang.Object description;
             java.lang.Object instanceType;
             java.lang.Object ipv6AddressCount;
             java.lang.Object ipv6Addresses;
+            java.lang.Object networkCardIndex;
+            java.lang.Object networkInterfaceId;
             java.lang.Object networkInterfaceName;
             java.lang.Object networkInterfaceTrafficMode;
             java.lang.Object primaryIpAddress;
             java.lang.Object queueNumber;
+            java.lang.Object queuePairNumber;
             java.lang.Object securityGroupId;
             java.lang.Object securityGroupIds;
+            java.lang.Object vSwitchId;
 
             /**
-             * Sets the value of {@link EniMappingsProperty#getVSwitchId}
-             * @param vSwitchId the value to be set. This parameter is required.
+             * Sets the value of {@link EniMappingsProperty#getDeleteOnRelease}
+             * @param deleteOnRelease the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder vSwitchId(java.lang.String vSwitchId) {
-                this.vSwitchId = vSwitchId;
+            public Builder deleteOnRelease(java.lang.Boolean deleteOnRelease) {
+                this.deleteOnRelease = deleteOnRelease;
                 return this;
             }
 
             /**
-             * Sets the value of {@link EniMappingsProperty#getVSwitchId}
-             * @param vSwitchId the value to be set. This parameter is required.
+             * Sets the value of {@link EniMappingsProperty#getDeleteOnRelease}
+             * @param deleteOnRelease the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
-                this.vSwitchId = vSwitchId;
+            public Builder deleteOnRelease(com.aliyun.ros.cdk.core.IResolvable deleteOnRelease) {
+                this.deleteOnRelease = deleteOnRelease;
                 return this;
             }
 
@@ -1796,6 +2193,50 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link EniMappingsProperty#getNetworkCardIndex}
+             * @param networkCardIndex the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder networkCardIndex(java.lang.Number networkCardIndex) {
+                this.networkCardIndex = networkCardIndex;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EniMappingsProperty#getNetworkCardIndex}
+             * @param networkCardIndex the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder networkCardIndex(com.aliyun.ros.cdk.core.IResolvable networkCardIndex) {
+                this.networkCardIndex = networkCardIndex;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EniMappingsProperty#getNetworkInterfaceId}
+             * @param networkInterfaceId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder networkInterfaceId(java.lang.String networkInterfaceId) {
+                this.networkInterfaceId = networkInterfaceId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EniMappingsProperty#getNetworkInterfaceId}
+             * @param networkInterfaceId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder networkInterfaceId(com.aliyun.ros.cdk.core.IResolvable networkInterfaceId) {
+                this.networkInterfaceId = networkInterfaceId;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link EniMappingsProperty#getNetworkInterfaceName}
              * @param networkInterfaceName the value to be set.
              * @return {@code this}
@@ -1884,6 +2325,28 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link EniMappingsProperty#getQueuePairNumber}
+             * @param queuePairNumber the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder queuePairNumber(java.lang.Number queuePairNumber) {
+                this.queuePairNumber = queuePairNumber;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EniMappingsProperty#getQueuePairNumber}
+             * @param queuePairNumber the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder queuePairNumber(com.aliyun.ros.cdk.core.IResolvable queuePairNumber) {
+                this.queuePairNumber = queuePairNumber;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link EniMappingsProperty#getSecurityGroupId}
              * @param securityGroupId the value to be set.
              * @return {@code this}
@@ -1928,6 +2391,28 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link EniMappingsProperty#getVSwitchId}
+             * @param vSwitchId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder vSwitchId(java.lang.String vSwitchId) {
+                this.vSwitchId = vSwitchId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EniMappingsProperty#getVSwitchId}
+             * @param vSwitchId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
+                this.vSwitchId = vSwitchId;
+                return this;
+            }
+
+            /**
              * Builds the configured instance.
              * @return a new instance of {@link EniMappingsProperty}
              * @throws NullPointerException if any required attribute was not provided
@@ -1945,17 +2430,21 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements EniMappingsProperty {
-            private final java.lang.Object vSwitchId;
+            private final java.lang.Object deleteOnRelease;
             private final java.lang.Object description;
             private final java.lang.Object instanceType;
             private final java.lang.Object ipv6AddressCount;
             private final java.lang.Object ipv6Addresses;
+            private final java.lang.Object networkCardIndex;
+            private final java.lang.Object networkInterfaceId;
             private final java.lang.Object networkInterfaceName;
             private final java.lang.Object networkInterfaceTrafficMode;
             private final java.lang.Object primaryIpAddress;
             private final java.lang.Object queueNumber;
+            private final java.lang.Object queuePairNumber;
             private final java.lang.Object securityGroupId;
             private final java.lang.Object securityGroupIds;
+            private final java.lang.Object vSwitchId;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -1963,17 +2452,21 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.deleteOnRelease = software.amazon.jsii.Kernel.get(this, "deleteOnRelease", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.instanceType = software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.ipv6AddressCount = software.amazon.jsii.Kernel.get(this, "ipv6AddressCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.ipv6Addresses = software.amazon.jsii.Kernel.get(this, "ipv6Addresses", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.networkCardIndex = software.amazon.jsii.Kernel.get(this, "networkCardIndex", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.networkInterfaceId = software.amazon.jsii.Kernel.get(this, "networkInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.networkInterfaceName = software.amazon.jsii.Kernel.get(this, "networkInterfaceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.networkInterfaceTrafficMode = software.amazon.jsii.Kernel.get(this, "networkInterfaceTrafficMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.primaryIpAddress = software.amazon.jsii.Kernel.get(this, "primaryIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.queueNumber = software.amazon.jsii.Kernel.get(this, "queueNumber", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.queuePairNumber = software.amazon.jsii.Kernel.get(this, "queuePairNumber", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.securityGroupIds = software.amazon.jsii.Kernel.get(this, "securityGroupIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -1981,22 +2474,26 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
+                this.deleteOnRelease = builder.deleteOnRelease;
                 this.description = builder.description;
                 this.instanceType = builder.instanceType;
                 this.ipv6AddressCount = builder.ipv6AddressCount;
                 this.ipv6Addresses = builder.ipv6Addresses;
+                this.networkCardIndex = builder.networkCardIndex;
+                this.networkInterfaceId = builder.networkInterfaceId;
                 this.networkInterfaceName = builder.networkInterfaceName;
                 this.networkInterfaceTrafficMode = builder.networkInterfaceTrafficMode;
                 this.primaryIpAddress = builder.primaryIpAddress;
                 this.queueNumber = builder.queueNumber;
+                this.queuePairNumber = builder.queuePairNumber;
                 this.securityGroupId = builder.securityGroupId;
                 this.securityGroupIds = builder.securityGroupIds;
+                this.vSwitchId = builder.vSwitchId;
             }
 
             @Override
-            public final java.lang.Object getVSwitchId() {
-                return this.vSwitchId;
+            public final java.lang.Object getDeleteOnRelease() {
+                return this.deleteOnRelease;
             }
 
             @Override
@@ -2020,6 +2517,16 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getNetworkCardIndex() {
+                return this.networkCardIndex;
+            }
+
+            @Override
+            public final java.lang.Object getNetworkInterfaceId() {
+                return this.networkInterfaceId;
+            }
+
+            @Override
             public final java.lang.Object getNetworkInterfaceName() {
                 return this.networkInterfaceName;
             }
@@ -2040,6 +2547,11 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getQueuePairNumber() {
+                return this.queuePairNumber;
+            }
+
+            @Override
             public final java.lang.Object getSecurityGroupId() {
                 return this.securityGroupId;
             }
@@ -2050,12 +2562,19 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getVSwitchId() {
+                return this.vSwitchId;
+            }
+
+            @Override
             @software.amazon.jsii.Internal
             public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
-                data.set("vSwitchId", om.valueToTree(this.getVSwitchId()));
+                if (this.getDeleteOnRelease() != null) {
+                    data.set("deleteOnRelease", om.valueToTree(this.getDeleteOnRelease()));
+                }
                 if (this.getDescription() != null) {
                     data.set("description", om.valueToTree(this.getDescription()));
                 }
@@ -2067,6 +2586,12 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
                 }
                 if (this.getIpv6Addresses() != null) {
                     data.set("ipv6Addresses", om.valueToTree(this.getIpv6Addresses()));
+                }
+                if (this.getNetworkCardIndex() != null) {
+                    data.set("networkCardIndex", om.valueToTree(this.getNetworkCardIndex()));
+                }
+                if (this.getNetworkInterfaceId() != null) {
+                    data.set("networkInterfaceId", om.valueToTree(this.getNetworkInterfaceId()));
                 }
                 if (this.getNetworkInterfaceName() != null) {
                     data.set("networkInterfaceName", om.valueToTree(this.getNetworkInterfaceName()));
@@ -2080,11 +2605,17 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.getQueueNumber() != null) {
                     data.set("queueNumber", om.valueToTree(this.getQueueNumber()));
                 }
+                if (this.getQueuePairNumber() != null) {
+                    data.set("queuePairNumber", om.valueToTree(this.getQueuePairNumber()));
+                }
                 if (this.getSecurityGroupId() != null) {
                     data.set("securityGroupId", om.valueToTree(this.getSecurityGroupId()));
                 }
                 if (this.getSecurityGroupIds() != null) {
                     data.set("securityGroupIds", om.valueToTree(this.getSecurityGroupIds()));
+                }
+                if (this.getVSwitchId() != null) {
+                    data.set("vSwitchId", om.valueToTree(this.getVSwitchId()));
                 }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -2104,32 +2635,427 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
 
                 EniMappingsProperty.Jsii$Proxy that = (EniMappingsProperty.Jsii$Proxy) o;
 
-                if (!vSwitchId.equals(that.vSwitchId)) return false;
+                if (this.deleteOnRelease != null ? !this.deleteOnRelease.equals(that.deleteOnRelease) : that.deleteOnRelease != null) return false;
                 if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
                 if (this.instanceType != null ? !this.instanceType.equals(that.instanceType) : that.instanceType != null) return false;
                 if (this.ipv6AddressCount != null ? !this.ipv6AddressCount.equals(that.ipv6AddressCount) : that.ipv6AddressCount != null) return false;
                 if (this.ipv6Addresses != null ? !this.ipv6Addresses.equals(that.ipv6Addresses) : that.ipv6Addresses != null) return false;
+                if (this.networkCardIndex != null ? !this.networkCardIndex.equals(that.networkCardIndex) : that.networkCardIndex != null) return false;
+                if (this.networkInterfaceId != null ? !this.networkInterfaceId.equals(that.networkInterfaceId) : that.networkInterfaceId != null) return false;
                 if (this.networkInterfaceName != null ? !this.networkInterfaceName.equals(that.networkInterfaceName) : that.networkInterfaceName != null) return false;
                 if (this.networkInterfaceTrafficMode != null ? !this.networkInterfaceTrafficMode.equals(that.networkInterfaceTrafficMode) : that.networkInterfaceTrafficMode != null) return false;
                 if (this.primaryIpAddress != null ? !this.primaryIpAddress.equals(that.primaryIpAddress) : that.primaryIpAddress != null) return false;
                 if (this.queueNumber != null ? !this.queueNumber.equals(that.queueNumber) : that.queueNumber != null) return false;
+                if (this.queuePairNumber != null ? !this.queuePairNumber.equals(that.queuePairNumber) : that.queuePairNumber != null) return false;
                 if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
-                return this.securityGroupIds != null ? this.securityGroupIds.equals(that.securityGroupIds) : that.securityGroupIds == null;
+                if (this.securityGroupIds != null ? !this.securityGroupIds.equals(that.securityGroupIds) : that.securityGroupIds != null) return false;
+                return this.vSwitchId != null ? this.vSwitchId.equals(that.vSwitchId) : that.vSwitchId == null;
             }
 
             @Override
             public final int hashCode() {
-                int result = this.vSwitchId.hashCode();
+                int result = this.deleteOnRelease != null ? this.deleteOnRelease.hashCode() : 0;
                 result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
                 result = 31 * result + (this.instanceType != null ? this.instanceType.hashCode() : 0);
                 result = 31 * result + (this.ipv6AddressCount != null ? this.ipv6AddressCount.hashCode() : 0);
                 result = 31 * result + (this.ipv6Addresses != null ? this.ipv6Addresses.hashCode() : 0);
+                result = 31 * result + (this.networkCardIndex != null ? this.networkCardIndex.hashCode() : 0);
+                result = 31 * result + (this.networkInterfaceId != null ? this.networkInterfaceId.hashCode() : 0);
                 result = 31 * result + (this.networkInterfaceName != null ? this.networkInterfaceName.hashCode() : 0);
                 result = 31 * result + (this.networkInterfaceTrafficMode != null ? this.networkInterfaceTrafficMode.hashCode() : 0);
                 result = 31 * result + (this.primaryIpAddress != null ? this.primaryIpAddress.hashCode() : 0);
                 result = 31 * result + (this.queueNumber != null ? this.queueNumber.hashCode() : 0);
+                result = 31 * result + (this.queuePairNumber != null ? this.queuePairNumber.hashCode() : 0);
                 result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
                 result = 31 * result + (this.securityGroupIds != null ? this.securityGroupIds.hashCode() : 0);
+                result = 31 * result + (this.vSwitchId != null ? this.vSwitchId.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInstanceGroupClone.ImageOptionsProperty")
+    @software.amazon.jsii.Jsii.Proxy(ImageOptionsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface ImageOptionsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getLoginAsNonRoot() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link ImageOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link ImageOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<ImageOptionsProperty> {
+            java.lang.Object loginAsNonRoot;
+
+            /**
+             * Sets the value of {@link ImageOptionsProperty#getLoginAsNonRoot}
+             * @param loginAsNonRoot the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder loginAsNonRoot(java.lang.Boolean loginAsNonRoot) {
+                this.loginAsNonRoot = loginAsNonRoot;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ImageOptionsProperty#getLoginAsNonRoot}
+             * @param loginAsNonRoot the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder loginAsNonRoot(com.aliyun.ros.cdk.core.IResolvable loginAsNonRoot) {
+                this.loginAsNonRoot = loginAsNonRoot;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link ImageOptionsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public ImageOptionsProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link ImageOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ImageOptionsProperty {
+            private final java.lang.Object loginAsNonRoot;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.loginAsNonRoot = software.amazon.jsii.Kernel.get(this, "loginAsNonRoot", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.loginAsNonRoot = builder.loginAsNonRoot;
+            }
+
+            @Override
+            public final java.lang.Object getLoginAsNonRoot() {
+                return this.loginAsNonRoot;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getLoginAsNonRoot() != null) {
+                    data.set("loginAsNonRoot", om.valueToTree(this.getLoginAsNonRoot()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ecs.RosInstanceGroupClone.ImageOptionsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                ImageOptionsProperty.Jsii$Proxy that = (ImageOptionsProperty.Jsii$Proxy) o;
+
+                return this.loginAsNonRoot != null ? this.loginAsNonRoot.equals(that.loginAsNonRoot) : that.loginAsNonRoot == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.loginAsNonRoot != null ? this.loginAsNonRoot.hashCode() : 0;
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInstanceGroupClone.NetworkOptionsProperty")
+    @software.amazon.jsii.Jsii.Proxy(NetworkOptionsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface NetworkOptionsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getEnableJumboFrame() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link NetworkOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link NetworkOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<NetworkOptionsProperty> {
+            java.lang.Object enableJumboFrame;
+
+            /**
+             * Sets the value of {@link NetworkOptionsProperty#getEnableJumboFrame}
+             * @param enableJumboFrame the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enableJumboFrame(java.lang.Boolean enableJumboFrame) {
+                this.enableJumboFrame = enableJumboFrame;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link NetworkOptionsProperty#getEnableJumboFrame}
+             * @param enableJumboFrame the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enableJumboFrame(com.aliyun.ros.cdk.core.IResolvable enableJumboFrame) {
+                this.enableJumboFrame = enableJumboFrame;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link NetworkOptionsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public NetworkOptionsProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link NetworkOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements NetworkOptionsProperty {
+            private final java.lang.Object enableJumboFrame;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.enableJumboFrame = software.amazon.jsii.Kernel.get(this, "enableJumboFrame", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.enableJumboFrame = builder.enableJumboFrame;
+            }
+
+            @Override
+            public final java.lang.Object getEnableJumboFrame() {
+                return this.enableJumboFrame;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getEnableJumboFrame() != null) {
+                    data.set("enableJumboFrame", om.valueToTree(this.getEnableJumboFrame()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ecs.RosInstanceGroupClone.NetworkOptionsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                NetworkOptionsProperty.Jsii$Proxy that = (NetworkOptionsProperty.Jsii$Proxy) o;
+
+                return this.enableJumboFrame != null ? this.enableJumboFrame.equals(that.enableJumboFrame) : that.enableJumboFrame == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.enableJumboFrame != null ? this.enableJumboFrame.hashCode() : 0;
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInstanceGroupClone.SecurityOptionsProperty")
+    @software.amazon.jsii.Jsii.Proxy(SecurityOptionsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface SecurityOptionsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getTrustedSystemMode() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link SecurityOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link SecurityOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<SecurityOptionsProperty> {
+            java.lang.Object trustedSystemMode;
+
+            /**
+             * Sets the value of {@link SecurityOptionsProperty#getTrustedSystemMode}
+             * @param trustedSystemMode the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder trustedSystemMode(java.lang.String trustedSystemMode) {
+                this.trustedSystemMode = trustedSystemMode;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SecurityOptionsProperty#getTrustedSystemMode}
+             * @param trustedSystemMode the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder trustedSystemMode(com.aliyun.ros.cdk.core.IResolvable trustedSystemMode) {
+                this.trustedSystemMode = trustedSystemMode;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link SecurityOptionsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public SecurityOptionsProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link SecurityOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements SecurityOptionsProperty {
+            private final java.lang.Object trustedSystemMode;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.trustedSystemMode = software.amazon.jsii.Kernel.get(this, "trustedSystemMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.trustedSystemMode = builder.trustedSystemMode;
+            }
+
+            @Override
+            public final java.lang.Object getTrustedSystemMode() {
+                return this.trustedSystemMode;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getTrustedSystemMode() != null) {
+                    data.set("trustedSystemMode", om.valueToTree(this.getTrustedSystemMode()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ecs.RosInstanceGroupClone.SecurityOptionsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                SecurityOptionsProperty.Jsii$Proxy that = (SecurityOptionsProperty.Jsii$Proxy) o;
+
+                return this.trustedSystemMode != null ? this.trustedSystemMode.equals(that.trustedSystemMode) : that.trustedSystemMode == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.trustedSystemMode != null ? this.trustedSystemMode.hashCode() : 0;
                 return result;
             }
         }
@@ -2433,6 +3359,23 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param cpuOptions This parameter is required.
+         */
+        public Builder cpuOptions(final com.aliyun.ros.cdk.core.IResolvable cpuOptions) {
+            this.props.cpuOptions(cpuOptions);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param cpuOptions This parameter is required.
+         */
+        public Builder cpuOptions(final com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.CpuOptionsProperty cpuOptions) {
+            this.props.cpuOptions(cpuOptions);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param deletionProtection This parameter is required.
          */
         public Builder deletionProtection(final java.lang.Boolean deletionProtection) {
@@ -2518,6 +3461,23 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param hostNames This parameter is required.
+         */
+        public Builder hostNames(final com.aliyun.ros.cdk.core.IResolvable hostNames) {
+            this.props.hostNames(hostNames);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param hostNames This parameter is required.
+         */
+        public Builder hostNames(final java.util.List<? extends java.lang.Object> hostNames) {
+            this.props.hostNames(hostNames);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param hpcClusterId This parameter is required.
          */
         public Builder hpcClusterId(final java.lang.String hpcClusterId) {
@@ -2547,6 +3507,23 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder imageId(final com.aliyun.ros.cdk.core.IResolvable imageId) {
             this.props.imageId(imageId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param imageOptions This parameter is required.
+         */
+        public Builder imageOptions(final com.aliyun.ros.cdk.core.IResolvable imageOptions) {
+            this.props.imageOptions(imageOptions);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param imageOptions This parameter is required.
+         */
+        public Builder imageOptions(final com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.ImageOptionsProperty imageOptions) {
+            this.props.imageOptions(imageOptions);
             return this;
         }
 
@@ -2722,6 +3699,40 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param networkInterfaceQueueNumber This parameter is required.
+         */
+        public Builder networkInterfaceQueueNumber(final java.lang.Number networkInterfaceQueueNumber) {
+            this.props.networkInterfaceQueueNumber(networkInterfaceQueueNumber);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param networkInterfaceQueueNumber This parameter is required.
+         */
+        public Builder networkInterfaceQueueNumber(final com.aliyun.ros.cdk.core.IResolvable networkInterfaceQueueNumber) {
+            this.props.networkInterfaceQueueNumber(networkInterfaceQueueNumber);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param networkOptions This parameter is required.
+         */
+        public Builder networkOptions(final com.aliyun.ros.cdk.core.IResolvable networkOptions) {
+            this.props.networkOptions(networkOptions);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param networkOptions This parameter is required.
+         */
+        public Builder networkOptions(final com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.NetworkOptionsProperty networkOptions) {
+            this.props.networkOptions(networkOptions);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param password This parameter is required.
          */
         public Builder password(final java.lang.String password) {
@@ -2853,6 +3864,23 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder securityGroupIds(final java.util.List<? extends java.lang.Object> securityGroupIds) {
             this.props.securityGroupIds(securityGroupIds);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param securityOptions This parameter is required.
+         */
+        public Builder securityOptions(final com.aliyun.ros.cdk.core.IResolvable securityOptions) {
+            this.props.securityOptions(securityOptions);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param securityOptions This parameter is required.
+         */
+        public Builder securityOptions(final com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.SecurityOptionsProperty securityOptions) {
+            this.props.securityOptions(securityOptions);
             return this;
         }
 
@@ -3066,6 +4094,23 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.TagsProperty> tags) {
             this.props.tags(tags);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param uniqueSuffix This parameter is required.
+         */
+        public Builder uniqueSuffix(final java.lang.Boolean uniqueSuffix) {
+            this.props.uniqueSuffix(uniqueSuffix);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param uniqueSuffix This parameter is required.
+         */
+        public Builder uniqueSuffix(final com.aliyun.ros.cdk.core.IResolvable uniqueSuffix) {
+            this.props.uniqueSuffix(uniqueSuffix);
             return this;
         }
 

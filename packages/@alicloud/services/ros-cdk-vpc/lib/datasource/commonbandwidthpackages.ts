@@ -31,6 +31,10 @@ export interface CommonBandwidthPackagesProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-commonbandwidthpackages
  */
 export class CommonBandwidthPackages extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: CommonBandwidthPackagesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CommonBandwidthPackageIds: The list of common bandwidth package IDs.
@@ -49,6 +53,10 @@ export class CommonBandwidthPackages extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: CommonBandwidthPackagesProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCommonBandwidthPackages = new RosCommonBandwidthPackages(this, id,  {
             resourceGroupId: props.resourceGroupId,

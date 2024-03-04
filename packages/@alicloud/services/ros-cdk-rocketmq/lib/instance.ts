@@ -26,11 +26,15 @@ export interface InstanceProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ROCKETMQ::Instance`ALIYUN::ROCKETMQ::Group is used to create a Group ID on the ROCKETMQ client. The Group ID that you create is used to publish and subscribe to messages.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ROCKETMQ::Instance`, which is used to create a Standard Edition instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq-instance
  */
 export class Instance extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: InstanceProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute HttpInternalEndpoint: The internal HTTP endpoint for the Message Queue for Apache RocketMQ instance.
@@ -74,6 +78,10 @@ export class Instance extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: InstanceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosInstance = new RosInstance(this, id,  {
             instanceName: props.instanceName,

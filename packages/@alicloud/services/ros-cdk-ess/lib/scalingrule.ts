@@ -148,6 +148,10 @@ export interface ScalingRuleProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalingrule
  */
 export class ScalingRule extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ScalingRuleProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ScalingRuleAri: Unique identifier of a scaling rule.
@@ -166,6 +170,10 @@ export class ScalingRule extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ScalingRuleProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosScalingRule = new RosScalingRule(this, id,  {
             targetValue: props.targetValue,

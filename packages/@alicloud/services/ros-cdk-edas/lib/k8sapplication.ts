@@ -272,6 +272,10 @@ export interface K8sApplicationProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-k8sapplication
  */
 export class K8sApplication extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: K8sApplicationProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AppId: The ID of the application.
@@ -305,6 +309,10 @@ export class K8sApplication extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: K8sApplicationProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosK8sApplication = new RosK8sApplication(this, id,  {
             logicalRegionId: props.logicalRegionId,

@@ -41,6 +41,10 @@ export interface CompliancePackProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-compliancepack
  */
 export class CompliancePack extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: CompliancePackProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AccountId: Aliyun User Id
@@ -79,6 +83,10 @@ export class CompliancePack extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: CompliancePackProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCompliancePack = new RosCompliancePack(this, id,  {
             compliancePackName: props.compliancePackName,

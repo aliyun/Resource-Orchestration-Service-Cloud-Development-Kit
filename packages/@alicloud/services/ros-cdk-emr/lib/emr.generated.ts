@@ -267,8 +267,8 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('sshEnable', ros.validateBoolean)(properties.sshEnable));
     errors.collect(ros.propertyValidator('useCustomHiveMetaDb', ros.validateBoolean)(properties.useCustomHiveMetaDb));
     errors.collect(ros.propertyValidator('isOpenPublicIp', ros.validateBoolean)(properties.isOpenPublicIp));
-    errors.collect(ros.propertyValidator('configurations', ros.validateString)(properties.configurations));
     errors.collect(ros.propertyValidator('authorizeContent', ros.validateString)(properties.authorizeContent));
+    errors.collect(ros.propertyValidator('configurations', ros.validateString)(properties.configurations));
     errors.collect(ros.propertyValidator('netType', ros.requiredValidator)(properties.netType));
     errors.collect(ros.propertyValidator('netType', ros.validateString)(properties.netType));
     errors.collect(ros.propertyValidator('userDefinedEmrEcsRole', ros.validateString)(properties.userDefinedEmrEcsRole));

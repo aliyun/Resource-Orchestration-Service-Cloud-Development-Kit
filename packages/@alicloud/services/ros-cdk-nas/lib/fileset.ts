@@ -37,6 +37,10 @@ export interface FilesetProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-fileset
  */
 export class Fileset extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: FilesetProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute FileSystemId: File system ID.
@@ -60,6 +64,10 @@ export class Fileset extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: FilesetProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosFileset = new RosFileset(this, id,  {
             fileSystemPath: props.fileSystemPath,

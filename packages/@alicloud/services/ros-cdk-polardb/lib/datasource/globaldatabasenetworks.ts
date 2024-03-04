@@ -21,11 +21,15 @@ export interface GlobalDatabaseNetworksProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::POLARDB::GlobalDatabaseNetworks`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::POLARDB::GlobalDatabaseNetworks`, which is used to query all global database networks (GDNs) within the current Alibaba Cloud account.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGlobalDatabaseNetworks`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-globaldatabasenetworks
  */
 export class GlobalDatabaseNetworks extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: GlobalDatabaseNetworksProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute GdnIds: The list of gdn IDs.
@@ -44,6 +48,10 @@ export class GlobalDatabaseNetworks extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: GlobalDatabaseNetworksProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosGlobalDatabaseNetworks = new RosGlobalDatabaseNetworks(this, id,  {
             dbClusterId: props.dbClusterId,

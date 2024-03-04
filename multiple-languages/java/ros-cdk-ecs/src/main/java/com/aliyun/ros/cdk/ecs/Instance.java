@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::Instance</code>, which is used to create an Elastic Compute Service (ECS) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.216Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:51.623Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -38,6 +38,158 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
     public Instance(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.InstanceProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
         software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), java.util.Objects.requireNonNull(props, "props is required") });
+    }
+
+    /**
+     * Add one or more security groups to an ECS instance.
+     * <p>
+     * @param securityGroups Security groups or security group IDs. This parameter is required.
+     */
+    public void addSecurityGroups(final @org.jetbrains.annotations.NotNull java.lang.Object... securityGroups) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            final java.util.List<java.lang.Object> __securityGroups__asList = java.util.Arrays.asList(securityGroups);
+            for (int __idx_504f7b = 0; __idx_504f7b < __securityGroups__asList.size(); __idx_504f7b++) {
+                final java.lang.Object __val_504f7b = __securityGroups__asList.get(__idx_504f7b);
+                if (
+                     !(__val_504f7b instanceof java.lang.String)
+                    && !(__val_504f7b instanceof com.aliyun.ros.cdk.ecs.SecurityGroup)
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("securityGroups").append("[").append(__idx_504f7b).append("]")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.ecs.SecurityGroup; received ")
+                            .append(__val_504f7b.getClass()).toString());
+                }
+            }
+        }
+        software.amazon.jsii.Kernel.call(this, "addSecurityGroups", software.amazon.jsii.NativeType.VOID, java.util.Arrays.<Object>stream(securityGroups).toArray(Object[]::new));
+    }
+
+    /**
+     * Add one or more commands to the userdata of an ECS instance.
+     * <p>
+     * @param commands Commands to be added. This parameter is required.
+     */
+    public void addUserDataCommands(final @org.jetbrains.annotations.NotNull java.lang.Object... commands) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            final java.util.List<java.lang.Object> __commands__asList = java.util.Arrays.asList(commands);
+            for (int __idx_e76cb8 = 0; __idx_e76cb8 < __commands__asList.size(); __idx_e76cb8++) {
+                final java.lang.Object __val_e76cb8 = __commands__asList.get(__idx_e76cb8);
+                if (
+                     !(__val_e76cb8 instanceof java.lang.String)
+                    && !(__val_e76cb8 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_e76cb8.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("commands").append("[").append(__idx_e76cb8).append("]")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_e76cb8.getClass()).toString());
+                }
+            }
+        }
+        software.amazon.jsii.Kernel.call(this, "addUserDataCommands", software.amazon.jsii.NativeType.VOID, java.util.Arrays.<Object>stream(commands).toArray(Object[]::new));
+    }
+
+    /**
+     * Create prerequisite resource(s) required to an ECS instance: VPC, VSwitch, and(or) security group.
+     * <p>
+     * @param zoneId Required when creating a VSwitch.
+     * @param vpcCidrBlock Optional when creating a VPC.
+     * @param vSwitchCidrBlock Optional when creating a VSwitch.
+     * @param whetherCreateSecurityGroup Whether to create a security group.
+     */
+    public @org.jetbrains.annotations.NotNull java.util.List<java.lang.Object> autoCreateDependencies(final @org.jetbrains.annotations.Nullable java.lang.Object zoneId, final @org.jetbrains.annotations.Nullable java.lang.String vpcCidrBlock, final @org.jetbrains.annotations.Nullable java.lang.String vSwitchCidrBlock, final @org.jetbrains.annotations.Nullable java.lang.Boolean whetherCreateSecurityGroup) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            if (
+                 !(zoneId instanceof java.lang.String)
+                && !(zoneId instanceof com.aliyun.ros.cdk.core.IResolvable)
+                && !(zoneId.getClass().equals(software.amazon.jsii.JsiiObject.class))
+            ) {
+                throw new IllegalArgumentException(
+                    new java.lang.StringBuilder("Expected ")
+                        .append("zoneId")
+                        .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                        .append(zoneId.getClass()).toString());
+            }
+        }
+        return java.util.Collections.unmodifiableList(software.amazon.jsii.Kernel.call(this, "autoCreateDependencies", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class)), new Object[] { zoneId, vpcCidrBlock, vSwitchCidrBlock, whetherCreateSecurityGroup }));
+    }
+
+    /**
+     * Create prerequisite resource(s) required to an ECS instance: VPC, VSwitch, and(or) security group.
+     * <p>
+     * @param zoneId Required when creating a VSwitch.
+     * @param vpcCidrBlock Optional when creating a VPC.
+     * @param vSwitchCidrBlock Optional when creating a VSwitch.
+     */
+    public @org.jetbrains.annotations.NotNull java.util.List<java.lang.Object> autoCreateDependencies(final @org.jetbrains.annotations.Nullable java.lang.Object zoneId, final @org.jetbrains.annotations.Nullable java.lang.String vpcCidrBlock, final @org.jetbrains.annotations.Nullable java.lang.String vSwitchCidrBlock) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            if (
+                 !(zoneId instanceof java.lang.String)
+                && !(zoneId instanceof com.aliyun.ros.cdk.core.IResolvable)
+                && !(zoneId.getClass().equals(software.amazon.jsii.JsiiObject.class))
+            ) {
+                throw new IllegalArgumentException(
+                    new java.lang.StringBuilder("Expected ")
+                        .append("zoneId")
+                        .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                        .append(zoneId.getClass()).toString());
+            }
+        }
+        return java.util.Collections.unmodifiableList(software.amazon.jsii.Kernel.call(this, "autoCreateDependencies", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class)), new Object[] { zoneId, vpcCidrBlock, vSwitchCidrBlock }));
+    }
+
+    /**
+     * Create prerequisite resource(s) required to an ECS instance: VPC, VSwitch, and(or) security group.
+     * <p>
+     * @param zoneId Required when creating a VSwitch.
+     * @param vpcCidrBlock Optional when creating a VPC.
+     */
+    public @org.jetbrains.annotations.NotNull java.util.List<java.lang.Object> autoCreateDependencies(final @org.jetbrains.annotations.Nullable java.lang.Object zoneId, final @org.jetbrains.annotations.Nullable java.lang.String vpcCidrBlock) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            if (
+                 !(zoneId instanceof java.lang.String)
+                && !(zoneId instanceof com.aliyun.ros.cdk.core.IResolvable)
+                && !(zoneId.getClass().equals(software.amazon.jsii.JsiiObject.class))
+            ) {
+                throw new IllegalArgumentException(
+                    new java.lang.StringBuilder("Expected ")
+                        .append("zoneId")
+                        .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                        .append(zoneId.getClass()).toString());
+            }
+        }
+        return java.util.Collections.unmodifiableList(software.amazon.jsii.Kernel.call(this, "autoCreateDependencies", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class)), new Object[] { zoneId, vpcCidrBlock }));
+    }
+
+    /**
+     * Create prerequisite resource(s) required to an ECS instance: VPC, VSwitch, and(or) security group.
+     * <p>
+     * @param zoneId Required when creating a VSwitch.
+     */
+    public @org.jetbrains.annotations.NotNull java.util.List<java.lang.Object> autoCreateDependencies(final @org.jetbrains.annotations.Nullable java.lang.Object zoneId) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            if (
+                 !(zoneId instanceof java.lang.String)
+                && !(zoneId instanceof com.aliyun.ros.cdk.core.IResolvable)
+                && !(zoneId.getClass().equals(software.amazon.jsii.JsiiObject.class))
+            ) {
+                throw new IllegalArgumentException(
+                    new java.lang.StringBuilder("Expected ")
+                        .append("zoneId")
+                        .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                        .append(zoneId.getClass()).toString());
+            }
+        }
+        return java.util.Collections.unmodifiableList(software.amazon.jsii.Kernel.call(this, "autoCreateDependencies", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class)), new Object[] { zoneId }));
+    }
+
+    /**
+     * Create prerequisite resource(s) required to an ECS instance: VPC, VSwitch, and(or) security group.
+     */
+    public @org.jetbrains.annotations.NotNull java.util.List<java.lang.Object> autoCreateDependencies() {
+        return java.util.Collections.unmodifiableList(software.amazon.jsii.Kernel.call(this, "autoCreateDependencies", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class))));
     }
 
     /**
@@ -98,6 +250,38 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrZoneId() {
         return software.amazon.jsii.Kernel.get(this, "attrZoneId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
+        return software.amazon.jsii.Kernel.get(this, "enableResourcePropertyConstraint", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
+    }
+
+    protected void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
+    }
+
+    protected @org.jetbrains.annotations.NotNull java.lang.String getId() {
+        return software.amazon.jsii.Kernel.get(this, "id", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    }
+
+    protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
+    }
+
+    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.InstanceProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.InstanceProps.class));
+    }
+
+    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.InstanceProps value) {
+        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
+    }
+
+    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {
+        return software.amazon.jsii.Kernel.get(this, "scope", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.Construct.class));
+    }
+
+    protected void setScope(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct value) {
+        software.amazon.jsii.Kernel.set(this, "scope", java.util.Objects.requireNonNull(value, "scope is required"));
     }
 
     /**

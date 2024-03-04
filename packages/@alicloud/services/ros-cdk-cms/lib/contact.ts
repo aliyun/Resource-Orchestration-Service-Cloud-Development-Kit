@@ -31,6 +31,10 @@ export interface ContactProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-contact
  */
 export class Contact extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ContactProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ContactName: The name of the alarm contact.
@@ -44,6 +48,10 @@ export class Contact extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ContactProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosContact = new RosContact(this, id,  {
             describe: props.describe,

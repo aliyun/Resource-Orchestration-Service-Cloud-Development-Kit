@@ -61,6 +61,10 @@ export interface TriggerProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-trigger
  */
 export class Trigger extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: TriggerProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute FunctionName: Function name.
@@ -99,6 +103,10 @@ export class Trigger extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: TriggerProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosTrigger = new RosTrigger(this, id,  {
             functionName: props.functionName,

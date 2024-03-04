@@ -50,6 +50,10 @@ export interface ClusterProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-foas-cluster
  */
 export class Cluster extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ClusterProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterId: Cluster ID.
@@ -98,6 +102,10 @@ export class Cluster extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ClusterProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCluster = new RosCluster(this, id,  {
             order: props.order,

@@ -110,7 +110,8 @@ export interface ElasticDBInstanceProps {
     readonly securityIpList?: string | ros.IResolvable;
 
     /**
-     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     * Property tags: The list of instance tags in the form of key\/value pairs.
+     * You can define a maximum of 20 tags for instance.
      */
     readonly tags?: RosElasticDBInstance.TagsProperty[];
 
@@ -128,6 +129,10 @@ export interface ElasticDBInstanceProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-elasticdbinstance
  */
 export class ElasticDBInstance extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ElasticDBInstanceProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ConnectionString: The endpoint of the instance.
@@ -156,6 +161,10 @@ export class ElasticDBInstance extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ElasticDBInstanceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosElasticDBInstance = new RosElasticDBInstance(this, id,  {
             masterNodeNum: props.masterNodeNum,

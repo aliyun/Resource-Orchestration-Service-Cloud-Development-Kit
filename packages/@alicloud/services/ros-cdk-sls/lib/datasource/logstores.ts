@@ -26,6 +26,10 @@ export interface LogstoresProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-sls-logstores
  */
 export class Logstores extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: LogstoresProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Logstores: The list of logstores.
@@ -39,6 +43,10 @@ export class Logstores extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: LogstoresProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosLogstores = new RosLogstores(this, id,  {
             project: props.project,

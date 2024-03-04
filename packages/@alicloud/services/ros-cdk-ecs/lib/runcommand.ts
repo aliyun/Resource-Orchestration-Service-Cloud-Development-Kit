@@ -167,6 +167,10 @@ export interface RunCommandProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-runcommand
  */
 export class RunCommand extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: RunCommandProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CommandId: The id of command created.
@@ -195,6 +199,10 @@ export class RunCommand extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: RunCommandProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosRunCommand = new RosRunCommand(this, id,  {
             description: props.description,

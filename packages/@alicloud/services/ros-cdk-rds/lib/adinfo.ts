@@ -41,6 +41,10 @@ export interface ADInfoProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-adinfo
  */
 export class ADInfo extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ADInfoProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ADDNS: Active directory domain name.
@@ -59,6 +63,10 @@ export class ADInfo extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ADInfoProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosADInfo = new RosADInfo(this, id,  {
             adServerIpAddress: props.adServerIpAddress,

@@ -151,7 +151,7 @@ function rosACLAssociationPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::ACLAssociation`, which is used to associate an access control list (ACL) with a Smart Access Gateway (SAG) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::ACLAssociation`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ACLAssociation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-aclassociation
  */
@@ -399,7 +399,7 @@ function rosACLRulePropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::ACLRule`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::ACLRule`, which is used to add an access control list (ACL) rule.
  * @Note This class does not contain additional functions, so it is recommended to use the `ACLRule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-aclrule
  */
@@ -634,7 +634,7 @@ function rosAppPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::App`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::App`, which is used to create a Smart Access Gateway (SAG) app instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `App` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-app
  */
@@ -840,7 +840,7 @@ export class RosAppUser extends ros.RosResource {
     public readonly attrSmartAgId: ros.IResolvable;
 
     /**
-     * @Attribute UserName: <heat.engine.properties.Schema object at 0x7fd9b9b6e1d0>
+     * @Attribute UserName: <heat.engine.properties.Schema object at 0x7f370e560750>
      */
     public readonly attrUserName: ros.IResolvable;
 
@@ -1183,7 +1183,7 @@ function rosGrantCcnToCenPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::GrantCcnToCen`, which is used to grant permissions on a Cloud Connect Network (CCN) instance to a Cloud Enterprise Network (CEN) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::GrantCcnToCen`.
  * @Note This class does not contain additional functions, so it is recommended to use the `GrantCcnToCen` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-grantccntocen
  */
@@ -1419,7 +1419,7 @@ function rosQosAssociationPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::QosAssociation`, which is used to associate a quality of service (QoS) policy with a Smart Access Gateway (SAG) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::QosAssociation`.
  * @Note This class does not contain additional functions, so it is recommended to use the `QosAssociation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-qosassociation
  */
@@ -1622,7 +1622,7 @@ function rosQosCarPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::QosCar`, which is used to create a traffic throttling rule for a quality of service (QoS) policy.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::QosCar`.
  * @Note This class does not contain additional functions, so it is recommended to use the `QosCar` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-qoscar
  */
@@ -2465,7 +2465,7 @@ function rosSmartAccessGatewayPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::SmartAccessGateway`, which is used to create a Smart Access Gateway (SAG) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::SmartAccessGateway`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SmartAccessGateway` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-smartaccessgateway
  */
@@ -2776,7 +2776,7 @@ function rosSmartAccessGatewayBindingPropsToRosTemplate(properties: any, enableR
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::SmartAccessGatewayBinding`, which is used to bind a Smart Access Gateway (SAG) instance to a specified Cloud Connect Network (CCN) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::SmartAccessGatewayBinding`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SmartAccessGatewayBinding` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-smartaccessgatewaybinding
  */

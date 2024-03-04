@@ -31,11 +31,15 @@ export interface AccountPrivilegeProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::AccountPrivilege`, which is used to authorize an account to access a database.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::AccountPrivilege`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccountPrivilege`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-accountprivilege
  */
 export class AccountPrivilege extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AccountPrivilegeProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -44,6 +48,10 @@ export class AccountPrivilege extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AccountPrivilegeProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAccountPrivilege = new RosAccountPrivilege(this, id,  {
             accountPrivilege: props.accountPrivilege,

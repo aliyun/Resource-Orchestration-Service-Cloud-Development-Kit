@@ -16,11 +16,15 @@ export interface RulesProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::PVTZ::Rules`, which is used to query forwarding rules.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::PVTZ::Rules`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRules`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pvtz-rules
  */
 export class Rules extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: RulesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute RuleIds: The list of rule IDs.
@@ -39,6 +43,10 @@ export class Rules extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: RulesProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosRules = new RosRules(this, id,  {
             endpointId: props.endpointId,

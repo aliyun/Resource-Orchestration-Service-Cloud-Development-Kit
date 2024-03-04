@@ -26,6 +26,10 @@ export interface CenBandwidthPackageAssociationProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthpackageassociation
  */
 export class CenBandwidthPackageAssociation extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: CenBandwidthPackageAssociationProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -34,6 +38,10 @@ export class CenBandwidthPackageAssociation extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: CenBandwidthPackageAssociationProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCenBandwidthPackageAssociation = new RosCenBandwidthPackageAssociation(this, id,  {
             cenId: props.cenId,

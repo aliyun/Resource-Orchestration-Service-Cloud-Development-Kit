@@ -46,6 +46,10 @@ export interface PublicIpAddressPoolsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-publicipaddresspools
  */
 export class PublicIpAddressPools extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: PublicIpAddressPoolsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute PublicIpAddressPoolIds: The list of public ip address pool IDs.
@@ -64,6 +68,10 @@ export class PublicIpAddressPools extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: PublicIpAddressPoolsProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosPublicIpAddressPools = new RosPublicIpAddressPools(this, id,  {
             resourceGroupId: props.resourceGroupId,

@@ -135,11 +135,15 @@ export interface SynchronizationJob2Props {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DTS::SynchronizationJob2`DATASOURCE::DTS::MigrationInstances is used to query information about Data Transmission Service (DTS) tasks.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DTS::SynchronizationJob2`, which is used to configure a data synchronization task.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSynchronizationJob2`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-synchronizationjob2
  */
 export class SynchronizationJob2 extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: SynchronizationJob2Props;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DtsInstanceId: The ID of the DTS instance.
@@ -163,6 +167,10 @@ export class SynchronizationJob2 extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: SynchronizationJob2Props, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosSynchronizationJob2 = new RosSynchronizationJob2(this, id,  {
             status: props.status,

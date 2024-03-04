@@ -16,11 +16,15 @@ export interface DefaultPatchBaselineProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::OOS::DefaultPatchBaseline`, which is used to register a default patch baseline.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::OOS::DefaultPatchBaseline`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDefaultPatchBaseline`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-defaultpatchbaseline
  */
 export class DefaultPatchBaseline extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DefaultPatchBaselineProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ApprovalRules: The rules of scanning and installing patches for the specified operating system.
@@ -79,6 +83,10 @@ export class DefaultPatchBaseline extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DefaultPatchBaselineProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDefaultPatchBaseline = new RosDefaultPatchBaseline(this, id,  {
             patchBaselineName: props.patchBaselineName,

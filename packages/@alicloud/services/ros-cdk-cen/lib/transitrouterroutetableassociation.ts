@@ -26,6 +26,10 @@ export interface TransitRouterRouteTableAssociationProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterroutetableassociation
  */
 export class TransitRouterRouteTableAssociation extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: TransitRouterRouteTableAssociationProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ResourceId: ResourceId
@@ -54,6 +58,10 @@ export class TransitRouterRouteTableAssociation extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: TransitRouterRouteTableAssociationProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosTransitRouterRouteTableAssociation = new RosTransitRouterRouteTableAssociation(this, id,  {
             transitRouterRouteTableId: props.transitRouterRouteTableId,

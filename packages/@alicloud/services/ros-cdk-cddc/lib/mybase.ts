@@ -140,11 +140,15 @@ export interface MyBaseProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CDDC::MyBase`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CDDC::MyBase`, which is used to create hosts in a dedicated cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMyBase`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cddc-mybase
  */
 export class MyBase extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: MyBaseProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceIds: The instance id list of created ecs instances
@@ -163,6 +167,10 @@ export class MyBase extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: MyBaseProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosMyBase = new RosMyBase(this, id,  {
             ecsInstanceName: props.ecsInstanceName,

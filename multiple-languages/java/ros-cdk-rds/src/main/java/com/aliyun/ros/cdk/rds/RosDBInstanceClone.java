@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.rds;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::RDS::DBInstanceClone</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::RDS::DBInstanceClone</code>, which is used to restore historical data of an instance to a new instance.
+ * <p>
+ * The new instance is the clone of the instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.573Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:54.108Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosDBInstanceClone")
 public class RosDBInstanceClone extends com.aliyun.ros.cdk.core.RosResource {
 

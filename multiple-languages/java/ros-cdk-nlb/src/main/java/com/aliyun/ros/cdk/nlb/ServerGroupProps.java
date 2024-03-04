@@ -5,15 +5,10 @@ package com.aliyun.ros.cdk.nlb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-servergroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.026Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:53.278Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.ServerGroupProps")
 @software.amazon.jsii.Jsii.Proxy(ServerGroupProps.Jsii$Proxy.class)
 public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable {
-
-    /**
-     * Property healthCheckConfig: Health Check Config.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getHealthCheckConfig();
 
     /**
      * Property serverGroupName: Name of ServerGroup.
@@ -33,6 +28,17 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
+     * Property anyPortEnabled: Specifies whether to enable all-port forwarding.
+     * <p>
+     * Valid values:
+     * true
+     * false (default)
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAnyPortEnabled() {
+        return null;
+    }
+
+    /**
      * Property connectionDrainEnabled: Whether to enable graceful connection interruption.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getConnectionDrainEnabled() {
@@ -43,6 +49,13 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
      * Property connectionDrainTimeout: Time of graceful connection interruption.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getConnectionDrainTimeout() {
+        return null;
+    }
+
+    /**
+     * Property healthCheckConfig: Health Check Config.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckConfig() {
         return null;
     }
 
@@ -103,6 +116,15 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
+     * Property tags: Tags to attach to instance.
+     * <p>
+     * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.nlb.RosServerGroup.TagsProperty> getTags() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link ServerGroupProps}
      */
     static Builder builder() {
@@ -112,12 +134,13 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link ServerGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ServerGroupProps> {
-        java.lang.Object healthCheckConfig;
         java.lang.Object serverGroupName;
         java.lang.Object vpcId;
         java.lang.Object addressIpVersion;
+        java.lang.Object anyPortEnabled;
         java.lang.Object connectionDrainEnabled;
         java.lang.Object connectionDrainTimeout;
+        java.lang.Object healthCheckConfig;
         java.lang.Object persistenceEnabled;
         java.lang.Object persistenceTimeout;
         java.lang.Object preserveClientIpEnabled;
@@ -126,26 +149,7 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object scheduler;
         java.lang.Object serverGroupType;
         java.lang.Object servers;
-
-        /**
-         * Sets the value of {@link ServerGroupProps#getHealthCheckConfig}
-         * @param healthCheckConfig Property healthCheckConfig: Health Check Config. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder healthCheckConfig(com.aliyun.ros.cdk.core.IResolvable healthCheckConfig) {
-            this.healthCheckConfig = healthCheckConfig;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ServerGroupProps#getHealthCheckConfig}
-         * @param healthCheckConfig Property healthCheckConfig: Health Check Config. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder healthCheckConfig(com.aliyun.ros.cdk.nlb.RosServerGroup.HealthCheckConfigProperty healthCheckConfig) {
-            this.healthCheckConfig = healthCheckConfig;
-            return this;
-        }
+        java.util.List<com.aliyun.ros.cdk.nlb.RosServerGroup.TagsProperty> tags;
 
         /**
          * Sets the value of {@link ServerGroupProps#getServerGroupName}
@@ -208,6 +212,32 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link ServerGroupProps#getAnyPortEnabled}
+         * @param anyPortEnabled Property anyPortEnabled: Specifies whether to enable all-port forwarding.
+         *                       Valid values:
+         *                       true
+         *                       false (default)
+         * @return {@code this}
+         */
+        public Builder anyPortEnabled(java.lang.Boolean anyPortEnabled) {
+            this.anyPortEnabled = anyPortEnabled;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ServerGroupProps#getAnyPortEnabled}
+         * @param anyPortEnabled Property anyPortEnabled: Specifies whether to enable all-port forwarding.
+         *                       Valid values:
+         *                       true
+         *                       false (default)
+         * @return {@code this}
+         */
+        public Builder anyPortEnabled(com.aliyun.ros.cdk.core.IResolvable anyPortEnabled) {
+            this.anyPortEnabled = anyPortEnabled;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ServerGroupProps#getConnectionDrainEnabled}
          * @param connectionDrainEnabled Property connectionDrainEnabled: Whether to enable graceful connection interruption.
          * @return {@code this}
@@ -244,6 +274,26 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
          */
         public Builder connectionDrainTimeout(com.aliyun.ros.cdk.core.IResolvable connectionDrainTimeout) {
             this.connectionDrainTimeout = connectionDrainTimeout;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ServerGroupProps#getHealthCheckConfig}
+         * @param healthCheckConfig Property healthCheckConfig: Health Check Config.
+         * @return {@code this}
+         */
+        public Builder healthCheckConfig(com.aliyun.ros.cdk.core.IResolvable healthCheckConfig) {
+            this.healthCheckConfig = healthCheckConfig;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ServerGroupProps#getHealthCheckConfig}
+         * @param healthCheckConfig Property healthCheckConfig: Health Check Config.
+         * @return {@code this}
+         */
+        public Builder healthCheckConfig(com.aliyun.ros.cdk.nlb.RosServerGroup.HealthCheckConfigProperty healthCheckConfig) {
+            this.healthCheckConfig = healthCheckConfig;
             return this;
         }
 
@@ -408,6 +458,18 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link ServerGroupProps#getTags}
+         * @param tags Property tags: Tags to attach to instance.
+         *             Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.nlb.RosServerGroup.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.nlb.RosServerGroup.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link ServerGroupProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -423,12 +485,13 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ServerGroupProps {
-        private final java.lang.Object healthCheckConfig;
         private final java.lang.Object serverGroupName;
         private final java.lang.Object vpcId;
         private final java.lang.Object addressIpVersion;
+        private final java.lang.Object anyPortEnabled;
         private final java.lang.Object connectionDrainEnabled;
         private final java.lang.Object connectionDrainTimeout;
+        private final java.lang.Object healthCheckConfig;
         private final java.lang.Object persistenceEnabled;
         private final java.lang.Object persistenceTimeout;
         private final java.lang.Object preserveClientIpEnabled;
@@ -437,6 +500,7 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object scheduler;
         private final java.lang.Object serverGroupType;
         private final java.lang.Object servers;
+        private final java.util.List<com.aliyun.ros.cdk.nlb.RosServerGroup.TagsProperty> tags;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -444,12 +508,13 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.healthCheckConfig = software.amazon.jsii.Kernel.get(this, "healthCheckConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serverGroupName = software.amazon.jsii.Kernel.get(this, "serverGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.addressIpVersion = software.amazon.jsii.Kernel.get(this, "addressIpVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.anyPortEnabled = software.amazon.jsii.Kernel.get(this, "anyPortEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.connectionDrainEnabled = software.amazon.jsii.Kernel.get(this, "connectionDrainEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.connectionDrainTimeout = software.amazon.jsii.Kernel.get(this, "connectionDrainTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.healthCheckConfig = software.amazon.jsii.Kernel.get(this, "healthCheckConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.persistenceEnabled = software.amazon.jsii.Kernel.get(this, "persistenceEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.persistenceTimeout = software.amazon.jsii.Kernel.get(this, "persistenceTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.preserveClientIpEnabled = software.amazon.jsii.Kernel.get(this, "preserveClientIpEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -458,19 +523,22 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
             this.scheduler = software.amazon.jsii.Kernel.get(this, "scheduler", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serverGroupType = software.amazon.jsii.Kernel.get(this, "serverGroupType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.servers = software.amazon.jsii.Kernel.get(this, "servers", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.nlb.RosServerGroup.TagsProperty.class)));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
+        @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.healthCheckConfig = java.util.Objects.requireNonNull(builder.healthCheckConfig, "healthCheckConfig is required");
             this.serverGroupName = java.util.Objects.requireNonNull(builder.serverGroupName, "serverGroupName is required");
             this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
             this.addressIpVersion = builder.addressIpVersion;
+            this.anyPortEnabled = builder.anyPortEnabled;
             this.connectionDrainEnabled = builder.connectionDrainEnabled;
             this.connectionDrainTimeout = builder.connectionDrainTimeout;
+            this.healthCheckConfig = builder.healthCheckConfig;
             this.persistenceEnabled = builder.persistenceEnabled;
             this.persistenceTimeout = builder.persistenceTimeout;
             this.preserveClientIpEnabled = builder.preserveClientIpEnabled;
@@ -479,11 +547,7 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
             this.scheduler = builder.scheduler;
             this.serverGroupType = builder.serverGroupType;
             this.servers = builder.servers;
-        }
-
-        @Override
-        public final java.lang.Object getHealthCheckConfig() {
-            return this.healthCheckConfig;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.nlb.RosServerGroup.TagsProperty>)builder.tags;
         }
 
         @Override
@@ -502,6 +566,11 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.lang.Object getAnyPortEnabled() {
+            return this.anyPortEnabled;
+        }
+
+        @Override
         public final java.lang.Object getConnectionDrainEnabled() {
             return this.connectionDrainEnabled;
         }
@@ -509,6 +578,11 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
         @Override
         public final java.lang.Object getConnectionDrainTimeout() {
             return this.connectionDrainTimeout;
+        }
+
+        @Override
+        public final java.lang.Object getHealthCheckConfig() {
+            return this.healthCheckConfig;
         }
 
         @Override
@@ -552,22 +626,32 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.util.List<com.aliyun.ros.cdk.nlb.RosServerGroup.TagsProperty> getTags() {
+            return this.tags;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
-            data.set("healthCheckConfig", om.valueToTree(this.getHealthCheckConfig()));
             data.set("serverGroupName", om.valueToTree(this.getServerGroupName()));
             data.set("vpcId", om.valueToTree(this.getVpcId()));
             if (this.getAddressIpVersion() != null) {
                 data.set("addressIpVersion", om.valueToTree(this.getAddressIpVersion()));
+            }
+            if (this.getAnyPortEnabled() != null) {
+                data.set("anyPortEnabled", om.valueToTree(this.getAnyPortEnabled()));
             }
             if (this.getConnectionDrainEnabled() != null) {
                 data.set("connectionDrainEnabled", om.valueToTree(this.getConnectionDrainEnabled()));
             }
             if (this.getConnectionDrainTimeout() != null) {
                 data.set("connectionDrainTimeout", om.valueToTree(this.getConnectionDrainTimeout()));
+            }
+            if (this.getHealthCheckConfig() != null) {
+                data.set("healthCheckConfig", om.valueToTree(this.getHealthCheckConfig()));
             }
             if (this.getPersistenceEnabled() != null) {
                 data.set("persistenceEnabled", om.valueToTree(this.getPersistenceEnabled()));
@@ -593,6 +677,9 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getServers() != null) {
                 data.set("servers", om.valueToTree(this.getServers()));
             }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-nlb.ServerGroupProps"));
@@ -611,12 +698,13 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
 
             ServerGroupProps.Jsii$Proxy that = (ServerGroupProps.Jsii$Proxy) o;
 
-            if (!healthCheckConfig.equals(that.healthCheckConfig)) return false;
             if (!serverGroupName.equals(that.serverGroupName)) return false;
             if (!vpcId.equals(that.vpcId)) return false;
             if (this.addressIpVersion != null ? !this.addressIpVersion.equals(that.addressIpVersion) : that.addressIpVersion != null) return false;
+            if (this.anyPortEnabled != null ? !this.anyPortEnabled.equals(that.anyPortEnabled) : that.anyPortEnabled != null) return false;
             if (this.connectionDrainEnabled != null ? !this.connectionDrainEnabled.equals(that.connectionDrainEnabled) : that.connectionDrainEnabled != null) return false;
             if (this.connectionDrainTimeout != null ? !this.connectionDrainTimeout.equals(that.connectionDrainTimeout) : that.connectionDrainTimeout != null) return false;
+            if (this.healthCheckConfig != null ? !this.healthCheckConfig.equals(that.healthCheckConfig) : that.healthCheckConfig != null) return false;
             if (this.persistenceEnabled != null ? !this.persistenceEnabled.equals(that.persistenceEnabled) : that.persistenceEnabled != null) return false;
             if (this.persistenceTimeout != null ? !this.persistenceTimeout.equals(that.persistenceTimeout) : that.persistenceTimeout != null) return false;
             if (this.preserveClientIpEnabled != null ? !this.preserveClientIpEnabled.equals(that.preserveClientIpEnabled) : that.preserveClientIpEnabled != null) return false;
@@ -624,17 +712,19 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.scheduler != null ? !this.scheduler.equals(that.scheduler) : that.scheduler != null) return false;
             if (this.serverGroupType != null ? !this.serverGroupType.equals(that.serverGroupType) : that.serverGroupType != null) return false;
-            return this.servers != null ? this.servers.equals(that.servers) : that.servers == null;
+            if (this.servers != null ? !this.servers.equals(that.servers) : that.servers != null) return false;
+            return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
         @Override
         public final int hashCode() {
-            int result = this.healthCheckConfig.hashCode();
-            result = 31 * result + (this.serverGroupName.hashCode());
+            int result = this.serverGroupName.hashCode();
             result = 31 * result + (this.vpcId.hashCode());
             result = 31 * result + (this.addressIpVersion != null ? this.addressIpVersion.hashCode() : 0);
+            result = 31 * result + (this.anyPortEnabled != null ? this.anyPortEnabled.hashCode() : 0);
             result = 31 * result + (this.connectionDrainEnabled != null ? this.connectionDrainEnabled.hashCode() : 0);
             result = 31 * result + (this.connectionDrainTimeout != null ? this.connectionDrainTimeout.hashCode() : 0);
+            result = 31 * result + (this.healthCheckConfig != null ? this.healthCheckConfig.hashCode() : 0);
             result = 31 * result + (this.persistenceEnabled != null ? this.persistenceEnabled.hashCode() : 0);
             result = 31 * result + (this.persistenceTimeout != null ? this.persistenceTimeout.hashCode() : 0);
             result = 31 * result + (this.preserveClientIpEnabled != null ? this.preserveClientIpEnabled.hashCode() : 0);
@@ -643,6 +733,7 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.scheduler != null ? this.scheduler.hashCode() : 0);
             result = 31 * result + (this.serverGroupType != null ? this.serverGroupType.hashCode() : 0);
             result = 31 * result + (this.servers != null ? this.servers.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }
     }

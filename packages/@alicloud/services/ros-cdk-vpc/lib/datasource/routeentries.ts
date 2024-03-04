@@ -70,6 +70,10 @@ export interface RouteEntriesProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-routeentries
  */
 export class RouteEntries extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: RouteEntriesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute RouteEntries: The list of The route entries.
@@ -88,6 +92,10 @@ export class RouteEntries extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: RouteEntriesProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosRouteEntries = new RosRouteEntries(this, id,  {
             nextHopType: props.nextHopType,

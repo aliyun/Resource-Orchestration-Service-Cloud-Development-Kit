@@ -89,6 +89,10 @@ export interface LoadBalancerProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-loadbalancer
  */
 export class LoadBalancer extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: LoadBalancerProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AddressIpVersion: The version of IP address that the NLB instance uses to provide services.
@@ -132,6 +136,10 @@ export class LoadBalancer extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: LoadBalancerProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosLoadBalancer = new RosLoadBalancer(this, id,  {
             addressIpVersion: props.addressIpVersion,

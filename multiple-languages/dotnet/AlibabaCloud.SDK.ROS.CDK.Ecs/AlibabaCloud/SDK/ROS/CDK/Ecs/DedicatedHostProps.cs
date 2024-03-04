@@ -610,9 +610,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Property tags: Tags to attach to instance.</summary>
+        /// <summary>Property tags: Tags to attach to DedicatedHost.</summary>
         /// <remarks>
-        /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+        /// Max support 20 tags to add during create DedicatedHost. Each tag with two properties Key and Value, and Key is required.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-ecs.RosDedicatedHost.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]

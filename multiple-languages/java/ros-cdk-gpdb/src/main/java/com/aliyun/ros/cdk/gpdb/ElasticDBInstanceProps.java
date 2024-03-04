@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.gpdb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-elasticdbinstance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.536Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:52.759Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.ElasticDBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(ElasticDBInstanceProps.Jsii$Proxy.class)
 public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -163,9 +163,9 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
     }
 
     /**
-     * Property tags: Tags to attach to instance.
+     * Property tags: The list of instance tags in the form of key/value pairs.
      * <p>
-     * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     * You can define a maximum of 20 tags for instance.
      */
     default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.gpdb.RosElasticDBInstance.TagsProperty> getTags() {
         return null;
@@ -623,8 +623,8 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
 
         /**
          * Sets the value of {@link ElasticDBInstanceProps#getTags}
-         * @param tags Property tags: Tags to attach to instance.
-         *             Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+         * @param tags Property tags: The list of instance tags in the form of key/value pairs.
+         *             You can define a maximum of 20 tags for instance.
          * @return {@code this}
          */
         @SuppressWarnings("unchecked")

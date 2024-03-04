@@ -111,6 +111,10 @@ export interface SnapshotsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-snapshots
  */
 export class Snapshots extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: SnapshotsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SnapshotIds: the list of snapshot ids.
@@ -129,6 +133,10 @@ export class Snapshots extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: SnapshotsProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosSnapshots = new RosSnapshots(this, id,  {
             status: props.status,

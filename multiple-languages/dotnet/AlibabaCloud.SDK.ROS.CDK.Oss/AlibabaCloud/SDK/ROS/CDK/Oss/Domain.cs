@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Oss
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::OSS::Domain`, which is used to bind a custom domain name.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::OSS::Domain`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomain`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-domain
@@ -49,6 +49,34 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDomainName
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
+        protected virtual bool EnableResourcePropertyConstraint
+        {
+            get => GetInstanceProperty<bool>()!;
+            set => SetInstanceProperty(value);
+        }
+
+        [JsiiProperty(name: "id", typeJson: "{\"primitive\":\"string\"}")]
+        protected virtual string Id
+        {
+            get => GetInstanceProperty<string>()!;
+            set => SetInstanceProperty(value);
+        }
+
+        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-oss.DomainProps\"}")]
+        protected virtual AlibabaCloud.SDK.ROS.CDK.Oss.IDomainProps Props
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Oss.IDomainProps>()!;
+            set => SetInstanceProperty(value);
+        }
+
+        [JsiiProperty(name: "scope", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}")]
+        protected virtual AlibabaCloud.SDK.ROS.CDK.Core.Construct Scope
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.Construct>()!;
+            set => SetInstanceProperty(value);
         }
     }
 }

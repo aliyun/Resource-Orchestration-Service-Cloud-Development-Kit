@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.nlb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-listener
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.011Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:53.261Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.RosListenerProps")
 @software.amazon.jsii.Jsii.Proxy(RosListenerProps.Jsii$Proxy.class)
 public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable {
@@ -119,6 +119,12 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.nlb.RosListener.TagsProperty> getTags() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosListenerProps}
      */
     static Builder builder() {
@@ -147,6 +153,7 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object secSensorEnabled;
         java.lang.Object securityPolicyId;
         java.lang.Object startPort;
+        java.util.List<com.aliyun.ros.cdk.nlb.RosListener.TagsProperty> tags;
 
         /**
          * Sets the value of {@link RosListenerProps#getListenerProtocol}
@@ -529,6 +536,17 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosListenerProps#getTags}
+         * @param tags the value to be set.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.nlb.RosListener.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.nlb.RosListener.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosListenerProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -563,6 +581,7 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object secSensorEnabled;
         private final java.lang.Object securityPolicyId;
         private final java.lang.Object startPort;
+        private final java.util.List<com.aliyun.ros.cdk.nlb.RosListener.TagsProperty> tags;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -589,11 +608,13 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             this.secSensorEnabled = software.amazon.jsii.Kernel.get(this, "secSensorEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityPolicyId = software.amazon.jsii.Kernel.get(this, "securityPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.startPort = software.amazon.jsii.Kernel.get(this, "startPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.nlb.RosListener.TagsProperty.class)));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
+        @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.listenerProtocol = java.util.Objects.requireNonNull(builder.listenerProtocol, "listenerProtocol is required");
@@ -615,6 +636,7 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             this.secSensorEnabled = builder.secSensorEnabled;
             this.securityPolicyId = builder.securityPolicyId;
             this.startPort = builder.startPort;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.nlb.RosListener.TagsProperty>)builder.tags;
         }
 
         @Override
@@ -713,6 +735,11 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.util.List<com.aliyun.ros.cdk.nlb.RosListener.TagsProperty> getTags() {
+            return this.tags;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -769,6 +796,9 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getStartPort() != null) {
                 data.set("startPort", om.valueToTree(this.getStartPort()));
             }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-nlb.RosListenerProps"));
@@ -805,7 +835,8 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             if (this.proxyProtocolEnabled != null ? !this.proxyProtocolEnabled.equals(that.proxyProtocolEnabled) : that.proxyProtocolEnabled != null) return false;
             if (this.secSensorEnabled != null ? !this.secSensorEnabled.equals(that.secSensorEnabled) : that.secSensorEnabled != null) return false;
             if (this.securityPolicyId != null ? !this.securityPolicyId.equals(that.securityPolicyId) : that.securityPolicyId != null) return false;
-            return this.startPort != null ? this.startPort.equals(that.startPort) : that.startPort == null;
+            if (this.startPort != null ? !this.startPort.equals(that.startPort) : that.startPort != null) return false;
+            return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
         @Override
@@ -829,6 +860,7 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.secSensorEnabled != null ? this.secSensorEnabled.hashCode() : 0);
             result = 31 * result + (this.securityPolicyId != null ? this.securityPolicyId.hashCode() : 0);
             result = 31 * result + (this.startPort != null ? this.startPort.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }
     }

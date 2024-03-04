@@ -698,6 +698,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
         }
 
+        private object? _prodType;
+
+        /// <remarks>
+        /// <strong>Property</strong>: prodType: Prod type. The value can be: standard, cost-effective. The default value is standard.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "prodType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ProdType
+        {
+            get => _prodType;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _prodType = value;
+            }
+        }
+
         private object? _securityIpList;
 
         /// <remarks>
@@ -1000,7 +1033,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+        /// <strong>Property</strong>: tags: The list of instance tags in the form of key\/value pairs.
+        /// You can define a maximum of 20 tags for instance.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-gpdb.RosDBInstance.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]

@@ -60,6 +60,10 @@ export interface DedicatedHostsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-dedicatedhosts
  */
 export class DedicatedHosts extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DedicatedHostsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DedicatedHostIds: The list of dedicated host ids.
@@ -78,6 +82,10 @@ export class DedicatedHosts extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DedicatedHostsProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDedicatedHosts = new RosDedicatedHosts(this, id,  {
             status: props.status,

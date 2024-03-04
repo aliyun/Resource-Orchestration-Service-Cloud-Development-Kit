@@ -21,6 +21,10 @@ export interface DiskReplicaPairsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ebs-diskreplicapairs
  */
 export class DiskReplicaPairs extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DiskReplicaPairsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DiskReplicaPairs: The list of disk replica pairs.
@@ -39,6 +43,10 @@ export class DiskReplicaPairs extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DiskReplicaPairsProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDiskReplicaPairs = new RosDiskReplicaPairs(this, id,  {
             resourceGroupId: props.resourceGroupId,

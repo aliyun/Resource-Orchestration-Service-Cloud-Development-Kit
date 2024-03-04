@@ -41,6 +41,10 @@ export interface CenRouteMapsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-cenroutemaps
  */
 export class CenRouteMaps extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: CenRouteMapsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute RouteMapIds: The list of The RouteMap ids.
@@ -59,6 +63,10 @@ export class CenRouteMaps extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: CenRouteMapsProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCenRouteMaps = new RosCenRouteMaps(this, id,  {
             transitRouterRouteTableId: props.transitRouterRouteTableId,

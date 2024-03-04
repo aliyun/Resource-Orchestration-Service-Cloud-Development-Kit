@@ -16,6 +16,10 @@ export interface FlowsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fnf-flows
  */
 export class Flows extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: FlowsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute FlowNames: The list of flow names.
@@ -34,6 +38,10 @@ export class Flows extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: FlowsProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosFlows = new RosFlows(this, id,  {
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

@@ -26,6 +26,10 @@ export interface MonitorGroupInstancesProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitorgroupinstances
  */
 export class MonitorGroupInstances extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: MonitorGroupInstancesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute GroupId: The ID of the application group.
@@ -39,6 +43,10 @@ export class MonitorGroupInstances extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: MonitorGroupInstancesProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosMonitorGroupInstances = new RosMonitorGroupInstances(this, id,  {
             instances: props.instances,

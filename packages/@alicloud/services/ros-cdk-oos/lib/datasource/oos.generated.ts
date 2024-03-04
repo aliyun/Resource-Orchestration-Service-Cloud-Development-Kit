@@ -3,6 +3,201 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosPatchBaseline`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-patchbaseline
+ */
+export interface RosPatchBaselineProps {
+
+    /**
+     * @Property patchBaselineName: The name of the patch baseline.
+     */
+    readonly patchBaselineName: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosPatchBaselineProps`
+ *
+ * @param properties - the TypeScript properties of a `RosPatchBaselineProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosPatchBaselinePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('patchBaselineName', ros.requiredValidator)(properties.patchBaselineName));
+    errors.collect(ros.propertyValidator('patchBaselineName', ros.validateString)(properties.patchBaselineName));
+    return errors.wrap('supplied properties not correct for "RosPatchBaselineProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::OOS::PatchBaseline` resource
+ *
+ * @param properties - the TypeScript properties of a `RosPatchBaselineProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::OOS::PatchBaseline` resource.
+ */
+// @ts-ignore TS6133
+function rosPatchBaselinePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosPatchBaselinePropsValidator(properties).assertSuccess();
+    }
+    return {
+      PatchBaselineName: ros.stringToRosTemplate(properties.patchBaselineName),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::PatchBaseline`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `PatchBaseline` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-patchbaseline
+ */
+export class RosPatchBaseline extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::OOS::PatchBaseline";
+
+    /**
+     * @Attribute ApprovalRules: Accept the rules.
+     */
+    public readonly attrApprovalRules: ros.IResolvable;
+
+    /**
+     * @Attribute ApprovedPatches: Approved patch list.
+     */
+    public readonly attrApprovedPatches: ros.IResolvable;
+
+    /**
+     * @Attribute ApprovedPatchesEnableNonSecurity: Approve whether the patch includes updates other than security.
+     */
+    public readonly attrApprovedPatchesEnableNonSecurity: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: Creation time.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute CreatedBy: Patch baseline creator.
+     */
+    public readonly attrCreatedBy: ros.IResolvable;
+
+    /**
+     * @Attribute Description: Patches baseline description information.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute IsDefault: Whether it is the default patch baseline.
+     */
+    public readonly attrIsDefault: ros.IResolvable;
+
+    /**
+     * @Attribute OperationSystem: Operating system type.
+     */
+    public readonly attrOperationSystem: ros.IResolvable;
+
+    /**
+     * @Attribute PatchBaselineId: Patch baseline ID.
+     */
+    public readonly attrPatchBaselineId: ros.IResolvable;
+
+    /**
+     * @Attribute PatchBaselineName: The name of the patch baseline.
+     */
+    public readonly attrPatchBaselineName: ros.IResolvable;
+
+    /**
+     * @Attribute RejectedPatches: Reject the name of the patch.
+     */
+    public readonly attrRejectedPatches: ros.IResolvable;
+
+    /**
+     * @Attribute RejectedPatchesAction: The operation of rejecting the patch.
+     */
+    public readonly attrRejectedPatchesAction: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: Approve whether the patch includes updates other than security
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute ShareType: Patch baseline sharing type.
+     */
+    public readonly attrShareType: ros.IResolvable;
+
+    /**
+     * @Attribute Sources: Patch source configuration list.
+     */
+    public readonly attrSources: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: Tags of patch baseline.
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    /**
+     * @Attribute UpdatedBy: Patch baseline updater.
+     */
+    public readonly attrUpdatedBy: ros.IResolvable;
+
+    /**
+     * @Attribute UpdatedDate: Update time.
+     */
+    public readonly attrUpdatedDate: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property patchBaselineName: The name of the patch baseline.
+     */
+    public patchBaselineName: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosPatchBaselineProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosPatchBaseline.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrApprovalRules = this.getAtt('ApprovalRules');
+        this.attrApprovedPatches = this.getAtt('ApprovedPatches');
+        this.attrApprovedPatchesEnableNonSecurity = this.getAtt('ApprovedPatchesEnableNonSecurity');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrCreatedBy = this.getAtt('CreatedBy');
+        this.attrDescription = this.getAtt('Description');
+        this.attrIsDefault = this.getAtt('IsDefault');
+        this.attrOperationSystem = this.getAtt('OperationSystem');
+        this.attrPatchBaselineId = this.getAtt('PatchBaselineId');
+        this.attrPatchBaselineName = this.getAtt('PatchBaselineName');
+        this.attrRejectedPatches = this.getAtt('RejectedPatches');
+        this.attrRejectedPatchesAction = this.getAtt('RejectedPatchesAction');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrShareType = this.getAtt('ShareType');
+        this.attrSources = this.getAtt('Sources');
+        this.attrTags = this.getAtt('Tags');
+        this.attrUpdatedBy = this.getAtt('UpdatedBy');
+        this.attrUpdatedDate = this.getAtt('UpdatedDate');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.patchBaselineName = props.patchBaselineName;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            patchBaselineName: this.patchBaselineName,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosPatchBaselinePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosPatchBaselines`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-patchbaselines
  */
@@ -186,7 +381,7 @@ function rosSecretParametersPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::SecretParameters`, which is used to query encryption parameters.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::SecretParameters`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecretParameters` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-secretparameters
  */

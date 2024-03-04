@@ -26,6 +26,10 @@ export interface DedicatedHostGroupsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cddc-dedicatedhostgroups
  */
 export class DedicatedHostGroups extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DedicatedHostGroupsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DedicatedHostGroupIds: The list of dedicated host group IDs.
@@ -44,6 +48,10 @@ export class DedicatedHostGroups extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DedicatedHostGroupsProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDedicatedHostGroups = new RosDedicatedHostGroups(this, id,  {
             dedicatedHostGroupId: props.dedicatedHostGroupId,

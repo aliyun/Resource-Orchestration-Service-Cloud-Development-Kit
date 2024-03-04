@@ -129,6 +129,10 @@ export interface DBClusterProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adb-dbcluster
  */
 export class DBCluster extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DBClusterProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ConnectionString: Vpc connection string.
@@ -152,6 +156,10 @@ export class DBCluster extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DBClusterProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDBCluster = new RosDBCluster(this, id,  {
             dbNodeStorage: props.dbNodeStorage,

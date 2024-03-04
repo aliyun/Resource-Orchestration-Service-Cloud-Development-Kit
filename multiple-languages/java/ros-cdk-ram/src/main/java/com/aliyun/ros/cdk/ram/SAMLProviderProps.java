@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ram;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-samlprovider
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.443Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:53.976Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.SAMLProviderProps")
 @software.amazon.jsii.Jsii.Proxy(SAMLProviderProps.Jsii$Proxy.class)
 public interface SAMLProviderProps extends software.amazon.jsii.JsiiSerializable {
@@ -25,9 +25,17 @@ public interface SAMLProviderProps extends software.amazon.jsii.JsiiSerializable
     }
 
     /**
+     * Property encodedSamlMetadataDocument: SAML metadata document.Base64 encoded. Provided by an identity provider that supports the SAML2.0 protocol. Only one of the three properties SAMLMetadataDocument, SAMLMetadataDocumentURL, EncodedSAMLMetadataDocument can be set.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEncodedSamlMetadataDocument() {
+        return null;
+    }
+
+    /**
      * Property samlMetadataDocument: SAML metadata document.
      * <p>
-     * The content must be 1 to 102,400 bytes in length.You must specify one of the SAMLMetadataDocument and SAMLMetadataDocumentURL properties, but you cannot specify both of them.
+     * The content must be 1 to 102,400 bytes in length.
+     * Only one of the three properties SAMLMetadataDocument, SAMLMetadataDocumentURL, EncodedSAMLMetadataDocument can be set.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSamlMetadataDocument() {
         return null;
@@ -37,6 +45,7 @@ public interface SAMLProviderProps extends software.amazon.jsii.JsiiSerializable
      * Property samlMetadataDocumentUrl: The URL for the file that contains the SAML metadata document.
      * <p>
      * The URL must point to a document located in an HTTP or HTTPS web server or an Alibaba Cloud OSS bucket. Examples: oss://ros/document/demo and oss://ros/document/demo?RegionId=cn-hangzhou. The URL can be up to 1,024 bytes in length.
+     * Only one of the three properties SAMLMetadataDocument, SAMLMetadataDocumentURL, EncodedSAMLMetadataDocument can be set.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSamlMetadataDocumentUrl() {
         return null;
@@ -54,6 +63,7 @@ public interface SAMLProviderProps extends software.amazon.jsii.JsiiSerializable
     public static final class Builder implements software.amazon.jsii.Builder<SAMLProviderProps> {
         java.lang.Object samlProviderName;
         java.lang.Object description;
+        java.lang.Object encodedSamlMetadataDocument;
         java.lang.Object samlMetadataDocument;
         java.lang.Object samlMetadataDocumentUrl;
 
@@ -100,9 +110,30 @@ public interface SAMLProviderProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link SAMLProviderProps#getEncodedSamlMetadataDocument}
+         * @param encodedSamlMetadataDocument Property encodedSamlMetadataDocument: SAML metadata document.Base64 encoded. Provided by an identity provider that supports the SAML2.0 protocol. Only one of the three properties SAMLMetadataDocument, SAMLMetadataDocumentURL, EncodedSAMLMetadataDocument can be set.
+         * @return {@code this}
+         */
+        public Builder encodedSamlMetadataDocument(java.lang.String encodedSamlMetadataDocument) {
+            this.encodedSamlMetadataDocument = encodedSamlMetadataDocument;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SAMLProviderProps#getEncodedSamlMetadataDocument}
+         * @param encodedSamlMetadataDocument Property encodedSamlMetadataDocument: SAML metadata document.Base64 encoded. Provided by an identity provider that supports the SAML2.0 protocol. Only one of the three properties SAMLMetadataDocument, SAMLMetadataDocumentURL, EncodedSAMLMetadataDocument can be set.
+         * @return {@code this}
+         */
+        public Builder encodedSamlMetadataDocument(com.aliyun.ros.cdk.core.IResolvable encodedSamlMetadataDocument) {
+            this.encodedSamlMetadataDocument = encodedSamlMetadataDocument;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SAMLProviderProps#getSamlMetadataDocument}
          * @param samlMetadataDocument Property samlMetadataDocument: SAML metadata document.
-         *                             The content must be 1 to 102,400 bytes in length.You must specify one of the SAMLMetadataDocument and SAMLMetadataDocumentURL properties, but you cannot specify both of them.
+         *                             The content must be 1 to 102,400 bytes in length.
+         *                             Only one of the three properties SAMLMetadataDocument, SAMLMetadataDocumentURL, EncodedSAMLMetadataDocument can be set.
          * @return {@code this}
          */
         public Builder samlMetadataDocument(java.lang.String samlMetadataDocument) {
@@ -113,7 +144,8 @@ public interface SAMLProviderProps extends software.amazon.jsii.JsiiSerializable
         /**
          * Sets the value of {@link SAMLProviderProps#getSamlMetadataDocument}
          * @param samlMetadataDocument Property samlMetadataDocument: SAML metadata document.
-         *                             The content must be 1 to 102,400 bytes in length.You must specify one of the SAMLMetadataDocument and SAMLMetadataDocumentURL properties, but you cannot specify both of them.
+         *                             The content must be 1 to 102,400 bytes in length.
+         *                             Only one of the three properties SAMLMetadataDocument, SAMLMetadataDocumentURL, EncodedSAMLMetadataDocument can be set.
          * @return {@code this}
          */
         public Builder samlMetadataDocument(com.aliyun.ros.cdk.core.IResolvable samlMetadataDocument) {
@@ -125,6 +157,7 @@ public interface SAMLProviderProps extends software.amazon.jsii.JsiiSerializable
          * Sets the value of {@link SAMLProviderProps#getSamlMetadataDocumentUrl}
          * @param samlMetadataDocumentUrl Property samlMetadataDocumentUrl: The URL for the file that contains the SAML metadata document.
          *                                The URL must point to a document located in an HTTP or HTTPS web server or an Alibaba Cloud OSS bucket. Examples: oss://ros/document/demo and oss://ros/document/demo?RegionId=cn-hangzhou. The URL can be up to 1,024 bytes in length.
+         *                                Only one of the three properties SAMLMetadataDocument, SAMLMetadataDocumentURL, EncodedSAMLMetadataDocument can be set.
          * @return {@code this}
          */
         public Builder samlMetadataDocumentUrl(java.lang.String samlMetadataDocumentUrl) {
@@ -136,6 +169,7 @@ public interface SAMLProviderProps extends software.amazon.jsii.JsiiSerializable
          * Sets the value of {@link SAMLProviderProps#getSamlMetadataDocumentUrl}
          * @param samlMetadataDocumentUrl Property samlMetadataDocumentUrl: The URL for the file that contains the SAML metadata document.
          *                                The URL must point to a document located in an HTTP or HTTPS web server or an Alibaba Cloud OSS bucket. Examples: oss://ros/document/demo and oss://ros/document/demo?RegionId=cn-hangzhou. The URL can be up to 1,024 bytes in length.
+         *                                Only one of the three properties SAMLMetadataDocument, SAMLMetadataDocumentURL, EncodedSAMLMetadataDocument can be set.
          * @return {@code this}
          */
         public Builder samlMetadataDocumentUrl(com.aliyun.ros.cdk.core.IResolvable samlMetadataDocumentUrl) {
@@ -161,6 +195,7 @@ public interface SAMLProviderProps extends software.amazon.jsii.JsiiSerializable
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements SAMLProviderProps {
         private final java.lang.Object samlProviderName;
         private final java.lang.Object description;
+        private final java.lang.Object encodedSamlMetadataDocument;
         private final java.lang.Object samlMetadataDocument;
         private final java.lang.Object samlMetadataDocumentUrl;
 
@@ -172,6 +207,7 @@ public interface SAMLProviderProps extends software.amazon.jsii.JsiiSerializable
             super(objRef);
             this.samlProviderName = software.amazon.jsii.Kernel.get(this, "samlProviderName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.encodedSamlMetadataDocument = software.amazon.jsii.Kernel.get(this, "encodedSamlMetadataDocument", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.samlMetadataDocument = software.amazon.jsii.Kernel.get(this, "samlMetadataDocument", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.samlMetadataDocumentUrl = software.amazon.jsii.Kernel.get(this, "samlMetadataDocumentUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -183,6 +219,7 @@ public interface SAMLProviderProps extends software.amazon.jsii.JsiiSerializable
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.samlProviderName = java.util.Objects.requireNonNull(builder.samlProviderName, "samlProviderName is required");
             this.description = builder.description;
+            this.encodedSamlMetadataDocument = builder.encodedSamlMetadataDocument;
             this.samlMetadataDocument = builder.samlMetadataDocument;
             this.samlMetadataDocumentUrl = builder.samlMetadataDocumentUrl;
         }
@@ -195,6 +232,11 @@ public interface SAMLProviderProps extends software.amazon.jsii.JsiiSerializable
         @Override
         public final java.lang.Object getDescription() {
             return this.description;
+        }
+
+        @Override
+        public final java.lang.Object getEncodedSamlMetadataDocument() {
+            return this.encodedSamlMetadataDocument;
         }
 
         @Override
@@ -216,6 +258,9 @@ public interface SAMLProviderProps extends software.amazon.jsii.JsiiSerializable
             data.set("samlProviderName", om.valueToTree(this.getSamlProviderName()));
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
+            }
+            if (this.getEncodedSamlMetadataDocument() != null) {
+                data.set("encodedSamlMetadataDocument", om.valueToTree(this.getEncodedSamlMetadataDocument()));
             }
             if (this.getSamlMetadataDocument() != null) {
                 data.set("samlMetadataDocument", om.valueToTree(this.getSamlMetadataDocument()));
@@ -243,6 +288,7 @@ public interface SAMLProviderProps extends software.amazon.jsii.JsiiSerializable
 
             if (!samlProviderName.equals(that.samlProviderName)) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
+            if (this.encodedSamlMetadataDocument != null ? !this.encodedSamlMetadataDocument.equals(that.encodedSamlMetadataDocument) : that.encodedSamlMetadataDocument != null) return false;
             if (this.samlMetadataDocument != null ? !this.samlMetadataDocument.equals(that.samlMetadataDocument) : that.samlMetadataDocument != null) return false;
             return this.samlMetadataDocumentUrl != null ? this.samlMetadataDocumentUrl.equals(that.samlMetadataDocumentUrl) : that.samlMetadataDocumentUrl == null;
         }
@@ -251,6 +297,7 @@ public interface SAMLProviderProps extends software.amazon.jsii.JsiiSerializable
         public final int hashCode() {
             int result = this.samlProviderName.hashCode();
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+            result = 31 * result + (this.encodedSamlMetadataDocument != null ? this.encodedSamlMetadataDocument.hashCode() : 0);
             result = 31 * result + (this.samlMetadataDocument != null ? this.samlMetadataDocument.hashCode() : 0);
             result = 31 * result + (this.samlMetadataDocumentUrl != null ? this.samlMetadataDocumentUrl.hashCode() : 0);
             return result;

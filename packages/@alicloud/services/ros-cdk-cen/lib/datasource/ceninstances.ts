@@ -21,6 +21,10 @@ export interface CenInstancesProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-ceninstances
  */
 export class CenInstances extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: CenInstancesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CenIds: The list of The Cen instance ids.
@@ -39,6 +43,10 @@ export class CenInstances extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: CenInstancesProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCenInstances = new RosCenInstances(this, id,  {
             filter: props.filter,

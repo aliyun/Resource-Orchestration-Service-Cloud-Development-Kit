@@ -26,6 +26,10 @@ export interface AliasesProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-aliases
  */
 export class Aliases extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AliasesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AliasNames: The list of alias names.
@@ -44,6 +48,10 @@ export class Aliases extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AliasesProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAliases = new RosAliases(this, id,  {
             serviceName: props.serviceName,

@@ -47,6 +47,10 @@ export interface AuthorizationProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-authorization
  */
 export class Authorization extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AuthorizationProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -55,6 +59,10 @@ export class Authorization extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AuthorizationProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAuthorization = new RosAuthorization(this, id,  {
             description: props.description,

@@ -26,6 +26,10 @@ export interface GroupsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-groups
  */
 export class Groups extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: GroupsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute GroupNames: The list of group names.
@@ -44,6 +48,10 @@ export class Groups extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: GroupsProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosGroups = new RosGroups(this, id,  {
             groupName: props.groupName,

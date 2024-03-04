@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ram;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-samlprovider
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.435Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:53.968Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosSAMLProviderProps")
 @software.amazon.jsii.Jsii.Proxy(RosSAMLProviderProps.Jsii$Proxy.class)
 public interface RosSAMLProviderProps extends software.amazon.jsii.JsiiSerializable {
@@ -17,6 +17,12 @@ public interface RosSAMLProviderProps extends software.amazon.jsii.JsiiSerializa
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEncodedSamlMetadataDocument() {
         return null;
     }
 
@@ -44,6 +50,7 @@ public interface RosSAMLProviderProps extends software.amazon.jsii.JsiiSerializa
     public static final class Builder implements software.amazon.jsii.Builder<RosSAMLProviderProps> {
         java.lang.Object samlProviderName;
         java.lang.Object description;
+        java.lang.Object encodedSamlMetadataDocument;
         java.lang.Object samlMetadataDocument;
         java.lang.Object samlMetadataDocumentUrl;
 
@@ -84,6 +91,26 @@ public interface RosSAMLProviderProps extends software.amazon.jsii.JsiiSerializa
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
             this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSAMLProviderProps#getEncodedSamlMetadataDocument}
+         * @param encodedSamlMetadataDocument the value to be set.
+         * @return {@code this}
+         */
+        public Builder encodedSamlMetadataDocument(java.lang.String encodedSamlMetadataDocument) {
+            this.encodedSamlMetadataDocument = encodedSamlMetadataDocument;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSAMLProviderProps#getEncodedSamlMetadataDocument}
+         * @param encodedSamlMetadataDocument the value to be set.
+         * @return {@code this}
+         */
+        public Builder encodedSamlMetadataDocument(com.aliyun.ros.cdk.core.IResolvable encodedSamlMetadataDocument) {
+            this.encodedSamlMetadataDocument = encodedSamlMetadataDocument;
             return this;
         }
 
@@ -145,6 +172,7 @@ public interface RosSAMLProviderProps extends software.amazon.jsii.JsiiSerializa
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosSAMLProviderProps {
         private final java.lang.Object samlProviderName;
         private final java.lang.Object description;
+        private final java.lang.Object encodedSamlMetadataDocument;
         private final java.lang.Object samlMetadataDocument;
         private final java.lang.Object samlMetadataDocumentUrl;
 
@@ -156,6 +184,7 @@ public interface RosSAMLProviderProps extends software.amazon.jsii.JsiiSerializa
             super(objRef);
             this.samlProviderName = software.amazon.jsii.Kernel.get(this, "samlProviderName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.encodedSamlMetadataDocument = software.amazon.jsii.Kernel.get(this, "encodedSamlMetadataDocument", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.samlMetadataDocument = software.amazon.jsii.Kernel.get(this, "samlMetadataDocument", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.samlMetadataDocumentUrl = software.amazon.jsii.Kernel.get(this, "samlMetadataDocumentUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -167,6 +196,7 @@ public interface RosSAMLProviderProps extends software.amazon.jsii.JsiiSerializa
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.samlProviderName = java.util.Objects.requireNonNull(builder.samlProviderName, "samlProviderName is required");
             this.description = builder.description;
+            this.encodedSamlMetadataDocument = builder.encodedSamlMetadataDocument;
             this.samlMetadataDocument = builder.samlMetadataDocument;
             this.samlMetadataDocumentUrl = builder.samlMetadataDocumentUrl;
         }
@@ -179,6 +209,11 @@ public interface RosSAMLProviderProps extends software.amazon.jsii.JsiiSerializa
         @Override
         public final java.lang.Object getDescription() {
             return this.description;
+        }
+
+        @Override
+        public final java.lang.Object getEncodedSamlMetadataDocument() {
+            return this.encodedSamlMetadataDocument;
         }
 
         @Override
@@ -200,6 +235,9 @@ public interface RosSAMLProviderProps extends software.amazon.jsii.JsiiSerializa
             data.set("samlProviderName", om.valueToTree(this.getSamlProviderName()));
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
+            }
+            if (this.getEncodedSamlMetadataDocument() != null) {
+                data.set("encodedSamlMetadataDocument", om.valueToTree(this.getEncodedSamlMetadataDocument()));
             }
             if (this.getSamlMetadataDocument() != null) {
                 data.set("samlMetadataDocument", om.valueToTree(this.getSamlMetadataDocument()));
@@ -227,6 +265,7 @@ public interface RosSAMLProviderProps extends software.amazon.jsii.JsiiSerializa
 
             if (!samlProviderName.equals(that.samlProviderName)) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
+            if (this.encodedSamlMetadataDocument != null ? !this.encodedSamlMetadataDocument.equals(that.encodedSamlMetadataDocument) : that.encodedSamlMetadataDocument != null) return false;
             if (this.samlMetadataDocument != null ? !this.samlMetadataDocument.equals(that.samlMetadataDocument) : that.samlMetadataDocument != null) return false;
             return this.samlMetadataDocumentUrl != null ? this.samlMetadataDocumentUrl.equals(that.samlMetadataDocumentUrl) : that.samlMetadataDocumentUrl == null;
         }
@@ -235,6 +274,7 @@ public interface RosSAMLProviderProps extends software.amazon.jsii.JsiiSerializa
         public final int hashCode() {
             int result = this.samlProviderName.hashCode();
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+            result = 31 * result + (this.encodedSamlMetadataDocument != null ? this.encodedSamlMetadataDocument.hashCode() : 0);
             result = 31 * result + (this.samlMetadataDocument != null ? this.samlMetadataDocument.hashCode() : 0);
             result = 31 * result + (this.samlMetadataDocumentUrl != null ? this.samlMetadataDocumentUrl.hashCode() : 0);
             return result;

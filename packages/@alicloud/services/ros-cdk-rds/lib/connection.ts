@@ -47,6 +47,10 @@ export interface ConnectionProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-connection
  */
 export class Connection extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ConnectionProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute BabelfishPort: The name of the dedicated cluster to which the instance belongs.
@@ -75,6 +79,10 @@ export class Connection extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ConnectionProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosConnection = new RosConnection(this, id,  {
             dbInstanceId: props.dbInstanceId,

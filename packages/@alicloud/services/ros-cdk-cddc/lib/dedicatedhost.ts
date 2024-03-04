@@ -76,6 +76,10 @@ export interface DedicatedHostProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cddc-dedicatedhost
  */
 export class DedicatedHost extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DedicatedHostProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AutoRenew: Whether Auto Renew
@@ -199,6 +203,10 @@ export class DedicatedHost extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DedicatedHostProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDedicatedHost = new RosDedicatedHost(this, id,  {
             hostClass: props.hostClass,

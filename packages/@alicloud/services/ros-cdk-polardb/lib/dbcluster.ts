@@ -25,8 +25,8 @@ export interface DBClusterProps {
     /**
      * Property dbVersion: The version of the database. Valid values:
      * MySQL: 5.6, 5.7 or 8.0
-     * PostgreSQL: 11
-     * Oracle: 11
+     * PostgreSQL: 11, 14
+     * Oracle: 11, 14
      */
     readonly dbVersion: string | ros.IResolvable;
 
@@ -387,6 +387,10 @@ export interface DBClusterProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbcluster
  */
 export class DBCluster extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DBClusterProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterConnectionString: The cluster connection string of the db cluster.
@@ -455,6 +459,10 @@ export class DBCluster extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DBClusterProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDBCluster = new RosDBCluster(this, id,  {
             defaultTimeZone: props.defaultTimeZone,

@@ -48,6 +48,10 @@ export interface ManagedInstancesProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-managedinstances
  */
 export class ManagedInstances extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ManagedInstancesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceIds: The list of managed instance ids.
@@ -66,6 +70,10 @@ export class ManagedInstances extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ManagedInstancesProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosManagedInstances = new RosManagedInstances(this, id,  {
             instanceName: props.instanceName,

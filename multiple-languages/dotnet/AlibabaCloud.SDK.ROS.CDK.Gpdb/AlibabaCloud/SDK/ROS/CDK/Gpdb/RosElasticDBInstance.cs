@@ -744,7 +744,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+        /// <strong>Property</strong>: tags: The list of instance tags in the form of key\/value pairs.
+        /// You can define a maximum of 20 tags for instance.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-gpdb.RosElasticDBInstance.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
@@ -790,7 +791,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         public interface ITagsProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: key: undefined
+            /// <strong>Property</strong>: key: The keyword of the tag.
             /// </remarks>
             [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             object Key
@@ -799,7 +800,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: value: undefined
+            /// <strong>Property</strong>: value: The value of the tag.
             /// </remarks>
             [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -819,7 +820,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: key: undefined
+                /// <strong>Property</strong>: key: The keyword of the tag.
                 /// </remarks>
                 [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
                 public object Key
@@ -828,7 +829,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: value: undefined
+                /// <strong>Property</strong>: value: The value of the tag.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -846,7 +847,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             private object _key;
 
             /// <remarks>
-            /// <strong>Property</strong>: key: undefined
+            /// <strong>Property</strong>: key: The keyword of the tag.
             /// </remarks>
             [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Key
@@ -878,7 +879,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             private object? _value;
 
             /// <remarks>
-            /// <strong>Property</strong>: value: undefined
+            /// <strong>Property</strong>: value: The value of the tag.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

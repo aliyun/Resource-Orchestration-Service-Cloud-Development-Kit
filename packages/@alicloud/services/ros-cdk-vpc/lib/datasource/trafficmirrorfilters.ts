@@ -21,6 +21,10 @@ export interface TrafficMirrorFiltersProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-trafficmirrorfilters
  */
 export class TrafficMirrorFilters extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: TrafficMirrorFiltersProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute TrafficMirrorFilterIds: The list of traffic mirror filter IDs.
@@ -39,6 +43,10 @@ export class TrafficMirrorFilters extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: TrafficMirrorFiltersProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosTrafficMirrorFilters = new RosTrafficMirrorFilters(this, id,  {
             trafficMirrorFilterName: props.trafficMirrorFilterName,

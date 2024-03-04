@@ -78,6 +78,10 @@ export interface HostProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bastionhost-host
  */
 export class Host extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: HostProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute HostId: The ID of the host that was created.
@@ -91,6 +95,10 @@ export class Host extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: HostProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosHost = new RosHost(this, id,  {
             comment: props.comment,

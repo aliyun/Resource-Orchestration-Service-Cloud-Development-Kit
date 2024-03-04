@@ -90,6 +90,10 @@ export interface ServiceInstanceProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-computenest-serviceinstance
  */
 export class ServiceInstance extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ServiceInstanceProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Components: Additional billing items.
@@ -213,6 +217,10 @@ export class ServiceInstance extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ServiceInstanceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosServiceInstance = new RosServiceInstance(this, id,  {
             specificationCode: props.specificationCode,

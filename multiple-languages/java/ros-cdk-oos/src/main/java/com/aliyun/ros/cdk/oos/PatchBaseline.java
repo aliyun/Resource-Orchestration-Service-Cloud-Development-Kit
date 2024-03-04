@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oos;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::OOS::PatchBaseline</code>, which is used to create a patch baseline.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.060Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:53.340Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.PatchBaseline")
 public class PatchBaseline extends com.aliyun.ros.cdk.core.Resource {
 
@@ -45,6 +45,20 @@ public class PatchBaseline extends com.aliyun.ros.cdk.core.Resource {
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrApprovalRules() {
         return software.amazon.jsii.Kernel.get(this, "attrApprovalRules", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute ApprovedPatches: Approved patch list.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrApprovedPatches() {
+        return software.amazon.jsii.Kernel.get(this, "attrApprovedPatches", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute ApprovedPatchesEnableNonSecurity: Approve whether the patch includes updates other than security.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrApprovedPatchesEnableNonSecurity() {
+        return software.amazon.jsii.Kernel.get(this, "attrApprovedPatchesEnableNonSecurity", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -97,10 +111,45 @@ public class PatchBaseline extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute RejectedPatches: Reject the name of the patch.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrRejectedPatches() {
+        return software.amazon.jsii.Kernel.get(this, "attrRejectedPatches", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute RejectedPatchesAction: The ID of the resource group.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrRejectedPatchesAction() {
+        return software.amazon.jsii.Kernel.get(this, "attrRejectedPatchesAction", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute ResourceGroupId: Approve whether the patch includes updates other than security.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrResourceGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "attrResourceGroupId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
      * Attribute ShareType: The share type of the patch baseline.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrShareType() {
         return software.amazon.jsii.Kernel.get(this, "attrShareType", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute Sources: Patch source configuration list.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSources() {
+        return software.amazon.jsii.Kernel.get(this, "attrSources", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute Tags: Tags of patch baseline.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrTags() {
+        return software.amazon.jsii.Kernel.get(this, "attrTags", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -115,6 +164,38 @@ public class PatchBaseline extends com.aliyun.ros.cdk.core.Resource {
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrUpdatedDate() {
         return software.amazon.jsii.Kernel.get(this, "attrUpdatedDate", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
+        return software.amazon.jsii.Kernel.get(this, "enableResourcePropertyConstraint", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
+    }
+
+    protected void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
+    }
+
+    protected @org.jetbrains.annotations.NotNull java.lang.String getId() {
+        return software.amazon.jsii.Kernel.get(this, "id", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    }
+
+    protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
+    }
+
+    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.oos.PatchBaselineProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.oos.PatchBaselineProps.class));
+    }
+
+    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.oos.PatchBaselineProps value) {
+        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
+    }
+
+    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {
+        return software.amazon.jsii.Kernel.get(this, "scope", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.Construct.class));
+    }
+
+    protected void setScope(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct value) {
+        software.amazon.jsii.Kernel.set(this, "scope", java.util.Objects.requireNonNull(value, "scope is required"));
     }
 
     /**
@@ -215,6 +296,48 @@ public class PatchBaseline extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property approvedPatches: Approved patch list.
+         * <p>
+         * @return {@code this}
+         * @param approvedPatches Property approvedPatches: Approved patch list. This parameter is required.
+         */
+        public Builder approvedPatches(final com.aliyun.ros.cdk.core.IResolvable approvedPatches) {
+            this.props.approvedPatches(approvedPatches);
+            return this;
+        }
+        /**
+         * Property approvedPatches: Approved patch list.
+         * <p>
+         * @return {@code this}
+         * @param approvedPatches Property approvedPatches: Approved patch list. This parameter is required.
+         */
+        public Builder approvedPatches(final java.util.List<? extends java.lang.Object> approvedPatches) {
+            this.props.approvedPatches(approvedPatches);
+            return this;
+        }
+
+        /**
+         * Property approvedPatchesEnableNonSecurity: Approve whether the patch includes updates other than security.
+         * <p>
+         * @return {@code this}
+         * @param approvedPatchesEnableNonSecurity Property approvedPatchesEnableNonSecurity: Approve whether the patch includes updates other than security. This parameter is required.
+         */
+        public Builder approvedPatchesEnableNonSecurity(final java.lang.Boolean approvedPatchesEnableNonSecurity) {
+            this.props.approvedPatchesEnableNonSecurity(approvedPatchesEnableNonSecurity);
+            return this;
+        }
+        /**
+         * Property approvedPatchesEnableNonSecurity: Approve whether the patch includes updates other than security.
+         * <p>
+         * @return {@code this}
+         * @param approvedPatchesEnableNonSecurity Property approvedPatchesEnableNonSecurity: Approve whether the patch includes updates other than security. This parameter is required.
+         */
+        public Builder approvedPatchesEnableNonSecurity(final com.aliyun.ros.cdk.core.IResolvable approvedPatchesEnableNonSecurity) {
+            this.props.approvedPatchesEnableNonSecurity(approvedPatchesEnableNonSecurity);
+            return this;
+        }
+
+        /**
          * Property description: The description of the patch baseline.
          * <p>
          * @return {@code this}
@@ -232,6 +355,101 @@ public class PatchBaseline extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
+            return this;
+        }
+
+        /**
+         * Property rejectedPatches: Rejected patch list.
+         * <p>
+         * @return {@code this}
+         * @param rejectedPatches Property rejectedPatches: Rejected patch list. This parameter is required.
+         */
+        public Builder rejectedPatches(final com.aliyun.ros.cdk.core.IResolvable rejectedPatches) {
+            this.props.rejectedPatches(rejectedPatches);
+            return this;
+        }
+        /**
+         * Property rejectedPatches: Rejected patch list.
+         * <p>
+         * @return {@code this}
+         * @param rejectedPatches Property rejectedPatches: Rejected patch list. This parameter is required.
+         */
+        public Builder rejectedPatches(final java.util.List<? extends java.lang.Object> rejectedPatches) {
+            this.props.rejectedPatches(rejectedPatches);
+            return this;
+        }
+
+        /**
+         * Property rejectedPatchesAction: The operation of rejecting the patch.
+         * <p>
+         * @return {@code this}
+         * @param rejectedPatchesAction Property rejectedPatchesAction: The operation of rejecting the patch. This parameter is required.
+         */
+        public Builder rejectedPatchesAction(final java.lang.String rejectedPatchesAction) {
+            this.props.rejectedPatchesAction(rejectedPatchesAction);
+            return this;
+        }
+        /**
+         * Property rejectedPatchesAction: The operation of rejecting the patch.
+         * <p>
+         * @return {@code this}
+         * @param rejectedPatchesAction Property rejectedPatchesAction: The operation of rejecting the patch. This parameter is required.
+         */
+        public Builder rejectedPatchesAction(final com.aliyun.ros.cdk.core.IResolvable rejectedPatchesAction) {
+            this.props.rejectedPatchesAction(rejectedPatchesAction);
+            return this;
+        }
+
+        /**
+         * Property resourceGroupId: Resource group id.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: Resource group id. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: Resource group id.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: Resource group id. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * Property sources: Patch source configuration list.
+         * <p>
+         * @return {@code this}
+         * @param sources Property sources: Patch source configuration list. This parameter is required.
+         */
+        public Builder sources(final com.aliyun.ros.cdk.core.IResolvable sources) {
+            this.props.sources(sources);
+            return this;
+        }
+        /**
+         * Property sources: Patch source configuration list.
+         * <p>
+         * @return {@code this}
+         * @param sources Property sources: Patch source configuration list. This parameter is required.
+         */
+        public Builder sources(final java.util.List<? extends java.lang.Object> sources) {
+            this.props.sources(sources);
+            return this;
+        }
+
+        /**
+         * Property tags: Tags of patch baseline.
+         * <p>
+         * @return {@code this}
+         * @param tags Property tags: Tags of patch baseline. This parameter is required.
+         */
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.oos.RosPatchBaseline.TagsProperty> tags) {
+            this.props.tags(tags);
             return this;
         }
 

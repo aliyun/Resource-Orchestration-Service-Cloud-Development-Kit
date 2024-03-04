@@ -67,6 +67,10 @@ export interface VaultProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-vault
  */
 export class Vault extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: VaultProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute BackupPlanStatistics: The statistics of backup plans that use the backup vault.
@@ -224,6 +228,10 @@ export class Vault extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: VaultProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosVault = new RosVault(this, id,  {
             vaultType: props.vaultType,

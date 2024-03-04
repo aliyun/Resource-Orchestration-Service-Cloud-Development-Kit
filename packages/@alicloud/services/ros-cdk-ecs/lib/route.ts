@@ -41,6 +41,10 @@ export interface RouteProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-route
  */
 export class Route extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: RouteProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute RouteEntryId: The ID of the route entry.
@@ -54,6 +58,10 @@ export class Route extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: RouteProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosRoute = new RosRoute(this, id,  {
             nextHopType: props.nextHopType === undefined || props.nextHopType === null ? 'Instance' : props.nextHopType,

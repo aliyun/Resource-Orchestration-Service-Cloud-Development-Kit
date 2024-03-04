@@ -152,6 +152,10 @@ export interface LoadBalancerProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-loadbalancer
  */
 export class LoadBalancer extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: LoadBalancerProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AddressIPVersion: IP version
@@ -235,6 +239,10 @@ export class LoadBalancer extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: LoadBalancerProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosLoadBalancer = new RosLoadBalancer(this, id,  {
             autoRenewPeriod: props.autoRenewPeriod,

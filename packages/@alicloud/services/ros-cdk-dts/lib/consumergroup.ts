@@ -31,11 +31,15 @@ export interface ConsumerGroupProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DTS::ConsumerGroup`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DTS::ConsumerGroup`, which is used to create a consumer group for a change tracking instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosConsumerGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-consumergroup
  */
 export class ConsumerGroup extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ConsumerGroupProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ConsumerGroupID: Consumer group ID
@@ -59,6 +63,10 @@ export class ConsumerGroup extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ConsumerGroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosConsumerGroup = new RosConsumerGroup(this, id,  {
             consumerGroupPassword: props.consumerGroupPassword,

@@ -96,6 +96,10 @@ export interface DomainConfigProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-domainconfig
  */
 export class DomainConfig extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DomainConfigProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Cname: CNAME assigned by WAF instance.
@@ -114,6 +118,10 @@ export class DomainConfig extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DomainConfigProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDomainConfig = new RosDomainConfig(this, id,  {
             httpToUserIp: props.httpToUserIp,

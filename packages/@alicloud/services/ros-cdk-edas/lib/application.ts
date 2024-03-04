@@ -75,6 +75,10 @@ export interface ApplicationProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-application
  */
 export class Application extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ApplicationProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AppId: Application Id, a unique identifier EDAS application
@@ -93,6 +97,10 @@ export class Application extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ApplicationProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosApplication = new RosApplication(this, id,  {
             componentIds: props.componentIds,

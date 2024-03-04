@@ -62,6 +62,10 @@ export interface SslVpnServerProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-sslvpnserver
  */
 export class SslVpnServer extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: SslVpnServerProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SslVpnServerId: ID of the SSL-VPN server.
@@ -75,6 +79,10 @@ export class SslVpnServer extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: SslVpnServerProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosSslVpnServer = new RosSslVpnServer(this, id,  {
             compress: props.compress === undefined || props.compress === null ? false : props.compress,

@@ -51,6 +51,10 @@ export interface TransitRouterVbrAttachmentProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervbrattachment
  */
 export class TransitRouterVbrAttachment extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: TransitRouterVbrAttachmentProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AutoPublishRouteEnabled: AutoPublishRouteEnabled
@@ -109,6 +113,10 @@ export class TransitRouterVbrAttachment extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: TransitRouterVbrAttachmentProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosTransitRouterVbrAttachment = new RosTransitRouterVbrAttachment(this, id,  {
             autoPublishRouteEnabled: props.autoPublishRouteEnabled,

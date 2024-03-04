@@ -107,6 +107,10 @@ export interface VpnGatewayProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpngateway
  */
 export class VpnGateway extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: VpnGatewayProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DisasterRecoveryInternetIp: The second IP address assigned by the system to create an IPsec-VPN connection.This attribute is returned only when the VPN gateway supports the dual-tunnel mode.
@@ -170,6 +174,10 @@ export class VpnGateway extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: VpnGatewayProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosVpnGateway = new RosVpnGateway(this, id,  {
             enableIpsec: props.enableIpsec === undefined || props.enableIpsec === null ? true : props.enableIpsec,

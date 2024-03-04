@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.sag;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SAG::SmartAccessGateway</code>, which is used to create a Smart Access Gateway (SAG) instance.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SAG::SmartAccessGateway</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:18.002Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:54.500Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.RosSmartAccessGateway")
 public class RosSmartAccessGateway extends com.aliyun.ros.cdk.core.RosResource {
 

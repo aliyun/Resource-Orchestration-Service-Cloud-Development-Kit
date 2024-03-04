@@ -50,6 +50,10 @@ export interface EventRuleProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-eventrule
  */
 export class EventRule extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: EventRuleProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Data: Number of rows affected.
@@ -63,6 +67,10 @@ export class EventRule extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: EventRuleProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosEventRule = new RosEventRule(this, id,  {
             eventPattern: props.eventPattern,

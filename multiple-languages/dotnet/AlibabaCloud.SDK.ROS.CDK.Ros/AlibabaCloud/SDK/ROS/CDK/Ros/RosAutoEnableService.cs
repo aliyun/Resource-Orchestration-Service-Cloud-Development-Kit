@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ros
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::AutoEnableService`ALIYUN::ROS::CustomResource is used to create a custom resource.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::AutoEnableService`, which is used to activate an Alibaba Cloud service.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `AutoEnableService` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-autoenableservice
@@ -107,6 +107,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// CDTCb: Cloud Data Transfer for Cross Border
         /// TransitRouter: Cen Transit Router
         /// PAI: Platform of Artificial Intelligence
+        /// Config: Cloud Config
+        /// TrustedService\/ROS: Trusted Service for ROS
+        /// CloudSSO: Cloud SSO
         /// </remarks>
         [JsiiProperty(name: "serviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object ServiceName

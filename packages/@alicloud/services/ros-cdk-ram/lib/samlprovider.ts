@@ -20,12 +20,20 @@ export interface SAMLProviderProps {
     readonly description?: string | ros.IResolvable;
 
     /**
-     * Property samlMetadataDocument: SAML metadata document. The content must be 1 to 102,400 bytes in length.You must specify one of the SAMLMetadataDocument and SAMLMetadataDocumentURL properties, but you cannot specify both of them.
+     * Property encodedSamlMetadataDocument: SAML metadata document.Base64 encoded. Provided by an identity provider that supports the SAML2.0 protocol.
+     * Only one of the three properties SAMLMetadataDocument, SAMLMetadataDocumentURL, EncodedSAMLMetadataDocument can be set.
+     */
+    readonly encodedSamlMetadataDocument?: string | ros.IResolvable;
+
+    /**
+     * Property samlMetadataDocument: SAML metadata document. The content must be 1 to 102,400 bytes in length.
+     * Only one of the three properties SAMLMetadataDocument, SAMLMetadataDocumentURL, EncodedSAMLMetadataDocument can be set.
      */
     readonly samlMetadataDocument?: string | ros.IResolvable;
 
     /**
      * Property samlMetadataDocumentUrl: The URL for the file that contains the SAML metadata document. The URL must point to a document located in an HTTP or HTTPS web server or an Alibaba Cloud OSS bucket. Examples: oss:\/\/ros\/document\/demo and oss:\/\/ros\/document\/demo?RegionId=cn-hangzhou. The URL can be up to 1,024 bytes in length.
+     * Only one of the three properties SAMLMetadataDocument, SAMLMetadataDocumentURL, EncodedSAMLMetadataDocument can be set.
      */
     readonly samlMetadataDocumentUrl?: string | ros.IResolvable;
 }
@@ -36,6 +44,10 @@ export interface SAMLProviderProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-samlprovider
  */
 export class SAMLProvider extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: SAMLProviderProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Arn: ARN.
@@ -54,11 +66,16 @@ export class SAMLProvider extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: SAMLProviderProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosSAMLProvider = new RosSAMLProvider(this, id,  {
             samlProviderName: props.samlProviderName,
             description: props.description,
             samlMetadataDocumentUrl: props.samlMetadataDocumentUrl,
+            encodedSamlMetadataDocument: props.encodedSamlMetadataDocument,
             samlMetadataDocument: props.samlMetadataDocument,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosSAMLProvider;

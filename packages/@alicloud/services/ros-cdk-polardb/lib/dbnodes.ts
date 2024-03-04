@@ -41,6 +41,10 @@ export interface DBNodesProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbnodes
  */
 export class DBNodes extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DBNodesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DBNodeIds: The ID list of added cluster nodes.
@@ -59,6 +63,10 @@ export class DBNodes extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DBNodesProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDBNodes = new RosDBNodes(this, id,  {
             resourceGroupId: props.resourceGroupId,

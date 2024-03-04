@@ -54,6 +54,10 @@ export interface CenRouteServiceProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenrouteservice
  */
 export class CenRouteService extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: CenRouteServiceProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Id: The ID of the cloud service. It is formatted to {CenId}/{HostRegionId}/{Host}/{AccessRegionId}
@@ -67,6 +71,10 @@ export class CenRouteService extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: CenRouteServiceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCenRouteService = new RosCenRouteService(this, id,  {
             conflictIgnore: props.conflictIgnore === undefined || props.conflictIgnore === null ? false : props.conflictIgnore,

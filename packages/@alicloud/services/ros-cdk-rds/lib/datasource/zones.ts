@@ -54,6 +54,10 @@ export interface ZonesProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-zones
  */
 export class Zones extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ZonesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ZoneIds: The list of zone IDs.
@@ -72,6 +76,10 @@ export class Zones extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ZonesProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosZones = new RosZones(this, id,  {
             dispenseMode: props.dispenseMode,

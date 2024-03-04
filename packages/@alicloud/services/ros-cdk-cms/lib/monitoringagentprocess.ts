@@ -31,6 +31,10 @@ export interface MonitoringAgentProcessProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitoringagentprocess
  */
 export class MonitoringAgentProcess extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: MonitoringAgentProcessProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Id: The process ID.
@@ -44,6 +48,10 @@ export class MonitoringAgentProcess extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: MonitoringAgentProcessProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosMonitoringAgentProcess = new RosMonitoringAgentProcess(this, id,  {
             processName: props.processName,

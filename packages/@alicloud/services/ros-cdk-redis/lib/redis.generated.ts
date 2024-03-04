@@ -101,7 +101,7 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::Account`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::Account`, which is used to create an account that has the specified permissions on an ApsaraDB for Redis instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-account
  */
@@ -267,7 +267,7 @@ function rosAuditLogConfigPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::AuditLogConfig`DATASOURCE::REDIS::InstanceClasses is used to query the types of ApsaraDB for Redis instances.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::AuditLogConfig`, which is used to modify the audit log settings of an ApsaraDB for Redis instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `AuditLogConfig` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-auditlogconfig
  */
@@ -772,7 +772,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::Instance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::Instance`, which is used to create an ApsaraDB for Redis instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-instance
  */

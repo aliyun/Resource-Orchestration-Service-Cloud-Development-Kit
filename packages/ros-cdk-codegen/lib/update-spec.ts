@@ -151,6 +151,7 @@ export function specGenerator() {
             Documentation: typeDetail.Documentation ? typeDetail.Documentation : '',
             Attributes: typeDetail.Attributes ? typeDetail.Attributes : {},
             Properties: typeDetail.Properties ? typeDetail.Properties : {},
+            PropsToRosName: typeDetail.PropsToRosName ? typeDetail.PropsToRosName : {},
         };
     }
     for (let [rosCode] of Object.entries(codeMappingFileContent['CodeMapping'])) {
@@ -179,11 +180,21 @@ export async function specOriginGenerator(endpoint: string, accessKeyId: string,
         if (type.startsWith('DATASOURCE') || type.startsWith('ALIYUN')) {
             let typeDetail = await client.getResourceType({ResourceType: type});
 
+            let properties = typeDetail.Properties ? typeDetail.Properties : {};
+            let propsToRosName: { [key: string]: string } = {};
+            if ('Id' in properties) {
+                const value = properties['Id'];
+                delete properties['Id'];
+                properties['Identity'] = value;
+                propsToRosName['Identity'] = 'Id';
+            }
+
             resourceTypes[`${typeDetail.ResourceType}`] = {
                 Description: typeDetail.Description ? typeDetail.Description : '',
                 Documentation: `https://www.alibabacloud.com/help/ros/developer-reference/${type.toLowerCase().replace(/::/g, '-')}`,
                 Attributes: typeDetail.Attributes ? typeDetail.Attributes : {},
-                Properties: typeDetail.Properties ? typeDetail.Properties : {},
+                Properties: properties,
+                PropsToRosName: propsToRosName,
             };
             await sleep(600);
         }

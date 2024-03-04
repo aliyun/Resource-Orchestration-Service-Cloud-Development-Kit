@@ -84,6 +84,10 @@ export interface DataFlowProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-dataflow
  */
 export class DataFlow extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DataFlowProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DataFlowId: Data flow ID.
@@ -102,6 +106,10 @@ export class DataFlow extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DataFlowProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDataFlow = new RosDataFlow(this, id,  {
             fsetId: props.fsetId,

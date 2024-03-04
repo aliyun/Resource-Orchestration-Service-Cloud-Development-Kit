@@ -31,6 +31,10 @@ export interface FunctionsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-functions
  */
 export class Functions extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: FunctionsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute FunctionNames: The list of function names.
@@ -49,6 +53,10 @@ export class Functions extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: FunctionsProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosFunctions = new RosFunctions(this, id,  {
             serviceName: props.serviceName,

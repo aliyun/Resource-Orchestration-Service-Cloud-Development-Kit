@@ -1,10 +1,11 @@
 import { IRosConditionExpression } from "./ros-condition";
-import { minimalRosTemplateJoin } from "./private/template-lang";
+import {minimalRosTemplateJoin, minimalRosTemplateListMerge} from "./private/template-lang";
 import { Intrinsic } from "./private/intrinsic";
 import { Reference } from "./reference";
 import { Token } from "./token";
 import { captureStackTrace } from "./stack-trace";
 import { IResolveContext, IResolvable } from "./resolvable";
+import * as ros from "./index";
 
 // tslint:disable:max-line-length
 
@@ -31,7 +32,7 @@ export class Fn {
     return new FnReplace([replaceData, content]).toString();
   }
 
-  public static listMerge(valueList: any[][]): IResolvable {
+  public static listMerge(valueList: (any[] | ros.IResolvable)[]): IResolvable {
     return new FnListMerge(valueList);
   }
 
@@ -116,7 +117,7 @@ export class Fn {
    * @param listOfValues The list of values you want combined.
    * @returns a token represented as a string
    */
-  public static join(delimiter: string, listOfValues: string[]): string {
+  public static join(delimiter: string, listOfValues: (string | ros.IResolvable)[]): string {
     if (listOfValues.length === 0) {
       throw new Error("FnJoin requires at least one value to be provided");
     }
@@ -347,15 +348,6 @@ export class FnReplace extends FnBase {
    */
   constructor(value: any) {
     super("Fn::Replace", value);
-  }
-}
-
-export class FnListMerge extends FnBase {
-  /**
-   * Creates an ``ListMerge`` function.
-   */
-  constructor(value: any) {
-    super("Fn::ListMerge", value);
   }
 }
 
@@ -666,6 +658,55 @@ export class FnOr extends FnConditionBase {
 //     super("Fn::EachMemberEquals", [listOfStrings, value]);
 //   }
 // }
+
+
+export class FnListMerge implements IResolvable {
+  public readonly creationStack: string[];
+
+  private readonly listOfValues: any[];
+
+  /**
+   * Creates an ``ListMerge`` function.
+   */
+  constructor(listOfValues: any[]) {
+    if (listOfValues.length === 0) {
+      throw new Error("FnListMerge requires at least one value to be provided");
+    }
+
+    this.listOfValues = listOfValues;
+    this.creationStack = captureStackTrace();
+  }
+
+  public resolve(context: IResolveContext): any {
+    if (Token.isUnresolved(this.listOfValues)) {
+      // This is a list token, don't try to do smart things with it.
+      return { "Fn::ListMerge": this.listOfValues };
+    }
+    const resolved = this.resolveValues(context);
+    if (resolved.length === 1) {
+      return resolved[0];
+    }
+    return { "Fn::ListMerge": resolved };
+  }
+
+  public toString() {
+    return Token.asString(this, { displayHint: "Fn::ListMerge" });
+  }
+
+  public toJSON() {
+    return "<Fn::ListMerge>";
+  }
+
+  /**
+   * Optimization: if an Fn::ListMerge is nested in another one, then flatten it up.
+   */
+  private resolveValues(context: IResolveContext) {
+    const resolvedValues = this.listOfValues.map((x) =>
+        Reference.isReference(x) ? x : context.resolve(x)
+    );
+    return minimalRosTemplateListMerge(resolvedValues);
+  }
+}
 
 /**
  * The intrinsic function ``Fn::Join`` appends a set of values into a single value, separated by

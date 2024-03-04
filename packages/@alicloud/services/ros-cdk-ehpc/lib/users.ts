@@ -21,11 +21,15 @@ export interface UsersProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::EHPC::Users`DATASOURCE::EHPC::Nodes is used to query nodes in an Elastic High Performance Computing (E-HPC) cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EHPC::Users`, which is used to add one or more users to a specified cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUsers`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-users
  */
 export class Users extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: UsersProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -34,6 +38,10 @@ export class Users extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: UsersProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosUsers = new RosUsers(this, id,  {
             clusterId: props.clusterId,

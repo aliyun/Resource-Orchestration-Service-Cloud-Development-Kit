@@ -99,6 +99,10 @@ export interface BucketProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucket
  */
 export class Bucket extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: BucketProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DomainName: The public DNS name of the specified bucket.
@@ -122,6 +126,10 @@ export class Bucket extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: BucketProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosBucket = new RosBucket(this, id,  {
             policy: props.policy,

@@ -1,5 +1,10 @@
 # Aliyun ROS Cloud Development Toolkit Changelog
 
+## [ros-cdk-cli 1.0.48] (2024-03-01)
+### Features
+- Update ROS resource sdk packages (Added the ALIYUN::CloudSSO::AccessAssignment, ALIYUN::CloudSSO::AccessConfiguration, ALIYUN::CloudSSO::AccessConfigurationProvision, ALIYUN::CloudSSO::Directory, ALIYUN::CloudSSO::Group, ALIYUN::CloudSSO::SAMLIdentityProvider, ALIYUN::CloudSSO::SCIMServerCredential, ALIYUN::CloudSSO::SCIMSynchronization, ALIYUN::CloudSSO::User,  ALIYUN::CloudSSO::UserProvision, ALIYUN::CloudSSO::UserToGroupAddition, ALIYUN::CloudSSO::PermissionPolicyToAccessConfigurationAddition, ALIYUN::CloudStorageGateway::StorageBundle, ALIYUN::DDoSPro::PremiumInstance, ALIYUN::DDoSPro::ProInstance, ALIYUN::SAS::Instance, ALIYUN::WAF3::Instance, ALIYUN::NLB::SecurityPolicy, ALIYUN::VPC::FullNatEntry, ALIYUN::VPC::NatIpCidr , ALIYUN::VPC::VSwitchCidrReservation,ALIYUN::CAS::Order,ALIYUN::CAS::SslCertificate,DATASOURCE::ECI::ImageCache, DATASOURCE::ECI::ImageCaches  resource type).
+- Provides functions with L2 capabilities (Added ecs.Instance.autoCreateDependencies, ecs.Instance.addSecurityGroup, ecs.Instance.addUserDataCommands).
+
 ## [ros-cdk-cli 1.0.47] (2023-12-26)
 
 ### Features

@@ -406,6 +406,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: cpuOptions: Cpu options.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "cpuOptions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ecs.RosInstanceGroup.CpuOptionsProperty\"}]}}", isOptional: true)]
+        public virtual object? CpuOptions
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Ecs.RosInstanceGroup.ICpuOptionsProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Ecs.RosInstanceGroup.ICpuOptionsProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: creditSpecification: The performance mode of the burstable instance. Valid values:
         /// - **Standard**: the standard mode.
         /// - **Unlimited**: the unlimited mode.
@@ -463,6 +494,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                             break;
                         default:
                             throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: deletionForce: Whether force delete the instance. Default value is false.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "deletionForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? DeletionForce
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
                     }
                 }
                 SetInstanceProperty(value);
@@ -663,7 +725,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: eniMappings: NetworkInterface to attach to instance. Max support 1 ENI.
+        /// <strong>Property</strong>: eniMappings: NetworkInterface to attach to instance. Max support 2 ENIs.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "eniMappings", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ecs.RosInstanceGroup.EniMappingsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -745,6 +807,59 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                             break;
                         default:
                             throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: hostNames: The hostname of instance N. You can use this parameter to specify different hostnames for multiple instances. Take note of the following items:
+        /// - The maximum value of N must be the same as the Amount value. For example, if you set Amount to 2, you can use HostNames.1 and HostNames.2 to specify hostnames for the individual instances. Examples: HostNames.1=test1 and HostNames.2=test2.
+        /// - You cannot specify both HostName and HostNames.N.
+        /// - The hostname cannot start or end with a period (.) or hyphen (-). The hostname cannot contain consecutive periods (.) or hyphens (-).
+        /// - For Windows instances, the hostname must be 2 to 15 characters in length and cannot contain periods (.) or contain only digits. The hostname can contain letters, digits, and hyphens (-).
+        /// - For instances that run other operating systems such as Linux, the hostname must be 2 to 64 characters in length. You can use periods (.) to separate a hostname into multiple segments. Each segment can contain letters, digits, and hyphens (-).
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "hostNames", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public virtual object? HostNames
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case object[] cast_cd4240:
+                            for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
+                            {
+                                switch (cast_cd4240[__idx_f64a5c])
+                                {
+                                    case string cast_201718:
+                                        break;
+                                    case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                        break;
+                                    case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
+                                        // Not enough information to type-check...
+                                        break;
+                                    case null:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                                    default:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                }
+                            }
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
                     }
                 }
                 SetInstanceProperty(value);
@@ -908,6 +1023,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                             break;
                         default:
                             throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: imageOptions: Image options.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "imageOptions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ecs.RosInstanceGroup.ImageOptionsProperty\"}]}}", isOptional: true)]
+        public virtual object? ImageOptions
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Ecs.RosInstanceGroup.IImageOptionsProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Ecs.RosInstanceGroup.IImageOptionsProperty).FullName}; received {value.GetType().FullName}", nameof(value));
                     }
                 }
                 SetInstanceProperty(value);
@@ -1310,6 +1456,91 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: networkInterfaceQueueNumber: The number of queues supported by the primary ENI. Take note of the following items:
+        /// - The value of this parameter cannot exceed the maximum number of queues per ENI allowed for the instance type.
+        /// - The total number of queues for all ENIs on the instance cannot exceed the queue quota for the instance type.
+        /// - If NetworkInterface.N.InstanceType is set to Primary, you cannot specify NetworkInterfaceQueueNumber but can specify NetworkInterface.N.QueueNumber
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "networkInterfaceQueueNumber", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? NetworkInterfaceQueueNumber
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case double cast_cd4240:
+                            break;
+                        case byte cast_cd4240:
+                            break;
+                        case decimal cast_cd4240:
+                            break;
+                        case float cast_cd4240:
+                            break;
+                        case int cast_cd4240:
+                            break;
+                        case long cast_cd4240:
+                            break;
+                        case sbyte cast_cd4240:
+                            break;
+                        case short cast_cd4240:
+                            break;
+                        case uint cast_cd4240:
+                            break;
+                        case ulong cast_cd4240:
+                            break;
+                        case ushort cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: networkOptions: Network options.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "networkOptions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ecs.RosInstanceGroup.NetworkOptionsProperty\"}]}}", isOptional: true)]
+        public virtual object? NetworkOptions
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Ecs.RosInstanceGroup.INetworkOptionsProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Ecs.RosInstanceGroup.INetworkOptionsProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: networkType: Instance network type. Support 'vpc' and 'classic', for compatible reason, default is 'classic'. If vswitch id and vpc id is specified, the property will be forced to be set to 'vpc'
         /// </remarks>
         [JsiiOptional]
@@ -1609,6 +1840,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: schedulerOptions: undefined
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "schedulerOptions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ecs.RosInstanceGroup.SchedulerOptionsProperty\"}]}}", isOptional: true)]
+        public virtual object? SchedulerOptions
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Ecs.RosInstanceGroup.ISchedulerOptionsProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Ecs.RosInstanceGroup.ISchedulerOptionsProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: securityEnhancementStrategy:
         /// </remarks>
         [JsiiOptional]
@@ -1712,6 +1974,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                             break;
                         default:
                             throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: securityOptions: Security options.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "securityOptions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ecs.RosInstanceGroup.SecurityOptionsProperty\"}]}}", isOptional: true)]
+        public virtual object? SecurityOptions
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Ecs.RosInstanceGroup.ISecurityOptionsProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Ecs.RosInstanceGroup.ISecurityOptionsProperty).FullName}; received {value.GetType().FullName}", nameof(value));
                     }
                 }
                 SetInstanceProperty(value);
@@ -2411,6 +2704,41 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: uniqueSuffix: Specifies whether to automatically append incremental suffixes to the hostname specified by the **HostName** parameter and to the instance name specified by the **InstanceName** parameter when you batch create instances. The incremental suffixes can range from 001 to 999. Valid values:
+        /// - **true**: appends incremental suffixes to the hostname and the instance name.
+        /// - **false**: does not append incremental suffixes to the hostname or the instance name.
+        /// Default value: **false**.
+        /// When the **HostName** or **InstanceName** value is set in the name_prefix[begin_number,bits] format without a suffix (name_suffix), the **UniqueSuffix** parameter does not take effect. The names are sorted in the specified sequence.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "uniqueSuffix", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? UniqueSuffix
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: updatePolicy: Specify the policy at update.
         /// The value can be 'ForNewInstances' or 'ForAllInstances'.
         /// If UpdatePolicy is 'ForAllInstance', The updatable parameters are InstanceType, ImageId, SystemDiskSize, SystemDiskCategory, Password, UserData,InternetChargeType, InternetMaxBandwidthOut, InternetMaxBandwidthIn.
@@ -2648,6 +2976,178 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 SetInstanceProperty(value);
             }
         }
+        [JsiiInterface(nativeType: typeof(ICpuOptionsProperty), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosInstanceGroup.CpuOptionsProperty")]
+        public interface ICpuOptionsProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: core: The number of CPU cores. This parameter cannot be specified but only uses its default value.
+            /// </remarks>
+            [JsiiProperty(name: "core", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Core
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: threadsPerCore: The number of threads per CPU core. The following formula is used to calculate the number of vCPUs of the instance: CpuOptions.Core value × CpuOptions.ThreadsPerCore value.
+            /// - If CpuOptionsThreadPerCore is set to 1, hyperthreading is disabled.
+            /// - This parameter is applicable only to specific instance types.
+            /// </remarks>
+            [JsiiProperty(name: "threadsPerCore", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? ThreadsPerCore
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(ICpuOptionsProperty), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosInstanceGroup.CpuOptionsProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.RosInstanceGroup.ICpuOptionsProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: core: The number of CPU cores. This parameter cannot be specified but only uses its default value.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "core", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Core
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: threadsPerCore: The number of threads per CPU core. The following formula is used to calculate the number of vCPUs of the instance: CpuOptions.Core value × CpuOptions.ThreadsPerCore value.
+                /// - If CpuOptionsThreadPerCore is set to 1, hyperthreading is disabled.
+                /// - This parameter is applicable only to specific instance types.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "threadsPerCore", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ThreadsPerCore
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.RosInstanceGroup.CpuOptionsProperty")]
+        public class CpuOptionsProperty : AlibabaCloud.SDK.ROS.CDK.Ecs.RosInstanceGroup.ICpuOptionsProperty
+        {
+            private object? _core;
+
+            /// <remarks>
+            /// <strong>Property</strong>: core: The number of CPU cores. This parameter cannot be specified but only uses its default value.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "core", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Core
+            {
+                get => _core;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _core = value;
+                }
+            }
+
+            private object? _threadsPerCore;
+
+            /// <remarks>
+            /// <strong>Property</strong>: threadsPerCore: The number of threads per CPU core. The following formula is used to calculate the number of vCPUs of the instance: CpuOptions.Core value × CpuOptions.ThreadsPerCore value.
+            /// - If CpuOptionsThreadPerCore is set to 1, hyperthreading is disabled.
+            /// - This parameter is applicable only to specific instance types.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "threadsPerCore", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ThreadsPerCore
+            {
+                get => _threadsPerCore;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _threadsPerCore = value;
+                }
+            }
+        }
         [JsiiInterface(nativeType: typeof(IDiskMappingsProperty), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosInstanceGroup.DiskMappingsProperty")]
         public interface IDiskMappingsProperty
         {
@@ -2806,6 +3306,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 }
             }
 
+            /// <remarks>
+            /// <strong>Property</strong>: storageClusterId: The ID of the dedicated block storage cluster to which data disk N belongs. If you want to use a disk in a dedicated block storage cluster as data disk N when you create the instance, you must specify this parameter.
+            /// </remarks>
+            [JsiiProperty(name: "storageClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? StorageClusterId
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
             [JsiiTypeProxy(nativeType: typeof(IDiskMappingsProperty), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosInstanceGroup.DiskMappingsProperty")]
             internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.RosInstanceGroup.IDiskMappingsProperty
             {
@@ -2931,6 +3444,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 [JsiiOptional]
                 [JsiiProperty(name: "snapshotId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? SnapshotId
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: storageClusterId: The ID of the dedicated block storage cluster to which data disk N belongs. If you want to use a disk in a dedicated block storage cluster as data disk N when you create the instance, you must specify this parameter.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "storageClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? StorageClusterId
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -3358,17 +3881,58 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                     _snapshotId = value;
                 }
             }
+
+            private object? _storageClusterId;
+
+            /// <remarks>
+            /// <strong>Property</strong>: storageClusterId: The ID of the dedicated block storage cluster to which data disk N belongs. If you want to use a disk in a dedicated block storage cluster as data disk N when you create the instance, you must specify this parameter.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "storageClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? StorageClusterId
+            {
+                get => _storageClusterId;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _storageClusterId = value;
+                }
+            }
         }
         [JsiiInterface(nativeType: typeof(IEniMappingsProperty), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosInstanceGroup.EniMappingsProperty")]
         public interface IEniMappingsProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: vSwitchId: VSwitch ID of the specified VPC. Specifies the switch ID for the VPC.
+            /// <strong>Property</strong>: deleteOnRelease: Specifies whether to retain the ENI when the associated instance is released. Valid values:
+            /// - **true**
+            /// - **false**
+            /// Default value: **true**.
+            /// **Note**: This parameter takes effect only for secondary ENIs.
             /// </remarks>
-            [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            object VSwitchId
+            [JsiiProperty(name: "deleteOnRelease", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? DeleteOnRelease
             {
-                get;
+                get
+                {
+                    return null;
+                }
             }
 
             /// <remarks>
@@ -3416,6 +3980,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             [JsiiProperty(name: "ipv6Addresses", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
             object? Ipv6Addresses
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: networkCardIndex: The index of the network card for ENI N.
+            /// Take note of the following items:
+            /// - You can specify network card indexes only for instances of specific instance types.
+            /// - When NetworkInterface.N.InstanceType is set to **Primary**, you can set **NetworkInterface.N.NetworkCardIndex** only to 0 for instance types that support network cards.
+            /// - When **NetworkInterface.N.InstanceType** is set to **Secondary** or left empty, you can set **NetworkInterface.N.NetworkCardIndex** based on instance types if the instance types support network cards.
+            /// </remarks>
+            [JsiiProperty(name: "networkCardIndex", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? NetworkCardIndex
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: networkInterfaceId: The ID of the ENI to attach to the instance.
+            /// **Note**: This parameter takes effect only for secondary ENIs.
+            /// </remarks>
+            [JsiiProperty(name: "networkInterfaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? NetworkInterfaceId
             {
                 get
                 {
@@ -3480,6 +4075,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: queuePairNumber: The number of queues supported by the ERI.
+            /// </remarks>
+            [JsiiProperty(name: "queuePairNumber", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? QueuePairNumber
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: securityGroupId: The ID of the security group that the ENI joins. The security group and the ENI must be in a same VPC.
             /// </remarks>
             [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -3506,6 +4114,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 }
             }
 
+            /// <remarks>
+            /// <strong>Property</strong>: vSwitchId: VSwitch ID of the specified VPC. Specifies the switch ID for the VPC.
+            /// </remarks>
+            [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? VSwitchId
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
             [JsiiTypeProxy(nativeType: typeof(IEniMappingsProperty), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosInstanceGroup.EniMappingsProperty")]
             internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.RosInstanceGroup.IEniMappingsProperty
             {
@@ -3514,12 +4135,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: vSwitchId: VSwitch ID of the specified VPC. Specifies the switch ID for the VPC.
+                /// <strong>Property</strong>: deleteOnRelease: Specifies whether to retain the ENI when the associated instance is released. Valid values:
+                /// - **true**
+                /// - **false**
+                /// Default value: **true**.
+                /// **Note**: This parameter takes effect only for secondary ENIs.
                 /// </remarks>
-                [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-                public object VSwitchId
+                [JsiiOptional]
+                [JsiiProperty(name: "deleteOnRelease", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? DeleteOnRelease
                 {
-                    get => GetInstanceProperty<object>()!;
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
@@ -3558,6 +4184,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 [JsiiOptional]
                 [JsiiProperty(name: "ipv6Addresses", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
                 public object? Ipv6Addresses
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: networkCardIndex: The index of the network card for ENI N.
+                /// Take note of the following items:
+                /// - You can specify network card indexes only for instances of specific instance types.
+                /// - When NetworkInterface.N.InstanceType is set to **Primary**, you can set **NetworkInterface.N.NetworkCardIndex** only to 0 for instance types that support network cards.
+                /// - When **NetworkInterface.N.InstanceType** is set to **Secondary** or left empty, you can set **NetworkInterface.N.NetworkCardIndex** based on instance types if the instance types support network cards.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "networkCardIndex", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? NetworkCardIndex
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: networkInterfaceId: The ID of the ENI to attach to the instance.
+                /// **Note**: This parameter takes effect only for secondary ENIs.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "networkInterfaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? NetworkInterfaceId
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -3607,6 +4258,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 }
 
                 /// <remarks>
+                /// <strong>Property</strong>: queuePairNumber: The number of queues supported by the ERI.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "queuePairNumber", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? QueuePairNumber
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
                 /// <strong>Property</strong>: securityGroupId: The ID of the security group that the ENI joins. The security group and the ENI must be in a same VPC.
                 /// </remarks>
                 [JsiiOptional]
@@ -3626,29 +4287,42 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 {
                     get => GetInstanceProperty<object?>();
                 }
+
+                /// <remarks>
+                /// <strong>Property</strong>: vSwitchId: VSwitch ID of the specified VPC. Specifies the switch ID for the VPC.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? VSwitchId
+                {
+                    get => GetInstanceProperty<object?>();
+                }
             }
         }
-        #pragma warning disable CS8618
-
         [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.RosInstanceGroup.EniMappingsProperty")]
         public class EniMappingsProperty : AlibabaCloud.SDK.ROS.CDK.Ecs.RosInstanceGroup.IEniMappingsProperty
         {
-            private object _vSwitchId;
+            private object? _deleteOnRelease;
 
             /// <remarks>
-            /// <strong>Property</strong>: vSwitchId: VSwitch ID of the specified VPC. Specifies the switch ID for the VPC.
+            /// <strong>Property</strong>: deleteOnRelease: Specifies whether to retain the ENI when the associated instance is released. Valid values:
+            /// - **true**
+            /// - **false**
+            /// Default value: **true**.
+            /// **Note**: This parameter takes effect only for secondary ENIs.
             /// </remarks>
-            [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object VSwitchId
+            [JsiiOptional]
+            [JsiiProperty(name: "deleteOnRelease", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DeleteOnRelease
             {
-                get => _vSwitchId;
+                get => _deleteOnRelease;
                 set
                 {
                     if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
                     {
                         switch (value)
                         {
-                            case string cast_cd4240:
+                            case bool cast_cd4240:
                                 break;
                             case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
                                 break;
@@ -3656,12 +4330,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                                 // Not enough information to type-check...
                                 break;
                             case null:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                                break;
                             default:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
                         }
                     }
-                    _vSwitchId = value;
+                    _deleteOnRelease = value;
                 }
             }
 
@@ -3834,6 +4508,97 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 }
             }
 
+            private object? _networkCardIndex;
+
+            /// <remarks>
+            /// <strong>Property</strong>: networkCardIndex: The index of the network card for ENI N.
+            /// Take note of the following items:
+            /// - You can specify network card indexes only for instances of specific instance types.
+            /// - When NetworkInterface.N.InstanceType is set to **Primary**, you can set **NetworkInterface.N.NetworkCardIndex** only to 0 for instance types that support network cards.
+            /// - When **NetworkInterface.N.InstanceType** is set to **Secondary** or left empty, you can set **NetworkInterface.N.NetworkCardIndex** based on instance types if the instance types support network cards.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "networkCardIndex", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? NetworkCardIndex
+            {
+                get => _networkCardIndex;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _networkCardIndex = value;
+                }
+            }
+
+            private object? _networkInterfaceId;
+
+            /// <remarks>
+            /// <strong>Property</strong>: networkInterfaceId: The ID of the ENI to attach to the instance.
+            /// **Note**: This parameter takes effect only for secondary ENIs.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "networkInterfaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? NetworkInterfaceId
+            {
+                get => _networkInterfaceId;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _networkInterfaceId = value;
+                }
+            }
+
             private object? _networkInterfaceName;
 
             /// <remarks>
@@ -3990,6 +4755,59 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 }
             }
 
+            private object? _queuePairNumber;
+
+            /// <remarks>
+            /// <strong>Property</strong>: queuePairNumber: The number of queues supported by the ERI.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "queuePairNumber", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? QueuePairNumber
+            {
+                get => _queuePairNumber;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _queuePairNumber = value;
+                }
+            }
+
             private object? _securityGroupId;
 
             /// <remarks>
@@ -4054,6 +4872,197 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                         }
                     }
                     _securityGroupIds = value;
+                }
+            }
+
+            private object? _vSwitchId;
+
+            /// <remarks>
+            /// <strong>Property</strong>: vSwitchId: VSwitch ID of the specified VPC. Specifies the switch ID for the VPC.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? VSwitchId
+            {
+                get => _vSwitchId;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _vSwitchId = value;
+                }
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IImageOptionsProperty), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosInstanceGroup.ImageOptionsProperty")]
+        public interface IImageOptionsProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: loginAsNonRoot: Specifies whether the instance that uses the image supports logons of the ecs-user user. Valid values:
+            /// - true
+            /// - false
+            /// </remarks>
+            [JsiiProperty(name: "loginAsNonRoot", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? LoginAsNonRoot
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IImageOptionsProperty), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosInstanceGroup.ImageOptionsProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.RosInstanceGroup.IImageOptionsProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: loginAsNonRoot: Specifies whether the instance that uses the image supports logons of the ecs-user user. Valid values:
+                /// - true
+                /// - false
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "loginAsNonRoot", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? LoginAsNonRoot
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.RosInstanceGroup.ImageOptionsProperty")]
+        public class ImageOptionsProperty : AlibabaCloud.SDK.ROS.CDK.Ecs.RosInstanceGroup.IImageOptionsProperty
+        {
+            private object? _loginAsNonRoot;
+
+            /// <remarks>
+            /// <strong>Property</strong>: loginAsNonRoot: Specifies whether the instance that uses the image supports logons of the ecs-user user. Valid values:
+            /// - true
+            /// - false
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "loginAsNonRoot", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? LoginAsNonRoot
+            {
+                get => _loginAsNonRoot;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _loginAsNonRoot = value;
+                }
+            }
+        }
+        [JsiiInterface(nativeType: typeof(INetworkOptionsProperty), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosInstanceGroup.NetworkOptionsProperty")]
+        public interface INetworkOptionsProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: enableJumboFrame: Specifies whether to enable the Jumbo Frame feature for the instance. Valid values:
+            /// - **false**: does not enable the Jumbo Frame feature for the instance. The maximum transmission unit (MTU) value of all ENIs on the instance is set to 1500.
+            /// - **true**: enables the Jumbo Frame feature for the instance. The MTU value of all ENIs on the instance is set to 8500.
+            /// Default value: true.
+            /// **Note**: The Jumbo Frame feature is supported by only 8th-generation or later instance types.
+            /// </remarks>
+            [JsiiProperty(name: "enableJumboFrame", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? EnableJumboFrame
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(INetworkOptionsProperty), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosInstanceGroup.NetworkOptionsProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.RosInstanceGroup.INetworkOptionsProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: enableJumboFrame: Specifies whether to enable the Jumbo Frame feature for the instance. Valid values:
+                /// - **false**: does not enable the Jumbo Frame feature for the instance. The maximum transmission unit (MTU) value of all ENIs on the instance is set to 1500.
+                /// - **true**: enables the Jumbo Frame feature for the instance. The MTU value of all ENIs on the instance is set to 8500.
+                /// Default value: true.
+                /// **Note**: The Jumbo Frame feature is supported by only 8th-generation or later instance types.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "enableJumboFrame", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? EnableJumboFrame
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.RosInstanceGroup.NetworkOptionsProperty")]
+        public class NetworkOptionsProperty : AlibabaCloud.SDK.ROS.CDK.Ecs.RosInstanceGroup.INetworkOptionsProperty
+        {
+            private object? _enableJumboFrame;
+
+            /// <remarks>
+            /// <strong>Property</strong>: enableJumboFrame: Specifies whether to enable the Jumbo Frame feature for the instance. Valid values:
+            /// - **false**: does not enable the Jumbo Frame feature for the instance. The maximum transmission unit (MTU) value of all ENIs on the instance is set to 1500.
+            /// - **true**: enables the Jumbo Frame feature for the instance. The MTU value of all ENIs on the instance is set to 8500.
+            /// Default value: true.
+            /// **Note**: The Jumbo Frame feature is supported by only 8th-generation or later instance types.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "enableJumboFrame", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EnableJumboFrame
+            {
+                get => _enableJumboFrame;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _enableJumboFrame = value;
                 }
             }
         }
@@ -4204,6 +5213,238 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                         }
                     }
                     _matchCriteria = value;
+                }
+            }
+        }
+        [JsiiInterface(nativeType: typeof(ISchedulerOptionsProperty), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosInstanceGroup.SchedulerOptionsProperty")]
+        public interface ISchedulerOptionsProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: dedicatedHostClusterId: The ID of the dedicated host cluster in which to create the instance. After this parameter is specified, the system selects one dedicated host from the specified cluster to create the instance.
+            /// **Note**: This parameter is valid only when **Tenancy** is set to host.
+            /// When you specify both **DedicatedHostId** and **SchedulerOptions.DedicatedHostClusterId**, take note of the following items:
+            /// - If the specified dedicated host belongs to the specified dedicated host cluster, the instance is preferentially deployed on the specified dedicated host.
+            /// - If the specified dedicated host does not belong to the specified dedicated host cluster, the instance cannot be created.
+            /// </remarks>
+            [JsiiProperty(name: "dedicatedHostClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? DedicatedHostClusterId
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: managedPrivateSpaceId: Managed private resource pool ID.
+            /// </remarks>
+            [JsiiProperty(name: "managedPrivateSpaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? ManagedPrivateSpaceId
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(ISchedulerOptionsProperty), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosInstanceGroup.SchedulerOptionsProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.RosInstanceGroup.ISchedulerOptionsProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: dedicatedHostClusterId: The ID of the dedicated host cluster in which to create the instance. After this parameter is specified, the system selects one dedicated host from the specified cluster to create the instance.
+                /// **Note**: This parameter is valid only when **Tenancy** is set to host.
+                /// When you specify both **DedicatedHostId** and **SchedulerOptions.DedicatedHostClusterId**, take note of the following items:
+                /// - If the specified dedicated host belongs to the specified dedicated host cluster, the instance is preferentially deployed on the specified dedicated host.
+                /// - If the specified dedicated host does not belong to the specified dedicated host cluster, the instance cannot be created.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "dedicatedHostClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? DedicatedHostClusterId
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: managedPrivateSpaceId: Managed private resource pool ID.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "managedPrivateSpaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ManagedPrivateSpaceId
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.RosInstanceGroup.SchedulerOptionsProperty")]
+        public class SchedulerOptionsProperty : AlibabaCloud.SDK.ROS.CDK.Ecs.RosInstanceGroup.ISchedulerOptionsProperty
+        {
+            private object? _dedicatedHostClusterId;
+
+            /// <remarks>
+            /// <strong>Property</strong>: dedicatedHostClusterId: The ID of the dedicated host cluster in which to create the instance. After this parameter is specified, the system selects one dedicated host from the specified cluster to create the instance.
+            /// **Note**: This parameter is valid only when **Tenancy** is set to host.
+            /// When you specify both **DedicatedHostId** and **SchedulerOptions.DedicatedHostClusterId**, take note of the following items:
+            /// - If the specified dedicated host belongs to the specified dedicated host cluster, the instance is preferentially deployed on the specified dedicated host.
+            /// - If the specified dedicated host does not belong to the specified dedicated host cluster, the instance cannot be created.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "dedicatedHostClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DedicatedHostClusterId
+            {
+                get => _dedicatedHostClusterId;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _dedicatedHostClusterId = value;
+                }
+            }
+
+            private object? _managedPrivateSpaceId;
+
+            /// <remarks>
+            /// <strong>Property</strong>: managedPrivateSpaceId: Managed private resource pool ID.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "managedPrivateSpaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ManagedPrivateSpaceId
+            {
+                get => _managedPrivateSpaceId;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _managedPrivateSpaceId = value;
+                }
+            }
+        }
+        [JsiiInterface(nativeType: typeof(ISecurityOptionsProperty), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosInstanceGroup.SecurityOptionsProperty")]
+        public interface ISecurityOptionsProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: trustedSystemMode: The trusted system mode. Set the value to vTPM.
+            /// The trusted system mode supports the following instance families:
+            /// - g7, c7, and r7
+            /// - Security-enhanced instance families: g7t, c7t, and r7t
+            /// When you create instances of the preceding instance families, you must set this parameter. Take note of the following items:
+            /// - To use Alibaba Cloud Trusted System, set this parameter to vTPM. Then, Alibaba Cloud Trusted System performs trust verifications when the instances start.
+            /// - If you do not want to use Alibaba Cloud Trusted System, leave this parameter empty. Take note that if your created instances use an enclave-based confidential computing environment (with SecurityOptions.ConfidentialComputingMode set to Enclave), Alibaba Cloud Trusted System is enabled for the instances.
+            /// - When you use the ECS API to create instances that use Alibaba Cloud Trusted System, you can call only the RunInstances operation. The CreateInstance operation does not support the SecurityOptions.TrustedSystemMode parameter.
+            /// **Note**: If you have configured an instance as a trusted instance when you created the instance, you can use only an image that supports Alibaba Cloud Trusted System to replace the system disk of the instance.
+            /// </remarks>
+            [JsiiProperty(name: "trustedSystemMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? TrustedSystemMode
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(ISecurityOptionsProperty), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosInstanceGroup.SecurityOptionsProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.RosInstanceGroup.ISecurityOptionsProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: trustedSystemMode: The trusted system mode. Set the value to vTPM.
+                /// The trusted system mode supports the following instance families:
+                /// - g7, c7, and r7
+                /// - Security-enhanced instance families: g7t, c7t, and r7t
+                /// When you create instances of the preceding instance families, you must set this parameter. Take note of the following items:
+                /// - To use Alibaba Cloud Trusted System, set this parameter to vTPM. Then, Alibaba Cloud Trusted System performs trust verifications when the instances start.
+                /// - If you do not want to use Alibaba Cloud Trusted System, leave this parameter empty. Take note that if your created instances use an enclave-based confidential computing environment (with SecurityOptions.ConfidentialComputingMode set to Enclave), Alibaba Cloud Trusted System is enabled for the instances.
+                /// - When you use the ECS API to create instances that use Alibaba Cloud Trusted System, you can call only the RunInstances operation. The CreateInstance operation does not support the SecurityOptions.TrustedSystemMode parameter.
+                /// **Note**: If you have configured an instance as a trusted instance when you created the instance, you can use only an image that supports Alibaba Cloud Trusted System to replace the system disk of the instance.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "trustedSystemMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? TrustedSystemMode
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.RosInstanceGroup.SecurityOptionsProperty")]
+        public class SecurityOptionsProperty : AlibabaCloud.SDK.ROS.CDK.Ecs.RosInstanceGroup.ISecurityOptionsProperty
+        {
+            private object? _trustedSystemMode;
+
+            /// <remarks>
+            /// <strong>Property</strong>: trustedSystemMode: The trusted system mode. Set the value to vTPM.
+            /// The trusted system mode supports the following instance families:
+            /// - g7, c7, and r7
+            /// - Security-enhanced instance families: g7t, c7t, and r7t
+            /// When you create instances of the preceding instance families, you must set this parameter. Take note of the following items:
+            /// - To use Alibaba Cloud Trusted System, set this parameter to vTPM. Then, Alibaba Cloud Trusted System performs trust verifications when the instances start.
+            /// - If you do not want to use Alibaba Cloud Trusted System, leave this parameter empty. Take note that if your created instances use an enclave-based confidential computing environment (with SecurityOptions.ConfidentialComputingMode set to Enclave), Alibaba Cloud Trusted System is enabled for the instances.
+            /// - When you use the ECS API to create instances that use Alibaba Cloud Trusted System, you can call only the RunInstances operation. The CreateInstance operation does not support the SecurityOptions.TrustedSystemMode parameter.
+            /// **Note**: If you have configured an instance as a trusted instance when you created the instance, you can use only an image that supports Alibaba Cloud Trusted System to replace the system disk of the instance.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "trustedSystemMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? TrustedSystemMode
+            {
+                get => _trustedSystemMode;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _trustedSystemMode = value;
                 }
             }
         }

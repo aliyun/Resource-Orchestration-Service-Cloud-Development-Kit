@@ -160,11 +160,15 @@ export interface ClusterProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::HBase::Cluster`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::HBase::Cluster`, which is used to create an ApsaraDB for HBase cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbase-cluster
  */
 export class Cluster extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ClusterProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterId: The ID of the instance.
@@ -203,6 +207,10 @@ export class Cluster extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ClusterProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCluster = new RosCluster(this, id,  {
             autoRenewPeriod: props.autoRenewPeriod,

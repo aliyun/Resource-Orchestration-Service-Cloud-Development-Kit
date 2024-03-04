@@ -288,6 +288,11 @@ export interface RosDBInstanceProps {
     readonly privateIpAddress?: string | ros.IResolvable;
 
     /**
+     * @Property prodType: Prod type. The value can be: standard, cost-effective. The default value is standard.
+     */
+    readonly prodType?: string | ros.IResolvable;
+
+    /**
      * @Property securityIpList: The whitelist of IP addresses that are allowed to access the instance. Default value:
      * 127.0.0.1.
      */
@@ -333,7 +338,8 @@ export interface RosDBInstanceProps {
     readonly storageSize?: number | ros.IResolvable;
 
     /**
-     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     * @Property tags: The list of instance tags in the form of key\/value pairs.
+     * You can define a maximum of 20 tags for instance.
      */
     readonly tags?: RosDBInstance.TagsProperty[];
 
@@ -455,6 +461,13 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('dbInstanceClass', ros.validateString)(properties.dbInstanceClass));
+    if(properties.prodType && (typeof properties.prodType) !== 'object') {
+        errors.collect(ros.propertyValidator('prodType', ros.validateAllowedValues)({
+          data: properties.prodType,
+          allowedValues: ["standard","cost-effective"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('prodType', ros.validateString)(properties.prodType));
     errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     if(properties.period && (typeof properties.period) !== 'object') {
@@ -536,6 +549,7 @@ function rosDBInstancePropsToRosTemplate(properties: any, enableResourceProperty
       Period: ros.numberToRosTemplate(properties.period),
       PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
       PrivateIpAddress: ros.stringToRosTemplate(properties.privateIpAddress),
+      ProdType: ros.stringToRosTemplate(properties.prodType),
       SecurityIPList: ros.stringToRosTemplate(properties.securityIpList),
       SegDiskPerformanceLevel: ros.stringToRosTemplate(properties.segDiskPerformanceLevel),
       SegNodeNum: ros.numberToRosTemplate(properties.segNodeNum),
@@ -688,6 +702,11 @@ export class RosDBInstance extends ros.RosResource {
     public privateIpAddress: string | ros.IResolvable | undefined;
 
     /**
+     * @Property prodType: Prod type. The value can be: standard, cost-effective. The default value is standard.
+     */
+    public prodType: string | ros.IResolvable | undefined;
+
+    /**
      * @Property securityIpList: The whitelist of IP addresses that are allowed to access the instance. Default value:
      * 127.0.0.1.
      */
@@ -733,7 +752,8 @@ export class RosDBInstance extends ros.RosResource {
     public storageSize: number | ros.IResolvable | undefined;
 
     /**
-     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     * @Property tags: The list of instance tags in the form of key\/value pairs.
+     * You can define a maximum of 20 tags for instance.
      */
     public tags: RosDBInstance.TagsProperty[] | undefined;
 
@@ -780,6 +800,7 @@ export class RosDBInstance extends ros.RosResource {
         this.period = props.period;
         this.periodUnit = props.periodUnit;
         this.privateIpAddress = props.privateIpAddress;
+        this.prodType = props.prodType;
         this.securityIpList = props.securityIpList;
         this.segDiskPerformanceLevel = props.segDiskPerformanceLevel;
         this.segNodeNum = props.segNodeNum;
@@ -813,6 +834,7 @@ export class RosDBInstance extends ros.RosResource {
             period: this.period,
             periodUnit: this.periodUnit,
             privateIpAddress: this.privateIpAddress,
+            prodType: this.prodType,
             securityIpList: this.securityIpList,
             segDiskPerformanceLevel: this.segDiskPerformanceLevel,
             segNodeNum: this.segNodeNum,
@@ -836,11 +858,11 @@ export namespace RosDBInstance {
      */
     export interface TagsProperty {
         /**
-         * @Property value: undefined
+         * @Property value: The value of the tag.
          */
         readonly value?: string | ros.IResolvable;
         /**
-         * @Property key: undefined
+         * @Property key: The keyword of the tag.
          */
         readonly key: string | ros.IResolvable;
     }
@@ -985,7 +1007,8 @@ export interface RosElasticDBInstanceProps {
     readonly securityIpList?: string | ros.IResolvable;
 
     /**
-     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     * @Property tags: The list of instance tags in the form of key\/value pairs.
+     * You can define a maximum of 20 tags for instance.
      */
     readonly tags?: RosElasticDBInstance.TagsProperty[];
 
@@ -1281,7 +1304,8 @@ export class RosElasticDBInstance extends ros.RosResource {
     public securityIpList: string | ros.IResolvable | undefined;
 
     /**
-     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     * @Property tags: The list of instance tags in the form of key\/value pairs.
+     * You can define a maximum of 20 tags for instance.
      */
     public tags: RosElasticDBInstance.TagsProperty[] | undefined;
 
@@ -1363,11 +1387,11 @@ export namespace RosElasticDBInstance {
      */
     export interface TagsProperty {
         /**
-         * @Property value: undefined
+         * @Property value: The value of the tag.
          */
         readonly value?: string | ros.IResolvable;
         /**
-         * @Property key: undefined
+         * @Property key: The keyword of the tag.
          */
         readonly key: string | ros.IResolvable;
     }

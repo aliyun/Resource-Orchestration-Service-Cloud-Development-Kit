@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-dedicatedhost
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.187Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:51.584Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.DedicatedHostProps")
 @software.amazon.jsii.Jsii.Proxy(DedicatedHostProps.Jsii$Proxy.class)
 public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializable {
@@ -136,9 +136,9 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
-     * Property tags: Tags to attach to instance.
+     * Property tags: Tags to attach to DedicatedHost.
      * <p>
-     * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     * Max support 20 tags to add during create DedicatedHost. Each tag with two properties Key and Value, and Key is required.
      */
     default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ecs.RosDedicatedHost.TagsProperty> getTags() {
         return null;
@@ -503,8 +503,8 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link DedicatedHostProps#getTags}
-         * @param tags Property tags: Tags to attach to instance.
-         *             Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+         * @param tags Property tags: Tags to attach to DedicatedHost.
+         *             Max support 20 tags to add during create DedicatedHost. Each tag with two properties Key and Value, and Key is required.
          * @return {@code this}
          */
         @SuppressWarnings("unchecked")

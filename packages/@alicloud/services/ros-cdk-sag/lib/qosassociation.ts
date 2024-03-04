@@ -21,11 +21,15 @@ export interface QosAssociationProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::QosAssociation`, which is used to associate a quality of service (QoS) policy with a Smart Access Gateway (SAG) instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::QosAssociation`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosQosAssociation`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-qosassociation
  */
 export class QosAssociation extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: QosAssociationProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute QosId: The ID of the QoS policy.
@@ -44,6 +48,10 @@ export class QosAssociation extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: QosAssociationProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosQosAssociation = new RosQosAssociation(this, id,  {
             qosId: props.qosId,

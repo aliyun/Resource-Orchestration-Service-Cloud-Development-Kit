@@ -21,6 +21,10 @@ export interface ClusterNodePoolsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-clusternodepools
  */
 export class ClusterNodePools extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ClusterNodePoolsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute NodePoolIds: The list of node_pool IDs.
@@ -39,6 +43,10 @@ export class ClusterNodePools extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ClusterNodePoolsProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosClusterNodePools = new RosClusterNodePools(this, id,  {
             clusterId: props.clusterId,

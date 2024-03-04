@@ -26,6 +26,10 @@ export interface ResourceGroupProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourcegroup
  */
 export class ResourceGroup extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ResourceGroupProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AccountId: The ID of the Alibaba Cloud account to which the resource group belongs
@@ -59,6 +63,10 @@ export class ResourceGroup extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ResourceGroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosResourceGroup = new RosResourceGroup(this, id,  {
             displayName: props.displayName,

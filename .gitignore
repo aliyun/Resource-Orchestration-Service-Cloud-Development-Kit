@@ -25,7 +25,7 @@ multiple-languages/java-test/.project
 
 tmp_specification_origin.json
 
-packages/@alicloud/test/
+stack.info.json
 
 references/docs/csharp
 references/docs/java

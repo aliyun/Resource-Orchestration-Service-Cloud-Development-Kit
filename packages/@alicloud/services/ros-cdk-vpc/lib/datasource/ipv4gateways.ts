@@ -31,6 +31,10 @@ export interface Ipv4GatewaysProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-ipv4gateways
  */
 export class Ipv4Gateways extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: Ipv4GatewaysProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Ipv4GatewayIds: The list of ipv4 gateway IDs.
@@ -49,6 +53,10 @@ export class Ipv4Gateways extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: Ipv4GatewaysProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosIpv4Gateways = new RosIpv4Gateways(this, id,  {
             ipv4GatewayName: props.ipv4GatewayName,

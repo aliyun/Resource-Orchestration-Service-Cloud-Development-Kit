@@ -47,6 +47,10 @@ export interface InstanceVpcEndpointLinkedVpcProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instancevpcendpointlinkedvpc
  */
 export class InstanceVpcEndpointLinkedVpc extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: InstanceVpcEndpointLinkedVpcProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceId: The ID of the instance.
@@ -70,6 +74,10 @@ export class InstanceVpcEndpointLinkedVpc extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: InstanceVpcEndpointLinkedVpcProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosInstanceVpcEndpointLinkedVpc = new RosInstanceVpcEndpointLinkedVpc(this, id,  {
             enableCreateDnsRecordInPvzt: props.enableCreateDnsRecordInPvzt === undefined || props.enableCreateDnsRecordInPvzt === null ? false : props.enableCreateDnsRecordInPvzt,

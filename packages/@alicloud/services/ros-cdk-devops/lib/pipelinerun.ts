@@ -41,11 +41,15 @@ export interface PipelineRunProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DEVOPS::PipelineRun`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DEVOPS::PipelineRun`, which is used to run a pipeline.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPipelineRun`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-pipelinerun
  */
 export class PipelineRun extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: PipelineRunProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute PipelineRunId: Pipeline run id.
@@ -59,6 +63,10 @@ export class PipelineRun extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: PipelineRunProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosPipelineRun = new RosPipelineRun(this, id,  {
             timeout: props.timeout === undefined || props.timeout === null ? 10 : props.timeout,

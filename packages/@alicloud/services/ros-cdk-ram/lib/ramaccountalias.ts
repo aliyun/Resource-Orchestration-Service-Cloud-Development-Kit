@@ -25,6 +25,10 @@ export interface RamAccountAliasProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-ramaccountalias
  */
 export class RamAccountAlias extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: RamAccountAliasProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AccountAlias: The alias of the Alibaba Cloud account.
@@ -38,6 +42,10 @@ export class RamAccountAlias extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: RamAccountAliasProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosRamAccountAlias = new RosRamAccountAlias(this, id,  {
             accountAlias: props.accountAlias,

@@ -58,6 +58,10 @@ export interface ServiceSourceProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-servicesource
  */
 export class ServiceSource extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ServiceSourceProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Address: Registration Address. If not specified, it will be automatically generated based on the selected instance.
@@ -88,6 +92,10 @@ If Type is set to NACOS, this parameter specifies the ID of the Nacos instance.
      */
     constructor(scope: ros.Construct, id: string, props: ServiceSourceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosServiceSource = new RosServiceSource(this, id,  {
             gatewayUniqueId: props.gatewayUniqueId,

@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::TrafficMirrorSession`DATASOURCE::VPC::NatGateways is used to query NAT gateways.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::TrafficMirrorSession`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `TrafficMirrorSession` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-trafficmirrorsession

@@ -21,6 +21,10 @@ export interface SlsGroupsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-slsgroups
  */
 export class SlsGroups extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: SlsGroupsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SlsGroupNames: The list of sls group names.
@@ -39,6 +43,10 @@ export class SlsGroups extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: SlsGroupsProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosSlsGroups = new RosSlsGroups(this, id,  {
             slsGroupName: props.slsGroupName,

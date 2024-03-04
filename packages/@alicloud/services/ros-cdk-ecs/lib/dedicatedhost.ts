@@ -85,7 +85,7 @@ export interface DedicatedHostProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     * Property tags: Tags to attach to DedicatedHost. Max support 20 tags to add during create DedicatedHost. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosDedicatedHost.TagsProperty[];
 
@@ -101,6 +101,10 @@ export interface DedicatedHostProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-dedicatedhost
  */
 export class DedicatedHost extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DedicatedHostProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DedicatedHostIds: The host id list of created hosts
@@ -119,6 +123,10 @@ export class DedicatedHost extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DedicatedHostProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDedicatedHost = new RosDedicatedHost(this, id,  {
             autoRenewPeriod: props.autoRenewPeriod === undefined || props.autoRenewPeriod === null ? 1 : props.autoRenewPeriod,

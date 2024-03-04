@@ -36,6 +36,10 @@ export interface SignatureBindingProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-signaturebinding
  */
 export class SignatureBinding extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: SignatureBindingProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -44,6 +48,10 @@ export class SignatureBinding extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: SignatureBindingProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosSignatureBinding = new RosSignatureBinding(this, id,  {
             signatureId: props.signatureId,

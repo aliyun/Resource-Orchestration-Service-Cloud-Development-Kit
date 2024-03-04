@@ -36,6 +36,10 @@ export interface AnycastEIPAssociationProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-anycasteipassociation
  */
 export class AnycastEIPAssociation extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AnycastEIPAssociationProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AnycastId: Anycast EIP instance ID.
@@ -64,6 +68,10 @@ export class AnycastEIPAssociation extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AnycastEIPAssociationProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAnycastEIPAssociation = new RosAnycastEIPAssociation(this, id,  {
             bindInstanceId: props.bindInstanceId,

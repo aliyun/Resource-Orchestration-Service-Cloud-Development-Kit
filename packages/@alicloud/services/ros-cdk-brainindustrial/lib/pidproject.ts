@@ -31,6 +31,10 @@ export interface PidProjectProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-brainindustrial-pidproject
  */
 export class PidProject extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: PidProjectProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute PidOrganizationId: PidOrganizationId
@@ -59,6 +63,10 @@ export class PidProject extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: PidProjectProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosPidProject = new RosPidProject(this, id,  {
             pidProjectDesc: props.pidProjectDesc,

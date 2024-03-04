@@ -16,11 +16,15 @@ export interface AppSecretProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::AppSecret`ALIYUN::RAM::ManagedPolicy is used to create a Resource Access Management (RAM) policy.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::AppSecret`, which is used to create an application secret.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAppSecret`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-appsecret
  */
 export class AppSecret extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AppSecretProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AppSecretId: The ID of the application secret.
@@ -39,6 +43,10 @@ export class AppSecret extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AppSecretProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAppSecret = new RosAppSecret(this, id,  {
             appId: props.appId,

@@ -111,11 +111,15 @@ export interface InstanceProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ENS::Instance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ENS::Instance`, which is used to create an Edge Node Service (ENS) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-instance
  */
 export class Instance extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: InstanceProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AutoRenew: Whether renew the fee automatically?it could be True,FalseDefault value is False.
@@ -234,6 +238,10 @@ export class Instance extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: InstanceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosInstance = new RosInstance(this, id,  {
             autoRenewPeriod: props.autoRenewPeriod,

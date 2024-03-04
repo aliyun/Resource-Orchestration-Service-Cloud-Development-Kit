@@ -57,11 +57,15 @@ export interface AccountProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::Account`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::Account`, which is used to create an account that has the specified permissions on an ApsaraDB for Redis instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccount`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-account
  */
 export class Account extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AccountProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AccountName: The name of the account.
@@ -80,6 +84,10 @@ export class Account extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AccountProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAccount = new RosAccount(this, id,  {
             accountDescription: props.accountDescription,

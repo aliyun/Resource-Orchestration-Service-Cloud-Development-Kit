@@ -76,6 +76,10 @@ export interface TransitRouterVpcAttachmentProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervpcattachment
  */
 export class TransitRouterVpcAttachment extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: TransitRouterVpcAttachmentProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CenId: CenId
@@ -129,6 +133,10 @@ export class TransitRouterVpcAttachment extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: TransitRouterVpcAttachmentProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosTransitRouterVpcAttachment = new RosTransitRouterVpcAttachment(this, id,  {
             routeTableAssociationEnabled: props.routeTableAssociationEnabled,

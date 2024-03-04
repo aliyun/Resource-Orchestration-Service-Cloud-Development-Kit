@@ -34,11 +34,15 @@ export interface PipelineRelationsProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DEVOPS::PipelineRelations`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DEVOPS::PipelineRelations`, which is used to associate resources with a pipeline.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPipelineRelations`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-pipelinerelations
  */
 export class PipelineRelations extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: PipelineRelationsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -47,6 +51,10 @@ export class PipelineRelations extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: PipelineRelationsProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosPipelineRelations = new RosPipelineRelations(this, id,  {
             relObjectType: props.relObjectType,

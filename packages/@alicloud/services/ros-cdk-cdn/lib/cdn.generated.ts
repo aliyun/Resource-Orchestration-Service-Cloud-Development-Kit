@@ -382,9 +382,9 @@ export interface RosDomainConfigProps {
     readonly domainNames: string | ros.IResolvable;
 
     /**
-     * @Property functions: function list, please refer to the CDN documentation for details.
+     * @Property functionList: Function list. This property is required.
      */
-    readonly functions: string | ros.IResolvable;
+    readonly functionList?: Array<RosDomainConfig.FunctionListProperty | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
@@ -397,8 +397,7 @@ export interface RosDomainConfigProps {
 function RosDomainConfigPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('functions', ros.requiredValidator)(properties.functions));
-    errors.collect(ros.propertyValidator('functions', ros.validateString)(properties.functions));
+    errors.collect(ros.propertyValidator('functionList', ros.listValidator(RosDomainConfig_FunctionListPropertyValidator))(properties.functionList));
     errors.collect(ros.propertyValidator('domainNames', ros.requiredValidator)(properties.domainNames));
     errors.collect(ros.propertyValidator('domainNames', ros.validateString)(properties.domainNames));
     return errors.wrap('supplied properties not correct for "RosDomainConfigProps"');
@@ -419,7 +418,7 @@ function rosDomainConfigPropsToRosTemplate(properties: any, enableResourceProper
     }
     return {
       DomainNames: ros.stringToRosTemplate(properties.domainNames),
-      Functions: ros.stringToRosTemplate(properties.functions),
+      FunctionList: ros.listMapper(rosDomainConfigFunctionListPropertyToRosTemplate)(properties.functionList),
     };
 }
 
@@ -443,9 +442,9 @@ export class RosDomainConfig extends ros.RosResource {
     public domainNames: string | ros.IResolvable;
 
     /**
-     * @Property functions: function list, please refer to the CDN documentation for details.
+     * @Property functionList: Function list. This property is required.
      */
-    public functions: string | ros.IResolvable;
+    public functionList: Array<RosDomainConfig.FunctionListProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @param scope - scope in which this resource is defined
@@ -457,17 +456,121 @@ export class RosDomainConfig extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.domainNames = props.domainNames;
-        this.functions = props.functions;
+        this.functionList = props.functionList;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             domainNames: this.domainNames,
-            functions: this.functions,
+            functionList: this.functionList,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosDomainConfigPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosDomainConfig {
+    /**
+     * @stability external
+     */
+    export interface FunctionArgsProperty {
+        /**
+         * @Property argValue: Arg value.
+         */
+        readonly argValue: string | ros.IResolvable;
+        /**
+         * @Property argName: Arg name.
+         */
+        readonly argName: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `FunctionArgsProperty`
+ *
+ * @param properties - the TypeScript properties of a `FunctionArgsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosDomainConfig_FunctionArgsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('argValue', ros.requiredValidator)(properties.argValue));
+    errors.collect(ros.propertyValidator('argValue', ros.validateString)(properties.argValue));
+    errors.collect(ros.propertyValidator('argName', ros.requiredValidator)(properties.argName));
+    errors.collect(ros.propertyValidator('argName', ros.validateString)(properties.argName));
+    return errors.wrap('supplied properties not correct for "FunctionArgsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CDN::DomainConfig.FunctionArgs` resource
+ *
+ * @param properties - the TypeScript properties of a `FunctionArgsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CDN::DomainConfig.FunctionArgs` resource.
+ */
+// @ts-ignore TS6133
+function rosDomainConfigFunctionArgsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosDomainConfig_FunctionArgsPropertyValidator(properties).assertSuccess();
+    return {
+      ArgValue: ros.stringToRosTemplate(properties.argValue),
+      ArgName: ros.stringToRosTemplate(properties.argName),
+    };
+}
+
+export namespace RosDomainConfig {
+    /**
+     * @stability external
+     */
+    export interface FunctionListProperty {
+        /**
+         * @Property parentId: Rule condition ID.
+         */
+        readonly parentId?: string | ros.IResolvable;
+        /**
+         * @Property functionName: Function name.
+         */
+        readonly functionName: string | ros.IResolvable;
+        /**
+         * @Property functionArgs: Function args.
+         */
+        readonly functionArgs: Array<RosDomainConfig.FunctionArgsProperty | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `FunctionListProperty`
+ *
+ * @param properties - the TypeScript properties of a `FunctionListProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosDomainConfig_FunctionListPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('parentId', ros.validateString)(properties.parentId));
+    errors.collect(ros.propertyValidator('functionName', ros.requiredValidator)(properties.functionName));
+    errors.collect(ros.propertyValidator('functionName', ros.validateString)(properties.functionName));
+    errors.collect(ros.propertyValidator('functionArgs', ros.requiredValidator)(properties.functionArgs));
+    errors.collect(ros.propertyValidator('functionArgs', ros.listValidator(RosDomainConfig_FunctionArgsPropertyValidator))(properties.functionArgs));
+    return errors.wrap('supplied properties not correct for "FunctionListProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CDN::DomainConfig.FunctionList` resource
+ *
+ * @param properties - the TypeScript properties of a `FunctionListProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CDN::DomainConfig.FunctionList` resource.
+ */
+// @ts-ignore TS6133
+function rosDomainConfigFunctionListPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosDomainConfig_FunctionListPropertyValidator(properties).assertSuccess();
+    return {
+      ParentId: ros.stringToRosTemplate(properties.parentId),
+      FunctionName: ros.stringToRosTemplate(properties.functionName),
+      FunctionArgs: ros.listMapper(rosDomainConfigFunctionArgsPropertyToRosTemplate)(properties.functionArgs),
+    };
 }

@@ -21,11 +21,15 @@ export interface AccountsProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::REDIS::Accounts`ALIYUN::ResourceManager::Account is used to create a resource account as a member account.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::REDIS::Accounts`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccounts`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-accounts
  */
 export class Accounts extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AccountsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AccountNames: The list of The Redis account names.
@@ -44,6 +48,10 @@ export class Accounts extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AccountsProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAccounts = new RosAccounts(this, id,  {
             instanceId: props.instanceId,

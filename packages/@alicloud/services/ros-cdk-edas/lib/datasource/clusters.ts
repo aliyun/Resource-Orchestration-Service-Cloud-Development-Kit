@@ -26,6 +26,10 @@ export interface ClustersProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-edas-clusters
  */
 export class Clusters extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ClustersProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterIds: The list of cluster IDs.
@@ -44,6 +48,10 @@ export class Clusters extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ClustersProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosClusters = new RosClusters(this, id,  {
             logicalRegionId: props.logicalRegionId,

@@ -56,6 +56,10 @@ export interface RepositoryProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-repository
  */
 export class Repository extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: RepositoryProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceId: The ID of the enterprise edition instance which repository belongs to.
@@ -89,6 +93,10 @@ export class Repository extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: RepositoryProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosRepository = new RosRepository(this, id,  {
             tagImmutability: props.tagImmutability,

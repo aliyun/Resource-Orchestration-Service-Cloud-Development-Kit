@@ -110,6 +110,10 @@ export interface JobProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidlc-job
  */
 export class Job extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: JobProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute JobId: The task ID created this time.
@@ -123,6 +127,10 @@ export class Job extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: JobProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosJob = new RosJob(this, id,  {
             thirdpartyLibs: props.thirdpartyLibs,

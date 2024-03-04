@@ -26,6 +26,10 @@ export interface TopicsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rocketmq-topics
  */
 export class Topics extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: TopicsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute TopicNames: The list of topic names.
@@ -44,6 +48,10 @@ export class Topics extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: TopicsProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosTopics = new RosTopics(this, id,  {
             instanceId: props.instanceId,

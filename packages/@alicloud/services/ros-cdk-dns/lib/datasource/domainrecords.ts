@@ -81,6 +81,10 @@ export interface DomainRecordsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dns-domainrecords
  */
 export class DomainRecords extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DomainRecordsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DomainRecordIds: The list of The DNS domain record ids.
@@ -99,6 +103,10 @@ export class DomainRecords extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DomainRecordsProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDomainRecords = new RosDomainRecords(this, id,  {
             status: props.status,

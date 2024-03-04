@@ -103,6 +103,11 @@ export interface ListenerProps {
      * Property startPort: StartPort of the portRange
      */
     readonly startPort?: number | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosListener.TagsProperty[];
 }
 
 /**
@@ -111,6 +116,10 @@ export interface ListenerProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-listener
  */
 export class Listener extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ListenerProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ListenerId: Id of created Listener
@@ -129,6 +138,10 @@ export class Listener extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ListenerProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosListener = new RosListener(this, id,  {
             caEnabled: props.caEnabled,
@@ -149,6 +162,7 @@ export class Listener extends ros.Resource {
             certificateIds: props.certificateIds,
             secSensorEnabled: props.secSensorEnabled,
             enable: props.enable,
+            tags: props.tags,
             alpnEnabled: props.alpnEnabled,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosListener;

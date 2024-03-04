@@ -135,6 +135,10 @@ export interface RestoreTaskProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dbs-restoretask
  */
 export class RestoreTask extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: RestoreTaskProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute RestoreTaskId: The ID of the restoration task.
@@ -148,6 +152,10 @@ export class RestoreTask extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: RestoreTaskProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosRestoreTask = new RosRestoreTask(this, id,  {
             startTask: props.startTask === undefined || props.startTask === null ? true : props.startTask,

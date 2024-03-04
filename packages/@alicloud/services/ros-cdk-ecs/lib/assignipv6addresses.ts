@@ -33,6 +33,10 @@ export interface AssignIpv6AddressesProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-assignipv6addresses
  */
 export class AssignIpv6Addresses extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AssignIpv6AddressesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Ipv6AddressIds: Assigned IPv6 address IDs.
@@ -56,6 +60,10 @@ export class AssignIpv6Addresses extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AssignIpv6AddressesProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAssignIpv6Addresses = new RosAssignIpv6Addresses(this, id,  {
             ipv6AddressCount: props.ipv6AddressCount,

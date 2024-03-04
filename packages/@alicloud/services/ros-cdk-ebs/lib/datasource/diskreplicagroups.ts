@@ -28,6 +28,10 @@ export interface DiskReplicaGroupsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ebs-diskreplicagroups
  */
 export class DiskReplicaGroups extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DiskReplicaGroupsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DiskReplicaGroups: The list of disk replica groups.
@@ -46,6 +50,10 @@ export class DiskReplicaGroups extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DiskReplicaGroupsProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDiskReplicaGroups = new RosDiskReplicaGroups(this, id,  {
             site: props.site,

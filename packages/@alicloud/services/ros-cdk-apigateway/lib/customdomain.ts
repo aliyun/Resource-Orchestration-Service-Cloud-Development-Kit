@@ -41,6 +41,10 @@ export interface CustomDomainProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-customdomain
  */
 export class CustomDomain extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: CustomDomainProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CertificateId: The id of the certificate.
@@ -54,6 +58,10 @@ export class CustomDomain extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: CustomDomainProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCustomDomain = new RosCustomDomain(this, id,  {
             certificateBody: props.certificateBody,

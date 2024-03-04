@@ -43,6 +43,10 @@ export interface UserVpcAuthorizationProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-uservpcauthorization
  */
 export class UserVpcAuthorization extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: UserVpcAuthorizationProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AuthType: Authorization type.
@@ -61,6 +65,10 @@ export class UserVpcAuthorization extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: UserVpcAuthorizationProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosUserVpcAuthorization = new RosUserVpcAuthorization(this, id,  {
             authCode: props.authCode,

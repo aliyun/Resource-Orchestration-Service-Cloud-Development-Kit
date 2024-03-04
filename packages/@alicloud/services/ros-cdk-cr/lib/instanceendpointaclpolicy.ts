@@ -47,6 +47,10 @@ export interface InstanceEndpointAclPolicyProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instanceendpointaclpolicy
  */
 export class InstanceEndpointAclPolicy extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: InstanceEndpointAclPolicyProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Entry: The IP address range that is allowed to access the instance.
@@ -65,6 +69,10 @@ export class InstanceEndpointAclPolicy extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: InstanceEndpointAclPolicyProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosInstanceEndpointAclPolicy = new RosInstanceEndpointAclPolicy(this, id,  {
             comment: props.comment,

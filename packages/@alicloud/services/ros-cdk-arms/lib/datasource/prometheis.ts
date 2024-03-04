@@ -16,11 +16,15 @@ export interface PrometheisProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ARMS::Prometheis`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ARMS::Prometheis`, which is used to query Prometheus instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPrometheis`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-prometheis
  */
 export class Prometheis extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: PrometheisProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterIds: The list of cluster IDs.
@@ -39,6 +43,10 @@ export class Prometheis extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: PrometheisProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosPrometheis = new RosPrometheis(this, id,  {
             resourceGroupId: props.resourceGroupId,

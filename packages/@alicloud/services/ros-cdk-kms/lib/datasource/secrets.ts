@@ -16,6 +16,10 @@ export interface SecretsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kms-secrets
  */
 export class Secrets extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: SecretsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SecretNames: The list of secret names.
@@ -34,6 +38,10 @@ export class Secrets extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: SecretsProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosSecrets = new RosSecrets(this, id,  {
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

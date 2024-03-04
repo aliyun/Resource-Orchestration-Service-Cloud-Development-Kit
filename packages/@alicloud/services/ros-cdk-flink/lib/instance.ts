@@ -86,6 +86,10 @@ export interface InstanceProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-instance
  */
 export class Instance extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: InstanceProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceId: Instance ID.
@@ -104,6 +108,10 @@ export class Instance extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: InstanceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosInstance = new RosInstance(this, id,  {
             instanceName: props.instanceName,

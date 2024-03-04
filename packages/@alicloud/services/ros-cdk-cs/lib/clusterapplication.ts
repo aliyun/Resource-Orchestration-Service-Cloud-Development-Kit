@@ -41,6 +41,18 @@ export interface ClusterApplicationProps {
      * The default is All.
      */
     readonly stage?: string | ros.IResolvable;
+
+    /**
+     * Property validationMode: Validation modes include:
+     * - Basic: basic validation, such as verifying the existence of a cluster.
+     * - Strict: in addition to basic validation, also validate the legality of YamlContent and WaitUntil.
+     */
+    readonly validationMode?: string | ros.IResolvable;
+
+    /**
+     * Property waitUntil: After starting a creation or update, wait until all conditions are met.
+     */
+    readonly waitUntil?: Array<RosClusterApplication.WaitUntilProperty | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
@@ -49,11 +61,20 @@ export interface ClusterApplicationProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterapplication
  */
 export class ClusterApplication extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ClusterApplicationProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterId: The ID of the cluster.
      */
     public readonly attrClusterId: ros.IResolvable;
+
+    /**
+     * Attribute WaitUntilData: A list of values for each JsonPath in WaitUntil.
+     */
+    public readonly attrWaitUntilData: ros.IResolvable;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -62,15 +83,22 @@ export class ClusterApplication extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ClusterApplicationProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosClusterApplication = new RosClusterApplication(this, id,  {
             rolePolicy: props.rolePolicy === undefined || props.rolePolicy === null ? 'EnsureAdminRoleAndBinding' : props.rolePolicy,
-            clusterId: props.clusterId,
             yamlContent: props.yamlContent,
+            clusterId: props.clusterId,
             defaultNamespace: props.defaultNamespace === undefined || props.defaultNamespace === null ? 'default' : props.defaultNamespace,
             stage: props.stage === undefined || props.stage === null ? 'All' : props.stage,
+            validationMode: props.validationMode === undefined || props.validationMode === null ? 'Strict' : props.validationMode,
+            waitUntil: props.waitUntil,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosClusterApplication;
         this.attrClusterId = rosClusterApplication.attrClusterId;
+        this.attrWaitUntilData = rosClusterApplication.attrWaitUntilData;
     }
 }

@@ -46,6 +46,10 @@ export interface ActivationProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-activation
  */
 export class Activation extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ActivationProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ActivationCode: Activation code.
@@ -74,6 +78,10 @@ export class Activation extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ActivationProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosActivation = new RosActivation(this, id,  {
             instanceName: props.instanceName,

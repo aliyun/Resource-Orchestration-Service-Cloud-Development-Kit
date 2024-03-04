@@ -137,6 +137,10 @@ export interface VpcFirewallControlPolicyProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-vpcfirewallcontrolpolicy
  */
 export class VpcFirewallControlPolicy extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: VpcFirewallControlPolicyProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AclUuid: The unique ID of the access control policy.
@@ -150,6 +154,10 @@ export class VpcFirewallControlPolicy extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: VpcFirewallControlPolicyProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosVpcFirewallControlPolicy = new RosVpcFirewallControlPolicy(this, id,  {
             destination: props.destination,

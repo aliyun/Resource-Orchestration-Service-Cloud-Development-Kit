@@ -21,6 +21,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             get;
         }
 
+        /// <summary>Property deletionProtection: Whether to enable deletion protection.</summary>
+        /// <remarks>
+        /// Default to False.
+        /// </remarks>
+        [JsiiProperty(name: "deletionProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DeletionProtection
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property description: The description of the Internet Shared Bandwidth instance.</summary>
         /// <remarks>
         /// The description must be 2 to 256 characters in length. It must start with a letter,
@@ -149,6 +163,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             public object Bandwidth
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property deletionProtection: Whether to enable deletion protection.</summary>
+            /// <remarks>
+            /// Default to False.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "deletionProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DeletionProtection
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property description: The description of the Internet Shared Bandwidth instance.</summary>

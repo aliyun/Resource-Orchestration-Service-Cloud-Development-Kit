@@ -26,11 +26,15 @@ export interface AuditProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Audit`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Audit`, which is used to configure Log Audit Service.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAudit`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-audit
  */
 export class Audit extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AuditProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DisplayName: Name of SLS log audit.
@@ -44,6 +48,10 @@ export class Audit extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AuditProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAudit = new RosAudit(this, id,  {
             variableMap: props.variableMap,

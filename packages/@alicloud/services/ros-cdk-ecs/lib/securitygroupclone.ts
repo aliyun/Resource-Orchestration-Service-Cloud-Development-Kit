@@ -58,6 +58,10 @@ export interface SecurityGroupCloneProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroupclone
  */
 export class SecurityGroupClone extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: SecurityGroupCloneProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SecurityGroupId: Generated security group id of new security group.
@@ -71,6 +75,10 @@ export class SecurityGroupClone extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: SecurityGroupCloneProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosSecurityGroupClone = new RosSecurityGroupClone(this, id,  {
             description: props.description,

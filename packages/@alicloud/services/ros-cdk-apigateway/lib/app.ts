@@ -50,6 +50,10 @@ export interface AppProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-app
  */
 export class App extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AppProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AppCode: The code of the APP.
@@ -83,6 +87,10 @@ export class App extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AppProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosApp = new RosApp(this, id,  {
             appCode: props.appCode,

@@ -90,6 +90,10 @@ export interface NetworkInterfaceProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-networkinterface
  */
 export class NetworkInterface extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: NetworkInterfaceProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute MacAddress: The MAC address of your Network Interface.
@@ -118,6 +122,10 @@ export class NetworkInterface extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: NetworkInterfaceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosNetworkInterface = new RosNetworkInterface(this, id,  {
             networkInterfaceTrafficMode: props.networkInterfaceTrafficMode,

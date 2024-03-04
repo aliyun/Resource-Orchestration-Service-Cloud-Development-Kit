@@ -29,11 +29,15 @@ export interface ProjectProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Project`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Project`, which is used to create a Log Service project.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosProject`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-project
  */
 export class Project extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ProjectProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Name: Project name.
@@ -47,6 +51,10 @@ export class Project extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ProjectProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosProject = new RosProject(this, id,  {
             description: props.description,

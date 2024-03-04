@@ -81,6 +81,10 @@ export interface AlarmTaskProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-alarmtask
  */
 export class AlarmTask extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AlarmTaskProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AlarmTaskId: The alarm task ID
@@ -94,6 +98,10 @@ export class AlarmTask extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AlarmTaskProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAlarmTask = new RosAlarmTask(this, id,  {
             comparisonOperator: props.comparisonOperator,

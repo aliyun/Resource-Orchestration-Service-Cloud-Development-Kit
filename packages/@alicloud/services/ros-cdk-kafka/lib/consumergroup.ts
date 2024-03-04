@@ -39,6 +39,10 @@ export interface ConsumerGroupProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-consumergroup
  */
 export class ConsumerGroup extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ConsumerGroupProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ConsumerId: Consumer group ID
@@ -52,6 +56,10 @@ export class ConsumerGroup extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ConsumerGroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosConsumerGroup = new RosConsumerGroup(this, id,  {
             instanceId: props.instanceId,

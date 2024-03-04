@@ -36,6 +36,10 @@ export interface AlertContactGroupProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-alertcontactgroup
  */
 export class AlertContactGroup extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AlertContactGroupProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ContactGroupId: The ID of the alert contact group that you created.
@@ -49,6 +53,10 @@ export class AlertContactGroup extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AlertContactGroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAlertContactGroup = new RosAlertContactGroup(this, id,  {
             proxyUserId: props.proxyUserId,

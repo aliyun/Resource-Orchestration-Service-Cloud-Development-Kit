@@ -32,11 +32,15 @@ export interface ImageSharePermissionProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::ImageSharePermission`DATASOURCE::ECS::AutoSnapshotPolicies is used to query automatic snapshot policies.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::ImageSharePermission`, which is used to manage the share permissions on a custom image.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosImageSharePermission`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-imagesharepermission
  */
 export class ImageSharePermission extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ImageSharePermissionProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ImageId: The shared custom image ID.
@@ -50,6 +54,10 @@ export class ImageSharePermission extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ImageSharePermissionProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosImageSharePermission = new RosImageSharePermission(this, id,  {
             keepPermission: props.keepPermission === undefined || props.keepPermission === null ? true : props.keepPermission,

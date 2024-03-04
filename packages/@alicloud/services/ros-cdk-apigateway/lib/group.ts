@@ -57,6 +57,10 @@ export interface GroupProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-group
  */
 export class Group extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: GroupProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute GroupId: The id of the created Group resource
@@ -80,6 +84,10 @@ export class Group extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: GroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosGroup = new RosGroup(this, id,  {
             internetEnable: props.internetEnable,

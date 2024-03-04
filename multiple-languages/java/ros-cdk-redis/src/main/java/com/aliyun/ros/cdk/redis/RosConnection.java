@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.redis;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::REDIS::Connection</code>, which is used to apply for a public endpoint for an ApsaraDB for Redis instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.703Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:54.221Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.RosConnection")
 public class RosConnection extends com.aliyun.ros.cdk.core.RosResource {
 

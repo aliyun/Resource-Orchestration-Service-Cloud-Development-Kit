@@ -26,6 +26,10 @@ export interface DiskReplicaPairAdditionProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ebs-diskreplicapairaddition
  */
 export class DiskReplicaPairAddition extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DiskReplicaPairAdditionProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ReplicaGroupId: The ID of the replication pair-consistent group.
@@ -44,6 +48,10 @@ export class DiskReplicaPairAddition extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DiskReplicaPairAdditionProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDiskReplicaPairAddition = new RosDiskReplicaPairAddition(this, id,  {
             replicaPairId: props.replicaPairId,

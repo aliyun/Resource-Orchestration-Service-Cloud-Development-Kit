@@ -31,6 +31,10 @@ export interface AclAssociationProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-aclassociation
  */
 export class AclAssociation extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AclAssociationProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ListenerId: The ID of the listener.
@@ -44,6 +48,10 @@ export class AclAssociation extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AclAssociationProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAclAssociation = new RosAclAssociation(this, id,  {
             aclType: props.aclType,

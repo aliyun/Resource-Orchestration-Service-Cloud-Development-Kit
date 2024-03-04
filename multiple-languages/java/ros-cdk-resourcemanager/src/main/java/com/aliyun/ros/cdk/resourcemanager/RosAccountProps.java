@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.resourcemanager;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-account
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.787Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:54.283Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.resourcemanager.$Module.class, fqn = "@alicloud/ros-cdk-resourcemanager.RosAccountProps")
 @software.amazon.jsii.Jsii.Proxy(RosAccountProps.Jsii$Proxy.class)
 public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
@@ -13,6 +13,12 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
     /**
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getDisplayName();
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeleteAccount() {
+        return null;
+    }
 
     /**
      */
@@ -37,6 +43,7 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosAccountProps> {
         java.lang.Object displayName;
+        java.lang.Object deleteAccount;
         java.lang.Object folderId;
         java.lang.Object payerAccountId;
 
@@ -57,6 +64,26 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder displayName(com.aliyun.ros.cdk.core.IResolvable displayName) {
             this.displayName = displayName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAccountProps#getDeleteAccount}
+         * @param deleteAccount the value to be set.
+         * @return {@code this}
+         */
+        public Builder deleteAccount(java.lang.Boolean deleteAccount) {
+            this.deleteAccount = deleteAccount;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAccountProps#getDeleteAccount}
+         * @param deleteAccount the value to be set.
+         * @return {@code this}
+         */
+        public Builder deleteAccount(com.aliyun.ros.cdk.core.IResolvable deleteAccount) {
+            this.deleteAccount = deleteAccount;
             return this;
         }
 
@@ -117,6 +144,7 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosAccountProps {
         private final java.lang.Object displayName;
+        private final java.lang.Object deleteAccount;
         private final java.lang.Object folderId;
         private final java.lang.Object payerAccountId;
 
@@ -127,6 +155,7 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.displayName = software.amazon.jsii.Kernel.get(this, "displayName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.deleteAccount = software.amazon.jsii.Kernel.get(this, "deleteAccount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.folderId = software.amazon.jsii.Kernel.get(this, "folderId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.payerAccountId = software.amazon.jsii.Kernel.get(this, "payerAccountId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -137,6 +166,7 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.displayName = java.util.Objects.requireNonNull(builder.displayName, "displayName is required");
+            this.deleteAccount = builder.deleteAccount;
             this.folderId = builder.folderId;
             this.payerAccountId = builder.payerAccountId;
         }
@@ -144,6 +174,11 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getDisplayName() {
             return this.displayName;
+        }
+
+        @Override
+        public final java.lang.Object getDeleteAccount() {
+            return this.deleteAccount;
         }
 
         @Override
@@ -163,6 +198,9 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
             data.set("displayName", om.valueToTree(this.getDisplayName()));
+            if (this.getDeleteAccount() != null) {
+                data.set("deleteAccount", om.valueToTree(this.getDeleteAccount()));
+            }
             if (this.getFolderId() != null) {
                 data.set("folderId", om.valueToTree(this.getFolderId()));
             }
@@ -188,6 +226,7 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
             RosAccountProps.Jsii$Proxy that = (RosAccountProps.Jsii$Proxy) o;
 
             if (!displayName.equals(that.displayName)) return false;
+            if (this.deleteAccount != null ? !this.deleteAccount.equals(that.deleteAccount) : that.deleteAccount != null) return false;
             if (this.folderId != null ? !this.folderId.equals(that.folderId) : that.folderId != null) return false;
             return this.payerAccountId != null ? this.payerAccountId.equals(that.payerAccountId) : that.payerAccountId == null;
         }
@@ -195,6 +234,7 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final int hashCode() {
             int result = this.displayName.hashCode();
+            result = 31 * result + (this.deleteAccount != null ? this.deleteAccount.hashCode() : 0);
             result = 31 * result + (this.folderId != null ? this.folderId.hashCode() : 0);
             result = 31 * result + (this.payerAccountId != null ? this.payerAccountId.hashCode() : 0);
             return result;

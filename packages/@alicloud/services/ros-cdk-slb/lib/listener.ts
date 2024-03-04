@@ -71,6 +71,19 @@ export interface ListenerProps {
     readonly caCertificateId?: string | ros.IResolvable;
 
     /**
+     * Property connectionDrain: Whether to enable graceful connection interruption. Value:on: turn on
+     * off: Not turned on
+     * Note: Only effective TCP listener.
+     */
+    readonly connectionDrain?: string | ros.IResolvable;
+
+    /**
+     * Property connectionDrainTimeout: Set the connection graceful interruption timeout. Unit: seconds. Value range: 10-900.
+     * Note: Only effective for TCP listener. When ConnectionDrain is on, this option is required.
+     */
+    readonly connectionDrainTimeout?: number | ros.IResolvable;
+
+    /**
      * Property description: The description of the listener.It must be 1 to 80 characters in length and can contain letters, digits, hyphens (-), forward slashes (\/), periods (.), and underscores (_). Chinese characters are supported.
      */
     readonly description?: string | ros.IResolvable;
@@ -120,6 +133,14 @@ export interface ListenerProps {
     readonly portRange?: Array<RosListener.PortRangeProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * Property proxyProtocolV2Enabled: Whether to support carrying the client source address to the backend server through the Proxy Protocol. Value:
+     * true: Yes
+     * false (default): No
+     * Note: Only effective TCP or UDP listener.
+     */
+    readonly proxyProtocolV2Enabled?: boolean | ros.IResolvable;
+
+    /**
      * Property requestTimeout: Specify the request timeout in seconds. Valid value: 1-180 If no response is received from the backend server during the specified timeout period, Server Load Balancer will stop waiting and send an HTTP 504 error to the client.
      */
     readonly requestTimeout?: number | ros.IResolvable;
@@ -146,6 +167,11 @@ export interface ListenerProps {
     readonly startListener?: boolean | ros.IResolvable;
 
     /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosListener.TagsProperty[];
+
+    /**
      * Property tlsCipherPolicy: The Transport Layer Security (TLS) security policy. Each security policy contains TLS protocol versions and cipher suites available for HTTPS. It takes effect when Protocol=https.
      */
     readonly tlsCipherPolicy?: string | ros.IResolvable;
@@ -157,11 +183,15 @@ export interface ListenerProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::Listener`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::Listener`, which is used to create a Server Load Balancer (SLB) listener.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosListener`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-listener
  */
 export class Listener extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ListenerProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ListenerPortsAndProtocol: The collection of listener.
@@ -180,25 +210,33 @@ export class Listener extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ListenerProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosListener = new RosListener(this, id,  {
             vServerGroupId: props.vServerGroupId,
             description: props.description,
+            proxyProtocolV2Enabled: props.proxyProtocolV2Enabled,
             scheduler: props.scheduler === undefined || props.scheduler === null ? 'wrr' : props.scheduler,
             healthCheck: props.healthCheck,
             idleTimeout: props.idleTimeout,
             loadBalancerId: props.loadBalancerId,
             backendServerPort: props.backendServerPort,
+            connectionDrainTimeout: props.connectionDrainTimeout,
             bandwidth: props.bandwidth,
             gzip: props.gzip,
             serverCertificateId: props.serverCertificateId,
             httpConfig: props.httpConfig,
             protocol: props.protocol,
+            tags: props.tags,
             requestTimeout: props.requestTimeout,
             listenerPort: props.listenerPort,
             tlsCipherPolicy: props.tlsCipherPolicy,
             caCertificateId: props.caCertificateId,
             aclId: props.aclId,
+            connectionDrain: props.connectionDrain,
             persistence: props.persistence,
             portRange: props.portRange,
             aclStatus: props.aclStatus === undefined || props.aclStatus === null ? 'off' : props.aclStatus,

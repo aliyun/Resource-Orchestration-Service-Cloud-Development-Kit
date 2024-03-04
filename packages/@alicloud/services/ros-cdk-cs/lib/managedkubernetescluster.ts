@@ -57,16 +57,6 @@ export interface ManagedKubernetesClusterProps {
     readonly chargeType?: string | ros.IResolvable;
 
     /**
-     * Property cisEnabled: Specifies whether to enable Center for Internet Security (CIS) reinforcement. 
-     * For more information, see CIS reinforcement.
-     * Valid values:
-     * true: enables CIS reinforcement.
-     * false: disables CIS reinforcement.
-     * Default value: false.
-     */
-    readonly cisEnabled?: boolean | ros.IResolvable;
-
-    /**
      * Property cloudMonitorFlags: Whether to install the cloud monitoring plugin:
      * true: indicates installation
      * false: Do not install
@@ -352,6 +342,10 @@ export interface ManagedKubernetesClusterProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managedkubernetescluster
  */
 export class ManagedKubernetesCluster extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ManagedKubernetesClusterProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute APIServerSLBId: The id of API server SLB
@@ -410,6 +404,10 @@ export class ManagedKubernetesCluster extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ManagedKubernetesClusterProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosManagedKubernetesCluster = new RosManagedKubernetesCluster(this, id,  {
             endpointPublicAccess: props.endpointPublicAccess === undefined || props.endpointPublicAccess === null ? false : props.endpointPublicAccess,
@@ -450,7 +448,6 @@ export class ManagedKubernetesCluster extends ros.Resource {
             period: props.period,
             clusterSpec: props.clusterSpec,
             deletionProtection: props.deletionProtection,
-            cisEnabled: props.cisEnabled,
             workerDataDisk: props.workerDataDisk === undefined || props.workerDataDisk === null ? false : props.workerDataDisk,
             vpcId: props.vpcId,
             numOfNodes: props.numOfNodes === undefined || props.numOfNodes === null ? 3 : props.numOfNodes,

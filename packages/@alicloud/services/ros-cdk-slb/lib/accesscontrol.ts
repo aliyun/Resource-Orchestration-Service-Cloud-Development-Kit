@@ -36,11 +36,15 @@ export interface AccessControlProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::AccessControl`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::AccessControl`, which is used to create an access control list (ACL).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccessControl`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-accesscontrol
  */
 export class AccessControl extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AccessControlProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AclId: The ID of the access control list.
@@ -54,6 +58,10 @@ export class AccessControl extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AccessControlProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAccessControl = new RosAccessControl(this, id,  {
             aclEntries: props.aclEntries,

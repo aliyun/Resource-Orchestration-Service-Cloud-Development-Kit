@@ -26,6 +26,10 @@ export interface BackupClientsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-backupclients
  */
 export class BackupClients extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: BackupClientsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClientIds: ID list of clients installed in instances
@@ -44,6 +48,10 @@ export class BackupClients extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: BackupClientsProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosBackupClients = new RosBackupClients(this, id,  {
             instanceIds: props.instanceIds,

@@ -34,6 +34,10 @@ export interface PluginAttachmentProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-pluginattachment
  */
 export class PluginAttachment extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: PluginAttachmentProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ApiId: The api id.
@@ -52,6 +56,10 @@ export class PluginAttachment extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: PluginAttachmentProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosPluginAttachment = new RosPluginAttachment(this, id,  {
             stageName: props.stageName,

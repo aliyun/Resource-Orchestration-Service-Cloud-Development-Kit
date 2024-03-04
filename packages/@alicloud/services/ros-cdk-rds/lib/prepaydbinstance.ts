@@ -438,11 +438,15 @@ export interface PrepayDBInstanceProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::PrepayDBInstance`, which is used to create a subscription ApsaraDB RDS instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::PrepayDBInstance`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPrepayDBInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-prepaydbinstance
  */
 export class PrepayDBInstance extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: PrepayDBInstanceProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DBInstanceId: The instance id of created database instance.
@@ -491,6 +495,10 @@ export class PrepayDBInstance extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: PrepayDBInstanceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosPrepayDBInstance = new RosPrepayDBInstance(this, id,  {
             periodType: props.periodType === undefined || props.periodType === null ? 'Month' : props.periodType,

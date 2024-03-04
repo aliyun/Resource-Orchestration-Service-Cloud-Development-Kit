@@ -76,6 +76,10 @@ export interface VpcEndpointProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpoint
  */
 export class VpcEndpoint extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: VpcEndpointProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Bandwidth: The bandwidth of the endpoint.
@@ -124,6 +128,10 @@ export class VpcEndpoint extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: VpcEndpointProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosVpcEndpoint = new RosVpcEndpoint(this, id,  {
             protectedEnabled: props.protectedEnabled,

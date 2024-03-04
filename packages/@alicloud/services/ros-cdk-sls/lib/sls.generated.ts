@@ -1102,7 +1102,7 @@ function rosApplyConfigToMachineGroupPropsToRosTemplate(properties: any, enableR
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::ApplyConfigToMachineGroup`, which is used to apply Log Service configurations to machine groups.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::ApplyConfigToMachineGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ApplyConfigToMachineGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-applyconfigtomachinegroup
  */
@@ -1232,7 +1232,7 @@ function rosAuditPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Audit`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Audit`, which is used to configure Log Audit Service.
  * @Note This class does not contain additional functions, so it is recommended to use the `Audit` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-audit
  */
@@ -4030,7 +4030,7 @@ function rosMachineGroupPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::MachineGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::MachineGroup`, which is used to create a machine group. Log Service manages all the ECS instances whose logs need to be collected using the Logtail client in the form of machine groups.
  * @Note This class does not contain additional functions, so it is recommended to use the `MachineGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-machinegroup
  */
@@ -4237,7 +4237,7 @@ function rosMetricStorePropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::MetricStore`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::MetricStore`, which is used to create a Logstore.
  * @Note This class does not contain additional functions, so it is recommended to use the `MetricStore` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-metricstore
  */
@@ -4412,7 +4412,7 @@ function rosProjectPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Project`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Project`, which is used to create a Log Service project.
  * @Note This class does not contain additional functions, so it is recommended to use the `Project` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-project
  */
@@ -4770,7 +4770,7 @@ function rosServiceLogPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::ServiceLog`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::ServiceLog`, which is used to enable the service log feature.
  * @Note This class does not contain additional functions, so it is recommended to use the `ServiceLog` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-servicelog
  */

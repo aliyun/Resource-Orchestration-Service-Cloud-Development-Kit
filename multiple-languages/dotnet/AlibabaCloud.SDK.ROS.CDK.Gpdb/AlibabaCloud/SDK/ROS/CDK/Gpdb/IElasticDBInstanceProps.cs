@@ -237,9 +237,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
         }
 
-        /// <summary>Property tags: Tags to attach to instance.</summary>
+        /// <summary>Property tags: The list of instance tags in the form of key\/value pairs.</summary>
         /// <remarks>
-        /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+        /// You can define a maximum of 20 tags for instance.
         /// </remarks>
         [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-gpdb.RosElasticDBInstance.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -471,9 +471,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property tags: Tags to attach to instance.</summary>
+            /// <summary>Property tags: The list of instance tags in the form of key\/value pairs.</summary>
             /// <remarks>
-            /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+            /// You can define a maximum of 20 tags for instance.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-gpdb.RosElasticDBInstance.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]

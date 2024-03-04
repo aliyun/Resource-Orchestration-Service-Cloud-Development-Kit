@@ -34,11 +34,15 @@ export interface DBClusterAccessWhiteListProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::DBClusterAccessWhiteList`, which is used to modify the list of IP addresses that are allowed to access an ApsaraDB for POLARDB cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::DBClusterAccessWhiteList`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBClusterAccessWhiteList`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusteraccesswhitelist
  */
 export class DBClusterAccessWhiteList extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DBClusterAccessWhiteListProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DBClusterId: The ID of the ApsaraDB for POLARDB cluster whose IP address whitelist is to be modified.
@@ -52,6 +56,10 @@ export class DBClusterAccessWhiteList extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DBClusterAccessWhiteListProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDBClusterAccessWhiteList = new RosDBClusterAccessWhiteList(this, id,  {
             securityIps: props.securityIps,

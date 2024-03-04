@@ -36,6 +36,10 @@ export interface ChildInstanceRouteEntryToAttachmentProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-childinstancerouteentrytoattachment
  */
 export class ChildInstanceRouteEntryToAttachment extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ChildInstanceRouteEntryToAttachmentProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CenId: The ID of the CEN instance.
@@ -64,6 +68,10 @@ export class ChildInstanceRouteEntryToAttachment extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ChildInstanceRouteEntryToAttachmentProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosChildInstanceRouteEntryToAttachment = new RosChildInstanceRouteEntryToAttachment(this, id,  {
             transitRouterAttachmentId: props.transitRouterAttachmentId,

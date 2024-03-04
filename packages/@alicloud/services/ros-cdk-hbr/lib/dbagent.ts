@@ -21,6 +21,10 @@ export interface DbAgentProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbagent
  */
 export class DbAgent extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DbAgentProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceIds: Uni backup agent instance ids
@@ -49,6 +53,10 @@ export class DbAgent extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DbAgentProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDbAgent = new RosDbAgent(this, id,  {
             instanceInfo: props.instanceInfo,

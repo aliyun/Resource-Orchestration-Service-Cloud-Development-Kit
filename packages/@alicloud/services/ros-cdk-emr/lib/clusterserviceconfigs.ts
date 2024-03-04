@@ -26,6 +26,10 @@ export interface ClusterServiceConfigsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-clusterserviceconfigs
  */
 export class ClusterServiceConfigs extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ClusterServiceConfigsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterId: The ID of the cluster.
@@ -39,6 +43,10 @@ export class ClusterServiceConfigs extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ClusterServiceConfigsProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosClusterServiceConfigs = new RosClusterServiceConfigs(this, id,  {
             clusterId: props.clusterId,

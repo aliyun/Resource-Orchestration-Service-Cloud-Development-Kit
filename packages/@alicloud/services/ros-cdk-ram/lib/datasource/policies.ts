@@ -41,6 +41,10 @@ export interface PoliciesProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-policies
  */
 export class Policies extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: PoliciesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Policies: The list of policies.
@@ -59,6 +63,10 @@ export class Policies extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: PoliciesProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosPolicies = new RosPolicies(this, id,  {
             groupName: props.groupName,

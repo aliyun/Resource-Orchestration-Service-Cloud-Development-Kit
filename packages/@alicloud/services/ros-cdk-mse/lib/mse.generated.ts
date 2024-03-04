@@ -621,6 +621,142 @@ Optional parameters:
 }
 
 /**
+ * Properties for defining a `RosEngineNamespace`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-enginenamespace
+ */
+export interface RosEngineNamespaceProps {
+
+    /**
+     * @Property instanceId: The ID of the instance.
+     */
+    readonly instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property name: The display name of the namespace.
+     */
+    readonly name: string | ros.IResolvable;
+
+    /**
+     * @Property desc: The description of the namespace.
+     */
+    readonly desc?: string | ros.IResolvable;
+
+    /**
+     * @Property identity: The custom ID of the namespace. If you do not specify this parameter, the automatically generated Universally Unique Identifier (UUID) is returned.
+     */
+    readonly identity?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosEngineNamespaceProps`
+ *
+ * @param properties - the TypeScript properties of a `RosEngineNamespaceProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosEngineNamespacePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('desc', ros.validateString)(properties.desc));
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    errors.collect(ros.propertyValidator('identity', ros.validateString)(properties.identity));
+    return errors.wrap('supplied properties not correct for "RosEngineNamespaceProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MSE::EngineNamespace` resource
+ *
+ * @param properties - the TypeScript properties of a `RosEngineNamespaceProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MSE::EngineNamespace` resource.
+ */
+// @ts-ignore TS6133
+function rosEngineNamespacePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosEngineNamespacePropsValidator(properties).assertSuccess();
+    }
+    return {
+      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+      Name: ros.stringToRosTemplate(properties.name),
+      Desc: ros.stringToRosTemplate(properties.desc),
+      Id: ros.stringToRosTemplate(properties.identity),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::EngineNamespace`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `EngineNamespace` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-enginenamespace
+ */
+export class RosEngineNamespace extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::MSE::EngineNamespace";
+
+    /**
+     * @Attribute NamespaceId: The ID of the namespace.
+     */
+    public readonly attrNamespaceId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property instanceId: The ID of the instance.
+     */
+    public instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property name: The display name of the namespace.
+     */
+    public name: string | ros.IResolvable;
+
+    /**
+     * @Property desc: The description of the namespace.
+     */
+    public desc: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property identity: The custom ID of the namespace. If you do not specify this parameter, the automatically generated Universally Unique Identifier (UUID) is returned.
+     */
+    public identity: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosEngineNamespaceProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosEngineNamespace.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrNamespaceId = this.getAtt('NamespaceId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.instanceId = props.instanceId;
+        this.name = props.name;
+        this.desc = props.desc;
+        this.identity = props.identity;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            instanceId: this.instanceId,
+            name: this.name,
+            desc: this.desc,
+            identity: this.identity,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosEngineNamespacePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosGateway`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-gateway
  */

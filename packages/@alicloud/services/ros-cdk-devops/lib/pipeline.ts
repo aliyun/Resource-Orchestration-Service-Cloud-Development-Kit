@@ -26,11 +26,15 @@ export interface PipelineProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DEVOPS::Pipeline`ALIYUN::DFS::AccessGroup is used to create a permission group.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DEVOPS::Pipeline`, which is used to create a pipeline. YAML-based pipelines are supported.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPipeline`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-pipeline
  */
 export class Pipeline extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: PipelineProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute PipelineId: Pipeline id.
@@ -44,6 +48,10 @@ export class Pipeline extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: PipelineProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosPipeline = new RosPipeline(this, id,  {
             content: props.content,

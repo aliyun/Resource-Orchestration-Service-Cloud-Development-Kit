@@ -1,0 +1,24 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "ROS Development Team",
+  "private": true,
+  "dependencies": {
+    "@alicloud/ros-cdk-assert": "^1.0.0",
+    "@alicloud/ros-cdk-core": "^1.0.0",
+    "@alicloud/ros-cdk-cr": "^1.0.0",
+    "@alicloud/ros-cdk-eci": "^1.0.0",
+    "@alicloud/ros-cdk-ecs": "^1.0.0",
+    "@alicloud/ros-cdk-ess": "^1.0.0",
+    "@alicloud/ros-cdk-ram": "^1.0.0",
+    "@alicloud/ros-cdk-sls": "^1.0.0",
+    "@alicloud/ros-cdk-mse": "^1.0.0",
+    "@types/jest": "^26.0.14",
+    "jest": "^25.5.0",
+    "ts-jest": "^25.3.1"
+  }
+}

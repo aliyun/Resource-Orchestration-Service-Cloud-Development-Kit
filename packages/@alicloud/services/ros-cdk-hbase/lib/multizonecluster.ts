@@ -174,11 +174,15 @@ export interface MultiZoneClusterProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::HBase::MultiZoneCluster`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::HBase::MultiZoneCluster`, which is used to create an ApsaraDB for HBase cluster that resides in multiple zones.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMultiZoneCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbase-multizonecluster
  */
 export class MultiZoneCluster extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: MultiZoneClusterProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterId: The ID of the instance.
@@ -217,6 +221,10 @@ export class MultiZoneCluster extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: MultiZoneClusterProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosMultiZoneCluster = new RosMultiZoneCluster(this, id,  {
             standbyZoneId: props.standbyZoneId,

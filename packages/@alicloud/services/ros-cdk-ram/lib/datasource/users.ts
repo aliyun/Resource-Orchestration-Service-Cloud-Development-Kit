@@ -26,6 +26,10 @@ export interface UsersProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-users
  */
 export class Users extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: UsersProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute UserNames: The list of user names.
@@ -44,6 +48,10 @@ export class Users extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: UsersProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosUsers = new RosUsers(this, id,  {
             groupName: props.groupName,

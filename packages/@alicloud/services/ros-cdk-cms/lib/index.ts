@@ -8,6 +8,7 @@ export * from './metricruletargets';
 export * from './metricruletemplate';
 export * from './monitorgroup';
 export * from './monitorgroupinstances';
+export * from './monitoringagent';
 export * from './monitoringagentprocess';
 export * from './namespace';
 export * from './resourcemetricrule';

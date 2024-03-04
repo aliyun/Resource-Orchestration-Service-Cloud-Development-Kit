@@ -18,23 +18,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
             get;
         }
 
-        /// <summary>Property ossBucketName: The OSS bucket to which the trail delivers logs.</summary>
-        /// <remarks>
-        /// Ensure that this is an existing OSS bucket.
-        /// </remarks>
-        [JsiiProperty(name: "ossBucketName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object OssBucketName
-        {
-            get;
-        }
-
-        /// <summary>Property roleName: The RAM role in ActionTrail permitted by the user.</summary>
-        [JsiiProperty(name: "roleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object RoleName
-        {
-            get;
-        }
-
         /// <summary>Property eventRw: Indicates whether the event is a read or a write event.</summary>
         /// <remarks>
         /// Valid values: Read, Write, and All. Default value: Write.
@@ -49,6 +32,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
             }
         }
 
+        /// <summary>Property ossBucketName: The OSS bucket to which the trail delivers logs.</summary>
+        /// <remarks>
+        /// Ensure that this is an existing OSS bucket.
+        /// </remarks>
+        [JsiiProperty(name: "ossBucketName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? OssBucketName
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property ossKeyPrefix: The prefix of the specified OSS bucket name.</summary>
         /// <remarks>
         /// This parameter can be left empty.
@@ -56,6 +53,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
         [JsiiProperty(name: "ossKeyPrefix", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? OssKeyPrefix
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property roleName: The RAM role in ActionTrail permitted by the user.</summary>
+        [JsiiProperty(name: "roleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? RoleName
         {
             get
             {
@@ -103,23 +111,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property ossBucketName: The OSS bucket to which the trail delivers logs.</summary>
-            /// <remarks>
-            /// Ensure that this is an existing OSS bucket.
-            /// </remarks>
-            [JsiiProperty(name: "ossBucketName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object OssBucketName
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
-            /// <summary>Property roleName: The RAM role in ActionTrail permitted by the user.</summary>
-            [JsiiProperty(name: "roleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object RoleName
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
             /// <summary>Property eventRw: Indicates whether the event is a read or a write event.</summary>
             /// <remarks>
             /// Valid values: Read, Write, and All. Default value: Write.
@@ -131,6 +122,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property ossBucketName: The OSS bucket to which the trail delivers logs.</summary>
+            /// <remarks>
+            /// Ensure that this is an existing OSS bucket.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ossBucketName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? OssBucketName
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property ossKeyPrefix: The prefix of the specified OSS bucket name.</summary>
             /// <remarks>
             /// This parameter can be left empty.
@@ -138,6 +140,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
             [JsiiOptional]
             [JsiiProperty(name: "ossKeyPrefix", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? OssKeyPrefix
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property roleName: The RAM role in ActionTrail permitted by the user.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "roleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RoleName
             {
                 get => GetInstanceProperty<object?>();
             }

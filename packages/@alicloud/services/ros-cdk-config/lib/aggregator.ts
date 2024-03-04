@@ -32,11 +32,15 @@ export interface AggregatorProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::Config::Aggregator`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::Config::Aggregator`, which is used to create an account group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAggregator`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-aggregator
  */
 export class Aggregator extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AggregatorProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AggregatorId: The ID of the aggregator.
@@ -50,6 +54,10 @@ export class Aggregator extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AggregatorProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAggregator = new RosAggregator(this, id,  {
             aggregatorName: props.aggregatorName,

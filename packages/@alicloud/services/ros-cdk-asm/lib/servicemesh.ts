@@ -114,6 +114,10 @@ export interface ServiceMeshProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-asm-servicemesh
  */
 export class ServiceMesh extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ServiceMeshProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ServiceMeshId: The ID of the ASM instance.
@@ -127,6 +131,10 @@ export class ServiceMesh extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ServiceMeshProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosServiceMesh = new RosServiceMesh(this, id,  {
             opa: props.opa,

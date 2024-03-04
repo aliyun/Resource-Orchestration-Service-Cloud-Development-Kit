@@ -40,6 +40,10 @@ export interface InstanceClassesProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mongodb-instanceclasses
  */
 export class InstanceClasses extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: InstanceClassesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceClassIds: The list of The instance class Ids.
@@ -58,6 +62,10 @@ export class InstanceClasses extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: InstanceClassesProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosInstanceClasses = new RosInstanceClasses(this, id,  {
             resourceGroupId: props.resourceGroupId,

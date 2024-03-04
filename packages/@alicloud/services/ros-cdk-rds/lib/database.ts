@@ -53,6 +53,10 @@ export interface DatabaseProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-database
  */
 export class Database extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DatabaseProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DBInstanceId: The ID of the instance.
@@ -71,6 +75,10 @@ export class Database extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DatabaseProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDatabase = new RosDatabase(this, id,  {
             characterSetName: props.characterSetName,

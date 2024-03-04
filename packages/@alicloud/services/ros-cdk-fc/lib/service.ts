@@ -77,6 +77,10 @@ export interface ServiceProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-service
  */
 export class Service extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ServiceProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InternetAccess: Whether enable Internet access
@@ -125,6 +129,10 @@ export class Service extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ServiceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosService = new RosService(this, id,  {
             role: props.role,

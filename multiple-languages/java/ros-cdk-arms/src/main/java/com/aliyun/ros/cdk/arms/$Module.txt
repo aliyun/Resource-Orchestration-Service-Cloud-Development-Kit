@@ -16,5 +16,13 @@
 @alicloud/ros-cdk-arms.RosRetcodeAppProps=com.aliyun.ros.cdk.arms.RosRetcodeAppProps
 @alicloud/ros-cdk-arms.datasource.Prometheis=com.aliyun.ros.cdk.arms.datasource.Prometheis
 @alicloud/ros-cdk-arms.datasource.PrometheisProps=com.aliyun.ros.cdk.arms.datasource.PrometheisProps
+@alicloud/ros-cdk-arms.datasource.PrometheusAuthToken=com.aliyun.ros.cdk.arms.datasource.PrometheusAuthToken
+@alicloud/ros-cdk-arms.datasource.PrometheusAuthTokenProps=com.aliyun.ros.cdk.arms.datasource.PrometheusAuthTokenProps
+@alicloud/ros-cdk-arms.datasource.PrometheusUrl=com.aliyun.ros.cdk.arms.datasource.PrometheusUrl
+@alicloud/ros-cdk-arms.datasource.PrometheusUrlProps=com.aliyun.ros.cdk.arms.datasource.PrometheusUrlProps
 @alicloud/ros-cdk-arms.datasource.RosPrometheis=com.aliyun.ros.cdk.arms.datasource.RosPrometheis
 @alicloud/ros-cdk-arms.datasource.RosPrometheisProps=com.aliyun.ros.cdk.arms.datasource.RosPrometheisProps
+@alicloud/ros-cdk-arms.datasource.RosPrometheusAuthToken=com.aliyun.ros.cdk.arms.datasource.RosPrometheusAuthToken
+@alicloud/ros-cdk-arms.datasource.RosPrometheusAuthTokenProps=com.aliyun.ros.cdk.arms.datasource.RosPrometheusAuthTokenProps
+@alicloud/ros-cdk-arms.datasource.RosPrometheusUrl=com.aliyun.ros.cdk.arms.datasource.RosPrometheusUrl
+@alicloud/ros-cdk-arms.datasource.RosPrometheusUrlProps=com.aliyun.ros.cdk.arms.datasource.RosPrometheusUrlProps

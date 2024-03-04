@@ -144,6 +144,10 @@ export interface ShardingInstanceProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mongodb-shardinginstance
  */
 export class ShardingInstance extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ShardingInstanceProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DBInstanceId: The instance id of created mongodb instance.
@@ -167,6 +171,10 @@ export class ShardingInstance extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ShardingInstanceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosShardingInstance = new RosShardingInstance(this, id,  {
             tdeStatus: props.tdeStatus,

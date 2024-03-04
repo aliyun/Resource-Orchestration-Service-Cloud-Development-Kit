@@ -34,11 +34,15 @@ export interface ResourceShareAssociationProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::ResourceShareAssociation`ALIYUN::ROCKETMQ::Instance is used to create a Standard Edition instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::ResourceShareAssociation`, which is used to associate a shared resource or a resource user.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosResourceShareAssociation`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourceshareassociation
  */
 export class ResourceShareAssociation extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ResourceShareAssociationProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ResourceShareId: The ID of the resource share.
@@ -52,6 +56,10 @@ export class ResourceShareAssociation extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ResourceShareAssociationProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosResourceShareAssociation = new RosResourceShareAssociation(this, id,  {
             resourceShareId: props.resourceShareId,

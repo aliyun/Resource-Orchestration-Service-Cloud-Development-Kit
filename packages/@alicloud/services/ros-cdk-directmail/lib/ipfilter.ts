@@ -21,6 +21,10 @@ export interface IpfilterProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-directmail-ipfilter
  */
 export class Ipfilter extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: IpfilterProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CreateTime: Creation time.
@@ -44,6 +48,10 @@ export class Ipfilter extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: IpfilterProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosIpfilter = new RosIpfilter(this, id,  {
             ipAddress: props.ipAddress,

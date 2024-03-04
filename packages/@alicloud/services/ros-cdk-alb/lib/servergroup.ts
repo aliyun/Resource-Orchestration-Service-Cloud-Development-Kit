@@ -83,6 +83,10 @@ export interface ServerGroupProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-servergroup
  */
 export class ServerGroup extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ServerGroupProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ServerGroupId: The ID of the server group.
@@ -96,6 +100,10 @@ export class ServerGroup extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ServerGroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosServerGroup = new RosServerGroup(this, id,  {
             vpcId: props.vpcId,

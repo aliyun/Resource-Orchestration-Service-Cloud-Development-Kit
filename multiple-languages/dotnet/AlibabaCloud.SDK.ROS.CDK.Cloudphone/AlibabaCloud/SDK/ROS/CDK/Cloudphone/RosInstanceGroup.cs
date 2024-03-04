@@ -72,6 +72,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudphone
         }
 
         /// <remarks>
+        /// <strong>Attribute</strong>: PrivateIps: Private IP address list of created cloud phone instances. Only for VPC instance.
+        /// </remarks>
+        [JsiiProperty(name: "attrPrivateIps", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPrivateIps
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
         /// <strong>Attribute</strong>: TradePrice: price
         /// </remarks>
         [JsiiProperty(name: "attrTradePrice", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]

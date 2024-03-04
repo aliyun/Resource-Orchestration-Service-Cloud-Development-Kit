@@ -26,6 +26,10 @@ export interface SchedulesProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fnf-schedules
  */
 export class Schedules extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: SchedulesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ScheduleNames: The list of schedule names.
@@ -44,6 +48,10 @@ export class Schedules extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: SchedulesProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosSchedules = new RosSchedules(this, id,  {
             flowName: props.flowName,

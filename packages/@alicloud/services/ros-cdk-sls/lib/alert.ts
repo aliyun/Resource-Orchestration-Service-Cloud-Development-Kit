@@ -29,6 +29,10 @@ export interface AlertProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-alert
  */
 export class Alert extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AlertProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Name: Alert name.
@@ -42,6 +46,10 @@ export class Alert extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AlertProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAlert = new RosAlert(this, id,  {
             project: props.project,

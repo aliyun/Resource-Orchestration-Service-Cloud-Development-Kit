@@ -21,11 +21,15 @@ export interface AliasProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::KMS::Alias`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::KMS::Alias`, which is used to create an alias for a Customer Master Key (CMK).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAlias`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-alias
  */
 export class Alias extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AliasProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -34,6 +38,10 @@ export class Alias extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AliasProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAlias = new RosAlias(this, id,  {
             aliasName: props.aliasName,

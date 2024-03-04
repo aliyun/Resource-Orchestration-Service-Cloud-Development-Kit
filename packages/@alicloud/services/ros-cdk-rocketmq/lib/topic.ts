@@ -40,11 +40,15 @@ export interface TopicProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ROCKETMQ::Topic`, which is used to create a topic.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ROCKETMQ::Topic`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTopic`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq-topic
  */
 export class Topic extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: TopicProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceId: The ID of the instance.
@@ -68,6 +72,10 @@ export class Topic extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: TopicProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosTopic = new RosTopic(this, id,  {
             instanceId: props.instanceId,

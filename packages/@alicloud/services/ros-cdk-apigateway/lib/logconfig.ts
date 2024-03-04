@@ -26,6 +26,10 @@ export interface LogConfigProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-logconfig
  */
 export class LogConfig extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: LogConfigProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SlsLogStore: Logstore name of SLS
@@ -44,6 +48,10 @@ export class LogConfig extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: LogConfigProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosLogConfig = new RosLogConfig(this, id,  {
             slsLogStore: props.slsLogStore,

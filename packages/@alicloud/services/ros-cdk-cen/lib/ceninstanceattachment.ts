@@ -41,6 +41,10 @@ export interface CenInstanceAttachmentProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-ceninstanceattachment
  */
 export class CenInstanceAttachment extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: CenInstanceAttachmentProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -49,6 +53,10 @@ export class CenInstanceAttachment extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: CenInstanceAttachmentProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCenInstanceAttachment = new RosCenInstanceAttachment(this, id,  {
             childInstanceType: props.childInstanceType,

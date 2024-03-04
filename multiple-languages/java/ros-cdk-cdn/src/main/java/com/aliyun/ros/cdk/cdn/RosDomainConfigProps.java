@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cdn;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cdn-domainconfig
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.082Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:50.252Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cdn.$Module.class, fqn = "@alicloud/ros-cdk-cdn.RosDomainConfigProps")
 @software.amazon.jsii.Jsii.Proxy(RosDomainConfigProps.Jsii$Proxy.class)
 public interface RosDomainConfigProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,7 +16,9 @@ public interface RosDomainConfigProps extends software.amazon.jsii.JsiiSerializa
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Object getFunctions();
+    default @org.jetbrains.annotations.Nullable java.lang.Object getFunctionList() {
+        return null;
+    }
 
     /**
      * @return a {@link Builder} of {@link RosDomainConfigProps}
@@ -29,7 +31,7 @@ public interface RosDomainConfigProps extends software.amazon.jsii.JsiiSerializa
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosDomainConfigProps> {
         java.lang.Object domainNames;
-        java.lang.Object functions;
+        java.lang.Object functionList;
 
         /**
          * Sets the value of {@link RosDomainConfigProps#getDomainNames}
@@ -52,22 +54,22 @@ public interface RosDomainConfigProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
-         * Sets the value of {@link RosDomainConfigProps#getFunctions}
-         * @param functions the value to be set. This parameter is required.
+         * Sets the value of {@link RosDomainConfigProps#getFunctionList}
+         * @param functionList the value to be set.
          * @return {@code this}
          */
-        public Builder functions(java.lang.String functions) {
-            this.functions = functions;
+        public Builder functionList(com.aliyun.ros.cdk.core.IResolvable functionList) {
+            this.functionList = functionList;
             return this;
         }
 
         /**
-         * Sets the value of {@link RosDomainConfigProps#getFunctions}
-         * @param functions the value to be set. This parameter is required.
+         * Sets the value of {@link RosDomainConfigProps#getFunctionList}
+         * @param functionList the value to be set.
          * @return {@code this}
          */
-        public Builder functions(com.aliyun.ros.cdk.core.IResolvable functions) {
-            this.functions = functions;
+        public Builder functionList(java.util.List<? extends java.lang.Object> functionList) {
+            this.functionList = functionList;
             return this;
         }
 
@@ -88,7 +90,7 @@ public interface RosDomainConfigProps extends software.amazon.jsii.JsiiSerializa
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosDomainConfigProps {
         private final java.lang.Object domainNames;
-        private final java.lang.Object functions;
+        private final java.lang.Object functionList;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -97,7 +99,7 @@ public interface RosDomainConfigProps extends software.amazon.jsii.JsiiSerializa
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.domainNames = software.amazon.jsii.Kernel.get(this, "domainNames", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.functions = software.amazon.jsii.Kernel.get(this, "functions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.functionList = software.amazon.jsii.Kernel.get(this, "functionList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -106,7 +108,7 @@ public interface RosDomainConfigProps extends software.amazon.jsii.JsiiSerializa
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.domainNames = java.util.Objects.requireNonNull(builder.domainNames, "domainNames is required");
-            this.functions = java.util.Objects.requireNonNull(builder.functions, "functions is required");
+            this.functionList = builder.functionList;
         }
 
         @Override
@@ -115,8 +117,8 @@ public interface RosDomainConfigProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
-        public final java.lang.Object getFunctions() {
-            return this.functions;
+        public final java.lang.Object getFunctionList() {
+            return this.functionList;
         }
 
         @Override
@@ -126,7 +128,9 @@ public interface RosDomainConfigProps extends software.amazon.jsii.JsiiSerializa
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
             data.set("domainNames", om.valueToTree(this.getDomainNames()));
-            data.set("functions", om.valueToTree(this.getFunctions()));
+            if (this.getFunctionList() != null) {
+                data.set("functionList", om.valueToTree(this.getFunctionList()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-cdn.RosDomainConfigProps"));
@@ -146,13 +150,13 @@ public interface RosDomainConfigProps extends software.amazon.jsii.JsiiSerializa
             RosDomainConfigProps.Jsii$Proxy that = (RosDomainConfigProps.Jsii$Proxy) o;
 
             if (!domainNames.equals(that.domainNames)) return false;
-            return this.functions.equals(that.functions);
+            return this.functionList != null ? this.functionList.equals(that.functionList) : that.functionList == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.domainNames.hashCode();
-            result = 31 * result + (this.functions.hashCode());
+            result = 31 * result + (this.functionList != null ? this.functionList.hashCode() : 0);
             return result;
         }
     }

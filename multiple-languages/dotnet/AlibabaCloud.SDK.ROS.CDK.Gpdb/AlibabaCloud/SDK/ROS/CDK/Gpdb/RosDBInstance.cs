@@ -752,6 +752,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: prodType: Prod type. The value can be: standard, cost-effective. The default value is standard.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "prodType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? ProdType
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: securityIpList: The whitelist of IP addresses that are allowed to access the instance. Default value:
         /// 127.0.0.1.
         /// </remarks>
@@ -1039,7 +1070,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+        /// <strong>Property</strong>: tags: The list of instance tags in the form of key\/value pairs.
+        /// You can define a maximum of 20 tags for instance.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-gpdb.RosDBInstance.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
@@ -1116,7 +1148,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         public interface ITagsProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: key: undefined
+            /// <strong>Property</strong>: key: The keyword of the tag.
             /// </remarks>
             [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             object Key
@@ -1125,7 +1157,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: value: undefined
+            /// <strong>Property</strong>: value: The value of the tag.
             /// </remarks>
             [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1145,7 +1177,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: key: undefined
+                /// <strong>Property</strong>: key: The keyword of the tag.
                 /// </remarks>
                 [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
                 public object Key
@@ -1154,7 +1186,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: value: undefined
+                /// <strong>Property</strong>: value: The value of the tag.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1172,7 +1204,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             private object _key;
 
             /// <remarks>
-            /// <strong>Property</strong>: key: undefined
+            /// <strong>Property</strong>: key: The keyword of the tag.
             /// </remarks>
             [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Key
@@ -1204,7 +1236,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             private object? _value;
 
             /// <remarks>
-            /// <strong>Property</strong>: value: undefined
+            /// <strong>Property</strong>: value: The value of the tag.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

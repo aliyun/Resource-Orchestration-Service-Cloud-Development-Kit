@@ -28,7 +28,7 @@
 		
     
 		
-		<PackageVersion>1.0.22</PackageVersion>
+		<PackageVersion>1.0.23</PackageVersion>
 		
 		
     
@@ -127,7 +127,7 @@
 		
     
 		
-		<EmbeddedResource Include="alicloud-ros-cdk-memcache-1.0.22.tgz"/>
+		<EmbeddedResource Include="alicloud-ros-cdk-memcache-1.0.23.tgz"/>
 		
 		
   

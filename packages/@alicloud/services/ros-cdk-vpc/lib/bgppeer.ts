@@ -29,11 +29,15 @@ export interface BgpPeerProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::BgpPeer`, which is used to add a Border Gateway Protocol (BGP) peer to a specific BGP group.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::BgpPeer`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBgpPeer`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-bgppeer
  */
 export class BgpPeer extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: BgpPeerProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute BgpPeerId: The ID of the BGP peer.
@@ -47,6 +51,10 @@ export class BgpPeer extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: BgpPeerProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosBgpPeer = new RosBgpPeer(this, id,  {
             peerIpAddress: props.peerIpAddress,

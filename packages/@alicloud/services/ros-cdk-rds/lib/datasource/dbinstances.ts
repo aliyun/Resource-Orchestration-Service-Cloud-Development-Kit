@@ -116,6 +116,10 @@ export interface DBInstancesProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-dbinstances
  */
 export class DBInstances extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DBInstancesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DBInstanceIds: The list of The RDS Database instance Ids.
@@ -134,6 +138,10 @@ export class DBInstances extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DBInstancesProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDBInstances = new RosDBInstances(this, id,  {
             dedicatedHostId: props.dedicatedHostId,

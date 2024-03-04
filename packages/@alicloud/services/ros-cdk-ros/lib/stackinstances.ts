@@ -66,6 +66,10 @@ export interface StackInstancesProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-stackinstances
  */
 export class StackInstances extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: StackInstancesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute LastOperationId: undefined
@@ -84,6 +88,10 @@ export class StackInstances extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: StackInstancesProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosStackInstances = new RosStackInstances(this, id,  {
             operationPreferences: props.operationPreferences,

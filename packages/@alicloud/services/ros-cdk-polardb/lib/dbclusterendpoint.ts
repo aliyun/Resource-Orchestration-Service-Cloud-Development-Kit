@@ -52,6 +52,10 @@ export interface DBClusterEndpointProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusterendpoint
  */
 export class DBClusterEndpoint extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DBClusterEndpointProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Addresses: The address items of the db cluster endpoint.
@@ -75,6 +79,10 @@ export class DBClusterEndpoint extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DBClusterEndpointProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDBClusterEndpoint = new RosDBClusterEndpoint(this, id,  {
             autoAddNewNodes: props.autoAddNewNodes === undefined || props.autoAddNewNodes === null ? 'Disable' : props.autoAddNewNodes,

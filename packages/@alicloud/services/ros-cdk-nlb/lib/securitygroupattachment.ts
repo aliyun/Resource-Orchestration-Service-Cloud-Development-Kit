@@ -21,11 +21,15 @@ export interface SecurityGroupAttachmentProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::NLB::SecurityGroupAttachment`DATASOURCE::NLB::LoadBalancers is used to query the basic information about created Network Load Balancer (NLB) instances.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::NLB::SecurityGroupAttachment`, which is used to bind a security group to a Network Load Balancer (NLB) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecurityGroupAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-securitygroupattachment
  */
 export class SecurityGroupAttachment extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: SecurityGroupAttachmentProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -34,6 +38,10 @@ export class SecurityGroupAttachment extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: SecurityGroupAttachmentProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosSecurityGroupAttachment = new RosSecurityGroupAttachment(this, id,  {
             loadBalancerId: props.loadBalancerId,

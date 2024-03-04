@@ -36,6 +36,10 @@ export interface TrafficControlBindingProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-trafficcontrolbinding
  */
 export class TrafficControlBinding extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: TrafficControlBindingProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -44,6 +48,10 @@ export class TrafficControlBinding extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: TrafficControlBindingProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosTrafficControlBinding = new RosTrafficControlBinding(this, id,  {
             stageName: props.stageName,

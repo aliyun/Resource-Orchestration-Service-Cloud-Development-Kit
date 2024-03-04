@@ -16,6 +16,10 @@ export interface ProjectsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-sls-projects
  */
 export class Projects extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ProjectsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ProjectNames: The list of project names.
@@ -34,6 +38,10 @@ export class Projects extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ProjectsProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosProjects = new RosProjects(this, id,  {
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

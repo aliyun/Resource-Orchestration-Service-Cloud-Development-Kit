@@ -1,0 +1,63 @@
+import * as ros from '@alicloud/ros-cdk-core';
+import { RosCommand } from './ecs.generated';
+export { RosCommand as CommandProperty };
+/**
+ * Properties for defining a `Command`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-command
+ */
+export interface CommandProps {
+    /**
+     * Property type: The type of command.
+     */
+    readonly type: string | ros.IResolvable;
+    /**
+     * Property commandContent: The content of command. Content requires base64 encoding. Maximum size support 16KB.
+     */
+    readonly commandContent?: string | ros.IResolvable;
+    /**
+     * Property description: The description of command.
+     */
+    readonly description?: string | ros.IResolvable;
+    /**
+     * Property enableParameter: Specifies whether the script contains custom parameters.
+     * Default value: false
+     */
+    readonly enableParameter?: boolean | ros.IResolvable;
+    /**
+     * Property name: The name of command.
+     */
+    readonly name?: string | ros.IResolvable;
+    /**
+     * Property tags: Tags to attach to command. Max support 20 tags to add during create command. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosCommand.TagsProperty[];
+    /**
+     * Property timeout: Total timeout when the command is executed in the instance. Input the time unit as second. Default is 60s.
+     */
+    readonly timeout?: number | ros.IResolvable;
+    /**
+     * Property workingDir: The path where command will be executed in the instance.
+     */
+    readonly workingDir?: string | ros.IResolvable;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Command`, which is used to create a Cloud Assistant command.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCommand`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-command
+ */
+export declare class Command extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: CommandProps;
+    protected enableResourcePropertyConstraint: boolean;
+    /**
+     * Attribute CommandId: The id of command created.
+     */
+    readonly attrCommandId: ros.IResolvable;
+    /**
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: CommandProps, enableResourcePropertyConstraint?: boolean);
+}

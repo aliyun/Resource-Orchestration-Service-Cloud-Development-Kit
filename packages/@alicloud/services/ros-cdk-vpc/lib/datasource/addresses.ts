@@ -75,11 +75,15 @@ export interface AddressesProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::EIP::Addresses`, which is used to query the information about elastic IP addresses (EIPs).
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::EIP::Addresses`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAddresses`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eip-addresses
  */
 export class Addresses extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AddressesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Addresses: The details about the EIP
@@ -98,6 +102,10 @@ export class Addresses extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AddressesProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAddresses = new RosAddresses(this, id,  {
             segmentInstanceId: props.segmentInstanceId,

@@ -16,6 +16,10 @@ export interface NatGatewayZonesProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-natgatewayzones
  */
 export class NatGatewayZones extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: NatGatewayZonesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ZoneIds: The list of The Zone Ids.
@@ -29,6 +33,10 @@ export class NatGatewayZones extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: NatGatewayZonesProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosNatGatewayZones = new RosNatGatewayZones(this, id,  {
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

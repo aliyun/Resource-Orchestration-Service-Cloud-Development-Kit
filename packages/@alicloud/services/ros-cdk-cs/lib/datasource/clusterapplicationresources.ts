@@ -46,6 +46,10 @@ export interface ClusterApplicationResourcesProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-clusterapplicationresources
  */
 export class ClusterApplicationResources extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ClusterApplicationResourcesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Response: Query result of kubernetes resource(s).
@@ -59,6 +63,10 @@ export class ClusterApplicationResources extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ClusterApplicationResourcesProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosClusterApplicationResources = new RosClusterApplicationResources(this, id,  {
             firstMatch: props.firstMatch === undefined || props.firstMatch === null ? false : props.firstMatch,

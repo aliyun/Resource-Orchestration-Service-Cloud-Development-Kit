@@ -44,11 +44,15 @@ export interface GroupProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::Group`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::Group`, which is used to create a Resource Access Management (RAM) user group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-group
  */
 export class Group extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: GroupProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute GroupName: Id of ram group.
@@ -62,6 +66,10 @@ export class Group extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: GroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosGroup = new RosGroup(this, id,  {
             groupName: props.groupName,

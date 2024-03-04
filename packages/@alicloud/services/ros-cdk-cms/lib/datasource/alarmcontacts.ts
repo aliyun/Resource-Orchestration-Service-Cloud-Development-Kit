@@ -21,6 +21,10 @@ export interface AlarmContactsProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-alarmcontacts
  */
 export class AlarmContacts extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AlarmContactsProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AlarmContactNames: The list of alarm contact names.
@@ -39,6 +43,10 @@ export class AlarmContacts extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AlarmContactsProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAlarmContacts = new RosAlarmContacts(this, id,  {
             alarmContactName: props.alarmContactName,

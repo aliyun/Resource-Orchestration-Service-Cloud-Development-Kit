@@ -46,6 +46,10 @@ export interface NetworkAclProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-networkacl
  */
 export class NetworkAcl extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: NetworkAclProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute NetworkAclEntryName: The name of the inbound rule.
@@ -64,6 +68,10 @@ export class NetworkAcl extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: NetworkAclProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosNetworkAcl = new RosNetworkAcl(this, id,  {
             ingressAclEntries: props.ingressAclEntries,

@@ -21,11 +21,15 @@ export interface TrafficMirrorSessionSourcesAdditionProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::TrafficMirrorSessionSourcesAddition`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::TrafficMirrorSessionSourcesAddition`, which is used to add traffic mirror sources to traffic mirror sessions.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTrafficMirrorSessionSourcesAddition`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-trafficmirrorsessionsourcesaddition
  */
 export class TrafficMirrorSessionSourcesAddition extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: TrafficMirrorSessionSourcesAdditionProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -34,6 +38,10 @@ export class TrafficMirrorSessionSourcesAddition extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: TrafficMirrorSessionSourcesAdditionProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosTrafficMirrorSessionSourcesAddition = new RosTrafficMirrorSessionSourcesAddition(this, id,  {
             trafficMirrorSourceIds: props.trafficMirrorSourceIds,

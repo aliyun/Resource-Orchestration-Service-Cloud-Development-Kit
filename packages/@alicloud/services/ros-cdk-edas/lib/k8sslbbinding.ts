@@ -54,6 +54,10 @@ export interface K8sSlbBindingProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-k8sslbbinding
  */
 export class K8sSlbBinding extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: K8sSlbBindingProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Address: The address of load balancer instance.
@@ -87,6 +91,10 @@ export class K8sSlbBinding extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: K8sSlbBindingProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosK8sSlbBinding = new RosK8sSlbBinding(this, id,  {
             type: props.type,

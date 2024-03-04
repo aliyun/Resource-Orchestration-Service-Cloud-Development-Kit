@@ -26,6 +26,10 @@ export interface VersionProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-version
  */
 export class Version extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: VersionProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ServiceName: The service name
@@ -44,6 +48,10 @@ export class Version extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: VersionProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosVersion = new RosVersion(this, id,  {
             description: props.description,

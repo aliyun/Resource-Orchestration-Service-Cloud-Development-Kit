@@ -424,6 +424,97 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             }
         }
 
+        private object? _connectionDrain;
+
+        /// <summary>Property connectionDrain: Whether to enable graceful connection interruption.</summary>
+        /// <remarks>
+        /// Value:on: turn on
+        /// off: Not turned on
+        /// Note: Only effective TCP listener.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "connectionDrain", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ConnectionDrain
+        {
+            get => _connectionDrain;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _connectionDrain = value;
+            }
+        }
+
+        private object? _connectionDrainTimeout;
+
+        /// <summary>Property connectionDrainTimeout: Set the connection graceful interruption timeout.</summary>
+        /// <remarks>
+        /// Unit: seconds. Value range: 10-900.
+        /// Note: Only effective for TCP listener. When ConnectionDrain is on, this option is required.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "connectionDrainTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ConnectionDrainTimeout
+        {
+            get => _connectionDrainTimeout;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case double cast_cd4240:
+                            break;
+                        case byte cast_cd4240:
+                            break;
+                        case decimal cast_cd4240:
+                            break;
+                        case float cast_cd4240:
+                            break;
+                        case int cast_cd4240:
+                            break;
+                        case long cast_cd4240:
+                            break;
+                        case sbyte cast_cd4240:
+                            break;
+                        case short cast_cd4240:
+                            break;
+                        case uint cast_cd4240:
+                            break;
+                        case ulong cast_cd4240:
+                            break;
+                        case ushort cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _connectionDrainTimeout = value;
+            }
+        }
+
         private object? _description;
 
         /// <summary>Property description: The description of the listener.It must be 1 to 80 characters in length and can contain letters, digits, hyphens (-), forward slashes (\/), periods (.), and underscores (_). Chinese characters are supported.</summary>
@@ -756,6 +847,43 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             }
         }
 
+        private object? _proxyProtocolV2Enabled;
+
+        /// <summary>Property proxyProtocolV2Enabled: Whether to support carrying the client source address to the backend server through the Proxy Protocol.</summary>
+        /// <remarks>
+        /// Value:
+        /// true: Yes
+        /// false (default): No
+        /// Note: Only effective TCP or UDP listener.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "proxyProtocolV2Enabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ProxyProtocolV2Enabled
+        {
+            get => _proxyProtocolV2Enabled;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _proxyProtocolV2Enabled = value;
+            }
+        }
+
         private object? _requestTimeout;
 
         /// <summary>Property requestTimeout: Specify the request timeout in seconds.</summary>
@@ -913,6 +1041,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
                 }
                 _startListener = value;
             }
+        }
+
+        /// <summary>Property tags: Tags to attach to instance.</summary>
+        /// <remarks>
+        /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-slb.RosListener.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        public AlibabaCloud.SDK.ROS.CDK.Slb.RosListener.ITagsProperty[]? Tags
+        {
+            get;
+            set;
         }
 
         private object? _tlsCipherPolicy;

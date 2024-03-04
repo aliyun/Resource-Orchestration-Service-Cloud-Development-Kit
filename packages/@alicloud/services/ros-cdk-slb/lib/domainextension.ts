@@ -37,6 +37,10 @@ export interface DomainExtensionProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-domainextension
  */
 export class DomainExtension extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DomainExtensionProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DomainExtensionId: The ID of the created domain name extension.
@@ -56,6 +60,10 @@ export class DomainExtension extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DomainExtensionProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDomainExtension = new RosDomainExtension(this, id,  {
             listenerPort: props.listenerPort,

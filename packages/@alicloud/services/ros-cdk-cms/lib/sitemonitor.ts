@@ -60,6 +60,10 @@ export interface SiteMonitorProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-sitemonitor
  */
 export class SiteMonitor extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: SiteMonitorProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute TaskId: The ID of the site monitoring task.
@@ -73,6 +77,10 @@ export class SiteMonitor extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: SiteMonitorProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosSiteMonitor = new RosSiteMonitor(this, id,  {
             address: props.address,

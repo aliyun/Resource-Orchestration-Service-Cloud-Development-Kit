@@ -50,16 +50,24 @@ export interface AutoEnableServiceProps {
      * CDTCb: Cloud Data Transfer for Cross Border
      * TransitRouter: Cen Transit Router
      * PAI: Platform of Artificial Intelligence
+     * Config: Cloud Config
+     * TrustedService\/ROS: Trusted Service for ROS
+     * CloudSSO: Cloud SSO
+     *
      */
     readonly serviceName: string | ros.IResolvable;
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ROS::AutoEnableService`ALIYUN::ROS::CustomResource is used to create a custom resource.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ROS::AutoEnableService`, which is used to activate an Alibaba Cloud service.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAutoEnableService`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-autoenableservice
  */
 export class AutoEnableService extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AutoEnableServiceProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -68,6 +76,10 @@ export class AutoEnableService extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AutoEnableServiceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAutoEnableService = new RosAutoEnableService(this, id,  {
             serviceName: props.serviceName,

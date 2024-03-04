@@ -32,6 +32,10 @@ export interface MasterSlaveServerGroupProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-masterslaveservergroup
  */
 export class MasterSlaveServerGroup extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: MasterSlaveServerGroupProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute MasterSlaveServerGroupId: Active/standby server group ID.
@@ -45,6 +49,10 @@ export class MasterSlaveServerGroup extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: MasterSlaveServerGroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosMasterSlaveServerGroup = new RosMasterSlaveServerGroup(this, id,  {
             loadBalancerId: props.loadBalancerId,

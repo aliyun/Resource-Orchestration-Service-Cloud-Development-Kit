@@ -21,11 +21,15 @@ export interface SecretParametersProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::OOS::SecretParameters`, which is used to query encryption parameters.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::OOS::SecretParameters`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecretParameters`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-secretparameters
  */
 export class SecretParameters extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: SecretParametersProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SecretParameterNames: The list of secret parameter names.
@@ -44,6 +48,10 @@ export class SecretParameters extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: SecretParametersProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosSecretParameters = new RosSecretParameters(this, id,  {
             resourceGroupId: props.resourceGroupId,

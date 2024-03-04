@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.eci;
  * <p>
  * A container group is an elastic container instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.121Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:51.497Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.RosContainerGroup")
 public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -126,14 +126,14 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
                 final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
                 if (
-                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.eci.RosContainerGroup.ContainerProperty)
-                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.eci.RosContainerGroup.ContainerProperty)
                     && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
                 ) {
                     throw new IllegalArgumentException(
                         new java.lang.StringBuilder("Expected ")
                             .append("value").append(".get(").append(__idx_ac66f0).append(")")
-                            .append(" to be one of: com.aliyun.ros.cdk.eci.RosContainerGroup.ContainerProperty, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.eci.RosContainerGroup.ContainerProperty; received ")
                             .append(__val_ac66f0.getClass()).toString());
                 }
             }

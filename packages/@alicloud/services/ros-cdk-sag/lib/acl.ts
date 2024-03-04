@@ -22,6 +22,10 @@ export interface ACLProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-acl
  */
 export class Acl extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ACLProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AclId: Access control set ID.
@@ -35,6 +39,10 @@ export class Acl extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ACLProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosACL = new RosACL(this, id,  {
             name: props.name,

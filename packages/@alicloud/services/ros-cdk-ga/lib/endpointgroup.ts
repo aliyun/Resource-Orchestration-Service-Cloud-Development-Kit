@@ -103,6 +103,10 @@ export interface EndpointGroupProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-endpointgroup
  */
 export class EndpointGroup extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: EndpointGroupProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute EndpointGroupId: The ID of the endpoint group.
@@ -116,6 +120,10 @@ export class EndpointGroup extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: EndpointGroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosEndpointGroup = new RosEndpointGroup(this, id,  {
             healthCheckIntervalSeconds: props.healthCheckIntervalSeconds,

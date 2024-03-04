@@ -44,6 +44,10 @@ export interface WorkspaceProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspace
  */
 export class Workspace extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: WorkspaceProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AdminNames: List of administrator account names.
@@ -102,6 +106,10 @@ export class Workspace extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: WorkspaceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosWorkspace = new RosWorkspace(this, id,  {
             description: props.description,

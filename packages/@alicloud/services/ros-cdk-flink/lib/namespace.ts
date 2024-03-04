@@ -31,6 +31,10 @@ export interface NamespaceProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-namespace
  */
 export class Namespace extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: NamespaceProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceId: Instance ID.
@@ -49,6 +53,10 @@ export class Namespace extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: NamespaceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosNamespace = new RosNamespace(this, id,  {
             instanceId: props.instanceId,

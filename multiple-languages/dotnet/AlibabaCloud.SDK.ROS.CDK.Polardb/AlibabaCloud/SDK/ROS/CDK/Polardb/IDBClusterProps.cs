@@ -32,8 +32,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <remarks>
         /// Valid values:
         /// MySQL: 5.6, 5.7 or 8.0
-        /// PostgreSQL: 11
-        /// Oracle: 11
+        /// PostgreSQL: 11, 14
+        /// Oracle: 11, 14
         /// </remarks>
         [JsiiProperty(name: "dbVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object DbVersion
@@ -797,8 +797,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// <remarks>
             /// Valid values:
             /// MySQL: 5.6, 5.7 or 8.0
-            /// PostgreSQL: 11
-            /// Oracle: 11
+            /// PostgreSQL: 11, 14
+            /// Oracle: 11, 14
             /// </remarks>
             [JsiiProperty(name: "dbVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object DbVersion

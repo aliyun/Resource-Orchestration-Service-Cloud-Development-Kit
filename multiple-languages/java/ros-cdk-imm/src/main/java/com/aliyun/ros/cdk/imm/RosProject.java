@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.imm;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::IMM::Project</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::IMM::Project</code>, which is used to create an Intelligent Media Management (IMM) project.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.665Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:52.900Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.imm.$Module.class, fqn = "@alicloud/ros-cdk-imm.RosProject")
 public class RosProject extends com.aliyun.ros.cdk.core.RosResource {
 

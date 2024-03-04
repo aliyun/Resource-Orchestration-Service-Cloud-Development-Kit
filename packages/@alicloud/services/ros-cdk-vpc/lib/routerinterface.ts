@@ -114,6 +114,10 @@ export interface RouterInterfaceProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-routerinterface
  */
 export class RouterInterface extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: RouterInterfaceProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute RouterInterfaceId: The ID of created RouterInterface.
@@ -127,6 +131,10 @@ export class RouterInterface extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: RouterInterfaceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosRouterInterface = new RosRouterInterface(this, id,  {
             oppositeInterfaceId: props.oppositeInterfaceId,

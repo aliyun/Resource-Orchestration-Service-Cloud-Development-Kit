@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Lindorm.Datasource
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::Lindorm::Instances`ALIYUN::MarketPlace::Order is used to purchase resources from Alibaba Cloud Marketplace.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::Lindorm::Instances`, which is used to query the information about Lindorm instances.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstances`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-lindorm-instances
@@ -49,6 +49,34 @@ namespace AlibabaCloud.SDK.ROS.CDK.Lindorm.Datasource
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInstances
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
+        protected virtual bool EnableResourcePropertyConstraint
+        {
+            get => GetInstanceProperty<bool>()!;
+            set => SetInstanceProperty(value);
+        }
+
+        [JsiiProperty(name: "id", typeJson: "{\"primitive\":\"string\"}")]
+        protected virtual string Id
+        {
+            get => GetInstanceProperty<string>()!;
+            set => SetInstanceProperty(value);
+        }
+
+        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-lindorm.datasource.InstancesProps\"}")]
+        protected virtual AlibabaCloud.SDK.ROS.CDK.Lindorm.Datasource.IInstancesProps Props
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Lindorm.Datasource.IInstancesProps>()!;
+            set => SetInstanceProperty(value);
+        }
+
+        [JsiiProperty(name: "scope", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}")]
+        protected virtual AlibabaCloud.SDK.ROS.CDK.Core.Construct Scope
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.Construct>()!;
+            set => SetInstanceProperty(value);
         }
     }
 }

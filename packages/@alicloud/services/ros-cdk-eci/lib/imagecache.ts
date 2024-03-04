@@ -82,6 +82,10 @@ export interface ImageCacheProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eci-imagecache
  */
 export class ImageCache extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ImageCacheProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ImageCacheId: The ID of the image cache.
@@ -95,6 +99,10 @@ export class ImageCache extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ImageCacheProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosImageCache = new RosImageCache(this, id,  {
             imageCacheSize: props.imageCacheSize,

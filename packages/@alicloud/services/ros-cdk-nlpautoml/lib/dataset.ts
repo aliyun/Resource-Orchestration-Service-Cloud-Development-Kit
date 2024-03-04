@@ -31,6 +31,10 @@ export interface DatasetProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlpautoml-dataset
  */
 export class Dataset extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DatasetProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DatasetId: The dataset ID.
@@ -44,6 +48,10 @@ export class Dataset extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DatasetProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDataset = new RosDataset(this, id,  {
             datasetName: props.datasetName,

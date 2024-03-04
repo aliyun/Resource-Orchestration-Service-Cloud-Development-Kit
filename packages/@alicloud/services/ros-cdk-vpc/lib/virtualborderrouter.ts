@@ -69,6 +69,10 @@ export interface VirtualBorderRouterProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-virtualborderrouter
  */
 export class VirtualBorderRouter extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: VirtualBorderRouterProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Name: The name of the VBR.
@@ -97,6 +101,10 @@ export class VirtualBorderRouter extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: VirtualBorderRouterProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosVirtualBorderRouter = new RosVirtualBorderRouter(this, id,  {
             peerGatewayIp: props.peerGatewayIp,

@@ -21,6 +21,10 @@ export interface DomainGroupProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dns-domaingroup
  */
 export class DomainGroup extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DomainGroupProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute GroupId: Domain name group ID
@@ -34,6 +38,10 @@ export class DomainGroup extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DomainGroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDomainGroup = new RosDomainGroup(this, id,  {
             groupName: props.groupName,

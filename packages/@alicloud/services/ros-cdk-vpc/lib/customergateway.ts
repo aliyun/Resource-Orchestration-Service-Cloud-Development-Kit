@@ -33,11 +33,15 @@ export interface CustomerGatewayProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::CustomerGateway`, which is used to create a customer gateway.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::CustomerGateway`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCustomerGateway`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-customergateway
  */
 export class CustomerGateway extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: CustomerGatewayProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CustomerGatewayId: The ID of the user gateway.
@@ -51,6 +55,10 @@ export class CustomerGateway extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: CustomerGatewayProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCustomerGateway = new RosCustomerGateway(this, id,  {
             description: props.description,

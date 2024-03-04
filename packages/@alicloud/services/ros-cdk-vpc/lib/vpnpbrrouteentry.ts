@@ -58,6 +58,10 @@ export interface VpnPbrRouteEntryProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnpbrrouteentry
  */
 export class VpnPbrRouteEntry extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: VpnPbrRouteEntryProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute NextHop: The next hop of the destination route entry.
@@ -86,6 +90,10 @@ export class VpnPbrRouteEntry extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: VpnPbrRouteEntryProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosVpnPbrRouteEntry = new RosVpnPbrRouteEntry(this, id,  {
             description: props.description,

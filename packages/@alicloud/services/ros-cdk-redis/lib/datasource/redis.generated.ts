@@ -55,7 +55,7 @@ function rosAccountsPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::REDIS::Accounts`ALIYUN::ResourceManager::Account is used to create a resource account as a member account.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::REDIS::Accounts`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Accounts` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-accounts
  */
@@ -233,7 +233,7 @@ function rosInstanceClassesPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::REDIS::InstanceClasses`DATASOURCE::REDIS::Instances is used to query the information about ApsaraDB for Redis instances.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::REDIS::InstanceClasses`, which is used to query the types of ApsaraDB for Redis instances.
  * @Note This class does not contain additional functions, so it is recommended to use the `InstanceClasses` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-instanceclasses
  */
@@ -597,7 +597,7 @@ function rosInstancesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::REDIS::Instances`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::REDIS::Instances`, which is used to query the information about ApsaraDB for Redis instances.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instances` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-instances
  */

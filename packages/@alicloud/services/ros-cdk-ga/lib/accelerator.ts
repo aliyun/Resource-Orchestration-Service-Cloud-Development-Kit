@@ -71,6 +71,10 @@ export interface AcceleratorProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-accelerator
  */
 export class Accelerator extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AcceleratorProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AcceleratorId: The ID of the GA instance to query.
@@ -124,6 +128,10 @@ export class Accelerator extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AcceleratorProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAccelerator = new RosAccelerator(this, id,  {
             bandwidthBillingType: props.bandwidthBillingType,

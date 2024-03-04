@@ -64,6 +64,10 @@ export interface VSwitchProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-vswitch
  */
 export class VSwitch extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: VSwitchProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CidrBlock: CIDR Block of created VSwitch
@@ -87,6 +91,10 @@ export class VSwitch extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: VSwitchProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosVSwitch = new RosVSwitch(this, id,  {
             description: props.description,

@@ -241,6 +241,10 @@ export interface ManagedEdgeKubernetesClusterProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managededgekubernetescluster
  */
 export class ManagedEdgeKubernetesCluster extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ManagedEdgeKubernetesClusterProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute APIServerSLBId: The id of API server SLB
@@ -299,6 +303,10 @@ export class ManagedEdgeKubernetesCluster extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ManagedEdgeKubernetesClusterProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosManagedEdgeKubernetesCluster = new RosManagedEdgeKubernetesCluster(this, id,  {
             endpointPublicAccess: props.endpointPublicAccess === undefined || props.endpointPublicAccess === null ? true : props.endpointPublicAccess,

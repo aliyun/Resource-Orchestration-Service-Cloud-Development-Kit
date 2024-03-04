@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.actiontrail;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ACTIONTRAIL::Trail</code>, which is used to create a trail to deliver events to a Log Service Logstore or an Object Storage Service (OSS) bucket.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:13.641Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:49.746Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.actiontrail.$Module.class, fqn = "@alicloud/ros-cdk-actiontrail.Trail")
 public class Trail extends com.aliyun.ros.cdk.core.Resource {
 
@@ -45,6 +45,38 @@ public class Trail extends com.aliyun.ros.cdk.core.Resource {
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrName() {
         return software.amazon.jsii.Kernel.get(this, "attrName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
+        return software.amazon.jsii.Kernel.get(this, "enableResourcePropertyConstraint", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
+    }
+
+    protected void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
+    }
+
+    protected @org.jetbrains.annotations.NotNull java.lang.String getId() {
+        return software.amazon.jsii.Kernel.get(this, "id", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    }
+
+    protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
+    }
+
+    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.actiontrail.TrailProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.actiontrail.TrailProps.class));
+    }
+
+    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.actiontrail.TrailProps value) {
+        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
+    }
+
+    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {
+        return software.amazon.jsii.Kernel.get(this, "scope", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.Construct.class));
+    }
+
+    protected void setScope(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct value) {
+        software.amazon.jsii.Kernel.set(this, "scope", java.util.Objects.requireNonNull(value, "scope is required"));
     }
 
     /**
@@ -103,52 +135,6 @@ public class Trail extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property ossBucketName: The OSS bucket to which the trail delivers logs.
-         * <p>
-         * Ensure that this is an existing OSS bucket.
-         * <p>
-         * @return {@code this}
-         * @param ossBucketName Property ossBucketName: The OSS bucket to which the trail delivers logs. This parameter is required.
-         */
-        public Builder ossBucketName(final java.lang.String ossBucketName) {
-            this.props.ossBucketName(ossBucketName);
-            return this;
-        }
-        /**
-         * Property ossBucketName: The OSS bucket to which the trail delivers logs.
-         * <p>
-         * Ensure that this is an existing OSS bucket.
-         * <p>
-         * @return {@code this}
-         * @param ossBucketName Property ossBucketName: The OSS bucket to which the trail delivers logs. This parameter is required.
-         */
-        public Builder ossBucketName(final com.aliyun.ros.cdk.core.IResolvable ossBucketName) {
-            this.props.ossBucketName(ossBucketName);
-            return this;
-        }
-
-        /**
-         * Property roleName: The RAM role in ActionTrail permitted by the user.
-         * <p>
-         * @return {@code this}
-         * @param roleName Property roleName: The RAM role in ActionTrail permitted by the user. This parameter is required.
-         */
-        public Builder roleName(final java.lang.String roleName) {
-            this.props.roleName(roleName);
-            return this;
-        }
-        /**
-         * Property roleName: The RAM role in ActionTrail permitted by the user.
-         * <p>
-         * @return {@code this}
-         * @param roleName Property roleName: The RAM role in ActionTrail permitted by the user. This parameter is required.
-         */
-        public Builder roleName(final com.aliyun.ros.cdk.core.IResolvable roleName) {
-            this.props.roleName(roleName);
-            return this;
-        }
-
-        /**
          * Property eventRw: Indicates whether the event is a read or a write event.
          * <p>
          * Valid values: Read, Write, and All. Default value: Write.
@@ -174,6 +160,31 @@ public class Trail extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property ossBucketName: The OSS bucket to which the trail delivers logs.
+         * <p>
+         * Ensure that this is an existing OSS bucket.
+         * <p>
+         * @return {@code this}
+         * @param ossBucketName Property ossBucketName: The OSS bucket to which the trail delivers logs. This parameter is required.
+         */
+        public Builder ossBucketName(final java.lang.String ossBucketName) {
+            this.props.ossBucketName(ossBucketName);
+            return this;
+        }
+        /**
+         * Property ossBucketName: The OSS bucket to which the trail delivers logs.
+         * <p>
+         * Ensure that this is an existing OSS bucket.
+         * <p>
+         * @return {@code this}
+         * @param ossBucketName Property ossBucketName: The OSS bucket to which the trail delivers logs. This parameter is required.
+         */
+        public Builder ossBucketName(final com.aliyun.ros.cdk.core.IResolvable ossBucketName) {
+            this.props.ossBucketName(ossBucketName);
+            return this;
+        }
+
+        /**
          * Property ossKeyPrefix: The prefix of the specified OSS bucket name.
          * <p>
          * This parameter can be left empty.
@@ -195,6 +206,27 @@ public class Trail extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder ossKeyPrefix(final com.aliyun.ros.cdk.core.IResolvable ossKeyPrefix) {
             this.props.ossKeyPrefix(ossKeyPrefix);
+            return this;
+        }
+
+        /**
+         * Property roleName: The RAM role in ActionTrail permitted by the user.
+         * <p>
+         * @return {@code this}
+         * @param roleName Property roleName: The RAM role in ActionTrail permitted by the user. This parameter is required.
+         */
+        public Builder roleName(final java.lang.String roleName) {
+            this.props.roleName(roleName);
+            return this;
+        }
+        /**
+         * Property roleName: The RAM role in ActionTrail permitted by the user.
+         * <p>
+         * @return {@code this}
+         * @param roleName Property roleName: The RAM role in ActionTrail permitted by the user. This parameter is required.
+         */
+        public Builder roleName(final com.aliyun.ros.cdk.core.IResolvable roleName) {
+            this.props.roleName(roleName);
             return this;
         }
 

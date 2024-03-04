@@ -51,6 +51,10 @@ export interface ManagedPrometheusProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-managedprometheus
  */
 export class ManagedPrometheus extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ManagedPrometheusProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterType: The type of the cluster.
@@ -69,6 +73,10 @@ export class ManagedPrometheus extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ManagedPrometheusProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosManagedPrometheus = new RosManagedPrometheus(this, id,  {
             vpcId: props.vpcId,

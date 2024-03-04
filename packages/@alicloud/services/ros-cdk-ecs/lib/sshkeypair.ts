@@ -36,6 +36,10 @@ export interface SSHKeyPairProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-sshkeypair
  */
 export class SSHKeyPair extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: SSHKeyPairProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute KeyPairFingerPrint: The fingerprint of the key pair. The public key fingerprint format defined in RFC4716: MD5 message digest algorithm. Refer to http://tools.ietf.org/html/rfc4716.
@@ -59,6 +63,10 @@ export class SSHKeyPair extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: SSHKeyPairProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosSSHKeyPair = new RosSSHKeyPair(this, id,  {
             keyPairName: props.keyPairName,

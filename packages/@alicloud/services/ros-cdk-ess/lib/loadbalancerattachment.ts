@@ -34,11 +34,15 @@ export interface LoadBalancerAttachmentProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::LoadBalancerAttachment`DATASOURCE::ESS::ScalingConfigurations is used to query the details of scaling configurations.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::LoadBalancerAttachment`, which is used to add one or more Server Load Balancer (SLB) instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLoadBalancerAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-loadbalancerattachment
  */
 export class LoadBalancerAttachment extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: LoadBalancerAttachmentProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -47,6 +51,10 @@ export class LoadBalancerAttachment extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: LoadBalancerAttachmentProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosLoadBalancerAttachment = new RosLoadBalancerAttachment(this, id,  {
             scalingGroupId: props.scalingGroupId,

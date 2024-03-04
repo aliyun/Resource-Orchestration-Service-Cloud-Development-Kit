@@ -84,6 +84,10 @@ export interface ListenerProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-listener
  */
 export class Listener extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ListenerProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ListenerId: The ID of the listener.
@@ -97,6 +101,10 @@ export class Listener extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: ListenerProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosListener = new RosListener(this, id,  {
             securityPolicyId: props.securityPolicyId,

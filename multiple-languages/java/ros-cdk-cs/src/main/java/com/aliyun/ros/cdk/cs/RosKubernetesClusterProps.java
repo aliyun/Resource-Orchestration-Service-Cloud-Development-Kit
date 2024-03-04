@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-kubernetescluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.690Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:51.031Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosKubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosKubernetesClusterProps.Jsii$Proxy.class)
 public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -51,12 +51,6 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getChargeType() {
-        return null;
-    }
-
-    /**
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getCisEnabled() {
         return null;
     }
 
@@ -391,7 +385,6 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         java.lang.Object autoRenew;
         java.lang.Object autoRenewPeriod;
         java.lang.Object chargeType;
-        java.lang.Object cisEnabled;
         java.lang.Object cloudMonitorFlags;
         java.lang.Object containerCidr;
         java.lang.Object cpuPolicy;
@@ -622,26 +615,6 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
          */
         public Builder chargeType(com.aliyun.ros.cdk.core.IResolvable chargeType) {
             this.chargeType = chargeType;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosKubernetesClusterProps#getCisEnabled}
-         * @param cisEnabled the value to be set.
-         * @return {@code this}
-         */
-        public Builder cisEnabled(java.lang.Boolean cisEnabled) {
-            this.cisEnabled = cisEnabled;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosKubernetesClusterProps#getCisEnabled}
-         * @param cisEnabled the value to be set.
-         * @return {@code this}
-         */
-        public Builder cisEnabled(com.aliyun.ros.cdk.core.IResolvable cisEnabled) {
-            this.cisEnabled = cisEnabled;
             return this;
         }
 
@@ -1701,7 +1674,6 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         private final java.lang.Object autoRenew;
         private final java.lang.Object autoRenewPeriod;
         private final java.lang.Object chargeType;
-        private final java.lang.Object cisEnabled;
         private final java.lang.Object cloudMonitorFlags;
         private final java.lang.Object containerCidr;
         private final java.lang.Object cpuPolicy;
@@ -1770,7 +1742,6 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
             this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoRenewPeriod = software.amazon.jsii.Kernel.get(this, "autoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.chargeType = software.amazon.jsii.Kernel.get(this, "chargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.cisEnabled = software.amazon.jsii.Kernel.get(this, "cisEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.cloudMonitorFlags = software.amazon.jsii.Kernel.get(this, "cloudMonitorFlags", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.containerCidr = software.amazon.jsii.Kernel.get(this, "containerCidr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.cpuPolicy = software.amazon.jsii.Kernel.get(this, "cpuPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1840,7 +1811,6 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
             this.autoRenew = builder.autoRenew;
             this.autoRenewPeriod = builder.autoRenewPeriod;
             this.chargeType = builder.chargeType;
-            this.cisEnabled = builder.cisEnabled;
             this.cloudMonitorFlags = builder.cloudMonitorFlags;
             this.containerCidr = builder.containerCidr;
             this.cpuPolicy = builder.cpuPolicy;
@@ -1938,11 +1908,6 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         @Override
         public final java.lang.Object getChargeType() {
             return this.chargeType;
-        }
-
-        @Override
-        public final java.lang.Object getCisEnabled() {
-            return this.cisEnabled;
         }
 
         @Override
@@ -2228,9 +2193,6 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
             if (this.getChargeType() != null) {
                 data.set("chargeType", om.valueToTree(this.getChargeType()));
             }
-            if (this.getCisEnabled() != null) {
-                data.set("cisEnabled", om.valueToTree(this.getCisEnabled()));
-            }
             if (this.getCloudMonitorFlags() != null) {
                 data.set("cloudMonitorFlags", om.valueToTree(this.getCloudMonitorFlags()));
             }
@@ -2414,7 +2376,6 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
             if (this.autoRenew != null ? !this.autoRenew.equals(that.autoRenew) : that.autoRenew != null) return false;
             if (this.autoRenewPeriod != null ? !this.autoRenewPeriod.equals(that.autoRenewPeriod) : that.autoRenewPeriod != null) return false;
             if (this.chargeType != null ? !this.chargeType.equals(that.chargeType) : that.chargeType != null) return false;
-            if (this.cisEnabled != null ? !this.cisEnabled.equals(that.cisEnabled) : that.cisEnabled != null) return false;
             if (this.cloudMonitorFlags != null ? !this.cloudMonitorFlags.equals(that.cloudMonitorFlags) : that.cloudMonitorFlags != null) return false;
             if (this.containerCidr != null ? !this.containerCidr.equals(that.containerCidr) : that.containerCidr != null) return false;
             if (this.cpuPolicy != null ? !this.cpuPolicy.equals(that.cpuPolicy) : that.cpuPolicy != null) return false;
@@ -2480,7 +2441,6 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
             result = 31 * result + (this.autoRenew != null ? this.autoRenew.hashCode() : 0);
             result = 31 * result + (this.autoRenewPeriod != null ? this.autoRenewPeriod.hashCode() : 0);
             result = 31 * result + (this.chargeType != null ? this.chargeType.hashCode() : 0);
-            result = 31 * result + (this.cisEnabled != null ? this.cisEnabled.hashCode() : 0);
             result = 31 * result + (this.cloudMonitorFlags != null ? this.cloudMonitorFlags.hashCode() : 0);
             result = 31 * result + (this.containerCidr != null ? this.containerCidr.hashCode() : 0);
             result = 31 * result + (this.cpuPolicy != null ? this.cpuPolicy.hashCode() : 0);

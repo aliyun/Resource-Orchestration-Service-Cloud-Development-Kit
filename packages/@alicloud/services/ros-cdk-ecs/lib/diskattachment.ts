@@ -41,6 +41,10 @@ export interface DiskAttachmentProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-diskattachment
  */
 export class DiskAttachment extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DiskAttachmentProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Device: The device where the volume is exposed on ecs instance.
@@ -64,6 +68,10 @@ export class DiskAttachment extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: DiskAttachmentProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDiskAttachment = new RosDiskAttachment(this, id,  {
             instanceId: props.instanceId,

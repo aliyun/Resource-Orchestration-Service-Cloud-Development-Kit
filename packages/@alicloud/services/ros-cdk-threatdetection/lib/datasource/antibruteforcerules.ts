@@ -16,6 +16,10 @@ export interface AntiBruteForceRulesProps {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-threatdetection-antibruteforcerules
  */
 export class AntiBruteForceRules extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AntiBruteForceRulesProps;
+    protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AntiBruteForceRuleIds: The list of anti brute force rule IDs.
@@ -34,6 +38,10 @@ export class AntiBruteForceRules extends ros.Resource {
      */
     constructor(scope: ros.Construct, id: string, props: AntiBruteForceRulesProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAntiBruteForceRules = new RosAntiBruteForceRules(this, id,  {
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
