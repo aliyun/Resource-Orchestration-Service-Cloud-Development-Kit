@@ -1,0 +1,555 @@
+{
+  "Description": {
+    "en": "Classic architecture on the cloud",
+    "zh-cn": "云上经典架构"
+  },
+  "Metadata": {
+    "ALIYUN::ROS::Interface": {
+      "ParameterGroups": [
+        {
+          "Parameters": [
+            "Zone1",
+            "Zone2"
+          ],
+          "Label": {
+            "default": {
+              "en": "Availability Zone",
+              "zh-cn": "可用区配置"
+            }
+          }
+        },
+        {
+          "Parameters": [
+            "EcsInstanceType1",
+            "EcsInstanceType2",
+            "InstancePassword"
+          ],
+          "Label": {
+            "default": {
+              "en": "Instance",
+              "zh-cn": "ECS实例配置"
+            }
+          }
+        },
+        {
+          "Parameters": [
+            "PolarDBName",
+            "DBNodeClass",
+            "PolarDBAccountName",
+            "PolarDBPassword"
+          ],
+          "Label": {
+            "default": {
+              "en": "PolarDB Information",
+              "zh-cn": "PolarDB配置"
+            }
+          }
+        }
+      ],
+      "TemplateTags": [
+        "acs:technical-solution:high-availability-architecture:云上经典架构-tech_solu_07",
+        "Create by ROS CDK"
+      ],
+      "Hidden": [
+        "CommonName"
+      ]
+    }
+  },
+  "ROSTemplateFormatVersion": "2015-09-01",
+  "Parameters": {
+    "Zone1": {
+      "Type": "String",
+      "Label": "可用区1",
+      "AssociationProperty": "ALIYUN::ECS::Instance::ZoneId",
+      "AssociationPropertyMetadata": {
+        "AutoSelectFirst": true,
+        "ExclusiveTo": [
+          "Zone2"
+        ]
+      }
+    },
+    "Zone2": {
+      "Type": "String",
+      "Label": "可用区2",
+      "AssociationProperty": "ALIYUN::ECS::Instance::ZoneId",
+      "AssociationPropertyMetadata": {
+        "AutoSelectFirst": true,
+        "ExclusiveTo": [
+          "Zone1"
+        ]
+      }
+    },
+    "EcsInstanceType1": {
+      "Type": "String",
+      "Default": "ecs.s6-c1m1.small",
+      "Description": {
+        "en": "If no available specifications are displayed, please select Modify Availability Zone and try again.",
+        "zh-cn": "如果没有可用规格显示，请选择修改可用区后重试。"
+      },
+      "Label": "可用区1对应实例类型",
+      "AssociationProperty": "ALIYUN::ECS::Instance::InstanceType",
+      "AssociationPropertyMetadata": {
+        "InstanceChargeType": "PostPaid",
+        "SpotStrategy": "SpotAsPriceGo",
+        "ZoneId": {
+          "Ref": "Zone1"
+        },
+        "SystemDiskCategory": "cloud_essd"
+      }
+    },
+    "EcsInstanceType2": {
+      "Type": "String",
+      "Default": "ecs.s6-c1m1.small",
+      "Description": {
+        "en": "If no available specifications are displayed, please select Modify Availability Zone and try again.",
+        "zh-cn": "如果没有可用规格显示，请选择修改可用区后重试。"
+      },
+      "Label": "可用区2对应实例类型",
+      "AssociationProperty": "ALIYUN::ECS::Instance::InstanceType",
+      "AssociationPropertyMetadata": {
+        "InstanceChargeType": "PostPaid",
+        "SpotStrategy": "SpotAsPriceGo",
+        "ZoneId": {
+          "Ref": "Zone2"
+        },
+        "SystemDiskCategory": "cloud_essd"
+      }
+    },
+    "InstancePassword": {
+      "Type": "String",
+      "ConstraintDescription": {
+        "en": "Length 8-30, must contain three(Capital letters, lowercase letters, numbers, ()`~!@#$%^&*_-+=|{}[]:;'<>,.?/ Special symbol in)",
+        "zh-cn": "长度8-30，必须包含三项（大写字母、小写字母、数字、 ()`~!@#$%^&*_-+=|{}[]:;'<>,.?/ 中的特殊符号）"
+      },
+      "Description": {
+        "en": "Server login password, Length 8-30, must contain three(Capital letters, lowercase letters, numbers, ()`~!@#$%^&*_-+=|{}[]:;'<>,.?/ Special symbol in)",
+        "zh-cn": "服务器登录密码，长度8-30，必须包含三项（大写字母、小写字母、数字、 ()`~!@#$%^&*_-+=|{}[]:;'<>,.?/ 中的特殊符号）"
+      },
+      "NoEcho": true,
+      "Label": "实例密码",
+      "AssociationProperty": "ALIYUN::ECS::Instance::Password"
+    },
+    "PolarDBName": {
+      "Type": "String",
+      "Default": "wordpress",
+      "Label": "数据库名称"
+    },
+    "DBNodeClass": {
+      "Type": "String",
+      "Default": "polar.mysql.g2.medium",
+      "Label": "PolarDB集群规格"
+    },
+    "PolarDBAccountName": {
+      "Type": "String",
+      "Default": "wordpress",
+      "Label": "数据库登录名"
+    },
+    "PolarDBPassword": {
+      "Type": "String",
+      "AllowedPattern": "^[a-zA-Z](?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+\\-=])[A-Za-z\\d!@#$%^&*()_+\\-=]{8,32}$",
+      "ConstraintDescription": {
+        "en": "There are three types of uppercase and lowercase letters, numbers, and special characters,  with a length of 8~32 characters; the special characters are !@#$%^&*()_+-=",
+        "zh-cn": "大小写字母、数字、特殊字符占三种，长度为8~32个字符；特殊字符为!@#$%^&*()_+-="
+      },
+      "Description": {
+        "en": "Software login password, There are three types of uppercase and lowercase letters,  numbers, and special characters, with a length of 8~32 characters; the special characters are !@#$%^&*()_+-=",
+        "zh-cn": "软件登录密码，大小写字母、数字、特殊字符占三种，长度为8~32个字符；特殊字符为!@#$%^&*()_+-="
+      },
+      "NoEcho": true,
+      "Label": "数据库登录密码"
+    },
+    "CommonName": {
+      "Type": "String",
+      "Default": "high-availability"
+    }
+  },
+  "Resources": {
+    "EcsVpc": {
+      "Type": "ALIYUN::ECS::VPC",
+      "Properties": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableIpv6": false,
+        "VpcName": {
+          "Fn::Sub": "${CommonName}_vpc"
+        }
+      }
+    },
+    "EcsSecurityGroup": {
+      "Type": "ALIYUN::ECS::SecurityGroup",
+      "Properties": {
+        "SecurityGroupEgress": [
+          {
+            "PortRange": "-1/-1",
+            "Priority": 1,
+            "IpProtocol": "all",
+            "DestCidrIp": "0.0.0.0/0",
+            "NicType": "internet"
+          },
+          {
+            "PortRange": "-1/-1",
+            "Priority": 1,
+            "IpProtocol": "all",
+            "DestCidrIp": "0.0.0.0/0",
+            "NicType": "intranet"
+          }
+        ],
+        "SecurityGroupIngress": [
+          {
+            "Priority": 1,
+            "NicType": "internet",
+            "PortRange": "3306/3306",
+            "SourceCidrIp": "0.0.0.0/0",
+            "IpProtocol": "tcp"
+          },
+          {
+            "Priority": 1,
+            "NicType": "internet",
+            "PortRange": "22/22",
+            "SourceCidrIp": "0.0.0.0/0",
+            "IpProtocol": "tcp"
+          },
+          {
+            "Priority": 1,
+            "NicType": "internet",
+            "PortRange": "80/80",
+            "SourceCidrIp": "0.0.0.0/0",
+            "IpProtocol": "tcp"
+          },
+          {
+            "Priority": 1,
+            "NicType": "internet",
+            "PortRange": "443/443",
+            "SourceCidrIp": "0.0.0.0/0",
+            "IpProtocol": "tcp"
+          }
+        ],
+        "SecurityGroupName": {
+          "Fn::Sub": "${CommonName}_sg"
+        },
+        "VpcId": {
+          "Ref": "EcsVpc"
+        }
+      }
+    },
+    "EcsInstance1": {
+      "Type": "ALIYUN::ECS::Instance",
+      "Properties": {
+        "InstanceType": {
+          "Ref": "EcsInstanceType1"
+        },
+        "AllocatePublicIP": true,
+        "AutoRenew": "False",
+        "AutoRenewPeriod": 1,
+        "ImageId": "centos_7_9",
+        "InstanceChargeType": "PostPaid",
+        "InstanceName": {
+          "Fn::Sub": "${CommonName}_ecs_1"
+        },
+        "InternetChargeType": "PayByTraffic",
+        "InternetMaxBandwidthOut": 1,
+        "IoOptimized": "optimized",
+        "Password": {
+          "Ref": "InstancePassword"
+        },
+        "Period": 1,
+        "PeriodUnit": "Month",
+        "SecurityGroupId": {
+          "Ref": "EcsSecurityGroup"
+        },
+        "SpotInterruptionBehavior": "Terminate",
+        "SpotStrategy": "SpotAsPriceGo",
+        "SystemDiskCategory": "cloud_essd",
+        "SystemDiskSize": 20,
+        "VpcId": {
+          "Ref": "EcsVpc"
+        },
+        "VSwitchId": {
+          "Fn::GetAtt": [
+            "AutoCreatedVSwitchForEcsInstance1",
+            "VSwitchId"
+          ]
+        },
+        "ZoneId": {
+          "Ref": "Zone1"
+        }
+      }
+    },
+    "AutoCreatedVSwitchForEcsInstance1": {
+      "Type": "ALIYUN::ECS::VSwitch",
+      "Properties": {
+        "CidrBlock": "192.168.1.0/24",
+        "VpcId": {
+          "Ref": "EcsVpc"
+        },
+        "ZoneId": {
+          "Ref": "Zone1"
+        },
+        "Description": "This is auto created by ROS-CDK."
+      }
+    },
+    "EcsInstance2": {
+      "Type": "ALIYUN::ECS::Instance",
+      "Properties": {
+        "InstanceType": {
+          "Ref": "EcsInstanceType2"
+        },
+        "AllocatePublicIP": true,
+        "AutoRenew": "False",
+        "AutoRenewPeriod": 1,
+        "ImageId": "centos_7_9",
+        "InstanceChargeType": "PostPaid",
+        "InstanceName": {
+          "Fn::Sub": "${CommonName}_ecs_2"
+        },
+        "InternetChargeType": "PayByTraffic",
+        "InternetMaxBandwidthOut": 1,
+        "IoOptimized": "optimized",
+        "Password": {
+          "Ref": "InstancePassword"
+        },
+        "Period": 1,
+        "PeriodUnit": "Month",
+        "SecurityGroupId": {
+          "Ref": "EcsSecurityGroup"
+        },
+        "SpotInterruptionBehavior": "Terminate",
+        "SpotStrategy": "SpotAsPriceGo",
+        "SystemDiskCategory": "cloud_essd",
+        "SystemDiskSize": 20,
+        "VpcId": {
+          "Ref": "EcsVpc"
+        },
+        "VSwitchId": {
+          "Fn::GetAtt": [
+            "AutoCreatedVSwitchForEcsInstance2",
+            "VSwitchId"
+          ]
+        },
+        "ZoneId": {
+          "Ref": "Zone2"
+        }
+      }
+    },
+    "AutoCreatedVSwitchForEcsInstance2": {
+      "Type": "ALIYUN::ECS::VSwitch",
+      "Properties": {
+        "CidrBlock": "192.168.2.0/24",
+        "VpcId": {
+          "Ref": "EcsVpc"
+        },
+        "ZoneId": {
+          "Ref": "Zone2"
+        },
+        "Description": "This is auto created by ROS-CDK."
+      }
+    },
+    "InstanceRunCommand": {
+      "Type": "ALIYUN::ECS::RunCommand",
+      "Properties": {
+        "CommandContent": {
+          "Fn::Sub": "#!/bin/bash\nyum install docker -y\nsystemctl start docker\nsystemctl enable docker.service\ndocker pull docker.io/library/wordpress:5.6\nmkdir /wordpress\ndocker run --name my-blog --restart=always -v /wordpress:/var/www/html -p 80:80 -d --env WORDPRESS_DB_HOST=${PolarDBCluster.ClusterConnectionString} --env WORDPRESS_DB_USER=${PolarDBAccountName} --env WORDPRESS_DB_PASSWORD=${PolarDBPassword} --env WORDPRESS_DB_NAME=${PolarDBName} wordpress:5.6"
+        },
+        "InstanceIds": [
+          {
+            "Ref": "EcsInstance1"
+          },
+          {
+            "Ref": "EcsInstance2"
+          }
+        ],
+        "Type": "RunShellScript",
+        "Sync": true,
+        "Timeout": 300
+      }
+    },
+    "PolarDBCluster": {
+      "Type": "ALIYUN::POLARDB::DBCluster",
+      "Properties": {
+        "DBNodeClass": {
+          "Ref": "DBNodeClass"
+        },
+        "DBType": "MySQL",
+        "DBVersion": "8.0",
+        "PayType": "Postpaid",
+        "AutoRenewPeriod": 1,
+        "CloneDataPoint": "LATEST",
+        "ClusterNetworkType": "VPC",
+        "CreationOption": "Normal",
+        "RenewalStatus": "Normal",
+        "SecurityGroupIds": [
+          {
+            "Ref": "EcsSecurityGroup"
+          }
+        ],
+        "SecurityIPList": "192.168.0.0/16",
+        "VpcId": {
+          "Ref": "EcsVpc"
+        },
+        "VSwitchId": {
+          "Ref": "AutoCreatedVSwitchForEcsInstance2"
+        },
+        "ZoneId": {
+          "Ref": "Zone2"
+        }
+      }
+    },
+    "PolarDBInstance": {
+      "Type": "ALIYUN::POLARDB::DBInstance",
+      "Properties": {
+        "CharacterSetName": "utf8mb4",
+        "DBClusterId": {
+          "Ref": "PolarDBCluster"
+        },
+        "DBName": {
+          "Ref": "PolarDBName"
+        },
+        "AccountPrivilege": "ReadWrite"
+      }
+    },
+    "PolarDBAccount": {
+      "Type": "ALIYUN::POLARDB::Account",
+      "Properties": {
+        "AccountName": {
+          "Ref": "PolarDBAccountName"
+        },
+        "AccountPassword": {
+          "Ref": "PolarDBPassword"
+        },
+        "DBClusterId": {
+          "Ref": "PolarDBCluster"
+        },
+        "AccountPrivilege": "ReadWrite",
+        "AccountType": "Normal",
+        "DBName": {
+          "Ref": "PolarDBInstance"
+        }
+      }
+    },
+    "AlbLoadBalancer": {
+      "Type": "ALIYUN::ALB::LoadBalancer",
+      "Properties": {
+        "AddressType": "Internet",
+        "LoadBalancerBillingConfig": {
+          "PayType": "PostPay"
+        },
+        "LoadBalancerEdition": "Basic",
+        "LoadBalancerName": {
+          "Fn::Sub": "${CommonName}_alb"
+        },
+        "VpcId": {
+          "Ref": "EcsVpc"
+        },
+        "ZoneMappings": [
+          {
+            "ZoneId": {
+              "Ref": "Zone1"
+            },
+            "VSwitchId": {
+              "Ref": "AutoCreatedVSwitchForEcsInstance1"
+            }
+          },
+          {
+            "ZoneId": {
+              "Ref": "Zone2"
+            },
+            "VSwitchId": {
+              "Ref": "AutoCreatedVSwitchForEcsInstance2"
+            }
+          }
+        ],
+        "AddressAllocatedMode": "Dynamic"
+      }
+    },
+    "AlbServerGroup": {
+      "Type": "ALIYUN::ALB::ServerGroup",
+      "Properties": {
+        "HealthCheckConfig": {
+          "HealthCheckCodes": [
+            "http_2xx",
+            "http_3xx"
+          ],
+          "HealthCheckPath": "/",
+          "HealthCheckProtocol": "HTTP",
+          "HealthCheckEnabled": true
+        },
+        "ServerGroupName": {
+          "Fn::Sub": "${CommonName}_server_group"
+        },
+        "VpcId": {
+          "Ref": "EcsVpc"
+        },
+        "StickySessionConfig": {
+          "StickySessionEnabled": false
+        }
+      }
+    },
+    "ServerAttachment": {
+      "Type": "ALIYUN::ALB::BackendServerAttachment",
+      "Properties": {
+        "ServerGroupId": {
+          "Ref": "AlbServerGroup"
+        },
+        "Servers": [
+          {
+            "ServerType": "Ecs",
+            "ServerId": {
+              "Ref": "EcsInstance1"
+            },
+            "Port": 80,
+            "Weight": 100
+          },
+          {
+            "ServerType": "Ecs",
+            "ServerId": {
+              "Ref": "EcsInstance2"
+            },
+            "Port": 80,
+            "Weight": 100
+          }
+        ]
+      }
+    },
+    "AlbListener": {
+      "Type": "ALIYUN::ALB::Listener",
+      "Properties": {
+        "DefaultActions": [
+          {
+            "Type": "ForwardGroup",
+            "ForwardGroupConfig": {
+              "ServerGroupTuples": [
+                {
+                  "ServerGroupId": {
+                    "Ref": "AlbServerGroup"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "ListenerPort": 80,
+        "ListenerProtocol": "HTTP",
+        "LoadBalancerId": {
+          "Ref": "AlbLoadBalancer"
+        }
+      }
+    }
+  },
+  "Outputs": {
+    "WordPressUrl": {
+      "Description": "WordPress 访问地址",
+      "Value": {
+        "Fn::Sub": [
+          "http://${AlbDnsName}",
+          {
+            "AlbDnsName": {
+              "Fn::GetAtt": [
+                "AlbLoadBalancer",
+                "DNSName"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

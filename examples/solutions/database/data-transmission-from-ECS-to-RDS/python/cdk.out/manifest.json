@@ -1,0 +1,369 @@
+{
+  "version": "6.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "data-transmission-from-ecs-to-rds-created-by-cdk": {
+      "type": "aliyun:ros:stack",
+      "properties": {
+        "templateFile": "data-transmission-from-ecs-to-rds-created-by-cdk.template.json"
+      },
+      "dependencies": [
+        "data-transmission-from-ecs-to-rds-created-by-cdk.assets"
+      ],
+      "metadata": {
+        "/data-transmission-from-ecs-to-rds-created-by-cdk/ROSTemplateFormatVersion": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "ROSTemplateFormatVersion",
+            "trace": [
+              "new Stack (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/jsii-kernel-iTMJTE/node_modules/@alicloud/ros-cdk-core/lib/stack.js:80:9)",
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/data-transmission-from-ecs-to-rds-created-by-cdk/Description": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "Description",
+            "trace": [
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/data-transmission-from-ecs-to-rds-created-by-cdk/ZoneId": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "ZoneId",
+            "trace": [
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/data-transmission-from-ecs-to-rds-created-by-cdk/EcsInstanceType": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "EcsInstanceType",
+            "trace": [
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/data-transmission-from-ecs-to-rds-created-by-cdk/InstancePassword": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "InstancePassword",
+            "trace": [
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/data-transmission-from-ecs-to-rds-created-by-cdk/DBInstanceEngineAndVersion": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "DBInstanceEngineAndVersion",
+            "trace": [
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/data-transmission-from-ecs-to-rds-created-by-cdk/DBInstanceClass": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "DBInstanceClass",
+            "trace": [
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/data-transmission-from-ecs-to-rds-created-by-cdk/DBUserName": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "DBUserName",
+            "trace": [
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/data-transmission-from-ecs-to-rds-created-by-cdk/DBPassword": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "DBPassword",
+            "trace": [
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/data-transmission-from-ecs-to-rds-created-by-cdk/WaitConditionHandle/WaitConditionHandle": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "WaitConditionHandle",
+            "trace": [
+              "new WaitConditionHandle (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/jsii-kernel-iTMJTE/node_modules/@alicloud/ros-cdk-ros/lib/waitconditionhandle.js:24:40)",
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/data-transmission-from-ecs-to-rds-created-by-cdk/WaitCondition/WaitCondition": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "WaitCondition",
+            "trace": [
+              "new WaitCondition (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/jsii-kernel-iTMJTE/node_modules/@alicloud/ros-cdk-ros/lib/waitcondition.js:24:34)",
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/data-transmission-from-ecs-to-rds-created-by-cdk/Vpc/Vpc": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "Vpc",
+            "trace": [
+              "new Vpc (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/jsii-kernel-iTMJTE/node_modules/@alicloud/ros-cdk-ecs/lib/vpc.js:24:24)",
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/data-transmission-from-ecs-to-rds-created-by-cdk/VSwitch/VSwitch": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "VSwitch",
+            "trace": [
+              "new VSwitch (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/jsii-kernel-iTMJTE/node_modules/@alicloud/ros-cdk-ecs/lib/vswitch.js:24:28)",
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/data-transmission-from-ecs-to-rds-created-by-cdk/SecurityGroup/SecurityGroup": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "SecurityGroup",
+            "trace": [
+              "new SecurityGroup (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/jsii-kernel-iTMJTE/node_modules/@alicloud/ros-cdk-ecs/lib/securitygroup.js:24:34)",
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/data-transmission-from-ecs-to-rds-created-by-cdk/SecurityGroupIngress/SecurityGroupIngress": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "SecurityGroupIngress",
+            "trace": [
+              "new SecurityGroupIngress (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/jsii-kernel-iTMJTE/node_modules/@alicloud/ros-cdk-ecs/lib/securitygroupingress.js:24:41)",
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/data-transmission-from-ecs-to-rds-created-by-cdk/Webserver/Webserver": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "Webserver",
+            "trace": [
+              "new Instance (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/jsii-kernel-iTMJTE/node_modules/@alicloud/ros-cdk-ecs/lib/instance.js:27:29)",
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/data-transmission-from-ecs-to-rds-created-by-cdk/Eip/Eip": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "Eip",
+            "trace": [
+              "new Eip (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/jsii-kernel-iTMJTE/node_modules/@alicloud/ros-cdk-vpc/lib/eip.js:24:24)",
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/data-transmission-from-ecs-to-rds-created-by-cdk/EipAssociation/EipAssociation": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "EipAssociation",
+            "trace": [
+              "new EIPAssociation (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/jsii-kernel-iTMJTE/node_modules/@alicloud/ros-cdk-vpc/lib/eipassociation.js:24:35)",
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/data-transmission-from-ecs-to-rds-created-by-cdk/Database/Database": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "Database",
+            "trace": [
+              "new DBInstance (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/jsii-kernel-iTMJTE/node_modules/@alicloud/ros-cdk-rds/lib/dbinstance.js:24:31)",
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/data-transmission-from-ecs-to-rds-created-by-cdk/ECSWordPressUrl": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "ECSWordPressUrl",
+            "trace": [
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/data-transmission-from-ecs-to-rds-created-by-cdk/ECSInstanceUser": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "ECSInstanceUser",
+            "trace": [
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/data-transmission-from-ecs-to-rds-created-by-cdk/WPUserForSQL": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "WPUserForSQL",
+            "trace": [
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/data-transmission-from-ecs-to-rds-created-by-cdk/WPUserForDTS": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "WPUserForDTS",
+            "trace": [
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/data-transmission-from-ecs-to-rds-created-by-cdk/RDSUserDTS": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "RDSUserDTS",
+            "trace": [
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpgpac66px/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

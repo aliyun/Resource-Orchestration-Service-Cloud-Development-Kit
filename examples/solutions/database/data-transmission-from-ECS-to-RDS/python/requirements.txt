@@ -1,0 +1,5 @@
+ros-cdk-core>=1.0.25
+ros-cdk-ecs>=1.0.23
+ros-cdk-rds>=1.0.23
+ros-cdk-ros>=1.0.23
+ros-cdk-vpc>=1.0.23

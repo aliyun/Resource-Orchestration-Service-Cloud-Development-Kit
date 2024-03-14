@@ -1,0 +1,433 @@
+{
+  "version": "6.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "classic-architecture-on-the-cloud-created-by-cdk": {
+      "type": "aliyun:ros:stack",
+      "properties": {
+        "templateFile": "classic-architecture-on-the-cloud-created-by-cdk.template.json"
+      },
+      "dependencies": [
+        "classic-architecture-on-the-cloud-created-by-cdk.assets"
+      ],
+      "metadata": {
+        "/classic-architecture-on-the-cloud-created-by-cdk/ROSTemplateFormatVersion": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "ROSTemplateFormatVersion",
+            "trace": [
+              "new Stack (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/jsii-kernel-rvUNhz/node_modules/@alicloud/ros-cdk-core/lib/stack.js:80:9)",
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/classic-architecture-on-the-cloud-created-by-cdk/Description": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "Description",
+            "trace": [
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/classic-architecture-on-the-cloud-created-by-cdk/Zone1": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "Zone1",
+            "trace": [
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/classic-architecture-on-the-cloud-created-by-cdk/Zone2": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "Zone2",
+            "trace": [
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/classic-architecture-on-the-cloud-created-by-cdk/EcsInstanceType1": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "EcsInstanceType1",
+            "trace": [
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/classic-architecture-on-the-cloud-created-by-cdk/EcsInstanceType2": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "EcsInstanceType2",
+            "trace": [
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/classic-architecture-on-the-cloud-created-by-cdk/InstancePassword": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "InstancePassword",
+            "trace": [
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/classic-architecture-on-the-cloud-created-by-cdk/PolarDBName": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "PolarDBName",
+            "trace": [
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/classic-architecture-on-the-cloud-created-by-cdk/DBNodeClass": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "DBNodeClass",
+            "trace": [
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/classic-architecture-on-the-cloud-created-by-cdk/PolarDBAccountName": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "PolarDBAccountName",
+            "trace": [
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/classic-architecture-on-the-cloud-created-by-cdk/PolarDBPassword": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "PolarDBPassword",
+            "trace": [
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/classic-architecture-on-the-cloud-created-by-cdk/CommonName": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "CommonName",
+            "trace": [
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/classic-architecture-on-the-cloud-created-by-cdk/Metadata": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "Metadata",
+            "trace": [
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/classic-architecture-on-the-cloud-created-by-cdk/EcsVpc/EcsVpc": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "EcsVpc",
+            "trace": [
+              "new Vpc (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/jsii-kernel-rvUNhz/node_modules/@alicloud/ros-cdk-ecs/lib/vpc.js:24:24)",
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/classic-architecture-on-the-cloud-created-by-cdk/EcsSecurityGroup/EcsSecurityGroup": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "EcsSecurityGroup",
+            "trace": [
+              "new SecurityGroup (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/jsii-kernel-rvUNhz/node_modules/@alicloud/ros-cdk-ecs/lib/securitygroup.js:24:34)",
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/classic-architecture-on-the-cloud-created-by-cdk/EcsInstance1/EcsInstance1": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "EcsInstance1",
+            "trace": [
+              "new Instance (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/jsii-kernel-rvUNhz/node_modules/@alicloud/ros-cdk-ecs/lib/instance.js:27:29)",
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/classic-architecture-on-the-cloud-created-by-cdk/AutoCreatedVSwitchForEcsInstance1/AutoCreatedVSwitchForEcsInstance1": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "AutoCreatedVSwitchForEcsInstance1",
+            "trace": [
+              "new VSwitch (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/jsii-kernel-rvUNhz/node_modules/@alicloud/ros-cdk-ecs/lib/vswitch.js:24:28)",
+              "Instance.autoCreateDependencies (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/jsii-kernel-rvUNhz/node_modules/@alicloud/ros-cdk-ecs/lib/instance.js:131:23)",
+              "/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9769:105",
+              "Kernel._ensureSync (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:10358:28)",
+              "Kernel.invoke (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9769:34)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/classic-architecture-on-the-cloud-created-by-cdk/EcsInstance2/EcsInstance2": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "EcsInstance2",
+            "trace": [
+              "new Instance (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/jsii-kernel-rvUNhz/node_modules/@alicloud/ros-cdk-ecs/lib/instance.js:27:29)",
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/classic-architecture-on-the-cloud-created-by-cdk/AutoCreatedVSwitchForEcsInstance2/AutoCreatedVSwitchForEcsInstance2": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "AutoCreatedVSwitchForEcsInstance2",
+            "trace": [
+              "new VSwitch (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/jsii-kernel-rvUNhz/node_modules/@alicloud/ros-cdk-ecs/lib/vswitch.js:24:28)",
+              "Instance.autoCreateDependencies (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/jsii-kernel-rvUNhz/node_modules/@alicloud/ros-cdk-ecs/lib/instance.js:131:23)",
+              "/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9769:105",
+              "Kernel._ensureSync (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:10358:28)",
+              "Kernel.invoke (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9769:34)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/classic-architecture-on-the-cloud-created-by-cdk/InstanceRunCommand/InstanceRunCommand": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "InstanceRunCommand",
+            "trace": [
+              "new RunCommand (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/jsii-kernel-rvUNhz/node_modules/@alicloud/ros-cdk-ecs/lib/runcommand.js:24:31)",
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/classic-architecture-on-the-cloud-created-by-cdk/PolarDBCluster/PolarDBCluster": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "PolarDBCluster",
+            "trace": [
+              "new DBCluster (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/jsii-kernel-rvUNhz/node_modules/@alicloud/ros-cdk-polardb/lib/dbcluster.js:24:30)",
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/classic-architecture-on-the-cloud-created-by-cdk/PolarDBInstance/PolarDBInstance": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "PolarDBInstance",
+            "trace": [
+              "new DBInstance (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/jsii-kernel-rvUNhz/node_modules/@alicloud/ros-cdk-polardb/lib/dbinstance.js:24:31)",
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/classic-architecture-on-the-cloud-created-by-cdk/PolarDBAccount/PolarDBAccount": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "PolarDBAccount",
+            "trace": [
+              "new Account (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/jsii-kernel-rvUNhz/node_modules/@alicloud/ros-cdk-polardb/lib/account.js:24:28)",
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/classic-architecture-on-the-cloud-created-by-cdk/AlbLoadBalancer/AlbLoadBalancer": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "AlbLoadBalancer",
+            "trace": [
+              "new LoadBalancer (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/jsii-kernel-rvUNhz/node_modules/@alicloud/ros-cdk-alb/lib/loadbalancer.js:24:33)",
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/classic-architecture-on-the-cloud-created-by-cdk/AlbServerGroup/AlbServerGroup": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "AlbServerGroup",
+            "trace": [
+              "new ServerGroup (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/jsii-kernel-rvUNhz/node_modules/@alicloud/ros-cdk-alb/lib/servergroup.js:24:32)",
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/classic-architecture-on-the-cloud-created-by-cdk/ServerAttachment/ServerAttachment": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "ServerAttachment",
+            "trace": [
+              "new BackendServerAttachment (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/jsii-kernel-rvUNhz/node_modules/@alicloud/ros-cdk-alb/lib/backendserverattachment.js:24:44)",
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/classic-architecture-on-the-cloud-created-by-cdk/AlbListener/AlbListener": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "AlbListener",
+            "trace": [
+              "new Listener (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/jsii-kernel-rvUNhz/node_modules/@alicloud/ros-cdk-alb/lib/listener.js:24:29)",
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/classic-architecture-on-the-cloud-created-by-cdk/WordPressUrl": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "WordPressUrl",
+            "trace": [
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpf04bupdo/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
