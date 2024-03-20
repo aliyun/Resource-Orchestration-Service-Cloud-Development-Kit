@@ -1,0 +1,215 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree"
+      },
+      "classic-architecture-on-the-cloud-created-by-cdk": {
+        "id": "classic-architecture-on-the-cloud-created-by-cdk",
+        "path": "classic-architecture-on-the-cloud-created-by-cdk",
+        "children": {
+          "ROSTemplateFormatVersion": {
+            "id": "ROSTemplateFormatVersion",
+            "path": "classic-architecture-on-the-cloud-created-by-cdk/ROSTemplateFormatVersion"
+          },
+          "Description": {
+            "id": "Description",
+            "path": "classic-architecture-on-the-cloud-created-by-cdk/Description"
+          },
+          "Zone1": {
+            "id": "Zone1",
+            "path": "classic-architecture-on-the-cloud-created-by-cdk/Zone1"
+          },
+          "Zone2": {
+            "id": "Zone2",
+            "path": "classic-architecture-on-the-cloud-created-by-cdk/Zone2"
+          },
+          "EcsInstanceType1": {
+            "id": "EcsInstanceType1",
+            "path": "classic-architecture-on-the-cloud-created-by-cdk/EcsInstanceType1"
+          },
+          "EcsInstanceType2": {
+            "id": "EcsInstanceType2",
+            "path": "classic-architecture-on-the-cloud-created-by-cdk/EcsInstanceType2"
+          },
+          "InstancePassword": {
+            "id": "InstancePassword",
+            "path": "classic-architecture-on-the-cloud-created-by-cdk/InstancePassword"
+          },
+          "PolarDBName": {
+            "id": "PolarDBName",
+            "path": "classic-architecture-on-the-cloud-created-by-cdk/PolarDBName"
+          },
+          "DBNodeClass": {
+            "id": "DBNodeClass",
+            "path": "classic-architecture-on-the-cloud-created-by-cdk/DBNodeClass"
+          },
+          "PolarDBAccountName": {
+            "id": "PolarDBAccountName",
+            "path": "classic-architecture-on-the-cloud-created-by-cdk/PolarDBAccountName"
+          },
+          "PolarDBPassword": {
+            "id": "PolarDBPassword",
+            "path": "classic-architecture-on-the-cloud-created-by-cdk/PolarDBPassword"
+          },
+          "CommonName": {
+            "id": "CommonName",
+            "path": "classic-architecture-on-the-cloud-created-by-cdk/CommonName"
+          },
+          "Metadata": {
+            "id": "Metadata",
+            "path": "classic-architecture-on-the-cloud-created-by-cdk/Metadata"
+          },
+          "EcsVpc": {
+            "id": "EcsVpc",
+            "path": "classic-architecture-on-the-cloud-created-by-cdk/EcsVpc",
+            "children": {
+              "EcsVpc": {
+                "id": "EcsVpc",
+                "path": "classic-architecture-on-the-cloud-created-by-cdk/EcsVpc/EcsVpc"
+              }
+            }
+          },
+          "EcsSecurityGroup": {
+            "id": "EcsSecurityGroup",
+            "path": "classic-architecture-on-the-cloud-created-by-cdk/EcsSecurityGroup",
+            "children": {
+              "EcsSecurityGroup": {
+                "id": "EcsSecurityGroup",
+                "path": "classic-architecture-on-the-cloud-created-by-cdk/EcsSecurityGroup/EcsSecurityGroup"
+              }
+            }
+          },
+          "EcsInstance1": {
+            "id": "EcsInstance1",
+            "path": "classic-architecture-on-the-cloud-created-by-cdk/EcsInstance1",
+            "children": {
+              "EcsInstance1": {
+                "id": "EcsInstance1",
+                "path": "classic-architecture-on-the-cloud-created-by-cdk/EcsInstance1/EcsInstance1"
+              }
+            }
+          },
+          "AutoCreatedVSwitchForEcsInstance1": {
+            "id": "AutoCreatedVSwitchForEcsInstance1",
+            "path": "classic-architecture-on-the-cloud-created-by-cdk/AutoCreatedVSwitchForEcsInstance1",
+            "children": {
+              "AutoCreatedVSwitchForEcsInstance1": {
+                "id": "AutoCreatedVSwitchForEcsInstance1",
+                "path": "classic-architecture-on-the-cloud-created-by-cdk/AutoCreatedVSwitchForEcsInstance1/AutoCreatedVSwitchForEcsInstance1"
+              }
+            }
+          },
+          "EcsInstance2": {
+            "id": "EcsInstance2",
+            "path": "classic-architecture-on-the-cloud-created-by-cdk/EcsInstance2",
+            "children": {
+              "EcsInstance2": {
+                "id": "EcsInstance2",
+                "path": "classic-architecture-on-the-cloud-created-by-cdk/EcsInstance2/EcsInstance2"
+              }
+            }
+          },
+          "AutoCreatedVSwitchForEcsInstance2": {
+            "id": "AutoCreatedVSwitchForEcsInstance2",
+            "path": "classic-architecture-on-the-cloud-created-by-cdk/AutoCreatedVSwitchForEcsInstance2",
+            "children": {
+              "AutoCreatedVSwitchForEcsInstance2": {
+                "id": "AutoCreatedVSwitchForEcsInstance2",
+                "path": "classic-architecture-on-the-cloud-created-by-cdk/AutoCreatedVSwitchForEcsInstance2/AutoCreatedVSwitchForEcsInstance2"
+              }
+            }
+          },
+          "InstanceRunCommand": {
+            "id": "InstanceRunCommand",
+            "path": "classic-architecture-on-the-cloud-created-by-cdk/InstanceRunCommand",
+            "children": {
+              "InstanceRunCommand": {
+                "id": "InstanceRunCommand",
+                "path": "classic-architecture-on-the-cloud-created-by-cdk/InstanceRunCommand/InstanceRunCommand"
+              }
+            }
+          },
+          "PolarDBCluster": {
+            "id": "PolarDBCluster",
+            "path": "classic-architecture-on-the-cloud-created-by-cdk/PolarDBCluster",
+            "children": {
+              "PolarDBCluster": {
+                "id": "PolarDBCluster",
+                "path": "classic-architecture-on-the-cloud-created-by-cdk/PolarDBCluster/PolarDBCluster"
+              }
+            }
+          },
+          "PolarDBInstance": {
+            "id": "PolarDBInstance",
+            "path": "classic-architecture-on-the-cloud-created-by-cdk/PolarDBInstance",
+            "children": {
+              "PolarDBInstance": {
+                "id": "PolarDBInstance",
+                "path": "classic-architecture-on-the-cloud-created-by-cdk/PolarDBInstance/PolarDBInstance"
+              }
+            }
+          },
+          "PolarDBAccount": {
+            "id": "PolarDBAccount",
+            "path": "classic-architecture-on-the-cloud-created-by-cdk/PolarDBAccount",
+            "children": {
+              "PolarDBAccount": {
+                "id": "PolarDBAccount",
+                "path": "classic-architecture-on-the-cloud-created-by-cdk/PolarDBAccount/PolarDBAccount"
+              }
+            }
+          },
+          "AlbLoadBalancer": {
+            "id": "AlbLoadBalancer",
+            "path": "classic-architecture-on-the-cloud-created-by-cdk/AlbLoadBalancer",
+            "children": {
+              "AlbLoadBalancer": {
+                "id": "AlbLoadBalancer",
+                "path": "classic-architecture-on-the-cloud-created-by-cdk/AlbLoadBalancer/AlbLoadBalancer"
+              }
+            }
+          },
+          "AlbServerGroup": {
+            "id": "AlbServerGroup",
+            "path": "classic-architecture-on-the-cloud-created-by-cdk/AlbServerGroup",
+            "children": {
+              "AlbServerGroup": {
+                "id": "AlbServerGroup",
+                "path": "classic-architecture-on-the-cloud-created-by-cdk/AlbServerGroup/AlbServerGroup"
+              }
+            }
+          },
+          "ServerAttachment": {
+            "id": "ServerAttachment",
+            "path": "classic-architecture-on-the-cloud-created-by-cdk/ServerAttachment",
+            "children": {
+              "ServerAttachment": {
+                "id": "ServerAttachment",
+                "path": "classic-architecture-on-the-cloud-created-by-cdk/ServerAttachment/ServerAttachment"
+              }
+            }
+          },
+          "AlbListener": {
+            "id": "AlbListener",
+            "path": "classic-architecture-on-the-cloud-created-by-cdk/AlbListener",
+            "children": {
+              "AlbListener": {
+                "id": "AlbListener",
+                "path": "classic-architecture-on-the-cloud-created-by-cdk/AlbListener/AlbListener"
+              }
+            }
+          },
+          "WordPressUrl": {
+            "id": "WordPressUrl",
+            "path": "classic-architecture-on-the-cloud-created-by-cdk/WordPressUrl"
+          }
+        }
+      }
+    }
+  }
+}

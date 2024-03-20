@@ -12,6 +12,7 @@ English | [简体中文](./README-CN.md)
 Examples of CDK usage code and best practices are as follows:
 
 - `Documents` : The examples provided in the documents category automate the deployment and configuration specified in Aliyun/Alibaba Cloud product documents.
+- `Solutions` : The examples provided in this classification implement technical solutions to common technical problems.
 
 ## Details
 
@@ -31,3 +32,24 @@ The tables below demonstrate the mapping between the product documents and the C
 |-------------------|---------------------|
 |[CDK usage examples](https://www.alibabacloud.com/help/en/ros/developer-reference/usage-examples/)|[python](./documents/ros/usage-examples/python/)/[java](./documents/ros/usage-examples/java/)/[javascript](./documents/ros/usage-examples/javascript/)/[typescript](./documents/ros/usage-examples/typescript/)/[csharp](./documents/ros/usage-examples/csharp/)|
 
+### Solutions
+
+The tables below demonstrate the mapping between the solutions and the CDK example code in various programming languages.
+
+#### network
+
+| Document                                                   |Language Projects    |
+|------------------------------------------------------------|---------------------|
+|[Cross-regional cross-account network interoperability scheme](https://www.aliyun.com/solution/tech-solution/cracani) |[python](./solutions/network/cross-region-account-network-interwork-scheme/python/)|
+
+#### database
+
+|Document           |Language Projects    |
+|-------------------|---------------------|
+|[Migrate a self-built database to a cloud database](https://www.aliyun.com/solution/tech-solution/smowdttc)|[python](./solutions/database/data-transmission-from-ECS-to-RDS/python/)|
+
+#### website
+
+|Document           |Language Projects    |
+|-------------------|---------------------|
+|[Classic architecture on the cloud](https://www.aliyun.com/solution/tech-solution/habwoc)|[python](solutions/website/classic-architecture-on-the-cloud/python/)|

@@ -1,0 +1,175 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree"
+      },
+      "data-transmission-from-ecs-to-rds-created-by-cdk": {
+        "id": "data-transmission-from-ecs-to-rds-created-by-cdk",
+        "path": "data-transmission-from-ecs-to-rds-created-by-cdk",
+        "children": {
+          "ROSTemplateFormatVersion": {
+            "id": "ROSTemplateFormatVersion",
+            "path": "data-transmission-from-ecs-to-rds-created-by-cdk/ROSTemplateFormatVersion"
+          },
+          "Description": {
+            "id": "Description",
+            "path": "data-transmission-from-ecs-to-rds-created-by-cdk/Description"
+          },
+          "ZoneId": {
+            "id": "ZoneId",
+            "path": "data-transmission-from-ecs-to-rds-created-by-cdk/ZoneId"
+          },
+          "EcsInstanceType": {
+            "id": "EcsInstanceType",
+            "path": "data-transmission-from-ecs-to-rds-created-by-cdk/EcsInstanceType"
+          },
+          "InstancePassword": {
+            "id": "InstancePassword",
+            "path": "data-transmission-from-ecs-to-rds-created-by-cdk/InstancePassword"
+          },
+          "DBInstanceEngineAndVersion": {
+            "id": "DBInstanceEngineAndVersion",
+            "path": "data-transmission-from-ecs-to-rds-created-by-cdk/DBInstanceEngineAndVersion"
+          },
+          "DBInstanceClass": {
+            "id": "DBInstanceClass",
+            "path": "data-transmission-from-ecs-to-rds-created-by-cdk/DBInstanceClass"
+          },
+          "DBUserName": {
+            "id": "DBUserName",
+            "path": "data-transmission-from-ecs-to-rds-created-by-cdk/DBUserName"
+          },
+          "DBPassword": {
+            "id": "DBPassword",
+            "path": "data-transmission-from-ecs-to-rds-created-by-cdk/DBPassword"
+          },
+          "WaitConditionHandle": {
+            "id": "WaitConditionHandle",
+            "path": "data-transmission-from-ecs-to-rds-created-by-cdk/WaitConditionHandle",
+            "children": {
+              "WaitConditionHandle": {
+                "id": "WaitConditionHandle",
+                "path": "data-transmission-from-ecs-to-rds-created-by-cdk/WaitConditionHandle/WaitConditionHandle"
+              }
+            }
+          },
+          "WaitCondition": {
+            "id": "WaitCondition",
+            "path": "data-transmission-from-ecs-to-rds-created-by-cdk/WaitCondition",
+            "children": {
+              "WaitCondition": {
+                "id": "WaitCondition",
+                "path": "data-transmission-from-ecs-to-rds-created-by-cdk/WaitCondition/WaitCondition"
+              }
+            }
+          },
+          "Vpc": {
+            "id": "Vpc",
+            "path": "data-transmission-from-ecs-to-rds-created-by-cdk/Vpc",
+            "children": {
+              "Vpc": {
+                "id": "Vpc",
+                "path": "data-transmission-from-ecs-to-rds-created-by-cdk/Vpc/Vpc"
+              }
+            }
+          },
+          "VSwitch": {
+            "id": "VSwitch",
+            "path": "data-transmission-from-ecs-to-rds-created-by-cdk/VSwitch",
+            "children": {
+              "VSwitch": {
+                "id": "VSwitch",
+                "path": "data-transmission-from-ecs-to-rds-created-by-cdk/VSwitch/VSwitch"
+              }
+            }
+          },
+          "SecurityGroup": {
+            "id": "SecurityGroup",
+            "path": "data-transmission-from-ecs-to-rds-created-by-cdk/SecurityGroup",
+            "children": {
+              "SecurityGroup": {
+                "id": "SecurityGroup",
+                "path": "data-transmission-from-ecs-to-rds-created-by-cdk/SecurityGroup/SecurityGroup"
+              }
+            }
+          },
+          "SecurityGroupIngress": {
+            "id": "SecurityGroupIngress",
+            "path": "data-transmission-from-ecs-to-rds-created-by-cdk/SecurityGroupIngress",
+            "children": {
+              "SecurityGroupIngress": {
+                "id": "SecurityGroupIngress",
+                "path": "data-transmission-from-ecs-to-rds-created-by-cdk/SecurityGroupIngress/SecurityGroupIngress"
+              }
+            }
+          },
+          "Webserver": {
+            "id": "Webserver",
+            "path": "data-transmission-from-ecs-to-rds-created-by-cdk/Webserver",
+            "children": {
+              "Webserver": {
+                "id": "Webserver",
+                "path": "data-transmission-from-ecs-to-rds-created-by-cdk/Webserver/Webserver"
+              }
+            }
+          },
+          "Eip": {
+            "id": "Eip",
+            "path": "data-transmission-from-ecs-to-rds-created-by-cdk/Eip",
+            "children": {
+              "Eip": {
+                "id": "Eip",
+                "path": "data-transmission-from-ecs-to-rds-created-by-cdk/Eip/Eip"
+              }
+            }
+          },
+          "EipAssociation": {
+            "id": "EipAssociation",
+            "path": "data-transmission-from-ecs-to-rds-created-by-cdk/EipAssociation",
+            "children": {
+              "EipAssociation": {
+                "id": "EipAssociation",
+                "path": "data-transmission-from-ecs-to-rds-created-by-cdk/EipAssociation/EipAssociation"
+              }
+            }
+          },
+          "Database": {
+            "id": "Database",
+            "path": "data-transmission-from-ecs-to-rds-created-by-cdk/Database",
+            "children": {
+              "Database": {
+                "id": "Database",
+                "path": "data-transmission-from-ecs-to-rds-created-by-cdk/Database/Database"
+              }
+            }
+          },
+          "ECSWordPressUrl": {
+            "id": "ECSWordPressUrl",
+            "path": "data-transmission-from-ecs-to-rds-created-by-cdk/ECSWordPressUrl"
+          },
+          "ECSInstanceUser": {
+            "id": "ECSInstanceUser",
+            "path": "data-transmission-from-ecs-to-rds-created-by-cdk/ECSInstanceUser"
+          },
+          "WPUserForSQL": {
+            "id": "WPUserForSQL",
+            "path": "data-transmission-from-ecs-to-rds-created-by-cdk/WPUserForSQL"
+          },
+          "WPUserForDTS": {
+            "id": "WPUserForDTS",
+            "path": "data-transmission-from-ecs-to-rds-created-by-cdk/WPUserForDTS"
+          },
+          "RDSUserDTS": {
+            "id": "RDSUserDTS",
+            "path": "data-transmission-from-ecs-to-rds-created-by-cdk/RDSUserDTS"
+          }
+        }
+      }
+    }
+  }
+}

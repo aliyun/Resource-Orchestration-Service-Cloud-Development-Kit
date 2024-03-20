@@ -1,0 +1,358 @@
+{
+  "Description": {
+    "en": "Data transmission from ECS self-built database to RDS database",
+    "zh-cn": "ECS自建数据库迁移至RDS数据库"
+  },
+  "Metadata": {
+    "ALIYUN::ROS::Interface": {
+      "TemplateTags": [
+        "Create by ROS CDK"
+      ]
+    }
+  },
+  "ROSTemplateFormatVersion": "2015-09-01",
+  "Parameters": {
+    "ZoneId": {
+      "Type": "String",
+      "Description": {
+        "en": "The zone to which the ECS and RDS instances belong.",
+        "zh-cn": "用于创建ECS和RDS的可用区。"
+      },
+      "Label": "可用区",
+      "AssociationProperty": "ALIYUN::ECS::Instance::ZoneId"
+    },
+    "EcsInstanceType": {
+      "Type": "String",
+      "Default": "ecs.e-c1m1.large",
+      "Description": {
+        "en": "The instance type of the ECS instance.",
+        "zh-cn": "ECS实例规格。"
+      },
+      "Label": "ECS实例规格",
+      "AssociationProperty": "ALIYUN::ECS::Instance::InstanceType",
+      "AssociationPropertyMetadata": {
+        "InstanceChargeType": "PostPaid",
+        "ZoneId": {
+          "Ref": "ZoneId"
+        },
+        "SystemDiskCategory": "cloud_essd"
+      }
+    },
+    "InstancePassword": {
+      "Type": "String",
+      "ConstraintDescription": {
+        "en": "Length 8-30, must contain three(Capital letters, lowercase letters, numbers, ()`~!@#$%^&*_-+=|{}[]:;'<>,.?/ Special symbol in)",
+        "zh-cn": "长度8-30，必须包含三项（大写字母、小写字母、数字、 ()`~!@#$%^&*_-+=|{}[]:;'<>,.?/ 中的特殊符号）"
+      },
+      "Description": {
+        "en": "Server login password, Length 8-30, must contain three(Capital letters, lowercase letters, numbers, ()`~!@#$%^&*_-+=|{}[]:;'<>,.?/ Special symbol in)",
+        "zh-cn": "服务器登录密码，长度8-30，必须包含三项（大写字母、小写字母、数字、 ()`~!@#$%^&*_-+=|{}[]:;'<>,.?/ 中的特殊符号）"
+      },
+      "NoEcho": true,
+      "Label": "实例密码",
+      "AssociationProperty": "ALIYUN::ECS::Instance::Password"
+    },
+    "DBInstanceEngineAndVersion": {
+      "Type": "String",
+      "Default": "MySQL 8.0",
+      "Description": {
+        "en": "Database instance engine type and version, default: MySQL 8.0",
+        "zh-cn": "数据库引擎类型及版本，默认为MySQL 8.0"
+      },
+      "Label": "数据库引擎和版本"
+    },
+    "DBInstanceClass": {
+      "Type": "String",
+      "Default": "mysql.n2m.small.2c",
+      "Description": "在模拟数据迁移体验中，您可以选择最小规格的数据库实例作为迁移目标实例，以减少成本。在生产环境中选择迁移目标实例，需要确保其规格满足您的业务需求。",
+      "Label": "迁移目标RDS实例规格",
+      "AssociationProperty": "ALIYUN::RDS::Instance::InstanceType",
+      "AssociationPropertyMetadata": {
+        "ZoneId": {
+          "Ref": "ZoneId"
+        },
+        "EngineVersion": "8.0",
+        "DBInstanceStorageType": "cloud_essd",
+        "Engine": "MySQL",
+        "Category": "HighAvailability"
+      }
+    },
+    "DBUserName": {
+      "Type": "String",
+      "ConstraintDescription": {
+        "en": "Consist of 2 to 16 characters of lowercase letters, underline. Must begin with a letter and be end with an alphanumeric character",
+        "zh-cn": "由 2 到 16 个小写字母组成，下划线。必须以字母开头，以字母数字字符结尾"
+      },
+      "MaxLength": 16,
+      "MinLength": 2,
+      "Label": "数据库用户名"
+    },
+    "DBPassword": {
+      "Type": "String",
+      "ConstraintDescription": {
+        "en": "Consist of 8 to 32 characters consist of alphanumeric characters, hyphen and underline",
+        "zh-cn": "由 8 到 32 个字符由字母数字字符、连字符和下划线组成"
+      },
+      "MaxLength": 32,
+      "MinLength": 8,
+      "NoEcho": true,
+      "Label": "数据库密码"
+    }
+  },
+  "Resources": {
+    "WaitConditionHandle": {
+      "Type": "ALIYUN::ROS::WaitConditionHandle",
+      "Properties": {
+        "Count": -1,
+        "Mode": "Full"
+      }
+    },
+    "WaitCondition": {
+      "Type": "ALIYUN::ROS::WaitCondition",
+      "Properties": {
+        "Handle": {
+          "Ref": "WaitConditionHandle"
+        },
+        "Timeout": 3600,
+        "Count": 1
+      }
+    },
+    "Vpc": {
+      "Type": "ALIYUN::ECS::VPC",
+      "Properties": {
+        "CidrBlock": "192.168.0.0/16",
+        "EnableIpv6": false,
+        "VpcName": "database-migration-test"
+      }
+    },
+    "VSwitch": {
+      "Type": "ALIYUN::ECS::VSwitch",
+      "Properties": {
+        "CidrBlock": "192.168.0.0/24",
+        "VpcId": {
+          "Ref": "Vpc"
+        },
+        "ZoneId": {
+          "Ref": "ZoneId"
+        }
+      }
+    },
+    "SecurityGroup": {
+      "Type": "ALIYUN::ECS::SecurityGroup",
+      "Properties": {
+        "SecurityGroupName": "SG-DTS-GROUP-20220101",
+        "VpcId": {
+          "Ref": "Vpc"
+        }
+      }
+    },
+    "SecurityGroupIngress": {
+      "Type": "ALIYUN::ECS::SecurityGroupIngress",
+      "Properties": {
+        "IpProtocol": "all",
+        "PortRange": "-1/-1",
+        "Priority": 1,
+        "SecurityGroupId": {
+          "Ref": "SecurityGroup"
+        },
+        "SourceCidrIp": "0.0.0.0/0"
+      }
+    },
+    "Webserver": {
+      "Type": "ALIYUN::ECS::Instance",
+      "Properties": {
+        "InstanceType": {
+          "Ref": "EcsInstanceType"
+        },
+        "AllocatePublicIP": false,
+        "AutoRenew": "False",
+        "AutoRenewPeriod": 1,
+        "ImageId": "aliyun_3_x64_20G_alibase_20230629.vhd",
+        "InstanceChargeType": "PostPaid",
+        "InstanceName": "Webserver",
+        "InternetChargeType": "PayByTraffic",
+        "InternetMaxBandwidthOut": 80,
+        "IoOptimized": "optimized",
+        "Password": {
+          "Ref": "InstancePassword"
+        },
+        "Period": 1,
+        "PeriodUnit": "Month",
+        "SecurityGroupId": {
+          "Ref": "SecurityGroup"
+        },
+        "SpotInterruptionBehavior": "Terminate",
+        "SystemDiskCategory": "cloud_efficiency",
+        "UserData": {
+          "Fn::Replace": [
+            {
+              "ros-notify": {
+                "Fn::GetAtt": [
+                  "WaitConditionHandle",
+                  "CurlCli"
+                ]
+              }
+            },
+            "#!/bin/sh\nDatabaseUser='wordpressuser'\nDatabasePwd='password'\nDatabaseName='wordpressdb'\nDatabaseHost='localhost'\nyum update -y\nyum install -y unzip zip\nyum install -y mysql-server\nsystemctl start mysqld\nsystemctl enable mysqld\nmysql -e \"CREATE DATABASE wordpressdb;\"\nmysql -e \"CREATE USER 'wordpressuser'@'localhost' IDENTIFIED BY 'password';\"\nmysql -e \"GRANT ALL PRIVILEGES ON wordpressdb.* TO 'wordpressuser'@'localhost';\"\nmysql -e \"FLUSH PRIVILEGES;\"\nmysql -e \"CREATE USER dtssync1 IDENTIFIED BY 'P@ssw0rd';\"\nmysql -e \"GRANT ALL ON *.* TO 'dtssync1'@'%';\"\nmysql -e \"FLUSH PRIVILEGES;\"\nmysql -e \"SET GLOBAL binlog_format = 'ROW';\"\nyum install -y nginx\nsystemctl start nginx\nsystemctl enable nginx\nyum install -y php php-fpm php-mysqlnd\nsystemctl start php-fpm\nsystemctl enable php-fpm\ncd /usr/share/nginx/html\nwget http://wordpress.org/latest.tar.gz\ntar xzvf latest.tar.gz\ncp -R wordpress/* .\nrm -R wordpress\nrm -R wordpress\ncp wp-config-sample.php wp-config.php\nsed -i \"s/database_name_here/$DatabaseName/\" wp-config.php\nsed -i \"s/username_here/$DatabaseUser/\" wp-config.php\nsed -i \"s/password_here/${DatabasePwd:-$DatabasePwdDef}/\" wp-config.php\nsed -i \"s/localhost/$DatabaseHost/\" wp-config.php\nsystemctl restart nginx\nsystemctl restart php-fpm\nros-notify\n"
+          ]
+        },
+        "VpcId": {
+          "Ref": "Vpc"
+        },
+        "VSwitchId": {
+          "Ref": "VSwitch"
+        },
+        "ZoneId": {
+          "Ref": "ZoneId"
+        }
+      }
+    },
+    "Eip": {
+      "Type": "ALIYUN::VPC::EIP",
+      "Properties": {
+        "AutoPay": true,
+        "Bandwidth": 50,
+        "DeletionProtection": false,
+        "InstanceChargeType": "Postpaid",
+        "InternetChargeType": "PayByTraffic",
+        "Period": 1,
+        "PricingCycle": "Month"
+      }
+    },
+    "EipAssociation": {
+      "Type": "ALIYUN::VPC::EIPAssociation",
+      "Properties": {
+        "AllocationId": {
+          "Ref": "Eip"
+        },
+        "InstanceId": {
+          "Ref": "Webserver"
+        }
+      },
+      "DependsOn": [
+        "Webserver",
+        "Eip"
+      ]
+    },
+    "Database": {
+      "Type": "ALIYUN::RDS::DBInstance",
+      "Properties": {
+        "DBInstanceClass": {
+          "Ref": "DBInstanceClass"
+        },
+        "DBInstanceStorage": 20,
+        "Engine": "MySQL",
+        "EngineVersion": "8.0",
+        "SecurityIPList": {
+          "Fn::Join": [
+            ",",
+            [
+              {
+                "Fn::GetAtt": [
+                  "Webserver",
+                  "PrivateIp"
+                ]
+              },
+              {
+                "Fn::GetAtt": [
+                  "Eip",
+                  "EipAddress"
+                ]
+              }
+            ]
+          ]
+        },
+        "BackupRetentionPeriod": 7,
+        "Category": "HighAvailability",
+        "ConnectionStringType": "Inner",
+        "DBInstanceDescription": "Test for database migration",
+        "DBInstanceNetType": "Intranet",
+        "DBInstanceStorageType": "cloud_essd",
+        "MasterUsername": {
+          "Ref": "DBUserName"
+        },
+        "MasterUserPassword": {
+          "Ref": "DBPassword"
+        },
+        "MasterUserType": "Super",
+        "MultiAZ": false,
+        "PayType": "Postpaid",
+        "Period": 1,
+        "PeriodType": "Month",
+        "SlaveZoneIds": [
+          "Auto"
+        ],
+        "SSLSetting": "Disabled",
+        "StorageAutoScale": "Disable",
+        "VpcId": {
+          "Ref": "Vpc"
+        },
+        "VSwitchId": {
+          "Ref": "VSwitch"
+        },
+        "ZoneId": {
+          "Ref": "ZoneId"
+        }
+      }
+    }
+  },
+  "Outputs": {
+    "ECSWordPressUrl": {
+      "Description": "WordPress default address.",
+      "Value": {
+        "Fn::Join": [
+          "",
+          [
+            "http://",
+            {
+              "Fn::GetAtt": [
+                "Eip",
+                "EipAddress"
+              ]
+            }
+          ]
+        ]
+      }
+    },
+    "ECSInstanceUser": {
+      "Description": "Username and password for logging in to ECS instance",
+      "Value": {
+        "Fn::Join": [
+          "",
+          [
+            "USERNAME: root ; PASSWORD: ",
+            {
+              "Ref": "InstancePassword"
+            }
+          ]
+        ]
+      }
+    },
+    "WPUserForSQL": {
+      "Description": "ECS-hosted database username and password for executing SQL",
+      "Value": "USERNAME: wordpressuser ; PASSWORD: password"
+    },
+    "WPUserForDTS": {
+      "Description": "ECS-hosted database username and password for connecting to DTS",
+      "Value": "USERNAME: dtssync1 ; PASSWORD: P@ssw0rd"
+    },
+    "RDSUserDTS": {
+      "Description": "RDS username and password for connecting to DTS",
+      "Value": {
+        "Fn::Join": [
+          "",
+          [
+            "USERNAME: ",
+            {
+              "Ref": "DBUserName"
+            },
+            " ; PASSWORD: ",
+            {
+              "Ref": "DBPassword"
+            }
+          ]
+        ]
+      }
+    }
+  }
+}
