@@ -1,0 +1,43 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree"
+      },
+      "demo": {
+        "id": "demo",
+        "path": "demo",
+        "children": {
+          "ROSTemplateFormatVersion": {
+            "id": "ROSTemplateFormatVersion",
+            "path": "demo/ROSTemplateFormatVersion"
+          },
+          "MyVPC": {
+            "id": "MyVPC",
+            "path": "demo/MyVPC",
+            "children": {
+              "MyVPC": {
+                "id": "MyVPC",
+                "path": "demo/MyVPC/MyVPC"
+              }
+            }
+          },
+          "MyVSwitch": {
+            "id": "MyVSwitch",
+            "path": "demo/MyVSwitch",
+            "children": {
+              "MyVSwitch": {
+                "id": "MyVSwitch",
+                "path": "demo/MyVSwitch/MyVSwitch"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

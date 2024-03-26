@@ -1,0 +1,32 @@
+{
+  "Metadata": {
+    "ALIYUN::ROS::Interface": {
+      "TemplateTags": [
+        "Create by ROS CDK"
+      ]
+    }
+  },
+  "ROSTemplateFormatVersion": "2015-09-01",
+  "Resources": {
+    "MyVPC": {
+      "Type": "ALIYUN::ECS::VPC",
+      "Properties": {
+        "CidrBlock": "10.0.0.0/8",
+        "Description": "This is ros python cdk test",
+        "EnableIpv6": false,
+        "VpcName": "test-ros-cdk-python"
+      }
+    },
+    "MyVSwitch": {
+      "Type": "ALIYUN::ECS::VSwitch",
+      "Properties": {
+        "CidrBlock": "10.0.0.0/16",
+        "VpcId": {
+          "Ref": "MyVPC"
+        },
+        "ZoneId": "cn-hangzhou-i",
+        "VSwitchName": "test-ros-cdk-python"
+      }
+    }
+  }
+}

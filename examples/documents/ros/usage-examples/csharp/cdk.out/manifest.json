@@ -1,0 +1,67 @@
+{
+  "version": "6.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "DemoStack": {
+      "type": "aliyun:ros:stack",
+      "properties": {
+        "templateFile": "DemoStack.template.json"
+      },
+      "dependencies": [
+        "DemoStack.assets"
+      ],
+      "metadata": {
+        "/DemoStack/ROSTemplateFormatVersion": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "ROSTemplateFormatVersion",
+            "trace": [
+              "new Stack (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/jsii-kernel-Q0n7hs/node_modules/@alicloud/ros-cdk-core/lib/stack.js:80:9)",
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/1siwodty.rq2/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/1siwodty.rq2/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/1siwodty.rq2/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/1siwodty.rq2/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/1siwodty.rq2/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/DemoStack/vpc-from-ros-cdk/vpc-from-ros-cdk": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "vpc-from-ros-cdk",
+            "trace": [
+              "new Vpc (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/jsii-kernel-Q0n7hs/node_modules/@alicloud/ros-cdk-ecs/lib/vpc.js:24:24)",
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/1siwodty.rq2/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/1siwodty.rq2/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/1siwodty.rq2/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/1siwodty.rq2/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/1siwodty.rq2/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/DemoStack/vsw-from-ros-cdk/vsw-from-ros-cdk": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "vsw-from-ros-cdk",
+            "trace": [
+              "new VSwitch (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/jsii-kernel-Q0n7hs/node_modules/@alicloud/ros-cdk-ecs/lib/vswitch.js:24:28)",
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/1siwodty.rq2/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/1siwodty.rq2/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/1siwodty.rq2/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/1siwodty.rq2/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/1siwodty.rq2/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
