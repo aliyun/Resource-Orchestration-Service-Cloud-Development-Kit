@@ -35,3 +35,4 @@ references/site
 references/site.zip
 
 **/.DS_Store
+**/__pycache__/

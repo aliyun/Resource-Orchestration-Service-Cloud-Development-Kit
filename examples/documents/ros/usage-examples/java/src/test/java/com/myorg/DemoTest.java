@@ -32,13 +32,23 @@ public class DemoTest {
         templateTags.add("Create by ROS CDK");
         ObjectNode resources = expected.putObject("Resources");
 
-        ObjectNode vpc = resources.putObject("VPC");
+        ObjectNode vpc = resources.putObject("vpc-from-ros-cdk");
         vpc.put("Type","ALIYUN::ECS::VPC");
-        ObjectNode properties = vpc.putObject("Properties");
-        properties.put("CidrBlock","10.0.0.0/8");
-        properties.put("Description","This is ros java cdk test");
-        properties.put("EnableIpv6",false);
-        properties.put("VpcName","TestJavaCDK");
+        ObjectNode vpcProperties = vpc.putObject("Properties");
+        vpcProperties.put("CidrBlock","10.0.0.0/8");
+        vpcProperties.put("Description","This is ros java cdk test");
+        vpcProperties.put("EnableIpv6",false);
+        vpcProperties.put("VpcName","TestJavaCDK");
+
+        ObjectNode vsw = resources.putObject("vsw-from-ros-cdk");
+        vsw.put("Type","ALIYUN::ECS::VSwitch");
+        ObjectNode vswProperties = vsw.putObject("Properties");
+        vswProperties.put("CidrBlock","10.0.0.0/16");
+        ObjectNode vpcId = vswProperties.putObject("VpcId");
+        vpcId.put("Ref","vpc-from-ros-cdk");
+        vswProperties.put("ZoneId","cn-hangzhou-i");
+        vswProperties.put("VSwitchName","TestJavaCDK");
+
         assertEquals(expected, actual);
     }
 }

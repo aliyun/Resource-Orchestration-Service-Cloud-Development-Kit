@@ -19,7 +19,7 @@ setuptools.setup(
     packages=setuptools.find_packages(where="demo") + setuptools.find_packages(where="test"),
 
     install_requires=[
-        "ros-cdk-core==1.0.22",
+        "ros-cdk-core==1.0.25",
     ],
 
     python_requires=">=3.6",

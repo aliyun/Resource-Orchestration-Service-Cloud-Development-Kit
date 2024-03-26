@@ -1,0 +1,89 @@
+{
+  "version": "6.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "DemoStack": {
+      "type": "aliyun:ros:stack",
+      "properties": {
+        "templateFile": "DemoStack.template.json"
+      },
+      "dependencies": [
+        "DemoStack.assets"
+      ],
+      "metadata": {
+        "/DemoStack/ROSTemplateFormatVersion": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "ROSTemplateFormatVersion",
+            "trace": [
+              "new Stack (/Users/yingzhao/codes/github/Resource-Orchestration-Service-Cloud-Development-Kit/examples/documents/ros/usage-examples/javascript/node_modules/@alicloud/ros-cdk-core/lib/stack.js:80:9)",
+              "new DemoStack (/Users/yingzhao/codes/github/Resource-Orchestration-Service-Cloud-Development-Kit/examples/documents/ros/usage-examples/javascript/lib/demo-stack.js:12:5)",
+              "Object.<anonymous> (/Users/yingzhao/codes/github/Resource-Orchestration-Service-Cloud-Development-Kit/examples/documents/ros/usage-examples/javascript/bin/demo.js:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1105:14)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1159:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Module._load (node:internal/modules/cjs/loader:827:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/DemoStack/Description": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "Description",
+            "trace": [
+              "new DemoStack (/Users/yingzhao/codes/github/Resource-Orchestration-Service-Cloud-Development-Kit/examples/documents/ros/usage-examples/javascript/lib/demo-stack.js:13:5)",
+              "Object.<anonymous> (/Users/yingzhao/codes/github/Resource-Orchestration-Service-Cloud-Development-Kit/examples/documents/ros/usage-examples/javascript/bin/demo.js:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1105:14)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1159:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Module._load (node:internal/modules/cjs/loader:827:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/DemoStack/vpc-from-ros-cdk/vpc-from-ros-cdk": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "vpc-from-ros-cdk",
+            "trace": [
+              "new Vpc (/Users/yingzhao/codes/github/Resource-Orchestration-Service-Cloud-Development-Kit/examples/documents/ros/usage-examples/javascript/node_modules/@alicloud/ros-cdk-ecs/lib/vpc.js:24:24)",
+              "new DemoStack (/Users/yingzhao/codes/github/Resource-Orchestration-Service-Cloud-Development-Kit/examples/documents/ros/usage-examples/javascript/lib/demo-stack.js:15:17)",
+              "Object.<anonymous> (/Users/yingzhao/codes/github/Resource-Orchestration-Service-Cloud-Development-Kit/examples/documents/ros/usage-examples/javascript/bin/demo.js:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1105:14)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1159:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Module._load (node:internal/modules/cjs/loader:827:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/DemoStack/vsw-from-ros-cdk/vsw-from-ros-cdk": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "vsw-from-ros-cdk",
+            "trace": [
+              "new VSwitch (/Users/yingzhao/codes/github/Resource-Orchestration-Service-Cloud-Development-Kit/examples/documents/ros/usage-examples/javascript/node_modules/@alicloud/ros-cdk-ecs/lib/vswitch.js:24:28)",
+              "new DemoStack (/Users/yingzhao/codes/github/Resource-Orchestration-Service-Cloud-Development-Kit/examples/documents/ros/usage-examples/javascript/lib/demo-stack.js:21:5)",
+              "Object.<anonymous> (/Users/yingzhao/codes/github/Resource-Orchestration-Service-Cloud-Development-Kit/examples/documents/ros/usage-examples/javascript/bin/demo.js:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1105:14)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1159:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Module._load (node:internal/modules/cjs/loader:827:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

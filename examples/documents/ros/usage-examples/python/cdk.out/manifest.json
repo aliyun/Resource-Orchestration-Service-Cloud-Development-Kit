@@ -1,0 +1,67 @@
+{
+  "version": "6.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "demo": {
+      "type": "aliyun:ros:stack",
+      "properties": {
+        "templateFile": "demo.template.json"
+      },
+      "dependencies": [
+        "demo.assets"
+      ],
+      "metadata": {
+        "/demo/ROSTemplateFormatVersion": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "ROSTemplateFormatVersion",
+            "trace": [
+              "new Stack (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/jsii-kernel-zCsKZt/node_modules/@alicloud/ros-cdk-core/lib/stack.js:80:9)",
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpshko10lr/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpshko10lr/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpshko10lr/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpshko10lr/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpshko10lr/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/demo/MyVPC/MyVPC": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "MyVPC",
+            "trace": [
+              "new Vpc (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/jsii-kernel-zCsKZt/node_modules/@alicloud/ros-cdk-ecs/lib/vpc.js:24:24)",
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpshko10lr/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpshko10lr/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpshko10lr/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpshko10lr/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpshko10lr/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ],
+        "/demo/MyVSwitch/MyVSwitch": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "MyVSwitch",
+            "trace": [
+              "new VSwitch (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/jsii-kernel-zCsKZt/node_modules/@alicloud/ros-cdk-ecs/lib/vswitch.js:24:28)",
+              "Kernel._create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpshko10lr/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpshko10lr/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpshko10lr/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpshko10lr/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/cc/mq3npfgj6dj_d9lgfwnxbj9c0000gp/T/tmpshko10lr/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:471:21)"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

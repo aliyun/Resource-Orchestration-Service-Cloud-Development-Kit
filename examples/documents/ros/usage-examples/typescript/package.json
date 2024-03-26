@@ -19,10 +19,10 @@
     "@babel/core": "^7.12.9",
     "@babel/preset-env": "7.12.7",
     "@babel/preset-typescript": "^7.12.7",
-    "@alicloud/ros-cdk-assert": "^1.0.0"
+    "@alicloud/ros-cdk-assert": "^1.0.25"
   },
   "dependencies": {
-    "@alicloud/ros-cdk-core": "^1.0.11",
-    "@alicloud/ros-cdk-ecs": "^1.0.9"   
+    "@alicloud/ros-cdk-core": "^1.0.25",
+    "@alicloud/ros-cdk-ecs": "^1.0.23"
   }
 }

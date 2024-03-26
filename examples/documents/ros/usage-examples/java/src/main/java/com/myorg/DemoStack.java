@@ -13,7 +13,10 @@ public class DemoStack extends Stack {
 
         // The code that defines your stack goes here
 
-        Vpc.Builder.create(this, "VPC").vpcName("TestJavaCDK").description("This is ros java cdk test").
+        Vpc vpc = Vpc.Builder.create(this, "vpc-from-ros-cdk").vpcName("TestJavaCDK").description("This is ros java cdk test").
                 cidrBlock("10.0.0.0/8").build();
+
+        VSwitch vsw = VSwitch.Builder.create(this, "vsw-from-ros-cdk").vSwitchName("TestJavaCDK").zoneId("cn-hangzhou-i").
+                cidrBlock("10.0.0.0/16").vpcId(vpc.getRef()).build();
     }
 }

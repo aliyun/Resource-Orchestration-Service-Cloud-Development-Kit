@@ -1,0 +1,43 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree"
+      },
+      "DemoStack": {
+        "id": "DemoStack",
+        "path": "DemoStack",
+        "children": {
+          "ROSTemplateFormatVersion": {
+            "id": "ROSTemplateFormatVersion",
+            "path": "DemoStack/ROSTemplateFormatVersion"
+          },
+          "vpc-from-ros-cdk": {
+            "id": "vpc-from-ros-cdk",
+            "path": "DemoStack/vpc-from-ros-cdk",
+            "children": {
+              "vpc-from-ros-cdk": {
+                "id": "vpc-from-ros-cdk",
+                "path": "DemoStack/vpc-from-ros-cdk/vpc-from-ros-cdk"
+              }
+            }
+          },
+          "vsw-from-ros-cdk": {
+            "id": "vsw-from-ros-cdk",
+            "path": "DemoStack/vsw-from-ros-cdk",
+            "children": {
+              "vsw-from-ros-cdk": {
+                "id": "vsw-from-ros-cdk",
+                "path": "DemoStack/vsw-from-ros-cdk/vsw-from-ros-cdk"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
