@@ -3090,7 +3090,7 @@ export interface RosScalingConfigurationProps {
     /**
      * @Property instanceTypes: ecs supported instance types. Length [1,10]. If InstanceTypes is specified,the InstanceType will be ignored.
      */
-    readonly instanceTypes?: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly instanceTypes?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property internetChargeType: Instance internet access charge type.Support 'PayByBandwidth' and 'PayByTraffic' only.
@@ -3471,7 +3471,7 @@ function RosScalingConfigurationPropsValidator(properties: any): ros.ValidationR
             max: 10,
           }));
     }
-    errors.collect(ros.propertyValidator('instanceTypes', ros.listValidator(ros.validateAny))(properties.instanceTypes));
+    errors.collect(ros.propertyValidator('instanceTypes', ros.listValidator(ros.validateString))(properties.instanceTypes));
     errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
     if(properties.spotStrategy && (typeof properties.spotStrategy) !== 'object') {
         errors.collect(ros.propertyValidator('spotStrategy', ros.validateAllowedValues)({
@@ -3554,7 +3554,7 @@ function rosScalingConfigurationPropsToRosTemplate(properties: any, enableResour
       InstancePatternInfos: ros.listMapper(rosScalingConfigurationInstancePatternInfosPropertyToRosTemplate)(properties.instancePatternInfos),
       InstanceType: ros.stringToRosTemplate(properties.instanceType),
       InstanceTypeOverrides: ros.listMapper(rosScalingConfigurationInstanceTypeOverridesPropertyToRosTemplate)(properties.instanceTypeOverrides),
-      InstanceTypes: ros.listMapper(ros.objectToRosTemplate)(properties.instanceTypes),
+      InstanceTypes: ros.listMapper(ros.stringToRosTemplate)(properties.instanceTypes),
       InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
       InternetMaxBandwidthIn: ros.numberToRosTemplate(properties.internetMaxBandwidthIn),
       InternetMaxBandwidthOut: ros.numberToRosTemplate(properties.internetMaxBandwidthOut),
@@ -3732,7 +3732,7 @@ export class RosScalingConfiguration extends ros.RosResource {
     /**
      * @Property instanceTypes: ecs supported instance types. Length [1,10]. If InstanceTypes is specified,the InstanceType will be ignored.
      */
-    public instanceTypes: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
+    public instanceTypes: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property internetChargeType: Instance internet access charge type.Support 'PayByBandwidth' and 'PayByTraffic' only.
@@ -4607,7 +4607,7 @@ export interface RosScalingGroupProps {
     /**
      * @Property dbInstanceIds: ID list of an RDS instance. A Json Array with format: [ "rm-id0", "rm-id1", ... "rm-idz" ], support up to 100 RDS instance.
      */
-    readonly dbInstanceIds?: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly dbInstanceIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property defaultCooldown: Default cool-down time (in seconds) of the scaling group. Value range: [0, 86400].
@@ -4666,7 +4666,7 @@ export interface RosScalingGroupProps {
     /**
      * @Property loadBalancerIds: ID list of a Server Load Balancer instance. A Json Array with format: [ "lb-id0", "lb-id1", ... "lb-idz" ], support up to 100 Load Balancer instance.
      */
-    readonly loadBalancerIds?: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly loadBalancerIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property maxInstanceLifetime: The maximum life span of an ECS instance in the scaling group. Unit: seconds.
@@ -4706,7 +4706,7 @@ export interface RosScalingGroupProps {
     /**
      * @Property protectedInstances: ECS instances of protected mode in the scaling group.
      */
-    readonly protectedInstances?: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly protectedInstances?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property removalPolicys: Policy for removing ECS instances from the scaling group.
@@ -4720,7 +4720,7 @@ export interface RosScalingGroupProps {
      * The scaling configuration source specified by the OldestScalingConfiguration setting can be a scaling configuration or a launch template. You can specify CustomPolicy only as the value of first item of RemovalPolicys. If you set first item of RemovalPolicys to CustomPolicy, you must also specify CustomPolicyARN.
      * Note: The removal of ECS instances from a scaling group is also affected by the value of MultiAZPolicy.
      */
-    readonly removalPolicys?: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly removalPolicys?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property scalingGroupName: Name shown for the scaling group, which must contain 2-40 characters (English or Chinese). The name must begin with a number, an upper\/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".". The account name is unique in the same region.
@@ -4759,7 +4759,7 @@ export interface RosScalingGroupProps {
     /**
      * @Property standbyInstances: ECS instances of standby mode in the scaling group.
      */
-    readonly standbyInstances?: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly standbyInstances?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
@@ -4777,7 +4777,7 @@ export interface RosScalingGroupProps {
      * The priority of VSwitches descends from 1 to 8, and 1 indicates the highest priority.
      * When you fail to create an instance in the zone to which a specified VSwitch belongs, another VSwitch with less priority replaces the specified one automatically.
      */
-    readonly vSwitchIds?: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly vSwitchIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
@@ -4801,6 +4801,13 @@ function RosScalingGroupPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('onDemandPercentageAboveBaseCapacity', ros.validateNumber)(properties.onDemandPercentageAboveBaseCapacity));
+    if(properties.desiredCapacity && (typeof properties.desiredCapacity) !== 'object') {
+        errors.collect(ros.propertyValidator('desiredCapacity', ros.validateRange)({
+            data: properties.desiredCapacity,
+            min: 0,
+            max: undefined,
+          }));
+    }
     errors.collect(ros.propertyValidator('desiredCapacity', ros.validateNumber)(properties.desiredCapacity));
     if(properties.allocationStrategy && (typeof properties.allocationStrategy) !== 'object') {
         errors.collect(ros.propertyValidator('allocationStrategy', ros.validateAllowedValues)({
@@ -4824,7 +4831,7 @@ function RosScalingGroupPropsValidator(properties: any): ros.ValidationResult {
             max: 1000,
           }));
     }
-    errors.collect(ros.propertyValidator('standbyInstances', ros.listValidator(ros.validateAny))(properties.standbyInstances));
+    errors.collect(ros.propertyValidator('standbyInstances', ros.listValidator(ros.validateString))(properties.standbyInstances));
     if(properties.launchTemplateOverrides && (Array.isArray(properties.launchTemplateOverrides) || (typeof properties.launchTemplateOverrides) === 'string')) {
         errors.collect(ros.propertyValidator('launchTemplateOverrides', ros.validateLength)({
             data: properties.launchTemplateOverrides.length,
@@ -4840,7 +4847,7 @@ function RosScalingGroupPropsValidator(properties: any): ros.ValidationResult {
             max: 3,
           }));
     }
-    errors.collect(ros.propertyValidator('removalPolicys', ros.listValidator(ros.validateAny))(properties.removalPolicys));
+    errors.collect(ros.propertyValidator('removalPolicys', ros.listValidator(ros.validateString))(properties.removalPolicys));
     if(properties.spotAllocationStrategy && (typeof properties.spotAllocationStrategy) !== 'object') {
         errors.collect(ros.propertyValidator('spotAllocationStrategy', ros.validateAllowedValues)({
           data: properties.spotAllocationStrategy,
@@ -4870,7 +4877,7 @@ function RosScalingGroupPropsValidator(properties: any): ros.ValidationResult {
             max: 8,
           }));
     }
-    errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateAny))(properties.vSwitchIds));
+    errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateString))(properties.vSwitchIds));
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     if(properties.loadBalancerIds && (Array.isArray(properties.loadBalancerIds) || (typeof properties.loadBalancerIds) === 'string')) {
@@ -4880,7 +4887,7 @@ function RosScalingGroupPropsValidator(properties: any): ros.ValidationResult {
             max: 100,
           }));
     }
-    errors.collect(ros.propertyValidator('loadBalancerIds', ros.listValidator(ros.validateAny))(properties.loadBalancerIds));
+    errors.collect(ros.propertyValidator('loadBalancerIds', ros.listValidator(ros.validateString))(properties.loadBalancerIds));
     if(properties.spotInstancePools && (typeof properties.spotInstancePools) !== 'object') {
         errors.collect(ros.propertyValidator('spotInstancePools', ros.validateRange)({
             data: properties.spotInstancePools,
@@ -4948,7 +4955,7 @@ function RosScalingGroupPropsValidator(properties: any): ros.ValidationResult {
             max: 1000,
           }));
     }
-    errors.collect(ros.propertyValidator('protectedInstances', ros.listValidator(ros.validateAny))(properties.protectedInstances));
+    errors.collect(ros.propertyValidator('protectedInstances', ros.listValidator(ros.validateString))(properties.protectedInstances));
     errors.collect(ros.propertyValidator('containerGroupId', ros.validateString)(properties.containerGroupId));
     if(properties.dbInstanceIds && (Array.isArray(properties.dbInstanceIds) || (typeof properties.dbInstanceIds) === 'string')) {
         errors.collect(ros.propertyValidator('dbInstanceIds', ros.validateLength)({
@@ -4957,7 +4964,7 @@ function RosScalingGroupPropsValidator(properties: any): ros.ValidationResult {
             max: 100,
           }));
     }
-    errors.collect(ros.propertyValidator('dbInstanceIds', ros.listValidator(ros.validateAny))(properties.dbInstanceIds));
+    errors.collect(ros.propertyValidator('dbInstanceIds', ros.listValidator(ros.validateString))(properties.dbInstanceIds));
     if(properties.healthCheckType && (typeof properties.healthCheckType) !== 'object') {
         errors.collect(ros.propertyValidator('healthCheckType', ros.validateAllowedValues)({
           data: properties.healthCheckType,
@@ -4997,7 +5004,7 @@ function rosScalingGroupPropsToRosTemplate(properties: any, enableResourceProper
       CompensateWithOnDemand: ros.booleanToRosTemplate(properties.compensateWithOnDemand),
       ContainerGroupId: ros.stringToRosTemplate(properties.containerGroupId),
       CustomPolicyARN: ros.stringToRosTemplate(properties.customPolicyArn),
-      DBInstanceIds: ros.listMapper(ros.objectToRosTemplate)(properties.dbInstanceIds),
+      DBInstanceIds: ros.listMapper(ros.stringToRosTemplate)(properties.dbInstanceIds),
       DefaultCooldown: ros.numberToRosTemplate(properties.defaultCooldown),
       DesiredCapacity: ros.numberToRosTemplate(properties.desiredCapacity),
       GroupDeletionProtection: ros.booleanToRosTemplate(properties.groupDeletionProtection),
@@ -5007,23 +5014,23 @@ function rosScalingGroupPropsToRosTemplate(properties: any, enableResourceProper
       LaunchTemplateId: ros.stringToRosTemplate(properties.launchTemplateId),
       LaunchTemplateOverrides: ros.listMapper(rosScalingGroupLaunchTemplateOverridesPropertyToRosTemplate)(properties.launchTemplateOverrides),
       LaunchTemplateVersion: ros.stringToRosTemplate(properties.launchTemplateVersion),
-      LoadBalancerIds: ros.listMapper(ros.objectToRosTemplate)(properties.loadBalancerIds),
+      LoadBalancerIds: ros.listMapper(ros.stringToRosTemplate)(properties.loadBalancerIds),
       MaxInstanceLifetime: ros.numberToRosTemplate(properties.maxInstanceLifetime),
       MultiAZPolicy: ros.stringToRosTemplate(properties.multiAzPolicy),
       NotificationConfigurations: ros.listMapper(rosScalingGroupNotificationConfigurationsPropertyToRosTemplate)(properties.notificationConfigurations),
       OnDemandBaseCapacity: ros.numberToRosTemplate(properties.onDemandBaseCapacity),
       OnDemandPercentageAboveBaseCapacity: ros.numberToRosTemplate(properties.onDemandPercentageAboveBaseCapacity),
-      ProtectedInstances: ros.listMapper(ros.objectToRosTemplate)(properties.protectedInstances),
-      RemovalPolicys: ros.listMapper(ros.objectToRosTemplate)(properties.removalPolicys),
+      ProtectedInstances: ros.listMapper(ros.stringToRosTemplate)(properties.protectedInstances),
+      RemovalPolicys: ros.listMapper(ros.stringToRosTemplate)(properties.removalPolicys),
       ScalingGroupName: ros.stringToRosTemplate(properties.scalingGroupName),
       ScalingPolicy: ros.stringToRosTemplate(properties.scalingPolicy),
       SpotAllocationStrategy: ros.stringToRosTemplate(properties.spotAllocationStrategy),
       SpotInstancePools: ros.numberToRosTemplate(properties.spotInstancePools),
       SpotInstanceRemedy: ros.booleanToRosTemplate(properties.spotInstanceRemedy),
-      StandbyInstances: ros.listMapper(ros.objectToRosTemplate)(properties.standbyInstances),
+      StandbyInstances: ros.listMapper(ros.stringToRosTemplate)(properties.standbyInstances),
       Tags: ros.listMapper(rosScalingGroupTagsPropertyToRosTemplate)(properties.tags),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      VSwitchIds: ros.listMapper(ros.objectToRosTemplate)(properties.vSwitchIds),
+      VSwitchIds: ros.listMapper(ros.stringToRosTemplate)(properties.vSwitchIds),
     };
 }
 
@@ -5096,7 +5103,7 @@ export class RosScalingGroup extends ros.RosResource {
     /**
      * @Property dbInstanceIds: ID list of an RDS instance. A Json Array with format: [ "rm-id0", "rm-id1", ... "rm-idz" ], support up to 100 RDS instance.
      */
-    public dbInstanceIds: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
+    public dbInstanceIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property defaultCooldown: Default cool-down time (in seconds) of the scaling group. Value range: [0, 86400].
@@ -5155,7 +5162,7 @@ export class RosScalingGroup extends ros.RosResource {
     /**
      * @Property loadBalancerIds: ID list of a Server Load Balancer instance. A Json Array with format: [ "lb-id0", "lb-id1", ... "lb-idz" ], support up to 100 Load Balancer instance.
      */
-    public loadBalancerIds: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
+    public loadBalancerIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property maxInstanceLifetime: The maximum life span of an ECS instance in the scaling group. Unit: seconds.
@@ -5195,7 +5202,7 @@ export class RosScalingGroup extends ros.RosResource {
     /**
      * @Property protectedInstances: ECS instances of protected mode in the scaling group.
      */
-    public protectedInstances: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
+    public protectedInstances: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property removalPolicys: Policy for removing ECS instances from the scaling group.
@@ -5209,7 +5216,7 @@ export class RosScalingGroup extends ros.RosResource {
      * The scaling configuration source specified by the OldestScalingConfiguration setting can be a scaling configuration or a launch template. You can specify CustomPolicy only as the value of first item of RemovalPolicys. If you set first item of RemovalPolicys to CustomPolicy, you must also specify CustomPolicyARN.
      * Note: The removal of ECS instances from a scaling group is also affected by the value of MultiAZPolicy.
      */
-    public removalPolicys: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
+    public removalPolicys: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property scalingGroupName: Name shown for the scaling group, which must contain 2-40 characters (English or Chinese). The name must begin with a number, an upper\/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".". The account name is unique in the same region.
@@ -5248,7 +5255,7 @@ export class RosScalingGroup extends ros.RosResource {
     /**
      * @Property standbyInstances: ECS instances of standby mode in the scaling group.
      */
-    public standbyInstances: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
+    public standbyInstances: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
@@ -5266,7 +5273,7 @@ export class RosScalingGroup extends ros.RosResource {
      * The priority of VSwitches descends from 1 to 8, and 1 indicates the highest priority.
      * When you fail to create an instance in the zone to which a specified VSwitch belongs, another VSwitch with less priority replaces the specified one automatically.
      */
-    public vSwitchIds: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
+    public vSwitchIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @param scope - scope in which this resource is defined
@@ -5445,7 +5452,7 @@ export namespace RosScalingGroup {
      * AUTOSCALING:SCALE_IN_START
      * AUTOSCALING:SCHEDULE_TASK_EXPIRING
          */
-        readonly notificationTypes: Array<any | ros.IResolvable> | ros.IResolvable;
+        readonly notificationTypes: Array<string | ros.IResolvable> | ros.IResolvable;
     }
 }
 /**
@@ -5481,7 +5488,7 @@ function RosScalingGroup_NotificationConfigurationsPropertyValidator(properties:
             max: 8,
           }));
     }
-    errors.collect(ros.propertyValidator('notificationTypes', ros.listValidator(ros.validateAny))(properties.notificationTypes));
+    errors.collect(ros.propertyValidator('notificationTypes', ros.listValidator(ros.validateString))(properties.notificationTypes));
     return errors.wrap('supplied properties not correct for "NotificationConfigurationsProperty"');
 }
 
@@ -5498,7 +5505,7 @@ function rosScalingGroupNotificationConfigurationsPropertyToRosTemplate(properti
     RosScalingGroup_NotificationConfigurationsPropertyValidator(properties).assertSuccess();
     return {
       NotificationArn: ros.stringToRosTemplate(properties.notificationArn),
-      NotificationTypes: ros.listMapper(ros.objectToRosTemplate)(properties.notificationTypes),
+      NotificationTypes: ros.listMapper(ros.stringToRosTemplate)(properties.notificationTypes),
     };
 }
 
@@ -5574,12 +5581,12 @@ export interface RosScalingGroupEnableProps {
     /**
      * @Property instanceIds: The id list of ECS instance which will be attached. Max support 1000 instances.
      */
-    readonly instanceIds?: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly instanceIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property removeInstanceIds: The id list of ECS instance which will be removed. Max support 1000 instances.
      */
-    readonly removeInstanceIds?: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly removeInstanceIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property scalingConfigurationId: The id of scaling configuration which will be activate.
@@ -5591,7 +5598,7 @@ export interface RosScalingGroupEnableProps {
      * When creating the resource, all the scaling rule aris in the list will be executed.
      * When updating the resource, none of scaling rule aris in the list will be executed, unless ScalingRuleArisExecuteVersion is changed.
      */
-    readonly scalingRuleAris?: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly scalingRuleAris?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property scalingRuleArisExecuteVersion: The change of the property leads to the execution of all the scaling rule aris in ScalingRuleAris.
@@ -5628,7 +5635,7 @@ function RosScalingGroupEnablePropsValidator(properties: any): ros.ValidationRes
             max: 10,
           }));
     }
-    errors.collect(ros.propertyValidator('scalingRuleAris', ros.listValidator(ros.validateAny))(properties.scalingRuleAris));
+    errors.collect(ros.propertyValidator('scalingRuleAris', ros.listValidator(ros.validateString))(properties.scalingRuleAris));
     if(properties.removeInstanceIds && (Array.isArray(properties.removeInstanceIds) || (typeof properties.removeInstanceIds) === 'string')) {
         errors.collect(ros.propertyValidator('removeInstanceIds', ros.validateLength)({
             data: properties.removeInstanceIds.length,
@@ -5636,7 +5643,7 @@ function RosScalingGroupEnablePropsValidator(properties: any): ros.ValidationRes
             max: 1000,
           }));
     }
-    errors.collect(ros.propertyValidator('removeInstanceIds', ros.listValidator(ros.validateAny))(properties.removeInstanceIds));
+    errors.collect(ros.propertyValidator('removeInstanceIds', ros.listValidator(ros.validateString))(properties.removeInstanceIds));
     errors.collect(ros.propertyValidator('scalingConfigurationId', ros.validateString)(properties.scalingConfigurationId));
     if(properties.instanceIds && (Array.isArray(properties.instanceIds) || (typeof properties.instanceIds) === 'string')) {
         errors.collect(ros.propertyValidator('instanceIds', ros.validateLength)({
@@ -5645,7 +5652,7 @@ function RosScalingGroupEnablePropsValidator(properties: any): ros.ValidationRes
             max: 1000,
           }));
     }
-    errors.collect(ros.propertyValidator('instanceIds', ros.listValidator(ros.validateAny))(properties.instanceIds));
+    errors.collect(ros.propertyValidator('instanceIds', ros.listValidator(ros.validateString))(properties.instanceIds));
     return errors.wrap('supplied properties not correct for "RosScalingGroupEnableProps"');
 }
 
@@ -5666,10 +5673,10 @@ function rosScalingGroupEnablePropsToRosTemplate(properties: any, enableResource
       ScalingGroupId: ros.stringToRosTemplate(properties.scalingGroupId),
       AttachOptions: rosScalingGroupEnableAttachOptionsPropertyToRosTemplate(properties.attachOptions),
       DetachOptions: rosScalingGroupEnableDetachOptionsPropertyToRosTemplate(properties.detachOptions),
-      InstanceIds: ros.listMapper(ros.objectToRosTemplate)(properties.instanceIds),
-      RemoveInstanceIds: ros.listMapper(ros.objectToRosTemplate)(properties.removeInstanceIds),
+      InstanceIds: ros.listMapper(ros.stringToRosTemplate)(properties.instanceIds),
+      RemoveInstanceIds: ros.listMapper(ros.stringToRosTemplate)(properties.removeInstanceIds),
       ScalingConfigurationId: ros.stringToRosTemplate(properties.scalingConfigurationId),
-      ScalingRuleAris: ros.listMapper(ros.objectToRosTemplate)(properties.scalingRuleAris),
+      ScalingRuleAris: ros.listMapper(ros.stringToRosTemplate)(properties.scalingRuleAris),
       ScalingRuleArisExecuteVersion: ros.numberToRosTemplate(properties.scalingRuleArisExecuteVersion),
     };
 }
@@ -5746,12 +5753,12 @@ export class RosScalingGroupEnable extends ros.RosResource {
     /**
      * @Property instanceIds: The id list of ECS instance which will be attached. Max support 1000 instances.
      */
-    public instanceIds: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
+    public instanceIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property removeInstanceIds: The id list of ECS instance which will be removed. Max support 1000 instances.
      */
-    public removeInstanceIds: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
+    public removeInstanceIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property scalingConfigurationId: The id of scaling configuration which will be activate.
@@ -5763,7 +5770,7 @@ export class RosScalingGroupEnable extends ros.RosResource {
      * When creating the resource, all the scaling rule aris in the list will be executed.
      * When updating the resource, none of scaling rule aris in the list will be executed, unless ScalingRuleArisExecuteVersion is changed.
      */
-    public scalingRuleAris: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
+    public scalingRuleAris: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property scalingRuleArisExecuteVersion: The change of the property leads to the execution of all the scaling rule aris in ScalingRuleAris.

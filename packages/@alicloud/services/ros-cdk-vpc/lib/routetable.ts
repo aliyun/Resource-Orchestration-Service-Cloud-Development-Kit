@@ -33,7 +33,7 @@ export interface RouteTableProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::RouteTable`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::RouteTable`, which is used to create a custom route table.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRouteTable`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-routetable
  */

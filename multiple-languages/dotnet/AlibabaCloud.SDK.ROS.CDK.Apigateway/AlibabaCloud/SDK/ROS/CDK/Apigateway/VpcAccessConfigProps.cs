@@ -15,7 +15,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
     {
         private object _instanceId;
 
-        /// <summary>Property instanceId: The id of the instance (ECS\/SLB).</summary>
+        /// <summary>Property instanceId: The id of the instance (ECS\/SLB\/ALB\/NLB).</summary>
         [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object InstanceId
         {

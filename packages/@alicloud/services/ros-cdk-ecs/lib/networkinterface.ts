@@ -15,9 +15,25 @@ export interface NetworkInterfaceProps {
     readonly vSwitchId: string | ros.IResolvable;
 
     /**
+     * Property deleteOnRelease: Specifies whether to delete the ENI when the instance is released.
+     */
+    readonly deleteOnRelease?: boolean | ros.IResolvable;
+
+    /**
      * Property description: Description of your ENI. It is a string of [2, 256] English or Chinese characters.
      */
     readonly description?: string | ros.IResolvable;
+
+    /**
+     * Property ipv4PrefixCount: Specifies one or more IPv4 prefixes for the elastic network interface. Range: 1-10
+     * **Note**: If you need to set an IPv4 prefix for an elastic network interface, you must set either Ipv4Prefixes or Ipv4PrefixCount, but not both.
+     */
+    readonly ipv4PrefixCount?: number | ros.IResolvable;
+
+    /**
+     * Property ipv4Prefixes: Specifies one or more IPv4 prefixes for the elastic network interface.
+     */
+    readonly ipv4Prefixes?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property ipv6AddressCount: The number of randomly generated IPv6 addresses that are assigned to the ENI.
@@ -28,6 +44,17 @@ export interface NetworkInterfaceProps {
      * Property ipv6Addresses: The IPv6 address N to assign to the ENI.
      */
     readonly ipv6Addresses?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property ipv6PrefixCount: Specifies one or more IPv6 prefixes for the elastic network interface. Range: 1-10
+     * **Note**: If you need to set an IPv6 prefix for an elastic network interface, you must set either Ipv6Prefixes or Ipv6PrefixCount, but not both.
+     */
+    readonly ipv6PrefixCount?: number | ros.IResolvable;
+
+    /**
+     * Property ipv6Prefixes: Specifies one or more IPv6 prefixes for the elastic network interface.
+     */
+    readonly ipv6Prefixes?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property networkInterfaceName: Name of your ENI. It is a string of [2, 128]  Chinese or English characters. It must begin with a letter and can contain numbers, underscores (_), colons (:), or hyphens (-).
@@ -64,6 +91,13 @@ export interface NetworkInterfaceProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
+     * Property rxQueueSize: Elastic network card inbound queue depth.
+     * **Note**: The inbound queue depth of the network card must be equal to the outbound queue depth, ranging from 8192 to 16384, and must be a power of two.
+     * Larger inbound queue depth can improve inbound throughput, but it consumes more memory.
+     */
+    readonly rxQueueSize?: number | ros.IResolvable;
+
+    /**
      * Property secondaryPrivateIpAddressCount: The number of private IP addresses that can be created automatically by ECS.
      */
     readonly secondaryPrivateIpAddressCount?: number | ros.IResolvable;
@@ -82,6 +116,13 @@ export interface NetworkInterfaceProps {
      * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosNetworkInterface.TagsProperty[];
+
+    /**
+     * Property txQueueSize: Elastic network card outbound queue depth.
+     * **Note**: The outbound queue depth of the network card must be equal to the inbound queue depth, ranging from 8192 to 16384, and must be a power of two.
+     * Larger outbound queue depth can improve outbound throughput, but it consumes more memory.
+     */
+    readonly txQueueSize?: number | ros.IResolvable;
 }
 
 /**
@@ -130,17 +171,24 @@ export class NetworkInterface extends ros.Resource {
         const rosNetworkInterface = new RosNetworkInterface(this, id,  {
             networkInterfaceTrafficMode: props.networkInterfaceTrafficMode,
             description: props.description,
-            privateIpAddresses: props.privateIpAddresses,
             resourceGroupId: props.resourceGroupId,
+            deleteOnRelease: props.deleteOnRelease,
+            privateIpAddresses: props.privateIpAddresses,
             secondaryPrivateIpAddressCount: props.secondaryPrivateIpAddressCount,
+            ipv6PrefixCount: props.ipv6PrefixCount,
+            ipv4Prefixes: props.ipv4Prefixes,
             securityGroupId: props.securityGroupId,
             vSwitchId: props.vSwitchId,
+            ipv4PrefixCount: props.ipv4PrefixCount,
             networkInterfaceName: props.networkInterfaceName,
             primaryIpAddress: props.primaryIpAddress,
+            ipv6Prefixes: props.ipv6Prefixes,
             ipv6Addresses: props.ipv6Addresses,
             securityGroupIds: props.securityGroupIds,
             queueNumber: props.queueNumber,
+            txQueueSize: props.txQueueSize,
             ipv6AddressCount: props.ipv6AddressCount,
+            rxQueueSize: props.rxQueueSize,
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosNetworkInterface;

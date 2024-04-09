@@ -20,6 +20,11 @@ export interface RunCommandProps {
      * Range of n: 1 ~ 10
      */
     readonly instanceIds: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property runAgainOn: The stage of executing the command again.
+     */
+    readonly runAgainOn?: Array<string | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
@@ -47,6 +52,7 @@ export class RunCommand extends ros.Resource {
 
         const rosRunCommand = new RosRunCommand(this, id,  {
             command: props.command,
+            runAgainOn: props.runAgainOn,
             instanceIds: props.instanceIds,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosRunCommand;

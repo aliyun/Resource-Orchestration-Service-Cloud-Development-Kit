@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ess;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalingconfiguration
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:52.455Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:33.016Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScalingConfigurationProps")
 @software.amazon.jsii.Jsii.Proxy(RosScalingConfigurationProps.Jsii$Proxy.class)
 public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiSerializable {
@@ -810,7 +810,7 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
          * @param instanceTypes the value to be set.
          * @return {@code this}
          */
-        public Builder instanceTypes(java.util.List<? extends java.lang.Object> instanceTypes) {
+        public Builder instanceTypes(com.aliyun.ros.cdk.core.IResolvable instanceTypes) {
             this.instanceTypes = instanceTypes;
             return this;
         }
@@ -820,7 +820,7 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
          * @param instanceTypes the value to be set.
          * @return {@code this}
          */
-        public Builder instanceTypes(com.aliyun.ros.cdk.core.IResolvable instanceTypes) {
+        public Builder instanceTypes(java.util.List<? extends java.lang.Object> instanceTypes) {
             this.instanceTypes = instanceTypes;
             return this;
         }

@@ -4847,3 +4847,205 @@ function rosSiteMonitorIspCitiesPropertyToRosTemplate(properties: any): any {
       City: ros.stringToRosTemplate(properties.city),
     };
 }
+
+/**
+ * Properties for defining a `RosSlsGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-slsgroup
+ */
+export interface RosSlsGroupProps {
+
+    /**
+     * @Property slsGroupConfig: The configurations of the Logstore group.Valid values of N: 1 to 25.
+     */
+    readonly slsGroupConfig: Array<RosSlsGroup.SlsGroupConfigProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property slsGroupName: The name of the Logstore group.The name must be 2 to 32 characters in length and can contain uppercase letters, lowercase letters, digits, and underscores (_). The name must start with a letter.
+     */
+    readonly slsGroupName: string | ros.IResolvable;
+
+    /**
+     * @Property slsGroupDescription: The description of the Logstore group.
+     */
+    readonly slsGroupDescription?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSlsGroupProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSlsGroupProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSlsGroupPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('slsGroupDescription', ros.validateString)(properties.slsGroupDescription));
+    errors.collect(ros.propertyValidator('slsGroupConfig', ros.requiredValidator)(properties.slsGroupConfig));
+    errors.collect(ros.propertyValidator('slsGroupConfig', ros.listValidator(RosSlsGroup_SlsGroupConfigPropertyValidator))(properties.slsGroupConfig));
+    errors.collect(ros.propertyValidator('slsGroupName', ros.requiredValidator)(properties.slsGroupName));
+    errors.collect(ros.propertyValidator('slsGroupName', ros.validateString)(properties.slsGroupName));
+    return errors.wrap('supplied properties not correct for "RosSlsGroupProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CMS::SlsGroup` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSlsGroupProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CMS::SlsGroup` resource.
+ */
+// @ts-ignore TS6133
+function rosSlsGroupPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSlsGroupPropsValidator(properties).assertSuccess();
+    }
+    return {
+      SlsGroupConfig: ros.listMapper(rosSlsGroupSlsGroupConfigPropertyToRosTemplate)(properties.slsGroupConfig),
+      SlsGroupName: ros.stringToRosTemplate(properties.slsGroupName),
+      SlsGroupDescription: ros.stringToRosTemplate(properties.slsGroupDescription),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::SlsGroup`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SlsGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-slsgroup
+ */
+export class RosSlsGroup extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CMS::SlsGroup";
+
+    /**
+     * @Attribute CreateTime: The creation time of the Logstore group.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute SlsGroupConfig: The configurations of the Logstore group.
+     */
+    public readonly attrSlsGroupConfig: ros.IResolvable;
+
+    /**
+     * @Attribute SlsGroupDescription: The description of the Logstore group.
+     */
+    public readonly attrSlsGroupDescription: ros.IResolvable;
+
+    /**
+     * @Attribute SlsGroupName: The name of the Logstore group.
+     */
+    public readonly attrSlsGroupName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property slsGroupConfig: The configurations of the Logstore group.Valid values of N: 1 to 25.
+     */
+    public slsGroupConfig: Array<RosSlsGroup.SlsGroupConfigProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property slsGroupName: The name of the Logstore group.The name must be 2 to 32 characters in length and can contain uppercase letters, lowercase letters, digits, and underscores (_). The name must start with a letter.
+     */
+    public slsGroupName: string | ros.IResolvable;
+
+    /**
+     * @Property slsGroupDescription: The description of the Logstore group.
+     */
+    public slsGroupDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSlsGroupProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSlsGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrSlsGroupConfig = this.getAtt('SlsGroupConfig');
+        this.attrSlsGroupDescription = this.getAtt('SlsGroupDescription');
+        this.attrSlsGroupName = this.getAtt('SlsGroupName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.slsGroupConfig = props.slsGroupConfig;
+        this.slsGroupName = props.slsGroupName;
+        this.slsGroupDescription = props.slsGroupDescription;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            slsGroupConfig: this.slsGroupConfig,
+            slsGroupName: this.slsGroupName,
+            slsGroupDescription: this.slsGroupDescription,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSlsGroupPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosSlsGroup {
+    /**
+     * @stability external
+     */
+    export interface SlsGroupConfigProperty {
+        /**
+         * @Property slsProject: The Simple Log Service project.
+         */
+        readonly slsProject: string | ros.IResolvable;
+        /**
+         * @Property slsRegion: The region ID.
+         */
+        readonly slsRegion: string | ros.IResolvable;
+        /**
+         * @Property slsUserId: The member ID. If you call this operation by using the management account of a resource directory, you can connect the Alibaba Cloud services that are activated for all members in the resource directory to Hybrid Cloud Monitoring. You can use the resource directory to monitor Alibaba Cloud services across enterprise accounts.Note If a member uses CloudMonitor for the first time, you must make sure that the service-linked role AliyunServiceRoleForCloudMonitor is attached to the member. For more information, see Manage the service-linked role for CloudMonitor.
+         */
+        readonly slsUserId?: string | ros.IResolvable;
+        /**
+         * @Property slsLogstore: The Logstore.
+         */
+        readonly slsLogstore: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `SlsGroupConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `SlsGroupConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSlsGroup_SlsGroupConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('slsProject', ros.requiredValidator)(properties.slsProject));
+    errors.collect(ros.propertyValidator('slsProject', ros.validateString)(properties.slsProject));
+    errors.collect(ros.propertyValidator('slsRegion', ros.requiredValidator)(properties.slsRegion));
+    errors.collect(ros.propertyValidator('slsRegion', ros.validateString)(properties.slsRegion));
+    errors.collect(ros.propertyValidator('slsUserId', ros.validateString)(properties.slsUserId));
+    errors.collect(ros.propertyValidator('slsLogstore', ros.requiredValidator)(properties.slsLogstore));
+    errors.collect(ros.propertyValidator('slsLogstore', ros.validateString)(properties.slsLogstore));
+    return errors.wrap('supplied properties not correct for "SlsGroupConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CMS::SlsGroup.SlsGroupConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `SlsGroupConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CMS::SlsGroup.SlsGroupConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosSlsGroupSlsGroupConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSlsGroup_SlsGroupConfigPropertyValidator(properties).assertSuccess();
+    return {
+      SlsProject: ros.stringToRosTemplate(properties.slsProject),
+      SlsRegion: ros.stringToRosTemplate(properties.slsRegion),
+      SlsUserId: ros.stringToRosTemplate(properties.slsUserId),
+      SlsLogstore: ros.stringToRosTemplate(properties.slsLogstore),
+    };
+}

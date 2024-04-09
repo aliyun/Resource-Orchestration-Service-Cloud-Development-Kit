@@ -63,7 +63,7 @@ function rosEditingProjectPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VOD::EditingProject`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VOD::EditingProject`, which is used to create an online editing project.
  * @Note This class does not contain additional functions, so it is recommended to use the `EditingProject` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vod-editingproject
  */
@@ -264,7 +264,7 @@ function rosMessageCallbackPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VOD::MessageCallback`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VOD::MessageCallback`, which is used to configure the callback method, callback URL, and event types for an event notification.
  * @Note This class does not contain additional functions, so it is recommended to use the `MessageCallback` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vod-messagecallback
  */

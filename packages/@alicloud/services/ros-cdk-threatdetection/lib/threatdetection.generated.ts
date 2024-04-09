@@ -126,7 +126,7 @@ function rosAntiBruteForceRulePropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ThreatDetection::AntiBruteForceRule`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ThreatDetection::AntiBruteForceRule`, which is used to create a defense rule against brute-force attacks.
  * @Note This class does not contain additional functions, so it is recommended to use the `AntiBruteForceRule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-threatdetection-antibruteforcerule
  */
@@ -615,7 +615,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ThreatDetection::Instance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ThreatDetection::Instance`, which is used to purchase Security Center (SAS).
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-threatdetection-instance
  */

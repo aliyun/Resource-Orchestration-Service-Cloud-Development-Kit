@@ -222,6 +222,11 @@ export class RosASKCluster extends ros.RosResource {
     public readonly attrDefaultUserKubeConfig: ros.IResolvable;
 
     /**
+     * @Attribute IngressSLBId: The id of ingress SLB
+     */
+    public readonly attrIngressSlbId: ros.IResolvable;
+
+    /**
      * @Attribute Nodes: The list of cluster nodes.
      */
     public readonly attrNodes: ros.IResolvable;
@@ -376,6 +381,7 @@ export class RosASKCluster extends ros.RosResource {
         this.attrApiServerSlbId = this.getAtt('APIServerSLBId');
         this.attrClusterId = this.getAtt('ClusterId');
         this.attrDefaultUserKubeConfig = this.getAtt('DefaultUserKubeConfig');
+        this.attrIngressSlbId = this.getAtt('IngressSLBId');
         this.attrNodes = this.getAtt('Nodes');
         this.attrPrivateUserKubConfig = this.getAtt('PrivateUserKubConfig');
         this.attrScalingConfigurationId = this.getAtt('ScalingConfigurationId');
@@ -605,6 +611,11 @@ export class RosAnyCluster extends ros.RosResource {
     public readonly attrDefaultUserKubeConfig: ros.IResolvable;
 
     /**
+     * @Attribute IngressSLBId: The id of ingress SLB
+     */
+    public readonly attrIngressSlbId: ros.IResolvable;
+
+    /**
      * @Attribute Nodes: The list of cluster nodes.
      */
     public readonly attrNodes: ros.IResolvable;
@@ -657,6 +668,7 @@ export class RosAnyCluster extends ros.RosResource {
         this.attrApiServerSlbId = this.getAtt('APIServerSLBId');
         this.attrClusterId = this.getAtt('ClusterId');
         this.attrDefaultUserKubeConfig = this.getAtt('DefaultUserKubeConfig');
+        this.attrIngressSlbId = this.getAtt('IngressSLBId');
         this.attrNodes = this.getAtt('Nodes');
         this.attrPrivateUserKubConfig = this.getAtt('PrivateUserKubConfig');
         this.attrScalingConfigurationId = this.getAtt('ScalingConfigurationId');
@@ -2635,7 +2647,9 @@ export namespace RosClusterNodePool {
          */
         readonly spotInstancePools?: number | ros.IResolvable;
         /**
-         * @Property period: The subscription period of nodes in the node pool. This parameter takes effect and is required only when InstanceChargeType is set to PrePaid. If PeriodUnit=Month is configured, the valid values are: 1, 2, 3, 6, and 12. 
+         * @Property period: The subscription period of nodes in the node pool. This parameter takes effect and is required only when InstanceChargeType is set to PrePaid. When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
+     * When PeriodUnit = Month, Period values are: {"1", "2", "3", "6", "12", "24", "36"}
+     * When PeriodUnit = Year, Period values are: {"1", "2", "3"}
      * Default value: 1.
          */
         readonly period?: number | ros.IResolvable;
@@ -2662,7 +2676,11 @@ export namespace RosClusterNodePool {
          */
         readonly rdsInstances?: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
-         * @Property periodUnit: The unit of the subscription period of nodes in the node pool. This parameter is required if you set InstanceChargeType to PrePaid. A value of Month specifies that the subscription period is measured in months.
+         * @Property periodUnit: The unit of the subscription period of nodes in the node pool. This parameter is required if you set InstanceChargeType to PrePaid. The options are:
+     * Week: Time is measured in weeks
+     * Month: time in months
+     * Year: time in years
+     * Default to Month
          */
         readonly periodUnit?: string | ros.IResolvable;
     }
@@ -2690,6 +2708,12 @@ function RosClusterNodePool_ScalingGroupPropertyValidator(properties: any): ros.
     errors.collect(ros.propertyValidator('systemDiskSize', ros.requiredValidator)(properties.systemDiskSize));
     errors.collect(ros.propertyValidator('systemDiskSize', ros.validateNumber)(properties.systemDiskSize));
     errors.collect(ros.propertyValidator('compensateWithOnDemand', ros.validateBoolean)(properties.compensateWithOnDemand));
+    if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
+          data: properties.instanceChargeType,
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
+        }));
+    }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
     if(properties.onDemandPercentageAboveBaseCapacity && (typeof properties.onDemandPercentageAboveBaseCapacity) !== 'object') {
         errors.collect(ros.propertyValidator('onDemandPercentageAboveBaseCapacity', ros.validateRange)({
@@ -2764,7 +2788,7 @@ function RosClusterNodePool_ScalingGroupPropertyValidator(properties: any): ros.
         errors.collect(ros.propertyValidator('period', ros.validateRange)({
             data: properties.period,
             min: 1,
-            max: undefined,
+            max: 36,
           }));
     }
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
@@ -2779,6 +2803,12 @@ function RosClusterNodePool_ScalingGroupPropertyValidator(properties: any): ros.
           }));
     }
     errors.collect(ros.propertyValidator('rdsInstances', ros.listValidator(ros.validateString))(properties.rdsInstances));
+    if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
+        errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
+          data: properties.periodUnit,
+          allowedValues: ["Week","Month","Year"],
+        }));
+    }
     errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
     return errors.wrap('supplied properties not correct for "ScalingGroupProperty"');
 }
@@ -3784,6 +3814,11 @@ export class RosKubernetesCluster extends ros.RosResource {
     public readonly attrDefaultUserKubeConfig: ros.IResolvable;
 
     /**
+     * @Attribute IngressSLBId: The id of ingress SLB
+     */
+    public readonly attrIngressSlbId: ros.IResolvable;
+
+    /**
      * @Attribute Nodes: The list of cluster nodes.
      */
     public readonly attrNodes: ros.IResolvable;
@@ -4235,6 +4270,7 @@ export class RosKubernetesCluster extends ros.RosResource {
         this.attrApiServerSlbId = this.getAtt('APIServerSLBId');
         this.attrClusterId = this.getAtt('ClusterId');
         this.attrDefaultUserKubeConfig = this.getAtt('DefaultUserKubeConfig');
+        this.attrIngressSlbId = this.getAtt('IngressSLBId');
         this.attrNodes = this.getAtt('Nodes');
         this.attrPrivateUserKubConfig = this.getAtt('PrivateUserKubConfig');
         this.attrScalingConfigurationId = this.getAtt('ScalingConfigurationId');
@@ -5718,6 +5754,11 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
     public readonly attrDefaultUserKubeConfig: ros.IResolvable;
 
     /**
+     * @Attribute IngressSLBId: The id of ingress SLB
+     */
+    public readonly attrIngressSlbId: ros.IResolvable;
+
+    /**
      * @Attribute Nodes: The list of cluster nodes.
      */
     public readonly attrNodes: ros.IResolvable;
@@ -5990,6 +6031,7 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
         this.attrApiServerSlbId = this.getAtt('APIServerSLBId');
         this.attrClusterId = this.getAtt('ClusterId');
         this.attrDefaultUserKubeConfig = this.getAtt('DefaultUserKubeConfig');
+        this.attrIngressSlbId = this.getAtt('IngressSLBId');
         this.attrNodes = this.getAtt('Nodes');
         this.attrPrivateUserKubConfig = this.getAtt('PrivateUserKubConfig');
         this.attrScalingConfigurationId = this.getAtt('ScalingConfigurationId');
@@ -6794,6 +6836,11 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
     public readonly attrDefaultUserKubeConfig: ros.IResolvable;
 
     /**
+     * @Attribute IngressSLBId: The id of ingress SLB
+     */
+    public readonly attrIngressSlbId: ros.IResolvable;
+
+    /**
      * @Attribute Nodes: The list of cluster nodes.
      */
     public readonly attrNodes: ros.IResolvable;
@@ -7167,6 +7214,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
         this.attrApiServerSlbId = this.getAtt('APIServerSLBId');
         this.attrClusterId = this.getAtt('ClusterId');
         this.attrDefaultUserKubeConfig = this.getAtt('DefaultUserKubeConfig');
+        this.attrIngressSlbId = this.getAtt('IngressSLBId');
         this.attrNodes = this.getAtt('Nodes');
         this.attrPrivateUserKubConfig = this.getAtt('PrivateUserKubConfig');
         this.attrScalingConfigurationId = this.getAtt('ScalingConfigurationId');

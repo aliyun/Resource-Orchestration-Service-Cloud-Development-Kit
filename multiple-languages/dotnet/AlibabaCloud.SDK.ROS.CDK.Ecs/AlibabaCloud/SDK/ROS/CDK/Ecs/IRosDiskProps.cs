@@ -12,15 +12,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
     public interface IRosDiskProps
     {
         /// <remarks>
-        /// <strong>Property</strong>: zoneId: The availability zone in which the volume will be created.
-        /// </remarks>
-        [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object ZoneId
-        {
-            get;
-        }
-
-        /// <remarks>
         /// <strong>Property</strong>: autoSnapshotPolicyId: Auto snapshot policy ID.
         /// </remarks>
         [JsiiProperty(name: "autoSnapshotPolicyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -104,6 +95,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         [JsiiProperty(name: "encrypted", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Encrypted
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: instanceId: Create a cloud disk and automatically mount it to the specified InstanceId.
+        /// - Once the instance ID is set, the ResourceGroupId, Tags, and KMSKeyId parameters you set are ignored.
+        /// - You cannot specify both ZoneId and InstanceId.
+        /// Default value: null, meaning that a pay-as-you-go cloud drive is created, and the region of the drive is defined by the RegionId and ZoneId.
+        /// </remarks>
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? InstanceId
         {
             get
             {
@@ -244,6 +251,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
+        /// <remarks>
+        /// <strong>Property</strong>: zoneId: Create a pay-as-you-go cloud drive within the specified availability area.
+        /// - If you do not set InstanceId, ZoneId is required.
+        /// - You cannot specify both ZoneId and InstanceId.
+        /// </remarks>
+        [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ZoneId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `RosDisk`.</summary>
         /// <remarks>
         /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-disk
@@ -253,15 +275,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         {
             private _Proxy(ByRefValue reference): base(reference)
             {
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: zoneId: The availability zone in which the volume will be created.
-            /// </remarks>
-            [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object ZoneId
-            {
-                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
@@ -330,6 +343,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             [JsiiOptional]
             [JsiiProperty(name: "encrypted", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Encrypted
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: instanceId: Create a cloud disk and automatically mount it to the specified InstanceId.
+            /// - Once the instance ID is set, the ResourceGroupId, Tags, and KMSKeyId parameters you set are ignored.
+            /// - You cannot specify both ZoneId and InstanceId.
+            /// Default value: null, meaning that a pay-as-you-go cloud drive is created, and the region of the drive is defined by the RegionId and ZoneId.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? InstanceId
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -435,6 +461,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             public AlibabaCloud.SDK.ROS.CDK.Ecs.RosDisk.ITagsProperty[]? Tags
             {
                 get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Ecs.RosDisk.ITagsProperty[]?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: zoneId: Create a pay-as-you-go cloud drive within the specified availability area.
+            /// - If you do not set InstanceId, ZoneId is required.
+            /// - You cannot specify both ZoneId and InstanceId.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ZoneId
+            {
+                get => GetInstanceProperty<object?>();
             }
         }
     }

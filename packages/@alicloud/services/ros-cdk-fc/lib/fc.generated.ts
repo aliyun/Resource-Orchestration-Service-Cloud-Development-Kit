@@ -3008,7 +3008,7 @@ export namespace RosService {
         /**
          * @Property vSwitchIds: List of VSwitch IDs
          */
-        readonly vSwitchIds: Array<any | ros.IResolvable> | ros.IResolvable;
+        readonly vSwitchIds: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property securityGroupId: Security group ID
          */
@@ -3028,7 +3028,7 @@ function RosService_VpcConfigPropertyValidator(properties: any): ros.ValidationR
     errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('vSwitchIds', ros.requiredValidator)(properties.vSwitchIds));
-    errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateAny))(properties.vSwitchIds));
+    errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateString))(properties.vSwitchIds));
     errors.collect(ros.propertyValidator('securityGroupId', ros.requiredValidator)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     return errors.wrap('supplied properties not correct for "VpcConfigProperty"');
@@ -3047,7 +3047,7 @@ function rosServiceVpcConfigPropertyToRosTemplate(properties: any): any {
     RosService_VpcConfigPropertyValidator(properties).assertSuccess();
     return {
       VpcId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitchIds: ros.listMapper(ros.objectToRosTemplate)(properties.vSwitchIds),
+      VSwitchIds: ros.listMapper(ros.stringToRosTemplate)(properties.vSwitchIds),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
     };
 }

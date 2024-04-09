@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ESS::ScalingConfiguration</code>, which is used to create a scaling configuration for a scaling group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:52.448Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:32.993Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScalingConfiguration")
 public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -463,18 +463,29 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
 
     /**
      */
-    public void setInstanceTypes(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
-        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
-            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
-                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
-            }
-        }
+    public void setInstanceTypes(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "instanceTypes", value);
     }
 
     /**
      */
-    public void setInstanceTypes(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+    public void setInstanceTypes(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "instanceTypes", value);
     }
 
@@ -3162,7 +3173,7 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
          * @return {@code this}
          * @param instanceTypes This parameter is required.
          */
-        public Builder instanceTypes(final java.util.List<? extends java.lang.Object> instanceTypes) {
+        public Builder instanceTypes(final com.aliyun.ros.cdk.core.IResolvable instanceTypes) {
             this.props.instanceTypes(instanceTypes);
             return this;
         }
@@ -3170,7 +3181,7 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
          * @return {@code this}
          * @param instanceTypes This parameter is required.
          */
-        public Builder instanceTypes(final com.aliyun.ros.cdk.core.IResolvable instanceTypes) {
+        public Builder instanceTypes(final java.util.List<? extends java.lang.Object> instanceTypes) {
             this.props.instanceTypes(instanceTypes);
             return this;
         }

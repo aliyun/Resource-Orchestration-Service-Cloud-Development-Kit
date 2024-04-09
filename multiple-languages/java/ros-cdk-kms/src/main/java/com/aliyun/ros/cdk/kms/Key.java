@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kms;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::KMS::Key</code>, which is used to create a customer master key (CMK).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:52.969Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:33.557Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.Key")
 public class Key extends com.aliyun.ros.cdk.core.Resource {
 
@@ -297,6 +297,27 @@ public class Key extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder pendingWindowInDays(final com.aliyun.ros.cdk.core.IResolvable pendingWindowInDays) {
             this.props().pendingWindowInDays(pendingWindowInDays);
+            return this;
+        }
+
+        /**
+         * Property policy: The policy of key.
+         * <p>
+         * @return {@code this}
+         * @param policy Property policy: The policy of key. This parameter is required.
+         */
+        public Builder policy(final com.aliyun.ros.cdk.core.IResolvable policy) {
+            this.props().policy(policy);
+            return this;
+        }
+        /**
+         * Property policy: The policy of key.
+         * <p>
+         * @return {@code this}
+         * @param policy Property policy: The policy of key. This parameter is required.
+         */
+        public Builder policy(final java.util.Map<java.lang.String, ? extends java.lang.Object> policy) {
+            this.props().policy(policy);
             return this;
         }
 

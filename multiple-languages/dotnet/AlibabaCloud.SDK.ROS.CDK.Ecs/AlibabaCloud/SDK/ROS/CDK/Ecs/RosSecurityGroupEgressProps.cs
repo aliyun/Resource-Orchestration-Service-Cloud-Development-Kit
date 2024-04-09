@@ -113,7 +113,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         private object? _destCidrIp;
 
         /// <remarks>
-        /// <strong>Property</strong>: destCidrIp: Dest CIDR Ip Address range. Only IPV4 supported.
+        /// <strong>Property</strong>: destCidrIp: The destination IPv4 CIDR block to which you want to control access. CIDR blocks and IPv4 addresses are supported.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "destCidrIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -146,7 +146,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         private object? _destGroupId;
 
         /// <remarks>
-        /// <strong>Property</strong>: destGroupId: Dest Group Id
+        /// <strong>Property</strong>: destGroupId: The destination security group ID to which access permissions need to be set.
+        /// Set at least one of the DestGroupId, DestCidrIp, Ipv6DestCidrIp, or DestPrefixListId parameters.
+        /// - If DestGroupId is specified without the DestCidrIp parameter, the NicType parameter can only take the value intranet.
+        /// - If both DestGroupId and DestCidrIp are specified, DestCidrIp is assumed to prevail.
+        /// You should pay attention to:
+        /// - Enterprise Security groups do not support authorized security group access.
+        /// - The maximum number of authorized security groups supported by ordinary security groups is 20.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "destGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -179,7 +185,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         private object? _destGroupOwnerId;
 
         /// <remarks>
-        /// <strong>Property</strong>: destGroupOwnerId: Dest Group Owner Account ID
+        /// <strong>Property</strong>: destGroupOwnerId: When setting security group rules across accounts, the Ali Cloud account ID of the destination security group.
+        /// - If neither DestGroupOwnerId nor DestGroupOwnerAccount is set, it is considered to set the access rights of your other security group.
+        /// - If you have set the parameter DestCidrIp, the parameter DestGroupOwnerId is invalid.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "destGroupOwnerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -247,8 +255,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         private object? _ipv6DestCidrIp;
 
         /// <remarks>
-        /// <strong>Property</strong>: ipv6DestCidrIp: Destination IPv6 CIDR address segment. Supports IP address ranges in CIDR format and IPv6 format.
-        /// Note Only VPC type IP addresses are supported.
+        /// <strong>Property</strong>: ipv6DestCidrIp: Destination IPv6 CIDR address block for which access rights need to be set. CIDR format and IPv6 format IP address range are supported.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "ipv6DestCidrIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

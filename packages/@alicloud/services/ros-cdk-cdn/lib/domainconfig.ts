@@ -21,7 +21,7 @@ export interface DomainConfigProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CDN::DomainConfig`, which is used to add multiple domain name settings.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CDN::DomainConfig`, which is used to configure multiple domain names at a time.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomainConfig`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cdn-domainconfig
  */

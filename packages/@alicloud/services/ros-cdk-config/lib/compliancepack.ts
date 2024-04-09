@@ -15,12 +15,12 @@ export interface CompliancePackProps {
     readonly compliancePackName: string | ros.IResolvable;
 
     /**
-     * Property description: Description
+     * Property configRules:
      */
-    readonly description: string | ros.IResolvable;
+    readonly configRules: string | ros.IResolvable;
 
     /**
-     * Property riskLevel: Ris Level
+     * Property riskLevel: Ris Level, valid values: 1 | 2 | 3
      */
     readonly riskLevel: number | ros.IResolvable;
 
@@ -30,9 +30,14 @@ export interface CompliancePackProps {
     readonly compliancePackTemplateId?: string | ros.IResolvable;
 
     /**
-     * Property configRules: Config Rule List
+     * Property configRuleIds: Compliance Package rule ID list
      */
-    readonly configRules?: Array<RosCompliancePack.ConfigRulesProperty | ros.IResolvable> | ros.IResolvable;
+    readonly configRuleIds?: Array<RosCompliancePack.ConfigRuleIdsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property description: Description
+     */
+    readonly description?: string | ros.IResolvable;
 }
 
 /**
@@ -72,7 +77,7 @@ export class CompliancePack extends ros.Resource {
     public readonly attrDescription: ros.IResolvable;
 
     /**
-     * Attribute RiskLevel: Ris Level
+     * Attribute RiskLevel: Ris Level, valid values: 1 | 2 | 3
      */
     public readonly attrRiskLevel: ros.IResolvable;
 
@@ -89,8 +94,9 @@ export class CompliancePack extends ros.Resource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCompliancePack = new RosCompliancePack(this, id,  {
-            compliancePackName: props.compliancePackName,
+            configRuleIds: props.configRuleIds,
             description: props.description,
+            compliancePackName: props.compliancePackName,
             configRules: props.configRules,
             compliancePackTemplateId: props.compliancePackTemplateId,
             riskLevel: props.riskLevel,

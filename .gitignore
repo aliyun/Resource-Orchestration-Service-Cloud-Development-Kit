@@ -8,6 +8,7 @@ dist/
 .jsii
 package-lock.json
 .idea
+**/__pycache__/
 
 .python-version
 
@@ -35,4 +36,3 @@ references/site
 references/site.zip
 
 **/.DS_Store
-**/__pycache__/

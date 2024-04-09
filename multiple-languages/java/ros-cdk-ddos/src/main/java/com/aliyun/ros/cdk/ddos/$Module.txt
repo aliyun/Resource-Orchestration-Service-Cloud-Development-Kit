@@ -1,0 +1,5 @@
+@alicloud/ros-cdk-ddos.OriginInstance=com.aliyun.ros.cdk.ddos.OriginInstance
+@alicloud/ros-cdk-ddos.OriginInstanceProps=com.aliyun.ros.cdk.ddos.OriginInstanceProps
+@alicloud/ros-cdk-ddos.RosOriginInstance=com.aliyun.ros.cdk.ddos.RosOriginInstance
+@alicloud/ros-cdk-ddos.RosOriginInstance.TagsProperty=com.aliyun.ros.cdk.ddos.RosOriginInstance$TagsProperty
+@alicloud/ros-cdk-ddos.RosOriginInstanceProps=com.aliyun.ros.cdk.ddos.RosOriginInstanceProps

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ECS::SecurityGroup</code>, which is used to create a security group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:51.933Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:32.371Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosSecurityGroup")
 public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -275,6 +275,13 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDestGroupOwnerAccount() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getDestGroupOwnerId() {
             return null;
         }
@@ -290,6 +297,13 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getIpv6DestCidrIp() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getIpv6SourceCidrIp() {
             return null;
         }
 
@@ -317,7 +331,14 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupId() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSourceCidrIp() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSourcePortRange() {
             return null;
         }
 
@@ -338,13 +359,16 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object description;
             java.lang.Object destCidrIp;
             java.lang.Object destGroupId;
+            java.lang.Object destGroupOwnerAccount;
             java.lang.Object destGroupOwnerId;
             java.lang.Object destPrefixListId;
             java.lang.Object ipv6DestCidrIp;
+            java.lang.Object ipv6SourceCidrIp;
             java.lang.Object nicType;
             java.lang.Object policy;
             java.lang.Object priority;
-            java.lang.Object securityGroupId;
+            java.lang.Object sourceCidrIp;
+            java.lang.Object sourcePortRange;
 
             /**
              * Sets the value of {@link SecurityGroupEgressProperty#getIpProtocol}
@@ -457,6 +481,28 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link SecurityGroupEgressProperty#getDestGroupOwnerAccount}
+             * @param destGroupOwnerAccount the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder destGroupOwnerAccount(java.lang.String destGroupOwnerAccount) {
+                this.destGroupOwnerAccount = destGroupOwnerAccount;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SecurityGroupEgressProperty#getDestGroupOwnerAccount}
+             * @param destGroupOwnerAccount the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder destGroupOwnerAccount(com.aliyun.ros.cdk.core.IResolvable destGroupOwnerAccount) {
+                this.destGroupOwnerAccount = destGroupOwnerAccount;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link SecurityGroupEgressProperty#getDestGroupOwnerId}
              * @param destGroupOwnerId the value to be set.
              * @return {@code this}
@@ -519,6 +565,28 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder ipv6DestCidrIp(com.aliyun.ros.cdk.core.IResolvable ipv6DestCidrIp) {
                 this.ipv6DestCidrIp = ipv6DestCidrIp;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SecurityGroupEgressProperty#getIpv6SourceCidrIp}
+             * @param ipv6SourceCidrIp the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder ipv6SourceCidrIp(java.lang.String ipv6SourceCidrIp) {
+                this.ipv6SourceCidrIp = ipv6SourceCidrIp;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SecurityGroupEgressProperty#getIpv6SourceCidrIp}
+             * @param ipv6SourceCidrIp the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder ipv6SourceCidrIp(com.aliyun.ros.cdk.core.IResolvable ipv6SourceCidrIp) {
+                this.ipv6SourceCidrIp = ipv6SourceCidrIp;
                 return this;
             }
 
@@ -589,24 +657,46 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
-             * Sets the value of {@link SecurityGroupEgressProperty#getSecurityGroupId}
-             * @param securityGroupId the value to be set.
+             * Sets the value of {@link SecurityGroupEgressProperty#getSourceCidrIp}
+             * @param sourceCidrIp the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder securityGroupId(java.lang.String securityGroupId) {
-                this.securityGroupId = securityGroupId;
+            public Builder sourceCidrIp(java.lang.String sourceCidrIp) {
+                this.sourceCidrIp = sourceCidrIp;
                 return this;
             }
 
             /**
-             * Sets the value of {@link SecurityGroupEgressProperty#getSecurityGroupId}
-             * @param securityGroupId the value to be set.
+             * Sets the value of {@link SecurityGroupEgressProperty#getSourceCidrIp}
+             * @param sourceCidrIp the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder securityGroupId(com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
-                this.securityGroupId = securityGroupId;
+            public Builder sourceCidrIp(com.aliyun.ros.cdk.core.IResolvable sourceCidrIp) {
+                this.sourceCidrIp = sourceCidrIp;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SecurityGroupEgressProperty#getSourcePortRange}
+             * @param sourcePortRange the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder sourcePortRange(java.lang.String sourcePortRange) {
+                this.sourcePortRange = sourcePortRange;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SecurityGroupEgressProperty#getSourcePortRange}
+             * @param sourcePortRange the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder sourcePortRange(com.aliyun.ros.cdk.core.IResolvable sourcePortRange) {
+                this.sourcePortRange = sourcePortRange;
                 return this;
             }
 
@@ -633,13 +723,16 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object description;
             private final java.lang.Object destCidrIp;
             private final java.lang.Object destGroupId;
+            private final java.lang.Object destGroupOwnerAccount;
             private final java.lang.Object destGroupOwnerId;
             private final java.lang.Object destPrefixListId;
             private final java.lang.Object ipv6DestCidrIp;
+            private final java.lang.Object ipv6SourceCidrIp;
             private final java.lang.Object nicType;
             private final java.lang.Object policy;
             private final java.lang.Object priority;
-            private final java.lang.Object securityGroupId;
+            private final java.lang.Object sourceCidrIp;
+            private final java.lang.Object sourcePortRange;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -652,13 +745,16 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
                 this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.destCidrIp = software.amazon.jsii.Kernel.get(this, "destCidrIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.destGroupId = software.amazon.jsii.Kernel.get(this, "destGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.destGroupOwnerAccount = software.amazon.jsii.Kernel.get(this, "destGroupOwnerAccount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.destGroupOwnerId = software.amazon.jsii.Kernel.get(this, "destGroupOwnerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.destPrefixListId = software.amazon.jsii.Kernel.get(this, "destPrefixListId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.ipv6DestCidrIp = software.amazon.jsii.Kernel.get(this, "ipv6DestCidrIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.ipv6SourceCidrIp = software.amazon.jsii.Kernel.get(this, "ipv6SourceCidrIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.nicType = software.amazon.jsii.Kernel.get(this, "nicType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.policy = software.amazon.jsii.Kernel.get(this, "policy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.priority = software.amazon.jsii.Kernel.get(this, "priority", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.sourceCidrIp = software.amazon.jsii.Kernel.get(this, "sourceCidrIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.sourcePortRange = software.amazon.jsii.Kernel.get(this, "sourcePortRange", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -671,13 +767,16 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
                 this.description = builder.description;
                 this.destCidrIp = builder.destCidrIp;
                 this.destGroupId = builder.destGroupId;
+                this.destGroupOwnerAccount = builder.destGroupOwnerAccount;
                 this.destGroupOwnerId = builder.destGroupOwnerId;
                 this.destPrefixListId = builder.destPrefixListId;
                 this.ipv6DestCidrIp = builder.ipv6DestCidrIp;
+                this.ipv6SourceCidrIp = builder.ipv6SourceCidrIp;
                 this.nicType = builder.nicType;
                 this.policy = builder.policy;
                 this.priority = builder.priority;
-                this.securityGroupId = builder.securityGroupId;
+                this.sourceCidrIp = builder.sourceCidrIp;
+                this.sourcePortRange = builder.sourcePortRange;
             }
 
             @Override
@@ -706,6 +805,11 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getDestGroupOwnerAccount() {
+                return this.destGroupOwnerAccount;
+            }
+
+            @Override
             public final java.lang.Object getDestGroupOwnerId() {
                 return this.destGroupOwnerId;
             }
@@ -718,6 +822,11 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final java.lang.Object getIpv6DestCidrIp() {
                 return this.ipv6DestCidrIp;
+            }
+
+            @Override
+            public final java.lang.Object getIpv6SourceCidrIp() {
+                return this.ipv6SourceCidrIp;
             }
 
             @Override
@@ -736,8 +845,13 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.Object getSecurityGroupId() {
-                return this.securityGroupId;
+            public final java.lang.Object getSourceCidrIp() {
+                return this.sourceCidrIp;
+            }
+
+            @Override
+            public final java.lang.Object getSourcePortRange() {
+                return this.sourcePortRange;
             }
 
             @Override
@@ -757,6 +871,9 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.getDestGroupId() != null) {
                     data.set("destGroupId", om.valueToTree(this.getDestGroupId()));
                 }
+                if (this.getDestGroupOwnerAccount() != null) {
+                    data.set("destGroupOwnerAccount", om.valueToTree(this.getDestGroupOwnerAccount()));
+                }
                 if (this.getDestGroupOwnerId() != null) {
                     data.set("destGroupOwnerId", om.valueToTree(this.getDestGroupOwnerId()));
                 }
@@ -765,6 +882,9 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
                 }
                 if (this.getIpv6DestCidrIp() != null) {
                     data.set("ipv6DestCidrIp", om.valueToTree(this.getIpv6DestCidrIp()));
+                }
+                if (this.getIpv6SourceCidrIp() != null) {
+                    data.set("ipv6SourceCidrIp", om.valueToTree(this.getIpv6SourceCidrIp()));
                 }
                 if (this.getNicType() != null) {
                     data.set("nicType", om.valueToTree(this.getNicType()));
@@ -775,8 +895,11 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.getPriority() != null) {
                     data.set("priority", om.valueToTree(this.getPriority()));
                 }
-                if (this.getSecurityGroupId() != null) {
-                    data.set("securityGroupId", om.valueToTree(this.getSecurityGroupId()));
+                if (this.getSourceCidrIp() != null) {
+                    data.set("sourceCidrIp", om.valueToTree(this.getSourceCidrIp()));
+                }
+                if (this.getSourcePortRange() != null) {
+                    data.set("sourcePortRange", om.valueToTree(this.getSourcePortRange()));
                 }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -801,13 +924,16 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
                 if (this.destCidrIp != null ? !this.destCidrIp.equals(that.destCidrIp) : that.destCidrIp != null) return false;
                 if (this.destGroupId != null ? !this.destGroupId.equals(that.destGroupId) : that.destGroupId != null) return false;
+                if (this.destGroupOwnerAccount != null ? !this.destGroupOwnerAccount.equals(that.destGroupOwnerAccount) : that.destGroupOwnerAccount != null) return false;
                 if (this.destGroupOwnerId != null ? !this.destGroupOwnerId.equals(that.destGroupOwnerId) : that.destGroupOwnerId != null) return false;
                 if (this.destPrefixListId != null ? !this.destPrefixListId.equals(that.destPrefixListId) : that.destPrefixListId != null) return false;
                 if (this.ipv6DestCidrIp != null ? !this.ipv6DestCidrIp.equals(that.ipv6DestCidrIp) : that.ipv6DestCidrIp != null) return false;
+                if (this.ipv6SourceCidrIp != null ? !this.ipv6SourceCidrIp.equals(that.ipv6SourceCidrIp) : that.ipv6SourceCidrIp != null) return false;
                 if (this.nicType != null ? !this.nicType.equals(that.nicType) : that.nicType != null) return false;
                 if (this.policy != null ? !this.policy.equals(that.policy) : that.policy != null) return false;
                 if (this.priority != null ? !this.priority.equals(that.priority) : that.priority != null) return false;
-                return this.securityGroupId != null ? this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId == null;
+                if (this.sourceCidrIp != null ? !this.sourceCidrIp.equals(that.sourceCidrIp) : that.sourceCidrIp != null) return false;
+                return this.sourcePortRange != null ? this.sourcePortRange.equals(that.sourcePortRange) : that.sourcePortRange == null;
             }
 
             @Override
@@ -817,13 +943,16 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
                 result = 31 * result + (this.destCidrIp != null ? this.destCidrIp.hashCode() : 0);
                 result = 31 * result + (this.destGroupId != null ? this.destGroupId.hashCode() : 0);
+                result = 31 * result + (this.destGroupOwnerAccount != null ? this.destGroupOwnerAccount.hashCode() : 0);
                 result = 31 * result + (this.destGroupOwnerId != null ? this.destGroupOwnerId.hashCode() : 0);
                 result = 31 * result + (this.destPrefixListId != null ? this.destPrefixListId.hashCode() : 0);
                 result = 31 * result + (this.ipv6DestCidrIp != null ? this.ipv6DestCidrIp.hashCode() : 0);
+                result = 31 * result + (this.ipv6SourceCidrIp != null ? this.ipv6SourceCidrIp.hashCode() : 0);
                 result = 31 * result + (this.nicType != null ? this.nicType.hashCode() : 0);
                 result = 31 * result + (this.policy != null ? this.policy.hashCode() : 0);
                 result = 31 * result + (this.priority != null ? this.priority.hashCode() : 0);
-                result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
+                result = 31 * result + (this.sourceCidrIp != null ? this.sourceCidrIp.hashCode() : 0);
+                result = 31 * result + (this.sourcePortRange != null ? this.sourcePortRange.hashCode() : 0);
                 return result;
             }
         }
@@ -849,6 +978,20 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDestCidrIp() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getIpv6DestCidrIp() {
             return null;
         }
 
@@ -883,13 +1026,6 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupId() {
-            return null;
-        }
-
-        /**
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getSourceCidrIp() {
             return null;
         }
@@ -898,6 +1034,13 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getSourceGroupId() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSourceGroupOwnerAccount() {
             return null;
         }
 
@@ -937,13 +1080,15 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object ipProtocol;
             java.lang.Object portRange;
             java.lang.Object description;
+            java.lang.Object destCidrIp;
+            java.lang.Object ipv6DestCidrIp;
             java.lang.Object ipv6SourceCidrIp;
             java.lang.Object nicType;
             java.lang.Object policy;
             java.lang.Object priority;
-            java.lang.Object securityGroupId;
             java.lang.Object sourceCidrIp;
             java.lang.Object sourceGroupId;
+            java.lang.Object sourceGroupOwnerAccount;
             java.lang.Object sourceGroupOwnerId;
             java.lang.Object sourcePortRange;
             java.lang.Object sourcePrefixListId;
@@ -1011,6 +1156,50 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
                 this.description = description;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SecurityGroupIngressProperty#getDestCidrIp}
+             * @param destCidrIp the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder destCidrIp(java.lang.String destCidrIp) {
+                this.destCidrIp = destCidrIp;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SecurityGroupIngressProperty#getDestCidrIp}
+             * @param destCidrIp the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder destCidrIp(com.aliyun.ros.cdk.core.IResolvable destCidrIp) {
+                this.destCidrIp = destCidrIp;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SecurityGroupIngressProperty#getIpv6DestCidrIp}
+             * @param ipv6DestCidrIp the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder ipv6DestCidrIp(java.lang.String ipv6DestCidrIp) {
+                this.ipv6DestCidrIp = ipv6DestCidrIp;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SecurityGroupIngressProperty#getIpv6DestCidrIp}
+             * @param ipv6DestCidrIp the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder ipv6DestCidrIp(com.aliyun.ros.cdk.core.IResolvable ipv6DestCidrIp) {
+                this.ipv6DestCidrIp = ipv6DestCidrIp;
                 return this;
             }
 
@@ -1103,28 +1292,6 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
-             * Sets the value of {@link SecurityGroupIngressProperty#getSecurityGroupId}
-             * @param securityGroupId the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder securityGroupId(java.lang.String securityGroupId) {
-                this.securityGroupId = securityGroupId;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link SecurityGroupIngressProperty#getSecurityGroupId}
-             * @param securityGroupId the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder securityGroupId(com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
-                this.securityGroupId = securityGroupId;
-                return this;
-            }
-
-            /**
              * Sets the value of {@link SecurityGroupIngressProperty#getSourceCidrIp}
              * @param sourceCidrIp the value to be set.
              * @return {@code this}
@@ -1165,6 +1332,28 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder sourceGroupId(com.aliyun.ros.cdk.core.IResolvable sourceGroupId) {
                 this.sourceGroupId = sourceGroupId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SecurityGroupIngressProperty#getSourceGroupOwnerAccount}
+             * @param sourceGroupOwnerAccount the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder sourceGroupOwnerAccount(java.lang.String sourceGroupOwnerAccount) {
+                this.sourceGroupOwnerAccount = sourceGroupOwnerAccount;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SecurityGroupIngressProperty#getSourceGroupOwnerAccount}
+             * @param sourceGroupOwnerAccount the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder sourceGroupOwnerAccount(com.aliyun.ros.cdk.core.IResolvable sourceGroupOwnerAccount) {
+                this.sourceGroupOwnerAccount = sourceGroupOwnerAccount;
                 return this;
             }
 
@@ -1255,13 +1444,15 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object ipProtocol;
             private final java.lang.Object portRange;
             private final java.lang.Object description;
+            private final java.lang.Object destCidrIp;
+            private final java.lang.Object ipv6DestCidrIp;
             private final java.lang.Object ipv6SourceCidrIp;
             private final java.lang.Object nicType;
             private final java.lang.Object policy;
             private final java.lang.Object priority;
-            private final java.lang.Object securityGroupId;
             private final java.lang.Object sourceCidrIp;
             private final java.lang.Object sourceGroupId;
+            private final java.lang.Object sourceGroupOwnerAccount;
             private final java.lang.Object sourceGroupOwnerId;
             private final java.lang.Object sourcePortRange;
             private final java.lang.Object sourcePrefixListId;
@@ -1275,13 +1466,15 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
                 this.ipProtocol = software.amazon.jsii.Kernel.get(this, "ipProtocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.portRange = software.amazon.jsii.Kernel.get(this, "portRange", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.destCidrIp = software.amazon.jsii.Kernel.get(this, "destCidrIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.ipv6DestCidrIp = software.amazon.jsii.Kernel.get(this, "ipv6DestCidrIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.ipv6SourceCidrIp = software.amazon.jsii.Kernel.get(this, "ipv6SourceCidrIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.nicType = software.amazon.jsii.Kernel.get(this, "nicType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.policy = software.amazon.jsii.Kernel.get(this, "policy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.priority = software.amazon.jsii.Kernel.get(this, "priority", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.sourceCidrIp = software.amazon.jsii.Kernel.get(this, "sourceCidrIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.sourceGroupId = software.amazon.jsii.Kernel.get(this, "sourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.sourceGroupOwnerAccount = software.amazon.jsii.Kernel.get(this, "sourceGroupOwnerAccount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.sourceGroupOwnerId = software.amazon.jsii.Kernel.get(this, "sourceGroupOwnerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.sourcePortRange = software.amazon.jsii.Kernel.get(this, "sourcePortRange", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.sourcePrefixListId = software.amazon.jsii.Kernel.get(this, "sourcePrefixListId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1295,13 +1488,15 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
                 this.ipProtocol = java.util.Objects.requireNonNull(builder.ipProtocol, "ipProtocol is required");
                 this.portRange = java.util.Objects.requireNonNull(builder.portRange, "portRange is required");
                 this.description = builder.description;
+                this.destCidrIp = builder.destCidrIp;
+                this.ipv6DestCidrIp = builder.ipv6DestCidrIp;
                 this.ipv6SourceCidrIp = builder.ipv6SourceCidrIp;
                 this.nicType = builder.nicType;
                 this.policy = builder.policy;
                 this.priority = builder.priority;
-                this.securityGroupId = builder.securityGroupId;
                 this.sourceCidrIp = builder.sourceCidrIp;
                 this.sourceGroupId = builder.sourceGroupId;
+                this.sourceGroupOwnerAccount = builder.sourceGroupOwnerAccount;
                 this.sourceGroupOwnerId = builder.sourceGroupOwnerId;
                 this.sourcePortRange = builder.sourcePortRange;
                 this.sourcePrefixListId = builder.sourcePrefixListId;
@@ -1320,6 +1515,16 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final java.lang.Object getDescription() {
                 return this.description;
+            }
+
+            @Override
+            public final java.lang.Object getDestCidrIp() {
+                return this.destCidrIp;
+            }
+
+            @Override
+            public final java.lang.Object getIpv6DestCidrIp() {
+                return this.ipv6DestCidrIp;
             }
 
             @Override
@@ -1343,11 +1548,6 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.Object getSecurityGroupId() {
-                return this.securityGroupId;
-            }
-
-            @Override
             public final java.lang.Object getSourceCidrIp() {
                 return this.sourceCidrIp;
             }
@@ -1355,6 +1555,11 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final java.lang.Object getSourceGroupId() {
                 return this.sourceGroupId;
+            }
+
+            @Override
+            public final java.lang.Object getSourceGroupOwnerAccount() {
+                return this.sourceGroupOwnerAccount;
             }
 
             @Override
@@ -1383,6 +1588,12 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.getDescription() != null) {
                     data.set("description", om.valueToTree(this.getDescription()));
                 }
+                if (this.getDestCidrIp() != null) {
+                    data.set("destCidrIp", om.valueToTree(this.getDestCidrIp()));
+                }
+                if (this.getIpv6DestCidrIp() != null) {
+                    data.set("ipv6DestCidrIp", om.valueToTree(this.getIpv6DestCidrIp()));
+                }
                 if (this.getIpv6SourceCidrIp() != null) {
                     data.set("ipv6SourceCidrIp", om.valueToTree(this.getIpv6SourceCidrIp()));
                 }
@@ -1395,14 +1606,14 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.getPriority() != null) {
                     data.set("priority", om.valueToTree(this.getPriority()));
                 }
-                if (this.getSecurityGroupId() != null) {
-                    data.set("securityGroupId", om.valueToTree(this.getSecurityGroupId()));
-                }
                 if (this.getSourceCidrIp() != null) {
                     data.set("sourceCidrIp", om.valueToTree(this.getSourceCidrIp()));
                 }
                 if (this.getSourceGroupId() != null) {
                     data.set("sourceGroupId", om.valueToTree(this.getSourceGroupId()));
+                }
+                if (this.getSourceGroupOwnerAccount() != null) {
+                    data.set("sourceGroupOwnerAccount", om.valueToTree(this.getSourceGroupOwnerAccount()));
                 }
                 if (this.getSourceGroupOwnerId() != null) {
                     data.set("sourceGroupOwnerId", om.valueToTree(this.getSourceGroupOwnerId()));
@@ -1434,13 +1645,15 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
                 if (!ipProtocol.equals(that.ipProtocol)) return false;
                 if (!portRange.equals(that.portRange)) return false;
                 if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
+                if (this.destCidrIp != null ? !this.destCidrIp.equals(that.destCidrIp) : that.destCidrIp != null) return false;
+                if (this.ipv6DestCidrIp != null ? !this.ipv6DestCidrIp.equals(that.ipv6DestCidrIp) : that.ipv6DestCidrIp != null) return false;
                 if (this.ipv6SourceCidrIp != null ? !this.ipv6SourceCidrIp.equals(that.ipv6SourceCidrIp) : that.ipv6SourceCidrIp != null) return false;
                 if (this.nicType != null ? !this.nicType.equals(that.nicType) : that.nicType != null) return false;
                 if (this.policy != null ? !this.policy.equals(that.policy) : that.policy != null) return false;
                 if (this.priority != null ? !this.priority.equals(that.priority) : that.priority != null) return false;
-                if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
                 if (this.sourceCidrIp != null ? !this.sourceCidrIp.equals(that.sourceCidrIp) : that.sourceCidrIp != null) return false;
                 if (this.sourceGroupId != null ? !this.sourceGroupId.equals(that.sourceGroupId) : that.sourceGroupId != null) return false;
+                if (this.sourceGroupOwnerAccount != null ? !this.sourceGroupOwnerAccount.equals(that.sourceGroupOwnerAccount) : that.sourceGroupOwnerAccount != null) return false;
                 if (this.sourceGroupOwnerId != null ? !this.sourceGroupOwnerId.equals(that.sourceGroupOwnerId) : that.sourceGroupOwnerId != null) return false;
                 if (this.sourcePortRange != null ? !this.sourcePortRange.equals(that.sourcePortRange) : that.sourcePortRange != null) return false;
                 return this.sourcePrefixListId != null ? this.sourcePrefixListId.equals(that.sourcePrefixListId) : that.sourcePrefixListId == null;
@@ -1451,13 +1664,15 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
                 int result = this.ipProtocol.hashCode();
                 result = 31 * result + (this.portRange.hashCode());
                 result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+                result = 31 * result + (this.destCidrIp != null ? this.destCidrIp.hashCode() : 0);
+                result = 31 * result + (this.ipv6DestCidrIp != null ? this.ipv6DestCidrIp.hashCode() : 0);
                 result = 31 * result + (this.ipv6SourceCidrIp != null ? this.ipv6SourceCidrIp.hashCode() : 0);
                 result = 31 * result + (this.nicType != null ? this.nicType.hashCode() : 0);
                 result = 31 * result + (this.policy != null ? this.policy.hashCode() : 0);
                 result = 31 * result + (this.priority != null ? this.priority.hashCode() : 0);
-                result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
                 result = 31 * result + (this.sourceCidrIp != null ? this.sourceCidrIp.hashCode() : 0);
                 result = 31 * result + (this.sourceGroupId != null ? this.sourceGroupId.hashCode() : 0);
+                result = 31 * result + (this.sourceGroupOwnerAccount != null ? this.sourceGroupOwnerAccount.hashCode() : 0);
                 result = 31 * result + (this.sourceGroupOwnerId != null ? this.sourceGroupOwnerId.hashCode() : 0);
                 result = 31 * result + (this.sourcePortRange != null ? this.sourcePortRange.hashCode() : 0);
                 result = 31 * result + (this.sourcePrefixListId != null ? this.sourcePrefixListId.hashCode() : 0);

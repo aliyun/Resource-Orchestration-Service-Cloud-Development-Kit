@@ -101,6 +101,189 @@ export class RosAccessGroups extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosFileSystem`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-filesystem
+ */
+export interface RosFileSystemProps {
+
+    /**
+     * @Property fileSystemId: The ID of the file system to be created.
+     */
+    readonly fileSystemId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosFileSystemProps`
+ *
+ * @param properties - the TypeScript properties of a `RosFileSystemProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosFileSystemPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('fileSystemId', ros.requiredValidator)(properties.fileSystemId));
+    errors.collect(ros.propertyValidator('fileSystemId', ros.validateString)(properties.fileSystemId));
+    return errors.wrap('supplied properties not correct for "RosFileSystemProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::NAS::FileSystem` resource
+ *
+ * @param properties - the TypeScript properties of a `RosFileSystemProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::NAS::FileSystem` resource.
+ */
+// @ts-ignore TS6133
+function rosFileSystemPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosFileSystemPropsValidator(properties).assertSuccess();
+    }
+    return {
+      FileSystemId: ros.stringToRosTemplate(properties.fileSystemId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::NAS::FileSystem`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `FileSystem` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-filesystem
+ */
+export class RosFileSystem extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::NAS::FileSystem";
+
+    /**
+     * @Attribute Bandwidth: Maximum file system throughput.
+     */
+    public readonly attrBandwidth: ros.IResolvable;
+
+    /**
+     * @Attribute Capacity: File system capacity.
+     */
+    public readonly attrCapacity: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: CreateTime.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute Description: File system description.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute EncryptType: Whether the file system is encrypted.
+     */
+    public readonly attrEncryptType: ros.IResolvable;
+
+    /**
+     * @Attribute ExpiredTime: ExpiredTime.
+     */
+    public readonly attrExpiredTime: ros.IResolvable;
+
+    /**
+     * @Attribute FileSystemId: The ID of the file system to be created.
+     */
+    public readonly attrFileSystemId: ros.IResolvable;
+
+    /**
+     * @Attribute FileSystemType: File system type.
+     */
+    public readonly attrFileSystemType: ros.IResolvable;
+
+    /**
+     * @Attribute KmsKeyId: The ID of the KMS key.
+     */
+    public readonly attrKmsKeyId: ros.IResolvable;
+
+    /**
+     * @Attribute Ldap: Ldap.
+     */
+    public readonly attrLdap: ros.IResolvable;
+
+    /**
+     * @Attribute MeteredSize: MeteredSize.
+     */
+    public readonly attrMeteredSize: ros.IResolvable;
+
+    /**
+     * @Attribute PaymentType: ChargeType.
+     */
+    public readonly attrPaymentType: ros.IResolvable;
+
+    /**
+     * @Attribute ProtocolType: File transfer protocol type.
+     */
+    public readonly attrProtocolType: ros.IResolvable;
+
+    /**
+     * @Attribute StorageType: Storage type.
+     */
+    public readonly attrStorageType: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: Tags.
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    /**
+     * @Attribute ZoneId: The zone ID.
+     */
+    public readonly attrZoneId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property fileSystemId: The ID of the file system to be created.
+     */
+    public fileSystemId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosFileSystemProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosFileSystem.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrBandwidth = this.getAtt('Bandwidth');
+        this.attrCapacity = this.getAtt('Capacity');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDescription = this.getAtt('Description');
+        this.attrEncryptType = this.getAtt('EncryptType');
+        this.attrExpiredTime = this.getAtt('ExpiredTime');
+        this.attrFileSystemId = this.getAtt('FileSystemId');
+        this.attrFileSystemType = this.getAtt('FileSystemType');
+        this.attrKmsKeyId = this.getAtt('KmsKeyId');
+        this.attrLdap = this.getAtt('Ldap');
+        this.attrMeteredSize = this.getAtt('MeteredSize');
+        this.attrPaymentType = this.getAtt('PaymentType');
+        this.attrProtocolType = this.getAtt('ProtocolType');
+        this.attrStorageType = this.getAtt('StorageType');
+        this.attrTags = this.getAtt('Tags');
+        this.attrZoneId = this.getAtt('ZoneId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.fileSystemId = props.fileSystemId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            fileSystemId: this.fileSystemId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosFileSystemPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosFileSystems`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-filesystems
  */

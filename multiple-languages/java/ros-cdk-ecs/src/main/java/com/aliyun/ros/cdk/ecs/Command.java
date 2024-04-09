@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::Command</code>, which is used to create a Cloud Assistant command.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:51.564Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:31.964Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.Command")
 public class Command extends com.aliyun.ros.cdk.core.Resource {
 
@@ -160,6 +160,37 @@ public class Command extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property contentEncoding: The encoding mode of script content (CommandContent).
+         * <p>
+         * Valid values (case insensitive):
+         * PlainText: The script content is not encoded, and transmitted in plaintext.
+         * Base64: base64-encoded.
+         * Default value: Base64. If the specified value of this parameter is invalid, Base64 is used by default.
+         * <p>
+         * @return {@code this}
+         * @param contentEncoding Property contentEncoding: The encoding mode of script content (CommandContent). This parameter is required.
+         */
+        public Builder contentEncoding(final java.lang.String contentEncoding) {
+            this.props.contentEncoding(contentEncoding);
+            return this;
+        }
+        /**
+         * Property contentEncoding: The encoding mode of script content (CommandContent).
+         * <p>
+         * Valid values (case insensitive):
+         * PlainText: The script content is not encoded, and transmitted in plaintext.
+         * Base64: base64-encoded.
+         * Default value: Base64. If the specified value of this parameter is invalid, Base64 is used by default.
+         * <p>
+         * @return {@code this}
+         * @param contentEncoding Property contentEncoding: The encoding mode of script content (CommandContent). This parameter is required.
+         */
+        public Builder contentEncoding(final com.aliyun.ros.cdk.core.IResolvable contentEncoding) {
+            this.props.contentEncoding(contentEncoding);
+            return this;
+        }
+
+        /**
          * Property description: The description of command.
          * <p>
          * @return {@code this}
@@ -223,6 +254,27 @@ public class Command extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
             this.props.name(name);
+            return this;
+        }
+
+        /**
+         * Property resourceGroupId: Resource group id.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: Resource group id. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: Resource group id.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: Resource group id. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
             return this;
         }
 

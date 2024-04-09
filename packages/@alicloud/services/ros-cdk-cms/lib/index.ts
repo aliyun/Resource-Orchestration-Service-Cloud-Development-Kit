@@ -13,6 +13,7 @@ export * from './monitoringagentprocess';
 export * from './namespace';
 export * from './resourcemetricrule';
 export * from './sitemonitor';
+export * from './slsgroup';
 
 // ALIYUN::CMS Resources:
 export * from './cms.generated';

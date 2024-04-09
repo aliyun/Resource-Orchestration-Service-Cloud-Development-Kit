@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.drds;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::DRDS::DrdsInstance</code>, which is used to create a Distributed Relational Database Service (DRDS) instance of specific specifications.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:51.281Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:31.678Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.drds.$Module.class, fqn = "@alicloud/ros-cdk-drds.DrdsInstance")
 public class DrdsInstance extends com.aliyun.ros.cdk.core.Resource {
 

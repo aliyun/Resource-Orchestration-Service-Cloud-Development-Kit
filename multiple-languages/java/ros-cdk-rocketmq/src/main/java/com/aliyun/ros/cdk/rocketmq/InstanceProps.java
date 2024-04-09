@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.rocketmq;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq-instance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:54.314Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:34.994Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq.InstanceProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceProps.Jsii$Proxy.class)
 public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -14,6 +14,15 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
      * Property instanceName: The name of the instance, which contains 3 to 64 characters in Chinese or English.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getInstanceName();
+
+    /**
+     * Property deletionForce: Whether delete all topics and groups of the instance and then delete instance.
+     * <p>
+     * Default is false
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeletionForce() {
+        return null;
+    }
 
     /**
      * Property remark: The remark of instance.
@@ -42,6 +51,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
      */
     public static final class Builder implements software.amazon.jsii.Builder<InstanceProps> {
         java.lang.Object instanceName;
+        java.lang.Object deletionForce;
         java.lang.Object remark;
         java.util.List<com.aliyun.ros.cdk.rocketmq.RosInstance.TagsProperty> tags;
 
@@ -62,6 +72,28 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder instanceName(com.aliyun.ros.cdk.core.IResolvable instanceName) {
             this.instanceName = instanceName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceProps#getDeletionForce}
+         * @param deletionForce Property deletionForce: Whether delete all topics and groups of the instance and then delete instance.
+         *                      Default is false
+         * @return {@code this}
+         */
+        public Builder deletionForce(java.lang.Boolean deletionForce) {
+            this.deletionForce = deletionForce;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceProps#getDeletionForce}
+         * @param deletionForce Property deletionForce: Whether delete all topics and groups of the instance and then delete instance.
+         *                      Default is false
+         * @return {@code this}
+         */
+        public Builder deletionForce(com.aliyun.ros.cdk.core.IResolvable deletionForce) {
+            this.deletionForce = deletionForce;
             return this;
         }
 
@@ -114,6 +146,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements InstanceProps {
         private final java.lang.Object instanceName;
+        private final java.lang.Object deletionForce;
         private final java.lang.Object remark;
         private final java.util.List<com.aliyun.ros.cdk.rocketmq.RosInstance.TagsProperty> tags;
 
@@ -124,6 +157,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.deletionForce = software.amazon.jsii.Kernel.get(this, "deletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.remark = software.amazon.jsii.Kernel.get(this, "remark", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.rocketmq.RosInstance.TagsProperty.class)));
         }
@@ -135,6 +169,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.instanceName = java.util.Objects.requireNonNull(builder.instanceName, "instanceName is required");
+            this.deletionForce = builder.deletionForce;
             this.remark = builder.remark;
             this.tags = (java.util.List<com.aliyun.ros.cdk.rocketmq.RosInstance.TagsProperty>)builder.tags;
         }
@@ -142,6 +177,11 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getInstanceName() {
             return this.instanceName;
+        }
+
+        @Override
+        public final java.lang.Object getDeletionForce() {
+            return this.deletionForce;
         }
 
         @Override
@@ -161,6 +201,9 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
             data.set("instanceName", om.valueToTree(this.getInstanceName()));
+            if (this.getDeletionForce() != null) {
+                data.set("deletionForce", om.valueToTree(this.getDeletionForce()));
+            }
             if (this.getRemark() != null) {
                 data.set("remark", om.valueToTree(this.getRemark()));
             }
@@ -186,6 +229,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             InstanceProps.Jsii$Proxy that = (InstanceProps.Jsii$Proxy) o;
 
             if (!instanceName.equals(that.instanceName)) return false;
+            if (this.deletionForce != null ? !this.deletionForce.equals(that.deletionForce) : that.deletionForce != null) return false;
             if (this.remark != null ? !this.remark.equals(that.remark) : that.remark != null) return false;
             return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
@@ -193,6 +237,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final int hashCode() {
             int result = this.instanceName.hashCode();
+            result = 31 * result + (this.deletionForce != null ? this.deletionForce.hashCode() : 0);
             result = 31 * result + (this.remark != null ? this.remark.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;

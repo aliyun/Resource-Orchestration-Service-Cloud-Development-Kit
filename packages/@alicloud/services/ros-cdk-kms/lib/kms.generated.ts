@@ -156,6 +156,11 @@ export interface RosKeyProps {
     readonly pendingWindowInDays?: number | ros.IResolvable;
 
     /**
+     * @Property policy: The policy of key.
+     */
+    readonly policy?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
      * @Property protectionLevel: The protection level of the CMK to create. Valid value: SOFTWARE and HSM. When this parameter is set to HSM:
      * If the Origin parameter is set to Aliyun_KMS, the CMK is created in Managed HSM.
      * If the Origin parameter is set to EXTERNAL, you can import external keys to Managed HSM.
@@ -178,6 +183,7 @@ export interface RosKeyProps {
 function RosKeyPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('policy', ros.hashValidator(ros.validateAny))(properties.policy));
     errors.collect(ros.propertyValidator('protectionLevel', ros.validateString)(properties.protectionLevel));
     if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
         errors.collect(ros.propertyValidator('description', ros.validateLength)({
@@ -188,6 +194,7 @@ function RosKeyPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('rotationInterval', ros.validateString)(properties.rotationInterval));
+    errors.collect(ros.propertyValidator('enableAutomaticRotation', ros.validateBoolean)(properties.enableAutomaticRotation));
     if(properties.pendingWindowInDays && (typeof properties.pendingWindowInDays) !== 'object') {
         errors.collect(ros.propertyValidator('pendingWindowInDays', ros.validateRange)({
             data: properties.pendingWindowInDays,
@@ -196,7 +203,6 @@ function RosKeyPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('pendingWindowInDays', ros.validateNumber)(properties.pendingWindowInDays));
-    errors.collect(ros.propertyValidator('enableAutomaticRotation', ros.validateBoolean)(properties.enableAutomaticRotation));
     errors.collect(ros.propertyValidator('keySpec', ros.validateString)(properties.keySpec));
     errors.collect(ros.propertyValidator('enable', ros.validateBoolean)(properties.enable));
     errors.collect(ros.propertyValidator('keyUsage', ros.validateString)(properties.keyUsage));
@@ -225,6 +231,7 @@ function rosKeyPropsToRosTemplate(properties: any, enableResourcePropertyConstra
       KeySpec: ros.stringToRosTemplate(properties.keySpec),
       KeyUsage: ros.stringToRosTemplate(properties.keyUsage),
       PendingWindowInDays: ros.numberToRosTemplate(properties.pendingWindowInDays),
+      Policy: ros.hashMapper(ros.objectToRosTemplate)(properties.policy),
       ProtectionLevel: ros.stringToRosTemplate(properties.protectionLevel),
       RotationInterval: ros.stringToRosTemplate(properties.rotationInterval),
     };
@@ -288,6 +295,11 @@ export class RosKey extends ros.RosResource {
     public pendingWindowInDays: number | ros.IResolvable | undefined;
 
     /**
+     * @Property policy: The policy of key.
+     */
+    public policy: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
      * @Property protectionLevel: The protection level of the CMK to create. Valid value: SOFTWARE and HSM. When this parameter is set to HSM:
      * If the Origin parameter is set to Aliyun_KMS, the CMK is created in Managed HSM.
      * If the Origin parameter is set to EXTERNAL, you can import external keys to Managed HSM.
@@ -316,6 +328,7 @@ export class RosKey extends ros.RosResource {
         this.keySpec = props.keySpec;
         this.keyUsage = props.keyUsage;
         this.pendingWindowInDays = props.pendingWindowInDays;
+        this.policy = props.policy;
         this.protectionLevel = props.protectionLevel;
         this.rotationInterval = props.rotationInterval;
     }
@@ -330,6 +343,7 @@ export class RosKey extends ros.RosResource {
             keySpec: this.keySpec,
             keyUsage: this.keyUsage,
             pendingWindowInDays: this.pendingWindowInDays,
+            policy: this.policy,
             protectionLevel: this.protectionLevel,
             rotationInterval: this.rotationInterval,
         };

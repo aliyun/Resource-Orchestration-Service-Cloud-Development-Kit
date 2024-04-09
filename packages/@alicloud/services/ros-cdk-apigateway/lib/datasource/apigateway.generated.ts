@@ -435,6 +435,255 @@ export class RosGroups extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-instance
+ */
+export interface RosInstanceProps {
+
+    /**
+     * @Property instanceId: Instance id.
+     */
+    readonly instanceId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosInstanceProps`
+ *
+ * @param properties - the TypeScript properties of a `RosInstanceProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstancePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    return errors.wrap('supplied properties not correct for "RosInstanceProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ApiGateway::Instance` resource
+ *
+ * @param properties - the TypeScript properties of a `RosInstanceProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ApiGateway::Instance` resource.
+ */
+// @ts-ignore TS6133
+function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosInstancePropsValidator(properties).assertSuccess();
+    }
+    return {
+      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ApiGateway::Instance`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-instance
+ */
+export class RosInstance extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ApiGateway::Instance";
+
+    /**
+     * @Attribute AclId: Access control ID.
+     */
+    public readonly attrAclId: ros.IResolvable;
+
+    /**
+     * @Attribute AclName: Access control name.
+     */
+    public readonly attrAclName: ros.IResolvable;
+
+    /**
+     * @Attribute AclStatus: Access control type.
+     */
+    public readonly attrAclStatus: ros.IResolvable;
+
+    /**
+     * @Attribute AclType: Access control type.
+     */
+    public readonly attrAclType: ros.IResolvable;
+
+    /**
+     * @Attribute ClassicEgressAddress: Classic network exit address.
+     */
+    public readonly attrClassicEgressAddress: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: Creation time.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute EgressIpv6Enable: Does IPV6 Capability Support.
+     */
+    public readonly attrEgressIpv6Enable: ros.IResolvable;
+
+    /**
+     * @Attribute ExpiredTime: Instance expiration time.
+     */
+    public readonly attrExpiredTime: ros.IResolvable;
+
+    /**
+     * @Attribute HttpsPolicy: Https policy.
+     */
+    public readonly attrHttpsPolicy: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceId: Instance id.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceName: Instance name.
+     */
+    public readonly attrInstanceName: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceRpsLimit: Instance rps limits.
+     */
+    public readonly attrInstanceRpsLimit: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceSpec: Instance type.
+     */
+    public readonly attrInstanceSpec: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceSpecAttributes: Instance type.
+     */
+    public readonly attrInstanceSpecAttributes: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceType: Instance type.
+     */
+    public readonly attrInstanceType: ros.IResolvable;
+
+    /**
+     * @Attribute InternetEgressAddress: Public network exit address.
+     */
+    public readonly attrInternetEgressAddress: ros.IResolvable;
+
+    /**
+     * @Attribute PaymentType: The payment type of the resource.
+     */
+    public readonly attrPaymentType: ros.IResolvable;
+
+    /**
+     * @Attribute SupportIpv6: Does ipv6 support.
+     */
+    public readonly attrSupportIpv6: ros.IResolvable;
+
+    /**
+     * @Attribute UserVpcId: User's VpcID.
+     */
+    public readonly attrUserVpcId: ros.IResolvable;
+
+    /**
+     * @Attribute UserVswitchId: DescribeInstances.
+     */
+    public readonly attrUserVswitchId: ros.IResolvable;
+
+    /**
+     * @Attribute VipTypeList: Vip type.
+     */
+    public readonly attrVipTypeList: ros.IResolvable;
+
+    /**
+     * @Attribute VpcEgressAddress: Intranet VPC exit network segment.
+     */
+    public readonly attrVpcEgressAddress: ros.IResolvable;
+
+    /**
+     * @Attribute VpcIntranetEnable: Whether Vpc allows authorization.
+     */
+    public readonly attrVpcIntranetEnable: ros.IResolvable;
+
+    /**
+     * @Attribute VpcOwnerId: Vpc licensor ID.
+     */
+    public readonly attrVpcOwnerId: ros.IResolvable;
+
+    /**
+     * @Attribute VpcSlbIntranetEnable: Whether the slb of the Vpc supports.
+     */
+    public readonly attrVpcSlbIntranetEnable: ros.IResolvable;
+
+    /**
+     * @Attribute ZoneId: Zone.
+     */
+    public readonly attrZoneId: ros.IResolvable;
+
+    /**
+     * @Attribute ZoneLocalName: Available area.
+     */
+    public readonly attrZoneLocalName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property instanceId: Instance id.
+     */
+    public instanceId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosInstanceProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAclId = this.getAtt('AclId');
+        this.attrAclName = this.getAtt('AclName');
+        this.attrAclStatus = this.getAtt('AclStatus');
+        this.attrAclType = this.getAtt('AclType');
+        this.attrClassicEgressAddress = this.getAtt('ClassicEgressAddress');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrEgressIpv6Enable = this.getAtt('EgressIpv6Enable');
+        this.attrExpiredTime = this.getAtt('ExpiredTime');
+        this.attrHttpsPolicy = this.getAtt('HttpsPolicy');
+        this.attrInstanceId = this.getAtt('InstanceId');
+        this.attrInstanceName = this.getAtt('InstanceName');
+        this.attrInstanceRpsLimit = this.getAtt('InstanceRpsLimit');
+        this.attrInstanceSpec = this.getAtt('InstanceSpec');
+        this.attrInstanceSpecAttributes = this.getAtt('InstanceSpecAttributes');
+        this.attrInstanceType = this.getAtt('InstanceType');
+        this.attrInternetEgressAddress = this.getAtt('InternetEgressAddress');
+        this.attrPaymentType = this.getAtt('PaymentType');
+        this.attrSupportIpv6 = this.getAtt('SupportIpv6');
+        this.attrUserVpcId = this.getAtt('UserVpcId');
+        this.attrUserVswitchId = this.getAtt('UserVswitchId');
+        this.attrVipTypeList = this.getAtt('VipTypeList');
+        this.attrVpcEgressAddress = this.getAtt('VpcEgressAddress');
+        this.attrVpcIntranetEnable = this.getAtt('VpcIntranetEnable');
+        this.attrVpcOwnerId = this.getAtt('VpcOwnerId');
+        this.attrVpcSlbIntranetEnable = this.getAtt('VpcSlbIntranetEnable');
+        this.attrZoneId = this.getAtt('ZoneId');
+        this.attrZoneLocalName = this.getAtt('ZoneLocalName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.instanceId = props.instanceId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            instanceId: this.instanceId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosInstancePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosInstances`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-instances
  */

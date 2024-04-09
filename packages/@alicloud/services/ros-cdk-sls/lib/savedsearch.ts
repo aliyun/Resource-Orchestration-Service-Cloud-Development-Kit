@@ -21,7 +21,7 @@ export interface SavedsearchProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Savedsearch`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Savedsearch`, which is used to save search results as a saved search.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSavedsearch`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-savedsearch
  */

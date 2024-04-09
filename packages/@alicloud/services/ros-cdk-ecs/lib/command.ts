@@ -20,6 +20,14 @@ export interface CommandProps {
     readonly commandContent?: string | ros.IResolvable;
 
     /**
+     * Property contentEncoding: The encoding mode of script content (CommandContent). Valid values (case insensitive):
+     * PlainText: The script content is not encoded, and transmitted in plaintext.
+     * Base64: base64-encoded.
+     * Default value: Base64. If the specified value of this parameter is invalid, Base64 is used by default.
+     */
+    readonly contentEncoding?: string | ros.IResolvable;
+
+    /**
      * Property description: The description of command.
      */
     readonly description?: string | ros.IResolvable;
@@ -34,6 +42,11 @@ export interface CommandProps {
      * Property name: The name of command.
      */
     readonly name?: string | ros.IResolvable;
+
+    /**
+     * Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
      * Property tags: Tags to attach to command. Max support 20 tags to add during create command. Each tag with two properties Key and Value, and Key is required.
@@ -84,8 +97,10 @@ export class Command extends ros.Resource {
             commandContent: props.commandContent,
             type: props.type,
             description: props.description,
+            resourceGroupId: props.resourceGroupId,
             timeout: props.timeout,
             enableParameter: props.enableParameter,
+            contentEncoding: props.contentEncoding,
             tags: props.tags,
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

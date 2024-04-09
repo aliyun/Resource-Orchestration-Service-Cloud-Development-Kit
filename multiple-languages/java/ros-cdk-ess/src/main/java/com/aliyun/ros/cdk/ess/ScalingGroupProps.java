@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ess;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:52.531Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:33.080Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScalingGroupProps")
 @software.amazon.jsii.Jsii.Proxy(ScalingGroupProps.Jsii$Proxy.class)
 public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -581,7 +581,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
          *                      A Json Array with format: [ "rm-id0", "rm-id1", ... "rm-idz" ], support up to 100 RDS instance.
          * @return {@code this}
          */
-        public Builder dbInstanceIds(java.util.List<? extends java.lang.Object> dbInstanceIds) {
+        public Builder dbInstanceIds(com.aliyun.ros.cdk.core.IResolvable dbInstanceIds) {
             this.dbInstanceIds = dbInstanceIds;
             return this;
         }
@@ -592,7 +592,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
          *                      A Json Array with format: [ "rm-id0", "rm-id1", ... "rm-idz" ], support up to 100 RDS instance.
          * @return {@code this}
          */
-        public Builder dbInstanceIds(com.aliyun.ros.cdk.core.IResolvable dbInstanceIds) {
+        public Builder dbInstanceIds(java.util.List<? extends java.lang.Object> dbInstanceIds) {
             this.dbInstanceIds = dbInstanceIds;
             return this;
         }
@@ -811,7 +811,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
          *                        A Json Array with format: [ "lb-id0", "lb-id1", ... "lb-idz" ], support up to 100 Load Balancer instance.
          * @return {@code this}
          */
-        public Builder loadBalancerIds(java.util.List<? extends java.lang.Object> loadBalancerIds) {
+        public Builder loadBalancerIds(com.aliyun.ros.cdk.core.IResolvable loadBalancerIds) {
             this.loadBalancerIds = loadBalancerIds;
             return this;
         }
@@ -822,7 +822,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
          *                        A Json Array with format: [ "lb-id0", "lb-id1", ... "lb-idz" ], support up to 100 Load Balancer instance.
          * @return {@code this}
          */
-        public Builder loadBalancerIds(com.aliyun.ros.cdk.core.IResolvable loadBalancerIds) {
+        public Builder loadBalancerIds(java.util.List<? extends java.lang.Object> loadBalancerIds) {
             this.loadBalancerIds = loadBalancerIds;
             return this;
         }
@@ -966,7 +966,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
          * @param protectedInstances Property protectedInstances: ECS instances of protected mode in the scaling group.
          * @return {@code this}
          */
-        public Builder protectedInstances(java.util.List<? extends java.lang.Object> protectedInstances) {
+        public Builder protectedInstances(com.aliyun.ros.cdk.core.IResolvable protectedInstances) {
             this.protectedInstances = protectedInstances;
             return this;
         }
@@ -976,30 +976,8 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
          * @param protectedInstances Property protectedInstances: ECS instances of protected mode in the scaling group.
          * @return {@code this}
          */
-        public Builder protectedInstances(com.aliyun.ros.cdk.core.IResolvable protectedInstances) {
+        public Builder protectedInstances(java.util.List<? extends java.lang.Object> protectedInstances) {
             this.protectedInstances = protectedInstances;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ScalingGroupProps#getRemovalPolicys}
-         * @param removalPolicys Property removalPolicys: Policy for removing ECS instances from the scaling group.
-         *                       Optional values:
-         *                       <p>
-         *                       <ul>
-         *                       <li>OldestInstance: removes the first ECS instance attached to the scaling group.</li>
-         *                       <li>NewestInstance: removes the first ECS instance attached to the scaling group.</li>
-         *                       <li>OldestScalingConfiguration: removes the ECS instance with the oldest scaling configuration.</li>
-         *                       <li>CustomPolicy: removes ECS instances based on the custom scale-in policy (Function).
-         *                       You can enter up to three removal policies.
-         *                       You cannot set any item of RemovalPolicys to the same value.
-         *                       The scaling configuration source specified by the OldestScalingConfiguration setting can be a scaling configuration or a launch template. You can specify CustomPolicy only as the value of first item of RemovalPolicys. If you set first item of RemovalPolicys to CustomPolicy, you must also specify CustomPolicyARN.
-         *                       Note: The removal of ECS instances from a scaling group is also affected by the value of MultiAZPolicy.</li>
-         *                       </ul>
-         * @return {@code this}
-         */
-        public Builder removalPolicys(java.util.List<? extends java.lang.Object> removalPolicys) {
-            this.removalPolicys = removalPolicys;
             return this;
         }
 
@@ -1021,6 +999,28 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
          * @return {@code this}
          */
         public Builder removalPolicys(com.aliyun.ros.cdk.core.IResolvable removalPolicys) {
+            this.removalPolicys = removalPolicys;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ScalingGroupProps#getRemovalPolicys}
+         * @param removalPolicys Property removalPolicys: Policy for removing ECS instances from the scaling group.
+         *                       Optional values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>OldestInstance: removes the first ECS instance attached to the scaling group.</li>
+         *                       <li>NewestInstance: removes the first ECS instance attached to the scaling group.</li>
+         *                       <li>OldestScalingConfiguration: removes the ECS instance with the oldest scaling configuration.</li>
+         *                       <li>CustomPolicy: removes ECS instances based on the custom scale-in policy (Function).
+         *                       You can enter up to three removal policies.
+         *                       You cannot set any item of RemovalPolicys to the same value.
+         *                       The scaling configuration source specified by the OldestScalingConfiguration setting can be a scaling configuration or a launch template. You can specify CustomPolicy only as the value of first item of RemovalPolicys. If you set first item of RemovalPolicys to CustomPolicy, you must also specify CustomPolicyARN.
+         *                       Note: The removal of ECS instances from a scaling group is also affected by the value of MultiAZPolicy.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder removalPolicys(java.util.List<? extends java.lang.Object> removalPolicys) {
             this.removalPolicys = removalPolicys;
             return this;
         }
@@ -1164,7 +1164,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
          * @param standbyInstances Property standbyInstances: ECS instances of standby mode in the scaling group.
          * @return {@code this}
          */
-        public Builder standbyInstances(java.util.List<? extends java.lang.Object> standbyInstances) {
+        public Builder standbyInstances(com.aliyun.ros.cdk.core.IResolvable standbyInstances) {
             this.standbyInstances = standbyInstances;
             return this;
         }
@@ -1174,7 +1174,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
          * @param standbyInstances Property standbyInstances: ECS instances of standby mode in the scaling group.
          * @return {@code this}
          */
-        public Builder standbyInstances(com.aliyun.ros.cdk.core.IResolvable standbyInstances) {
+        public Builder standbyInstances(java.util.List<? extends java.lang.Object> standbyInstances) {
             this.standbyInstances = standbyInstances;
             return this;
         }
@@ -1216,7 +1216,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
          * @param vSwitchIds Property vSwitchIds: Parameter VSwitchIds.N is used to create instance in multiple zones. Parameter VSwitchIds.N has a priority over parameter VSwitchId. The valid range of N is [1, 8], and you can specify at most 5 VSwitches in a VPC. The priority of VSwitches descends from 1 to 8, and 1 indicates the highest priority. When you fail to create an instance in the zone to which a specified VSwitch belongs, another VSwitch with less priority replaces the specified one automatically.
          * @return {@code this}
          */
-        public Builder vSwitchIds(java.util.List<? extends java.lang.Object> vSwitchIds) {
+        public Builder vSwitchIds(com.aliyun.ros.cdk.core.IResolvable vSwitchIds) {
             this.vSwitchIds = vSwitchIds;
             return this;
         }
@@ -1226,7 +1226,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
          * @param vSwitchIds Property vSwitchIds: Parameter VSwitchIds.N is used to create instance in multiple zones. Parameter VSwitchIds.N has a priority over parameter VSwitchId. The valid range of N is [1, 8], and you can specify at most 5 VSwitches in a VPC. The priority of VSwitches descends from 1 to 8, and 1 indicates the highest priority. When you fail to create an instance in the zone to which a specified VSwitch belongs, another VSwitch with less priority replaces the specified one automatically.
          * @return {@code this}
          */
-        public Builder vSwitchIds(com.aliyun.ros.cdk.core.IResolvable vSwitchIds) {
+        public Builder vSwitchIds(java.util.List<? extends java.lang.Object> vSwitchIds) {
             this.vSwitchIds = vSwitchIds;
             return this;
         }

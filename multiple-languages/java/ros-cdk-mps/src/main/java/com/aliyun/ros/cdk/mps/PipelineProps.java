@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.mps;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mps-pipeline
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:53.138Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:33.722Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mps.$Module.class, fqn = "@alicloud/ros-cdk-mps.PipelineProps")
 @software.amazon.jsii.Jsii.Proxy(PipelineProps.Jsii$Proxy.class)
 public interface PipelineProps extends software.amazon.jsii.JsiiSerializable {

@@ -79,7 +79,7 @@ export interface TrafficMirrorSessionProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::TrafficMirrorSession`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::TrafficMirrorSession`, which is used to create a traffic image session.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTrafficMirrorSession`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-trafficmirrorsession
  */

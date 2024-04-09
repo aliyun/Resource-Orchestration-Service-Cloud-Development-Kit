@@ -88,7 +88,7 @@ function rosGroupPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ::Group`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ::Group`, which is used to create a Group ID on the ROCKETMQ client. The Group ID that you create is used to publish and subscribe to messages.
  * @Note This class does not contain additional functions, so it is recommended to use the `Group` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq-group
  */
@@ -185,6 +185,11 @@ export interface RosInstanceProps {
     readonly instanceName: string | ros.IResolvable;
 
     /**
+     * @Property deletionForce: Whether delete all topics and groups of the instance and then delete instance. Default is false
+     */
+    readonly deletionForce?: boolean | ros.IResolvable;
+
+    /**
      * @Property remark: The remark of instance.
      */
     readonly remark?: string | ros.IResolvable;
@@ -214,6 +219,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
+    errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -241,6 +247,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
     }
     return {
       InstanceName: ros.stringToRosTemplate(properties.instanceName),
+      DeletionForce: ros.booleanToRosTemplate(properties.deletionForce),
       Remark: ros.stringToRosTemplate(properties.remark),
       Tags: ros.listMapper(rosInstanceTagsPropertyToRosTemplate)(properties.tags),
     };
@@ -301,6 +308,11 @@ export class RosInstance extends ros.RosResource {
     public instanceName: string | ros.IResolvable;
 
     /**
+     * @Property deletionForce: Whether delete all topics and groups of the instance and then delete instance. Default is false
+     */
+    public deletionForce: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property remark: The remark of instance.
      */
     public remark: string | ros.IResolvable | undefined;
@@ -327,6 +339,7 @@ export class RosInstance extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.instanceName = props.instanceName;
+        this.deletionForce = props.deletionForce;
         this.remark = props.remark;
         this.tags = props.tags;
     }
@@ -335,6 +348,7 @@ export class RosInstance extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             instanceName: this.instanceName,
+            deletionForce: this.deletionForce,
             remark: this.remark,
             tags: this.tags,
         };

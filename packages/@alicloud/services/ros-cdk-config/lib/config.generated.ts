@@ -623,12 +623,12 @@ export interface RosCompliancePackProps {
     readonly compliancePackName: string | ros.IResolvable;
 
     /**
-     * @Property description: Description
+     * @Property configRules:
      */
-    readonly description: string | ros.IResolvable;
+    readonly configRules: string | ros.IResolvable;
 
     /**
-     * @Property riskLevel: Ris Level
+     * @Property riskLevel: Ris Level, valid values: 1 | 2 | 3
      */
     readonly riskLevel: number | ros.IResolvable;
 
@@ -638,9 +638,14 @@ export interface RosCompliancePackProps {
     readonly compliancePackTemplateId?: string | ros.IResolvable;
 
     /**
-     * @Property configRules: Config Rule List
+     * @Property configRuleIds: Compliance Package rule ID list
      */
-    readonly configRules?: Array<RosCompliancePack.ConfigRulesProperty | ros.IResolvable> | ros.IResolvable;
+    readonly configRuleIds?: Array<RosCompliancePack.ConfigRuleIdsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property description: Description
+     */
+    readonly description?: string | ros.IResolvable;
 }
 
 /**
@@ -653,13 +658,20 @@ export interface RosCompliancePackProps {
 function RosCompliancePackPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('configRuleIds', ros.listValidator(RosCompliancePack_ConfigRuleIdsPropertyValidator))(properties.configRuleIds));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('compliancePackName', ros.requiredValidator)(properties.compliancePackName));
     errors.collect(ros.propertyValidator('compliancePackName', ros.validateString)(properties.compliancePackName));
-    errors.collect(ros.propertyValidator('description', ros.requiredValidator)(properties.description));
-    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    errors.collect(ros.propertyValidator('configRules', ros.listValidator(RosCompliancePack_ConfigRulesPropertyValidator))(properties.configRules));
+    errors.collect(ros.propertyValidator('configRules', ros.requiredValidator)(properties.configRules));
+    errors.collect(ros.propertyValidator('configRules', ros.validateString)(properties.configRules));
     errors.collect(ros.propertyValidator('compliancePackTemplateId', ros.validateString)(properties.compliancePackTemplateId));
     errors.collect(ros.propertyValidator('riskLevel', ros.requiredValidator)(properties.riskLevel));
+    if(properties.riskLevel && (typeof properties.riskLevel) !== 'object') {
+        errors.collect(ros.propertyValidator('riskLevel', ros.validateAllowedValues)({
+          data: properties.riskLevel,
+          allowedValues: [1,2,3],
+        }));
+    }
     errors.collect(ros.propertyValidator('riskLevel', ros.validateNumber)(properties.riskLevel));
     return errors.wrap('supplied properties not correct for "RosCompliancePackProps"');
 }
@@ -679,10 +691,11 @@ function rosCompliancePackPropsToRosTemplate(properties: any, enableResourceProp
     }
     return {
       CompliancePackName: ros.stringToRosTemplate(properties.compliancePackName),
-      Description: ros.stringToRosTemplate(properties.description),
+      ConfigRules: ros.stringToRosTemplate(properties.configRules),
       RiskLevel: ros.numberToRosTemplate(properties.riskLevel),
       CompliancePackTemplateId: ros.stringToRosTemplate(properties.compliancePackTemplateId),
-      ConfigRules: ros.listMapper(rosCompliancePackConfigRulesPropertyToRosTemplate)(properties.configRules),
+      ConfigRuleIds: ros.listMapper(rosCompliancePackConfigRuleIdsPropertyToRosTemplate)(properties.configRuleIds),
+      Description: ros.stringToRosTemplate(properties.description),
     };
 }
 
@@ -723,7 +736,7 @@ export class RosCompliancePack extends ros.RosResource {
     public readonly attrDescription: ros.IResolvable;
 
     /**
-     * @Attribute RiskLevel: Ris Level
+     * @Attribute RiskLevel: Ris Level, valid values: 1 | 2 | 3
      */
     public readonly attrRiskLevel: ros.IResolvable;
 
@@ -736,12 +749,12 @@ export class RosCompliancePack extends ros.RosResource {
     public compliancePackName: string | ros.IResolvable;
 
     /**
-     * @Property description: Description
+     * @Property configRules:
      */
-    public description: string | ros.IResolvable;
+    public configRules: string | ros.IResolvable;
 
     /**
-     * @Property riskLevel: Ris Level
+     * @Property riskLevel: Ris Level, valid values: 1 | 2 | 3
      */
     public riskLevel: number | ros.IResolvable;
 
@@ -751,9 +764,14 @@ export class RosCompliancePack extends ros.RosResource {
     public compliancePackTemplateId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property configRules: Config Rule List
+     * @Property configRuleIds: Compliance Package rule ID list
      */
-    public configRules: Array<RosCompliancePack.ConfigRulesProperty | ros.IResolvable> | ros.IResolvable | undefined;
+    public configRuleIds: Array<RosCompliancePack.ConfigRuleIdsProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property description: Description
+     */
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @param scope - scope in which this resource is defined
@@ -771,20 +789,22 @@ export class RosCompliancePack extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.compliancePackName = props.compliancePackName;
-        this.description = props.description;
+        this.configRules = props.configRules;
         this.riskLevel = props.riskLevel;
         this.compliancePackTemplateId = props.compliancePackTemplateId;
-        this.configRules = props.configRules;
+        this.configRuleIds = props.configRuleIds;
+        this.description = props.description;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             compliancePackName: this.compliancePackName,
-            description: this.description,
+            configRules: this.configRules,
             riskLevel: this.riskLevel,
             compliancePackTemplateId: this.compliancePackTemplateId,
-            configRules: this.configRules,
+            configRuleIds: this.configRuleIds,
+            description: this.description,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -796,111 +816,40 @@ export namespace RosCompliancePack {
     /**
      * @stability external
      */
-    export interface ConfigRuleParametersProperty {
+    export interface ConfigRuleIdsProperty {
         /**
-         * @Property parameterValue: Parameter Value
-         */
-        readonly parameterValue?: string | ros.IResolvable;
-        /**
-         * @Property required: Required
-         */
-        readonly required?: boolean | ros.IResolvable;
-        /**
-         * @Property parameterName: Parameter Name
-         */
-        readonly parameterName?: string | ros.IResolvable;
-    }
-}
-/**
- * Determine whether the given properties match those of a `ConfigRuleParametersProperty`
- *
- * @param properties - the TypeScript properties of a `ConfigRuleParametersProperty`
- *
- * @returns the result of the validation.
- */
-function RosCompliancePack_ConfigRuleParametersPropertyValidator(properties: any): ros.ValidationResult {
-    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
-    const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('parameterValue', ros.validateString)(properties.parameterValue));
-    errors.collect(ros.propertyValidator('required', ros.validateBoolean)(properties.required));
-    errors.collect(ros.propertyValidator('parameterName', ros.validateString)(properties.parameterName));
-    return errors.wrap('supplied properties not correct for "ConfigRuleParametersProperty"');
-}
-
-/**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::Config::CompliancePack.ConfigRuleParameters` resource
- *
- * @param properties - the TypeScript properties of a `ConfigRuleParametersProperty`
- *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::Config::CompliancePack.ConfigRuleParameters` resource.
- */
-// @ts-ignore TS6133
-function rosCompliancePackConfigRuleParametersPropertyToRosTemplate(properties: any): any {
-    if (!ros.canInspect(properties)) { return properties; }
-    RosCompliancePack_ConfigRuleParametersPropertyValidator(properties).assertSuccess();
-    return {
-      ParameterValue: ros.stringToRosTemplate(properties.parameterValue),
-      Required: ros.booleanToRosTemplate(properties.required),
-      ParameterName: ros.stringToRosTemplate(properties.parameterName),
-    };
-}
-
-export namespace RosCompliancePack {
-    /**
-     * @stability external
-     */
-    export interface ConfigRulesProperty {
-        /**
-         * @Property configRuleId: Config Rule Id
+         * @Property configRuleId: Rule ID
          */
         readonly configRuleId?: string | ros.IResolvable;
-        /**
-         * @Property configRuleName: Config Rule Name
-         */
-        readonly configRuleName?: string | ros.IResolvable;
-        /**
-         * @Property managedRuleIdentifier: Managed Rule Identifier
-         */
-        readonly managedRuleIdentifier?: string | ros.IResolvable;
-        /**
-         * @Property configRuleParameters: Config Rule Parameter List
-         */
-        readonly configRuleParameters?: Array<RosCompliancePack.ConfigRuleParametersProperty | ros.IResolvable> | ros.IResolvable;
     }
 }
 /**
- * Determine whether the given properties match those of a `ConfigRulesProperty`
+ * Determine whether the given properties match those of a `ConfigRuleIdsProperty`
  *
- * @param properties - the TypeScript properties of a `ConfigRulesProperty`
+ * @param properties - the TypeScript properties of a `ConfigRuleIdsProperty`
  *
  * @returns the result of the validation.
  */
-function RosCompliancePack_ConfigRulesPropertyValidator(properties: any): ros.ValidationResult {
+function RosCompliancePack_ConfigRuleIdsPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('configRuleId', ros.validateString)(properties.configRuleId));
-    errors.collect(ros.propertyValidator('configRuleName', ros.validateString)(properties.configRuleName));
-    errors.collect(ros.propertyValidator('managedRuleIdentifier', ros.validateString)(properties.managedRuleIdentifier));
-    errors.collect(ros.propertyValidator('configRuleParameters', ros.listValidator(RosCompliancePack_ConfigRuleParametersPropertyValidator))(properties.configRuleParameters));
-    return errors.wrap('supplied properties not correct for "ConfigRulesProperty"');
+    return errors.wrap('supplied properties not correct for "ConfigRuleIdsProperty"');
 }
 
 /**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::Config::CompliancePack.ConfigRules` resource
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::Config::CompliancePack.ConfigRuleIds` resource
  *
- * @param properties - the TypeScript properties of a `ConfigRulesProperty`
+ * @param properties - the TypeScript properties of a `ConfigRuleIdsProperty`
  *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::Config::CompliancePack.ConfigRules` resource.
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::Config::CompliancePack.ConfigRuleIds` resource.
  */
 // @ts-ignore TS6133
-function rosCompliancePackConfigRulesPropertyToRosTemplate(properties: any): any {
+function rosCompliancePackConfigRuleIdsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
-    RosCompliancePack_ConfigRulesPropertyValidator(properties).assertSuccess();
+    RosCompliancePack_ConfigRuleIdsPropertyValidator(properties).assertSuccess();
     return {
       ConfigRuleId: ros.stringToRosTemplate(properties.configRuleId),
-      ConfigRuleName: ros.stringToRosTemplate(properties.configRuleName),
-      ManagedRuleIdentifier: ros.stringToRosTemplate(properties.managedRuleIdentifier),
-      ConfigRuleParameters: ros.listMapper(rosCompliancePackConfigRuleParametersPropertyToRosTemplate)(properties.configRuleParameters),
     };
 }
 

@@ -1,3 +1,4 @@
+export * from './instance';
 export * from './instances';
 
 // DATASOURCE::EAIS Resources:

@@ -4,8 +4,6 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    #pragma warning disable CS8618
-
     /// <summary>Properties for defining a `Disk`.</summary>
     /// <remarks>
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-disk
@@ -13,36 +11,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.DiskProps")]
     public class DiskProps : AlibabaCloud.SDK.ROS.CDK.Ecs.IDiskProps
     {
-        private object _zoneId;
-
-        /// <summary>Property zoneId: The availability zone in which the volume will be created.</summary>
-        [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        public object ZoneId
-        {
-            get => _zoneId;
-            set
-            {
-                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                {
-                    switch (value)
-                    {
-                        case string cast_cd4240:
-                            break;
-                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                            break;
-                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                            // Not enough information to type-check...
-                            break;
-                        case null:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
-                        default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                    }
-                }
-                _zoneId = value;
-            }
-        }
-
         private object? _autoSnapshotPolicyId;
 
         /// <summary>Property autoSnapshotPolicyId: Auto snapshot policy ID.</summary>
@@ -263,6 +231,44 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                     }
                 }
                 _encrypted = value;
+            }
+        }
+
+        private object? _instanceId;
+
+        /// <summary>Property instanceId: Create a cloud disk and automatically mount it to the specified InstanceId.</summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <description>Once the instance ID is set, the ResourceGroupId, Tags, and KMSKeyId parameters you set are ignored.</description>
+        /// <description>You cannot specify both ZoneId and InstanceId.
+        /// Default value: null, meaning that a pay-as-you-go cloud drive is created, and the region of the drive is defined by the RegionId and ZoneId.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? InstanceId
+        {
+            get => _instanceId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _instanceId = value;
             }
         }
 
@@ -621,6 +627,43 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         {
             get;
             set;
+        }
+
+        private object? _zoneId;
+
+        /// <summary>Property zoneId: Create a pay-as-you-go cloud drive within the specified availability area.</summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <description>If you do not set InstanceId, ZoneId is required.</description>
+        /// <description>You cannot specify both ZoneId and InstanceId.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ZoneId
+        {
+            get => _zoneId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _zoneId = value;
+            }
         }
     }
 }

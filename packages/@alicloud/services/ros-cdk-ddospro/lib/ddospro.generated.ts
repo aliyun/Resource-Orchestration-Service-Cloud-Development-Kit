@@ -85,6 +85,11 @@ export interface RosPremiumInstanceProps {
      * 3: the Secure Chinese Mainland Acceleration (Sec-CMA) mitigation plan
      */
     readonly productPlan?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosPremiumInstance.TagsProperty[];
 }
 
 /**
@@ -142,6 +147,14 @@ function RosPremiumInstancePropsValidator(properties: any): ros.ValidationResult
           }));
     }
     errors.collect(ros.propertyValidator('portCount', ros.validateNumber)(properties.portCount));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosPremiumInstance_TagsPropertyValidator))(properties.tags));
     if(properties.burstBandwidthMode && (typeof properties.burstBandwidthMode) !== 'object') {
         errors.collect(ros.propertyValidator('burstBandwidthMode', ros.validateAllowedValues)({
           data: properties.burstBandwidthMode,
@@ -190,6 +203,7 @@ function rosPremiumInstancePropsToRosTemplate(properties: any, enableResourcePro
       PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
       PortCount: ros.numberToRosTemplate(properties.portCount),
       ProductPlan: ros.stringToRosTemplate(properties.productPlan),
+      Tags: ros.listMapper(rosPremiumInstanceTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -291,6 +305,11 @@ export class RosPremiumInstance extends ros.RosResource {
     public productPlan: string | ros.IResolvable | undefined;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosPremiumInstance.TagsProperty[] | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -309,6 +328,7 @@ export class RosPremiumInstance extends ros.RosResource {
         this.periodUnit = props.periodUnit;
         this.portCount = props.portCount;
         this.productPlan = props.productPlan;
+        this.tags = props.tags;
     }
 
 
@@ -323,11 +343,60 @@ export class RosPremiumInstance extends ros.RosResource {
             periodUnit: this.periodUnit,
             portCount: this.portCount,
             productPlan: this.productPlan,
+            tags: this.tags,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosPremiumInstancePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosPremiumInstance {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosPremiumInstance_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DDoSPro::PremiumInstance.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DDoSPro::PremiumInstance.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosPremiumInstanceTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosPremiumInstance_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**
@@ -415,6 +484,11 @@ export interface RosProInstanceProps {
      * @Property servicePartner: The type of the protection line. Set the value to coop-line-001, which indicates the default protection line.
      */
     readonly servicePartner?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosProInstance.TagsProperty[];
 }
 
 /**
@@ -489,6 +563,14 @@ function RosProInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('addressType', ros.validateString)(properties.addressType));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosProInstance_TagsPropertyValidator))(properties.tags));
     if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
         errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
           data: properties.periodUnit,
@@ -534,6 +616,7 @@ function rosProInstancePropsToRosTemplate(properties: any, enableResourcePropert
       PortCount: ros.numberToRosTemplate(properties.portCount),
       ServiceBandwidth: ros.numberToRosTemplate(properties.serviceBandwidth),
       ServicePartner: ros.stringToRosTemplate(properties.servicePartner),
+      Tags: ros.listMapper(rosProInstanceTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -637,6 +720,11 @@ export class RosProInstance extends ros.RosResource {
     public servicePartner: string | ros.IResolvable | undefined;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosProInstance.TagsProperty[] | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -659,6 +747,7 @@ export class RosProInstance extends ros.RosResource {
         this.portCount = props.portCount;
         this.serviceBandwidth = props.serviceBandwidth;
         this.servicePartner = props.servicePartner;
+        this.tags = props.tags;
     }
 
 
@@ -677,9 +766,58 @@ export class RosProInstance extends ros.RosResource {
             portCount: this.portCount,
             serviceBandwidth: this.serviceBandwidth,
             servicePartner: this.servicePartner,
+            tags: this.tags,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosProInstancePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosProInstance {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosProInstance_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DDoSPro::ProInstance.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DDoSPro::ProInstance.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosProInstanceTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosProInstance_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
 }

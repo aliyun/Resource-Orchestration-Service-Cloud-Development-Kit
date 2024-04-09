@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.kms;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-key
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:52.974Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:33.564Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.RosKeyProps")
 @software.amazon.jsii.Jsii.Proxy(RosKeyProps.Jsii$Proxy.class)
 public interface RosKeyProps extends software.amazon.jsii.JsiiSerializable {
@@ -54,6 +54,12 @@ public interface RosKeyProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPolicy() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getProtectionLevel() {
         return null;
     }
@@ -81,6 +87,7 @@ public interface RosKeyProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object keySpec;
         java.lang.Object keyUsage;
         java.lang.Object pendingWindowInDays;
+        java.lang.Object policy;
         java.lang.Object protectionLevel;
         java.lang.Object rotationInterval;
 
@@ -225,6 +232,26 @@ public interface RosKeyProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosKeyProps#getPolicy}
+         * @param policy the value to be set.
+         * @return {@code this}
+         */
+        public Builder policy(com.aliyun.ros.cdk.core.IResolvable policy) {
+            this.policy = policy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosKeyProps#getPolicy}
+         * @param policy the value to be set.
+         * @return {@code this}
+         */
+        public Builder policy(java.util.Map<java.lang.String, ? extends java.lang.Object> policy) {
+            this.policy = policy;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosKeyProps#getProtectionLevel}
          * @param protectionLevel the value to be set.
          * @return {@code this}
@@ -287,6 +314,7 @@ public interface RosKeyProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object keySpec;
         private final java.lang.Object keyUsage;
         private final java.lang.Object pendingWindowInDays;
+        private final java.lang.Object policy;
         private final java.lang.Object protectionLevel;
         private final java.lang.Object rotationInterval;
 
@@ -303,6 +331,7 @@ public interface RosKeyProps extends software.amazon.jsii.JsiiSerializable {
             this.keySpec = software.amazon.jsii.Kernel.get(this, "keySpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.keyUsage = software.amazon.jsii.Kernel.get(this, "keyUsage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.pendingWindowInDays = software.amazon.jsii.Kernel.get(this, "pendingWindowInDays", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.policy = software.amazon.jsii.Kernel.get(this, "policy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.protectionLevel = software.amazon.jsii.Kernel.get(this, "protectionLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.rotationInterval = software.amazon.jsii.Kernel.get(this, "rotationInterval", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -319,6 +348,7 @@ public interface RosKeyProps extends software.amazon.jsii.JsiiSerializable {
             this.keySpec = builder.keySpec;
             this.keyUsage = builder.keyUsage;
             this.pendingWindowInDays = builder.pendingWindowInDays;
+            this.policy = builder.policy;
             this.protectionLevel = builder.protectionLevel;
             this.rotationInterval = builder.rotationInterval;
         }
@@ -359,6 +389,11 @@ public interface RosKeyProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getPolicy() {
+            return this.policy;
+        }
+
+        @Override
         public final java.lang.Object getProtectionLevel() {
             return this.protectionLevel;
         }
@@ -395,6 +430,9 @@ public interface RosKeyProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getPendingWindowInDays() != null) {
                 data.set("pendingWindowInDays", om.valueToTree(this.getPendingWindowInDays()));
             }
+            if (this.getPolicy() != null) {
+                data.set("policy", om.valueToTree(this.getPolicy()));
+            }
             if (this.getProtectionLevel() != null) {
                 data.set("protectionLevel", om.valueToTree(this.getProtectionLevel()));
             }
@@ -426,6 +464,7 @@ public interface RosKeyProps extends software.amazon.jsii.JsiiSerializable {
             if (this.keySpec != null ? !this.keySpec.equals(that.keySpec) : that.keySpec != null) return false;
             if (this.keyUsage != null ? !this.keyUsage.equals(that.keyUsage) : that.keyUsage != null) return false;
             if (this.pendingWindowInDays != null ? !this.pendingWindowInDays.equals(that.pendingWindowInDays) : that.pendingWindowInDays != null) return false;
+            if (this.policy != null ? !this.policy.equals(that.policy) : that.policy != null) return false;
             if (this.protectionLevel != null ? !this.protectionLevel.equals(that.protectionLevel) : that.protectionLevel != null) return false;
             return this.rotationInterval != null ? this.rotationInterval.equals(that.rotationInterval) : that.rotationInterval == null;
         }
@@ -439,6 +478,7 @@ public interface RosKeyProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.keySpec != null ? this.keySpec.hashCode() : 0);
             result = 31 * result + (this.keyUsage != null ? this.keyUsage.hashCode() : 0);
             result = 31 * result + (this.pendingWindowInDays != null ? this.pendingWindowInDays.hashCode() : 0);
+            result = 31 * result + (this.policy != null ? this.policy.hashCode() : 0);
             result = 31 * result + (this.protectionLevel != null ? this.protectionLevel.hashCode() : 0);
             result = 31 * result + (this.rotationInterval != null ? this.rotationInterval.hashCode() : 0);
             return result;

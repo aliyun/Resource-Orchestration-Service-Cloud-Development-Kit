@@ -22,7 +22,7 @@ export interface AuditLogConfigProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::AuditLogConfig`, which is used to modify the audit log settings of an ApsaraDB for Redis instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::AuditLogConfig`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAuditLogConfig`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-auditlogconfig
  */

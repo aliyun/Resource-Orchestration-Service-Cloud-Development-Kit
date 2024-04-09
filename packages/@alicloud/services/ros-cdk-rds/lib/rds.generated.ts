@@ -433,7 +433,7 @@ function rosAccountPrivilegePropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::AccountPrivilege`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::AccountPrivilege`, which is used to authorize an account to access a database.
  * @Note This class does not contain additional functions, so it is recommended to use the `AccountPrivilege` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-accountprivilege
  */
@@ -1199,8 +1199,22 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('dbInstanceDescription', ros.validateString)(properties.dbInstanceDescription));
     errors.collect(ros.propertyValidator('targetDedicatedHostIdForMaster', ros.validateString)(properties.targetDedicatedHostIdForMaster));
     errors.collect(ros.propertyValidator('engineVersion', ros.requiredValidator)(properties.engineVersion));
+    if(properties.engineVersion && (Array.isArray(properties.engineVersion) || (typeof properties.engineVersion) === 'string')) {
+        errors.collect(ros.propertyValidator('engineVersion', ros.validateLength)({
+            data: properties.engineVersion.length,
+            min: 1,
+            max: 16,
+          }));
+    }
     errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
     errors.collect(ros.propertyValidator('dbInstanceClass', ros.requiredValidator)(properties.dbInstanceClass));
+    if(properties.dbInstanceClass && (Array.isArray(properties.dbInstanceClass) || (typeof properties.dbInstanceClass) === 'string')) {
+        errors.collect(ros.propertyValidator('dbInstanceClass', ros.validateLength)({
+            data: properties.dbInstanceClass.length,
+            min: 1,
+            max: 64,
+          }));
+    }
     errors.collect(ros.propertyValidator('dbInstanceClass', ros.validateString)(properties.dbInstanceClass));
     if(properties.archiveBackupKeepPolicy && (typeof properties.archiveBackupKeepPolicy) !== 'object') {
         errors.collect(ros.propertyValidator('archiveBackupKeepPolicy', ros.validateAllowedValues)({
@@ -1313,6 +1327,12 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('slaveZoneIds', ros.listValidator(ros.validateString))(properties.slaveZoneIds));
     errors.collect(ros.propertyValidator('securityIpList', ros.requiredValidator)(properties.securityIpList));
     errors.collect(ros.propertyValidator('securityIpList', ros.validateString)(properties.securityIpList));
+    if(properties.dbIsIgnoreCase && (typeof properties.dbIsIgnoreCase) !== 'object') {
+        errors.collect(ros.propertyValidator('dbIsIgnoreCase', ros.validateAllowedValues)({
+          data: properties.dbIsIgnoreCase,
+          allowedValues: [0,1],
+        }));
+    }
     errors.collect(ros.propertyValidator('dbIsIgnoreCase', ros.validateNumber)(properties.dbIsIgnoreCase));
     errors.collect(ros.propertyValidator('maintainTime', ros.validateString)(properties.maintainTime));
     errors.collect(ros.propertyValidator('dbParamGroupId', ros.validateString)(properties.dbParamGroupId));
@@ -2533,6 +2553,13 @@ function RosDBInstanceClonePropsValidator(properties: any): ros.ValidationResult
     errors.collect(ros.propertyValidator('tags', ros.hashValidator(ros.validateAny))(properties.tags));
     errors.collect(ros.propertyValidator('dbInstanceDescription', ros.validateString)(properties.dbInstanceDescription));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    if(properties.dbInstanceClass && (Array.isArray(properties.dbInstanceClass) || (typeof properties.dbInstanceClass) === 'string')) {
+        errors.collect(ros.propertyValidator('dbInstanceClass', ros.validateLength)({
+            data: properties.dbInstanceClass.length,
+            min: 1,
+            max: 64,
+          }));
+    }
     errors.collect(ros.propertyValidator('dbInstanceClass', ros.validateString)(properties.dbInstanceClass));
     errors.collect(ros.propertyValidator('allocatePublicConnection', ros.validateBoolean)(properties.allocatePublicConnection));
     errors.collect(ros.propertyValidator('preferredBackupTime', ros.validateString)(properties.preferredBackupTime));
@@ -3478,7 +3505,7 @@ function rosDBInstanceSecurityIpsPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBInstanceSecurityIps`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBInstanceSecurityIps`, which is used to modify an IP address whitelist of an ApsaraDB for RDS instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBInstanceSecurityIps` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstancesecurityips
  */
@@ -4466,8 +4493,22 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
     errors.collect(ros.propertyValidator('engine', ros.validateString)(properties.engine));
     errors.collect(ros.propertyValidator('targetDedicatedHostIdForMaster', ros.validateString)(properties.targetDedicatedHostIdForMaster));
     errors.collect(ros.propertyValidator('engineVersion', ros.requiredValidator)(properties.engineVersion));
+    if(properties.engineVersion && (Array.isArray(properties.engineVersion) || (typeof properties.engineVersion) === 'string')) {
+        errors.collect(ros.propertyValidator('engineVersion', ros.validateLength)({
+            data: properties.engineVersion.length,
+            min: 1,
+            max: 16,
+          }));
+    }
     errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
     errors.collect(ros.propertyValidator('dbInstanceClass', ros.requiredValidator)(properties.dbInstanceClass));
+    if(properties.dbInstanceClass && (Array.isArray(properties.dbInstanceClass) || (typeof properties.dbInstanceClass) === 'string')) {
+        errors.collect(ros.propertyValidator('dbInstanceClass', ros.validateLength)({
+            data: properties.dbInstanceClass.length,
+            min: 1,
+            max: 64,
+          }));
+    }
     errors.collect(ros.propertyValidator('dbInstanceClass', ros.validateString)(properties.dbInstanceClass));
     if(properties.archiveBackupKeepPolicy && (typeof properties.archiveBackupKeepPolicy) !== 'object') {
         errors.collect(ros.propertyValidator('archiveBackupKeepPolicy', ros.validateAllowedValues)({
@@ -4573,6 +4614,12 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
           }));
     }
     errors.collect(ros.propertyValidator('slaveZoneIds', ros.listValidator(ros.validateString))(properties.slaveZoneIds));
+    if(properties.dbIsIgnoreCase && (typeof properties.dbIsIgnoreCase) !== 'object') {
+        errors.collect(ros.propertyValidator('dbIsIgnoreCase', ros.validateAllowedValues)({
+          data: properties.dbIsIgnoreCase,
+          allowedValues: [0,1],
+        }));
+    }
     errors.collect(ros.propertyValidator('dbIsIgnoreCase', ros.validateNumber)(properties.dbIsIgnoreCase));
     errors.collect(ros.propertyValidator('commodityCode', ros.requiredValidator)(properties.commodityCode));
     if(properties.commodityCode && (typeof properties.commodityCode) !== 'object') {
@@ -4721,7 +4768,7 @@ function rosPrepayDBInstancePropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::PrepayDBInstance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::PrepayDBInstance`, which is used to create a subscription ApsaraDB RDS instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `PrepayDBInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-prepaydbinstance
  */

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kms;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::KMS::Key</code>, which is used to create a customer master key (CMK).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:52.973Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:33.561Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.RosKey")
 public class RosKey extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -187,6 +187,36 @@ public class RosKey extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPolicy() {
+        return software.amazon.jsii.Kernel.get(this, "policy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPolicy(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "policy", value);
+    }
+
+    /**
+     */
+    public void setPolicy(final @org.jetbrains.annotations.Nullable java.util.Map<java.lang.String, java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            if (!(value.keySet().toArray()[0] instanceof String)) {
+                throw new IllegalArgumentException(
+                    new java.lang.StringBuilder("Expected ")
+                        .append("value").append(".keySet()")
+                        .append(" to contain class String; received ")
+                        .append(value.keySet().toArray()[0].getClass()).toString());
+            }
+            for (final java.util.Map.Entry<String, java.lang.Object> __item_ac66f0: value.entrySet()) {
+                final java.lang.Object __val_ac66f0 = __item_ac66f0.getValue();
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "policy", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getProtectionLevel() {
         return software.amazon.jsii.Kernel.get(this, "protectionLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -363,6 +393,23 @@ public class RosKey extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder pendingWindowInDays(final com.aliyun.ros.cdk.core.IResolvable pendingWindowInDays) {
             this.props.pendingWindowInDays(pendingWindowInDays);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param policy This parameter is required.
+         */
+        public Builder policy(final com.aliyun.ros.cdk.core.IResolvable policy) {
+            this.props.policy(policy);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param policy This parameter is required.
+         */
+        public Builder policy(final java.util.Map<java.lang.String, ? extends java.lang.Object> policy) {
+            this.props.policy(policy);
             return this;
         }
 

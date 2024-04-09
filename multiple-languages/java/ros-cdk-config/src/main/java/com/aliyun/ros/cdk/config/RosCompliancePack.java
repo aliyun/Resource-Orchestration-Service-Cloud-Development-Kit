@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.config;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::Config::CompliancePack</code>, which is used to create a compliance package.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:50.842Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:31.228Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.config.$Module.class, fqn = "@alicloud/ros-cdk-config.RosCompliancePack")
 public class RosCompliancePack extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -101,20 +101,20 @@ public class RosCompliancePack extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getDescription() {
-        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getConfigRules() {
+        return software.amazon.jsii.Kernel.get(this, "configRules", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
-    public void setDescription(final @org.jetbrains.annotations.NotNull java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "description", java.util.Objects.requireNonNull(value, "description is required"));
+    public void setConfigRules(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "configRules", java.util.Objects.requireNonNull(value, "configRules is required"));
     }
 
     /**
      */
-    public void setDescription(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "description", java.util.Objects.requireNonNull(value, "description is required"));
+    public void setConfigRules(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "configRules", java.util.Objects.requireNonNull(value, "configRules is required"));
     }
 
     public @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -163,258 +163,61 @@ public class RosCompliancePack extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getConfigRules() {
-        return software.amazon.jsii.Kernel.get(this, "configRules", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getConfigRuleIds() {
+        return software.amazon.jsii.Kernel.get(this, "configRuleIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
-    public void setConfigRules(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "configRules", value);
+    public void setConfigRuleIds(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "configRuleIds", value);
     }
 
     /**
      */
-    public void setConfigRules(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+    public void setConfigRuleIds(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
         if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
             for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
                 final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
                 if (
                      !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
-                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.config.RosCompliancePack.ConfigRulesProperty)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.config.RosCompliancePack.ConfigRuleIdsProperty)
                     && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
                 ) {
                     throw new IllegalArgumentException(
                         new java.lang.StringBuilder("Expected ")
                             .append("value").append(".get(").append(__idx_ac66f0).append(")")
-                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.config.RosCompliancePack.ConfigRulesProperty; received ")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.config.RosCompliancePack.ConfigRuleIdsProperty; received ")
                             .append(__val_ac66f0.getClass()).toString());
                 }
             }
         }
-        software.amazon.jsii.Kernel.set(this, "configRules", value);
+        software.amazon.jsii.Kernel.set(this, "configRuleIds", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDescription(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "description", value);
+    }
+
+    /**
+     */
+    public void setDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "description", value);
     }
     /**
      */
-    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.config.$Module.class, fqn = "@alicloud/ros-cdk-config.RosCompliancePack.ConfigRuleParametersProperty")
-    @software.amazon.jsii.Jsii.Proxy(ConfigRuleParametersProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.config.$Module.class, fqn = "@alicloud/ros-cdk-config.RosCompliancePack.ConfigRuleIdsProperty")
+    @software.amazon.jsii.Jsii.Proxy(ConfigRuleIdsProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-    public static interface ConfigRuleParametersProperty extends software.amazon.jsii.JsiiSerializable {
-
-        /**
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Object getParameterName() {
-            return null;
-        }
-
-        /**
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Object getParameterValue() {
-            return null;
-        }
-
-        /**
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Object getRequired() {
-            return null;
-        }
-
-        /**
-         * @return a {@link Builder} of {@link ConfigRuleParametersProperty}
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        static Builder builder() {
-            return new Builder();
-        }
-        /**
-         * A builder for {@link ConfigRuleParametersProperty}
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        public static final class Builder implements software.amazon.jsii.Builder<ConfigRuleParametersProperty> {
-            java.lang.Object parameterName;
-            java.lang.Object parameterValue;
-            java.lang.Object required;
-
-            /**
-             * Sets the value of {@link ConfigRuleParametersProperty#getParameterName}
-             * @param parameterName the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder parameterName(java.lang.String parameterName) {
-                this.parameterName = parameterName;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link ConfigRuleParametersProperty#getParameterName}
-             * @param parameterName the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder parameterName(com.aliyun.ros.cdk.core.IResolvable parameterName) {
-                this.parameterName = parameterName;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link ConfigRuleParametersProperty#getParameterValue}
-             * @param parameterValue the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder parameterValue(java.lang.String parameterValue) {
-                this.parameterValue = parameterValue;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link ConfigRuleParametersProperty#getParameterValue}
-             * @param parameterValue the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder parameterValue(com.aliyun.ros.cdk.core.IResolvable parameterValue) {
-                this.parameterValue = parameterValue;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link ConfigRuleParametersProperty#getRequired}
-             * @param required the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder required(java.lang.Boolean required) {
-                this.required = required;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link ConfigRuleParametersProperty#getRequired}
-             * @param required the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder required(com.aliyun.ros.cdk.core.IResolvable required) {
-                this.required = required;
-                return this;
-            }
-
-            /**
-             * Builds the configured instance.
-             * @return a new instance of {@link ConfigRuleParametersProperty}
-             * @throws NullPointerException if any required attribute was not provided
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            @Override
-            public ConfigRuleParametersProperty build() {
-                return new Jsii$Proxy(this);
-            }
-        }
-
-        /**
-         * An implementation for {@link ConfigRuleParametersProperty}
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @software.amazon.jsii.Internal
-        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ConfigRuleParametersProperty {
-            private final java.lang.Object parameterName;
-            private final java.lang.Object parameterValue;
-            private final java.lang.Object required;
-
-            /**
-             * Constructor that initializes the object based on values retrieved from the JsiiObject.
-             * @param objRef Reference to the JSII managed object.
-             */
-            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
-                super(objRef);
-                this.parameterName = software.amazon.jsii.Kernel.get(this, "parameterName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.parameterValue = software.amazon.jsii.Kernel.get(this, "parameterValue", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.required = software.amazon.jsii.Kernel.get(this, "required", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            }
-
-            /**
-             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
-             */
-            protected Jsii$Proxy(final Builder builder) {
-                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.parameterName = builder.parameterName;
-                this.parameterValue = builder.parameterValue;
-                this.required = builder.required;
-            }
-
-            @Override
-            public final java.lang.Object getParameterName() {
-                return this.parameterName;
-            }
-
-            @Override
-            public final java.lang.Object getParameterValue() {
-                return this.parameterValue;
-            }
-
-            @Override
-            public final java.lang.Object getRequired() {
-                return this.required;
-            }
-
-            @Override
-            @software.amazon.jsii.Internal
-            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
-                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
-                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
-
-                if (this.getParameterName() != null) {
-                    data.set("parameterName", om.valueToTree(this.getParameterName()));
-                }
-                if (this.getParameterValue() != null) {
-                    data.set("parameterValue", om.valueToTree(this.getParameterValue()));
-                }
-                if (this.getRequired() != null) {
-                    data.set("required", om.valueToTree(this.getRequired()));
-                }
-
-                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
-                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-config.RosCompliancePack.ConfigRuleParametersProperty"));
-                struct.set("data", data);
-
-                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
-                obj.set("$jsii.struct", struct);
-
-                return obj;
-            }
-
-            @Override
-            public final boolean equals(final Object o) {
-                if (this == o) return true;
-                if (o == null || getClass() != o.getClass()) return false;
-
-                ConfigRuleParametersProperty.Jsii$Proxy that = (ConfigRuleParametersProperty.Jsii$Proxy) o;
-
-                if (this.parameterName != null ? !this.parameterName.equals(that.parameterName) : that.parameterName != null) return false;
-                if (this.parameterValue != null ? !this.parameterValue.equals(that.parameterValue) : that.parameterValue != null) return false;
-                return this.required != null ? this.required.equals(that.required) : that.required == null;
-            }
-
-            @Override
-            public final int hashCode() {
-                int result = this.parameterName != null ? this.parameterName.hashCode() : 0;
-                result = 31 * result + (this.parameterValue != null ? this.parameterValue.hashCode() : 0);
-                result = 31 * result + (this.required != null ? this.required.hashCode() : 0);
-                return result;
-            }
-        }
-    }
-    /**
-     */
-    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.config.$Module.class, fqn = "@alicloud/ros-cdk-config.RosCompliancePack.ConfigRulesProperty")
-    @software.amazon.jsii.Jsii.Proxy(ConfigRulesProperty.Jsii$Proxy.class)
-    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-    public static interface ConfigRulesProperty extends software.amazon.jsii.JsiiSerializable {
+    public static interface ConfigRuleIdsProperty extends software.amazon.jsii.JsiiSerializable {
 
         /**
          */
@@ -424,45 +227,21 @@ public class RosCompliancePack extends com.aliyun.ros.cdk.core.RosResource {
         }
 
         /**
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Object getConfigRuleName() {
-            return null;
-        }
-
-        /**
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Object getConfigRuleParameters() {
-            return null;
-        }
-
-        /**
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Object getManagedRuleIdentifier() {
-            return null;
-        }
-
-        /**
-         * @return a {@link Builder} of {@link ConfigRulesProperty}
+         * @return a {@link Builder} of {@link ConfigRuleIdsProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         static Builder builder() {
             return new Builder();
         }
         /**
-         * A builder for {@link ConfigRulesProperty}
+         * A builder for {@link ConfigRuleIdsProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        public static final class Builder implements software.amazon.jsii.Builder<ConfigRulesProperty> {
+        public static final class Builder implements software.amazon.jsii.Builder<ConfigRuleIdsProperty> {
             java.lang.Object configRuleId;
-            java.lang.Object configRuleName;
-            java.lang.Object configRuleParameters;
-            java.lang.Object managedRuleIdentifier;
 
             /**
-             * Sets the value of {@link ConfigRulesProperty#getConfigRuleId}
+             * Sets the value of {@link ConfigRuleIdsProperty#getConfigRuleId}
              * @param configRuleId the value to be set.
              * @return {@code this}
              */
@@ -473,7 +252,7 @@ public class RosCompliancePack extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
-             * Sets the value of {@link ConfigRulesProperty#getConfigRuleId}
+             * Sets the value of {@link ConfigRuleIdsProperty#getConfigRuleId}
              * @param configRuleId the value to be set.
              * @return {@code this}
              */
@@ -484,93 +263,24 @@ public class RosCompliancePack extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
-             * Sets the value of {@link ConfigRulesProperty#getConfigRuleName}
-             * @param configRuleName the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder configRuleName(java.lang.String configRuleName) {
-                this.configRuleName = configRuleName;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link ConfigRulesProperty#getConfigRuleName}
-             * @param configRuleName the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder configRuleName(com.aliyun.ros.cdk.core.IResolvable configRuleName) {
-                this.configRuleName = configRuleName;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link ConfigRulesProperty#getConfigRuleParameters}
-             * @param configRuleParameters the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder configRuleParameters(com.aliyun.ros.cdk.core.IResolvable configRuleParameters) {
-                this.configRuleParameters = configRuleParameters;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link ConfigRulesProperty#getConfigRuleParameters}
-             * @param configRuleParameters the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder configRuleParameters(java.util.List<? extends java.lang.Object> configRuleParameters) {
-                this.configRuleParameters = configRuleParameters;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link ConfigRulesProperty#getManagedRuleIdentifier}
-             * @param managedRuleIdentifier the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder managedRuleIdentifier(java.lang.String managedRuleIdentifier) {
-                this.managedRuleIdentifier = managedRuleIdentifier;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link ConfigRulesProperty#getManagedRuleIdentifier}
-             * @param managedRuleIdentifier the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder managedRuleIdentifier(com.aliyun.ros.cdk.core.IResolvable managedRuleIdentifier) {
-                this.managedRuleIdentifier = managedRuleIdentifier;
-                return this;
-            }
-
-            /**
              * Builds the configured instance.
-             * @return a new instance of {@link ConfigRulesProperty}
+             * @return a new instance of {@link ConfigRuleIdsProperty}
              * @throws NullPointerException if any required attribute was not provided
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
-            public ConfigRulesProperty build() {
+            public ConfigRuleIdsProperty build() {
                 return new Jsii$Proxy(this);
             }
         }
 
         /**
-         * An implementation for {@link ConfigRulesProperty}
+         * An implementation for {@link ConfigRuleIdsProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
-        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ConfigRulesProperty {
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ConfigRuleIdsProperty {
             private final java.lang.Object configRuleId;
-            private final java.lang.Object configRuleName;
-            private final java.lang.Object configRuleParameters;
-            private final java.lang.Object managedRuleIdentifier;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -579,9 +289,6 @@ public class RosCompliancePack extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
                 this.configRuleId = software.amazon.jsii.Kernel.get(this, "configRuleId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.configRuleName = software.amazon.jsii.Kernel.get(this, "configRuleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.configRuleParameters = software.amazon.jsii.Kernel.get(this, "configRuleParameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.managedRuleIdentifier = software.amazon.jsii.Kernel.get(this, "managedRuleIdentifier", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -590,29 +297,11 @@ public class RosCompliancePack extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.configRuleId = builder.configRuleId;
-                this.configRuleName = builder.configRuleName;
-                this.configRuleParameters = builder.configRuleParameters;
-                this.managedRuleIdentifier = builder.managedRuleIdentifier;
             }
 
             @Override
             public final java.lang.Object getConfigRuleId() {
                 return this.configRuleId;
-            }
-
-            @Override
-            public final java.lang.Object getConfigRuleName() {
-                return this.configRuleName;
-            }
-
-            @Override
-            public final java.lang.Object getConfigRuleParameters() {
-                return this.configRuleParameters;
-            }
-
-            @Override
-            public final java.lang.Object getManagedRuleIdentifier() {
-                return this.managedRuleIdentifier;
             }
 
             @Override
@@ -624,18 +313,9 @@ public class RosCompliancePack extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.getConfigRuleId() != null) {
                     data.set("configRuleId", om.valueToTree(this.getConfigRuleId()));
                 }
-                if (this.getConfigRuleName() != null) {
-                    data.set("configRuleName", om.valueToTree(this.getConfigRuleName()));
-                }
-                if (this.getConfigRuleParameters() != null) {
-                    data.set("configRuleParameters", om.valueToTree(this.getConfigRuleParameters()));
-                }
-                if (this.getManagedRuleIdentifier() != null) {
-                    data.set("managedRuleIdentifier", om.valueToTree(this.getManagedRuleIdentifier()));
-                }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
-                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-config.RosCompliancePack.ConfigRulesProperty"));
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-config.RosCompliancePack.ConfigRuleIdsProperty"));
                 struct.set("data", data);
 
                 final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -649,20 +329,14 @@ public class RosCompliancePack extends com.aliyun.ros.cdk.core.RosResource {
                 if (this == o) return true;
                 if (o == null || getClass() != o.getClass()) return false;
 
-                ConfigRulesProperty.Jsii$Proxy that = (ConfigRulesProperty.Jsii$Proxy) o;
+                ConfigRuleIdsProperty.Jsii$Proxy that = (ConfigRuleIdsProperty.Jsii$Proxy) o;
 
-                if (this.configRuleId != null ? !this.configRuleId.equals(that.configRuleId) : that.configRuleId != null) return false;
-                if (this.configRuleName != null ? !this.configRuleName.equals(that.configRuleName) : that.configRuleName != null) return false;
-                if (this.configRuleParameters != null ? !this.configRuleParameters.equals(that.configRuleParameters) : that.configRuleParameters != null) return false;
-                return this.managedRuleIdentifier != null ? this.managedRuleIdentifier.equals(that.managedRuleIdentifier) : that.managedRuleIdentifier == null;
+                return this.configRuleId != null ? this.configRuleId.equals(that.configRuleId) : that.configRuleId == null;
             }
 
             @Override
             public final int hashCode() {
                 int result = this.configRuleId != null ? this.configRuleId.hashCode() : 0;
-                result = 31 * result + (this.configRuleName != null ? this.configRuleName.hashCode() : 0);
-                result = 31 * result + (this.configRuleParameters != null ? this.configRuleParameters.hashCode() : 0);
-                result = 31 * result + (this.managedRuleIdentifier != null ? this.managedRuleIdentifier.hashCode() : 0);
                 return result;
             }
         }
@@ -713,18 +387,18 @@ public class RosCompliancePack extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param description This parameter is required.
+         * @param configRules This parameter is required.
          */
-        public Builder description(final java.lang.String description) {
-            this.props.description(description);
+        public Builder configRules(final java.lang.String configRules) {
+            this.props.configRules(configRules);
             return this;
         }
         /**
          * @return {@code this}
-         * @param description This parameter is required.
+         * @param configRules This parameter is required.
          */
-        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
-            this.props.description(description);
+        public Builder configRules(final com.aliyun.ros.cdk.core.IResolvable configRules) {
+            this.props.configRules(configRules);
             return this;
         }
 
@@ -764,18 +438,35 @@ public class RosCompliancePack extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param configRules This parameter is required.
+         * @param configRuleIds This parameter is required.
          */
-        public Builder configRules(final com.aliyun.ros.cdk.core.IResolvable configRules) {
-            this.props.configRules(configRules);
+        public Builder configRuleIds(final com.aliyun.ros.cdk.core.IResolvable configRuleIds) {
+            this.props.configRuleIds(configRuleIds);
             return this;
         }
         /**
          * @return {@code this}
-         * @param configRules This parameter is required.
+         * @param configRuleIds This parameter is required.
          */
-        public Builder configRules(final java.util.List<? extends java.lang.Object> configRules) {
-            this.props.configRules(configRules);
+        public Builder configRuleIds(final java.util.List<? extends java.lang.Object> configRuleIds) {
+            this.props.configRuleIds(configRuleIds);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param description This parameter is required.
+         */
+        public Builder description(final java.lang.String description) {
+            this.props.description(description);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param description This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props.description(description);
             return this;
         }
 

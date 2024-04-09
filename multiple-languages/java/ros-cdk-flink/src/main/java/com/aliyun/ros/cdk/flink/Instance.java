@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.flink;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::Flink::Instance</code>, which is used to create a subscription or pay-as-you-go Realtime Compute for Apache Flink instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:52.658Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:33.210Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.flink.$Module.class, fqn = "@alicloud/ros-cdk-flink.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 

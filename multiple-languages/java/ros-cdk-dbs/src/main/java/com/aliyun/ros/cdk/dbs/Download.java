@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dbs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::DBS::Download</code>, which is used to create an advanced download task.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:51.108Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:31.495Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dbs.$Module.class, fqn = "@alicloud/ros-cdk-dbs.Download")
 public class Download extends com.aliyun.ros.cdk.core.Resource {
 

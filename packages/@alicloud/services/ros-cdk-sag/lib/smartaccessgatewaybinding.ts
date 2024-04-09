@@ -21,7 +21,7 @@ export interface SmartAccessGatewayBindingProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::SmartAccessGatewayBinding`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::SmartAccessGatewayBinding`, which is used to bind a Smart Access Gateway (SAG) instance to a specified Cloud Connect Network (CCN) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSmartAccessGatewayBinding`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-smartaccessgatewaybinding
  */

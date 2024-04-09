@@ -86,6 +86,11 @@ export interface PremiumInstanceProps {
      * 3: the Secure Chinese Mainland Acceleration (Sec-CMA) mitigation plan
      */
     readonly productPlan?: string | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosPremiumInstance.TagsProperty[];
 }
 
 /**
@@ -123,6 +128,7 @@ export class PremiumInstance extends ros.Resource {
             productPlan: props.productPlan,
             period: props.period,
             portCount: props.portCount,
+            tags: props.tags,
             burstBandwidthMode: props.burstBandwidthMode,
             periodUnit: props.periodUnit,
             domainCount: props.domainCount,

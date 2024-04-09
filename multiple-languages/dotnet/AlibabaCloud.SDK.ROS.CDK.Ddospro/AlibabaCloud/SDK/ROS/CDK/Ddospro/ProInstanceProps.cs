@@ -600,5 +600,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ddospro
                 _servicePartner = value;
             }
         }
+
+        /// <summary>Property tags: Tags to attach to instance.</summary>
+        /// <remarks>
+        /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-ddospro.RosProInstance.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        public AlibabaCloud.SDK.ROS.CDK.Ddospro.RosProInstance.ITagsProperty[]? Tags
+        {
+            get;
+            set;
+        }
     }
 }

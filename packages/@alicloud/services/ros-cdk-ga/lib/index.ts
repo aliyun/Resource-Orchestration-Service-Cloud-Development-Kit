@@ -1,4 +1,5 @@
 export * from './accelerator';
+export * from './acl';
 export * from './bandwidthpackage';
 export * from './bandwidthpackageacceleratoraddition';
 export * from './endpointgroup';

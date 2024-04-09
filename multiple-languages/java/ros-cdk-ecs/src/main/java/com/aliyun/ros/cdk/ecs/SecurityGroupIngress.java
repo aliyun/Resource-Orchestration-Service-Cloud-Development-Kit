@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::SecurityGroupIngress</code>, which is used to create an inbound rule for a security group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:51.981Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:32.433Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.SecurityGroupIngress")
 public class SecurityGroupIngress extends com.aliyun.ros.cdk.core.Resource {
 
@@ -392,8 +392,11 @@ public class SecurityGroupIngress extends com.aliyun.ros.cdk.core.Resource {
          * Property sourcePrefixListId: The ID of the source prefix list to which you want to control access.
          * <p>
          * You can call the DescribePrefixLists operation to query the IDs of available prefix lists. Take note of the following items:
-         * If a security group is in the classic network, you cannot configure prefix lists in the security group rules. For information about the limits on security groups and prefix lists, see the "Security group limits" section in Limits.
-         * If you specify the SourceCidrIp, Ipv6SourceCidrIp, or SourceGroupId parameter, this parameter is ignored.
+         * <p>
+         * <ul>
+         * <li>If a security group is in the classic network, you cannot configure prefix lists in the security group rules.</li>
+         * <li>If you specify the SourceCidrIp, Ipv6SourceCidrIp, or SourceGroupId parameter, this parameter is ignored.</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param sourcePrefixListId Property sourcePrefixListId: The ID of the source prefix list to which you want to control access. This parameter is required.
@@ -406,8 +409,11 @@ public class SecurityGroupIngress extends com.aliyun.ros.cdk.core.Resource {
          * Property sourcePrefixListId: The ID of the source prefix list to which you want to control access.
          * <p>
          * You can call the DescribePrefixLists operation to query the IDs of available prefix lists. Take note of the following items:
-         * If a security group is in the classic network, you cannot configure prefix lists in the security group rules. For information about the limits on security groups and prefix lists, see the "Security group limits" section in Limits.
-         * If you specify the SourceCidrIp, Ipv6SourceCidrIp, or SourceGroupId parameter, this parameter is ignored.
+         * <p>
+         * <ul>
+         * <li>If a security group is in the classic network, you cannot configure prefix lists in the security group rules.</li>
+         * <li>If you specify the SourceCidrIp, Ipv6SourceCidrIp, or SourceGroupId parameter, this parameter is ignored.</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param sourcePrefixListId Property sourcePrefixListId: The ID of the source prefix list to which you want to control access. This parameter is required.

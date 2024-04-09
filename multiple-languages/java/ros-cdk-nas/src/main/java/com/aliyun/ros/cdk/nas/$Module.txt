@@ -34,10 +34,14 @@
 @alicloud/ros-cdk-nas.RosProtocolServiceProps=com.aliyun.ros.cdk.nas.RosProtocolServiceProps
 @alicloud/ros-cdk-nas.datasource.AccessGroups=com.aliyun.ros.cdk.nas.datasource.AccessGroups
 @alicloud/ros-cdk-nas.datasource.AccessGroupsProps=com.aliyun.ros.cdk.nas.datasource.AccessGroupsProps
+@alicloud/ros-cdk-nas.datasource.FileSystem=com.aliyun.ros.cdk.nas.datasource.FileSystem
+@alicloud/ros-cdk-nas.datasource.FileSystemProps=com.aliyun.ros.cdk.nas.datasource.FileSystemProps
 @alicloud/ros-cdk-nas.datasource.FileSystems=com.aliyun.ros.cdk.nas.datasource.FileSystems
 @alicloud/ros-cdk-nas.datasource.FileSystemsProps=com.aliyun.ros.cdk.nas.datasource.FileSystemsProps
 @alicloud/ros-cdk-nas.datasource.RosAccessGroups=com.aliyun.ros.cdk.nas.datasource.RosAccessGroups
 @alicloud/ros-cdk-nas.datasource.RosAccessGroupsProps=com.aliyun.ros.cdk.nas.datasource.RosAccessGroupsProps
+@alicloud/ros-cdk-nas.datasource.RosFileSystem=com.aliyun.ros.cdk.nas.datasource.RosFileSystem
+@alicloud/ros-cdk-nas.datasource.RosFileSystemProps=com.aliyun.ros.cdk.nas.datasource.RosFileSystemProps
 @alicloud/ros-cdk-nas.datasource.RosFileSystems=com.aliyun.ros.cdk.nas.datasource.RosFileSystems
 @alicloud/ros-cdk-nas.datasource.RosFileSystemsProps=com.aliyun.ros.cdk.nas.datasource.RosFileSystemsProps
 @alicloud/ros-cdk-nas.datasource.RosZones=com.aliyun.ros.cdk.nas.datasource.RosZones

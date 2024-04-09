@@ -54,7 +54,7 @@ export interface ScalingGroupProps {
     /**
      * Property dbInstanceIds: ID list of an RDS instance. A Json Array with format: [ "rm-id0", "rm-id1", ... "rm-idz" ], support up to 100 RDS instance.
      */
-    readonly dbInstanceIds?: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly dbInstanceIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property defaultCooldown: Default cool-down time (in seconds) of the scaling group. Value range: [0, 86400].
@@ -113,7 +113,7 @@ export interface ScalingGroupProps {
     /**
      * Property loadBalancerIds: ID list of a Server Load Balancer instance. A Json Array with format: [ "lb-id0", "lb-id1", ... "lb-idz" ], support up to 100 Load Balancer instance.
      */
-    readonly loadBalancerIds?: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly loadBalancerIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property maxInstanceLifetime: The maximum life span of an ECS instance in the scaling group. Unit: seconds.
@@ -153,7 +153,7 @@ export interface ScalingGroupProps {
     /**
      * Property protectedInstances: ECS instances of protected mode in the scaling group.
      */
-    readonly protectedInstances?: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly protectedInstances?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property removalPolicys: Policy for removing ECS instances from the scaling group.
@@ -167,7 +167,7 @@ export interface ScalingGroupProps {
      * The scaling configuration source specified by the OldestScalingConfiguration setting can be a scaling configuration or a launch template. You can specify CustomPolicy only as the value of first item of RemovalPolicys. If you set first item of RemovalPolicys to CustomPolicy, you must also specify CustomPolicyARN.
      * Note: The removal of ECS instances from a scaling group is also affected by the value of MultiAZPolicy.
      */
-    readonly removalPolicys?: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly removalPolicys?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property scalingGroupName: Name shown for the scaling group, which must contain 2-40 characters (English or Chinese). The name must begin with a number, an upper\/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".". The account name is unique in the same region.
@@ -206,7 +206,7 @@ export interface ScalingGroupProps {
     /**
      * Property standbyInstances: ECS instances of standby mode in the scaling group.
      */
-    readonly standbyInstances?: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly standbyInstances?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
@@ -224,7 +224,7 @@ export interface ScalingGroupProps {
      * The priority of VSwitches descends from 1 to 8, and 1 indicates the highest priority.
      * When you fail to create an instance in the zone to which a specified VSwitch belongs, another VSwitch with less priority replaces the specified one automatically.
      */
-    readonly vSwitchIds?: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly vSwitchIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 }
 
 /**

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.fc;
  * <p>
  * All functions of a service share the same settings, such as permission settings and log configurations. A service can have multiple functions, all of which share service resources, such as Logstores and RAM roles.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:52.612Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:33.166Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosService")
 public class RosService extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -1787,7 +1787,7 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder vSwitchIds(java.util.List<? extends java.lang.Object> vSwitchIds) {
+            public Builder vSwitchIds(com.aliyun.ros.cdk.core.IResolvable vSwitchIds) {
                 this.vSwitchIds = vSwitchIds;
                 return this;
             }
@@ -1798,7 +1798,7 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder vSwitchIds(com.aliyun.ros.cdk.core.IResolvable vSwitchIds) {
+            public Builder vSwitchIds(java.util.List<? extends java.lang.Object> vSwitchIds) {
                 this.vSwitchIds = vSwitchIds;
                 return this;
             }

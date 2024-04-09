@@ -2691,7 +2691,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
-          allowedValues: ["PostPaid","PrePaid"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
@@ -4235,7 +4235,7 @@ export class RosTrafficControlBinding extends ros.RosResource {
 export interface RosVpcAccessConfigProps {
 
     /**
-     * @Property instanceId: The id of the instance (ECS\/SLB).
+     * @Property instanceId: The id of the instance (ECS\/SLB\/ALB\/NLB).
      */
     readonly instanceId: string | ros.IResolvable;
 
@@ -4319,7 +4319,7 @@ export class RosVpcAccessConfig extends ros.RosResource {
 
 
     /**
-     * @Property instanceId: The id of the instance (ECS\/SLB).
+     * @Property instanceId: The id of the instance (ECS\/SLB\/ALB\/NLB).
      */
     public instanceId: string | ros.IResolvable;
 

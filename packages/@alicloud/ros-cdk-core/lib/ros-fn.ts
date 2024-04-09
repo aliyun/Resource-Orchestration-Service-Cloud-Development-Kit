@@ -173,6 +173,9 @@ export class Fn {
     body: string,
     variables?: { [key: string]: any }
   ): string {
+    if (variables === undefined) {
+      return new FnSub(body).toString();
+    }
     return new FnSub([body, variables]).toString();
   }
 

@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.ros;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ROS::WaitCondition</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ROS::WaitCondition</code>, which is used to wait for signals.
+ * <p>
+ * You can use ALIYUN::ROS::WaitCondition together with ALIYUN::ROS::WaitConditionHandle to manage the execution process of a stack. When you create an Elastic Compute Service (ECS) instance, a signal is sent during the execution of the user data.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:54.407Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:35.091Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.WaitCondition")
 public class WaitCondition extends com.aliyun.ros.cdk.core.Resource {
 

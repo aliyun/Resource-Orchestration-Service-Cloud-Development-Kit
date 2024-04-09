@@ -44,7 +44,7 @@ export interface IndexProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Index`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Index`, which is used to create an index for a specified Logstore.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosIndex`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-index
  */

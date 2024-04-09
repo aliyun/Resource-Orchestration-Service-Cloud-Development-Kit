@@ -88,6 +88,11 @@ export interface ProInstanceProps {
      * Property servicePartner: The type of the protection line. Set the value to coop-line-001, which indicates the default protection line.
      */
     readonly servicePartner?: string | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosProInstance.TagsProperty[];
 }
 
 /**
@@ -130,6 +135,7 @@ export class ProInstance extends ros.Resource {
             functionVersion: props.functionVersion,
             bandwidth: props.bandwidth,
             addressType: props.addressType,
+            tags: props.tags,
             periodUnit: props.periodUnit,
             domainCount: props.domainCount,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

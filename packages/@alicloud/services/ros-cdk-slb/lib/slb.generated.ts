@@ -1809,6 +1809,13 @@ function RosListener_HealthCheckPropertyValidator(properties: any): ros.Validati
           }));
     }
     errors.collect(ros.propertyValidator('unhealthyThreshold', ros.validateNumber)(properties.unhealthyThreshold));
+    if(properties.timeout && (typeof properties.timeout) !== 'object') {
+        errors.collect(ros.propertyValidator('timeout', ros.validateRange)({
+            data: properties.timeout,
+            min: 0,
+            max: undefined,
+          }));
+    }
     errors.collect(ros.propertyValidator('timeout', ros.validateNumber)(properties.timeout));
     errors.collect(ros.propertyValidator('healthCheckMethod', ros.validateString)(properties.healthCheckMethod));
     if(properties.healthyThreshold && (typeof properties.healthyThreshold) !== 'object') {
@@ -2427,6 +2434,13 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('loadBalancerSpec', ros.validateString)(properties.loadBalancerSpec));
     errors.collect(ros.propertyValidator('loadBalancerName', ros.validateString)(properties.loadBalancerName));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    if(properties.bandwidth && (typeof properties.bandwidth) !== 'object') {
+        errors.collect(ros.propertyValidator('bandwidth', ros.validateRange)({
+            data: properties.bandwidth,
+            min: 1,
+            max: undefined,
+          }));
+    }
     errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));
     if(properties.modificationProtectionReason && (Array.isArray(properties.modificationProtectionReason) || (typeof properties.modificationProtectionReason) === 'string')) {
         errors.collect(ros.propertyValidator('modificationProtectionReason', ros.validateLength)({
@@ -2985,7 +2999,7 @@ function rosLoadBalancerClonePropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::LoadBalancerClone`, which is used to clone a Server Load Balancer (SLB) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::LoadBalancerClone`.
  * @Note This class does not contain additional functions, so it is recommended to use the `LoadBalancerClone` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-loadbalancerclone
  */
@@ -3532,7 +3546,7 @@ function rosRulePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::Rule`, which is used to add forwarding rules to an HTTP or HTTPS listener.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::Rule`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Rule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-rule
  */
@@ -3906,7 +3920,7 @@ function rosVServerGroupPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::VServerGroup`, which is used to create a server group and attach backend servers to a Server Load Balancer (SLB) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::VServerGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `VServerGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-vservergroup
  */

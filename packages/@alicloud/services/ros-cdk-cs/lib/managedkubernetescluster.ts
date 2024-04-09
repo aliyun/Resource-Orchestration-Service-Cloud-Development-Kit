@@ -363,6 +363,11 @@ export class ManagedKubernetesCluster extends ros.Resource {
     public readonly attrDefaultUserKubeConfig: ros.IResolvable;
 
     /**
+     * Attribute IngressSLBId: The id of ingress SLB
+     */
+    public readonly attrIngressSlbId: ros.IResolvable;
+
+    /**
      * Attribute Nodes: The list of cluster nodes.
      */
     public readonly attrNodes: ros.IResolvable;
@@ -462,6 +467,7 @@ export class ManagedKubernetesCluster extends ros.Resource {
         this.attrApiServerSlbId = rosManagedKubernetesCluster.attrApiServerSlbId;
         this.attrClusterId = rosManagedKubernetesCluster.attrClusterId;
         this.attrDefaultUserKubeConfig = rosManagedKubernetesCluster.attrDefaultUserKubeConfig;
+        this.attrIngressSlbId = rosManagedKubernetesCluster.attrIngressSlbId;
         this.attrNodes = rosManagedKubernetesCluster.attrNodes;
         this.attrPrivateUserKubConfig = rosManagedKubernetesCluster.attrPrivateUserKubConfig;
         this.attrScalingConfigurationId = rosManagedKubernetesCluster.attrScalingConfigurationId;

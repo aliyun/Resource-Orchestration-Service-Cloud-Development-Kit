@@ -85,8 +85,13 @@
 @alicloud/ros-cdk-cms.RosSiteMonitor=com.aliyun.ros.cdk.cms.RosSiteMonitor
 @alicloud/ros-cdk-cms.RosSiteMonitor.IspCitiesProperty=com.aliyun.ros.cdk.cms.RosSiteMonitor$IspCitiesProperty
 @alicloud/ros-cdk-cms.RosSiteMonitorProps=com.aliyun.ros.cdk.cms.RosSiteMonitorProps
+@alicloud/ros-cdk-cms.RosSlsGroup=com.aliyun.ros.cdk.cms.RosSlsGroup
+@alicloud/ros-cdk-cms.RosSlsGroup.SlsGroupConfigProperty=com.aliyun.ros.cdk.cms.RosSlsGroup$SlsGroupConfigProperty
+@alicloud/ros-cdk-cms.RosSlsGroupProps=com.aliyun.ros.cdk.cms.RosSlsGroupProps
 @alicloud/ros-cdk-cms.SiteMonitor=com.aliyun.ros.cdk.cms.SiteMonitor
 @alicloud/ros-cdk-cms.SiteMonitorProps=com.aliyun.ros.cdk.cms.SiteMonitorProps
+@alicloud/ros-cdk-cms.SlsGroup=com.aliyun.ros.cdk.cms.SlsGroup
+@alicloud/ros-cdk-cms.SlsGroupProps=com.aliyun.ros.cdk.cms.SlsGroupProps
 @alicloud/ros-cdk-cms.datasource.AlarmContacts=com.aliyun.ros.cdk.cms.datasource.AlarmContacts
 @alicloud/ros-cdk-cms.datasource.AlarmContactsProps=com.aliyun.ros.cdk.cms.datasource.AlarmContactsProps
 @alicloud/ros-cdk-cms.datasource.MonitorGroups=com.aliyun.ros.cdk.cms.datasource.MonitorGroups

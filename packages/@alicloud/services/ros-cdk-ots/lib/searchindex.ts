@@ -43,7 +43,7 @@ export interface SearchIndexProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::OTS::SearchIndex`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::OTS::SearchIndex`, which is used to create a search index for a data table. You can create multiple search indexes for a data table.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSearchIndex`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-searchindex
  */

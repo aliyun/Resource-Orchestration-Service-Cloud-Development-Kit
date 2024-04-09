@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vod.Datasource
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::VOD::EditingProjects`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::VOD::EditingProjects`, which is used to query the basic information about online editing projects.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEditingProjects`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vod-editingprojects

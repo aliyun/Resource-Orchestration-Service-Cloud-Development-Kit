@@ -1,3 +1,4 @@
+export * from './bucket';
 export * from './buckets';
 
 // DATASOURCE::OSS Resources:

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::NetworkInterface</code>, which is used to create an elastic network interface (ENI).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:51.732Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:32.157Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.NetworkInterface")
 public class NetworkInterface extends com.aliyun.ros.cdk.core.Resource {
 
@@ -160,6 +160,27 @@ public class NetworkInterface extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property deleteOnRelease: Specifies whether to delete the ENI when the instance is released.
+         * <p>
+         * @return {@code this}
+         * @param deleteOnRelease Property deleteOnRelease: Specifies whether to delete the ENI when the instance is released. This parameter is required.
+         */
+        public Builder deleteOnRelease(final java.lang.Boolean deleteOnRelease) {
+            this.props.deleteOnRelease(deleteOnRelease);
+            return this;
+        }
+        /**
+         * Property deleteOnRelease: Specifies whether to delete the ENI when the instance is released.
+         * <p>
+         * @return {@code this}
+         * @param deleteOnRelease Property deleteOnRelease: Specifies whether to delete the ENI when the instance is released. This parameter is required.
+         */
+        public Builder deleteOnRelease(final com.aliyun.ros.cdk.core.IResolvable deleteOnRelease) {
+            this.props.deleteOnRelease(deleteOnRelease);
+            return this;
+        }
+
+        /**
          * Property description: Description of your ENI.
          * <p>
          * It is a string of [2, 256] English or Chinese characters.
@@ -181,6 +202,54 @@ public class NetworkInterface extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
+            return this;
+        }
+
+        /**
+         * Property ipv4PrefixCount: Specifies one or more IPv4 prefixes for the elastic network interface.
+         * <p>
+         * Range: 1-10
+         * <strong>Note</strong>: If you need to set an IPv4 prefix for an elastic network interface, you must set either Ipv4Prefixes or Ipv4PrefixCount, but not both.
+         * <p>
+         * @return {@code this}
+         * @param ipv4PrefixCount Property ipv4PrefixCount: Specifies one or more IPv4 prefixes for the elastic network interface. This parameter is required.
+         */
+        public Builder ipv4PrefixCount(final java.lang.Number ipv4PrefixCount) {
+            this.props.ipv4PrefixCount(ipv4PrefixCount);
+            return this;
+        }
+        /**
+         * Property ipv4PrefixCount: Specifies one or more IPv4 prefixes for the elastic network interface.
+         * <p>
+         * Range: 1-10
+         * <strong>Note</strong>: If you need to set an IPv4 prefix for an elastic network interface, you must set either Ipv4Prefixes or Ipv4PrefixCount, but not both.
+         * <p>
+         * @return {@code this}
+         * @param ipv4PrefixCount Property ipv4PrefixCount: Specifies one or more IPv4 prefixes for the elastic network interface. This parameter is required.
+         */
+        public Builder ipv4PrefixCount(final com.aliyun.ros.cdk.core.IResolvable ipv4PrefixCount) {
+            this.props.ipv4PrefixCount(ipv4PrefixCount);
+            return this;
+        }
+
+        /**
+         * Property ipv4Prefixes: Specifies one or more IPv4 prefixes for the elastic network interface.
+         * <p>
+         * @return {@code this}
+         * @param ipv4Prefixes Property ipv4Prefixes: Specifies one or more IPv4 prefixes for the elastic network interface. This parameter is required.
+         */
+        public Builder ipv4Prefixes(final com.aliyun.ros.cdk.core.IResolvable ipv4Prefixes) {
+            this.props.ipv4Prefixes(ipv4Prefixes);
+            return this;
+        }
+        /**
+         * Property ipv4Prefixes: Specifies one or more IPv4 prefixes for the elastic network interface.
+         * <p>
+         * @return {@code this}
+         * @param ipv4Prefixes Property ipv4Prefixes: Specifies one or more IPv4 prefixes for the elastic network interface. This parameter is required.
+         */
+        public Builder ipv4Prefixes(final java.util.List<? extends java.lang.Object> ipv4Prefixes) {
+            this.props.ipv4Prefixes(ipv4Prefixes);
             return this;
         }
 
@@ -223,6 +292,54 @@ public class NetworkInterface extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder ipv6Addresses(final java.util.List<? extends java.lang.Object> ipv6Addresses) {
             this.props.ipv6Addresses(ipv6Addresses);
+            return this;
+        }
+
+        /**
+         * Property ipv6PrefixCount: Specifies one or more IPv6 prefixes for the elastic network interface.
+         * <p>
+         * Range: 1-10
+         * <strong>Note</strong>: If you need to set an IPv6 prefix for an elastic network interface, you must set either Ipv6Prefixes or Ipv6PrefixCount, but not both.
+         * <p>
+         * @return {@code this}
+         * @param ipv6PrefixCount Property ipv6PrefixCount: Specifies one or more IPv6 prefixes for the elastic network interface. This parameter is required.
+         */
+        public Builder ipv6PrefixCount(final java.lang.Number ipv6PrefixCount) {
+            this.props.ipv6PrefixCount(ipv6PrefixCount);
+            return this;
+        }
+        /**
+         * Property ipv6PrefixCount: Specifies one or more IPv6 prefixes for the elastic network interface.
+         * <p>
+         * Range: 1-10
+         * <strong>Note</strong>: If you need to set an IPv6 prefix for an elastic network interface, you must set either Ipv6Prefixes or Ipv6PrefixCount, but not both.
+         * <p>
+         * @return {@code this}
+         * @param ipv6PrefixCount Property ipv6PrefixCount: Specifies one or more IPv6 prefixes for the elastic network interface. This parameter is required.
+         */
+        public Builder ipv6PrefixCount(final com.aliyun.ros.cdk.core.IResolvable ipv6PrefixCount) {
+            this.props.ipv6PrefixCount(ipv6PrefixCount);
+            return this;
+        }
+
+        /**
+         * Property ipv6Prefixes: Specifies one or more IPv6 prefixes for the elastic network interface.
+         * <p>
+         * @return {@code this}
+         * @param ipv6Prefixes Property ipv6Prefixes: Specifies one or more IPv6 prefixes for the elastic network interface. This parameter is required.
+         */
+        public Builder ipv6Prefixes(final com.aliyun.ros.cdk.core.IResolvable ipv6Prefixes) {
+            this.props.ipv6Prefixes(ipv6Prefixes);
+            return this;
+        }
+        /**
+         * Property ipv6Prefixes: Specifies one or more IPv6 prefixes for the elastic network interface.
+         * <p>
+         * @return {@code this}
+         * @param ipv6Prefixes Property ipv6Prefixes: Specifies one or more IPv6 prefixes for the elastic network interface. This parameter is required.
+         */
+        public Builder ipv6Prefixes(final java.util.List<? extends java.lang.Object> ipv6Prefixes) {
+            this.props.ipv6Prefixes(ipv6Prefixes);
             return this;
         }
 
@@ -381,6 +498,33 @@ public class NetworkInterface extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property rxQueueSize: Elastic network card inbound queue depth.
+         * <p>
+         * <strong>Note</strong>: The inbound queue depth of the network card must be equal to the outbound queue depth, ranging from 8192 to 16384, and must be a power of two.
+         * Larger inbound queue depth can improve inbound throughput, but it consumes more memory.
+         * <p>
+         * @return {@code this}
+         * @param rxQueueSize Property rxQueueSize: Elastic network card inbound queue depth. This parameter is required.
+         */
+        public Builder rxQueueSize(final java.lang.Number rxQueueSize) {
+            this.props.rxQueueSize(rxQueueSize);
+            return this;
+        }
+        /**
+         * Property rxQueueSize: Elastic network card inbound queue depth.
+         * <p>
+         * <strong>Note</strong>: The inbound queue depth of the network card must be equal to the outbound queue depth, ranging from 8192 to 16384, and must be a power of two.
+         * Larger inbound queue depth can improve inbound throughput, but it consumes more memory.
+         * <p>
+         * @return {@code this}
+         * @param rxQueueSize Property rxQueueSize: Elastic network card inbound queue depth. This parameter is required.
+         */
+        public Builder rxQueueSize(final com.aliyun.ros.cdk.core.IResolvable rxQueueSize) {
+            this.props.rxQueueSize(rxQueueSize);
+            return this;
+        }
+
+        /**
          * Property secondaryPrivateIpAddressCount: The number of private IP addresses that can be created automatically by ECS.
          * <p>
          * @return {@code this}
@@ -461,6 +605,33 @@ public class NetworkInterface extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosNetworkInterface.TagsProperty> tags) {
             this.props.tags(tags);
+            return this;
+        }
+
+        /**
+         * Property txQueueSize: Elastic network card outbound queue depth.
+         * <p>
+         * <strong>Note</strong>: The outbound queue depth of the network card must be equal to the inbound queue depth, ranging from 8192 to 16384, and must be a power of two.
+         * Larger outbound queue depth can improve outbound throughput, but it consumes more memory.
+         * <p>
+         * @return {@code this}
+         * @param txQueueSize Property txQueueSize: Elastic network card outbound queue depth. This parameter is required.
+         */
+        public Builder txQueueSize(final java.lang.Number txQueueSize) {
+            this.props.txQueueSize(txQueueSize);
+            return this;
+        }
+        /**
+         * Property txQueueSize: Elastic network card outbound queue depth.
+         * <p>
+         * <strong>Note</strong>: The outbound queue depth of the network card must be equal to the inbound queue depth, ranging from 8192 to 16384, and must be a power of two.
+         * Larger outbound queue depth can improve outbound throughput, but it consumes more memory.
+         * <p>
+         * @return {@code this}
+         * @param txQueueSize Property txQueueSize: Elastic network card outbound queue depth. This parameter is required.
+         */
+        public Builder txQueueSize(final com.aliyun.ros.cdk.core.IResolvable txQueueSize) {
+            this.props.txQueueSize(txQueueSize);
             return this;
         }
 

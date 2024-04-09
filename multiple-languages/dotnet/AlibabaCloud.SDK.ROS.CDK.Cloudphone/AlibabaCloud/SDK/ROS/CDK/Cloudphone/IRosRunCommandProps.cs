@@ -31,6 +31,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudphone
             get;
         }
 
+        /// <remarks>
+        /// <strong>Property</strong>: runAgainOn: The stage of executing the command again.
+        /// </remarks>
+        [JsiiProperty(name: "runAgainOn", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? RunAgainOn
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `RosRunCommand`.</summary>
         /// <remarks>
         /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-runcommand
@@ -60,6 +73,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudphone
             public object InstanceIds
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: runAgainOn: The stage of executing the command again.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "runAgainOn", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? RunAgainOn
+            {
+                get => GetInstanceProperty<object?>();
             }
         }
     }

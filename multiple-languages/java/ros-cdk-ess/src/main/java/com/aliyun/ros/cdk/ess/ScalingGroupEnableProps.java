@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ess;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroupenable
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:52.530Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:33.079Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScalingGroupEnableProps")
 @software.amazon.jsii.Jsii.Proxy(ScalingGroupEnableProps.Jsii$Proxy.class)
 public interface ScalingGroupEnableProps extends software.amazon.jsii.JsiiSerializable {
@@ -157,7 +157,7 @@ public interface ScalingGroupEnableProps extends software.amazon.jsii.JsiiSerial
          *                    Max support 1000 instances.
          * @return {@code this}
          */
-        public Builder instanceIds(java.util.List<? extends java.lang.Object> instanceIds) {
+        public Builder instanceIds(com.aliyun.ros.cdk.core.IResolvable instanceIds) {
             this.instanceIds = instanceIds;
             return this;
         }
@@ -168,7 +168,7 @@ public interface ScalingGroupEnableProps extends software.amazon.jsii.JsiiSerial
          *                    Max support 1000 instances.
          * @return {@code this}
          */
-        public Builder instanceIds(com.aliyun.ros.cdk.core.IResolvable instanceIds) {
+        public Builder instanceIds(java.util.List<? extends java.lang.Object> instanceIds) {
             this.instanceIds = instanceIds;
             return this;
         }
@@ -179,7 +179,7 @@ public interface ScalingGroupEnableProps extends software.amazon.jsii.JsiiSerial
          *                          Max support 1000 instances.
          * @return {@code this}
          */
-        public Builder removeInstanceIds(java.util.List<? extends java.lang.Object> removeInstanceIds) {
+        public Builder removeInstanceIds(com.aliyun.ros.cdk.core.IResolvable removeInstanceIds) {
             this.removeInstanceIds = removeInstanceIds;
             return this;
         }
@@ -190,7 +190,7 @@ public interface ScalingGroupEnableProps extends software.amazon.jsii.JsiiSerial
          *                          Max support 1000 instances.
          * @return {@code this}
          */
-        public Builder removeInstanceIds(com.aliyun.ros.cdk.core.IResolvable removeInstanceIds) {
+        public Builder removeInstanceIds(java.util.List<? extends java.lang.Object> removeInstanceIds) {
             this.removeInstanceIds = removeInstanceIds;
             return this;
         }
@@ -223,7 +223,7 @@ public interface ScalingGroupEnableProps extends software.amazon.jsii.JsiiSerial
          *                        When updating the resource, none of scaling rule aris in the list will be executed, unless ScalingRuleArisExecuteVersion is changed.
          * @return {@code this}
          */
-        public Builder scalingRuleAris(java.util.List<? extends java.lang.Object> scalingRuleAris) {
+        public Builder scalingRuleAris(com.aliyun.ros.cdk.core.IResolvable scalingRuleAris) {
             this.scalingRuleAris = scalingRuleAris;
             return this;
         }
@@ -236,7 +236,7 @@ public interface ScalingGroupEnableProps extends software.amazon.jsii.JsiiSerial
          *                        When updating the resource, none of scaling rule aris in the list will be executed, unless ScalingRuleArisExecuteVersion is changed.
          * @return {@code this}
          */
-        public Builder scalingRuleAris(com.aliyun.ros.cdk.core.IResolvable scalingRuleAris) {
+        public Builder scalingRuleAris(java.util.List<? extends java.lang.Object> scalingRuleAris) {
             this.scalingRuleAris = scalingRuleAris;
             return this;
         }
