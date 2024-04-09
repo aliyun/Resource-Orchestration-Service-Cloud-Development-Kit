@@ -121,7 +121,7 @@ export interface ScalingConfigurationProps {
     /**
      * Property instanceTypes: ecs supported instance types. Length [1,10]. If InstanceTypes is specified,the InstanceType will be ignored.
      */
-    readonly instanceTypes?: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly instanceTypes?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property internetChargeType: Instance internet access charge type.Support 'PayByBandwidth' and 'PayByTraffic' only.

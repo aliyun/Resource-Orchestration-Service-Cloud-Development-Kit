@@ -46,7 +46,7 @@ export interface FlowLogProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::FlowLog`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::FlowLog`, which is used to create a flow log.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFlowLog`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-flowlog
  */

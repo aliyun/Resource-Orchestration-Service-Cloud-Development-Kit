@@ -5,13 +5,13 @@ package com.aliyun.ros.cdk.apigateway;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-vpcaccessconfig
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:50.031Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:30.531Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.VpcAccessConfigProps")
 @software.amazon.jsii.Jsii.Proxy(VpcAccessConfigProps.Jsii$Proxy.class)
 public interface VpcAccessConfigProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property instanceId: The id of the instance (ECS/SLB).
+     * Property instanceId: The id of the instance (ECS/SLB/ALB/NLB).
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getInstanceId();
 
@@ -47,7 +47,7 @@ public interface VpcAccessConfigProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link VpcAccessConfigProps#getInstanceId}
-         * @param instanceId Property instanceId: The id of the instance (ECS/SLB). This parameter is required.
+         * @param instanceId Property instanceId: The id of the instance (ECS/SLB/ALB/NLB). This parameter is required.
          * @return {@code this}
          */
         public Builder instanceId(java.lang.String instanceId) {
@@ -57,7 +57,7 @@ public interface VpcAccessConfigProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link VpcAccessConfigProps#getInstanceId}
-         * @param instanceId Property instanceId: The id of the instance (ECS/SLB). This parameter is required.
+         * @param instanceId Property instanceId: The id of the instance (ECS/SLB/ALB/NLB). This parameter is required.
          * @return {@code this}
          */
         public Builder instanceId(com.aliyun.ros.cdk.core.IResolvable instanceId) {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pai.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::PAI::Services</code>, which is used to query the information about Elastic Algorithm Service (EAS) services of Machine Learning Platform for AI (PAI).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:53.614Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:34.370Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pai.$Module.class, fqn = "@alicloud/ros-cdk-pai.datasource.Services")
 public class Services extends com.aliyun.ros.cdk.core.Resource {
 

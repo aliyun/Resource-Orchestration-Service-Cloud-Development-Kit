@@ -43,13 +43,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
             }
         }
 
-        private object _description;
+        private object _configRules;
 
-        /// <summary>Property description: Description.</summary>
-        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        public object Description
+        /// <summary>Property configRules:.</summary>
+        [JsiiProperty(name: "configRules", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public object ConfigRules
         {
-            get => _description;
+            get => _configRules;
             set
             {
                 if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
@@ -69,13 +69,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
                             throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
                     }
                 }
-                _description = value;
+                _configRules = value;
             }
         }
 
         private object _riskLevel;
 
-        /// <summary>Property riskLevel: Ris Level.</summary>
+        /// <summary>Property riskLevel: Ris Level, valid values: 1 | 2 | 3.</summary>
         [JsiiProperty(name: "riskLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object RiskLevel
         {
@@ -154,14 +154,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
             }
         }
 
-        private object? _configRules;
+        private object? _configRuleIds;
 
-        /// <summary>Property configRules: Config Rule List.</summary>
+        /// <summary>Property configRuleIds: Compliance Package rule ID list.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "configRules", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-config.RosCompliancePack.ConfigRulesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
-        public object? ConfigRules
+        [JsiiProperty(name: "configRuleIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-config.RosCompliancePack.ConfigRuleIdsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public object? ConfigRuleIds
         {
-            get => _configRules;
+            get => _configRuleIds;
             set
             {
                 if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
@@ -177,15 +177,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
                                 {
                                     case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
                                         break;
-                                    case AlibabaCloud.SDK.ROS.CDK.Config.RosCompliancePack.IConfigRulesProperty cast_201718:
+                                    case AlibabaCloud.SDK.ROS.CDK.Config.RosCompliancePack.IConfigRuleIdsProperty cast_201718:
                                         break;
                                     case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
                                         // Not enough information to type-check...
                                         break;
                                     case null:
-                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Config.RosCompliancePack.IConfigRulesProperty).FullName}; received null", nameof(value));
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Config.RosCompliancePack.IConfigRuleIdsProperty).FullName}; received null", nameof(value));
                                     default:
-                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Config.RosCompliancePack.IConfigRulesProperty).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Config.RosCompliancePack.IConfigRuleIdsProperty).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
                                 }
                             }
                             break;
@@ -198,7 +198,38 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
                             throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
                     }
                 }
-                _configRules = value;
+                _configRuleIds = value;
+            }
+        }
+
+        private object? _description;
+
+        /// <summary>Property description: Description.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? Description
+        {
+            get => _description;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _description = value;
             }
         }
     }

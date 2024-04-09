@@ -42,6 +42,11 @@ export class AnyCluster extends ros.Resource {
     public readonly attrDefaultUserKubeConfig: ros.IResolvable;
 
     /**
+     * Attribute IngressSLBId: The id of ingress SLB
+     */
+    public readonly attrIngressSlbId: ros.IResolvable;
+
+    /**
      * Attribute Nodes: The list of cluster nodes.
      */
     public readonly attrNodes: ros.IResolvable;
@@ -95,6 +100,7 @@ export class AnyCluster extends ros.Resource {
         this.attrApiServerSlbId = rosAnyCluster.attrApiServerSlbId;
         this.attrClusterId = rosAnyCluster.attrClusterId;
         this.attrDefaultUserKubeConfig = rosAnyCluster.attrDefaultUserKubeConfig;
+        this.attrIngressSlbId = rosAnyCluster.attrIngressSlbId;
         this.attrNodes = rosAnyCluster.attrNodes;
         this.attrPrivateUserKubConfig = rosAnyCluster.attrPrivateUserKubConfig;
         this.attrScalingConfigurationId = rosAnyCluster.attrScalingConfigurationId;

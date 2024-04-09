@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cloudphone;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CloudPhone::InstanceGroup</code>, which is used to create and start one or more Elastic Cloud Phone (ECP) instances.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CloudPhone::InstanceGroup</code>, which is used to create and start Elastic Cloud Phone (ECP) instances.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:50.573Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:30.965Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudphone.$Module.class, fqn = "@alicloud/ros-cdk-cloudphone.RosInstanceGroup")
 public class RosInstanceGroup extends com.aliyun.ros.cdk.core.RosResource {
 

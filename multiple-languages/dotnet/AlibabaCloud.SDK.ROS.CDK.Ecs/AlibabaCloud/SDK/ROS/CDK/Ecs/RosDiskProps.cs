@@ -4,8 +4,6 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    #pragma warning disable CS8618
-
     /// <summary>Properties for defining a `RosDisk`.</summary>
     /// <remarks>
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-disk
@@ -13,38 +11,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.RosDiskProps")]
     public class RosDiskProps : AlibabaCloud.SDK.ROS.CDK.Ecs.IRosDiskProps
     {
-        private object _zoneId;
-
-        /// <remarks>
-        /// <strong>Property</strong>: zoneId: The availability zone in which the volume will be created.
-        /// </remarks>
-        [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        public object ZoneId
-        {
-            get => _zoneId;
-            set
-            {
-                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                {
-                    switch (value)
-                    {
-                        case string cast_cd4240:
-                            break;
-                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                            break;
-                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                            // Not enough information to type-check...
-                            break;
-                        case null:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
-                        default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                    }
-                }
-                _zoneId = value;
-            }
-        }
-
         private object? _autoSnapshotPolicyId;
 
         /// <remarks>
@@ -273,6 +239,42 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                     }
                 }
                 _encrypted = value;
+            }
+        }
+
+        private object? _instanceId;
+
+        /// <remarks>
+        /// <strong>Property</strong>: instanceId: Create a cloud disk and automatically mount it to the specified InstanceId.
+        /// - Once the instance ID is set, the ResourceGroupId, Tags, and KMSKeyId parameters you set are ignored.
+        /// - You cannot specify both ZoneId and InstanceId.
+        /// Default value: null, meaning that a pay-as-you-go cloud drive is created, and the region of the drive is defined by the RegionId and ZoneId.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? InstanceId
+        {
+            get => _instanceId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _instanceId = value;
             }
         }
 
@@ -645,6 +647,41 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         {
             get;
             set;
+        }
+
+        private object? _zoneId;
+
+        /// <remarks>
+        /// <strong>Property</strong>: zoneId: Create a pay-as-you-go cloud drive within the specified availability area.
+        /// - If you do not set InstanceId, ZoneId is required.
+        /// - You cannot specify both ZoneId and InstanceId.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ZoneId
+        {
+            get => _zoneId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _zoneId = value;
+            }
         }
     }
 }

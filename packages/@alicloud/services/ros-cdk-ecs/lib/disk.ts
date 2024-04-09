@@ -10,11 +10,6 @@ export { RosDisk as DiskProperty };
 export interface DiskProps {
 
     /**
-     * Property zoneId: The availability zone in which the volume will be created.
-     */
-    readonly zoneId: string | ros.IResolvable;
-
-    /**
      * Property autoSnapshotPolicyId: Auto snapshot policy ID.
      */
     readonly autoSnapshotPolicyId?: string | ros.IResolvable;
@@ -48,6 +43,14 @@ export interface DiskProps {
      * Property encrypted: Whether disk is encrypted, default to false.
      */
     readonly encrypted?: boolean | ros.IResolvable;
+
+    /**
+     * Property instanceId: Create a cloud disk and automatically mount it to the specified InstanceId.
+     * - Once the instance ID is set, the ResourceGroupId, Tags, and KMSKeyId parameters you set are ignored.
+     * - You cannot specify both ZoneId and InstanceId.
+     * Default value: null, meaning that a pay-as-you-go cloud drive is created, and the region of the drive is defined by the RegionId and ZoneId.
+     */
+    readonly instanceId?: string | ros.IResolvable;
 
     /**
      * Property kmsKeyId: KMS key ID used by the cloud disk.
@@ -101,6 +104,13 @@ export interface DiskProps {
      * Property tags: Tags to attach to disk. Max support 20 tags to add during create disk. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosDisk.TagsProperty[];
+
+    /**
+     * Property zoneId: Create a pay-as-you-go cloud drive within the specified availability area.
+     * - If you do not set InstanceId, ZoneId is required.
+     * - You cannot specify both ZoneId and InstanceId.
+     */
+    readonly zoneId?: string | ros.IResolvable;
 }
 
 /**
@@ -129,7 +139,7 @@ export class Disk extends ros.Resource {
      * Param id    - scoped id of the resource
      * Param props - resource properties
      */
-    constructor(scope: ros.Construct, id: string, props: DiskProps, enableResourcePropertyConstraint:boolean = true) {
+    constructor(scope: ros.Construct, id: string, props: DiskProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
         this.scope = scope;
         this.id = id;
@@ -142,15 +152,16 @@ export class Disk extends ros.Resource {
             kmsKeyId: props.kmsKeyId,
             resourceGroupId: props.resourceGroupId,
             zoneId: props.zoneId,
-            encrypted: props.encrypted === undefined || props.encrypted === null ? false : props.encrypted,
+            instanceId: props.instanceId,
             performanceLevel: props.performanceLevel,
+            encrypted: props.encrypted === undefined || props.encrypted === null ? false : props.encrypted,
             size: props.size,
             deleteAutoSnapshot: props.deleteAutoSnapshot === undefined || props.deleteAutoSnapshot === null ? false : props.deleteAutoSnapshot,
             diskCategory: props.diskCategory,
             autoSnapshotPolicyId: props.autoSnapshotPolicyId,
             storageSetPartitionNumber: props.storageSetPartitionNumber,
-            diskName: props.diskName,
             provisionedIops: props.provisionedIops,
+            diskName: props.diskName,
             multiAttach: props.multiAttach,
             snapshotId: props.snapshotId,
             storageSetId: props.storageSetId,

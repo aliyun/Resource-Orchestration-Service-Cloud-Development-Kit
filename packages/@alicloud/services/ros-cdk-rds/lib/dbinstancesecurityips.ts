@@ -26,7 +26,7 @@ export interface DBInstanceSecurityIpsProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::DBInstanceSecurityIps`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::DBInstanceSecurityIps`, which is used to modify an IP address whitelist of an ApsaraDB for RDS instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBInstanceSecurityIps`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstancesecurityips
  */

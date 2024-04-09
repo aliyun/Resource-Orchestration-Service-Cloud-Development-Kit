@@ -1,5 +1,7 @@
 export * from './addressbook';
+export * from './allfwswitch';
 export * from './controlpolicy';
+export * from './fwswitch';
 export * from './instance';
 export * from './vpcfirewallcontrolpolicy';
 

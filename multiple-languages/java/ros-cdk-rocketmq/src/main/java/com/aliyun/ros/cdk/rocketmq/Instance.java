@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rocketmq;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ROCKETMQ::Instance</code>, which is used to create a Standard Edition instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:54.314Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:34.993Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -173,6 +173,31 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder instanceName(final com.aliyun.ros.cdk.core.IResolvable instanceName) {
             this.props.instanceName(instanceName);
+            return this;
+        }
+
+        /**
+         * Property deletionForce: Whether delete all topics and groups of the instance and then delete instance.
+         * <p>
+         * Default is false
+         * <p>
+         * @return {@code this}
+         * @param deletionForce Property deletionForce: Whether delete all topics and groups of the instance and then delete instance. This parameter is required.
+         */
+        public Builder deletionForce(final java.lang.Boolean deletionForce) {
+            this.props.deletionForce(deletionForce);
+            return this;
+        }
+        /**
+         * Property deletionForce: Whether delete all topics and groups of the instance and then delete instance.
+         * <p>
+         * Default is false
+         * <p>
+         * @return {@code this}
+         * @param deletionForce Property deletionForce: Whether delete all topics and groups of the instance and then delete instance. This parameter is required.
+         */
+        public Builder deletionForce(final com.aliyun.ros.cdk.core.IResolvable deletionForce) {
+            this.props.deletionForce(deletionForce);
             return this;
         }
 

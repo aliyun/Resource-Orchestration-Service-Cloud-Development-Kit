@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.config;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::Config::CompliancePack</code>, which is used to create a compliance package.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:50.828Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:31.217Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.config.$Module.class, fqn = "@alicloud/ros-cdk-config.CompliancePack")
 public class CompliancePack extends com.aliyun.ros.cdk.core.Resource {
 
@@ -76,7 +76,7 @@ public class CompliancePack extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Attribute RiskLevel: Ris Level.
+     * Attribute RiskLevel: Ris Level, valid values: 1 | 2 | 3.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrRiskLevel() {
         return software.amazon.jsii.Kernel.get(this, "attrRiskLevel", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
@@ -170,41 +170,41 @@ public class CompliancePack extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property description: Description.
+         * Property configRules:.
          * <p>
          * @return {@code this}
-         * @param description Property description: Description. This parameter is required.
+         * @param configRules Property configRules:. This parameter is required.
          */
-        public Builder description(final java.lang.String description) {
-            this.props.description(description);
+        public Builder configRules(final java.lang.String configRules) {
+            this.props.configRules(configRules);
             return this;
         }
         /**
-         * Property description: Description.
+         * Property configRules:.
          * <p>
          * @return {@code this}
-         * @param description Property description: Description. This parameter is required.
+         * @param configRules Property configRules:. This parameter is required.
          */
-        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
-            this.props.description(description);
+        public Builder configRules(final com.aliyun.ros.cdk.core.IResolvable configRules) {
+            this.props.configRules(configRules);
             return this;
         }
 
         /**
-         * Property riskLevel: Ris Level.
+         * Property riskLevel: Ris Level, valid values: 1 | 2 | 3.
          * <p>
          * @return {@code this}
-         * @param riskLevel Property riskLevel: Ris Level. This parameter is required.
+         * @param riskLevel Property riskLevel: Ris Level, valid values: 1 | 2 | 3. This parameter is required.
          */
         public Builder riskLevel(final java.lang.Number riskLevel) {
             this.props.riskLevel(riskLevel);
             return this;
         }
         /**
-         * Property riskLevel: Ris Level.
+         * Property riskLevel: Ris Level, valid values: 1 | 2 | 3.
          * <p>
          * @return {@code this}
-         * @param riskLevel Property riskLevel: Ris Level. This parameter is required.
+         * @param riskLevel Property riskLevel: Ris Level, valid values: 1 | 2 | 3. This parameter is required.
          */
         public Builder riskLevel(final com.aliyun.ros.cdk.core.IResolvable riskLevel) {
             this.props.riskLevel(riskLevel);
@@ -233,23 +233,44 @@ public class CompliancePack extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property configRules: Config Rule List.
+         * Property configRuleIds: Compliance Package rule ID list.
          * <p>
          * @return {@code this}
-         * @param configRules Property configRules: Config Rule List. This parameter is required.
+         * @param configRuleIds Property configRuleIds: Compliance Package rule ID list. This parameter is required.
          */
-        public Builder configRules(final com.aliyun.ros.cdk.core.IResolvable configRules) {
-            this.props.configRules(configRules);
+        public Builder configRuleIds(final com.aliyun.ros.cdk.core.IResolvable configRuleIds) {
+            this.props.configRuleIds(configRuleIds);
             return this;
         }
         /**
-         * Property configRules: Config Rule List.
+         * Property configRuleIds: Compliance Package rule ID list.
          * <p>
          * @return {@code this}
-         * @param configRules Property configRules: Config Rule List. This parameter is required.
+         * @param configRuleIds Property configRuleIds: Compliance Package rule ID list. This parameter is required.
          */
-        public Builder configRules(final java.util.List<? extends java.lang.Object> configRules) {
-            this.props.configRules(configRules);
+        public Builder configRuleIds(final java.util.List<? extends java.lang.Object> configRuleIds) {
+            this.props.configRuleIds(configRuleIds);
+            return this;
+        }
+
+        /**
+         * Property description: Description.
+         * <p>
+         * @return {@code this}
+         * @param description Property description: Description. This parameter is required.
+         */
+        public Builder description(final java.lang.String description) {
+            this.props.description(description);
+            return this;
+        }
+        /**
+         * Property description: Description.
+         * <p>
+         * @return {@code this}
+         * @param description Property description: Description. This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props.description(description);
             return this;
         }
 

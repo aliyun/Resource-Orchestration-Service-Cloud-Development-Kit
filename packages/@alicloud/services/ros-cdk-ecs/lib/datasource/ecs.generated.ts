@@ -296,6 +296,302 @@ function rosAutoSnapshotPoliciesTagsPropertyToRosTemplate(properties: any): any 
 }
 
 /**
+ * Properties for defining a `RosAutoSnapshotPolicy`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-autosnapshotpolicy
+ */
+export interface RosAutoSnapshotPolicyProps {
+
+    /**
+     * @Property autoSnapshotPolicyId: The name of the automatic snapshot policy.
+     */
+    readonly autoSnapshotPolicyId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAutoSnapshotPolicyProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAutoSnapshotPolicyProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAutoSnapshotPolicyPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('autoSnapshotPolicyId', ros.requiredValidator)(properties.autoSnapshotPolicyId));
+    errors.collect(ros.propertyValidator('autoSnapshotPolicyId', ros.validateString)(properties.autoSnapshotPolicyId));
+    return errors.wrap('supplied properties not correct for "RosAutoSnapshotPolicyProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::AutoSnapshotPolicy` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAutoSnapshotPolicyProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::AutoSnapshotPolicy` resource.
+ */
+// @ts-ignore TS6133
+function rosAutoSnapshotPolicyPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAutoSnapshotPolicyPropsValidator(properties).assertSuccess();
+    }
+    return {
+      AutoSnapshotPolicyId: ros.stringToRosTemplate(properties.autoSnapshotPolicyId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::AutoSnapshotPolicy`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AutoSnapshotPolicy` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-autosnapshotpolicy
+ */
+export class RosAutoSnapshotPolicy extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::AutoSnapshotPolicy";
+
+    /**
+     * @Attribute AutoSnapshotPolicyName: Name of the automatic snapshot policy.
+     */
+    public readonly attrAutoSnapshotPolicyName: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: The time when the automatic snapshot policy was created. The time follows the ISO 8601 standard in the yyyy-MM-ddThh:mm:ssZ format. The time is displayed in UTC.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute DiskNums: Number of cloud disks with this policy enabled.
+     */
+    public readonly attrDiskNums: ros.IResolvable;
+
+    /**
+     * @Attribute RepeatWeekdays: The days of the week on which to create automatic snapshots. Valid values: 1 to 7, which correspond to the days of the week. 1 indicates Monday. One or more days can be specified.
+     */
+    public readonly attrRepeatWeekdays: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The ID of the resource group.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute RetentionDays: The retention period of the automatic snapshot. Unit: days. Valid values:
+- -1: The automatic snapshot is retained until it is deleted.
+- 1 to 65536: The automatic snapshot is retained for the specified number of days.
+     */
+    public readonly attrRetentionDays: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: The tags of the automatic snapshot policy.
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    /**
+     * @Attribute TimePoints: The time when the automatic snapshot policy was created. The time follows the ISO 8601 standard in the yyyy-MM-ddThh:mm:ssZ format. The time is displayed in UTC.
+     */
+    public readonly attrTimePoints: ros.IResolvable;
+
+    /**
+     * @Attribute VolumeNums: The number of extended volumes to which the automatic snapshot policy is applied.
+     */
+    public readonly attrVolumeNums: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property autoSnapshotPolicyId: The name of the automatic snapshot policy.
+     */
+    public autoSnapshotPolicyId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAutoSnapshotPolicyProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAutoSnapshotPolicy.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAutoSnapshotPolicyName = this.getAtt('AutoSnapshotPolicyName');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDiskNums = this.getAtt('DiskNums');
+        this.attrRepeatWeekdays = this.getAtt('RepeatWeekdays');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrRetentionDays = this.getAtt('RetentionDays');
+        this.attrTags = this.getAtt('Tags');
+        this.attrTimePoints = this.getAtt('TimePoints');
+        this.attrVolumeNums = this.getAtt('VolumeNums');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.autoSnapshotPolicyId = props.autoSnapshotPolicyId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            autoSnapshotPolicyId: this.autoSnapshotPolicyId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAutoSnapshotPolicyPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosCommand`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-command
+ */
+export interface RosCommandProps {
+
+    /**
+     * @Property commandId: Command ID.
+     */
+    readonly commandId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosCommandProps`
+ *
+ * @param properties - the TypeScript properties of a `RosCommandProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosCommandPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('commandId', ros.requiredValidator)(properties.commandId));
+    errors.collect(ros.propertyValidator('commandId', ros.validateString)(properties.commandId));
+    return errors.wrap('supplied properties not correct for "RosCommandProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Command` resource
+ *
+ * @param properties - the TypeScript properties of a `RosCommandProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Command` resource.
+ */
+// @ts-ignore TS6133
+function rosCommandPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosCommandPropsValidator(properties).assertSuccess();
+    }
+    return {
+      CommandId: ros.stringToRosTemplate(properties.commandId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Command`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Command` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-command
+ */
+export class RosCommand extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::Command";
+
+    /**
+     * @Attribute CommandContent: Command content, encoded in Base64 and transmitted.
+     */
+    public readonly attrCommandContent: ros.IResolvable;
+
+    /**
+     * @Attribute CommandId: Command ID.
+     */
+    public readonly attrCommandId: ros.IResolvable;
+
+    /**
+     * @Attribute CommandName: Command name.
+     */
+    public readonly attrCommandName: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: Command creation time.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute Description: Command description.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute EnableParameter: Whether to use parameters.
+     */
+    public readonly attrEnableParameter: ros.IResolvable;
+
+    /**
+     * @Attribute ParameterNames: Parameter name.
+     */
+    public readonly attrParameterNames: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: The label information of the command.
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    /**
+     * @Attribute Timeout: Timeout.
+     */
+    public readonly attrTimeout: ros.IResolvable;
+
+    /**
+     * @Attribute Type: Command type.
+     */
+    public readonly attrType: ros.IResolvable;
+
+    /**
+     * @Attribute WorkingDir: Execution path.
+     */
+    public readonly attrWorkingDir: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property commandId: Command ID.
+     */
+    public commandId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosCommandProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosCommand.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCommandContent = this.getAtt('CommandContent');
+        this.attrCommandId = this.getAtt('CommandId');
+        this.attrCommandName = this.getAtt('CommandName');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDescription = this.getAtt('Description');
+        this.attrEnableParameter = this.getAtt('EnableParameter');
+        this.attrParameterNames = this.getAtt('ParameterNames');
+        this.attrTags = this.getAtt('Tags');
+        this.attrTimeout = this.getAtt('Timeout');
+        this.attrType = this.getAtt('Type');
+        this.attrWorkingDir = this.getAtt('WorkingDir');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.commandId = props.commandId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            commandId: this.commandId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosCommandPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosCommands`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-commands
  */
@@ -993,6 +1289,327 @@ export class RosDeploymentSets extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosDeploymentSetsPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosDisk`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-disk
+ */
+export interface RosDiskProps {
+
+    /**
+     * @Property diskId: The disk id.
+     */
+    readonly diskId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosDiskProps`
+ *
+ * @param properties - the TypeScript properties of a `RosDiskProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosDiskPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('diskId', ros.requiredValidator)(properties.diskId));
+    errors.collect(ros.propertyValidator('diskId', ros.validateString)(properties.diskId));
+    return errors.wrap('supplied properties not correct for "RosDiskProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Disk` resource
+ *
+ * @param properties - the TypeScript properties of a `RosDiskProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Disk` resource.
+ */
+// @ts-ignore TS6133
+function rosDiskPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosDiskPropsValidator(properties).assertSuccess();
+    }
+    return {
+      DiskId: ros.stringToRosTemplate(properties.diskId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Disk`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Disk` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-disk
+ */
+export class RosDisk extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::Disk";
+
+    /**
+     * @Attribute AttachedTime: The attached time.
+     */
+    public readonly attrAttachedTime: ros.IResolvable;
+
+    /**
+     * @Attribute AutoSnapshotPolicyId: Automatic snapshot policy ID.
+     */
+    public readonly attrAutoSnapshotPolicyId: ros.IResolvable;
+
+    /**
+     * @Attribute BurstingEnabled: Does the data disk turn on Burst (performance Burst).
+     */
+    public readonly attrBurstingEnabled: ros.IResolvable;
+
+    /**
+     * @Attribute Category: Disk type.
+     */
+    public readonly attrCategory: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: The creation time.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute DeleteAutoSnapshot: Whether to delete automatic snapshots at the same time.
+     */
+    public readonly attrDeleteAutoSnapshot: ros.IResolvable;
+
+    /**
+     * @Attribute DeleteWithInstance: Whether to release with the instance.
+     */
+    public readonly attrDeleteWithInstance: ros.IResolvable;
+
+    /**
+     * @Attribute Description: The description.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute DetachedTime: Unloading time.
+     */
+    public readonly attrDetachedTime: ros.IResolvable;
+
+    /**
+     * @Attribute Device: Cloud disk or the device name of the mounted instance on the site.
+     */
+    public readonly attrDevice: ros.IResolvable;
+
+    /**
+     * @Attribute DiskId: The disk id.
+     */
+    public readonly attrDiskId: ros.IResolvable;
+
+    /**
+     * @Attribute DiskName: The disk name.
+     */
+    public readonly attrDiskName: ros.IResolvable;
+
+    /**
+     * @Attribute EnableAutoSnapshot: Whether the disk implements an automatic snapshot policy.
+     */
+    public readonly attrEnableAutoSnapshot: ros.IResolvable;
+
+    /**
+     * @Attribute EnableAutomatedSnapshotPolicy: Whether the disk implements an automatic snapshot policy.
+     */
+    public readonly attrEnableAutomatedSnapshotPolicy: ros.IResolvable;
+
+    /**
+     * @Attribute Encrypted: Whether the disk is encrypted.
+     */
+    public readonly attrEncrypted: ros.IResolvable;
+
+    /**
+     * @Attribute ExpiredTime: The expiration time of a monthly disk.
+     */
+    public readonly attrExpiredTime: ros.IResolvable;
+
+    /**
+     * @Attribute ImageId: The image id.
+     */
+    public readonly attrImageId: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceId: The instance id.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute Iops: Number of read/write (I/O) operations per second.
+     */
+    public readonly attrIops: ros.IResolvable;
+
+    /**
+     * @Attribute IopsRead: Number of reads per second.
+     */
+    public readonly attrIopsRead: ros.IResolvable;
+
+    /**
+     * @Attribute IopsWrite: Number of writes per second.
+     */
+    public readonly attrIopsWrite: ros.IResolvable;
+
+    /**
+     * @Attribute KmsKeyId: The KMS keyId.
+     */
+    public readonly attrKmsKeyId: ros.IResolvable;
+
+    /**
+     * @Attribute MountInstanceNum: Number of instances mounted on shared storage.
+     */
+    public readonly attrMountInstanceNum: ros.IResolvable;
+
+    /**
+     * @Attribute MountInstances: Disk mount instances.
+     */
+    public readonly attrMountInstances: ros.IResolvable;
+
+    /**
+     * @Attribute MultiAttach: Whether to enable the multi-Mount feature.
+     */
+    public readonly attrMultiAttach: ros.IResolvable;
+
+    /**
+     * @Attribute OperationLocks: Resource locking information.
+     */
+    public readonly attrOperationLocks: ros.IResolvable;
+
+    /**
+     * @Attribute PaymentType: Payment method for disk.
+     */
+    public readonly attrPaymentType: ros.IResolvable;
+
+    /**
+     * @Attribute PerformanceLevel: Performance levels of ESSD cloud disk.
+     */
+    public readonly attrPerformanceLevel: ros.IResolvable;
+
+    /**
+     * @Attribute Portable: Whether the disk is unmountable.
+     */
+    public readonly attrPortable: ros.IResolvable;
+
+    /**
+     * @Attribute ProductCode: The product logo of the cloud market.
+     */
+    public readonly attrProductCode: ros.IResolvable;
+
+    /**
+     * @Attribute ProvisionedIops: The preconfigured read and write IOPS of the ESSD AutoPL cloud disk. Possible values: 0 ~ min{50,000, 1000 * capacity-baseline performance}.
+     */
+    public readonly attrProvisionedIops: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The resource group id.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute Size: Disk size.
+     */
+    public readonly attrSize: ros.IResolvable;
+
+    /**
+     * @Attribute SnapshotId: The source snapshot id.
+     */
+    public readonly attrSnapshotId: ros.IResolvable;
+
+    /**
+     * @Attribute StorageClusterId: The ID of the dedicated block storage cluster. If you need to create a cloud disk in the specified dedicated block storage cluster, specify this parameter.
+     */
+    public readonly attrStorageClusterId: ros.IResolvable;
+
+    /**
+     * @Attribute StorageSetId: The ID of the Save set.
+     */
+    public readonly attrStorageSetId: ros.IResolvable;
+
+    /**
+     * @Attribute StorageSetPartitionNumber: Number of Save set partitions. Value range: greater than or equal to 2. The maximum value cannot exceed the equity quota limit displayed after calling.
+     */
+    public readonly attrStorageSetPartitionNumber: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: The tags.
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    /**
+     * @Attribute ZoneId: ID of the free zone to which the disk belongs.
+     */
+    public readonly attrZoneId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property diskId: The disk id.
+     */
+    public diskId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosDiskProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosDisk.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAttachedTime = this.getAtt('AttachedTime');
+        this.attrAutoSnapshotPolicyId = this.getAtt('AutoSnapshotPolicyId');
+        this.attrBurstingEnabled = this.getAtt('BurstingEnabled');
+        this.attrCategory = this.getAtt('Category');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDeleteAutoSnapshot = this.getAtt('DeleteAutoSnapshot');
+        this.attrDeleteWithInstance = this.getAtt('DeleteWithInstance');
+        this.attrDescription = this.getAtt('Description');
+        this.attrDetachedTime = this.getAtt('DetachedTime');
+        this.attrDevice = this.getAtt('Device');
+        this.attrDiskId = this.getAtt('DiskId');
+        this.attrDiskName = this.getAtt('DiskName');
+        this.attrEnableAutoSnapshot = this.getAtt('EnableAutoSnapshot');
+        this.attrEnableAutomatedSnapshotPolicy = this.getAtt('EnableAutomatedSnapshotPolicy');
+        this.attrEncrypted = this.getAtt('Encrypted');
+        this.attrExpiredTime = this.getAtt('ExpiredTime');
+        this.attrImageId = this.getAtt('ImageId');
+        this.attrInstanceId = this.getAtt('InstanceId');
+        this.attrIops = this.getAtt('Iops');
+        this.attrIopsRead = this.getAtt('IopsRead');
+        this.attrIopsWrite = this.getAtt('IopsWrite');
+        this.attrKmsKeyId = this.getAtt('KmsKeyId');
+        this.attrMountInstanceNum = this.getAtt('MountInstanceNum');
+        this.attrMountInstances = this.getAtt('MountInstances');
+        this.attrMultiAttach = this.getAtt('MultiAttach');
+        this.attrOperationLocks = this.getAtt('OperationLocks');
+        this.attrPaymentType = this.getAtt('PaymentType');
+        this.attrPerformanceLevel = this.getAtt('PerformanceLevel');
+        this.attrPortable = this.getAtt('Portable');
+        this.attrProductCode = this.getAtt('ProductCode');
+        this.attrProvisionedIops = this.getAtt('ProvisionedIops');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrSize = this.getAtt('Size');
+        this.attrSnapshotId = this.getAtt('SnapshotId');
+        this.attrStorageClusterId = this.getAtt('StorageClusterId');
+        this.attrStorageSetId = this.getAtt('StorageSetId');
+        this.attrStorageSetPartitionNumber = this.getAtt('StorageSetPartitionNumber');
+        this.attrTags = this.getAtt('Tags');
+        this.attrZoneId = this.getAtt('ZoneId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.diskId = props.diskId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            diskId: this.diskId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosDiskPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
 
@@ -2687,7 +3304,7 @@ function rosInstancesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Instances`, which is used to query the details of Elastic Compute Service (ECS) instances.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Instances`, which is used to query the information about Elastic Compute Service (ECS) instances.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instances` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-instances
  */
@@ -3035,6 +3652,131 @@ function rosInstancesTagsPropertyToRosTemplate(properties: any): any {
       Value: ros.stringToRosTemplate(properties.value),
       Key: ros.stringToRosTemplate(properties.key),
     };
+}
+
+/**
+ * Properties for defining a `RosKeyPair`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-keypair
+ */
+export interface RosKeyPairProps {
+
+    /**
+     * @Property keyPairName: The name of the key pair. You can use the asterisk (*) symbol as a wildcard in regular expressions to perform a fuzzy search for key pairs. Sample patterns:
+     * - *SshKey: queries key pairs whose names end with SshKey, including the key pair named SshKey.
+     * - SshKey*: queries key pairs whose names start with SshKey, including the key pair named SshKey.
+     * - *SshKey*: queries key pairs whose names include SshKey, including the key pair named SshKey.
+     * - SshKey: queries the key pair named SshKey.
+     */
+    readonly keyPairName: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosKeyPairProps`
+ *
+ * @param properties - the TypeScript properties of a `RosKeyPairProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosKeyPairPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('keyPairName', ros.requiredValidator)(properties.keyPairName));
+    errors.collect(ros.propertyValidator('keyPairName', ros.validateString)(properties.keyPairName));
+    return errors.wrap('supplied properties not correct for "RosKeyPairProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::KeyPair` resource
+ *
+ * @param properties - the TypeScript properties of a `RosKeyPairProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::KeyPair` resource.
+ */
+// @ts-ignore TS6133
+function rosKeyPairPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosKeyPairPropsValidator(properties).assertSuccess();
+    }
+    return {
+      KeyPairName: ros.stringToRosTemplate(properties.keyPairName),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::KeyPair`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `KeyPair` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-keypair
+ */
+export class RosKeyPair extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::KeyPair";
+
+    /**
+     * @Attribute CreateTime: The time when the key pair was created.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute FingerPrint: The fingerprint of the key pair.
+     */
+    public readonly attrFingerPrint: ros.IResolvable;
+
+    /**
+     * @Attribute KeyPairName: The name of the key pair.
+     */
+    public readonly attrKeyPairName: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The ID of the resource group.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: The tags of the key pair.
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property keyPairName: The name of the key pair. You can use the asterisk (*) symbol as a wildcard in regular expressions to perform a fuzzy search for key pairs. Sample patterns:
+     * - *SshKey: queries key pairs whose names end with SshKey, including the key pair named SshKey.
+     * - SshKey*: queries key pairs whose names start with SshKey, including the key pair named SshKey.
+     * - *SshKey*: queries key pairs whose names include SshKey, including the key pair named SshKey.
+     * - SshKey: queries the key pair named SshKey.
+     */
+    public keyPairName: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosKeyPairProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosKeyPair.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrFingerPrint = this.getAtt('FingerPrint');
+        this.attrKeyPairName = this.getAtt('KeyPairName');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrTags = this.getAtt('Tags');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.keyPairName = props.keyPairName;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            keyPairName: this.keyPairName,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosKeyPairPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
 }
 
 /**
@@ -4002,7 +4744,7 @@ function RosRecommendInstanceTypesPropsValidator(properties: any): ros.Validatio
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
           data: properties.instanceChargeType,
-          allowedValues: ["PrePaid","PostPaid"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
@@ -4256,6 +4998,171 @@ export class RosRecommendInstanceTypes extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosRecommendInstanceTypesPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosSecurityGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-securitygroup
+ */
+export interface RosSecurityGroupProps {
+
+    /**
+     * @Property securityGroupId: Security group ID.
+     */
+    readonly securityGroupId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSecurityGroupProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSecurityGroupProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSecurityGroupPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('securityGroupId', ros.requiredValidator)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    return errors.wrap('supplied properties not correct for "RosSecurityGroupProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::SecurityGroup` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSecurityGroupProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::SecurityGroup` resource.
+ */
+// @ts-ignore TS6133
+function rosSecurityGroupPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSecurityGroupPropsValidator(properties).assertSuccess();
+    }
+    return {
+      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::SecurityGroup`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SecurityGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-securitygroup
+ */
+export class RosSecurityGroup extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::SecurityGroup";
+
+    /**
+     * @Attribute CreateTime: The create time.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute Description: The description.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute InnerAccessPolicy: Network connectivity policy within the security group.
+     */
+    public readonly attrInnerAccessPolicy: ros.IResolvable;
+
+    /**
+     * @Attribute Permissions: A collection of Security Group permission rules.
+     */
+    public readonly attrPermissions: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The enterprise resource group ID where the security group resides.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute SecurityGroupId: Security group ID.
+     */
+    public readonly attrSecurityGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute SecurityGroupName: The security group name.
+     */
+    public readonly attrSecurityGroupName: ros.IResolvable;
+
+    /**
+     * @Attribute SecurityGroupReferences: The complete information about the authorization of all user-specified security groups.
+     */
+    public readonly attrSecurityGroupReferences: ros.IResolvable;
+
+    /**
+     * @Attribute SecurityGroupType: Security group type.
+     */
+    public readonly attrSecurityGroupType: ros.IResolvable;
+
+    /**
+     * @Attribute ServiceId: The virtual quotient ID corresponding to the security group.
+     */
+    public readonly attrServiceId: ros.IResolvable;
+
+    /**
+     * @Attribute ServiceManaged: Whether the owner of the security group is a cloud product or vendor.
+     */
+    public readonly attrServiceManaged: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: The tags.
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    /**
+     * @Attribute VpcId: Secure the group's proprietary network.
+     */
+    public readonly attrVpcId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property securityGroupId: Security group ID.
+     */
+    public securityGroupId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSecurityGroupProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSecurityGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDescription = this.getAtt('Description');
+        this.attrInnerAccessPolicy = this.getAtt('InnerAccessPolicy');
+        this.attrPermissions = this.getAtt('Permissions');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrSecurityGroupId = this.getAtt('SecurityGroupId');
+        this.attrSecurityGroupName = this.getAtt('SecurityGroupName');
+        this.attrSecurityGroupReferences = this.getAtt('SecurityGroupReferences');
+        this.attrSecurityGroupType = this.getAtt('SecurityGroupType');
+        this.attrServiceId = this.getAtt('ServiceId');
+        this.attrServiceManaged = this.getAtt('ServiceManaged');
+        this.attrTags = this.getAtt('Tags');
+        this.attrVpcId = this.getAtt('VpcId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.securityGroupId = props.securityGroupId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            securityGroupId: this.securityGroupId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSecurityGroupPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
 
@@ -4527,6 +5434,213 @@ function rosSecurityGroupsTagsPropertyToRosTemplate(properties: any): any {
       Value: ros.stringToRosTemplate(properties.value),
       Key: ros.stringToRosTemplate(properties.key),
     };
+}
+
+/**
+ * Properties for defining a `RosSnapshot`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-snapshot
+ */
+export interface RosSnapshotProps {
+
+    /**
+     * @Property snapshotId: The snapshot id.
+     */
+    readonly snapshotId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSnapshotProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSnapshotProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSnapshotPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('snapshotId', ros.requiredValidator)(properties.snapshotId));
+    errors.collect(ros.propertyValidator('snapshotId', ros.validateString)(properties.snapshotId));
+    return errors.wrap('supplied properties not correct for "RosSnapshotProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Snapshot` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSnapshotProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Snapshot` resource.
+ */
+// @ts-ignore TS6133
+function rosSnapshotPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSnapshotPropsValidator(properties).assertSuccess();
+    }
+    return {
+      SnapshotId: ros.stringToRosTemplate(properties.snapshotId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Snapshot`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Snapshot` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-snapshot
+ */
+export class RosSnapshot extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::Snapshot";
+
+    /**
+     * @Attribute CreateTime: The create time.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute Description: The description.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute DiskId: The source disk id.
+     */
+    public readonly attrDiskId: ros.IResolvable;
+
+    /**
+     * @Attribute Encrypted: Whether the snapshot is encrypted.
+     */
+    public readonly attrEncrypted: ros.IResolvable;
+
+    /**
+     * @Attribute InstantAccess: Whether snapshot speed availability is enabled.
+     */
+    public readonly attrInstantAccess: ros.IResolvable;
+
+    /**
+     * @Attribute InstantAccessRetentionDays: InstantAccessRetentionDays.
+     */
+    public readonly attrInstantAccessRetentionDays: ros.IResolvable;
+
+    /**
+     * @Attribute ProductCode: The product number inherited from the mirror market.
+     */
+    public readonly attrProductCode: ros.IResolvable;
+
+    /**
+     * @Attribute Progress: Snapshot creation progress, in percentage.
+     */
+    public readonly attrProgress: ros.IResolvable;
+
+    /**
+     * @Attribute RemainTime: Remaining completion time for the snapshot being created.
+     */
+    public readonly attrRemainTime: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The resource group id.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute RetentionDays: Automatic snapshot retention days.
+     */
+    public readonly attrRetentionDays: ros.IResolvable;
+
+    /**
+     * @Attribute SnapshotId: The snapshot id.
+     */
+    public readonly attrSnapshotId: ros.IResolvable;
+
+    /**
+     * @Attribute SnapshotName: Snapshot Display Name.
+     */
+    public readonly attrSnapshotName: ros.IResolvable;
+
+    /**
+     * @Attribute SnapshotSN: Snapshot serial number.
+     */
+    public readonly attrSnapshotSn: ros.IResolvable;
+
+    /**
+     * @Attribute SnapshotType: Snapshot creation type.
+     */
+    public readonly attrSnapshotType: ros.IResolvable;
+
+    /**
+     * @Attribute SourceDiskSize: Source disk capacity.
+     */
+    public readonly attrSourceDiskSize: ros.IResolvable;
+
+    /**
+     * @Attribute SourceDiskType: Source disk attributes.
+     */
+    public readonly attrSourceDiskType: ros.IResolvable;
+
+    /**
+     * @Attribute SourceStorageType: Original disk type.
+     */
+    public readonly attrSourceStorageType: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: The tags.
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    /**
+     * @Attribute Usage: A resource type that has a reference relationship.
+     */
+    public readonly attrUsage: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property snapshotId: The snapshot id.
+     */
+    public snapshotId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSnapshotProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSnapshot.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDescription = this.getAtt('Description');
+        this.attrDiskId = this.getAtt('DiskId');
+        this.attrEncrypted = this.getAtt('Encrypted');
+        this.attrInstantAccess = this.getAtt('InstantAccess');
+        this.attrInstantAccessRetentionDays = this.getAtt('InstantAccessRetentionDays');
+        this.attrProductCode = this.getAtt('ProductCode');
+        this.attrProgress = this.getAtt('Progress');
+        this.attrRemainTime = this.getAtt('RemainTime');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrRetentionDays = this.getAtt('RetentionDays');
+        this.attrSnapshotId = this.getAtt('SnapshotId');
+        this.attrSnapshotName = this.getAtt('SnapshotName');
+        this.attrSnapshotSn = this.getAtt('SnapshotSN');
+        this.attrSnapshotType = this.getAtt('SnapshotType');
+        this.attrSourceDiskSize = this.getAtt('SourceDiskSize');
+        this.attrSourceDiskType = this.getAtt('SourceDiskType');
+        this.attrSourceStorageType = this.getAtt('SourceStorageType');
+        this.attrTags = this.getAtt('Tags');
+        this.attrUsage = this.getAtt('Usage');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.snapshotId = props.snapshotId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            snapshotId: this.snapshotId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSnapshotPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
 }
 
 /**

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroupingress
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:51.982Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:32.435Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.SecurityGroupIngressProps")
 @software.amazon.jsii.Jsii.Proxy(SecurityGroupIngressProps.Jsii$Proxy.class)
 public interface SecurityGroupIngressProps extends software.amazon.jsii.JsiiSerializable {
@@ -109,8 +109,11 @@ public interface SecurityGroupIngressProps extends software.amazon.jsii.JsiiSeri
      * Property sourcePrefixListId: The ID of the source prefix list to which you want to control access.
      * <p>
      * You can call the DescribePrefixLists operation to query the IDs of available prefix lists. Take note of the following items:
-     * If a security group is in the classic network, you cannot configure prefix lists in the security group rules. For information about the limits on security groups and prefix lists, see the "Security group limits" section in Limits.
-     * If you specify the SourceCidrIp, Ipv6SourceCidrIp, or SourceGroupId parameter, this parameter is ignored.
+     * <p>
+     * <ul>
+     * <li>If a security group is in the classic network, you cannot configure prefix lists in the security group rules.</li>
+     * <li>If you specify the SourceCidrIp, Ipv6SourceCidrIp, or SourceGroupId parameter, this parameter is ignored.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSourcePrefixListId() {
         return null;
@@ -400,8 +403,11 @@ public interface SecurityGroupIngressProps extends software.amazon.jsii.JsiiSeri
          * Sets the value of {@link SecurityGroupIngressProps#getSourcePrefixListId}
          * @param sourcePrefixListId Property sourcePrefixListId: The ID of the source prefix list to which you want to control access.
          *                           You can call the DescribePrefixLists operation to query the IDs of available prefix lists. Take note of the following items:
-         *                           If a security group is in the classic network, you cannot configure prefix lists in the security group rules. For information about the limits on security groups and prefix lists, see the "Security group limits" section in Limits.
-         *                           If you specify the SourceCidrIp, Ipv6SourceCidrIp, or SourceGroupId parameter, this parameter is ignored.
+         *                           <p>
+         *                           <ul>
+         *                           <li>If a security group is in the classic network, you cannot configure prefix lists in the security group rules.</li>
+         *                           <li>If you specify the SourceCidrIp, Ipv6SourceCidrIp, or SourceGroupId parameter, this parameter is ignored.</li>
+         *                           </ul>
          * @return {@code this}
          */
         public Builder sourcePrefixListId(java.lang.String sourcePrefixListId) {
@@ -413,8 +419,11 @@ public interface SecurityGroupIngressProps extends software.amazon.jsii.JsiiSeri
          * Sets the value of {@link SecurityGroupIngressProps#getSourcePrefixListId}
          * @param sourcePrefixListId Property sourcePrefixListId: The ID of the source prefix list to which you want to control access.
          *                           You can call the DescribePrefixLists operation to query the IDs of available prefix lists. Take note of the following items:
-         *                           If a security group is in the classic network, you cannot configure prefix lists in the security group rules. For information about the limits on security groups and prefix lists, see the "Security group limits" section in Limits.
-         *                           If you specify the SourceCidrIp, Ipv6SourceCidrIp, or SourceGroupId parameter, this parameter is ignored.
+         *                           <p>
+         *                           <ul>
+         *                           <li>If a security group is in the classic network, you cannot configure prefix lists in the security group rules.</li>
+         *                           <li>If you specify the SourceCidrIp, Ipv6SourceCidrIp, or SourceGroupId parameter, this parameter is ignored.</li>
+         *                           </ul>
          * @return {@code this}
          */
         public Builder sourcePrefixListId(com.aliyun.ros.cdk.core.IResolvable sourcePrefixListId) {

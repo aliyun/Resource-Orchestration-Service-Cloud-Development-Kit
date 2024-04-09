@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::TrafficMirrorSession</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::TrafficMirrorSession</code>, which is used to create a traffic image session.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:55.052Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:35.726Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosTrafficMirrorSession")
 public class RosTrafficMirrorSession extends com.aliyun.ros.cdk.core.RosResource {
 

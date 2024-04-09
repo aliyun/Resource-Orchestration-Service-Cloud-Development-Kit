@@ -22,7 +22,7 @@ export interface SslVpnClientCertProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::SslVpnClientCert`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::SslVpnClientCert`, which is used to call the CreateSslVpnClientCert operation to create an SSL-VPN client certificate.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSslVpnClientCert`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-sslvpnclientcert
  */

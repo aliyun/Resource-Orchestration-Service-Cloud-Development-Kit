@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.pvtz.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::PVTZ::Rules</code>.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::PVTZ::Rules</code>, which is used to query forwarding rules.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:53.912Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:34.587Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.datasource.RosRules")
 public class RosRules extends com.aliyun.ros.cdk.core.RosResource {
 

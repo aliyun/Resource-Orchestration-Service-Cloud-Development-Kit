@@ -295,6 +295,92 @@ function rosAddressBookTagListPropertyToRosTemplate(properties: any): any {
 }
 
 /**
+ * Properties for defining a `RosAllFwSwitch`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-allfwswitch
+ */
+export interface RosAllFwSwitchProps {
+
+    /**
+     * @Property instanceId: The ID of the cloud firewall instance.
+     */
+    readonly instanceId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAllFwSwitchProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAllFwSwitchProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAllFwSwitchPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    return errors.wrap('supplied properties not correct for "RosAllFwSwitchProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CLOUDFW::AllFwSwitch` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAllFwSwitchProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CLOUDFW::AllFwSwitch` resource.
+ */
+// @ts-ignore TS6133
+function rosAllFwSwitchPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAllFwSwitchPropsValidator(properties).assertSuccess();
+    }
+    return {
+      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::AllFwSwitch`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AllFwSwitch` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-allfwswitch
+ */
+export class RosAllFwSwitch extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CLOUDFW::AllFwSwitch";
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property instanceId: The ID of the cloud firewall instance.
+     */
+    public instanceId: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAllFwSwitchProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAllFwSwitch.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.instanceId = props.instanceId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            instanceId: this.instanceId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAllFwSwitchPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosControlPolicy`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-controlpolicy
  */
@@ -705,6 +791,169 @@ export class RosControlPolicy extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosControlPolicyPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosFwSwitch`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-fwswitch
+ */
+export interface RosFwSwitchProps {
+
+    /**
+     * @Property ipaddrList: The IP address list.
+     * **Note**: The IpaddrList, RegionList, and ResourceTypeList arguments are not allowed to be empty at the same time. A value must be set for one of the three arguments.
+     */
+    readonly ipaddrList?: Array<any | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property regionList: The region list.
+     * **Note**: The IpaddrList, RegionList, and ResourceTypeList arguments are not allowed to be empty at the same time. A value must be set for one of the three arguments.
+     */
+    readonly regionList?: Array<any | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property resourceTypeList: The asset type list. Valid values:
+     * - BastionHostIP: Bastion machine exit IP.
+     * - BastionHostIngressIP: The entrance IP of the fortress machine.
+     * - EcsEIP: ECS EIP.
+     * - EcsPublicIP: ECS public network IP.
+     * - EIP: Elastic Public IP.
+     * - EniEIP: Elastic Network card EIP.
+     * - NatEIP: NAT EIP.
+     * - SlbEIP: SLB EIP.
+     * - SlbPublicIP: SLB public network IP.
+     * - NatPublicIP: NAT public IP
+     * - HAVIP: High Availability Virtual IP.
+     * **Note**: The IpaddrList, RegionList, and ResourceTypeList arguments are not allowed to be empty at the same time. A value must be set for one of the three arguments.
+     */
+    readonly resourceTypeList?: Array<any | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosFwSwitchProps`
+ *
+ * @param properties - the TypeScript properties of a `RosFwSwitchProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosFwSwitchPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.ipaddrList && (Array.isArray(properties.ipaddrList) || (typeof properties.ipaddrList) === 'string')) {
+        errors.collect(ros.propertyValidator('ipaddrList', ros.validateLength)({
+            data: properties.ipaddrList.length,
+            min: undefined,
+            max: 200,
+          }));
+    }
+    errors.collect(ros.propertyValidator('ipaddrList', ros.listValidator(ros.validateAny))(properties.ipaddrList));
+    if(properties.resourceTypeList && (Array.isArray(properties.resourceTypeList) || (typeof properties.resourceTypeList) === 'string')) {
+        errors.collect(ros.propertyValidator('resourceTypeList', ros.validateLength)({
+            data: properties.resourceTypeList.length,
+            min: undefined,
+            max: 200,
+          }));
+    }
+    errors.collect(ros.propertyValidator('resourceTypeList', ros.listValidator(ros.validateAny))(properties.resourceTypeList));
+    if(properties.regionList && (Array.isArray(properties.regionList) || (typeof properties.regionList) === 'string')) {
+        errors.collect(ros.propertyValidator('regionList', ros.validateLength)({
+            data: properties.regionList.length,
+            min: undefined,
+            max: 200,
+          }));
+    }
+    errors.collect(ros.propertyValidator('regionList', ros.listValidator(ros.validateAny))(properties.regionList));
+    return errors.wrap('supplied properties not correct for "RosFwSwitchProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CLOUDFW::FwSwitch` resource
+ *
+ * @param properties - the TypeScript properties of a `RosFwSwitchProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CLOUDFW::FwSwitch` resource.
+ */
+// @ts-ignore TS6133
+function rosFwSwitchPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosFwSwitchPropsValidator(properties).assertSuccess();
+    }
+    return {
+      IpaddrList: ros.listMapper(ros.objectToRosTemplate)(properties.ipaddrList),
+      RegionList: ros.listMapper(ros.objectToRosTemplate)(properties.regionList),
+      ResourceTypeList: ros.listMapper(ros.objectToRosTemplate)(properties.resourceTypeList),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::FwSwitch`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `FwSwitch` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-fwswitch
+ */
+export class RosFwSwitch extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CLOUDFW::FwSwitch";
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property ipaddrList: The IP address list.
+     * **Note**: The IpaddrList, RegionList, and ResourceTypeList arguments are not allowed to be empty at the same time. A value must be set for one of the three arguments.
+     */
+    public ipaddrList: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property regionList: The region list.
+     * **Note**: The IpaddrList, RegionList, and ResourceTypeList arguments are not allowed to be empty at the same time. A value must be set for one of the three arguments.
+     */
+    public regionList: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceTypeList: The asset type list. Valid values:
+     * - BastionHostIP: Bastion machine exit IP.
+     * - BastionHostIngressIP: The entrance IP of the fortress machine.
+     * - EcsEIP: ECS EIP.
+     * - EcsPublicIP: ECS public network IP.
+     * - EIP: Elastic Public IP.
+     * - EniEIP: Elastic Network card EIP.
+     * - NatEIP: NAT EIP.
+     * - SlbEIP: SLB EIP.
+     * - SlbPublicIP: SLB public network IP.
+     * - NatPublicIP: NAT public IP
+     * - HAVIP: High Availability Virtual IP.
+     * **Note**: The IpaddrList, RegionList, and ResourceTypeList arguments are not allowed to be empty at the same time. A value must be set for one of the three arguments.
+     */
+    public resourceTypeList: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosFwSwitchProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosFwSwitch.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.ipaddrList = props.ipaddrList;
+        this.regionList = props.regionList;
+        this.resourceTypeList = props.resourceTypeList;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            ipaddrList: this.ipaddrList,
+            regionList: this.regionList,
+            resourceTypeList: this.resourceTypeList,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosFwSwitchPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
 

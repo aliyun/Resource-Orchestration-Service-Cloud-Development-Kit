@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.waf;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::WAF::LogServiceEnable</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:55.262Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:35.963Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.waf.$Module.class, fqn = "@alicloud/ros-cdk-waf.RosLogServiceEnable")
 public class RosLogServiceEnable extends com.aliyun.ros.cdk.core.RosResource {
 

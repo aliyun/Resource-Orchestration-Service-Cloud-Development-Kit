@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ess;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:52.466Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:33.028Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScalingGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosScalingGroupProps.Jsii$Proxy.class)
 public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -400,7 +400,7 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
          * @param dbInstanceIds the value to be set.
          * @return {@code this}
          */
-        public Builder dbInstanceIds(java.util.List<? extends java.lang.Object> dbInstanceIds) {
+        public Builder dbInstanceIds(com.aliyun.ros.cdk.core.IResolvable dbInstanceIds) {
             this.dbInstanceIds = dbInstanceIds;
             return this;
         }
@@ -410,7 +410,7 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
          * @param dbInstanceIds the value to be set.
          * @return {@code this}
          */
-        public Builder dbInstanceIds(com.aliyun.ros.cdk.core.IResolvable dbInstanceIds) {
+        public Builder dbInstanceIds(java.util.List<? extends java.lang.Object> dbInstanceIds) {
             this.dbInstanceIds = dbInstanceIds;
             return this;
         }
@@ -600,7 +600,7 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
          * @param loadBalancerIds the value to be set.
          * @return {@code this}
          */
-        public Builder loadBalancerIds(java.util.List<? extends java.lang.Object> loadBalancerIds) {
+        public Builder loadBalancerIds(com.aliyun.ros.cdk.core.IResolvable loadBalancerIds) {
             this.loadBalancerIds = loadBalancerIds;
             return this;
         }
@@ -610,7 +610,7 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
          * @param loadBalancerIds the value to be set.
          * @return {@code this}
          */
-        public Builder loadBalancerIds(com.aliyun.ros.cdk.core.IResolvable loadBalancerIds) {
+        public Builder loadBalancerIds(java.util.List<? extends java.lang.Object> loadBalancerIds) {
             this.loadBalancerIds = loadBalancerIds;
             return this;
         }
@@ -720,7 +720,7 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
          * @param protectedInstances the value to be set.
          * @return {@code this}
          */
-        public Builder protectedInstances(java.util.List<? extends java.lang.Object> protectedInstances) {
+        public Builder protectedInstances(com.aliyun.ros.cdk.core.IResolvable protectedInstances) {
             this.protectedInstances = protectedInstances;
             return this;
         }
@@ -730,7 +730,7 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
          * @param protectedInstances the value to be set.
          * @return {@code this}
          */
-        public Builder protectedInstances(com.aliyun.ros.cdk.core.IResolvable protectedInstances) {
+        public Builder protectedInstances(java.util.List<? extends java.lang.Object> protectedInstances) {
             this.protectedInstances = protectedInstances;
             return this;
         }
@@ -740,7 +740,7 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
          * @param removalPolicys the value to be set.
          * @return {@code this}
          */
-        public Builder removalPolicys(java.util.List<? extends java.lang.Object> removalPolicys) {
+        public Builder removalPolicys(com.aliyun.ros.cdk.core.IResolvable removalPolicys) {
             this.removalPolicys = removalPolicys;
             return this;
         }
@@ -750,7 +750,7 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
          * @param removalPolicys the value to be set.
          * @return {@code this}
          */
-        public Builder removalPolicys(com.aliyun.ros.cdk.core.IResolvable removalPolicys) {
+        public Builder removalPolicys(java.util.List<? extends java.lang.Object> removalPolicys) {
             this.removalPolicys = removalPolicys;
             return this;
         }
@@ -860,7 +860,7 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
          * @param standbyInstances the value to be set.
          * @return {@code this}
          */
-        public Builder standbyInstances(java.util.List<? extends java.lang.Object> standbyInstances) {
+        public Builder standbyInstances(com.aliyun.ros.cdk.core.IResolvable standbyInstances) {
             this.standbyInstances = standbyInstances;
             return this;
         }
@@ -870,7 +870,7 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
          * @param standbyInstances the value to be set.
          * @return {@code this}
          */
-        public Builder standbyInstances(com.aliyun.ros.cdk.core.IResolvable standbyInstances) {
+        public Builder standbyInstances(java.util.List<? extends java.lang.Object> standbyInstances) {
             this.standbyInstances = standbyInstances;
             return this;
         }
@@ -911,7 +911,7 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
          * @param vSwitchIds the value to be set.
          * @return {@code this}
          */
-        public Builder vSwitchIds(java.util.List<? extends java.lang.Object> vSwitchIds) {
+        public Builder vSwitchIds(com.aliyun.ros.cdk.core.IResolvable vSwitchIds) {
             this.vSwitchIds = vSwitchIds;
             return this;
         }
@@ -921,7 +921,7 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
          * @param vSwitchIds the value to be set.
          * @return {@code this}
          */
-        public Builder vSwitchIds(com.aliyun.ros.cdk.core.IResolvable vSwitchIds) {
+        public Builder vSwitchIds(java.util.List<? extends java.lang.Object> vSwitchIds) {
             this.vSwitchIds = vSwitchIds;
             return this;
         }

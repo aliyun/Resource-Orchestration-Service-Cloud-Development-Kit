@@ -38,7 +38,7 @@ export interface InfluxDBUserProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::TSDB::InfluxDBUser`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::TSDB::InfluxDBUser`, which is used to create a Time Series Database (TSDB) database account.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInfluxDBUser`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-tsdb-influxdbuser
  */

@@ -7,7 +7,11 @@
 @alicloud/ros-cdk-eais.RosInstance=com.aliyun.ros.cdk.eais.RosInstance
 @alicloud/ros-cdk-eais.RosInstance.EnvironmentVarProperty=com.aliyun.ros.cdk.eais.RosInstance$EnvironmentVarProperty
 @alicloud/ros-cdk-eais.RosInstanceProps=com.aliyun.ros.cdk.eais.RosInstanceProps
+@alicloud/ros-cdk-eais.datasource.Instance=com.aliyun.ros.cdk.eais.datasource.Instance
+@alicloud/ros-cdk-eais.datasource.InstanceProps=com.aliyun.ros.cdk.eais.datasource.InstanceProps
 @alicloud/ros-cdk-eais.datasource.Instances=com.aliyun.ros.cdk.eais.datasource.Instances
 @alicloud/ros-cdk-eais.datasource.InstancesProps=com.aliyun.ros.cdk.eais.datasource.InstancesProps
+@alicloud/ros-cdk-eais.datasource.RosInstance=com.aliyun.ros.cdk.eais.datasource.RosInstance
+@alicloud/ros-cdk-eais.datasource.RosInstanceProps=com.aliyun.ros.cdk.eais.datasource.RosInstanceProps
 @alicloud/ros-cdk-eais.datasource.RosInstances=com.aliyun.ros.cdk.eais.datasource.RosInstances
 @alicloud/ros-cdk-eais.datasource.RosInstancesProps=com.aliyun.ros.cdk.eais.datasource.RosInstancesProps

@@ -21,6 +21,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: deletionForce: Whether delete all topics and groups of the instance and then delete instance. Default is false
+        /// </remarks>
+        [JsiiProperty(name: "deletionForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DeletionForce
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: remark: The remark of instance.
         /// </remarks>
         [JsiiProperty(name: "remark", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -64,6 +77,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
             public object InstanceName
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: deletionForce: Whether delete all topics and groups of the instance and then delete instance. Default is false
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "deletionForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DeletionForce
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>

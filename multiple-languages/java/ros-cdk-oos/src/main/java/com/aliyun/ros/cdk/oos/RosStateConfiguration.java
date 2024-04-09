@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oos;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::OOS::StateConfiguration</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:53.369Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:34.252Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.RosStateConfiguration")
 public class RosStateConfiguration extends com.aliyun.ros.cdk.core.RosResource {
 

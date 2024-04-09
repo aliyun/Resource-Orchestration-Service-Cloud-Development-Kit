@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dms;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DMS::User</code>, which is used to add a user to Data Management (DMS).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:51.239Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:31.631Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dms.$Module.class, fqn = "@alicloud/ros-cdk-dms.RosUser")
 public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
 

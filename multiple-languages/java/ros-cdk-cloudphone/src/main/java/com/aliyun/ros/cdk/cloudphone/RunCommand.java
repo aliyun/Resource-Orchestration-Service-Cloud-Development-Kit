@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cloudphone;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CloudPhone::RunCommand</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:50.579Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:30.982Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudphone.$Module.class, fqn = "@alicloud/ros-cdk-cloudphone.RunCommand")
 public class RunCommand extends com.aliyun.ros.cdk.core.Resource {
 
@@ -153,6 +153,27 @@ public class RunCommand extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder instanceIds(final java.util.List<? extends java.lang.Object> instanceIds) {
             this.props.instanceIds(instanceIds);
+            return this;
+        }
+
+        /**
+         * Property runAgainOn: The stage of executing the command again.
+         * <p>
+         * @return {@code this}
+         * @param runAgainOn Property runAgainOn: The stage of executing the command again. This parameter is required.
+         */
+        public Builder runAgainOn(final com.aliyun.ros.cdk.core.IResolvable runAgainOn) {
+            this.props.runAgainOn(runAgainOn);
+            return this;
+        }
+        /**
+         * Property runAgainOn: The stage of executing the command again.
+         * <p>
+         * @return {@code this}
+         * @param runAgainOn Property runAgainOn: The stage of executing the command again. This parameter is required.
+         */
+        public Builder runAgainOn(final java.util.List<? extends java.lang.Object> runAgainOn) {
+            this.props.runAgainOn(runAgainOn);
             return this;
         }
 

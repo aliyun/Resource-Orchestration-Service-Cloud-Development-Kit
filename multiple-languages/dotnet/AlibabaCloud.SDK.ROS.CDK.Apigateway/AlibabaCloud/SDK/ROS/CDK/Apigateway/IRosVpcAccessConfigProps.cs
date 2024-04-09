@@ -12,7 +12,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
     public interface IRosVpcAccessConfigProps
     {
         /// <remarks>
-        /// <strong>Property</strong>: instanceId: The id of the instance (ECS\/SLB).
+        /// <strong>Property</strong>: instanceId: The id of the instance (ECS\/SLB\/ALB\/NLB).
         /// </remarks>
         [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object InstanceId
@@ -59,7 +59,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: instanceId: The id of the instance (ECS\/SLB).
+            /// <strong>Property</strong>: instanceId: The id of the instance (ECS\/SLB\/ALB\/NLB).
             /// </remarks>
             [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object InstanceId

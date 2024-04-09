@@ -15,6 +15,11 @@ export interface InstanceProps {
     readonly instanceName: string | ros.IResolvable;
 
     /**
+     * Property deletionForce: Whether delete all topics and groups of the instance and then delete instance. Default is false
+     */
+    readonly deletionForce?: boolean | ros.IResolvable;
+
+    /**
      * Property remark: The remark of instance.
      */
     readonly remark?: string | ros.IResolvable;
@@ -85,6 +90,7 @@ export class Instance extends ros.Resource {
 
         const rosInstance = new RosInstance(this, id,  {
             instanceName: props.instanceName,
+            deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
             tags: props.tags,
             remark: props.remark,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

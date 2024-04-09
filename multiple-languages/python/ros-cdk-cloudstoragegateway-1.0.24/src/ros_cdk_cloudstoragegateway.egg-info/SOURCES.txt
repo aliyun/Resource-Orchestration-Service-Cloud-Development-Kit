@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+NOTICE
+README.md
+pyproject.toml
+setup.py
+src/ros_cdk_cloudstoragegateway/__init__.py
+src/ros_cdk_cloudstoragegateway/py.typed
+src/ros_cdk_cloudstoragegateway.egg-info/PKG-INFO
+src/ros_cdk_cloudstoragegateway.egg-info/SOURCES.txt
+src/ros_cdk_cloudstoragegateway.egg-info/dependency_links.txt
+src/ros_cdk_cloudstoragegateway.egg-info/requires.txt
+src/ros_cdk_cloudstoragegateway.egg-info/top_level.txt
+src/ros_cdk_cloudstoragegateway/_jsii/__init__.py
+src/ros_cdk_cloudstoragegateway/_jsii/ros-cdk-cloudstoragegateway@1.0.24.jsii.tgz

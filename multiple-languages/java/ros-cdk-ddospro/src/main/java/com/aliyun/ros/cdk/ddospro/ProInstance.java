@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ddospro;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::DDoSPro::ProInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:51.156Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:31.549Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ddospro.$Module.class, fqn = "@alicloud/ros-cdk-ddospro.ProInstance")
 public class ProInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -463,6 +463,19 @@ public class ProInstance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder servicePartner(final com.aliyun.ros.cdk.core.IResolvable servicePartner) {
             this.props().servicePartner(servicePartner);
+            return this;
+        }
+
+        /**
+         * Property tags: Tags to attach to instance.
+         * <p>
+         * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+         * <p>
+         * @return {@code this}
+         * @param tags Property tags: Tags to attach to instance. This parameter is required.
+         */
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.ddospro.RosProInstance.TagsProperty> tags) {
+            this.props().tags(tags);
             return this;
         }
 

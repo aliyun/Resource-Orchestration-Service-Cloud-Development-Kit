@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroupegress
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:51.979Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:32.431Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.SecurityGroupEgressProps")
 @software.amazon.jsii.Jsii.Proxy(SecurityGroupEgressProps.Jsii$Proxy.class)
 public interface SecurityGroupEgressProps extends software.amazon.jsii.JsiiSerializable {
@@ -32,23 +32,38 @@ public interface SecurityGroupEgressProps extends software.amazon.jsii.JsiiSeria
     }
 
     /**
-     * Property destCidrIp: Dest CIDR Ip Address range.
+     * Property destCidrIp: The destination IPv4 CIDR block to which you want to control access.
      * <p>
-     * Only IPV4 supported.
+     * CIDR blocks and IPv4 addresses are supported.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDestCidrIp() {
         return null;
     }
 
     /**
-     * Property destGroupId: Dest Group Id.
+     * Property destGroupId: The destination security group ID to which access permissions need to be set.
+     * <p>
+     * Set at least one of the DestGroupId, DestCidrIp, Ipv6DestCidrIp, or DestPrefixListId parameters.
+     * <p>
+     * <ul>
+     * <li>If DestGroupId is specified without the DestCidrIp parameter, the NicType parameter can only take the value intranet.</li>
+     * <li>If both DestGroupId and DestCidrIp are specified, DestCidrIp is assumed to prevail.
+     * You should pay attention to:</li>
+     * <li>Enterprise Security groups do not support authorized security group access.</li>
+     * <li>The maximum number of authorized security groups supported by ordinary security groups is 20.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDestGroupId() {
         return null;
     }
 
     /**
-     * Property destGroupOwnerId: Dest Group Owner Account ID.
+     * Property destGroupOwnerId: When setting security group rules across accounts, the Ali Cloud account ID of the destination security group.
+     * <p>
+     * <ul>
+     * <li>If neither DestGroupOwnerId nor DestGroupOwnerAccount is set, it is considered to set the access rights of your other security group.</li>
+     * <li>If you have set the parameter DestCidrIp, the parameter DestGroupOwnerId is invalid.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDestGroupOwnerId() {
         return null;
@@ -66,10 +81,9 @@ public interface SecurityGroupEgressProps extends software.amazon.jsii.JsiiSeria
     }
 
     /**
-     * Property ipv6DestCidrIp: Destination IPv6 CIDR address segment.
+     * Property ipv6DestCidrIp: Destination IPv6 CIDR address block for which access rights need to be set.
      * <p>
-     * Supports IP address ranges in CIDR format and IPv6 format.
-     * Note Only VPC type IP addresses are supported.
+     * CIDR format and IPv6 format IP address range are supported.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getIpv6DestCidrIp() {
         return null;
@@ -196,8 +210,8 @@ public interface SecurityGroupEgressProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link SecurityGroupEgressProps#getDestCidrIp}
-         * @param destCidrIp Property destCidrIp: Dest CIDR Ip Address range.
-         *                   Only IPV4 supported.
+         * @param destCidrIp Property destCidrIp: The destination IPv4 CIDR block to which you want to control access.
+         *                   CIDR blocks and IPv4 addresses are supported.
          * @return {@code this}
          */
         public Builder destCidrIp(java.lang.String destCidrIp) {
@@ -207,8 +221,8 @@ public interface SecurityGroupEgressProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link SecurityGroupEgressProps#getDestCidrIp}
-         * @param destCidrIp Property destCidrIp: Dest CIDR Ip Address range.
-         *                   Only IPV4 supported.
+         * @param destCidrIp Property destCidrIp: The destination IPv4 CIDR block to which you want to control access.
+         *                   CIDR blocks and IPv4 addresses are supported.
          * @return {@code this}
          */
         public Builder destCidrIp(com.aliyun.ros.cdk.core.IResolvable destCidrIp) {
@@ -218,7 +232,16 @@ public interface SecurityGroupEgressProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link SecurityGroupEgressProps#getDestGroupId}
-         * @param destGroupId Property destGroupId: Dest Group Id.
+         * @param destGroupId Property destGroupId: The destination security group ID to which access permissions need to be set.
+         *                    Set at least one of the DestGroupId, DestCidrIp, Ipv6DestCidrIp, or DestPrefixListId parameters.
+         *                    <p>
+         *                    <ul>
+         *                    <li>If DestGroupId is specified without the DestCidrIp parameter, the NicType parameter can only take the value intranet.</li>
+         *                    <li>If both DestGroupId and DestCidrIp are specified, DestCidrIp is assumed to prevail.
+         *                    You should pay attention to:</li>
+         *                    <li>Enterprise Security groups do not support authorized security group access.</li>
+         *                    <li>The maximum number of authorized security groups supported by ordinary security groups is 20.</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder destGroupId(java.lang.String destGroupId) {
@@ -228,7 +251,16 @@ public interface SecurityGroupEgressProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link SecurityGroupEgressProps#getDestGroupId}
-         * @param destGroupId Property destGroupId: Dest Group Id.
+         * @param destGroupId Property destGroupId: The destination security group ID to which access permissions need to be set.
+         *                    Set at least one of the DestGroupId, DestCidrIp, Ipv6DestCidrIp, or DestPrefixListId parameters.
+         *                    <p>
+         *                    <ul>
+         *                    <li>If DestGroupId is specified without the DestCidrIp parameter, the NicType parameter can only take the value intranet.</li>
+         *                    <li>If both DestGroupId and DestCidrIp are specified, DestCidrIp is assumed to prevail.
+         *                    You should pay attention to:</li>
+         *                    <li>Enterprise Security groups do not support authorized security group access.</li>
+         *                    <li>The maximum number of authorized security groups supported by ordinary security groups is 20.</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder destGroupId(com.aliyun.ros.cdk.core.IResolvable destGroupId) {
@@ -238,7 +270,11 @@ public interface SecurityGroupEgressProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link SecurityGroupEgressProps#getDestGroupOwnerId}
-         * @param destGroupOwnerId Property destGroupOwnerId: Dest Group Owner Account ID.
+         * @param destGroupOwnerId Property destGroupOwnerId: When setting security group rules across accounts, the Ali Cloud account ID of the destination security group.
+         *                         <ul>
+         *                         <li>If neither DestGroupOwnerId nor DestGroupOwnerAccount is set, it is considered to set the access rights of your other security group.</li>
+         *                         <li>If you have set the parameter DestCidrIp, the parameter DestGroupOwnerId is invalid.</li>
+         *                         </ul>
          * @return {@code this}
          */
         public Builder destGroupOwnerId(java.lang.String destGroupOwnerId) {
@@ -248,7 +284,11 @@ public interface SecurityGroupEgressProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link SecurityGroupEgressProps#getDestGroupOwnerId}
-         * @param destGroupOwnerId Property destGroupOwnerId: Dest Group Owner Account ID.
+         * @param destGroupOwnerId Property destGroupOwnerId: When setting security group rules across accounts, the Ali Cloud account ID of the destination security group.
+         *                         <ul>
+         *                         <li>If neither DestGroupOwnerId nor DestGroupOwnerAccount is set, it is considered to set the access rights of your other security group.</li>
+         *                         <li>If you have set the parameter DestCidrIp, the parameter DestGroupOwnerId is invalid.</li>
+         *                         </ul>
          * @return {@code this}
          */
         public Builder destGroupOwnerId(com.aliyun.ros.cdk.core.IResolvable destGroupOwnerId) {
@@ -284,9 +324,8 @@ public interface SecurityGroupEgressProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link SecurityGroupEgressProps#getIpv6DestCidrIp}
-         * @param ipv6DestCidrIp Property ipv6DestCidrIp: Destination IPv6 CIDR address segment.
-         *                       Supports IP address ranges in CIDR format and IPv6 format.
-         *                       Note Only VPC type IP addresses are supported.
+         * @param ipv6DestCidrIp Property ipv6DestCidrIp: Destination IPv6 CIDR address block for which access rights need to be set.
+         *                       CIDR format and IPv6 format IP address range are supported.
          * @return {@code this}
          */
         public Builder ipv6DestCidrIp(java.lang.String ipv6DestCidrIp) {
@@ -296,9 +335,8 @@ public interface SecurityGroupEgressProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link SecurityGroupEgressProps#getIpv6DestCidrIp}
-         * @param ipv6DestCidrIp Property ipv6DestCidrIp: Destination IPv6 CIDR address segment.
-         *                       Supports IP address ranges in CIDR format and IPv6 format.
-         *                       Note Only VPC type IP addresses are supported.
+         * @param ipv6DestCidrIp Property ipv6DestCidrIp: Destination IPv6 CIDR address block for which access rights need to be set.
+         *                       CIDR format and IPv6 format IP address range are supported.
          * @return {@code this}
          */
         public Builder ipv6DestCidrIp(com.aliyun.ros.cdk.core.IResolvable ipv6DestCidrIp) {

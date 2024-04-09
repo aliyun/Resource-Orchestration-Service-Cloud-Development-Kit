@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::AnycastEIPAssociation</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::AnycastEIPAssociation</code>, which is used to associate an Anycast elastic IP address (Anycast EIP) with a cloud resource in a specific region.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:54.856Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:35.550Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.AnycastEIPAssociation")
 public class AnycastEIPAssociation extends com.aliyun.ros.cdk.core.Resource {
 

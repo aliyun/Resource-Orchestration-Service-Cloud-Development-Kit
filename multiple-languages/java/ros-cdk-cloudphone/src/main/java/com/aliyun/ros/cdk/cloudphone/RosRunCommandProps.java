@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cloudphone;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-runcommand
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:50.579Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:30.982Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudphone.$Module.class, fqn = "@alicloud/ros-cdk-cloudphone.RosRunCommandProps")
 @software.amazon.jsii.Jsii.Proxy(RosRunCommandProps.Jsii$Proxy.class)
 public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializable {
@@ -19,6 +19,12 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
     @org.jetbrains.annotations.NotNull java.lang.Object getInstanceIds();
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRunAgainOn() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosRunCommandProps}
      */
     static Builder builder() {
@@ -30,6 +36,7 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
     public static final class Builder implements software.amazon.jsii.Builder<RosRunCommandProps> {
         java.lang.Object command;
         java.lang.Object instanceIds;
+        java.lang.Object runAgainOn;
 
         /**
          * Sets the value of {@link RosRunCommandProps#getCommand}
@@ -72,6 +79,26 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosRunCommandProps#getRunAgainOn}
+         * @param runAgainOn the value to be set.
+         * @return {@code this}
+         */
+        public Builder runAgainOn(com.aliyun.ros.cdk.core.IResolvable runAgainOn) {
+            this.runAgainOn = runAgainOn;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRunCommandProps#getRunAgainOn}
+         * @param runAgainOn the value to be set.
+         * @return {@code this}
+         */
+        public Builder runAgainOn(java.util.List<? extends java.lang.Object> runAgainOn) {
+            this.runAgainOn = runAgainOn;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosRunCommandProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -89,6 +116,7 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosRunCommandProps {
         private final java.lang.Object command;
         private final java.lang.Object instanceIds;
+        private final java.lang.Object runAgainOn;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -98,6 +126,7 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
             super(objRef);
             this.command = software.amazon.jsii.Kernel.get(this, "command", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceIds = software.amazon.jsii.Kernel.get(this, "instanceIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.runAgainOn = software.amazon.jsii.Kernel.get(this, "runAgainOn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -107,6 +136,7 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.command = java.util.Objects.requireNonNull(builder.command, "command is required");
             this.instanceIds = java.util.Objects.requireNonNull(builder.instanceIds, "instanceIds is required");
+            this.runAgainOn = builder.runAgainOn;
         }
 
         @Override
@@ -120,6 +150,11 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
+        public final java.lang.Object getRunAgainOn() {
+            return this.runAgainOn;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -127,6 +162,9 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
 
             data.set("command", om.valueToTree(this.getCommand()));
             data.set("instanceIds", om.valueToTree(this.getInstanceIds()));
+            if (this.getRunAgainOn() != null) {
+                data.set("runAgainOn", om.valueToTree(this.getRunAgainOn()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-cloudphone.RosRunCommandProps"));
@@ -146,13 +184,15 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
             RosRunCommandProps.Jsii$Proxy that = (RosRunCommandProps.Jsii$Proxy) o;
 
             if (!command.equals(that.command)) return false;
-            return this.instanceIds.equals(that.instanceIds);
+            if (!instanceIds.equals(that.instanceIds)) return false;
+            return this.runAgainOn != null ? this.runAgainOn.equals(that.runAgainOn) : that.runAgainOn == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.command.hashCode();
             result = 31 * result + (this.instanceIds.hashCode());
+            result = 31 * result + (this.runAgainOn != null ? this.runAgainOn.hashCode() : 0);
             return result;
         }
     }

@@ -1102,7 +1102,7 @@ function rosApplyConfigToMachineGroupPropsToRosTemplate(properties: any, enableR
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::ApplyConfigToMachineGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::ApplyConfigToMachineGroup`, which is used to apply Log Service configurations to machine groups.
  * @Note This class does not contain additional functions, so it is recommended to use the `ApplyConfigToMachineGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-applyconfigtomachinegroup
  */
@@ -2827,7 +2827,7 @@ function rosIndexPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Index`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Index`, which is used to create an index for a specified Logstore.
  * @Note This class does not contain additional functions, so it is recommended to use the `Index` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-index
  */
@@ -4030,7 +4030,7 @@ function rosMachineGroupPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::MachineGroup`, which is used to create a machine group. Log Service manages all the ECS instances whose logs need to be collected using the Logtail client in the form of machine groups.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::MachineGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `MachineGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-machinegroup
  */
@@ -4412,7 +4412,7 @@ function rosProjectPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Project`, which is used to create a Log Service project.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Project`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Project` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-project
  */
@@ -4578,7 +4578,7 @@ function rosSavedsearchPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Savedsearch`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Savedsearch`, which is used to save search results as a saved search.
  * @Note This class does not contain additional functions, so it is recommended to use the `Savedsearch` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-savedsearch
  */

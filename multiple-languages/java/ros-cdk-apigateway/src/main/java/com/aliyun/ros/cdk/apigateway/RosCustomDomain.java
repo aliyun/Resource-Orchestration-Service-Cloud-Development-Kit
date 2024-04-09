@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ApiGateway::CustomDomain</code>, which is used to bind a custom domain name and upload an SSL certificate to a specified API group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:49.993Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:30.502Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.RosCustomDomain")
 public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
 

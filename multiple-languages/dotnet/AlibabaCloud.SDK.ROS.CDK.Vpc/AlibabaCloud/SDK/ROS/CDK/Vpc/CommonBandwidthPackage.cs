@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::VPC::CommonBandwidthPackage`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::VPC::CommonBandwidthPackage`, which is used to create an elastic IP address (EIP) bandwidth plan.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCommonBandwidthPackage`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-commonbandwidthpackage

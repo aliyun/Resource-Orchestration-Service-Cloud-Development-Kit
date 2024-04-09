@@ -2409,7 +2409,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: period: The subscription period of nodes in the node pool. This parameter takes effect and is required only when InstanceChargeType is set to PrePaid. If PeriodUnit=Month is configured, the valid values are: 1, 2, 3, 6, and 12.
+            /// <strong>Property</strong>: period: The subscription period of nodes in the node pool. This parameter takes effect and is required only when InstanceChargeType is set to PrePaid. When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
+            /// When PeriodUnit = Month, Period values are: {"1", "2", "3", "6", "12", "24", "36"}
+            /// When PeriodUnit = Year, Period values are: {"1", "2", "3"}
             /// Default value: 1.
             /// </remarks>
             [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -2423,7 +2425,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: periodUnit: The unit of the subscription period of nodes in the node pool. This parameter is required if you set InstanceChargeType to PrePaid. A value of Month specifies that the subscription period is measured in months.
+            /// <strong>Property</strong>: periodUnit: The unit of the subscription period of nodes in the node pool. This parameter is required if you set InstanceChargeType to PrePaid. The options are:
+            /// Week: Time is measured in weeks
+            /// Month: time in months
+            /// Year: time in years
+            /// Default to Month
             /// </remarks>
             [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -2790,7 +2796,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: period: The subscription period of nodes in the node pool. This parameter takes effect and is required only when InstanceChargeType is set to PrePaid. If PeriodUnit=Month is configured, the valid values are: 1, 2, 3, 6, and 12.
+                /// <strong>Property</strong>: period: The subscription period of nodes in the node pool. This parameter takes effect and is required only when InstanceChargeType is set to PrePaid. When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
+                /// When PeriodUnit = Month, Period values are: {"1", "2", "3", "6", "12", "24", "36"}
+                /// When PeriodUnit = Year, Period values are: {"1", "2", "3"}
                 /// Default value: 1.
                 /// </remarks>
                 [JsiiOptional]
@@ -2801,7 +2809,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: periodUnit: The unit of the subscription period of nodes in the node pool. This parameter is required if you set InstanceChargeType to PrePaid. A value of Month specifies that the subscription period is measured in months.
+                /// <strong>Property</strong>: periodUnit: The unit of the subscription period of nodes in the node pool. This parameter is required if you set InstanceChargeType to PrePaid. The options are:
+                /// Week: Time is measured in weeks
+                /// Month: time in months
+                /// Year: time in years
+                /// Default to Month
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -3649,7 +3661,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             private object? _period;
 
             /// <remarks>
-            /// <strong>Property</strong>: period: The subscription period of nodes in the node pool. This parameter takes effect and is required only when InstanceChargeType is set to PrePaid. If PeriodUnit=Month is configured, the valid values are: 1, 2, 3, 6, and 12.
+            /// <strong>Property</strong>: period: The subscription period of nodes in the node pool. This parameter takes effect and is required only when InstanceChargeType is set to PrePaid. When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
+            /// When PeriodUnit = Month, Period values are: {"1", "2", "3", "6", "12", "24", "36"}
+            /// When PeriodUnit = Year, Period values are: {"1", "2", "3"}
             /// Default value: 1.
             /// </remarks>
             [JsiiOptional]
@@ -3703,7 +3717,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             private object? _periodUnit;
 
             /// <remarks>
-            /// <strong>Property</strong>: periodUnit: The unit of the subscription period of nodes in the node pool. This parameter is required if you set InstanceChargeType to PrePaid. A value of Month specifies that the subscription period is measured in months.
+            /// <strong>Property</strong>: periodUnit: The unit of the subscription period of nodes in the node pool. This parameter is required if you set InstanceChargeType to PrePaid. The options are:
+            /// Week: Time is measured in weeks
+            /// Month: time in months
+            /// Year: time in years
+            /// Default to Month
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

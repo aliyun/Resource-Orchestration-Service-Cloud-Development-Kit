@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ESS::ScalingGroupEnable</code>, which is used to enable a scaling group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:52.463Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:33.025Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScalingGroupEnable")
 public class RosScalingGroupEnable extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -163,18 +163,29 @@ public class RosScalingGroupEnable extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public void setInstanceIds(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
-        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
-            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
-                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
-            }
-        }
+    public void setInstanceIds(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "instanceIds", value);
     }
 
     /**
      */
-    public void setInstanceIds(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+    public void setInstanceIds(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "instanceIds", value);
     }
 
@@ -186,18 +197,29 @@ public class RosScalingGroupEnable extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public void setRemoveInstanceIds(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
-        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
-            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
-                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
-            }
-        }
+    public void setRemoveInstanceIds(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "removeInstanceIds", value);
     }
 
     /**
      */
-    public void setRemoveInstanceIds(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+    public void setRemoveInstanceIds(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "removeInstanceIds", value);
     }
 
@@ -227,18 +249,29 @@ public class RosScalingGroupEnable extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public void setScalingRuleAris(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
-        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
-            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
-                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
-            }
-        }
+    public void setScalingRuleAris(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "scalingRuleAris", value);
     }
 
     /**
      */
-    public void setScalingRuleAris(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+    public void setScalingRuleAris(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "scalingRuleAris", value);
     }
 
@@ -728,7 +761,7 @@ public class RosScalingGroupEnable extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param instanceIds This parameter is required.
          */
-        public Builder instanceIds(final java.util.List<? extends java.lang.Object> instanceIds) {
+        public Builder instanceIds(final com.aliyun.ros.cdk.core.IResolvable instanceIds) {
             this.props.instanceIds(instanceIds);
             return this;
         }
@@ -736,7 +769,7 @@ public class RosScalingGroupEnable extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param instanceIds This parameter is required.
          */
-        public Builder instanceIds(final com.aliyun.ros.cdk.core.IResolvable instanceIds) {
+        public Builder instanceIds(final java.util.List<? extends java.lang.Object> instanceIds) {
             this.props.instanceIds(instanceIds);
             return this;
         }
@@ -745,7 +778,7 @@ public class RosScalingGroupEnable extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param removeInstanceIds This parameter is required.
          */
-        public Builder removeInstanceIds(final java.util.List<? extends java.lang.Object> removeInstanceIds) {
+        public Builder removeInstanceIds(final com.aliyun.ros.cdk.core.IResolvable removeInstanceIds) {
             this.props.removeInstanceIds(removeInstanceIds);
             return this;
         }
@@ -753,7 +786,7 @@ public class RosScalingGroupEnable extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param removeInstanceIds This parameter is required.
          */
-        public Builder removeInstanceIds(final com.aliyun.ros.cdk.core.IResolvable removeInstanceIds) {
+        public Builder removeInstanceIds(final java.util.List<? extends java.lang.Object> removeInstanceIds) {
             this.props.removeInstanceIds(removeInstanceIds);
             return this;
         }
@@ -779,7 +812,7 @@ public class RosScalingGroupEnable extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param scalingRuleAris This parameter is required.
          */
-        public Builder scalingRuleAris(final java.util.List<? extends java.lang.Object> scalingRuleAris) {
+        public Builder scalingRuleAris(final com.aliyun.ros.cdk.core.IResolvable scalingRuleAris) {
             this.props.scalingRuleAris(scalingRuleAris);
             return this;
         }
@@ -787,7 +820,7 @@ public class RosScalingGroupEnable extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param scalingRuleAris This parameter is required.
          */
-        public Builder scalingRuleAris(final com.aliyun.ros.cdk.core.IResolvable scalingRuleAris) {
+        public Builder scalingRuleAris(final java.util.List<? extends java.lang.Object> scalingRuleAris) {
             this.props.scalingRuleAris(scalingRuleAris);
             return this;
         }

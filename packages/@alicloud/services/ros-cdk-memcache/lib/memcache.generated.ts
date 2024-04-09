@@ -165,6 +165,12 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('capacity', ros.validateNumber)(properties.capacity));
     errors.collect(ros.propertyValidator('autoUseCoupon', ros.validateString)(properties.autoUseCoupon));
+    if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
+          data: properties.chargeType,
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
+        }));
+    }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
     errors.collect(ros.propertyValidator('networkType', ros.validateString)(properties.networkType));
     errors.collect(ros.propertyValidator('backupPolicy', RosInstance_BackupPolicyPropertyValidator)(properties.backupPolicy));

@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::VPC::EIP`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::VPC::EIP`, which is used to apply for an elastic IP address (EIP).</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEIP`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eip

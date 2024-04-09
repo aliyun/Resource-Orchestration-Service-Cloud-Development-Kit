@@ -1,9 +1,13 @@
+@alicloud/ros-cdk-ros.Assert=com.aliyun.ros.cdk.ros.Assert
+@alicloud/ros-cdk-ros.AssertProps=com.aliyun.ros.cdk.ros.AssertProps
 @alicloud/ros-cdk-ros.AutoEnableService=com.aliyun.ros.cdk.ros.AutoEnableService
 @alicloud/ros-cdk-ros.AutoEnableServiceProps=com.aliyun.ros.cdk.ros.AutoEnableServiceProps
 @alicloud/ros-cdk-ros.CustomResource=com.aliyun.ros.cdk.ros.CustomResource
 @alicloud/ros-cdk-ros.CustomResourceProps=com.aliyun.ros.cdk.ros.CustomResourceProps
 @alicloud/ros-cdk-ros.ResourceCleaner=com.aliyun.ros.cdk.ros.ResourceCleaner
 @alicloud/ros-cdk-ros.ResourceCleanerProps=com.aliyun.ros.cdk.ros.ResourceCleanerProps
+@alicloud/ros-cdk-ros.RosAssert=com.aliyun.ros.cdk.ros.RosAssert
+@alicloud/ros-cdk-ros.RosAssertProps=com.aliyun.ros.cdk.ros.RosAssertProps
 @alicloud/ros-cdk-ros.RosAutoEnableService=com.aliyun.ros.cdk.ros.RosAutoEnableService
 @alicloud/ros-cdk-ros.RosAutoEnableServiceProps=com.aliyun.ros.cdk.ros.RosAutoEnableServiceProps
 @alicloud/ros-cdk-ros.RosCustomResource=com.aliyun.ros.cdk.ros.RosCustomResource

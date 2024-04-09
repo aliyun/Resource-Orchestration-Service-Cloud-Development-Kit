@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dbs.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::DBS::BackupPlans</code>, which is used to query the information about backup schedules.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:51.126Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:31.520Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dbs.$Module.class, fqn = "@alicloud/ros-cdk-dbs.datasource.BackupPlans")
 public class BackupPlans extends com.aliyun.ros.cdk.core.Resource {
 

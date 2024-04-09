@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ECS::Disk</code>, which is used to create a cloud disk for an Elastic Compute Service (ECS) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:51.780Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:32.227Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosDisk")
 public class RosDisk extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -63,24 +63,6 @@ public class RosDisk extends com.aliyun.ros.cdk.core.RosResource {
 
     public void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
         software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getZoneId() {
-        return software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setZoneId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "zoneId", java.util.Objects.requireNonNull(value, "zoneId is required"));
-    }
-
-    /**
-     */
-    public void setZoneId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "zoneId", java.util.Objects.requireNonNull(value, "zoneId is required"));
     }
 
     /**
@@ -207,6 +189,24 @@ public class RosDisk extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setEncrypted(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "encrypted", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setInstanceId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "instanceId", value);
+    }
+
+    /**
+     */
+    public void setInstanceId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "instanceId", value);
     }
 
     /**
@@ -381,6 +381,24 @@ public class RosDisk extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setTags(final @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ecs.RosDisk.TagsProperty> value) {
         software.amazon.jsii.Kernel.set(this, "tags", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
+        return software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setZoneId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "zoneId", value);
+    }
+
+    /**
+     */
+    public void setZoneId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "zoneId", value);
     }
     /**
      */
@@ -579,23 +597,6 @@ public class RosDisk extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param zoneId This parameter is required.
-         */
-        public Builder zoneId(final java.lang.String zoneId) {
-            this.props.zoneId(zoneId);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param zoneId This parameter is required.
-         */
-        public Builder zoneId(final com.aliyun.ros.cdk.core.IResolvable zoneId) {
-            this.props.zoneId(zoneId);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param autoSnapshotPolicyId This parameter is required.
          */
         public Builder autoSnapshotPolicyId(final java.lang.String autoSnapshotPolicyId) {
@@ -710,6 +711,23 @@ public class RosDisk extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder encrypted(final com.aliyun.ros.cdk.core.IResolvable encrypted) {
             this.props.encrypted(encrypted);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param instanceId This parameter is required.
+         */
+        public Builder instanceId(final java.lang.String instanceId) {
+            this.props.instanceId(instanceId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param instanceId This parameter is required.
+         */
+        public Builder instanceId(final com.aliyun.ros.cdk.core.IResolvable instanceId) {
+            this.props.instanceId(instanceId);
             return this;
         }
 
@@ -872,6 +890,23 @@ public class RosDisk extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosDisk.TagsProperty> tags) {
             this.props.tags(tags);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param zoneId This parameter is required.
+         */
+        public Builder zoneId(final java.lang.String zoneId) {
+            this.props.zoneId(zoneId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param zoneId This parameter is required.
+         */
+        public Builder zoneId(final com.aliyun.ros.cdk.core.IResolvable zoneId) {
+            this.props.zoneId(zoneId);
             return this;
         }
 

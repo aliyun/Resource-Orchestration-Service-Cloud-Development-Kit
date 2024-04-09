@@ -21,16 +21,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: description: Description
+        /// <strong>Property</strong>: configRules:
         /// </remarks>
-        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object Description
+        [JsiiProperty(name: "configRules", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ConfigRules
         {
             get;
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: riskLevel: Ris Level
+        /// <strong>Property</strong>: riskLevel: Ris Level, valid values: 1 | 2 | 3
         /// </remarks>
         [JsiiProperty(name: "riskLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object RiskLevel
@@ -52,11 +52,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: configRules: Config Rule List
+        /// <strong>Property</strong>: configRuleIds: Compliance Package rule ID list
         /// </remarks>
-        [JsiiProperty(name: "configRules", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-config.RosCompliancePack.ConfigRulesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [JsiiProperty(name: "configRuleIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-config.RosCompliancePack.ConfigRuleIdsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? ConfigRules
+        object? ConfigRuleIds
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: description: Description
+        /// </remarks>
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Description
         {
             get
             {
@@ -85,16 +98,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: description: Description
+            /// <strong>Property</strong>: configRules:
             /// </remarks>
-            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object Description
+            [JsiiProperty(name: "configRules", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ConfigRules
             {
                 get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: riskLevel: Ris Level
+            /// <strong>Property</strong>: riskLevel: Ris Level, valid values: 1 | 2 | 3
             /// </remarks>
             [JsiiProperty(name: "riskLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object RiskLevel
@@ -113,11 +126,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: configRules: Config Rule List
+            /// <strong>Property</strong>: configRuleIds: Compliance Package rule ID list
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "configRules", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-config.RosCompliancePack.ConfigRulesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
-            public object? ConfigRules
+            [JsiiProperty(name: "configRuleIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-config.RosCompliancePack.ConfigRuleIdsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? ConfigRuleIds
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: description: Description
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Description
             {
                 get => GetInstanceProperty<object?>();
             }

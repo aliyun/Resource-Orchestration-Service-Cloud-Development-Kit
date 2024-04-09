@@ -1,3 +1,4 @@
+export * from './assert';
 export * from './autoenableservice';
 export * from './customresource';
 export * from './resourcecleaner';

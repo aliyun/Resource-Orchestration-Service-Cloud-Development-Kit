@@ -116,6 +116,327 @@ export class RosAccounts extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-instance
+ */
+export interface RosInstanceProps {
+
+    /**
+     * @Property dbInstanceId: Database instance id.
+     */
+    readonly dbInstanceId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosInstanceProps`
+ *
+ * @param properties - the TypeScript properties of a `RosInstanceProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstancePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('dbInstanceId', ros.requiredValidator)(properties.dbInstanceId));
+    errors.collect(ros.propertyValidator('dbInstanceId', ros.validateString)(properties.dbInstanceId));
+    return errors.wrap('supplied properties not correct for "RosInstanceProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::REDIS::Instance` resource
+ *
+ * @param properties - the TypeScript properties of a `RosInstanceProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::REDIS::Instance` resource.
+ */
+// @ts-ignore TS6133
+function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosInstancePropsValidator(properties).assertSuccess();
+    }
+    return {
+      DBInstanceId: ros.stringToRosTemplate(properties.dbInstanceId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::REDIS::Instance`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-instance
+ */
+export class RosInstance extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::REDIS::Instance";
+
+    /**
+     * @Attribute ArchitectureType: Architecture type.
+     */
+    public readonly attrArchitectureType: ros.IResolvable;
+
+    /**
+     * @Attribute Bandwidth: Bandwidth.
+     */
+    public readonly attrBandwidth: ros.IResolvable;
+
+    /**
+     * @Attribute Capacity: Capacity.
+     */
+    public readonly attrCapacity: ros.IResolvable;
+
+    /**
+     * @Attribute CloudType: Cloud category.
+     */
+    public readonly attrCloudType: ros.IResolvable;
+
+    /**
+     * @Attribute Config: Config.
+     */
+    public readonly attrConfig: ros.IResolvable;
+
+    /**
+     * @Attribute ConnectionDomain: Connection domain.
+     */
+    public readonly attrConnectionDomain: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: Create time.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute DBInstanceId: Database instance id.
+     */
+    public readonly attrDbInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute DBInstanceName: Instance name.
+     */
+    public readonly attrDbInstanceName: ros.IResolvable;
+
+    /**
+     * @Attribute EndTime: End time.
+     */
+    public readonly attrEndTime: ros.IResolvable;
+
+    /**
+     * @Attribute EngineVersion: Engine version.
+     */
+    public readonly attrEngineVersion: ros.IResolvable;
+
+    /**
+     * @Attribute HasRenewChangeOrder: Has renew change order.
+     */
+    public readonly attrHasRenewChangeOrder: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceClass: Instance class.
+     */
+    public readonly attrInstanceClass: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceReleaseProtection: Instance release protection.
+     */
+    public readonly attrInstanceReleaseProtection: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceType: Instance type.
+     */
+    public readonly attrInstanceType: ros.IResolvable;
+
+    /**
+     * @Attribute IsRds: is RDS.
+     */
+    public readonly attrIsRds: ros.IResolvable;
+
+    /**
+     * @Attribute MaintainEndTime: Maintain end time.
+     */
+    public readonly attrMaintainEndTime: ros.IResolvable;
+
+    /**
+     * @Attribute MaintainStartTime: Maintain start time.
+     */
+    public readonly attrMaintainStartTime: ros.IResolvable;
+
+    /**
+     * @Attribute NetworkType: Network type.
+     */
+    public readonly attrNetworkType: ros.IResolvable;
+
+    /**
+     * @Attribute PackageType: Package type.
+     */
+    public readonly attrPackageType: ros.IResolvable;
+
+    /**
+     * @Attribute PaymentType: Payment type.
+     */
+    public readonly attrPaymentType: ros.IResolvable;
+
+    /**
+     * @Attribute Port: Port.
+     */
+    public readonly attrPort: ros.IResolvable;
+
+    /**
+     * @Attribute PrivateIp: Private IP.
+     */
+    public readonly attrPrivateIp: ros.IResolvable;
+
+    /**
+     * @Attribute Qps: QPS.
+     */
+    public readonly attrQps: ros.IResolvable;
+
+    /**
+     * @Attribute ReadOnlyCount: The number of read-only nodes. This parameter is only applicable to the creation of read-write splitting instances in the cloud disk version. You can use this parameter to customize the number of read-only nodes. Valid values: 1 to 5.
+     */
+    public readonly attrReadOnlyCount: ros.IResolvable;
+
+    /**
+     * @Attribute ReplacateId: Replacate id.
+     */
+    public readonly attrReplacateId: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: Resource group id.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute SecondaryZoneId: The ID of the standby zone. You can call the [DescribeZones](~~ 94527 ~~) operation.
+     */
+    public readonly attrSecondaryZoneId: ros.IResolvable;
+
+    /**
+     * @Attribute SecurityGroupId: Security group id.
+     */
+    public readonly attrSecurityGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute SecurityIpGroupAttribute: Security IP group attribute.
+     */
+    public readonly attrSecurityIpGroupAttribute: ros.IResolvable;
+
+    /**
+     * @Attribute SecurityIpGroupName: Security IP group name.
+     */
+    public readonly attrSecurityIpGroupName: ros.IResolvable;
+
+    /**
+     * @Attribute SecurityIps: Security IPs.
+     */
+    public readonly attrSecurityIps: ros.IResolvable;
+
+    /**
+     * @Attribute ShardCount: The number of slices. This parameter is only applicable to creating a cloud disk cluster architecture instance. You can use this parameter to customize the number of slices.
+     */
+    public readonly attrShardCount: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: Tags.
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    /**
+     * @Attribute VSwitchId: Vswitch id.
+     */
+    public readonly attrVSwitchId: ros.IResolvable;
+
+    /**
+     * @Attribute VpcAuthMode: Vpc auth mode.
+     */
+    public readonly attrVpcAuthMode: ros.IResolvable;
+
+    /**
+     * @Attribute VpcCloudInstanceId: Vpc cloud instance id.
+     */
+    public readonly attrVpcCloudInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute VpcId: Vpc id.
+     */
+    public readonly attrVpcId: ros.IResolvable;
+
+    /**
+     * @Attribute ZoneId: Zone id.
+     */
+    public readonly attrZoneId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property dbInstanceId: Database instance id.
+     */
+    public dbInstanceId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosInstanceProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArchitectureType = this.getAtt('ArchitectureType');
+        this.attrBandwidth = this.getAtt('Bandwidth');
+        this.attrCapacity = this.getAtt('Capacity');
+        this.attrCloudType = this.getAtt('CloudType');
+        this.attrConfig = this.getAtt('Config');
+        this.attrConnectionDomain = this.getAtt('ConnectionDomain');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDbInstanceId = this.getAtt('DBInstanceId');
+        this.attrDbInstanceName = this.getAtt('DBInstanceName');
+        this.attrEndTime = this.getAtt('EndTime');
+        this.attrEngineVersion = this.getAtt('EngineVersion');
+        this.attrHasRenewChangeOrder = this.getAtt('HasRenewChangeOrder');
+        this.attrInstanceClass = this.getAtt('InstanceClass');
+        this.attrInstanceReleaseProtection = this.getAtt('InstanceReleaseProtection');
+        this.attrInstanceType = this.getAtt('InstanceType');
+        this.attrIsRds = this.getAtt('IsRds');
+        this.attrMaintainEndTime = this.getAtt('MaintainEndTime');
+        this.attrMaintainStartTime = this.getAtt('MaintainStartTime');
+        this.attrNetworkType = this.getAtt('NetworkType');
+        this.attrPackageType = this.getAtt('PackageType');
+        this.attrPaymentType = this.getAtt('PaymentType');
+        this.attrPort = this.getAtt('Port');
+        this.attrPrivateIp = this.getAtt('PrivateIp');
+        this.attrQps = this.getAtt('Qps');
+        this.attrReadOnlyCount = this.getAtt('ReadOnlyCount');
+        this.attrReplacateId = this.getAtt('ReplacateId');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrSecondaryZoneId = this.getAtt('SecondaryZoneId');
+        this.attrSecurityGroupId = this.getAtt('SecurityGroupId');
+        this.attrSecurityIpGroupAttribute = this.getAtt('SecurityIpGroupAttribute');
+        this.attrSecurityIpGroupName = this.getAtt('SecurityIpGroupName');
+        this.attrSecurityIps = this.getAtt('SecurityIps');
+        this.attrShardCount = this.getAtt('ShardCount');
+        this.attrTags = this.getAtt('Tags');
+        this.attrVSwitchId = this.getAtt('VSwitchId');
+        this.attrVpcAuthMode = this.getAtt('VpcAuthMode');
+        this.attrVpcCloudInstanceId = this.getAtt('VpcCloudInstanceId');
+        this.attrVpcId = this.getAtt('VpcId');
+        this.attrZoneId = this.getAtt('ZoneId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.dbInstanceId = props.dbInstanceId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            dbInstanceId: this.dbInstanceId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosInstancePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosInstanceClasses`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-instanceclasses
  */

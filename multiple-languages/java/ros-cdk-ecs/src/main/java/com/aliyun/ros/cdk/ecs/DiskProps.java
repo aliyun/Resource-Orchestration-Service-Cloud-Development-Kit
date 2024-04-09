@@ -5,15 +5,10 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-disk
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:51.592Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:32.012Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.DiskProps")
 @software.amazon.jsii.Jsii.Proxy(DiskProps.Jsii$Proxy.class)
 public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
-
-    /**
-     * Property zoneId: The availability zone in which the volume will be created.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getZoneId();
 
     /**
      * Property autoSnapshotPolicyId: Auto snapshot policy ID.
@@ -65,6 +60,19 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
      * Property encrypted: Whether disk is encrypted, default to false.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEncrypted() {
+        return null;
+    }
+
+    /**
+     * Property instanceId: Create a cloud disk and automatically mount it to the specified InstanceId.
+     * <p>
+     * <ul>
+     * <li>Once the instance ID is set, the ResourceGroupId, Tags, and KMSKeyId parameters you set are ignored.</li>
+     * <li>You cannot specify both ZoneId and InstanceId.
+     * Default value: null, meaning that a pay-as-you-go cloud drive is created, and the region of the drive is defined by the RegionId and ZoneId.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceId() {
         return null;
     }
 
@@ -146,6 +154,18 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property zoneId: Create a pay-as-you-go cloud drive within the specified availability area.
+     * <p>
+     * <ul>
+     * <li>If you do not set InstanceId, ZoneId is required.</li>
+     * <li>You cannot specify both ZoneId and InstanceId.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link DiskProps}
      */
     static Builder builder() {
@@ -155,7 +175,6 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link DiskProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<DiskProps> {
-        java.lang.Object zoneId;
         java.lang.Object autoSnapshotPolicyId;
         java.lang.Object burstingEnabled;
         java.lang.Object deleteAutoSnapshot;
@@ -163,6 +182,7 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object diskCategory;
         java.lang.Object diskName;
         java.lang.Object encrypted;
+        java.lang.Object instanceId;
         java.lang.Object kmsKeyId;
         java.lang.Object multiAttach;
         java.lang.Object performanceLevel;
@@ -173,26 +193,7 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object storageSetId;
         java.lang.Object storageSetPartitionNumber;
         java.util.List<com.aliyun.ros.cdk.ecs.RosDisk.TagsProperty> tags;
-
-        /**
-         * Sets the value of {@link DiskProps#getZoneId}
-         * @param zoneId Property zoneId: The availability zone in which the volume will be created. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder zoneId(java.lang.String zoneId) {
-            this.zoneId = zoneId;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link DiskProps#getZoneId}
-         * @param zoneId Property zoneId: The availability zone in which the volume will be created. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {
-            this.zoneId = zoneId;
-            return this;
-        }
+        java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link DiskProps#getAutoSnapshotPolicyId}
@@ -335,6 +336,36 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder encrypted(com.aliyun.ros.cdk.core.IResolvable encrypted) {
             this.encrypted = encrypted;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DiskProps#getInstanceId}
+         * @param instanceId Property instanceId: Create a cloud disk and automatically mount it to the specified InstanceId.
+         *                   <ul>
+         *                   <li>Once the instance ID is set, the ResourceGroupId, Tags, and KMSKeyId parameters you set are ignored.</li>
+         *                   <li>You cannot specify both ZoneId and InstanceId.
+         *                   Default value: null, meaning that a pay-as-you-go cloud drive is created, and the region of the drive is defined by the RegionId and ZoneId.</li>
+         *                   </ul>
+         * @return {@code this}
+         */
+        public Builder instanceId(java.lang.String instanceId) {
+            this.instanceId = instanceId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DiskProps#getInstanceId}
+         * @param instanceId Property instanceId: Create a cloud disk and automatically mount it to the specified InstanceId.
+         *                   <ul>
+         *                   <li>Once the instance ID is set, the ResourceGroupId, Tags, and KMSKeyId parameters you set are ignored.</li>
+         *                   <li>You cannot specify both ZoneId and InstanceId.
+         *                   Default value: null, meaning that a pay-as-you-go cloud drive is created, and the region of the drive is defined by the RegionId and ZoneId.</li>
+         *                   </ul>
+         * @return {@code this}
+         */
+        public Builder instanceId(com.aliyun.ros.cdk.core.IResolvable instanceId) {
+            this.instanceId = instanceId;
             return this;
         }
 
@@ -539,6 +570,34 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link DiskProps#getZoneId}
+         * @param zoneId Property zoneId: Create a pay-as-you-go cloud drive within the specified availability area.
+         *               <ul>
+         *               <li>If you do not set InstanceId, ZoneId is required.</li>
+         *               <li>You cannot specify both ZoneId and InstanceId.</li>
+         *               </ul>
+         * @return {@code this}
+         */
+        public Builder zoneId(java.lang.String zoneId) {
+            this.zoneId = zoneId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DiskProps#getZoneId}
+         * @param zoneId Property zoneId: Create a pay-as-you-go cloud drive within the specified availability area.
+         *               <ul>
+         *               <li>If you do not set InstanceId, ZoneId is required.</li>
+         *               <li>You cannot specify both ZoneId and InstanceId.</li>
+         *               </ul>
+         * @return {@code this}
+         */
+        public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {
+            this.zoneId = zoneId;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link DiskProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -554,7 +613,6 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DiskProps {
-        private final java.lang.Object zoneId;
         private final java.lang.Object autoSnapshotPolicyId;
         private final java.lang.Object burstingEnabled;
         private final java.lang.Object deleteAutoSnapshot;
@@ -562,6 +620,7 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object diskCategory;
         private final java.lang.Object diskName;
         private final java.lang.Object encrypted;
+        private final java.lang.Object instanceId;
         private final java.lang.Object kmsKeyId;
         private final java.lang.Object multiAttach;
         private final java.lang.Object performanceLevel;
@@ -572,6 +631,7 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object storageSetId;
         private final java.lang.Object storageSetPartitionNumber;
         private final java.util.List<com.aliyun.ros.cdk.ecs.RosDisk.TagsProperty> tags;
+        private final java.lang.Object zoneId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -579,7 +639,6 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoSnapshotPolicyId = software.amazon.jsii.Kernel.get(this, "autoSnapshotPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.burstingEnabled = software.amazon.jsii.Kernel.get(this, "burstingEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deleteAutoSnapshot = software.amazon.jsii.Kernel.get(this, "deleteAutoSnapshot", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -587,6 +646,7 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
             this.diskCategory = software.amazon.jsii.Kernel.get(this, "diskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.diskName = software.amazon.jsii.Kernel.get(this, "diskName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.encrypted = software.amazon.jsii.Kernel.get(this, "encrypted", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.kmsKeyId = software.amazon.jsii.Kernel.get(this, "kmsKeyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.multiAttach = software.amazon.jsii.Kernel.get(this, "multiAttach", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.performanceLevel = software.amazon.jsii.Kernel.get(this, "performanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -597,6 +657,7 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
             this.storageSetId = software.amazon.jsii.Kernel.get(this, "storageSetId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.storageSetPartitionNumber = software.amazon.jsii.Kernel.get(this, "storageSetPartitionNumber", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosDisk.TagsProperty.class)));
+            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -605,7 +666,6 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
         @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.zoneId = java.util.Objects.requireNonNull(builder.zoneId, "zoneId is required");
             this.autoSnapshotPolicyId = builder.autoSnapshotPolicyId;
             this.burstingEnabled = builder.burstingEnabled;
             this.deleteAutoSnapshot = builder.deleteAutoSnapshot;
@@ -613,6 +673,7 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
             this.diskCategory = builder.diskCategory;
             this.diskName = builder.diskName;
             this.encrypted = builder.encrypted;
+            this.instanceId = builder.instanceId;
             this.kmsKeyId = builder.kmsKeyId;
             this.multiAttach = builder.multiAttach;
             this.performanceLevel = builder.performanceLevel;
@@ -623,11 +684,7 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
             this.storageSetId = builder.storageSetId;
             this.storageSetPartitionNumber = builder.storageSetPartitionNumber;
             this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosDisk.TagsProperty>)builder.tags;
-        }
-
-        @Override
-        public final java.lang.Object getZoneId() {
-            return this.zoneId;
+            this.zoneId = builder.zoneId;
         }
 
         @Override
@@ -663,6 +720,11 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getEncrypted() {
             return this.encrypted;
+        }
+
+        @Override
+        public final java.lang.Object getInstanceId() {
+            return this.instanceId;
         }
 
         @Override
@@ -716,12 +778,16 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getZoneId() {
+            return this.zoneId;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
-            data.set("zoneId", om.valueToTree(this.getZoneId()));
             if (this.getAutoSnapshotPolicyId() != null) {
                 data.set("autoSnapshotPolicyId", om.valueToTree(this.getAutoSnapshotPolicyId()));
             }
@@ -742,6 +808,9 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getEncrypted() != null) {
                 data.set("encrypted", om.valueToTree(this.getEncrypted()));
+            }
+            if (this.getInstanceId() != null) {
+                data.set("instanceId", om.valueToTree(this.getInstanceId()));
             }
             if (this.getKmsKeyId() != null) {
                 data.set("kmsKeyId", om.valueToTree(this.getKmsKeyId()));
@@ -773,6 +842,9 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
             }
+            if (this.getZoneId() != null) {
+                data.set("zoneId", om.valueToTree(this.getZoneId()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ecs.DiskProps"));
@@ -791,7 +863,6 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
 
             DiskProps.Jsii$Proxy that = (DiskProps.Jsii$Proxy) o;
 
-            if (!zoneId.equals(that.zoneId)) return false;
             if (this.autoSnapshotPolicyId != null ? !this.autoSnapshotPolicyId.equals(that.autoSnapshotPolicyId) : that.autoSnapshotPolicyId != null) return false;
             if (this.burstingEnabled != null ? !this.burstingEnabled.equals(that.burstingEnabled) : that.burstingEnabled != null) return false;
             if (this.deleteAutoSnapshot != null ? !this.deleteAutoSnapshot.equals(that.deleteAutoSnapshot) : that.deleteAutoSnapshot != null) return false;
@@ -799,6 +870,7 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
             if (this.diskCategory != null ? !this.diskCategory.equals(that.diskCategory) : that.diskCategory != null) return false;
             if (this.diskName != null ? !this.diskName.equals(that.diskName) : that.diskName != null) return false;
             if (this.encrypted != null ? !this.encrypted.equals(that.encrypted) : that.encrypted != null) return false;
+            if (this.instanceId != null ? !this.instanceId.equals(that.instanceId) : that.instanceId != null) return false;
             if (this.kmsKeyId != null ? !this.kmsKeyId.equals(that.kmsKeyId) : that.kmsKeyId != null) return false;
             if (this.multiAttach != null ? !this.multiAttach.equals(that.multiAttach) : that.multiAttach != null) return false;
             if (this.performanceLevel != null ? !this.performanceLevel.equals(that.performanceLevel) : that.performanceLevel != null) return false;
@@ -808,19 +880,20 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
             if (this.snapshotId != null ? !this.snapshotId.equals(that.snapshotId) : that.snapshotId != null) return false;
             if (this.storageSetId != null ? !this.storageSetId.equals(that.storageSetId) : that.storageSetId != null) return false;
             if (this.storageSetPartitionNumber != null ? !this.storageSetPartitionNumber.equals(that.storageSetPartitionNumber) : that.storageSetPartitionNumber != null) return false;
-            return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
+            if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
+            return this.zoneId != null ? this.zoneId.equals(that.zoneId) : that.zoneId == null;
         }
 
         @Override
         public final int hashCode() {
-            int result = this.zoneId.hashCode();
-            result = 31 * result + (this.autoSnapshotPolicyId != null ? this.autoSnapshotPolicyId.hashCode() : 0);
+            int result = this.autoSnapshotPolicyId != null ? this.autoSnapshotPolicyId.hashCode() : 0;
             result = 31 * result + (this.burstingEnabled != null ? this.burstingEnabled.hashCode() : 0);
             result = 31 * result + (this.deleteAutoSnapshot != null ? this.deleteAutoSnapshot.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.diskCategory != null ? this.diskCategory.hashCode() : 0);
             result = 31 * result + (this.diskName != null ? this.diskName.hashCode() : 0);
             result = 31 * result + (this.encrypted != null ? this.encrypted.hashCode() : 0);
+            result = 31 * result + (this.instanceId != null ? this.instanceId.hashCode() : 0);
             result = 31 * result + (this.kmsKeyId != null ? this.kmsKeyId.hashCode() : 0);
             result = 31 * result + (this.multiAttach != null ? this.multiAttach.hashCode() : 0);
             result = 31 * result + (this.performanceLevel != null ? this.performanceLevel.hashCode() : 0);
@@ -831,6 +904,7 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.storageSetId != null ? this.storageSetId.hashCode() : 0);
             result = 31 * result + (this.storageSetPartitionNumber != null ? this.storageSetPartitionNumber.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
+            result = 31 * result + (this.zoneId != null ? this.zoneId.hashCode() : 0);
             return result;
         }
     }

@@ -56,7 +56,7 @@ export interface TableProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::OTS::Table`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::OTS::Table`, which is used to create a table based on a specified schema.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTable`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-table
  */

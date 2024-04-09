@@ -25,7 +25,7 @@ export interface ZonesProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::Zones`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::Zones`, which is used to query the zones in which Server Load Balancer (SLB) instances are deployed.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosZones`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-zones
  */

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.nas;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-protocolservice
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:53.216Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:33.956Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.ProtocolServiceProps")
 @software.amazon.jsii.Jsii.Proxy(ProtocolServiceProps.Jsii$Proxy.class)
 public interface ProtocolServiceProps extends software.amazon.jsii.JsiiSerializable {

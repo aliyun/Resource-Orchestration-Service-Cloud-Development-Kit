@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.nlpautoml;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlpautoml-model
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:53.319Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:34.204Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlpautoml.$Module.class, fqn = "@alicloud/ros-cdk-nlpautoml.RosModelProps")
 @software.amazon.jsii.Jsii.Proxy(RosModelProps.Jsii$Proxy.class)
 public interface RosModelProps extends software.amazon.jsii.JsiiSerializable {

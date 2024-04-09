@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.emr.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-emr-cluster2
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:52.351Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:32.849Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.emr.$Module.class, fqn = "@alicloud/ros-cdk-emr.datasource.Cluster2Props")
 @software.amazon.jsii.Jsii.Proxy(Cluster2Props.Jsii$Proxy.class)
 public interface Cluster2Props extends software.amazon.jsii.JsiiSerializable {

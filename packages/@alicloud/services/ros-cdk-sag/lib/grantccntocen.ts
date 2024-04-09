@@ -26,7 +26,7 @@ export interface GrantCcnToCenProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::GrantCcnToCen`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::GrantCcnToCen`, which is used to grant permissions on a Cloud Connect Network (CCN) instance to a Cloud Enterprise Network (CEN) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGrantCcnToCen`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-grantccntocen
  */

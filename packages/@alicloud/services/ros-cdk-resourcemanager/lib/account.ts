@@ -31,7 +31,7 @@ export interface AccountProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::Account`, which is used to create a resource account as a member account.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::Account`, which is used to create a member of the resource account type.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccount`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-account
  */

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ApiGateway::VpcAccessConfig</code>, which is used to configure the VPC authorization for an instance so that VPC API can provide services externally.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:50.030Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:30.530Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.VpcAccessConfig")
 public class VpcAccessConfig extends com.aliyun.ros.cdk.core.Resource {
 
@@ -107,20 +107,20 @@ public class VpcAccessConfig extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property instanceId: The id of the instance (ECS/SLB).
+         * Property instanceId: The id of the instance (ECS/SLB/ALB/NLB).
          * <p>
          * @return {@code this}
-         * @param instanceId Property instanceId: The id of the instance (ECS/SLB). This parameter is required.
+         * @param instanceId Property instanceId: The id of the instance (ECS/SLB/ALB/NLB). This parameter is required.
          */
         public Builder instanceId(final java.lang.String instanceId) {
             this.props.instanceId(instanceId);
             return this;
         }
         /**
-         * Property instanceId: The id of the instance (ECS/SLB).
+         * Property instanceId: The id of the instance (ECS/SLB/ALB/NLB).
          * <p>
          * @return {@code this}
-         * @param instanceId Property instanceId: The id of the instance (ECS/SLB). This parameter is required.
+         * @param instanceId Property instanceId: The id of the instance (ECS/SLB/ALB/NLB). This parameter is required.
          */
         public Builder instanceId(final com.aliyun.ros.cdk.core.IResolvable instanceId) {
             this.props.instanceId(instanceId);

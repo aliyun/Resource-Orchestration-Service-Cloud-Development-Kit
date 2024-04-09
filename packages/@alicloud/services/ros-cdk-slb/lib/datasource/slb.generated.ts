@@ -190,7 +190,7 @@ function rosDomainExtensionsPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::DomainExtensions`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::DomainExtensions`, which is used to query the domain name extensions that are added to a listener of a Server Load Balancer (SLB) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `DomainExtensions` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-domainextensions
  */
@@ -617,7 +617,7 @@ function rosRulesPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::Rules`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::Rules`, which is used to query the forwarding rules that are configured for a listener.
  * @Note This class does not contain additional functions, so it is recommended to use the `Rules` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-rules
  */
@@ -737,7 +737,7 @@ function rosTLSPoliciesPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::TLSPolicies`, which is used to query Transport Layer Security (TLS) policies.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::TLSPolicies`.
  * @Note This class does not contain additional functions, so it is recommended to use the `TLSPolicies` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-tlspolicies
  */
@@ -952,7 +952,7 @@ function rosZonesPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::Zones`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::Zones`, which is used to query the zones in which Server Load Balancer (SLB) instances are deployed.
  * @Note This class does not contain additional functions, so it is recommended to use the `Zones` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-zones
  */

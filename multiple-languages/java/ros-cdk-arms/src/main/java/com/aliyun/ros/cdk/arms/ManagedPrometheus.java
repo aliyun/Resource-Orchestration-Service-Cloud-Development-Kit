@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.arms;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ARMS::ManagedPrometheus</code>, which is used to install a Prometheus agent in a ACK Serverless (ASK) cluster or an Elastic Compute Service (ECS) cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:50.066Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:30.552Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.ManagedPrometheus")
 public class ManagedPrometheus extends com.aliyun.ros.cdk.core.Resource {
 

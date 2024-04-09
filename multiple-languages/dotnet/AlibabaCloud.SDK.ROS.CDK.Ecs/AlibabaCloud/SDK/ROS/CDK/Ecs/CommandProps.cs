@@ -77,6 +77,43 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
+        private object? _contentEncoding;
+
+        /// <summary>Property contentEncoding: The encoding mode of script content (CommandContent).</summary>
+        /// <remarks>
+        /// Valid values (case insensitive):
+        /// PlainText: The script content is not encoded, and transmitted in plaintext.
+        /// Base64: base64-encoded.
+        /// Default value: Base64. If the specified value of this parameter is invalid, Base64 is used by default.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "contentEncoding", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ContentEncoding
+        {
+            get => _contentEncoding;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _contentEncoding = value;
+            }
+        }
+
         private object? _description;
 
         /// <summary>Property description: The description of command.</summary>
@@ -170,6 +207,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                     }
                 }
                 _name = value;
+            }
+        }
+
+        private object? _resourceGroupId;
+
+        /// <summary>Property resourceGroupId: Resource group id.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ResourceGroupId
+        {
+            get => _resourceGroupId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _resourceGroupId = value;
             }
         }
 

@@ -27,12 +27,12 @@ export interface ScalingGroupEnableProps {
     /**
      * Property instanceIds: The id list of ECS instance which will be attached. Max support 1000 instances.
      */
-    readonly instanceIds?: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly instanceIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property removeInstanceIds: The id list of ECS instance which will be removed. Max support 1000 instances.
      */
-    readonly removeInstanceIds?: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly removeInstanceIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property scalingConfigurationId: The id of scaling configuration which will be activate.
@@ -44,7 +44,7 @@ export interface ScalingGroupEnableProps {
      * When creating the resource, all the scaling rule aris in the list will be executed.
      * When updating the resource, none of scaling rule aris in the list will be executed, unless ScalingRuleArisExecuteVersion is changed.
      */
-    readonly scalingRuleAris?: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly scalingRuleAris?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property scalingRuleArisExecuteVersion: The change of the property leads to the execution of all the scaling rule aris in ScalingRuleAris.

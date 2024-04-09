@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.eci;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ECI::ImageCache</code>, which is used to create an image cache.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:51.515Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:31.918Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.RosImageCache")
 public class RosImageCache extends com.aliyun.ros.cdk.core.RosResource {
 

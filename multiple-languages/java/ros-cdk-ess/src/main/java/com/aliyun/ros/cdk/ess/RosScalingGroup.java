@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ess;
  * <p>
  * A scaling group is a group of Elastic Compute Service (ECS) instances that are dynamically scaled based on the configured scenario. A scaling group does not immediately take effect after it is created. You must use ALIYUN::ESS::ScalingGroupEnable to enable the scaling group to trigger scaling activities and execute scaling rules.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:52.459Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:33.021Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScalingGroup")
 public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -201,18 +201,29 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public void setDbInstanceIds(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
-        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
-            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
-                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
-            }
-        }
+    public void setDbInstanceIds(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "dbInstanceIds", value);
     }
 
     /**
      */
-    public void setDbInstanceIds(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+    public void setDbInstanceIds(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "dbInstanceIds", value);
     }
 
@@ -402,18 +413,29 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public void setLoadBalancerIds(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
-        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
-            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
-                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
-            }
-        }
+    public void setLoadBalancerIds(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "loadBalancerIds", value);
     }
 
     /**
      */
-    public void setLoadBalancerIds(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+    public void setLoadBalancerIds(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "loadBalancerIds", value);
     }
 
@@ -531,18 +553,29 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public void setProtectedInstances(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
-        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
-            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
-                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
-            }
-        }
+    public void setProtectedInstances(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "protectedInstances", value);
     }
 
     /**
      */
-    public void setProtectedInstances(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+    public void setProtectedInstances(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "protectedInstances", value);
     }
 
@@ -554,18 +587,29 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public void setRemovalPolicys(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
-        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
-            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
-                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
-            }
-        }
+    public void setRemovalPolicys(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "removalPolicys", value);
     }
 
     /**
      */
-    public void setRemovalPolicys(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+    public void setRemovalPolicys(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "removalPolicys", value);
     }
 
@@ -667,18 +711,29 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public void setStandbyInstances(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
-        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
-            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
-                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
-            }
-        }
+    public void setStandbyInstances(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "standbyInstances", value);
     }
 
     /**
      */
-    public void setStandbyInstances(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+    public void setStandbyInstances(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "standbyInstances", value);
     }
 
@@ -720,18 +775,29 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public void setVSwitchIds(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
-        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
-            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
-                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
-            }
-        }
+    public void setVSwitchIds(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "vSwitchIds", value);
     }
 
     /**
      */
-    public void setVSwitchIds(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+    public void setVSwitchIds(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "vSwitchIds", value);
     }
     /**
@@ -1009,7 +1075,7 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder notificationTypes(java.util.List<? extends java.lang.Object> notificationTypes) {
+            public Builder notificationTypes(com.aliyun.ros.cdk.core.IResolvable notificationTypes) {
                 this.notificationTypes = notificationTypes;
                 return this;
             }
@@ -1020,7 +1086,7 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder notificationTypes(com.aliyun.ros.cdk.core.IResolvable notificationTypes) {
+            public Builder notificationTypes(java.util.List<? extends java.lang.Object> notificationTypes) {
                 this.notificationTypes = notificationTypes;
                 return this;
             }
@@ -1431,7 +1497,7 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param dbInstanceIds This parameter is required.
          */
-        public Builder dbInstanceIds(final java.util.List<? extends java.lang.Object> dbInstanceIds) {
+        public Builder dbInstanceIds(final com.aliyun.ros.cdk.core.IResolvable dbInstanceIds) {
             this.props.dbInstanceIds(dbInstanceIds);
             return this;
         }
@@ -1439,7 +1505,7 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param dbInstanceIds This parameter is required.
          */
-        public Builder dbInstanceIds(final com.aliyun.ros.cdk.core.IResolvable dbInstanceIds) {
+        public Builder dbInstanceIds(final java.util.List<? extends java.lang.Object> dbInstanceIds) {
             this.props.dbInstanceIds(dbInstanceIds);
             return this;
         }
@@ -1601,7 +1667,7 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param loadBalancerIds This parameter is required.
          */
-        public Builder loadBalancerIds(final java.util.List<? extends java.lang.Object> loadBalancerIds) {
+        public Builder loadBalancerIds(final com.aliyun.ros.cdk.core.IResolvable loadBalancerIds) {
             this.props.loadBalancerIds(loadBalancerIds);
             return this;
         }
@@ -1609,7 +1675,7 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param loadBalancerIds This parameter is required.
          */
-        public Builder loadBalancerIds(final com.aliyun.ros.cdk.core.IResolvable loadBalancerIds) {
+        public Builder loadBalancerIds(final java.util.List<? extends java.lang.Object> loadBalancerIds) {
             this.props.loadBalancerIds(loadBalancerIds);
             return this;
         }
@@ -1703,7 +1769,7 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param protectedInstances This parameter is required.
          */
-        public Builder protectedInstances(final java.util.List<? extends java.lang.Object> protectedInstances) {
+        public Builder protectedInstances(final com.aliyun.ros.cdk.core.IResolvable protectedInstances) {
             this.props.protectedInstances(protectedInstances);
             return this;
         }
@@ -1711,7 +1777,7 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param protectedInstances This parameter is required.
          */
-        public Builder protectedInstances(final com.aliyun.ros.cdk.core.IResolvable protectedInstances) {
+        public Builder protectedInstances(final java.util.List<? extends java.lang.Object> protectedInstances) {
             this.props.protectedInstances(protectedInstances);
             return this;
         }
@@ -1720,7 +1786,7 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param removalPolicys This parameter is required.
          */
-        public Builder removalPolicys(final java.util.List<? extends java.lang.Object> removalPolicys) {
+        public Builder removalPolicys(final com.aliyun.ros.cdk.core.IResolvable removalPolicys) {
             this.props.removalPolicys(removalPolicys);
             return this;
         }
@@ -1728,7 +1794,7 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param removalPolicys This parameter is required.
          */
-        public Builder removalPolicys(final com.aliyun.ros.cdk.core.IResolvable removalPolicys) {
+        public Builder removalPolicys(final java.util.List<? extends java.lang.Object> removalPolicys) {
             this.props.removalPolicys(removalPolicys);
             return this;
         }
@@ -1822,7 +1888,7 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param standbyInstances This parameter is required.
          */
-        public Builder standbyInstances(final java.util.List<? extends java.lang.Object> standbyInstances) {
+        public Builder standbyInstances(final com.aliyun.ros.cdk.core.IResolvable standbyInstances) {
             this.props.standbyInstances(standbyInstances);
             return this;
         }
@@ -1830,7 +1896,7 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param standbyInstances This parameter is required.
          */
-        public Builder standbyInstances(final com.aliyun.ros.cdk.core.IResolvable standbyInstances) {
+        public Builder standbyInstances(final java.util.List<? extends java.lang.Object> standbyInstances) {
             this.props.standbyInstances(standbyInstances);
             return this;
         }
@@ -1865,7 +1931,7 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param vSwitchIds This parameter is required.
          */
-        public Builder vSwitchIds(final java.util.List<? extends java.lang.Object> vSwitchIds) {
+        public Builder vSwitchIds(final com.aliyun.ros.cdk.core.IResolvable vSwitchIds) {
             this.props.vSwitchIds(vSwitchIds);
             return this;
         }
@@ -1873,7 +1939,7 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param vSwitchIds This parameter is required.
          */
-        public Builder vSwitchIds(final com.aliyun.ros.cdk.core.IResolvable vSwitchIds) {
+        public Builder vSwitchIds(final java.util.List<? extends java.lang.Object> vSwitchIds) {
             this.props.vSwitchIds(vSwitchIds);
             return this;
         }

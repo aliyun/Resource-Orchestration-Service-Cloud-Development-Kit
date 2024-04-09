@@ -227,7 +227,7 @@ function RosCenBandwidthPackagePropsValidator(properties: any): ros.ValidationRe
     if(properties.bandwidthPackageChargeType && (typeof properties.bandwidthPackageChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('bandwidthPackageChargeType', ros.validateAllowedValues)({
           data: properties.bandwidthPackageChargeType,
-          allowedValues: ["POSTPAY","PREPAY"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('bandwidthPackageChargeType', ros.validateString)(properties.bandwidthPackageChargeType));

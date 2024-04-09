@@ -2151,6 +2151,14 @@ export interface RosCommandProps {
     readonly commandContent?: string | ros.IResolvable;
 
     /**
+     * @Property contentEncoding: The encoding mode of script content (CommandContent). Valid values (case insensitive):
+     * PlainText: The script content is not encoded, and transmitted in plaintext.
+     * Base64: base64-encoded.
+     * Default value: Base64. If the specified value of this parameter is invalid, Base64 is used by default.
+     */
+    readonly contentEncoding?: string | ros.IResolvable;
+
+    /**
      * @Property description: The description of command.
      */
     readonly description?: string | ros.IResolvable;
@@ -2165,6 +2173,11 @@ export interface RosCommandProps {
      * @Property name: The name of command.
      */
     readonly name?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
      * @Property tags: Tags to attach to command. Max support 20 tags to add during create command. Each tag with two properties Key and Value, and Key is required.
@@ -2197,8 +2210,16 @@ function RosCommandPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('type', ros.requiredValidator)(properties.type));
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('timeout', ros.validateNumber)(properties.timeout));
     errors.collect(ros.propertyValidator('enableParameter', ros.validateBoolean)(properties.enableParameter));
+    if(properties.contentEncoding && (typeof properties.contentEncoding) !== 'object') {
+        errors.collect(ros.propertyValidator('contentEncoding', ros.validateAllowedValues)({
+          data: properties.contentEncoding,
+          allowedValues: ["PlainText","Base64"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('contentEncoding', ros.validateString)(properties.contentEncoding));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -2227,9 +2248,11 @@ function rosCommandPropsToRosTemplate(properties: any, enableResourcePropertyCon
     return {
       Type: ros.stringToRosTemplate(properties.type),
       CommandContent: ros.stringToRosTemplate(properties.commandContent),
+      ContentEncoding: ros.stringToRosTemplate(properties.contentEncoding),
       Description: ros.stringToRosTemplate(properties.description),
       EnableParameter: ros.booleanToRosTemplate(properties.enableParameter),
       Name: ros.stringToRosTemplate(properties.name),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       Tags: ros.listMapper(rosCommandTagsPropertyToRosTemplate)(properties.tags),
       Timeout: ros.numberToRosTemplate(properties.timeout),
       WorkingDir: ros.stringToRosTemplate(properties.workingDir),
@@ -2266,6 +2289,14 @@ export class RosCommand extends ros.RosResource {
     public commandContent: string | ros.IResolvable | undefined;
 
     /**
+     * @Property contentEncoding: The encoding mode of script content (CommandContent). Valid values (case insensitive):
+     * PlainText: The script content is not encoded, and transmitted in plaintext.
+     * Base64: base64-encoded.
+     * Default value: Base64. If the specified value of this parameter is invalid, Base64 is used by default.
+     */
+    public contentEncoding: string | ros.IResolvable | undefined;
+
+    /**
      * @Property description: The description of command.
      */
     public description: string | ros.IResolvable | undefined;
@@ -2280,6 +2311,11 @@ export class RosCommand extends ros.RosResource {
      * @Property name: The name of command.
      */
     public name: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
      * @Property tags: Tags to attach to command. Max support 20 tags to add during create command. Each tag with two properties Key and Value, and Key is required.
@@ -2308,9 +2344,11 @@ export class RosCommand extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.type = props.type;
         this.commandContent = props.commandContent;
+        this.contentEncoding = props.contentEncoding;
         this.description = props.description;
         this.enableParameter = props.enableParameter;
         this.name = props.name;
+        this.resourceGroupId = props.resourceGroupId;
         this.tags = props.tags;
         this.timeout = props.timeout;
         this.workingDir = props.workingDir;
@@ -2321,9 +2359,11 @@ export class RosCommand extends ros.RosResource {
         return {
             type: this.type,
             commandContent: this.commandContent,
+            contentEncoding: this.contentEncoding,
             description: this.description,
             enableParameter: this.enableParameter,
             name: this.name,
+            resourceGroupId: this.resourceGroupId,
             tags: this.tags,
             timeout: this.timeout,
             workingDir: this.workingDir,
@@ -3730,11 +3770,6 @@ export class RosDeploymentSet extends ros.RosResource {
 export interface RosDiskProps {
 
     /**
-     * @Property zoneId: The availability zone in which the volume will be created.
-     */
-    readonly zoneId: string | ros.IResolvable;
-
-    /**
      * @Property autoSnapshotPolicyId: Auto snapshot policy ID.
      */
     readonly autoSnapshotPolicyId?: string | ros.IResolvable;
@@ -3768,6 +3803,14 @@ export interface RosDiskProps {
      * @Property encrypted: Whether disk is encrypted, default to false.
      */
     readonly encrypted?: boolean | ros.IResolvable;
+
+    /**
+     * @Property instanceId: Create a cloud disk and automatically mount it to the specified InstanceId.
+     * - Once the instance ID is set, the ResourceGroupId, Tags, and KMSKeyId parameters you set are ignored.
+     * - You cannot specify both ZoneId and InstanceId.
+     * Default value: null, meaning that a pay-as-you-go cloud drive is created, and the region of the drive is defined by the RegionId and ZoneId.
+     */
+    readonly instanceId?: string | ros.IResolvable;
 
     /**
      * @Property kmsKeyId: KMS key ID used by the cloud disk.
@@ -3821,6 +3864,13 @@ export interface RosDiskProps {
      * @Property tags: Tags to attach to disk. Max support 20 tags to add during create disk. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosDisk.TagsProperty[];
+
+    /**
+     * @Property zoneId: Create a pay-as-you-go cloud drive within the specified availability area.
+     * - If you do not set InstanceId, ZoneId is required.
+     * - You cannot specify both ZoneId and InstanceId.
+     */
+    readonly zoneId?: string | ros.IResolvable;
 }
 
 /**
@@ -3837,10 +3887,10 @@ function RosDiskPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('kmsKeyId', ros.validateString)(properties.kmsKeyId));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
-    errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
-    errors.collect(ros.propertyValidator('encrypted', ros.validateBoolean)(properties.encrypted));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
     errors.collect(ros.propertyValidator('performanceLevel', ros.validateString)(properties.performanceLevel));
+    errors.collect(ros.propertyValidator('encrypted', ros.validateBoolean)(properties.encrypted));
     if(properties.size && (typeof properties.size) !== 'object') {
         errors.collect(ros.propertyValidator('size', ros.validateRange)({
             data: properties.size,
@@ -3853,8 +3903,8 @@ function RosDiskPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('diskCategory', ros.validateString)(properties.diskCategory));
     errors.collect(ros.propertyValidator('autoSnapshotPolicyId', ros.validateString)(properties.autoSnapshotPolicyId));
     errors.collect(ros.propertyValidator('storageSetPartitionNumber', ros.validateNumber)(properties.storageSetPartitionNumber));
-    errors.collect(ros.propertyValidator('diskName', ros.validateString)(properties.diskName));
     errors.collect(ros.propertyValidator('provisionedIops', ros.validateNumber)(properties.provisionedIops));
+    errors.collect(ros.propertyValidator('diskName', ros.validateString)(properties.diskName));
     if(properties.multiAttach && (typeof properties.multiAttach) !== 'object') {
         errors.collect(ros.propertyValidator('multiAttach', ros.validateAllowedValues)({
           data: properties.multiAttach,
@@ -3889,7 +3939,6 @@ function rosDiskPropsToRosTemplate(properties: any, enableResourcePropertyConstr
         RosDiskPropsValidator(properties).assertSuccess();
     }
     return {
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
       AutoSnapshotPolicyId: ros.stringToRosTemplate(properties.autoSnapshotPolicyId),
       BurstingEnabled: ros.booleanToRosTemplate(properties.burstingEnabled),
       DeleteAutoSnapshot: ros.booleanToRosTemplate(properties.deleteAutoSnapshot),
@@ -3897,6 +3946,7 @@ function rosDiskPropsToRosTemplate(properties: any, enableResourcePropertyConstr
       DiskCategory: ros.stringToRosTemplate(properties.diskCategory),
       DiskName: ros.stringToRosTemplate(properties.diskName),
       Encrypted: ros.booleanToRosTemplate(properties.encrypted),
+      InstanceId: ros.stringToRosTemplate(properties.instanceId),
       KMSKeyId: ros.stringToRosTemplate(properties.kmsKeyId),
       MultiAttach: ros.stringToRosTemplate(properties.multiAttach),
       PerformanceLevel: ros.stringToRosTemplate(properties.performanceLevel),
@@ -3907,6 +3957,7 @@ function rosDiskPropsToRosTemplate(properties: any, enableResourcePropertyConstr
       StorageSetId: ros.stringToRosTemplate(properties.storageSetId),
       StorageSetPartitionNumber: ros.numberToRosTemplate(properties.storageSetPartitionNumber),
       Tags: ros.listMapper(rosDiskTagsPropertyToRosTemplate)(properties.tags),
+      ZoneId: ros.stringToRosTemplate(properties.zoneId),
     };
 }
 
@@ -3933,11 +3984,6 @@ export class RosDisk extends ros.RosResource {
 
     public enableResourcePropertyConstraint: boolean;
 
-
-    /**
-     * @Property zoneId: The availability zone in which the volume will be created.
-     */
-    public zoneId: string | ros.IResolvable;
 
     /**
      * @Property autoSnapshotPolicyId: Auto snapshot policy ID.
@@ -3973,6 +4019,14 @@ export class RosDisk extends ros.RosResource {
      * @Property encrypted: Whether disk is encrypted, default to false.
      */
     public encrypted: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceId: Create a cloud disk and automatically mount it to the specified InstanceId.
+     * - Once the instance ID is set, the ResourceGroupId, Tags, and KMSKeyId parameters you set are ignored.
+     * - You cannot specify both ZoneId and InstanceId.
+     * Default value: null, meaning that a pay-as-you-go cloud drive is created, and the region of the drive is defined by the RegionId and ZoneId.
+     */
+    public instanceId: string | ros.IResolvable | undefined;
 
     /**
      * @Property kmsKeyId: KMS key ID used by the cloud disk.
@@ -4028,6 +4082,13 @@ export class RosDisk extends ros.RosResource {
     public tags: RosDisk.TagsProperty[] | undefined;
 
     /**
+     * @Property zoneId: Create a pay-as-you-go cloud drive within the specified availability area.
+     * - If you do not set InstanceId, ZoneId is required.
+     * - You cannot specify both ZoneId and InstanceId.
+     */
+    public zoneId: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -4038,7 +4099,6 @@ export class RosDisk extends ros.RosResource {
         this.attrStatus = this.getAtt('Status');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-        this.zoneId = props.zoneId;
         this.autoSnapshotPolicyId = props.autoSnapshotPolicyId;
         this.burstingEnabled = props.burstingEnabled;
         this.deleteAutoSnapshot = props.deleteAutoSnapshot;
@@ -4046,6 +4106,7 @@ export class RosDisk extends ros.RosResource {
         this.diskCategory = props.diskCategory;
         this.diskName = props.diskName;
         this.encrypted = props.encrypted;
+        this.instanceId = props.instanceId;
         this.kmsKeyId = props.kmsKeyId;
         this.multiAttach = props.multiAttach;
         this.performanceLevel = props.performanceLevel;
@@ -4056,12 +4117,12 @@ export class RosDisk extends ros.RosResource {
         this.storageSetId = props.storageSetId;
         this.storageSetPartitionNumber = props.storageSetPartitionNumber;
         this.tags = props.tags;
+        this.zoneId = props.zoneId;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
-            zoneId: this.zoneId,
             autoSnapshotPolicyId: this.autoSnapshotPolicyId,
             burstingEnabled: this.burstingEnabled,
             deleteAutoSnapshot: this.deleteAutoSnapshot,
@@ -4069,6 +4130,7 @@ export class RosDisk extends ros.RosResource {
             diskCategory: this.diskCategory,
             diskName: this.diskName,
             encrypted: this.encrypted,
+            instanceId: this.instanceId,
             kmsKeyId: this.kmsKeyId,
             multiAttach: this.multiAttach,
             performanceLevel: this.performanceLevel,
@@ -4079,6 +4141,7 @@ export class RosDisk extends ros.RosResource {
             storageSetId: this.storageSetId,
             storageSetPartitionNumber: this.storageSetPartitionNumber,
             tags: this.tags,
+            zoneId: this.zoneId,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -8469,6 +8532,11 @@ export class RosInstanceGroup extends ros.RosResource {
     public readonly attrPublicIps: ros.IResolvable;
 
     /**
+     * @Attribute RelatedOrderIds: The related order id list of created ecs instances
+     */
+    public readonly attrRelatedOrderIds: ros.IResolvable;
+
+    /**
      * @Attribute ZoneIds: Zone id of created instances.
      */
     public readonly attrZoneIds: ros.IResolvable;
@@ -8958,6 +9026,7 @@ export class RosInstanceGroup extends ros.RosResource {
         this.attrOrderId = this.getAtt('OrderId');
         this.attrPrivateIps = this.getAtt('PrivateIps');
         this.attrPublicIps = this.getAtt('PublicIps');
+        this.attrRelatedOrderIds = this.getAtt('RelatedOrderIds');
         this.attrZoneIds = this.getAtt('ZoneIds');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
@@ -12196,7 +12265,7 @@ function RosLaunchTemplatePropsValidator(properties: any): ros.ValidationResult 
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
           data: properties.instanceChargeType,
-          allowedValues: ["PrePaid","PostPaid"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
@@ -13005,9 +13074,25 @@ export interface RosNetworkInterfaceProps {
     readonly vSwitchId: string | ros.IResolvable;
 
     /**
+     * @Property deleteOnRelease: Specifies whether to delete the ENI when the instance is released.
+     */
+    readonly deleteOnRelease?: boolean | ros.IResolvable;
+
+    /**
      * @Property description: Description of your ENI. It is a string of [2, 256] English or Chinese characters.
      */
     readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property ipv4PrefixCount: Specifies one or more IPv4 prefixes for the elastic network interface. Range: 1-10
+     * **Note**: If you need to set an IPv4 prefix for an elastic network interface, you must set either Ipv4Prefixes or Ipv4PrefixCount, but not both.
+     */
+    readonly ipv4PrefixCount?: number | ros.IResolvable;
+
+    /**
+     * @Property ipv4Prefixes: Specifies one or more IPv4 prefixes for the elastic network interface.
+     */
+    readonly ipv4Prefixes?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property ipv6AddressCount: The number of randomly generated IPv6 addresses that are assigned to the ENI.
@@ -13018,6 +13103,17 @@ export interface RosNetworkInterfaceProps {
      * @Property ipv6Addresses: The IPv6 address N to assign to the ENI.
      */
     readonly ipv6Addresses?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property ipv6PrefixCount: Specifies one or more IPv6 prefixes for the elastic network interface. Range: 1-10
+     * **Note**: If you need to set an IPv6 prefix for an elastic network interface, you must set either Ipv6Prefixes or Ipv6PrefixCount, but not both.
+     */
+    readonly ipv6PrefixCount?: number | ros.IResolvable;
+
+    /**
+     * @Property ipv6Prefixes: Specifies one or more IPv6 prefixes for the elastic network interface.
+     */
+    readonly ipv6Prefixes?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property networkInterfaceName: Name of your ENI. It is a string of [2, 128]  Chinese or English characters. It must begin with a letter and can contain numbers, underscores (_), colons (:), or hyphens (-).
@@ -13054,6 +13150,13 @@ export interface RosNetworkInterfaceProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
+     * @Property rxQueueSize: Elastic network card inbound queue depth.
+     * **Note**: The inbound queue depth of the network card must be equal to the outbound queue depth, ranging from 8192 to 16384, and must be a power of two.
+     * Larger inbound queue depth can improve inbound throughput, but it consumes more memory.
+     */
+    readonly rxQueueSize?: number | ros.IResolvable;
+
+    /**
      * @Property secondaryPrivateIpAddressCount: The number of private IP addresses that can be created automatically by ECS.
      */
     readonly secondaryPrivateIpAddressCount?: number | ros.IResolvable;
@@ -13072,6 +13175,13 @@ export interface RosNetworkInterfaceProps {
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosNetworkInterface.TagsProperty[];
+
+    /**
+     * @Property txQueueSize: Elastic network card outbound queue depth.
+     * **Note**: The outbound queue depth of the network card must be equal to the inbound queue depth, ranging from 8192 to 16384, and must be a power of two.
+     * Larger outbound queue depth can improve outbound throughput, but it consumes more memory.
+     */
+    readonly txQueueSize?: number | ros.IResolvable;
 }
 
 /**
@@ -13092,6 +13202,8 @@ function RosNetworkInterfacePropsValidator(properties: any): ros.ValidationResul
     }
     errors.collect(ros.propertyValidator('networkInterfaceTrafficMode', ros.validateString)(properties.networkInterfaceTrafficMode));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('deleteOnRelease', ros.validateBoolean)(properties.deleteOnRelease));
     if(properties.privateIpAddresses && (Array.isArray(properties.privateIpAddresses) || (typeof properties.privateIpAddresses) === 'string')) {
         errors.collect(ros.propertyValidator('privateIpAddresses', ros.validateLength)({
             data: properties.privateIpAddresses.length,
@@ -13100,13 +13212,44 @@ function RosNetworkInterfacePropsValidator(properties: any): ros.ValidationResul
           }));
     }
     errors.collect(ros.propertyValidator('privateIpAddresses', ros.listValidator(ros.validateString))(properties.privateIpAddresses));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('secondaryPrivateIpAddressCount', ros.validateNumber)(properties.secondaryPrivateIpAddressCount));
+    if(properties.ipv6PrefixCount && (typeof properties.ipv6PrefixCount) !== 'object') {
+        errors.collect(ros.propertyValidator('ipv6PrefixCount', ros.validateRange)({
+            data: properties.ipv6PrefixCount,
+            min: 1,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('ipv6PrefixCount', ros.validateNumber)(properties.ipv6PrefixCount));
+    if(properties.ipv4Prefixes && (Array.isArray(properties.ipv4Prefixes) || (typeof properties.ipv4Prefixes) === 'string')) {
+        errors.collect(ros.propertyValidator('ipv4Prefixes', ros.validateLength)({
+            data: properties.ipv4Prefixes.length,
+            min: undefined,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('ipv4Prefixes', ros.listValidator(ros.validateString))(properties.ipv4Prefixes));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    if(properties.ipv4PrefixCount && (typeof properties.ipv4PrefixCount) !== 'object') {
+        errors.collect(ros.propertyValidator('ipv4PrefixCount', ros.validateRange)({
+            data: properties.ipv4PrefixCount,
+            min: 1,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('ipv4PrefixCount', ros.validateNumber)(properties.ipv4PrefixCount));
     errors.collect(ros.propertyValidator('networkInterfaceName', ros.validateString)(properties.networkInterfaceName));
     errors.collect(ros.propertyValidator('primaryIpAddress', ros.validateString)(properties.primaryIpAddress));
+    if(properties.ipv6Prefixes && (Array.isArray(properties.ipv6Prefixes) || (typeof properties.ipv6Prefixes) === 'string')) {
+        errors.collect(ros.propertyValidator('ipv6Prefixes', ros.validateLength)({
+            data: properties.ipv6Prefixes.length,
+            min: undefined,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('ipv6Prefixes', ros.listValidator(ros.validateString))(properties.ipv6Prefixes));
     if(properties.ipv6Addresses && (Array.isArray(properties.ipv6Addresses) || (typeof properties.ipv6Addresses) === 'string')) {
         errors.collect(ros.propertyValidator('ipv6Addresses', ros.validateLength)({
             data: properties.ipv6Addresses.length,
@@ -13131,7 +13274,23 @@ function RosNetworkInterfacePropsValidator(properties: any): ros.ValidationResul
           }));
     }
     errors.collect(ros.propertyValidator('queueNumber', ros.validateNumber)(properties.queueNumber));
+    if(properties.txQueueSize && (typeof properties.txQueueSize) !== 'object') {
+        errors.collect(ros.propertyValidator('txQueueSize', ros.validateRange)({
+            data: properties.txQueueSize,
+            min: 8192,
+            max: 16384,
+          }));
+    }
+    errors.collect(ros.propertyValidator('txQueueSize', ros.validateNumber)(properties.txQueueSize));
     errors.collect(ros.propertyValidator('ipv6AddressCount', ros.validateNumber)(properties.ipv6AddressCount));
+    if(properties.rxQueueSize && (typeof properties.rxQueueSize) !== 'object') {
+        errors.collect(ros.propertyValidator('rxQueueSize', ros.validateRange)({
+            data: properties.rxQueueSize,
+            min: 8192,
+            max: 16384,
+          }));
+    }
+    errors.collect(ros.propertyValidator('rxQueueSize', ros.validateNumber)(properties.rxQueueSize));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -13158,19 +13317,26 @@ function rosNetworkInterfacePropsToRosTemplate(properties: any, enableResourcePr
     }
     return {
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
+      DeleteOnRelease: ros.booleanToRosTemplate(properties.deleteOnRelease),
       Description: ros.stringToRosTemplate(properties.description),
+      Ipv4PrefixCount: ros.numberToRosTemplate(properties.ipv4PrefixCount),
+      Ipv4Prefixes: ros.listMapper(ros.stringToRosTemplate)(properties.ipv4Prefixes),
       Ipv6AddressCount: ros.numberToRosTemplate(properties.ipv6AddressCount),
       Ipv6Addresses: ros.listMapper(ros.stringToRosTemplate)(properties.ipv6Addresses),
+      Ipv6PrefixCount: ros.numberToRosTemplate(properties.ipv6PrefixCount),
+      Ipv6Prefixes: ros.listMapper(ros.stringToRosTemplate)(properties.ipv6Prefixes),
       NetworkInterfaceName: ros.stringToRosTemplate(properties.networkInterfaceName),
       NetworkInterfaceTrafficMode: ros.stringToRosTemplate(properties.networkInterfaceTrafficMode),
       PrimaryIpAddress: ros.stringToRosTemplate(properties.primaryIpAddress),
       PrivateIpAddresses: ros.listMapper(ros.stringToRosTemplate)(properties.privateIpAddresses),
       QueueNumber: ros.numberToRosTemplate(properties.queueNumber),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      RxQueueSize: ros.numberToRosTemplate(properties.rxQueueSize),
       SecondaryPrivateIpAddressCount: ros.numberToRosTemplate(properties.secondaryPrivateIpAddressCount),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       SecurityGroupIds: ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupIds),
       Tags: ros.listMapper(rosNetworkInterfaceTagsPropertyToRosTemplate)(properties.tags),
+      TxQueueSize: ros.numberToRosTemplate(properties.txQueueSize),
     };
 }
 
@@ -13214,9 +13380,25 @@ export class RosNetworkInterface extends ros.RosResource {
     public vSwitchId: string | ros.IResolvable;
 
     /**
+     * @Property deleteOnRelease: Specifies whether to delete the ENI when the instance is released.
+     */
+    public deleteOnRelease: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property description: Description of your ENI. It is a string of [2, 256] English or Chinese characters.
      */
     public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipv4PrefixCount: Specifies one or more IPv4 prefixes for the elastic network interface. Range: 1-10
+     * **Note**: If you need to set an IPv4 prefix for an elastic network interface, you must set either Ipv4Prefixes or Ipv4PrefixCount, but not both.
+     */
+    public ipv4PrefixCount: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipv4Prefixes: Specifies one or more IPv4 prefixes for the elastic network interface.
+     */
+    public ipv4Prefixes: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property ipv6AddressCount: The number of randomly generated IPv6 addresses that are assigned to the ENI.
@@ -13227,6 +13409,17 @@ export class RosNetworkInterface extends ros.RosResource {
      * @Property ipv6Addresses: The IPv6 address N to assign to the ENI.
      */
     public ipv6Addresses: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipv6PrefixCount: Specifies one or more IPv6 prefixes for the elastic network interface. Range: 1-10
+     * **Note**: If you need to set an IPv6 prefix for an elastic network interface, you must set either Ipv6Prefixes or Ipv6PrefixCount, but not both.
+     */
+    public ipv6PrefixCount: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipv6Prefixes: Specifies one or more IPv6 prefixes for the elastic network interface.
+     */
+    public ipv6Prefixes: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property networkInterfaceName: Name of your ENI. It is a string of [2, 128]  Chinese or English characters. It must begin with a letter and can contain numbers, underscores (_), colons (:), or hyphens (-).
@@ -13263,6 +13456,13 @@ export class RosNetworkInterface extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property rxQueueSize: Elastic network card inbound queue depth.
+     * **Note**: The inbound queue depth of the network card must be equal to the outbound queue depth, ranging from 8192 to 16384, and must be a power of two.
+     * Larger inbound queue depth can improve inbound throughput, but it consumes more memory.
+     */
+    public rxQueueSize: number | ros.IResolvable | undefined;
+
+    /**
      * @Property secondaryPrivateIpAddressCount: The number of private IP addresses that can be created automatically by ECS.
      */
     public secondaryPrivateIpAddressCount: number | ros.IResolvable | undefined;
@@ -13283,6 +13483,13 @@ export class RosNetworkInterface extends ros.RosResource {
     public tags: RosNetworkInterface.TagsProperty[] | undefined;
 
     /**
+     * @Property txQueueSize: Elastic network card outbound queue depth.
+     * **Note**: The outbound queue depth of the network card must be equal to the inbound queue depth, ranging from 8192 to 16384, and must be a power of two.
+     * Larger outbound queue depth can improve outbound throughput, but it consumes more memory.
+     */
+    public txQueueSize: number | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -13296,38 +13503,52 @@ export class RosNetworkInterface extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.vSwitchId = props.vSwitchId;
+        this.deleteOnRelease = props.deleteOnRelease;
         this.description = props.description;
+        this.ipv4PrefixCount = props.ipv4PrefixCount;
+        this.ipv4Prefixes = props.ipv4Prefixes;
         this.ipv6AddressCount = props.ipv6AddressCount;
         this.ipv6Addresses = props.ipv6Addresses;
+        this.ipv6PrefixCount = props.ipv6PrefixCount;
+        this.ipv6Prefixes = props.ipv6Prefixes;
         this.networkInterfaceName = props.networkInterfaceName;
         this.networkInterfaceTrafficMode = props.networkInterfaceTrafficMode;
         this.primaryIpAddress = props.primaryIpAddress;
         this.privateIpAddresses = props.privateIpAddresses;
         this.queueNumber = props.queueNumber;
         this.resourceGroupId = props.resourceGroupId;
+        this.rxQueueSize = props.rxQueueSize;
         this.secondaryPrivateIpAddressCount = props.secondaryPrivateIpAddressCount;
         this.securityGroupId = props.securityGroupId;
         this.securityGroupIds = props.securityGroupIds;
         this.tags = props.tags;
+        this.txQueueSize = props.txQueueSize;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             vSwitchId: this.vSwitchId,
+            deleteOnRelease: this.deleteOnRelease,
             description: this.description,
+            ipv4PrefixCount: this.ipv4PrefixCount,
+            ipv4Prefixes: this.ipv4Prefixes,
             ipv6AddressCount: this.ipv6AddressCount,
             ipv6Addresses: this.ipv6Addresses,
+            ipv6PrefixCount: this.ipv6PrefixCount,
+            ipv6Prefixes: this.ipv6Prefixes,
             networkInterfaceName: this.networkInterfaceName,
             networkInterfaceTrafficMode: this.networkInterfaceTrafficMode,
             primaryIpAddress: this.primaryIpAddress,
             privateIpAddresses: this.privateIpAddresses,
             queueNumber: this.queueNumber,
             resourceGroupId: this.resourceGroupId,
+            rxQueueSize: this.rxQueueSize,
             secondaryPrivateIpAddressCount: this.secondaryPrivateIpAddressCount,
             securityGroupId: this.securityGroupId,
             securityGroupIds: this.securityGroupIds,
             tags: this.tags,
+            txQueueSize: this.txQueueSize,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -15488,13 +15709,46 @@ export namespace RosSecurityGroup {
          */
         readonly policy?: string | ros.IResolvable;
         /**
+         * @Property description: Description of the security group rule, [1, 512] characters. The default is empty.
+         */
+        readonly description?: string | ros.IResolvable;
+        /**
+         * @Property sourcePortRange: The range of the ports enabled by the source security group for the transport layer protocol. Valid values: TCP\/UDP: Value range: 1 to 65535. The start port and the end port are separated by a slash (\/). Correct example: 1\/200. Incorrect example: 200\/1.ICMP: -1\/-1.GRE: -1\/-1.ALL: -1\/-1.
+         */
+        readonly sourcePortRange?: string | ros.IResolvable;
+        /**
+         * @Property priority: Authorization policies priority range[1, 100]
+         */
+        readonly priority?: number | ros.IResolvable;
+        /**
+         * @Property ipv6SourceCidrIp: Source IPv6 CIDR address segment. Supports IP address ranges in CIDR format and IPv6 format.
+     * Note Only VPC type IP addresses are supported.
+         */
+        readonly ipv6SourceCidrIp?: string | ros.IResolvable;
+        /**
+         * @Property nicType: Network type, could be 'internet' or 'intranet'. Default value is internet.
+         */
+        readonly nicType?: string | ros.IResolvable;
+        /**
+         * @Property destGroupId: The destination security group ID to which access permissions need to be set.
+     * Set at least one of the DestGroupId, DestCidrIp, Ipv6DestCidrIp, or DestPrefixListId parameters.
+     * - If DestGroupId is specified without the DestCidrIp parameter, the NicType parameter can only take the value intranet.
+     * - If both DestGroupId and DestCidrIp are specified, DestCidrIp is assumed to prevail.
+     * You should pay attention to:
+     * - Enterprise Security groups do not support authorized security group access.
+     * - The maximum number of authorized security groups supported by ordinary security groups is 20.
+         */
+        readonly destGroupId?: string | ros.IResolvable;
+        /**
          * @Property portRange: Ip protocol relative port range. For tcp and udp, the port rang is [1,65535], using format '1\/200'For icmp|gre|all protocel, the port range should be '-1\/-1'
          */
         readonly portRange: string | ros.IResolvable;
         /**
-         * @Property description: Description of the security group rule, [1, 512] characters. The default is empty.
+         * @Property destGroupOwnerAccount: When setting security group rules across accounts, the Ali cloud account to which the destination security group belongs.
+     * - If neither DestGroupOwnerAccount nor DestGroupOwnerId is set, it is considered to set access permissions for your other security group.
+     * - If the parameter DestCidrIp has been set, the parameter DestGroupOwnerAccount is invalid.
          */
-        readonly description?: string | ros.IResolvable;
+        readonly destGroupOwnerAccount?: string | ros.IResolvable;
         /**
          * @Property destPrefixListId: The ID of the destination prefix list to which you want to control access. You can call the DescribePrefixLists operation to query the IDs of available prefix lists.Take note of the following items:
      * If a security group is in the classic network, you cannot configure prefix lists in the security group rules. For information about the limits on security groups and prefix lists, see the "Security group limits" in Limits.
@@ -15502,15 +15756,13 @@ export namespace RosSecurityGroup {
          */
         readonly destPrefixListId?: string | ros.IResolvable;
         /**
-         * @Property priority: Authorization policies priority range[1, 100]
+         * @Property sourceCidrIp: The source IPv4 CIDR block to which you want to control access. CIDR blocks and IPv4 addresses are supported.
          */
-        readonly priority?: number | ros.IResolvable;
+        readonly sourceCidrIp?: string | ros.IResolvable;
         /**
-         * @Property securityGroupId: Id of the security group.
-         */
-        readonly securityGroupId?: string | ros.IResolvable;
-        /**
-         * @Property destGroupOwnerId: Dest Group Owner Account ID
+         * @Property destGroupOwnerId: When setting security group rules across accounts, the Ali Cloud account ID of the destination security group.
+     * - If neither DestGroupOwnerId nor DestGroupOwnerAccount is set, it is considered to set the access rights of your other security group.
+     * - If you have set the parameter DestCidrIp, the parameter DestGroupOwnerId is invalid.
          */
         readonly destGroupOwnerId?: string | ros.IResolvable;
         /**
@@ -15518,22 +15770,13 @@ export namespace RosSecurityGroup {
          */
         readonly ipProtocol: string | ros.IResolvable;
         /**
-         * @Property destCidrIp: Dest CIDR Ip Address range. Only IPV4 supported.
+         * @Property destCidrIp: The destination IPv4 CIDR block to which you want to control access. CIDR blocks and IPv4 addresses are supported.
          */
         readonly destCidrIp?: string | ros.IResolvable;
         /**
-         * @Property nicType: Network type, could be 'internet' or 'intranet'. Default value is internet.
-         */
-        readonly nicType?: string | ros.IResolvable;
-        /**
-         * @Property ipv6DestCidrIp: Destination IPv6 CIDR address segment. Supports IP address ranges in CIDR format and IPv6 format.
-     * Note Only VPC type IP addresses are supported.
+         * @Property ipv6DestCidrIp: Destination IPv6 CIDR address block for which access rights need to be set. CIDR format and IPv6 format IP address range are supported.
          */
         readonly ipv6DestCidrIp?: string | ros.IResolvable;
-        /**
-         * @Property destGroupId: Dest Group Id
-         */
-        readonly destGroupId?: string | ros.IResolvable;
     }
 }
 /**
@@ -15553,8 +15796,6 @@ function RosSecurityGroup_SecurityGroupEgressPropertyValidator(properties: any):
         }));
     }
     errors.collect(ros.propertyValidator('policy', ros.validateString)(properties.policy));
-    errors.collect(ros.propertyValidator('portRange', ros.requiredValidator)(properties.portRange));
-    errors.collect(ros.propertyValidator('portRange', ros.validateString)(properties.portRange));
     if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
         errors.collect(ros.propertyValidator('description', ros.validateLength)({
             data: properties.description.length,
@@ -15563,7 +15804,7 @@ function RosSecurityGroup_SecurityGroupEgressPropertyValidator(properties: any):
           }));
     }
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    errors.collect(ros.propertyValidator('destPrefixListId', ros.validateString)(properties.destPrefixListId));
+    errors.collect(ros.propertyValidator('sourcePortRange', ros.validateString)(properties.sourcePortRange));
     if(properties.priority && (typeof properties.priority) !== 'object') {
         errors.collect(ros.propertyValidator('priority', ros.validateRange)({
             data: properties.priority,
@@ -15572,7 +15813,20 @@ function RosSecurityGroup_SecurityGroupEgressPropertyValidator(properties: any):
           }));
     }
     errors.collect(ros.propertyValidator('priority', ros.validateNumber)(properties.priority));
-    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('ipv6SourceCidrIp', ros.validateString)(properties.ipv6SourceCidrIp));
+    if(properties.nicType && (typeof properties.nicType) !== 'object') {
+        errors.collect(ros.propertyValidator('nicType', ros.validateAllowedValues)({
+          data: properties.nicType,
+          allowedValues: ["internet","intranet"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('nicType', ros.validateString)(properties.nicType));
+    errors.collect(ros.propertyValidator('destGroupId', ros.validateString)(properties.destGroupId));
+    errors.collect(ros.propertyValidator('portRange', ros.requiredValidator)(properties.portRange));
+    errors.collect(ros.propertyValidator('portRange', ros.validateString)(properties.portRange));
+    errors.collect(ros.propertyValidator('destGroupOwnerAccount', ros.validateString)(properties.destGroupOwnerAccount));
+    errors.collect(ros.propertyValidator('destPrefixListId', ros.validateString)(properties.destPrefixListId));
+    errors.collect(ros.propertyValidator('sourceCidrIp', ros.validateString)(properties.sourceCidrIp));
     errors.collect(ros.propertyValidator('destGroupOwnerId', ros.validateString)(properties.destGroupOwnerId));
     errors.collect(ros.propertyValidator('ipProtocol', ros.requiredValidator)(properties.ipProtocol));
     if(properties.ipProtocol && (typeof properties.ipProtocol) !== 'object') {
@@ -15583,15 +15837,7 @@ function RosSecurityGroup_SecurityGroupEgressPropertyValidator(properties: any):
     }
     errors.collect(ros.propertyValidator('ipProtocol', ros.validateString)(properties.ipProtocol));
     errors.collect(ros.propertyValidator('destCidrIp', ros.validateString)(properties.destCidrIp));
-    if(properties.nicType && (typeof properties.nicType) !== 'object') {
-        errors.collect(ros.propertyValidator('nicType', ros.validateAllowedValues)({
-          data: properties.nicType,
-          allowedValues: ["internet","intranet"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('nicType', ros.validateString)(properties.nicType));
     errors.collect(ros.propertyValidator('ipv6DestCidrIp', ros.validateString)(properties.ipv6DestCidrIp));
-    errors.collect(ros.propertyValidator('destGroupId', ros.validateString)(properties.destGroupId));
     return errors.wrap('supplied properties not correct for "SecurityGroupEgressProperty"');
 }
 
@@ -15608,17 +15854,20 @@ function rosSecurityGroupSecurityGroupEgressPropertyToRosTemplate(properties: an
     RosSecurityGroup_SecurityGroupEgressPropertyValidator(properties).assertSuccess();
     return {
       Policy: ros.stringToRosTemplate(properties.policy),
-      PortRange: ros.stringToRosTemplate(properties.portRange),
       Description: ros.stringToRosTemplate(properties.description),
-      DestPrefixListId: ros.stringToRosTemplate(properties.destPrefixListId),
+      SourcePortRange: ros.stringToRosTemplate(properties.sourcePortRange),
       Priority: ros.numberToRosTemplate(properties.priority),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
+      Ipv6SourceCidrIp: ros.stringToRosTemplate(properties.ipv6SourceCidrIp),
+      NicType: ros.stringToRosTemplate(properties.nicType),
+      DestGroupId: ros.stringToRosTemplate(properties.destGroupId),
+      PortRange: ros.stringToRosTemplate(properties.portRange),
+      DestGroupOwnerAccount: ros.stringToRosTemplate(properties.destGroupOwnerAccount),
+      DestPrefixListId: ros.stringToRosTemplate(properties.destPrefixListId),
+      SourceCidrIp: ros.stringToRosTemplate(properties.sourceCidrIp),
       DestGroupOwnerId: ros.stringToRosTemplate(properties.destGroupOwnerId),
       IpProtocol: ros.stringToRosTemplate(properties.ipProtocol),
       DestCidrIp: ros.stringToRosTemplate(properties.destCidrIp),
-      NicType: ros.stringToRosTemplate(properties.nicType),
       Ipv6DestCidrIp: ros.stringToRosTemplate(properties.ipv6DestCidrIp),
-      DestGroupId: ros.stringToRosTemplate(properties.destGroupId),
     };
 }
 
@@ -15628,13 +15877,13 @@ export namespace RosSecurityGroup {
      */
     export interface SecurityGroupIngressProperty {
         /**
-         * @Property sourceGroupId: Source Group Id
-         */
-        readonly sourceGroupId?: string | ros.IResolvable;
-        /**
          * @Property policy: Authorization policies, parameter values can be: accept (accepted access), drop (denied access). Default value is accept.
          */
         readonly policy?: string | ros.IResolvable;
+        /**
+         * @Property sourceGroupId: Source Group Id
+         */
+        readonly sourceGroupId?: string | ros.IResolvable;
         /**
          * @Property description: Description of the security group rule, [1, 512] characters. The default is empty.
          */
@@ -15647,10 +15896,6 @@ export namespace RosSecurityGroup {
          * @Property priority: Authorization policies priority range[1, 100]
          */
         readonly priority?: number | ros.IResolvable;
-        /**
-         * @Property securityGroupId: Id of the security group.
-         */
-        readonly securityGroupId?: string | ros.IResolvable;
         /**
          * @Property sourceGroupOwnerId: Source Group Owner Account ID
          */
@@ -15677,9 +15922,21 @@ export namespace RosSecurityGroup {
          */
         readonly ipProtocol: string | ros.IResolvable;
         /**
+         * @Property destCidrIp: The destination IPv4 CIDR block to which you want to control access. CIDR blocks and IPv4 addresses are supported.
+         */
+        readonly destCidrIp?: string | ros.IResolvable;
+        /**
+         * @Property sourceGroupOwnerAccount: Source Group Owner Account
+         */
+        readonly sourceGroupOwnerAccount?: string | ros.IResolvable;
+        /**
+         * @Property ipv6DestCidrIp: Destination IPv6 CIDR address block for which access rights need to be set. CIDR format and IPv6 format IP address range are supported.
+         */
+        readonly ipv6DestCidrIp?: string | ros.IResolvable;
+        /**
          * @Property sourcePrefixListId: The ID of the source prefix list to which you want to control access. You can call the DescribePrefixLists operation to query the IDs of available prefix lists. Take note of the following items:
-     * If a security group is in the classic network, you cannot configure prefix lists in the security group rules. For information about the limits on security groups and prefix lists, see the "Security group limits" section in Limits.
-     * If you specify the SourceCidrIp, Ipv6SourceCidrIp, or SourceGroupId parameter, this parameter is ignored.
+     * - If a security group is in the classic network, you cannot configure prefix lists in the security group rules.
+     * - If you specify the SourceCidrIp, Ipv6SourceCidrIp, or SourceGroupId parameter, this parameter is ignored.
          */
         readonly sourcePrefixListId?: string | ros.IResolvable;
     }
@@ -15694,7 +15951,6 @@ export namespace RosSecurityGroup {
 function RosSecurityGroup_SecurityGroupIngressPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('sourceGroupId', ros.validateString)(properties.sourceGroupId));
     if(properties.policy && (typeof properties.policy) !== 'object') {
         errors.collect(ros.propertyValidator('policy', ros.validateAllowedValues)({
           data: properties.policy,
@@ -15702,6 +15958,7 @@ function RosSecurityGroup_SecurityGroupIngressPropertyValidator(properties: any)
         }));
     }
     errors.collect(ros.propertyValidator('policy', ros.validateString)(properties.policy));
+    errors.collect(ros.propertyValidator('sourceGroupId', ros.validateString)(properties.sourceGroupId));
     if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
         errors.collect(ros.propertyValidator('description', ros.validateLength)({
             data: properties.description.length,
@@ -15719,7 +15976,6 @@ function RosSecurityGroup_SecurityGroupIngressPropertyValidator(properties: any)
           }));
     }
     errors.collect(ros.propertyValidator('priority', ros.validateNumber)(properties.priority));
-    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('sourceGroupOwnerId', ros.validateString)(properties.sourceGroupOwnerId));
     errors.collect(ros.propertyValidator('ipv6SourceCidrIp', ros.validateString)(properties.ipv6SourceCidrIp));
     if(properties.nicType && (typeof properties.nicType) !== 'object') {
@@ -15740,6 +15996,9 @@ function RosSecurityGroup_SecurityGroupIngressPropertyValidator(properties: any)
         }));
     }
     errors.collect(ros.propertyValidator('ipProtocol', ros.validateString)(properties.ipProtocol));
+    errors.collect(ros.propertyValidator('destCidrIp', ros.validateString)(properties.destCidrIp));
+    errors.collect(ros.propertyValidator('sourceGroupOwnerAccount', ros.validateString)(properties.sourceGroupOwnerAccount));
+    errors.collect(ros.propertyValidator('ipv6DestCidrIp', ros.validateString)(properties.ipv6DestCidrIp));
     errors.collect(ros.propertyValidator('sourcePrefixListId', ros.validateString)(properties.sourcePrefixListId));
     return errors.wrap('supplied properties not correct for "SecurityGroupIngressProperty"');
 }
@@ -15756,18 +16015,20 @@ function rosSecurityGroupSecurityGroupIngressPropertyToRosTemplate(properties: a
     if (!ros.canInspect(properties)) { return properties; }
     RosSecurityGroup_SecurityGroupIngressPropertyValidator(properties).assertSuccess();
     return {
-      SourceGroupId: ros.stringToRosTemplate(properties.sourceGroupId),
       Policy: ros.stringToRosTemplate(properties.policy),
+      SourceGroupId: ros.stringToRosTemplate(properties.sourceGroupId),
       Description: ros.stringToRosTemplate(properties.description),
       SourcePortRange: ros.stringToRosTemplate(properties.sourcePortRange),
       Priority: ros.numberToRosTemplate(properties.priority),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       SourceGroupOwnerId: ros.stringToRosTemplate(properties.sourceGroupOwnerId),
       Ipv6SourceCidrIp: ros.stringToRosTemplate(properties.ipv6SourceCidrIp),
       NicType: ros.stringToRosTemplate(properties.nicType),
       PortRange: ros.stringToRosTemplate(properties.portRange),
       SourceCidrIp: ros.stringToRosTemplate(properties.sourceCidrIp),
       IpProtocol: ros.stringToRosTemplate(properties.ipProtocol),
+      DestCidrIp: ros.stringToRosTemplate(properties.destCidrIp),
+      SourceGroupOwnerAccount: ros.stringToRosTemplate(properties.sourceGroupOwnerAccount),
+      Ipv6DestCidrIp: ros.stringToRosTemplate(properties.ipv6DestCidrIp),
       SourcePrefixListId: ros.stringToRosTemplate(properties.sourcePrefixListId),
     };
 }
@@ -16049,17 +16310,25 @@ export interface RosSecurityGroupEgressProps {
     readonly description?: string | ros.IResolvable;
 
     /**
-     * @Property destCidrIp: Dest CIDR Ip Address range. Only IPV4 supported.
+     * @Property destCidrIp: The destination IPv4 CIDR block to which you want to control access. CIDR blocks and IPv4 addresses are supported.
      */
     readonly destCidrIp?: string | ros.IResolvable;
 
     /**
-     * @Property destGroupId: Dest Group Id
+     * @Property destGroupId: The destination security group ID to which access permissions need to be set.
+     * Set at least one of the DestGroupId, DestCidrIp, Ipv6DestCidrIp, or DestPrefixListId parameters.
+     * - If DestGroupId is specified without the DestCidrIp parameter, the NicType parameter can only take the value intranet.
+     * - If both DestGroupId and DestCidrIp are specified, DestCidrIp is assumed to prevail.
+     * You should pay attention to:
+     * - Enterprise Security groups do not support authorized security group access.
+     * - The maximum number of authorized security groups supported by ordinary security groups is 20.
      */
     readonly destGroupId?: string | ros.IResolvable;
 
     /**
-     * @Property destGroupOwnerId: Dest Group Owner Account ID
+     * @Property destGroupOwnerId: When setting security group rules across accounts, the Ali Cloud account ID of the destination security group.
+     * - If neither DestGroupOwnerId nor DestGroupOwnerAccount is set, it is considered to set the access rights of your other security group.
+     * - If you have set the parameter DestCidrIp, the parameter DestGroupOwnerId is invalid.
      */
     readonly destGroupOwnerId?: string | ros.IResolvable;
 
@@ -16071,8 +16340,7 @@ export interface RosSecurityGroupEgressProps {
     readonly destPrefixListId?: string | ros.IResolvable;
 
     /**
-     * @Property ipv6DestCidrIp: Destination IPv6 CIDR address segment. Supports IP address ranges in CIDR format and IPv6 format.
-     * Note Only VPC type IP addresses are supported.
+     * @Property ipv6DestCidrIp: Destination IPv6 CIDR address block for which access rights need to be set. CIDR format and IPv6 format IP address range are supported.
      */
     readonly ipv6DestCidrIp?: string | ros.IResolvable;
 
@@ -16215,17 +16483,25 @@ export class RosSecurityGroupEgress extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * @Property destCidrIp: Dest CIDR Ip Address range. Only IPV4 supported.
+     * @Property destCidrIp: The destination IPv4 CIDR block to which you want to control access. CIDR blocks and IPv4 addresses are supported.
      */
     public destCidrIp: string | ros.IResolvable | undefined;
 
     /**
-     * @Property destGroupId: Dest Group Id
+     * @Property destGroupId: The destination security group ID to which access permissions need to be set.
+     * Set at least one of the DestGroupId, DestCidrIp, Ipv6DestCidrIp, or DestPrefixListId parameters.
+     * - If DestGroupId is specified without the DestCidrIp parameter, the NicType parameter can only take the value intranet.
+     * - If both DestGroupId and DestCidrIp are specified, DestCidrIp is assumed to prevail.
+     * You should pay attention to:
+     * - Enterprise Security groups do not support authorized security group access.
+     * - The maximum number of authorized security groups supported by ordinary security groups is 20.
      */
     public destGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property destGroupOwnerId: Dest Group Owner Account ID
+     * @Property destGroupOwnerId: When setting security group rules across accounts, the Ali Cloud account ID of the destination security group.
+     * - If neither DestGroupOwnerId nor DestGroupOwnerAccount is set, it is considered to set the access rights of your other security group.
+     * - If you have set the parameter DestCidrIp, the parameter DestGroupOwnerId is invalid.
      */
     public destGroupOwnerId: string | ros.IResolvable | undefined;
 
@@ -16237,8 +16513,7 @@ export class RosSecurityGroupEgress extends ros.RosResource {
     public destPrefixListId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property ipv6DestCidrIp: Destination IPv6 CIDR address segment. Supports IP address ranges in CIDR format and IPv6 format.
-     * Note Only VPC type IP addresses are supported.
+     * @Property ipv6DestCidrIp: Destination IPv6 CIDR address block for which access rights need to be set. CIDR format and IPv6 format IP address range are supported.
      */
     public ipv6DestCidrIp: string | ros.IResolvable | undefined;
 
@@ -16305,6 +16580,287 @@ export class RosSecurityGroupEgress extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosSecurityGroupEgressPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+/**
+ * Properties for defining a `RosSecurityGroupEgresses`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroupegresses
+ */
+export interface RosSecurityGroupEgressesProps {
+
+    /**
+     * @Property permissions: A list of security group rules. A hundred at most.
+     */
+    readonly permissions: Array<RosSecurityGroupEgresses.PermissionsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property securityGroupId: Id of the security group.
+     */
+    readonly securityGroupId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSecurityGroupEgressesProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSecurityGroupEgressesProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSecurityGroupEgressesPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('securityGroupId', ros.requiredValidator)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('permissions', ros.requiredValidator)(properties.permissions));
+    if(properties.permissions && (Array.isArray(properties.permissions) || (typeof properties.permissions) === 'string')) {
+        errors.collect(ros.propertyValidator('permissions', ros.validateLength)({
+            data: properties.permissions.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('permissions', ros.listValidator(RosSecurityGroupEgresses_PermissionsPropertyValidator))(properties.permissions));
+    return errors.wrap('supplied properties not correct for "RosSecurityGroupEgressesProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECS::SecurityGroupEgresses` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSecurityGroupEgressesProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECS::SecurityGroupEgresses` resource.
+ */
+// @ts-ignore TS6133
+function rosSecurityGroupEgressesPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSecurityGroupEgressesPropsValidator(properties).assertSuccess();
+    }
+    return {
+      Permissions: ros.listMapper(rosSecurityGroupEgressesPermissionsPropertyToRosTemplate)(properties.permissions),
+      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SecurityGroupEgresses`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SecurityGroupEgresses` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroupegresses
+ */
+export class RosSecurityGroupEgresses extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::SecurityGroupEgresses";
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property permissions: A list of security group rules. A hundred at most.
+     */
+    public permissions: Array<RosSecurityGroupEgresses.PermissionsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property securityGroupId: Id of the security group.
+     */
+    public securityGroupId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSecurityGroupEgressesProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSecurityGroupEgresses.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.permissions = props.permissions;
+        this.securityGroupId = props.securityGroupId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            permissions: this.permissions,
+            securityGroupId: this.securityGroupId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSecurityGroupEgressesPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosSecurityGroupEgresses {
+    /**
+     * @stability external
+     */
+    export interface PermissionsProperty {
+        /**
+         * @Property policy: Authorization policies, parameter values can be: accept (accepted access), drop (denied access). Default value is accept.
+         */
+        readonly policy?: string | ros.IResolvable;
+        /**
+         * @Property description: Description of the security group rule, [1, 512] characters. The default is empty.
+         */
+        readonly description?: string | ros.IResolvable;
+        /**
+         * @Property sourcePortRange: The range of the ports enabled by the source security group for the transport layer protocol. Valid values: TCP\/UDP: Value range: 1 to 65535. The start port and the end port are separated by a slash (\/). Correct example: 1\/200. Incorrect example: 200\/1.ICMP: -1\/-1.GRE: -1\/-1.ALL: -1\/-1.
+         */
+        readonly sourcePortRange?: string | ros.IResolvable;
+        /**
+         * @Property priority: Authorization policies priority range[1, 100]
+         */
+        readonly priority?: number | ros.IResolvable;
+        /**
+         * @Property ipv6SourceCidrIp: Source IPv6 CIDR address segment. Supports IP address ranges in CIDR format and IPv6 format.
+     * Note Only VPC type IP addresses are supported.
+         */
+        readonly ipv6SourceCidrIp?: string | ros.IResolvable;
+        /**
+         * @Property nicType: Network type, could be 'internet' or 'intranet'. Default value is internet.
+         */
+        readonly nicType?: string | ros.IResolvable;
+        /**
+         * @Property destGroupId: The destination security group ID to which access permissions need to be set.
+     * Set at least one of the DestGroupId, DestCidrIp, Ipv6DestCidrIp, or DestPrefixListId parameters.
+     * - If DestGroupId is specified without the DestCidrIp parameter, the NicType parameter can only take the value intranet.
+     * - If both DestGroupId and DestCidrIp are specified, DestCidrIp is assumed to prevail.
+     * You should pay attention to:
+     * - Enterprise Security groups do not support authorized security group access.
+     * - The maximum number of authorized security groups supported by ordinary security groups is 20.
+         */
+        readonly destGroupId?: string | ros.IResolvable;
+        /**
+         * @Property portRange: Ip protocol relative port range. For tcp and udp, the port rang is [1,65535], using format '1\/200'For icmp|gre|all protocel, the port range should be '-1\/-1'
+         */
+        readonly portRange: string | ros.IResolvable;
+        /**
+         * @Property destGroupOwnerAccount: When setting security group rules across accounts, the Ali cloud account to which the destination security group belongs.
+     * - If neither DestGroupOwnerAccount nor DestGroupOwnerId is set, it is considered to set access permissions for your other security group.
+     * - If the parameter DestCidrIp has been set, the parameter DestGroupOwnerAccount is invalid.
+         */
+        readonly destGroupOwnerAccount?: string | ros.IResolvable;
+        /**
+         * @Property destPrefixListId: The ID of the destination prefix list to which you want to control access. You can call the DescribePrefixLists operation to query the IDs of available prefix lists.Take note of the following items:
+     * If a security group is in the classic network, you cannot configure prefix lists in the security group rules. For information about the limits on security groups and prefix lists, see the "Security group limits" in Limits.
+     * If you specify DestCidrIp, Ipv6DestCidrIp, or DestGroupId, DestPrefixListId is ignored.
+         */
+        readonly destPrefixListId?: string | ros.IResolvable;
+        /**
+         * @Property sourceCidrIp: The source IPv4 CIDR block to which you want to control access. CIDR blocks and IPv4 addresses are supported.
+         */
+        readonly sourceCidrIp?: string | ros.IResolvable;
+        /**
+         * @Property destGroupOwnerId: When setting security group rules across accounts, the Ali Cloud account ID of the destination security group.
+     * - If neither DestGroupOwnerId nor DestGroupOwnerAccount is set, it is considered to set the access rights of your other security group.
+     * - If you have set the parameter DestCidrIp, the parameter DestGroupOwnerId is invalid.
+         */
+        readonly destGroupOwnerId?: string | ros.IResolvable;
+        /**
+         * @Property ipProtocol: Ip protocol for in rule.
+         */
+        readonly ipProtocol: string | ros.IResolvable;
+        /**
+         * @Property destCidrIp: The destination IPv4 CIDR block to which you want to control access. CIDR blocks and IPv4 addresses are supported.
+         */
+        readonly destCidrIp?: string | ros.IResolvable;
+        /**
+         * @Property ipv6DestCidrIp: Destination IPv6 CIDR address block for which access rights need to be set. CIDR format and IPv6 format IP address range are supported.
+         */
+        readonly ipv6DestCidrIp?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `PermissionsProperty`
+ *
+ * @param properties - the TypeScript properties of a `PermissionsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSecurityGroupEgresses_PermissionsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.policy && (typeof properties.policy) !== 'object') {
+        errors.collect(ros.propertyValidator('policy', ros.validateAllowedValues)({
+          data: properties.policy,
+          allowedValues: ["accept","drop"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('policy', ros.validateString)(properties.policy));
+    if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
+        errors.collect(ros.propertyValidator('description', ros.validateLength)({
+            data: properties.description.length,
+            min: 1,
+            max: 512,
+          }));
+    }
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('sourcePortRange', ros.validateString)(properties.sourcePortRange));
+    if(properties.priority && (typeof properties.priority) !== 'object') {
+        errors.collect(ros.propertyValidator('priority', ros.validateRange)({
+            data: properties.priority,
+            min: 1,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('priority', ros.validateNumber)(properties.priority));
+    errors.collect(ros.propertyValidator('ipv6SourceCidrIp', ros.validateString)(properties.ipv6SourceCidrIp));
+    if(properties.nicType && (typeof properties.nicType) !== 'object') {
+        errors.collect(ros.propertyValidator('nicType', ros.validateAllowedValues)({
+          data: properties.nicType,
+          allowedValues: ["internet","intranet"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('nicType', ros.validateString)(properties.nicType));
+    errors.collect(ros.propertyValidator('destGroupId', ros.validateString)(properties.destGroupId));
+    errors.collect(ros.propertyValidator('portRange', ros.requiredValidator)(properties.portRange));
+    errors.collect(ros.propertyValidator('portRange', ros.validateString)(properties.portRange));
+    errors.collect(ros.propertyValidator('destGroupOwnerAccount', ros.validateString)(properties.destGroupOwnerAccount));
+    errors.collect(ros.propertyValidator('destPrefixListId', ros.validateString)(properties.destPrefixListId));
+    errors.collect(ros.propertyValidator('sourceCidrIp', ros.validateString)(properties.sourceCidrIp));
+    errors.collect(ros.propertyValidator('destGroupOwnerId', ros.validateString)(properties.destGroupOwnerId));
+    errors.collect(ros.propertyValidator('ipProtocol', ros.requiredValidator)(properties.ipProtocol));
+    if(properties.ipProtocol && (typeof properties.ipProtocol) !== 'object') {
+        errors.collect(ros.propertyValidator('ipProtocol', ros.validateAllowedValues)({
+          data: properties.ipProtocol,
+          allowedValues: ["tcp","udp","icmp","gre","all","icmpv6"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ipProtocol', ros.validateString)(properties.ipProtocol));
+    errors.collect(ros.propertyValidator('destCidrIp', ros.validateString)(properties.destCidrIp));
+    errors.collect(ros.propertyValidator('ipv6DestCidrIp', ros.validateString)(properties.ipv6DestCidrIp));
+    return errors.wrap('supplied properties not correct for "PermissionsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECS::SecurityGroupEgresses.Permissions` resource
+ *
+ * @param properties - the TypeScript properties of a `PermissionsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECS::SecurityGroupEgresses.Permissions` resource.
+ */
+// @ts-ignore TS6133
+function rosSecurityGroupEgressesPermissionsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSecurityGroupEgresses_PermissionsPropertyValidator(properties).assertSuccess();
+    return {
+      Policy: ros.stringToRosTemplate(properties.policy),
+      Description: ros.stringToRosTemplate(properties.description),
+      SourcePortRange: ros.stringToRosTemplate(properties.sourcePortRange),
+      Priority: ros.numberToRosTemplate(properties.priority),
+      Ipv6SourceCidrIp: ros.stringToRosTemplate(properties.ipv6SourceCidrIp),
+      NicType: ros.stringToRosTemplate(properties.nicType),
+      DestGroupId: ros.stringToRosTemplate(properties.destGroupId),
+      PortRange: ros.stringToRosTemplate(properties.portRange),
+      DestGroupOwnerAccount: ros.stringToRosTemplate(properties.destGroupOwnerAccount),
+      DestPrefixListId: ros.stringToRosTemplate(properties.destPrefixListId),
+      SourceCidrIp: ros.stringToRosTemplate(properties.sourceCidrIp),
+      DestGroupOwnerId: ros.stringToRosTemplate(properties.destGroupOwnerId),
+      IpProtocol: ros.stringToRosTemplate(properties.ipProtocol),
+      DestCidrIp: ros.stringToRosTemplate(properties.destCidrIp),
+      Ipv6DestCidrIp: ros.stringToRosTemplate(properties.ipv6DestCidrIp),
+    };
 }
 
 /**
@@ -16376,8 +16932,8 @@ export interface RosSecurityGroupIngressProps {
 
     /**
      * @Property sourcePrefixListId: The ID of the source prefix list to which you want to control access. You can call the DescribePrefixLists operation to query the IDs of available prefix lists. Take note of the following items:
-     * If a security group is in the classic network, you cannot configure prefix lists in the security group rules. For information about the limits on security groups and prefix lists, see the "Security group limits" section in Limits.
-     * If you specify the SourceCidrIp, Ipv6SourceCidrIp, or SourceGroupId parameter, this parameter is ignored.
+     * - If a security group is in the classic network, you cannot configure prefix lists in the security group rules.
+     * - If you specify the SourceCidrIp, Ipv6SourceCidrIp, or SourceGroupId parameter, this parameter is ignored.
      */
     readonly sourcePrefixListId?: string | ros.IResolvable;
 }
@@ -16549,8 +17105,8 @@ export class RosSecurityGroupIngress extends ros.RosResource {
 
     /**
      * @Property sourcePrefixListId: The ID of the source prefix list to which you want to control access. You can call the DescribePrefixLists operation to query the IDs of available prefix lists. Take note of the following items:
-     * If a security group is in the classic network, you cannot configure prefix lists in the security group rules. For information about the limits on security groups and prefix lists, see the "Security group limits" section in Limits.
-     * If you specify the SourceCidrIp, Ipv6SourceCidrIp, or SourceGroupId parameter, this parameter is ignored.
+     * - If a security group is in the classic network, you cannot configure prefix lists in the security group rules.
+     * - If you specify the SourceCidrIp, Ipv6SourceCidrIp, or SourceGroupId parameter, this parameter is ignored.
      */
     public sourcePrefixListId: string | ros.IResolvable | undefined;
 
@@ -16599,6 +17155,277 @@ export class RosSecurityGroupIngress extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosSecurityGroupIngressPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+/**
+ * Properties for defining a `RosSecurityGroupIngresses`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroupingresses
+ */
+export interface RosSecurityGroupIngressesProps {
+
+    /**
+     * @Property permissions: A list of security group rules. A hundred at most.
+     */
+    readonly permissions: Array<RosSecurityGroupIngresses.PermissionsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property securityGroupId: Id of the security group.
+     */
+    readonly securityGroupId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSecurityGroupIngressesProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSecurityGroupIngressesProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSecurityGroupIngressesPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('securityGroupId', ros.requiredValidator)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('permissions', ros.requiredValidator)(properties.permissions));
+    if(properties.permissions && (Array.isArray(properties.permissions) || (typeof properties.permissions) === 'string')) {
+        errors.collect(ros.propertyValidator('permissions', ros.validateLength)({
+            data: properties.permissions.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('permissions', ros.listValidator(RosSecurityGroupIngresses_PermissionsPropertyValidator))(properties.permissions));
+    return errors.wrap('supplied properties not correct for "RosSecurityGroupIngressesProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECS::SecurityGroupIngresses` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSecurityGroupIngressesProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECS::SecurityGroupIngresses` resource.
+ */
+// @ts-ignore TS6133
+function rosSecurityGroupIngressesPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSecurityGroupIngressesPropsValidator(properties).assertSuccess();
+    }
+    return {
+      Permissions: ros.listMapper(rosSecurityGroupIngressesPermissionsPropertyToRosTemplate)(properties.permissions),
+      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SecurityGroupIngresses`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SecurityGroupIngresses` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroupingresses
+ */
+export class RosSecurityGroupIngresses extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::SecurityGroupIngresses";
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property permissions: A list of security group rules. A hundred at most.
+     */
+    public permissions: Array<RosSecurityGroupIngresses.PermissionsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property securityGroupId: Id of the security group.
+     */
+    public securityGroupId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSecurityGroupIngressesProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSecurityGroupIngresses.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.permissions = props.permissions;
+        this.securityGroupId = props.securityGroupId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            permissions: this.permissions,
+            securityGroupId: this.securityGroupId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSecurityGroupIngressesPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosSecurityGroupIngresses {
+    /**
+     * @stability external
+     */
+    export interface PermissionsProperty {
+        /**
+         * @Property policy: Authorization policies, parameter values can be: accept (accepted access), drop (denied access). Default value is accept.
+         */
+        readonly policy?: string | ros.IResolvable;
+        /**
+         * @Property sourceGroupId: Source Group Id
+         */
+        readonly sourceGroupId?: string | ros.IResolvable;
+        /**
+         * @Property description: Description of the security group rule, [1, 512] characters. The default is empty.
+         */
+        readonly description?: string | ros.IResolvable;
+        /**
+         * @Property sourcePortRange: The range of the ports enabled by the source security group for the transport layer protocol. Valid values: TCP\/UDP: Value range: 1 to 65535. The start port and the end port are separated by a slash (\/). Correct example: 1\/200. Incorrect example: 200\/1.ICMP: -1\/-1.GRE: -1\/-1.ALL: -1\/-1.
+         */
+        readonly sourcePortRange?: string | ros.IResolvable;
+        /**
+         * @Property priority: Authorization policies priority range[1, 100]
+         */
+        readonly priority?: number | ros.IResolvable;
+        /**
+         * @Property sourceGroupOwnerId: Source Group Owner Account ID
+         */
+        readonly sourceGroupOwnerId?: string | ros.IResolvable;
+        /**
+         * @Property ipv6SourceCidrIp: Source IPv6 CIDR address segment. Supports IP address ranges in CIDR format and IPv6 format.
+     * Note Only VPC type IP addresses are supported.
+         */
+        readonly ipv6SourceCidrIp?: string | ros.IResolvable;
+        /**
+         * @Property nicType: Network type, could be 'internet' or 'intranet'. Default value is internet.
+         */
+        readonly nicType?: string | ros.IResolvable;
+        /**
+         * @Property portRange: Ip protocol relative port range. For tcp and udp, the port rang is [1,65535], using format '1\/200'For icmp|gre|all protocel, the port range should be '-1\/-1'
+         */
+        readonly portRange: string | ros.IResolvable;
+        /**
+         * @Property sourceCidrIp: The source IPv4 CIDR block to which you want to control access. CIDR blocks and IPv4 addresses are supported.
+         */
+        readonly sourceCidrIp?: string | ros.IResolvable;
+        /**
+         * @Property ipProtocol: Ip protocol for in rule.
+         */
+        readonly ipProtocol: string | ros.IResolvable;
+        /**
+         * @Property destCidrIp: The destination IPv4 CIDR block to which you want to control access. CIDR blocks and IPv4 addresses are supported.
+         */
+        readonly destCidrIp?: string | ros.IResolvable;
+        /**
+         * @Property sourceGroupOwnerAccount: Source Group Owner Account
+         */
+        readonly sourceGroupOwnerAccount?: string | ros.IResolvable;
+        /**
+         * @Property ipv6DestCidrIp: Destination IPv6 CIDR address block for which access rights need to be set. CIDR format and IPv6 format IP address range are supported.
+         */
+        readonly ipv6DestCidrIp?: string | ros.IResolvable;
+        /**
+         * @Property sourcePrefixListId: The ID of the source prefix list to which you want to control access. You can call the DescribePrefixLists operation to query the IDs of available prefix lists. Take note of the following items:
+     * - If a security group is in the classic network, you cannot configure prefix lists in the security group rules.
+     * - If you specify the SourceCidrIp, Ipv6SourceCidrIp, or SourceGroupId parameter, this parameter is ignored.
+         */
+        readonly sourcePrefixListId?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `PermissionsProperty`
+ *
+ * @param properties - the TypeScript properties of a `PermissionsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSecurityGroupIngresses_PermissionsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.policy && (typeof properties.policy) !== 'object') {
+        errors.collect(ros.propertyValidator('policy', ros.validateAllowedValues)({
+          data: properties.policy,
+          allowedValues: ["accept","drop"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('policy', ros.validateString)(properties.policy));
+    errors.collect(ros.propertyValidator('sourceGroupId', ros.validateString)(properties.sourceGroupId));
+    if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
+        errors.collect(ros.propertyValidator('description', ros.validateLength)({
+            data: properties.description.length,
+            min: 1,
+            max: 512,
+          }));
+    }
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('sourcePortRange', ros.validateString)(properties.sourcePortRange));
+    if(properties.priority && (typeof properties.priority) !== 'object') {
+        errors.collect(ros.propertyValidator('priority', ros.validateRange)({
+            data: properties.priority,
+            min: 1,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('priority', ros.validateNumber)(properties.priority));
+    errors.collect(ros.propertyValidator('sourceGroupOwnerId', ros.validateString)(properties.sourceGroupOwnerId));
+    errors.collect(ros.propertyValidator('ipv6SourceCidrIp', ros.validateString)(properties.ipv6SourceCidrIp));
+    if(properties.nicType && (typeof properties.nicType) !== 'object') {
+        errors.collect(ros.propertyValidator('nicType', ros.validateAllowedValues)({
+          data: properties.nicType,
+          allowedValues: ["internet","intranet"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('nicType', ros.validateString)(properties.nicType));
+    errors.collect(ros.propertyValidator('portRange', ros.requiredValidator)(properties.portRange));
+    errors.collect(ros.propertyValidator('portRange', ros.validateString)(properties.portRange));
+    errors.collect(ros.propertyValidator('sourceCidrIp', ros.validateString)(properties.sourceCidrIp));
+    errors.collect(ros.propertyValidator('ipProtocol', ros.requiredValidator)(properties.ipProtocol));
+    if(properties.ipProtocol && (typeof properties.ipProtocol) !== 'object') {
+        errors.collect(ros.propertyValidator('ipProtocol', ros.validateAllowedValues)({
+          data: properties.ipProtocol,
+          allowedValues: ["tcp","udp","icmp","gre","all","icmpv6"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ipProtocol', ros.validateString)(properties.ipProtocol));
+    errors.collect(ros.propertyValidator('destCidrIp', ros.validateString)(properties.destCidrIp));
+    errors.collect(ros.propertyValidator('sourceGroupOwnerAccount', ros.validateString)(properties.sourceGroupOwnerAccount));
+    errors.collect(ros.propertyValidator('ipv6DestCidrIp', ros.validateString)(properties.ipv6DestCidrIp));
+    errors.collect(ros.propertyValidator('sourcePrefixListId', ros.validateString)(properties.sourcePrefixListId));
+    return errors.wrap('supplied properties not correct for "PermissionsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECS::SecurityGroupIngresses.Permissions` resource
+ *
+ * @param properties - the TypeScript properties of a `PermissionsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECS::SecurityGroupIngresses.Permissions` resource.
+ */
+// @ts-ignore TS6133
+function rosSecurityGroupIngressesPermissionsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSecurityGroupIngresses_PermissionsPropertyValidator(properties).assertSuccess();
+    return {
+      Policy: ros.stringToRosTemplate(properties.policy),
+      SourceGroupId: ros.stringToRosTemplate(properties.sourceGroupId),
+      Description: ros.stringToRosTemplate(properties.description),
+      SourcePortRange: ros.stringToRosTemplate(properties.sourcePortRange),
+      Priority: ros.numberToRosTemplate(properties.priority),
+      SourceGroupOwnerId: ros.stringToRosTemplate(properties.sourceGroupOwnerId),
+      Ipv6SourceCidrIp: ros.stringToRosTemplate(properties.ipv6SourceCidrIp),
+      NicType: ros.stringToRosTemplate(properties.nicType),
+      PortRange: ros.stringToRosTemplate(properties.portRange),
+      SourceCidrIp: ros.stringToRosTemplate(properties.sourceCidrIp),
+      IpProtocol: ros.stringToRosTemplate(properties.ipProtocol),
+      DestCidrIp: ros.stringToRosTemplate(properties.destCidrIp),
+      SourceGroupOwnerAccount: ros.stringToRosTemplate(properties.sourceGroupOwnerAccount),
+      Ipv6DestCidrIp: ros.stringToRosTemplate(properties.ipv6DestCidrIp),
+      SourcePrefixListId: ros.stringToRosTemplate(properties.sourcePrefixListId),
+    };
 }
 
 /**

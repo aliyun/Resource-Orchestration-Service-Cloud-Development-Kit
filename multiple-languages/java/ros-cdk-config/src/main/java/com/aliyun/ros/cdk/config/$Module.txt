@@ -14,8 +14,7 @@
 @alicloud/ros-cdk-config.RosAggregator.AggregatorAccountsProperty=com.aliyun.ros.cdk.config.RosAggregator$AggregatorAccountsProperty
 @alicloud/ros-cdk-config.RosAggregatorProps=com.aliyun.ros.cdk.config.RosAggregatorProps
 @alicloud/ros-cdk-config.RosCompliancePack=com.aliyun.ros.cdk.config.RosCompliancePack
-@alicloud/ros-cdk-config.RosCompliancePack.ConfigRuleParametersProperty=com.aliyun.ros.cdk.config.RosCompliancePack$ConfigRuleParametersProperty
-@alicloud/ros-cdk-config.RosCompliancePack.ConfigRulesProperty=com.aliyun.ros.cdk.config.RosCompliancePack$ConfigRulesProperty
+@alicloud/ros-cdk-config.RosCompliancePack.ConfigRuleIdsProperty=com.aliyun.ros.cdk.config.RosCompliancePack$ConfigRuleIdsProperty
 @alicloud/ros-cdk-config.RosCompliancePackProps=com.aliyun.ros.cdk.config.RosCompliancePackProps
 @alicloud/ros-cdk-config.RosDeliveryChannel=com.aliyun.ros.cdk.config.RosDeliveryChannel
 @alicloud/ros-cdk-config.RosDeliveryChannelProps=com.aliyun.ros.cdk.config.RosDeliveryChannelProps

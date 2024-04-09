@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Nlpautoml
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::NLPAUTOML::Dataset`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::NLPAUTOML::Dataset`, which is used to create a dataset.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDataset`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlpautoml-dataset

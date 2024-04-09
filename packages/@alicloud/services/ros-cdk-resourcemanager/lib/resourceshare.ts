@@ -43,7 +43,7 @@ export interface ResourceShareProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::ResourceShare`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::ResourceShare`, which is used to create a resource share.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosResourceShare`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourceshare
  */

@@ -265,6 +265,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
             }
         }
 
+        private object? _policy;
+
+        /// <remarks>
+        /// <strong>Property</strong>: policy: The policy of key.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "policy", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+        public object? Policy
+        {
+            get => _policy;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case System.Collections.Generic.IDictionary<string, object> cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, System.Collections.Generic.IDictionary<string, object>; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _policy = value;
+            }
+        }
+
         private object? _protectionLevel;
 
         /// <remarks>

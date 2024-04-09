@@ -25,17 +25,25 @@ export interface SecurityGroupEgressProps {
     readonly description?: string | ros.IResolvable;
 
     /**
-     * Property destCidrIp: Dest CIDR Ip Address range. Only IPV4 supported.
+     * Property destCidrIp: The destination IPv4 CIDR block to which you want to control access. CIDR blocks and IPv4 addresses are supported.
      */
     readonly destCidrIp?: string | ros.IResolvable;
 
     /**
-     * Property destGroupId: Dest Group Id
+     * Property destGroupId: The destination security group ID to which access permissions need to be set.
+     * Set at least one of the DestGroupId, DestCidrIp, Ipv6DestCidrIp, or DestPrefixListId parameters.
+     * - If DestGroupId is specified without the DestCidrIp parameter, the NicType parameter can only take the value intranet.
+     * - If both DestGroupId and DestCidrIp are specified, DestCidrIp is assumed to prevail.
+     * You should pay attention to:
+     * - Enterprise Security groups do not support authorized security group access.
+     * - The maximum number of authorized security groups supported by ordinary security groups is 20.
      */
     readonly destGroupId?: string | ros.IResolvable;
 
     /**
-     * Property destGroupOwnerId: Dest Group Owner Account ID
+     * Property destGroupOwnerId: When setting security group rules across accounts, the Ali Cloud account ID of the destination security group.
+     * - If neither DestGroupOwnerId nor DestGroupOwnerAccount is set, it is considered to set the access rights of your other security group.
+     * - If you have set the parameter DestCidrIp, the parameter DestGroupOwnerId is invalid.
      */
     readonly destGroupOwnerId?: string | ros.IResolvable;
 
@@ -47,8 +55,7 @@ export interface SecurityGroupEgressProps {
     readonly destPrefixListId?: string | ros.IResolvable;
 
     /**
-     * Property ipv6DestCidrIp: Destination IPv6 CIDR address segment. Supports IP address ranges in CIDR format and IPv6 format.
-     * Note Only VPC type IP addresses are supported.
+     * Property ipv6DestCidrIp: Destination IPv6 CIDR address block for which access rights need to be set. CIDR format and IPv6 format IP address range are supported.
      */
     readonly ipv6DestCidrIp?: string | ros.IResolvable;
 

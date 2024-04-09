@@ -48,7 +48,7 @@ function rosDefaultPatchBaselinePropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::DefaultPatchBaseline`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::DefaultPatchBaseline`, which is used to register a default patch baseline.
  * @Note This class does not contain additional functions, so it is recommended to use the `DefaultPatchBaseline` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-defaultpatchbaseline
  */

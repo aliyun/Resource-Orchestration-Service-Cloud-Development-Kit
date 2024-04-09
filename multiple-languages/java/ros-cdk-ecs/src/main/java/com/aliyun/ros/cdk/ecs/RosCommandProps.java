@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-command
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:51.769Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:32.216Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosCommandProps")
 @software.amazon.jsii.Jsii.Proxy(RosCommandProps.Jsii$Proxy.class)
 public interface RosCommandProps extends software.amazon.jsii.JsiiSerializable {
@@ -17,6 +17,12 @@ public interface RosCommandProps extends software.amazon.jsii.JsiiSerializable {
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCommandContent() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getContentEncoding() {
         return null;
     }
 
@@ -35,6 +41,12 @@ public interface RosCommandProps extends software.amazon.jsii.JsiiSerializable {
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
 
@@ -68,9 +80,11 @@ public interface RosCommandProps extends software.amazon.jsii.JsiiSerializable {
     public static final class Builder implements software.amazon.jsii.Builder<RosCommandProps> {
         java.lang.Object type;
         java.lang.Object commandContent;
+        java.lang.Object contentEncoding;
         java.lang.Object description;
         java.lang.Object enableParameter;
         java.lang.Object name;
+        java.lang.Object resourceGroupId;
         java.util.List<com.aliyun.ros.cdk.ecs.RosCommand.TagsProperty> tags;
         java.lang.Object timeout;
         java.lang.Object workingDir;
@@ -112,6 +126,26 @@ public interface RosCommandProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder commandContent(com.aliyun.ros.cdk.core.IResolvable commandContent) {
             this.commandContent = commandContent;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCommandProps#getContentEncoding}
+         * @param contentEncoding the value to be set.
+         * @return {@code this}
+         */
+        public Builder contentEncoding(java.lang.String contentEncoding) {
+            this.contentEncoding = contentEncoding;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCommandProps#getContentEncoding}
+         * @param contentEncoding the value to be set.
+         * @return {@code this}
+         */
+        public Builder contentEncoding(com.aliyun.ros.cdk.core.IResolvable contentEncoding) {
+            this.contentEncoding = contentEncoding;
             return this;
         }
 
@@ -172,6 +206,26 @@ public interface RosCommandProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
             this.name = name;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCommandProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCommandProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
             return this;
         }
 
@@ -244,9 +298,11 @@ public interface RosCommandProps extends software.amazon.jsii.JsiiSerializable {
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosCommandProps {
         private final java.lang.Object type;
         private final java.lang.Object commandContent;
+        private final java.lang.Object contentEncoding;
         private final java.lang.Object description;
         private final java.lang.Object enableParameter;
         private final java.lang.Object name;
+        private final java.lang.Object resourceGroupId;
         private final java.util.List<com.aliyun.ros.cdk.ecs.RosCommand.TagsProperty> tags;
         private final java.lang.Object timeout;
         private final java.lang.Object workingDir;
@@ -259,9 +315,11 @@ public interface RosCommandProps extends software.amazon.jsii.JsiiSerializable {
             super(objRef);
             this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.commandContent = software.amazon.jsii.Kernel.get(this, "commandContent", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.contentEncoding = software.amazon.jsii.Kernel.get(this, "contentEncoding", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enableParameter = software.amazon.jsii.Kernel.get(this, "enableParameter", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosCommand.TagsProperty.class)));
             this.timeout = software.amazon.jsii.Kernel.get(this, "timeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workingDir = software.amazon.jsii.Kernel.get(this, "workingDir", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -275,9 +333,11 @@ public interface RosCommandProps extends software.amazon.jsii.JsiiSerializable {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.type = java.util.Objects.requireNonNull(builder.type, "type is required");
             this.commandContent = builder.commandContent;
+            this.contentEncoding = builder.contentEncoding;
             this.description = builder.description;
             this.enableParameter = builder.enableParameter;
             this.name = builder.name;
+            this.resourceGroupId = builder.resourceGroupId;
             this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosCommand.TagsProperty>)builder.tags;
             this.timeout = builder.timeout;
             this.workingDir = builder.workingDir;
@@ -294,6 +354,11 @@ public interface RosCommandProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getContentEncoding() {
+            return this.contentEncoding;
+        }
+
+        @Override
         public final java.lang.Object getDescription() {
             return this.description;
         }
@@ -306,6 +371,11 @@ public interface RosCommandProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getName() {
             return this.name;
+        }
+
+        @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
         }
 
         @Override
@@ -333,6 +403,9 @@ public interface RosCommandProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getCommandContent() != null) {
                 data.set("commandContent", om.valueToTree(this.getCommandContent()));
             }
+            if (this.getContentEncoding() != null) {
+                data.set("contentEncoding", om.valueToTree(this.getContentEncoding()));
+            }
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
             }
@@ -341,6 +414,9 @@ public interface RosCommandProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getName() != null) {
                 data.set("name", om.valueToTree(this.getName()));
+            }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
@@ -371,9 +447,11 @@ public interface RosCommandProps extends software.amazon.jsii.JsiiSerializable {
 
             if (!type.equals(that.type)) return false;
             if (this.commandContent != null ? !this.commandContent.equals(that.commandContent) : that.commandContent != null) return false;
+            if (this.contentEncoding != null ? !this.contentEncoding.equals(that.contentEncoding) : that.contentEncoding != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.enableParameter != null ? !this.enableParameter.equals(that.enableParameter) : that.enableParameter != null) return false;
             if (this.name != null ? !this.name.equals(that.name) : that.name != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.timeout != null ? !this.timeout.equals(that.timeout) : that.timeout != null) return false;
             return this.workingDir != null ? this.workingDir.equals(that.workingDir) : that.workingDir == null;
@@ -383,9 +461,11 @@ public interface RosCommandProps extends software.amazon.jsii.JsiiSerializable {
         public final int hashCode() {
             int result = this.type.hashCode();
             result = 31 * result + (this.commandContent != null ? this.commandContent.hashCode() : 0);
+            result = 31 * result + (this.contentEncoding != null ? this.contentEncoding.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.enableParameter != null ? this.enableParameter.hashCode() : 0);
             result = 31 * result + (this.name != null ? this.name.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.timeout != null ? this.timeout.hashCode() : 0);
             result = 31 * result + (this.workingDir != null ? this.workingDir.hashCode() : 0);

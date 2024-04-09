@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ddospro;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-proinstance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:51.165Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:31.570Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ddospro.$Module.class, fqn = "@alicloud/ros-cdk-ddospro.RosProInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosProInstanceProps.Jsii$Proxy.class)
 public interface RosProInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -89,6 +89,12 @@ public interface RosProInstanceProps extends software.amazon.jsii.JsiiSerializab
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ddospro.RosProInstance.TagsProperty> getTags() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosProInstanceProps}
      */
     static Builder builder() {
@@ -111,6 +117,7 @@ public interface RosProInstanceProps extends software.amazon.jsii.JsiiSerializab
         java.lang.Object portCount;
         java.lang.Object serviceBandwidth;
         java.lang.Object servicePartner;
+        java.util.List<com.aliyun.ros.cdk.ddospro.RosProInstance.TagsProperty> tags;
 
         /**
          * Sets the value of {@link RosProInstanceProps#getAddressType}
@@ -373,6 +380,17 @@ public interface RosProInstanceProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosProInstanceProps#getTags}
+         * @param tags the value to be set.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.ddospro.RosProInstance.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ddospro.RosProInstance.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosProInstanceProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -401,6 +419,7 @@ public interface RosProInstanceProps extends software.amazon.jsii.JsiiSerializab
         private final java.lang.Object portCount;
         private final java.lang.Object serviceBandwidth;
         private final java.lang.Object servicePartner;
+        private final java.util.List<com.aliyun.ros.cdk.ddospro.RosProInstance.TagsProperty> tags;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -421,11 +440,13 @@ public interface RosProInstanceProps extends software.amazon.jsii.JsiiSerializab
             this.portCount = software.amazon.jsii.Kernel.get(this, "portCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serviceBandwidth = software.amazon.jsii.Kernel.get(this, "serviceBandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.servicePartner = software.amazon.jsii.Kernel.get(this, "servicePartner", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ddospro.RosProInstance.TagsProperty.class)));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
+        @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.addressType = builder.addressType;
@@ -441,6 +462,7 @@ public interface RosProInstanceProps extends software.amazon.jsii.JsiiSerializab
             this.portCount = builder.portCount;
             this.serviceBandwidth = builder.serviceBandwidth;
             this.servicePartner = builder.servicePartner;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ddospro.RosProInstance.TagsProperty>)builder.tags;
         }
 
         @Override
@@ -509,6 +531,11 @@ public interface RosProInstanceProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
+        public final java.util.List<com.aliyun.ros.cdk.ddospro.RosProInstance.TagsProperty> getTags() {
+            return this.tags;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -553,6 +580,9 @@ public interface RosProInstanceProps extends software.amazon.jsii.JsiiSerializab
             if (this.getServicePartner() != null) {
                 data.set("servicePartner", om.valueToTree(this.getServicePartner()));
             }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ddospro.RosProInstanceProps"));
@@ -583,7 +613,8 @@ public interface RosProInstanceProps extends software.amazon.jsii.JsiiSerializab
             if (this.periodUnit != null ? !this.periodUnit.equals(that.periodUnit) : that.periodUnit != null) return false;
             if (this.portCount != null ? !this.portCount.equals(that.portCount) : that.portCount != null) return false;
             if (this.serviceBandwidth != null ? !this.serviceBandwidth.equals(that.serviceBandwidth) : that.serviceBandwidth != null) return false;
-            return this.servicePartner != null ? this.servicePartner.equals(that.servicePartner) : that.servicePartner == null;
+            if (this.servicePartner != null ? !this.servicePartner.equals(that.servicePartner) : that.servicePartner != null) return false;
+            return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
         @Override
@@ -601,6 +632,7 @@ public interface RosProInstanceProps extends software.amazon.jsii.JsiiSerializab
             result = 31 * result + (this.portCount != null ? this.portCount.hashCode() : 0);
             result = 31 * result + (this.serviceBandwidth != null ? this.serviceBandwidth.hashCode() : 0);
             result = 31 * result + (this.servicePartner != null ? this.servicePartner.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }
     }

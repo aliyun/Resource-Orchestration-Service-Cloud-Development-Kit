@@ -3,6 +3,129 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cr-instance
+ */
+export interface RosInstanceProps {
+
+    /**
+     * @Property instanceId: The first ID of the resource.
+     */
+    readonly instanceId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosInstanceProps`
+ *
+ * @param properties - the TypeScript properties of a `RosInstanceProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstancePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    return errors.wrap('supplied properties not correct for "RosInstanceProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::CR::Instance` resource
+ *
+ * @param properties - the TypeScript properties of a `RosInstanceProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::CR::Instance` resource.
+ */
+// @ts-ignore TS6133
+function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosInstancePropsValidator(properties).assertSuccess();
+    }
+    return {
+      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CR::Instance`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cr-instance
+ */
+export class RosInstance extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::CR::Instance";
+
+    /**
+     * @Attribute CreateTime: The creation time of the resource.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceId: The first ID of the resource.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceName: InstanceName.
+     */
+    public readonly attrInstanceName: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceSpecification: InstanceSpecification.
+     */
+    public readonly attrInstanceSpecification: ros.IResolvable;
+
+    /**
+     * @Attribute ModifiedTime: Last modification time.
+     */
+    public readonly attrModifiedTime: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The ID of the resource group.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property instanceId: The first ID of the resource.
+     */
+    public instanceId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosInstanceProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrInstanceId = this.getAtt('InstanceId');
+        this.attrInstanceName = this.getAtt('InstanceName');
+        this.attrInstanceSpecification = this.getAtt('InstanceSpecification');
+        this.attrModifiedTime = this.getAtt('ModifiedTime');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.instanceId = props.instanceId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            instanceId: this.instanceId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosInstancePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosInstances`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cr-instances
  */

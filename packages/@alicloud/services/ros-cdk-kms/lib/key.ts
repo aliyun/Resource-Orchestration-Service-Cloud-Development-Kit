@@ -48,6 +48,11 @@ export interface KeyProps {
     readonly pendingWindowInDays?: number | ros.IResolvable;
 
     /**
+     * Property policy: The policy of key.
+     */
+    readonly policy?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
      * Property protectionLevel: The protection level of the CMK to create. Valid value: SOFTWARE and HSM. When this parameter is set to HSM:
      * If the Origin parameter is set to Aliyun_KMS, the CMK is created in Managed HSM.
      * If the Origin parameter is set to EXTERNAL, you can import external keys to Managed HSM.
@@ -89,11 +94,12 @@ export class Key extends ros.Resource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosKey = new RosKey(this, id,  {
+            policy: props.policy,
             protectionLevel: props.protectionLevel,
             description: props.description,
             rotationInterval: props.rotationInterval,
-            pendingWindowInDays: props.pendingWindowInDays === undefined || props.pendingWindowInDays === null ? 30 : props.pendingWindowInDays,
             enableAutomaticRotation: props.enableAutomaticRotation,
+            pendingWindowInDays: props.pendingWindowInDays === undefined || props.pendingWindowInDays === null ? 30 : props.pendingWindowInDays,
             keySpec: props.keySpec,
             enable: props.enable === undefined || props.enable === null ? true : props.enable,
             keyUsage: props.keyUsage,

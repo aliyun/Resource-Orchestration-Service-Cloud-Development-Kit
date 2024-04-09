@@ -438,7 +438,7 @@ export interface PrepayDBInstanceProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::PrepayDBInstance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::PrepayDBInstance`, which is used to create a subscription ApsaraDB RDS instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPrepayDBInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-prepaydbinstance
  */

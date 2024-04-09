@@ -27,7 +27,7 @@ export interface DomainExtensionsProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::DomainExtensions`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::DomainExtensions`, which is used to query the domain name extensions that are added to a listener of a Server Load Balancer (SLB) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomainExtensions`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-domainextensions
  */

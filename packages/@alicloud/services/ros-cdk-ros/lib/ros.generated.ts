@@ -3,6 +3,168 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosAssert`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-assert
+ */
+export interface RosAssertProps {
+
+    /**
+     * @Property values: A list of values to assert. The items in the list are compared in order. The range of length is one to three. 
+     * - Three values are supported only if the operation is Equal or NotEqual.
+     * - One value is supported only if the operation is Not.
+     */
+    readonly values: Array<any | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property abortCreation: Whether to abort creation when the assert fails. Default is True.
+     */
+    readonly abortCreation?: boolean | ros.IResolvable;
+
+    /**
+     * @Property errorMessage: The error message to be returned when the assert fails.
+     */
+    readonly errorMessage?: string | ros.IResolvable;
+
+    /**
+     * @Property operation: The type of assertion to make. The supported operations are:
+     * Equal, NotEqual, Greater, GreaterOrEqual, Less, LessOrEqual, Contain, NotContain, And, Or, Not.
+     * Default is Equal.
+     */
+    readonly operation?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAssertProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAssertProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAssertPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('values', ros.requiredValidator)(properties.values));
+    if(properties.values && (Array.isArray(properties.values) || (typeof properties.values) === 'string')) {
+        errors.collect(ros.propertyValidator('values', ros.validateLength)({
+            data: properties.values.length,
+            min: 1,
+            max: 3,
+          }));
+    }
+    errors.collect(ros.propertyValidator('values', ros.listValidator(ros.validateAny))(properties.values));
+    if(properties.operation && (typeof properties.operation) !== 'object') {
+        errors.collect(ros.propertyValidator('operation', ros.validateAllowedValues)({
+          data: properties.operation,
+          allowedValues: ["Equal","NotEqual","Greater","GreaterOrEqual","Less","LessOrEqual","Contain","NotContain","And","Or","Not"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('operation', ros.validateString)(properties.operation));
+    errors.collect(ros.propertyValidator('errorMessage', ros.validateString)(properties.errorMessage));
+    errors.collect(ros.propertyValidator('abortCreation', ros.validateBoolean)(properties.abortCreation));
+    return errors.wrap('supplied properties not correct for "RosAssertProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ROS::Assert` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAssertProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ROS::Assert` resource.
+ */
+// @ts-ignore TS6133
+function rosAssertPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAssertPropsValidator(properties).assertSuccess();
+    }
+    return {
+      Values: ros.listMapper(ros.objectToRosTemplate)(properties.values),
+      AbortCreation: ros.booleanToRosTemplate(properties.abortCreation),
+      ErrorMessage: ros.stringToRosTemplate(properties.errorMessage),
+      Operation: ros.stringToRosTemplate(properties.operation),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::Assert`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Assert` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-assert
+ */
+export class RosAssert extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ROS::Assert";
+
+    /**
+     * @Attribute FailureCause: The reason the assertion failed
+     */
+    public readonly attrFailureCause: ros.IResolvable;
+
+    /**
+     * @Attribute Result: The result of the assert.
+     */
+    public readonly attrResult: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property values: A list of values to assert. The items in the list are compared in order. The range of length is one to three. 
+     * - Three values are supported only if the operation is Equal or NotEqual.
+     * - One value is supported only if the operation is Not.
+     */
+    public values: Array<any | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property abortCreation: Whether to abort creation when the assert fails. Default is True.
+     */
+    public abortCreation: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property errorMessage: The error message to be returned when the assert fails.
+     */
+    public errorMessage: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property operation: The type of assertion to make. The supported operations are:
+     * Equal, NotEqual, Greater, GreaterOrEqual, Less, LessOrEqual, Contain, NotContain, And, Or, Not.
+     * Default is Equal.
+     */
+    public operation: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAssertProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAssert.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrFailureCause = this.getAtt('FailureCause');
+        this.attrResult = this.getAtt('Result');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.values = props.values;
+        this.abortCreation = props.abortCreation;
+        this.errorMessage = props.errorMessage;
+        this.operation = props.operation;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            values: this.values,
+            abortCreation: this.abortCreation,
+            errorMessage: this.errorMessage,
+            operation: this.operation,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAssertPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosAutoEnableService`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-autoenableservice
  */
@@ -52,7 +214,7 @@ export interface RosAutoEnableServiceProps {
      * Config: Cloud Config
      * TrustedService\/ROS: Trusted Service for ROS
      * CloudSSO: Cloud SSO
-     *
+     * ControlPolicy: Control Policy
      */
     readonly serviceName: string | ros.IResolvable;
 }
@@ -71,7 +233,7 @@ function RosAutoEnableServicePropsValidator(properties: any): ros.ValidationResu
     if(properties.serviceName && (typeof properties.serviceName) !== 'object') {
         errors.collect(ros.propertyValidator('serviceName', ros.validateAllowedValues)({
           data: properties.serviceName,
-          allowedValues: ["IOT","EMAS","MaxCompute","CloudSSO","Config","BatchCompute","IMM","Xtrace","DataWorks","FNF","FC","KMS","TransitRouter","PAI","CS","CR","DataHub","EDAS","CMS","RocketMQ","HBR","ApiGateway","NLP","SLS","NAS","CDTCb","OSS","MNS","TrafficMirror","ARMS","SAE","CloudStorageGateway","PrivateZone","DCDN","VS","CDT","AHAS","BrainIndustrial","OTS","CDN","PrivateLink","TrustedService/ROS"],
+          allowedValues: ["IOT","EMAS","MaxCompute","CloudSSO","Config","BatchCompute","IMM","Xtrace","DataWorks","FNF","FC","KMS","TransitRouter","PAI","CS","CR","DataHub","EDAS","CMS","RocketMQ","HBR","ApiGateway","NLP","ControlPolicy","SLS","NAS","CDTCb","OSS","MNS","TrafficMirror","ARMS","SAE","CloudStorageGateway","PrivateZone","DCDN","VS","CDT","AHAS","BrainIndustrial","OTS","CDN","PrivateLink","TrustedService/ROS"],
         }));
     }
     errors.collect(ros.propertyValidator('serviceName', ros.validateString)(properties.serviceName));
@@ -97,7 +259,7 @@ function rosAutoEnableServicePropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::AutoEnableService`, which is used to activate an Alibaba Cloud service.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::AutoEnableService`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AutoEnableService` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-autoenableservice
  */
@@ -154,7 +316,7 @@ export class RosAutoEnableService extends ros.RosResource {
      * Config: Cloud Config
      * TrustedService\/ROS: Trusted Service for ROS
      * CloudSSO: Cloud SSO
-     *
+     * ControlPolicy: Control Policy
      */
     public serviceName: string | ros.IResolvable;
 
@@ -1827,7 +1989,7 @@ function rosStackGroupPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::StackGroup`, which is used to create a stack group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::StackGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `StackGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-stackgroup
  */
@@ -2413,7 +2575,7 @@ function rosWaitConditionPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::WaitCondition`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::WaitCondition`, which is used to wait for signals. You can use ALIYUN::ROS::WaitCondition together with ALIYUN::ROS::WaitConditionHandle to manage the execution process of a stack. When you create an Elastic Compute Service (ECS) instance, a signal is sent during the execution of the user data.
  * @Note This class does not contain additional functions, so it is recommended to use the `WaitCondition` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-waitcondition
  */

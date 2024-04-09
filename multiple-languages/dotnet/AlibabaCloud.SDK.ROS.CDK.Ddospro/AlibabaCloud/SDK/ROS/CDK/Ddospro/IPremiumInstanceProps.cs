@@ -163,6 +163,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ddospro
             }
         }
 
+        /// <summary>Property tags: Tags to attach to instance.</summary>
+        /// <remarks>
+        /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-ddospro.RosPremiumInstance.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        AlibabaCloud.SDK.ROS.CDK.Ddospro.RosPremiumInstance.ITagsProperty[]? Tags
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `PremiumInstance`.</summary>
         /// <remarks>
         /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-premiuminstance
@@ -297,6 +311,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ddospro
             public object? ProductPlan
             {
                 get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property tags: Tags to attach to instance.</summary>
+            /// <remarks>
+            /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-ddospro.RosPremiumInstance.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+            public AlibabaCloud.SDK.ROS.CDK.Ddospro.RosPremiumInstance.ITagsProperty[]? Tags
+            {
+                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Ddospro.RosPremiumInstance.ITagsProperty[]?>();
             }
         }
     }

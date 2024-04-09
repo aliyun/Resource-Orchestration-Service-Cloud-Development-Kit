@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ess;
  * <p>
  * A scaling group is a group of Elastic Compute Service (ECS) instances that are dynamically scaled based on the configured scenario. A scaling group does not immediately take effect after it is created. You must use ALIYUN::ESS::ScalingGroupEnable to enable the scaling group to trigger scaling activities and execute scaling rules.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:52.524Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:33.071Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScalingGroup")
 public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
 
@@ -327,7 +327,7 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param dbInstanceIds Property dbInstanceIds: ID list of an RDS instance. This parameter is required.
          */
-        public Builder dbInstanceIds(final java.util.List<? extends java.lang.Object> dbInstanceIds) {
+        public Builder dbInstanceIds(final com.aliyun.ros.cdk.core.IResolvable dbInstanceIds) {
             this.props.dbInstanceIds(dbInstanceIds);
             return this;
         }
@@ -339,7 +339,7 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param dbInstanceIds Property dbInstanceIds: ID list of an RDS instance. This parameter is required.
          */
-        public Builder dbInstanceIds(final com.aliyun.ros.cdk.core.IResolvable dbInstanceIds) {
+        public Builder dbInstanceIds(final java.util.List<? extends java.lang.Object> dbInstanceIds) {
             this.props.dbInstanceIds(dbInstanceIds);
             return this;
         }
@@ -583,7 +583,7 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param loadBalancerIds Property loadBalancerIds: ID list of a Server Load Balancer instance. This parameter is required.
          */
-        public Builder loadBalancerIds(final java.util.List<? extends java.lang.Object> loadBalancerIds) {
+        public Builder loadBalancerIds(final com.aliyun.ros.cdk.core.IResolvable loadBalancerIds) {
             this.props.loadBalancerIds(loadBalancerIds);
             return this;
         }
@@ -595,7 +595,7 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param loadBalancerIds Property loadBalancerIds: ID list of a Server Load Balancer instance. This parameter is required.
          */
-        public Builder loadBalancerIds(final com.aliyun.ros.cdk.core.IResolvable loadBalancerIds) {
+        public Builder loadBalancerIds(final java.util.List<? extends java.lang.Object> loadBalancerIds) {
             this.props.loadBalancerIds(loadBalancerIds);
             return this;
         }
@@ -753,7 +753,7 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param protectedInstances Property protectedInstances: ECS instances of protected mode in the scaling group. This parameter is required.
          */
-        public Builder protectedInstances(final java.util.List<? extends java.lang.Object> protectedInstances) {
+        public Builder protectedInstances(final com.aliyun.ros.cdk.core.IResolvable protectedInstances) {
             this.props.protectedInstances(protectedInstances);
             return this;
         }
@@ -763,7 +763,7 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param protectedInstances Property protectedInstances: ECS instances of protected mode in the scaling group. This parameter is required.
          */
-        public Builder protectedInstances(final com.aliyun.ros.cdk.core.IResolvable protectedInstances) {
+        public Builder protectedInstances(final java.util.List<? extends java.lang.Object> protectedInstances) {
             this.props.protectedInstances(protectedInstances);
             return this;
         }
@@ -787,7 +787,7 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param removalPolicys Property removalPolicys: Policy for removing ECS instances from the scaling group. This parameter is required.
          */
-        public Builder removalPolicys(final java.util.List<? extends java.lang.Object> removalPolicys) {
+        public Builder removalPolicys(final com.aliyun.ros.cdk.core.IResolvable removalPolicys) {
             this.props.removalPolicys(removalPolicys);
             return this;
         }
@@ -810,7 +810,7 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param removalPolicys Property removalPolicys: Policy for removing ECS instances from the scaling group. This parameter is required.
          */
-        public Builder removalPolicys(final com.aliyun.ros.cdk.core.IResolvable removalPolicys) {
+        public Builder removalPolicys(final java.util.List<? extends java.lang.Object> removalPolicys) {
             this.props.removalPolicys(removalPolicys);
             return this;
         }
@@ -970,7 +970,7 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param standbyInstances Property standbyInstances: ECS instances of standby mode in the scaling group. This parameter is required.
          */
-        public Builder standbyInstances(final java.util.List<? extends java.lang.Object> standbyInstances) {
+        public Builder standbyInstances(final com.aliyun.ros.cdk.core.IResolvable standbyInstances) {
             this.props.standbyInstances(standbyInstances);
             return this;
         }
@@ -980,7 +980,7 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param standbyInstances Property standbyInstances: ECS instances of standby mode in the scaling group. This parameter is required.
          */
-        public Builder standbyInstances(final com.aliyun.ros.cdk.core.IResolvable standbyInstances) {
+        public Builder standbyInstances(final java.util.List<? extends java.lang.Object> standbyInstances) {
             this.props.standbyInstances(standbyInstances);
             return this;
         }
@@ -1025,7 +1025,7 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param vSwitchIds Property vSwitchIds: Parameter VSwitchIds.N is used to create instance in multiple zones. Parameter VSwitchIds.N has a priority over parameter VSwitchId. The valid range of N is [1, 8], and you can specify at most 5 VSwitches in a VPC. The priority of VSwitches descends from 1 to 8, and 1 indicates the highest priority. When you fail to create an instance in the zone to which a specified VSwitch belongs, another VSwitch with less priority replaces the specified one automatically. This parameter is required.
          */
-        public Builder vSwitchIds(final java.util.List<? extends java.lang.Object> vSwitchIds) {
+        public Builder vSwitchIds(final com.aliyun.ros.cdk.core.IResolvable vSwitchIds) {
             this.props.vSwitchIds(vSwitchIds);
             return this;
         }
@@ -1035,7 +1035,7 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param vSwitchIds Property vSwitchIds: Parameter VSwitchIds.N is used to create instance in multiple zones. Parameter VSwitchIds.N has a priority over parameter VSwitchId. The valid range of N is [1, 8], and you can specify at most 5 VSwitches in a VPC. The priority of VSwitches descends from 1 to 8, and 1 indicates the highest priority. When you fail to create an instance in the zone to which a specified VSwitch belongs, another VSwitch with less priority replaces the specified one automatically. This parameter is required.
          */
-        public Builder vSwitchIds(final com.aliyun.ros.cdk.core.IResolvable vSwitchIds) {
+        public Builder vSwitchIds(final java.util.List<? extends java.lang.Object> vSwitchIds) {
             this.props.vSwitchIds(vSwitchIds);
             return this;
         }

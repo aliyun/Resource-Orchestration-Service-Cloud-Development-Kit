@@ -60,6 +60,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// Config: Cloud Config
         /// TrustedService/ROS: Trusted Service for ROS
         /// CloudSSO: Cloud SSO
+        /// ControlPolicy: Control Policy
         /// </remarks>
         [JsiiProperty(name: "serviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object ServiceName

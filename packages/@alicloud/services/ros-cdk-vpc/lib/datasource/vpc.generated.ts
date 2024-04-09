@@ -3,6 +3,291 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosAddress`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eip-address
+ */
+export interface RosAddressProps {
+
+    /**
+     * @Property allocationId: The ID of the EIP instance.
+     */
+    readonly allocationId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAddressProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAddressProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAddressPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('allocationId', ros.requiredValidator)(properties.allocationId));
+    errors.collect(ros.propertyValidator('allocationId', ros.validateString)(properties.allocationId));
+    return errors.wrap('supplied properties not correct for "RosAddressProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::EIP::Address` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAddressProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::EIP::Address` resource.
+ */
+// @ts-ignore TS6133
+function rosAddressPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAddressPropsValidator(properties).assertSuccess();
+    }
+    return {
+      AllocationId: ros.stringToRosTemplate(properties.allocationId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::EIP::Address`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Address` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eip-address
+ */
+export class RosAddress extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::EIP::Address";
+
+    /**
+     * @Attribute AddressName: The name of the EIP.
+     */
+    public readonly attrAddressName: ros.IResolvable;
+
+    /**
+     * @Attribute AllocationId: The ID of the EIP instance.
+     */
+    public readonly attrAllocationId: ros.IResolvable;
+
+    /**
+     * @Attribute Bandwidth: The peak bandwidth of the EIP. Unit: Mbps.
+     */
+    public readonly attrBandwidth: ros.IResolvable;
+
+    /**
+     * @Attribute BandwidthPackageBandwidth: The bandwidth value of the Internet shared bandwidth added to the EIP. The unit is Mbps.
+     */
+    public readonly attrBandwidthPackageBandwidth: ros.IResolvable;
+
+    /**
+     * @Attribute BandwidthPackageId: The ID of the added shared bandwidth.
+     */
+    public readonly attrBandwidthPackageId: ros.IResolvable;
+
+    /**
+     * @Attribute BandwidthPackageType: The type of bandwidth. Only **CommonBandwidthPackage** (shared bandwidth) is supported.
+     */
+    public readonly attrBandwidthPackageType: ros.IResolvable;
+
+    /**
+     * @Attribute BusinessStatus: The business status of the EIP instance.
+     */
+    public readonly attrBusinessStatus: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: The time when the EIP was created.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute DeletionProtection: Whether the delete protection function is turned on.
+     */
+    public readonly attrDeletionProtection: ros.IResolvable;
+
+    /**
+     * @Attribute Description: The description of the EIP instance.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute EipBandwidth: AN EIP is added to an Internet shared bandwidth before or exit purchase an Internet shared bandwidth instance after the bandwidth Mbps Set for the bandwidth.
+     */
+    public readonly attrEipBandwidth: ros.IResolvable;
+
+    /**
+     * @Attribute ExpiredTime: Expiration time, format' YYYY-MM-DDThh:mm:ssZ '.
+     */
+    public readonly attrExpiredTime: ros.IResolvable;
+
+    /**
+     * @Attribute HasReservationData: Whether there is renewal data.
+     */
+    public readonly attrHasReservationData: ros.IResolvable;
+
+    /**
+     * @Attribute HdMonitorStatus: Whether the second-level monitoring is enabled for the EIP.
+     */
+    public readonly attrHdMonitorStatus: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceId: The ID of the current bound instance.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceRegionId: The region ID of the currently bound resource.
+     */
+    public readonly attrInstanceRegionId: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceType: The type of the current bound instance.
+     */
+    public readonly attrInstanceType: ros.IResolvable;
+
+    /**
+     * @Attribute IpAddress: The IP address of the EIP.
+     */
+    public readonly attrIpAddress: ros.IResolvable;
+
+    /**
+     * @Attribute Isp: Service providers.
+     */
+    public readonly attrIsp: ros.IResolvable;
+
+    /**
+     * @Attribute Netmode: Network type.
+     */
+    public readonly attrNetmode: ros.IResolvable;
+
+    /**
+     * @Attribute OperationLocks: Lock details.
+     */
+    public readonly attrOperationLocks: ros.IResolvable;
+
+    /**
+     * @Attribute PaymentType: The billing method of the EIP.
+     */
+    public readonly attrPaymentType: ros.IResolvable;
+
+    /**
+     * @Attribute PublicIpAddressPoolId: The ID of the IP address pool to which the EIP belongs.
+     */
+    public readonly attrPublicIpAddressPoolId: ros.IResolvable;
+
+    /**
+     * @Attribute ReservationActiveTime: The effective time of the renewal fee, in the format of 'YYYY-MM-DDThh:mm:ssZ'.
+     */
+    public readonly attrReservationActiveTime: ros.IResolvable;
+
+    /**
+     * @Attribute ReservationBandwidth: Renewal bandwidth, in Mbps.
+     */
+    public readonly attrReservationBandwidth: ros.IResolvable;
+
+    /**
+     * @Attribute ReservationInternetChargeType: Renewal Payment type.
+     */
+    public readonly attrReservationInternetChargeType: ros.IResolvable;
+
+    /**
+     * @Attribute ReservationOrderType: Renewal order type.
+     */
+    public readonly attrReservationOrderType: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The ID of the resource group.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute SecondLimited: Whether a secondary speed limit is configured.
+     */
+    public readonly attrSecondLimited: ros.IResolvable;
+
+    /**
+     * @Attribute SecurityProtectionTypes: Security protection level.
+     */
+    public readonly attrSecurityProtectionTypes: ros.IResolvable;
+
+    /**
+     * @Attribute SegmentInstanceId: The ID of the consecutive EIPs.
+     */
+    public readonly attrSegmentInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute ServiceManaged: Indicates the resource created for the service account.
+     */
+    public readonly attrServiceManaged: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: The tag of the resource.
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property allocationId: The ID of the EIP instance.
+     */
+    public allocationId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAddressProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAddress.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAddressName = this.getAtt('AddressName');
+        this.attrAllocationId = this.getAtt('AllocationId');
+        this.attrBandwidth = this.getAtt('Bandwidth');
+        this.attrBandwidthPackageBandwidth = this.getAtt('BandwidthPackageBandwidth');
+        this.attrBandwidthPackageId = this.getAtt('BandwidthPackageId');
+        this.attrBandwidthPackageType = this.getAtt('BandwidthPackageType');
+        this.attrBusinessStatus = this.getAtt('BusinessStatus');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDeletionProtection = this.getAtt('DeletionProtection');
+        this.attrDescription = this.getAtt('Description');
+        this.attrEipBandwidth = this.getAtt('EipBandwidth');
+        this.attrExpiredTime = this.getAtt('ExpiredTime');
+        this.attrHasReservationData = this.getAtt('HasReservationData');
+        this.attrHdMonitorStatus = this.getAtt('HdMonitorStatus');
+        this.attrInstanceId = this.getAtt('InstanceId');
+        this.attrInstanceRegionId = this.getAtt('InstanceRegionId');
+        this.attrInstanceType = this.getAtt('InstanceType');
+        this.attrIpAddress = this.getAtt('IpAddress');
+        this.attrIsp = this.getAtt('Isp');
+        this.attrNetmode = this.getAtt('Netmode');
+        this.attrOperationLocks = this.getAtt('OperationLocks');
+        this.attrPaymentType = this.getAtt('PaymentType');
+        this.attrPublicIpAddressPoolId = this.getAtt('PublicIpAddressPoolId');
+        this.attrReservationActiveTime = this.getAtt('ReservationActiveTime');
+        this.attrReservationBandwidth = this.getAtt('ReservationBandwidth');
+        this.attrReservationInternetChargeType = this.getAtt('ReservationInternetChargeType');
+        this.attrReservationOrderType = this.getAtt('ReservationOrderType');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrSecondLimited = this.getAtt('SecondLimited');
+        this.attrSecurityProtectionTypes = this.getAtt('SecurityProtectionTypes');
+        this.attrSegmentInstanceId = this.getAtt('SegmentInstanceId');
+        this.attrServiceManaged = this.getAtt('ServiceManaged');
+        this.attrTags = this.getAtt('Tags');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.allocationId = props.allocationId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            allocationId: this.allocationId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAddressPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosAddresses`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eip-addresses
  */
@@ -983,6 +1268,159 @@ export class RosFlowLogs extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosHaVip`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-havip
+ */
+export interface RosHaVipProps {
+
+    /**
+     * @Property haVipId: The  ID of the resource.
+     */
+    readonly haVipId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosHaVipProps`
+ *
+ * @param properties - the TypeScript properties of a `RosHaVipProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosHaVipPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('haVipId', ros.requiredValidator)(properties.haVipId));
+    errors.collect(ros.propertyValidator('haVipId', ros.validateString)(properties.haVipId));
+    return errors.wrap('supplied properties not correct for "RosHaVipProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::VPC::HaVip` resource
+ *
+ * @param properties - the TypeScript properties of a `RosHaVipProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::VPC::HaVip` resource.
+ */
+// @ts-ignore TS6133
+function rosHaVipPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosHaVipPropsValidator(properties).assertSuccess();
+    }
+    return {
+      HaVipId: ros.stringToRosTemplate(properties.haVipId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::HaVip`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `HaVip` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-havip
+ */
+export class RosHaVip extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::VPC::HaVip";
+
+    /**
+     * @Attribute AssociatedEipAddresses: EIP bound to HaVip.
+     */
+    public readonly attrAssociatedEipAddresses: ros.IResolvable;
+
+    /**
+     * @Attribute AssociatedInstanceType: The type of the instance that is bound to the VIIP.
+     */
+    public readonly attrAssociatedInstanceType: ros.IResolvable;
+
+    /**
+     * @Attribute AssociatedInstances: An ECS instance that is bound to HaVip.
+     */
+    public readonly attrAssociatedInstances: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: The creation time of the  resource.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute Description: Dependence of a HaVip instance.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute HaVipId: The  ID of the resource.
+     */
+    public readonly attrHaVipId: ros.IResolvable;
+
+    /**
+     * @Attribute HaVipName: The name of the HaVip instance.
+     */
+    public readonly attrHaVipName: ros.IResolvable;
+
+    /**
+     * @Attribute IpAddress: IP address of private network.
+     */
+    public readonly attrIpAddress: ros.IResolvable;
+
+    /**
+     * @Attribute MasterInstanceId: The primary instance ID bound to HaVip.
+     */
+    public readonly attrMasterInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute VSwitchId: The switch ID to which the HaVip instance belongs.
+     */
+    public readonly attrVSwitchId: ros.IResolvable;
+
+    /**
+     * @Attribute VpcId: The VPC ID to which the HaVip instance belongs.
+     */
+    public readonly attrVpcId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property haVipId: The  ID of the resource.
+     */
+    public haVipId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosHaVipProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosHaVip.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAssociatedEipAddresses = this.getAtt('AssociatedEipAddresses');
+        this.attrAssociatedInstanceType = this.getAtt('AssociatedInstanceType');
+        this.attrAssociatedInstances = this.getAtt('AssociatedInstances');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDescription = this.getAtt('Description');
+        this.attrHaVipId = this.getAtt('HaVipId');
+        this.attrHaVipName = this.getAtt('HaVipName');
+        this.attrIpAddress = this.getAtt('IpAddress');
+        this.attrMasterInstanceId = this.getAtt('MasterInstanceId');
+        this.attrVSwitchId = this.getAtt('VSwitchId');
+        this.attrVpcId = this.getAtt('VpcId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.haVipId = props.haVipId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            haVipId: this.haVipId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosHaVipPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosHaVips`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-havips
  */
@@ -1027,7 +1465,7 @@ function rosHaVipsPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::HaVips`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::HaVips`, which is used to query the high-availability virtual IP addresses (HAVIPs) in a specified region.
  * @Note This class does not contain additional functions, so it is recommended to use the `HaVips` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-havips
  */
@@ -1268,7 +1706,7 @@ function rosIpv4GatewaysPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::Ipv4Gateways`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::Ipv4Gateways`, which is used to query the details of IPv4 gateways.
  * @Note This class does not contain additional functions, so it is recommended to use the `Ipv4Gateways` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-ipv4gateways
  */
@@ -2174,6 +2612,153 @@ export class RosPrefixLists extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosPublicIpAddressPool`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-publicipaddresspool
+ */
+export interface RosPublicIpAddressPoolProps {
+
+    /**
+     * @Property publicIpAddressPoolId: The first ID of the resource.
+     */
+    readonly publicIpAddressPoolId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosPublicIpAddressPoolProps`
+ *
+ * @param properties - the TypeScript properties of a `RosPublicIpAddressPoolProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosPublicIpAddressPoolPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('publicIpAddressPoolId', ros.requiredValidator)(properties.publicIpAddressPoolId));
+    errors.collect(ros.propertyValidator('publicIpAddressPoolId', ros.validateString)(properties.publicIpAddressPoolId));
+    return errors.wrap('supplied properties not correct for "RosPublicIpAddressPoolProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::VPC::PublicIpAddressPool` resource
+ *
+ * @param properties - the TypeScript properties of a `RosPublicIpAddressPoolProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::VPC::PublicIpAddressPool` resource.
+ */
+// @ts-ignore TS6133
+function rosPublicIpAddressPoolPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosPublicIpAddressPoolPropsValidator(properties).assertSuccess();
+    }
+    return {
+      PublicIpAddressPoolId: ros.stringToRosTemplate(properties.publicIpAddressPoolId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::PublicIpAddressPool`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `PublicIpAddressPool` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-publicipaddresspool
+ */
+export class RosPublicIpAddressPool extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::VPC::PublicIpAddressPool";
+
+    /**
+     * @Attribute CreateTime: The creation time of the resource.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute Description: Description.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute IpAddressRemaining: Whether there is a free IP address.
+     */
+    public readonly attrIpAddressRemaining: ros.IResolvable;
+
+    /**
+     * @Attribute Isp: Service providers.
+     */
+    public readonly attrIsp: ros.IResolvable;
+
+    /**
+     * @Attribute PublicIpAddressPoolId: The first ID of the resource.
+     */
+    public readonly attrPublicIpAddressPoolId: ros.IResolvable;
+
+    /**
+     * @Attribute PublicIpAddressPoolName: The name of the resource.
+     */
+    public readonly attrPublicIpAddressPoolName: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The ID of the resource group to which the VPC belongs.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: The tags of PrefixList.
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    /**
+     * @Attribute TotalIpNum: Total ip number of PublicIpAddressPool.
+     */
+    public readonly attrTotalIpNum: ros.IResolvable;
+
+    /**
+     * @Attribute UsedIpNum: Used ip number of PublicIpAddressPool.
+     */
+    public readonly attrUsedIpNum: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property publicIpAddressPoolId: The first ID of the resource.
+     */
+    public publicIpAddressPoolId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosPublicIpAddressPoolProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosPublicIpAddressPool.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDescription = this.getAtt('Description');
+        this.attrIpAddressRemaining = this.getAtt('IpAddressRemaining');
+        this.attrIsp = this.getAtt('Isp');
+        this.attrPublicIpAddressPoolId = this.getAtt('PublicIpAddressPoolId');
+        this.attrPublicIpAddressPoolName = this.getAtt('PublicIpAddressPoolName');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrTags = this.getAtt('Tags');
+        this.attrTotalIpNum = this.getAtt('TotalIpNum');
+        this.attrUsedIpNum = this.getAtt('UsedIpNum');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.publicIpAddressPoolId = props.publicIpAddressPoolId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            publicIpAddressPoolId: this.publicIpAddressPoolId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosPublicIpAddressPoolPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosPublicIpAddressPools`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-publicipaddresspools
  */
@@ -2561,6 +3146,159 @@ export class RosRouteEntries extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosRouteTable`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-routetable
+ */
+export interface RosRouteTableProps {
+
+    /**
+     * @Property routeTableId: The ID of the routing table.
+     */
+    readonly routeTableId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosRouteTableProps`
+ *
+ * @param properties - the TypeScript properties of a `RosRouteTableProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosRouteTablePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('routeTableId', ros.requiredValidator)(properties.routeTableId));
+    errors.collect(ros.propertyValidator('routeTableId', ros.validateString)(properties.routeTableId));
+    return errors.wrap('supplied properties not correct for "RosRouteTableProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::VPC::RouteTable` resource
+ *
+ * @param properties - the TypeScript properties of a `RosRouteTableProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::VPC::RouteTable` resource.
+ */
+// @ts-ignore TS6133
+function rosRouteTablePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosRouteTablePropsValidator(properties).assertSuccess();
+    }
+    return {
+      RouteTableId: ros.stringToRosTemplate(properties.routeTableId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::RouteTable`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `RouteTable` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-routetable
+ */
+export class RosRouteTable extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::VPC::RouteTable";
+
+    /**
+     * @Attribute CreateTime: The creation time of the routing table.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute Description: Description of the routing table.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: Resource group ID.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute RouteTableId: The ID of the routing table.
+     */
+    public readonly attrRouteTableId: ros.IResolvable;
+
+    /**
+     * @Attribute RouteTableName: The name of the routing table.
+     */
+    public readonly attrRouteTableName: ros.IResolvable;
+
+    /**
+     * @Attribute RouteTableType: The type of routing table.
+     */
+    public readonly attrRouteTableType: ros.IResolvable;
+
+    /**
+     * @Attribute RouterId: The router ID to which the routing table belongs.
+     */
+    public readonly attrRouterId: ros.IResolvable;
+
+    /**
+     * @Attribute RouterType: The router type to which the routing table belongs.
+     */
+    public readonly attrRouterType: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: The tag.
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    /**
+     * @Attribute VSwitchIds: The ID of the switch.
+     */
+    public readonly attrVSwitchIds: ros.IResolvable;
+
+    /**
+     * @Attribute VpcId: The ID of VPC.
+     */
+    public readonly attrVpcId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property routeTableId: The ID of the routing table.
+     */
+    public routeTableId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosRouteTableProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosRouteTable.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDescription = this.getAtt('Description');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrRouteTableId = this.getAtt('RouteTableId');
+        this.attrRouteTableName = this.getAtt('RouteTableName');
+        this.attrRouteTableType = this.getAtt('RouteTableType');
+        this.attrRouterId = this.getAtt('RouterId');
+        this.attrRouterType = this.getAtt('RouterType');
+        this.attrTags = this.getAtt('Tags');
+        this.attrVSwitchIds = this.getAtt('VSwitchIds');
+        this.attrVpcId = this.getAtt('VpcId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.routeTableId = props.routeTableId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            routeTableId: this.routeTableId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosRouteTablePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosRouteTables`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-routetables
  */
@@ -2896,7 +3634,7 @@ function rosTrafficMirrorFiltersPropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::TrafficMirrorFilters`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::TrafficMirrorFilters`, which is used to query filters for traffic mirroring.
  * @Note This class does not contain additional functions, so it is recommended to use the `TrafficMirrorFilters` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-trafficmirrorfilters
  */
@@ -2946,6 +3684,171 @@ export class RosTrafficMirrorFilters extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosTrafficMirrorFiltersPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosVSwitch`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-vswitch
+ */
+export interface RosVSwitchProps {
+
+    /**
+     * @Property vSwitchId: The ID of the VSwitch.
+     */
+    readonly vSwitchId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosVSwitchProps`
+ *
+ * @param properties - the TypeScript properties of a `RosVSwitchProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosVSwitchPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    return errors.wrap('supplied properties not correct for "RosVSwitchProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::VPC::VSwitch` resource
+ *
+ * @param properties - the TypeScript properties of a `RosVSwitchProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::VPC::VSwitch` resource.
+ */
+// @ts-ignore TS6133
+function rosVSwitchPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosVSwitchPropsValidator(properties).assertSuccess();
+    }
+    return {
+      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::VSwitch`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `VSwitch` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-vswitch
+ */
+export class RosVSwitch extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::VPC::VSwitch";
+
+    /**
+     * @Attribute AvailableIpAddressCount: The number of available IP addresses.
+     */
+    public readonly attrAvailableIpAddressCount: ros.IResolvable;
+
+    /**
+     * @Attribute CidrBlock: The IPv4 CIDR block of the VSwitch.
+     */
+    public readonly attrCidrBlock: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: The creation time of the VSwitch.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute Description: The description of VSwitch.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute Ipv6CidrBlock: The IPv6 CIDR block of the VSwitch.
+     */
+    public readonly attrIpv6CidrBlock: ros.IResolvable;
+
+    /**
+     * @Attribute IsDefault: Indicates whether the VSwitch is a default VSwitch.
+     */
+    public readonly attrIsDefault: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The resource group id of VSwitch.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute RouteTableId: The route table id.
+     */
+    public readonly attrRouteTableId: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: The tags of VSwitch.
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    /**
+     * @Attribute VSwitchId: The ID of the VSwitch.
+     */
+    public readonly attrVSwitchId: ros.IResolvable;
+
+    /**
+     * @Attribute VSwitchName: The name of the VSwitch.
+     */
+    public readonly attrVSwitchName: ros.IResolvable;
+
+    /**
+     * @Attribute VpcId: The VPC ID.
+     */
+    public readonly attrVpcId: ros.IResolvable;
+
+    /**
+     * @Attribute ZoneId: The zone ID  of the resource.
+     */
+    public readonly attrZoneId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property vSwitchId: The ID of the VSwitch.
+     */
+    public vSwitchId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosVSwitchProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosVSwitch.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAvailableIpAddressCount = this.getAtt('AvailableIpAddressCount');
+        this.attrCidrBlock = this.getAtt('CidrBlock');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDescription = this.getAtt('Description');
+        this.attrIpv6CidrBlock = this.getAtt('Ipv6CidrBlock');
+        this.attrIsDefault = this.getAtt('IsDefault');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrRouteTableId = this.getAtt('RouteTableId');
+        this.attrTags = this.getAtt('Tags');
+        this.attrVSwitchId = this.getAtt('VSwitchId');
+        this.attrVSwitchName = this.getAtt('VSwitchName');
+        this.attrVpcId = this.getAtt('VpcId');
+        this.attrZoneId = this.getAtt('ZoneId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.vSwitchId = props.vSwitchId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            vSwitchId: this.vSwitchId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosVSwitchPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
 
@@ -3155,6 +4058,191 @@ export class RosVSwitches extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosVSwitchesPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosVpc`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-vpc
+ */
+export interface RosVpcProps {
+
+    /**
+     * @Property vpcId: The ID of the VPC.
+     */
+    readonly vpcId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosVpcProps`
+ *
+ * @param properties - the TypeScript properties of a `RosVpcProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosVpcPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    return errors.wrap('supplied properties not correct for "RosVpcProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::VPC::Vpc` resource
+ *
+ * @param properties - the TypeScript properties of a `RosVpcProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::VPC::Vpc` resource.
+ */
+// @ts-ignore TS6133
+function rosVpcPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosVpcPropsValidator(properties).assertSuccess();
+    }
+    return {
+      VpcId: ros.stringToRosTemplate(properties.vpcId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::Vpc`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Vpc` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-vpc
+ */
+export class RosVpc extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::VPC::Vpc";
+
+    /**
+     * @Attribute CidrBlock: The IPv4 CIDR block of the VPC.
+     */
+    public readonly attrCidrBlock: ros.IResolvable;
+
+    /**
+     * @Attribute ClassicLinkEnabled: status of vpc  ClassicLink..
+     */
+    public readonly attrClassicLinkEnabled: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: The time at which the VPC was created.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute Description: The description of the VPC.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute DhcpOptionsSetId: The ID of the DHCP option set.
+     */
+    public readonly attrDhcpOptionsSetId: ros.IResolvable;
+
+    /**
+     * @Attribute Ipv6CidrBlock: The ipv6 cidr block of vpc.
+     */
+    public readonly attrIpv6CidrBlock: ros.IResolvable;
+
+    /**
+     * @Attribute Ipv6CidrBlocks: The IPv6 network segment of the VPC.
+     */
+    public readonly attrIpv6CidrBlocks: ros.IResolvable;
+
+    /**
+     * @Attribute IsDefault: Indicates whether to query the default VPC in the specified region. Valid values: 
+- true (default): All VPCs in the specified region are queried.
+- false: The default VPC is not queried.
+     */
+    public readonly attrIsDefault: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The ID of the resource group to which the VPC belongs.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute RouterId: The ID of the VRouter.
+     */
+    public readonly attrRouterId: ros.IResolvable;
+
+    /**
+     * @Attribute SecondaryCidrBlocks: Additional network segment information.
+     */
+    public readonly attrSecondaryCidrBlocks: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: The tags of Vpc.
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    /**
+     * @Attribute UserCidrs: A list of user CIDRs.
+     */
+    public readonly attrUserCidrs: ros.IResolvable;
+
+    /**
+     * @Attribute VSwitchIds: A list of VSwitches in the VPC.
+     */
+    public readonly attrVSwitchIds: ros.IResolvable;
+
+    /**
+     * @Attribute VpcId: The ID of the VPC.
+     */
+    public readonly attrVpcId: ros.IResolvable;
+
+    /**
+     * @Attribute VpcName: The name of the VPC.
+     */
+    public readonly attrVpcName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property vpcId: The ID of the VPC.
+     */
+    public vpcId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosVpcProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosVpc.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCidrBlock = this.getAtt('CidrBlock');
+        this.attrClassicLinkEnabled = this.getAtt('ClassicLinkEnabled');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDescription = this.getAtt('Description');
+        this.attrDhcpOptionsSetId = this.getAtt('DhcpOptionsSetId');
+        this.attrIpv6CidrBlock = this.getAtt('Ipv6CidrBlock');
+        this.attrIpv6CidrBlocks = this.getAtt('Ipv6CidrBlocks');
+        this.attrIsDefault = this.getAtt('IsDefault');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrRouterId = this.getAtt('RouterId');
+        this.attrSecondaryCidrBlocks = this.getAtt('SecondaryCidrBlocks');
+        this.attrTags = this.getAtt('Tags');
+        this.attrUserCidrs = this.getAtt('UserCidrs');
+        this.attrVSwitchIds = this.getAtt('VSwitchIds');
+        this.attrVpcId = this.getAtt('VpcId');
+        this.attrVpcName = this.getAtt('VpcName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.vpcId = props.vpcId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            vpcId: this.vpcId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosVpcPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
 

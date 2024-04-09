@@ -109,6 +109,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
             }
         }
 
+        /// <summary>Property policy: The policy of key.</summary>
+        [JsiiProperty(name: "policy", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Policy
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property protectionLevel: The protection level of the CMK to create.</summary>
         /// <remarks>
         /// Valid value: SOFTWARE and HSM. When this parameter is set to HSM:
@@ -223,6 +234,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
             [JsiiOptional]
             [JsiiProperty(name: "pendingWindowInDays", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PendingWindowInDays
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property policy: The policy of key.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "policy", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+            public object? Policy
             {
                 get => GetInstanceProperty<object?>();
             }

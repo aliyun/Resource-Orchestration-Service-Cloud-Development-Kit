@@ -72,7 +72,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
-        /// <summary>Attribute RiskLevel: Ris Level.</summary>
+        /// <summary>Attribute RiskLevel: Ris Level, valid values: 1 | 2 | 3.</summary>
         [JsiiProperty(name: "attrRiskLevel", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrRiskLevel
         {

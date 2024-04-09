@@ -31,7 +31,7 @@ export interface VServerGroupProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::VServerGroup`, which is used to create a server group and attach backend servers to a Server Load Balancer (SLB) instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::VServerGroup`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVServerGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-vservergroup
  */

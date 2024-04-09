@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nas;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::NAS::FileSystem</code>, which is used to create a file system in Apsara File Storage NAS (NAS).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:53.203Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:33.903Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.FileSystem")
 public class FileSystem extends com.aliyun.ros.cdk.core.Resource {
 

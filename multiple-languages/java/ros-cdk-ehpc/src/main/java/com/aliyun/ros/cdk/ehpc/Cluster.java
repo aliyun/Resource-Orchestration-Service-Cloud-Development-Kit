@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ehpc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::EHPC::Cluster</code>, which is used to create an Elastic High Performance Computing (E-HPC) cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:52.235Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:32.724Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.Cluster")
 public class Cluster extends com.aliyun.ros.cdk.core.Resource {
 

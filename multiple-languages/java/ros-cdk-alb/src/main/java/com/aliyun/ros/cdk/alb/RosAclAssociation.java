@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ALB::AclAssociation</code>, which is used to associate access control lists (ACLs) with a listener.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:49.816Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:30.094Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosAclAssociation")
 public class RosAclAssociation extends com.aliyun.ros.cdk.core.RosResource {
 

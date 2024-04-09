@@ -10,7 +10,7 @@ export { RosVpcAccessConfig as VpcAccessConfigProperty };
 export interface VpcAccessConfigProps {
 
     /**
-     * Property instanceId: The id of the instance (ECS\/SLB).
+     * Property instanceId: The id of the instance (ECS\/SLB\/ALB\/NLB).
      */
     readonly instanceId: string | ros.IResolvable;
 

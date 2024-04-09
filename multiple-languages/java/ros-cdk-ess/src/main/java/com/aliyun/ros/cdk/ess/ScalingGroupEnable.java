@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ESS::ScalingGroupEnable</code>, which is used to enable a scaling group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:52.529Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:33.078Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScalingGroupEnable")
 public class ScalingGroupEnable extends com.aliyun.ros.cdk.core.Resource {
 
@@ -233,7 +233,7 @@ public class ScalingGroupEnable extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param instanceIds Property instanceIds: The id list of ECS instance which will be attached. This parameter is required.
          */
-        public Builder instanceIds(final java.util.List<? extends java.lang.Object> instanceIds) {
+        public Builder instanceIds(final com.aliyun.ros.cdk.core.IResolvable instanceIds) {
             this.props.instanceIds(instanceIds);
             return this;
         }
@@ -245,7 +245,7 @@ public class ScalingGroupEnable extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param instanceIds Property instanceIds: The id list of ECS instance which will be attached. This parameter is required.
          */
-        public Builder instanceIds(final com.aliyun.ros.cdk.core.IResolvable instanceIds) {
+        public Builder instanceIds(final java.util.List<? extends java.lang.Object> instanceIds) {
             this.props.instanceIds(instanceIds);
             return this;
         }
@@ -258,7 +258,7 @@ public class ScalingGroupEnable extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param removeInstanceIds Property removeInstanceIds: The id list of ECS instance which will be removed. This parameter is required.
          */
-        public Builder removeInstanceIds(final java.util.List<? extends java.lang.Object> removeInstanceIds) {
+        public Builder removeInstanceIds(final com.aliyun.ros.cdk.core.IResolvable removeInstanceIds) {
             this.props.removeInstanceIds(removeInstanceIds);
             return this;
         }
@@ -270,7 +270,7 @@ public class ScalingGroupEnable extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param removeInstanceIds Property removeInstanceIds: The id list of ECS instance which will be removed. This parameter is required.
          */
-        public Builder removeInstanceIds(final com.aliyun.ros.cdk.core.IResolvable removeInstanceIds) {
+        public Builder removeInstanceIds(final java.util.List<? extends java.lang.Object> removeInstanceIds) {
             this.props.removeInstanceIds(removeInstanceIds);
             return this;
         }
@@ -306,7 +306,7 @@ public class ScalingGroupEnable extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param scalingRuleAris Property scalingRuleAris: A list of scaling rule aris which will be executed. This parameter is required.
          */
-        public Builder scalingRuleAris(final java.util.List<? extends java.lang.Object> scalingRuleAris) {
+        public Builder scalingRuleAris(final com.aliyun.ros.cdk.core.IResolvable scalingRuleAris) {
             this.props.scalingRuleAris(scalingRuleAris);
             return this;
         }
@@ -320,7 +320,7 @@ public class ScalingGroupEnable extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param scalingRuleAris Property scalingRuleAris: A list of scaling rule aris which will be executed. This parameter is required.
          */
-        public Builder scalingRuleAris(final com.aliyun.ros.cdk.core.IResolvable scalingRuleAris) {
+        public Builder scalingRuleAris(final java.util.List<? extends java.lang.Object> scalingRuleAris) {
             this.props.scalingRuleAris(scalingRuleAris);
             return this;
         }

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.bss;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bss-resourcepackage
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-03-01T09:16:50.150Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:30.636Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.bss.$Module.class, fqn = "@alicloud/ros-cdk-bss.ResourcePackageProps")
 @software.amazon.jsii.Jsii.Proxy(ResourcePackageProps.Jsii$Proxy.class)
 public interface ResourcePackageProps extends software.amazon.jsii.JsiiSerializable {

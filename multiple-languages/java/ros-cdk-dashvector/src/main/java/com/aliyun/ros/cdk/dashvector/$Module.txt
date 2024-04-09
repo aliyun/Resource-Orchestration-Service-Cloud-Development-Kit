@@ -1,0 +1,4 @@
+@alicloud/ros-cdk-dashvector.Cluster=com.aliyun.ros.cdk.dashvector.Cluster
+@alicloud/ros-cdk-dashvector.ClusterProps=com.aliyun.ros.cdk.dashvector.ClusterProps
+@alicloud/ros-cdk-dashvector.RosCluster=com.aliyun.ros.cdk.dashvector.RosCluster
+@alicloud/ros-cdk-dashvector.RosClusterProps=com.aliyun.ros.cdk.dashvector.RosClusterProps

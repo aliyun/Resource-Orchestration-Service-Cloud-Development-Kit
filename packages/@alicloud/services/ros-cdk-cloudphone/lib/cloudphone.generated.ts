@@ -392,7 +392,7 @@ function rosInstanceGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudPhone::InstanceGroup`, which is used to create and start one or more Elastic Cloud Phone (ECP) instances.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudPhone::InstanceGroup`, which is used to create and start Elastic Cloud Phone (ECP) instances.
  * @Note This class does not contain additional functions, so it is recommended to use the `InstanceGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-instancegroup
  */
@@ -770,6 +770,11 @@ export interface RosRunCommandProps {
      * Range of n: 1 ~ 10
      */
     readonly instanceIds: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property runAgainOn: The stage of executing the command again.
+     */
+    readonly runAgainOn?: Array<string | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
@@ -784,6 +789,14 @@ function RosRunCommandPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('command', ros.requiredValidator)(properties.command));
     errors.collect(ros.propertyValidator('command', ros.validateString)(properties.command));
+    if(properties.runAgainOn && (Array.isArray(properties.runAgainOn) || (typeof properties.runAgainOn) === 'string')) {
+        errors.collect(ros.propertyValidator('runAgainOn', ros.validateLength)({
+            data: properties.runAgainOn.length,
+            min: 1,
+            max: 1,
+          }));
+    }
+    errors.collect(ros.propertyValidator('runAgainOn', ros.listValidator(ros.validateString))(properties.runAgainOn));
     errors.collect(ros.propertyValidator('instanceIds', ros.requiredValidator)(properties.instanceIds));
     if(properties.instanceIds && (Array.isArray(properties.instanceIds) || (typeof properties.instanceIds) === 'string')) {
         errors.collect(ros.propertyValidator('instanceIds', ros.validateLength)({
@@ -812,6 +825,7 @@ function rosRunCommandPropsToRosTemplate(properties: any, enableResourceProperty
     return {
       Command: ros.stringToRosTemplate(properties.command),
       InstanceIds: ros.listMapper(ros.stringToRosTemplate)(properties.instanceIds),
+      RunAgainOn: ros.listMapper(ros.stringToRosTemplate)(properties.runAgainOn),
     };
 }
 
@@ -842,6 +856,11 @@ export class RosRunCommand extends ros.RosResource {
     public instanceIds: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * @Property runAgainOn: The stage of executing the command again.
+     */
+    public runAgainOn: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -852,6 +871,7 @@ export class RosRunCommand extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.command = props.command;
         this.instanceIds = props.instanceIds;
+        this.runAgainOn = props.runAgainOn;
     }
 
 
@@ -859,6 +879,7 @@ export class RosRunCommand extends ros.RosResource {
         return {
             command: this.command,
             instanceIds: this.instanceIds,
+            runAgainOn: this.runAgainOn,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

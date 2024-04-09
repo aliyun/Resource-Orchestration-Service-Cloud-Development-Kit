@@ -16,7 +16,7 @@ export interface TrafficMirrorFiltersProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::TrafficMirrorFilters`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::TrafficMirrorFilters`, which is used to query filters for traffic mirroring.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTrafficMirrorFilters`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-trafficmirrorfilters
  */
