@@ -37,6 +37,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
         {
         }
 
+        /// <summary>Thrown an exception if the given bucket name is not valid.</summary>
+        /// <param name="physicalName">name of the bucket.</param>
+        [JsiiMethod(name: "validateBucketName", parametersJson: "[{\"docs\":{\"summary\":\"name of the bucket.\"},\"name\":\"physicalName\",\"type\":{\"primitive\":\"string\"}}]", isAsync: true)]
+        public static void ValidateBucketName(string physicalName)
+        {
+            InvokeStaticVoidMethod(typeof(AlibabaCloud.SDK.ROS.CDK.Oss.Bucket), new System.Type[]{typeof(string)}, new object[]{physicalName});
+        }
+
         /// <summary>Attribute DomainName: The public DNS name of the specified bucket.</summary>
         [JsiiProperty(name: "attrDomainName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDomainName

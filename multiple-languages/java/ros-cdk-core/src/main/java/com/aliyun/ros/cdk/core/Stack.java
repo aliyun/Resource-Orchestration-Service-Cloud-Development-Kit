@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * A root construct which represents a single ROS stack.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:29.979Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:49.337Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Stack")
 public class Stack extends com.aliyun.ros.cdk.core.Construct implements com.aliyun.ros.cdk.core.ITaggable {
 
@@ -213,7 +213,7 @@ public class Stack extends com.aliyun.ros.cdk.core.Construct implements com.aliy
      * @param session This parameter is required.
      */
     @Override
-    protected void synthesize(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.ISynthesisSession session) {
+    public void synthesize(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.ISynthesisSession session) {
         software.amazon.jsii.Kernel.call(this, "synthesize", software.amazon.jsii.NativeType.VOID, new Object[] { java.util.Objects.requireNonNull(session, "session is required") });
     }
 
@@ -237,10 +237,42 @@ public class Stack extends com.aliyun.ros.cdk.core.Construct implements com.aliy
     }
 
     /**
+     * The ALIYUN account into which this stack will be deployed.
+     * <p>
+     * This value is resolved according to the following rules:
+     * <p>
+     * <ol>
+     * <li>The value provided to <code>env.account</code> when the stack is defined. This can
+     * either be a concrete account or the <code>ALIYUN.ACCOUNT_ID</code> token.</li>
+     * <li><code>ALIYUN.ACCOUNT_ID</code>, which represents the ROS intrinsic reference
+     * <code>{ "Ref": "ALIYUN::AccountId" }</code> encoded as a string token.</li>
+     * </ol>
+     * <p>
+     * Preferably, you should use the return value as an opaque string and not
+     * attempt to parse it to implement your logic. If you do, you must first
+     * check that it is a concrete value an not an unresolved token. If this
+     * value is an unresolved token (<code>Token.isUnresolved(stack.account)</code> returns
+     * <code>true</code>), this implies that the user wishes that this stack will synthesize
+     * into a <strong>account-agnostic template</strong>. In this case, your code should either
+     * fail (throw an error, emit a synth error using <code>Annotations.of(construct).addError()</code>) or
+     * implement some other region-agnostic behavior.
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.String getAccount() {
+        return software.amazon.jsii.Kernel.get(this, "account", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    }
+
+    /**
      * The ID of the cloud assembly artifact for this stack.
      */
     public @org.jetbrains.annotations.NotNull java.lang.String getArtifactId() {
         return software.amazon.jsii.Kernel.get(this, "artifactId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    }
+
+    /**
+     * Indicates whether the stack requires bundling or not.
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Boolean getBundlingRequired() {
+        return software.amazon.jsii.Kernel.get(this, "bundlingRequired", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
     }
 
     /**
@@ -259,6 +291,31 @@ public class Stack extends com.aliyun.ros.cdk.core.Construct implements com.aliy
      */
     public @org.jetbrains.annotations.NotNull java.lang.Boolean getNested() {
         return software.amazon.jsii.Kernel.get(this, "nested", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
+    }
+
+    /**
+     * The ALIYUN region into which this stack will be deployed (e.g. <code>cn-beijing</code>).
+     * <p>
+     * This value is resolved according to the following rules:
+     * <p>
+     * <ol>
+     * <li>The value provided to <code>env.region</code> when the stack is defined. This can
+     * either be a concrete region or the <code>ALIYUN.REGION</code> token.</li>
+     * <li><code>ALIYUN.REGION</code>, which is represents the ROS intrinsic reference
+     * <code>{ "Ref": "ALIYUN::Region" }</code> encoded as a string token.</li>
+     * </ol>
+     * <p>
+     * Preferably, you should use the return value as an opaque string and not
+     * attempt to parse it to implement your logic. If you do, you must first
+     * check that it is a concrete value an not an unresolved token. If this
+     * value is an unresolved token (<code>Token.isUnresolved(stack.region)</code> returns
+     * <code>true</code>), this implies that the user wishes that this stack will synthesize
+     * into a <strong>region-agnostic template</strong>. In this case, your code should either
+     * fail (throw an error, emit a synth error using <code>Annotations.of(construct).addError()</code>) or
+     * implement some other region-agnostic behavior.
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.String getRegion() {
+        return software.amazon.jsii.Kernel.get(this, "region", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
     }
 
     /**
@@ -345,6 +402,14 @@ public class Stack extends com.aliyun.ros.cdk.core.Construct implements com.aliy
         return software.amazon.jsii.Kernel.get(this, "parentStack", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.Stack.class));
     }
 
+    public @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.RamRoles getRoles() {
+        return software.amazon.jsii.Kernel.get(this, "roles", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.RamRoles.class));
+    }
+
+    public void setRoles(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.RamRoles value) {
+        software.amazon.jsii.Kernel.set(this, "roles", value);
+    }
+
     /**
      * A fluent builder for {@link com.aliyun.ros.cdk.core.Stack}.
      */
@@ -399,6 +464,74 @@ public class Stack extends com.aliyun.ros.cdk.core.Construct implements com.aliy
          */
         public Builder enableResourcePropertyConstraint(final java.lang.Boolean enableResourcePropertyConstraint) {
             this.props().enableResourcePropertyConstraint(enableResourcePropertyConstraint);
+            return this;
+        }
+
+        /**
+         * (experimental) The ALIYUN environment (account/region) where this stack will be deployed.
+         * <p>
+         * Set the <code>region</code>/<code>account</code> fields of <code>env</code> to either a concrete value to
+         * select the indicated environment (recommended for production stacks), or to
+         * the values of environment variables
+         * <code>CDK_DEFAULT_REGION</code>/<code>CDK_DEFAULT_ACCOUNT</code> to let the target environment
+         * depend on the ALIYUN credentials/configuration that the CDK CLI is executed
+         * under (recommended for development stacks).
+         * <p>
+         * If the <code>Stack</code> is instantiated inside a <code>Stage</code>, any undefined
+         * <code>region</code>/<code>account</code> fields from <code>env</code> will default to the same field on the
+         * encompassing <code>Stage</code>, if configured there.
+         * <p>
+         * If either <code>region</code> or <code>account</code> are not set nor inherited from <code>Stage</code>, the
+         * Stack will be considered "<em>environment-agnostic</em>"". Environment-agnostic
+         * stacks can be deployed to any environment but may not be able to take
+         * advantage of all features of the CDK.
+         * <p>
+         * Default: - The environment of the containing `Stage` if available,
+         * otherwise create the stack will be environment-agnostic.
+         * <p>
+         * Example:
+         * <p>
+         * <blockquote><pre>
+         * // Use a concrete account and region to deploy this stack to:
+         * // `.account` and `.region` will simply return these values.
+         * new Stack(app, 'Stack1', {
+         *   env: {
+         *     account: '123456789012',
+         *     region: 'cn-hangzhou'
+         *   },
+         * });
+         * // Use the CLI's current credentials to determine the target environment:
+         * // `.account` and `.region` will reflect the account+region the CLI
+         * // is configured to use (based on the user CLI credentials)
+         * new Stack(app, 'Stack2', {
+         *   env: {
+         *     account: process.env.CDK_DEFAULT_ACCOUNT,
+         *     region: process.env.CDK_DEFAULT_REGION
+         *   },
+         * });
+         * // Define multiple stacks stage associated with an environment
+         * const myStage = new Stage(app, 'MyStage', {
+         *   env: {
+         *     account: '123456789012',
+         *     region: 'cn-hangzhou'
+         *   }
+         * });
+         * // both of these stacks will use the stage's account/region:
+         * // `.account` and `.region` will resolve to the concrete values as above
+         * new MyStack(myStage, 'Stack1');
+         * new YourStack(myStage, 'Stack2');
+         * // Define an environment-agnostic stack:
+         * // `.account` and `.region` will resolve to `{ "Ref": "ALIYUN::AccountId" }` and `{ "Ref": "ALIYUN::Region" }` respectively.
+         * // which will only resolve to actual values by ROS during deployment.
+         * new MyStack(app, 'Stack1');
+         * </pre></blockquote>
+         * <p>
+         * @return {@code this}
+         * @param env The ALIYUN environment (account/region) where this stack will be deployed. This parameter is required.
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Experimental)
+        public Builder env(final com.aliyun.ros.cdk.core.Environment env) {
+            this.props().env(env);
             return this;
         }
 

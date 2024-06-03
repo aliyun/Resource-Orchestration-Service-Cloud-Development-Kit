@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.core;
  * <p>
  * Passed into <code>Construct.synthesize()</code> methods.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:29.960Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:49.307Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.ISynthesisSession")
 @software.amazon.jsii.Jsii.Proxy(ISynthesisSession.Jsii$Proxy.class)
 public interface ISynthesisSession extends software.amazon.jsii.JsiiSerializable {
@@ -29,6 +29,25 @@ public interface ISynthesisSession extends software.amazon.jsii.JsiiSerializable
      * The output directory for this synthesis session.
      */
     void setOutdir(final @org.jetbrains.annotations.NotNull java.lang.String value);
+
+    /**
+     * Whether the stack should be validated after synthesis to check for error metadata.
+     * <p>
+     * Default: - false
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Boolean getValidateOnSynth() {
+        return null;
+    }
+
+    /**
+     * Whether the stack should be validated after synthesis to check for error metadata.
+     * <p>
+     * Default: - false
+     */
+    @software.amazon.jsii.Optional
+    default void setValidateOnSynth(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        throw new UnsupportedOperationException("'void " + getClass().getCanonicalName() + "#setValidateOnSynth(@org.jetbrains.annotations.Nullable java.lang.Boolean)' is not implemented!");
+    }
 
     /**
      * A proxy class which represents a concrete javascript instance of this type.
@@ -70,6 +89,26 @@ public interface ISynthesisSession extends software.amazon.jsii.JsiiSerializable
         public final void setOutdir(final @org.jetbrains.annotations.NotNull java.lang.String value) {
             software.amazon.jsii.Kernel.set(this, "outdir", java.util.Objects.requireNonNull(value, "outdir is required"));
         }
+
+        /**
+         * Whether the stack should be validated after synthesis to check for error metadata.
+         * <p>
+         * Default: - false
+         */
+        @Override
+        public final @org.jetbrains.annotations.Nullable java.lang.Boolean getValidateOnSynth() {
+            return software.amazon.jsii.Kernel.get(this, "validateOnSynth", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
+        }
+
+        /**
+         * Whether the stack should be validated after synthesis to check for error metadata.
+         * <p>
+         * Default: - false
+         */
+        @Override
+        public final void setValidateOnSynth(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+            software.amazon.jsii.Kernel.set(this, "validateOnSynth", value);
+        }
     }
 
     /**
@@ -108,6 +147,26 @@ public interface ISynthesisSession extends software.amazon.jsii.JsiiSerializable
         @Override
         default void setOutdir(final @org.jetbrains.annotations.NotNull java.lang.String value) {
             software.amazon.jsii.Kernel.set(this, "outdir", java.util.Objects.requireNonNull(value, "outdir is required"));
+        }
+
+        /**
+         * Whether the stack should be validated after synthesis to check for error metadata.
+         * <p>
+         * Default: - false
+         */
+        @Override
+        default @org.jetbrains.annotations.Nullable java.lang.Boolean getValidateOnSynth() {
+            return software.amazon.jsii.Kernel.get(this, "validateOnSynth", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
+        }
+
+        /**
+         * Whether the stack should be validated after synthesis to check for error metadata.
+         * <p>
+         * Default: - false
+         */
+        @Override
+        default void setValidateOnSynth(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+            software.amazon.jsii.Kernel.set(this, "validateOnSynth", value);
         }
     }
 }

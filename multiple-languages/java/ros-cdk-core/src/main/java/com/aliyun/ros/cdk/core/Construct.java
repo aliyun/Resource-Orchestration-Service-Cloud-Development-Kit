@@ -6,7 +6,7 @@ package com.aliyun.ros.cdk.core;
  * All constructs besides the root construct must be created within the scope of
  * another construct.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:29.932Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:49.247Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Construct")
 public class Construct extends software.constructs.Construct implements com.aliyun.ros.cdk.core.IConstruct {
 
@@ -95,7 +95,7 @@ public class Construct extends software.constructs.Construct implements com.aliy
      * <p>
      * @param session The synthesis session. This parameter is required.
      */
-    protected void synthesize(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.ISynthesisSession session) {
+    public void synthesize(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.ISynthesisSession session) {
         software.amazon.jsii.Kernel.call(this, "synthesize", software.amazon.jsii.NativeType.VOID, new Object[] { java.util.Objects.requireNonNull(session, "session is required") });
     }
 

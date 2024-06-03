@@ -7,7 +7,10 @@ import {
   IConstruct,
   SynthesisOptions,
   ValidationError,
+  ISynthesisSession,
 } from "../construct-compat";
+import {TreeMetadata} from "./tree-metadata";
+import {Stack} from "../stack";
 
 export function synthesize(
   root: IConstruct,
@@ -111,13 +114,49 @@ function prepareTree(root: IConstruct) {
  *
  * Stop at Assembly boundaries.
  */
-function synthesizeTree(root: IConstruct, builder: cxapi.CloudAssemblyBuilder) {
-  visit(root, "post", (construct) =>
-    construct.onSynthesize({
+function synthesizeTree(root: IConstruct, builder: cxapi.CloudAssemblyBuilder, validateOnSynth: boolean = false) {
+  visit(root, "post", (construct) => {
+    const session = {
       outdir: builder.outdir,
       assembly: builder,
-    })
-  );
+      validateOnSynth,
+    };
+
+    if (Stack.isStack(construct)) {
+      construct.synthesizer.synthesize(session);
+    } else if (construct instanceof TreeMetadata) {
+      construct.synthesize(session);
+    } else {
+      const custom = getCustomSynthesis(construct);
+      custom?.onSynthesize(session);
+    }
+  });
+}
+
+const CUSTOM_SYNTHESIS_SYM = Symbol.for('@ros-cdk/core:customSynthesis');
+
+/**
+ * Interface for constructs that want to do something custom during synthesis
+ *
+ * This feature is intended for use by official ROS CDK libraries only; 3rd party
+ * library authors and CDK users should not use this function.
+ */
+export interface ICustomSynthesis {
+  /**
+   * Called when the construct is synthesized
+   */
+  onSynthesize(session: ISynthesisSession): void;
+}
+
+export function addCustomSynthesis(construct: IConstruct, synthesis: ICustomSynthesis): void {
+  Object.defineProperty(construct, CUSTOM_SYNTHESIS_SYM, {
+    value: synthesis,
+    enumerable: false,
+  });
+}
+
+function getCustomSynthesis(construct: IConstruct): ICustomSynthesis | undefined {
+  return (construct as any)[CUSTOM_SYNTHESIS_SYM];
 }
 
 /**

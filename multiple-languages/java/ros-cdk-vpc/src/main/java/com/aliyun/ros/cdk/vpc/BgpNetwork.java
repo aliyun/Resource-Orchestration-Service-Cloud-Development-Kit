@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::BgpNetwork</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::BgpNetwork</code>, which is used to advertise a Border Gateway Protocol (BGP) network.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:35.553Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:54.746Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.BgpNetwork")
 public class BgpNetwork extends com.aliyun.ros.cdk.core.Resource {
 

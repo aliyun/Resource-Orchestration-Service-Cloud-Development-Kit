@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.rds;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstanceclone
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:34.697Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:53.848Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.DBInstanceCloneProps")
 @software.amazon.jsii.Jsii.Proxy(DBInstanceCloneProps.Jsii$Proxy.class)
 public interface DBInstanceCloneProps extends software.amazon.jsii.JsiiSerializable {
@@ -1007,7 +1007,7 @@ public interface DBInstanceCloneProps extends software.amazon.jsii.JsiiSerializa
          *                              Separate multiple values with commas (,). The default value is the original value. Valid values:Monday Tuesday Wednesday Thursday Friday Saturday Sunday Note When the BackupPolicyMode parameter is set to DataBackupPolicy, this parameter is required.
          * @return {@code this}
          */
-        public Builder preferredBackupPeriod(java.util.List<? extends java.lang.Object> preferredBackupPeriod) {
+        public Builder preferredBackupPeriod(com.aliyun.ros.cdk.core.IResolvable preferredBackupPeriod) {
             this.preferredBackupPeriod = preferredBackupPeriod;
             return this;
         }
@@ -1018,7 +1018,7 @@ public interface DBInstanceCloneProps extends software.amazon.jsii.JsiiSerializa
          *                              Separate multiple values with commas (,). The default value is the original value. Valid values:Monday Tuesday Wednesday Thursday Friday Saturday Sunday Note When the BackupPolicyMode parameter is set to DataBackupPolicy, this parameter is required.
          * @return {@code this}
          */
-        public Builder preferredBackupPeriod(com.aliyun.ros.cdk.core.IResolvable preferredBackupPeriod) {
+        public Builder preferredBackupPeriod(java.util.List<? extends java.lang.Object> preferredBackupPeriod) {
             this.preferredBackupPeriod = preferredBackupPeriod;
             return this;
         }

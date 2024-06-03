@@ -43,6 +43,20 @@ export class Stage extends Construct {
   }
 
   /**
+   * The cloud assembly output directory.
+   */
+  public get outdir() {
+    return this._assemblyBuilder.outdir;
+  }
+
+  /**
+   * The cloud assembly asset output directory.
+   */
+  public get assetOutdir() {
+    return this._assemblyBuilder.assetOutdir;
+  }
+
+  /**
    * Test whether the given construct is a stage.
    *
    * @experimental
@@ -54,16 +68,14 @@ export class Stage extends Construct {
   /**
    * The default region for all resources defined within this stage.
    *
-   * @experimental
    */
-  // public readonly region?: string;
+  public readonly region?: string;
 
   /**
    * The default account for all resources defined within this stage.
    *
-   * @experimental
    */
-  // public readonly account?: string;
+  public readonly account?: string;
 
   /**
    * The cloud assembly builder that is being used for this App

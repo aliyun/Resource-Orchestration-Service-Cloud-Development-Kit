@@ -3,6 +3,153 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosActivation`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-activation
+ */
+export interface RosActivationProps {
+
+    /**
+     * @Property activationId: Activation code ID.
+     */
+    readonly activationId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosActivationProps`
+ *
+ * @param properties - the TypeScript properties of a `RosActivationProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosActivationPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('activationId', ros.requiredValidator)(properties.activationId));
+    errors.collect(ros.propertyValidator('activationId', ros.validateString)(properties.activationId));
+    return errors.wrap('supplied properties not correct for "RosActivationProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Activation` resource
+ *
+ * @param properties - the TypeScript properties of a `RosActivationProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Activation` resource.
+ */
+// @ts-ignore TS6133
+function rosActivationPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosActivationPropsValidator(properties).assertSuccess();
+    }
+    return {
+      ActivationId: ros.stringToRosTemplate(properties.activationId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Activation`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Activation` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-activation
+ */
+export class RosActivation extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::Activation";
+
+    /**
+     * @Attribute ActivationId: Activation code ID.
+     */
+    public readonly attrActivationId: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: The time when the activation code was created.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute DeregisteredCount: The number of instances that have been logged out.
+     */
+    public readonly attrDeregisteredCount: ros.IResolvable;
+
+    /**
+     * @Attribute Description: The description of the activation code.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute Disabled: Indicates whether the activation code is disabled.
+     */
+    public readonly attrDisabled: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceCount: The maximum number of times that the activation code can be used to register managed instances.
+     */
+    public readonly attrInstanceCount: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceName: The default prefix of the instance name.
+     */
+    public readonly attrInstanceName: ros.IResolvable;
+
+    /**
+     * @Attribute IpAddressRange: The IP address of the host that allows the activation code to be used.
+     */
+    public readonly attrIpAddressRange: ros.IResolvable;
+
+    /**
+     * @Attribute RegisteredCount: The number of instances that were registered.
+     */
+    public readonly attrRegisteredCount: ros.IResolvable;
+
+    /**
+     * @Attribute TimeToLiveInHours: The validity period of the activation code. Unit: hours.
+     */
+    public readonly attrTimeToLiveInHours: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property activationId: Activation code ID.
+     */
+    public activationId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosActivationProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosActivation.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrActivationId = this.getAtt('ActivationId');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDeregisteredCount = this.getAtt('DeregisteredCount');
+        this.attrDescription = this.getAtt('Description');
+        this.attrDisabled = this.getAtt('Disabled');
+        this.attrInstanceCount = this.getAtt('InstanceCount');
+        this.attrInstanceName = this.getAtt('InstanceName');
+        this.attrIpAddressRange = this.getAtt('IpAddressRange');
+        this.attrRegisteredCount = this.getAtt('RegisteredCount');
+        this.attrTimeToLiveInHours = this.getAtt('TimeToLiveInHours');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.activationId = props.activationId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            activationId: this.activationId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosActivationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosActivations`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-activations
  */
@@ -744,6 +891,129 @@ export class RosCommands extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosDedicatedHostCluster`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-dedicatedhostcluster
+ */
+export interface RosDedicatedHostClusterProps {
+
+    /**
+     * @Property dedicatedHostClusterId: Dedicated host cluster id.
+     */
+    readonly dedicatedHostClusterId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosDedicatedHostClusterProps`
+ *
+ * @param properties - the TypeScript properties of a `RosDedicatedHostClusterProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosDedicatedHostClusterPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('dedicatedHostClusterId', ros.requiredValidator)(properties.dedicatedHostClusterId));
+    errors.collect(ros.propertyValidator('dedicatedHostClusterId', ros.validateString)(properties.dedicatedHostClusterId));
+    return errors.wrap('supplied properties not correct for "RosDedicatedHostClusterProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::DedicatedHostCluster` resource
+ *
+ * @param properties - the TypeScript properties of a `RosDedicatedHostClusterProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::DedicatedHostCluster` resource.
+ */
+// @ts-ignore TS6133
+function rosDedicatedHostClusterPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosDedicatedHostClusterPropsValidator(properties).assertSuccess();
+    }
+    return {
+      DedicatedHostClusterId: ros.stringToRosTemplate(properties.dedicatedHostClusterId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::DedicatedHostCluster`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DedicatedHostCluster` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-dedicatedhostcluster
+ */
+export class RosDedicatedHostCluster extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::DedicatedHostCluster";
+
+    /**
+     * @Attribute DedicatedHostClusterId: Dedicated host cluster id.
+     */
+    public readonly attrDedicatedHostClusterId: ros.IResolvable;
+
+    /**
+     * @Attribute DedicatedHostClusterName: The name of the dedicated host cluster.
+     */
+    public readonly attrDedicatedHostClusterName: ros.IResolvable;
+
+    /**
+     * @Attribute Description: The description of the dedicated host cluster.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The ID of the resource group to which the dedicated host cluster belongs.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: The tags of the dedicated host cluster.
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    /**
+     * @Attribute ZoneId: The zone ID of the dedicated host cluster.
+     */
+    public readonly attrZoneId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property dedicatedHostClusterId: Dedicated host cluster id.
+     */
+    public dedicatedHostClusterId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosDedicatedHostClusterProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosDedicatedHostCluster.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDedicatedHostClusterId = this.getAtt('DedicatedHostClusterId');
+        this.attrDedicatedHostClusterName = this.getAtt('DedicatedHostClusterName');
+        this.attrDescription = this.getAtt('Description');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrTags = this.getAtt('Tags');
+        this.attrZoneId = this.getAtt('ZoneId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.dedicatedHostClusterId = props.dedicatedHostClusterId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            dedicatedHostClusterId: this.dedicatedHostClusterId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosDedicatedHostClusterPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosDedicatedHostClusters`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-dedicatedhostclusters
  */
@@ -1139,6 +1409,141 @@ function rosDedicatedHostsTagsPropertyToRosTemplate(properties: any): any {
       Value: ros.stringToRosTemplate(properties.value),
       Key: ros.stringToRosTemplate(properties.key),
     };
+}
+
+/**
+ * Properties for defining a `RosDeploymentSet`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-deploymentset
+ */
+export interface RosDeploymentSetProps {
+
+    /**
+     * @Property deploymentSetId: The ID of deployment set.
+     */
+    readonly deploymentSetId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosDeploymentSetProps`
+ *
+ * @param properties - the TypeScript properties of a `RosDeploymentSetProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosDeploymentSetPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('deploymentSetId', ros.requiredValidator)(properties.deploymentSetId));
+    errors.collect(ros.propertyValidator('deploymentSetId', ros.validateString)(properties.deploymentSetId));
+    return errors.wrap('supplied properties not correct for "RosDeploymentSetProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::DeploymentSet` resource
+ *
+ * @param properties - the TypeScript properties of a `RosDeploymentSetProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::DeploymentSet` resource.
+ */
+// @ts-ignore TS6133
+function rosDeploymentSetPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosDeploymentSetPropsValidator(properties).assertSuccess();
+    }
+    return {
+      DeploymentSetId: ros.stringToRosTemplate(properties.deploymentSetId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::DeploymentSet`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DeploymentSet` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-deploymentset
+ */
+export class RosDeploymentSet extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::DeploymentSet";
+
+    /**
+     * @Attribute CreateTime: The time when the deployment set was created.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute DeploymentSetId: The ID of deployment set.
+     */
+    public readonly attrDeploymentSetId: ros.IResolvable;
+
+    /**
+     * @Attribute DeploymentSetName: The name of the deployment set.
+     */
+    public readonly attrDeploymentSetName: ros.IResolvable;
+
+    /**
+     * @Attribute Granularity: The deployment granularity.
+     */
+    public readonly attrGranularity: ros.IResolvable;
+
+    /**
+     * @Attribute GroupCount: The number of deployment set groups in the deployment set.
+     */
+    public readonly attrGroupCount: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceAmount: The number of instances in the deployment set.
+     */
+    public readonly attrInstanceAmount: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceIds: The IDs of the instances in the deployment set.
+     */
+    public readonly attrInstanceIds: ros.IResolvable;
+
+    /**
+     * @Attribute Strategy: The deployment strategy.
+     */
+    public readonly attrStrategy: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property deploymentSetId: The ID of deployment set.
+     */
+    public deploymentSetId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosDeploymentSetProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosDeploymentSet.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDeploymentSetId = this.getAtt('DeploymentSetId');
+        this.attrDeploymentSetName = this.getAtt('DeploymentSetName');
+        this.attrGranularity = this.getAtt('Granularity');
+        this.attrGroupCount = this.getAtt('GroupCount');
+        this.attrInstanceAmount = this.getAtt('InstanceAmount');
+        this.attrInstanceIds = this.getAtt('InstanceIds');
+        this.attrStrategy = this.getAtt('Strategy');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.deploymentSetId = props.deploymentSetId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            deploymentSetId: this.deploymentSetId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosDeploymentSetPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
 }
 
 /**

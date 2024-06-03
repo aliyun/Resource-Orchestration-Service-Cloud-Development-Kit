@@ -69,7 +69,7 @@ export interface ElasticityAssuranceProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::ElasticityAssurance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::ElasticityAssurance`, which is used to create an elasticity assurance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosElasticityAssurance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-elasticityassurance
  */

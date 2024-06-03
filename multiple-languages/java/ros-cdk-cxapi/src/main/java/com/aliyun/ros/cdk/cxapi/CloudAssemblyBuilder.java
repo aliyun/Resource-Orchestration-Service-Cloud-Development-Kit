@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cxapi;
 /**
  * Can be used to build a cloud assembly.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:29.911Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:49.222Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cxapi.$Module.class, fqn = "@alicloud/ros-cdk-cxapi.CloudAssemblyBuilder")
 public class CloudAssemblyBuilder extends software.amazon.jsii.JsiiObject {
 
@@ -13,6 +13,17 @@ public class CloudAssemblyBuilder extends software.amazon.jsii.JsiiObject {
 
     protected CloudAssemblyBuilder(final software.amazon.jsii.JsiiObject.InitializationMode initializationMode) {
         super(initializationMode);
+    }
+
+    /**
+     * Initializes a cloud assembly builder.
+     * <p>
+     * @param outdir The output directory, uses temporary directory if undefined.
+     * @param props
+     */
+    public CloudAssemblyBuilder(final @org.jetbrains.annotations.Nullable java.lang.String outdir, final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.cxapi.CloudAssemblyBuilderProps props) {
+        super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+        software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { outdir, props });
     }
 
     /**
@@ -79,9 +90,86 @@ public class CloudAssemblyBuilder extends software.amazon.jsii.JsiiObject {
     }
 
     /**
+     * The directory where assets of this Cloud Assembly should be stored.
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.String getAssetOutdir() {
+        return software.amazon.jsii.Kernel.get(this, "assetOutdir", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    }
+
+    /**
      * The root directory of the resulting cloud assembly.
      */
     public @org.jetbrains.annotations.NotNull java.lang.String getOutdir() {
         return software.amazon.jsii.Kernel.get(this, "outdir", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    }
+
+    /**
+     * A fluent builder for {@link com.aliyun.ros.cdk.cxapi.CloudAssemblyBuilder}.
+     */
+    public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.cxapi.CloudAssemblyBuilder> {
+        /**
+         * @return a new instance of {@link Builder}.
+         * @param outdir The output directory, uses temporary directory if undefined.
+         */
+        public static Builder create(final java.lang.String outdir) {
+            return new Builder(outdir);
+        }
+        /**
+         * @return a new instance of {@link Builder}.
+         */
+        public static Builder create() {
+            return new Builder(null);
+        }
+
+        private final java.lang.String outdir;
+        private com.aliyun.ros.cdk.cxapi.CloudAssemblyBuilderProps.Builder props;
+
+        private Builder(final java.lang.String outdir) {
+            this.outdir = outdir;
+        }
+
+        /**
+         * Use the given asset output directory.
+         * <p>
+         * Default: - Same as the manifest outdir
+         * <p>
+         * @return {@code this}
+         * @param assetOutdir Use the given asset output directory. This parameter is required.
+         */
+        public Builder assetOutdir(final java.lang.String assetOutdir) {
+            this.props().assetOutdir(assetOutdir);
+            return this;
+        }
+
+        /**
+         * If this builder is for a nested assembly, the parent assembly builder.
+         * <p>
+         * Default: - This is a root assembly
+         * <p>
+         * @return {@code this}
+         * @param parentBuilder If this builder is for a nested assembly, the parent assembly builder. This parameter is required.
+         */
+        public Builder parentBuilder(final com.aliyun.ros.cdk.cxapi.CloudAssemblyBuilder parentBuilder) {
+            this.props().parentBuilder(parentBuilder);
+            return this;
+        }
+
+        /**
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.cxapi.CloudAssemblyBuilder}.
+         */
+        @Override
+        public com.aliyun.ros.cdk.cxapi.CloudAssemblyBuilder build() {
+            return new com.aliyun.ros.cdk.cxapi.CloudAssemblyBuilder(
+                this.outdir,
+                this.props != null ? this.props.build() : null
+            );
+        }
+
+        private com.aliyun.ros.cdk.cxapi.CloudAssemblyBuilderProps.Builder props() {
+            if (this.props == null) {
+                this.props = new com.aliyun.ros.cdk.cxapi.CloudAssemblyBuilderProps.Builder();
+            }
+            return this.props;
+        }
     }
 }

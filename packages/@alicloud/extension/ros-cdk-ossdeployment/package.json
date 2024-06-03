@@ -1,0 +1,42 @@
+{
+  "name": "@alicloud/ros-cdk-ossdeployment",
+  "jsii": {
+    "outdir": "dist",
+    "targets": {
+      "java": {
+        "package": "com.aliyun.ros.cdk.ossdeployment",
+        "maven": {
+          "groupId": "com.aliyun",
+          "artifactId": "ros-cdk-ossdeployment"
+        }
+      },
+      "python": {
+        "module": "ros_cdk_ossdeployment",
+        "distName": "ros-cdk-ossdeployment",
+        "classifiers": [
+          "Programming Language :: Python :: 3"
+        ]
+      },
+      "dotnet": {
+        "namespace": "AlibabaCloud.SDK.ROS.CDK.OssDeployment",
+        "packageId": "AlibabaCloud.SDK.ROS.CDK.OssDeployment"
+      }
+    }
+  },
+  "dependencies": {
+    "constructs": "^3.0.4",
+    "@alicloud/ros-cdk-ros": "^1.0.25",
+    "@alicloud/ros-cdk-oss": "^1.0.25",
+    "@alicloud/ros-cdk-ossassets": "^1.0.25",
+    "@alicloud/ros-cdk-fc": "^1.0.25",
+    "@alicloud/ros-cdk-ram": "^1.0.25",
+    "@alicloud/ros-cdk-sls": "^1.0.25",
+    "ali-oss": "^6.20.0"
+  },
+  "bundledDependencies": [
+    "ali-oss"
+  ],
+  "peerDependencies": {
+    "constructs": "^3.0.4"
+  }
+}

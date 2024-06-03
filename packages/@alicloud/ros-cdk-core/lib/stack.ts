@@ -8,10 +8,19 @@ import { resolve } from "./private/resolve";
 import { makeUniqueId } from "./private/uniqueid";
 import { RosInfo } from "./ros-info";
 
+const minimatch = require('minimatch');
+
 const STACK_SYMBOL = Symbol.for("ros-cdk-core.Stack");
 const MY_STACK_CACHE = Symbol.for("ros-cdk-core.Stack.myStack");
 
 const VALID_STACK_NAME_REGEX = /^[A-Za-z][A-Za-z0-9-]*$/;
+
+export interface RamRoles {
+  /**
+   * The RAM role ARN that grants FC function the required permissions.
+   */
+  readonly fcRole: IResolvable;
+}
 
 export interface StackProps {
   readonly version?: String;
@@ -21,6 +30,71 @@ export interface StackProps {
    * @default - No description.
    */
   readonly description?: string;
+
+  /**
+   * The ALIYUN environment (account/region) where this stack will be deployed.
+   *
+   * Set the `region`/`account` fields of `env` to either a concrete value to
+   * select the indicated environment (recommended for production stacks), or to
+   * the values of environment variables
+   * `CDK_DEFAULT_REGION`/`CDK_DEFAULT_ACCOUNT` to let the target environment
+   * depend on the ALIYUN credentials/configuration that the CDK CLI is executed
+   * under (recommended for development stacks).
+   *
+   * If the `Stack` is instantiated inside a `Stage`, any undefined
+   * `region`/`account` fields from `env` will default to the same field on the
+   * encompassing `Stage`, if configured there.
+   *
+   * If either `region` or `account` are not set nor inherited from `Stage`, the
+   * Stack will be considered "*environment-agnostic*"". Environment-agnostic
+   * stacks can be deployed to any environment but may not be able to take
+   * advantage of all features of the CDK.
+   *
+   * @example
+   *
+   * // Use a concrete account and region to deploy this stack to:
+   * // `.account` and `.region` will simply return these values.
+   * new Stack(app, 'Stack1', {
+   *   env: {
+   *     account: '123456789012',
+   *     region: 'cn-hangzhou'
+   *   },
+   * });
+   *
+   * // Use the CLI's current credentials to determine the target environment:
+   * // `.account` and `.region` will reflect the account+region the CLI
+   * // is configured to use (based on the user CLI credentials)
+   * new Stack(app, 'Stack2', {
+   *   env: {
+   *     account: process.env.CDK_DEFAULT_ACCOUNT,
+   *     region: process.env.CDK_DEFAULT_REGION
+   *   },
+   * });
+   *
+   * // Define multiple stacks stage associated with an environment
+   * const myStage = new Stage(app, 'MyStage', {
+   *   env: {
+   *     account: '123456789012',
+   *     region: 'cn-hangzhou'
+   *   }
+   * });
+   *
+   * // both of these stacks will use the stage's account/region:
+   * // `.account` and `.region` will resolve to the concrete values as above
+   * new MyStack(myStage, 'Stack1');
+   * new YourStack(myStage, 'Stack2');
+   *
+   * // Define an environment-agnostic stack:
+   * // `.account` and `.region` will resolve to `{ "Ref": "ALIYUN::AccountId" }` and `{ "Ref": "ALIYUN::Region" }` respectively.
+   * // which will only resolve to actual values by ROS during deployment.
+   * new MyStack(app, 'Stack1');
+   *
+   * @default - The environment of the containing `Stage` if available,
+   * otherwise create the stack will be environment-agnostic.
+   *
+   * @experimental
+   */
+  readonly env?: Environment;
 
   /**
    * Name to deploy the stack with
@@ -102,6 +176,50 @@ export class Stack extends Construct implements ITaggable {
   public readonly tags: TagManager;
 
   /**
+   * The ALIYUN region into which this stack will be deployed (e.g. `cn-beijing`).
+   *
+   * This value is resolved according to the following rules:
+   *
+   * 1. The value provided to `env.region` when the stack is defined. This can
+   *    either be a concrete region or the `ALIYUN.REGION` token.
+   * 2. `ALIYUN.REGION`, which is represents the ROS intrinsic reference
+   *    `{ "Ref": "ALIYUN::Region" }` encoded as a string token.
+   *
+   * Preferably, you should use the return value as an opaque string and not
+   * attempt to parse it to implement your logic. If you do, you must first
+   * check that it is a concrete value an not an unresolved token. If this
+   * value is an unresolved token (`Token.isUnresolved(stack.region)` returns
+   * `true`), this implies that the user wishes that this stack will synthesize
+   * into a **region-agnostic template**. In this case, your code should either
+   * fail (throw an error, emit a synth error using `Annotations.of(construct).addError()`) or
+   * implement some other region-agnostic behavior.
+   */
+  public readonly region: string;
+
+  /**
+   * The ALIYUN account into which this stack will be deployed.
+   *
+   * This value is resolved according to the following rules:
+   *
+   * 1. The value provided to `env.account` when the stack is defined. This can
+   *    either be a concrete account or the `ALIYUN.ACCOUNT_ID` token.
+   * 2. `ALIYUN.ACCOUNT_ID`, which represents the ROS intrinsic reference
+   *    `{ "Ref": "ALIYUN::AccountId" }` encoded as a string token.
+   *
+   * Preferably, you should use the return value as an opaque string and not
+   * attempt to parse it to implement your logic. If you do, you must first
+   * check that it is a concrete value an not an unresolved token. If this
+   * value is an unresolved token (`Token.isUnresolved(stack.account)` returns
+   * `true`), this implies that the user wishes that this stack will synthesize
+   * into a **account-agnostic template**. In this case, your code should either
+   * fail (throw an error, emit a synth error using `Annotations.of(construct).addError()`) or
+   * implement some other region-agnostic behavior.
+   */
+  public readonly account: string;
+
+  public roles?: RamRoles;
+
+  /**
    * Options for ROS template (like version, description).
    */
   public readonly templateOptions: ITemplateOptions = {};
@@ -150,6 +268,8 @@ export class Stack extends Construct implements ITaggable {
 
   public readonly enableResourcePropertyConstraint: boolean;
 
+  private readonly maxResources: number = 300;
+
   /**
    * Creates a new stack.
    *
@@ -195,6 +315,11 @@ export class Stack extends Construct implements ITaggable {
       props.tags
     );
 
+    const { account, region } = this.parseEnvironment(props.env);
+
+    this.account = account;
+    this.region = region;
+
     if (!VALID_STACK_NAME_REGEX.test(this.stackName)) {
       throw new Error(
         `Stack name must match the regular expression: ${VALID_STACK_NAME_REGEX.toString()}, got '${
@@ -220,8 +345,15 @@ export class Stack extends Construct implements ITaggable {
 
     this.templateFile = `${this.artifactId}.template.json`;
 
-    this.synthesizer = props.synthesizer ?? new DefaultStackSynthesizer();
-    this.synthesizer.bind(this);
+    const synthesizer = props.synthesizer ?? new DefaultStackSynthesizer();
+    if (isReusableStackSynthesizer(synthesizer)) {
+      // Produce a fresh instance for each stack (should have been the default behavior)
+      this.synthesizer = synthesizer.reusableBind(this);
+    } else {
+      // Bind the single instance in-place to the current stack (backwards compat)
+      this.synthesizer = synthesizer;
+      this.synthesizer.bind(this);
+    }
     new RosInfo(
       this,
       RosInfo.formatVersion,
@@ -239,6 +371,24 @@ export class Stack extends Construct implements ITaggable {
       resolver: ROS_TOKEN_RESOLVER,
       preparing: false,
     });
+  }
+
+  /**
+   * Determine the various stack environment attributes.
+   *
+   */
+  private parseEnvironment(env: Environment = {}) {
+    // if an environment property is explicitly specified when the stack is
+    // created, it will be used. if not, use tokens for account and region.
+    const containingAssembly = Stage.of(this);
+
+    const account = env.account ?? containingAssembly?.account ?? RosPseudo.accountId;
+    const region = env.region ?? containingAssembly?.region ?? RosPseudo.region;
+
+    return {
+      account,
+      region
+    };
   }
 
   /**
@@ -449,7 +599,7 @@ export class Stack extends Construct implements ITaggable {
     }
   }
 
-  protected synthesize(session: ISynthesisSession): void {
+  public synthesize(session: ISynthesisSession): void {
     // In principle, stack synthesis is delegated to the
     // StackSynthesis object.
     //
@@ -457,14 +607,23 @@ export class Stack extends Construct implements ITaggable {
     // methods on Stack, and I don't really see the value in refactoring
     // this right now, so some parts still happen here.
     const builder = session.assembly;
+    const template = this._toRosTemplate();
 
     // write the ROS template as a JSON file
     const outPath = path.join(builder.outdir, this.templateFile);
-    const text = JSON.stringify(this._toRosTemplate(), undefined, 2);
+    const resources = template.Resources || {};
+    const numberOfResources = Object.keys(resources).length;
+
+    if (numberOfResources > this.maxResources) {
+      const counts = Object.entries(count(Object.values(resources).map((r: any) => `${r?.Type}`))).map(([type, c]) => `${type} (${c})`).join(', ');
+      throw new Error(`Number of resources in stack '${this.node.path}': ${numberOfResources} is greater than allowed maximum of ${this.maxResources}: ${counts}`);
+    }
+
+    const text = JSON.stringify(template, undefined, 2);
     fs.writeFileSync(outPath, text);
 
     // Delegate adding artifacts to the Synthesizer
-    this.synthesizer.synthesizeStackArtifacts(session);
+    // this.synthesizer.synthesize(session);
   }
 
   /**
@@ -577,6 +736,18 @@ export class Stack extends Construct implements ITaggable {
     }
 
     return makeStackName(ids);
+  }
+
+  /**
+   * Indicates whether the stack requires bundling or not
+   */
+  public get bundlingRequired() {
+    const bundlingStacks: string[] = this.node.tryGetContext(cxapi.BUNDLING_STACKS) ?? ['**'];
+
+    return bundlingStacks.some(pattern => minimatch(
+        this.node.path, // use the same value for pattern matching as the ALIYUN-cdk CLI (displayName / hierarchicalId)
+        pattern,
+    ));
   }
 }
 
@@ -757,13 +928,26 @@ import { addDependency } from "./deps";
 import { Reference } from "./reference";
 import { IResolvable } from "./resolvable";
 import {
-  DefaultStackSynthesizer,
+  DefaultStackSynthesizer, isReusableStackSynthesizer,
   IStackSynthesizer,
 } from "./stack-synthesizers";
 import { Stage } from "./stage";
 import { ITaggable, TagManager } from "./tag-manager";
+import {Environment} from "./environment";
 
 interface StackDependency {
   stack: Stack;
   reasons: string[];
+}
+
+function count(xs: string[]): Record<string, number> {
+  const ret: Record<string, number> = {};
+  for (const x of xs) {
+    if (x in ret) {
+      ret[x] += 1;
+    } else {
+      ret[x] = 1;
+    }
+  }
+  return ret;
 }

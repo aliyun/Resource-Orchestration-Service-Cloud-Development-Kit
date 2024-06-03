@@ -251,6 +251,71 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: albAccessCollectionPolicy: ALB access log collection policy script. Default empty.
+            /// </remarks>
+            [JsiiProperty(name: "albAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? AlbAccessCollectionPolicy
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: albAccessEnabled: Specifies whether to collect ALB access log. Default false.
+            /// </remarks>
+            [JsiiProperty(name: "albAccessEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? AlbAccessEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: albAccessTtl: ALB access log TTL. Default 180.
+            /// </remarks>
+            [JsiiProperty(name: "albAccessTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? AlbAccessTtl
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: albSyncEnabled: ALB synchronization to central configuration switch. Default true.
+            /// </remarks>
+            [JsiiProperty(name: "albSyncEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? AlbSyncEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: albSyncTtl: ALB synchronization to central TTL. Default 180.
+            /// </remarks>
+            [JsiiProperty(name: "albSyncTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? AlbSyncTtl
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: apigatewayAccessCollectionPolicy: Apigateway audit collection policy
             /// </remarks>
             [JsiiProperty(name: "apigatewayAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -446,6 +511,58 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: cloudconfigChangeEnabled: CloudConfig change log switch. Default false.
+            /// </remarks>
+            [JsiiProperty(name: "cloudconfigChangeEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? CloudconfigChangeEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: cloudconfigChangeTtl: CloudConfig change log ttl. Default 180.
+            /// </remarks>
+            [JsiiProperty(name: "cloudconfigChangeTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? CloudconfigChangeTtl
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: cloudconfigNoncomEnabled: CloudConfig non-compliance log switch. Default false.
+            /// </remarks>
+            [JsiiProperty(name: "cloudconfigNoncomEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? CloudconfigNoncomEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: cloudconfigNoncomTtl: CloudConfig non-compliance log ttl. Default 180.
+            /// </remarks>
+            [JsiiProperty(name: "cloudconfigNoncomTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? CloudconfigNoncomTtl
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: cloudfirewallAccessCollectionPolicy: Cloud firewall audit collection policy
             /// </remarks>
             [JsiiProperty(name: "cloudfirewallAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -503,6 +620,32 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             [JsiiProperty(name: "cloudfirewallTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
             object? CloudfirewallTtl
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: cloudfirewallVpcEnabled: Specifies whether to collect VPC firewall traffic logs from Cloud Firewall. Default false.
+            /// </remarks>
+            [JsiiProperty(name: "cloudfirewallVpcEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? CloudfirewallVpcEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: cloudfirewallVpcTtl: The retention period of Cloud Firewall VPC firewall traffic logs in the central Logstore. Default 180.
+            /// </remarks>
+            [JsiiProperty(name: "cloudfirewallVpcTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? CloudfirewallVpcTtl
             {
                 get
                 {
@@ -576,6 +719,32 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: ddosBgpAccessEnabled: Anti-DDoS (Origin) access log switch. Default false.
+            /// </remarks>
+            [JsiiProperty(name: "ddosBgpAccessEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? DdosBgpAccessEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ddosBgpAccessTtl: Anti-DDoS (Origin) access log ttl. Default 180.
+            /// </remarks>
+            [JsiiProperty(name: "ddosBgpAccessTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? DdosBgpAccessTtl
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: ddosCooAccessCollectionPolicy: Ddos audit collection policy
             /// </remarks>
             [JsiiProperty(name: "ddosCooAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -633,6 +802,97 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             [JsiiProperty(name: "ddosCooAccessTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
             object? DdosCooAccessTtl
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ddosDipAccessEnabled: Anti-DDoS Premium access log switch. Default false.
+            /// </remarks>
+            [JsiiProperty(name: "ddosDipAccessEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? DdosDipAccessEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ddosDipAccessTtl: Anti-DDoS Premium access log ttl. Default 180.
+            /// </remarks>
+            [JsiiProperty(name: "ddosDipAccessTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? DdosDipAccessTtl
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: dnsIntranetCollectionPolicy: DNS intranet log collection policy script. Default empty.
+            /// </remarks>
+            [JsiiProperty(name: "dnsIntranetCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? DnsIntranetCollectionPolicy
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: dnsIntranetEnabled: Specifies whether to collect intranet Alibaba Cloud DNS (DNS) logs. Default false.
+            /// </remarks>
+            [JsiiProperty(name: "dnsIntranetEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? DnsIntranetEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: dnsIntranetTtl: The retention period of intranet DNS logs in the regional Logstore. Default 7.
+            /// </remarks>
+            [JsiiProperty(name: "dnsIntranetTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? DnsIntranetTtl
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: dnsSyncEnabled: Specifies whether to synchronize DNS intranet logs to the central project. Default true.
+            /// </remarks>
+            [JsiiProperty(name: "dnsSyncEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? DnsSyncEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: dnsSyncTtl: The retention period of intranet DNS logs in the central Logstore. Default 180.
+            /// </remarks>
+            [JsiiProperty(name: "dnsSyncTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? DnsSyncTtl
             {
                 get
                 {
@@ -724,6 +984,84 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             [JsiiProperty(name: "drdsSyncTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
             object? DrdsSyncTtl
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: idaasMngCollectionPolicy: IDaaS management log collection policy script. Default empty.
+            /// </remarks>
+            [JsiiProperty(name: "idaasMngCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? IdaasMngCollectionPolicy
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: idaasMngEnabled: Specifies whether to collect IDaaS management log. Default false.
+            /// </remarks>
+            [JsiiProperty(name: "idaasMngEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? IdaasMngEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: idaasMngTtl: IDaaS management log TTL. Default 180.
+            /// </remarks>
+            [JsiiProperty(name: "idaasMngTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? IdaasMngTtl
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: idaasUserCollectionPolicy: IDaaS user behavior log collection policy script. Default empty.
+            /// </remarks>
+            [JsiiProperty(name: "idaasUserCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? IdaasUserCollectionPolicy
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: idaasUserEnabled: Specifies whether to collect IDaaS user behavior log. Default false.
+            /// </remarks>
+            [JsiiProperty(name: "idaasUserEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? IdaasUserEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: idaasUserTtl: IDaaS user behavior log. Default 180.
+            /// </remarks>
+            [JsiiProperty(name: "idaasUserTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? IdaasUserTtl
             {
                 get
                 {
@@ -1187,6 +1525,45 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: polardbErrorCollectionPolicy: PolarDB error log collection policy script. Default empty.
+            /// </remarks>
+            [JsiiProperty(name: "polardbErrorCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? PolardbErrorCollectionPolicy
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: polardbErrorEnabled: Specifies whether to collect PolarDB error log. Default false.
+            /// </remarks>
+            [JsiiProperty(name: "polardbErrorEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? PolardbErrorEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: polardbErrorTtl: PolarDB error log TTL. Default 180.
+            /// </remarks>
+            [JsiiProperty(name: "polardbErrorTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? PolardbErrorTtl
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: polardbPerfCollectionPolicy: POLARDB perf collection policy.
             /// </remarks>
             [JsiiProperty(name: "polardbPerfCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1374,6 +1751,45 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             [JsiiProperty(name: "rdsEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
             object? RdsEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: rdsErrorCollectionPolicy: RDS error log collection policy script. Default empty.
+            /// </remarks>
+            [JsiiProperty(name: "rdsErrorCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? RdsErrorCollectionPolicy
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: rdsErrorEnabled: Specifies whether to collect RDS error log. Default false.
+            /// </remarks>
+            [JsiiProperty(name: "rdsErrorEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? RdsErrorEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: rdsErrorTtl: RDS error log TTL. Default 180.
+            /// </remarks>
+            [JsiiProperty(name: "rdsErrorTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? RdsErrorTtl
             {
                 get
                 {
@@ -1655,6 +2071,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: sasDnsQueryEnabled: Specifies whether to collect DNS query logs. Default false.
+            /// </remarks>
+            [JsiiProperty(name: "sasDnsQueryEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? SasDnsQueryEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: sasHttpEnabled: Cloud Security Center WEB access log switch. Default false.
             /// </remarks>
             [JsiiProperty(name: "sasHttpEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1928,6 +2357,71 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: vpcFlowCollectionPolicy: VPC flow log collection policy script. Default empty.
+            /// </remarks>
+            [JsiiProperty(name: "vpcFlowCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? VpcFlowCollectionPolicy
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: vpcFlowEnabled: Flow log of VPC. Default false.
+            /// </remarks>
+            [JsiiProperty(name: "vpcFlowEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? VpcFlowEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: vpcFlowTtl: Regional flow log TTL of VPC. Default 7.
+            /// </remarks>
+            [JsiiProperty(name: "vpcFlowTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? VpcFlowTtl
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: vpcSyncEnabled: VPC synchronization to central configuration switch. Default true.
+            /// </remarks>
+            [JsiiProperty(name: "vpcSyncEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? VpcSyncEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: vpcSyncTtl: VPC synchronization to central TTL. Default 180.
+            /// </remarks>
+            [JsiiProperty(name: "vpcSyncTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? VpcSyncTtl
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: wafAccessCollectionPolicy: Waf audit collection policy
             /// </remarks>
             [JsiiProperty(name: "wafAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -2045,6 +2539,56 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 [JsiiOptional]
                 [JsiiProperty(name: "actiontrailTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? ActiontrailTtl
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: albAccessCollectionPolicy: ALB access log collection policy script. Default empty.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "albAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? AlbAccessCollectionPolicy
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: albAccessEnabled: Specifies whether to collect ALB access log. Default false.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "albAccessEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? AlbAccessEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: albAccessTtl: ALB access log TTL. Default 180.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "albAccessTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? AlbAccessTtl
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: albSyncEnabled: ALB synchronization to central configuration switch. Default true.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "albSyncEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? AlbSyncEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: albSyncTtl: ALB synchronization to central TTL. Default 180.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "albSyncTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? AlbSyncTtl
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -2200,6 +2744,46 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 }
 
                 /// <remarks>
+                /// <strong>Property</strong>: cloudconfigChangeEnabled: CloudConfig change log switch. Default false.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "cloudconfigChangeEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? CloudconfigChangeEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: cloudconfigChangeTtl: CloudConfig change log ttl. Default 180.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "cloudconfigChangeTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? CloudconfigChangeTtl
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: cloudconfigNoncomEnabled: CloudConfig non-compliance log switch. Default false.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "cloudconfigNoncomEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? CloudconfigNoncomEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: cloudconfigNoncomTtl: CloudConfig non-compliance log ttl. Default 180.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "cloudconfigNoncomTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? CloudconfigNoncomTtl
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
                 /// <strong>Property</strong>: cloudfirewallAccessCollectionPolicy: Cloud firewall audit collection policy
                 /// </remarks>
                 [JsiiOptional]
@@ -2245,6 +2829,26 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 [JsiiOptional]
                 [JsiiProperty(name: "cloudfirewallTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? CloudfirewallTtl
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: cloudfirewallVpcEnabled: Specifies whether to collect VPC firewall traffic logs from Cloud Firewall. Default false.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "cloudfirewallVpcEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? CloudfirewallVpcEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: cloudfirewallVpcTtl: The retention period of Cloud Firewall VPC firewall traffic logs in the central Logstore. Default 180.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "cloudfirewallVpcTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? CloudfirewallVpcTtl
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -2300,6 +2904,26 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 }
 
                 /// <remarks>
+                /// <strong>Property</strong>: ddosBgpAccessEnabled: Anti-DDoS (Origin) access log switch. Default false.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "ddosBgpAccessEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? DdosBgpAccessEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: ddosBgpAccessTtl: Anti-DDoS (Origin) access log ttl. Default 180.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "ddosBgpAccessTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? DdosBgpAccessTtl
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
                 /// <strong>Property</strong>: ddosCooAccessCollectionPolicy: Ddos audit collection policy
                 /// </remarks>
                 [JsiiOptional]
@@ -2345,6 +2969,76 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 [JsiiOptional]
                 [JsiiProperty(name: "ddosCooAccessTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? DdosCooAccessTtl
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: ddosDipAccessEnabled: Anti-DDoS Premium access log switch. Default false.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "ddosDipAccessEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? DdosDipAccessEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: ddosDipAccessTtl: Anti-DDoS Premium access log ttl. Default 180.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "ddosDipAccessTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? DdosDipAccessTtl
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: dnsIntranetCollectionPolicy: DNS intranet log collection policy script. Default empty.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "dnsIntranetCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? DnsIntranetCollectionPolicy
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: dnsIntranetEnabled: Specifies whether to collect intranet Alibaba Cloud DNS (DNS) logs. Default false.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "dnsIntranetEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? DnsIntranetEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: dnsIntranetTtl: The retention period of intranet DNS logs in the regional Logstore. Default 7.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "dnsIntranetTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? DnsIntranetTtl
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: dnsSyncEnabled: Specifies whether to synchronize DNS intranet logs to the central project. Default true.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "dnsSyncEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? DnsSyncEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: dnsSyncTtl: The retention period of intranet DNS logs in the central Logstore. Default 180.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "dnsSyncTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? DnsSyncTtl
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -2415,6 +3109,66 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 [JsiiOptional]
                 [JsiiProperty(name: "drdsSyncTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? DrdsSyncTtl
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: idaasMngCollectionPolicy: IDaaS management log collection policy script. Default empty.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "idaasMngCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? IdaasMngCollectionPolicy
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: idaasMngEnabled: Specifies whether to collect IDaaS management log. Default false.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "idaasMngEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? IdaasMngEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: idaasMngTtl: IDaaS management log TTL. Default 180.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "idaasMngTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? IdaasMngTtl
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: idaasUserCollectionPolicy: IDaaS user behavior log collection policy script. Default empty.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "idaasUserCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? IdaasUserCollectionPolicy
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: idaasUserEnabled: Specifies whether to collect IDaaS user behavior log. Default false.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "idaasUserEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? IdaasUserEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: idaasUserTtl: IDaaS user behavior log. Default 180.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "idaasUserTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? IdaasUserTtl
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -2770,6 +3524,36 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 }
 
                 /// <remarks>
+                /// <strong>Property</strong>: polardbErrorCollectionPolicy: PolarDB error log collection policy script. Default empty.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "polardbErrorCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? PolardbErrorCollectionPolicy
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: polardbErrorEnabled: Specifies whether to collect PolarDB error log. Default false.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "polardbErrorEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? PolardbErrorEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: polardbErrorTtl: PolarDB error log TTL. Default 180.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "polardbErrorTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? PolardbErrorTtl
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
                 /// <strong>Property</strong>: polardbPerfCollectionPolicy: POLARDB perf collection policy.
                 /// </remarks>
                 [JsiiOptional]
@@ -2915,6 +3699,36 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 [JsiiOptional]
                 [JsiiProperty(name: "rdsEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? RdsEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: rdsErrorCollectionPolicy: RDS error log collection policy script. Default empty.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "rdsErrorCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? RdsErrorCollectionPolicy
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: rdsErrorEnabled: Specifies whether to collect RDS error log. Default false.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "rdsErrorEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? RdsErrorEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: rdsErrorTtl: RDS error log TTL. Default 180.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "rdsErrorTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? RdsErrorTtl
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -3130,6 +3944,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 }
 
                 /// <remarks>
+                /// <strong>Property</strong>: sasDnsQueryEnabled: Specifies whether to collect DNS query logs. Default false.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "sasDnsQueryEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? SasDnsQueryEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
                 /// <strong>Property</strong>: sasHttpEnabled: Cloud Security Center WEB access log switch. Default false.
                 /// </remarks>
                 [JsiiOptional]
@@ -3335,6 +4159,56 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 [JsiiOptional]
                 [JsiiProperty(name: "slbSyncTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? SlbSyncTtl
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: vpcFlowCollectionPolicy: VPC flow log collection policy script. Default empty.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "vpcFlowCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? VpcFlowCollectionPolicy
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: vpcFlowEnabled: Flow log of VPC. Default false.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "vpcFlowEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? VpcFlowEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: vpcFlowTtl: Regional flow log TTL of VPC. Default 7.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "vpcFlowTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? VpcFlowTtl
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: vpcSyncEnabled: VPC synchronization to central configuration switch. Default true.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "vpcSyncEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? VpcSyncEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: vpcSyncTtl: VPC synchronization to central TTL. Default 180.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "vpcSyncTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? VpcSyncTtl
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -3575,6 +4449,211 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                         }
                     }
                     _actiontrailTtl = value;
+                }
+            }
+
+            private object? _albAccessCollectionPolicy;
+
+            /// <remarks>
+            /// <strong>Property</strong>: albAccessCollectionPolicy: ALB access log collection policy script. Default empty.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "albAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AlbAccessCollectionPolicy
+            {
+                get => _albAccessCollectionPolicy;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _albAccessCollectionPolicy = value;
+                }
+            }
+
+            private object? _albAccessEnabled;
+
+            /// <remarks>
+            /// <strong>Property</strong>: albAccessEnabled: Specifies whether to collect ALB access log. Default false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "albAccessEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AlbAccessEnabled
+            {
+                get => _albAccessEnabled;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _albAccessEnabled = value;
+                }
+            }
+
+            private object? _albAccessTtl;
+
+            /// <remarks>
+            /// <strong>Property</strong>: albAccessTtl: ALB access log TTL. Default 180.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "albAccessTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AlbAccessTtl
+            {
+                get => _albAccessTtl;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _albAccessTtl = value;
+                }
+            }
+
+            private object? _albSyncEnabled;
+
+            /// <remarks>
+            /// <strong>Property</strong>: albSyncEnabled: ALB synchronization to central configuration switch. Default true.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "albSyncEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AlbSyncEnabled
+            {
+                get => _albSyncEnabled;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _albSyncEnabled = value;
+                }
+            }
+
+            private object? _albSyncTtl;
+
+            /// <remarks>
+            /// <strong>Property</strong>: albSyncTtl: ALB synchronization to central TTL. Default 180.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "albSyncTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AlbSyncTtl
+            {
+                get => _albSyncTtl;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _albSyncTtl = value;
                 }
             }
 
@@ -4133,6 +5212,178 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 }
             }
 
+            private object? _cloudconfigChangeEnabled;
+
+            /// <remarks>
+            /// <strong>Property</strong>: cloudconfigChangeEnabled: CloudConfig change log switch. Default false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "cloudconfigChangeEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? CloudconfigChangeEnabled
+            {
+                get => _cloudconfigChangeEnabled;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _cloudconfigChangeEnabled = value;
+                }
+            }
+
+            private object? _cloudconfigChangeTtl;
+
+            /// <remarks>
+            /// <strong>Property</strong>: cloudconfigChangeTtl: CloudConfig change log ttl. Default 180.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "cloudconfigChangeTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? CloudconfigChangeTtl
+            {
+                get => _cloudconfigChangeTtl;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _cloudconfigChangeTtl = value;
+                }
+            }
+
+            private object? _cloudconfigNoncomEnabled;
+
+            /// <remarks>
+            /// <strong>Property</strong>: cloudconfigNoncomEnabled: CloudConfig non-compliance log switch. Default false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "cloudconfigNoncomEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? CloudconfigNoncomEnabled
+            {
+                get => _cloudconfigNoncomEnabled;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _cloudconfigNoncomEnabled = value;
+                }
+            }
+
+            private object? _cloudconfigNoncomTtl;
+
+            /// <remarks>
+            /// <strong>Property</strong>: cloudconfigNoncomTtl: CloudConfig non-compliance log ttl. Default 180.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "cloudconfigNoncomTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? CloudconfigNoncomTtl
+            {
+                get => _cloudconfigNoncomTtl;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _cloudconfigNoncomTtl = value;
+                }
+            }
+
             private object? _cloudfirewallAccessCollectionPolicy;
 
             /// <remarks>
@@ -4315,6 +5566,92 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                         }
                     }
                     _cloudfirewallTtl = value;
+                }
+            }
+
+            private object? _cloudfirewallVpcEnabled;
+
+            /// <remarks>
+            /// <strong>Property</strong>: cloudfirewallVpcEnabled: Specifies whether to collect VPC firewall traffic logs from Cloud Firewall. Default false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "cloudfirewallVpcEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? CloudfirewallVpcEnabled
+            {
+                get => _cloudfirewallVpcEnabled;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _cloudfirewallVpcEnabled = value;
+                }
+            }
+
+            private object? _cloudfirewallVpcTtl;
+
+            /// <remarks>
+            /// <strong>Property</strong>: cloudfirewallVpcTtl: The retention period of Cloud Firewall VPC firewall traffic logs in the central Logstore. Default 180.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "cloudfirewallVpcTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? CloudfirewallVpcTtl
+            {
+                get => _cloudfirewallVpcTtl;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _cloudfirewallVpcTtl = value;
                 }
             }
 
@@ -4503,6 +5840,92 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 }
             }
 
+            private object? _ddosBgpAccessEnabled;
+
+            /// <remarks>
+            /// <strong>Property</strong>: ddosBgpAccessEnabled: Anti-DDoS (Origin) access log switch. Default false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ddosBgpAccessEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DdosBgpAccessEnabled
+            {
+                get => _ddosBgpAccessEnabled;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _ddosBgpAccessEnabled = value;
+                }
+            }
+
+            private object? _ddosBgpAccessTtl;
+
+            /// <remarks>
+            /// <strong>Property</strong>: ddosBgpAccessTtl: Anti-DDoS (Origin) access log ttl. Default 180.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ddosBgpAccessTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DdosBgpAccessTtl
+            {
+                get => _ddosBgpAccessTtl;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _ddosBgpAccessTtl = value;
+                }
+            }
+
             private object? _ddosCooAccessCollectionPolicy;
 
             /// <remarks>
@@ -4685,6 +6108,297 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                         }
                     }
                     _ddosCooAccessTtl = value;
+                }
+            }
+
+            private object? _ddosDipAccessEnabled;
+
+            /// <remarks>
+            /// <strong>Property</strong>: ddosDipAccessEnabled: Anti-DDoS Premium access log switch. Default false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ddosDipAccessEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DdosDipAccessEnabled
+            {
+                get => _ddosDipAccessEnabled;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _ddosDipAccessEnabled = value;
+                }
+            }
+
+            private object? _ddosDipAccessTtl;
+
+            /// <remarks>
+            /// <strong>Property</strong>: ddosDipAccessTtl: Anti-DDoS Premium access log ttl. Default 180.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ddosDipAccessTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DdosDipAccessTtl
+            {
+                get => _ddosDipAccessTtl;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _ddosDipAccessTtl = value;
+                }
+            }
+
+            private object? _dnsIntranetCollectionPolicy;
+
+            /// <remarks>
+            /// <strong>Property</strong>: dnsIntranetCollectionPolicy: DNS intranet log collection policy script. Default empty.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "dnsIntranetCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DnsIntranetCollectionPolicy
+            {
+                get => _dnsIntranetCollectionPolicy;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _dnsIntranetCollectionPolicy = value;
+                }
+            }
+
+            private object? _dnsIntranetEnabled;
+
+            /// <remarks>
+            /// <strong>Property</strong>: dnsIntranetEnabled: Specifies whether to collect intranet Alibaba Cloud DNS (DNS) logs. Default false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "dnsIntranetEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DnsIntranetEnabled
+            {
+                get => _dnsIntranetEnabled;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _dnsIntranetEnabled = value;
+                }
+            }
+
+            private object? _dnsIntranetTtl;
+
+            /// <remarks>
+            /// <strong>Property</strong>: dnsIntranetTtl: The retention period of intranet DNS logs in the regional Logstore. Default 7.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "dnsIntranetTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DnsIntranetTtl
+            {
+                get => _dnsIntranetTtl;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _dnsIntranetTtl = value;
+                }
+            }
+
+            private object? _dnsSyncEnabled;
+
+            /// <remarks>
+            /// <strong>Property</strong>: dnsSyncEnabled: Specifies whether to synchronize DNS intranet logs to the central project. Default true.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "dnsSyncEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DnsSyncEnabled
+            {
+                get => _dnsSyncEnabled;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _dnsSyncEnabled = value;
+                }
+            }
+
+            private object? _dnsSyncTtl;
+
+            /// <remarks>
+            /// <strong>Property</strong>: dnsSyncTtl: The retention period of intranet DNS logs in the central Logstore. Default 180.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "dnsSyncTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DnsSyncTtl
+            {
+                get => _dnsSyncTtl;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _dnsSyncTtl = value;
                 }
             }
 
@@ -4956,6 +6670,244 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                         }
                     }
                     _drdsSyncTtl = value;
+                }
+            }
+
+            private object? _idaasMngCollectionPolicy;
+
+            /// <remarks>
+            /// <strong>Property</strong>: idaasMngCollectionPolicy: IDaaS management log collection policy script. Default empty.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "idaasMngCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IdaasMngCollectionPolicy
+            {
+                get => _idaasMngCollectionPolicy;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _idaasMngCollectionPolicy = value;
+                }
+            }
+
+            private object? _idaasMngEnabled;
+
+            /// <remarks>
+            /// <strong>Property</strong>: idaasMngEnabled: Specifies whether to collect IDaaS management log. Default false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "idaasMngEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IdaasMngEnabled
+            {
+                get => _idaasMngEnabled;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _idaasMngEnabled = value;
+                }
+            }
+
+            private object? _idaasMngTtl;
+
+            /// <remarks>
+            /// <strong>Property</strong>: idaasMngTtl: IDaaS management log TTL. Default 180.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "idaasMngTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IdaasMngTtl
+            {
+                get => _idaasMngTtl;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _idaasMngTtl = value;
+                }
+            }
+
+            private object? _idaasUserCollectionPolicy;
+
+            /// <remarks>
+            /// <strong>Property</strong>: idaasUserCollectionPolicy: IDaaS user behavior log collection policy script. Default empty.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "idaasUserCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IdaasUserCollectionPolicy
+            {
+                get => _idaasUserCollectionPolicy;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _idaasUserCollectionPolicy = value;
+                }
+            }
+
+            private object? _idaasUserEnabled;
+
+            /// <remarks>
+            /// <strong>Property</strong>: idaasUserEnabled: Specifies whether to collect IDaaS user behavior log. Default false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "idaasUserEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IdaasUserEnabled
+            {
+                get => _idaasUserEnabled;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _idaasUserEnabled = value;
+                }
+            }
+
+            private object? _idaasUserTtl;
+
+            /// <remarks>
+            /// <strong>Property</strong>: idaasUserTtl: IDaaS user behavior log. Default 180.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "idaasUserTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IdaasUserTtl
+            {
+                get => _idaasUserTtl;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _idaasUserTtl = value;
                 }
             }
 
@@ -6254,6 +8206,125 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 }
             }
 
+            private object? _polardbErrorCollectionPolicy;
+
+            /// <remarks>
+            /// <strong>Property</strong>: polardbErrorCollectionPolicy: PolarDB error log collection policy script. Default empty.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "polardbErrorCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PolardbErrorCollectionPolicy
+            {
+                get => _polardbErrorCollectionPolicy;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _polardbErrorCollectionPolicy = value;
+                }
+            }
+
+            private object? _polardbErrorEnabled;
+
+            /// <remarks>
+            /// <strong>Property</strong>: polardbErrorEnabled: Specifies whether to collect PolarDB error log. Default false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "polardbErrorEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PolardbErrorEnabled
+            {
+                get => _polardbErrorEnabled;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _polardbErrorEnabled = value;
+                }
+            }
+
+            private object? _polardbErrorTtl;
+
+            /// <remarks>
+            /// <strong>Property</strong>: polardbErrorTtl: PolarDB error log TTL. Default 180.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "polardbErrorTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PolardbErrorTtl
+            {
+                get => _polardbErrorTtl;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _polardbErrorTtl = value;
+                }
+            }
+
             private object? _polardbPerfCollectionPolicy;
 
             /// <remarks>
@@ -6806,6 +8877,125 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                         }
                     }
                     _rdsEnabled = value;
+                }
+            }
+
+            private object? _rdsErrorCollectionPolicy;
+
+            /// <remarks>
+            /// <strong>Property</strong>: rdsErrorCollectionPolicy: RDS error log collection policy script. Default empty.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "rdsErrorCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RdsErrorCollectionPolicy
+            {
+                get => _rdsErrorCollectionPolicy;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _rdsErrorCollectionPolicy = value;
+                }
+            }
+
+            private object? _rdsErrorEnabled;
+
+            /// <remarks>
+            /// <strong>Property</strong>: rdsErrorEnabled: Specifies whether to collect RDS error log. Default false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "rdsErrorEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RdsErrorEnabled
+            {
+                get => _rdsErrorEnabled;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _rdsErrorEnabled = value;
+                }
+            }
+
+            private object? _rdsErrorTtl;
+
+            /// <remarks>
+            /// <strong>Property</strong>: rdsErrorTtl: RDS error log TTL. Default 180.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "rdsErrorTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RdsErrorTtl
+            {
+                get => _rdsErrorTtl;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _rdsErrorTtl = value;
                 }
             }
 
@@ -7602,6 +9792,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 }
             }
 
+            private object? _sasDnsQueryEnabled;
+
+            /// <remarks>
+            /// <strong>Property</strong>: sasDnsQueryEnabled: Specifies whether to collect DNS query logs. Default false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "sasDnsQueryEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SasDnsQueryEnabled
+            {
+                get => _sasDnsQueryEnabled;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _sasDnsQueryEnabled = value;
+                }
+            }
+
             private object? _sasHttpEnabled;
 
             /// <remarks>
@@ -8352,6 +10575,211 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                         }
                     }
                     _slbSyncTtl = value;
+                }
+            }
+
+            private object? _vpcFlowCollectionPolicy;
+
+            /// <remarks>
+            /// <strong>Property</strong>: vpcFlowCollectionPolicy: VPC flow log collection policy script. Default empty.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "vpcFlowCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? VpcFlowCollectionPolicy
+            {
+                get => _vpcFlowCollectionPolicy;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _vpcFlowCollectionPolicy = value;
+                }
+            }
+
+            private object? _vpcFlowEnabled;
+
+            /// <remarks>
+            /// <strong>Property</strong>: vpcFlowEnabled: Flow log of VPC. Default false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "vpcFlowEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? VpcFlowEnabled
+            {
+                get => _vpcFlowEnabled;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _vpcFlowEnabled = value;
+                }
+            }
+
+            private object? _vpcFlowTtl;
+
+            /// <remarks>
+            /// <strong>Property</strong>: vpcFlowTtl: Regional flow log TTL of VPC. Default 7.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "vpcFlowTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? VpcFlowTtl
+            {
+                get => _vpcFlowTtl;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _vpcFlowTtl = value;
+                }
+            }
+
+            private object? _vpcSyncEnabled;
+
+            /// <remarks>
+            /// <strong>Property</strong>: vpcSyncEnabled: VPC synchronization to central configuration switch. Default true.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "vpcSyncEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? VpcSyncEnabled
+            {
+                get => _vpcSyncEnabled;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _vpcSyncEnabled = value;
+                }
+            }
+
+            private object? _vpcSyncTtl;
+
+            /// <remarks>
+            /// <strong>Property</strong>: vpcSyncTtl: VPC synchronization to central TTL. Default 180.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "vpcSyncTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? VpcSyncTtl
+            {
+                get => _vpcSyncTtl;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _vpcSyncTtl = value;
                 }
             }
 

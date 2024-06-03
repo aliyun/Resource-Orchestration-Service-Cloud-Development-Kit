@@ -16,7 +16,7 @@ export interface CustomerGatewaysProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::CustomerGateways`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::CustomerGateways`, which is used to query customer gateways.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCustomerGateways`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-customergateways
  */

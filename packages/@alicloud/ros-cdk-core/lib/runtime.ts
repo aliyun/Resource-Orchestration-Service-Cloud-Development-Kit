@@ -473,16 +473,8 @@ export function requireProperty(
 /**
  * Validates if any of the given validators matches
  *
- * We add either/or words to the front of the error mesages so that they read
- * more nicely. Example:
- *
- *   Properties not correct for 'FunctionProps'
- *     codeUri: not one of the possible types
- *       either: properties not correct for 'S3LocationProperty'
- *         bucket: required but missing
- *         key: required but missing
- *         version: required but missing
- *       or: '3' should be a 'string'
+ * We add either/or words to the front of the error messages so that they read
+ * more nicely.
  *
  */
 export function unionValidator(...validators: Validator[]): Validator {

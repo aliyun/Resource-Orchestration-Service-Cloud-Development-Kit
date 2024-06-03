@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.rds;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstanceclone
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:34.787Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:53.991Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosDBInstanceCloneProps")
 @software.amazon.jsii.Jsii.Proxy(RosDBInstanceCloneProps.Jsii$Proxy.class)
 public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerializable {
@@ -782,7 +782,7 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
          * @param preferredBackupPeriod the value to be set.
          * @return {@code this}
          */
-        public Builder preferredBackupPeriod(java.util.List<? extends java.lang.Object> preferredBackupPeriod) {
+        public Builder preferredBackupPeriod(com.aliyun.ros.cdk.core.IResolvable preferredBackupPeriod) {
             this.preferredBackupPeriod = preferredBackupPeriod;
             return this;
         }
@@ -792,7 +792,7 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
          * @param preferredBackupPeriod the value to be set.
          * @return {@code this}
          */
-        public Builder preferredBackupPeriod(com.aliyun.ros.cdk.core.IResolvable preferredBackupPeriod) {
+        public Builder preferredBackupPeriod(java.util.List<? extends java.lang.Object> preferredBackupPeriod) {
             this.preferredBackupPeriod = preferredBackupPeriod;
             return this;
         }

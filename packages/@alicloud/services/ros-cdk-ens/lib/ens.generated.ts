@@ -108,7 +108,7 @@ function rosDiskPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Disk`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Disk`, which is used to create a pay-as-you-go or subscription data disk.
  * @Note This class does not contain additional functions, so it is recommended to use the `Disk` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-disk
  */
@@ -277,7 +277,7 @@ function rosDiskInstanceAttachmentPropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::DiskInstanceAttachment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::DiskInstanceAttachment`, which is used to attach a data disk to an Edge Node Service (ENS) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `DiskInstanceAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-diskinstanceattachment
  */
@@ -892,7 +892,7 @@ function rosInstanceSecurityGroupAttachmentPropsToRosTemplate(properties: any, e
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::InstanceSecurityGroupAttachment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::InstanceSecurityGroupAttachment`, which is used to add an Edge Node Service (ENS) instance to a security group.
  * @Note This class does not contain additional functions, so it is recommended to use the `InstanceSecurityGroupAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-instancesecuritygroupattachment
  */
@@ -1150,7 +1150,7 @@ function rosNetworkPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Network`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Network`, which is used to create a virtual private cloud (VPC).
  * @Note This class does not contain additional functions, so it is recommended to use the `Network` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-network
  */
@@ -1979,7 +1979,7 @@ function rosSnapshotPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Snapshot`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Snapshot`, which is used to create a snapshot.
  * @Note This class does not contain additional functions, so it is recommended to use the `Snapshot` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-snapshot
  */
@@ -2131,7 +2131,7 @@ function rosVSwitchPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::VSwitch`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::VSwitch`, which is used to create a vSwitch.
  * @Note This class does not contain additional functions, so it is recommended to use the `VSwitch` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-vswitch
  */

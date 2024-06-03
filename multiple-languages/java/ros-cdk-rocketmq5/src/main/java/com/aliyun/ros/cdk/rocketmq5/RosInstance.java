@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rocketmq5;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ROCKETMQ5::Instance</code>, which is used to create an ApsaraMQ for RocketMQ 5.0 instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:35.012Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:54.237Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq5.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq5.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -790,7 +790,23 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Object getVSwitchId();
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupId() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchIds() {
+            return null;
+        }
 
         /**
          * @return a {@link Builder} of {@link VpcInfoProperty}
@@ -805,7 +821,9 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<VpcInfoProperty> {
             java.lang.Object vpcId;
+            java.lang.Object securityGroupId;
             java.lang.Object vSwitchId;
+            java.lang.Object vSwitchIds;
 
             /**
              * Sets the value of {@link VpcInfoProperty#getVpcId}
@@ -830,8 +848,30 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link VpcInfoProperty#getSecurityGroupId}
+             * @param securityGroupId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder securityGroupId(java.lang.String securityGroupId) {
+                this.securityGroupId = securityGroupId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VpcInfoProperty#getSecurityGroupId}
+             * @param securityGroupId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder securityGroupId(com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
+                this.securityGroupId = securityGroupId;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link VpcInfoProperty#getVSwitchId}
-             * @param vSwitchId the value to be set. This parameter is required.
+             * @param vSwitchId the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -842,12 +882,34 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
             /**
              * Sets the value of {@link VpcInfoProperty#getVSwitchId}
-             * @param vSwitchId the value to be set. This parameter is required.
+             * @param vSwitchId the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
                 this.vSwitchId = vSwitchId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VpcInfoProperty#getVSwitchIds}
+             * @param vSwitchIds the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder vSwitchIds(com.aliyun.ros.cdk.core.IResolvable vSwitchIds) {
+                this.vSwitchIds = vSwitchIds;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VpcInfoProperty#getVSwitchIds}
+             * @param vSwitchIds the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder vSwitchIds(java.util.List<? extends java.lang.Object> vSwitchIds) {
+                this.vSwitchIds = vSwitchIds;
                 return this;
             }
 
@@ -870,7 +932,9 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements VpcInfoProperty {
             private final java.lang.Object vpcId;
+            private final java.lang.Object securityGroupId;
             private final java.lang.Object vSwitchId;
+            private final java.lang.Object vSwitchIds;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -879,7 +943,9 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
                 this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.vSwitchIds = software.amazon.jsii.Kernel.get(this, "vSwitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -888,7 +954,9 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
-                this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
+                this.securityGroupId = builder.securityGroupId;
+                this.vSwitchId = builder.vSwitchId;
+                this.vSwitchIds = builder.vSwitchIds;
             }
 
             @Override
@@ -897,8 +965,18 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getSecurityGroupId() {
+                return this.securityGroupId;
+            }
+
+            @Override
             public final java.lang.Object getVSwitchId() {
                 return this.vSwitchId;
+            }
+
+            @Override
+            public final java.lang.Object getVSwitchIds() {
+                return this.vSwitchIds;
             }
 
             @Override
@@ -908,7 +986,15 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
                 data.set("vpcId", om.valueToTree(this.getVpcId()));
-                data.set("vSwitchId", om.valueToTree(this.getVSwitchId()));
+                if (this.getSecurityGroupId() != null) {
+                    data.set("securityGroupId", om.valueToTree(this.getSecurityGroupId()));
+                }
+                if (this.getVSwitchId() != null) {
+                    data.set("vSwitchId", om.valueToTree(this.getVSwitchId()));
+                }
+                if (this.getVSwitchIds() != null) {
+                    data.set("vSwitchIds", om.valueToTree(this.getVSwitchIds()));
+                }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
                 struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-rocketmq5.RosInstance.VpcInfoProperty"));
@@ -928,13 +1014,17 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
                 VpcInfoProperty.Jsii$Proxy that = (VpcInfoProperty.Jsii$Proxy) o;
 
                 if (!vpcId.equals(that.vpcId)) return false;
-                return this.vSwitchId.equals(that.vSwitchId);
+                if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
+                if (this.vSwitchId != null ? !this.vSwitchId.equals(that.vSwitchId) : that.vSwitchId != null) return false;
+                return this.vSwitchIds != null ? this.vSwitchIds.equals(that.vSwitchIds) : that.vSwitchIds == null;
             }
 
             @Override
             public final int hashCode() {
                 int result = this.vpcId.hashCode();
-                result = 31 * result + (this.vSwitchId.hashCode());
+                result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
+                result = 31 * result + (this.vSwitchId != null ? this.vSwitchId.hashCode() : 0);
+                result = 31 * result + (this.vSwitchIds != null ? this.vSwitchIds.hashCode() : 0);
                 return result;
             }
         }

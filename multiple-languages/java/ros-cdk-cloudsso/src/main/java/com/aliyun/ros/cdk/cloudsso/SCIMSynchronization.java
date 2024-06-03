@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cloudsso;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CloudSSO::SCIMSynchronization</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CloudSSO::SCIMSynchronization</code>, which is used to enable or disable System for Cross-domain Identity Management (SCIM) synchronization.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:31.040Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:50.237Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudsso.$Module.class, fqn = "@alicloud/ros-cdk-cloudsso.SCIMSynchronization")
 public class SCIMSynchronization extends com.aliyun.ros.cdk.core.Resource {
 

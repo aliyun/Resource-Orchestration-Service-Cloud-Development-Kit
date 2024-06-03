@@ -21,7 +21,7 @@ export interface SerialNumberBindingProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::SerialNumberBinding`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::SerialNumberBinding`, which is used to associate a Smart Access Gateway (SAG) device with an SAG instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSerialNumberBinding`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-serialnumberbinding
  */

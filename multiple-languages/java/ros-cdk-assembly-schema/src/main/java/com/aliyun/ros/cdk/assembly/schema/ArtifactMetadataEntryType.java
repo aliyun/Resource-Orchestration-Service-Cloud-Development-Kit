@@ -3,9 +3,13 @@ package com.aliyun.ros.cdk.assembly.schema;
 /**
  * Type of artifact metadata entry.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:29.890Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:49.185Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.assembly.schema.$Module.class, fqn = "@alicloud/ros-cdk-assembly-schema.ArtifactMetadataEntryType")
 public enum ArtifactMetadataEntryType {
+    /**
+     * Asset in metadata.
+     */
+    ASSET,
     /**
      * Metadata key used to print INFO-level messages by the toolkit when an app is syntheized.
      */

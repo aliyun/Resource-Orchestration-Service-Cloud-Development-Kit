@@ -170,6 +170,11 @@ export interface ScalingGroupProps {
     readonly removalPolicys?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * Property scalingGroupName: Name shown for the scaling group, which must contain 2-40 characters (English or Chinese). The name must begin with a number, an upper\/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".". The account name is unique in the same region.
      * If this parameter is not specified, the default value is ScalingGroupId.
      */
@@ -183,6 +188,11 @@ export interface ScalingGroupProps {
      * ScalingPolicy specifies the reclaim modes of scaling groups, but the policy that is used to remove ECS instances from scaling groups is determined by the RemovePolicy parameter of the RemoveInstances operation.
      */
     readonly scalingPolicy?: string | ros.IResolvable;
+
+    /**
+     * Property serverGroups: The config of server group.
+     */
+    readonly serverGroups?: Array<RosScalingGroup.ServerGroupsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property spotAllocationStrategy: The allocation policy of preemptible instances. You can use this parameter to individually specify the allocation policy of preemptible instances. This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
@@ -262,7 +272,9 @@ export class ScalingGroup extends ros.Resource {
 
         const rosScalingGroup = new RosScalingGroup(this, id,  {
             spotInstanceRemedy: props.spotInstanceRemedy,
+            resourceGroupId: props.resourceGroupId,
             compensateWithOnDemand: props.compensateWithOnDemand,
+            serverGroups: props.serverGroups,
             notificationConfigurations: props.notificationConfigurations,
             onDemandPercentageAboveBaseCapacity: props.onDemandPercentageAboveBaseCapacity,
             desiredCapacity: props.desiredCapacity,

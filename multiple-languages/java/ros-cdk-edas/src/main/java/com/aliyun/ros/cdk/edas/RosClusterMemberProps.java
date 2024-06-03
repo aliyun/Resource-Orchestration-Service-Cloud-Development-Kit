@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.edas;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-clustermember
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:32.654Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:51.862Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.RosClusterMemberProps")
 @software.amazon.jsii.Jsii.Proxy(RosClusterMemberProps.Jsii$Proxy.class)
 public interface RosClusterMemberProps extends software.amazon.jsii.JsiiSerializable {

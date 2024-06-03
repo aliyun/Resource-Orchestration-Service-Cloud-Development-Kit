@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sag;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SAG::QosPolicy</code>, which is used to create a traffic classification rule for a quality of service (QoS) policy.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:35.184Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:54.394Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.RosQosPolicy")
 public class RosQosPolicy extends com.aliyun.ros.cdk.core.RosResource {
 

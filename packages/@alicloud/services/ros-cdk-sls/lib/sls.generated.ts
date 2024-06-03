@@ -1307,6 +1307,10 @@ export namespace RosAudit {
          */
         readonly wafEnabled?: boolean | ros.IResolvable;
         /**
+         * @Property vpcFlowEnabled: Flow log of VPC. Default false.
+         */
+        readonly vpcFlowEnabled?: boolean | ros.IResolvable;
+        /**
          * @Property rdsPerfEnabled: RDS perf log switch. Default false.
          */
         readonly rdsPerfEnabled?: boolean | ros.IResolvable;
@@ -1347,13 +1351,13 @@ export namespace RosAudit {
          */
         readonly bastionEnabled?: boolean | ros.IResolvable;
         /**
-         * @Property redisSyncTtl: Redis sync to center switch. Default 180.
-         */
-        readonly redisSyncTtl?: number | ros.IResolvable;
-        /**
          * @Property rdsEnabled: RDS audit log switch. Default true.
          */
         readonly rdsEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property redisSyncTtl: Redis sync to center switch. Default 180.
+         */
+        readonly redisSyncTtl?: number | ros.IResolvable;
         /**
          * @Property sasSessionEnabled: Cloud security center network session log switch.Default false.
          */
@@ -1367,13 +1371,29 @@ export namespace RosAudit {
          */
         readonly ddosCooAccessTtl?: number | ros.IResolvable;
         /**
+         * @Property albAccessEnabled: Specifies whether to collect ALB access log. Default false.
+         */
+        readonly albAccessEnabled?: boolean | ros.IResolvable;
+        /**
          * @Property bastionTtl: Fort machine centralized ttl. Default 180.
          */
         readonly bastionTtl?: number | ros.IResolvable;
         /**
+         * @Property albSyncEnabled: ALB synchronization to central configuration switch. Default true.
+         */
+        readonly albSyncEnabled?: boolean | ros.IResolvable;
+        /**
          * @Property rdsSlowEnabled: RDS slow log switch. Default false.
          */
         readonly rdsSlowEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property sasDnsQueryEnabled: Specifies whether to collect DNS query logs. Default false.
+         */
+        readonly sasDnsQueryEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property polardbErrorTtl: PolarDB error log TTL. Default 180.
+         */
+        readonly polardbErrorTtl?: number | ros.IResolvable;
         /**
          * @Property wafAccessCollectionPolicy: Waf audit collection policy
          */
@@ -1395,9 +1415,17 @@ export namespace RosAudit {
          */
         readonly slbAccessCollectionPolicy?: string | ros.IResolvable;
         /**
+         * @Property albAccessTtl: ALB access log TTL. Default 180.
+         */
+        readonly albAccessTtl?: number | ros.IResolvable;
+        /**
          * @Property sasSnapshotPortEnabled: Cloud Security Center Port Snapshot Switch. Default false.
          */
         readonly sasSnapshotPortEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property cloudconfigChangeEnabled: CloudConfig change log switch. Default false.
+         */
+        readonly cloudconfigChangeEnabled?: boolean | ros.IResolvable;
         /**
          * @Property rdsSlowTtl: Rds slow log centralization ttl. Default 180.
          */
@@ -1422,6 +1450,10 @@ export namespace RosAudit {
          * @Property appconnectTiEnabled: Threat Intelligence of Appconnect.
          */
         readonly appconnectTiEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property vpcFlowCollectionPolicy: VPC flow log collection policy script. Default empty.
+         */
+        readonly vpcFlowCollectionPolicy?: string | ros.IResolvable;
         /**
          * @Property cpsTtl: Mobile push ttl. Default 180.
          */
@@ -1467,9 +1499,17 @@ export namespace RosAudit {
          */
         readonly cpsEnabled?: boolean | ros.IResolvable;
         /**
+         * @Property ddosBgpAccessEnabled: Anti-DDoS (Origin) access log switch. Default false.
+         */
+        readonly ddosBgpAccessEnabled?: boolean | ros.IResolvable;
+        /**
          * @Property rdsSlowCollectionPolicy: Rds slow collection policy.
          */
         readonly rdsSlowCollectionPolicy?: string | ros.IResolvable;
+        /**
+         * @Property vpcSyncTtl: VPC synchronization to central TTL. Default 180.
+         */
+        readonly vpcSyncTtl?: number | ros.IResolvable;
         /**
          * @Property actiontrailOpenapiCollectionPolicy: Actiontrail openapi collection policy
          */
@@ -1482,6 +1522,10 @@ export namespace RosAudit {
          * @Property cloudfirewallAccessPolicySetting: Cloud firewall audit policy setting.
          */
         readonly cloudfirewallAccessPolicySetting?: Array<any | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property idaasMngTtl: IDaaS management log TTL. Default 180.
+         */
+        readonly idaasMngTtl?: number | ros.IResolvable;
         /**
          * @Property ossAccessEnabled: Access log switch of OSS. Default true.
          */
@@ -1511,13 +1555,13 @@ export namespace RosAudit {
          */
         readonly ossAccessTtl?: number | ros.IResolvable;
         /**
-         * @Property ossMeteringPolicySetting: Oss metering policy setting.
-         */
-        readonly ossMeteringPolicySetting?: Array<any | ros.IResolvable> | ros.IResolvable;
-        /**
          * @Property sasHttpEnabled: Cloud Security Center WEB access log switch. Default false.
          */
         readonly sasHttpEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property ossMeteringPolicySetting: Oss metering policy setting.
+         */
+        readonly ossMeteringPolicySetting?: Array<any | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property ossMeteringEnabled: OSS metering log switch.Default true.
          */
@@ -1527,9 +1571,29 @@ export namespace RosAudit {
          */
         readonly cloudfirewallEnabled?: boolean | ros.IResolvable;
         /**
+         * @Property dnsIntranetEnabled: Specifies whether to collect intranet Alibaba Cloud DNS (DNS) logs. Default false.
+         */
+        readonly dnsIntranetEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property cloudfirewallVpcTtl: The retention period of Cloud Firewall VPC firewall traffic logs in the central Logstore. Default 180.
+         */
+        readonly cloudfirewallVpcTtl?: number | ros.IResolvable;
+        /**
+         * @Property albAccessCollectionPolicy: ALB access log collection policy script. Default empty.
+         */
+        readonly albAccessCollectionPolicy?: string | ros.IResolvable;
+        /**
+         * @Property dnsSyncTtl: The retention period of intranet DNS logs in the central Logstore. Default 180.
+         */
+        readonly dnsSyncTtl?: number | ros.IResolvable;
+        /**
          * @Property slbAccessTiEnabled: Threat Intelligence of SLB.
          */
         readonly slbAccessTiEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property ddosDipAccessEnabled: Anti-DDoS Premium access log switch. Default false.
+         */
+        readonly ddosDipAccessEnabled?: boolean | ros.IResolvable;
         /**
          * @Property drdsSyncTtl: DRDS sync to center ttl. Default 180.
          */
@@ -1563,6 +1627,10 @@ export namespace RosAudit {
          */
         readonly k8SIngressEnabled?: boolean | ros.IResolvable;
         /**
+         * @Property rdsErrorEnabled: Specifies whether to collect RDS error log. Default false.
+         */
+        readonly rdsErrorEnabled?: boolean | ros.IResolvable;
+        /**
          * @Property cloudfirewallTiEnabled: Threat Intelligence of Cloud firewall.
          */
         readonly cloudfirewallTiEnabled?: boolean | ros.IResolvable;
@@ -1590,6 +1658,10 @@ export namespace RosAudit {
          * @Property cpsTiEnabled: Threat Intelligence of mobile push.
          */
         readonly cpsTiEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property rdsErrorTtl: RDS error log TTL. Default 180.
+         */
+        readonly rdsErrorTtl?: number | ros.IResolvable;
         /**
          * @Property k8SEventEnabled: K8s event log switch. Default false.
          */
@@ -1623,6 +1695,14 @@ export namespace RosAudit {
          */
         readonly sasTiEnabled?: boolean | ros.IResolvable;
         /**
+         * @Property vpcFlowTtl: Regional flow log TTL of VPC. Default 7.
+         */
+        readonly vpcFlowTtl?: number | ros.IResolvable;
+        /**
+         * @Property idaasUserTtl: IDaaS user behavior log. Default 180.
+         */
+        readonly idaasUserTtl?: number | ros.IResolvable;
+        /**
          * @Property drdsAuditTtl: DRDS log centralization ttl. Default 7.
          */
         readonly drdsAuditTtl?: number | ros.IResolvable;
@@ -1635,17 +1715,25 @@ export namespace RosAudit {
          */
         readonly polardbPerfEnabled?: boolean | ros.IResolvable;
         /**
+         * @Property idaasMngEnabled: Specifies whether to collect IDaaS management log. Default false.
+         */
+        readonly idaasMngEnabled?: boolean | ros.IResolvable;
+        /**
          * @Property ddosCooAccessCollectionPolicy: Ddos audit collection policy
          */
         readonly ddosCooAccessCollectionPolicy?: string | ros.IResolvable;
+        /**
+         * @Property ossMeteringTiEnabled: Threat Intelligence of oss metering.
+         */
+        readonly ossMeteringTiEnabled?: boolean | ros.IResolvable;
         /**
          * @Property k8SAuditEnabled: K8s access log switch. Default false.
          */
         readonly k8SAuditEnabled?: boolean | ros.IResolvable;
         /**
-         * @Property ossMeteringTiEnabled: Threat Intelligence of oss metering.
+         * @Property cloudconfigChangeTtl: CloudConfig change log ttl. Default 180.
          */
-        readonly ossMeteringTiEnabled?: boolean | ros.IResolvable;
+        readonly cloudconfigChangeTtl?: number | ros.IResolvable;
         /**
          * @Property polardbPerfTtl: POLARDB perf log centralization ttl. Default 180.
          */
@@ -1687,6 +1775,14 @@ export namespace RosAudit {
          */
         readonly k8SAuditCollectionPolicy?: string | ros.IResolvable;
         /**
+         * @Property dnsIntranetCollectionPolicy: DNS intranet log collection policy script. Default empty.
+         */
+        readonly dnsIntranetCollectionPolicy?: string | ros.IResolvable;
+        /**
+         * @Property vpcSyncEnabled: VPC synchronization to central configuration switch. Default true.
+         */
+        readonly vpcSyncEnabled?: boolean | ros.IResolvable;
+        /**
          * @Property ddosCooAccessTiEnabled: Threat Intelligence of Ddos.
          */
         readonly ddosCooAccessTiEnabled?: boolean | ros.IResolvable;
@@ -1695,9 +1791,25 @@ export namespace RosAudit {
          */
         readonly appconnectOpCollectionPolicy?: string | ros.IResolvable;
         /**
+         * @Property ddosDipAccessTtl: Anti-DDoS Premium access log ttl. Default 180.
+         */
+        readonly ddosDipAccessTtl?: number | ros.IResolvable;
+        /**
+         * @Property cloudfirewallVpcEnabled: Specifies whether to collect VPC firewall traffic logs from Cloud Firewall. Default false.
+         */
+        readonly cloudfirewallVpcEnabled?: boolean | ros.IResolvable;
+        /**
          * @Property appconnectOpPolicySetting: Appconnect audit policy setting.
          */
         readonly appconnectOpPolicySetting?: Array<any | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property idaasUserCollectionPolicy: IDaaS user behavior log collection policy script. Default empty.
+         */
+        readonly idaasUserCollectionPolicy?: string | ros.IResolvable;
+        /**
+         * @Property polardbErrorEnabled: Specifies whether to collect PolarDB error log. Default false.
+         */
+        readonly polardbErrorEnabled?: boolean | ros.IResolvable;
         /**
          * @Property polardbTiEnabled: Threat Intelligence of POLARDB.
          */
@@ -1711,9 +1823,17 @@ export namespace RosAudit {
          */
         readonly rdsSlowTiEnabled?: boolean | ros.IResolvable;
         /**
+         * @Property albSyncTtl: ALB synchronization to central TTL. Default 180.
+         */
+        readonly albSyncTtl?: number | ros.IResolvable;
+        /**
          * @Property sasTtl: Cloud Security Center centralized ttl. Default 180.
          */
         readonly sasTtl?: number | ros.IResolvable;
+        /**
+         * @Property idaasMngCollectionPolicy: IDaaS management log collection policy script. Default empty.
+         */
+        readonly idaasMngCollectionPolicy?: string | ros.IResolvable;
         /**
          * @Property actiontrailTtl: Actiontrail action log TTL.
          */
@@ -1722,6 +1842,10 @@ export namespace RosAudit {
          * @Property rdsPerfCollectionPolicy: Rds perf collection policy.
          */
         readonly rdsPerfCollectionPolicy?: string | ros.IResolvable;
+        /**
+         * @Property ddosBgpAccessTtl: Anti-DDoS (Origin) access log ttl. Default 180.
+         */
+        readonly ddosBgpAccessTtl?: number | ros.IResolvable;
         /**
          * @Property ossAccessCollectionPolicy: Oss access collection policy.
          */
@@ -1734,6 +1858,10 @@ export namespace RosAudit {
          * @Property wafTiEnabled: Threat Intelligence of Waf.
          */
         readonly wafTiEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property cloudconfigNoncomTtl: CloudConfig non-compliance log ttl. Default 180.
+         */
+        readonly cloudconfigNoncomTtl?: number | ros.IResolvable;
         /**
          * @Property redisSyncEnabled: Redis sync to center switch. Default true.
          */
@@ -1755,9 +1883,17 @@ export namespace RosAudit {
          */
         readonly appconnectEnabled?: boolean | ros.IResolvable;
         /**
+         * @Property rdsErrorCollectionPolicy: RDS error log collection policy script. Default empty.
+         */
+        readonly rdsErrorCollectionPolicy?: string | ros.IResolvable;
+        /**
          * @Property drdsAuditPolicySetting: DRDS audit policy setting.
          */
         readonly drdsAuditPolicySetting?: Array<any | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property idaasUserEnabled: Specifies whether to collect IDaaS user behavior log. Default false.
+         */
+        readonly idaasUserEnabled?: boolean | ros.IResolvable;
         /**
          * @Property k8SEventTiEnabled: Threat Intelligence of k8s event.
          */
@@ -1771,29 +1907,37 @@ export namespace RosAudit {
          */
         readonly ddosCooAccessPolicySetting?: Array<any | ros.IResolvable> | ros.IResolvable;
         /**
-         * @Property k8SEventTtl: K8s event log centralization ttl. Default 180.
-         */
-        readonly k8SEventTtl?: number | ros.IResolvable;
-        /**
          * @Property polardbSlowEnabled: POLARDB slow log switch. Default false.
          */
         readonly polardbSlowEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property k8SEventTtl: K8s event log centralization ttl. Default 180.
+         */
+        readonly k8SEventTtl?: number | ros.IResolvable;
         /**
          * @Property sasSecurityAlertEnabled: Cloud Security Center Security Alarm Log Switch .Default false.
          */
         readonly sasSecurityAlertEnabled?: boolean | ros.IResolvable;
         /**
-         * @Property slbAccessEnabled: Slb log switch. Default true.
-         */
-        readonly slbAccessEnabled?: boolean | ros.IResolvable;
-        /**
          * @Property drdsAuditEnabled: DRDS audit log switch. Default true.
          */
         readonly drdsAuditEnabled?: boolean | ros.IResolvable;
         /**
+         * @Property slbAccessEnabled: Slb log switch. Default true.
+         */
+        readonly slbAccessEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property cloudconfigNoncomEnabled: CloudConfig non-compliance log switch. Default false.
+         */
+        readonly cloudconfigNoncomEnabled?: boolean | ros.IResolvable;
+        /**
          * @Property sasNetworkEnabled: Cloud security center network connection log switch. Default false.
          */
         readonly sasNetworkEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property dnsIntranetTtl: The retention period of intranet DNS logs in the regional Logstore. Default 7.
+         */
+        readonly dnsIntranetTtl?: number | ros.IResolvable;
         /**
          * @Property k8SIngressPolicySetting: K8s Ingress policy setting.
          */
@@ -1802,6 +1946,10 @@ export namespace RosAudit {
          * @Property ossMeteringCollectionPolicy: Oss metering collection policy.
          */
         readonly ossMeteringCollectionPolicy?: string | ros.IResolvable;
+        /**
+         * @Property polardbErrorCollectionPolicy: PolarDB error log collection policy script. Default empty.
+         */
+        readonly polardbErrorCollectionPolicy?: string | ros.IResolvable;
         /**
          * @Property polardbSlowTiEnabled: Threat Intelligence of POLARDB slow log.
          */
@@ -1839,6 +1987,10 @@ export namespace RosAudit {
          */
         readonly rdsTiEnabled?: boolean | ros.IResolvable;
         /**
+         * @Property dnsSyncEnabled: Specifies whether to synchronize DNS intranet logs to the central project. Default true.
+         */
+        readonly dnsSyncEnabled?: boolean | ros.IResolvable;
+        /**
          * @Property apigatewayAccessCollectionPolicy: Apigateway audit collection policy
          */
         readonly apigatewayAccessCollectionPolicy?: string | ros.IResolvable;
@@ -1868,6 +2020,7 @@ function RosAudit_VariableMapPropertyValidator(properties: any): ros.ValidationR
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('polardbPerfPolicySetting', ros.listValidator(ros.validateAny))(properties.polardbPerfPolicySetting));
     errors.collect(ros.propertyValidator('wafEnabled', ros.validateBoolean)(properties.wafEnabled));
+    errors.collect(ros.propertyValidator('vpcFlowEnabled', ros.validateBoolean)(properties.vpcFlowEnabled));
     errors.collect(ros.propertyValidator('rdsPerfEnabled', ros.validateBoolean)(properties.rdsPerfEnabled));
     errors.collect(ros.propertyValidator('cpsCallbackCollectionPolicy', ros.validateString)(properties.cpsCallbackCollectionPolicy));
     errors.collect(ros.propertyValidator('redisAuditTiEnabled', ros.validateBoolean)(properties.redisAuditTiEnabled));
@@ -1878,25 +2031,32 @@ function RosAudit_VariableMapPropertyValidator(properties: any): ros.ValidationR
     errors.collect(ros.propertyValidator('rdsAuditCollectionPolicy', ros.validateString)(properties.rdsAuditCollectionPolicy));
     errors.collect(ros.propertyValidator('bastionAuditCollectionPolicy', ros.validateString)(properties.bastionAuditCollectionPolicy));
     errors.collect(ros.propertyValidator('bastionEnabled', ros.validateBoolean)(properties.bastionEnabled));
-    errors.collect(ros.propertyValidator('redisSyncTtl', ros.validateNumber)(properties.redisSyncTtl));
     errors.collect(ros.propertyValidator('rdsEnabled', ros.validateBoolean)(properties.rdsEnabled));
+    errors.collect(ros.propertyValidator('redisSyncTtl', ros.validateNumber)(properties.redisSyncTtl));
     errors.collect(ros.propertyValidator('sasSessionEnabled', ros.validateBoolean)(properties.sasSessionEnabled));
     errors.collect(ros.propertyValidator('rdsAuditPolicySetting', ros.listValidator(ros.validateAny))(properties.rdsAuditPolicySetting));
     errors.collect(ros.propertyValidator('ddosCooAccessTtl', ros.validateNumber)(properties.ddosCooAccessTtl));
+    errors.collect(ros.propertyValidator('albAccessEnabled', ros.validateBoolean)(properties.albAccessEnabled));
     errors.collect(ros.propertyValidator('bastionTtl', ros.validateNumber)(properties.bastionTtl));
+    errors.collect(ros.propertyValidator('albSyncEnabled', ros.validateBoolean)(properties.albSyncEnabled));
     errors.collect(ros.propertyValidator('rdsSlowEnabled', ros.validateBoolean)(properties.rdsSlowEnabled));
+    errors.collect(ros.propertyValidator('sasDnsQueryEnabled', ros.validateBoolean)(properties.sasDnsQueryEnabled));
+    errors.collect(ros.propertyValidator('polardbErrorTtl', ros.validateNumber)(properties.polardbErrorTtl));
     errors.collect(ros.propertyValidator('wafAccessCollectionPolicy', ros.validateString)(properties.wafAccessCollectionPolicy));
     errors.collect(ros.propertyValidator('k8SAuditTtl', ros.validateNumber)(properties.k8SAuditTtl));
     errors.collect(ros.propertyValidator('polardbTtl', ros.validateNumber)(properties.polardbTtl));
     errors.collect(ros.propertyValidator('drdsAuditCollectionPolicy', ros.validateString)(properties.drdsAuditCollectionPolicy));
     errors.collect(ros.propertyValidator('slbAccessCollectionPolicy', ros.validateString)(properties.slbAccessCollectionPolicy));
+    errors.collect(ros.propertyValidator('albAccessTtl', ros.validateNumber)(properties.albAccessTtl));
     errors.collect(ros.propertyValidator('sasSnapshotPortEnabled', ros.validateBoolean)(properties.sasSnapshotPortEnabled));
+    errors.collect(ros.propertyValidator('cloudconfigChangeEnabled', ros.validateBoolean)(properties.cloudconfigChangeEnabled));
     errors.collect(ros.propertyValidator('rdsSlowTtl', ros.validateNumber)(properties.rdsSlowTtl));
     errors.collect(ros.propertyValidator('polardbEnabled', ros.validateBoolean)(properties.polardbEnabled));
     errors.collect(ros.propertyValidator('sasSnapshotProcessEnabled', ros.validateBoolean)(properties.sasSnapshotProcessEnabled));
     errors.collect(ros.propertyValidator('actiontrailTiEnabled', ros.validateBoolean)(properties.actiontrailTiEnabled));
     errors.collect(ros.propertyValidator('nasTiEnabled', ros.validateBoolean)(properties.nasTiEnabled));
     errors.collect(ros.propertyValidator('appconnectTiEnabled', ros.validateBoolean)(properties.appconnectTiEnabled));
+    errors.collect(ros.propertyValidator('vpcFlowCollectionPolicy', ros.validateString)(properties.vpcFlowCollectionPolicy));
     errors.collect(ros.propertyValidator('cpsTtl', ros.validateNumber)(properties.cpsTtl));
     errors.collect(ros.propertyValidator('slbSyncTtl', ros.validateNumber)(properties.slbSyncTtl));
     errors.collect(ros.propertyValidator('cloudfirewallAccessCollectionPolicy', ros.validateString)(properties.cloudfirewallAccessCollectionPolicy));
@@ -1908,10 +2068,13 @@ function RosAudit_VariableMapPropertyValidator(properties: any): ros.ValidationR
     errors.collect(ros.propertyValidator('k8SIngressCollectionPolicy', ros.validateString)(properties.k8SIngressCollectionPolicy));
     errors.collect(ros.propertyValidator('apigatewayTtl', ros.validateNumber)(properties.apigatewayTtl));
     errors.collect(ros.propertyValidator('cpsEnabled', ros.validateBoolean)(properties.cpsEnabled));
+    errors.collect(ros.propertyValidator('ddosBgpAccessEnabled', ros.validateBoolean)(properties.ddosBgpAccessEnabled));
     errors.collect(ros.propertyValidator('rdsSlowCollectionPolicy', ros.validateString)(properties.rdsSlowCollectionPolicy));
+    errors.collect(ros.propertyValidator('vpcSyncTtl', ros.validateNumber)(properties.vpcSyncTtl));
     errors.collect(ros.propertyValidator('actiontrailOpenapiCollectionPolicy', ros.validateString)(properties.actiontrailOpenapiCollectionPolicy));
     errors.collect(ros.propertyValidator('rdsPerfPolicySetting', ros.listValidator(ros.validateAny))(properties.rdsPerfPolicySetting));
     errors.collect(ros.propertyValidator('cloudfirewallAccessPolicySetting', ros.listValidator(ros.validateAny))(properties.cloudfirewallAccessPolicySetting));
+    errors.collect(ros.propertyValidator('idaasMngTtl', ros.validateNumber)(properties.idaasMngTtl));
     errors.collect(ros.propertyValidator('ossAccessEnabled', ros.validateBoolean)(properties.ossAccessEnabled));
     errors.collect(ros.propertyValidator('cpsCallbackPolicySetting', ros.listValidator(ros.validateAny))(properties.cpsCallbackPolicySetting));
     errors.collect(ros.propertyValidator('slbAccessTtl', ros.validateNumber)(properties.slbAccessTtl));
@@ -1919,11 +2082,16 @@ function RosAudit_VariableMapPropertyValidator(properties: any): ros.ValidationR
     errors.collect(ros.propertyValidator('polardbPerfTiEnabled', ros.validateBoolean)(properties.polardbPerfTiEnabled));
     errors.collect(ros.propertyValidator('sasLocalDnsEnabled', ros.validateBoolean)(properties.sasLocalDnsEnabled));
     errors.collect(ros.propertyValidator('ossAccessTtl', ros.validateNumber)(properties.ossAccessTtl));
-    errors.collect(ros.propertyValidator('ossMeteringPolicySetting', ros.listValidator(ros.validateAny))(properties.ossMeteringPolicySetting));
     errors.collect(ros.propertyValidator('sasHttpEnabled', ros.validateBoolean)(properties.sasHttpEnabled));
+    errors.collect(ros.propertyValidator('ossMeteringPolicySetting', ros.listValidator(ros.validateAny))(properties.ossMeteringPolicySetting));
     errors.collect(ros.propertyValidator('ossMeteringEnabled', ros.validateBoolean)(properties.ossMeteringEnabled));
     errors.collect(ros.propertyValidator('cloudfirewallEnabled', ros.validateBoolean)(properties.cloudfirewallEnabled));
+    errors.collect(ros.propertyValidator('dnsIntranetEnabled', ros.validateBoolean)(properties.dnsIntranetEnabled));
+    errors.collect(ros.propertyValidator('cloudfirewallVpcTtl', ros.validateNumber)(properties.cloudfirewallVpcTtl));
+    errors.collect(ros.propertyValidator('albAccessCollectionPolicy', ros.validateString)(properties.albAccessCollectionPolicy));
+    errors.collect(ros.propertyValidator('dnsSyncTtl', ros.validateNumber)(properties.dnsSyncTtl));
     errors.collect(ros.propertyValidator('slbAccessTiEnabled', ros.validateBoolean)(properties.slbAccessTiEnabled));
+    errors.collect(ros.propertyValidator('ddosDipAccessEnabled', ros.validateBoolean)(properties.ddosDipAccessEnabled));
     errors.collect(ros.propertyValidator('drdsSyncTtl', ros.validateNumber)(properties.drdsSyncTtl));
     errors.collect(ros.propertyValidator('k8SEventPolicySetting', ros.listValidator(ros.validateAny))(properties.k8SEventPolicySetting));
     errors.collect(ros.propertyValidator('nasTtl', ros.validateNumber)(properties.nasTtl));
@@ -1932,6 +2100,7 @@ function RosAudit_VariableMapPropertyValidator(properties: any): ros.ValidationR
     errors.collect(ros.propertyValidator('nasAuditPolicySetting', ros.listValidator(ros.validateAny))(properties.nasAuditPolicySetting));
     errors.collect(ros.propertyValidator('rdsTtl', ros.validateNumber)(properties.rdsTtl));
     errors.collect(ros.propertyValidator('k8SIngressEnabled', ros.validateBoolean)(properties.k8SIngressEnabled));
+    errors.collect(ros.propertyValidator('rdsErrorEnabled', ros.validateBoolean)(properties.rdsErrorEnabled));
     errors.collect(ros.propertyValidator('cloudfirewallTiEnabled', ros.validateBoolean)(properties.cloudfirewallTiEnabled));
     errors.collect(ros.propertyValidator('k8SEventCollectionPolicy', ros.validateString)(properties.k8SEventCollectionPolicy));
     errors.collect(ros.propertyValidator('actiontrailEnabled', ros.validateBoolean)(properties.actiontrailEnabled));
@@ -1939,6 +2108,7 @@ function RosAudit_VariableMapPropertyValidator(properties: any): ros.ValidationR
     errors.collect(ros.propertyValidator('apigatewayEnabled', ros.validateBoolean)(properties.apigatewayEnabled));
     errors.collect(ros.propertyValidator('sasCrackEnabled', ros.validateBoolean)(properties.sasCrackEnabled));
     errors.collect(ros.propertyValidator('cpsTiEnabled', ros.validateBoolean)(properties.cpsTiEnabled));
+    errors.collect(ros.propertyValidator('rdsErrorTtl', ros.validateNumber)(properties.rdsErrorTtl));
     errors.collect(ros.propertyValidator('k8SEventEnabled', ros.validateBoolean)(properties.k8SEventEnabled));
     errors.collect(ros.propertyValidator('ossSyncTtl', ros.validateNumber)(properties.ossSyncTtl));
     errors.collect(ros.propertyValidator('rdsPerfTtl', ros.validateNumber)(properties.rdsPerfTtl));
@@ -1947,12 +2117,16 @@ function RosAudit_VariableMapPropertyValidator(properties: any): ros.ValidationR
     errors.collect(ros.propertyValidator('bastionTiEnabled', ros.validateBoolean)(properties.bastionTiEnabled));
     errors.collect(ros.propertyValidator('ossAccessPolicySetting', ros.listValidator(ros.validateAny))(properties.ossAccessPolicySetting));
     errors.collect(ros.propertyValidator('sasTiEnabled', ros.validateBoolean)(properties.sasTiEnabled));
+    errors.collect(ros.propertyValidator('vpcFlowTtl', ros.validateNumber)(properties.vpcFlowTtl));
+    errors.collect(ros.propertyValidator('idaasUserTtl', ros.validateNumber)(properties.idaasUserTtl));
     errors.collect(ros.propertyValidator('drdsAuditTtl', ros.validateNumber)(properties.drdsAuditTtl));
     errors.collect(ros.propertyValidator('redisAuditCollectionPolicy', ros.validateString)(properties.redisAuditCollectionPolicy));
     errors.collect(ros.propertyValidator('polardbPerfEnabled', ros.validateBoolean)(properties.polardbPerfEnabled));
+    errors.collect(ros.propertyValidator('idaasMngEnabled', ros.validateBoolean)(properties.idaasMngEnabled));
     errors.collect(ros.propertyValidator('ddosCooAccessCollectionPolicy', ros.validateString)(properties.ddosCooAccessCollectionPolicy));
-    errors.collect(ros.propertyValidator('k8SAuditEnabled', ros.validateBoolean)(properties.k8SAuditEnabled));
     errors.collect(ros.propertyValidator('ossMeteringTiEnabled', ros.validateBoolean)(properties.ossMeteringTiEnabled));
+    errors.collect(ros.propertyValidator('k8SAuditEnabled', ros.validateBoolean)(properties.k8SAuditEnabled));
+    errors.collect(ros.propertyValidator('cloudconfigChangeTtl', ros.validateNumber)(properties.cloudconfigChangeTtl));
     errors.collect(ros.propertyValidator('polardbPerfTtl', ros.validateNumber)(properties.polardbPerfTtl));
     errors.collect(ros.propertyValidator('apigatewayAccessPolicySetting', ros.listValidator(ros.validateAny))(properties.apigatewayAccessPolicySetting));
     errors.collect(ros.propertyValidator('nasEnabled', ros.validateBoolean)(properties.nasEnabled));
@@ -1963,35 +2137,50 @@ function RosAudit_VariableMapPropertyValidator(properties: any): ros.ValidationR
     errors.collect(ros.propertyValidator('ossMeteringTtl', ros.validateNumber)(properties.ossMeteringTtl));
     errors.collect(ros.propertyValidator('sasSecurityHcEnabled', ros.validateBoolean)(properties.sasSecurityHcEnabled));
     errors.collect(ros.propertyValidator('k8SAuditCollectionPolicy', ros.validateString)(properties.k8SAuditCollectionPolicy));
+    errors.collect(ros.propertyValidator('dnsIntranetCollectionPolicy', ros.validateString)(properties.dnsIntranetCollectionPolicy));
+    errors.collect(ros.propertyValidator('vpcSyncEnabled', ros.validateBoolean)(properties.vpcSyncEnabled));
     errors.collect(ros.propertyValidator('ddosCooAccessTiEnabled', ros.validateBoolean)(properties.ddosCooAccessTiEnabled));
     errors.collect(ros.propertyValidator('appconnectOpCollectionPolicy', ros.validateString)(properties.appconnectOpCollectionPolicy));
+    errors.collect(ros.propertyValidator('ddosDipAccessTtl', ros.validateNumber)(properties.ddosDipAccessTtl));
+    errors.collect(ros.propertyValidator('cloudfirewallVpcEnabled', ros.validateBoolean)(properties.cloudfirewallVpcEnabled));
     errors.collect(ros.propertyValidator('appconnectOpPolicySetting', ros.listValidator(ros.validateAny))(properties.appconnectOpPolicySetting));
+    errors.collect(ros.propertyValidator('idaasUserCollectionPolicy', ros.validateString)(properties.idaasUserCollectionPolicy));
+    errors.collect(ros.propertyValidator('polardbErrorEnabled', ros.validateBoolean)(properties.polardbErrorEnabled));
     errors.collect(ros.propertyValidator('polardbTiEnabled', ros.validateBoolean)(properties.polardbTiEnabled));
     errors.collect(ros.propertyValidator('redisAuditTtl', ros.validateNumber)(properties.redisAuditTtl));
     errors.collect(ros.propertyValidator('rdsSlowTiEnabled', ros.validateBoolean)(properties.rdsSlowTiEnabled));
+    errors.collect(ros.propertyValidator('albSyncTtl', ros.validateNumber)(properties.albSyncTtl));
     errors.collect(ros.propertyValidator('sasTtl', ros.validateNumber)(properties.sasTtl));
+    errors.collect(ros.propertyValidator('idaasMngCollectionPolicy', ros.validateString)(properties.idaasMngCollectionPolicy));
     errors.collect(ros.propertyValidator('actiontrailTtl', ros.validateNumber)(properties.actiontrailTtl));
     errors.collect(ros.propertyValidator('rdsPerfCollectionPolicy', ros.validateString)(properties.rdsPerfCollectionPolicy));
+    errors.collect(ros.propertyValidator('ddosBgpAccessTtl', ros.validateNumber)(properties.ddosBgpAccessTtl));
     errors.collect(ros.propertyValidator('ossAccessCollectionPolicy', ros.validateString)(properties.ossAccessCollectionPolicy));
     errors.collect(ros.propertyValidator('redisAuditEnabled', ros.validateBoolean)(properties.redisAuditEnabled));
     errors.collect(ros.propertyValidator('wafTiEnabled', ros.validateBoolean)(properties.wafTiEnabled));
+    errors.collect(ros.propertyValidator('cloudconfigNoncomTtl', ros.validateNumber)(properties.cloudconfigNoncomTtl));
     errors.collect(ros.propertyValidator('redisSyncEnabled', ros.validateBoolean)(properties.redisSyncEnabled));
     errors.collect(ros.propertyValidator('k8SAuditTiEnabled', ros.validateBoolean)(properties.k8SAuditTiEnabled));
     errors.collect(ros.propertyValidator('sasProcessEnabled', ros.validateBoolean)(properties.sasProcessEnabled));
     errors.collect(ros.propertyValidator('redisAuditPolicySetting', ros.listValidator(ros.validateAny))(properties.redisAuditPolicySetting));
     errors.collect(ros.propertyValidator('appconnectEnabled', ros.validateBoolean)(properties.appconnectEnabled));
+    errors.collect(ros.propertyValidator('rdsErrorCollectionPolicy', ros.validateString)(properties.rdsErrorCollectionPolicy));
     errors.collect(ros.propertyValidator('drdsAuditPolicySetting', ros.listValidator(ros.validateAny))(properties.drdsAuditPolicySetting));
+    errors.collect(ros.propertyValidator('idaasUserEnabled', ros.validateBoolean)(properties.idaasUserEnabled));
     errors.collect(ros.propertyValidator('k8SEventTiEnabled', ros.validateBoolean)(properties.k8SEventTiEnabled));
     errors.collect(ros.propertyValidator('polardbAuditCollectionPolicy', ros.validateString)(properties.polardbAuditCollectionPolicy));
     errors.collect(ros.propertyValidator('ddosCooAccessPolicySetting', ros.listValidator(ros.validateAny))(properties.ddosCooAccessPolicySetting));
-    errors.collect(ros.propertyValidator('k8SEventTtl', ros.validateNumber)(properties.k8SEventTtl));
     errors.collect(ros.propertyValidator('polardbSlowEnabled', ros.validateBoolean)(properties.polardbSlowEnabled));
+    errors.collect(ros.propertyValidator('k8SEventTtl', ros.validateNumber)(properties.k8SEventTtl));
     errors.collect(ros.propertyValidator('sasSecurityAlertEnabled', ros.validateBoolean)(properties.sasSecurityAlertEnabled));
-    errors.collect(ros.propertyValidator('slbAccessEnabled', ros.validateBoolean)(properties.slbAccessEnabled));
     errors.collect(ros.propertyValidator('drdsAuditEnabled', ros.validateBoolean)(properties.drdsAuditEnabled));
+    errors.collect(ros.propertyValidator('slbAccessEnabled', ros.validateBoolean)(properties.slbAccessEnabled));
+    errors.collect(ros.propertyValidator('cloudconfigNoncomEnabled', ros.validateBoolean)(properties.cloudconfigNoncomEnabled));
     errors.collect(ros.propertyValidator('sasNetworkEnabled', ros.validateBoolean)(properties.sasNetworkEnabled));
+    errors.collect(ros.propertyValidator('dnsIntranetTtl', ros.validateNumber)(properties.dnsIntranetTtl));
     errors.collect(ros.propertyValidator('k8SIngressPolicySetting', ros.listValidator(ros.validateAny))(properties.k8SIngressPolicySetting));
     errors.collect(ros.propertyValidator('ossMeteringCollectionPolicy', ros.validateString)(properties.ossMeteringCollectionPolicy));
+    errors.collect(ros.propertyValidator('polardbErrorCollectionPolicy', ros.validateString)(properties.polardbErrorCollectionPolicy));
     errors.collect(ros.propertyValidator('polardbSlowTiEnabled', ros.validateBoolean)(properties.polardbSlowTiEnabled));
     errors.collect(ros.propertyValidator('polardbSlowTtl', ros.validateNumber)(properties.polardbSlowTtl));
     errors.collect(ros.propertyValidator('ossAccessTiEnabled', ros.validateBoolean)(properties.ossAccessTiEnabled));
@@ -2001,6 +2190,7 @@ function RosAudit_VariableMapPropertyValidator(properties: any): ros.ValidationR
     errors.collect(ros.propertyValidator('bastionAuditPolicySetting', ros.listValidator(ros.validateAny))(properties.bastionAuditPolicySetting));
     errors.collect(ros.propertyValidator('slbAccessPolicySetting', ros.listValidator(ros.validateAny))(properties.slbAccessPolicySetting));
     errors.collect(ros.propertyValidator('rdsTiEnabled', ros.validateBoolean)(properties.rdsTiEnabled));
+    errors.collect(ros.propertyValidator('dnsSyncEnabled', ros.validateBoolean)(properties.dnsSyncEnabled));
     errors.collect(ros.propertyValidator('apigatewayAccessCollectionPolicy', ros.validateString)(properties.apigatewayAccessCollectionPolicy));
     errors.collect(ros.propertyValidator('cloudfirewallTtl', ros.validateNumber)(properties.cloudfirewallTtl));
     errors.collect(ros.propertyValidator('polardbAuditPolicySetting', ros.listValidator(ros.validateAny))(properties.polardbAuditPolicySetting));
@@ -2022,6 +2212,7 @@ function rosAuditVariableMapPropertyToRosTemplate(properties: any): any {
     return {
       PolardbPerfPolicySetting: ros.listMapper(ros.objectToRosTemplate)(properties.polardbPerfPolicySetting),
       WafEnabled: ros.booleanToRosTemplate(properties.wafEnabled),
+      VpcFlowEnabled: ros.booleanToRosTemplate(properties.vpcFlowEnabled),
       RdsPerfEnabled: ros.booleanToRosTemplate(properties.rdsPerfEnabled),
       CpsCallbackCollectionPolicy: ros.stringToRosTemplate(properties.cpsCallbackCollectionPolicy),
       RedisAuditTiEnabled: ros.booleanToRosTemplate(properties.redisAuditTiEnabled),
@@ -2032,25 +2223,32 @@ function rosAuditVariableMapPropertyToRosTemplate(properties: any): any {
       RdsAuditCollectionPolicy: ros.stringToRosTemplate(properties.rdsAuditCollectionPolicy),
       BastionAuditCollectionPolicy: ros.stringToRosTemplate(properties.bastionAuditCollectionPolicy),
       BastionEnabled: ros.booleanToRosTemplate(properties.bastionEnabled),
-      RedisSyncTtl: ros.numberToRosTemplate(properties.redisSyncTtl),
       RdsEnabled: ros.booleanToRosTemplate(properties.rdsEnabled),
+      RedisSyncTtl: ros.numberToRosTemplate(properties.redisSyncTtl),
       SasSessionEnabled: ros.booleanToRosTemplate(properties.sasSessionEnabled),
       RdsAuditPolicySetting: ros.listMapper(ros.objectToRosTemplate)(properties.rdsAuditPolicySetting),
       DdosCooAccessTtl: ros.numberToRosTemplate(properties.ddosCooAccessTtl),
+      AlbAccessEnabled: ros.booleanToRosTemplate(properties.albAccessEnabled),
       BastionTtl: ros.numberToRosTemplate(properties.bastionTtl),
+      AlbSyncEnabled: ros.booleanToRosTemplate(properties.albSyncEnabled),
       RdsSlowEnabled: ros.booleanToRosTemplate(properties.rdsSlowEnabled),
+      SasDnsQueryEnabled: ros.booleanToRosTemplate(properties.sasDnsQueryEnabled),
+      PolardbErrorTtl: ros.numberToRosTemplate(properties.polardbErrorTtl),
       WafAccessCollectionPolicy: ros.stringToRosTemplate(properties.wafAccessCollectionPolicy),
       K8sAuditTtl: ros.numberToRosTemplate(properties.k8SAuditTtl),
       PolardbTtl: ros.numberToRosTemplate(properties.polardbTtl),
       DrdsAuditCollectionPolicy: ros.stringToRosTemplate(properties.drdsAuditCollectionPolicy),
       SlbAccessCollectionPolicy: ros.stringToRosTemplate(properties.slbAccessCollectionPolicy),
+      AlbAccessTtl: ros.numberToRosTemplate(properties.albAccessTtl),
       SasSnapshotPortEnabled: ros.booleanToRosTemplate(properties.sasSnapshotPortEnabled),
+      CloudconfigChangeEnabled: ros.booleanToRosTemplate(properties.cloudconfigChangeEnabled),
       RdsSlowTtl: ros.numberToRosTemplate(properties.rdsSlowTtl),
       PolardbEnabled: ros.booleanToRosTemplate(properties.polardbEnabled),
       SasSnapshotProcessEnabled: ros.booleanToRosTemplate(properties.sasSnapshotProcessEnabled),
       ActiontrailTiEnabled: ros.booleanToRosTemplate(properties.actiontrailTiEnabled),
       NasTiEnabled: ros.booleanToRosTemplate(properties.nasTiEnabled),
       AppconnectTiEnabled: ros.booleanToRosTemplate(properties.appconnectTiEnabled),
+      VpcFlowCollectionPolicy: ros.stringToRosTemplate(properties.vpcFlowCollectionPolicy),
       CpsTtl: ros.numberToRosTemplate(properties.cpsTtl),
       SlbSyncTtl: ros.numberToRosTemplate(properties.slbSyncTtl),
       CloudfirewallAccessCollectionPolicy: ros.stringToRosTemplate(properties.cloudfirewallAccessCollectionPolicy),
@@ -2062,10 +2260,13 @@ function rosAuditVariableMapPropertyToRosTemplate(properties: any): any {
       K8sIngressCollectionPolicy: ros.stringToRosTemplate(properties.k8SIngressCollectionPolicy),
       ApigatewayTtl: ros.numberToRosTemplate(properties.apigatewayTtl),
       CpsEnabled: ros.booleanToRosTemplate(properties.cpsEnabled),
+      DdosBgpAccessEnabled: ros.booleanToRosTemplate(properties.ddosBgpAccessEnabled),
       RdsSlowCollectionPolicy: ros.stringToRosTemplate(properties.rdsSlowCollectionPolicy),
+      VpcSyncTtl: ros.numberToRosTemplate(properties.vpcSyncTtl),
       ActiontrailOpenapiCollectionPolicy: ros.stringToRosTemplate(properties.actiontrailOpenapiCollectionPolicy),
       RdsPerfPolicySetting: ros.listMapper(ros.objectToRosTemplate)(properties.rdsPerfPolicySetting),
       CloudfirewallAccessPolicySetting: ros.listMapper(ros.objectToRosTemplate)(properties.cloudfirewallAccessPolicySetting),
+      IdaasMngTtl: ros.numberToRosTemplate(properties.idaasMngTtl),
       OssAccessEnabled: ros.booleanToRosTemplate(properties.ossAccessEnabled),
       CpsCallbackPolicySetting: ros.listMapper(ros.objectToRosTemplate)(properties.cpsCallbackPolicySetting),
       SlbAccessTtl: ros.numberToRosTemplate(properties.slbAccessTtl),
@@ -2073,11 +2274,16 @@ function rosAuditVariableMapPropertyToRosTemplate(properties: any): any {
       PolardbPerfTiEnabled: ros.booleanToRosTemplate(properties.polardbPerfTiEnabled),
       SasLocalDnsEnabled: ros.booleanToRosTemplate(properties.sasLocalDnsEnabled),
       OssAccessTtl: ros.numberToRosTemplate(properties.ossAccessTtl),
-      OssMeteringPolicySetting: ros.listMapper(ros.objectToRosTemplate)(properties.ossMeteringPolicySetting),
       SasHttpEnabled: ros.booleanToRosTemplate(properties.sasHttpEnabled),
+      OssMeteringPolicySetting: ros.listMapper(ros.objectToRosTemplate)(properties.ossMeteringPolicySetting),
       OssMeteringEnabled: ros.booleanToRosTemplate(properties.ossMeteringEnabled),
       CloudfirewallEnabled: ros.booleanToRosTemplate(properties.cloudfirewallEnabled),
+      DnsIntranetEnabled: ros.booleanToRosTemplate(properties.dnsIntranetEnabled),
+      CloudfirewallVpcTtl: ros.numberToRosTemplate(properties.cloudfirewallVpcTtl),
+      AlbAccessCollectionPolicy: ros.stringToRosTemplate(properties.albAccessCollectionPolicy),
+      DnsSyncTtl: ros.numberToRosTemplate(properties.dnsSyncTtl),
       SlbAccessTiEnabled: ros.booleanToRosTemplate(properties.slbAccessTiEnabled),
+      DdosDipAccessEnabled: ros.booleanToRosTemplate(properties.ddosDipAccessEnabled),
       DrdsSyncTtl: ros.numberToRosTemplate(properties.drdsSyncTtl),
       K8sEventPolicySetting: ros.listMapper(ros.objectToRosTemplate)(properties.k8SEventPolicySetting),
       NasTtl: ros.numberToRosTemplate(properties.nasTtl),
@@ -2086,6 +2292,7 @@ function rosAuditVariableMapPropertyToRosTemplate(properties: any): any {
       NasAuditPolicySetting: ros.listMapper(ros.objectToRosTemplate)(properties.nasAuditPolicySetting),
       RdsTtl: ros.numberToRosTemplate(properties.rdsTtl),
       K8sIngressEnabled: ros.booleanToRosTemplate(properties.k8SIngressEnabled),
+      RdsErrorEnabled: ros.booleanToRosTemplate(properties.rdsErrorEnabled),
       CloudfirewallTiEnabled: ros.booleanToRosTemplate(properties.cloudfirewallTiEnabled),
       K8sEventCollectionPolicy: ros.stringToRosTemplate(properties.k8SEventCollectionPolicy),
       ActiontrailEnabled: ros.booleanToRosTemplate(properties.actiontrailEnabled),
@@ -2093,6 +2300,7 @@ function rosAuditVariableMapPropertyToRosTemplate(properties: any): any {
       ApigatewayEnabled: ros.booleanToRosTemplate(properties.apigatewayEnabled),
       SasCrackEnabled: ros.booleanToRosTemplate(properties.sasCrackEnabled),
       CpsTiEnabled: ros.booleanToRosTemplate(properties.cpsTiEnabled),
+      RdsErrorTtl: ros.numberToRosTemplate(properties.rdsErrorTtl),
       K8sEventEnabled: ros.booleanToRosTemplate(properties.k8SEventEnabled),
       OssSyncTtl: ros.numberToRosTemplate(properties.ossSyncTtl),
       RdsPerfTtl: ros.numberToRosTemplate(properties.rdsPerfTtl),
@@ -2101,12 +2309,16 @@ function rosAuditVariableMapPropertyToRosTemplate(properties: any): any {
       BastionTiEnabled: ros.booleanToRosTemplate(properties.bastionTiEnabled),
       OssAccessPolicySetting: ros.listMapper(ros.objectToRosTemplate)(properties.ossAccessPolicySetting),
       SasTiEnabled: ros.booleanToRosTemplate(properties.sasTiEnabled),
+      VpcFlowTtl: ros.numberToRosTemplate(properties.vpcFlowTtl),
+      IdaasUserTtl: ros.numberToRosTemplate(properties.idaasUserTtl),
       DrdsAuditTtl: ros.numberToRosTemplate(properties.drdsAuditTtl),
       RedisAuditCollectionPolicy: ros.stringToRosTemplate(properties.redisAuditCollectionPolicy),
       PolardbPerfEnabled: ros.booleanToRosTemplate(properties.polardbPerfEnabled),
+      IdaasMngEnabled: ros.booleanToRosTemplate(properties.idaasMngEnabled),
       DdosCooAccessCollectionPolicy: ros.stringToRosTemplate(properties.ddosCooAccessCollectionPolicy),
-      K8sAuditEnabled: ros.booleanToRosTemplate(properties.k8SAuditEnabled),
       OssMeteringTiEnabled: ros.booleanToRosTemplate(properties.ossMeteringTiEnabled),
+      K8sAuditEnabled: ros.booleanToRosTemplate(properties.k8SAuditEnabled),
+      CloudconfigChangeTtl : ros.numberToRosTemplate(properties.cloudconfigChangeTtl),
       PolardbPerfTtl: ros.numberToRosTemplate(properties.polardbPerfTtl),
       ApigatewayAccessPolicySetting: ros.listMapper(ros.objectToRosTemplate)(properties.apigatewayAccessPolicySetting),
       NasEnabled: ros.booleanToRosTemplate(properties.nasEnabled),
@@ -2117,35 +2329,50 @@ function rosAuditVariableMapPropertyToRosTemplate(properties: any): any {
       OssMeteringTtl: ros.numberToRosTemplate(properties.ossMeteringTtl),
       SasSecurityHcEnabled: ros.booleanToRosTemplate(properties.sasSecurityHcEnabled),
       K8sAuditCollectionPolicy: ros.stringToRosTemplate(properties.k8SAuditCollectionPolicy),
+      DnsIntranetCollectionPolicy: ros.stringToRosTemplate(properties.dnsIntranetCollectionPolicy),
+      VpcSyncEnabled: ros.booleanToRosTemplate(properties.vpcSyncEnabled),
       DdosCooAccessTiEnabled: ros.booleanToRosTemplate(properties.ddosCooAccessTiEnabled),
       AppconnectOpCollectionPolicy: ros.stringToRosTemplate(properties.appconnectOpCollectionPolicy),
+      DdosDipAccessTtl: ros.numberToRosTemplate(properties.ddosDipAccessTtl),
+      CloudfirewallVpcEnabled: ros.booleanToRosTemplate(properties.cloudfirewallVpcEnabled),
       AppconnectOpPolicySetting: ros.listMapper(ros.objectToRosTemplate)(properties.appconnectOpPolicySetting),
+      IdaasUserCollectionPolicy: ros.stringToRosTemplate(properties.idaasUserCollectionPolicy),
+      PolardbErrorEnabled: ros.booleanToRosTemplate(properties.polardbErrorEnabled),
       PolardbTiEnabled: ros.booleanToRosTemplate(properties.polardbTiEnabled),
       RedisAuditTtl: ros.numberToRosTemplate(properties.redisAuditTtl),
       RdsSlowTiEnabled: ros.booleanToRosTemplate(properties.rdsSlowTiEnabled),
+      AlbSyncTtl: ros.numberToRosTemplate(properties.albSyncTtl),
       SasTtl: ros.numberToRosTemplate(properties.sasTtl),
+      IdaasMngCollectionPolicy: ros.stringToRosTemplate(properties.idaasMngCollectionPolicy),
       ActiontrailTtl: ros.numberToRosTemplate(properties.actiontrailTtl),
       RdsPerfCollectionPolicy: ros.stringToRosTemplate(properties.rdsPerfCollectionPolicy),
+      DdosBgpAccessTtl: ros.numberToRosTemplate(properties.ddosBgpAccessTtl),
       OssAccessCollectionPolicy: ros.stringToRosTemplate(properties.ossAccessCollectionPolicy),
       RedisAuditEnabled: ros.booleanToRosTemplate(properties.redisAuditEnabled),
       WafTiEnabled: ros.booleanToRosTemplate(properties.wafTiEnabled),
+      CloudconfigNoncomTtl : ros.numberToRosTemplate(properties.cloudconfigNoncomTtl),
       RedisSyncEnabled: ros.booleanToRosTemplate(properties.redisSyncEnabled),
       K8sAuditTiEnabled: ros.booleanToRosTemplate(properties.k8SAuditTiEnabled),
       SasProcessEnabled: ros.booleanToRosTemplate(properties.sasProcessEnabled),
       RedisAuditPolicySetting: ros.listMapper(ros.objectToRosTemplate)(properties.redisAuditPolicySetting),
       AppconnectEnabled: ros.booleanToRosTemplate(properties.appconnectEnabled),
+      RdsErrorCollectionPolicy: ros.stringToRosTemplate(properties.rdsErrorCollectionPolicy),
       DrdsAuditPolicySetting: ros.listMapper(ros.objectToRosTemplate)(properties.drdsAuditPolicySetting),
+      IdaasUserEnabled: ros.booleanToRosTemplate(properties.idaasUserEnabled),
       K8sEventTiEnabled: ros.booleanToRosTemplate(properties.k8SEventTiEnabled),
       PolardbAuditCollectionPolicy: ros.stringToRosTemplate(properties.polardbAuditCollectionPolicy),
       DdosCooAccessPolicySetting: ros.listMapper(ros.objectToRosTemplate)(properties.ddosCooAccessPolicySetting),
-      K8sEventTtl: ros.numberToRosTemplate(properties.k8SEventTtl),
       PolardbSlowEnabled: ros.booleanToRosTemplate(properties.polardbSlowEnabled),
+      K8sEventTtl: ros.numberToRosTemplate(properties.k8SEventTtl),
       SasSecurityAlertEnabled: ros.booleanToRosTemplate(properties.sasSecurityAlertEnabled),
-      SlbAccessEnabled: ros.booleanToRosTemplate(properties.slbAccessEnabled),
       DrdsAuditEnabled: ros.booleanToRosTemplate(properties.drdsAuditEnabled),
+      SlbAccessEnabled: ros.booleanToRosTemplate(properties.slbAccessEnabled),
+      CloudconfigNoncomEnabled: ros.booleanToRosTemplate(properties.cloudconfigNoncomEnabled),
       SasNetworkEnabled: ros.booleanToRosTemplate(properties.sasNetworkEnabled),
+      DnsIntranetTtl: ros.numberToRosTemplate(properties.dnsIntranetTtl),
       K8sIngressPolicySetting: ros.listMapper(ros.objectToRosTemplate)(properties.k8SIngressPolicySetting),
       OssMeteringCollectionPolicy: ros.stringToRosTemplate(properties.ossMeteringCollectionPolicy),
+      PolardbErrorCollectionPolicy: ros.stringToRosTemplate(properties.polardbErrorCollectionPolicy),
       PolardbSlowTiEnabled: ros.booleanToRosTemplate(properties.polardbSlowTiEnabled),
       PolardbSlowTtl: ros.numberToRosTemplate(properties.polardbSlowTtl),
       OssAccessTiEnabled: ros.booleanToRosTemplate(properties.ossAccessTiEnabled),
@@ -2155,6 +2382,7 @@ function rosAuditVariableMapPropertyToRosTemplate(properties: any): any {
       BastionAuditPolicySetting: ros.listMapper(ros.objectToRosTemplate)(properties.bastionAuditPolicySetting),
       SlbAccessPolicySetting: ros.listMapper(ros.objectToRosTemplate)(properties.slbAccessPolicySetting),
       RdsTiEnabled: ros.booleanToRosTemplate(properties.rdsTiEnabled),
+      DnsSyncEnabled: ros.booleanToRosTemplate(properties.dnsSyncEnabled),
       ApigatewayAccessCollectionPolicy: ros.stringToRosTemplate(properties.apigatewayAccessCollectionPolicy),
       CloudfirewallTtl: ros.numberToRosTemplate(properties.cloudfirewallTtl),
       PolardbAuditPolicySetting: ros.listMapper(ros.objectToRosTemplate)(properties.polardbAuditPolicySetting),
@@ -4030,7 +4258,7 @@ function rosMachineGroupPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::MachineGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::MachineGroup`, which is used to create a machine group. Log Service manages all the ECS instances whose logs need to be collected using the Logtail client in the form of machine groups.
  * @Note This class does not contain additional functions, so it is recommended to use the `MachineGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-machinegroup
  */
@@ -4412,7 +4640,7 @@ function rosProjectPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Project`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Project`, which is used to create a Log Service project.
  * @Note This class does not contain additional functions, so it is recommended to use the `Project` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-project
  */

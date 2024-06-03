@@ -3,7 +3,9 @@ import { CodeMaker } from 'codemaker';
 import * as genspec from './genspec';
 import { itemTypeNames, scalarTypeNames, SpecName } from './spec-utils';
 import { upcaseFirst } from './util';
-import * as fs from "fs";
+import * as fs from "fs-extra";
+import * as path from "path";
+import * as util from "./util";
 
 const CORE = genspec.CORE_NAMESPACE;
 const RESOURCE_CLASS_PREFIX = genspec.RESOURCE_CLASS_PREFIX;
@@ -62,15 +64,6 @@ export default class ResourceCodeGenerator {
     const rosName = SpecName.parse(resourceName);
     const rosReourceName = genspec.CodeName.forRosResource(rosName, this.affix);
     const resourceCodeName = genspec.CodeName.forResource(rosName, this.affix);
-    const extensionFilePath = `../@alicloud/extension/ros-cdk-${resourceCodeName.packageName}/lib/${rosName.resourceName.toLowerCase()}.ts`
-    let data = undefined;
-    let extensionCodes : string[] = [];
-    if (fs.existsSync(extensionFilePath)) {
-      console.log('add extension: ', extensionFilePath);
-      data = fs.readFileSync(extensionFilePath, 'utf8');
-      extensionCodes = data.split('\n');
-    }
-
     if (resourceCodeName.packageName === 'eip') {
       // 处理DATASOURCE::EIP::Addresses 这个原属于VPC的特殊资源
       this.code.line(
@@ -82,36 +75,10 @@ export default class ResourceCodeGenerator {
           `import { ${RESOURCE_CLASS_PREFIX}${rosName.resourceName} } from './${resourceCodeName.packageName}.generated';`,
       );
     }
-    while (extensionCodes.length > 0) {
-      if (extensionCodes[0].trimLeft() !== '' && !extensionCodes[0].startsWith('import')) {
-        break;
-      }
-      const codeLine = extensionCodes.shift();
-      if (codeLine && codeLine.includes(`@alicloud/ros-cdk-${resourceCodeName.packageName}`)) {
-        const matches = codeLine.match(/{(.*?)}/);
-        if (matches && matches[1]) {
-          const importResourceNames = matches[1].split(',').map((element) => element.trim());
-          for (const importResourceName of importResourceNames) {
-            if (importResourceName === rosName.resourceName
-                || importResourceName === `${rosName.resourceName}Props`
-                || importResourceName === `Ros${rosName.resourceName}`) {
-              continue;
-            }
-            this.code.line(
-                `import { ${importResourceName} } from './${importResourceName.toLowerCase()}';`,
-            );
-          }
-        }
-      } else if (codeLine && !codeLine.includes('@alicloud/ros-cdk-core')) {
-        this.code.line(codeLine);
-      }
-    }
-
     this.code.line('// Generated from the AliCloud ROS Resource Specification');
     this.code.line(`export { ${RESOURCE_CLASS_PREFIX}${rosName.resourceName} as ${rosName.resourceName}Property };`);
     this.code.line();
-    this.emitResourceType(resourceCodeName, rosReourceName, resourceSpec, extensionCodes);
-    // this.emitPropertyTypes(resourceName, rosReourceName);
+    this.emitResourceType(resourceCodeName, rosReourceName, resourceSpec);
   }
 
   /**
@@ -208,7 +175,6 @@ export default class ResourceCodeGenerator {
     resourceName: genspec.CodeName,
     rosResourceName: genspec.CodeName,
     spec: schema.ResourceType,
-    extensionCodes: string[]
   ): void {
     this.beginNamespace(resourceName);
 
@@ -323,31 +289,6 @@ export default class ResourceCodeGenerator {
     }
     this.code.closeBlockFormatter = () => `}`;
     this.code.closeBlock();
-
-    // extension functions for l2
-    if (extensionCodes.length > 0) {
-      this.code.line();
-      let leftBracket = 0;
-      const leftBracketRegex = /{/g;
-      const rightBracketRegex = /}/g;
-      while (extensionCodes.length > 0) {
-        const codeLine = extensionCodes.shift();
-        if (leftBracket === 0 && (!codeLine || codeLine.startsWith('class'))) {
-          if (codeLine && codeLine.includes('{')) {
-            leftBracket++;
-          }
-          continue;
-        }
-        if (codeLine) {
-          leftBracket += codeLine.match(leftBracketRegex)?.length || 0;
-          leftBracket -= codeLine.match(rightBracketRegex)?.length || 0;
-        }
-        if (leftBracket === 0) {
-          break;
-        }
-        this.code.line(codeLine?.replace(/^\s{4}/, ''));
-      }
-    }
     this.code.closeBlock();
   }
 
@@ -495,6 +436,176 @@ export default class ResourceCodeGenerator {
     }
     this.code.line(' */');
     return;
+  }
+}
+
+
+export class ExtensionCodeGenerator {
+  public async getFilesWithoutNodeModules(dir: string): Promise<string[]> {
+    let files: string[] = [];
+    const items = await fs.readdir(dir);
+
+    for (const item of items) {
+      const itemPath = path.join(dir, item);
+      const stat = await fs.stat(itemPath);
+
+      if (stat.isDirectory()) {
+        if (!itemPath.includes('node_modules') && !itemPath.includes('\.idea')) {
+          const subFiles = await this.getFilesWithoutNodeModules(itemPath);
+          files = files.concat(subFiles);
+        }
+      } else {
+        if (!itemPath.includes('node_modules') && !itemPath.includes('\.idea')) {
+          files.push(itemPath);
+        }
+      }
+    }
+
+    return files;
+  }
+
+  public async emitCode(outPath : string) {
+    const extensionFilePaths = await this.getFilesWithoutNodeModules('../@alicloud/extension');
+    const pkgTemplate = fs.readFileSync('./lib/pkg-template/package.json', 'utf8');
+    for (const extensionFilePath of extensionFilePaths) {
+      const filePathRegex = /@alicloud\/extension\/(.*?)\//;
+      const filePathMatch = extensionFilePath.match(filePathRegex);
+      let packageName = undefined;
+      if (filePathMatch && filePathMatch.length > 1) {
+        packageName = filePathMatch[1];
+      } else {
+        continue;
+      }
+      const fileName = extensionFilePath.split('/')[extensionFilePath.split('/').length-1];
+      const pathSuffixIndex = extensionFilePath.indexOf("@alicloud/extension/") + "@alicloud/extension/".length;
+      const pathSuffix = extensionFilePath.substring(pathSuffixIndex);
+      const resourceFilePath = `${outPath}/${pathSuffix}`;
+      // console.log(extensionFilePath);
+      let data = fs.readFileSync(extensionFilePath, 'utf8');
+      let resourceCodes :string[] = [];
+      if (fs.existsSync(resourceFilePath)) {
+        const resourceData = fs.readFileSync(resourceFilePath, 'utf8');
+        resourceCodes = resourceData.split('\n');
+
+        if (fileName === 'package.json') {
+          console.log('merge package.json: ', extensionFilePath);
+          const mergedPackageData = util.mergeObjects(JSON.parse(resourceData), JSON.parse(data));
+          const mergedPackageJson = JSON.stringify(mergedPackageData, null, 2);
+          fs.writeFileSync(resourceFilePath, mergedPackageJson, 'utf8');
+          continue;
+        }
+
+        console.log('merge extension resource: ', extensionFilePath);
+
+        const resourceClassRegex = /class\s+Extension(\w+)\s+extends/;
+        const resourceClassMatch = resourceClassRegex.exec(data);
+        let resourceName: string;
+        if (resourceClassMatch && resourceClassMatch.length > 1) {
+          resourceName = resourceClassMatch[1];
+          data = data.replace(new RegExp(`Extension${resourceName}`, 'g'), `${resourceName}`);
+        } else {
+          throw new Error(`Extension class name is not correct: ${extensionFilePath}`);
+        }
+        const extensionCodes = data.split('\n');
+        // console.log(data);
+        // console.log('-----------------------------------------------------------------');
+
+        let resourceCodeIndex = resourceCodes.findIndex((str) => str.includes(`export { Ros${resourceName} as ${resourceName}Property };`));
+
+        let extensionLeftBracketCounts = 0;
+        for (let codeLine of extensionCodes) {
+          if (codeLine === 'import * as ros from "@alicloud/ros-cdk-core";') {
+            continue;
+          }
+          if (codeLine && codeLine.includes(`@alicloud/${packageName}`)) {
+            const matches = codeLine.match(/{(.*?)}/);
+            if (matches && matches[1]) {
+              const importResourceNames = matches[1].split(',').map((element) => element.trim());
+              for (const importResourceName of importResourceNames) {
+                if (importResourceName === resourceName
+                    || importResourceName === `${resourceName}Props`
+                    || importResourceName === `Ros${resourceName}`) {
+                  continue;
+                }
+                resourceCodes.splice(resourceCodeIndex, 0,
+                    `import { ${importResourceName} } from './${importResourceName.toLowerCase()}';`);
+                resourceCodeIndex++;
+              }
+            }
+          } else if (codeLine && codeLine.includes(`import`)) {
+            resourceCodes.splice(resourceCodeIndex, 0, codeLine);
+            resourceCodeIndex++;
+          } else if (codeLine && codeLine.includes(`class ${resourceName} extends ${resourceName} {`)) {
+            const resourceClassIndex = resourceCodes.findIndex((str) => str.includes(`export class ${resourceName} extends`));
+            const subArray = resourceCodes.slice(resourceClassIndex + 1);
+            const constructorIndex = subArray.findIndex((str) => str.includes("constructor(scope: ros.Construct,"));
+            if (constructorIndex !== -1) {
+              const actualConstructorIndex = resourceClassIndex + 1 + constructorIndex;
+              let leftBracketCounts = 0;
+              for (resourceCodeIndex = actualConstructorIndex; resourceCodeIndex < resourceCodes.length; resourceCodeIndex++) {
+                leftBracketCounts += (resourceCodes[resourceCodeIndex].split('{').length - 1);
+                leftBracketCounts -= (resourceCodes[resourceCodeIndex].split('}').length - 1);
+                if (leftBracketCounts === 0) {
+                  resourceCodeIndex++;
+                  resourceCodes.splice(resourceCodeIndex, 0, '');
+                  resourceCodeIndex++;
+                  break;
+                }
+              }
+            } else {
+              throw new Error(`Class ${resourceName} has no constuctor`);
+            }
+          } else {
+            extensionLeftBracketCounts += (codeLine.split('{').length - 1);
+            extensionLeftBracketCounts -= (codeLine.split('}').length - 1);
+            if (extensionLeftBracketCounts === -1) {
+              resourceCodeIndex = resourceCodes.length - 1;
+              continue;
+            }
+            resourceCodes.splice(resourceCodeIndex, 0, codeLine);
+            resourceCodeIndex++;
+          }
+        }
+      } else {
+        const directoryPath = path.dirname(resourceFilePath);
+        await fs.ensureDir(directoryPath);
+        console.log('add extension file: ', extensionFilePath);
+        if (fileName !== 'package.json' && !fileName.endsWith('.ts')) {
+          fs.copyFileSync(extensionFilePath, resourceFilePath);
+          continue;
+        }
+        if (fileName === 'package.json') {
+          const mergedPackageData = util.mergeObjects(JSON.parse(pkgTemplate), JSON.parse(data));
+          const mergedPackageJson = JSON.stringify(mergedPackageData, null, 2);
+          fs.writeFileSync(resourceFilePath, mergedPackageJson, 'utf8');
+          continue;
+        }
+        const codes = data.split('\n');
+
+        // fs.mkdirSync(resourceFilePath, { recursive: true });
+        for (let codeLine of codes) {
+          // const codeLine = codes.shift();
+          if (codeLine && codeLine.includes(`@alicloud/${packageName}`)) {
+            const matches = codeLine.match(/{(.*?)}/);
+            if (matches && matches[1]) {
+              const importResourceNames = matches[1].split(',').map((element) => element.trim());
+              for (const importResourceName of importResourceNames) {
+                resourceCodes.push(
+                    `import { ${importResourceName} } from './${importResourceName.toLowerCase()}';`,
+                );
+              }
+            }
+          } else {
+            resourceCodes.push(codeLine);
+          }
+        }
+      }
+      fs.writeFile(resourceFilePath, resourceCodes.join('\n'), 'utf8', (err) => {
+        if (err) {
+          console.error(`Error writing to ${resourceFilePath}: ${err}`);
+        }
+      });
+    }
   }
 }
 

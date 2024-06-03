@@ -2999,7 +2999,7 @@ function rosLoadBalancerClonePropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::LoadBalancerClone`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::LoadBalancerClone`, which is used to clone a Server Load Balancer (SLB) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `LoadBalancerClone` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-loadbalancerclone
  */
@@ -3546,7 +3546,7 @@ function rosRulePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::Rule`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::Rule`, which is used to add forwarding rules to an HTTP or HTTPS listener.
  * @Note This class does not contain additional functions, so it is recommended to use the `Rule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-rule
  */
@@ -3846,6 +3846,233 @@ function rosRuleRuleListPropertyToRosTemplate(properties: any): any {
 }
 
 /**
+ * Properties for defining a `RosTLSPolicy`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-tlspolicy
+ */
+export interface RosTLSPolicyProps {
+
+    /**
+     * @Property ciphers: The supported cipher suites, which are determined by the TLS protocol version. You can specify at most 32 cipher suites.TLS 1.0 and TLS 1.1 support the following cipher suites:
+     * ECDHE-ECDSA-AES128-SHA
+     * ECDHE-ECDSA-AES256-SHA
+     * ECDHE-RSA-AES128-SHA
+     * ECDHE-RSA-AES256-SHA
+     * AES128-SHA
+     * AES256-SHA
+     * DES-CBC3-SHA
+     * TLS 1.2 supports the following cipher suites:
+     * ECDHE-ECDSA-AES128-SHA
+     * ECDHE-ECDSA-AES256-SHA
+     * ECDHE-RSA-AES128-SHA
+     * ECDHE-RSA-AES256-SHA
+     * AES128-SHA
+     * AES256-SHA
+     * DES-CBC3-SHA
+     * ECDHE-ECDSA-AES128-GCM-SHA256
+     * ECDHE-ECDSA-AES256-GCM-SHA384
+     * ECDHE-ECDSA-AES128-SHA256
+     * ECDHE-ECDSA-AES256-SHA384
+     * ECDHE-RSA-AES128-GCM-SHA256
+     * ECDHE-RSA-AES256-GCM-SHA384
+     * ECDHE-RSA-AES128-SHA256
+     * ECDHE-RSA-AES256-SHA384
+     * AES128-GCM-SHA256
+     * AES256-GCM-SHA384
+     * AES128-SHA256
+     * AES256-SHA256
+     * TLS 1.3 supports the following cipher suites:
+     * TLS_AES_128_GCM_SHA256
+     * TLS_AES_256_GCM_SHA384
+     * TLS_CHACHA20_POLY1305_SHA256
+     * TLS_AES_128_CCM_SHA256
+     * TLS_AES_128_CCM_8_SHA256
+     */
+    readonly ciphers: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property tlsPolicyName: The name of the TLS policy. The name must be 1 to 200 characters in length, and can contain letters, digits, periods (.), underscores (_), and hyphens (-).
+     */
+    readonly tlsPolicyName: string | ros.IResolvable;
+
+    /**
+     * @Property tlsVersions: The version of the TLS protocol.
+     */
+    readonly tlsVersions: Array<string | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosTLSPolicyProps`
+ *
+ * @param properties - the TypeScript properties of a `RosTLSPolicyProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosTLSPolicyPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('ciphers', ros.requiredValidator)(properties.ciphers));
+    if(properties.ciphers && (Array.isArray(properties.ciphers) || (typeof properties.ciphers) === 'string')) {
+        errors.collect(ros.propertyValidator('ciphers', ros.validateLength)({
+            data: properties.ciphers.length,
+            min: 1,
+            max: 32,
+          }));
+    }
+    errors.collect(ros.propertyValidator('ciphers', ros.listValidator(ros.validateString))(properties.ciphers));
+    errors.collect(ros.propertyValidator('tlsPolicyName', ros.requiredValidator)(properties.tlsPolicyName));
+    errors.collect(ros.propertyValidator('tlsPolicyName', ros.validateString)(properties.tlsPolicyName));
+    errors.collect(ros.propertyValidator('tlsVersions', ros.requiredValidator)(properties.tlsVersions));
+    if(properties.tlsVersions && (Array.isArray(properties.tlsVersions) || (typeof properties.tlsVersions) === 'string')) {
+        errors.collect(ros.propertyValidator('tlsVersions', ros.validateLength)({
+            data: properties.tlsVersions.length,
+            min: 1,
+            max: 4,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tlsVersions', ros.listValidator(ros.validateString))(properties.tlsVersions));
+    return errors.wrap('supplied properties not correct for "RosTLSPolicyProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLB::TLSPolicy` resource
+ *
+ * @param properties - the TypeScript properties of a `RosTLSPolicyProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLB::TLSPolicy` resource.
+ */
+// @ts-ignore TS6133
+function rosTLSPolicyPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosTLSPolicyPropsValidator(properties).assertSuccess();
+    }
+    return {
+      Ciphers: ros.listMapper(ros.stringToRosTemplate)(properties.ciphers),
+      TLSPolicyName: ros.stringToRosTemplate(properties.tlsPolicyName),
+      TlsVersions: ros.listMapper(ros.stringToRosTemplate)(properties.tlsVersions),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::TLSPolicy`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `TLSPolicy` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-tlspolicy
+ */
+export class RosTLSPolicy extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLB::TLSPolicy";
+
+    /**
+     * @Attribute Ciphers: The supported cipher suites, which are determined by the TLS protocol version.
+     */
+    public readonly attrCiphers: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: Creation time.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceId: The ID of the policy.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute TLSPolicyName: The name of the TLS policy.
+     */
+    public readonly attrTlsPolicyName: ros.IResolvable;
+
+    /**
+     * @Attribute TlsVersions: The version of the TLS protocol.
+     */
+    public readonly attrTlsVersions: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property ciphers: The supported cipher suites, which are determined by the TLS protocol version. You can specify at most 32 cipher suites.TLS 1.0 and TLS 1.1 support the following cipher suites:
+     * ECDHE-ECDSA-AES128-SHA
+     * ECDHE-ECDSA-AES256-SHA
+     * ECDHE-RSA-AES128-SHA
+     * ECDHE-RSA-AES256-SHA
+     * AES128-SHA
+     * AES256-SHA
+     * DES-CBC3-SHA
+     * TLS 1.2 supports the following cipher suites:
+     * ECDHE-ECDSA-AES128-SHA
+     * ECDHE-ECDSA-AES256-SHA
+     * ECDHE-RSA-AES128-SHA
+     * ECDHE-RSA-AES256-SHA
+     * AES128-SHA
+     * AES256-SHA
+     * DES-CBC3-SHA
+     * ECDHE-ECDSA-AES128-GCM-SHA256
+     * ECDHE-ECDSA-AES256-GCM-SHA384
+     * ECDHE-ECDSA-AES128-SHA256
+     * ECDHE-ECDSA-AES256-SHA384
+     * ECDHE-RSA-AES128-GCM-SHA256
+     * ECDHE-RSA-AES256-GCM-SHA384
+     * ECDHE-RSA-AES128-SHA256
+     * ECDHE-RSA-AES256-SHA384
+     * AES128-GCM-SHA256
+     * AES256-GCM-SHA384
+     * AES128-SHA256
+     * AES256-SHA256
+     * TLS 1.3 supports the following cipher suites:
+     * TLS_AES_128_GCM_SHA256
+     * TLS_AES_256_GCM_SHA384
+     * TLS_CHACHA20_POLY1305_SHA256
+     * TLS_AES_128_CCM_SHA256
+     * TLS_AES_128_CCM_8_SHA256
+     */
+    public ciphers: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property tlsPolicyName: The name of the TLS policy. The name must be 1 to 200 characters in length, and can contain letters, digits, periods (.), underscores (_), and hyphens (-).
+     */
+    public tlsPolicyName: string | ros.IResolvable;
+
+    /**
+     * @Property tlsVersions: The version of the TLS protocol.
+     */
+    public tlsVersions: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosTLSPolicyProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosTLSPolicy.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCiphers = this.getAtt('Ciphers');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrInstanceId = this.getAtt('InstanceId');
+        this.attrTlsPolicyName = this.getAtt('TLSPolicyName');
+        this.attrTlsVersions = this.getAtt('TlsVersions');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.ciphers = props.ciphers;
+        this.tlsPolicyName = props.tlsPolicyName;
+        this.tlsVersions = props.tlsVersions;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            ciphers: this.ciphers,
+            tlsPolicyName: this.tlsPolicyName,
+            tlsVersions: this.tlsVersions,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosTLSPolicyPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosVServerGroup`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-vservergroup
  */
@@ -3920,7 +4147,7 @@ function rosVServerGroupPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::VServerGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::VServerGroup`, which is used to create a server group and attach backend servers to a Server Load Balancer (SLB) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `VServerGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-vservergroup
  */

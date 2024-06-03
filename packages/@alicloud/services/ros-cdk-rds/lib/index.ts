@@ -8,6 +8,7 @@ export * from './dbinstanceparametergroup';
 export * from './dbinstancesecurityips';
 export * from './database';
 export * from './migratetask';
+export * from './postgresextensions';
 export * from './prepaydbinstance';
 export * from './readonlydbinstance';
 

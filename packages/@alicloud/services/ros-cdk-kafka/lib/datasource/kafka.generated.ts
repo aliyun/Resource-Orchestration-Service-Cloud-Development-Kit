@@ -417,7 +417,7 @@ function rosTopicPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::KAFKA::Topic`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::KAFKA::Topic`, which is used to query the information about a topic.
  * @Note This class does not contain additional functions, so it is recommended to use the `Topic` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kafka-topic
  */
@@ -579,7 +579,7 @@ function rosTopicsPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::KAFKA::Topics`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::KAFKA::Topics`, which is used to query the information about topics.
  * @Note This class does not contain additional functions, so it is recommended to use the `Topics` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kafka-topics
  */

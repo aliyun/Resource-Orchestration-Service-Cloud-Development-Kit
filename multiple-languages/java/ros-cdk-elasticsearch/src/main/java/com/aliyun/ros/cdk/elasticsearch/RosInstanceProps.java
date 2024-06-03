@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.elasticsearch;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-elasticsearch-instance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:32.790Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:51.987Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.elasticsearch.$Module.class, fqn = "@alicloud/ros-cdk-elasticsearch.RosInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstanceProps.Jsii$Proxy.class)
 public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -47,6 +47,12 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEnablePublic() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceCategory() {
         return null;
     }
 
@@ -146,6 +152,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object enableKibanaPrivate;
         java.lang.Object enableKibanaPublic;
         java.lang.Object enablePublic;
+        java.lang.Object instanceCategory;
         java.lang.Object instanceChargeType;
         java.lang.Object kibanaNode;
         java.lang.Object kibanaWhitelist;
@@ -317,6 +324,26 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
          */
         public Builder enablePublic(com.aliyun.ros.cdk.core.IResolvable enablePublic) {
             this.enablePublic = enablePublic;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getInstanceCategory}
+         * @param instanceCategory the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceCategory(java.lang.String instanceCategory) {
+            this.instanceCategory = instanceCategory;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getInstanceCategory}
+         * @param instanceCategory the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceCategory(com.aliyun.ros.cdk.core.IResolvable instanceCategory) {
+            this.instanceCategory = instanceCategory;
             return this;
         }
 
@@ -595,6 +622,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object enableKibanaPrivate;
         private final java.lang.Object enableKibanaPublic;
         private final java.lang.Object enablePublic;
+        private final java.lang.Object instanceCategory;
         private final java.lang.Object instanceChargeType;
         private final java.lang.Object kibanaNode;
         private final java.lang.Object kibanaWhitelist;
@@ -623,6 +651,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             this.enableKibanaPrivate = software.amazon.jsii.Kernel.get(this, "enableKibanaPrivate", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enableKibanaPublic = software.amazon.jsii.Kernel.get(this, "enableKibanaPublic", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enablePublic = software.amazon.jsii.Kernel.get(this, "enablePublic", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceCategory = software.amazon.jsii.Kernel.get(this, "instanceCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.kibanaNode = software.amazon.jsii.Kernel.get(this, "kibanaNode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.kibanaWhitelist = software.amazon.jsii.Kernel.get(this, "kibanaWhitelist", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -652,6 +681,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             this.enableKibanaPrivate = builder.enableKibanaPrivate;
             this.enableKibanaPublic = builder.enableKibanaPublic;
             this.enablePublic = builder.enablePublic;
+            this.instanceCategory = builder.instanceCategory;
             this.instanceChargeType = builder.instanceChargeType;
             this.kibanaNode = builder.kibanaNode;
             this.kibanaWhitelist = builder.kibanaWhitelist;
@@ -705,6 +735,11 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         @Override
         public final java.lang.Object getEnablePublic() {
             return this.enablePublic;
+        }
+
+        @Override
+        public final java.lang.Object getInstanceCategory() {
+            return this.instanceCategory;
         }
 
         @Override
@@ -794,6 +829,9 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getEnablePublic() != null) {
                 data.set("enablePublic", om.valueToTree(this.getEnablePublic()));
             }
+            if (this.getInstanceCategory() != null) {
+                data.set("instanceCategory", om.valueToTree(this.getInstanceCategory()));
+            }
             if (this.getInstanceChargeType() != null) {
                 data.set("instanceChargeType", om.valueToTree(this.getInstanceChargeType()));
             }
@@ -859,6 +897,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             if (this.enableKibanaPrivate != null ? !this.enableKibanaPrivate.equals(that.enableKibanaPrivate) : that.enableKibanaPrivate != null) return false;
             if (this.enableKibanaPublic != null ? !this.enableKibanaPublic.equals(that.enableKibanaPublic) : that.enableKibanaPublic != null) return false;
             if (this.enablePublic != null ? !this.enablePublic.equals(that.enablePublic) : that.enablePublic != null) return false;
+            if (this.instanceCategory != null ? !this.instanceCategory.equals(that.instanceCategory) : that.instanceCategory != null) return false;
             if (this.instanceChargeType != null ? !this.instanceChargeType.equals(that.instanceChargeType) : that.instanceChargeType != null) return false;
             if (this.kibanaNode != null ? !this.kibanaNode.equals(that.kibanaNode) : that.kibanaNode != null) return false;
             if (this.kibanaWhitelist != null ? !this.kibanaWhitelist.equals(that.kibanaWhitelist) : that.kibanaWhitelist != null) return false;
@@ -884,6 +923,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.enableKibanaPrivate != null ? this.enableKibanaPrivate.hashCode() : 0);
             result = 31 * result + (this.enableKibanaPublic != null ? this.enableKibanaPublic.hashCode() : 0);
             result = 31 * result + (this.enablePublic != null ? this.enablePublic.hashCode() : 0);
+            result = 31 * result + (this.instanceCategory != null ? this.instanceCategory.hashCode() : 0);
             result = 31 * result + (this.instanceChargeType != null ? this.instanceChargeType.hashCode() : 0);
             result = 31 * result + (this.kibanaNode != null ? this.kibanaNode.hashCode() : 0);
             result = 31 * result + (this.kibanaWhitelist != null ? this.kibanaWhitelist.hashCode() : 0);

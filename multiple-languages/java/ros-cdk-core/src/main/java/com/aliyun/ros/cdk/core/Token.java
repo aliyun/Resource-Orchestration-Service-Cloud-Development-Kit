@@ -10,7 +10,7 @@ package com.aliyun.ros.cdk.core;
  * Tokens can be embedded into strings while retaining their original
  * semantics.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:29.992Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:49.356Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Token")
 public class Token extends software.amazon.jsii.JsiiObject {
 

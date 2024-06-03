@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-kubernetescluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:31.329Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:50.538Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.KubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(KubernetesClusterProps.Jsii$Proxy.class)
 public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -439,6 +439,18 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
     }
 
     /**
+     * Property securityHardeningOs: Alibaba Cloud OS security hardening.
+     * <p>
+     * Value:
+     * true: enables security hardening OS.
+     * false: disables security hardening OS.
+     * Default value: false.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityHardeningOs() {
+        return null;
+    }
+
+    /**
      * Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment.
      * <p>
      * When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
@@ -644,6 +656,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
         java.lang.Object resourceGroupId;
         java.lang.Object runtime;
         java.lang.Object securityGroupId;
+        java.lang.Object securityHardeningOs;
         java.lang.Object serviceCidr;
         java.lang.Object snatEntry;
         java.lang.Object socEnabled;
@@ -1737,6 +1750,34 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link KubernetesClusterProps#getSecurityHardeningOs}
+         * @param securityHardeningOs Property securityHardeningOs: Alibaba Cloud OS security hardening.
+         *                            Value:
+         *                            true: enables security hardening OS.
+         *                            false: disables security hardening OS.
+         *                            Default value: false.
+         * @return {@code this}
+         */
+        public Builder securityHardeningOs(java.lang.Boolean securityHardeningOs) {
+            this.securityHardeningOs = securityHardeningOs;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link KubernetesClusterProps#getSecurityHardeningOs}
+         * @param securityHardeningOs Property securityHardeningOs: Alibaba Cloud OS security hardening.
+         *                            Value:
+         *                            true: enables security hardening OS.
+         *                            false: disables security hardening OS.
+         *                            Default value: false.
+         * @return {@code this}
+         */
+        public Builder securityHardeningOs(com.aliyun.ros.cdk.core.IResolvable securityHardeningOs) {
+            this.securityHardeningOs = securityHardeningOs;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link KubernetesClusterProps#getServiceCidr}
          * @param serviceCidr Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment.
          *                    When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
@@ -2171,6 +2212,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object runtime;
         private final java.lang.Object securityGroupId;
+        private final java.lang.Object securityHardeningOs;
         private final java.lang.Object serviceCidr;
         private final java.lang.Object snatEntry;
         private final java.lang.Object socEnabled;
@@ -2239,6 +2281,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.runtime = software.amazon.jsii.Kernel.get(this, "runtime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityHardeningOs = software.amazon.jsii.Kernel.get(this, "securityHardeningOs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serviceCidr = software.amazon.jsii.Kernel.get(this, "serviceCidr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.snatEntry = software.amazon.jsii.Kernel.get(this, "snatEntry", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.socEnabled = software.amazon.jsii.Kernel.get(this, "socEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -2308,6 +2351,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
             this.resourceGroupId = builder.resourceGroupId;
             this.runtime = builder.runtime;
             this.securityGroupId = builder.securityGroupId;
+            this.securityHardeningOs = builder.securityHardeningOs;
             this.serviceCidr = builder.serviceCidr;
             this.snatEntry = builder.snatEntry;
             this.socEnabled = builder.socEnabled;
@@ -2548,6 +2592,11 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
+        public final java.lang.Object getSecurityHardeningOs() {
+            return this.securityHardeningOs;
+        }
+
+        @Override
         public final java.lang.Object getServiceCidr() {
             return this.serviceCidr;
         }
@@ -2760,6 +2809,9 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
             if (this.getSecurityGroupId() != null) {
                 data.set("securityGroupId", om.valueToTree(this.getSecurityGroupId()));
             }
+            if (this.getSecurityHardeningOs() != null) {
+                data.set("securityHardeningOs", om.valueToTree(this.getSecurityHardeningOs()));
+            }
             if (this.getServiceCidr() != null) {
                 data.set("serviceCidr", om.valueToTree(this.getServiceCidr()));
             }
@@ -2873,6 +2925,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.runtime != null ? !this.runtime.equals(that.runtime) : that.runtime != null) return false;
             if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
+            if (this.securityHardeningOs != null ? !this.securityHardeningOs.equals(that.securityHardeningOs) : that.securityHardeningOs != null) return false;
             if (this.serviceCidr != null ? !this.serviceCidr.equals(that.serviceCidr) : that.serviceCidr != null) return false;
             if (this.snatEntry != null ? !this.snatEntry.equals(that.snatEntry) : that.snatEntry != null) return false;
             if (this.socEnabled != null ? !this.socEnabled.equals(that.socEnabled) : that.socEnabled != null) return false;
@@ -2938,6 +2991,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.runtime != null ? this.runtime.hashCode() : 0);
             result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
+            result = 31 * result + (this.securityHardeningOs != null ? this.securityHardeningOs.hashCode() : 0);
             result = 31 * result + (this.serviceCidr != null ? this.serviceCidr.hashCode() : 0);
             result = 31 * result + (this.snatEntry != null ? this.snatEntry.hashCode() : 0);
             result = 31 * result + (this.socEnabled != null ? this.socEnabled.hashCode() : 0);

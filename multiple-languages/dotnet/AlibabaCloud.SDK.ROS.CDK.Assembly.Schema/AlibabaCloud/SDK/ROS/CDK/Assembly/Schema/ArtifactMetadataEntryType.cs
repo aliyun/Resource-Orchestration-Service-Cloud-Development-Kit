@@ -9,6 +9,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
     [JsiiEnum(nativeType: typeof(ArtifactMetadataEntryType), fullyQualifiedName: "@alicloud/ros-cdk-assembly-schema.ArtifactMetadataEntryType")]
     public enum ArtifactMetadataEntryType
     {
+        /// <summary>Asset in metadata.</summary>
+        [JsiiEnumMember(name: "ASSET")]
+        ASSET,
         /// <summary>Metadata key used to print INFO-level messages by the toolkit when an app is syntheized.</summary>
         [JsiiEnumMember(name: "INFO")]
         INFO,

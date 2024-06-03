@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SLS::Audit</code>, which is used to configure Log Audit Service.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:35.399Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:54.592Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosAudit")
 public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -173,6 +173,41 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getAlbAccessCollectionPolicy() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getAlbAccessEnabled() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getAlbAccessTtl() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getAlbSyncEnabled() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getAlbSyncTtl() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getApigatewayAccessCollectionPolicy() {
             return null;
         }
@@ -278,6 +313,34 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCloudconfigChangeEnabled() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCloudconfigChangeTtl() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCloudconfigNoncomEnabled() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCloudconfigNoncomTtl() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getCloudfirewallAccessCollectionPolicy() {
             return null;
         }
@@ -307,6 +370,20 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getCloudfirewallTtl() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCloudfirewallVpcEnabled() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCloudfirewallVpcTtl() {
             return null;
         }
 
@@ -348,6 +425,20 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDdosBgpAccessEnabled() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDdosBgpAccessTtl() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getDdosCooAccessCollectionPolicy() {
             return null;
         }
@@ -377,6 +468,55 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getDdosCooAccessTtl() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDdosDipAccessEnabled() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDdosDipAccessTtl() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDnsIntranetCollectionPolicy() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDnsIntranetEnabled() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDnsIntranetTtl() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDnsSyncEnabled() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDnsSyncTtl() {
             return null;
         }
 
@@ -426,6 +566,48 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getDrdsSyncTtl() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getIdaasMngCollectionPolicy() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getIdaasMngEnabled() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getIdaasMngTtl() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getIdaasUserCollectionPolicy() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getIdaasUserEnabled() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getIdaasUserTtl() {
             return null;
         }
 
@@ -677,6 +859,27 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPolardbErrorCollectionPolicy() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPolardbErrorEnabled() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPolardbErrorTtl() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getPolardbPerfCollectionPolicy() {
             return null;
         }
@@ -776,6 +979,27 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getRdsEnabled() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getRdsErrorCollectionPolicy() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getRdsErrorEnabled() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getRdsErrorTtl() {
             return null;
         }
 
@@ -929,6 +1153,13 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSasDnsQueryEnabled() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getSasHttpEnabled() {
             return null;
         }
@@ -1076,6 +1307,41 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getVpcFlowCollectionPolicy() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getVpcFlowEnabled() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getVpcFlowTtl() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getVpcSyncEnabled() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getVpcSyncTtl() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getWafAccessCollectionPolicy() {
             return null;
         }
@@ -1125,6 +1391,11 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object actiontrailOpenapiPolicySetting;
             java.lang.Object actiontrailTiEnabled;
             java.lang.Object actiontrailTtl;
+            java.lang.Object albAccessCollectionPolicy;
+            java.lang.Object albAccessEnabled;
+            java.lang.Object albAccessTtl;
+            java.lang.Object albSyncEnabled;
+            java.lang.Object albSyncTtl;
             java.lang.Object apigatewayAccessCollectionPolicy;
             java.lang.Object apigatewayAccessPolicySetting;
             java.lang.Object apigatewayEnabled;
@@ -1140,21 +1411,36 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object bastionEnabled;
             java.lang.Object bastionTiEnabled;
             java.lang.Object bastionTtl;
+            java.lang.Object cloudconfigChangeEnabled;
+            java.lang.Object cloudconfigChangeTtl;
+            java.lang.Object cloudconfigNoncomEnabled;
+            java.lang.Object cloudconfigNoncomTtl;
             java.lang.Object cloudfirewallAccessCollectionPolicy;
             java.lang.Object cloudfirewallAccessPolicySetting;
             java.lang.Object cloudfirewallEnabled;
             java.lang.Object cloudfirewallTiEnabled;
             java.lang.Object cloudfirewallTtl;
+            java.lang.Object cloudfirewallVpcEnabled;
+            java.lang.Object cloudfirewallVpcTtl;
             java.lang.Object cpsCallbackCollectionPolicy;
             java.lang.Object cpsCallbackPolicySetting;
             java.lang.Object cpsEnabled;
             java.lang.Object cpsTiEnabled;
             java.lang.Object cpsTtl;
+            java.lang.Object ddosBgpAccessEnabled;
+            java.lang.Object ddosBgpAccessTtl;
             java.lang.Object ddosCooAccessCollectionPolicy;
             java.lang.Object ddosCooAccessEnabled;
             java.lang.Object ddosCooAccessPolicySetting;
             java.lang.Object ddosCooAccessTiEnabled;
             java.lang.Object ddosCooAccessTtl;
+            java.lang.Object ddosDipAccessEnabled;
+            java.lang.Object ddosDipAccessTtl;
+            java.lang.Object dnsIntranetCollectionPolicy;
+            java.lang.Object dnsIntranetEnabled;
+            java.lang.Object dnsIntranetTtl;
+            java.lang.Object dnsSyncEnabled;
+            java.lang.Object dnsSyncTtl;
             java.lang.Object drdsAuditCollectionPolicy;
             java.lang.Object drdsAuditEnabled;
             java.lang.Object drdsAuditPolicySetting;
@@ -1162,6 +1448,12 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object drdsAuditTtl;
             java.lang.Object drdsSyncEnabled;
             java.lang.Object drdsSyncTtl;
+            java.lang.Object idaasMngCollectionPolicy;
+            java.lang.Object idaasMngEnabled;
+            java.lang.Object idaasMngTtl;
+            java.lang.Object idaasUserCollectionPolicy;
+            java.lang.Object idaasUserEnabled;
+            java.lang.Object idaasUserTtl;
             java.lang.Object k8SAuditCollectionPolicy;
             java.lang.Object k8SAuditEnabled;
             java.lang.Object k8SAuditPolicySetting;
@@ -1197,6 +1489,9 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object polardbAuditCollectionPolicy;
             java.lang.Object polardbAuditPolicySetting;
             java.lang.Object polardbEnabled;
+            java.lang.Object polardbErrorCollectionPolicy;
+            java.lang.Object polardbErrorEnabled;
+            java.lang.Object polardbErrorTtl;
             java.lang.Object polardbPerfCollectionPolicy;
             java.lang.Object polardbPerfEnabled;
             java.lang.Object polardbPerfPolicySetting;
@@ -1212,6 +1507,9 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object rdsAuditCollectionPolicy;
             java.lang.Object rdsAuditPolicySetting;
             java.lang.Object rdsEnabled;
+            java.lang.Object rdsErrorCollectionPolicy;
+            java.lang.Object rdsErrorEnabled;
+            java.lang.Object rdsErrorTtl;
             java.lang.Object rdsPerfCollectionPolicy;
             java.lang.Object rdsPerfEnabled;
             java.lang.Object rdsPerfPolicySetting;
@@ -1233,6 +1531,7 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object redisSyncTtl;
             java.lang.Object sasCrackEnabled;
             java.lang.Object sasDnsEnabled;
+            java.lang.Object sasDnsQueryEnabled;
             java.lang.Object sasHttpEnabled;
             java.lang.Object sasLocalDnsEnabled;
             java.lang.Object sasLoginEnabled;
@@ -1254,6 +1553,11 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object slbAccessTtl;
             java.lang.Object slbSyncEnabled;
             java.lang.Object slbSyncTtl;
+            java.lang.Object vpcFlowCollectionPolicy;
+            java.lang.Object vpcFlowEnabled;
+            java.lang.Object vpcFlowTtl;
+            java.lang.Object vpcSyncEnabled;
+            java.lang.Object vpcSyncTtl;
             java.lang.Object wafAccessCollectionPolicy;
             java.lang.Object wafAccessPolicySetting;
             java.lang.Object wafEnabled;
@@ -1367,6 +1671,116 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder actiontrailTtl(com.aliyun.ros.cdk.core.IResolvable actiontrailTtl) {
                 this.actiontrailTtl = actiontrailTtl;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getAlbAccessCollectionPolicy}
+             * @param albAccessCollectionPolicy the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder albAccessCollectionPolicy(java.lang.String albAccessCollectionPolicy) {
+                this.albAccessCollectionPolicy = albAccessCollectionPolicy;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getAlbAccessCollectionPolicy}
+             * @param albAccessCollectionPolicy the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder albAccessCollectionPolicy(com.aliyun.ros.cdk.core.IResolvable albAccessCollectionPolicy) {
+                this.albAccessCollectionPolicy = albAccessCollectionPolicy;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getAlbAccessEnabled}
+             * @param albAccessEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder albAccessEnabled(java.lang.Boolean albAccessEnabled) {
+                this.albAccessEnabled = albAccessEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getAlbAccessEnabled}
+             * @param albAccessEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder albAccessEnabled(com.aliyun.ros.cdk.core.IResolvable albAccessEnabled) {
+                this.albAccessEnabled = albAccessEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getAlbAccessTtl}
+             * @param albAccessTtl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder albAccessTtl(java.lang.Number albAccessTtl) {
+                this.albAccessTtl = albAccessTtl;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getAlbAccessTtl}
+             * @param albAccessTtl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder albAccessTtl(com.aliyun.ros.cdk.core.IResolvable albAccessTtl) {
+                this.albAccessTtl = albAccessTtl;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getAlbSyncEnabled}
+             * @param albSyncEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder albSyncEnabled(java.lang.Boolean albSyncEnabled) {
+                this.albSyncEnabled = albSyncEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getAlbSyncEnabled}
+             * @param albSyncEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder albSyncEnabled(com.aliyun.ros.cdk.core.IResolvable albSyncEnabled) {
+                this.albSyncEnabled = albSyncEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getAlbSyncTtl}
+             * @param albSyncTtl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder albSyncTtl(java.lang.Number albSyncTtl) {
+                this.albSyncTtl = albSyncTtl;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getAlbSyncTtl}
+             * @param albSyncTtl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder albSyncTtl(com.aliyun.ros.cdk.core.IResolvable albSyncTtl) {
+                this.albSyncTtl = albSyncTtl;
                 return this;
             }
 
@@ -1701,6 +2115,94 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link VariableMapProperty#getCloudconfigChangeEnabled}
+             * @param cloudconfigChangeEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder cloudconfigChangeEnabled(java.lang.Boolean cloudconfigChangeEnabled) {
+                this.cloudconfigChangeEnabled = cloudconfigChangeEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getCloudconfigChangeEnabled}
+             * @param cloudconfigChangeEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder cloudconfigChangeEnabled(com.aliyun.ros.cdk.core.IResolvable cloudconfigChangeEnabled) {
+                this.cloudconfigChangeEnabled = cloudconfigChangeEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getCloudconfigChangeTtl}
+             * @param cloudconfigChangeTtl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder cloudconfigChangeTtl(java.lang.Number cloudconfigChangeTtl) {
+                this.cloudconfigChangeTtl = cloudconfigChangeTtl;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getCloudconfigChangeTtl}
+             * @param cloudconfigChangeTtl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder cloudconfigChangeTtl(com.aliyun.ros.cdk.core.IResolvable cloudconfigChangeTtl) {
+                this.cloudconfigChangeTtl = cloudconfigChangeTtl;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getCloudconfigNoncomEnabled}
+             * @param cloudconfigNoncomEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder cloudconfigNoncomEnabled(java.lang.Boolean cloudconfigNoncomEnabled) {
+                this.cloudconfigNoncomEnabled = cloudconfigNoncomEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getCloudconfigNoncomEnabled}
+             * @param cloudconfigNoncomEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder cloudconfigNoncomEnabled(com.aliyun.ros.cdk.core.IResolvable cloudconfigNoncomEnabled) {
+                this.cloudconfigNoncomEnabled = cloudconfigNoncomEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getCloudconfigNoncomTtl}
+             * @param cloudconfigNoncomTtl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder cloudconfigNoncomTtl(java.lang.Number cloudconfigNoncomTtl) {
+                this.cloudconfigNoncomTtl = cloudconfigNoncomTtl;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getCloudconfigNoncomTtl}
+             * @param cloudconfigNoncomTtl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder cloudconfigNoncomTtl(com.aliyun.ros.cdk.core.IResolvable cloudconfigNoncomTtl) {
+                this.cloudconfigNoncomTtl = cloudconfigNoncomTtl;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link VariableMapProperty#getCloudfirewallAccessCollectionPolicy}
              * @param cloudfirewallAccessCollectionPolicy the value to be set.
              * @return {@code this}
@@ -1807,6 +2309,50 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder cloudfirewallTtl(com.aliyun.ros.cdk.core.IResolvable cloudfirewallTtl) {
                 this.cloudfirewallTtl = cloudfirewallTtl;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getCloudfirewallVpcEnabled}
+             * @param cloudfirewallVpcEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder cloudfirewallVpcEnabled(java.lang.Boolean cloudfirewallVpcEnabled) {
+                this.cloudfirewallVpcEnabled = cloudfirewallVpcEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getCloudfirewallVpcEnabled}
+             * @param cloudfirewallVpcEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder cloudfirewallVpcEnabled(com.aliyun.ros.cdk.core.IResolvable cloudfirewallVpcEnabled) {
+                this.cloudfirewallVpcEnabled = cloudfirewallVpcEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getCloudfirewallVpcTtl}
+             * @param cloudfirewallVpcTtl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder cloudfirewallVpcTtl(java.lang.Number cloudfirewallVpcTtl) {
+                this.cloudfirewallVpcTtl = cloudfirewallVpcTtl;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getCloudfirewallVpcTtl}
+             * @param cloudfirewallVpcTtl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder cloudfirewallVpcTtl(com.aliyun.ros.cdk.core.IResolvable cloudfirewallVpcTtl) {
+                this.cloudfirewallVpcTtl = cloudfirewallVpcTtl;
                 return this;
             }
 
@@ -1921,6 +2467,50 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link VariableMapProperty#getDdosBgpAccessEnabled}
+             * @param ddosBgpAccessEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder ddosBgpAccessEnabled(java.lang.Boolean ddosBgpAccessEnabled) {
+                this.ddosBgpAccessEnabled = ddosBgpAccessEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getDdosBgpAccessEnabled}
+             * @param ddosBgpAccessEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder ddosBgpAccessEnabled(com.aliyun.ros.cdk.core.IResolvable ddosBgpAccessEnabled) {
+                this.ddosBgpAccessEnabled = ddosBgpAccessEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getDdosBgpAccessTtl}
+             * @param ddosBgpAccessTtl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder ddosBgpAccessTtl(java.lang.Number ddosBgpAccessTtl) {
+                this.ddosBgpAccessTtl = ddosBgpAccessTtl;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getDdosBgpAccessTtl}
+             * @param ddosBgpAccessTtl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder ddosBgpAccessTtl(com.aliyun.ros.cdk.core.IResolvable ddosBgpAccessTtl) {
+                this.ddosBgpAccessTtl = ddosBgpAccessTtl;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link VariableMapProperty#getDdosCooAccessCollectionPolicy}
              * @param ddosCooAccessCollectionPolicy the value to be set.
              * @return {@code this}
@@ -2027,6 +2617,160 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder ddosCooAccessTtl(com.aliyun.ros.cdk.core.IResolvable ddosCooAccessTtl) {
                 this.ddosCooAccessTtl = ddosCooAccessTtl;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getDdosDipAccessEnabled}
+             * @param ddosDipAccessEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder ddosDipAccessEnabled(java.lang.Boolean ddosDipAccessEnabled) {
+                this.ddosDipAccessEnabled = ddosDipAccessEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getDdosDipAccessEnabled}
+             * @param ddosDipAccessEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder ddosDipAccessEnabled(com.aliyun.ros.cdk.core.IResolvable ddosDipAccessEnabled) {
+                this.ddosDipAccessEnabled = ddosDipAccessEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getDdosDipAccessTtl}
+             * @param ddosDipAccessTtl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder ddosDipAccessTtl(java.lang.Number ddosDipAccessTtl) {
+                this.ddosDipAccessTtl = ddosDipAccessTtl;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getDdosDipAccessTtl}
+             * @param ddosDipAccessTtl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder ddosDipAccessTtl(com.aliyun.ros.cdk.core.IResolvable ddosDipAccessTtl) {
+                this.ddosDipAccessTtl = ddosDipAccessTtl;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getDnsIntranetCollectionPolicy}
+             * @param dnsIntranetCollectionPolicy the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder dnsIntranetCollectionPolicy(java.lang.String dnsIntranetCollectionPolicy) {
+                this.dnsIntranetCollectionPolicy = dnsIntranetCollectionPolicy;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getDnsIntranetCollectionPolicy}
+             * @param dnsIntranetCollectionPolicy the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder dnsIntranetCollectionPolicy(com.aliyun.ros.cdk.core.IResolvable dnsIntranetCollectionPolicy) {
+                this.dnsIntranetCollectionPolicy = dnsIntranetCollectionPolicy;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getDnsIntranetEnabled}
+             * @param dnsIntranetEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder dnsIntranetEnabled(java.lang.Boolean dnsIntranetEnabled) {
+                this.dnsIntranetEnabled = dnsIntranetEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getDnsIntranetEnabled}
+             * @param dnsIntranetEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder dnsIntranetEnabled(com.aliyun.ros.cdk.core.IResolvable dnsIntranetEnabled) {
+                this.dnsIntranetEnabled = dnsIntranetEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getDnsIntranetTtl}
+             * @param dnsIntranetTtl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder dnsIntranetTtl(java.lang.Number dnsIntranetTtl) {
+                this.dnsIntranetTtl = dnsIntranetTtl;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getDnsIntranetTtl}
+             * @param dnsIntranetTtl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder dnsIntranetTtl(com.aliyun.ros.cdk.core.IResolvable dnsIntranetTtl) {
+                this.dnsIntranetTtl = dnsIntranetTtl;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getDnsSyncEnabled}
+             * @param dnsSyncEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder dnsSyncEnabled(java.lang.Boolean dnsSyncEnabled) {
+                this.dnsSyncEnabled = dnsSyncEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getDnsSyncEnabled}
+             * @param dnsSyncEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder dnsSyncEnabled(com.aliyun.ros.cdk.core.IResolvable dnsSyncEnabled) {
+                this.dnsSyncEnabled = dnsSyncEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getDnsSyncTtl}
+             * @param dnsSyncTtl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder dnsSyncTtl(java.lang.Number dnsSyncTtl) {
+                this.dnsSyncTtl = dnsSyncTtl;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getDnsSyncTtl}
+             * @param dnsSyncTtl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder dnsSyncTtl(com.aliyun.ros.cdk.core.IResolvable dnsSyncTtl) {
+                this.dnsSyncTtl = dnsSyncTtl;
                 return this;
             }
 
@@ -2181,6 +2925,138 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder drdsSyncTtl(com.aliyun.ros.cdk.core.IResolvable drdsSyncTtl) {
                 this.drdsSyncTtl = drdsSyncTtl;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getIdaasMngCollectionPolicy}
+             * @param idaasMngCollectionPolicy the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder idaasMngCollectionPolicy(java.lang.String idaasMngCollectionPolicy) {
+                this.idaasMngCollectionPolicy = idaasMngCollectionPolicy;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getIdaasMngCollectionPolicy}
+             * @param idaasMngCollectionPolicy the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder idaasMngCollectionPolicy(com.aliyun.ros.cdk.core.IResolvable idaasMngCollectionPolicy) {
+                this.idaasMngCollectionPolicy = idaasMngCollectionPolicy;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getIdaasMngEnabled}
+             * @param idaasMngEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder idaasMngEnabled(java.lang.Boolean idaasMngEnabled) {
+                this.idaasMngEnabled = idaasMngEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getIdaasMngEnabled}
+             * @param idaasMngEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder idaasMngEnabled(com.aliyun.ros.cdk.core.IResolvable idaasMngEnabled) {
+                this.idaasMngEnabled = idaasMngEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getIdaasMngTtl}
+             * @param idaasMngTtl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder idaasMngTtl(java.lang.Number idaasMngTtl) {
+                this.idaasMngTtl = idaasMngTtl;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getIdaasMngTtl}
+             * @param idaasMngTtl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder idaasMngTtl(com.aliyun.ros.cdk.core.IResolvable idaasMngTtl) {
+                this.idaasMngTtl = idaasMngTtl;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getIdaasUserCollectionPolicy}
+             * @param idaasUserCollectionPolicy the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder idaasUserCollectionPolicy(java.lang.String idaasUserCollectionPolicy) {
+                this.idaasUserCollectionPolicy = idaasUserCollectionPolicy;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getIdaasUserCollectionPolicy}
+             * @param idaasUserCollectionPolicy the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder idaasUserCollectionPolicy(com.aliyun.ros.cdk.core.IResolvable idaasUserCollectionPolicy) {
+                this.idaasUserCollectionPolicy = idaasUserCollectionPolicy;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getIdaasUserEnabled}
+             * @param idaasUserEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder idaasUserEnabled(java.lang.Boolean idaasUserEnabled) {
+                this.idaasUserEnabled = idaasUserEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getIdaasUserEnabled}
+             * @param idaasUserEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder idaasUserEnabled(com.aliyun.ros.cdk.core.IResolvable idaasUserEnabled) {
+                this.idaasUserEnabled = idaasUserEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getIdaasUserTtl}
+             * @param idaasUserTtl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder idaasUserTtl(java.lang.Number idaasUserTtl) {
+                this.idaasUserTtl = idaasUserTtl;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getIdaasUserTtl}
+             * @param idaasUserTtl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder idaasUserTtl(com.aliyun.ros.cdk.core.IResolvable idaasUserTtl) {
+                this.idaasUserTtl = idaasUserTtl;
                 return this;
             }
 
@@ -2955,6 +3831,72 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link VariableMapProperty#getPolardbErrorCollectionPolicy}
+             * @param polardbErrorCollectionPolicy the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder polardbErrorCollectionPolicy(java.lang.String polardbErrorCollectionPolicy) {
+                this.polardbErrorCollectionPolicy = polardbErrorCollectionPolicy;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getPolardbErrorCollectionPolicy}
+             * @param polardbErrorCollectionPolicy the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder polardbErrorCollectionPolicy(com.aliyun.ros.cdk.core.IResolvable polardbErrorCollectionPolicy) {
+                this.polardbErrorCollectionPolicy = polardbErrorCollectionPolicy;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getPolardbErrorEnabled}
+             * @param polardbErrorEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder polardbErrorEnabled(java.lang.Boolean polardbErrorEnabled) {
+                this.polardbErrorEnabled = polardbErrorEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getPolardbErrorEnabled}
+             * @param polardbErrorEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder polardbErrorEnabled(com.aliyun.ros.cdk.core.IResolvable polardbErrorEnabled) {
+                this.polardbErrorEnabled = polardbErrorEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getPolardbErrorTtl}
+             * @param polardbErrorTtl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder polardbErrorTtl(java.lang.Number polardbErrorTtl) {
+                this.polardbErrorTtl = polardbErrorTtl;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getPolardbErrorTtl}
+             * @param polardbErrorTtl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder polardbErrorTtl(com.aliyun.ros.cdk.core.IResolvable polardbErrorTtl) {
+                this.polardbErrorTtl = polardbErrorTtl;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link VariableMapProperty#getPolardbPerfCollectionPolicy}
              * @param polardbPerfCollectionPolicy the value to be set.
              * @return {@code this}
@@ -3281,6 +4223,72 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder rdsEnabled(com.aliyun.ros.cdk.core.IResolvable rdsEnabled) {
                 this.rdsEnabled = rdsEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getRdsErrorCollectionPolicy}
+             * @param rdsErrorCollectionPolicy the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder rdsErrorCollectionPolicy(java.lang.String rdsErrorCollectionPolicy) {
+                this.rdsErrorCollectionPolicy = rdsErrorCollectionPolicy;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getRdsErrorCollectionPolicy}
+             * @param rdsErrorCollectionPolicy the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder rdsErrorCollectionPolicy(com.aliyun.ros.cdk.core.IResolvable rdsErrorCollectionPolicy) {
+                this.rdsErrorCollectionPolicy = rdsErrorCollectionPolicy;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getRdsErrorEnabled}
+             * @param rdsErrorEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder rdsErrorEnabled(java.lang.Boolean rdsErrorEnabled) {
+                this.rdsErrorEnabled = rdsErrorEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getRdsErrorEnabled}
+             * @param rdsErrorEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder rdsErrorEnabled(com.aliyun.ros.cdk.core.IResolvable rdsErrorEnabled) {
+                this.rdsErrorEnabled = rdsErrorEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getRdsErrorTtl}
+             * @param rdsErrorTtl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder rdsErrorTtl(java.lang.Number rdsErrorTtl) {
+                this.rdsErrorTtl = rdsErrorTtl;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getRdsErrorTtl}
+             * @param rdsErrorTtl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder rdsErrorTtl(com.aliyun.ros.cdk.core.IResolvable rdsErrorTtl) {
+                this.rdsErrorTtl = rdsErrorTtl;
                 return this;
             }
 
@@ -3747,6 +4755,28 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link VariableMapProperty#getSasDnsQueryEnabled}
+             * @param sasDnsQueryEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder sasDnsQueryEnabled(java.lang.Boolean sasDnsQueryEnabled) {
+                this.sasDnsQueryEnabled = sasDnsQueryEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getSasDnsQueryEnabled}
+             * @param sasDnsQueryEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder sasDnsQueryEnabled(com.aliyun.ros.cdk.core.IResolvable sasDnsQueryEnabled) {
+                this.sasDnsQueryEnabled = sasDnsQueryEnabled;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link VariableMapProperty#getSasHttpEnabled}
              * @param sasHttpEnabled the value to be set.
              * @return {@code this}
@@ -4209,6 +5239,116 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link VariableMapProperty#getVpcFlowCollectionPolicy}
+             * @param vpcFlowCollectionPolicy the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder vpcFlowCollectionPolicy(java.lang.String vpcFlowCollectionPolicy) {
+                this.vpcFlowCollectionPolicy = vpcFlowCollectionPolicy;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getVpcFlowCollectionPolicy}
+             * @param vpcFlowCollectionPolicy the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder vpcFlowCollectionPolicy(com.aliyun.ros.cdk.core.IResolvable vpcFlowCollectionPolicy) {
+                this.vpcFlowCollectionPolicy = vpcFlowCollectionPolicy;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getVpcFlowEnabled}
+             * @param vpcFlowEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder vpcFlowEnabled(java.lang.Boolean vpcFlowEnabled) {
+                this.vpcFlowEnabled = vpcFlowEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getVpcFlowEnabled}
+             * @param vpcFlowEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder vpcFlowEnabled(com.aliyun.ros.cdk.core.IResolvable vpcFlowEnabled) {
+                this.vpcFlowEnabled = vpcFlowEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getVpcFlowTtl}
+             * @param vpcFlowTtl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder vpcFlowTtl(java.lang.Number vpcFlowTtl) {
+                this.vpcFlowTtl = vpcFlowTtl;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getVpcFlowTtl}
+             * @param vpcFlowTtl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder vpcFlowTtl(com.aliyun.ros.cdk.core.IResolvable vpcFlowTtl) {
+                this.vpcFlowTtl = vpcFlowTtl;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getVpcSyncEnabled}
+             * @param vpcSyncEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder vpcSyncEnabled(java.lang.Boolean vpcSyncEnabled) {
+                this.vpcSyncEnabled = vpcSyncEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getVpcSyncEnabled}
+             * @param vpcSyncEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder vpcSyncEnabled(com.aliyun.ros.cdk.core.IResolvable vpcSyncEnabled) {
+                this.vpcSyncEnabled = vpcSyncEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getVpcSyncTtl}
+             * @param vpcSyncTtl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder vpcSyncTtl(java.lang.Number vpcSyncTtl) {
+                this.vpcSyncTtl = vpcSyncTtl;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VariableMapProperty#getVpcSyncTtl}
+             * @param vpcSyncTtl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder vpcSyncTtl(com.aliyun.ros.cdk.core.IResolvable vpcSyncTtl) {
+                this.vpcSyncTtl = vpcSyncTtl;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link VariableMapProperty#getWafAccessCollectionPolicy}
              * @param wafAccessCollectionPolicy the value to be set.
              * @return {@code this}
@@ -4341,6 +5481,11 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object actiontrailOpenapiPolicySetting;
             private final java.lang.Object actiontrailTiEnabled;
             private final java.lang.Object actiontrailTtl;
+            private final java.lang.Object albAccessCollectionPolicy;
+            private final java.lang.Object albAccessEnabled;
+            private final java.lang.Object albAccessTtl;
+            private final java.lang.Object albSyncEnabled;
+            private final java.lang.Object albSyncTtl;
             private final java.lang.Object apigatewayAccessCollectionPolicy;
             private final java.lang.Object apigatewayAccessPolicySetting;
             private final java.lang.Object apigatewayEnabled;
@@ -4356,21 +5501,36 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object bastionEnabled;
             private final java.lang.Object bastionTiEnabled;
             private final java.lang.Object bastionTtl;
+            private final java.lang.Object cloudconfigChangeEnabled;
+            private final java.lang.Object cloudconfigChangeTtl;
+            private final java.lang.Object cloudconfigNoncomEnabled;
+            private final java.lang.Object cloudconfigNoncomTtl;
             private final java.lang.Object cloudfirewallAccessCollectionPolicy;
             private final java.lang.Object cloudfirewallAccessPolicySetting;
             private final java.lang.Object cloudfirewallEnabled;
             private final java.lang.Object cloudfirewallTiEnabled;
             private final java.lang.Object cloudfirewallTtl;
+            private final java.lang.Object cloudfirewallVpcEnabled;
+            private final java.lang.Object cloudfirewallVpcTtl;
             private final java.lang.Object cpsCallbackCollectionPolicy;
             private final java.lang.Object cpsCallbackPolicySetting;
             private final java.lang.Object cpsEnabled;
             private final java.lang.Object cpsTiEnabled;
             private final java.lang.Object cpsTtl;
+            private final java.lang.Object ddosBgpAccessEnabled;
+            private final java.lang.Object ddosBgpAccessTtl;
             private final java.lang.Object ddosCooAccessCollectionPolicy;
             private final java.lang.Object ddosCooAccessEnabled;
             private final java.lang.Object ddosCooAccessPolicySetting;
             private final java.lang.Object ddosCooAccessTiEnabled;
             private final java.lang.Object ddosCooAccessTtl;
+            private final java.lang.Object ddosDipAccessEnabled;
+            private final java.lang.Object ddosDipAccessTtl;
+            private final java.lang.Object dnsIntranetCollectionPolicy;
+            private final java.lang.Object dnsIntranetEnabled;
+            private final java.lang.Object dnsIntranetTtl;
+            private final java.lang.Object dnsSyncEnabled;
+            private final java.lang.Object dnsSyncTtl;
             private final java.lang.Object drdsAuditCollectionPolicy;
             private final java.lang.Object drdsAuditEnabled;
             private final java.lang.Object drdsAuditPolicySetting;
@@ -4378,6 +5538,12 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object drdsAuditTtl;
             private final java.lang.Object drdsSyncEnabled;
             private final java.lang.Object drdsSyncTtl;
+            private final java.lang.Object idaasMngCollectionPolicy;
+            private final java.lang.Object idaasMngEnabled;
+            private final java.lang.Object idaasMngTtl;
+            private final java.lang.Object idaasUserCollectionPolicy;
+            private final java.lang.Object idaasUserEnabled;
+            private final java.lang.Object idaasUserTtl;
             private final java.lang.Object k8SAuditCollectionPolicy;
             private final java.lang.Object k8SAuditEnabled;
             private final java.lang.Object k8SAuditPolicySetting;
@@ -4413,6 +5579,9 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object polardbAuditCollectionPolicy;
             private final java.lang.Object polardbAuditPolicySetting;
             private final java.lang.Object polardbEnabled;
+            private final java.lang.Object polardbErrorCollectionPolicy;
+            private final java.lang.Object polardbErrorEnabled;
+            private final java.lang.Object polardbErrorTtl;
             private final java.lang.Object polardbPerfCollectionPolicy;
             private final java.lang.Object polardbPerfEnabled;
             private final java.lang.Object polardbPerfPolicySetting;
@@ -4428,6 +5597,9 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object rdsAuditCollectionPolicy;
             private final java.lang.Object rdsAuditPolicySetting;
             private final java.lang.Object rdsEnabled;
+            private final java.lang.Object rdsErrorCollectionPolicy;
+            private final java.lang.Object rdsErrorEnabled;
+            private final java.lang.Object rdsErrorTtl;
             private final java.lang.Object rdsPerfCollectionPolicy;
             private final java.lang.Object rdsPerfEnabled;
             private final java.lang.Object rdsPerfPolicySetting;
@@ -4449,6 +5621,7 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object redisSyncTtl;
             private final java.lang.Object sasCrackEnabled;
             private final java.lang.Object sasDnsEnabled;
+            private final java.lang.Object sasDnsQueryEnabled;
             private final java.lang.Object sasHttpEnabled;
             private final java.lang.Object sasLocalDnsEnabled;
             private final java.lang.Object sasLoginEnabled;
@@ -4470,6 +5643,11 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object slbAccessTtl;
             private final java.lang.Object slbSyncEnabled;
             private final java.lang.Object slbSyncTtl;
+            private final java.lang.Object vpcFlowCollectionPolicy;
+            private final java.lang.Object vpcFlowEnabled;
+            private final java.lang.Object vpcFlowTtl;
+            private final java.lang.Object vpcSyncEnabled;
+            private final java.lang.Object vpcSyncTtl;
             private final java.lang.Object wafAccessCollectionPolicy;
             private final java.lang.Object wafAccessPolicySetting;
             private final java.lang.Object wafEnabled;
@@ -4487,6 +5665,11 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 this.actiontrailOpenapiPolicySetting = software.amazon.jsii.Kernel.get(this, "actiontrailOpenapiPolicySetting", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.actiontrailTiEnabled = software.amazon.jsii.Kernel.get(this, "actiontrailTiEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.actiontrailTtl = software.amazon.jsii.Kernel.get(this, "actiontrailTtl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.albAccessCollectionPolicy = software.amazon.jsii.Kernel.get(this, "albAccessCollectionPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.albAccessEnabled = software.amazon.jsii.Kernel.get(this, "albAccessEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.albAccessTtl = software.amazon.jsii.Kernel.get(this, "albAccessTtl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.albSyncEnabled = software.amazon.jsii.Kernel.get(this, "albSyncEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.albSyncTtl = software.amazon.jsii.Kernel.get(this, "albSyncTtl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.apigatewayAccessCollectionPolicy = software.amazon.jsii.Kernel.get(this, "apigatewayAccessCollectionPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.apigatewayAccessPolicySetting = software.amazon.jsii.Kernel.get(this, "apigatewayAccessPolicySetting", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.apigatewayEnabled = software.amazon.jsii.Kernel.get(this, "apigatewayEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -4502,21 +5685,36 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 this.bastionEnabled = software.amazon.jsii.Kernel.get(this, "bastionEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.bastionTiEnabled = software.amazon.jsii.Kernel.get(this, "bastionTiEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.bastionTtl = software.amazon.jsii.Kernel.get(this, "bastionTtl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.cloudconfigChangeEnabled = software.amazon.jsii.Kernel.get(this, "cloudconfigChangeEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.cloudconfigChangeTtl = software.amazon.jsii.Kernel.get(this, "cloudconfigChangeTtl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.cloudconfigNoncomEnabled = software.amazon.jsii.Kernel.get(this, "cloudconfigNoncomEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.cloudconfigNoncomTtl = software.amazon.jsii.Kernel.get(this, "cloudconfigNoncomTtl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.cloudfirewallAccessCollectionPolicy = software.amazon.jsii.Kernel.get(this, "cloudfirewallAccessCollectionPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.cloudfirewallAccessPolicySetting = software.amazon.jsii.Kernel.get(this, "cloudfirewallAccessPolicySetting", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.cloudfirewallEnabled = software.amazon.jsii.Kernel.get(this, "cloudfirewallEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.cloudfirewallTiEnabled = software.amazon.jsii.Kernel.get(this, "cloudfirewallTiEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.cloudfirewallTtl = software.amazon.jsii.Kernel.get(this, "cloudfirewallTtl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.cloudfirewallVpcEnabled = software.amazon.jsii.Kernel.get(this, "cloudfirewallVpcEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.cloudfirewallVpcTtl = software.amazon.jsii.Kernel.get(this, "cloudfirewallVpcTtl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.cpsCallbackCollectionPolicy = software.amazon.jsii.Kernel.get(this, "cpsCallbackCollectionPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.cpsCallbackPolicySetting = software.amazon.jsii.Kernel.get(this, "cpsCallbackPolicySetting", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.cpsEnabled = software.amazon.jsii.Kernel.get(this, "cpsEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.cpsTiEnabled = software.amazon.jsii.Kernel.get(this, "cpsTiEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.cpsTtl = software.amazon.jsii.Kernel.get(this, "cpsTtl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.ddosBgpAccessEnabled = software.amazon.jsii.Kernel.get(this, "ddosBgpAccessEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.ddosBgpAccessTtl = software.amazon.jsii.Kernel.get(this, "ddosBgpAccessTtl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.ddosCooAccessCollectionPolicy = software.amazon.jsii.Kernel.get(this, "ddosCooAccessCollectionPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.ddosCooAccessEnabled = software.amazon.jsii.Kernel.get(this, "ddosCooAccessEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.ddosCooAccessPolicySetting = software.amazon.jsii.Kernel.get(this, "ddosCooAccessPolicySetting", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.ddosCooAccessTiEnabled = software.amazon.jsii.Kernel.get(this, "ddosCooAccessTiEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.ddosCooAccessTtl = software.amazon.jsii.Kernel.get(this, "ddosCooAccessTtl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.ddosDipAccessEnabled = software.amazon.jsii.Kernel.get(this, "ddosDipAccessEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.ddosDipAccessTtl = software.amazon.jsii.Kernel.get(this, "ddosDipAccessTtl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.dnsIntranetCollectionPolicy = software.amazon.jsii.Kernel.get(this, "dnsIntranetCollectionPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.dnsIntranetEnabled = software.amazon.jsii.Kernel.get(this, "dnsIntranetEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.dnsIntranetTtl = software.amazon.jsii.Kernel.get(this, "dnsIntranetTtl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.dnsSyncEnabled = software.amazon.jsii.Kernel.get(this, "dnsSyncEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.dnsSyncTtl = software.amazon.jsii.Kernel.get(this, "dnsSyncTtl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.drdsAuditCollectionPolicy = software.amazon.jsii.Kernel.get(this, "drdsAuditCollectionPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.drdsAuditEnabled = software.amazon.jsii.Kernel.get(this, "drdsAuditEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.drdsAuditPolicySetting = software.amazon.jsii.Kernel.get(this, "drdsAuditPolicySetting", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -4524,6 +5722,12 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 this.drdsAuditTtl = software.amazon.jsii.Kernel.get(this, "drdsAuditTtl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.drdsSyncEnabled = software.amazon.jsii.Kernel.get(this, "drdsSyncEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.drdsSyncTtl = software.amazon.jsii.Kernel.get(this, "drdsSyncTtl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.idaasMngCollectionPolicy = software.amazon.jsii.Kernel.get(this, "idaasMngCollectionPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.idaasMngEnabled = software.amazon.jsii.Kernel.get(this, "idaasMngEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.idaasMngTtl = software.amazon.jsii.Kernel.get(this, "idaasMngTtl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.idaasUserCollectionPolicy = software.amazon.jsii.Kernel.get(this, "idaasUserCollectionPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.idaasUserEnabled = software.amazon.jsii.Kernel.get(this, "idaasUserEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.idaasUserTtl = software.amazon.jsii.Kernel.get(this, "idaasUserTtl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.k8SAuditCollectionPolicy = software.amazon.jsii.Kernel.get(this, "k8SAuditCollectionPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.k8SAuditEnabled = software.amazon.jsii.Kernel.get(this, "k8SAuditEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.k8SAuditPolicySetting = software.amazon.jsii.Kernel.get(this, "k8SAuditPolicySetting", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -4559,6 +5763,9 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 this.polardbAuditCollectionPolicy = software.amazon.jsii.Kernel.get(this, "polardbAuditCollectionPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.polardbAuditPolicySetting = software.amazon.jsii.Kernel.get(this, "polardbAuditPolicySetting", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.polardbEnabled = software.amazon.jsii.Kernel.get(this, "polardbEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.polardbErrorCollectionPolicy = software.amazon.jsii.Kernel.get(this, "polardbErrorCollectionPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.polardbErrorEnabled = software.amazon.jsii.Kernel.get(this, "polardbErrorEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.polardbErrorTtl = software.amazon.jsii.Kernel.get(this, "polardbErrorTtl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.polardbPerfCollectionPolicy = software.amazon.jsii.Kernel.get(this, "polardbPerfCollectionPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.polardbPerfEnabled = software.amazon.jsii.Kernel.get(this, "polardbPerfEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.polardbPerfPolicySetting = software.amazon.jsii.Kernel.get(this, "polardbPerfPolicySetting", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -4574,6 +5781,9 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 this.rdsAuditCollectionPolicy = software.amazon.jsii.Kernel.get(this, "rdsAuditCollectionPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.rdsAuditPolicySetting = software.amazon.jsii.Kernel.get(this, "rdsAuditPolicySetting", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.rdsEnabled = software.amazon.jsii.Kernel.get(this, "rdsEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.rdsErrorCollectionPolicy = software.amazon.jsii.Kernel.get(this, "rdsErrorCollectionPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.rdsErrorEnabled = software.amazon.jsii.Kernel.get(this, "rdsErrorEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.rdsErrorTtl = software.amazon.jsii.Kernel.get(this, "rdsErrorTtl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.rdsPerfCollectionPolicy = software.amazon.jsii.Kernel.get(this, "rdsPerfCollectionPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.rdsPerfEnabled = software.amazon.jsii.Kernel.get(this, "rdsPerfEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.rdsPerfPolicySetting = software.amazon.jsii.Kernel.get(this, "rdsPerfPolicySetting", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -4595,6 +5805,7 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 this.redisSyncTtl = software.amazon.jsii.Kernel.get(this, "redisSyncTtl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.sasCrackEnabled = software.amazon.jsii.Kernel.get(this, "sasCrackEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.sasDnsEnabled = software.amazon.jsii.Kernel.get(this, "sasDnsEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.sasDnsQueryEnabled = software.amazon.jsii.Kernel.get(this, "sasDnsQueryEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.sasHttpEnabled = software.amazon.jsii.Kernel.get(this, "sasHttpEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.sasLocalDnsEnabled = software.amazon.jsii.Kernel.get(this, "sasLocalDnsEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.sasLoginEnabled = software.amazon.jsii.Kernel.get(this, "sasLoginEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -4616,6 +5827,11 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 this.slbAccessTtl = software.amazon.jsii.Kernel.get(this, "slbAccessTtl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.slbSyncEnabled = software.amazon.jsii.Kernel.get(this, "slbSyncEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.slbSyncTtl = software.amazon.jsii.Kernel.get(this, "slbSyncTtl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.vpcFlowCollectionPolicy = software.amazon.jsii.Kernel.get(this, "vpcFlowCollectionPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.vpcFlowEnabled = software.amazon.jsii.Kernel.get(this, "vpcFlowEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.vpcFlowTtl = software.amazon.jsii.Kernel.get(this, "vpcFlowTtl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.vpcSyncEnabled = software.amazon.jsii.Kernel.get(this, "vpcSyncEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.vpcSyncTtl = software.amazon.jsii.Kernel.get(this, "vpcSyncTtl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.wafAccessCollectionPolicy = software.amazon.jsii.Kernel.get(this, "wafAccessCollectionPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.wafAccessPolicySetting = software.amazon.jsii.Kernel.get(this, "wafAccessPolicySetting", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.wafEnabled = software.amazon.jsii.Kernel.get(this, "wafEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -4633,6 +5849,11 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 this.actiontrailOpenapiPolicySetting = builder.actiontrailOpenapiPolicySetting;
                 this.actiontrailTiEnabled = builder.actiontrailTiEnabled;
                 this.actiontrailTtl = builder.actiontrailTtl;
+                this.albAccessCollectionPolicy = builder.albAccessCollectionPolicy;
+                this.albAccessEnabled = builder.albAccessEnabled;
+                this.albAccessTtl = builder.albAccessTtl;
+                this.albSyncEnabled = builder.albSyncEnabled;
+                this.albSyncTtl = builder.albSyncTtl;
                 this.apigatewayAccessCollectionPolicy = builder.apigatewayAccessCollectionPolicy;
                 this.apigatewayAccessPolicySetting = builder.apigatewayAccessPolicySetting;
                 this.apigatewayEnabled = builder.apigatewayEnabled;
@@ -4648,21 +5869,36 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 this.bastionEnabled = builder.bastionEnabled;
                 this.bastionTiEnabled = builder.bastionTiEnabled;
                 this.bastionTtl = builder.bastionTtl;
+                this.cloudconfigChangeEnabled = builder.cloudconfigChangeEnabled;
+                this.cloudconfigChangeTtl = builder.cloudconfigChangeTtl;
+                this.cloudconfigNoncomEnabled = builder.cloudconfigNoncomEnabled;
+                this.cloudconfigNoncomTtl = builder.cloudconfigNoncomTtl;
                 this.cloudfirewallAccessCollectionPolicy = builder.cloudfirewallAccessCollectionPolicy;
                 this.cloudfirewallAccessPolicySetting = builder.cloudfirewallAccessPolicySetting;
                 this.cloudfirewallEnabled = builder.cloudfirewallEnabled;
                 this.cloudfirewallTiEnabled = builder.cloudfirewallTiEnabled;
                 this.cloudfirewallTtl = builder.cloudfirewallTtl;
+                this.cloudfirewallVpcEnabled = builder.cloudfirewallVpcEnabled;
+                this.cloudfirewallVpcTtl = builder.cloudfirewallVpcTtl;
                 this.cpsCallbackCollectionPolicy = builder.cpsCallbackCollectionPolicy;
                 this.cpsCallbackPolicySetting = builder.cpsCallbackPolicySetting;
                 this.cpsEnabled = builder.cpsEnabled;
                 this.cpsTiEnabled = builder.cpsTiEnabled;
                 this.cpsTtl = builder.cpsTtl;
+                this.ddosBgpAccessEnabled = builder.ddosBgpAccessEnabled;
+                this.ddosBgpAccessTtl = builder.ddosBgpAccessTtl;
                 this.ddosCooAccessCollectionPolicy = builder.ddosCooAccessCollectionPolicy;
                 this.ddosCooAccessEnabled = builder.ddosCooAccessEnabled;
                 this.ddosCooAccessPolicySetting = builder.ddosCooAccessPolicySetting;
                 this.ddosCooAccessTiEnabled = builder.ddosCooAccessTiEnabled;
                 this.ddosCooAccessTtl = builder.ddosCooAccessTtl;
+                this.ddosDipAccessEnabled = builder.ddosDipAccessEnabled;
+                this.ddosDipAccessTtl = builder.ddosDipAccessTtl;
+                this.dnsIntranetCollectionPolicy = builder.dnsIntranetCollectionPolicy;
+                this.dnsIntranetEnabled = builder.dnsIntranetEnabled;
+                this.dnsIntranetTtl = builder.dnsIntranetTtl;
+                this.dnsSyncEnabled = builder.dnsSyncEnabled;
+                this.dnsSyncTtl = builder.dnsSyncTtl;
                 this.drdsAuditCollectionPolicy = builder.drdsAuditCollectionPolicy;
                 this.drdsAuditEnabled = builder.drdsAuditEnabled;
                 this.drdsAuditPolicySetting = builder.drdsAuditPolicySetting;
@@ -4670,6 +5906,12 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 this.drdsAuditTtl = builder.drdsAuditTtl;
                 this.drdsSyncEnabled = builder.drdsSyncEnabled;
                 this.drdsSyncTtl = builder.drdsSyncTtl;
+                this.idaasMngCollectionPolicy = builder.idaasMngCollectionPolicy;
+                this.idaasMngEnabled = builder.idaasMngEnabled;
+                this.idaasMngTtl = builder.idaasMngTtl;
+                this.idaasUserCollectionPolicy = builder.idaasUserCollectionPolicy;
+                this.idaasUserEnabled = builder.idaasUserEnabled;
+                this.idaasUserTtl = builder.idaasUserTtl;
                 this.k8SAuditCollectionPolicy = builder.k8SAuditCollectionPolicy;
                 this.k8SAuditEnabled = builder.k8SAuditEnabled;
                 this.k8SAuditPolicySetting = builder.k8SAuditPolicySetting;
@@ -4705,6 +5947,9 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 this.polardbAuditCollectionPolicy = builder.polardbAuditCollectionPolicy;
                 this.polardbAuditPolicySetting = builder.polardbAuditPolicySetting;
                 this.polardbEnabled = builder.polardbEnabled;
+                this.polardbErrorCollectionPolicy = builder.polardbErrorCollectionPolicy;
+                this.polardbErrorEnabled = builder.polardbErrorEnabled;
+                this.polardbErrorTtl = builder.polardbErrorTtl;
                 this.polardbPerfCollectionPolicy = builder.polardbPerfCollectionPolicy;
                 this.polardbPerfEnabled = builder.polardbPerfEnabled;
                 this.polardbPerfPolicySetting = builder.polardbPerfPolicySetting;
@@ -4720,6 +5965,9 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 this.rdsAuditCollectionPolicy = builder.rdsAuditCollectionPolicy;
                 this.rdsAuditPolicySetting = builder.rdsAuditPolicySetting;
                 this.rdsEnabled = builder.rdsEnabled;
+                this.rdsErrorCollectionPolicy = builder.rdsErrorCollectionPolicy;
+                this.rdsErrorEnabled = builder.rdsErrorEnabled;
+                this.rdsErrorTtl = builder.rdsErrorTtl;
                 this.rdsPerfCollectionPolicy = builder.rdsPerfCollectionPolicy;
                 this.rdsPerfEnabled = builder.rdsPerfEnabled;
                 this.rdsPerfPolicySetting = builder.rdsPerfPolicySetting;
@@ -4741,6 +5989,7 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 this.redisSyncTtl = builder.redisSyncTtl;
                 this.sasCrackEnabled = builder.sasCrackEnabled;
                 this.sasDnsEnabled = builder.sasDnsEnabled;
+                this.sasDnsQueryEnabled = builder.sasDnsQueryEnabled;
                 this.sasHttpEnabled = builder.sasHttpEnabled;
                 this.sasLocalDnsEnabled = builder.sasLocalDnsEnabled;
                 this.sasLoginEnabled = builder.sasLoginEnabled;
@@ -4762,6 +6011,11 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 this.slbAccessTtl = builder.slbAccessTtl;
                 this.slbSyncEnabled = builder.slbSyncEnabled;
                 this.slbSyncTtl = builder.slbSyncTtl;
+                this.vpcFlowCollectionPolicy = builder.vpcFlowCollectionPolicy;
+                this.vpcFlowEnabled = builder.vpcFlowEnabled;
+                this.vpcFlowTtl = builder.vpcFlowTtl;
+                this.vpcSyncEnabled = builder.vpcSyncEnabled;
+                this.vpcSyncTtl = builder.vpcSyncTtl;
                 this.wafAccessCollectionPolicy = builder.wafAccessCollectionPolicy;
                 this.wafAccessPolicySetting = builder.wafAccessPolicySetting;
                 this.wafEnabled = builder.wafEnabled;
@@ -4792,6 +6046,31 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final java.lang.Object getActiontrailTtl() {
                 return this.actiontrailTtl;
+            }
+
+            @Override
+            public final java.lang.Object getAlbAccessCollectionPolicy() {
+                return this.albAccessCollectionPolicy;
+            }
+
+            @Override
+            public final java.lang.Object getAlbAccessEnabled() {
+                return this.albAccessEnabled;
+            }
+
+            @Override
+            public final java.lang.Object getAlbAccessTtl() {
+                return this.albAccessTtl;
+            }
+
+            @Override
+            public final java.lang.Object getAlbSyncEnabled() {
+                return this.albSyncEnabled;
+            }
+
+            @Override
+            public final java.lang.Object getAlbSyncTtl() {
+                return this.albSyncTtl;
             }
 
             @Override
@@ -4870,6 +6149,26 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getCloudconfigChangeEnabled() {
+                return this.cloudconfigChangeEnabled;
+            }
+
+            @Override
+            public final java.lang.Object getCloudconfigChangeTtl() {
+                return this.cloudconfigChangeTtl;
+            }
+
+            @Override
+            public final java.lang.Object getCloudconfigNoncomEnabled() {
+                return this.cloudconfigNoncomEnabled;
+            }
+
+            @Override
+            public final java.lang.Object getCloudconfigNoncomTtl() {
+                return this.cloudconfigNoncomTtl;
+            }
+
+            @Override
             public final java.lang.Object getCloudfirewallAccessCollectionPolicy() {
                 return this.cloudfirewallAccessCollectionPolicy;
             }
@@ -4892,6 +6191,16 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final java.lang.Object getCloudfirewallTtl() {
                 return this.cloudfirewallTtl;
+            }
+
+            @Override
+            public final java.lang.Object getCloudfirewallVpcEnabled() {
+                return this.cloudfirewallVpcEnabled;
+            }
+
+            @Override
+            public final java.lang.Object getCloudfirewallVpcTtl() {
+                return this.cloudfirewallVpcTtl;
             }
 
             @Override
@@ -4920,6 +6229,16 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getDdosBgpAccessEnabled() {
+                return this.ddosBgpAccessEnabled;
+            }
+
+            @Override
+            public final java.lang.Object getDdosBgpAccessTtl() {
+                return this.ddosBgpAccessTtl;
+            }
+
+            @Override
             public final java.lang.Object getDdosCooAccessCollectionPolicy() {
                 return this.ddosCooAccessCollectionPolicy;
             }
@@ -4942,6 +6261,41 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final java.lang.Object getDdosCooAccessTtl() {
                 return this.ddosCooAccessTtl;
+            }
+
+            @Override
+            public final java.lang.Object getDdosDipAccessEnabled() {
+                return this.ddosDipAccessEnabled;
+            }
+
+            @Override
+            public final java.lang.Object getDdosDipAccessTtl() {
+                return this.ddosDipAccessTtl;
+            }
+
+            @Override
+            public final java.lang.Object getDnsIntranetCollectionPolicy() {
+                return this.dnsIntranetCollectionPolicy;
+            }
+
+            @Override
+            public final java.lang.Object getDnsIntranetEnabled() {
+                return this.dnsIntranetEnabled;
+            }
+
+            @Override
+            public final java.lang.Object getDnsIntranetTtl() {
+                return this.dnsIntranetTtl;
+            }
+
+            @Override
+            public final java.lang.Object getDnsSyncEnabled() {
+                return this.dnsSyncEnabled;
+            }
+
+            @Override
+            public final java.lang.Object getDnsSyncTtl() {
+                return this.dnsSyncTtl;
             }
 
             @Override
@@ -4977,6 +6331,36 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final java.lang.Object getDrdsSyncTtl() {
                 return this.drdsSyncTtl;
+            }
+
+            @Override
+            public final java.lang.Object getIdaasMngCollectionPolicy() {
+                return this.idaasMngCollectionPolicy;
+            }
+
+            @Override
+            public final java.lang.Object getIdaasMngEnabled() {
+                return this.idaasMngEnabled;
+            }
+
+            @Override
+            public final java.lang.Object getIdaasMngTtl() {
+                return this.idaasMngTtl;
+            }
+
+            @Override
+            public final java.lang.Object getIdaasUserCollectionPolicy() {
+                return this.idaasUserCollectionPolicy;
+            }
+
+            @Override
+            public final java.lang.Object getIdaasUserEnabled() {
+                return this.idaasUserEnabled;
+            }
+
+            @Override
+            public final java.lang.Object getIdaasUserTtl() {
+                return this.idaasUserTtl;
             }
 
             @Override
@@ -5155,6 +6539,21 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getPolardbErrorCollectionPolicy() {
+                return this.polardbErrorCollectionPolicy;
+            }
+
+            @Override
+            public final java.lang.Object getPolardbErrorEnabled() {
+                return this.polardbErrorEnabled;
+            }
+
+            @Override
+            public final java.lang.Object getPolardbErrorTtl() {
+                return this.polardbErrorTtl;
+            }
+
+            @Override
             public final java.lang.Object getPolardbPerfCollectionPolicy() {
                 return this.polardbPerfCollectionPolicy;
             }
@@ -5227,6 +6626,21 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final java.lang.Object getRdsEnabled() {
                 return this.rdsEnabled;
+            }
+
+            @Override
+            public final java.lang.Object getRdsErrorCollectionPolicy() {
+                return this.rdsErrorCollectionPolicy;
+            }
+
+            @Override
+            public final java.lang.Object getRdsErrorEnabled() {
+                return this.rdsErrorEnabled;
+            }
+
+            @Override
+            public final java.lang.Object getRdsErrorTtl() {
+                return this.rdsErrorTtl;
             }
 
             @Override
@@ -5335,6 +6749,11 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getSasDnsQueryEnabled() {
+                return this.sasDnsQueryEnabled;
+            }
+
+            @Override
             public final java.lang.Object getSasHttpEnabled() {
                 return this.sasHttpEnabled;
             }
@@ -5440,6 +6859,31 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getVpcFlowCollectionPolicy() {
+                return this.vpcFlowCollectionPolicy;
+            }
+
+            @Override
+            public final java.lang.Object getVpcFlowEnabled() {
+                return this.vpcFlowEnabled;
+            }
+
+            @Override
+            public final java.lang.Object getVpcFlowTtl() {
+                return this.vpcFlowTtl;
+            }
+
+            @Override
+            public final java.lang.Object getVpcSyncEnabled() {
+                return this.vpcSyncEnabled;
+            }
+
+            @Override
+            public final java.lang.Object getVpcSyncTtl() {
+                return this.vpcSyncTtl;
+            }
+
+            @Override
             public final java.lang.Object getWafAccessCollectionPolicy() {
                 return this.wafAccessCollectionPolicy;
             }
@@ -5484,6 +6928,21 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 }
                 if (this.getActiontrailTtl() != null) {
                     data.set("actiontrailTtl", om.valueToTree(this.getActiontrailTtl()));
+                }
+                if (this.getAlbAccessCollectionPolicy() != null) {
+                    data.set("albAccessCollectionPolicy", om.valueToTree(this.getAlbAccessCollectionPolicy()));
+                }
+                if (this.getAlbAccessEnabled() != null) {
+                    data.set("albAccessEnabled", om.valueToTree(this.getAlbAccessEnabled()));
+                }
+                if (this.getAlbAccessTtl() != null) {
+                    data.set("albAccessTtl", om.valueToTree(this.getAlbAccessTtl()));
+                }
+                if (this.getAlbSyncEnabled() != null) {
+                    data.set("albSyncEnabled", om.valueToTree(this.getAlbSyncEnabled()));
+                }
+                if (this.getAlbSyncTtl() != null) {
+                    data.set("albSyncTtl", om.valueToTree(this.getAlbSyncTtl()));
                 }
                 if (this.getApigatewayAccessCollectionPolicy() != null) {
                     data.set("apigatewayAccessCollectionPolicy", om.valueToTree(this.getApigatewayAccessCollectionPolicy()));
@@ -5530,6 +6989,18 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.getBastionTtl() != null) {
                     data.set("bastionTtl", om.valueToTree(this.getBastionTtl()));
                 }
+                if (this.getCloudconfigChangeEnabled() != null) {
+                    data.set("cloudconfigChangeEnabled", om.valueToTree(this.getCloudconfigChangeEnabled()));
+                }
+                if (this.getCloudconfigChangeTtl() != null) {
+                    data.set("cloudconfigChangeTtl", om.valueToTree(this.getCloudconfigChangeTtl()));
+                }
+                if (this.getCloudconfigNoncomEnabled() != null) {
+                    data.set("cloudconfigNoncomEnabled", om.valueToTree(this.getCloudconfigNoncomEnabled()));
+                }
+                if (this.getCloudconfigNoncomTtl() != null) {
+                    data.set("cloudconfigNoncomTtl", om.valueToTree(this.getCloudconfigNoncomTtl()));
+                }
                 if (this.getCloudfirewallAccessCollectionPolicy() != null) {
                     data.set("cloudfirewallAccessCollectionPolicy", om.valueToTree(this.getCloudfirewallAccessCollectionPolicy()));
                 }
@@ -5544,6 +7015,12 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 }
                 if (this.getCloudfirewallTtl() != null) {
                     data.set("cloudfirewallTtl", om.valueToTree(this.getCloudfirewallTtl()));
+                }
+                if (this.getCloudfirewallVpcEnabled() != null) {
+                    data.set("cloudfirewallVpcEnabled", om.valueToTree(this.getCloudfirewallVpcEnabled()));
+                }
+                if (this.getCloudfirewallVpcTtl() != null) {
+                    data.set("cloudfirewallVpcTtl", om.valueToTree(this.getCloudfirewallVpcTtl()));
                 }
                 if (this.getCpsCallbackCollectionPolicy() != null) {
                     data.set("cpsCallbackCollectionPolicy", om.valueToTree(this.getCpsCallbackCollectionPolicy()));
@@ -5560,6 +7037,12 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.getCpsTtl() != null) {
                     data.set("cpsTtl", om.valueToTree(this.getCpsTtl()));
                 }
+                if (this.getDdosBgpAccessEnabled() != null) {
+                    data.set("ddosBgpAccessEnabled", om.valueToTree(this.getDdosBgpAccessEnabled()));
+                }
+                if (this.getDdosBgpAccessTtl() != null) {
+                    data.set("ddosBgpAccessTtl", om.valueToTree(this.getDdosBgpAccessTtl()));
+                }
                 if (this.getDdosCooAccessCollectionPolicy() != null) {
                     data.set("ddosCooAccessCollectionPolicy", om.valueToTree(this.getDdosCooAccessCollectionPolicy()));
                 }
@@ -5574,6 +7057,27 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 }
                 if (this.getDdosCooAccessTtl() != null) {
                     data.set("ddosCooAccessTtl", om.valueToTree(this.getDdosCooAccessTtl()));
+                }
+                if (this.getDdosDipAccessEnabled() != null) {
+                    data.set("ddosDipAccessEnabled", om.valueToTree(this.getDdosDipAccessEnabled()));
+                }
+                if (this.getDdosDipAccessTtl() != null) {
+                    data.set("ddosDipAccessTtl", om.valueToTree(this.getDdosDipAccessTtl()));
+                }
+                if (this.getDnsIntranetCollectionPolicy() != null) {
+                    data.set("dnsIntranetCollectionPolicy", om.valueToTree(this.getDnsIntranetCollectionPolicy()));
+                }
+                if (this.getDnsIntranetEnabled() != null) {
+                    data.set("dnsIntranetEnabled", om.valueToTree(this.getDnsIntranetEnabled()));
+                }
+                if (this.getDnsIntranetTtl() != null) {
+                    data.set("dnsIntranetTtl", om.valueToTree(this.getDnsIntranetTtl()));
+                }
+                if (this.getDnsSyncEnabled() != null) {
+                    data.set("dnsSyncEnabled", om.valueToTree(this.getDnsSyncEnabled()));
+                }
+                if (this.getDnsSyncTtl() != null) {
+                    data.set("dnsSyncTtl", om.valueToTree(this.getDnsSyncTtl()));
                 }
                 if (this.getDrdsAuditCollectionPolicy() != null) {
                     data.set("drdsAuditCollectionPolicy", om.valueToTree(this.getDrdsAuditCollectionPolicy()));
@@ -5595,6 +7099,24 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 }
                 if (this.getDrdsSyncTtl() != null) {
                     data.set("drdsSyncTtl", om.valueToTree(this.getDrdsSyncTtl()));
+                }
+                if (this.getIdaasMngCollectionPolicy() != null) {
+                    data.set("idaasMngCollectionPolicy", om.valueToTree(this.getIdaasMngCollectionPolicy()));
+                }
+                if (this.getIdaasMngEnabled() != null) {
+                    data.set("idaasMngEnabled", om.valueToTree(this.getIdaasMngEnabled()));
+                }
+                if (this.getIdaasMngTtl() != null) {
+                    data.set("idaasMngTtl", om.valueToTree(this.getIdaasMngTtl()));
+                }
+                if (this.getIdaasUserCollectionPolicy() != null) {
+                    data.set("idaasUserCollectionPolicy", om.valueToTree(this.getIdaasUserCollectionPolicy()));
+                }
+                if (this.getIdaasUserEnabled() != null) {
+                    data.set("idaasUserEnabled", om.valueToTree(this.getIdaasUserEnabled()));
+                }
+                if (this.getIdaasUserTtl() != null) {
+                    data.set("idaasUserTtl", om.valueToTree(this.getIdaasUserTtl()));
                 }
                 if (this.getK8SAuditCollectionPolicy() != null) {
                     data.set("k8SAuditCollectionPolicy", om.valueToTree(this.getK8SAuditCollectionPolicy()));
@@ -5701,6 +7223,15 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.getPolardbEnabled() != null) {
                     data.set("polardbEnabled", om.valueToTree(this.getPolardbEnabled()));
                 }
+                if (this.getPolardbErrorCollectionPolicy() != null) {
+                    data.set("polardbErrorCollectionPolicy", om.valueToTree(this.getPolardbErrorCollectionPolicy()));
+                }
+                if (this.getPolardbErrorEnabled() != null) {
+                    data.set("polardbErrorEnabled", om.valueToTree(this.getPolardbErrorEnabled()));
+                }
+                if (this.getPolardbErrorTtl() != null) {
+                    data.set("polardbErrorTtl", om.valueToTree(this.getPolardbErrorTtl()));
+                }
                 if (this.getPolardbPerfCollectionPolicy() != null) {
                     data.set("polardbPerfCollectionPolicy", om.valueToTree(this.getPolardbPerfCollectionPolicy()));
                 }
@@ -5745,6 +7276,15 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 }
                 if (this.getRdsEnabled() != null) {
                     data.set("rdsEnabled", om.valueToTree(this.getRdsEnabled()));
+                }
+                if (this.getRdsErrorCollectionPolicy() != null) {
+                    data.set("rdsErrorCollectionPolicy", om.valueToTree(this.getRdsErrorCollectionPolicy()));
+                }
+                if (this.getRdsErrorEnabled() != null) {
+                    data.set("rdsErrorEnabled", om.valueToTree(this.getRdsErrorEnabled()));
+                }
+                if (this.getRdsErrorTtl() != null) {
+                    data.set("rdsErrorTtl", om.valueToTree(this.getRdsErrorTtl()));
                 }
                 if (this.getRdsPerfCollectionPolicy() != null) {
                     data.set("rdsPerfCollectionPolicy", om.valueToTree(this.getRdsPerfCollectionPolicy()));
@@ -5809,6 +7349,9 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.getSasDnsEnabled() != null) {
                     data.set("sasDnsEnabled", om.valueToTree(this.getSasDnsEnabled()));
                 }
+                if (this.getSasDnsQueryEnabled() != null) {
+                    data.set("sasDnsQueryEnabled", om.valueToTree(this.getSasDnsQueryEnabled()));
+                }
                 if (this.getSasHttpEnabled() != null) {
                     data.set("sasHttpEnabled", om.valueToTree(this.getSasHttpEnabled()));
                 }
@@ -5872,6 +7415,21 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.getSlbSyncTtl() != null) {
                     data.set("slbSyncTtl", om.valueToTree(this.getSlbSyncTtl()));
                 }
+                if (this.getVpcFlowCollectionPolicy() != null) {
+                    data.set("vpcFlowCollectionPolicy", om.valueToTree(this.getVpcFlowCollectionPolicy()));
+                }
+                if (this.getVpcFlowEnabled() != null) {
+                    data.set("vpcFlowEnabled", om.valueToTree(this.getVpcFlowEnabled()));
+                }
+                if (this.getVpcFlowTtl() != null) {
+                    data.set("vpcFlowTtl", om.valueToTree(this.getVpcFlowTtl()));
+                }
+                if (this.getVpcSyncEnabled() != null) {
+                    data.set("vpcSyncEnabled", om.valueToTree(this.getVpcSyncEnabled()));
+                }
+                if (this.getVpcSyncTtl() != null) {
+                    data.set("vpcSyncTtl", om.valueToTree(this.getVpcSyncTtl()));
+                }
                 if (this.getWafAccessCollectionPolicy() != null) {
                     data.set("wafAccessCollectionPolicy", om.valueToTree(this.getWafAccessCollectionPolicy()));
                 }
@@ -5910,6 +7468,11 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.actiontrailOpenapiPolicySetting != null ? !this.actiontrailOpenapiPolicySetting.equals(that.actiontrailOpenapiPolicySetting) : that.actiontrailOpenapiPolicySetting != null) return false;
                 if (this.actiontrailTiEnabled != null ? !this.actiontrailTiEnabled.equals(that.actiontrailTiEnabled) : that.actiontrailTiEnabled != null) return false;
                 if (this.actiontrailTtl != null ? !this.actiontrailTtl.equals(that.actiontrailTtl) : that.actiontrailTtl != null) return false;
+                if (this.albAccessCollectionPolicy != null ? !this.albAccessCollectionPolicy.equals(that.albAccessCollectionPolicy) : that.albAccessCollectionPolicy != null) return false;
+                if (this.albAccessEnabled != null ? !this.albAccessEnabled.equals(that.albAccessEnabled) : that.albAccessEnabled != null) return false;
+                if (this.albAccessTtl != null ? !this.albAccessTtl.equals(that.albAccessTtl) : that.albAccessTtl != null) return false;
+                if (this.albSyncEnabled != null ? !this.albSyncEnabled.equals(that.albSyncEnabled) : that.albSyncEnabled != null) return false;
+                if (this.albSyncTtl != null ? !this.albSyncTtl.equals(that.albSyncTtl) : that.albSyncTtl != null) return false;
                 if (this.apigatewayAccessCollectionPolicy != null ? !this.apigatewayAccessCollectionPolicy.equals(that.apigatewayAccessCollectionPolicy) : that.apigatewayAccessCollectionPolicy != null) return false;
                 if (this.apigatewayAccessPolicySetting != null ? !this.apigatewayAccessPolicySetting.equals(that.apigatewayAccessPolicySetting) : that.apigatewayAccessPolicySetting != null) return false;
                 if (this.apigatewayEnabled != null ? !this.apigatewayEnabled.equals(that.apigatewayEnabled) : that.apigatewayEnabled != null) return false;
@@ -5925,21 +7488,36 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.bastionEnabled != null ? !this.bastionEnabled.equals(that.bastionEnabled) : that.bastionEnabled != null) return false;
                 if (this.bastionTiEnabled != null ? !this.bastionTiEnabled.equals(that.bastionTiEnabled) : that.bastionTiEnabled != null) return false;
                 if (this.bastionTtl != null ? !this.bastionTtl.equals(that.bastionTtl) : that.bastionTtl != null) return false;
+                if (this.cloudconfigChangeEnabled != null ? !this.cloudconfigChangeEnabled.equals(that.cloudconfigChangeEnabled) : that.cloudconfigChangeEnabled != null) return false;
+                if (this.cloudconfigChangeTtl != null ? !this.cloudconfigChangeTtl.equals(that.cloudconfigChangeTtl) : that.cloudconfigChangeTtl != null) return false;
+                if (this.cloudconfigNoncomEnabled != null ? !this.cloudconfigNoncomEnabled.equals(that.cloudconfigNoncomEnabled) : that.cloudconfigNoncomEnabled != null) return false;
+                if (this.cloudconfigNoncomTtl != null ? !this.cloudconfigNoncomTtl.equals(that.cloudconfigNoncomTtl) : that.cloudconfigNoncomTtl != null) return false;
                 if (this.cloudfirewallAccessCollectionPolicy != null ? !this.cloudfirewallAccessCollectionPolicy.equals(that.cloudfirewallAccessCollectionPolicy) : that.cloudfirewallAccessCollectionPolicy != null) return false;
                 if (this.cloudfirewallAccessPolicySetting != null ? !this.cloudfirewallAccessPolicySetting.equals(that.cloudfirewallAccessPolicySetting) : that.cloudfirewallAccessPolicySetting != null) return false;
                 if (this.cloudfirewallEnabled != null ? !this.cloudfirewallEnabled.equals(that.cloudfirewallEnabled) : that.cloudfirewallEnabled != null) return false;
                 if (this.cloudfirewallTiEnabled != null ? !this.cloudfirewallTiEnabled.equals(that.cloudfirewallTiEnabled) : that.cloudfirewallTiEnabled != null) return false;
                 if (this.cloudfirewallTtl != null ? !this.cloudfirewallTtl.equals(that.cloudfirewallTtl) : that.cloudfirewallTtl != null) return false;
+                if (this.cloudfirewallVpcEnabled != null ? !this.cloudfirewallVpcEnabled.equals(that.cloudfirewallVpcEnabled) : that.cloudfirewallVpcEnabled != null) return false;
+                if (this.cloudfirewallVpcTtl != null ? !this.cloudfirewallVpcTtl.equals(that.cloudfirewallVpcTtl) : that.cloudfirewallVpcTtl != null) return false;
                 if (this.cpsCallbackCollectionPolicy != null ? !this.cpsCallbackCollectionPolicy.equals(that.cpsCallbackCollectionPolicy) : that.cpsCallbackCollectionPolicy != null) return false;
                 if (this.cpsCallbackPolicySetting != null ? !this.cpsCallbackPolicySetting.equals(that.cpsCallbackPolicySetting) : that.cpsCallbackPolicySetting != null) return false;
                 if (this.cpsEnabled != null ? !this.cpsEnabled.equals(that.cpsEnabled) : that.cpsEnabled != null) return false;
                 if (this.cpsTiEnabled != null ? !this.cpsTiEnabled.equals(that.cpsTiEnabled) : that.cpsTiEnabled != null) return false;
                 if (this.cpsTtl != null ? !this.cpsTtl.equals(that.cpsTtl) : that.cpsTtl != null) return false;
+                if (this.ddosBgpAccessEnabled != null ? !this.ddosBgpAccessEnabled.equals(that.ddosBgpAccessEnabled) : that.ddosBgpAccessEnabled != null) return false;
+                if (this.ddosBgpAccessTtl != null ? !this.ddosBgpAccessTtl.equals(that.ddosBgpAccessTtl) : that.ddosBgpAccessTtl != null) return false;
                 if (this.ddosCooAccessCollectionPolicy != null ? !this.ddosCooAccessCollectionPolicy.equals(that.ddosCooAccessCollectionPolicy) : that.ddosCooAccessCollectionPolicy != null) return false;
                 if (this.ddosCooAccessEnabled != null ? !this.ddosCooAccessEnabled.equals(that.ddosCooAccessEnabled) : that.ddosCooAccessEnabled != null) return false;
                 if (this.ddosCooAccessPolicySetting != null ? !this.ddosCooAccessPolicySetting.equals(that.ddosCooAccessPolicySetting) : that.ddosCooAccessPolicySetting != null) return false;
                 if (this.ddosCooAccessTiEnabled != null ? !this.ddosCooAccessTiEnabled.equals(that.ddosCooAccessTiEnabled) : that.ddosCooAccessTiEnabled != null) return false;
                 if (this.ddosCooAccessTtl != null ? !this.ddosCooAccessTtl.equals(that.ddosCooAccessTtl) : that.ddosCooAccessTtl != null) return false;
+                if (this.ddosDipAccessEnabled != null ? !this.ddosDipAccessEnabled.equals(that.ddosDipAccessEnabled) : that.ddosDipAccessEnabled != null) return false;
+                if (this.ddosDipAccessTtl != null ? !this.ddosDipAccessTtl.equals(that.ddosDipAccessTtl) : that.ddosDipAccessTtl != null) return false;
+                if (this.dnsIntranetCollectionPolicy != null ? !this.dnsIntranetCollectionPolicy.equals(that.dnsIntranetCollectionPolicy) : that.dnsIntranetCollectionPolicy != null) return false;
+                if (this.dnsIntranetEnabled != null ? !this.dnsIntranetEnabled.equals(that.dnsIntranetEnabled) : that.dnsIntranetEnabled != null) return false;
+                if (this.dnsIntranetTtl != null ? !this.dnsIntranetTtl.equals(that.dnsIntranetTtl) : that.dnsIntranetTtl != null) return false;
+                if (this.dnsSyncEnabled != null ? !this.dnsSyncEnabled.equals(that.dnsSyncEnabled) : that.dnsSyncEnabled != null) return false;
+                if (this.dnsSyncTtl != null ? !this.dnsSyncTtl.equals(that.dnsSyncTtl) : that.dnsSyncTtl != null) return false;
                 if (this.drdsAuditCollectionPolicy != null ? !this.drdsAuditCollectionPolicy.equals(that.drdsAuditCollectionPolicy) : that.drdsAuditCollectionPolicy != null) return false;
                 if (this.drdsAuditEnabled != null ? !this.drdsAuditEnabled.equals(that.drdsAuditEnabled) : that.drdsAuditEnabled != null) return false;
                 if (this.drdsAuditPolicySetting != null ? !this.drdsAuditPolicySetting.equals(that.drdsAuditPolicySetting) : that.drdsAuditPolicySetting != null) return false;
@@ -5947,6 +7525,12 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.drdsAuditTtl != null ? !this.drdsAuditTtl.equals(that.drdsAuditTtl) : that.drdsAuditTtl != null) return false;
                 if (this.drdsSyncEnabled != null ? !this.drdsSyncEnabled.equals(that.drdsSyncEnabled) : that.drdsSyncEnabled != null) return false;
                 if (this.drdsSyncTtl != null ? !this.drdsSyncTtl.equals(that.drdsSyncTtl) : that.drdsSyncTtl != null) return false;
+                if (this.idaasMngCollectionPolicy != null ? !this.idaasMngCollectionPolicy.equals(that.idaasMngCollectionPolicy) : that.idaasMngCollectionPolicy != null) return false;
+                if (this.idaasMngEnabled != null ? !this.idaasMngEnabled.equals(that.idaasMngEnabled) : that.idaasMngEnabled != null) return false;
+                if (this.idaasMngTtl != null ? !this.idaasMngTtl.equals(that.idaasMngTtl) : that.idaasMngTtl != null) return false;
+                if (this.idaasUserCollectionPolicy != null ? !this.idaasUserCollectionPolicy.equals(that.idaasUserCollectionPolicy) : that.idaasUserCollectionPolicy != null) return false;
+                if (this.idaasUserEnabled != null ? !this.idaasUserEnabled.equals(that.idaasUserEnabled) : that.idaasUserEnabled != null) return false;
+                if (this.idaasUserTtl != null ? !this.idaasUserTtl.equals(that.idaasUserTtl) : that.idaasUserTtl != null) return false;
                 if (this.k8SAuditCollectionPolicy != null ? !this.k8SAuditCollectionPolicy.equals(that.k8SAuditCollectionPolicy) : that.k8SAuditCollectionPolicy != null) return false;
                 if (this.k8SAuditEnabled != null ? !this.k8SAuditEnabled.equals(that.k8SAuditEnabled) : that.k8SAuditEnabled != null) return false;
                 if (this.k8SAuditPolicySetting != null ? !this.k8SAuditPolicySetting.equals(that.k8SAuditPolicySetting) : that.k8SAuditPolicySetting != null) return false;
@@ -5982,6 +7566,9 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.polardbAuditCollectionPolicy != null ? !this.polardbAuditCollectionPolicy.equals(that.polardbAuditCollectionPolicy) : that.polardbAuditCollectionPolicy != null) return false;
                 if (this.polardbAuditPolicySetting != null ? !this.polardbAuditPolicySetting.equals(that.polardbAuditPolicySetting) : that.polardbAuditPolicySetting != null) return false;
                 if (this.polardbEnabled != null ? !this.polardbEnabled.equals(that.polardbEnabled) : that.polardbEnabled != null) return false;
+                if (this.polardbErrorCollectionPolicy != null ? !this.polardbErrorCollectionPolicy.equals(that.polardbErrorCollectionPolicy) : that.polardbErrorCollectionPolicy != null) return false;
+                if (this.polardbErrorEnabled != null ? !this.polardbErrorEnabled.equals(that.polardbErrorEnabled) : that.polardbErrorEnabled != null) return false;
+                if (this.polardbErrorTtl != null ? !this.polardbErrorTtl.equals(that.polardbErrorTtl) : that.polardbErrorTtl != null) return false;
                 if (this.polardbPerfCollectionPolicy != null ? !this.polardbPerfCollectionPolicy.equals(that.polardbPerfCollectionPolicy) : that.polardbPerfCollectionPolicy != null) return false;
                 if (this.polardbPerfEnabled != null ? !this.polardbPerfEnabled.equals(that.polardbPerfEnabled) : that.polardbPerfEnabled != null) return false;
                 if (this.polardbPerfPolicySetting != null ? !this.polardbPerfPolicySetting.equals(that.polardbPerfPolicySetting) : that.polardbPerfPolicySetting != null) return false;
@@ -5997,6 +7584,9 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.rdsAuditCollectionPolicy != null ? !this.rdsAuditCollectionPolicy.equals(that.rdsAuditCollectionPolicy) : that.rdsAuditCollectionPolicy != null) return false;
                 if (this.rdsAuditPolicySetting != null ? !this.rdsAuditPolicySetting.equals(that.rdsAuditPolicySetting) : that.rdsAuditPolicySetting != null) return false;
                 if (this.rdsEnabled != null ? !this.rdsEnabled.equals(that.rdsEnabled) : that.rdsEnabled != null) return false;
+                if (this.rdsErrorCollectionPolicy != null ? !this.rdsErrorCollectionPolicy.equals(that.rdsErrorCollectionPolicy) : that.rdsErrorCollectionPolicy != null) return false;
+                if (this.rdsErrorEnabled != null ? !this.rdsErrorEnabled.equals(that.rdsErrorEnabled) : that.rdsErrorEnabled != null) return false;
+                if (this.rdsErrorTtl != null ? !this.rdsErrorTtl.equals(that.rdsErrorTtl) : that.rdsErrorTtl != null) return false;
                 if (this.rdsPerfCollectionPolicy != null ? !this.rdsPerfCollectionPolicy.equals(that.rdsPerfCollectionPolicy) : that.rdsPerfCollectionPolicy != null) return false;
                 if (this.rdsPerfEnabled != null ? !this.rdsPerfEnabled.equals(that.rdsPerfEnabled) : that.rdsPerfEnabled != null) return false;
                 if (this.rdsPerfPolicySetting != null ? !this.rdsPerfPolicySetting.equals(that.rdsPerfPolicySetting) : that.rdsPerfPolicySetting != null) return false;
@@ -6018,6 +7608,7 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.redisSyncTtl != null ? !this.redisSyncTtl.equals(that.redisSyncTtl) : that.redisSyncTtl != null) return false;
                 if (this.sasCrackEnabled != null ? !this.sasCrackEnabled.equals(that.sasCrackEnabled) : that.sasCrackEnabled != null) return false;
                 if (this.sasDnsEnabled != null ? !this.sasDnsEnabled.equals(that.sasDnsEnabled) : that.sasDnsEnabled != null) return false;
+                if (this.sasDnsQueryEnabled != null ? !this.sasDnsQueryEnabled.equals(that.sasDnsQueryEnabled) : that.sasDnsQueryEnabled != null) return false;
                 if (this.sasHttpEnabled != null ? !this.sasHttpEnabled.equals(that.sasHttpEnabled) : that.sasHttpEnabled != null) return false;
                 if (this.sasLocalDnsEnabled != null ? !this.sasLocalDnsEnabled.equals(that.sasLocalDnsEnabled) : that.sasLocalDnsEnabled != null) return false;
                 if (this.sasLoginEnabled != null ? !this.sasLoginEnabled.equals(that.sasLoginEnabled) : that.sasLoginEnabled != null) return false;
@@ -6039,6 +7630,11 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.slbAccessTtl != null ? !this.slbAccessTtl.equals(that.slbAccessTtl) : that.slbAccessTtl != null) return false;
                 if (this.slbSyncEnabled != null ? !this.slbSyncEnabled.equals(that.slbSyncEnabled) : that.slbSyncEnabled != null) return false;
                 if (this.slbSyncTtl != null ? !this.slbSyncTtl.equals(that.slbSyncTtl) : that.slbSyncTtl != null) return false;
+                if (this.vpcFlowCollectionPolicy != null ? !this.vpcFlowCollectionPolicy.equals(that.vpcFlowCollectionPolicy) : that.vpcFlowCollectionPolicy != null) return false;
+                if (this.vpcFlowEnabled != null ? !this.vpcFlowEnabled.equals(that.vpcFlowEnabled) : that.vpcFlowEnabled != null) return false;
+                if (this.vpcFlowTtl != null ? !this.vpcFlowTtl.equals(that.vpcFlowTtl) : that.vpcFlowTtl != null) return false;
+                if (this.vpcSyncEnabled != null ? !this.vpcSyncEnabled.equals(that.vpcSyncEnabled) : that.vpcSyncEnabled != null) return false;
+                if (this.vpcSyncTtl != null ? !this.vpcSyncTtl.equals(that.vpcSyncTtl) : that.vpcSyncTtl != null) return false;
                 if (this.wafAccessCollectionPolicy != null ? !this.wafAccessCollectionPolicy.equals(that.wafAccessCollectionPolicy) : that.wafAccessCollectionPolicy != null) return false;
                 if (this.wafAccessPolicySetting != null ? !this.wafAccessPolicySetting.equals(that.wafAccessPolicySetting) : that.wafAccessPolicySetting != null) return false;
                 if (this.wafEnabled != null ? !this.wafEnabled.equals(that.wafEnabled) : that.wafEnabled != null) return false;
@@ -6053,6 +7649,11 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.actiontrailOpenapiPolicySetting != null ? this.actiontrailOpenapiPolicySetting.hashCode() : 0);
                 result = 31 * result + (this.actiontrailTiEnabled != null ? this.actiontrailTiEnabled.hashCode() : 0);
                 result = 31 * result + (this.actiontrailTtl != null ? this.actiontrailTtl.hashCode() : 0);
+                result = 31 * result + (this.albAccessCollectionPolicy != null ? this.albAccessCollectionPolicy.hashCode() : 0);
+                result = 31 * result + (this.albAccessEnabled != null ? this.albAccessEnabled.hashCode() : 0);
+                result = 31 * result + (this.albAccessTtl != null ? this.albAccessTtl.hashCode() : 0);
+                result = 31 * result + (this.albSyncEnabled != null ? this.albSyncEnabled.hashCode() : 0);
+                result = 31 * result + (this.albSyncTtl != null ? this.albSyncTtl.hashCode() : 0);
                 result = 31 * result + (this.apigatewayAccessCollectionPolicy != null ? this.apigatewayAccessCollectionPolicy.hashCode() : 0);
                 result = 31 * result + (this.apigatewayAccessPolicySetting != null ? this.apigatewayAccessPolicySetting.hashCode() : 0);
                 result = 31 * result + (this.apigatewayEnabled != null ? this.apigatewayEnabled.hashCode() : 0);
@@ -6068,21 +7669,36 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.bastionEnabled != null ? this.bastionEnabled.hashCode() : 0);
                 result = 31 * result + (this.bastionTiEnabled != null ? this.bastionTiEnabled.hashCode() : 0);
                 result = 31 * result + (this.bastionTtl != null ? this.bastionTtl.hashCode() : 0);
+                result = 31 * result + (this.cloudconfigChangeEnabled != null ? this.cloudconfigChangeEnabled.hashCode() : 0);
+                result = 31 * result + (this.cloudconfigChangeTtl != null ? this.cloudconfigChangeTtl.hashCode() : 0);
+                result = 31 * result + (this.cloudconfigNoncomEnabled != null ? this.cloudconfigNoncomEnabled.hashCode() : 0);
+                result = 31 * result + (this.cloudconfigNoncomTtl != null ? this.cloudconfigNoncomTtl.hashCode() : 0);
                 result = 31 * result + (this.cloudfirewallAccessCollectionPolicy != null ? this.cloudfirewallAccessCollectionPolicy.hashCode() : 0);
                 result = 31 * result + (this.cloudfirewallAccessPolicySetting != null ? this.cloudfirewallAccessPolicySetting.hashCode() : 0);
                 result = 31 * result + (this.cloudfirewallEnabled != null ? this.cloudfirewallEnabled.hashCode() : 0);
                 result = 31 * result + (this.cloudfirewallTiEnabled != null ? this.cloudfirewallTiEnabled.hashCode() : 0);
                 result = 31 * result + (this.cloudfirewallTtl != null ? this.cloudfirewallTtl.hashCode() : 0);
+                result = 31 * result + (this.cloudfirewallVpcEnabled != null ? this.cloudfirewallVpcEnabled.hashCode() : 0);
+                result = 31 * result + (this.cloudfirewallVpcTtl != null ? this.cloudfirewallVpcTtl.hashCode() : 0);
                 result = 31 * result + (this.cpsCallbackCollectionPolicy != null ? this.cpsCallbackCollectionPolicy.hashCode() : 0);
                 result = 31 * result + (this.cpsCallbackPolicySetting != null ? this.cpsCallbackPolicySetting.hashCode() : 0);
                 result = 31 * result + (this.cpsEnabled != null ? this.cpsEnabled.hashCode() : 0);
                 result = 31 * result + (this.cpsTiEnabled != null ? this.cpsTiEnabled.hashCode() : 0);
                 result = 31 * result + (this.cpsTtl != null ? this.cpsTtl.hashCode() : 0);
+                result = 31 * result + (this.ddosBgpAccessEnabled != null ? this.ddosBgpAccessEnabled.hashCode() : 0);
+                result = 31 * result + (this.ddosBgpAccessTtl != null ? this.ddosBgpAccessTtl.hashCode() : 0);
                 result = 31 * result + (this.ddosCooAccessCollectionPolicy != null ? this.ddosCooAccessCollectionPolicy.hashCode() : 0);
                 result = 31 * result + (this.ddosCooAccessEnabled != null ? this.ddosCooAccessEnabled.hashCode() : 0);
                 result = 31 * result + (this.ddosCooAccessPolicySetting != null ? this.ddosCooAccessPolicySetting.hashCode() : 0);
                 result = 31 * result + (this.ddosCooAccessTiEnabled != null ? this.ddosCooAccessTiEnabled.hashCode() : 0);
                 result = 31 * result + (this.ddosCooAccessTtl != null ? this.ddosCooAccessTtl.hashCode() : 0);
+                result = 31 * result + (this.ddosDipAccessEnabled != null ? this.ddosDipAccessEnabled.hashCode() : 0);
+                result = 31 * result + (this.ddosDipAccessTtl != null ? this.ddosDipAccessTtl.hashCode() : 0);
+                result = 31 * result + (this.dnsIntranetCollectionPolicy != null ? this.dnsIntranetCollectionPolicy.hashCode() : 0);
+                result = 31 * result + (this.dnsIntranetEnabled != null ? this.dnsIntranetEnabled.hashCode() : 0);
+                result = 31 * result + (this.dnsIntranetTtl != null ? this.dnsIntranetTtl.hashCode() : 0);
+                result = 31 * result + (this.dnsSyncEnabled != null ? this.dnsSyncEnabled.hashCode() : 0);
+                result = 31 * result + (this.dnsSyncTtl != null ? this.dnsSyncTtl.hashCode() : 0);
                 result = 31 * result + (this.drdsAuditCollectionPolicy != null ? this.drdsAuditCollectionPolicy.hashCode() : 0);
                 result = 31 * result + (this.drdsAuditEnabled != null ? this.drdsAuditEnabled.hashCode() : 0);
                 result = 31 * result + (this.drdsAuditPolicySetting != null ? this.drdsAuditPolicySetting.hashCode() : 0);
@@ -6090,6 +7706,12 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.drdsAuditTtl != null ? this.drdsAuditTtl.hashCode() : 0);
                 result = 31 * result + (this.drdsSyncEnabled != null ? this.drdsSyncEnabled.hashCode() : 0);
                 result = 31 * result + (this.drdsSyncTtl != null ? this.drdsSyncTtl.hashCode() : 0);
+                result = 31 * result + (this.idaasMngCollectionPolicy != null ? this.idaasMngCollectionPolicy.hashCode() : 0);
+                result = 31 * result + (this.idaasMngEnabled != null ? this.idaasMngEnabled.hashCode() : 0);
+                result = 31 * result + (this.idaasMngTtl != null ? this.idaasMngTtl.hashCode() : 0);
+                result = 31 * result + (this.idaasUserCollectionPolicy != null ? this.idaasUserCollectionPolicy.hashCode() : 0);
+                result = 31 * result + (this.idaasUserEnabled != null ? this.idaasUserEnabled.hashCode() : 0);
+                result = 31 * result + (this.idaasUserTtl != null ? this.idaasUserTtl.hashCode() : 0);
                 result = 31 * result + (this.k8SAuditCollectionPolicy != null ? this.k8SAuditCollectionPolicy.hashCode() : 0);
                 result = 31 * result + (this.k8SAuditEnabled != null ? this.k8SAuditEnabled.hashCode() : 0);
                 result = 31 * result + (this.k8SAuditPolicySetting != null ? this.k8SAuditPolicySetting.hashCode() : 0);
@@ -6125,6 +7747,9 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.polardbAuditCollectionPolicy != null ? this.polardbAuditCollectionPolicy.hashCode() : 0);
                 result = 31 * result + (this.polardbAuditPolicySetting != null ? this.polardbAuditPolicySetting.hashCode() : 0);
                 result = 31 * result + (this.polardbEnabled != null ? this.polardbEnabled.hashCode() : 0);
+                result = 31 * result + (this.polardbErrorCollectionPolicy != null ? this.polardbErrorCollectionPolicy.hashCode() : 0);
+                result = 31 * result + (this.polardbErrorEnabled != null ? this.polardbErrorEnabled.hashCode() : 0);
+                result = 31 * result + (this.polardbErrorTtl != null ? this.polardbErrorTtl.hashCode() : 0);
                 result = 31 * result + (this.polardbPerfCollectionPolicy != null ? this.polardbPerfCollectionPolicy.hashCode() : 0);
                 result = 31 * result + (this.polardbPerfEnabled != null ? this.polardbPerfEnabled.hashCode() : 0);
                 result = 31 * result + (this.polardbPerfPolicySetting != null ? this.polardbPerfPolicySetting.hashCode() : 0);
@@ -6140,6 +7765,9 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.rdsAuditCollectionPolicy != null ? this.rdsAuditCollectionPolicy.hashCode() : 0);
                 result = 31 * result + (this.rdsAuditPolicySetting != null ? this.rdsAuditPolicySetting.hashCode() : 0);
                 result = 31 * result + (this.rdsEnabled != null ? this.rdsEnabled.hashCode() : 0);
+                result = 31 * result + (this.rdsErrorCollectionPolicy != null ? this.rdsErrorCollectionPolicy.hashCode() : 0);
+                result = 31 * result + (this.rdsErrorEnabled != null ? this.rdsErrorEnabled.hashCode() : 0);
+                result = 31 * result + (this.rdsErrorTtl != null ? this.rdsErrorTtl.hashCode() : 0);
                 result = 31 * result + (this.rdsPerfCollectionPolicy != null ? this.rdsPerfCollectionPolicy.hashCode() : 0);
                 result = 31 * result + (this.rdsPerfEnabled != null ? this.rdsPerfEnabled.hashCode() : 0);
                 result = 31 * result + (this.rdsPerfPolicySetting != null ? this.rdsPerfPolicySetting.hashCode() : 0);
@@ -6161,6 +7789,7 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.redisSyncTtl != null ? this.redisSyncTtl.hashCode() : 0);
                 result = 31 * result + (this.sasCrackEnabled != null ? this.sasCrackEnabled.hashCode() : 0);
                 result = 31 * result + (this.sasDnsEnabled != null ? this.sasDnsEnabled.hashCode() : 0);
+                result = 31 * result + (this.sasDnsQueryEnabled != null ? this.sasDnsQueryEnabled.hashCode() : 0);
                 result = 31 * result + (this.sasHttpEnabled != null ? this.sasHttpEnabled.hashCode() : 0);
                 result = 31 * result + (this.sasLocalDnsEnabled != null ? this.sasLocalDnsEnabled.hashCode() : 0);
                 result = 31 * result + (this.sasLoginEnabled != null ? this.sasLoginEnabled.hashCode() : 0);
@@ -6182,6 +7811,11 @@ public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.slbAccessTtl != null ? this.slbAccessTtl.hashCode() : 0);
                 result = 31 * result + (this.slbSyncEnabled != null ? this.slbSyncEnabled.hashCode() : 0);
                 result = 31 * result + (this.slbSyncTtl != null ? this.slbSyncTtl.hashCode() : 0);
+                result = 31 * result + (this.vpcFlowCollectionPolicy != null ? this.vpcFlowCollectionPolicy.hashCode() : 0);
+                result = 31 * result + (this.vpcFlowEnabled != null ? this.vpcFlowEnabled.hashCode() : 0);
+                result = 31 * result + (this.vpcFlowTtl != null ? this.vpcFlowTtl.hashCode() : 0);
+                result = 31 * result + (this.vpcSyncEnabled != null ? this.vpcSyncEnabled.hashCode() : 0);
+                result = 31 * result + (this.vpcSyncTtl != null ? this.vpcSyncTtl.hashCode() : 0);
                 result = 31 * result + (this.wafAccessCollectionPolicy != null ? this.wafAccessCollectionPolicy.hashCode() : 0);
                 result = 31 * result + (this.wafAccessPolicySetting != null ? this.wafAccessPolicySetting.hashCode() : 0);
                 result = 31 * result + (this.wafEnabled != null ? this.wafEnabled.hashCode() : 0);

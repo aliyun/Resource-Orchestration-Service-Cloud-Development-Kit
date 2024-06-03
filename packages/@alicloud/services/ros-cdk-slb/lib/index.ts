@@ -8,6 +8,7 @@ export * from './loadbalancer';
 export * from './loadbalancerclone';
 export * from './masterslaveservergroup';
 export * from './rule';
+export * from './tlspolicy';
 export * from './vservergroup';
 
 // ALIYUN::SLB Resources:

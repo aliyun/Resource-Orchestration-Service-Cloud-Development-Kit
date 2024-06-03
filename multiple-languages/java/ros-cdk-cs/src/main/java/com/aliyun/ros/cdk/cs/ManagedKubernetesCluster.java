@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CS::ManagedKubernetesCluster</code>, which is used to create a Container Service for Kubernetes (ACK) managed cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:31.360Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:50.568Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ManagedKubernetesCluster")
 public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -1128,6 +1128,37 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property securityHardeningOs: Alibaba Cloud OS security hardening.
+         * <p>
+         * Value:
+         * true: enables security hardening OS.
+         * false: disables security hardening OS.
+         * Default value: false.
+         * <p>
+         * @return {@code this}
+         * @param securityHardeningOs Property securityHardeningOs: Alibaba Cloud OS security hardening. This parameter is required.
+         */
+        public Builder securityHardeningOs(final java.lang.Boolean securityHardeningOs) {
+            this.props.securityHardeningOs(securityHardeningOs);
+            return this;
+        }
+        /**
+         * Property securityHardeningOs: Alibaba Cloud OS security hardening.
+         * <p>
+         * Value:
+         * true: enables security hardening OS.
+         * false: disables security hardening OS.
+         * Default value: false.
+         * <p>
+         * @return {@code this}
+         * @param securityHardeningOs Property securityHardeningOs: Alibaba Cloud OS security hardening. This parameter is required.
+         */
+        public Builder securityHardeningOs(final com.aliyun.ros.cdk.core.IResolvable securityHardeningOs) {
+            this.props.securityHardeningOs(securityHardeningOs);
+            return this;
+        }
+
+        /**
          * Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment.
          * <p>
          * When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
@@ -1407,6 +1438,35 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder workerSystemDiskCategory(final com.aliyun.ros.cdk.core.IResolvable workerSystemDiskCategory) {
             this.props.workerSystemDiskCategory(workerSystemDiskCategory);
+            return this;
+        }
+
+        /**
+         * Property workerSystemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.
+         * <p>
+         * Default value: PL0. Valid values:
+         * PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
+         * PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
+         * <p>
+         * @return {@code this}
+         * @param workerSystemDiskPerformanceLevel Property workerSystemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk. This parameter is required.
+         */
+        public Builder workerSystemDiskPerformanceLevel(final java.lang.String workerSystemDiskPerformanceLevel) {
+            this.props.workerSystemDiskPerformanceLevel(workerSystemDiskPerformanceLevel);
+            return this;
+        }
+        /**
+         * Property workerSystemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.
+         * <p>
+         * Default value: PL0. Valid values:
+         * PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
+         * PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
+         * <p>
+         * @return {@code this}
+         * @param workerSystemDiskPerformanceLevel Property workerSystemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk. This parameter is required.
+         */
+        public Builder workerSystemDiskPerformanceLevel(final com.aliyun.ros.cdk.core.IResolvable workerSystemDiskPerformanceLevel) {
+            this.props.workerSystemDiskPerformanceLevel(workerSystemDiskPerformanceLevel);
             return this;
         }
 

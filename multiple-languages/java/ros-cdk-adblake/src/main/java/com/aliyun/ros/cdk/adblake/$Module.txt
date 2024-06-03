@@ -1,0 +1,5 @@
+@alicloud/ros-cdk-adblake.DBCluster=com.aliyun.ros.cdk.adblake.DBCluster
+@alicloud/ros-cdk-adblake.DBClusterProps=com.aliyun.ros.cdk.adblake.DBClusterProps
+@alicloud/ros-cdk-adblake.RosDBCluster=com.aliyun.ros.cdk.adblake.RosDBCluster
+@alicloud/ros-cdk-adblake.RosDBCluster.TagsProperty=com.aliyun.ros.cdk.adblake.RosDBCluster$TagsProperty
+@alicloud/ros-cdk-adblake.RosDBClusterProps=com.aliyun.ros.cdk.adblake.RosDBClusterProps

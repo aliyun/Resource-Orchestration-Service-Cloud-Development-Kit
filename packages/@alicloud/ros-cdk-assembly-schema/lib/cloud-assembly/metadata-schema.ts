@@ -46,6 +46,11 @@ export type MetadataEntryData =
  */
 export enum ArtifactMetadataEntryType {
   /**
+   * Asset in metadata.
+   */
+  ASSET = 'aliyun:ros:asset',
+
+  /**
    * Metadata key used to print INFO-level messages by the toolkit when an app is syntheized.
    */
   INFO = "aliyun:ros:info",
@@ -93,4 +98,62 @@ export interface MetadataEntry {
    * @default - no trace.
    */
   readonly trace?: string[];
+}
+
+/**
+ * Common properties for asset metadata.
+ */
+interface BaseAssetMetadataEntry {
+  /**
+   * Requested packaging style
+   */
+  readonly packaging: string;
+
+  /**
+   * Logical identifier for the asset
+   */
+  readonly id: string;
+
+  /**
+   * The hash of the asset source.
+   */
+  readonly sourceHash: string;
+
+  /**
+   * Path on disk to the asset
+   */
+  readonly path: string;
+}
+
+/**
+ * Metadata Entry spec for files.
+ *
+ * @example
+ * const entry = {
+ *   packaging: 'file',
+ *   ossBucketParameter: 'bucket-parameter',
+ *   ossKeyParameter: 'key-parameter',
+ *   artifactHashParameter: 'hash-parameter',
+ * }
+ */
+export interface FileAssetMetadataEntry extends BaseAssetMetadataEntry {
+  /**
+   * Requested packaging style
+   */
+  readonly packaging: 'zip' | 'file';
+
+  /**
+   * Name of parameter where OSS bucket should be passed in
+   */
+  readonly ossBucketParameter: string;
+
+  /**
+   * Name of parameter where OSS object key should be passed in
+   */
+  readonly ossKeyParameter: string;
+
+  /**
+   * The name of the parameter where the hash of the bundled asset should be passed in.
+   */
+  readonly artifactHashParameter: string;
 }

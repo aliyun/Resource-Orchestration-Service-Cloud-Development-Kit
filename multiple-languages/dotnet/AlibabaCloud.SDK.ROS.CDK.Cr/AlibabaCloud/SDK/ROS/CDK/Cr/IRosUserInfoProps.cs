@@ -20,6 +20,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
             get;
         }
 
+        /// <remarks>
+        /// <strong>Property</strong>: instanceId: The ID of enterprise edition ACR instance.
+        /// </remarks>
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? InstanceId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `RosUserInfo`.</summary>
         /// <remarks>
         /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-userinfo
@@ -38,6 +51,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
             public object User
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: instanceId: The ID of enterprise edition ACR instance.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? InstanceId
+            {
+                get => GetInstanceProperty<object?>();
             }
         }
     }

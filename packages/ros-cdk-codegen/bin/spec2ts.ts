@@ -35,8 +35,14 @@ async function main() {
 
   if (argv.spec !== 'false') {
     let endpoint = readlineSync.question('endpoint(optional, default:https://ros.aliyuncs.com):');
-    let accessKeyId = readlineSync.question('accessKeyId:', {hideEchoBack: true});
-    let accessKeySecret = readlineSync.question('accessKeySecret:', {hideEchoBack: true});
+    let accessKeyId = readlineSync.question('accessKeyId(default:ALIBABA_CLOUD_ACCESS_KEY_ID in the environment variables):', {hideEchoBack: true});
+    let accessKeySecret = readlineSync.question('accessKeySecret(default:ALIBABA_CLOUD_ACCESS_KEY_SECRET in the environment variables):', {hideEchoBack: true});
+    if (accessKeyId === '') {
+      accessKeyId = process.env.ALIBABA_CLOUD_ACCESS_KEY_ID ?? '';
+    }
+    if (accessKeySecret === '') {
+      accessKeySecret = process.env.ALIBABA_CLOUD_ACCESS_KEY_SECRET ?? '';
+    }
     await specOriginGenerator(endpoint, accessKeyId, accessKeySecret);
     specGenerator();
     return;

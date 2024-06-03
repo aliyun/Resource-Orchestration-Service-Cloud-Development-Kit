@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kafka;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::KAFKA::Instance</code>, which is used to create an ApsaraMQ for Kafka instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:33.517Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:52.671Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kafka.$Module.class, fqn = "@alicloud/ros-cdk-kafka.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 

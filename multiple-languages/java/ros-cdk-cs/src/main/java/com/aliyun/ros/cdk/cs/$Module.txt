@@ -10,6 +10,8 @@
 @alicloud/ros-cdk-cs.ClusterHelmApplicationProps=com.aliyun.ros.cdk.cs.ClusterHelmApplicationProps
 @alicloud/ros-cdk-cs.ClusterNodePool=com.aliyun.ros.cdk.cs.ClusterNodePool
 @alicloud/ros-cdk-cs.ClusterNodePoolProps=com.aliyun.ros.cdk.cs.ClusterNodePoolProps
+@alicloud/ros-cdk-cs.GrantPermissions=com.aliyun.ros.cdk.cs.GrantPermissions
+@alicloud/ros-cdk-cs.GrantPermissionsProps=com.aliyun.ros.cdk.cs.GrantPermissionsProps
 @alicloud/ros-cdk-cs.KubernetesCluster=com.aliyun.ros.cdk.cs.KubernetesCluster
 @alicloud/ros-cdk-cs.KubernetesClusterProps=com.aliyun.ros.cdk.cs.KubernetesClusterProps
 @alicloud/ros-cdk-cs.ManagedEdgeKubernetesCluster=com.aliyun.ros.cdk.cs.ManagedEdgeKubernetesCluster
@@ -47,6 +49,9 @@
 @alicloud/ros-cdk-cs.RosClusterNodePool.TeeConfigProperty=com.aliyun.ros.cdk.cs.RosClusterNodePool$TeeConfigProperty
 @alicloud/ros-cdk-cs.RosClusterNodePool.UpgradeConfigProperty=com.aliyun.ros.cdk.cs.RosClusterNodePool$UpgradeConfigProperty
 @alicloud/ros-cdk-cs.RosClusterNodePoolProps=com.aliyun.ros.cdk.cs.RosClusterNodePoolProps
+@alicloud/ros-cdk-cs.RosGrantPermissions=com.aliyun.ros.cdk.cs.RosGrantPermissions
+@alicloud/ros-cdk-cs.RosGrantPermissions.PermissionsProperty=com.aliyun.ros.cdk.cs.RosGrantPermissions$PermissionsProperty
+@alicloud/ros-cdk-cs.RosGrantPermissionsProps=com.aliyun.ros.cdk.cs.RosGrantPermissionsProps
 @alicloud/ros-cdk-cs.RosKubernetesCluster=com.aliyun.ros.cdk.cs.RosKubernetesCluster
 @alicloud/ros-cdk-cs.RosKubernetesCluster.AddonsProperty=com.aliyun.ros.cdk.cs.RosKubernetesCluster$AddonsProperty
 @alicloud/ros-cdk-cs.RosKubernetesCluster.DataDisksProperty=com.aliyun.ros.cdk.cs.RosKubernetesCluster$DataDisksProperty

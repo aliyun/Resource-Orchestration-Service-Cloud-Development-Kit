@@ -1283,7 +1283,7 @@ function rosLogServiceEnablePropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::WAF::LogServiceEnable`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::WAF::LogServiceEnable`, which is used to enable the log collection feature for a specific domain name.
  * @Note This class does not contain additional functions, so it is recommended to use the `LogServiceEnable` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-logserviceenable
  */
@@ -1431,7 +1431,7 @@ function rosWafSwitchPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::WAF::WafSwitch`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::WAF::WafSwitch`, which is used to enable or disable Web attack protection.
  * @Note This class does not contain additional functions, so it is recommended to use the `WafSwitch` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-wafswitch
  */

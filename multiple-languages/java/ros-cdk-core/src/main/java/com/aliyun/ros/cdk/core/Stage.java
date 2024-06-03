@@ -10,7 +10,7 @@ package com.aliyun.ros.cdk.core;
  * copies of your application which should be be deployed to different
  * environments.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:29.988Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:49.351Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Stage")
 public class Stage extends com.aliyun.ros.cdk.core.Construct {
 
@@ -88,6 +88,20 @@ public class Stage extends com.aliyun.ros.cdk.core.Construct {
     }
 
     /**
+     * The cloud assembly asset output directory.
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.String getAssetOutdir() {
+        return software.amazon.jsii.Kernel.get(this, "assetOutdir", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    }
+
+    /**
+     * The cloud assembly output directory.
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.String getOutdir() {
+        return software.amazon.jsii.Kernel.get(this, "outdir", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    }
+
+    /**
      * (experimental) The name of the stage.
      * <p>
      * Based on names of the parent stages separated by
@@ -96,6 +110,13 @@ public class Stage extends com.aliyun.ros.cdk.core.Construct {
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Experimental)
     public @org.jetbrains.annotations.NotNull java.lang.String getStageName() {
         return software.amazon.jsii.Kernel.get(this, "stageName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    }
+
+    /**
+     * The default account for all resources defined within this stage.
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.String getAccount() {
+        return software.amazon.jsii.Kernel.get(this, "account", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
     }
 
     /**
@@ -108,6 +129,13 @@ public class Stage extends com.aliyun.ros.cdk.core.Construct {
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Experimental)
     public @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.Stage getParentStage() {
         return software.amazon.jsii.Kernel.get(this, "parentStage", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.Stage.class));
+    }
+
+    /**
+     * The default region for all resources defined within this stage.
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.String getRegion() {
+        return software.amazon.jsii.Kernel.get(this, "region", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
     }
 
     /**

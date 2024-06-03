@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::RDS::DBInstance</code>, which is used to query an ApsaraDB RDS instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:34.821Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:54.059Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.datasource.DBInstance")
 public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
 

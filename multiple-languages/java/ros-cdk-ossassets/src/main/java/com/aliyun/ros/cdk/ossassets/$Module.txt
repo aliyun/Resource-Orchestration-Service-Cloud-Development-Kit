@@ -1,0 +1,3 @@
+@alicloud/ros-cdk-ossassets.Asset=com.aliyun.ros.cdk.ossassets.Asset
+@alicloud/ros-cdk-ossassets.AssetOptions=com.aliyun.ros.cdk.ossassets.AssetOptions
+@alicloud/ros-cdk-ossassets.AssetProps=com.aliyun.ros.cdk.ossassets.AssetProps

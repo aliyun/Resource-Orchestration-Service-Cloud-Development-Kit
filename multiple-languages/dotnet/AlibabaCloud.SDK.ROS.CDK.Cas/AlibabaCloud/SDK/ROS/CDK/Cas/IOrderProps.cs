@@ -45,21 +45,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cas
             }
         }
 
-        /// <summary>Property domains: Domain names.</summary>
-        /// <remarks>
-        /// If you specify this parameter, you do not need to specify DomainCnt; otherwise, the length of the array used for this parameter will prevail.
-        /// <strong>Note:</strong> This parameter is not supported by international stations.
-        /// </remarks>
-        [JsiiProperty(name: "domains", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? Domains
-        {
-            get
-            {
-                return null;
-            }
-        }
-
         /// <summary>Property domainType: Domain type.</summary>
         /// <remarks>
         /// Valid values: one, all, multiple.
@@ -67,36 +52,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cas
         [JsiiProperty(name: "domainType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? DomainType
-        {
-            get
-            {
-                return null;
-            }
-        }
-
-        /// <summary>Property merge: Whether to merge issues.</summary>
-        /// <remarks>
-        /// Syndication is the process of combining multiple certificates (domains) into a single certificate, including full single or wildcard domains.
-        /// For example: aliyun.com/*.aliyun.com
-        /// <strong>Note</strong>: The number of combined certificates (domains) is not recommended to exceed 200
-        /// </remarks>
-        [JsiiProperty(name: "merge", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? Merge
-        {
-            get
-            {
-                return null;
-            }
-        }
-
-        /// <summary>Property monitor: Whether to enable monitoring domains.</summary>
-        /// <remarks>
-        /// <strong>Note:</strong> This parameter is not supported by international stations.
-        /// </remarks>
-        [JsiiProperty(name: "monitor", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? Monitor
         {
             get
             {
@@ -184,18 +139,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cas
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property domains: Domain names.</summary>
-            /// <remarks>
-            /// If you specify this parameter, you do not need to specify DomainCnt; otherwise, the length of the array used for this parameter will prevail.
-            /// <strong>Note:</strong> This parameter is not supported by international stations.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "domains", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
-            public object? Domains
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
             /// <summary>Property domainType: Domain type.</summary>
             /// <remarks>
             /// Valid values: one, all, multiple.
@@ -203,30 +146,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cas
             [JsiiOptional]
             [JsiiProperty(name: "domainType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DomainType
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <summary>Property merge: Whether to merge issues.</summary>
-            /// <remarks>
-            /// Syndication is the process of combining multiple certificates (domains) into a single certificate, including full single or wildcard domains.
-            /// For example: aliyun.com/*.aliyun.com
-            /// <strong>Note</strong>: The number of combined certificates (domains) is not recommended to exceed 200
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "merge", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? Merge
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <summary>Property monitor: Whether to enable monitoring domains.</summary>
-            /// <remarks>
-            /// <strong>Note:</strong> This parameter is not supported by international stations.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "monitor", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? Monitor
             {
                 get => GetInstanceProperty<object?>();
             }

@@ -130,57 +130,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cas
             }
         }
 
-        private object? _domains;
-
-        /// <remarks>
-        /// <strong>Property</strong>: domains: Domain names. If you specify this parameter, you do not need to specify DomainCnt; otherwise, the length of the array used for this parameter will prevail.
-        /// **Note:** This parameter is not supported by international stations.
-        /// </remarks>
-        [JsiiOptional]
-        [JsiiProperty(name: "domains", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
-        public object? Domains
-        {
-            get => _domains;
-            set
-            {
-                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                {
-                    switch (value)
-                    {
-                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                            break;
-                        case object[] cast_cd4240:
-                            for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
-                            {
-                                switch (cast_cd4240[__idx_f64a5c])
-                                {
-                                    case string cast_201718:
-                                        break;
-                                    case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
-                                        break;
-                                    case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
-                                        // Not enough information to type-check...
-                                        break;
-                                    case null:
-                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
-                                    default:
-                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
-                                }
-                            }
-                            break;
-                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                            // Not enough information to type-check...
-                            break;
-                        case null:
-                            break;
-                        default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
-                    }
-                }
-                _domains = value;
-            }
-        }
-
         private object? _domainType;
 
         /// <remarks>
@@ -211,75 +160,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cas
                     }
                 }
                 _domainType = value;
-            }
-        }
-
-        private object? _merge;
-
-        /// <remarks>
-        /// <strong>Property</strong>: merge: Whether to merge issues. Syndication is the process of combining multiple certificates (domains) into a single certificate, including full single or wildcard domains.
-        /// For example: aliyun.com\/*.aliyun.com
-        /// **Note**: The number of combined certificates (domains) is not recommended to exceed 200
-        /// </remarks>
-        [JsiiOptional]
-        [JsiiProperty(name: "merge", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        public object? Merge
-        {
-            get => _merge;
-            set
-            {
-                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                {
-                    switch (value)
-                    {
-                        case bool cast_cd4240:
-                            break;
-                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                            break;
-                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                            // Not enough information to type-check...
-                            break;
-                        case null:
-                            break;
-                        default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                    }
-                }
-                _merge = value;
-            }
-        }
-
-        private object? _monitor;
-
-        /// <remarks>
-        /// <strong>Property</strong>: monitor: Whether to enable monitoring domains.
-        /// **Note:** This parameter is not supported by international stations.
-        /// </remarks>
-        [JsiiOptional]
-        [JsiiProperty(name: "monitor", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        public object? Monitor
-        {
-            get => _monitor;
-            set
-            {
-                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                {
-                    switch (value)
-                    {
-                        case bool cast_cd4240:
-                            break;
-                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                            break;
-                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                            // Not enough information to type-check...
-                            break;
-                        case null:
-                            break;
-                        default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                    }
-                }
-                _monitor = value;
             }
         }
 

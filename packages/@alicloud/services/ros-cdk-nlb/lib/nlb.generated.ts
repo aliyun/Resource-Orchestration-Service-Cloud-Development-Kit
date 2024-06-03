@@ -1370,7 +1370,7 @@ function rosSecurityPolicyPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::SecurityPolicy`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::SecurityPolicy`, which is used to create a custom security policy for a TCP/SSL listener.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecurityPolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-securitypolicy
  */
@@ -2019,9 +2019,10 @@ export namespace RosServerGroup {
          */
         readonly serverIp?: string | ros.IResolvable;
         /**
-         * @Property port: The port used by the backend server. Valid values: 1 to 65535.
+         * @Property port: The port used by the backend server. Valid values: 0 to 65535. Default value is 0.
+     * When the server group enables full port forwarding, there is no need to specify a port when adding a backend server (0 is entered by default). NLB will forward traffic to the back-end server according to the frontend request port.
          */
-        readonly port: number | ros.IResolvable;
+        readonly port?: number | ros.IResolvable;
         /**
          * @Property weight: The weight of the backend server. Valid values: 0 to 100. Default value: 100.
      * If the weight of a backend server is set to 0, no requests are forwarded to the backend server.
@@ -2051,11 +2052,10 @@ function RosServerGroup_ServersPropertyValidator(properties: any): ros.Validatio
     errors.collect(ros.propertyValidator('serverId', ros.requiredValidator)(properties.serverId));
     errors.collect(ros.propertyValidator('serverId', ros.validateString)(properties.serverId));
     errors.collect(ros.propertyValidator('serverIp', ros.validateString)(properties.serverIp));
-    errors.collect(ros.propertyValidator('port', ros.requiredValidator)(properties.port));
     if(properties.port && (typeof properties.port) !== 'object') {
         errors.collect(ros.propertyValidator('port', ros.validateRange)({
             data: properties.port,
-            min: 1,
+            min: 0,
             max: 65535,
           }));
     }

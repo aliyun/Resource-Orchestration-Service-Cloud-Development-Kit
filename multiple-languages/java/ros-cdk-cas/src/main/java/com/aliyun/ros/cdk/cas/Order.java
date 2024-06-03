@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cas;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CAS::Order</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:30.652Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:49.838Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cas.$Module.class, fqn = "@alicloud/ros-cdk-cas.Order")
 public class Order extends com.aliyun.ros.cdk.core.Resource {
 
@@ -182,33 +182,6 @@ public class Order extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property domains: Domain names.
-         * <p>
-         * If you specify this parameter, you do not need to specify DomainCnt; otherwise, the length of the array used for this parameter will prevail.
-         * <strong>Note:</strong> This parameter is not supported by international stations.
-         * <p>
-         * @return {@code this}
-         * @param domains Property domains: Domain names. This parameter is required.
-         */
-        public Builder domains(final com.aliyun.ros.cdk.core.IResolvable domains) {
-            this.props.domains(domains);
-            return this;
-        }
-        /**
-         * Property domains: Domain names.
-         * <p>
-         * If you specify this parameter, you do not need to specify DomainCnt; otherwise, the length of the array used for this parameter will prevail.
-         * <strong>Note:</strong> This parameter is not supported by international stations.
-         * <p>
-         * @return {@code this}
-         * @param domains Property domains: Domain names. This parameter is required.
-         */
-        public Builder domains(final java.util.List<? extends java.lang.Object> domains) {
-            this.props.domains(domains);
-            return this;
-        }
-
-        /**
          * Property domainType: Domain type.
          * <p>
          * Valid values: one, all, multiple.
@@ -230,60 +203,6 @@ public class Order extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder domainType(final com.aliyun.ros.cdk.core.IResolvable domainType) {
             this.props.domainType(domainType);
-            return this;
-        }
-
-        /**
-         * Property merge: Whether to merge issues.
-         * <p>
-         * Syndication is the process of combining multiple certificates (domains) into a single certificate, including full single or wildcard domains.
-         * For example: aliyun.com/*.aliyun.com
-         * <strong>Note</strong>: The number of combined certificates (domains) is not recommended to exceed 200
-         * <p>
-         * @return {@code this}
-         * @param merge Property merge: Whether to merge issues. This parameter is required.
-         */
-        public Builder merge(final java.lang.Boolean merge) {
-            this.props.merge(merge);
-            return this;
-        }
-        /**
-         * Property merge: Whether to merge issues.
-         * <p>
-         * Syndication is the process of combining multiple certificates (domains) into a single certificate, including full single or wildcard domains.
-         * For example: aliyun.com/*.aliyun.com
-         * <strong>Note</strong>: The number of combined certificates (domains) is not recommended to exceed 200
-         * <p>
-         * @return {@code this}
-         * @param merge Property merge: Whether to merge issues. This parameter is required.
-         */
-        public Builder merge(final com.aliyun.ros.cdk.core.IResolvable merge) {
-            this.props.merge(merge);
-            return this;
-        }
-
-        /**
-         * Property monitor: Whether to enable monitoring domains.
-         * <p>
-         * <strong>Note:</strong> This parameter is not supported by international stations.
-         * <p>
-         * @return {@code this}
-         * @param monitor Property monitor: Whether to enable monitoring domains. This parameter is required.
-         */
-        public Builder monitor(final java.lang.Boolean monitor) {
-            this.props.monitor(monitor);
-            return this;
-        }
-        /**
-         * Property monitor: Whether to enable monitoring domains.
-         * <p>
-         * <strong>Note:</strong> This parameter is not supported by international stations.
-         * <p>
-         * @return {@code this}
-         * @param monitor Property monitor: Whether to enable monitoring domains. This parameter is required.
-         */
-        public Builder monitor(final com.aliyun.ros.cdk.core.IResolvable monitor) {
-            this.props.monitor(monitor);
             return this;
         }
 

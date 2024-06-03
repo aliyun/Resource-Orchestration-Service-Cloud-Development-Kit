@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CS::KubernetesCluster</code>, which is used to create a Container Service for Kubernetes (ACK) dedicated cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:31.322Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:50.531Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.KubernetesCluster")
 public class KubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -1366,6 +1366,37 @@ public class KubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder securityGroupId(final com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
             this.props.securityGroupId(securityGroupId);
+            return this;
+        }
+
+        /**
+         * Property securityHardeningOs: Alibaba Cloud OS security hardening.
+         * <p>
+         * Value:
+         * true: enables security hardening OS.
+         * false: disables security hardening OS.
+         * Default value: false.
+         * <p>
+         * @return {@code this}
+         * @param securityHardeningOs Property securityHardeningOs: Alibaba Cloud OS security hardening. This parameter is required.
+         */
+        public Builder securityHardeningOs(final java.lang.Boolean securityHardeningOs) {
+            this.props.securityHardeningOs(securityHardeningOs);
+            return this;
+        }
+        /**
+         * Property securityHardeningOs: Alibaba Cloud OS security hardening.
+         * <p>
+         * Value:
+         * true: enables security hardening OS.
+         * false: disables security hardening OS.
+         * Default value: false.
+         * <p>
+         * @return {@code this}
+         * @param securityHardeningOs Property securityHardeningOs: Alibaba Cloud OS security hardening. This parameter is required.
+         */
+        public Builder securityHardeningOs(final com.aliyun.ros.cdk.core.IResolvable securityHardeningOs) {
+            this.props.securityHardeningOs(securityHardeningOs);
             return this;
         }
 

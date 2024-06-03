@@ -1,0 +1,5 @@
+@alicloud/ros-cdk-ossdeployment.BucketDeployment=com.aliyun.ros.cdk.ossdeployment.BucketDeployment
+@alicloud/ros-cdk-ossdeployment.BucketDeploymentProps=com.aliyun.ros.cdk.ossdeployment.BucketDeploymentProps
+@alicloud/ros-cdk-ossdeployment.ISource=com.aliyun.ros.cdk.ossdeployment.ISource
+@alicloud/ros-cdk-ossdeployment.Source=com.aliyun.ros.cdk.ossdeployment.Source
+@alicloud/ros-cdk-ossdeployment.SourceConfig=com.aliyun.ros.cdk.ossdeployment.SourceConfig

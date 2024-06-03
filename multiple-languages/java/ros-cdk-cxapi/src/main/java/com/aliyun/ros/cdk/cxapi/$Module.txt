@@ -3,6 +3,12 @@
 @alicloud/ros-cdk-cxapi.CloudArtifact=com.aliyun.ros.cdk.cxapi.CloudArtifact
 @alicloud/ros-cdk-cxapi.CloudAssembly=com.aliyun.ros.cdk.cxapi.CloudAssembly
 @alicloud/ros-cdk-cxapi.CloudAssemblyBuilder=com.aliyun.ros.cdk.cxapi.CloudAssemblyBuilder
+@alicloud/ros-cdk-cxapi.CloudAssemblyBuilderProps=com.aliyun.ros.cdk.cxapi.CloudAssemblyBuilderProps
+@alicloud/ros-cdk-cxapi.Environment=com.aliyun.ros.cdk.cxapi.Environment
+@alicloud/ros-cdk-cxapi.EnvironmentPlaceholderValues=com.aliyun.ros.cdk.cxapi.EnvironmentPlaceholderValues
+@alicloud/ros-cdk-cxapi.EnvironmentPlaceholders=com.aliyun.ros.cdk.cxapi.EnvironmentPlaceholders
+@alicloud/ros-cdk-cxapi.EnvironmentUtils=com.aliyun.ros.cdk.cxapi.EnvironmentUtils
+@alicloud/ros-cdk-cxapi.IEnvironmentPlaceholderProvider=com.aliyun.ros.cdk.cxapi.IEnvironmentPlaceholderProvider
 @alicloud/ros-cdk-cxapi.MetadataEntry=com.aliyun.ros.cdk.cxapi.MetadataEntry
 @alicloud/ros-cdk-cxapi.MetadataEntryResult=com.aliyun.ros.cdk.cxapi.MetadataEntryResult
 @alicloud/ros-cdk-cxapi.MissingContext=com.aliyun.ros.cdk.cxapi.MissingContext

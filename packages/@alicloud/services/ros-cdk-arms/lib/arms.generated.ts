@@ -328,6 +328,134 @@ export class RosAlertContactGroup extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosApplyAlertRuleTemplate`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-applyalertruletemplate
+ */
+export interface RosApplyAlertRuleTemplateProps {
+
+    /**
+     * @Property clusterIds: The IDs list of Prometheus Instances.
+     */
+    readonly clusterIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property templateIds: The IDs list of Prometheus alert rule templates.
+     */
+    readonly templateIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property update: Whether to update created alert rules. Default false.
+     */
+    readonly update?: boolean | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosApplyAlertRuleTemplateProps`
+ *
+ * @param properties - the TypeScript properties of a `RosApplyAlertRuleTemplateProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosApplyAlertRuleTemplatePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('update', ros.validateBoolean)(properties.update));
+    if(properties.clusterIds && (Array.isArray(properties.clusterIds) || (typeof properties.clusterIds) === 'string')) {
+        errors.collect(ros.propertyValidator('clusterIds', ros.validateLength)({
+            data: properties.clusterIds.length,
+            min: 1,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('clusterIds', ros.listValidator(ros.validateString))(properties.clusterIds));
+    if(properties.templateIds && (Array.isArray(properties.templateIds) || (typeof properties.templateIds) === 'string')) {
+        errors.collect(ros.propertyValidator('templateIds', ros.validateLength)({
+            data: properties.templateIds.length,
+            min: 1,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('templateIds', ros.listValidator(ros.validateString))(properties.templateIds));
+    return errors.wrap('supplied properties not correct for "RosApplyAlertRuleTemplateProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ARMS::ApplyAlertRuleTemplate` resource
+ *
+ * @param properties - the TypeScript properties of a `RosApplyAlertRuleTemplateProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ARMS::ApplyAlertRuleTemplate` resource.
+ */
+// @ts-ignore TS6133
+function rosApplyAlertRuleTemplatePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosApplyAlertRuleTemplatePropsValidator(properties).assertSuccess();
+    }
+    return {
+      ClusterIds: ros.listMapper(ros.stringToRosTemplate)(properties.clusterIds),
+      TemplateIds: ros.listMapper(ros.stringToRosTemplate)(properties.templateIds),
+      Update: ros.booleanToRosTemplate(properties.update),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::ApplyAlertRuleTemplate`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ApplyAlertRuleTemplate` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-applyalertruletemplate
+ */
+export class RosApplyAlertRuleTemplate extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ARMS::ApplyAlertRuleTemplate";
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property clusterIds: The IDs list of Prometheus Instances.
+     */
+    public clusterIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property templateIds: The IDs list of Prometheus alert rule templates.
+     */
+    public templateIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property update: Whether to update created alert rules. Default false.
+     */
+    public update: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosApplyAlertRuleTemplateProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosApplyAlertRuleTemplate.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.clusterIds = props.clusterIds;
+        this.templateIds = props.templateIds;
+        this.update = props.update;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            clusterIds: this.clusterIds,
+            templateIds: this.templateIds,
+            update: this.update,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosApplyAlertRuleTemplatePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosManagedPrometheus`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-managedprometheus
  */

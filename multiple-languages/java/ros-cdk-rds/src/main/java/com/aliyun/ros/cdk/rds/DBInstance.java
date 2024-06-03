@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::RDS::DBInstance</code>, which is used to create an ApsaraDB RDS instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:34.686Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:53.768Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.DBInstance")
 public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -1325,7 +1325,7 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param preferredBackupPeriod Property preferredBackupPeriod: The backup period. This parameter is required.
          */
-        public Builder preferredBackupPeriod(final java.util.List<? extends java.lang.Object> preferredBackupPeriod) {
+        public Builder preferredBackupPeriod(final com.aliyun.ros.cdk.core.IResolvable preferredBackupPeriod) {
             this.props.preferredBackupPeriod(preferredBackupPeriod);
             return this;
         }
@@ -1337,7 +1337,7 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param preferredBackupPeriod Property preferredBackupPeriod: The backup period. This parameter is required.
          */
-        public Builder preferredBackupPeriod(final com.aliyun.ros.cdk.core.IResolvable preferredBackupPeriod) {
+        public Builder preferredBackupPeriod(final java.util.List<? extends java.lang.Object> preferredBackupPeriod) {
             this.props.preferredBackupPeriod(preferredBackupPeriod);
             return this;
         }

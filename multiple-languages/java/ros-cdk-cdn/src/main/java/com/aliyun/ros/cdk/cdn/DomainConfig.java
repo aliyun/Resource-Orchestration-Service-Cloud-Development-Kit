@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cdn;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CDN::DomainConfig</code>, which is used to configure multiple domain names at a time.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:30.702Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:49.896Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cdn.$Module.class, fqn = "@alicloud/ros-cdk-cdn.DomainConfig")
 public class DomainConfig extends com.aliyun.ros.cdk.core.Resource {
 

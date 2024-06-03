@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.fc;
  * <p>
  * All functions of a service share the same settings, such as permission settings and log configurations. A service can have multiple functions, all of which share service resources, such as Logstores and RAM roles.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:33.166Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:55.227Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosService")
 public class RosService extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -1722,6 +1722,13 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
         @org.jetbrains.annotations.NotNull java.lang.Object getVSwitchIds();
 
         /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
+            return null;
+        }
+
+        /**
          * @return a {@link Builder} of {@link VpcConfigProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -1736,6 +1743,7 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object securityGroupId;
             java.lang.Object vpcId;
             java.lang.Object vSwitchIds;
+            java.lang.Object zoneId;
 
             /**
              * Sets the value of {@link VpcConfigProperty#getSecurityGroupId}
@@ -1804,6 +1812,28 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link VpcConfigProperty#getZoneId}
+             * @param zoneId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder zoneId(java.lang.String zoneId) {
+                this.zoneId = zoneId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VpcConfigProperty#getZoneId}
+             * @param zoneId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {
+                this.zoneId = zoneId;
+                return this;
+            }
+
+            /**
              * Builds the configured instance.
              * @return a new instance of {@link VpcConfigProperty}
              * @throws NullPointerException if any required attribute was not provided
@@ -1824,6 +1854,7 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object securityGroupId;
             private final java.lang.Object vpcId;
             private final java.lang.Object vSwitchIds;
+            private final java.lang.Object zoneId;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -1834,6 +1865,7 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
                 this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.vSwitchIds = software.amazon.jsii.Kernel.get(this, "vSwitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -1844,6 +1876,7 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
                 this.securityGroupId = java.util.Objects.requireNonNull(builder.securityGroupId, "securityGroupId is required");
                 this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
                 this.vSwitchIds = java.util.Objects.requireNonNull(builder.vSwitchIds, "vSwitchIds is required");
+                this.zoneId = builder.zoneId;
             }
 
             @Override
@@ -1862,6 +1895,11 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getZoneId() {
+                return this.zoneId;
+            }
+
+            @Override
             @software.amazon.jsii.Internal
             public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -1870,6 +1908,9 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
                 data.set("securityGroupId", om.valueToTree(this.getSecurityGroupId()));
                 data.set("vpcId", om.valueToTree(this.getVpcId()));
                 data.set("vSwitchIds", om.valueToTree(this.getVSwitchIds()));
+                if (this.getZoneId() != null) {
+                    data.set("zoneId", om.valueToTree(this.getZoneId()));
+                }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
                 struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-fc.RosService.VpcConfigProperty"));
@@ -1890,7 +1931,8 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
 
                 if (!securityGroupId.equals(that.securityGroupId)) return false;
                 if (!vpcId.equals(that.vpcId)) return false;
-                return this.vSwitchIds.equals(that.vSwitchIds);
+                if (!vSwitchIds.equals(that.vSwitchIds)) return false;
+                return this.zoneId != null ? this.zoneId.equals(that.zoneId) : that.zoneId == null;
             }
 
             @Override
@@ -1898,6 +1940,7 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
                 int result = this.securityGroupId.hashCode();
                 result = 31 * result + (this.vpcId.hashCode());
                 result = 31 * result + (this.vSwitchIds.hashCode());
+                result = 31 * result + (this.zoneId != null ? this.zoneId.hashCode() : 0);
                 return result;
             }
         }

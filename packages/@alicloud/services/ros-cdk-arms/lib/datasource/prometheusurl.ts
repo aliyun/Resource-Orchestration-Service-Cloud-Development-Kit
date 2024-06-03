@@ -16,7 +16,7 @@ export interface PrometheusUrlProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ARMS::PrometheusUrl`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ARMS::PrometheusUrl`, which is used to query all URLs of a cluster, including the URLs for remote read, remote write, Pushgateway, and Grafana.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPrometheusUrl`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-prometheusurl
  */

@@ -1,3 +1,4 @@
+export * from './hostgroup';
 export * from './pipeline';
 export * from './pipelinerelations';
 export * from './pipelinerun';

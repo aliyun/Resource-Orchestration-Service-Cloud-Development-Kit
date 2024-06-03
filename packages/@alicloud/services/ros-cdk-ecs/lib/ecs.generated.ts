@@ -1925,7 +1925,7 @@ function rosCapacityReservationPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::CapacityReservation`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::CapacityReservation`, which is used to create a capacity reservation.
  * @Note This class does not contain additional functions, so it is recommended to use the `CapacityReservation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-capacityreservation
  */
@@ -4505,7 +4505,7 @@ function rosElasticityAssurancePropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::ElasticityAssurance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::ElasticityAssurance`, which is used to create an elasticity assurance.
  * @Note This class does not contain additional functions, so it is recommended to use the `ElasticityAssurance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-elasticityassurance
  */
@@ -5155,7 +5155,7 @@ function rosImageComponentPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::ImageComponent`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::ImageComponent`, which is used to create an image component.
  * @Note This class does not contain additional functions, so it is recommended to use the `ImageComponent` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-imagecomponent
  */
@@ -5486,7 +5486,7 @@ function rosImagePipelinePropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::ImagePipeline`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::ImagePipeline`, which is used to create an image template.
  * @Note This class does not contain additional functions, so it is recommended to use the `ImagePipeline` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-imagepipeline
  */

@@ -1724,6 +1724,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
                 get;
             }
 
+            /// <remarks>
+            /// <strong>Property</strong>: zoneId: Zone Id
+            /// </remarks>
+            [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? ZoneId
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
             [JsiiTypeProxy(nativeType: typeof(IVpcConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-fc.RosService.VpcConfigProperty")]
             internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Fc.RosService.IVpcConfigProperty
             {
@@ -1756,6 +1769,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
                 public object VSwitchIds
                 {
                     get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: zoneId: Zone Id
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ZoneId
+                {
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -1874,6 +1897,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
                         }
                     }
                     _vSwitchIds = value;
+                }
+            }
+
+            private object? _zoneId;
+
+            /// <remarks>
+            /// <strong>Property</strong>: zoneId: Zone Id
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ZoneId
+            {
+                get => _zoneId;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _zoneId = value;
                 }
             }
         }

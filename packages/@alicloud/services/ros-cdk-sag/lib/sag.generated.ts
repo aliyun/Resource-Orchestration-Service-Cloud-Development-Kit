@@ -49,7 +49,7 @@ function rosACLPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::ACL`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::ACL`, which is used to create an access control list (ACL).
  * @Note This class does not contain additional functions, so it is recommended to use the `ACL` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-acl
  */
@@ -840,7 +840,7 @@ export class RosAppUser extends ros.RosResource {
     public readonly attrSmartAgId: ros.IResolvable;
 
     /**
-     * @Attribute UserName: <heat.engine.properties.Schema object at 0x7f16e13a8b50>
+     * @Attribute UserName: <heat.engine.properties.Schema object at 0x7fb572afd610>
      */
     public readonly attrUserName: ros.IResolvable;
 
@@ -2134,7 +2134,7 @@ function rosSerialNumberBindingPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::SerialNumberBinding`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::SerialNumberBinding`, which is used to associate a Smart Access Gateway (SAG) device with an SAG instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `SerialNumberBinding` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-serialnumberbinding
  */

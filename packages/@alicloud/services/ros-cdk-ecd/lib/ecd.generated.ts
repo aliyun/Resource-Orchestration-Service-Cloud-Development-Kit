@@ -270,6 +270,542 @@ export class RosBundle extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosDesktopGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-desktopgroup
+ */
+export interface RosDesktopGroupProps {
+
+    /**
+     * @Property bundleId: The ID of the desktop template.
+     */
+    readonly bundleId: string | ros.IResolvable;
+
+    /**
+     * @Property chargeType: The billing method of the cloud desktops in the desktop group.  Enumeration Value:
+     * PostPaid
+     * PrePaid
+     */
+    readonly chargeType: string | ros.IResolvable;
+
+    /**
+     * @Property officeSiteId: The ID of the workspace.
+     */
+    readonly officeSiteId: string | ros.IResolvable;
+
+    /**
+     * @Property policyGroupId: The ID of the policy.
+     */
+    readonly policyGroupId: string | ros.IResolvable;
+
+    /**
+     * @Property allowAutoSetup: Specifies whether to automatically create cloud desktops in the desktop group if you set the billing method to subscription. If you set the ChargeType parameter to PrePaid, this parameter is required.
+     */
+    readonly allowAutoSetup?: number | ros.IResolvable;
+
+    /**
+     * @Property allowBufferCount: Specifies whether to reserve cloud desktops if you set the billing method to pay-as-you-go. If you set the ChargeType parameter to PostPaid, this parameter is required. Valid values: 0: does not allow the system to reserve cloud desktops. N: allows the system to reserve N cloud desktops. The variable N must be an integer that ranges from 1 to 100.
+     */
+    readonly allowBufferCount?: number | ros.IResolvable;
+
+    /**
+     * @Property autoPay: Specifies whether to enable automatic payment.
+     */
+    readonly autoPay?: boolean | ros.IResolvable;
+
+    /**
+     * @Property autoRenew: Specifies whether to enable auto-renewal.
+     */
+    readonly autoRenew?: boolean | ros.IResolvable;
+
+    /**
+     * @Property buyDesktopsCount: The number of cloud desktops that you want to purchase. Valid values: 0 to 200.
+     */
+    readonly buyDesktopsCount?: number | ros.IResolvable;
+
+    /**
+     * @Property comments: The remarks on the desktop group.
+     */
+    readonly comments?: string | ros.IResolvable;
+
+    /**
+     * @Property connectDuration: The maximum period of time during which the session is connected. When the specified maximum period of time is reached, the session automatically disconnects. Unit: milliseconds. This parameter is required only for cloud desktops in the same desktop group.
+     */
+    readonly connectDuration?: number | ros.IResolvable;
+
+    /**
+     * @Property defaultInitDesktopCount: The default number of cloud desktops to create when you create the desktop group. Default value: 1.
+     */
+    readonly defaultInitDesktopCount?: number | ros.IResolvable;
+
+    /**
+     * @Property desktopGroupName: The name of the desktop group.
+     */
+    readonly desktopGroupName?: string | ros.IResolvable;
+
+    /**
+     * @Property endUserIds: The end users that can use the desktop group.
+     */
+    readonly endUserIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property groupVersion: The desktop group version.
+     */
+    readonly groupVersion?: number | ros.IResolvable;
+
+    /**
+     * @Property idleDisconnectDuration: The maximum period of time for which a session remains idle. If an end user performs no operations on a cloud desktop by using keyboards or mouses during a session, the session becomes idle. When the specified maximum period of time is reached, the session automatically disconnects. Unit: milliseconds. This parameter is required only for cloud desktops in the same desktop group.
+     */
+    readonly idleDisconnectDuration?: number | ros.IResolvable;
+
+    /**
+     * @Property keepDuration: The retention period of the cloud desktop after the end user disconnects from the cloud desktop. Unit: milliseconds.
+     */
+    readonly keepDuration?: number | ros.IResolvable;
+
+    /**
+     * @Property maxDesktopsCount: The maximum number of cloud desktops that the desktop group can contain. Valid values: 0 to 200.
+     */
+    readonly maxDesktopsCount?: number | ros.IResolvable;
+
+    /**
+     * @Property minDesktopsCount: The minimum number of cloud desktops that must be contained in the desktop group if you set the billing method to subscription. If you set the ChargeType parameter to PrePaid, this parameter is required. Valid values: 0 to the value of MaxDesktopsCount. Default value: 1.
+     */
+    readonly minDesktopsCount?: number | ros.IResolvable;
+
+    /**
+     * @Property period: The subscription period of the cloud desktops in the desktop group. The unit is specified by the PeriodUnit parameter. The Period parameter takes effect only if you set the ChargeType parameter to PrePaid.
+     * Valid values if you set the PeriodUnit parameter to Month: 1, 2, 3, 6
+     * Valid values if you set the PeriodUnit parameter to Year:  1, 2, 3, 4, 5
+     */
+    readonly period?: number | ros.IResolvable;
+
+    /**
+     * @Property periodUnit: Whether to open CA
+     */
+    readonly periodUnit?: string | ros.IResolvable;
+
+    /**
+     * @Property resetType: Specifies which type of the disk to reset for cloud desktops in the desktop group.
+     */
+    readonly resetType?: number | ros.IResolvable;
+
+    /**
+     * @Property stopDuration: The period of time before the idle cloud desktop is stopped. When the specified period of time is reached, the idle cloud desktop automatically stops. If an end user connects to a stopped cloud desktop, the cloud desktop automatically starts. Unit: milliseconds.
+     */
+    readonly stopDuration?: number | ros.IResolvable;
+
+    /**
+     * @Property volumeEncryptionEnabled: Specifies whether to enable disk encryption.
+     */
+    readonly volumeEncryptionEnabled?: boolean | ros.IResolvable;
+
+    /**
+     * @Property volumeEncryptionKey: The ID of the Key Management Service (KMS) key that you want to use when disk encryption is enabled.
+     */
+    readonly volumeEncryptionKey?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosDesktopGroupProps`
+ *
+ * @param properties - the TypeScript properties of a `RosDesktopGroupProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosDesktopGroupPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.connectDuration && (typeof properties.connectDuration) !== 'object') {
+        errors.collect(ros.propertyValidator('connectDuration', ros.validateRange)({
+            data: properties.connectDuration,
+            min: 900000,
+            max: 345600000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('connectDuration', ros.validateNumber)(properties.connectDuration));
+    errors.collect(ros.propertyValidator('desktopGroupName', ros.validateString)(properties.desktopGroupName));
+    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
+    errors.collect(ros.propertyValidator('volumeEncryptionEnabled', ros.validateBoolean)(properties.volumeEncryptionEnabled));
+    if(properties.allowBufferCount && (typeof properties.allowBufferCount) !== 'object') {
+        errors.collect(ros.propertyValidator('allowBufferCount', ros.validateRange)({
+            data: properties.allowBufferCount,
+            min: 0,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('allowBufferCount', ros.validateNumber)(properties.allowBufferCount));
+    errors.collect(ros.propertyValidator('groupVersion', ros.validateNumber)(properties.groupVersion));
+    if(properties.keepDuration && (typeof properties.keepDuration) !== 'object') {
+        errors.collect(ros.propertyValidator('keepDuration', ros.validateRange)({
+            data: properties.keepDuration,
+            min: 180000,
+            max: 345600000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('keepDuration', ros.validateNumber)(properties.keepDuration));
+    if(properties.idleDisconnectDuration && (typeof properties.idleDisconnectDuration) !== 'object') {
+        errors.collect(ros.propertyValidator('idleDisconnectDuration', ros.validateRange)({
+            data: properties.idleDisconnectDuration,
+            min: 360000,
+            max: 3600000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('idleDisconnectDuration', ros.validateNumber)(properties.idleDisconnectDuration));
+    if(properties.maxDesktopsCount && (typeof properties.maxDesktopsCount) !== 'object') {
+        errors.collect(ros.propertyValidator('maxDesktopsCount', ros.validateRange)({
+            data: properties.maxDesktopsCount,
+            min: 0,
+            max: 200,
+          }));
+    }
+    errors.collect(ros.propertyValidator('maxDesktopsCount', ros.validateNumber)(properties.maxDesktopsCount));
+    if(properties.resetType && (typeof properties.resetType) !== 'object') {
+        errors.collect(ros.propertyValidator('resetType', ros.validateRange)({
+            data: properties.resetType,
+            min: 0,
+            max: 3,
+          }));
+    }
+    errors.collect(ros.propertyValidator('resetType', ros.validateNumber)(properties.resetType));
+    if(properties.minDesktopsCount && (typeof properties.minDesktopsCount) !== 'object') {
+        errors.collect(ros.propertyValidator('minDesktopsCount', ros.validateRange)({
+            data: properties.minDesktopsCount,
+            min: 1,
+            max: 500,
+          }));
+    }
+    errors.collect(ros.propertyValidator('minDesktopsCount', ros.validateNumber)(properties.minDesktopsCount));
+    errors.collect(ros.propertyValidator('comments', ros.validateString)(properties.comments));
+    errors.collect(ros.propertyValidator('policyGroupId', ros.requiredValidator)(properties.policyGroupId));
+    errors.collect(ros.propertyValidator('policyGroupId', ros.validateString)(properties.policyGroupId));
+    if(properties.endUserIds && (Array.isArray(properties.endUserIds) || (typeof properties.endUserIds) === 'string')) {
+        errors.collect(ros.propertyValidator('endUserIds', ros.validateLength)({
+            data: properties.endUserIds.length,
+            min: 0,
+            max: 1000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('endUserIds', ros.listValidator(ros.validateString))(properties.endUserIds));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateRange)({
+            data: properties.period,
+            min: 1,
+            max: 6,
+          }));
+    }
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    if(properties.defaultInitDesktopCount && (typeof properties.defaultInitDesktopCount) !== 'object') {
+        errors.collect(ros.propertyValidator('defaultInitDesktopCount', ros.validateRange)({
+            data: properties.defaultInitDesktopCount,
+            min: 1,
+            max: 1000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('defaultInitDesktopCount', ros.validateNumber)(properties.defaultInitDesktopCount));
+    errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
+    errors.collect(ros.propertyValidator('officeSiteId', ros.requiredValidator)(properties.officeSiteId));
+    errors.collect(ros.propertyValidator('officeSiteId', ros.validateString)(properties.officeSiteId));
+    errors.collect(ros.propertyValidator('bundleId', ros.requiredValidator)(properties.bundleId));
+    errors.collect(ros.propertyValidator('bundleId', ros.validateString)(properties.bundleId));
+    errors.collect(ros.propertyValidator('stopDuration', ros.validateNumber)(properties.stopDuration));
+    errors.collect(ros.propertyValidator('chargeType', ros.requiredValidator)(properties.chargeType));
+    if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
+          data: properties.chargeType,
+          allowedValues: ["PostPaid","PrePaid"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
+    errors.collect(ros.propertyValidator('volumeEncryptionKey', ros.validateString)(properties.volumeEncryptionKey));
+    if(properties.allowAutoSetup && (typeof properties.allowAutoSetup) !== 'object') {
+        errors.collect(ros.propertyValidator('allowAutoSetup', ros.validateRange)({
+            data: properties.allowAutoSetup,
+            min: 0,
+            max: 1,
+          }));
+    }
+    errors.collect(ros.propertyValidator('allowAutoSetup', ros.validateNumber)(properties.allowAutoSetup));
+    if(properties.buyDesktopsCount && (typeof properties.buyDesktopsCount) !== 'object') {
+        errors.collect(ros.propertyValidator('buyDesktopsCount', ros.validateRange)({
+            data: properties.buyDesktopsCount,
+            min: 0,
+            max: 200,
+          }));
+    }
+    errors.collect(ros.propertyValidator('buyDesktopsCount', ros.validateNumber)(properties.buyDesktopsCount));
+    if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
+        errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
+          data: properties.periodUnit,
+          allowedValues: ["Month","Year"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
+    return errors.wrap('supplied properties not correct for "RosDesktopGroupProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECD::DesktopGroup` resource
+ *
+ * @param properties - the TypeScript properties of a `RosDesktopGroupProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECD::DesktopGroup` resource.
+ */
+// @ts-ignore TS6133
+function rosDesktopGroupPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosDesktopGroupPropsValidator(properties).assertSuccess();
+    }
+    return {
+      BundleId: ros.stringToRosTemplate(properties.bundleId),
+      ChargeType: ros.stringToRosTemplate(properties.chargeType),
+      OfficeSiteId: ros.stringToRosTemplate(properties.officeSiteId),
+      PolicyGroupId: ros.stringToRosTemplate(properties.policyGroupId),
+      AllowAutoSetup: ros.numberToRosTemplate(properties.allowAutoSetup),
+      AllowBufferCount: ros.numberToRosTemplate(properties.allowBufferCount),
+      AutoPay: ros.booleanToRosTemplate(properties.autoPay),
+      AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
+      BuyDesktopsCount: ros.numberToRosTemplate(properties.buyDesktopsCount),
+      Comments: ros.stringToRosTemplate(properties.comments),
+      ConnectDuration: ros.numberToRosTemplate(properties.connectDuration),
+      DefaultInitDesktopCount: ros.numberToRosTemplate(properties.defaultInitDesktopCount),
+      DesktopGroupName: ros.stringToRosTemplate(properties.desktopGroupName),
+      EndUserIds: ros.listMapper(ros.stringToRosTemplate)(properties.endUserIds),
+      GroupVersion: ros.numberToRosTemplate(properties.groupVersion),
+      IdleDisconnectDuration: ros.numberToRosTemplate(properties.idleDisconnectDuration),
+      KeepDuration: ros.numberToRosTemplate(properties.keepDuration),
+      MaxDesktopsCount: ros.numberToRosTemplate(properties.maxDesktopsCount),
+      MinDesktopsCount: ros.numberToRosTemplate(properties.minDesktopsCount),
+      Period: ros.numberToRosTemplate(properties.period),
+      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
+      ResetType: ros.numberToRosTemplate(properties.resetType),
+      StopDuration: ros.numberToRosTemplate(properties.stopDuration),
+      VolumeEncryptionEnabled: ros.booleanToRosTemplate(properties.volumeEncryptionEnabled),
+      VolumeEncryptionKey: ros.stringToRosTemplate(properties.volumeEncryptionKey),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::DesktopGroup`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DesktopGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-desktopgroup
+ */
+export class RosDesktopGroup extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECD::DesktopGroup";
+
+    /**
+     * @Attribute DesktopGroupId: Id of created DesktopGroup
+     */
+    public readonly attrDesktopGroupId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property bundleId: The ID of the desktop template.
+     */
+    public bundleId: string | ros.IResolvable;
+
+    /**
+     * @Property chargeType: The billing method of the cloud desktops in the desktop group.  Enumeration Value:
+     * PostPaid
+     * PrePaid
+     */
+    public chargeType: string | ros.IResolvable;
+
+    /**
+     * @Property officeSiteId: The ID of the workspace.
+     */
+    public officeSiteId: string | ros.IResolvable;
+
+    /**
+     * @Property policyGroupId: The ID of the policy.
+     */
+    public policyGroupId: string | ros.IResolvable;
+
+    /**
+     * @Property allowAutoSetup: Specifies whether to automatically create cloud desktops in the desktop group if you set the billing method to subscription. If you set the ChargeType parameter to PrePaid, this parameter is required.
+     */
+    public allowAutoSetup: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property allowBufferCount: Specifies whether to reserve cloud desktops if you set the billing method to pay-as-you-go. If you set the ChargeType parameter to PostPaid, this parameter is required. Valid values: 0: does not allow the system to reserve cloud desktops. N: allows the system to reserve N cloud desktops. The variable N must be an integer that ranges from 1 to 100.
+     */
+    public allowBufferCount: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property autoPay: Specifies whether to enable automatic payment.
+     */
+    public autoPay: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property autoRenew: Specifies whether to enable auto-renewal.
+     */
+    public autoRenew: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property buyDesktopsCount: The number of cloud desktops that you want to purchase. Valid values: 0 to 200.
+     */
+    public buyDesktopsCount: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property comments: The remarks on the desktop group.
+     */
+    public comments: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property connectDuration: The maximum period of time during which the session is connected. When the specified maximum period of time is reached, the session automatically disconnects. Unit: milliseconds. This parameter is required only for cloud desktops in the same desktop group.
+     */
+    public connectDuration: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property defaultInitDesktopCount: The default number of cloud desktops to create when you create the desktop group. Default value: 1.
+     */
+    public defaultInitDesktopCount: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property desktopGroupName: The name of the desktop group.
+     */
+    public desktopGroupName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property endUserIds: The end users that can use the desktop group.
+     */
+    public endUserIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property groupVersion: The desktop group version.
+     */
+    public groupVersion: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property idleDisconnectDuration: The maximum period of time for which a session remains idle. If an end user performs no operations on a cloud desktop by using keyboards or mouses during a session, the session becomes idle. When the specified maximum period of time is reached, the session automatically disconnects. Unit: milliseconds. This parameter is required only for cloud desktops in the same desktop group.
+     */
+    public idleDisconnectDuration: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property keepDuration: The retention period of the cloud desktop after the end user disconnects from the cloud desktop. Unit: milliseconds.
+     */
+    public keepDuration: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property maxDesktopsCount: The maximum number of cloud desktops that the desktop group can contain. Valid values: 0 to 200.
+     */
+    public maxDesktopsCount: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property minDesktopsCount: The minimum number of cloud desktops that must be contained in the desktop group if you set the billing method to subscription. If you set the ChargeType parameter to PrePaid, this parameter is required. Valid values: 0 to the value of MaxDesktopsCount. Default value: 1.
+     */
+    public minDesktopsCount: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property period: The subscription period of the cloud desktops in the desktop group. The unit is specified by the PeriodUnit parameter. The Period parameter takes effect only if you set the ChargeType parameter to PrePaid.
+     * Valid values if you set the PeriodUnit parameter to Month: 1, 2, 3, 6
+     * Valid values if you set the PeriodUnit parameter to Year:  1, 2, 3, 4, 5
+     */
+    public period: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property periodUnit: Whether to open CA
+     */
+    public periodUnit: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resetType: Specifies which type of the disk to reset for cloud desktops in the desktop group.
+     */
+    public resetType: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property stopDuration: The period of time before the idle cloud desktop is stopped. When the specified period of time is reached, the idle cloud desktop automatically stops. If an end user connects to a stopped cloud desktop, the cloud desktop automatically starts. Unit: milliseconds.
+     */
+    public stopDuration: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property volumeEncryptionEnabled: Specifies whether to enable disk encryption.
+     */
+    public volumeEncryptionEnabled: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property volumeEncryptionKey: The ID of the Key Management Service (KMS) key that you want to use when disk encryption is enabled.
+     */
+    public volumeEncryptionKey: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosDesktopGroupProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosDesktopGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDesktopGroupId = this.getAtt('DesktopGroupId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.bundleId = props.bundleId;
+        this.chargeType = props.chargeType;
+        this.officeSiteId = props.officeSiteId;
+        this.policyGroupId = props.policyGroupId;
+        this.allowAutoSetup = props.allowAutoSetup;
+        this.allowBufferCount = props.allowBufferCount;
+        this.autoPay = props.autoPay;
+        this.autoRenew = props.autoRenew;
+        this.buyDesktopsCount = props.buyDesktopsCount;
+        this.comments = props.comments;
+        this.connectDuration = props.connectDuration;
+        this.defaultInitDesktopCount = props.defaultInitDesktopCount;
+        this.desktopGroupName = props.desktopGroupName;
+        this.endUserIds = props.endUserIds;
+        this.groupVersion = props.groupVersion;
+        this.idleDisconnectDuration = props.idleDisconnectDuration;
+        this.keepDuration = props.keepDuration;
+        this.maxDesktopsCount = props.maxDesktopsCount;
+        this.minDesktopsCount = props.minDesktopsCount;
+        this.period = props.period;
+        this.periodUnit = props.periodUnit;
+        this.resetType = props.resetType;
+        this.stopDuration = props.stopDuration;
+        this.volumeEncryptionEnabled = props.volumeEncryptionEnabled;
+        this.volumeEncryptionKey = props.volumeEncryptionKey;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            bundleId: this.bundleId,
+            chargeType: this.chargeType,
+            officeSiteId: this.officeSiteId,
+            policyGroupId: this.policyGroupId,
+            allowAutoSetup: this.allowAutoSetup,
+            allowBufferCount: this.allowBufferCount,
+            autoPay: this.autoPay,
+            autoRenew: this.autoRenew,
+            buyDesktopsCount: this.buyDesktopsCount,
+            comments: this.comments,
+            connectDuration: this.connectDuration,
+            defaultInitDesktopCount: this.defaultInitDesktopCount,
+            desktopGroupName: this.desktopGroupName,
+            endUserIds: this.endUserIds,
+            groupVersion: this.groupVersion,
+            idleDisconnectDuration: this.idleDisconnectDuration,
+            keepDuration: this.keepDuration,
+            maxDesktopsCount: this.maxDesktopsCount,
+            minDesktopsCount: this.minDesktopsCount,
+            period: this.period,
+            periodUnit: this.periodUnit,
+            resetType: this.resetType,
+            stopDuration: this.stopDuration,
+            volumeEncryptionEnabled: this.volumeEncryptionEnabled,
+            volumeEncryptionKey: this.volumeEncryptionKey,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosDesktopGroupPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosDesktops`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-desktops
  */
@@ -861,6 +1397,253 @@ function rosDesktopsTagsPropertyToRosTemplate(properties: any): any {
       Value: ros.stringToRosTemplate(properties.value),
       Key: ros.stringToRosTemplate(properties.key),
     };
+}
+
+/**
+ * Properties for defining a `RosNetworkPackage`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-networkpackage
+ */
+export interface RosNetworkPackageProps {
+
+    /**
+     * @Property bandwidth: The maximum public bandwidth. Unit: Mbit\/s.
+     * Valid values for the pay-by-data-transfer type (PayByTraffic): 10 to 200. 
+     *  Valid values for the pay-by-bandwith type (PayByBandwidth): 10 to 1000.
+     */
+    readonly bandwidth: number | ros.IResolvable;
+
+    /**
+     * @Property officeSiteId: The ID of the workspace.
+     */
+    readonly officeSiteId: string | ros.IResolvable;
+
+    /**
+     * @Property autoPay: Specifies whether to enable automatic payment.
+     */
+    readonly autoPay?: boolean | ros.IResolvable;
+
+    /**
+     * @Property autoRenew: Specifies whether to enable auto-renewal.
+     */
+    readonly autoRenew?: boolean | ros.IResolvable;
+
+    /**
+     * @Property internetChargeType: The metering method of the pay-as-you-go Internet access package. Valid values: 
+     * PayByTraffic: pay-by-data-transfer.
+     * PayByBandwidth: pay-by-bandwidth. 
+     * Default value: PayByTraffic.
+     */
+    readonly internetChargeType?: string | ros.IResolvable;
+
+    /**
+     * @Property payType: The billing method of the Internet access package. Enumeration Value:
+     * PostPaid
+     * PrePaid
+     */
+    readonly payType?: string | ros.IResolvable;
+
+    /**
+     * @Property period: The duration of the Internet access package.
+     */
+    readonly period?: number | ros.IResolvable;
+
+    /**
+     * @Property periodUnit: The unit of duration that you want to use for the Internet access package. Enumeration Value:
+     * MonthYearWeek
+     */
+    readonly periodUnit?: string | ros.IResolvable;
+
+    /**
+     * @Property promotionId: The ID of the sales promotion.
+     */
+    readonly promotionId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosNetworkPackageProps`
+ *
+ * @param properties - the TypeScript properties of a `RosNetworkPackageProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosNetworkPackagePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('officeSiteId', ros.requiredValidator)(properties.officeSiteId));
+    errors.collect(ros.propertyValidator('officeSiteId', ros.validateString)(properties.officeSiteId));
+    errors.collect(ros.propertyValidator('promotionId', ros.validateString)(properties.promotionId));
+    errors.collect(ros.propertyValidator('bandwidth', ros.requiredValidator)(properties.bandwidth));
+    if(properties.bandwidth && (typeof properties.bandwidth) !== 'object') {
+        errors.collect(ros.propertyValidator('bandwidth', ros.validateRange)({
+            data: properties.bandwidth,
+            min: 2,
+            max: 1000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));
+    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
+    if(properties.payType && (typeof properties.payType) !== 'object') {
+        errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
+          data: properties.payType,
+          allowedValues: ["PostPaid","PrePaid"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
+    if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
+        errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
+          data: properties.periodUnit,
+          allowedValues: ["Month","Year","Week"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
+    if(properties.internetChargeType && (typeof properties.internetChargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('internetChargeType', ros.validateAllowedValues)({
+          data: properties.internetChargeType,
+          allowedValues: ["PayByTraffic","PayByBandwidth"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
+    return errors.wrap('supplied properties not correct for "RosNetworkPackageProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECD::NetworkPackage` resource
+ *
+ * @param properties - the TypeScript properties of a `RosNetworkPackageProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECD::NetworkPackage` resource.
+ */
+// @ts-ignore TS6133
+function rosNetworkPackagePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosNetworkPackagePropsValidator(properties).assertSuccess();
+    }
+    return {
+      Bandwidth: ros.numberToRosTemplate(properties.bandwidth),
+      OfficeSiteId: ros.stringToRosTemplate(properties.officeSiteId),
+      AutoPay: ros.booleanToRosTemplate(properties.autoPay),
+      AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
+      InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
+      PayType: ros.stringToRosTemplate(properties.payType),
+      Period: ros.numberToRosTemplate(properties.period),
+      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
+      PromotionId: ros.stringToRosTemplate(properties.promotionId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::NetworkPackage`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `NetworkPackage` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-networkpackage
+ */
+export class RosNetworkPackage extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECD::NetworkPackage";
+
+    /**
+     * @Attribute NetworkPackageId: The ID of the Internet access package.
+     */
+    public readonly attrNetworkPackageId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property bandwidth: The maximum public bandwidth. Unit: Mbit\/s.
+     * Valid values for the pay-by-data-transfer type (PayByTraffic): 10 to 200. 
+     *  Valid values for the pay-by-bandwith type (PayByBandwidth): 10 to 1000.
+     */
+    public bandwidth: number | ros.IResolvable;
+
+    /**
+     * @Property officeSiteId: The ID of the workspace.
+     */
+    public officeSiteId: string | ros.IResolvable;
+
+    /**
+     * @Property autoPay: Specifies whether to enable automatic payment.
+     */
+    public autoPay: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property autoRenew: Specifies whether to enable auto-renewal.
+     */
+    public autoRenew: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property internetChargeType: The metering method of the pay-as-you-go Internet access package. Valid values: 
+     * PayByTraffic: pay-by-data-transfer.
+     * PayByBandwidth: pay-by-bandwidth. 
+     * Default value: PayByTraffic.
+     */
+    public internetChargeType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property payType: The billing method of the Internet access package. Enumeration Value:
+     * PostPaid
+     * PrePaid
+     */
+    public payType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property period: The duration of the Internet access package.
+     */
+    public period: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property periodUnit: The unit of duration that you want to use for the Internet access package. Enumeration Value:
+     * MonthYearWeek
+     */
+    public periodUnit: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property promotionId: The ID of the sales promotion.
+     */
+    public promotionId: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosNetworkPackageProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosNetworkPackage.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrNetworkPackageId = this.getAtt('NetworkPackageId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.bandwidth = props.bandwidth;
+        this.officeSiteId = props.officeSiteId;
+        this.autoPay = props.autoPay;
+        this.autoRenew = props.autoRenew;
+        this.internetChargeType = props.internetChargeType;
+        this.payType = props.payType;
+        this.period = props.period;
+        this.periodUnit = props.periodUnit;
+        this.promotionId = props.promotionId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            bandwidth: this.bandwidth,
+            officeSiteId: this.officeSiteId,
+            autoPay: this.autoPay,
+            autoRenew: this.autoRenew,
+            internetChargeType: this.internetChargeType,
+            payType: this.payType,
+            period: this.period,
+            periodUnit: this.periodUnit,
+            promotionId: this.promotionId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosNetworkPackagePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
 }
 
 /**

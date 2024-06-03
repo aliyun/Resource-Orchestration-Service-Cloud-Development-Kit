@@ -18,6 +18,8 @@
 @alicloud/ros-cdk-rds.DatabaseProps=com.aliyun.ros.cdk.rds.DatabaseProps
 @alicloud/ros-cdk-rds.MigrateTask=com.aliyun.ros.cdk.rds.MigrateTask
 @alicloud/ros-cdk-rds.MigrateTaskProps=com.aliyun.ros.cdk.rds.MigrateTaskProps
+@alicloud/ros-cdk-rds.PostgresExtensions=com.aliyun.ros.cdk.rds.PostgresExtensions
+@alicloud/ros-cdk-rds.PostgresExtensionsProps=com.aliyun.ros.cdk.rds.PostgresExtensionsProps
 @alicloud/ros-cdk-rds.PrepayDBInstance=com.aliyun.ros.cdk.rds.PrepayDBInstance
 @alicloud/ros-cdk-rds.PrepayDBInstanceProps=com.aliyun.ros.cdk.rds.PrepayDBInstanceProps
 @alicloud/ros-cdk-rds.ReadOnlyDBInstance=com.aliyun.ros.cdk.rds.ReadOnlyDBInstance
@@ -48,6 +50,8 @@
 @alicloud/ros-cdk-rds.RosDatabaseProps=com.aliyun.ros.cdk.rds.RosDatabaseProps
 @alicloud/ros-cdk-rds.RosMigrateTask=com.aliyun.ros.cdk.rds.RosMigrateTask
 @alicloud/ros-cdk-rds.RosMigrateTaskProps=com.aliyun.ros.cdk.rds.RosMigrateTaskProps
+@alicloud/ros-cdk-rds.RosPostgresExtensions=com.aliyun.ros.cdk.rds.RosPostgresExtensions
+@alicloud/ros-cdk-rds.RosPostgresExtensionsProps=com.aliyun.ros.cdk.rds.RosPostgresExtensionsProps
 @alicloud/ros-cdk-rds.RosPrepayDBInstance=com.aliyun.ros.cdk.rds.RosPrepayDBInstance
 @alicloud/ros-cdk-rds.RosPrepayDBInstance.DBMappingsProperty=com.aliyun.ros.cdk.rds.RosPrepayDBInstance$DBMappingsProperty
 @alicloud/ros-cdk-rds.RosPrepayDBInstance.ServerlessConfigProperty=com.aliyun.ros.cdk.rds.RosPrepayDBInstance$ServerlessConfigProperty

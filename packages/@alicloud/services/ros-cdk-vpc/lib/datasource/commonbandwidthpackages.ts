@@ -26,7 +26,7 @@ export interface CommonBandwidthPackagesProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::CommonBandwidthPackages`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::CommonBandwidthPackages`, which is used to query the elastic IP address (EIP) bandwidth plans in a specified region.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCommonBandwidthPackages`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-commonbandwidthpackages
  */

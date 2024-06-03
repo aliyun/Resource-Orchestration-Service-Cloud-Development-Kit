@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.fc;
  * <p>
  * Functions must be associated with services. All functions of a service share the same attributes as the service, such as service authorization and log configurations.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:33.140Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:55.187Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.Function")
 public class Function extends com.aliyun.ros.cdk.core.Resource {
 
@@ -40,6 +40,34 @@ public class Function extends com.aliyun.ros.cdk.core.Resource {
     public Function(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.fc.FunctionProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
         software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), java.util.Objects.requireNonNull(props, "props is required") });
+    }
+
+    /**
+     * Loads the fcFunction code from a local disk path.
+     * <p>
+     * @param path Either a directory with the Lambda code bundle or a .zip file. This parameter is required.
+     */
+    public void codeFromAsset(final @org.jetbrains.annotations.NotNull java.lang.String path) {
+        software.amazon.jsii.Kernel.call(this, "codeFromAsset", software.amazon.jsii.NativeType.VOID, new Object[] { java.util.Objects.requireNonNull(path, "path is required") });
+    }
+
+    /**
+     * Function handler code as an OSS object.
+     * <p>
+     * @param bucket The OSS bucket. This parameter is required.
+     * @param key The object key. This parameter is required.
+     */
+    public void codeFromBucket(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.oss.Bucket bucket, final @org.jetbrains.annotations.NotNull java.lang.String key) {
+        software.amazon.jsii.Kernel.call(this, "codeFromBucket", software.amazon.jsii.NativeType.VOID, new Object[] { java.util.Objects.requireNonNull(bucket, "bucket is required"), java.util.Objects.requireNonNull(key, "key is required") });
+    }
+
+    /**
+     * Inline code for FC fcFunction handler.
+     * <p>
+     * @param code The actual handler code (limited to 4KiB). This parameter is required.
+     */
+    public void codeFromInline(final @org.jetbrains.annotations.NotNull java.lang.String code) {
+        software.amazon.jsii.Kernel.call(this, "codeFromInline", software.amazon.jsii.NativeType.VOID, new Object[] { java.util.Objects.requireNonNull(code, "code is required") });
     }
 
     /**

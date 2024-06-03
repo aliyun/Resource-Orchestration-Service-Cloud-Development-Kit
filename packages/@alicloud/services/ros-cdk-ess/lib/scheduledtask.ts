@@ -100,7 +100,7 @@ export interface ScheduledTaskProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScheduledTask`, which is used to create a scheduled task based on specified parameters.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScheduledTask`, which is used to create a scheduled task by specifying properties.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosScheduledTask`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scheduledtask
  */

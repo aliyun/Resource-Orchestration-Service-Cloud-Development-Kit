@@ -407,35 +407,14 @@ export class RosExchange extends ros.RosResource {
 export interface RosInstanceProps {
 
     /**
-     * @Property instanceType: The Instance Type. Valid values: professional, enterprise, vip.
-     */
-    readonly instanceType: string | ros.IResolvable;
-
-    /**
-     * @Property maxTps: If instance type is professional, the valid value is [1000, 1500, 2000, 2500, 3000, 4000, 5000].
-     * If instance type is enterprise, the valid value is [3000, 5000, 8000, 10000, 15000, 20000, 3000040000, 50000, 80000, 10000].
-     * If instance type is vip, the valid value is [8000, 15000, 25000, 40000, 50000, 100000, 200000, 300000, 500000, 800000, 1000000].
-     *
-     */
-    readonly maxTps: number | ros.IResolvable;
-
-    /**
-     * @Property queueCapacity: The queue capacity. If instance type is professional, the valid value is [50, 1000] with the step size 5.
-     * If instance type is enterprise, the valid value is [200, 6000] with the step size 100
-     * If instance type is vip, the valid value is [200, 80000] with the step size 100
-     */
-    readonly queueCapacity: number | ros.IResolvable;
-
-    /**
-     * @Property storageSize: The storage size. It is valid when instance_type is vip.
-     * If instance type is professional or enterprise, the valid value is 0.If instance type is vip, the valid value is [700, 2800] with the step size 100
-     */
-    readonly storageSize: number | ros.IResolvable;
-
-    /**
      * @Property instanceName: The instance name.
      */
     readonly instanceName?: string | ros.IResolvable;
+
+    /**
+     * @Property instanceType: The Instance Type. Valid values: professional, enterprise, vip.
+     */
+    readonly instanceType?: string | ros.IResolvable;
 
     /**
      * @Property maxEipTps: The max eip tps. It is valid when support_eip is true. 
@@ -443,6 +422,14 @@ export interface RosInstanceProps {
      *
      */
     readonly maxEipTps?: number | ros.IResolvable;
+
+    /**
+     * @Property maxTps: If instance type is professional, the valid value is [1000, 1500, 2000, 2500, 3000, 4000, 5000].
+     * If instance type is enterprise, the valid value is [3000, 5000, 8000, 10000, 15000, 20000, 3000040000, 50000, 80000, 10000].
+     * If instance type is vip, the valid value is [8000, 15000, 25000, 40000, 50000, 100000, 200000, 300000, 500000, 800000, 1000000].
+     *
+     */
+    readonly maxTps?: number | ros.IResolvable;
 
     /**
      * @Property orderNum: Set the number of instances to be created.
@@ -467,6 +454,19 @@ export interface RosInstanceProps {
      * Default value: Month.
      */
     readonly periodUnit?: string | ros.IResolvable;
+
+    /**
+     * @Property queueCapacity: The queue capacity. If instance type is professional, the valid value is [50, 1000] with the step size 5.
+     * If instance type is enterprise, the valid value is [200, 6000] with the step size 100
+     * If instance type is vip, the valid value is [200, 80000] with the step size 100
+     */
+    readonly queueCapacity?: number | ros.IResolvable;
+
+    /**
+     * @Property storageSize: The storage size. It is valid when instance_type is vip.
+     * If instance type is professional or enterprise, the valid value is 0.If instance type is vip, the valid value is [700, 2800] with the step size 100
+     */
+    readonly storageSize?: number | ros.IResolvable;
 
     /**
      * @Property supportEip: Whether to support EIP. Valid values: true, false.
@@ -497,7 +497,6 @@ export interface RosInstanceProps {
 function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('maxTps', ros.requiredValidator)(properties.maxTps));
     if(properties.maxTps && (typeof properties.maxTps) !== 'object') {
         errors.collect(ros.propertyValidator('maxTps', ros.validateAllowedValues)({
           data: properties.maxTps,
@@ -527,7 +526,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
-    errors.collect(ros.propertyValidator('storageSize', ros.requiredValidator)(properties.storageSize));
     if(properties.storageSize && (typeof properties.storageSize) !== 'object') {
         errors.collect(ros.propertyValidator('storageSize', ros.validateRange)({
             data: properties.storageSize,
@@ -539,11 +537,10 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
           data: properties.payType,
-          allowedValues: ["Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
-    errors.collect(ros.propertyValidator('queueCapacity', ros.requiredValidator)(properties.queueCapacity));
     if(properties.queueCapacity && (typeof properties.queueCapacity) !== 'object') {
         errors.collect(ros.propertyValidator('queueCapacity', ros.validateRange)({
             data: properties.queueCapacity,
@@ -575,7 +572,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('supportTracing', ros.validateString)(properties.supportTracing));
-    errors.collect(ros.propertyValidator('instanceType', ros.requiredValidator)(properties.instanceType));
     if(properties.instanceType && (typeof properties.instanceType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceType', ros.validateAllowedValues)({
           data: properties.instanceType,
@@ -607,16 +603,16 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      InstanceType: ros.stringToRosTemplate(properties.instanceType),
-      MaxTps: ros.numberToRosTemplate(properties.maxTps),
-      QueueCapacity: ros.numberToRosTemplate(properties.queueCapacity),
-      StorageSize: ros.numberToRosTemplate(properties.storageSize),
       InstanceName: ros.stringToRosTemplate(properties.instanceName),
+      InstanceType: ros.stringToRosTemplate(properties.instanceType),
       MaxEipTps: ros.numberToRosTemplate(properties.maxEipTps),
+      MaxTps: ros.numberToRosTemplate(properties.maxTps),
       OrderNum: ros.numberToRosTemplate(properties.orderNum),
       PayType: ros.stringToRosTemplate(properties.payType),
       Period: ros.numberToRosTemplate(properties.period),
       PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
+      QueueCapacity: ros.numberToRosTemplate(properties.queueCapacity),
+      StorageSize: ros.numberToRosTemplate(properties.storageSize),
       SupportEip: ros.stringToRosTemplate(properties.supportEip),
       SupportTracing: ros.stringToRosTemplate(properties.supportTracing),
       TracingStorageTime: ros.numberToRosTemplate(properties.tracingStorageTime),
@@ -653,35 +649,14 @@ export class RosInstance extends ros.RosResource {
 
 
     /**
-     * @Property instanceType: The Instance Type. Valid values: professional, enterprise, vip.
-     */
-    public instanceType: string | ros.IResolvable;
-
-    /**
-     * @Property maxTps: If instance type is professional, the valid value is [1000, 1500, 2000, 2500, 3000, 4000, 5000].
-     * If instance type is enterprise, the valid value is [3000, 5000, 8000, 10000, 15000, 20000, 3000040000, 50000, 80000, 10000].
-     * If instance type is vip, the valid value is [8000, 15000, 25000, 40000, 50000, 100000, 200000, 300000, 500000, 800000, 1000000].
-     *
-     */
-    public maxTps: number | ros.IResolvable;
-
-    /**
-     * @Property queueCapacity: The queue capacity. If instance type is professional, the valid value is [50, 1000] with the step size 5.
-     * If instance type is enterprise, the valid value is [200, 6000] with the step size 100
-     * If instance type is vip, the valid value is [200, 80000] with the step size 100
-     */
-    public queueCapacity: number | ros.IResolvable;
-
-    /**
-     * @Property storageSize: The storage size. It is valid when instance_type is vip.
-     * If instance type is professional or enterprise, the valid value is 0.If instance type is vip, the valid value is [700, 2800] with the step size 100
-     */
-    public storageSize: number | ros.IResolvable;
-
-    /**
      * @Property instanceName: The instance name.
      */
     public instanceName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceType: The Instance Type. Valid values: professional, enterprise, vip.
+     */
+    public instanceType: string | ros.IResolvable | undefined;
 
     /**
      * @Property maxEipTps: The max eip tps. It is valid when support_eip is true. 
@@ -689,6 +664,14 @@ export class RosInstance extends ros.RosResource {
      *
      */
     public maxEipTps: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property maxTps: If instance type is professional, the valid value is [1000, 1500, 2000, 2500, 3000, 4000, 5000].
+     * If instance type is enterprise, the valid value is [3000, 5000, 8000, 10000, 15000, 20000, 3000040000, 50000, 80000, 10000].
+     * If instance type is vip, the valid value is [8000, 15000, 25000, 40000, 50000, 100000, 200000, 300000, 500000, 800000, 1000000].
+     *
+     */
+    public maxTps: number | ros.IResolvable | undefined;
 
     /**
      * @Property orderNum: Set the number of instances to be created.
@@ -713,6 +696,19 @@ export class RosInstance extends ros.RosResource {
      * Default value: Month.
      */
     public periodUnit: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property queueCapacity: The queue capacity. If instance type is professional, the valid value is [50, 1000] with the step size 5.
+     * If instance type is enterprise, the valid value is [200, 6000] with the step size 100
+     * If instance type is vip, the valid value is [200, 80000] with the step size 100
+     */
+    public queueCapacity: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property storageSize: The storage size. It is valid when instance_type is vip.
+     * If instance type is professional or enterprise, the valid value is 0.If instance type is vip, the valid value is [700, 2800] with the step size 100
+     */
+    public storageSize: number | ros.IResolvable | undefined;
 
     /**
      * @Property supportEip: Whether to support EIP. Valid values: true, false.
@@ -744,16 +740,16 @@ export class RosInstance extends ros.RosResource {
         this.attrPrivateEndpoint = this.getAtt('PrivateEndpoint');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-        this.instanceType = props.instanceType;
-        this.maxTps = props.maxTps;
-        this.queueCapacity = props.queueCapacity;
-        this.storageSize = props.storageSize;
         this.instanceName = props.instanceName;
+        this.instanceType = props.instanceType;
         this.maxEipTps = props.maxEipTps;
+        this.maxTps = props.maxTps;
         this.orderNum = props.orderNum;
         this.payType = props.payType;
         this.period = props.period;
         this.periodUnit = props.periodUnit;
+        this.queueCapacity = props.queueCapacity;
+        this.storageSize = props.storageSize;
         this.supportEip = props.supportEip;
         this.supportTracing = props.supportTracing;
         this.tracingStorageTime = props.tracingStorageTime;
@@ -762,16 +758,16 @@ export class RosInstance extends ros.RosResource {
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
-            instanceType: this.instanceType,
-            maxTps: this.maxTps,
-            queueCapacity: this.queueCapacity,
-            storageSize: this.storageSize,
             instanceName: this.instanceName,
+            instanceType: this.instanceType,
             maxEipTps: this.maxEipTps,
+            maxTps: this.maxTps,
             orderNum: this.orderNum,
             payType: this.payType,
             period: this.period,
             periodUnit: this.periodUnit,
+            queueCapacity: this.queueCapacity,
+            storageSize: this.storageSize,
             supportEip: this.supportEip,
             supportTracing: this.supportTracing,
             tracingStorageTime: this.tracingStorageTime,

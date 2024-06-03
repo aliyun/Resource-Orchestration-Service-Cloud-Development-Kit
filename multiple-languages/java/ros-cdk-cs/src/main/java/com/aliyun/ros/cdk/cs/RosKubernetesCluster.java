@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CS::KubernetesCluster</code>, which is used to create a Container Service for Kubernetes (ACK) dedicated cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:31.417Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:50.612Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosKubernetesCluster")
 public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -1004,6 +1004,24 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setSecurityGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "securityGroupId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSecurityHardeningOs() {
+        return software.amazon.jsii.Kernel.get(this, "securityHardeningOs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSecurityHardeningOs(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "securityHardeningOs", value);
+    }
+
+    /**
+     */
+    public void setSecurityHardeningOs(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "securityHardeningOs", value);
     }
 
     /**
@@ -2557,6 +2575,20 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
         @org.jetbrains.annotations.NotNull java.lang.Object getName();
 
         /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getType() {
+            return null;
+        }
+
+        /**
          * @return a {@link Builder} of {@link NodePoolInfoProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -2569,6 +2601,8 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<NodePoolInfoProperty> {
             java.lang.Object name;
+            java.lang.Object resourceGroupId;
+            java.lang.Object type;
 
             /**
              * Sets the value of {@link NodePoolInfoProperty#getName}
@@ -2593,6 +2627,50 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link NodePoolInfoProperty#getResourceGroupId}
+             * @param resourceGroupId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder resourceGroupId(java.lang.String resourceGroupId) {
+                this.resourceGroupId = resourceGroupId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link NodePoolInfoProperty#getResourceGroupId}
+             * @param resourceGroupId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+                this.resourceGroupId = resourceGroupId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link NodePoolInfoProperty#getType}
+             * @param type the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder type(java.lang.String type) {
+                this.type = type;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link NodePoolInfoProperty#getType}
+             * @param type the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder type(com.aliyun.ros.cdk.core.IResolvable type) {
+                this.type = type;
+                return this;
+            }
+
+            /**
              * Builds the configured instance.
              * @return a new instance of {@link NodePoolInfoProperty}
              * @throws NullPointerException if any required attribute was not provided
@@ -2611,6 +2689,8 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements NodePoolInfoProperty {
             private final java.lang.Object name;
+            private final java.lang.Object resourceGroupId;
+            private final java.lang.Object type;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -2619,6 +2699,8 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
                 this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -2627,11 +2709,23 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
+                this.resourceGroupId = builder.resourceGroupId;
+                this.type = builder.type;
             }
 
             @Override
             public final java.lang.Object getName() {
                 return this.name;
+            }
+
+            @Override
+            public final java.lang.Object getResourceGroupId() {
+                return this.resourceGroupId;
+            }
+
+            @Override
+            public final java.lang.Object getType() {
+                return this.type;
             }
 
             @Override
@@ -2641,6 +2735,12 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
                 data.set("name", om.valueToTree(this.getName()));
+                if (this.getResourceGroupId() != null) {
+                    data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+                }
+                if (this.getType() != null) {
+                    data.set("type", om.valueToTree(this.getType()));
+                }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
                 struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-cs.RosKubernetesCluster.NodePoolInfoProperty"));
@@ -2659,12 +2759,16 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
 
                 NodePoolInfoProperty.Jsii$Proxy that = (NodePoolInfoProperty.Jsii$Proxy) o;
 
-                return this.name.equals(that.name);
+                if (!name.equals(that.name)) return false;
+                if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
+                return this.type != null ? this.type.equals(that.type) : that.type == null;
             }
 
             @Override
             public final int hashCode() {
                 int result = this.name.hashCode();
+                result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
+                result = 31 * result + (this.type != null ? this.type.hashCode() : 0);
                 return result;
             }
         }
@@ -5448,6 +5552,23 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder securityGroupId(final com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
             this.props.securityGroupId(securityGroupId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param securityHardeningOs This parameter is required.
+         */
+        public Builder securityHardeningOs(final java.lang.Boolean securityHardeningOs) {
+            this.props.securityHardeningOs(securityHardeningOs);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param securityHardeningOs This parameter is required.
+         */
+        public Builder securityHardeningOs(final com.aliyun.ros.cdk.core.IResolvable securityHardeningOs) {
+            this.props.securityHardeningOs(securityHardeningOs);
             return this;
         }
 

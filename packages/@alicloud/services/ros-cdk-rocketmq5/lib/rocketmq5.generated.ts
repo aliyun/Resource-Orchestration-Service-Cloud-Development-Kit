@@ -102,7 +102,7 @@ function rosConsumerGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ5::ConsumerGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ5::ConsumerGroup`, which is used to create a consumer group in ApsaraMQ for RocketMQ 5.0.
  * @Note This class does not contain additional functions, so it is recommended to use the `ConsumerGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq5-consumergroup
  */
@@ -361,7 +361,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     if(properties.subSeriesCode && (typeof properties.subSeriesCode) !== 'object') {
         errors.collect(ros.propertyValidator('subSeriesCode', ros.validateAllowedValues)({
           data: properties.subSeriesCode,
-          allowedValues: ["single_node","cluster_ha"],
+          allowedValues: ["single_node","cluster_ha","serverless"],
         }));
     }
     errors.collect(ros.propertyValidator('subSeriesCode', ros.validateString)(properties.subSeriesCode));
@@ -729,9 +729,18 @@ export namespace RosInstance {
          */
         readonly vpcId: string | ros.IResolvable;
         /**
+         * @Property vSwitchIds: IDs of the vSwitchs associated with the instance to be created.
+     * **Note**: Only one is required for VSwitchIds and VSwitchId. When both are filled in, VSwitchIds overwrites VSwitchId.
+         */
+        readonly vSwitchIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
          * @Property vSwitchId: ID of the vSwitch associated with the instance to be created.
          */
-        readonly vSwitchId: string | ros.IResolvable;
+        readonly vSwitchId?: string | ros.IResolvable;
+        /**
+         * @Property securityGroupId: ID of the security group associated with the instance to be created. Required when creating serverless.
+         */
+        readonly securityGroupId?: string | ros.IResolvable;
     }
 }
 /**
@@ -746,8 +755,16 @@ function RosInstance_VpcInfoPropertyValidator(properties: any): ros.ValidationRe
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
-    errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
+    if(properties.vSwitchIds && (Array.isArray(properties.vSwitchIds) || (typeof properties.vSwitchIds) === 'string')) {
+        errors.collect(ros.propertyValidator('vSwitchIds', ros.validateLength)({
+            data: properties.vSwitchIds.length,
+            min: undefined,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateString))(properties.vSwitchIds));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     return errors.wrap('supplied properties not correct for "VpcInfoProperty"');
 }
 
@@ -764,7 +781,9 @@ function rosInstanceVpcInfoPropertyToRosTemplate(properties: any): any {
     RosInstance_VpcInfoPropertyValidator(properties).assertSuccess();
     return {
       VpcId: ros.stringToRosTemplate(properties.vpcId),
+      VSwitchIds: ros.listMapper(ros.stringToRosTemplate)(properties.vSwitchIds),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
+      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
     };
 }
 

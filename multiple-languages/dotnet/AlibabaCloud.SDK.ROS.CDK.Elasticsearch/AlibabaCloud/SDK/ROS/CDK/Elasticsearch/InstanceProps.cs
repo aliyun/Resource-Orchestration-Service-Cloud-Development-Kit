@@ -269,6 +269,42 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             }
         }
 
+        private object? _instanceCategory;
+
+        /// <summary>Property instanceCategory: Version Type: - x-pack: Create a commercial instance or a kernel-enhanced instance without Indexing Service and OpenStore enabled.</summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <description>IS: Creates a kernel-enhanced instance with Indexing Service or OpenStore enabled</description>
+        /// </list>
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "instanceCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? InstanceCategory
+        {
+            get => _instanceCategory;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _instanceCategory = value;
+            }
+        }
+
         private object? _instanceChargeType;
 
         /// <summary>Property instanceChargeType: Valid values are PrePaid, PostPaid, Default to PostPaid.</summary>

@@ -102,7 +102,7 @@ function rosAccessAssignmentPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::AccessAssignment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::AccessAssignment`, which is used to assign access permissions on an account in your resource directory to a user or group by using an access configuration.
  * @Note This class does not contain additional functions, so it is recommended to use the `AccessAssignment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsso-accessassignment
  */
@@ -282,7 +282,7 @@ function rosAccessConfigurationPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::AccessConfiguration`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::AccessConfiguration`, which is used to create an access configuration.
  * @Note This class does not contain additional functions, so it is recommended to use the `AccessConfiguration` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsso-accessconfiguration
  */
@@ -440,7 +440,7 @@ function rosAccessConfigurationProvisionPropsToRosTemplate(properties: any, enab
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::AccessConfigurationProvision`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::AccessConfigurationProvision`, which is used to provision an access configuration for an account in your resource directory.
  * @Note This class does not contain additional functions, so it is recommended to use the `AccessConfigurationProvision` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsso-accessconfigurationprovision
  */
@@ -550,7 +550,7 @@ function rosDirectoryPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::Directory`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::Directory`, which is used to create a directory.
  * @Note This class does not contain additional functions, so it is recommended to use the `Directory` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsso-directory
  */
@@ -677,7 +677,7 @@ function rosGroupPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::Group`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::Group`, which is used to create a group in CloudSSO.
  * @Note This class does not contain additional functions, so it is recommended to use the `Group` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsso-group
  */
@@ -830,7 +830,7 @@ function rosPermissionPolicyToAccessConfigurationAdditionPropsToRosTemplate(prop
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::PermissionPolicyToAccessConfigurationAddition`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::PermissionPolicyToAccessConfigurationAddition`, which is used to add a policy to an access configuration.
  * @Note This class does not contain additional functions, so it is recommended to use the `PermissionPolicyToAccessConfigurationAddition` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsso-permissionpolicytoaccessconfigurationaddition
  */
@@ -1004,7 +1004,7 @@ function rosSAMLIdentityProviderPropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::SAMLIdentityProvider`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::SAMLIdentityProvider`, which is used to configure the information about a Security Assertion Markup Language (SAML) identity provider (IdP).
  * @Note This class does not contain additional functions, so it is recommended to use the `SAMLIdentityProvider` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsso-samlidentityprovider
  */
@@ -1154,7 +1154,7 @@ function rosSCIMServerCredentialPropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::SCIMServerCredential`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::SCIMServerCredential`, which is used to create a System for Cross-domain Identity Management (SCIM) credential.
  * @Note This class does not contain additional functions, so it is recommended to use the `SCIMServerCredential` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsso-scimservercredential
  */
@@ -1279,7 +1279,7 @@ function rosSCIMSynchronizationPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::SCIMSynchronization`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::SCIMSynchronization`, which is used to enable or disable System for Cross-domain Identity Management (SCIM) synchronization.
  * @Note This class does not contain additional functions, so it is recommended to use the `SCIMSynchronization` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsso-scimsynchronization
  */
@@ -1482,7 +1482,7 @@ function rosUserPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::User`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::User`, which is used to create a user.
  * @Note This class does not contain additional functions, so it is recommended to use the `User` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsso-user
  */
@@ -1720,7 +1720,7 @@ function rosUserProvisionPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::UserProvision`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::UserProvision`, which is used to create a Resource Access Management (RAM) user provisioning.
  * @Note This class does not contain additional functions, so it is recommended to use the `UserProvision` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsso-userprovision
  */
@@ -1886,7 +1886,7 @@ function rosUserToGroupAdditionPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::UserToGroupAddition`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSSO::UserToGroupAddition`, which is used to add a user to a group.
  * @Note This class does not contain additional functions, so it is recommended to use the `UserToGroupAddition` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsso-usertogroupaddition
  */

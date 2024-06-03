@@ -95,6 +95,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             }
         }
 
+        /// <summary>Property instanceCategory: Version Type: - x-pack: Create a commercial instance or a kernel-enhanced instance without Indexing Service and OpenStore enabled.</summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <description>IS: Creates a kernel-enhanced instance with Indexing Service or OpenStore enabled</description>
+        /// </list>
+        /// </remarks>
+        [JsiiProperty(name: "instanceCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? InstanceCategory
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property instanceChargeType: Valid values are PrePaid, PostPaid, Default to PostPaid.</summary>
         [JsiiProperty(name: "instanceChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -332,6 +348,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             [JsiiOptional]
             [JsiiProperty(name: "enablePublic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? EnablePublic
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property instanceCategory: Version Type: - x-pack: Create a commercial instance or a kernel-enhanced instance without Indexing Service and OpenStore enabled.</summary>
+            /// <remarks>
+            /// <list type="bullet">
+            /// <description>IS: Creates a kernel-enhanced instance with Indexing Service or OpenStore enabled</description>
+            /// </list>
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "instanceCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? InstanceCategory
             {
                 get => GetInstanceProperty<object?>();
             }

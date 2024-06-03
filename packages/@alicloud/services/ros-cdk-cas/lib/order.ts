@@ -25,28 +25,9 @@ export interface OrderProps {
     readonly domainCnt?: number | ros.IResolvable;
 
     /**
-     * Property domains: Domain names. If you specify this parameter, you do not need to specify DomainCnt; otherwise, the length of the array used for this parameter will prevail.
-     * **Note:** This parameter is not supported by international stations.
-     */
-    readonly domains?: Array<string | ros.IResolvable> | ros.IResolvable;
-
-    /**
      * Property domainType: Domain type. Valid values: one, all, multiple.
      */
     readonly domainType?: string | ros.IResolvable;
-
-    /**
-     * Property merge: Whether to merge issues. Syndication is the process of combining multiple certificates (domains) into a single certificate, including full single or wildcard domains.
-     * For example: aliyun.com\/*.aliyun.com
-     * **Note**: The number of combined certificates (domains) is not recommended to exceed 200
-     */
-    readonly merge?: boolean | ros.IResolvable;
-
-    /**
-     * Property monitor: Whether to enable monitoring domains.
-     * **Note:** This parameter is not supported by international stations.
-     */
-    readonly monitor?: boolean | ros.IResolvable;
 
     /**
      * Property period: Service time of the certificate, in year. Valid values: 1, 2, 3.
@@ -90,11 +71,8 @@ export class Order extends ros.Resource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosOrder = new RosOrder(this, id,  {
-            domains: props.domains,
             domainCnt: props.domainCnt === undefined || props.domainCnt === null ? 1 : props.domainCnt,
             domainType: props.domainType === undefined || props.domainType === null ? 'one' : props.domainType,
-            monitor: props.monitor === undefined || props.monitor === null ? false : props.monitor,
-            merge: props.merge === undefined || props.merge === null ? false : props.merge,
             service: props.service === undefined || props.service === null ? 'NoNeed' : props.service,
             period: props.period === undefined || props.period === null ? 1 : props.period,
             certType: props.certType,

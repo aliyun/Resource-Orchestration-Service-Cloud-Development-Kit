@@ -21,7 +21,7 @@ export interface StorageBundleProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CloudStorageGateway::StorageBundle`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CloudStorageGateway::StorageBundle`, which is used to create a gateway cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosStorageBundle`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudstoragegateway-storagebundle
  */

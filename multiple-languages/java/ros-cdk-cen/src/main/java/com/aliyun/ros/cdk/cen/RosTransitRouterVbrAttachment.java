@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CEN::TransitRouterVbrAttachment</code>, which is used to create a virtual border router (VBR) connection from an Enterprise Edition transit router.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:30.793Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:49.994Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosTransitRouterVbrAttachment")
 public class RosTransitRouterVbrAttachment extends com.aliyun.ros.cdk.core.RosResource {
 

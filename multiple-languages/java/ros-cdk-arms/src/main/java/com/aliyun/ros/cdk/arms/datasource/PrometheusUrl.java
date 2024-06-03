@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.arms.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::ARMS::PrometheusUrl</code>.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::ARMS::PrometheusUrl</code>, which is used to query all URLs of a cluster, including the URLs for remote read, remote write, Pushgateway, and Grafana.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:30.582Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:49.779Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.datasource.PrometheusUrl")
 public class PrometheusUrl extends com.aliyun.ros.cdk.core.Resource {
 

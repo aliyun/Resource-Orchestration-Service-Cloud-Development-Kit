@@ -4,6 +4,7 @@ export * from './clusteraddons';
 export * from './clusterapplication';
 export * from './clusterhelmapplication';
 export * from './clusternodepool';
+export * from './grantpermissions';
 export * from './kubernetescluster';
 export * from './managededgekubernetescluster';
 export * from './managedkubernetescluster';

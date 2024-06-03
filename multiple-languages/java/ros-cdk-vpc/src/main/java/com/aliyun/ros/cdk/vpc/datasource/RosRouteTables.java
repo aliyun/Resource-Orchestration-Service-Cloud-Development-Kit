@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::VPC::RouteTables</code>.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::VPC::RouteTables</code>, which is used to query route tables.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:35.901Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:55.099Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.RosRouteTables")
 public class RosRouteTables extends com.aliyun.ros.cdk.core.RosResource {
 

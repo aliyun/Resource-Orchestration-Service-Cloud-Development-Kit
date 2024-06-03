@@ -37,7 +37,7 @@ export interface SecurityPolicyProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::NLB::SecurityPolicy`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::NLB::SecurityPolicy`, which is used to create a custom security policy for a TCP/SSL listener.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecurityPolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-securitypolicy
  */

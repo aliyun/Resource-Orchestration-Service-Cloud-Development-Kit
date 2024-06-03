@@ -11,54 +11,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
     [JsiiInterface(nativeType: typeof(IInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-amqp.InstanceProps")]
     public interface IInstanceProps
     {
-        /// <summary>Property instanceType: The Instance Type.</summary>
-        /// <remarks>
-        /// Valid values: professional, enterprise, vip.
-        /// </remarks>
-        [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object InstanceType
-        {
-            get;
-        }
-
-        /// <summary>Property maxTps: If instance type is professional, the valid value is [1000, 1500, 2000, 2500, 3000, 4000, 5000].</summary>
-        /// <remarks>
-        /// If instance type is enterprise, the valid value is [3000, 5000, 8000, 10000, 15000, 20000, 3000040000, 50000, 80000, 10000].
-        /// If instance type is vip, the valid value is [8000, 15000, 25000, 40000, 50000, 100000, 200000, 300000, 500000, 800000, 1000000].
-        /// </remarks>
-        [JsiiProperty(name: "maxTps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object MaxTps
-        {
-            get;
-        }
-
-        /// <summary>Property queueCapacity: The queue capacity.</summary>
-        /// <remarks>
-        /// If instance type is professional, the valid value is [50, 1000] with the step size 5.
-        /// If instance type is enterprise, the valid value is [200, 6000] with the step size 100
-        /// If instance type is vip, the valid value is [200, 80000] with the step size 100
-        /// </remarks>
-        [JsiiProperty(name: "queueCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object QueueCapacity
-        {
-            get;
-        }
-
-        /// <summary>Property storageSize: The storage size.</summary>
-        /// <remarks>
-        /// It is valid when instance_type is vip.
-        /// If instance type is professional or enterprise, the valid value is 0.If instance type is vip, the valid value is [700, 2800] with the step size 100
-        /// </remarks>
-        [JsiiProperty(name: "storageSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object StorageSize
-        {
-            get;
-        }
-
         /// <summary>Property instanceName: The instance name.</summary>
         [JsiiProperty(name: "instanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? InstanceName
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property instanceType: The Instance Type.</summary>
+        /// <remarks>
+        /// Valid values: professional, enterprise, vip.
+        /// </remarks>
+        [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? InstanceType
         {
             get
             {
@@ -74,6 +44,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
         [JsiiProperty(name: "maxEipTps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? MaxEipTps
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property maxTps: If instance type is professional, the valid value is [1000, 1500, 2000, 2500, 3000, 4000, 5000].</summary>
+        /// <remarks>
+        /// If instance type is enterprise, the valid value is [3000, 5000, 8000, 10000, 15000, 20000, 3000040000, 50000, 80000, 10000].
+        /// If instance type is vip, the valid value is [8000, 15000, 25000, 40000, 50000, 100000, 200000, 300000, 500000, 800000, 1000000].
+        /// </remarks>
+        [JsiiProperty(name: "maxTps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? MaxTps
         {
             get
             {
@@ -138,6 +123,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
             }
         }
 
+        /// <summary>Property queueCapacity: The queue capacity.</summary>
+        /// <remarks>
+        /// If instance type is professional, the valid value is [50, 1000] with the step size 5.
+        /// If instance type is enterprise, the valid value is [200, 6000] with the step size 100
+        /// If instance type is vip, the valid value is [200, 80000] with the step size 100
+        /// </remarks>
+        [JsiiProperty(name: "queueCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? QueueCapacity
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property storageSize: The storage size.</summary>
+        /// <remarks>
+        /// It is valid when instance_type is vip.
+        /// If instance type is professional or enterprise, the valid value is 0.If instance type is vip, the valid value is [700, 2800] with the step size 100
+        /// </remarks>
+        [JsiiProperty(name: "storageSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? StorageSize
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property supportEip: Whether to support EIP.</summary>
         /// <remarks>
         /// Valid values: true, false.
@@ -194,54 +210,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
             {
             }
 
-            /// <summary>Property instanceType: The Instance Type.</summary>
-            /// <remarks>
-            /// Valid values: professional, enterprise, vip.
-            /// </remarks>
-            [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object InstanceType
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
-            /// <summary>Property maxTps: If instance type is professional, the valid value is [1000, 1500, 2000, 2500, 3000, 4000, 5000].</summary>
-            /// <remarks>
-            /// If instance type is enterprise, the valid value is [3000, 5000, 8000, 10000, 15000, 20000, 3000040000, 50000, 80000, 10000].
-            /// If instance type is vip, the valid value is [8000, 15000, 25000, 40000, 50000, 100000, 200000, 300000, 500000, 800000, 1000000].
-            /// </remarks>
-            [JsiiProperty(name: "maxTps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object MaxTps
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
-            /// <summary>Property queueCapacity: The queue capacity.</summary>
-            /// <remarks>
-            /// If instance type is professional, the valid value is [50, 1000] with the step size 5.
-            /// If instance type is enterprise, the valid value is [200, 6000] with the step size 100
-            /// If instance type is vip, the valid value is [200, 80000] with the step size 100
-            /// </remarks>
-            [JsiiProperty(name: "queueCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object QueueCapacity
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
-            /// <summary>Property storageSize: The storage size.</summary>
-            /// <remarks>
-            /// It is valid when instance_type is vip.
-            /// If instance type is professional or enterprise, the valid value is 0.If instance type is vip, the valid value is [700, 2800] with the step size 100
-            /// </remarks>
-            [JsiiProperty(name: "storageSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object StorageSize
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
             /// <summary>Property instanceName: The instance name.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "instanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? InstanceName
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property instanceType: The Instance Type.</summary>
+            /// <remarks>
+            /// Valid values: professional, enterprise, vip.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? InstanceType
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -254,6 +237,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
             [JsiiOptional]
             [JsiiProperty(name: "maxEipTps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? MaxEipTps
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property maxTps: If instance type is professional, the valid value is [1000, 1500, 2000, 2500, 3000, 4000, 5000].</summary>
+            /// <remarks>
+            /// If instance type is enterprise, the valid value is [3000, 5000, 8000, 10000, 15000, 20000, 3000040000, 50000, 80000, 10000].
+            /// If instance type is vip, the valid value is [8000, 15000, 25000, 40000, 50000, 100000, 200000, 300000, 500000, 800000, 1000000].
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "maxTps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MaxTps
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -299,6 +294,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
             [JsiiOptional]
             [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PeriodUnit
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property queueCapacity: The queue capacity.</summary>
+            /// <remarks>
+            /// If instance type is professional, the valid value is [50, 1000] with the step size 5.
+            /// If instance type is enterprise, the valid value is [200, 6000] with the step size 100
+            /// If instance type is vip, the valid value is [200, 80000] with the step size 100
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "queueCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? QueueCapacity
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property storageSize: The storage size.</summary>
+            /// <remarks>
+            /// It is valid when instance_type is vip.
+            /// If instance type is professional or enterprise, the valid value is 0.If instance type is vip, the valid value is [700, 2800] with the step size 100
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "storageSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? StorageSize
             {
                 get => GetInstanceProperty<object?>();
             }

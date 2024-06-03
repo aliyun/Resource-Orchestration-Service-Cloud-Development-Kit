@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dts;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::DTS::MigrationJob2</code>, which is used to purchase a data migration instance and configure a data migration task of the new version.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:31.726Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:50.977Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.MigrationJob2")
 public class MigrationJob2 extends com.aliyun.ros.cdk.core.Resource {
 

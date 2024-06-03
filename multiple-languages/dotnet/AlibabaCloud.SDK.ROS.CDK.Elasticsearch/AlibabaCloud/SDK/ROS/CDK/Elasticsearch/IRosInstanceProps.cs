@@ -102,6 +102,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: instanceCategory: Version Type:
+        /// - x-pack: Create a commercial instance or a kernel-enhanced instance without Indexing Service and OpenStore enabled.
+        /// - IS: Creates a kernel-enhanced instance with Indexing Service or OpenStore enabled
+        /// </remarks>
+        [JsiiProperty(name: "instanceCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? InstanceCategory
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: instanceChargeType: Valid values are PrePaid, PostPaid, Default to PostPaid.
         /// </remarks>
         [JsiiProperty(name: "instanceChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -357,6 +372,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             [JsiiOptional]
             [JsiiProperty(name: "enablePublic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? EnablePublic
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: instanceCategory: Version Type:
+            /// - x-pack: Create a commercial instance or a kernel-enhanced instance without Indexing Service and OpenStore enabled.
+            /// - IS: Creates a kernel-enhanced instance with Indexing Service or OpenStore enabled
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "instanceCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? InstanceCategory
             {
                 get => GetInstanceProperty<object?>();
             }

@@ -256,6 +256,14 @@ export interface ManagedKubernetesClusterProps {
     readonly securityGroupId?: string | ros.IResolvable;
 
     /**
+     * Property securityHardeningOs: Alibaba Cloud OS security hardening. Value:
+     * true: enables security hardening OS.
+     * false: disables security hardening OS.
+     * Default value: false.
+     */
+    readonly securityHardeningOs?: boolean | ros.IResolvable;
+
+    /**
      * Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0\/20 is used by default.
      */
     readonly serviceCidr?: string | ros.IResolvable;
@@ -323,6 +331,14 @@ export interface ManagedKubernetesClusterProps {
      * Default to cloud_efficiency.
      */
     readonly workerSystemDiskCategory?: string | ros.IResolvable;
+
+    /**
+     * Property workerSystemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk. Default value: PL0. Valid values:
+     * PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.
+     * PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.
+     *
+     */
+    readonly workerSystemDiskPerformanceLevel?: string | ros.IResolvable;
 
     /**
      * Property workerSystemDiskSize: Worker disk system disk size, the unit is GiB.
@@ -417,51 +433,53 @@ export class ManagedKubernetesCluster extends ros.Resource {
         const rosManagedKubernetesCluster = new RosManagedKubernetesCluster(this, id,  {
             endpointPublicAccess: props.endpointPublicAccess === undefined || props.endpointPublicAccess === null ? false : props.endpointPublicAccess,
             socEnabled: props.socEnabled,
-            formatDisk: props.formatDisk,
             platform: props.platform,
             resourceGroupId: props.resourceGroupId,
-            userData: props.userData,
-            autoRenew: props.autoRenew,
-            addons: props.addons,
-            workerSystemDiskCategory: props.workerSystemDiskCategory === undefined || props.workerSystemDiskCategory === null ? 'cloud_efficiency' : props.workerSystemDiskCategory,
-            workerSystemDiskSize: props.workerSystemDiskSize === undefined || props.workerSystemDiskSize === null ? 120 : props.workerSystemDiskSize,
             loadBalancerSpec: props.loadBalancerSpec,
             name: props.name,
             taint: props.taint,
             isEnterpriseSecurityGroup: props.isEnterpriseSecurityGroup,
             runtime: props.runtime,
-            cloudMonitorFlags: props.cloudMonitorFlags === undefined || props.cloudMonitorFlags === null ? false : props.cloudMonitorFlags,
             osType: props.osType,
             nodeNameMode: props.nodeNameMode,
-            serviceCidr: props.serviceCidr === undefined || props.serviceCidr === null ? '172.19.0.0/20' : props.serviceCidr,
-            podVswitchIds: props.podVswitchIds,
-            zoneIds: props.zoneIds,
             proxyMode: props.proxyMode === undefined || props.proxyMode === null ? 'iptables' : props.proxyMode,
             disableRollback: props.disableRollback === undefined || props.disableRollback === null ? true : props.disableRollback,
             tags: props.tags,
-            workerInstanceTypes: props.workerInstanceTypes,
-            loginPassword: props.loginPassword,
-            autoRenewPeriod: props.autoRenewPeriod,
-            kubernetesVersion: props.kubernetesVersion,
             containerCidr: props.containerCidr === undefined || props.containerCidr === null ? '172.16.0.0/16' : props.containerCidr,
             keyPair: props.keyPair,
             nodeCidrMask: props.nodeCidrMask,
             vSwitchIds: props.vSwitchIds,
-            workerDataDisks: props.workerDataDisks,
-            timeoutMins: props.timeoutMins === undefined || props.timeoutMins === null ? 60 : props.timeoutMins,
-            securityGroupId: props.securityGroupId,
             period: props.period,
-            clusterSpec: props.clusterSpec,
             deletionProtection: props.deletionProtection,
-            workerDataDisk: props.workerDataDisk === undefined || props.workerDataDisk === null ? false : props.workerDataDisk,
             vpcId: props.vpcId,
-            numOfNodes: props.numOfNodes === undefined || props.numOfNodes === null ? 3 : props.numOfNodes,
-            keepInstanceName: props.keepInstanceName,
             nodePools: props.nodePools,
-            chargeType: props.chargeType,
             encryptionProviderKey: props.encryptionProviderKey,
             snatEntry: props.snatEntry === undefined || props.snatEntry === null ? true : props.snatEntry,
             periodUnit: props.periodUnit,
+            formatDisk: props.formatDisk,
+            userData: props.userData,
+            autoRenew: props.autoRenew,
+            addons: props.addons,
+            workerSystemDiskCategory: props.workerSystemDiskCategory === undefined || props.workerSystemDiskCategory === null ? 'cloud_efficiency' : props.workerSystemDiskCategory,
+            workerSystemDiskSize: props.workerSystemDiskSize === undefined || props.workerSystemDiskSize === null ? 120 : props.workerSystemDiskSize,
+            cloudMonitorFlags: props.cloudMonitorFlags === undefined || props.cloudMonitorFlags === null ? false : props.cloudMonitorFlags,
+            securityHardeningOs: props.securityHardeningOs,
+            serviceCidr: props.serviceCidr === undefined || props.serviceCidr === null ? '172.19.0.0/20' : props.serviceCidr,
+            podVswitchIds: props.podVswitchIds,
+            zoneIds: props.zoneIds,
+            workerSystemDiskPerformanceLevel: props.workerSystemDiskPerformanceLevel,
+            workerInstanceTypes: props.workerInstanceTypes,
+            loginPassword: props.loginPassword,
+            autoRenewPeriod: props.autoRenewPeriod,
+            kubernetesVersion: props.kubernetesVersion,
+            workerDataDisks: props.workerDataDisks,
+            securityGroupId: props.securityGroupId,
+            timeoutMins: props.timeoutMins === undefined || props.timeoutMins === null ? 60 : props.timeoutMins,
+            clusterSpec: props.clusterSpec,
+            workerDataDisk: props.workerDataDisk === undefined || props.workerDataDisk === null ? false : props.workerDataDisk,
+            numOfNodes: props.numOfNodes === undefined || props.numOfNodes === null ? 3 : props.numOfNodes,
+            keepInstanceName: props.keepInstanceName,
+            chargeType: props.chargeType,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosManagedKubernetesCluster;
         this.attrApiServerSlbId = rosManagedKubernetesCluster.attrApiServerSlbId;

@@ -3006,6 +3006,10 @@ export namespace RosService {
          */
         readonly vpcId: string | ros.IResolvable;
         /**
+         * @Property zoneId: Zone Id
+         */
+        readonly zoneId?: string | ros.IResolvable;
+        /**
          * @Property vSwitchIds: List of VSwitch IDs
          */
         readonly vSwitchIds: Array<string | ros.IResolvable> | ros.IResolvable;
@@ -3027,6 +3031,7 @@ function RosService_VpcConfigPropertyValidator(properties: any): ros.ValidationR
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('vSwitchIds', ros.requiredValidator)(properties.vSwitchIds));
     errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateString))(properties.vSwitchIds));
     errors.collect(ros.propertyValidator('securityGroupId', ros.requiredValidator)(properties.securityGroupId));
@@ -3047,6 +3052,7 @@ function rosServiceVpcConfigPropertyToRosTemplate(properties: any): any {
     RosService_VpcConfigPropertyValidator(properties).assertSuccess();
     return {
       VpcId: ros.stringToRosTemplate(properties.vpcId),
+      ZoneId: ros.stringToRosTemplate(properties.zoneId),
       VSwitchIds: ros.listMapper(ros.stringToRosTemplate)(properties.vSwitchIds),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
     };
