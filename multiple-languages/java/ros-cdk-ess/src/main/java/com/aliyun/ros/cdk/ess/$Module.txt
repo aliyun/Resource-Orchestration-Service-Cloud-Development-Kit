@@ -45,6 +45,7 @@
 @alicloud/ros-cdk-ess.RosScalingGroup=com.aliyun.ros.cdk.ess.RosScalingGroup
 @alicloud/ros-cdk-ess.RosScalingGroup.LaunchTemplateOverridesProperty=com.aliyun.ros.cdk.ess.RosScalingGroup$LaunchTemplateOverridesProperty
 @alicloud/ros-cdk-ess.RosScalingGroup.NotificationConfigurationsProperty=com.aliyun.ros.cdk.ess.RosScalingGroup$NotificationConfigurationsProperty
+@alicloud/ros-cdk-ess.RosScalingGroup.ServerGroupsProperty=com.aliyun.ros.cdk.ess.RosScalingGroup$ServerGroupsProperty
 @alicloud/ros-cdk-ess.RosScalingGroup.TagsProperty=com.aliyun.ros.cdk.ess.RosScalingGroup$TagsProperty
 @alicloud/ros-cdk-ess.RosScalingGroupEnable=com.aliyun.ros.cdk.ess.RosScalingGroupEnable
 @alicloud/ros-cdk-ess.RosScalingGroupEnable.AttachOptionsProperty=com.aliyun.ros.cdk.ess.RosScalingGroupEnable$AttachOptionsProperty

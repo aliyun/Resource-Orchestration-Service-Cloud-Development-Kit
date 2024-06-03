@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ess;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:33.028Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:52.205Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScalingGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosScalingGroupProps.Jsii$Proxy.class)
 public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -158,6 +158,12 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getScalingGroupName() {
         return null;
     }
@@ -165,6 +171,12 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getScalingPolicy() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getServerGroups() {
         return null;
     }
 
@@ -245,8 +257,10 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
         java.lang.Object onDemandPercentageAboveBaseCapacity;
         java.lang.Object protectedInstances;
         java.lang.Object removalPolicys;
+        java.lang.Object resourceGroupId;
         java.lang.Object scalingGroupName;
         java.lang.Object scalingPolicy;
+        java.lang.Object serverGroups;
         java.lang.Object spotAllocationStrategy;
         java.lang.Object spotInstancePools;
         java.lang.Object spotInstanceRemedy;
@@ -756,6 +770,26 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosScalingGroupProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingGroupProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosScalingGroupProps#getScalingGroupName}
          * @param scalingGroupName the value to be set.
          * @return {@code this}
@@ -792,6 +826,26 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
          */
         public Builder scalingPolicy(com.aliyun.ros.cdk.core.IResolvable scalingPolicy) {
             this.scalingPolicy = scalingPolicy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingGroupProps#getServerGroups}
+         * @param serverGroups the value to be set.
+         * @return {@code this}
+         */
+        public Builder serverGroups(com.aliyun.ros.cdk.core.IResolvable serverGroups) {
+            this.serverGroups = serverGroups;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingGroupProps#getServerGroups}
+         * @param serverGroups the value to be set.
+         * @return {@code this}
+         */
+        public Builder serverGroups(java.util.List<? extends java.lang.Object> serverGroups) {
+            this.serverGroups = serverGroups;
             return this;
         }
 
@@ -967,8 +1021,10 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
         private final java.lang.Object onDemandPercentageAboveBaseCapacity;
         private final java.lang.Object protectedInstances;
         private final java.lang.Object removalPolicys;
+        private final java.lang.Object resourceGroupId;
         private final java.lang.Object scalingGroupName;
         private final java.lang.Object scalingPolicy;
+        private final java.lang.Object serverGroups;
         private final java.lang.Object spotAllocationStrategy;
         private final java.lang.Object spotInstancePools;
         private final java.lang.Object spotInstanceRemedy;
@@ -1008,8 +1064,10 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
             this.onDemandPercentageAboveBaseCapacity = software.amazon.jsii.Kernel.get(this, "onDemandPercentageAboveBaseCapacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.protectedInstances = software.amazon.jsii.Kernel.get(this, "protectedInstances", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.removalPolicys = software.amazon.jsii.Kernel.get(this, "removalPolicys", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.scalingGroupName = software.amazon.jsii.Kernel.get(this, "scalingGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.scalingPolicy = software.amazon.jsii.Kernel.get(this, "scalingPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.serverGroups = software.amazon.jsii.Kernel.get(this, "serverGroups", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.spotAllocationStrategy = software.amazon.jsii.Kernel.get(this, "spotAllocationStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.spotInstancePools = software.amazon.jsii.Kernel.get(this, "spotInstancePools", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.spotInstanceRemedy = software.amazon.jsii.Kernel.get(this, "spotInstanceRemedy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1050,8 +1108,10 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
             this.onDemandPercentageAboveBaseCapacity = builder.onDemandPercentageAboveBaseCapacity;
             this.protectedInstances = builder.protectedInstances;
             this.removalPolicys = builder.removalPolicys;
+            this.resourceGroupId = builder.resourceGroupId;
             this.scalingGroupName = builder.scalingGroupName;
             this.scalingPolicy = builder.scalingPolicy;
+            this.serverGroups = builder.serverGroups;
             this.spotAllocationStrategy = builder.spotAllocationStrategy;
             this.spotInstancePools = builder.spotInstancePools;
             this.spotInstanceRemedy = builder.spotInstanceRemedy;
@@ -1187,6 +1247,11 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
+        }
+
+        @Override
         public final java.lang.Object getScalingGroupName() {
             return this.scalingGroupName;
         }
@@ -1194,6 +1259,11 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
         @Override
         public final java.lang.Object getScalingPolicy() {
             return this.scalingPolicy;
+        }
+
+        @Override
+        public final java.lang.Object getServerGroups() {
+            return this.serverGroups;
         }
 
         @Override
@@ -1308,11 +1378,17 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
             if (this.getRemovalPolicys() != null) {
                 data.set("removalPolicys", om.valueToTree(this.getRemovalPolicys()));
             }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
             if (this.getScalingGroupName() != null) {
                 data.set("scalingGroupName", om.valueToTree(this.getScalingGroupName()));
             }
             if (this.getScalingPolicy() != null) {
                 data.set("scalingPolicy", om.valueToTree(this.getScalingPolicy()));
+            }
+            if (this.getServerGroups() != null) {
+                data.set("serverGroups", om.valueToTree(this.getServerGroups()));
             }
             if (this.getSpotAllocationStrategy() != null) {
                 data.set("spotAllocationStrategy", om.valueToTree(this.getSpotAllocationStrategy()));
@@ -1378,8 +1454,10 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
             if (this.onDemandPercentageAboveBaseCapacity != null ? !this.onDemandPercentageAboveBaseCapacity.equals(that.onDemandPercentageAboveBaseCapacity) : that.onDemandPercentageAboveBaseCapacity != null) return false;
             if (this.protectedInstances != null ? !this.protectedInstances.equals(that.protectedInstances) : that.protectedInstances != null) return false;
             if (this.removalPolicys != null ? !this.removalPolicys.equals(that.removalPolicys) : that.removalPolicys != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.scalingGroupName != null ? !this.scalingGroupName.equals(that.scalingGroupName) : that.scalingGroupName != null) return false;
             if (this.scalingPolicy != null ? !this.scalingPolicy.equals(that.scalingPolicy) : that.scalingPolicy != null) return false;
+            if (this.serverGroups != null ? !this.serverGroups.equals(that.serverGroups) : that.serverGroups != null) return false;
             if (this.spotAllocationStrategy != null ? !this.spotAllocationStrategy.equals(that.spotAllocationStrategy) : that.spotAllocationStrategy != null) return false;
             if (this.spotInstancePools != null ? !this.spotInstancePools.equals(that.spotInstancePools) : that.spotInstancePools != null) return false;
             if (this.spotInstanceRemedy != null ? !this.spotInstanceRemedy.equals(that.spotInstanceRemedy) : that.spotInstanceRemedy != null) return false;
@@ -1416,8 +1494,10 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
             result = 31 * result + (this.onDemandPercentageAboveBaseCapacity != null ? this.onDemandPercentageAboveBaseCapacity.hashCode() : 0);
             result = 31 * result + (this.protectedInstances != null ? this.protectedInstances.hashCode() : 0);
             result = 31 * result + (this.removalPolicys != null ? this.removalPolicys.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.scalingGroupName != null ? this.scalingGroupName.hashCode() : 0);
             result = 31 * result + (this.scalingPolicy != null ? this.scalingPolicy.hashCode() : 0);
+            result = 31 * result + (this.serverGroups != null ? this.serverGroups.hashCode() : 0);
             result = 31 * result + (this.spotAllocationStrategy != null ? this.spotAllocationStrategy.hashCode() : 0);
             result = 31 * result + (this.spotInstancePools != null ? this.spotInstancePools.hashCode() : 0);
             result = 31 * result + (this.spotInstanceRemedy != null ? this.spotInstanceRemedy.hashCode() : 0);

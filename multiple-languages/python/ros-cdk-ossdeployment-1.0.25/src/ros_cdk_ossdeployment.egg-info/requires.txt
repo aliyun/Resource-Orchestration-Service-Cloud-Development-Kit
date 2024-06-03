@@ -1,0 +1,11 @@
+constructs<4.0.0,>=3.0.4
+jsii<=1.85.0,>1.12.0
+publication>=0.0.3
+ros-cdk-core<2.0.0,>=1.0.27
+ros-cdk-fc<2.0.0,>=1.0.25
+ros-cdk-oss<2.0.0,>=1.0.25
+ros-cdk-ossassets<2.0.0,>=1.0.25
+ros-cdk-ram<2.0.0,>=1.0.25
+ros-cdk-ros<2.0.0,>=1.0.25
+ros-cdk-sls<2.0.0,>=1.0.25
+typeguard~=2.13.3

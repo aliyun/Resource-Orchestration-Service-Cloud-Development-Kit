@@ -1,0 +1,28 @@
+{
+  "name": "tests",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "ROS Development Team",
+  "private": true,
+  "dependencies": {
+    "@alicloud/ros-cdk-assert": "file:../packages/@alicloud/ros-cdk-assert",
+    "@alicloud/ros-cdk-core": "file:../packages/@alicloud/ros-cdk-core",
+    "@alicloud/ros-cdk-cr": "file:../packages/@alicloud/services/ros-cdk-cr",
+    "@alicloud/ros-cdk-eci": "file:../packages/@alicloud/services/ros-cdk-eci",
+    "@alicloud/ros-cdk-ecs": "file:../packages/@alicloud/services/ros-cdk-ecs",
+    "@alicloud/ros-cdk-ess": "file:../packages/@alicloud/services/ros-cdk-ess",
+    "@alicloud/ros-cdk-ram": "file:../packages/@alicloud/services/ros-cdk-ram",
+    "@alicloud/ros-cdk-sls": "file:../packages/@alicloud/services/ros-cdk-sls",
+    "@alicloud/ros-cdk-mse": "file:../packages/@alicloud/services/ros-cdk-mse",
+    "@alicloud/ros-cdk-ossassets": "file:../packages/@alicloud/services/ros-cdk-ossassets",
+    "@alicloud/ros-cdk-ossdeployment": "file:../packages/@alicloud/services/ros-cdk-ossdeployment",
+    "@alicloud/ros-cdk-oss": "file:../packages/@alicloud/services/ros-cdk-oss",
+    "@alicloud/ros-cdk-fc": "file:../packages/@alicloud/services/ros-cdk-fc",
+    "@types/jest": "^26.0.14",
+    "jest": "^25.5.0",
+    "ts-jest": "^25.3.1"
+  }
+}

@@ -59,7 +59,7 @@ export interface FullNatEntryProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::FullNatEntry`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::FullNatEntry`, which is used to add a FULLNAT entry to a FULLNAT table.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFullNatEntry`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-fullnatentry
  */

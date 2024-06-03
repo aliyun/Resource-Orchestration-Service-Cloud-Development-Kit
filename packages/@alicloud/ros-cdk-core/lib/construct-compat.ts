@@ -35,6 +35,13 @@ export interface ISynthesisSession {
    * Cloud assembly builder.
    */
   assembly: cxapi.CloudAssemblyBuilder;
+
+  /**
+   * Whether the stack should be validated after synthesis to check for error metadata
+   *
+   * @default - false
+   */
+  validateOnSynth?: boolean;
 }
 
 /**
@@ -166,7 +173,7 @@ export class Construct extends constructs.Construct implements IConstruct {
    *
    * @param session The synthesis session.
    */
-  protected synthesize(session: ISynthesisSession): void {
+  public synthesize(session: ISynthesisSession): void {
     ignore(session);
   }
 }

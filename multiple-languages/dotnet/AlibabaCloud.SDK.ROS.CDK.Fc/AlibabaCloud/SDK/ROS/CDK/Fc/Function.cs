@@ -39,6 +39,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         {
         }
 
+        /// <summary>Loads the fcFunction code from a local disk path.</summary>
+        /// <param name="path">Either a directory with the Lambda code bundle or a .zip file.</param>
+        [JsiiMethod(name: "codeFromAsset", parametersJson: "[{\"docs\":{\"summary\":\"Either a directory with the Lambda code bundle or a .zip file.\"},\"name\":\"path\",\"type\":{\"primitive\":\"string\"}}]")]
+        public virtual void CodeFromAsset(string path)
+        {
+            InvokeInstanceVoidMethod(new System.Type[]{typeof(string)}, new object[]{path});
+        }
+
+        /// <summary>Function handler code as an OSS object.</summary>
+        /// <param name="bucket">The OSS bucket.</param>
+        /// <param name="key">The object key.</param>
+        [JsiiMethod(name: "codeFromBucket", parametersJson: "[{\"docs\":{\"summary\":\"The OSS bucket.\"},\"name\":\"bucket\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-oss.Bucket\"}},{\"docs\":{\"summary\":\"The object key.\"},\"name\":\"key\",\"type\":{\"primitive\":\"string\"}}]")]
+        public virtual void CodeFromBucket(AlibabaCloud.SDK.ROS.CDK.Oss.Bucket bucket, string key)
+        {
+            InvokeInstanceVoidMethod(new System.Type[]{typeof(AlibabaCloud.SDK.ROS.CDK.Oss.Bucket), typeof(string)}, new object[]{bucket, key});
+        }
+
+        /// <summary>Inline code for FC fcFunction handler.</summary>
+        /// <param name="code">The actual handler code (limited to 4KiB).</param>
+        [JsiiMethod(name: "codeFromInline", parametersJson: "[{\"docs\":{\"summary\":\"The actual handler code (limited to 4KiB).\"},\"name\":\"code\",\"type\":{\"primitive\":\"string\"}}]")]
+        public virtual void CodeFromInline(string code)
+        {
+            InvokeInstanceVoidMethod(new System.Type[]{typeof(string)}, new object[]{code});
+        }
+
         /// <summary>Attribute ARN: The ARN for ALIYUN::ROS::CustomResource.</summary>
         [JsiiProperty(name: "attrArn", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrArn

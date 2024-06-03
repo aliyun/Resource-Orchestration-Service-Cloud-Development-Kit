@@ -50,6 +50,13 @@ export interface InstanceProps {
     readonly enablePublic?: boolean | ros.IResolvable;
 
     /**
+     * Property instanceCategory: Version Type:
+     * - x-pack: Create a commercial instance or a kernel-enhanced instance without Indexing Service and OpenStore enabled.
+     * - IS: Creates a kernel-enhanced instance with Indexing Service or OpenStore enabled
+     */
+    readonly instanceCategory?: string | ros.IResolvable;
+
+    /**
      * Property instanceChargeType: Valid values are PrePaid, PostPaid, Default to PostPaid.
      */
     readonly instanceChargeType?: string | ros.IResolvable;
@@ -194,14 +201,15 @@ export class Instance extends ros.Resource {
             masterNode: props.masterNode,
             description: props.description,
             kibanaNode: props.kibanaNode,
+            resourceGroupId: props.resourceGroupId,
             enableKibanaPrivate: props.enableKibanaPrivate,
             zoneId: props.zoneId,
-            resourceGroupId: props.resourceGroupId,
             publicWhitelist: props.publicWhitelist,
             instanceChargeType: props.instanceChargeType === undefined || props.instanceChargeType === null ? 'PostPaid' : props.instanceChargeType,
             enableKibanaPublic: props.enableKibanaPublic,
             vSwitchId: props.vSwitchId,
             period: props.period === undefined || props.period === null ? 1 : props.period,
+            instanceCategory: props.instanceCategory,
             enablePublic: props.enablePublic,
             privateWhitelist: props.privateWhitelist,
             version: props.version,
@@ -210,8 +218,8 @@ export class Instance extends ros.Resource {
             ymlConfig: props.ymlConfig,
             tags: props.tags,
             periodUnit: props.periodUnit,
-            zoneCount: props.zoneCount,
             password: props.password,
+            zoneCount: props.zoneCount,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstance;
         this.attrDomain = rosInstance.attrDomain;

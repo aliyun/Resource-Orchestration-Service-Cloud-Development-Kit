@@ -131,7 +131,7 @@ export class Instance extends ros.Resource {
             remark: props.remark,
             instanceName: props.instanceName,
             seriesCode: props.seriesCode,
-            paymentType: props.paymentType,
+            paymentType: props.paymentType === undefined || props.paymentType === null ? 'PayAsYouGo' : props.paymentType,
             vpcInfo: props.vpcInfo,
             periodUnit: props.periodUnit,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

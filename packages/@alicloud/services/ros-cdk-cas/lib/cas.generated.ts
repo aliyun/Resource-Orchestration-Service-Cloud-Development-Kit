@@ -175,28 +175,9 @@ export interface RosOrderProps {
     readonly domainCnt?: number | ros.IResolvable;
 
     /**
-     * @Property domains: Domain names. If you specify this parameter, you do not need to specify DomainCnt; otherwise, the length of the array used for this parameter will prevail.
-     * **Note:** This parameter is not supported by international stations.
-     */
-    readonly domains?: Array<string | ros.IResolvable> | ros.IResolvable;
-
-    /**
      * @Property domainType: Domain type. Valid values: one, all, multiple.
      */
     readonly domainType?: string | ros.IResolvable;
-
-    /**
-     * @Property merge: Whether to merge issues. Syndication is the process of combining multiple certificates (domains) into a single certificate, including full single or wildcard domains.
-     * For example: aliyun.com\/*.aliyun.com
-     * **Note**: The number of combined certificates (domains) is not recommended to exceed 200
-     */
-    readonly merge?: boolean | ros.IResolvable;
-
-    /**
-     * @Property monitor: Whether to enable monitoring domains.
-     * **Note:** This parameter is not supported by international stations.
-     */
-    readonly monitor?: boolean | ros.IResolvable;
 
     /**
      * @Property period: Service time of the certificate, in year. Valid values: 1, 2, 3.
@@ -226,14 +207,6 @@ export interface RosOrderProps {
 function RosOrderPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    if(properties.domains && (Array.isArray(properties.domains) || (typeof properties.domains) === 'string')) {
-        errors.collect(ros.propertyValidator('domains', ros.validateLength)({
-            data: properties.domains.length,
-            min: 1,
-            max: 500,
-          }));
-    }
-    errors.collect(ros.propertyValidator('domains', ros.listValidator(ros.validateString))(properties.domains));
     if(properties.domainCnt && (typeof properties.domainCnt) !== 'object') {
         errors.collect(ros.propertyValidator('domainCnt', ros.validateRange)({
             data: properties.domainCnt,
@@ -249,8 +222,6 @@ function RosOrderPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('domainType', ros.validateString)(properties.domainType));
-    errors.collect(ros.propertyValidator('monitor', ros.validateBoolean)(properties.monitor));
-    errors.collect(ros.propertyValidator('merge', ros.validateBoolean)(properties.merge));
     if(properties.service && (typeof properties.service) !== 'object') {
         errors.collect(ros.propertyValidator('service', ros.validateAllowedValues)({
           data: properties.service,
@@ -302,10 +273,7 @@ function rosOrderPropsToRosTemplate(properties: any, enableResourcePropertyConst
       CertBrand: ros.stringToRosTemplate(properties.certBrand),
       CertType: ros.stringToRosTemplate(properties.certType),
       DomainCnt: ros.numberToRosTemplate(properties.domainCnt),
-      Domains: ros.listMapper(ros.stringToRosTemplate)(properties.domains),
       DomainType: ros.stringToRosTemplate(properties.domainType),
-      Merge: ros.booleanToRosTemplate(properties.merge),
-      Monitor: ros.booleanToRosTemplate(properties.monitor),
       Period: ros.numberToRosTemplate(properties.period),
       Service: ros.stringToRosTemplate(properties.service),
     };
@@ -341,28 +309,9 @@ export class RosOrder extends ros.RosResource {
     public domainCnt: number | ros.IResolvable | undefined;
 
     /**
-     * @Property domains: Domain names. If you specify this parameter, you do not need to specify DomainCnt; otherwise, the length of the array used for this parameter will prevail.
-     * **Note:** This parameter is not supported by international stations.
-     */
-    public domains: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
-
-    /**
      * @Property domainType: Domain type. Valid values: one, all, multiple.
      */
     public domainType: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property merge: Whether to merge issues. Syndication is the process of combining multiple certificates (domains) into a single certificate, including full single or wildcard domains.
-     * For example: aliyun.com\/*.aliyun.com
-     * **Note**: The number of combined certificates (domains) is not recommended to exceed 200
-     */
-    public merge: boolean | ros.IResolvable | undefined;
-
-    /**
-     * @Property monitor: Whether to enable monitoring domains.
-     * **Note:** This parameter is not supported by international stations.
-     */
-    public monitor: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property period: Service time of the certificate, in year. Valid values: 1, 2, 3.
@@ -393,10 +342,7 @@ export class RosOrder extends ros.RosResource {
         this.certBrand = props.certBrand;
         this.certType = props.certType;
         this.domainCnt = props.domainCnt;
-        this.domains = props.domains;
         this.domainType = props.domainType;
-        this.merge = props.merge;
-        this.monitor = props.monitor;
         this.period = props.period;
         this.service = props.service;
     }
@@ -407,10 +353,7 @@ export class RosOrder extends ros.RosResource {
             certBrand: this.certBrand,
             certType: this.certType,
             domainCnt: this.domainCnt,
-            domains: this.domains,
             domainType: this.domainType,
-            merge: this.merge,
-            monitor: this.monitor,
             period: this.period,
             service: this.service,
         };

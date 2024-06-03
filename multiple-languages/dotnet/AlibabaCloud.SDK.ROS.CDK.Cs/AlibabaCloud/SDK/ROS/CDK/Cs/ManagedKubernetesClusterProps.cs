@@ -1315,6 +1315,43 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
+        private object? _securityHardeningOs;
+
+        /// <summary>Property securityHardeningOs: Alibaba Cloud OS security hardening.</summary>
+        /// <remarks>
+        /// Value:
+        /// true: enables security hardening OS.
+        /// false: disables security hardening OS.
+        /// Default value: false.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "securityHardeningOs", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? SecurityHardeningOs
+        {
+            get => _securityHardeningOs;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _securityHardeningOs = value;
+            }
+        }
+
         private object? _serviceCidr;
 
         /// <summary>Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment.</summary>
@@ -1726,6 +1763,42 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
                     }
                 }
                 _workerSystemDiskCategory = value;
+            }
+        }
+
+        private object? _workerSystemDiskPerformanceLevel;
+
+        /// <summary>Property workerSystemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.</summary>
+        /// <remarks>
+        /// Default value: PL0. Valid values:
+        /// PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
+        /// PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "workerSystemDiskPerformanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? WorkerSystemDiskPerformanceLevel
+        {
+            get => _workerSystemDiskPerformanceLevel;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _workerSystemDiskPerformanceLevel = value;
             }
         }
 

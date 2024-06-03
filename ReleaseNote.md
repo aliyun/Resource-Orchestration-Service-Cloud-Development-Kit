@@ -1,5 +1,17 @@
 # Aliyun ROS Cloud Development Toolkit Changelog
 
+## [ros-cdk-cli 1.0.50] (2024-05-29)
+### Features
+- Update ROS resource sdk packages (Added the ALIYUN::ADBLake::DBCluster, ALIYUN::ARMS::ApplyAlertRuleTemplate, ALIYUN::DataWorks::Project, ALIYUN::DDoSPro::Port, ALIYUN::DDoSPro::SceneDefensePolicy, ALIYUN::DDoSPro::SchedulerRule, ALIYUN::DEVOPS::HostGroup, ALIYUN::ECD::DesktopGroup, ALIYUN::ECD::NetworkPackage, DATASOURCE::ECS::Activation, DATASOURCE::ECS::DedicatedHostCluster, DATASOURCE::ECS::DeploymentSet, ALIYUN::GA::AclsListenerAssociation, ALIYUN::GA::ApplicationMonitor, ALIYUN::GA::BasicAccelerateIp, ALIYUN::GA::BasicAccelerator, ALIYUN::GA::BasicAcceleratorIpEndpointRelation, ALIYUN::GA::BasicEndpoint, ALIYUN::GA::BasicEndpointGroup, ALIYUN::GA::BasicIpSet, ALIYUN::GA::EndpointGroups, ALIYUN::KMS::Instance, ALIYUN::NLS::Project, ALIYUN::PAI::WorkspaceResourceDlc, ALIYUN::PAI::WorkspaceResourceFlink, ALIYUN::PAI::WorkspaceResourceMaxCompute, ALIYUN::PAIPlugin::Campaign, ALIYUN::PAIPlugin::InferenceJob, ALIYUN::PAIPlugin::TrainingJob, ALIYUN::SLB::TLSPolicy; deleted the ALIYUN::BrainIndustrial::PidOrganization, ALIYUN::BrainIndustrial::PidProject).
+- Asset module Construction
+- ros-cdk-assert adds support for regular pattern matching
+- ros-cdk-cli modification of stack state record in synchronous deployment mode to record failure states
+- Added L2 functions:
+  - ros-cdk-fc Function. CodeFromBucket/codeFromInline codeFromAsset from OSS bucket/string/local deployment code in a zip file or folder to fc Function
+  - ros-cdk-oss bucket.checkBucketexists checks if a bucket exists. validateBucketName/ validates that the bucket name is valid
+  - ros-cdk-ossassets Asset support caching local files/folders into OSS bucket; Asset. AddResourceMetadata add metadata information
+  - ros-cdk-ossdeployment Source. The bucket/asset/data/jsonData support object/local files of different bucket with region/string data/json data as a Source of deployment; BucketDeployment deploys the source to the specified OSS bucket
+
 ## [ros-cdk-cli 1.0.49] (2024-04-09)
 ### Features
 - Update ROS resource sdk packages (Added the ALIYUN::DDoS::OriginInstance, ALIYUN::DashVector::Cluster, ALIYUN::ENS::Disk, ALIYUN::ENS::Snapshot, ALIYUN::ENS::Network, ALIYUN::ENS::VSwitch, ALIYUN::CLOUDFW::FwSwitch, ALIYUN::CLOUDFW::AllFwSwitch, DATASOURCE::OSS::Bucket, DATASOURCE::KAFKA::Instance, DATASOURCE::EIP::Address, DATASOURCE::REDIS::Instance, DATASOURCE::KAFKA::Topics, DATASOURCE::KAFKA::Topic, DATASOURCE::CR::Instance, DATASOURCE::ClickHouse:DBCluster, DATASOURCE::ApiGateway::Instance, DATASOURCE::AEAIS::Instance, ALIYUN::ENS::SecurityGroup, ALIYUN::ENS::KeyPiar, ALIYUN::ECS::SecurityGroupEgresses, ALIYUN::ECS::SecurityGroupIngresses, DATASOURCE::VPC::HaVip, DATASOURCE::VPC::PublicIpAddressPool, DATASOURCE::VPC::RouteTable, DATASOURCE::VPC::Vpc,DATASOURCE::VPC::VSwitch, DATASOURCE::ECS::Command, DATASOURCE::ECS::Disk, DATASOURCE::ECS::Snapshot, DATASOURCE::ECS::AutoSnapshotPolicy, DATASOURCE::ECS::SecurityGroup, DATASOURCE::ECS::KeyPair, ALIYUN::ENS::NetworkAcl, ALIYUN::ENS::NetworkAclAssociation resource type).

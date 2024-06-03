@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managedkubernetescluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:31.375Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:50.575Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ManagedKubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(ManagedKubernetesClusterProps.Jsii$Proxy.class)
 public interface ManagedKubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -357,6 +357,18 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
     }
 
     /**
+     * Property securityHardeningOs: Alibaba Cloud OS security hardening.
+     * <p>
+     * Value:
+     * true: enables security hardening OS.
+     * false: disables security hardening OS.
+     * Default value: false.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityHardeningOs() {
+        return null;
+    }
+
+    /**
      * Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment.
      * <p>
      * When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
@@ -465,6 +477,17 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
     }
 
     /**
+     * Property workerSystemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.
+     * <p>
+     * Default value: PL0. Valid values:
+     * PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
+     * PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getWorkerSystemDiskPerformanceLevel() {
+        return null;
+    }
+
+    /**
      * Property workerSystemDiskSize: Worker disk system disk size, the unit is GiB.
      * <p>
      * Default to 120.
@@ -524,6 +547,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         java.lang.Object resourceGroupId;
         java.lang.Object runtime;
         java.lang.Object securityGroupId;
+        java.lang.Object securityHardeningOs;
         java.lang.Object serviceCidr;
         java.lang.Object snatEntry;
         java.lang.Object socEnabled;
@@ -535,6 +559,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         java.lang.Object workerDataDisks;
         java.lang.Object workerInstanceTypes;
         java.lang.Object workerSystemDiskCategory;
+        java.lang.Object workerSystemDiskPerformanceLevel;
         java.lang.Object workerSystemDiskSize;
         java.lang.Object zoneIds;
 
@@ -1395,6 +1420,34 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         }
 
         /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getSecurityHardeningOs}
+         * @param securityHardeningOs Property securityHardeningOs: Alibaba Cloud OS security hardening.
+         *                            Value:
+         *                            true: enables security hardening OS.
+         *                            false: disables security hardening OS.
+         *                            Default value: false.
+         * @return {@code this}
+         */
+        public Builder securityHardeningOs(java.lang.Boolean securityHardeningOs) {
+            this.securityHardeningOs = securityHardeningOs;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getSecurityHardeningOs}
+         * @param securityHardeningOs Property securityHardeningOs: Alibaba Cloud OS security hardening.
+         *                            Value:
+         *                            true: enables security hardening OS.
+         *                            false: disables security hardening OS.
+         *                            Default value: false.
+         * @return {@code this}
+         */
+        public Builder securityHardeningOs(com.aliyun.ros.cdk.core.IResolvable securityHardeningOs) {
+            this.securityHardeningOs = securityHardeningOs;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ManagedKubernetesClusterProps#getServiceCidr}
          * @param serviceCidr Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment.
          *                    When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
@@ -1648,6 +1701,32 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         }
 
         /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getWorkerSystemDiskPerformanceLevel}
+         * @param workerSystemDiskPerformanceLevel Property workerSystemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.
+         *                                         Default value: PL0. Valid values:
+         *                                         PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
+         *                                         PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
+         * @return {@code this}
+         */
+        public Builder workerSystemDiskPerformanceLevel(java.lang.String workerSystemDiskPerformanceLevel) {
+            this.workerSystemDiskPerformanceLevel = workerSystemDiskPerformanceLevel;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getWorkerSystemDiskPerformanceLevel}
+         * @param workerSystemDiskPerformanceLevel Property workerSystemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.
+         *                                         Default value: PL0. Valid values:
+         *                                         PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
+         *                                         PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
+         * @return {@code this}
+         */
+        public Builder workerSystemDiskPerformanceLevel(com.aliyun.ros.cdk.core.IResolvable workerSystemDiskPerformanceLevel) {
+            this.workerSystemDiskPerformanceLevel = workerSystemDiskPerformanceLevel;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ManagedKubernetesClusterProps#getWorkerSystemDiskSize}
          * @param workerSystemDiskSize Property workerSystemDiskSize: Worker disk system disk size, the unit is GiB.
          *                             Default to 120.
@@ -1739,6 +1818,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object runtime;
         private final java.lang.Object securityGroupId;
+        private final java.lang.Object securityHardeningOs;
         private final java.lang.Object serviceCidr;
         private final java.lang.Object snatEntry;
         private final java.lang.Object socEnabled;
@@ -1750,6 +1830,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         private final java.lang.Object workerDataDisks;
         private final java.lang.Object workerInstanceTypes;
         private final java.lang.Object workerSystemDiskCategory;
+        private final java.lang.Object workerSystemDiskPerformanceLevel;
         private final java.lang.Object workerSystemDiskSize;
         private final java.lang.Object zoneIds;
 
@@ -1793,6 +1874,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.runtime = software.amazon.jsii.Kernel.get(this, "runtime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityHardeningOs = software.amazon.jsii.Kernel.get(this, "securityHardeningOs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serviceCidr = software.amazon.jsii.Kernel.get(this, "serviceCidr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.snatEntry = software.amazon.jsii.Kernel.get(this, "snatEntry", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.socEnabled = software.amazon.jsii.Kernel.get(this, "socEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1804,6 +1886,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             this.workerDataDisks = software.amazon.jsii.Kernel.get(this, "workerDataDisks", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerInstanceTypes = software.amazon.jsii.Kernel.get(this, "workerInstanceTypes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerSystemDiskCategory = software.amazon.jsii.Kernel.get(this, "workerSystemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.workerSystemDiskPerformanceLevel = software.amazon.jsii.Kernel.get(this, "workerSystemDiskPerformanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerSystemDiskSize = software.amazon.jsii.Kernel.get(this, "workerSystemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneIds = software.amazon.jsii.Kernel.get(this, "zoneIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -1848,6 +1931,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             this.resourceGroupId = builder.resourceGroupId;
             this.runtime = builder.runtime;
             this.securityGroupId = builder.securityGroupId;
+            this.securityHardeningOs = builder.securityHardeningOs;
             this.serviceCidr = builder.serviceCidr;
             this.snatEntry = builder.snatEntry;
             this.socEnabled = builder.socEnabled;
@@ -1859,6 +1943,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             this.workerDataDisks = builder.workerDataDisks;
             this.workerInstanceTypes = builder.workerInstanceTypes;
             this.workerSystemDiskCategory = builder.workerSystemDiskCategory;
+            this.workerSystemDiskPerformanceLevel = builder.workerSystemDiskPerformanceLevel;
             this.workerSystemDiskSize = builder.workerSystemDiskSize;
             this.zoneIds = builder.zoneIds;
         }
@@ -2034,6 +2119,11 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         }
 
         @Override
+        public final java.lang.Object getSecurityHardeningOs() {
+            return this.securityHardeningOs;
+        }
+
+        @Override
         public final java.lang.Object getServiceCidr() {
             return this.serviceCidr;
         }
@@ -2086,6 +2176,11 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         @Override
         public final java.lang.Object getWorkerSystemDiskCategory() {
             return this.workerSystemDiskCategory;
+        }
+
+        @Override
+        public final java.lang.Object getWorkerSystemDiskPerformanceLevel() {
+            return this.workerSystemDiskPerformanceLevel;
         }
 
         @Override
@@ -2200,6 +2295,9 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             if (this.getSecurityGroupId() != null) {
                 data.set("securityGroupId", om.valueToTree(this.getSecurityGroupId()));
             }
+            if (this.getSecurityHardeningOs() != null) {
+                data.set("securityHardeningOs", om.valueToTree(this.getSecurityHardeningOs()));
+            }
             if (this.getServiceCidr() != null) {
                 data.set("serviceCidr", om.valueToTree(this.getServiceCidr()));
             }
@@ -2232,6 +2330,9 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             }
             if (this.getWorkerSystemDiskCategory() != null) {
                 data.set("workerSystemDiskCategory", om.valueToTree(this.getWorkerSystemDiskCategory()));
+            }
+            if (this.getWorkerSystemDiskPerformanceLevel() != null) {
+                data.set("workerSystemDiskPerformanceLevel", om.valueToTree(this.getWorkerSystemDiskPerformanceLevel()));
             }
             if (this.getWorkerSystemDiskSize() != null) {
                 data.set("workerSystemDiskSize", om.valueToTree(this.getWorkerSystemDiskSize()));
@@ -2291,6 +2392,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.runtime != null ? !this.runtime.equals(that.runtime) : that.runtime != null) return false;
             if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
+            if (this.securityHardeningOs != null ? !this.securityHardeningOs.equals(that.securityHardeningOs) : that.securityHardeningOs != null) return false;
             if (this.serviceCidr != null ? !this.serviceCidr.equals(that.serviceCidr) : that.serviceCidr != null) return false;
             if (this.snatEntry != null ? !this.snatEntry.equals(that.snatEntry) : that.snatEntry != null) return false;
             if (this.socEnabled != null ? !this.socEnabled.equals(that.socEnabled) : that.socEnabled != null) return false;
@@ -2302,6 +2404,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             if (this.workerDataDisks != null ? !this.workerDataDisks.equals(that.workerDataDisks) : that.workerDataDisks != null) return false;
             if (this.workerInstanceTypes != null ? !this.workerInstanceTypes.equals(that.workerInstanceTypes) : that.workerInstanceTypes != null) return false;
             if (this.workerSystemDiskCategory != null ? !this.workerSystemDiskCategory.equals(that.workerSystemDiskCategory) : that.workerSystemDiskCategory != null) return false;
+            if (this.workerSystemDiskPerformanceLevel != null ? !this.workerSystemDiskPerformanceLevel.equals(that.workerSystemDiskPerformanceLevel) : that.workerSystemDiskPerformanceLevel != null) return false;
             if (this.workerSystemDiskSize != null ? !this.workerSystemDiskSize.equals(that.workerSystemDiskSize) : that.workerSystemDiskSize != null) return false;
             return this.zoneIds != null ? this.zoneIds.equals(that.zoneIds) : that.zoneIds == null;
         }
@@ -2342,6 +2445,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.runtime != null ? this.runtime.hashCode() : 0);
             result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
+            result = 31 * result + (this.securityHardeningOs != null ? this.securityHardeningOs.hashCode() : 0);
             result = 31 * result + (this.serviceCidr != null ? this.serviceCidr.hashCode() : 0);
             result = 31 * result + (this.snatEntry != null ? this.snatEntry.hashCode() : 0);
             result = 31 * result + (this.socEnabled != null ? this.socEnabled.hashCode() : 0);
@@ -2353,6 +2457,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             result = 31 * result + (this.workerDataDisks != null ? this.workerDataDisks.hashCode() : 0);
             result = 31 * result + (this.workerInstanceTypes != null ? this.workerInstanceTypes.hashCode() : 0);
             result = 31 * result + (this.workerSystemDiskCategory != null ? this.workerSystemDiskCategory.hashCode() : 0);
+            result = 31 * result + (this.workerSystemDiskPerformanceLevel != null ? this.workerSystemDiskPerformanceLevel.hashCode() : 0);
             result = 31 * result + (this.workerSystemDiskSize != null ? this.workerSystemDiskSize.hashCode() : 0);
             result = 31 * result + (this.zoneIds != null ? this.zoneIds.hashCode() : 0);
             return result;

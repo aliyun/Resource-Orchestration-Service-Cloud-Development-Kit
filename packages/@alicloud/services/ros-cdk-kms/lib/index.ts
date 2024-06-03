@@ -1,4 +1,5 @@
 export * from './alias';
+export * from './instance';
 export * from './key';
 export * from './secret';
 

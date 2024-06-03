@@ -52,12 +52,16 @@
 @alicloud/ros-cdk-slb.RosRule.AdvancedSettingsProperty=com.aliyun.ros.cdk.slb.RosRule$AdvancedSettingsProperty
 @alicloud/ros-cdk-slb.RosRule.RuleListProperty=com.aliyun.ros.cdk.slb.RosRule$RuleListProperty
 @alicloud/ros-cdk-slb.RosRuleProps=com.aliyun.ros.cdk.slb.RosRuleProps
+@alicloud/ros-cdk-slb.RosTLSPolicy=com.aliyun.ros.cdk.slb.RosTLSPolicy
+@alicloud/ros-cdk-slb.RosTLSPolicyProps=com.aliyun.ros.cdk.slb.RosTLSPolicyProps
 @alicloud/ros-cdk-slb.RosVServerGroup=com.aliyun.ros.cdk.slb.RosVServerGroup
 @alicloud/ros-cdk-slb.RosVServerGroup.BackendServersProperty=com.aliyun.ros.cdk.slb.RosVServerGroup$BackendServersProperty
 @alicloud/ros-cdk-slb.RosVServerGroup.TagsProperty=com.aliyun.ros.cdk.slb.RosVServerGroup$TagsProperty
 @alicloud/ros-cdk-slb.RosVServerGroupProps=com.aliyun.ros.cdk.slb.RosVServerGroupProps
 @alicloud/ros-cdk-slb.Rule=com.aliyun.ros.cdk.slb.Rule
 @alicloud/ros-cdk-slb.RuleProps=com.aliyun.ros.cdk.slb.RuleProps
+@alicloud/ros-cdk-slb.TLSPolicy=com.aliyun.ros.cdk.slb.TLSPolicy
+@alicloud/ros-cdk-slb.TLSPolicyProps=com.aliyun.ros.cdk.slb.TLSPolicyProps
 @alicloud/ros-cdk-slb.VServerGroup=com.aliyun.ros.cdk.slb.VServerGroup
 @alicloud/ros-cdk-slb.VServerGroupProps=com.aliyun.ros.cdk.slb.VServerGroupProps
 @alicloud/ros-cdk-slb.datasource.AccessControls=com.aliyun.ros.cdk.slb.datasource.AccessControls

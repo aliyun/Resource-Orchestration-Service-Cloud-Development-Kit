@@ -55,3 +55,5 @@ export const FUTURE_FLAGS = {
   // We will advertise this flag when the feature is complete
   // [NEW_STYLE_STACK_SYNTHESIS]: 'true',
 };
+
+export const DOCKER_IGNORE_SUPPORT = 'ros-cdk:dockerIgnoreSupport';

@@ -934,3 +934,827 @@ export class RosWorkspace extends ros.RosResource {
         return rosWorkspacePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
+
+/**
+ * Properties for defining a `RosWorkspaceResourceDlc`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspaceresourcedlc
+ */
+export interface RosWorkspaceResourceDlcProps {
+
+    /**
+     * @Property groupName: Resource group name. If you want to obtain a resource group name, see [ListResources].
+     */
+    readonly groupName: string | ros.IResolvable;
+
+    /**
+     * @Property resources: Resource List.
+     */
+    readonly resources: Array<RosWorkspaceResourceDlc.ResourcesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property workspaceId: The ID of the workspace to which the workspace belongs.
+     */
+    readonly workspaceId: string | ros.IResolvable;
+
+    /**
+     * @Property isDefault: Indicates whether it is the default resource. Currently, this parameter only supports the input of true and does not support false.
+     */
+    readonly isDefault?: boolean | ros.IResolvable;
+
+    /**
+     * @Property option: Create behavior that supports the following values:
+     * - CreateAndAttach: Create resource and bind to workspace
+     * - Attach: bind resource to workspace.
+     */
+    readonly option?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosWorkspaceResourceDlcProps`
+ *
+ * @param properties - the TypeScript properties of a `RosWorkspaceResourceDlcProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosWorkspaceResourceDlcPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('isDefault', ros.validateBoolean)(properties.isDefault));
+    errors.collect(ros.propertyValidator('groupName', ros.requiredValidator)(properties.groupName));
+    errors.collect(ros.propertyValidator('groupName', ros.validateString)(properties.groupName));
+    errors.collect(ros.propertyValidator('workspaceId', ros.requiredValidator)(properties.workspaceId));
+    errors.collect(ros.propertyValidator('workspaceId', ros.validateString)(properties.workspaceId));
+    if(properties.option && (typeof properties.option) !== 'object') {
+        errors.collect(ros.propertyValidator('option', ros.validateAllowedValues)({
+          data: properties.option,
+          allowedValues: ["CreateAndAttach","Attach"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('option', ros.validateString)(properties.option));
+    errors.collect(ros.propertyValidator('resources', ros.requiredValidator)(properties.resources));
+    if(properties.resources && (Array.isArray(properties.resources) || (typeof properties.resources) === 'string')) {
+        errors.collect(ros.propertyValidator('resources', ros.validateLength)({
+            data: properties.resources.length,
+            min: 1,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('resources', ros.listValidator(RosWorkspaceResourceDlc_ResourcesPropertyValidator))(properties.resources));
+    return errors.wrap('supplied properties not correct for "RosWorkspaceResourceDlcProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PAI::WorkspaceResourceDlc` resource
+ *
+ * @param properties - the TypeScript properties of a `RosWorkspaceResourceDlcProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PAI::WorkspaceResourceDlc` resource.
+ */
+// @ts-ignore TS6133
+function rosWorkspaceResourceDlcPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosWorkspaceResourceDlcPropsValidator(properties).assertSuccess();
+    }
+    return {
+      GroupName: ros.stringToRosTemplate(properties.groupName),
+      Resources: ros.listMapper(rosWorkspaceResourceDlcResourcesPropertyToRosTemplate)(properties.resources),
+      WorkspaceId: ros.stringToRosTemplate(properties.workspaceId),
+      IsDefault: ros.booleanToRosTemplate(properties.isDefault),
+      Option: ros.stringToRosTemplate(properties.option),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::WorkspaceResourceDlc`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `WorkspaceResourceDlc` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspaceresourcedlc
+ */
+export class RosWorkspaceResourceDlc extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PAI::WorkspaceResourceDlc";
+
+    /**
+     * @Attribute CreateTime: The creation time of the resource.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute GroupName: Resource group name. If you want to obtain a resource group name, see [ListResources].
+     */
+    public readonly attrGroupName: ros.IResolvable;
+
+    /**
+     * @Attribute IsDefault: Indicates whether it is the default resource. Currently, this parameter only supports the input of true and does not support false.
+     */
+    public readonly attrIsDefault: ros.IResolvable;
+
+    /**
+     * @Attribute Resources: Resource List.
+     */
+    public readonly attrResources: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property groupName: Resource group name. If you want to obtain a resource group name, see [ListResources].
+     */
+    public groupName: string | ros.IResolvable;
+
+    /**
+     * @Property resources: Resource List.
+     */
+    public resources: Array<RosWorkspaceResourceDlc.ResourcesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property workspaceId: The ID of the workspace to which the workspace belongs.
+     */
+    public workspaceId: string | ros.IResolvable;
+
+    /**
+     * @Property isDefault: Indicates whether it is the default resource. Currently, this parameter only supports the input of true and does not support false.
+     */
+    public isDefault: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property option: Create behavior that supports the following values:
+     * - CreateAndAttach: Create resource and bind to workspace
+     * - Attach: bind resource to workspace.
+     */
+    public option: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosWorkspaceResourceDlcProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosWorkspaceResourceDlc.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrGroupName = this.getAtt('GroupName');
+        this.attrIsDefault = this.getAtt('IsDefault');
+        this.attrResources = this.getAtt('Resources');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.groupName = props.groupName;
+        this.resources = props.resources;
+        this.workspaceId = props.workspaceId;
+        this.isDefault = props.isDefault;
+        this.option = props.option;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            groupName: this.groupName,
+            resources: this.resources,
+            workspaceId: this.workspaceId,
+            isDefault: this.isDefault,
+            option: this.option,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosWorkspaceResourceDlcPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosWorkspaceResourceDlc {
+    /**
+     * @stability external
+     */
+    export interface ResourcesProperty {
+        /**
+         * @Property workspaceResourceWorkspaceId: ID of the workspace to which the resource information belongs.
+         */
+        readonly workspaceResourceWorkspaceId: string | ros.IResolvable;
+        /**
+         * @Property workspaceResourceName: Resource name, 3 to 28 characters in length, unique within each locale. Starts with the required letter and can contain only letters, numbers, and underscores (_).
+         */
+        readonly workspaceResourceName: string | ros.IResolvable;
+        /**
+         * @Property spec: Resource Specifications.
+         */
+        readonly spec?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+        /**
+         * @Property envType: Environment, Support:
+     * - dev: Development
+     * - prod: Production.
+         */
+        readonly envType: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ResourcesProperty`
+ *
+ * @param properties - the TypeScript properties of a `ResourcesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosWorkspaceResourceDlc_ResourcesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('workspaceResourceWorkspaceId', ros.requiredValidator)(properties.workspaceResourceWorkspaceId));
+    errors.collect(ros.propertyValidator('workspaceResourceWorkspaceId', ros.validateString)(properties.workspaceResourceWorkspaceId));
+    errors.collect(ros.propertyValidator('workspaceResourceName', ros.requiredValidator)(properties.workspaceResourceName));
+    errors.collect(ros.propertyValidator('workspaceResourceName', ros.validateString)(properties.workspaceResourceName));
+    errors.collect(ros.propertyValidator('spec', ros.hashValidator(ros.validateAny))(properties.spec));
+    errors.collect(ros.propertyValidator('envType', ros.requiredValidator)(properties.envType));
+    if(properties.envType && (typeof properties.envType) !== 'object') {
+        errors.collect(ros.propertyValidator('envType', ros.validateAllowedValues)({
+          data: properties.envType,
+          allowedValues: ["dev","prod"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('envType', ros.validateString)(properties.envType));
+    return errors.wrap('supplied properties not correct for "ResourcesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PAI::WorkspaceResourceDlc.Resources` resource
+ *
+ * @param properties - the TypeScript properties of a `ResourcesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PAI::WorkspaceResourceDlc.Resources` resource.
+ */
+// @ts-ignore TS6133
+function rosWorkspaceResourceDlcResourcesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosWorkspaceResourceDlc_ResourcesPropertyValidator(properties).assertSuccess();
+    return {
+      WorkspaceResourceWorkspaceId: ros.stringToRosTemplate(properties.workspaceResourceWorkspaceId),
+      WorkspaceResourceName: ros.stringToRosTemplate(properties.workspaceResourceName),
+      Spec: ros.hashMapper(ros.objectToRosTemplate)(properties.spec),
+      EnvType: ros.stringToRosTemplate(properties.envType),
+    };
+}
+
+/**
+ * Properties for defining a `RosWorkspaceResourceFlink`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspaceresourceflink
+ */
+export interface RosWorkspaceResourceFlinkProps {
+
+    /**
+     * @Property groupName: Resource group name. If you want to obtain a resource group name, see [ListResources].
+     */
+    readonly groupName: string | ros.IResolvable;
+
+    /**
+     * @Property resources: Resource List.
+     */
+    readonly resources: Array<RosWorkspaceResourceFlink.ResourcesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property workspaceId: The ID of the workspace to which the workspace belongs.
+     */
+    readonly workspaceId: string | ros.IResolvable;
+
+    /**
+     * @Property isDefault: Indicates whether it is the default resource. Currently, this parameter only supports the input of true and does not support false.
+     */
+    readonly isDefault?: boolean | ros.IResolvable;
+
+    /**
+     * @Property option: Create behavior that supports the following values:
+     * - CreateAndAttach: Create resource and bind to workspace
+     * - Attach: bind resource to workspace.
+     */
+    readonly option?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosWorkspaceResourceFlinkProps`
+ *
+ * @param properties - the TypeScript properties of a `RosWorkspaceResourceFlinkProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosWorkspaceResourceFlinkPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('isDefault', ros.validateBoolean)(properties.isDefault));
+    errors.collect(ros.propertyValidator('groupName', ros.requiredValidator)(properties.groupName));
+    errors.collect(ros.propertyValidator('groupName', ros.validateString)(properties.groupName));
+    errors.collect(ros.propertyValidator('workspaceId', ros.requiredValidator)(properties.workspaceId));
+    errors.collect(ros.propertyValidator('workspaceId', ros.validateString)(properties.workspaceId));
+    if(properties.option && (typeof properties.option) !== 'object') {
+        errors.collect(ros.propertyValidator('option', ros.validateAllowedValues)({
+          data: properties.option,
+          allowedValues: ["CreateAndAttach","Attach"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('option', ros.validateString)(properties.option));
+    errors.collect(ros.propertyValidator('resources', ros.requiredValidator)(properties.resources));
+    if(properties.resources && (Array.isArray(properties.resources) || (typeof properties.resources) === 'string')) {
+        errors.collect(ros.propertyValidator('resources', ros.validateLength)({
+            data: properties.resources.length,
+            min: 1,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('resources', ros.listValidator(RosWorkspaceResourceFlink_ResourcesPropertyValidator))(properties.resources));
+    return errors.wrap('supplied properties not correct for "RosWorkspaceResourceFlinkProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PAI::WorkspaceResourceFlink` resource
+ *
+ * @param properties - the TypeScript properties of a `RosWorkspaceResourceFlinkProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PAI::WorkspaceResourceFlink` resource.
+ */
+// @ts-ignore TS6133
+function rosWorkspaceResourceFlinkPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosWorkspaceResourceFlinkPropsValidator(properties).assertSuccess();
+    }
+    return {
+      GroupName: ros.stringToRosTemplate(properties.groupName),
+      Resources: ros.listMapper(rosWorkspaceResourceFlinkResourcesPropertyToRosTemplate)(properties.resources),
+      WorkspaceId: ros.stringToRosTemplate(properties.workspaceId),
+      IsDefault: ros.booleanToRosTemplate(properties.isDefault),
+      Option: ros.stringToRosTemplate(properties.option),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::WorkspaceResourceFlink`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `WorkspaceResourceFlink` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspaceresourceflink
+ */
+export class RosWorkspaceResourceFlink extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PAI::WorkspaceResourceFlink";
+
+    /**
+     * @Attribute CreateTime: The creation time of the resource.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute GroupName: Resource group name. If you want to obtain a resource group name, see [ListResources](~~ 449143 ~~).
+     */
+    public readonly attrGroupName: ros.IResolvable;
+
+    /**
+     * @Attribute IsDefault: Indicates whether it is the default resource. Currently, this parameter only supports the input of true and does not support false.
+     */
+    public readonly attrIsDefault: ros.IResolvable;
+
+    /**
+     * @Attribute Resources: Resource List.
+     */
+    public readonly attrResources: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property groupName: Resource group name. If you want to obtain a resource group name, see [ListResources].
+     */
+    public groupName: string | ros.IResolvable;
+
+    /**
+     * @Property resources: Resource List.
+     */
+    public resources: Array<RosWorkspaceResourceFlink.ResourcesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property workspaceId: The ID of the workspace to which the workspace belongs.
+     */
+    public workspaceId: string | ros.IResolvable;
+
+    /**
+     * @Property isDefault: Indicates whether it is the default resource. Currently, this parameter only supports the input of true and does not support false.
+     */
+    public isDefault: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property option: Create behavior that supports the following values:
+     * - CreateAndAttach: Create resource and bind to workspace
+     * - Attach: bind resource to workspace.
+     */
+    public option: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosWorkspaceResourceFlinkProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosWorkspaceResourceFlink.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrGroupName = this.getAtt('GroupName');
+        this.attrIsDefault = this.getAtt('IsDefault');
+        this.attrResources = this.getAtt('Resources');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.groupName = props.groupName;
+        this.resources = props.resources;
+        this.workspaceId = props.workspaceId;
+        this.isDefault = props.isDefault;
+        this.option = props.option;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            groupName: this.groupName,
+            resources: this.resources,
+            workspaceId: this.workspaceId,
+            isDefault: this.isDefault,
+            option: this.option,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosWorkspaceResourceFlinkPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosWorkspaceResourceFlink {
+    /**
+     * @stability external
+     */
+    export interface ResourcesProperty {
+        /**
+         * @Property workspaceResourceWorkspaceId: ID of the workspace to which the resource information belongs.
+         */
+        readonly workspaceResourceWorkspaceId: string | ros.IResolvable;
+        /**
+         * @Property workspaceResourceName: Resource name, 3 to 28 characters in length, unique within each locale. Starts with the required letter and can contain only letters, numbers, and underscores (_).
+         */
+        readonly workspaceResourceName: string | ros.IResolvable;
+        /**
+         * @Property spec: Resource Specifications.
+         */
+        readonly spec?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+        /**
+         * @Property envType: Environment, Support:
+     * - dev: Development
+     * - prod: Production.
+         */
+        readonly envType: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ResourcesProperty`
+ *
+ * @param properties - the TypeScript properties of a `ResourcesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosWorkspaceResourceFlink_ResourcesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('workspaceResourceWorkspaceId', ros.requiredValidator)(properties.workspaceResourceWorkspaceId));
+    errors.collect(ros.propertyValidator('workspaceResourceWorkspaceId', ros.validateString)(properties.workspaceResourceWorkspaceId));
+    errors.collect(ros.propertyValidator('workspaceResourceName', ros.requiredValidator)(properties.workspaceResourceName));
+    errors.collect(ros.propertyValidator('workspaceResourceName', ros.validateString)(properties.workspaceResourceName));
+    errors.collect(ros.propertyValidator('spec', ros.hashValidator(ros.validateAny))(properties.spec));
+    errors.collect(ros.propertyValidator('envType', ros.requiredValidator)(properties.envType));
+    if(properties.envType && (typeof properties.envType) !== 'object') {
+        errors.collect(ros.propertyValidator('envType', ros.validateAllowedValues)({
+          data: properties.envType,
+          allowedValues: ["dev","prod"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('envType', ros.validateString)(properties.envType));
+    return errors.wrap('supplied properties not correct for "ResourcesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PAI::WorkspaceResourceFlink.Resources` resource
+ *
+ * @param properties - the TypeScript properties of a `ResourcesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PAI::WorkspaceResourceFlink.Resources` resource.
+ */
+// @ts-ignore TS6133
+function rosWorkspaceResourceFlinkResourcesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosWorkspaceResourceFlink_ResourcesPropertyValidator(properties).assertSuccess();
+    return {
+      WorkspaceResourceWorkspaceId: ros.stringToRosTemplate(properties.workspaceResourceWorkspaceId),
+      WorkspaceResourceName: ros.stringToRosTemplate(properties.workspaceResourceName),
+      Spec: ros.hashMapper(ros.objectToRosTemplate)(properties.spec),
+      EnvType: ros.stringToRosTemplate(properties.envType),
+    };
+}
+
+/**
+ * Properties for defining a `RosWorkspaceResourceMaxCompute`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspaceresourcemaxcompute
+ */
+export interface RosWorkspaceResourceMaxComputeProps {
+
+    /**
+     * @Property groupName: Resource group name. If you want to obtain a resource group name.
+     */
+    readonly groupName: string | ros.IResolvable;
+
+    /**
+     * @Property resources: Resource List.
+     */
+    readonly resources: Array<RosWorkspaceResourceMaxCompute.ResourcesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property workspaceId: The ID of the workspace to which the workspace belongs.
+     */
+    readonly workspaceId: string | ros.IResolvable;
+
+    /**
+     * @Property isDefault: Indicates whether it is the default resource. Currently, this parameter only supports the input of true and does not support false.
+     */
+    readonly isDefault?: boolean | ros.IResolvable;
+
+    /**
+     * @Property option: Create behavior that supports the following values:
+     * - CreateAndAttach: Create resource and bind to workspace
+     * - Attach: bind resource to workspace.
+     */
+    readonly option?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosWorkspaceResourceMaxComputeProps`
+ *
+ * @param properties - the TypeScript properties of a `RosWorkspaceResourceMaxComputeProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosWorkspaceResourceMaxComputePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('isDefault', ros.validateBoolean)(properties.isDefault));
+    errors.collect(ros.propertyValidator('groupName', ros.requiredValidator)(properties.groupName));
+    errors.collect(ros.propertyValidator('groupName', ros.validateString)(properties.groupName));
+    errors.collect(ros.propertyValidator('workspaceId', ros.requiredValidator)(properties.workspaceId));
+    errors.collect(ros.propertyValidator('workspaceId', ros.validateString)(properties.workspaceId));
+    if(properties.option && (typeof properties.option) !== 'object') {
+        errors.collect(ros.propertyValidator('option', ros.validateAllowedValues)({
+          data: properties.option,
+          allowedValues: ["CreateAndAttach","Attach"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('option', ros.validateString)(properties.option));
+    errors.collect(ros.propertyValidator('resources', ros.requiredValidator)(properties.resources));
+    if(properties.resources && (Array.isArray(properties.resources) || (typeof properties.resources) === 'string')) {
+        errors.collect(ros.propertyValidator('resources', ros.validateLength)({
+            data: properties.resources.length,
+            min: 1,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('resources', ros.listValidator(RosWorkspaceResourceMaxCompute_ResourcesPropertyValidator))(properties.resources));
+    return errors.wrap('supplied properties not correct for "RosWorkspaceResourceMaxComputeProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PAI::WorkspaceResourceMaxCompute` resource
+ *
+ * @param properties - the TypeScript properties of a `RosWorkspaceResourceMaxComputeProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PAI::WorkspaceResourceMaxCompute` resource.
+ */
+// @ts-ignore TS6133
+function rosWorkspaceResourceMaxComputePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosWorkspaceResourceMaxComputePropsValidator(properties).assertSuccess();
+    }
+    return {
+      GroupName: ros.stringToRosTemplate(properties.groupName),
+      Resources: ros.listMapper(rosWorkspaceResourceMaxComputeResourcesPropertyToRosTemplate)(properties.resources),
+      WorkspaceId: ros.stringToRosTemplate(properties.workspaceId),
+      IsDefault: ros.booleanToRosTemplate(properties.isDefault),
+      Option: ros.stringToRosTemplate(properties.option),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::WorkspaceResourceMaxCompute`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `WorkspaceResourceMaxCompute` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspaceresourcemaxcompute
+ */
+export class RosWorkspaceResourceMaxCompute extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PAI::WorkspaceResourceMaxCompute";
+
+    /**
+     * @Attribute CreateTime: The creation time of the resource.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute GroupName: Resource group name. If you want to obtain a resource group name, see [ListResources](~~ 449143 ~~).
+     */
+    public readonly attrGroupName: ros.IResolvable;
+
+    /**
+     * @Attribute IsDefault: Indicates whether it is the default resource. Currently, this parameter only supports the input of true and does not support false.
+     */
+    public readonly attrIsDefault: ros.IResolvable;
+
+    /**
+     * @Attribute Resources: Resource List.
+     */
+    public readonly attrResources: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property groupName: Resource group name. If you want to obtain a resource group name.
+     */
+    public groupName: string | ros.IResolvable;
+
+    /**
+     * @Property resources: Resource List.
+     */
+    public resources: Array<RosWorkspaceResourceMaxCompute.ResourcesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property workspaceId: The ID of the workspace to which the workspace belongs.
+     */
+    public workspaceId: string | ros.IResolvable;
+
+    /**
+     * @Property isDefault: Indicates whether it is the default resource. Currently, this parameter only supports the input of true and does not support false.
+     */
+    public isDefault: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property option: Create behavior that supports the following values:
+     * - CreateAndAttach: Create resource and bind to workspace
+     * - Attach: bind resource to workspace.
+     */
+    public option: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosWorkspaceResourceMaxComputeProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosWorkspaceResourceMaxCompute.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrGroupName = this.getAtt('GroupName');
+        this.attrIsDefault = this.getAtt('IsDefault');
+        this.attrResources = this.getAtt('Resources');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.groupName = props.groupName;
+        this.resources = props.resources;
+        this.workspaceId = props.workspaceId;
+        this.isDefault = props.isDefault;
+        this.option = props.option;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            groupName: this.groupName,
+            resources: this.resources,
+            workspaceId: this.workspaceId,
+            isDefault: this.isDefault,
+            option: this.option,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosWorkspaceResourceMaxComputePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosWorkspaceResourceMaxCompute {
+    /**
+     * @stability external
+     */
+    export interface QuotasProperty {
+        /**
+         * @Property quotaId: The resource quota ID.
+     * Obtain the ID of the Quota through ListQuotas.
+         */
+        readonly quotaId: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `QuotasProperty`
+ *
+ * @param properties - the TypeScript properties of a `QuotasProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosWorkspaceResourceMaxCompute_QuotasPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('quotaId', ros.requiredValidator)(properties.quotaId));
+    errors.collect(ros.propertyValidator('quotaId', ros.validateString)(properties.quotaId));
+    return errors.wrap('supplied properties not correct for "QuotasProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PAI::WorkspaceResourceMaxCompute.Quotas` resource
+ *
+ * @param properties - the TypeScript properties of a `QuotasProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PAI::WorkspaceResourceMaxCompute.Quotas` resource.
+ */
+// @ts-ignore TS6133
+function rosWorkspaceResourceMaxComputeQuotasPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosWorkspaceResourceMaxCompute_QuotasPropertyValidator(properties).assertSuccess();
+    return {
+      QuotaId: ros.stringToRosTemplate(properties.quotaId),
+    };
+}
+
+export namespace RosWorkspaceResourceMaxCompute {
+    /**
+     * @stability external
+     */
+    export interface ResourcesProperty {
+        /**
+         * @Property workspaceResourceWorkspaceId: ID of the workspace to which the resource information belongs.
+         */
+        readonly workspaceResourceWorkspaceId: string | ros.IResolvable;
+        /**
+         * @Property quotas: The list of resource quotas. Currently, only MaxCompute resources have resource quotas.
+         */
+        readonly quotas?: Array<RosWorkspaceResourceMaxCompute.QuotasProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property workspaceResourceName: Resource name, 3 to 28 characters in length, unique within each locale. Starts with the required letter and can contain only letters, numbers, and underscores (_).
+         */
+        readonly workspaceResourceName: string | ros.IResolvable;
+        /**
+         * @Property spec: Resource Specifications.
+         */
+        readonly spec?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+        /**
+         * @Property envType: Environment, Support:
+     * - dev: Development
+     * - prod: Production.
+         */
+        readonly envType: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ResourcesProperty`
+ *
+ * @param properties - the TypeScript properties of a `ResourcesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosWorkspaceResourceMaxCompute_ResourcesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('workspaceResourceWorkspaceId', ros.requiredValidator)(properties.workspaceResourceWorkspaceId));
+    errors.collect(ros.propertyValidator('workspaceResourceWorkspaceId', ros.validateString)(properties.workspaceResourceWorkspaceId));
+    if(properties.quotas && (Array.isArray(properties.quotas) || (typeof properties.quotas) === 'string')) {
+        errors.collect(ros.propertyValidator('quotas', ros.validateLength)({
+            data: properties.quotas.length,
+            min: 0,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('quotas', ros.listValidator(RosWorkspaceResourceMaxCompute_QuotasPropertyValidator))(properties.quotas));
+    errors.collect(ros.propertyValidator('workspaceResourceName', ros.requiredValidator)(properties.workspaceResourceName));
+    errors.collect(ros.propertyValidator('workspaceResourceName', ros.validateString)(properties.workspaceResourceName));
+    errors.collect(ros.propertyValidator('spec', ros.hashValidator(ros.validateAny))(properties.spec));
+    errors.collect(ros.propertyValidator('envType', ros.requiredValidator)(properties.envType));
+    if(properties.envType && (typeof properties.envType) !== 'object') {
+        errors.collect(ros.propertyValidator('envType', ros.validateAllowedValues)({
+          data: properties.envType,
+          allowedValues: ["dev","prod"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('envType', ros.validateString)(properties.envType));
+    return errors.wrap('supplied properties not correct for "ResourcesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PAI::WorkspaceResourceMaxCompute.Resources` resource
+ *
+ * @param properties - the TypeScript properties of a `ResourcesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PAI::WorkspaceResourceMaxCompute.Resources` resource.
+ */
+// @ts-ignore TS6133
+function rosWorkspaceResourceMaxComputeResourcesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosWorkspaceResourceMaxCompute_ResourcesPropertyValidator(properties).assertSuccess();
+    return {
+      WorkspaceResourceWorkspaceId: ros.stringToRosTemplate(properties.workspaceResourceWorkspaceId),
+      Quotas: ros.listMapper(rosWorkspaceResourceMaxComputeQuotasPropertyToRosTemplate)(properties.quotas),
+      WorkspaceResourceName: ros.stringToRosTemplate(properties.workspaceResourceName),
+      Spec: ros.hashMapper(ros.objectToRosTemplate)(properties.spec),
+      EnvType: ros.stringToRosTemplate(properties.envType),
+    };
+}

@@ -196,7 +196,7 @@ export async function specOriginGenerator(endpoint: string, accessKeyId: string,
                 Properties: properties,
                 PropsToRosName: propsToRosName,
             };
-            await sleep(600);
+            await sleep(1000);
         }
     }
     spec['ResourceTypes'] = resourceTypes;

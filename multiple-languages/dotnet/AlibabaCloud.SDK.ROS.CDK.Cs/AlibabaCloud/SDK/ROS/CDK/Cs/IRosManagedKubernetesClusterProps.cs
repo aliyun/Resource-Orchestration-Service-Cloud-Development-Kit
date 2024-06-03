@@ -518,6 +518,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: securityHardeningOs: Alibaba Cloud OS security hardening. Value:
+        /// true: enables security hardening OS.
+        /// false: disables security hardening OS.
+        /// Default value: false.
+        /// </remarks>
+        [JsiiProperty(name: "securityHardeningOs", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SecurityHardeningOs
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0\/20 is used by default.
         /// </remarks>
         [JsiiProperty(name: "serviceCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -667,6 +683,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         [JsiiProperty(name: "workerSystemDiskCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? WorkerSystemDiskCategory
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: workerSystemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk. Default value: PL0. Valid values:
+        /// PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.
+        /// PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.
+        /// </remarks>
+        [JsiiProperty(name: "workerSystemDiskPerformanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? WorkerSystemDiskPerformanceLevel
         {
             get
             {
@@ -1126,6 +1157,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: securityHardeningOs: Alibaba Cloud OS security hardening. Value:
+            /// true: enables security hardening OS.
+            /// false: disables security hardening OS.
+            /// Default value: false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "securityHardeningOs", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SecurityHardeningOs
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0\/20 is used by default.
             /// </remarks>
             [JsiiOptional]
@@ -1245,6 +1289,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             [JsiiOptional]
             [JsiiProperty(name: "workerSystemDiskCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? WorkerSystemDiskCategory
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: workerSystemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk. Default value: PL0. Valid values:
+            /// PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.
+            /// PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "workerSystemDiskPerformanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? WorkerSystemDiskPerformanceLevel
             {
                 get => GetInstanceProperty<object?>();
             }

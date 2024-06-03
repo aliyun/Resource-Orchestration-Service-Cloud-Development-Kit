@@ -21,7 +21,7 @@ export interface InstanceSecurityGroupAttachmentProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ENS::InstanceSecurityGroupAttachment`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ENS::InstanceSecurityGroupAttachment`, which is used to add an Edge Node Service (ENS) instance to a security group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstanceSecurityGroupAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-instancesecuritygroupattachment
  */

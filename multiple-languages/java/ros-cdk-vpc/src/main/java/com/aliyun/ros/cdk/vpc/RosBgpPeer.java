@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::BgpPeer</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::BgpPeer</code>, which is used to add a Border Gateway Protocol (BGP) peer to a specific BGP group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:35.633Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:54.831Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosBgpPeer")
 public class RosBgpPeer extends com.aliyun.ros.cdk.core.RosResource {
 

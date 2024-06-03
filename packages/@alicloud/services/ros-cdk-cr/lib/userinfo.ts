@@ -13,6 +13,11 @@ export interface UserInfoProps {
      * Property user: User info. If user exists, will update user info.
      */
     readonly user: RosUserInfo.UserProperty | ros.IResolvable;
+
+    /**
+     * Property instanceId: The ID of enterprise edition ACR instance.
+     */
+    readonly instanceId?: string | ros.IResolvable;
 }
 
 /**
@@ -50,6 +55,7 @@ export class UserInfo extends ros.Resource {
 
         const rosUserInfo = new RosUserInfo(this, id,  {
             user: props.user,
+            instanceId: props.instanceId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosUserInfo;
         this.attrLoginName = rosUserInfo.attrLoginName;

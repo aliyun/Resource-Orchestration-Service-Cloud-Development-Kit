@@ -5,6 +5,7 @@ import {
   ISynthesisSession,
 } from "../construct-compat";
 import { Stack } from "../stack";
+import * as crypto from 'crypto';
 
 /**
  * Shared logic of writing stack artifact to the Cloud Assembly
@@ -104,6 +105,13 @@ function collectStackMetadata(stack: Stack) {
 
     return findParentStack(node.node.scope);
   }
+}
+
+/**
+ * Hash a string
+ */
+export function contentHash(content: string) {
+  return crypto.createHash('sha256').update(content).digest('hex');
 }
 
 /**

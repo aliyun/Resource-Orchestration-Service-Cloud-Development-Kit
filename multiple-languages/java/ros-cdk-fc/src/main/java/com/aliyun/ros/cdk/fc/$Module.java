@@ -45,12 +45,12 @@ public final class $Module extends JsiiModule {
     private final Map<String, Class<?>> cache = new HashMap<>();
 
     public $Module() {
-        super("@alicloud/ros-cdk-fc", "1.0.24", $Module.class, "ros-cdk-fc@1.0.24.jsii.tgz");
+        super("@alicloud/ros-cdk-fc", "1.0.25", $Module.class, "ros-cdk-fc@1.0.25.jsii.tgz");
     }
 
     @Override
     public List<Class<? extends JsiiModule>> getDependencies() {
-        return asList(com.aliyun.ros.cdk.core.$Module.class, software.constructs.$Module.class);
+        return asList(com.aliyun.ros.cdk.core.$Module.class, com.aliyun.ros.cdk.oss.$Module.class, com.aliyun.ros.cdk.ossassets.$Module.class, software.constructs.$Module.class);
     }
 
     @Override

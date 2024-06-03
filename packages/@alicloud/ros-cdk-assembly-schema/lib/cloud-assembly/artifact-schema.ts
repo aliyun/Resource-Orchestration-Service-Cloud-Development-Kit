@@ -56,6 +56,22 @@ export interface NestedCloudAssemblyProperties {
 }
 
 /**
+ * Configuration options for the Asset Manifest
+ */
+export interface AssetManifestOptions {
+}
+
+/**
+ * Artifact properties for the Asset Manifest
+ */
+export interface AssetManifestProperties extends AssetManifestOptions {
+  /**
+   * Filename of the asset manifest
+   */
+  readonly file: string;
+}
+
+/**
  * Properties for manifest artifacts
  */
 export type ArtifactProperties =

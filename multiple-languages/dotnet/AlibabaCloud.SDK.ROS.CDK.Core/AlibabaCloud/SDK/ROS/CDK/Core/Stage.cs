@@ -86,6 +86,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             get => GetInstanceProperty<string>()!;
         }
 
+        /// <summary>The cloud assembly asset output directory.</summary>
+        [JsiiProperty(name: "assetOutdir", typeJson: "{\"primitive\":\"string\"}")]
+        public virtual string AssetOutdir
+        {
+            get => GetInstanceProperty<string>()!;
+        }
+
+        /// <summary>The cloud assembly output directory.</summary>
+        [JsiiProperty(name: "outdir", typeJson: "{\"primitive\":\"string\"}")]
+        public virtual string Outdir
+        {
+            get => GetInstanceProperty<string>()!;
+        }
+
         /// <summary>(experimental) The name of the stage.</summary>
         /// <remarks>
         /// Based on names of the parent stages separated by
@@ -97,6 +111,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         public virtual string StageName
         {
             get => GetInstanceProperty<string>()!;
+        }
+
+        /// <summary>The default account for all resources defined within this stage.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "account", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        public virtual string? Account
+        {
+            get => GetInstanceProperty<string?>();
         }
 
         /// <summary>(experimental) The parent stage or 'undefined' if this is the app.</summary>
@@ -112,6 +134,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.Stage? ParentStage
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.Stage?>();
+        }
+
+        /// <summary>The default region for all resources defined within this stage.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "region", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        public virtual string? Region
+        {
+            get => GetInstanceProperty<string?>();
         }
     }
 }

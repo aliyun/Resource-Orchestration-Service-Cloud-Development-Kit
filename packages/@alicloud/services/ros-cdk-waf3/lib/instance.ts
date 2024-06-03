@@ -127,7 +127,7 @@ export interface InstanceProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::WAF3::Instance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::WAF3::Instance`, which is used to create a Web Application Firewall (WAF) 3.0 instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf3-instance
  */

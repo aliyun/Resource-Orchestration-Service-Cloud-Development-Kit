@@ -11,3 +11,14 @@
  * Omits stack traces from construct metadata entries.
  */
 export const DISABLE_METADATA_STACK_TRACE = "aliyun:ros:disable-stack-trace";
+
+/**
+ * Run bundling for stacks specified in this context key
+ */
+export const BUNDLING_STACKS = 'aliyun:ros:bundling-stacks';
+
+/**
+ * Disable asset staging.
+ *
+ */
+export const DISABLE_ASSET_STAGING_CONTEXT = 'aliyun:ros:disable-asset-staging';

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.oss.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::OSS::Bucket</code>.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::OSS::Bucket</code>, which is used to query the information about an Object Storage Service (OSS) bucket.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:34.301Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:53.136Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.datasource.RosBucket")
 public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
 

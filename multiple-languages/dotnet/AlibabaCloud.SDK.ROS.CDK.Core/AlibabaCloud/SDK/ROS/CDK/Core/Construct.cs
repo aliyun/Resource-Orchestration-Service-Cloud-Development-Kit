@@ -104,7 +104,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// as they participate in synthesizing the cloud assembly.
         /// </remarks>
         [JsiiMethod(name: "synthesize", parametersJson: "[{\"docs\":{\"summary\":\"The synthesis session.\"},\"name\":\"session\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.ISynthesisSession\"}}]")]
-        protected virtual void Synthesize(AlibabaCloud.SDK.ROS.CDK.Core.ISynthesisSession session)
+        public virtual void Synthesize(AlibabaCloud.SDK.ROS.CDK.Core.ISynthesisSession session)
         {
             InvokeInstanceVoidMethod(new System.Type[]{typeof(AlibabaCloud.SDK.ROS.CDK.Core.ISynthesisSession)}, new object[]{session});
         }

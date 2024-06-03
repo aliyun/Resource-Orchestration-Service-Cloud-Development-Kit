@@ -29,7 +29,7 @@ export interface GroupProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::Group`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::Group`, which is used to create a group in CloudSSO.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsso-group
  */

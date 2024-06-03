@@ -1217,7 +1217,7 @@ function rosClusterApplicationPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ClusterApplication`, which is used to deploy a container application.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ClusterApplication`, which is used to deploy an application in a Container Service for Kubernetes (ACK) cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `ClusterApplication` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterapplication
  */
@@ -3128,6 +3128,203 @@ function rosClusterNodePoolUpgradeConfigPropertyToRosTemplate(properties: any): 
 }
 
 /**
+ * Properties for defining a `RosGrantPermissions`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-grantpermissions
+ */
+export interface RosGrantPermissionsProps {
+
+    /**
+     * @Property permissions: The permissions that you want to grant to the RAM user.
+     */
+    readonly permissions: Array<RosGrantPermissions.PermissionsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property userId: The ID of the RAM user.
+     */
+    readonly userId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosGrantPermissionsProps`
+ *
+ * @param properties - the TypeScript properties of a `RosGrantPermissionsProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosGrantPermissionsPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('userId', ros.requiredValidator)(properties.userId));
+    errors.collect(ros.propertyValidator('userId', ros.validateString)(properties.userId));
+    errors.collect(ros.propertyValidator('permissions', ros.requiredValidator)(properties.permissions));
+    if(properties.permissions && (Array.isArray(properties.permissions) || (typeof properties.permissions) === 'string')) {
+        errors.collect(ros.propertyValidator('permissions', ros.validateLength)({
+            data: properties.permissions.length,
+            min: 0,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('permissions', ros.listValidator(RosGrantPermissions_PermissionsPropertyValidator))(properties.permissions));
+    return errors.wrap('supplied properties not correct for "RosGrantPermissionsProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::GrantPermissions` resource
+ *
+ * @param properties - the TypeScript properties of a `RosGrantPermissionsProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::GrantPermissions` resource.
+ */
+// @ts-ignore TS6133
+function rosGrantPermissionsPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosGrantPermissionsPropsValidator(properties).assertSuccess();
+    }
+    return {
+      Permissions: ros.listMapper(rosGrantPermissionsPermissionsPropertyToRosTemplate)(properties.permissions),
+      UserId: ros.stringToRosTemplate(properties.userId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::GrantPermissions`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `GrantPermissions` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-grantpermissions
+ */
+export class RosGrantPermissions extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CS::GrantPermissions";
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property permissions: The permissions that you want to grant to the RAM user.
+     */
+    public permissions: Array<RosGrantPermissions.PermissionsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property userId: The ID of the RAM user.
+     */
+    public userId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosGrantPermissionsProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosGrantPermissions.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.permissions = props.permissions;
+        this.userId = props.userId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            permissions: this.permissions,
+            userId: this.userId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosGrantPermissionsPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosGrantPermissions {
+    /**
+     * @stability external
+     */
+    export interface PermissionsProperty {
+        /**
+         * @Property roleName: he predefined role name. Valid values:
+     * admin: administrator
+     * ops: O&M engineer
+     * dev: developer
+     * restricted: restricted user
+     * The custom cluster role.
+         */
+        readonly roleName: string | ros.IResolvable;
+        /**
+         * @Property clusterId: The ID of the cluster that you want to manage. When the role_type parameter is set to all-clusters, this parameter is set to an empty string.
+         */
+        readonly clusterId: string | ros.IResolvable;
+        /**
+         * @Property roleType: The authorization type. Valid values:
+     * cluster: indicates that the permissions are scoped to a cluster.
+     * namespace: specifies that the permissions are scoped to a namespace of a cluster.
+     * all-clusters: specifies that the permissions are scoped to all clusters.
+         */
+        readonly roleType: string | ros.IResolvable;
+        /**
+         * @Property isCustom: Specifies whether to perform a custom authorization. To perform a custom authorization, set RoleName to a custom cluster role.
+         */
+        readonly isCustom?: boolean | ros.IResolvable;
+        /**
+         * @Property isRamRole: Specifies whether the permissions are granted to a RAM role.
+         */
+        readonly isRamRole?: boolean | ros.IResolvable;
+        /**
+         * @Property namespace: The namespace to which the permissions are scoped. This parameter is required only if you set RoleType to namespace.
+         */
+        readonly namespace?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `PermissionsProperty`
+ *
+ * @param properties - the TypeScript properties of a `PermissionsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosGrantPermissions_PermissionsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('roleName', ros.requiredValidator)(properties.roleName));
+    errors.collect(ros.propertyValidator('roleName', ros.validateString)(properties.roleName));
+    errors.collect(ros.propertyValidator('clusterId', ros.requiredValidator)(properties.clusterId));
+    errors.collect(ros.propertyValidator('clusterId', ros.validateString)(properties.clusterId));
+    errors.collect(ros.propertyValidator('roleType', ros.requiredValidator)(properties.roleType));
+    if(properties.roleType && (typeof properties.roleType) !== 'object') {
+        errors.collect(ros.propertyValidator('roleType', ros.validateAllowedValues)({
+          data: properties.roleType,
+          allowedValues: ["cluster","namespace","all-clusters"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('roleType', ros.validateString)(properties.roleType));
+    errors.collect(ros.propertyValidator('isCustom', ros.validateBoolean)(properties.isCustom));
+    errors.collect(ros.propertyValidator('isRamRole', ros.validateBoolean)(properties.isRamRole));
+    errors.collect(ros.propertyValidator('namespace', ros.validateString)(properties.namespace));
+    return errors.wrap('supplied properties not correct for "PermissionsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::GrantPermissions.Permissions` resource
+ *
+ * @param properties - the TypeScript properties of a `PermissionsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::GrantPermissions.Permissions` resource.
+ */
+// @ts-ignore TS6133
+function rosGrantPermissionsPermissionsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosGrantPermissions_PermissionsPropertyValidator(properties).assertSuccess();
+    return {
+      RoleName: ros.stringToRosTemplate(properties.roleName),
+      ClusterId: ros.stringToRosTemplate(properties.clusterId),
+      RoleType: ros.stringToRosTemplate(properties.roleType),
+      IsCustom: ros.booleanToRosTemplate(properties.isCustom),
+      IsRamRole: ros.booleanToRosTemplate(properties.isRamRole),
+      Namespace: ros.stringToRosTemplate(properties.namespace),
+    };
+}
+
+/**
  * Properties for defining a `RosKubernetesCluster`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-kubernetescluster
  */
@@ -3436,6 +3633,14 @@ export interface RosKubernetesClusterProps {
     readonly securityGroupId?: string | ros.IResolvable;
 
     /**
+     * @Property securityHardeningOs: Alibaba Cloud OS security hardening. Value:
+     * true: enables security hardening OS.
+     * false: disables security hardening OS.
+     * Default value: false.
+     */
+    readonly securityHardeningOs?: boolean | ros.IResolvable;
+
+    /**
      * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0\/20 is used by default.
      */
     readonly serviceCidr?: string | ros.IResolvable;
@@ -3647,6 +3852,7 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
     }
     errors.collect(ros.propertyValidator('masterVSwitchIds', ros.listValidator(ros.validateAny))(properties.masterVSwitchIds));
     errors.collect(ros.propertyValidator('cloudMonitorFlags', ros.validateBoolean)(properties.cloudMonitorFlags));
+    errors.collect(ros.propertyValidator('securityHardeningOs', ros.validateBoolean)(properties.securityHardeningOs));
     errors.collect(ros.propertyValidator('serviceCidr', ros.validateString)(properties.serviceCidr));
     errors.collect(ros.propertyValidator('podVswitchIds', ros.listValidator(ros.validateString))(properties.podVswitchIds));
     if(properties.workerInstanceTypes && (Array.isArray(properties.workerInstanceTypes) || (typeof properties.workerInstanceTypes) === 'string')) {
@@ -3767,6 +3973,7 @@ function rosKubernetesClusterPropsToRosTemplate(properties: any, enableResourceP
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       Runtime: rosKubernetesClusterRuntimePropertyToRosTemplate(properties.runtime),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
+      SecurityHardeningOs: ros.booleanToRosTemplate(properties.securityHardeningOs),
       ServiceCidr: ros.stringToRosTemplate(properties.serviceCidr),
       SnatEntry: ros.booleanToRosTemplate(properties.snatEntry),
       SocEnabled: ros.booleanToRosTemplate(properties.socEnabled),
@@ -4159,6 +4366,14 @@ export class RosKubernetesCluster extends ros.RosResource {
     public securityGroupId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property securityHardeningOs: Alibaba Cloud OS security hardening. Value:
+     * true: enables security hardening OS.
+     * false: disables security hardening OS.
+     * Default value: false.
+     */
+    public securityHardeningOs: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0\/20 is used by default.
      */
     public serviceCidr: string | ros.IResolvable | undefined;
@@ -4324,6 +4539,7 @@ export class RosKubernetesCluster extends ros.RosResource {
         this.resourceGroupId = props.resourceGroupId;
         this.runtime = props.runtime;
         this.securityGroupId = props.securityGroupId;
+        this.securityHardeningOs = props.securityHardeningOs;
         this.serviceCidr = props.serviceCidr;
         this.snatEntry = props.snatEntry;
         this.socEnabled = props.socEnabled;
@@ -4390,6 +4606,7 @@ export class RosKubernetesCluster extends ros.RosResource {
             resourceGroupId: this.resourceGroupId,
             runtime: this.runtime,
             securityGroupId: this.securityGroupId,
+            securityHardeningOs: this.securityHardeningOs,
             serviceCidr: this.serviceCidr,
             snatEntry: this.snatEntry,
             socEnabled: this.socEnabled,
@@ -4753,6 +4970,16 @@ export namespace RosKubernetesCluster {
      */
     export interface NodePoolInfoProperty {
         /**
+         * @Property type: Node pool type. Value range:
+     * ess: Node pool.
+     * edge: Edge node pool.
+         */
+        readonly type?: string | ros.IResolvable;
+        /**
+         * @Property resourceGroupId: Resource Group ID of a node pool.
+         */
+        readonly resourceGroupId?: string | ros.IResolvable;
+        /**
          * @Property name: The name of the node pool.
          */
         readonly name: string | ros.IResolvable;
@@ -4768,6 +4995,14 @@ export namespace RosKubernetesCluster {
 function RosKubernetesCluster_NodePoolInfoPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    if(properties.type && (typeof properties.type) !== 'object') {
+        errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
+          data: properties.type,
+          allowedValues: ["ess","edge"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     return errors.wrap('supplied properties not correct for "NodePoolInfoProperty"');
@@ -4785,6 +5020,8 @@ function rosKubernetesClusterNodePoolInfoPropertyToRosTemplate(properties: any):
     if (!ros.canInspect(properties)) { return properties; }
     RosKubernetesCluster_NodePoolInfoPropertyValidator(properties).assertSuccess();
     return {
+      Type: ros.stringToRosTemplate(properties.type),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       Name: ros.stringToRosTemplate(properties.name),
     };
 }
@@ -6537,6 +6774,14 @@ export interface RosManagedKubernetesClusterProps {
     readonly securityGroupId?: string | ros.IResolvable;
 
     /**
+     * @Property securityHardeningOs: Alibaba Cloud OS security hardening. Value:
+     * true: enables security hardening OS.
+     * false: disables security hardening OS.
+     * Default value: false.
+     */
+    readonly securityHardeningOs?: boolean | ros.IResolvable;
+
+    /**
      * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0\/20 is used by default.
      */
     readonly serviceCidr?: string | ros.IResolvable;
@@ -6606,6 +6851,14 @@ export interface RosManagedKubernetesClusterProps {
     readonly workerSystemDiskCategory?: string | ros.IResolvable;
 
     /**
+     * @Property workerSystemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk. Default value: PL0. Valid values:
+     * PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.
+     * PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.
+     *
+     */
+    readonly workerSystemDiskPerformanceLevel?: string | ros.IResolvable;
+
+    /**
      * @Property workerSystemDiskSize: Worker disk system disk size, the unit is GiB.
      * Default to 120.
      */
@@ -6629,9 +6882,65 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('endpointPublicAccess', ros.validateBoolean)(properties.endpointPublicAccess));
     errors.collect(ros.propertyValidator('socEnabled', ros.validateBoolean)(properties.socEnabled));
-    errors.collect(ros.propertyValidator('formatDisk', ros.validateBoolean)(properties.formatDisk));
     errors.collect(ros.propertyValidator('platform', ros.validateString)(properties.platform));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('loadBalancerSpec', ros.validateString)(properties.loadBalancerSpec));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    errors.collect(ros.propertyValidator('taint', ros.listValidator(ros.validateAnyDict))(properties.taint));
+    errors.collect(ros.propertyValidator('isEnterpriseSecurityGroup', ros.validateBoolean)(properties.isEnterpriseSecurityGroup));
+    errors.collect(ros.propertyValidator('runtime', RosManagedKubernetesCluster_RuntimePropertyValidator)(properties.runtime));
+    if(properties.osType && (typeof properties.osType) !== 'object') {
+        errors.collect(ros.propertyValidator('osType', ros.validateAllowedValues)({
+          data: properties.osType,
+          allowedValues: ["Windows","Linux"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('osType', ros.validateString)(properties.osType));
+    errors.collect(ros.propertyValidator('nodeNameMode', ros.validateString)(properties.nodeNameMode));
+    errors.collect(ros.propertyValidator('proxyMode', ros.validateString)(properties.proxyMode));
+    errors.collect(ros.propertyValidator('disableRollback', ros.validateBoolean)(properties.disableRollback));
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosManagedKubernetesCluster_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('containerCidr', ros.validateString)(properties.containerCidr));
+    errors.collect(ros.propertyValidator('keyPair', ros.validateString)(properties.keyPair));
+    errors.collect(ros.propertyValidator('nodeCidrMask', ros.validateString)(properties.nodeCidrMask));
+    errors.collect(ros.propertyValidator('vSwitchIds', ros.requiredValidator)(properties.vSwitchIds));
+    if(properties.vSwitchIds && (Array.isArray(properties.vSwitchIds) || (typeof properties.vSwitchIds) === 'string')) {
+        errors.collect(ros.propertyValidator('vSwitchIds', ros.validateLength)({
+            data: properties.vSwitchIds.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateAny))(properties.vSwitchIds));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
+          data: properties.period,
+          allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36,48,60],
+        }));
+    }
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
+    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    if(properties.nodePools && (Array.isArray(properties.nodePools) || (typeof properties.nodePools) === 'string')) {
+        errors.collect(ros.propertyValidator('nodePools', ros.validateLength)({
+            data: properties.nodePools.length,
+            min: undefined,
+            max: 1,
+          }));
+    }
+    errors.collect(ros.propertyValidator('nodePools', ros.listValidator(RosManagedKubernetesCluster_NodePoolsPropertyValidator))(properties.nodePools));
+    errors.collect(ros.propertyValidator('encryptionProviderKey', ros.validateString)(properties.encryptionProviderKey));
+    errors.collect(ros.propertyValidator('snatEntry', ros.validateBoolean)(properties.snatEntry));
+    if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
+        errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
+          data: properties.periodUnit,
+          allowedValues: ["Week","Month","Year"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
+    errors.collect(ros.propertyValidator('formatDisk', ros.validateBoolean)(properties.formatDisk));
     errors.collect(ros.propertyValidator('userData', ros.validateString)(properties.userData));
     errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     errors.collect(ros.propertyValidator('addons', ros.listValidator(RosManagedKubernetesCluster_AddonsPropertyValidator))(properties.addons));
@@ -6644,27 +6953,12 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
           }));
     }
     errors.collect(ros.propertyValidator('workerSystemDiskSize', ros.validateNumber)(properties.workerSystemDiskSize));
-    errors.collect(ros.propertyValidator('loadBalancerSpec', ros.validateString)(properties.loadBalancerSpec));
-    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
-    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
-    errors.collect(ros.propertyValidator('taint', ros.listValidator(ros.validateAnyDict))(properties.taint));
-    errors.collect(ros.propertyValidator('isEnterpriseSecurityGroup', ros.validateBoolean)(properties.isEnterpriseSecurityGroup));
-    errors.collect(ros.propertyValidator('runtime', RosManagedKubernetesCluster_RuntimePropertyValidator)(properties.runtime));
     errors.collect(ros.propertyValidator('cloudMonitorFlags', ros.validateBoolean)(properties.cloudMonitorFlags));
-    if(properties.osType && (typeof properties.osType) !== 'object') {
-        errors.collect(ros.propertyValidator('osType', ros.validateAllowedValues)({
-          data: properties.osType,
-          allowedValues: ["Windows","Linux"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('osType', ros.validateString)(properties.osType));
-    errors.collect(ros.propertyValidator('nodeNameMode', ros.validateString)(properties.nodeNameMode));
+    errors.collect(ros.propertyValidator('securityHardeningOs', ros.validateBoolean)(properties.securityHardeningOs));
     errors.collect(ros.propertyValidator('serviceCidr', ros.validateString)(properties.serviceCidr));
     errors.collect(ros.propertyValidator('podVswitchIds', ros.listValidator(ros.validateString))(properties.podVswitchIds));
     errors.collect(ros.propertyValidator('zoneIds', ros.listValidator(ros.validateString))(properties.zoneIds));
-    errors.collect(ros.propertyValidator('proxyMode', ros.validateString)(properties.proxyMode));
-    errors.collect(ros.propertyValidator('disableRollback', ros.validateBoolean)(properties.disableRollback));
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosManagedKubernetesCluster_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('workerSystemDiskPerformanceLevel', ros.validateString)(properties.workerSystemDiskPerformanceLevel));
     if(properties.workerInstanceTypes && (Array.isArray(properties.workerInstanceTypes) || (typeof properties.workerInstanceTypes) === 'string')) {
         errors.collect(ros.propertyValidator('workerInstanceTypes', ros.validateLength)({
             data: properties.workerInstanceTypes.length,
@@ -6682,33 +6976,11 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
     }
     errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateNumber)(properties.autoRenewPeriod));
     errors.collect(ros.propertyValidator('kubernetesVersion', ros.validateString)(properties.kubernetesVersion));
-    errors.collect(ros.propertyValidator('containerCidr', ros.validateString)(properties.containerCidr));
-    errors.collect(ros.propertyValidator('keyPair', ros.validateString)(properties.keyPair));
-    errors.collect(ros.propertyValidator('nodeCidrMask', ros.validateString)(properties.nodeCidrMask));
-    errors.collect(ros.propertyValidator('vSwitchIds', ros.requiredValidator)(properties.vSwitchIds));
-    if(properties.vSwitchIds && (Array.isArray(properties.vSwitchIds) || (typeof properties.vSwitchIds) === 'string')) {
-        errors.collect(ros.propertyValidator('vSwitchIds', ros.validateLength)({
-            data: properties.vSwitchIds.length,
-            min: 1,
-            max: undefined,
-          }));
-    }
-    errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateAny))(properties.vSwitchIds));
     errors.collect(ros.propertyValidator('workerDataDisks', ros.listValidator(RosManagedKubernetesCluster_WorkerDataDisksPropertyValidator))(properties.workerDataDisks));
-    errors.collect(ros.propertyValidator('timeoutMins', ros.validateNumber)(properties.timeoutMins));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
-    if(properties.period && (typeof properties.period) !== 'object') {
-        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
-          data: properties.period,
-          allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36,48,60],
-        }));
-    }
-    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    errors.collect(ros.propertyValidator('timeoutMins', ros.validateNumber)(properties.timeoutMins));
     errors.collect(ros.propertyValidator('clusterSpec', ros.validateString)(properties.clusterSpec));
-    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
     errors.collect(ros.propertyValidator('workerDataDisk', ros.validateBoolean)(properties.workerDataDisk));
-    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
-    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     if(properties.numOfNodes && (typeof properties.numOfNodes) !== 'object') {
         errors.collect(ros.propertyValidator('numOfNodes', ros.validateRange)({
             data: properties.numOfNodes,
@@ -6718,14 +6990,6 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
     }
     errors.collect(ros.propertyValidator('numOfNodes', ros.validateNumber)(properties.numOfNodes));
     errors.collect(ros.propertyValidator('keepInstanceName', ros.validateBoolean)(properties.keepInstanceName));
-    if(properties.nodePools && (Array.isArray(properties.nodePools) || (typeof properties.nodePools) === 'string')) {
-        errors.collect(ros.propertyValidator('nodePools', ros.validateLength)({
-            data: properties.nodePools.length,
-            min: undefined,
-            max: 1,
-          }));
-    }
-    errors.collect(ros.propertyValidator('nodePools', ros.listValidator(RosManagedKubernetesCluster_NodePoolsPropertyValidator))(properties.nodePools));
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
@@ -6733,15 +6997,6 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
-    errors.collect(ros.propertyValidator('encryptionProviderKey', ros.validateString)(properties.encryptionProviderKey));
-    errors.collect(ros.propertyValidator('snatEntry', ros.validateBoolean)(properties.snatEntry));
-    if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
-        errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
-          data: properties.periodUnit,
-          allowedValues: ["Week","Month","Year"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
     return errors.wrap('supplied properties not correct for "RosManagedKubernetesClusterProps"');
 }
 
@@ -6793,6 +7048,7 @@ function rosManagedKubernetesClusterPropsToRosTemplate(properties: any, enableRe
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       Runtime: rosManagedKubernetesClusterRuntimePropertyToRosTemplate(properties.runtime),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
+      SecurityHardeningOs: ros.booleanToRosTemplate(properties.securityHardeningOs),
       ServiceCidr: ros.stringToRosTemplate(properties.serviceCidr),
       SnatEntry: ros.booleanToRosTemplate(properties.snatEntry),
       SocEnabled: ros.booleanToRosTemplate(properties.socEnabled),
@@ -6804,6 +7060,7 @@ function rosManagedKubernetesClusterPropsToRosTemplate(properties: any, enableRe
       WorkerDataDisks: ros.listMapper(rosManagedKubernetesClusterWorkerDataDisksPropertyToRosTemplate)(properties.workerDataDisks),
       WorkerInstanceTypes: ros.listMapper(ros.stringToRosTemplate)(properties.workerInstanceTypes),
       WorkerSystemDiskCategory: ros.stringToRosTemplate(properties.workerSystemDiskCategory),
+      WorkerSystemDiskPerformanceLevel: ros.stringToRosTemplate(properties.workerSystemDiskPerformanceLevel),
       WorkerSystemDiskSize: ros.numberToRosTemplate(properties.workerSystemDiskSize),
       ZoneIds: ros.listMapper(ros.stringToRosTemplate)(properties.zoneIds),
     };
@@ -7125,6 +7382,14 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
     public securityGroupId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property securityHardeningOs: Alibaba Cloud OS security hardening. Value:
+     * true: enables security hardening OS.
+     * false: disables security hardening OS.
+     * Default value: false.
+     */
+    public securityHardeningOs: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0\/20 is used by default.
      */
     public serviceCidr: string | ros.IResolvable | undefined;
@@ -7194,6 +7459,14 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
     public workerSystemDiskCategory: string | ros.IResolvable | undefined;
 
     /**
+     * @Property workerSystemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk. Default value: PL0. Valid values:
+     * PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.
+     * PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.
+     *
+     */
+    public workerSystemDiskPerformanceLevel: string | ros.IResolvable | undefined;
+
+    /**
      * @Property workerSystemDiskSize: Worker disk system disk size, the unit is GiB.
      * Default to 120.
      */
@@ -7258,6 +7531,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
         this.resourceGroupId = props.resourceGroupId;
         this.runtime = props.runtime;
         this.securityGroupId = props.securityGroupId;
+        this.securityHardeningOs = props.securityHardeningOs;
         this.serviceCidr = props.serviceCidr;
         this.snatEntry = props.snatEntry;
         this.socEnabled = props.socEnabled;
@@ -7269,6 +7543,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
         this.workerDataDisks = props.workerDataDisks;
         this.workerInstanceTypes = props.workerInstanceTypes;
         this.workerSystemDiskCategory = props.workerSystemDiskCategory;
+        this.workerSystemDiskPerformanceLevel = props.workerSystemDiskPerformanceLevel;
         this.workerSystemDiskSize = props.workerSystemDiskSize;
         this.zoneIds = props.zoneIds;
     }
@@ -7310,6 +7585,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
             resourceGroupId: this.resourceGroupId,
             runtime: this.runtime,
             securityGroupId: this.securityGroupId,
+            securityHardeningOs: this.securityHardeningOs,
             serviceCidr: this.serviceCidr,
             snatEntry: this.snatEntry,
             socEnabled: this.socEnabled,
@@ -7321,6 +7597,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
             workerDataDisks: this.workerDataDisks,
             workerInstanceTypes: this.workerInstanceTypes,
             workerSystemDiskCategory: this.workerSystemDiskCategory,
+            workerSystemDiskPerformanceLevel: this.workerSystemDiskPerformanceLevel,
             workerSystemDiskSize: this.workerSystemDiskSize,
             zoneIds: this.zoneIds,
         };
@@ -7616,6 +7893,16 @@ export namespace RosManagedKubernetesCluster {
      */
     export interface NodePoolInfoProperty {
         /**
+         * @Property type: Node pool type. Value range:
+     * ess: Node pool.
+     * edge: Edge node pool.
+         */
+        readonly type?: string | ros.IResolvable;
+        /**
+         * @Property resourceGroupId: Resource Group ID of a node pool.
+         */
+        readonly resourceGroupId?: string | ros.IResolvable;
+        /**
          * @Property name: The name of the node pool.
          */
         readonly name: string | ros.IResolvable;
@@ -7631,6 +7918,14 @@ export namespace RosManagedKubernetesCluster {
 function RosManagedKubernetesCluster_NodePoolInfoPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    if(properties.type && (typeof properties.type) !== 'object') {
+        errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
+          data: properties.type,
+          allowedValues: ["ess","edge"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     return errors.wrap('supplied properties not correct for "NodePoolInfoProperty"');
@@ -7648,6 +7943,8 @@ function rosManagedKubernetesClusterNodePoolInfoPropertyToRosTemplate(properties
     if (!ros.canInspect(properties)) { return properties; }
     RosManagedKubernetesCluster_NodePoolInfoPropertyValidator(properties).assertSuccess();
     return {
+      Type: ros.stringToRosTemplate(properties.type),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       Name: ros.stringToRosTemplate(properties.name),
     };
 }
@@ -8151,6 +8448,13 @@ export namespace RosManagedKubernetesCluster {
          */
         readonly category: string | ros.IResolvable;
         /**
+         * @Property performanceLevel: The performance level of the enhanced SSD used as the system disk. Default value: PL0. Valid values:
+     * PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.
+     * PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.
+     *
+         */
+        readonly performanceLevel?: string | ros.IResolvable;
+        /**
          * @Property size: Data disk size in GiB.
          */
         readonly size: number | ros.IResolvable;
@@ -8168,6 +8472,7 @@ function RosManagedKubernetesCluster_WorkerDataDisksPropertyValidator(properties
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('category', ros.requiredValidator)(properties.category));
     errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
+    errors.collect(ros.propertyValidator('performanceLevel', ros.validateString)(properties.performanceLevel));
     errors.collect(ros.propertyValidator('size', ros.requiredValidator)(properties.size));
     if(properties.size && (typeof properties.size) !== 'object') {
         errors.collect(ros.propertyValidator('size', ros.validateRange)({
@@ -8193,6 +8498,7 @@ function rosManagedKubernetesClusterWorkerDataDisksPropertyToRosTemplate(propert
     RosManagedKubernetesCluster_WorkerDataDisksPropertyValidator(properties).assertSuccess();
     return {
       Category: ros.stringToRosTemplate(properties.category),
+      PerformanceLevel: ros.stringToRosTemplate(properties.performanceLevel),
       Size: ros.numberToRosTemplate(properties.size),
     };
 }

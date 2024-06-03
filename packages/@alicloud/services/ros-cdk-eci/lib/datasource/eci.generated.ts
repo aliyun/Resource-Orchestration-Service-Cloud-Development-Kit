@@ -48,7 +48,7 @@ function rosImageCachePropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECI::ImageCache`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECI::ImageCache`, which is used to query the information about an image cache.
  * @Note This class does not contain additional functions, so it is recommended to use the `ImageCache` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eci-imagecache
  */
@@ -246,7 +246,7 @@ function rosImageCachesPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECI::ImageCaches`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECI::ImageCaches`, which is used to query multiple image caches at a time.
  * @Note This class does not contain additional functions, so it is recommended to use the `ImageCaches` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eci-imagecaches
  */

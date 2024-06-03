@@ -1,5 +1,5 @@
 module.exports = {
-  roots: ['<rootDir>/packages/@alicloud/test'],
+  roots: ['<rootDir>/tests'],
   testMatch: ['**/*.test.ts'],
   transform: {
     '^.+\\.tsx?$': 'ts-jest'

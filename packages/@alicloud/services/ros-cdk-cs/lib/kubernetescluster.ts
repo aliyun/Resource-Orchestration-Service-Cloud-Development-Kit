@@ -312,6 +312,14 @@ export interface KubernetesClusterProps {
     readonly securityGroupId?: string | ros.IResolvable;
 
     /**
+     * Property securityHardeningOs: Alibaba Cloud OS security hardening. Value:
+     * true: enables security hardening OS.
+     * false: disables security hardening OS.
+     * Default value: false.
+     */
+    readonly securityHardeningOs?: boolean | ros.IResolvable;
+
+    /**
      * Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0\/20 is used by default.
      */
     readonly serviceCidr?: string | ros.IResolvable;
@@ -537,6 +545,7 @@ export class KubernetesCluster extends ros.Resource {
             workerSystemDiskSize: props.workerSystemDiskSize === undefined || props.workerSystemDiskSize === null ? 120 : props.workerSystemDiskSize,
             masterVSwitchIds: props.masterVSwitchIds,
             cloudMonitorFlags: props.cloudMonitorFlags === undefined || props.cloudMonitorFlags === null ? false : props.cloudMonitorFlags,
+            securityHardeningOs: props.securityHardeningOs,
             serviceCidr: props.serviceCidr === undefined || props.serviceCidr === null ? '172.19.0.0/20' : props.serviceCidr,
             podVswitchIds: props.podVswitchIds,
             workerInstanceTypes: props.workerInstanceTypes,

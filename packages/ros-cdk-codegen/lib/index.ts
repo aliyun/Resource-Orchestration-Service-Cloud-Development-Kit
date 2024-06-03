@@ -1,7 +1,7 @@
 import * as rosSpec from '@alicloud/ros-cdk-spec';
 import * as fs from 'fs-extra';
 import CodeGenerator, { CodeGeneratorOptions } from './codegen';
-import ResourceCodeGenerator, { ResourceCodeGeneratorOptions } from './resource-codegen';
+import ResourceCodeGenerator, {ExtensionCodeGenerator, ResourceCodeGeneratorOptions} from './resource-codegen';
 import { packageName } from './genspec';
 import IndexCodeGenerator from './index-codegen';
 
@@ -39,7 +39,7 @@ export default async function (
       const scopePath = `${outPath}/ros-cdk-${moduleName}/lib`;
       // fs.mkdirp(scopePath);
       const generator = new CodeGenerator(rosResourceFileName, spec, affix, options);
-      generator.emitCode(Object.keys(spec.ResourceTypes));
+      await generator.emitCode(Object.keys(spec.ResourceTypes));
       await generator.save(scopePath);
 
       // for every specification create resource class file
@@ -56,14 +56,14 @@ export default async function (
             '',
             options as ResourceCodeGeneratorOptions,
         );
-        resourceGenerator.emitCode(resourceName);
-        resourceGenerator.save(scopePath);
+        await resourceGenerator.emitCode(resourceName);
+        await resourceGenerator.save(scopePath);
       }
 
       // create index.ts
       const indexGenerator = new IndexCodeGenerator(moduleName, fileNames, scope);
-      indexGenerator.emitCode(hasDataSource);
-      indexGenerator.save(scopePath);
+      await indexGenerator.emitCode(hasDataSource);
+      await indexGenerator.save(scopePath);
     }
   }
   // 处理DATASOURCE开头的资源类型
@@ -95,7 +95,7 @@ export default async function (
       const scopePath = `${outPath}/ros-cdk-${moduleName}/lib/datasource`;
       // fs.mkdirp(scopePath);
       const generator = new CodeGenerator(rosDataSourceResourceFileName, dataSourceSpec, affix, options);
-      generator.emitCode(dataSourceResourceTypes);
+      await generator.emitCode(dataSourceResourceTypes);
       await generator.save(scopePath);
 
       // for every specification create datasource resource class file
@@ -112,16 +112,18 @@ export default async function (
             '',
             options as ResourceCodeGeneratorOptions,
         );
-        resourceGenerator.emitCode(resourceName);
-        resourceGenerator.save(scopePath);
+        await resourceGenerator.emitCode(resourceName);
+        await resourceGenerator.save(scopePath);
       }
 
       // create index.ts
       const indexGenerator = new IndexCodeGenerator(moduleName, fileNames, scope);
-      indexGenerator.emitCode(false);
-      indexGenerator.save(scopePath);
+      await indexGenerator.emitCode(false);
+      await indexGenerator.save(scopePath);
     }
   }
+  const extensionGenerator = new ExtensionCodeGenerator();
+  await extensionGenerator.emitCode(outPath);
 }
 
 /**

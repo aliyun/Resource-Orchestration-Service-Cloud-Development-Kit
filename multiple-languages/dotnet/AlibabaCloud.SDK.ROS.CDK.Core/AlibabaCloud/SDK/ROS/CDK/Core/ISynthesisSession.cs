@@ -27,6 +27,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             set;
         }
 
+        /// <summary>Whether the stack should be validated after synthesis to check for error metadata.</summary>
+        /// <remarks>
+        /// <strong>Default</strong>: - false
+        /// </remarks>
+        [JsiiProperty(name: "validateOnSynth", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        bool? ValidateOnSynth
+        {
+            get
+            {
+                return null;
+            }
+            set
+            {
+                throw new System.NotSupportedException("'set' for 'ValidateOnSynth' is not implemented");
+            }
+        }
+
         /// <summary>Represents a single session of synthesis.</summary>
         /// <remarks>
         /// Passed into <c>Construct.synthesize()</c> methods.
@@ -51,6 +69,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             public string Outdir
             {
                 get => GetInstanceProperty<string>()!;
+                set => SetInstanceProperty(value);
+            }
+
+            /// <summary>Whether the stack should be validated after synthesis to check for error metadata.</summary>
+            /// <remarks>
+            /// <strong>Default</strong>: - false
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "validateOnSynth", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true)]
+            public bool? ValidateOnSynth
+            {
+                get => GetInstanceProperty<bool?>();
                 set => SetInstanceProperty(value);
             }
         }

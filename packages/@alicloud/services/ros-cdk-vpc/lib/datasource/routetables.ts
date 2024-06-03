@@ -44,7 +44,7 @@ export interface RouteTablesProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::RouteTables`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::RouteTables`, which is used to query route tables.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRouteTables`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-routetables
  */

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ros;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-assert
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:35.037Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:54.247Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.AssertProps")
 @software.amazon.jsii.Jsii.Proxy(AssertProps.Jsii$Proxy.class)
 public interface AssertProps extends software.amazon.jsii.JsiiSerializable {

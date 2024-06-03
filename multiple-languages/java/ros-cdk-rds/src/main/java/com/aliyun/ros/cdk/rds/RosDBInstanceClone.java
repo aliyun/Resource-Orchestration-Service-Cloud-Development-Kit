@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.rds;
  * <p>
  * The new instance is the clone of the instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:34.774Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:53.987Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosDBInstanceClone")
 public class RosDBInstanceClone extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -553,18 +553,29 @@ public class RosDBInstanceClone extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public void setPreferredBackupPeriod(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
-        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
-            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
-                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
-            }
-        }
+    public void setPreferredBackupPeriod(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "preferredBackupPeriod", value);
     }
 
     /**
      */
-    public void setPreferredBackupPeriod(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+    public void setPreferredBackupPeriod(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "preferredBackupPeriod", value);
     }
 
@@ -1982,7 +1993,7 @@ public class RosDBInstanceClone extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param preferredBackupPeriod This parameter is required.
          */
-        public Builder preferredBackupPeriod(final java.util.List<? extends java.lang.Object> preferredBackupPeriod) {
+        public Builder preferredBackupPeriod(final com.aliyun.ros.cdk.core.IResolvable preferredBackupPeriod) {
             this.props.preferredBackupPeriod(preferredBackupPeriod);
             return this;
         }
@@ -1990,7 +2001,7 @@ public class RosDBInstanceClone extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param preferredBackupPeriod This parameter is required.
          */
-        public Builder preferredBackupPeriod(final com.aliyun.ros.cdk.core.IResolvable preferredBackupPeriod) {
+        public Builder preferredBackupPeriod(final java.util.List<? extends java.lang.Object> preferredBackupPeriod) {
             this.props.preferredBackupPeriod(preferredBackupPeriod);
             return this;
         }

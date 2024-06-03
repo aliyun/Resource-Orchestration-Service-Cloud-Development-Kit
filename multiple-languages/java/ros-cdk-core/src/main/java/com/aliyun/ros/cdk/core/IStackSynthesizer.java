@@ -3,10 +3,19 @@ package com.aliyun.ros.cdk.core;
 /**
  * Encodes information how a certain Stack should be deployed.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:29.959Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:49.305Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.IStackSynthesizer")
 @software.amazon.jsii.Jsii.Proxy(IStackSynthesizer.Jsii$Proxy.class)
 public interface IStackSynthesizer extends software.amazon.jsii.JsiiSerializable {
+
+    /**
+     * Register a File Asset.
+     * <p>
+     * Returns the parameters that can be used to refer to the asset inside the template.
+     * <p>
+     * @param asset This parameter is required.
+     */
+    @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.FileAssetLocation addFileAsset(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.FileAssetSource asset);
 
     /**
      * Bind to the stack this environment is going to be used on.
@@ -18,12 +27,11 @@ public interface IStackSynthesizer extends software.amazon.jsii.JsiiSerializable
     void bind(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Stack stack);
 
     /**
-     * (experimental) Synthesize all artifacts required for the stack into the session.
+     * Synthesize the associated stack to the session.
      * <p>
      * @param session This parameter is required.
      */
-    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Experimental)
-    void synthesizeStackArtifacts(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.ISynthesisSession session);
+    void synthesize(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.ISynthesisSession session);
 
     /**
      * A proxy class which represents a concrete javascript instance of this type.
@@ -32,6 +40,18 @@ public interface IStackSynthesizer extends software.amazon.jsii.JsiiSerializable
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements com.aliyun.ros.cdk.core.IStackSynthesizer.Jsii$Default {
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
+        }
+
+        /**
+         * Register a File Asset.
+         * <p>
+         * Returns the parameters that can be used to refer to the asset inside the template.
+         * <p>
+         * @param asset This parameter is required.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.FileAssetLocation addFileAsset(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.FileAssetSource asset) {
+            return software.amazon.jsii.Kernel.call(this, "addFileAsset", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.FileAssetLocation.class), new Object[] { java.util.Objects.requireNonNull(asset, "asset is required") });
         }
 
         /**
@@ -47,14 +67,13 @@ public interface IStackSynthesizer extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
-         * (experimental) Synthesize all artifacts required for the stack into the session.
+         * Synthesize the associated stack to the session.
          * <p>
          * @param session This parameter is required.
          */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Experimental)
         @Override
-        public final void synthesizeStackArtifacts(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.ISynthesisSession session) {
-            software.amazon.jsii.Kernel.call(this, "synthesizeStackArtifacts", software.amazon.jsii.NativeType.VOID, new Object[] { java.util.Objects.requireNonNull(session, "session is required") });
+        public final void synthesize(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.ISynthesisSession session) {
+            software.amazon.jsii.Kernel.call(this, "synthesize", software.amazon.jsii.NativeType.VOID, new Object[] { java.util.Objects.requireNonNull(session, "session is required") });
         }
     }
 
@@ -63,6 +82,18 @@ public interface IStackSynthesizer extends software.amazon.jsii.JsiiSerializable
      */
     @software.amazon.jsii.Internal
     interface Jsii$Default extends IStackSynthesizer {
+
+        /**
+         * Register a File Asset.
+         * <p>
+         * Returns the parameters that can be used to refer to the asset inside the template.
+         * <p>
+         * @param asset This parameter is required.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.FileAssetLocation addFileAsset(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.FileAssetSource asset) {
+            return software.amazon.jsii.Kernel.call(this, "addFileAsset", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.FileAssetLocation.class), new Object[] { java.util.Objects.requireNonNull(asset, "asset is required") });
+        }
 
         /**
          * Bind to the stack this environment is going to be used on.
@@ -77,14 +108,13 @@ public interface IStackSynthesizer extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
-         * (experimental) Synthesize all artifacts required for the stack into the session.
+         * Synthesize the associated stack to the session.
          * <p>
          * @param session This parameter is required.
          */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Experimental)
         @Override
-        default void synthesizeStackArtifacts(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.ISynthesisSession session) {
-            software.amazon.jsii.Kernel.call(this, "synthesizeStackArtifacts", software.amazon.jsii.NativeType.VOID, new Object[] { java.util.Objects.requireNonNull(session, "session is required") });
+        default void synthesize(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.ISynthesisSession session) {
+            software.amazon.jsii.Kernel.call(this, "synthesize", software.amazon.jsii.NativeType.VOID, new Object[] { java.util.Objects.requireNonNull(session, "session is required") });
         }
     }
 }

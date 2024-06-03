@@ -3,6 +3,308 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosHostGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-hostgroup
+ */
+export interface RosHostGroupProps {
+
+    /**
+     * @Property name: Host group name.
+     */
+    readonly name: string | ros.IResolvable;
+
+    /**
+     * @Property organizationId: Corporate identity, also known as enterprise id, can obtain in cloud effect access links.
+     */
+    readonly organizationId: string | ros.IResolvable;
+
+    /**
+     * @Property serviceConnectionId: Service connection.
+     */
+    readonly serviceConnectionId: number | ros.IResolvable;
+
+    /**
+     * @Property aliyunRegion: The aliyun region.
+     */
+    readonly aliyunRegion?: string | ros.IResolvable;
+
+    /**
+     * @Property ecsLabelKey: The tag key of the ECS.
+     */
+    readonly ecsLabelKey?: string | ros.IResolvable;
+
+    /**
+     * @Property ecsLabelValue: The tag value of the ECS.
+     */
+    readonly ecsLabelValue?: string | ros.IResolvable;
+
+    /**
+     * @Property ecsType: The type of ECS, currently only supports ECS_ALIYUN.
+     */
+    readonly ecsType?: string | ros.IResolvable;
+
+    /**
+     * @Property envId: Environment id.
+     */
+    readonly envId?: string | ros.IResolvable;
+
+    /**
+     * @Property machineInfos: The machine infos
+     */
+    readonly machineInfos?: Array<RosHostGroup.MachineInfosProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property tagIds: The ids of tag.
+     */
+    readonly tagIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property type: Host group type, currently only supports ECS.
+     */
+    readonly type?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosHostGroupProps`
+ *
+ * @param properties - the TypeScript properties of a `RosHostGroupProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosHostGroupPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('serviceConnectionId', ros.requiredValidator)(properties.serviceConnectionId));
+    errors.collect(ros.propertyValidator('serviceConnectionId', ros.validateNumber)(properties.serviceConnectionId));
+    if(properties.tagIds && (Array.isArray(properties.tagIds) || (typeof properties.tagIds) === 'string')) {
+        errors.collect(ros.propertyValidator('tagIds', ros.validateLength)({
+            data: properties.tagIds.length,
+            min: 0,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tagIds', ros.listValidator(ros.validateString))(properties.tagIds));
+    errors.collect(ros.propertyValidator('ecsType', ros.validateString)(properties.ecsType));
+    errors.collect(ros.propertyValidator('envId', ros.validateString)(properties.envId));
+    errors.collect(ros.propertyValidator('machineInfos', ros.listValidator(RosHostGroup_MachineInfosPropertyValidator))(properties.machineInfos));
+    errors.collect(ros.propertyValidator('aliyunRegion', ros.validateString)(properties.aliyunRegion));
+    errors.collect(ros.propertyValidator('ecsLabelValue', ros.validateString)(properties.ecsLabelValue));
+    errors.collect(ros.propertyValidator('organizationId', ros.requiredValidator)(properties.organizationId));
+    errors.collect(ros.propertyValidator('organizationId', ros.validateString)(properties.organizationId));
+    errors.collect(ros.propertyValidator('ecsLabelKey', ros.validateString)(properties.ecsLabelKey));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "RosHostGroupProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DEVOPS::HostGroup` resource
+ *
+ * @param properties - the TypeScript properties of a `RosHostGroupProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DEVOPS::HostGroup` resource.
+ */
+// @ts-ignore TS6133
+function rosHostGroupPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosHostGroupPropsValidator(properties).assertSuccess();
+    }
+    return {
+      Name: ros.stringToRosTemplate(properties.name),
+      OrganizationId: ros.stringToRosTemplate(properties.organizationId),
+      ServiceConnectionId: ros.numberToRosTemplate(properties.serviceConnectionId),
+      AliyunRegion: ros.stringToRosTemplate(properties.aliyunRegion),
+      EcsLabelKey: ros.stringToRosTemplate(properties.ecsLabelKey),
+      EcsLabelValue: ros.stringToRosTemplate(properties.ecsLabelValue),
+      EcsType: ros.stringToRosTemplate(properties.ecsType),
+      EnvId: ros.stringToRosTemplate(properties.envId),
+      MachineInfos: ros.listMapper(rosHostGroupMachineInfosPropertyToRosTemplate)(properties.machineInfos),
+      TagIds: ros.listMapper(ros.stringToRosTemplate)(properties.tagIds),
+      Type: ros.stringToRosTemplate(properties.type),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DEVOPS::HostGroup`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `HostGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-hostgroup
+ */
+export class RosHostGroup extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DEVOPS::HostGroup";
+
+    /**
+     * @Attribute HostGroupId: The id of the host group.
+     */
+    public readonly attrHostGroupId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property name: Host group name.
+     */
+    public name: string | ros.IResolvable;
+
+    /**
+     * @Property organizationId: Corporate identity, also known as enterprise id, can obtain in cloud effect access links.
+     */
+    public organizationId: string | ros.IResolvable;
+
+    /**
+     * @Property serviceConnectionId: Service connection.
+     */
+    public serviceConnectionId: number | ros.IResolvable;
+
+    /**
+     * @Property aliyunRegion: The aliyun region.
+     */
+    public aliyunRegion: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ecsLabelKey: The tag key of the ECS.
+     */
+    public ecsLabelKey: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ecsLabelValue: The tag value of the ECS.
+     */
+    public ecsLabelValue: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ecsType: The type of ECS, currently only supports ECS_ALIYUN.
+     */
+    public ecsType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property envId: Environment id.
+     */
+    public envId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property machineInfos: The machine infos
+     */
+    public machineInfos: Array<RosHostGroup.MachineInfosProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property tagIds: The ids of tag.
+     */
+    public tagIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property type: Host group type, currently only supports ECS.
+     */
+    public type: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosHostGroupProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosHostGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrHostGroupId = this.getAtt('HostGroupId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.name = props.name;
+        this.organizationId = props.organizationId;
+        this.serviceConnectionId = props.serviceConnectionId;
+        this.aliyunRegion = props.aliyunRegion;
+        this.ecsLabelKey = props.ecsLabelKey;
+        this.ecsLabelValue = props.ecsLabelValue;
+        this.ecsType = props.ecsType;
+        this.envId = props.envId;
+        this.machineInfos = props.machineInfos;
+        this.tagIds = props.tagIds;
+        this.type = props.type;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            name: this.name,
+            organizationId: this.organizationId,
+            serviceConnectionId: this.serviceConnectionId,
+            aliyunRegion: this.aliyunRegion,
+            ecsLabelKey: this.ecsLabelKey,
+            ecsLabelValue: this.ecsLabelValue,
+            ecsType: this.ecsType,
+            envId: this.envId,
+            machineInfos: this.machineInfos,
+            tagIds: this.tagIds,
+            type: this.type,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosHostGroupPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosHostGroup {
+    /**
+     * @stability external
+     */
+    export interface MachineInfosProperty {
+        /**
+         * @Property instanceName: The name of the instance.
+         */
+        readonly instanceName?: string | ros.IResolvable;
+        /**
+         * @Property machineSn: The id of the instance.
+         */
+        readonly machineSn: string | ros.IResolvable;
+        /**
+         * @Property ip: The ip address of the instance.
+         */
+        readonly ip?: string | ros.IResolvable;
+        /**
+         * @Property aliyunRegionId: The aliyun region of the instance.
+         */
+        readonly aliyunRegionId?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `MachineInfosProperty`
+ *
+ * @param properties - the TypeScript properties of a `MachineInfosProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosHostGroup_MachineInfosPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
+    errors.collect(ros.propertyValidator('machineSn', ros.requiredValidator)(properties.machineSn));
+    errors.collect(ros.propertyValidator('machineSn', ros.validateString)(properties.machineSn));
+    errors.collect(ros.propertyValidator('ip', ros.validateString)(properties.ip));
+    errors.collect(ros.propertyValidator('aliyunRegionId', ros.validateString)(properties.aliyunRegionId));
+    return errors.wrap('supplied properties not correct for "MachineInfosProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DEVOPS::HostGroup.MachineInfos` resource
+ *
+ * @param properties - the TypeScript properties of a `MachineInfosProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DEVOPS::HostGroup.MachineInfos` resource.
+ */
+// @ts-ignore TS6133
+function rosHostGroupMachineInfosPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosHostGroup_MachineInfosPropertyValidator(properties).assertSuccess();
+    return {
+      InstanceName: ros.stringToRosTemplate(properties.instanceName),
+      MachineSn: ros.stringToRosTemplate(properties.machineSn),
+      Ip: ros.stringToRosTemplate(properties.ip),
+      AliyunRegionId: ros.stringToRosTemplate(properties.aliyunRegionId),
+    };
+}
+
+/**
  * Properties for defining a `RosPipeline`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-pipeline
  */

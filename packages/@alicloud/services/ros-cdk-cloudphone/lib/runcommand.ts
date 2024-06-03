@@ -28,7 +28,7 @@ export interface RunCommandProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CloudPhone::RunCommand`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CloudPhone::RunCommand`, which is used to run a command on Elastic Cloud Phone (ECP) instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRunCommand`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-runcommand
  */

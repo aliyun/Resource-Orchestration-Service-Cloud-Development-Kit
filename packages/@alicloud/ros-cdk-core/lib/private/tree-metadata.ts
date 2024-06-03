@@ -19,7 +19,7 @@ export class TreeMetadata extends Construct {
     super(scope, "Tree");
   }
 
-  protected synthesize(session: ISynthesisSession) {
+  public synthesize(session: ISynthesisSession) {
     const lookup: { [path: string]: Node } = {};
 
     const visit = (construct: IConstruct): Node => {

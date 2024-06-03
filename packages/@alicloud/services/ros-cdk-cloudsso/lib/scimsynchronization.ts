@@ -24,7 +24,7 @@ export interface SCIMSynchronizationProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::SCIMSynchronization`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::SCIMSynchronization`, which is used to enable or disable System for Cross-domain Identity Management (SCIM) synchronization.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSCIMSynchronization`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsso-scimsynchronization
  */

@@ -1,4 +1,5 @@
 @alicloud/ros-cdk-oss.Bucket=com.aliyun.ros.cdk.oss.Bucket
+@alicloud/ros-cdk-oss.BucketAttributes=com.aliyun.ros.cdk.oss.BucketAttributes
 @alicloud/ros-cdk-oss.BucketProps=com.aliyun.ros.cdk.oss.BucketProps
 @alicloud/ros-cdk-oss.Directory=com.aliyun.ros.cdk.oss.Directory
 @alicloud/ros-cdk-oss.DirectoryProps=com.aliyun.ros.cdk.oss.DirectoryProps

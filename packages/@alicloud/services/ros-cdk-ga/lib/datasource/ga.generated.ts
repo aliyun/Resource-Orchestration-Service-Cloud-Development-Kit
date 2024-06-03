@@ -174,7 +174,7 @@ function rosBandwidthPackagePropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::GA::BandwidthPackage`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::GA::BandwidthPackage`, which is used to query the information about a bandwidth plan.
  * @Note This class does not contain additional functions, so it is recommended to use the `BandwidthPackage` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ga-bandwidthpackage
  */
@@ -385,7 +385,7 @@ function rosBandwidthPackagesPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::GA::BandwidthPackages`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::GA::BandwidthPackages`, which is used to query the information about bandwidth plans.
  * @Note This class does not contain additional functions, so it is recommended to use the `BandwidthPackages` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ga-bandwidthpackages
  */

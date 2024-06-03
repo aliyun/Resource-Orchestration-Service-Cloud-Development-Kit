@@ -26,7 +26,7 @@ export interface StorageProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VOD::Storage`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VOD::Storage`, which is used to add an Object Storage Service (OSS) bucket in ApsaraVideo VOD (VOD).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosStorage`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vod-storage
  */

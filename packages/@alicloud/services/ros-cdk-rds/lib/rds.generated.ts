@@ -989,7 +989,7 @@ export interface RosDBInstanceProps {
     /**
      * @Property preferredBackupPeriod: The backup period. Separate multiple values with commas (,). The default value is the original value. Valid values:Monday Tuesday Wednesday Thursday Friday Saturday Sunday Note When the BackupPolicyMode parameter is set to DataBackupPolicy, this parameter is required.
      */
-    readonly preferredBackupPeriod?: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly preferredBackupPeriod?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property preferredBackupTime: The time when the backup task is performed. Format: yyyy-MM-ddZ-HH:mm:ssZ.Note When the BackupPolicyMode parameter is set to DataBackupPolicy, this parameter is required.
@@ -1308,7 +1308,7 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('dedicatedHostGroupId', ros.validateString)(properties.dedicatedHostGroupId));
     errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     errors.collect(ros.propertyValidator('encryptionKey', ros.validateString)(properties.encryptionKey));
-    errors.collect(ros.propertyValidator('preferredBackupPeriod', ros.listValidator(ros.validateAny))(properties.preferredBackupPeriod));
+    errors.collect(ros.propertyValidator('preferredBackupPeriod', ros.listValidator(ros.validateString))(properties.preferredBackupPeriod));
     if(properties.logBackupLocalRetentionNumber && (typeof properties.logBackupLocalRetentionNumber) !== 'object') {
         errors.collect(ros.propertyValidator('logBackupLocalRetentionNumber', ros.validateRange)({
             data: properties.logBackupLocalRetentionNumber,
@@ -1436,7 +1436,7 @@ function rosDBInstancePropsToRosTemplate(properties: any, enableResourceProperty
       Period: ros.numberToRosTemplate(properties.period),
       PeriodType: ros.stringToRosTemplate(properties.periodType),
       Port: ros.numberToRosTemplate(properties.port),
-      PreferredBackupPeriod: ros.listMapper(ros.objectToRosTemplate)(properties.preferredBackupPeriod),
+      PreferredBackupPeriod: ros.listMapper(ros.stringToRosTemplate)(properties.preferredBackupPeriod),
       PreferredBackupTime: ros.stringToRosTemplate(properties.preferredBackupTime),
       PrivateIpAddress: ros.stringToRosTemplate(properties.privateIpAddress),
       ReleasedKeepPolicy: ros.stringToRosTemplate(properties.releasedKeepPolicy),
@@ -1804,7 +1804,7 @@ export class RosDBInstance extends ros.RosResource {
     /**
      * @Property preferredBackupPeriod: The backup period. Separate multiple values with commas (,). The default value is the original value. Valid values:Monday Tuesday Wednesday Thursday Friday Saturday Sunday Note When the BackupPolicyMode parameter is set to DataBackupPolicy, this parameter is required.
      */
-    public preferredBackupPeriod: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
+    public preferredBackupPeriod: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property preferredBackupTime: The time when the backup task is performed. Format: yyyy-MM-ddZ-HH:mm:ssZ.Note When the BackupPolicyMode parameter is set to DataBackupPolicy, this parameter is required.
@@ -2385,7 +2385,7 @@ export interface RosDBInstanceCloneProps {
     /**
      * @Property preferredBackupPeriod: The backup period. Separate multiple values with commas (,). The default value is the original value. Valid values:Monday Tuesday Wednesday Thursday Friday Saturday Sunday Note When the BackupPolicyMode parameter is set to DataBackupPolicy, this parameter is required.
      */
-    readonly preferredBackupPeriod?: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly preferredBackupPeriod?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property preferredBackupTime: The time when the backup task is performed. Format: yyyy-MM-ddZ-HH:mm:ssZ.Note When the BackupPolicyMode parameter is set to DataBackupPolicy, this parameter is required.
@@ -2520,7 +2520,7 @@ function RosDBInstanceClonePropsValidator(properties: any): ros.ValidationResult
     errors.collect(ros.propertyValidator('backupId', ros.validateString)(properties.backupId));
     errors.collect(ros.propertyValidator('instanceNetworkType', ros.validateString)(properties.instanceNetworkType));
     errors.collect(ros.propertyValidator('restoreTime', ros.validateString)(properties.restoreTime));
-    errors.collect(ros.propertyValidator('preferredBackupPeriod', ros.listValidator(ros.validateAny))(properties.preferredBackupPeriod));
+    errors.collect(ros.propertyValidator('preferredBackupPeriod', ros.listValidator(ros.validateString))(properties.preferredBackupPeriod));
     errors.collect(ros.propertyValidator('dbNames', ros.validateString)(properties.dbNames));
     if(properties.slaveZoneIds && (Array.isArray(properties.slaveZoneIds) || (typeof properties.slaveZoneIds) === 'string')) {
         errors.collect(ros.propertyValidator('slaveZoneIds', ros.validateLength)({
@@ -2670,7 +2670,7 @@ function rosDBInstanceClonePropsToRosTemplate(properties: any, enableResourcePro
       Period: ros.numberToRosTemplate(properties.period),
       PeriodType: ros.stringToRosTemplate(properties.periodType),
       Port: ros.numberToRosTemplate(properties.port),
-      PreferredBackupPeriod: ros.listMapper(ros.objectToRosTemplate)(properties.preferredBackupPeriod),
+      PreferredBackupPeriod: ros.listMapper(ros.stringToRosTemplate)(properties.preferredBackupPeriod),
       PreferredBackupTime: ros.stringToRosTemplate(properties.preferredBackupTime),
       PrivateIpAddress: ros.stringToRosTemplate(properties.privateIpAddress),
       RestoreTable: ros.stringToRosTemplate(properties.restoreTable),
@@ -2888,7 +2888,7 @@ export class RosDBInstanceClone extends ros.RosResource {
     /**
      * @Property preferredBackupPeriod: The backup period. Separate multiple values with commas (,). The default value is the original value. Valid values:Monday Tuesday Wednesday Thursday Friday Saturday Sunday Note When the BackupPolicyMode parameter is set to DataBackupPolicy, this parameter is required.
      */
-    public preferredBackupPeriod: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
+    public preferredBackupPeriod: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property preferredBackupTime: The time when the backup task is performed. Format: yyyy-MM-ddZ-HH:mm:ssZ.Note When the BackupPolicyMode parameter is set to DataBackupPolicy, this parameter is required.
@@ -3976,6 +3976,210 @@ export class RosMigrateTask extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosPostgresExtensions`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-postgresextensions
+ */
+export interface RosPostgresExtensionsProps {
+
+    /**
+     * @Property accountName: The account of the user who owns the extension. Only privileged accounts are supported.
+     */
+    readonly accountName: string | ros.IResolvable;
+
+    /**
+     * @Property dbInstanceId: The instance ID. You can call the DescribeDBInstances operation to query the instance ID.
+     */
+    readonly dbInstanceId: string | ros.IResolvable;
+
+    /**
+     * @Property dbName: The database name. You can call the DescribeDatabases operation to query the database name.
+     */
+    readonly dbName: string | ros.IResolvable;
+
+    /**
+     * @Property extensions: The extensions that you want to install.
+     */
+    readonly extensions?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property riskConfirmed: The risk description that you need to confirm. If your instance runs an outdated minor engine version, installing specific extensions on the instance poses security risks. Proceed with the installation only after you acknowledge these risks. Valid values:
+     * true
+     * false
+     * Note For more information about the risks, see Limits on extension creation for ApsaraDB RDS for PostgreSQL instances.
+     */
+    readonly riskConfirmed?: boolean | ros.IResolvable;
+
+    /**
+     * @Property sourceDatabase: The source database from which you want to synchronize the extension to the destination database. If you do not specify the Extensions parameter, you must specify this parameter.
+     */
+    readonly sourceDatabase?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosPostgresExtensionsProps`
+ *
+ * @param properties - the TypeScript properties of a `RosPostgresExtensionsProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosPostgresExtensionsPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('dbInstanceId', ros.requiredValidator)(properties.dbInstanceId));
+    if(properties.dbInstanceId && (typeof properties.dbInstanceId) !== 'object') {
+        errors.collect(ros.propertyValidator('dbInstanceId', ros.validateAllowedPattern)({
+          data: properties.dbInstanceId,
+          reg: /[_a-zA-Z0-9-]{1,65}/
+        }));
+    }
+    errors.collect(ros.propertyValidator('dbInstanceId', ros.validateString)(properties.dbInstanceId));
+    errors.collect(ros.propertyValidator('riskConfirmed', ros.validateBoolean)(properties.riskConfirmed));
+    errors.collect(ros.propertyValidator('dbName', ros.requiredValidator)(properties.dbName));
+    if(properties.dbName && (typeof properties.dbName) !== 'object') {
+        errors.collect(ros.propertyValidator('dbName', ros.validateAllowedPattern)({
+          data: properties.dbName,
+          reg: /[_a-zA-Z0-9-]{1,65}/
+        }));
+    }
+    errors.collect(ros.propertyValidator('dbName', ros.validateString)(properties.dbName));
+    errors.collect(ros.propertyValidator('sourceDatabase', ros.validateString)(properties.sourceDatabase));
+    if(properties.extensions && (Array.isArray(properties.extensions) || (typeof properties.extensions) === 'string')) {
+        errors.collect(ros.propertyValidator('extensions', ros.validateLength)({
+            data: properties.extensions.length,
+            min: 1,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('extensions', ros.listValidator(ros.validateString))(properties.extensions));
+    errors.collect(ros.propertyValidator('accountName', ros.requiredValidator)(properties.accountName));
+    errors.collect(ros.propertyValidator('accountName', ros.validateString)(properties.accountName));
+    return errors.wrap('supplied properties not correct for "RosPostgresExtensionsProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::RDS::PostgresExtensions` resource
+ *
+ * @param properties - the TypeScript properties of a `RosPostgresExtensionsProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::RDS::PostgresExtensions` resource.
+ */
+// @ts-ignore TS6133
+function rosPostgresExtensionsPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosPostgresExtensionsPropsValidator(properties).assertSuccess();
+    }
+    return {
+      AccountName: ros.stringToRosTemplate(properties.accountName),
+      DBInstanceId: ros.stringToRosTemplate(properties.dbInstanceId),
+      DBName: ros.stringToRosTemplate(properties.dbName),
+      Extensions: ros.listMapper(ros.stringToRosTemplate)(properties.extensions),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      RiskConfirmed: ros.booleanToRosTemplate(properties.riskConfirmed),
+      SourceDatabase: ros.stringToRosTemplate(properties.sourceDatabase),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::PostgresExtensions`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `PostgresExtensions` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-postgresextensions
+ */
+export class RosPostgresExtensions extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::RDS::PostgresExtensions";
+
+    /**
+     * @Attribute InstalledExtensionNames: Extension names installed via ROS
+     */
+    public readonly attrInstalledExtensionNames: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property accountName: The account of the user who owns the extension. Only privileged accounts are supported.
+     */
+    public accountName: string | ros.IResolvable;
+
+    /**
+     * @Property dbInstanceId: The instance ID. You can call the DescribeDBInstances operation to query the instance ID.
+     */
+    public dbInstanceId: string | ros.IResolvable;
+
+    /**
+     * @Property dbName: The database name. You can call the DescribeDatabases operation to query the database name.
+     */
+    public dbName: string | ros.IResolvable;
+
+    /**
+     * @Property extensions: The extensions that you want to install.
+     */
+    public extensions: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property riskConfirmed: The risk description that you need to confirm. If your instance runs an outdated minor engine version, installing specific extensions on the instance poses security risks. Proceed with the installation only after you acknowledge these risks. Valid values:
+     * true
+     * false
+     * Note For more information about the risks, see Limits on extension creation for ApsaraDB RDS for PostgreSQL instances.
+     */
+    public riskConfirmed: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property sourceDatabase: The source database from which you want to synchronize the extension to the destination database. If you do not specify the Extensions parameter, you must specify this parameter.
+     */
+    public sourceDatabase: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosPostgresExtensionsProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosPostgresExtensions.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrInstalledExtensionNames = this.getAtt('InstalledExtensionNames');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.accountName = props.accountName;
+        this.dbInstanceId = props.dbInstanceId;
+        this.dbName = props.dbName;
+        this.extensions = props.extensions;
+        this.resourceGroupId = props.resourceGroupId;
+        this.riskConfirmed = props.riskConfirmed;
+        this.sourceDatabase = props.sourceDatabase;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            accountName: this.accountName,
+            dbInstanceId: this.dbInstanceId,
+            dbName: this.dbName,
+            extensions: this.extensions,
+            resourceGroupId: this.resourceGroupId,
+            riskConfirmed: this.riskConfirmed,
+            sourceDatabase: this.sourceDatabase,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosPostgresExtensionsPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosPrepayDBInstance`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-prepaydbinstance
  */
@@ -4277,7 +4481,7 @@ export interface RosPrepayDBInstanceProps {
     /**
      * @Property preferredBackupPeriod: The backup period. Separate multiple values with commas (,). The default value is the original value. Valid values:Monday Tuesday Wednesday Thursday Friday Saturday Sunday Note When the BackupPolicyMode parameter is set to DataBackupPolicy, this parameter is required.
      */
-    readonly preferredBackupPeriod?: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly preferredBackupPeriod?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property preferredBackupTime: The time when the backup task is performed. Format: yyyy-MM-ddZ-HH:mm:ssZ.Note When the BackupPolicyMode parameter is set to DataBackupPolicy, this parameter is required.
@@ -4597,7 +4801,7 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
     errors.collect(ros.propertyValidator('dedicatedHostGroupId', ros.validateString)(properties.dedicatedHostGroupId));
     errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     errors.collect(ros.propertyValidator('encryptionKey', ros.validateString)(properties.encryptionKey));
-    errors.collect(ros.propertyValidator('preferredBackupPeriod', ros.listValidator(ros.validateAny))(properties.preferredBackupPeriod));
+    errors.collect(ros.propertyValidator('preferredBackupPeriod', ros.listValidator(ros.validateString))(properties.preferredBackupPeriod));
     if(properties.logBackupLocalRetentionNumber && (typeof properties.logBackupLocalRetentionNumber) !== 'object') {
         errors.collect(ros.propertyValidator('logBackupLocalRetentionNumber', ros.validateRange)({
             data: properties.logBackupLocalRetentionNumber,
@@ -4742,7 +4946,7 @@ function rosPrepayDBInstancePropsToRosTemplate(properties: any, enableResourcePr
       MasterUserType: ros.stringToRosTemplate(properties.masterUserType),
       MultiAZ: ros.booleanToRosTemplate(properties.multiAz),
       Port: ros.numberToRosTemplate(properties.port),
-      PreferredBackupPeriod: ros.listMapper(ros.objectToRosTemplate)(properties.preferredBackupPeriod),
+      PreferredBackupPeriod: ros.listMapper(ros.stringToRosTemplate)(properties.preferredBackupPeriod),
       PreferredBackupTime: ros.stringToRosTemplate(properties.preferredBackupTime),
       PrivateIpAddress: ros.stringToRosTemplate(properties.privateIpAddress),
       Quantity: ros.numberToRosTemplate(properties.quantity),
@@ -4768,7 +4972,7 @@ function rosPrepayDBInstancePropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::PrepayDBInstance`, which is used to create a subscription ApsaraDB RDS instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::PrepayDBInstance`, which is used to create subscription ApsaraDB RDS instances.
  * @Note This class does not contain additional functions, so it is recommended to use the `PrepayDBInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-prepaydbinstance
  */
@@ -5117,7 +5321,7 @@ export class RosPrepayDBInstance extends ros.RosResource {
     /**
      * @Property preferredBackupPeriod: The backup period. Separate multiple values with commas (,). The default value is the original value. Valid values:Monday Tuesday Wednesday Thursday Friday Saturday Sunday Note When the BackupPolicyMode parameter is set to DataBackupPolicy, this parameter is required.
      */
-    public preferredBackupPeriod: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
+    public preferredBackupPeriod: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property preferredBackupTime: The time when the backup task is performed. Format: yyyy-MM-ddZ-HH:mm:ssZ.Note When the BackupPolicyMode parameter is set to DataBackupPolicy, this parameter is required.

@@ -49,6 +49,13 @@ export interface RosInstanceProps {
     readonly enablePublic?: boolean | ros.IResolvable;
 
     /**
+     * @Property instanceCategory: Version Type:
+     * - x-pack: Create a commercial instance or a kernel-enhanced instance without Indexing Service and OpenStore enabled.
+     * - IS: Creates a kernel-enhanced instance with Indexing Service or OpenStore enabled
+     */
+    readonly instanceCategory?: string | ros.IResolvable;
+
+    /**
      * @Property instanceChargeType: Valid values are PrePaid, PostPaid, Default to PostPaid.
      */
     readonly instanceChargeType?: string | ros.IResolvable;
@@ -136,9 +143,9 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('kibanaNode', RosInstance_KibanaNodePropertyValidator)(properties.kibanaNode));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('enableKibanaPrivate', ros.validateBoolean)(properties.enableKibanaPrivate));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('publicWhitelist', ros.listValidator(ros.validateAny))(properties.publicWhitelist));
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
@@ -157,6 +164,13 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    if(properties.instanceCategory && (typeof properties.instanceCategory) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceCategory', ros.validateAllowedValues)({
+          data: properties.instanceCategory,
+          allowedValues: ["x-pack","IS"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('instanceCategory', ros.validateString)(properties.instanceCategory));
     errors.collect(ros.propertyValidator('enablePublic', ros.validateBoolean)(properties.enablePublic));
     errors.collect(ros.propertyValidator('privateWhitelist', ros.listValidator(ros.validateAny))(properties.privateWhitelist));
     errors.collect(ros.propertyValidator('version', ros.requiredValidator)(properties.version));
@@ -180,6 +194,8 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
+    errors.collect(ros.propertyValidator('password', ros.requiredValidator)(properties.password));
+    errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
     if(properties.zoneCount && (typeof properties.zoneCount) !== 'object') {
         errors.collect(ros.propertyValidator('zoneCount', ros.validateAllowedValues)({
           data: properties.zoneCount,
@@ -187,8 +203,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('zoneCount', ros.validateNumber)(properties.zoneCount));
-    errors.collect(ros.propertyValidator('password', ros.requiredValidator)(properties.password));
-    errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
     return errors.wrap('supplied properties not correct for "RosInstanceProps"');
 }
 
@@ -214,6 +228,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       EnableKibanaPrivate: ros.booleanToRosTemplate(properties.enableKibanaPrivate),
       EnableKibanaPublic: ros.booleanToRosTemplate(properties.enableKibanaPublic),
       EnablePublic: ros.booleanToRosTemplate(properties.enablePublic),
+      InstanceCategory: ros.stringToRosTemplate(properties.instanceCategory),
       InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
       KibanaNode: rosInstanceKibanaNodePropertyToRosTemplate(properties.kibanaNode),
       KibanaWhitelist: ros.listMapper(ros.objectToRosTemplate)(properties.kibanaWhitelist),
@@ -335,6 +350,13 @@ export class RosInstance extends ros.RosResource {
     public enablePublic: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property instanceCategory: Version Type:
+     * - x-pack: Create a commercial instance or a kernel-enhanced instance without Indexing Service and OpenStore enabled.
+     * - IS: Creates a kernel-enhanced instance with Indexing Service or OpenStore enabled
+     */
+    public instanceCategory: string | ros.IResolvable | undefined;
+
+    /**
      * @Property instanceChargeType: Valid values are PrePaid, PostPaid, Default to PostPaid.
      */
     public instanceChargeType: string | ros.IResolvable | undefined;
@@ -428,6 +450,7 @@ export class RosInstance extends ros.RosResource {
         this.enableKibanaPrivate = props.enableKibanaPrivate;
         this.enableKibanaPublic = props.enableKibanaPublic;
         this.enablePublic = props.enablePublic;
+        this.instanceCategory = props.instanceCategory;
         this.instanceChargeType = props.instanceChargeType;
         this.kibanaNode = props.kibanaNode;
         this.kibanaWhitelist = props.kibanaWhitelist;
@@ -454,6 +477,7 @@ export class RosInstance extends ros.RosResource {
             enableKibanaPrivate: this.enableKibanaPrivate,
             enableKibanaPublic: this.enableKibanaPublic,
             enablePublic: this.enablePublic,
+            instanceCategory: this.instanceCategory,
             instanceChargeType: this.instanceChargeType,
             kibanaNode: this.kibanaNode,
             kibanaWhitelist: this.kibanaWhitelist,

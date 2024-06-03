@@ -48,7 +48,7 @@ function rosImagePropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CloudPhone::Image`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CloudPhone::Image`, which is used to query the information about an image.
  * @Note This class does not contain additional functions, so it is recommended to use the `Image` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudphone-image
  */
@@ -339,7 +339,7 @@ function rosKeyPairPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CloudPhone::KeyPair`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CloudPhone::KeyPair`, which is used to query the information about a key pair.
  * @Note This class does not contain additional functions, so it is recommended to use the `KeyPair` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudphone-keypair
  */

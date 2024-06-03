@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.amqp;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::AMQP::Instance</code>, which is used to create an ApsaraMQ for RabbitMQ instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:30.204Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:49.577Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.amqp.$Module.class, fqn = "@alicloud/ros-cdk-amqp.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -20,12 +20,12 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
-     * @param props This parameter is required.
+     * @param props
      * @param enableResourcePropertyConstraint
      */
-    public Instance(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.amqp.InstanceProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
+    public Instance(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.amqp.InstanceProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-        software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), java.util.Objects.requireNonNull(props, "props is required"), enableResourcePropertyConstraint });
+        software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), props, enableResourcePropertyConstraint });
     }
 
     /**
@@ -33,11 +33,22 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
-     * @param props This parameter is required.
+     * @param props
      */
-    public Instance(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.amqp.InstanceProps props) {
+    public Instance(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.amqp.InstanceProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-        software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), java.util.Objects.requireNonNull(props, "props is required") });
+        software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), props });
+    }
+
+    /**
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     */
+    public Instance(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id) {
+        super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+        software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required") });
     }
 
     /**
@@ -118,13 +129,33 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
         private final com.aliyun.ros.cdk.core.Construct scope;
         private final java.lang.String id;
         private final java.lang.Boolean enableResourcePropertyConstraint;
-        private final com.aliyun.ros.cdk.amqp.InstanceProps.Builder props;
+        private com.aliyun.ros.cdk.amqp.InstanceProps.Builder props;
 
         private Builder(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
             this.scope = scope;
             this.id = id;
             this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-            this.props = new com.aliyun.ros.cdk.amqp.InstanceProps.Builder();
+        }
+
+        /**
+         * Property instanceName: The instance name.
+         * <p>
+         * @return {@code this}
+         * @param instanceName Property instanceName: The instance name. This parameter is required.
+         */
+        public Builder instanceName(final java.lang.String instanceName) {
+            this.props().instanceName(instanceName);
+            return this;
+        }
+        /**
+         * Property instanceName: The instance name.
+         * <p>
+         * @return {@code this}
+         * @param instanceName Property instanceName: The instance name. This parameter is required.
+         */
+        public Builder instanceName(final com.aliyun.ros.cdk.core.IResolvable instanceName) {
+            this.props().instanceName(instanceName);
+            return this;
         }
 
         /**
@@ -136,7 +167,7 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          * @param instanceType Property instanceType: The Instance Type. This parameter is required.
          */
         public Builder instanceType(final java.lang.String instanceType) {
-            this.props.instanceType(instanceType);
+            this.props().instanceType(instanceType);
             return this;
         }
         /**
@@ -148,111 +179,7 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          * @param instanceType Property instanceType: The Instance Type. This parameter is required.
          */
         public Builder instanceType(final com.aliyun.ros.cdk.core.IResolvable instanceType) {
-            this.props.instanceType(instanceType);
-            return this;
-        }
-
-        /**
-         * Property maxTps: If instance type is professional, the valid value is [1000, 1500, 2000, 2500, 3000, 4000, 5000].
-         * <p>
-         * If instance type is enterprise, the valid value is [3000, 5000, 8000, 10000, 15000, 20000, 3000040000, 50000, 80000, 10000].
-         * If instance type is vip, the valid value is [8000, 15000, 25000, 40000, 50000, 100000, 200000, 300000, 500000, 800000, 1000000].
-         * <p>
-         * @return {@code this}
-         * @param maxTps Property maxTps: If instance type is professional, the valid value is [1000, 1500, 2000, 2500, 3000, 4000, 5000]. This parameter is required.
-         */
-        public Builder maxTps(final java.lang.Number maxTps) {
-            this.props.maxTps(maxTps);
-            return this;
-        }
-        /**
-         * Property maxTps: If instance type is professional, the valid value is [1000, 1500, 2000, 2500, 3000, 4000, 5000].
-         * <p>
-         * If instance type is enterprise, the valid value is [3000, 5000, 8000, 10000, 15000, 20000, 3000040000, 50000, 80000, 10000].
-         * If instance type is vip, the valid value is [8000, 15000, 25000, 40000, 50000, 100000, 200000, 300000, 500000, 800000, 1000000].
-         * <p>
-         * @return {@code this}
-         * @param maxTps Property maxTps: If instance type is professional, the valid value is [1000, 1500, 2000, 2500, 3000, 4000, 5000]. This parameter is required.
-         */
-        public Builder maxTps(final com.aliyun.ros.cdk.core.IResolvable maxTps) {
-            this.props.maxTps(maxTps);
-            return this;
-        }
-
-        /**
-         * Property queueCapacity: The queue capacity.
-         * <p>
-         * If instance type is professional, the valid value is [50, 1000] with the step size 5.
-         * If instance type is enterprise, the valid value is [200, 6000] with the step size 100
-         * If instance type is vip, the valid value is [200, 80000] with the step size 100
-         * <p>
-         * @return {@code this}
-         * @param queueCapacity Property queueCapacity: The queue capacity. This parameter is required.
-         */
-        public Builder queueCapacity(final java.lang.Number queueCapacity) {
-            this.props.queueCapacity(queueCapacity);
-            return this;
-        }
-        /**
-         * Property queueCapacity: The queue capacity.
-         * <p>
-         * If instance type is professional, the valid value is [50, 1000] with the step size 5.
-         * If instance type is enterprise, the valid value is [200, 6000] with the step size 100
-         * If instance type is vip, the valid value is [200, 80000] with the step size 100
-         * <p>
-         * @return {@code this}
-         * @param queueCapacity Property queueCapacity: The queue capacity. This parameter is required.
-         */
-        public Builder queueCapacity(final com.aliyun.ros.cdk.core.IResolvable queueCapacity) {
-            this.props.queueCapacity(queueCapacity);
-            return this;
-        }
-
-        /**
-         * Property storageSize: The storage size.
-         * <p>
-         * It is valid when instance_type is vip.
-         * If instance type is professional or enterprise, the valid value is 0.If instance type is vip, the valid value is [700, 2800] with the step size 100
-         * <p>
-         * @return {@code this}
-         * @param storageSize Property storageSize: The storage size. This parameter is required.
-         */
-        public Builder storageSize(final java.lang.Number storageSize) {
-            this.props.storageSize(storageSize);
-            return this;
-        }
-        /**
-         * Property storageSize: The storage size.
-         * <p>
-         * It is valid when instance_type is vip.
-         * If instance type is professional or enterprise, the valid value is 0.If instance type is vip, the valid value is [700, 2800] with the step size 100
-         * <p>
-         * @return {@code this}
-         * @param storageSize Property storageSize: The storage size. This parameter is required.
-         */
-        public Builder storageSize(final com.aliyun.ros.cdk.core.IResolvable storageSize) {
-            this.props.storageSize(storageSize);
-            return this;
-        }
-
-        /**
-         * Property instanceName: The instance name.
-         * <p>
-         * @return {@code this}
-         * @param instanceName Property instanceName: The instance name. This parameter is required.
-         */
-        public Builder instanceName(final java.lang.String instanceName) {
-            this.props.instanceName(instanceName);
-            return this;
-        }
-        /**
-         * Property instanceName: The instance name.
-         * <p>
-         * @return {@code this}
-         * @param instanceName Property instanceName: The instance name. This parameter is required.
-         */
-        public Builder instanceName(final com.aliyun.ros.cdk.core.IResolvable instanceName) {
-            this.props.instanceName(instanceName);
+            this.props().instanceType(instanceType);
             return this;
         }
 
@@ -266,7 +193,7 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          * @param maxEipTps Property maxEipTps: The max eip tps. This parameter is required.
          */
         public Builder maxEipTps(final java.lang.Number maxEipTps) {
-            this.props.maxEipTps(maxEipTps);
+            this.props().maxEipTps(maxEipTps);
             return this;
         }
         /**
@@ -279,7 +206,34 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          * @param maxEipTps Property maxEipTps: The max eip tps. This parameter is required.
          */
         public Builder maxEipTps(final com.aliyun.ros.cdk.core.IResolvable maxEipTps) {
-            this.props.maxEipTps(maxEipTps);
+            this.props().maxEipTps(maxEipTps);
+            return this;
+        }
+
+        /**
+         * Property maxTps: If instance type is professional, the valid value is [1000, 1500, 2000, 2500, 3000, 4000, 5000].
+         * <p>
+         * If instance type is enterprise, the valid value is [3000, 5000, 8000, 10000, 15000, 20000, 3000040000, 50000, 80000, 10000].
+         * If instance type is vip, the valid value is [8000, 15000, 25000, 40000, 50000, 100000, 200000, 300000, 500000, 800000, 1000000].
+         * <p>
+         * @return {@code this}
+         * @param maxTps Property maxTps: If instance type is professional, the valid value is [1000, 1500, 2000, 2500, 3000, 4000, 5000]. This parameter is required.
+         */
+        public Builder maxTps(final java.lang.Number maxTps) {
+            this.props().maxTps(maxTps);
+            return this;
+        }
+        /**
+         * Property maxTps: If instance type is professional, the valid value is [1000, 1500, 2000, 2500, 3000, 4000, 5000].
+         * <p>
+         * If instance type is enterprise, the valid value is [3000, 5000, 8000, 10000, 15000, 20000, 3000040000, 50000, 80000, 10000].
+         * If instance type is vip, the valid value is [8000, 15000, 25000, 40000, 50000, 100000, 200000, 300000, 500000, 800000, 1000000].
+         * <p>
+         * @return {@code this}
+         * @param maxTps Property maxTps: If instance type is professional, the valid value is [1000, 1500, 2000, 2500, 3000, 4000, 5000]. This parameter is required.
+         */
+        public Builder maxTps(final com.aliyun.ros.cdk.core.IResolvable maxTps) {
+            this.props().maxTps(maxTps);
             return this;
         }
 
@@ -290,7 +244,7 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          * @param orderNum Property orderNum: Set the number of instances to be created. This parameter is required.
          */
         public Builder orderNum(final java.lang.Number orderNum) {
-            this.props.orderNum(orderNum);
+            this.props().orderNum(orderNum);
             return this;
         }
         /**
@@ -300,7 +254,7 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          * @param orderNum Property orderNum: Set the number of instances to be created. This parameter is required.
          */
         public Builder orderNum(final com.aliyun.ros.cdk.core.IResolvable orderNum) {
-            this.props.orderNum(orderNum);
+            this.props().orderNum(orderNum);
             return this;
         }
 
@@ -314,7 +268,7 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          * @param payType Property payType: The billing method of the instance. This parameter is required.
          */
         public Builder payType(final java.lang.String payType) {
-            this.props.payType(payType);
+            this.props().payType(payType);
             return this;
         }
         /**
@@ -327,7 +281,7 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          * @param payType Property payType: The billing method of the instance. This parameter is required.
          */
         public Builder payType(final com.aliyun.ros.cdk.core.IResolvable payType) {
-            this.props.payType(payType);
+            this.props().payType(payType);
             return this;
         }
 
@@ -340,7 +294,7 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          * @param period Property period: The period. This parameter is required.
          */
         public Builder period(final java.lang.Number period) {
-            this.props.period(period);
+            this.props().period(period);
             return this;
         }
         /**
@@ -352,7 +306,7 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          * @param period Property period: The period. This parameter is required.
          */
         public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
-            this.props.period(period);
+            this.props().period(period);
             return this;
         }
 
@@ -368,7 +322,7 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          * @param periodUnit Property periodUnit: The unit of the subscription duration. This parameter is required.
          */
         public Builder periodUnit(final java.lang.String periodUnit) {
-            this.props.periodUnit(periodUnit);
+            this.props().periodUnit(periodUnit);
             return this;
         }
         /**
@@ -383,7 +337,63 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          * @param periodUnit Property periodUnit: The unit of the subscription duration. This parameter is required.
          */
         public Builder periodUnit(final com.aliyun.ros.cdk.core.IResolvable periodUnit) {
-            this.props.periodUnit(periodUnit);
+            this.props().periodUnit(periodUnit);
+            return this;
+        }
+
+        /**
+         * Property queueCapacity: The queue capacity.
+         * <p>
+         * If instance type is professional, the valid value is [50, 1000] with the step size 5.
+         * If instance type is enterprise, the valid value is [200, 6000] with the step size 100
+         * If instance type is vip, the valid value is [200, 80000] with the step size 100
+         * <p>
+         * @return {@code this}
+         * @param queueCapacity Property queueCapacity: The queue capacity. This parameter is required.
+         */
+        public Builder queueCapacity(final java.lang.Number queueCapacity) {
+            this.props().queueCapacity(queueCapacity);
+            return this;
+        }
+        /**
+         * Property queueCapacity: The queue capacity.
+         * <p>
+         * If instance type is professional, the valid value is [50, 1000] with the step size 5.
+         * If instance type is enterprise, the valid value is [200, 6000] with the step size 100
+         * If instance type is vip, the valid value is [200, 80000] with the step size 100
+         * <p>
+         * @return {@code this}
+         * @param queueCapacity Property queueCapacity: The queue capacity. This parameter is required.
+         */
+        public Builder queueCapacity(final com.aliyun.ros.cdk.core.IResolvable queueCapacity) {
+            this.props().queueCapacity(queueCapacity);
+            return this;
+        }
+
+        /**
+         * Property storageSize: The storage size.
+         * <p>
+         * It is valid when instance_type is vip.
+         * If instance type is professional or enterprise, the valid value is 0.If instance type is vip, the valid value is [700, 2800] with the step size 100
+         * <p>
+         * @return {@code this}
+         * @param storageSize Property storageSize: The storage size. This parameter is required.
+         */
+        public Builder storageSize(final java.lang.Number storageSize) {
+            this.props().storageSize(storageSize);
+            return this;
+        }
+        /**
+         * Property storageSize: The storage size.
+         * <p>
+         * It is valid when instance_type is vip.
+         * If instance type is professional or enterprise, the valid value is 0.If instance type is vip, the valid value is [700, 2800] with the step size 100
+         * <p>
+         * @return {@code this}
+         * @param storageSize Property storageSize: The storage size. This parameter is required.
+         */
+        public Builder storageSize(final com.aliyun.ros.cdk.core.IResolvable storageSize) {
+            this.props().storageSize(storageSize);
             return this;
         }
 
@@ -396,7 +406,7 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          * @param supportEip Property supportEip: Whether to support EIP. This parameter is required.
          */
         public Builder supportEip(final java.lang.String supportEip) {
-            this.props.supportEip(supportEip);
+            this.props().supportEip(supportEip);
             return this;
         }
         /**
@@ -408,7 +418,7 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          * @param supportEip Property supportEip: Whether to support EIP. This parameter is required.
          */
         public Builder supportEip(final com.aliyun.ros.cdk.core.IResolvable supportEip) {
-            this.props.supportEip(supportEip);
+            this.props().supportEip(supportEip);
             return this;
         }
 
@@ -421,7 +431,7 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          * @param supportTracing Property supportTracing: Whether to support tracing. This parameter is required.
          */
         public Builder supportTracing(final java.lang.String supportTracing) {
-            this.props.supportTracing(supportTracing);
+            this.props().supportTracing(supportTracing);
             return this;
         }
         /**
@@ -433,7 +443,7 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          * @param supportTracing Property supportTracing: Whether to support tracing. This parameter is required.
          */
         public Builder supportTracing(final com.aliyun.ros.cdk.core.IResolvable supportTracing) {
-            this.props.supportTracing(supportTracing);
+            this.props().supportTracing(supportTracing);
             return this;
         }
 
@@ -449,7 +459,7 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          * @param tracingStorageTime Property tracingStorageTime: The retention period of message traces was set. This parameter is required.
          */
         public Builder tracingStorageTime(final java.lang.Number tracingStorageTime) {
-            this.props.tracingStorageTime(tracingStorageTime);
+            this.props().tracingStorageTime(tracingStorageTime);
             return this;
         }
         /**
@@ -464,7 +474,7 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          * @param tracingStorageTime Property tracingStorageTime: The retention period of message traces was set. This parameter is required.
          */
         public Builder tracingStorageTime(final com.aliyun.ros.cdk.core.IResolvable tracingStorageTime) {
-            this.props.tracingStorageTime(tracingStorageTime);
+            this.props().tracingStorageTime(tracingStorageTime);
             return this;
         }
 
@@ -476,9 +486,16 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
             return new com.aliyun.ros.cdk.amqp.Instance(
                 this.scope,
                 this.id,
-                this.props.build(),
+                this.props != null ? this.props.build() : null,
                 this.enableResourcePropertyConstraint
             );
+        }
+
+        private com.aliyun.ros.cdk.amqp.InstanceProps.Builder props() {
+            if (this.props == null) {
+                this.props = new com.aliyun.ros.cdk.amqp.InstanceProps.Builder();
+            }
+            return this.props;
         }
     }
 }

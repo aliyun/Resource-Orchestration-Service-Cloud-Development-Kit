@@ -112,6 +112,418 @@ export class RosAlias extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-instance
+ */
+export interface RosInstanceProps {
+
+    /**
+     * @Property productVersion: KMS Instance commodity type (software\/software-small\/hardware\/hardware-small).
+     */
+    readonly productVersion: string | ros.IResolvable;
+
+    /**
+     * @Property connection:
+     */
+    readonly connection?: RosInstance.ConnectionProperty | ros.IResolvable;
+
+    /**
+     * @Property instanceChargeType: Billing method of the KMS instance, default to Subscription.
+     */
+    readonly instanceChargeType?: string | ros.IResolvable;
+
+    /**
+     * @Property keyNum: Maximum number of stored keys. It is required when the InstanceCharge is Subscription.
+     */
+    readonly keyNum?: number | ros.IResolvable;
+
+    /**
+     * @Property log: Whether to enable log.
+     */
+    readonly log?: boolean | ros.IResolvable;
+
+    /**
+     * @Property logStorage: Log storage.
+     */
+    readonly logStorage?: number | ros.IResolvable;
+
+    /**
+     * @Property period: The subscription duration of the KMS instance.
+     * If PeriodUnit is Month, the valid range is 1, 2, 3, 6, 12, 24, 36
+     * If PeriodUnit is Year, the valid range is 1, 2, 3
+     */
+    readonly period?: number | ros.IResolvable;
+
+    /**
+     * @Property periodUnit: The unit of the subscription duration. Valid values:
+     * Month
+     * Year
+     * Default value: Month.
+     */
+    readonly periodUnit?: string | ros.IResolvable;
+
+    /**
+     * @Property renewPeriod: Automatic renewal period, in months.
+     */
+    readonly renewPeriod?: number | ros.IResolvable;
+
+    /**
+     * @Property renewStatus: Renewal options (manual renewal, automatic renewal, no renewal).
+     */
+    readonly renewStatus?: string | ros.IResolvable;
+
+    /**
+     * @Property secretNum: Maximum number of secrets. It is required when the InstanceCharge is Subscription.
+     */
+    readonly secretNum?: number | ros.IResolvable;
+
+    /**
+     * @Property spec: The computation performance level of the KMS instance.
+     */
+    readonly spec?: number | ros.IResolvable;
+
+    /**
+     * @Property vpcNum: The number of managed accesses. The maximum number of VPCs that can access this KMS instance. It is required when the InstanceCharge is Subscription.
+     */
+    readonly vpcNum?: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosInstanceProps`
+ *
+ * @param properties - the TypeScript properties of a `RosInstanceProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstancePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.vpcNum && (typeof properties.vpcNum) !== 'object') {
+        errors.collect(ros.propertyValidator('vpcNum', ros.validateRange)({
+            data: properties.vpcNum,
+            min: 1,
+            max: 1000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('vpcNum', ros.validateNumber)(properties.vpcNum));
+    errors.collect(ros.propertyValidator('log', ros.validateBoolean)(properties.log));
+    if(properties.keyNum && (typeof properties.keyNum) !== 'object') {
+        errors.collect(ros.propertyValidator('keyNum', ros.validateRange)({
+            data: properties.keyNum,
+            min: 100,
+            max: 100000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('keyNum', ros.validateNumber)(properties.keyNum));
+    if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
+          data: properties.instanceChargeType,
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
+    errors.collect(ros.propertyValidator('connection', RosInstance_ConnectionPropertyValidator)(properties.connection));
+    if(properties.renewPeriod && (typeof properties.renewPeriod) !== 'object') {
+        errors.collect(ros.propertyValidator('renewPeriod', ros.validateRange)({
+            data: properties.renewPeriod,
+            min: 1,
+            max: 36,
+          }));
+    }
+    errors.collect(ros.propertyValidator('renewPeriod', ros.validateNumber)(properties.renewPeriod));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
+          data: properties.period,
+          allowedValues: [1,2,3,6,12,24,36],
+        }));
+    }
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    if(properties.secretNum && (typeof properties.secretNum) !== 'object') {
+        errors.collect(ros.propertyValidator('secretNum', ros.validateRange)({
+            data: properties.secretNum,
+            min: 0,
+            max: 100000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('secretNum', ros.validateNumber)(properties.secretNum));
+    errors.collect(ros.propertyValidator('productVersion', ros.requiredValidator)(properties.productVersion));
+    if(properties.productVersion && (typeof properties.productVersion) !== 'object') {
+        errors.collect(ros.propertyValidator('productVersion', ros.validateAllowedValues)({
+          data: properties.productVersion,
+          allowedValues: ["software","software-small","hardware","hardware-small"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('productVersion', ros.validateString)(properties.productVersion));
+    if(properties.logStorage && (typeof properties.logStorage) !== 'object') {
+        errors.collect(ros.propertyValidator('logStorage', ros.validateRange)({
+            data: properties.logStorage,
+            min: 1000,
+            max: 500000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('logStorage', ros.validateNumber)(properties.logStorage));
+    if(properties.renewStatus && (typeof properties.renewStatus) !== 'object') {
+        errors.collect(ros.propertyValidator('renewStatus', ros.validateAllowedValues)({
+          data: properties.renewStatus,
+          allowedValues: ["AutoRenewal","ManualRenewal"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('renewStatus', ros.validateString)(properties.renewStatus));
+    if(properties.spec && (typeof properties.spec) !== 'object') {
+        errors.collect(ros.propertyValidator('spec', ros.validateAllowedValues)({
+          data: properties.spec,
+          allowedValues: [200,1000,2000,4000],
+        }));
+    }
+    errors.collect(ros.propertyValidator('spec', ros.validateNumber)(properties.spec));
+    if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
+        errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
+          data: properties.periodUnit,
+          allowedValues: ["Month","Year"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
+    return errors.wrap('supplied properties not correct for "RosInstanceProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::KMS::Instance` resource
+ *
+ * @param properties - the TypeScript properties of a `RosInstanceProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::KMS::Instance` resource.
+ */
+// @ts-ignore TS6133
+function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosInstancePropsValidator(properties).assertSuccess();
+    }
+    return {
+      ProductVersion: ros.stringToRosTemplate(properties.productVersion),
+      Connection: rosInstanceConnectionPropertyToRosTemplate(properties.connection),
+      InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
+      KeyNum: ros.numberToRosTemplate(properties.keyNum),
+      Log: ros.booleanToRosTemplate(properties.log),
+      LogStorage: ros.numberToRosTemplate(properties.logStorage),
+      Period: ros.numberToRosTemplate(properties.period),
+      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
+      RenewPeriod: ros.numberToRosTemplate(properties.renewPeriod),
+      RenewStatus: ros.stringToRosTemplate(properties.renewStatus),
+      SecretNum: ros.numberToRosTemplate(properties.secretNum),
+      Spec: ros.numberToRosTemplate(properties.spec),
+      VpcNum: ros.numberToRosTemplate(properties.vpcNum),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Instance`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-instance
+ */
+export class RosInstance extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::KMS::Instance";
+
+    /**
+     * @Attribute InstanceId: The ID of the instance.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property productVersion: KMS Instance commodity type (software\/software-small\/hardware\/hardware-small).
+     */
+    public productVersion: string | ros.IResolvable;
+
+    /**
+     * @Property connection:
+     */
+    public connection: RosInstance.ConnectionProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceChargeType: Billing method of the KMS instance, default to Subscription.
+     */
+    public instanceChargeType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property keyNum: Maximum number of stored keys. It is required when the InstanceCharge is Subscription.
+     */
+    public keyNum: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property log: Whether to enable log.
+     */
+    public log: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property logStorage: Log storage.
+     */
+    public logStorage: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property period: The subscription duration of the KMS instance.
+     * If PeriodUnit is Month, the valid range is 1, 2, 3, 6, 12, 24, 36
+     * If PeriodUnit is Year, the valid range is 1, 2, 3
+     */
+    public period: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property periodUnit: The unit of the subscription duration. Valid values:
+     * Month
+     * Year
+     * Default value: Month.
+     */
+    public periodUnit: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property renewPeriod: Automatic renewal period, in months.
+     */
+    public renewPeriod: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property renewStatus: Renewal options (manual renewal, automatic renewal, no renewal).
+     */
+    public renewStatus: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property secretNum: Maximum number of secrets. It is required when the InstanceCharge is Subscription.
+     */
+    public secretNum: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property spec: The computation performance level of the KMS instance.
+     */
+    public spec: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property vpcNum: The number of managed accesses. The maximum number of VPCs that can access this KMS instance. It is required when the InstanceCharge is Subscription.
+     */
+    public vpcNum: number | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosInstanceProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrInstanceId = this.getAtt('InstanceId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.productVersion = props.productVersion;
+        this.connection = props.connection;
+        this.instanceChargeType = props.instanceChargeType;
+        this.keyNum = props.keyNum;
+        this.log = props.log;
+        this.logStorage = props.logStorage;
+        this.period = props.period;
+        this.periodUnit = props.periodUnit;
+        this.renewPeriod = props.renewPeriod;
+        this.renewStatus = props.renewStatus;
+        this.secretNum = props.secretNum;
+        this.spec = props.spec;
+        this.vpcNum = props.vpcNum;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            productVersion: this.productVersion,
+            connection: this.connection,
+            instanceChargeType: this.instanceChargeType,
+            keyNum: this.keyNum,
+            log: this.log,
+            logStorage: this.logStorage,
+            period: this.period,
+            periodUnit: this.periodUnit,
+            renewPeriod: this.renewPeriod,
+            renewStatus: this.renewStatus,
+            secretNum: this.secretNum,
+            spec: this.spec,
+            vpcNum: this.vpcNum,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosInstancePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosInstance {
+    /**
+     * @stability external
+     */
+    export interface ConnectionProperty {
+        /**
+         * @Property vpcId: Set the private network VPC ID for the KMS instance.
+         */
+        readonly vpcId: string | ros.IResolvable;
+        /**
+         * @Property vSwitchIds: Set up a switch under dual availability zones, and the switch has at least 1 available IP.
+         */
+        readonly vSwitchIds: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property zoneIds: Set up two Availability Zones for the KMS instance. Improve service availability and disaster recovery capabilities through dual availability zone load balancing.
+         */
+        readonly zoneIds: Array<string | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ConnectionProperty`
+ *
+ * @param properties - the TypeScript properties of a `ConnectionProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstance_ConnectionPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vSwitchIds', ros.requiredValidator)(properties.vSwitchIds));
+    if(properties.vSwitchIds && (Array.isArray(properties.vSwitchIds) || (typeof properties.vSwitchIds) === 'string')) {
+        errors.collect(ros.propertyValidator('vSwitchIds', ros.validateLength)({
+            data: properties.vSwitchIds.length,
+            min: 1,
+            max: 1,
+          }));
+    }
+    errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateString))(properties.vSwitchIds));
+    errors.collect(ros.propertyValidator('zoneIds', ros.requiredValidator)(properties.zoneIds));
+    if(properties.zoneIds && (Array.isArray(properties.zoneIds) || (typeof properties.zoneIds) === 'string')) {
+        errors.collect(ros.propertyValidator('zoneIds', ros.validateLength)({
+            data: properties.zoneIds.length,
+            min: 2,
+            max: 2,
+          }));
+    }
+    errors.collect(ros.propertyValidator('zoneIds', ros.listValidator(ros.validateString))(properties.zoneIds));
+    return errors.wrap('supplied properties not correct for "ConnectionProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::KMS::Instance.Connection` resource
+ *
+ * @param properties - the TypeScript properties of a `ConnectionProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::KMS::Instance.Connection` resource.
+ */
+// @ts-ignore TS6133
+function rosInstanceConnectionPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosInstance_ConnectionPropertyValidator(properties).assertSuccess();
+    return {
+      VpcId: ros.stringToRosTemplate(properties.vpcId),
+      VSwitchIds: ros.listMapper(ros.stringToRosTemplate)(properties.vSwitchIds),
+      ZoneIds: ros.listMapper(ros.stringToRosTemplate)(properties.zoneIds),
+    };
+}
+
+/**
  * Properties for defining a `RosKey`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-key
  */

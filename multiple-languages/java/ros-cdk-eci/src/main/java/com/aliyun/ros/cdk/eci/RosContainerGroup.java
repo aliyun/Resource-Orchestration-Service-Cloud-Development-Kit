@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.eci;
  * <p>
  * A container group is an elastic container instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:31.902Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:51.169Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.RosContainerGroup")
 public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -6149,6 +6149,13 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getMountPropagation() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
             return null;
         }
@@ -6157,6 +6164,13 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getReadOnly() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSubPath() {
             return null;
         }
 
@@ -6173,8 +6187,10 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<VolumeMountProperty> {
             java.lang.Object mountPath;
+            java.lang.Object mountPropagation;
             java.lang.Object name;
             java.lang.Object readOnly;
+            java.lang.Object subPath;
 
             /**
              * Sets the value of {@link VolumeMountProperty#getMountPath}
@@ -6195,6 +6211,28 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder mountPath(com.aliyun.ros.cdk.core.IResolvable mountPath) {
                 this.mountPath = mountPath;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VolumeMountProperty#getMountPropagation}
+             * @param mountPropagation the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder mountPropagation(java.lang.String mountPropagation) {
+                this.mountPropagation = mountPropagation;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VolumeMountProperty#getMountPropagation}
+             * @param mountPropagation the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder mountPropagation(com.aliyun.ros.cdk.core.IResolvable mountPropagation) {
+                this.mountPropagation = mountPropagation;
                 return this;
             }
 
@@ -6243,6 +6281,28 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link VolumeMountProperty#getSubPath}
+             * @param subPath the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder subPath(java.lang.String subPath) {
+                this.subPath = subPath;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VolumeMountProperty#getSubPath}
+             * @param subPath the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder subPath(com.aliyun.ros.cdk.core.IResolvable subPath) {
+                this.subPath = subPath;
+                return this;
+            }
+
+            /**
              * Builds the configured instance.
              * @return a new instance of {@link VolumeMountProperty}
              * @throws NullPointerException if any required attribute was not provided
@@ -6261,8 +6321,10 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements VolumeMountProperty {
             private final java.lang.Object mountPath;
+            private final java.lang.Object mountPropagation;
             private final java.lang.Object name;
             private final java.lang.Object readOnly;
+            private final java.lang.Object subPath;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -6271,8 +6333,10 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
                 this.mountPath = software.amazon.jsii.Kernel.get(this, "mountPath", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.mountPropagation = software.amazon.jsii.Kernel.get(this, "mountPropagation", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.readOnly = software.amazon.jsii.Kernel.get(this, "readOnly", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.subPath = software.amazon.jsii.Kernel.get(this, "subPath", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -6281,13 +6345,20 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.mountPath = builder.mountPath;
+                this.mountPropagation = builder.mountPropagation;
                 this.name = builder.name;
                 this.readOnly = builder.readOnly;
+                this.subPath = builder.subPath;
             }
 
             @Override
             public final java.lang.Object getMountPath() {
                 return this.mountPath;
+            }
+
+            @Override
+            public final java.lang.Object getMountPropagation() {
+                return this.mountPropagation;
             }
 
             @Override
@@ -6301,6 +6372,11 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getSubPath() {
+                return this.subPath;
+            }
+
+            @Override
             @software.amazon.jsii.Internal
             public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -6309,11 +6385,17 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.getMountPath() != null) {
                     data.set("mountPath", om.valueToTree(this.getMountPath()));
                 }
+                if (this.getMountPropagation() != null) {
+                    data.set("mountPropagation", om.valueToTree(this.getMountPropagation()));
+                }
                 if (this.getName() != null) {
                     data.set("name", om.valueToTree(this.getName()));
                 }
                 if (this.getReadOnly() != null) {
                     data.set("readOnly", om.valueToTree(this.getReadOnly()));
+                }
+                if (this.getSubPath() != null) {
+                    data.set("subPath", om.valueToTree(this.getSubPath()));
                 }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -6334,15 +6416,19 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
                 VolumeMountProperty.Jsii$Proxy that = (VolumeMountProperty.Jsii$Proxy) o;
 
                 if (this.mountPath != null ? !this.mountPath.equals(that.mountPath) : that.mountPath != null) return false;
+                if (this.mountPropagation != null ? !this.mountPropagation.equals(that.mountPropagation) : that.mountPropagation != null) return false;
                 if (this.name != null ? !this.name.equals(that.name) : that.name != null) return false;
-                return this.readOnly != null ? this.readOnly.equals(that.readOnly) : that.readOnly == null;
+                if (this.readOnly != null ? !this.readOnly.equals(that.readOnly) : that.readOnly != null) return false;
+                return this.subPath != null ? this.subPath.equals(that.subPath) : that.subPath == null;
             }
 
             @Override
             public final int hashCode() {
                 int result = this.mountPath != null ? this.mountPath.hashCode() : 0;
+                result = 31 * result + (this.mountPropagation != null ? this.mountPropagation.hashCode() : 0);
                 result = 31 * result + (this.name != null ? this.name.hashCode() : 0);
                 result = 31 * result + (this.readOnly != null ? this.readOnly.hashCode() : 0);
+                result = 31 * result + (this.subPath != null ? this.subPath.hashCode() : 0);
                 return result;
             }
         }
@@ -6375,6 +6461,27 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getEmptyDirVolumeMedium() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getFlexVolumeDriver() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getFlexVolumeFsType() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getFlexVolumeOptions() {
             return null;
         }
 
@@ -6415,6 +6522,9 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object type;
             java.lang.Object configFileVolumeConfigFileToPath;
             java.lang.Object emptyDirVolumeMedium;
+            java.lang.Object flexVolumeDriver;
+            java.lang.Object flexVolumeFsType;
+            java.lang.Object flexVolumeOptions;
             java.lang.Object nfsVolumePath;
             java.lang.Object nfsVolumeReadOnly;
             java.lang.Object nfsVolumeServer;
@@ -6508,6 +6618,72 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link VolumeProperty#getFlexVolumeDriver}
+             * @param flexVolumeDriver the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder flexVolumeDriver(java.lang.String flexVolumeDriver) {
+                this.flexVolumeDriver = flexVolumeDriver;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VolumeProperty#getFlexVolumeDriver}
+             * @param flexVolumeDriver the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder flexVolumeDriver(com.aliyun.ros.cdk.core.IResolvable flexVolumeDriver) {
+                this.flexVolumeDriver = flexVolumeDriver;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VolumeProperty#getFlexVolumeFsType}
+             * @param flexVolumeFsType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder flexVolumeFsType(java.lang.String flexVolumeFsType) {
+                this.flexVolumeFsType = flexVolumeFsType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VolumeProperty#getFlexVolumeFsType}
+             * @param flexVolumeFsType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder flexVolumeFsType(com.aliyun.ros.cdk.core.IResolvable flexVolumeFsType) {
+                this.flexVolumeFsType = flexVolumeFsType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VolumeProperty#getFlexVolumeOptions}
+             * @param flexVolumeOptions the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder flexVolumeOptions(com.aliyun.ros.cdk.core.IResolvable flexVolumeOptions) {
+                this.flexVolumeOptions = flexVolumeOptions;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VolumeProperty#getFlexVolumeOptions}
+             * @param flexVolumeOptions the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder flexVolumeOptions(java.util.Map<java.lang.String, ? extends java.lang.Object> flexVolumeOptions) {
+                this.flexVolumeOptions = flexVolumeOptions;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link VolumeProperty#getNfsVolumePath}
              * @param nfsVolumePath the value to be set.
              * @return {@code this}
@@ -6595,6 +6771,9 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object type;
             private final java.lang.Object configFileVolumeConfigFileToPath;
             private final java.lang.Object emptyDirVolumeMedium;
+            private final java.lang.Object flexVolumeDriver;
+            private final java.lang.Object flexVolumeFsType;
+            private final java.lang.Object flexVolumeOptions;
             private final java.lang.Object nfsVolumePath;
             private final java.lang.Object nfsVolumeReadOnly;
             private final java.lang.Object nfsVolumeServer;
@@ -6609,6 +6788,9 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
                 this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.configFileVolumeConfigFileToPath = software.amazon.jsii.Kernel.get(this, "configFileVolumeConfigFileToPath", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.emptyDirVolumeMedium = software.amazon.jsii.Kernel.get(this, "emptyDirVolumeMedium", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.flexVolumeDriver = software.amazon.jsii.Kernel.get(this, "flexVolumeDriver", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.flexVolumeFsType = software.amazon.jsii.Kernel.get(this, "flexVolumeFsType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.flexVolumeOptions = software.amazon.jsii.Kernel.get(this, "flexVolumeOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.nfsVolumePath = software.amazon.jsii.Kernel.get(this, "nfsVolumePath", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.nfsVolumeReadOnly = software.amazon.jsii.Kernel.get(this, "nfsVolumeReadOnly", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.nfsVolumeServer = software.amazon.jsii.Kernel.get(this, "nfsVolumeServer", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -6623,6 +6805,9 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
                 this.type = java.util.Objects.requireNonNull(builder.type, "type is required");
                 this.configFileVolumeConfigFileToPath = builder.configFileVolumeConfigFileToPath;
                 this.emptyDirVolumeMedium = builder.emptyDirVolumeMedium;
+                this.flexVolumeDriver = builder.flexVolumeDriver;
+                this.flexVolumeFsType = builder.flexVolumeFsType;
+                this.flexVolumeOptions = builder.flexVolumeOptions;
                 this.nfsVolumePath = builder.nfsVolumePath;
                 this.nfsVolumeReadOnly = builder.nfsVolumeReadOnly;
                 this.nfsVolumeServer = builder.nfsVolumeServer;
@@ -6646,6 +6831,21 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final java.lang.Object getEmptyDirVolumeMedium() {
                 return this.emptyDirVolumeMedium;
+            }
+
+            @Override
+            public final java.lang.Object getFlexVolumeDriver() {
+                return this.flexVolumeDriver;
+            }
+
+            @Override
+            public final java.lang.Object getFlexVolumeFsType() {
+                return this.flexVolumeFsType;
+            }
+
+            @Override
+            public final java.lang.Object getFlexVolumeOptions() {
+                return this.flexVolumeOptions;
             }
 
             @Override
@@ -6676,6 +6876,15 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
                 }
                 if (this.getEmptyDirVolumeMedium() != null) {
                     data.set("emptyDirVolumeMedium", om.valueToTree(this.getEmptyDirVolumeMedium()));
+                }
+                if (this.getFlexVolumeDriver() != null) {
+                    data.set("flexVolumeDriver", om.valueToTree(this.getFlexVolumeDriver()));
+                }
+                if (this.getFlexVolumeFsType() != null) {
+                    data.set("flexVolumeFsType", om.valueToTree(this.getFlexVolumeFsType()));
+                }
+                if (this.getFlexVolumeOptions() != null) {
+                    data.set("flexVolumeOptions", om.valueToTree(this.getFlexVolumeOptions()));
                 }
                 if (this.getNfsVolumePath() != null) {
                     data.set("nfsVolumePath", om.valueToTree(this.getNfsVolumePath()));
@@ -6708,6 +6917,9 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
                 if (!type.equals(that.type)) return false;
                 if (this.configFileVolumeConfigFileToPath != null ? !this.configFileVolumeConfigFileToPath.equals(that.configFileVolumeConfigFileToPath) : that.configFileVolumeConfigFileToPath != null) return false;
                 if (this.emptyDirVolumeMedium != null ? !this.emptyDirVolumeMedium.equals(that.emptyDirVolumeMedium) : that.emptyDirVolumeMedium != null) return false;
+                if (this.flexVolumeDriver != null ? !this.flexVolumeDriver.equals(that.flexVolumeDriver) : that.flexVolumeDriver != null) return false;
+                if (this.flexVolumeFsType != null ? !this.flexVolumeFsType.equals(that.flexVolumeFsType) : that.flexVolumeFsType != null) return false;
+                if (this.flexVolumeOptions != null ? !this.flexVolumeOptions.equals(that.flexVolumeOptions) : that.flexVolumeOptions != null) return false;
                 if (this.nfsVolumePath != null ? !this.nfsVolumePath.equals(that.nfsVolumePath) : that.nfsVolumePath != null) return false;
                 if (this.nfsVolumeReadOnly != null ? !this.nfsVolumeReadOnly.equals(that.nfsVolumeReadOnly) : that.nfsVolumeReadOnly != null) return false;
                 return this.nfsVolumeServer != null ? this.nfsVolumeServer.equals(that.nfsVolumeServer) : that.nfsVolumeServer == null;
@@ -6719,6 +6931,9 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.type.hashCode());
                 result = 31 * result + (this.configFileVolumeConfigFileToPath != null ? this.configFileVolumeConfigFileToPath.hashCode() : 0);
                 result = 31 * result + (this.emptyDirVolumeMedium != null ? this.emptyDirVolumeMedium.hashCode() : 0);
+                result = 31 * result + (this.flexVolumeDriver != null ? this.flexVolumeDriver.hashCode() : 0);
+                result = 31 * result + (this.flexVolumeFsType != null ? this.flexVolumeFsType.hashCode() : 0);
+                result = 31 * result + (this.flexVolumeOptions != null ? this.flexVolumeOptions.hashCode() : 0);
                 result = 31 * result + (this.nfsVolumePath != null ? this.nfsVolumePath.hashCode() : 0);
                 result = 31 * result + (this.nfsVolumeReadOnly != null ? this.nfsVolumeReadOnly.hashCode() : 0);
                 result = 31 * result + (this.nfsVolumeServer != null ? this.nfsVolumeServer.hashCode() : 0);

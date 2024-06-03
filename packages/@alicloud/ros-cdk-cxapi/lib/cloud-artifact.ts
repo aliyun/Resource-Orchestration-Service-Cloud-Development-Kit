@@ -43,16 +43,9 @@ export class CloudArtifact {
     id: string,
     artifact: cxschema.ArtifactManifest
   ): CloudArtifact | undefined {
-    switch (artifact.type) {
-      case cxschema.ArtifactType.ALIYUN_ROS_STACK:
-        return new RosStackArtifact(assembly, id, artifact);
-      case cxschema.ArtifactType.CDK_TREE:
-        return new TreeCloudArtifact(assembly, id, artifact);
-      case cxschema.ArtifactType.NESTED_CLOUD_ASSEMBLY:
-        return new NestedCloudAssemblyArtifact(assembly, id, artifact);
-      default:
-        return undefined;
-    }
+    // Implementation is defined in a separate file to break cyclic dependencies
+    void(assembly), void(id), void(artifact);
+    throw new Error('Implementation not overridden yet');
   }
 
   /**
@@ -148,8 +141,3 @@ export class CloudArtifact {
     return messages;
   }
 }
-
-// needs to be defined at the end to avoid a cyclic dependency
-import { RosStackArtifact } from "./artifacts/ros-stack-artifact";
-import { NestedCloudAssemblyArtifact } from "./artifacts/nested-cloud-assembly-artifact";
-import { TreeCloudArtifact } from "./artifacts/tree-cloud-artifact";

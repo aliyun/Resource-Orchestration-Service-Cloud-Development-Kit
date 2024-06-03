@@ -48,10 +48,29 @@ export async function tryAutoDetectScope(pkg: any): Promise<undefined | string[]
 }
 
 export async function tryReadPackageJson(path: string) {
-  
+
   if (!(fs.pathExistsSync(path))) {
     return undefined;
   }
 
   return fs.readJSONSync(path);
+}
+
+export function mergeObjects(obj1: any, obj2: any): any {
+  for (const key in obj2) {
+    if (obj2.hasOwnProperty(key)) {
+      if (obj1.hasOwnProperty(key)) {
+        if (Array.isArray(obj1[key]) && Array.isArray(obj2[key])) {
+          obj1[key] = obj1[key].concat(obj2[key]);
+        } else if (typeof obj1[key] === 'object' && typeof obj2[key] === 'object') {
+          obj1[key] = mergeObjects(obj1[key], obj2[key]);
+        } else {
+          obj1[key] = obj2[key];
+        }
+      } else {
+        obj1[key] = obj2[key];
+      }
+    }
+  }
+  return obj1;
 }

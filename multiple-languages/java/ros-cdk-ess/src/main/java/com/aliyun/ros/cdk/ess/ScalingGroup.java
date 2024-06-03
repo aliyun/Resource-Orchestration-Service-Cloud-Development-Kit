@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ess;
  * <p>
  * A scaling group is a group of Elastic Compute Service (ECS) instances that are dynamically scaled based on the configured scenario. A scaling group does not immediately take effect after it is created. You must use ALIYUN::ESS::ScalingGroupEnable to enable the scaling group to trigger scaling activities and execute scaling rules.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:33.071Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:52.251Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScalingGroup")
 public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
 
@@ -816,6 +816,27 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property resourceGroupId: Resource group id.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: Resource group id. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: Resource group id.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: Resource group id. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
          * Property scalingGroupName: Name shown for the scaling group, which must contain 2-40 characters (English or Chinese).
          * <p>
          * The name must begin with a number, an upper/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".". The account name is unique in the same region.
@@ -872,6 +893,27 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder scalingPolicy(final com.aliyun.ros.cdk.core.IResolvable scalingPolicy) {
             this.props.scalingPolicy(scalingPolicy);
+            return this;
+        }
+
+        /**
+         * Property serverGroups: The config of server group.
+         * <p>
+         * @return {@code this}
+         * @param serverGroups Property serverGroups: The config of server group. This parameter is required.
+         */
+        public Builder serverGroups(final com.aliyun.ros.cdk.core.IResolvable serverGroups) {
+            this.props.serverGroups(serverGroups);
+            return this;
+        }
+        /**
+         * Property serverGroups: The config of server group.
+         * <p>
+         * @return {@code this}
+         * @param serverGroups Property serverGroups: The config of server group. This parameter is required.
+         */
+        public Builder serverGroups(final java.util.List<? extends java.lang.Object> serverGroups) {
+            this.props.serverGroups(serverGroups);
             return this;
         }
 

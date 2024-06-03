@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nlb;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::NLB::ServerGroup</code>, which is used to create a server group for a Network Load Balancer (NLB) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:34.099Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:53.031Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.RosServerGroup")
 public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -921,11 +921,6 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Object getPort();
-
-        /**
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @org.jetbrains.annotations.NotNull java.lang.Object getServerId();
 
         /**
@@ -937,6 +932,13 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPort() {
             return null;
         }
 
@@ -966,34 +968,12 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ServersProperty> {
-            java.lang.Object port;
             java.lang.Object serverId;
             java.lang.Object serverType;
             java.lang.Object description;
+            java.lang.Object port;
             java.lang.Object serverIp;
             java.lang.Object weight;
-
-            /**
-             * Sets the value of {@link ServersProperty#getPort}
-             * @param port the value to be set. This parameter is required.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder port(java.lang.Number port) {
-                this.port = port;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link ServersProperty#getPort}
-             * @param port the value to be set. This parameter is required.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder port(com.aliyun.ros.cdk.core.IResolvable port) {
-                this.port = port;
-                return this;
-            }
 
             /**
              * Sets the value of {@link ServersProperty#getServerId}
@@ -1062,6 +1042,28 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link ServersProperty#getPort}
+             * @param port the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder port(java.lang.Number port) {
+                this.port = port;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ServersProperty#getPort}
+             * @param port the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder port(com.aliyun.ros.cdk.core.IResolvable port) {
+                this.port = port;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link ServersProperty#getServerIp}
              * @param serverIp the value to be set.
              * @return {@code this}
@@ -1123,10 +1125,10 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ServersProperty {
-            private final java.lang.Object port;
             private final java.lang.Object serverId;
             private final java.lang.Object serverType;
             private final java.lang.Object description;
+            private final java.lang.Object port;
             private final java.lang.Object serverIp;
             private final java.lang.Object weight;
 
@@ -1136,10 +1138,10 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.port = software.amazon.jsii.Kernel.get(this, "port", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.serverId = software.amazon.jsii.Kernel.get(this, "serverId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.serverType = software.amazon.jsii.Kernel.get(this, "serverType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.port = software.amazon.jsii.Kernel.get(this, "port", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.serverIp = software.amazon.jsii.Kernel.get(this, "serverIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.weight = software.amazon.jsii.Kernel.get(this, "weight", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
@@ -1149,17 +1151,12 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.port = java.util.Objects.requireNonNull(builder.port, "port is required");
                 this.serverId = java.util.Objects.requireNonNull(builder.serverId, "serverId is required");
                 this.serverType = java.util.Objects.requireNonNull(builder.serverType, "serverType is required");
                 this.description = builder.description;
+                this.port = builder.port;
                 this.serverIp = builder.serverIp;
                 this.weight = builder.weight;
-            }
-
-            @Override
-            public final java.lang.Object getPort() {
-                return this.port;
             }
 
             @Override
@@ -1178,6 +1175,11 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getPort() {
+                return this.port;
+            }
+
+            @Override
             public final java.lang.Object getServerIp() {
                 return this.serverIp;
             }
@@ -1193,11 +1195,13 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
-                data.set("port", om.valueToTree(this.getPort()));
                 data.set("serverId", om.valueToTree(this.getServerId()));
                 data.set("serverType", om.valueToTree(this.getServerType()));
                 if (this.getDescription() != null) {
                     data.set("description", om.valueToTree(this.getDescription()));
+                }
+                if (this.getPort() != null) {
+                    data.set("port", om.valueToTree(this.getPort()));
                 }
                 if (this.getServerIp() != null) {
                     data.set("serverIp", om.valueToTree(this.getServerIp()));
@@ -1223,20 +1227,20 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
 
                 ServersProperty.Jsii$Proxy that = (ServersProperty.Jsii$Proxy) o;
 
-                if (!port.equals(that.port)) return false;
                 if (!serverId.equals(that.serverId)) return false;
                 if (!serverType.equals(that.serverType)) return false;
                 if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
+                if (this.port != null ? !this.port.equals(that.port) : that.port != null) return false;
                 if (this.serverIp != null ? !this.serverIp.equals(that.serverIp) : that.serverIp != null) return false;
                 return this.weight != null ? this.weight.equals(that.weight) : that.weight == null;
             }
 
             @Override
             public final int hashCode() {
-                int result = this.port.hashCode();
-                result = 31 * result + (this.serverId.hashCode());
+                int result = this.serverId.hashCode();
                 result = 31 * result + (this.serverType.hashCode());
                 result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+                result = 31 * result + (this.port != null ? this.port.hashCode() : 0);
                 result = 31 * result + (this.serverIp != null ? this.serverIp.hashCode() : 0);
                 result = 31 * result + (this.weight != null ? this.weight.hashCode() : 0);
                 return result;

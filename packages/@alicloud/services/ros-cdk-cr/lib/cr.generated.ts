@@ -1123,6 +1123,11 @@ export interface RosUserInfoProps {
      * @Property user: User info. If user exists, will update user info.
      */
     readonly user: RosUserInfo.UserProperty | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The ID of enterprise edition ACR instance.
+     */
+    readonly instanceId?: string | ros.IResolvable;
 }
 
 /**
@@ -1137,6 +1142,7 @@ function RosUserInfoPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('user', ros.requiredValidator)(properties.user));
     errors.collect(ros.propertyValidator('user', RosUserInfo_UserPropertyValidator)(properties.user));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
     return errors.wrap('supplied properties not correct for "RosUserInfoProps"');
 }
 
@@ -1155,6 +1161,7 @@ function rosUserInfoPropsToRosTemplate(properties: any, enableResourcePropertyCo
     }
     return {
       User: rosUserInfoUserPropertyToRosTemplate(properties.user),
+      InstanceId: ros.stringToRosTemplate(properties.instanceId),
     };
 }
 
@@ -1188,6 +1195,11 @@ export class RosUserInfo extends ros.RosResource {
     public user: RosUserInfo.UserProperty | ros.IResolvable;
 
     /**
+     * @Property instanceId: The ID of enterprise edition ACR instance.
+     */
+    public instanceId: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1199,12 +1211,14 @@ export class RosUserInfo extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.user = props.user;
+        this.instanceId = props.instanceId;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             user: this.user,
+            instanceId: this.instanceId,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

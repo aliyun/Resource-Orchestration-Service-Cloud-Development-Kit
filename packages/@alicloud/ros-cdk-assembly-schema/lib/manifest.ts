@@ -105,8 +105,11 @@ export class Manifest {
 
       allowUnknownAttributes: false,
     } as any);
-    if (!result.valid) {
-      throw new Error(`Invalid assembly manifest:\n${result}`);
+
+    let errors = result.errors;
+
+    if (errors.length > 0) {
+      throw new Error(`Invalid assembly manifest:\n${errors.map(e => e.stack).join('\n')}`);
     }
   }
 

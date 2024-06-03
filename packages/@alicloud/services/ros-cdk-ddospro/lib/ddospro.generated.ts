@@ -3,6 +3,174 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosPort`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-port
+ */
+export interface RosPortProps {
+
+    /**
+     * @Property frontendProtocol: The type of the protocol. Valid values:
+     * tcp
+     * udp
+     */
+    readonly frontendProtocol: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The ID of the Anti-DDoS Pro or Anti-DDoS Premium instance to which the port forwarding rule belongs.
+     */
+    readonly instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property realServers: An array that consists of the IP addresses of origin servers.
+     */
+    readonly realServers: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property backendPort: The port of the origin server. Valid values: 0 to 65535.
+     */
+    readonly backendPort?: string | ros.IResolvable;
+
+    /**
+     * @Property frontendPort: The forwarding port. Valid values: 0 to 65535.
+     */
+    readonly frontendPort?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosPortProps`
+ *
+ * @param properties - the TypeScript properties of a `RosPortProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosPortPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('backendPort', ros.validateString)(properties.backendPort));
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('realServers', ros.requiredValidator)(properties.realServers));
+    if(properties.realServers && (Array.isArray(properties.realServers) || (typeof properties.realServers) === 'string')) {
+        errors.collect(ros.propertyValidator('realServers', ros.validateLength)({
+            data: properties.realServers.length,
+            min: 0,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('realServers', ros.listValidator(ros.validateString))(properties.realServers));
+    errors.collect(ros.propertyValidator('frontendPort', ros.validateString)(properties.frontendPort));
+    errors.collect(ros.propertyValidator('frontendProtocol', ros.requiredValidator)(properties.frontendProtocol));
+    if(properties.frontendProtocol && (typeof properties.frontendProtocol) !== 'object') {
+        errors.collect(ros.propertyValidator('frontendProtocol', ros.validateAllowedValues)({
+          data: properties.frontendProtocol,
+          allowedValues: ["tcp","udp"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('frontendProtocol', ros.validateString)(properties.frontendProtocol));
+    return errors.wrap('supplied properties not correct for "RosPortProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DDoSPro::Port` resource
+ *
+ * @param properties - the TypeScript properties of a `RosPortProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DDoSPro::Port` resource.
+ */
+// @ts-ignore TS6133
+function rosPortPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosPortPropsValidator(properties).assertSuccess();
+    }
+    return {
+      FrontendProtocol: ros.stringToRosTemplate(properties.frontendProtocol),
+      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+      RealServers: ros.listMapper(ros.stringToRosTemplate)(properties.realServers),
+      BackendPort: ros.stringToRosTemplate(properties.backendPort),
+      FrontendPort: ros.stringToRosTemplate(properties.frontendPort),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::Port`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Port` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-port
+ */
+export class RosPort extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DDoSPro::Port";
+
+    /**
+     * @Attribute FrontendPort: The forwarding port.
+     */
+    public readonly attrFrontendPort: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property frontendProtocol: The type of the protocol. Valid values:
+     * tcp
+     * udp
+     */
+    public frontendProtocol: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The ID of the Anti-DDoS Pro or Anti-DDoS Premium instance to which the port forwarding rule belongs.
+     */
+    public instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property realServers: An array that consists of the IP addresses of origin servers.
+     */
+    public realServers: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property backendPort: The port of the origin server. Valid values: 0 to 65535.
+     */
+    public backendPort: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property frontendPort: The forwarding port. Valid values: 0 to 65535.
+     */
+    public frontendPort: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosPortProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosPort.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrFrontendPort = this.getAtt('FrontendPort');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.frontendProtocol = props.frontendProtocol;
+        this.instanceId = props.instanceId;
+        this.realServers = props.realServers;
+        this.backendPort = props.backendPort;
+        this.frontendPort = props.frontendPort;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            frontendProtocol: this.frontendProtocol,
+            instanceId: this.instanceId,
+            realServers: this.realServers,
+            backendPort: this.backendPort,
+            frontendPort: this.frontendPort,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosPortPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosPremiumInstance`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-premiuminstance
  */
@@ -208,7 +376,7 @@ function rosPremiumInstancePropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::PremiumInstance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::PremiumInstance`, which is used to create an Anti-DDoS Proxy (Outside Chinese Mainland) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `PremiumInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-premiuminstance
  */
@@ -621,7 +789,7 @@ function rosProInstancePropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::ProInstance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::ProInstance`, which is used to create an Anti-DDoS Proxy (Chinese Mainland) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `ProInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-proinstance
  */
@@ -820,4 +988,333 @@ function rosProInstanceTagsPropertyToRosTemplate(properties: any): any {
       Value: ros.stringToRosTemplate(properties.value),
       Key: ros.stringToRosTemplate(properties.key),
     };
+}
+
+/**
+ * Properties for defining a `RosSceneDefensePolicy`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-scenedefensepolicy
+ */
+export interface RosSceneDefensePolicyProps {
+
+    /**
+     * @Property endTime: The end time of the policy. This value is a UNIX timestamp. Units: milliseconds.
+     */
+    readonly endTime: number | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the policy.
+     */
+    readonly name: string | ros.IResolvable;
+
+    /**
+     * @Property startTime: The start time of the policy. This value is a UNIX timestamp. Units: milliseconds.
+     */
+    readonly startTime: number | ros.IResolvable;
+
+    /**
+     * @Property template: The template of the policy. Valid values:
+     * promotion: important activity
+     * bypass: all traffic forwarded
+     */
+    readonly template: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSceneDefensePolicyProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSceneDefensePolicyProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSceneDefensePolicyPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('endTime', ros.requiredValidator)(properties.endTime));
+    errors.collect(ros.propertyValidator('endTime', ros.validateNumber)(properties.endTime));
+    errors.collect(ros.propertyValidator('startTime', ros.requiredValidator)(properties.startTime));
+    errors.collect(ros.propertyValidator('startTime', ros.validateNumber)(properties.startTime));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    errors.collect(ros.propertyValidator('template', ros.requiredValidator)(properties.template));
+    if(properties.template && (typeof properties.template) !== 'object') {
+        errors.collect(ros.propertyValidator('template', ros.validateAllowedValues)({
+          data: properties.template,
+          allowedValues: ["promotion","bypass"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('template', ros.validateString)(properties.template));
+    return errors.wrap('supplied properties not correct for "RosSceneDefensePolicyProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DDoSPro::SceneDefensePolicy` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSceneDefensePolicyProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DDoSPro::SceneDefensePolicy` resource.
+ */
+// @ts-ignore TS6133
+function rosSceneDefensePolicyPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSceneDefensePolicyPropsValidator(properties).assertSuccess();
+    }
+    return {
+      EndTime: ros.numberToRosTemplate(properties.endTime),
+      Name: ros.stringToRosTemplate(properties.name),
+      StartTime: ros.numberToRosTemplate(properties.startTime),
+      Template: ros.stringToRosTemplate(properties.template),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::SceneDefensePolicy`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SceneDefensePolicy` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-scenedefensepolicy
+ */
+export class RosSceneDefensePolicy extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DDoSPro::SceneDefensePolicy";
+
+    /**
+     * @Attribute Name: The name of the policy.
+     */
+    public readonly attrName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property endTime: The end time of the policy. This value is a UNIX timestamp. Units: milliseconds.
+     */
+    public endTime: number | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the policy.
+     */
+    public name: string | ros.IResolvable;
+
+    /**
+     * @Property startTime: The start time of the policy. This value is a UNIX timestamp. Units: milliseconds.
+     */
+    public startTime: number | ros.IResolvable;
+
+    /**
+     * @Property template: The template of the policy. Valid values:
+     * promotion: important activity
+     * bypass: all traffic forwarded
+     */
+    public template: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSceneDefensePolicyProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSceneDefensePolicy.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrName = this.getAtt('Name');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.endTime = props.endTime;
+        this.name = props.name;
+        this.startTime = props.startTime;
+        this.template = props.template;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            endTime: this.endTime,
+            name: this.name,
+            startTime: this.startTime,
+            template: this.template,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSceneDefensePolicyPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosSchedulerRule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-schedulerrule
+ */
+export interface RosSchedulerRuleProps {
+
+    /**
+     * @Property ruleName: The name of the rule.
+     */
+    readonly ruleName: string | ros.IResolvable;
+
+    /**
+     * @Property rules: The details of the scheduling rule. This parameter is a JSON string. The following list describes the fields in the value of the parameter:
+     * Type: the address type of the interaction resource that you want to use in the scheduling rule. This field is required and must be of the string type. Valid values: A: IP address. CNAME: domain name
+     * Value: the address of the interaction resource that you want to use in the scheduling rule. This field is required and must be of the string type.
+     * Priority: the priority of the scheduling rule. This field is required and must be of the integer type. Valid values: 0 to 100. A larger value indicates a higher priority.
+     * ValueType: the type of the interaction resource that you want to use in the scheduling rule. This field is required and must be of the integer type. Valid values: 1: the IP address of the Anti-DDoS Pro or Anti-DDoS Premium instance. 2: the IP address of the interaction resource in the tiered protection scenario. 3: the IP address that is used to accelerate access in the network acceleration scenario. 5: the domain name that is configured in Alibaba Cloud CDN (CDN) in the CDN interaction scenario. 6 the IP address of the interaction resource in the cloud service interaction scenario
+     * RegionId: the region where the interaction resource is deployed. This parameter must be specified when ValueType is set to 2. The value must be of the string type.
+     */
+    readonly rules: string | ros.IResolvable;
+
+    /**
+     * @Property ruleType: The type of the custom defense rule. Valid values:
+     * 2: tiered protection
+     * 3: network acceleration
+     * 5: CDN interaction
+     * 6: cloud service interaction
+     * 8: secure acceleration
+     */
+    readonly ruleType: number | ros.IResolvable;
+
+    /**
+     * @Property param: The details of the CDN interaction rule. This parameter is a JSON string. The following list describes the fields in the value of the parameter:
+     * ParamType: the type of the scheduling rule. This field is required and must be of the string type. Set the value to cdn. This indicates that you want to modify a CDN interaction rule.
+     * ParamData: the values of parameters that you want to modify for the CDN interaction rule. This field is required and must be of the map type. ParamData contains the following parameters: Domain: the accelerated domain in CDN. This parameter is required and must be of the string type; Cname: the CNAME that is assigned to the accelerated domain. This parameter is required and must be of the string type; AccessQps: the queries per second (QPS) threshold that is used to switch service traffic to Anti-DDoS Pro or Anti-DDoS Premium. This parameter is required and must be of the integer type; UpstreamQps: the QPS threshold that is used to switch service traffic to CDN. This parameter is optional and must be of the integer type.
+     */
+    readonly param?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the instance belongs in Resource Management. This parameter is empty by default, which indicates that the instance belongs to the default resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSchedulerRuleProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSchedulerRuleProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSchedulerRulePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('param', ros.validateString)(properties.param));
+    errors.collect(ros.propertyValidator('ruleType', ros.requiredValidator)(properties.ruleType));
+    if(properties.ruleType && (typeof properties.ruleType) !== 'object') {
+        errors.collect(ros.propertyValidator('ruleType', ros.validateAllowedValues)({
+          data: properties.ruleType,
+          allowedValues: [2,3,5,6,8],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ruleType', ros.validateNumber)(properties.ruleType));
+    errors.collect(ros.propertyValidator('rules', ros.requiredValidator)(properties.rules));
+    errors.collect(ros.propertyValidator('rules', ros.validateString)(properties.rules));
+    errors.collect(ros.propertyValidator('ruleName', ros.requiredValidator)(properties.ruleName));
+    errors.collect(ros.propertyValidator('ruleName', ros.validateString)(properties.ruleName));
+    return errors.wrap('supplied properties not correct for "RosSchedulerRuleProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DDoSPro::SchedulerRule` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSchedulerRuleProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DDoSPro::SchedulerRule` resource.
+ */
+// @ts-ignore TS6133
+function rosSchedulerRulePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSchedulerRulePropsValidator(properties).assertSuccess();
+    }
+    return {
+      RuleName: ros.stringToRosTemplate(properties.ruleName),
+      Rules: ros.stringToRosTemplate(properties.rules),
+      RuleType: ros.numberToRosTemplate(properties.ruleType),
+      Param: ros.stringToRosTemplate(properties.param),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::SchedulerRule`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SchedulerRule` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-schedulerrule
+ */
+export class RosSchedulerRule extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DDoSPro::SchedulerRule";
+
+    /**
+     * @Attribute RuleName: The name of the rule.
+     */
+    public readonly attrRuleName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property ruleName: The name of the rule.
+     */
+    public ruleName: string | ros.IResolvable;
+
+    /**
+     * @Property rules: The details of the scheduling rule. This parameter is a JSON string. The following list describes the fields in the value of the parameter:
+     * Type: the address type of the interaction resource that you want to use in the scheduling rule. This field is required and must be of the string type. Valid values: A: IP address. CNAME: domain name
+     * Value: the address of the interaction resource that you want to use in the scheduling rule. This field is required and must be of the string type.
+     * Priority: the priority of the scheduling rule. This field is required and must be of the integer type. Valid values: 0 to 100. A larger value indicates a higher priority.
+     * ValueType: the type of the interaction resource that you want to use in the scheduling rule. This field is required and must be of the integer type. Valid values: 1: the IP address of the Anti-DDoS Pro or Anti-DDoS Premium instance. 2: the IP address of the interaction resource in the tiered protection scenario. 3: the IP address that is used to accelerate access in the network acceleration scenario. 5: the domain name that is configured in Alibaba Cloud CDN (CDN) in the CDN interaction scenario. 6 the IP address of the interaction resource in the cloud service interaction scenario
+     * RegionId: the region where the interaction resource is deployed. This parameter must be specified when ValueType is set to 2. The value must be of the string type.
+     */
+    public rules: string | ros.IResolvable;
+
+    /**
+     * @Property ruleType: The type of the custom defense rule. Valid values:
+     * 2: tiered protection
+     * 3: network acceleration
+     * 5: CDN interaction
+     * 6: cloud service interaction
+     * 8: secure acceleration
+     */
+    public ruleType: number | ros.IResolvable;
+
+    /**
+     * @Property param: The details of the CDN interaction rule. This parameter is a JSON string. The following list describes the fields in the value of the parameter:
+     * ParamType: the type of the scheduling rule. This field is required and must be of the string type. Set the value to cdn. This indicates that you want to modify a CDN interaction rule.
+     * ParamData: the values of parameters that you want to modify for the CDN interaction rule. This field is required and must be of the map type. ParamData contains the following parameters: Domain: the accelerated domain in CDN. This parameter is required and must be of the string type; Cname: the CNAME that is assigned to the accelerated domain. This parameter is required and must be of the string type; AccessQps: the queries per second (QPS) threshold that is used to switch service traffic to Anti-DDoS Pro or Anti-DDoS Premium. This parameter is required and must be of the integer type; UpstreamQps: the QPS threshold that is used to switch service traffic to CDN. This parameter is optional and must be of the integer type.
+     */
+    public param: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the instance belongs in Resource Management. This parameter is empty by default, which indicates that the instance belongs to the default resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSchedulerRuleProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSchedulerRule.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrRuleName = this.getAtt('RuleName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.ruleName = props.ruleName;
+        this.rules = props.rules;
+        this.ruleType = props.ruleType;
+        this.param = props.param;
+        this.resourceGroupId = props.resourceGroupId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            ruleName: this.ruleName,
+            rules: this.rules,
+            ruleType: this.ruleType,
+            param: this.param,
+            resourceGroupId: this.resourceGroupId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSchedulerRulePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
 }

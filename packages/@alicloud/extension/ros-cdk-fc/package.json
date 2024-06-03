@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@alicloud/ros-cdk-oss": "^1.0.25",
+    "@alicloud/ros-cdk-ossassets": "^1.0.25"
+  },
+  "peerDependencies": {
+    "@alicloud/ros-cdk-oss": "^1.0.25",
+    "@alicloud/ros-cdk-ossassets": "^1.0.25"
+  }
+}

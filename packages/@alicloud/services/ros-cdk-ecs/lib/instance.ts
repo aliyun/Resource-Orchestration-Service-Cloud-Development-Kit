@@ -1,9 +1,11 @@
 import * as ros from '@alicloud/ros-cdk-core';
 import { RosInstance } from './ecs.generated';
+// Generated from the AliCloud ROS Resource Specification
 import { Vpc } from './vpc';
 import { VSwitch } from './vswitch';
 import { SecurityGroup } from './securitygroup';
-// Generated from the AliCloud ROS Resource Specification
+
+
 export { RosInstance as InstanceProperty };
 
 /**

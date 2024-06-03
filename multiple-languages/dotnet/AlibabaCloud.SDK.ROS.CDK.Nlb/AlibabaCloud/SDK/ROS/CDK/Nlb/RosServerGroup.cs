@@ -1354,15 +1354,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
         public interface IServersProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: port: The port used by the backend server. Valid values: 1 to 65535.
-            /// </remarks>
-            [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            object Port
-            {
-                get;
-            }
-
-            /// <remarks>
             /// <strong>Property</strong>: serverId: The ID of the server. You can specify at most 40 server IDs in each call.
             /// If the server group type is **Instance**, set the ServerId parameter to the ID of an Elastic Compute Service (ECS) instance, an elastic network interface (ENI), or an elastic container instance. These backend servers are specified by **Ecs**, **Eni**, or **Eci**.
             /// If the server group type is **Ip**, set the ServerId parameter to an IP address.
@@ -1394,6 +1385,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
             object? Description
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: port: The port used by the backend server. Valid values: 0 to 65535. Default value is 0.
+            /// When the server group enables full port forwarding, there is no need to specify a port when adding a backend server (0 is entered by default). NLB will forward traffic to the back-end server according to the frontend request port.
+            /// </remarks>
+            [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Port
             {
                 get
                 {
@@ -1436,15 +1441,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: port: The port used by the backend server. Valid values: 1 to 65535.
-                /// </remarks>
-                [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-                public object Port
-                {
-                    get => GetInstanceProperty<object>()!;
-                }
-
-                /// <remarks>
                 /// <strong>Property</strong>: serverId: The ID of the server. You can specify at most 40 server IDs in each call.
                 /// If the server group type is **Instance**, set the ServerId parameter to the ID of an Elastic Compute Service (ECS) instance, an elastic network interface (ENI), or an elastic container instance. These backend servers are specified by **Ecs**, **Eni**, or **Eci**.
                 /// If the server group type is **Ip**, set the ServerId parameter to an IP address.
@@ -1481,6 +1477,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
                 }
 
                 /// <remarks>
+                /// <strong>Property</strong>: port: The port used by the backend server. Valid values: 0 to 65535. Default value is 0.
+                /// When the server group enables full port forwarding, there is no need to specify a port when adding a backend server (0 is entered by default). NLB will forward traffic to the back-end server according to the frontend request port.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Port
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
                 /// <strong>Property</strong>: serverIp: The IP address of the server. If the server group type is **Ip**, ServerId is taken as the value of this parameter.
                 /// </remarks>
                 [JsiiOptional]
@@ -1507,58 +1514,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
         [JsiiByValue(fqn: "@alicloud/ros-cdk-nlb.RosServerGroup.ServersProperty")]
         public class ServersProperty : AlibabaCloud.SDK.ROS.CDK.Nlb.RosServerGroup.IServersProperty
         {
-            private object _port;
-
-            /// <remarks>
-            /// <strong>Property</strong>: port: The port used by the backend server. Valid values: 1 to 65535.
-            /// </remarks>
-            [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object Port
-            {
-                get => _port;
-                set
-                {
-                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                    {
-                        switch (value)
-                        {
-                            case double cast_cd4240:
-                                break;
-                            case byte cast_cd4240:
-                                break;
-                            case decimal cast_cd4240:
-                                break;
-                            case float cast_cd4240:
-                                break;
-                            case int cast_cd4240:
-                                break;
-                            case long cast_cd4240:
-                                break;
-                            case sbyte cast_cd4240:
-                                break;
-                            case short cast_cd4240:
-                                break;
-                            case uint cast_cd4240:
-                                break;
-                            case ulong cast_cd4240:
-                                break;
-                            case ushort cast_cd4240:
-                                break;
-                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                                break;
-                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                                // Not enough information to type-check...
-                                break;
-                            case null:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
-                            default:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                        }
-                    }
-                    _port = value;
-                }
-            }
-
             private object _serverId;
 
             /// <remarks>
@@ -1661,6 +1616,60 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
                         }
                     }
                     _description = value;
+                }
+            }
+
+            private object? _port;
+
+            /// <remarks>
+            /// <strong>Property</strong>: port: The port used by the backend server. Valid values: 0 to 65535. Default value is 0.
+            /// When the server group enables full port forwarding, there is no need to specify a port when adding a backend server (0 is entered by default). NLB will forward traffic to the back-end server according to the frontend request port.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Port
+            {
+                get => _port;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _port = value;
                 }
             }
 

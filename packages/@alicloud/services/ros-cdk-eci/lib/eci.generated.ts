@@ -1999,7 +1999,13 @@ export namespace RosContainerGroup {
      */
     export interface VolumeProperty {
         /**
-         * @Property type: The type of volume. Valid values: EmptyDirVolume, NFSVolume, and ConfigFileVolume.
+         * @Property type: The type of volume. Valid values:
+     * - EmptyDirVolume: A data volume of type EmptyDir that represents an empty directory.
+     * - NFSVolume: A data volume of type NFS that represents a network filesystem
+     * - ConfigFileVolume: A data volume of type ConfigFile, which represents configuration files
+     * - FlexVolume: Use FlexVolume plug-in to extend the storage type and support mounting cloud disk.
+     * - HostPathVolume: A data volume of type HostPath, representing a file or directory of the host node.
+     * - DiskVolume (not recommended) : Cloud disk volume FlexVolume is recommended to mount the cloud disk.
          */
         readonly type: string | ros.IResolvable;
         /**
@@ -2014,6 +2020,21 @@ export namespace RosContainerGroup {
          * @Property emptyDirVolumeMedium: The storage medium for EmptyDirVolume. By default, the file system on the node is used. Default value: not specified. Valid value: Memory. If this parameter is set to Memory, the EmptyDirVolume volume is stored in memory.
          */
         readonly emptyDirVolumeMedium?: string | ros.IResolvable;
+        /**
+         * @Property flexVolumeDriver: Driver type when using the FlexVolume plug-in to mount a data volume. Valid values:
+     * - alicloud\/disk: Mount the cloud disk
+     * - alicloud\/nas: Mount NAS
+     * - alicloud\/oss: Mount OSS
+         */
+        readonly flexVolumeDriver?: string | ros.IResolvable;
+        /**
+         * @Property flexVolumeFsType: The type of file system to mount depends, by default, on FlexVolume's script.
+         */
+        readonly flexVolumeFsType?: string | ros.IResolvable;
+        /**
+         * @Property flexVolumeOptions: The options of FlexVolume.
+         */
+        readonly flexVolumeOptions?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
         /**
          * @Property nfsVolumePath: The path to the NFS volume.
          */
@@ -2042,7 +2063,7 @@ function RosContainerGroup_VolumePropertyValidator(properties: any): ros.Validat
     if(properties.type && (typeof properties.type) !== 'object') {
         errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
           data: properties.type,
-          allowedValues: ["EmptyDirVolume","NFSVolume","ConfigFileVolume"],
+          allowedValues: ["EmptyDirVolume","NFSVolume","ConfigFileVolume","FlexVolume","HostPathVolume","DiskVolume"],
         }));
     }
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
@@ -2056,6 +2077,15 @@ function RosContainerGroup_VolumePropertyValidator(properties: any): ros.Validat
         }));
     }
     errors.collect(ros.propertyValidator('emptyDirVolumeMedium', ros.validateString)(properties.emptyDirVolumeMedium));
+    if(properties.flexVolumeDriver && (typeof properties.flexVolumeDriver) !== 'object') {
+        errors.collect(ros.propertyValidator('flexVolumeDriver', ros.validateAllowedValues)({
+          data: properties.flexVolumeDriver,
+          allowedValues: ["alicloud/disk","alicloud/nas","alicloud/oss"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('flexVolumeDriver', ros.validateString)(properties.flexVolumeDriver));
+    errors.collect(ros.propertyValidator('flexVolumeFsType', ros.validateString)(properties.flexVolumeFsType));
+    errors.collect(ros.propertyValidator('flexVolumeOptions', ros.hashValidator(ros.validateAny))(properties.flexVolumeOptions));
     errors.collect(ros.propertyValidator('nfsVolumePath', ros.validateString)(properties.nfsVolumePath));
     errors.collect(ros.propertyValidator('nfsVolumeReadOnly', ros.validateBoolean)(properties.nfsVolumeReadOnly));
     errors.collect(ros.propertyValidator('nfsVolumeServer', ros.validateString)(properties.nfsVolumeServer));
@@ -2078,6 +2108,9 @@ function rosContainerGroupVolumePropertyToRosTemplate(properties: any): any {
       Name: ros.stringToRosTemplate(properties.name),
       ConfigFileVolumeConfigFileToPath: ros.listMapper(rosContainerGroupConfigFileVolumeConfigFileToPathPropertyToRosTemplate)(properties.configFileVolumeConfigFileToPath),
       EmptyDirVolumeMedium: ros.stringToRosTemplate(properties.emptyDirVolumeMedium),
+      FlexVolumeDriver: ros.stringToRosTemplate(properties.flexVolumeDriver),
+      FlexVolumeFsType: ros.stringToRosTemplate(properties.flexVolumeFsType),
+      FlexVolumeOptions: ros.hashMapper(ros.objectToRosTemplate)(properties.flexVolumeOptions),
       NFSVolumePath: ros.stringToRosTemplate(properties.nfsVolumePath),
       NFSVolumeReadOnly: ros.booleanToRosTemplate(properties.nfsVolumeReadOnly),
       NFSVolumeServer: ros.stringToRosTemplate(properties.nfsVolumeServer),
@@ -2090,13 +2123,25 @@ export namespace RosContainerGroup {
      */
     export interface VolumeMountProperty {
         /**
+         * @Property mountPath: A mount path. The data in the target directory is overwritten by the data in the mounted volume. Therefore, use caution when you mount a volume to a directory.
+         */
+        readonly mountPath?: string | ros.IResolvable;
+        /**
          * @Property readOnly: Default value: False.
          */
         readonly readOnly?: boolean | ros.IResolvable;
         /**
-         * @Property mountPath: A mount path. The data in the target directory is overwritten by the data in the mounted volume. Therefore, use caution when you mount a volume to a directory.
+         * @Property subPath: A subdirectory under the data volume. The convenience instance mounts different directories under the same data volume to different directories of the container.
          */
-        readonly mountPath?: string | ros.IResolvable;
+        readonly subPath?: string | ros.IResolvable;
+        /**
+         * @Property mountPropagation: Mount propagation Settings for data volumes. Mount propagation allows container mounted volumes to be shared to other containers on the same ECI instance, or even to other ECI instances on the same host machine. Valid values:
+     * - None: This volume is not aware of any subsequent mount operations performed on this volume or its subdirectories.
+     * - HostToContainer: This volume will be aware of subsequent mount operations on this volume or its subdirectories
+     * - Bidirectional: Mount aware, similar to HostToContainer In addition, the volume will be propagated back to the host and to all containers of all ECI instances that use the same volume.
+     * Default value: None
+         */
+        readonly mountPropagation?: string | ros.IResolvable;
         /**
          * @Property name: The name of the volume. The name is the same as that specified for the Name parameter in the Volume section.
          */
@@ -2113,8 +2158,16 @@ export namespace RosContainerGroup {
 function RosContainerGroup_VolumeMountPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('readOnly', ros.validateBoolean)(properties.readOnly));
     errors.collect(ros.propertyValidator('mountPath', ros.validateString)(properties.mountPath));
+    errors.collect(ros.propertyValidator('readOnly', ros.validateBoolean)(properties.readOnly));
+    errors.collect(ros.propertyValidator('subPath', ros.validateString)(properties.subPath));
+    if(properties.mountPropagation && (typeof properties.mountPropagation) !== 'object') {
+        errors.collect(ros.propertyValidator('mountPropagation', ros.validateAllowedValues)({
+          data: properties.mountPropagation,
+          allowedValues: ["None","HostToContainer","Bidirectional"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('mountPropagation', ros.validateString)(properties.mountPropagation));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     return errors.wrap('supplied properties not correct for "VolumeMountProperty"');
 }
@@ -2131,8 +2184,10 @@ function rosContainerGroupVolumeMountPropertyToRosTemplate(properties: any): any
     if (!ros.canInspect(properties)) { return properties; }
     RosContainerGroup_VolumeMountPropertyValidator(properties).assertSuccess();
     return {
-      ReadOnly: ros.booleanToRosTemplate(properties.readOnly),
       MountPath: ros.stringToRosTemplate(properties.mountPath),
+      ReadOnly: ros.booleanToRosTemplate(properties.readOnly),
+      SubPath: ros.stringToRosTemplate(properties.subPath),
+      MountPropagation: ros.stringToRosTemplate(properties.mountPropagation),
       Name: ros.stringToRosTemplate(properties.name),
     };
 }

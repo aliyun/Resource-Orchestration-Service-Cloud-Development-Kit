@@ -1,9 +1,14 @@
+@alicloud/ros-cdk-devops.HostGroup=com.aliyun.ros.cdk.devops.HostGroup
+@alicloud/ros-cdk-devops.HostGroupProps=com.aliyun.ros.cdk.devops.HostGroupProps
 @alicloud/ros-cdk-devops.Pipeline=com.aliyun.ros.cdk.devops.Pipeline
 @alicloud/ros-cdk-devops.PipelineProps=com.aliyun.ros.cdk.devops.PipelineProps
 @alicloud/ros-cdk-devops.PipelineRelations=com.aliyun.ros.cdk.devops.PipelineRelations
 @alicloud/ros-cdk-devops.PipelineRelationsProps=com.aliyun.ros.cdk.devops.PipelineRelationsProps
 @alicloud/ros-cdk-devops.PipelineRun=com.aliyun.ros.cdk.devops.PipelineRun
 @alicloud/ros-cdk-devops.PipelineRunProps=com.aliyun.ros.cdk.devops.PipelineRunProps
+@alicloud/ros-cdk-devops.RosHostGroup=com.aliyun.ros.cdk.devops.RosHostGroup
+@alicloud/ros-cdk-devops.RosHostGroup.MachineInfosProperty=com.aliyun.ros.cdk.devops.RosHostGroup$MachineInfosProperty
+@alicloud/ros-cdk-devops.RosHostGroupProps=com.aliyun.ros.cdk.devops.RosHostGroupProps
 @alicloud/ros-cdk-devops.RosPipeline=com.aliyun.ros.cdk.devops.RosPipeline
 @alicloud/ros-cdk-devops.RosPipelineProps=com.aliyun.ros.cdk.devops.RosPipelineProps
 @alicloud/ros-cdk-devops.RosPipelineRelations=com.aliyun.ros.cdk.devops.RosPipelineRelations

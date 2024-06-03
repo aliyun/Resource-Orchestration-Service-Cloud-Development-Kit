@@ -7247,6 +7247,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: mountPropagation: Mount propagation Settings for data volumes. Mount propagation allows container mounted volumes to be shared to other containers on the same ECI instance, or even to other ECI instances on the same host machine. Valid values:
+            /// - None: This volume is not aware of any subsequent mount operations performed on this volume or its subdirectories.
+            /// - HostToContainer: This volume will be aware of subsequent mount operations on this volume or its subdirectories
+            /// - Bidirectional: Mount aware, similar to HostToContainer In addition, the volume will be propagated back to the host and to all containers of all ECI instances that use the same volume.
+            /// Default value: None
+            /// </remarks>
+            [JsiiProperty(name: "mountPropagation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? MountPropagation
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: name: The name of the volume. The name is the same as that specified for the Name parameter in the Volume section.
             /// </remarks>
             [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -7272,6 +7289,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
                 }
             }
 
+            /// <remarks>
+            /// <strong>Property</strong>: subPath: A subdirectory under the data volume. The convenience instance mounts different directories under the same data volume to different directories of the container.
+            /// </remarks>
+            [JsiiProperty(name: "subPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? SubPath
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
             [JsiiTypeProxy(nativeType: typeof(IVolumeMountProperty), fullyQualifiedName: "@alicloud/ros-cdk-eci.RosContainerGroup.VolumeMountProperty")]
             internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Eci.RosContainerGroup.IVolumeMountProperty
             {
@@ -7285,6 +7315,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
                 [JsiiOptional]
                 [JsiiProperty(name: "mountPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? MountPath
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: mountPropagation: Mount propagation Settings for data volumes. Mount propagation allows container mounted volumes to be shared to other containers on the same ECI instance, or even to other ECI instances on the same host machine. Valid values:
+                /// - None: This volume is not aware of any subsequent mount operations performed on this volume or its subdirectories.
+                /// - HostToContainer: This volume will be aware of subsequent mount operations on this volume or its subdirectories
+                /// - Bidirectional: Mount aware, similar to HostToContainer In addition, the volume will be propagated back to the host and to all containers of all ECI instances that use the same volume.
+                /// Default value: None
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "mountPropagation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? MountPropagation
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -7305,6 +7349,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
                 [JsiiOptional]
                 [JsiiProperty(name: "readOnly", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? ReadOnly
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: subPath: A subdirectory under the data volume. The convenience instance mounts different directories under the same data volume to different directories of the container.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "subPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? SubPath
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -7343,6 +7397,43 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
                         }
                     }
                     _mountPath = value;
+                }
+            }
+
+            private object? _mountPropagation;
+
+            /// <remarks>
+            /// <strong>Property</strong>: mountPropagation: Mount propagation Settings for data volumes. Mount propagation allows container mounted volumes to be shared to other containers on the same ECI instance, or even to other ECI instances on the same host machine. Valid values:
+            /// - None: This volume is not aware of any subsequent mount operations performed on this volume or its subdirectories.
+            /// - HostToContainer: This volume will be aware of subsequent mount operations on this volume or its subdirectories
+            /// - Bidirectional: Mount aware, similar to HostToContainer In addition, the volume will be propagated back to the host and to all containers of all ECI instances that use the same volume.
+            /// Default value: None
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "mountPropagation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MountPropagation
+            {
+                get => _mountPropagation;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _mountPropagation = value;
                 }
             }
 
@@ -7411,6 +7502,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
                     _readOnly = value;
                 }
             }
+
+            private object? _subPath;
+
+            /// <remarks>
+            /// <strong>Property</strong>: subPath: A subdirectory under the data volume. The convenience instance mounts different directories under the same data volume to different directories of the container.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "subPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SubPath
+            {
+                get => _subPath;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _subPath = value;
+                }
+            }
         }
         [JsiiInterface(nativeType: typeof(IVolumeProperty), fullyQualifiedName: "@alicloud/ros-cdk-eci.RosContainerGroup.VolumeProperty")]
         public interface IVolumeProperty
@@ -7425,7 +7549,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: type: The type of volume. Valid values: EmptyDirVolume, NFSVolume, and ConfigFileVolume.
+            /// <strong>Property</strong>: type: The type of volume. Valid values:
+            /// - EmptyDirVolume: A data volume of type EmptyDir that represents an empty directory.
+            /// - NFSVolume: A data volume of type NFS that represents a network filesystem
+            /// - ConfigFileVolume: A data volume of type ConfigFile, which represents configuration files
+            /// - FlexVolume: Use FlexVolume plug-in to extend the storage type and support mounting cloud disk.
+            /// - HostPathVolume: A data volume of type HostPath, representing a file or directory of the host node.
+            /// - DiskVolume (not recommended) : Cloud disk volume FlexVolume is recommended to mount the cloud disk.
             /// </remarks>
             [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             object Type
@@ -7452,6 +7582,48 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             [JsiiProperty(name: "emptyDirVolumeMedium", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
             object? EmptyDirVolumeMedium
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: flexVolumeDriver: Driver type when using the FlexVolume plug-in to mount a data volume. Valid values:
+            /// - alicloud\/disk: Mount the cloud disk
+            /// - alicloud\/nas: Mount NAS
+            /// - alicloud\/oss: Mount OSS
+            /// </remarks>
+            [JsiiProperty(name: "flexVolumeDriver", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? FlexVolumeDriver
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: flexVolumeFsType: The type of file system to mount depends, by default, on FlexVolume's script.
+            /// </remarks>
+            [JsiiProperty(name: "flexVolumeFsType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? FlexVolumeFsType
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: flexVolumeOptions: The options of FlexVolume.
+            /// </remarks>
+            [JsiiProperty(name: "flexVolumeOptions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? FlexVolumeOptions
             {
                 get
                 {
@@ -7515,7 +7687,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: type: The type of volume. Valid values: EmptyDirVolume, NFSVolume, and ConfigFileVolume.
+                /// <strong>Property</strong>: type: The type of volume. Valid values:
+                /// - EmptyDirVolume: A data volume of type EmptyDir that represents an empty directory.
+                /// - NFSVolume: A data volume of type NFS that represents a network filesystem
+                /// - ConfigFileVolume: A data volume of type ConfigFile, which represents configuration files
+                /// - FlexVolume: Use FlexVolume plug-in to extend the storage type and support mounting cloud disk.
+                /// - HostPathVolume: A data volume of type HostPath, representing a file or directory of the host node.
+                /// - DiskVolume (not recommended) : Cloud disk volume FlexVolume is recommended to mount the cloud disk.
                 /// </remarks>
                 [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
                 public object Type
@@ -7539,6 +7717,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
                 [JsiiOptional]
                 [JsiiProperty(name: "emptyDirVolumeMedium", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? EmptyDirVolumeMedium
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: flexVolumeDriver: Driver type when using the FlexVolume plug-in to mount a data volume. Valid values:
+                /// - alicloud\/disk: Mount the cloud disk
+                /// - alicloud\/nas: Mount NAS
+                /// - alicloud\/oss: Mount OSS
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "flexVolumeDriver", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? FlexVolumeDriver
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: flexVolumeFsType: The type of file system to mount depends, by default, on FlexVolume's script.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "flexVolumeFsType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? FlexVolumeFsType
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: flexVolumeOptions: The options of FlexVolume.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "flexVolumeOptions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+                public object? FlexVolumeOptions
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -7614,7 +7825,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             private object _type;
 
             /// <remarks>
-            /// <strong>Property</strong>: type: The type of volume. Valid values: EmptyDirVolume, NFSVolume, and ConfigFileVolume.
+            /// <strong>Property</strong>: type: The type of volume. Valid values:
+            /// - EmptyDirVolume: A data volume of type EmptyDir that represents an empty directory.
+            /// - NFSVolume: A data volume of type NFS that represents a network filesystem
+            /// - ConfigFileVolume: A data volume of type ConfigFile, which represents configuration files
+            /// - FlexVolume: Use FlexVolume plug-in to extend the storage type and support mounting cloud disk.
+            /// - HostPathVolume: A data volume of type HostPath, representing a file or directory of the host node.
+            /// - DiskVolume (not recommended) : Cloud disk volume FlexVolume is recommended to mount the cloud disk.
             /// </remarks>
             [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Type
@@ -7723,6 +7940,108 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
                         }
                     }
                     _emptyDirVolumeMedium = value;
+                }
+            }
+
+            private object? _flexVolumeDriver;
+
+            /// <remarks>
+            /// <strong>Property</strong>: flexVolumeDriver: Driver type when using the FlexVolume plug-in to mount a data volume. Valid values:
+            /// - alicloud\/disk: Mount the cloud disk
+            /// - alicloud\/nas: Mount NAS
+            /// - alicloud\/oss: Mount OSS
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "flexVolumeDriver", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? FlexVolumeDriver
+            {
+                get => _flexVolumeDriver;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _flexVolumeDriver = value;
+                }
+            }
+
+            private object? _flexVolumeFsType;
+
+            /// <remarks>
+            /// <strong>Property</strong>: flexVolumeFsType: The type of file system to mount depends, by default, on FlexVolume's script.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "flexVolumeFsType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? FlexVolumeFsType
+            {
+                get => _flexVolumeFsType;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _flexVolumeFsType = value;
+                }
+            }
+
+            private object? _flexVolumeOptions;
+
+            /// <remarks>
+            /// <strong>Property</strong>: flexVolumeOptions: The options of FlexVolume.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "flexVolumeOptions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+            public object? FlexVolumeOptions
+            {
+                get => _flexVolumeOptions;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case System.Collections.Generic.IDictionary<string, object> cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, System.Collections.Generic.IDictionary<string, object>; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _flexVolumeOptions = value;
                 }
             }
 

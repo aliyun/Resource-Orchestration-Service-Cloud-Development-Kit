@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.adb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ADB::Account</code>, which is used to create a database account for an AnalyticDB for MySQL cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:30.026Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:49.391Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.adb.$Module.class, fqn = "@alicloud/ros-cdk-adb.Account")
 public class Account extends com.aliyun.ros.cdk.core.Resource {
 

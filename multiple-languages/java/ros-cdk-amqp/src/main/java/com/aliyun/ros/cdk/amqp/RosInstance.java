@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.amqp;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::AMQP::Instance</code>, which is used to create an ApsaraMQ for RabbitMQ instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:30.244Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:49.594Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.amqp.$Module.class, fqn = "@alicloud/ros-cdk-amqp.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -73,78 +73,6 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getInstanceType() {
-        return software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setInstanceType(final @org.jetbrains.annotations.NotNull java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "instanceType", java.util.Objects.requireNonNull(value, "instanceType is required"));
-    }
-
-    /**
-     */
-    public void setInstanceType(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "instanceType", java.util.Objects.requireNonNull(value, "instanceType is required"));
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getMaxTps() {
-        return software.amazon.jsii.Kernel.get(this, "maxTps", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setMaxTps(final @org.jetbrains.annotations.NotNull java.lang.Number value) {
-        software.amazon.jsii.Kernel.set(this, "maxTps", java.util.Objects.requireNonNull(value, "maxTps is required"));
-    }
-
-    /**
-     */
-    public void setMaxTps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "maxTps", java.util.Objects.requireNonNull(value, "maxTps is required"));
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getQueueCapacity() {
-        return software.amazon.jsii.Kernel.get(this, "queueCapacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setQueueCapacity(final @org.jetbrains.annotations.NotNull java.lang.Number value) {
-        software.amazon.jsii.Kernel.set(this, "queueCapacity", java.util.Objects.requireNonNull(value, "queueCapacity is required"));
-    }
-
-    /**
-     */
-    public void setQueueCapacity(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "queueCapacity", java.util.Objects.requireNonNull(value, "queueCapacity is required"));
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getStorageSize() {
-        return software.amazon.jsii.Kernel.get(this, "storageSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setStorageSize(final @org.jetbrains.annotations.NotNull java.lang.Number value) {
-        software.amazon.jsii.Kernel.set(this, "storageSize", java.util.Objects.requireNonNull(value, "storageSize is required"));
-    }
-
-    /**
-     */
-    public void setStorageSize(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "storageSize", java.util.Objects.requireNonNull(value, "storageSize is required"));
-    }
-
-    /**
-     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getInstanceName() {
         return software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -163,6 +91,24 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInstanceType() {
+        return software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setInstanceType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "instanceType", value);
+    }
+
+    /**
+     */
+    public void setInstanceType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "instanceType", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getMaxEipTps() {
         return software.amazon.jsii.Kernel.get(this, "maxEipTps", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -177,6 +123,24 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setMaxEipTps(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "maxEipTps", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMaxTps() {
+        return software.amazon.jsii.Kernel.get(this, "maxTps", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setMaxTps(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "maxTps", value);
+    }
+
+    /**
+     */
+    public void setMaxTps(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "maxTps", value);
     }
 
     /**
@@ -249,6 +213,42 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setPeriodUnit(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "periodUnit", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getQueueCapacity() {
+        return software.amazon.jsii.Kernel.get(this, "queueCapacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setQueueCapacity(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "queueCapacity", value);
+    }
+
+    /**
+     */
+    public void setQueueCapacity(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "queueCapacity", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getStorageSize() {
+        return software.amazon.jsii.Kernel.get(this, "storageSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setStorageSize(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "storageSize", value);
+    }
+
+    /**
+     */
+    public void setStorageSize(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "storageSize", value);
     }
 
     /**
@@ -333,74 +333,6 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param instanceType This parameter is required.
-         */
-        public Builder instanceType(final java.lang.String instanceType) {
-            this.props.instanceType(instanceType);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param instanceType This parameter is required.
-         */
-        public Builder instanceType(final com.aliyun.ros.cdk.core.IResolvable instanceType) {
-            this.props.instanceType(instanceType);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param maxTps This parameter is required.
-         */
-        public Builder maxTps(final java.lang.Number maxTps) {
-            this.props.maxTps(maxTps);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param maxTps This parameter is required.
-         */
-        public Builder maxTps(final com.aliyun.ros.cdk.core.IResolvable maxTps) {
-            this.props.maxTps(maxTps);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param queueCapacity This parameter is required.
-         */
-        public Builder queueCapacity(final java.lang.Number queueCapacity) {
-            this.props.queueCapacity(queueCapacity);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param queueCapacity This parameter is required.
-         */
-        public Builder queueCapacity(final com.aliyun.ros.cdk.core.IResolvable queueCapacity) {
-            this.props.queueCapacity(queueCapacity);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param storageSize This parameter is required.
-         */
-        public Builder storageSize(final java.lang.Number storageSize) {
-            this.props.storageSize(storageSize);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param storageSize This parameter is required.
-         */
-        public Builder storageSize(final com.aliyun.ros.cdk.core.IResolvable storageSize) {
-            this.props.storageSize(storageSize);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param instanceName This parameter is required.
          */
         public Builder instanceName(final java.lang.String instanceName) {
@@ -418,6 +350,23 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param instanceType This parameter is required.
+         */
+        public Builder instanceType(final java.lang.String instanceType) {
+            this.props.instanceType(instanceType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param instanceType This parameter is required.
+         */
+        public Builder instanceType(final com.aliyun.ros.cdk.core.IResolvable instanceType) {
+            this.props.instanceType(instanceType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param maxEipTps This parameter is required.
          */
         public Builder maxEipTps(final java.lang.Number maxEipTps) {
@@ -430,6 +379,23 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder maxEipTps(final com.aliyun.ros.cdk.core.IResolvable maxEipTps) {
             this.props.maxEipTps(maxEipTps);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param maxTps This parameter is required.
+         */
+        public Builder maxTps(final java.lang.Number maxTps) {
+            this.props.maxTps(maxTps);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param maxTps This parameter is required.
+         */
+        public Builder maxTps(final com.aliyun.ros.cdk.core.IResolvable maxTps) {
+            this.props.maxTps(maxTps);
             return this;
         }
 
@@ -498,6 +464,40 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder periodUnit(final com.aliyun.ros.cdk.core.IResolvable periodUnit) {
             this.props.periodUnit(periodUnit);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param queueCapacity This parameter is required.
+         */
+        public Builder queueCapacity(final java.lang.Number queueCapacity) {
+            this.props.queueCapacity(queueCapacity);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param queueCapacity This parameter is required.
+         */
+        public Builder queueCapacity(final com.aliyun.ros.cdk.core.IResolvable queueCapacity) {
+            this.props.queueCapacity(queueCapacity);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param storageSize This parameter is required.
+         */
+        public Builder storageSize(final java.lang.Number storageSize) {
+            this.props.storageSize(storageSize);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param storageSize This parameter is required.
+         */
+        public Builder storageSize(final com.aliyun.ros.cdk.core.IResolvable storageSize) {
+            this.props.storageSize(storageSize);
             return this;
         }
 

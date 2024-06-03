@@ -4723,6 +4723,11 @@ export interface RosScalingGroupProps {
     readonly removalPolicys?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * @Property scalingGroupName: Name shown for the scaling group, which must contain 2-40 characters (English or Chinese). The name must begin with a number, an upper\/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".". The account name is unique in the same region.
      * If this parameter is not specified, the default value is ScalingGroupId.
      */
@@ -4736,6 +4741,11 @@ export interface RosScalingGroupProps {
      * ScalingPolicy specifies the reclaim modes of scaling groups, but the policy that is used to remove ECS instances from scaling groups is determined by the RemovePolicy parameter of the RemoveInstances operation.
      */
     readonly scalingPolicy?: string | ros.IResolvable;
+
+    /**
+     * @Property serverGroups: The config of server group.
+     */
+    readonly serverGroups?: Array<RosScalingGroup.ServerGroupsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property spotAllocationStrategy: The allocation policy of preemptible instances. You can use this parameter to individually specify the allocation policy of preemptible instances. This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
@@ -4791,7 +4801,16 @@ function RosScalingGroupPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('spotInstanceRemedy', ros.validateBoolean)(properties.spotInstanceRemedy));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('compensateWithOnDemand', ros.validateBoolean)(properties.compensateWithOnDemand));
+    if(properties.serverGroups && (Array.isArray(properties.serverGroups) || (typeof properties.serverGroups) === 'string')) {
+        errors.collect(ros.propertyValidator('serverGroups', ros.validateLength)({
+            data: properties.serverGroups.length,
+            min: undefined,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('serverGroups', ros.listValidator(RosScalingGroup_ServerGroupsPropertyValidator))(properties.serverGroups));
     errors.collect(ros.propertyValidator('notificationConfigurations', ros.listValidator(RosScalingGroup_NotificationConfigurationsPropertyValidator))(properties.notificationConfigurations));
     if(properties.onDemandPercentageAboveBaseCapacity && (typeof properties.onDemandPercentageAboveBaseCapacity) !== 'object') {
         errors.collect(ros.propertyValidator('onDemandPercentageAboveBaseCapacity', ros.validateRange)({
@@ -5022,8 +5041,10 @@ function rosScalingGroupPropsToRosTemplate(properties: any, enableResourceProper
       OnDemandPercentageAboveBaseCapacity: ros.numberToRosTemplate(properties.onDemandPercentageAboveBaseCapacity),
       ProtectedInstances: ros.listMapper(ros.stringToRosTemplate)(properties.protectedInstances),
       RemovalPolicys: ros.listMapper(ros.stringToRosTemplate)(properties.removalPolicys),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       ScalingGroupName: ros.stringToRosTemplate(properties.scalingGroupName),
       ScalingPolicy: ros.stringToRosTemplate(properties.scalingPolicy),
+      ServerGroups: ros.listMapper(rosScalingGroupServerGroupsPropertyToRosTemplate)(properties.serverGroups),
       SpotAllocationStrategy: ros.stringToRosTemplate(properties.spotAllocationStrategy),
       SpotInstancePools: ros.numberToRosTemplate(properties.spotInstancePools),
       SpotInstanceRemedy: ros.booleanToRosTemplate(properties.spotInstanceRemedy),
@@ -5219,6 +5240,11 @@ export class RosScalingGroup extends ros.RosResource {
     public removalPolicys: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property scalingGroupName: Name shown for the scaling group, which must contain 2-40 characters (English or Chinese). The name must begin with a number, an upper\/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".". The account name is unique in the same region.
      * If this parameter is not specified, the default value is ScalingGroupId.
      */
@@ -5232,6 +5258,11 @@ export class RosScalingGroup extends ros.RosResource {
      * ScalingPolicy specifies the reclaim modes of scaling groups, but the policy that is used to remove ECS instances from scaling groups is determined by the RemovePolicy parameter of the RemoveInstances operation.
      */
     public scalingPolicy: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property serverGroups: The config of server group.
+     */
+    public serverGroups: Array<RosScalingGroup.ServerGroupsProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property spotAllocationStrategy: The allocation policy of preemptible instances. You can use this parameter to individually specify the allocation policy of preemptible instances. This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
@@ -5311,8 +5342,10 @@ export class RosScalingGroup extends ros.RosResource {
         this.onDemandPercentageAboveBaseCapacity = props.onDemandPercentageAboveBaseCapacity;
         this.protectedInstances = props.protectedInstances;
         this.removalPolicys = props.removalPolicys;
+        this.resourceGroupId = props.resourceGroupId;
         this.scalingGroupName = props.scalingGroupName;
         this.scalingPolicy = props.scalingPolicy;
+        this.serverGroups = props.serverGroups;
         this.spotAllocationStrategy = props.spotAllocationStrategy;
         this.spotInstancePools = props.spotInstancePools;
         this.spotInstanceRemedy = props.spotInstanceRemedy;
@@ -5350,8 +5383,10 @@ export class RosScalingGroup extends ros.RosResource {
             onDemandPercentageAboveBaseCapacity: this.onDemandPercentageAboveBaseCapacity,
             protectedInstances: this.protectedInstances,
             removalPolicys: this.removalPolicys,
+            resourceGroupId: this.resourceGroupId,
             scalingGroupName: this.scalingGroupName,
             scalingPolicy: this.scalingPolicy,
+            serverGroups: this.serverGroups,
             spotAllocationStrategy: this.spotAllocationStrategy,
             spotInstancePools: this.spotInstancePools,
             spotInstanceRemedy: this.spotInstanceRemedy,
@@ -5506,6 +5541,89 @@ function rosScalingGroupNotificationConfigurationsPropertyToRosTemplate(properti
     return {
       NotificationArn: ros.stringToRosTemplate(properties.notificationArn),
       NotificationTypes: ros.listMapper(ros.stringToRosTemplate)(properties.notificationTypes),
+    };
+}
+
+export namespace RosScalingGroup {
+    /**
+     * @stability external
+     */
+    export interface ServerGroupsProperty {
+        /**
+         * @Property type: The type of the server group.
+         */
+        readonly type: string | ros.IResolvable;
+        /**
+         * @Property port: The port of server group.
+         */
+        readonly port: number | ros.IResolvable;
+        /**
+         * @Property serverGroupId: The id of the server group.
+         */
+        readonly serverGroupId: string | ros.IResolvable;
+        /**
+         * @Property weight: The weight of server group.
+         */
+        readonly weight: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ServerGroupsProperty`
+ *
+ * @param properties - the TypeScript properties of a `ServerGroupsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosScalingGroup_ServerGroupsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('type', ros.requiredValidator)(properties.type));
+    if(properties.type && (typeof properties.type) !== 'object') {
+        errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
+          data: properties.type,
+          allowedValues: ["ALB","NLB"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('port', ros.requiredValidator)(properties.port));
+    if(properties.port && (typeof properties.port) !== 'object') {
+        errors.collect(ros.propertyValidator('port', ros.validateRange)({
+            data: properties.port,
+            min: 1,
+            max: 65535,
+          }));
+    }
+    errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
+    errors.collect(ros.propertyValidator('serverGroupId', ros.requiredValidator)(properties.serverGroupId));
+    errors.collect(ros.propertyValidator('serverGroupId', ros.validateString)(properties.serverGroupId));
+    errors.collect(ros.propertyValidator('weight', ros.requiredValidator)(properties.weight));
+    if(properties.weight && (typeof properties.weight) !== 'object') {
+        errors.collect(ros.propertyValidator('weight', ros.validateRange)({
+            data: properties.weight,
+            min: 0,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('weight', ros.validateNumber)(properties.weight));
+    return errors.wrap('supplied properties not correct for "ServerGroupsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESS::ScalingGroup.ServerGroups` resource
+ *
+ * @param properties - the TypeScript properties of a `ServerGroupsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESS::ScalingGroup.ServerGroups` resource.
+ */
+// @ts-ignore TS6133
+function rosScalingGroupServerGroupsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosScalingGroup_ServerGroupsPropertyValidator(properties).assertSuccess();
+    return {
+      Type: ros.stringToRosTemplate(properties.type),
+      Port: ros.numberToRosTemplate(properties.port),
+      ServerGroupId: ros.stringToRosTemplate(properties.serverGroupId),
+      Weight: ros.numberToRosTemplate(properties.weight),
     };
 }
 
@@ -6734,7 +6852,7 @@ function rosScheduledTaskPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScheduledTask`, which is used to create a scheduled task based on specified parameters.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScheduledTask`, which is used to create a scheduled task by specifying properties.
  * @Note This class does not contain additional functions, so it is recommended to use the `ScheduledTask` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scheduledtask
  */

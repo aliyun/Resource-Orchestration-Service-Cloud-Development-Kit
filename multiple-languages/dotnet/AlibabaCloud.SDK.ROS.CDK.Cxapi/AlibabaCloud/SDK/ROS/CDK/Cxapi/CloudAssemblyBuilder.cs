@@ -5,19 +5,19 @@ using Amazon.JSII.Runtime.Deputy;
 namespace AlibabaCloud.SDK.ROS.CDK.Cxapi
 {
     /// <summary>Can be used to build a cloud assembly.</summary>
-    [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Cxapi.CloudAssemblyBuilder), fullyQualifiedName: "@alicloud/ros-cdk-cxapi.CloudAssemblyBuilder", parametersJson: "[{\"docs\":{\"summary\":\"The output directory, uses temporary directory if undefined.\"},\"name\":\"outdir\",\"optional\":true,\"type\":{\"primitive\":\"string\"}}]")]
+    [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Cxapi.CloudAssemblyBuilder), fullyQualifiedName: "@alicloud/ros-cdk-cxapi.CloudAssemblyBuilder", parametersJson: "[{\"docs\":{\"summary\":\"The output directory, uses temporary directory if undefined.\"},\"name\":\"outdir\",\"optional\":true,\"type\":{\"primitive\":\"string\"}},{\"name\":\"props\",\"optional\":true,\"type\":{\"fqn\":\"@alicloud/ros-cdk-cxapi.CloudAssemblyBuilderProps\"}}]")]
     public class CloudAssemblyBuilder : DeputyBase
     {
         /// <summary>Initializes a cloud assembly builder.</summary>
         /// <param name="outdir">The output directory, uses temporary directory if undefined.</param>
-        public CloudAssemblyBuilder(string? outdir = null): base(_MakeDeputyProps(outdir))
+        public CloudAssemblyBuilder(string? outdir = null, AlibabaCloud.SDK.ROS.CDK.Cxapi.ICloudAssemblyBuilderProps? props = null): base(_MakeDeputyProps(outdir, props))
         {
         }
 
         [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
-        private static DeputyProps _MakeDeputyProps(string? outdir = null)
+        private static DeputyProps _MakeDeputyProps(string? outdir = null, AlibabaCloud.SDK.ROS.CDK.Cxapi.ICloudAssemblyBuilderProps? props = null)
         {
-            return new DeputyProps(new object?[]{outdir});
+            return new DeputyProps(new object?[]{outdir, props});
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>
@@ -63,6 +63,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cxapi
         public virtual AlibabaCloud.SDK.ROS.CDK.Cxapi.CloudAssemblyBuilder CreateNestedAssembly(string artifactId, string displayName)
         {
             return InvokeInstanceMethod<AlibabaCloud.SDK.ROS.CDK.Cxapi.CloudAssemblyBuilder>(new System.Type[]{typeof(string), typeof(string)}, new object[]{artifactId, displayName})!;
+        }
+
+        /// <summary>The directory where assets of this Cloud Assembly should be stored.</summary>
+        [JsiiProperty(name: "assetOutdir", typeJson: "{\"primitive\":\"string\"}")]
+        public virtual string AssetOutdir
+        {
+            get => GetInstanceProperty<string>()!;
         }
 
         /// <summary>The root directory of the resulting cloud assembly.</summary>

@@ -32,6 +32,7 @@ setup_dependency() {
 
 clear_dependency() {
     lerna clean -y
+    find . -name "package-lock.json" -type f -exec rm -f {} \;
 }
 
 
@@ -59,6 +60,7 @@ generate_tsconfig() {
       echo "run command ->" + $line
       cd $line
       $JSII
+      python3 ${root}/tools/update_tsconfig.py --folder_path=${line}
     done
 
     cd $root

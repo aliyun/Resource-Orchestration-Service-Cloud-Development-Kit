@@ -38,7 +38,7 @@ export interface NetworkProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ENS::Network`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ENS::Network`, which is used to create a virtual private cloud (VPC).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNetwork`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-network
  */

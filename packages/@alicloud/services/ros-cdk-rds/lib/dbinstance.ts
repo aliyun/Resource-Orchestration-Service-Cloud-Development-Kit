@@ -304,7 +304,7 @@ export interface DBInstanceProps {
     /**
      * Property preferredBackupPeriod: The backup period. Separate multiple values with commas (,). The default value is the original value. Valid values:Monday Tuesday Wednesday Thursday Friday Saturday Sunday Note When the BackupPolicyMode parameter is set to DataBackupPolicy, this parameter is required.
      */
-    readonly preferredBackupPeriod?: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly preferredBackupPeriod?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property preferredBackupTime: The time when the backup task is performed. Format: yyyy-MM-ddZ-HH:mm:ssZ.Note When the BackupPolicyMode parameter is set to DataBackupPolicy, this parameter is required.

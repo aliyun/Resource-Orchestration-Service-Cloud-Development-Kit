@@ -169,7 +169,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// as they participate in synthesizing the cloud assembly.
         /// </remarks>
         [JsiiMethod(name: "synthesize", parametersJson: "[{\"name\":\"session\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.ISynthesisSession\"}}]")]
-        protected override void Synthesize(AlibabaCloud.SDK.ROS.CDK.Core.ISynthesisSession session)
+        public override void Synthesize(AlibabaCloud.SDK.ROS.CDK.Core.ISynthesisSession session)
         {
             InvokeInstanceVoidMethod(new System.Type[]{typeof(AlibabaCloud.SDK.ROS.CDK.Core.ISynthesisSession)}, new object[]{session});
         }
@@ -181,11 +181,44 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             return InvokeInstanceMethod<string>(new System.Type[]{typeof(object), typeof(double)}, new object?[]{obj, space})!;
         }
 
+        /// <summary>The ALIYUN account into which this stack will be deployed.</summary>
+        /// <remarks>
+        /// This value is resolved according to the following rules:
+        ///
+        /// <list type="number">
+        /// <description>The value provided to <c>env.account</c> when the stack is defined. This can
+        /// either be a concrete account or the <c>ALIYUN.ACCOUNT_ID</c> token.</description>
+        /// <description><c>ALIYUN.ACCOUNT_ID</c>, which represents the ROS intrinsic reference
+        /// <c>{ "Ref": "ALIYUN::AccountId" }</c> encoded as a string token.</description>
+        /// </list>
+        ///
+        /// Preferably, you should use the return value as an opaque string and not
+        /// attempt to parse it to implement your logic. If you do, you must first
+        /// check that it is a concrete value an not an unresolved token. If this
+        /// value is an unresolved token (<c>Token.isUnresolved(stack.account)</c> returns
+        /// <c>true</c>), this implies that the user wishes that this stack will synthesize
+        /// into a <strong>account-agnostic template</strong>. In this case, your code should either
+        /// fail (throw an error, emit a synth error using <c>Annotations.of(construct).addError()</c>) or
+        /// implement some other region-agnostic behavior.
+        /// </remarks>
+        [JsiiProperty(name: "account", typeJson: "{\"primitive\":\"string\"}")]
+        public virtual string Account
+        {
+            get => GetInstanceProperty<string>()!;
+        }
+
         /// <summary>The ID of the cloud assembly artifact for this stack.</summary>
         [JsiiProperty(name: "artifactId", typeJson: "{\"primitive\":\"string\"}")]
         public virtual string ArtifactId
         {
             get => GetInstanceProperty<string>()!;
+        }
+
+        /// <summary>Indicates whether the stack requires bundling or not.</summary>
+        [JsiiProperty(name: "bundlingRequired", typeJson: "{\"primitive\":\"boolean\"}")]
+        public virtual bool BundlingRequired
+        {
+            get => GetInstanceProperty<bool>()!;
         }
 
         /// <summary>Return the stacks this stack depends on.</summary>
@@ -206,6 +239,32 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         public virtual bool Nested
         {
             get => GetInstanceProperty<bool>()!;
+        }
+
+        /// <summary>The ALIYUN region into which this stack will be deployed (e.g. `cn-beijing`).</summary>
+        /// <remarks>
+        /// This value is resolved according to the following rules:
+        ///
+        /// <list type="number">
+        /// <description>The value provided to <c>env.region</c> when the stack is defined. This can
+        /// either be a concrete region or the <c>ALIYUN.REGION</c> token.</description>
+        /// <description><c>ALIYUN.REGION</c>, which is represents the ROS intrinsic reference
+        /// <c>{ "Ref": "ALIYUN::Region" }</c> encoded as a string token.</description>
+        /// </list>
+        ///
+        /// Preferably, you should use the return value as an opaque string and not
+        /// attempt to parse it to implement your logic. If you do, you must first
+        /// check that it is a concrete value an not an unresolved token. If this
+        /// value is an unresolved token (<c>Token.isUnresolved(stack.region)</c> returns
+        /// <c>true</c>), this implies that the user wishes that this stack will synthesize
+        /// into a <strong>region-agnostic template</strong>. In this case, your code should either
+        /// fail (throw an error, emit a synth error using <c>Annotations.of(construct).addError()</c>) or
+        /// implement some other region-agnostic behavior.
+        /// </remarks>
+        [JsiiProperty(name: "region", typeJson: "{\"primitive\":\"string\"}")]
+        public virtual string Region
+        {
+            get => GetInstanceProperty<string>()!;
         }
 
         /// <summary>The ID of the stack.</summary>
@@ -294,6 +353,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.Stack? ParentStack
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.Stack?>();
+        }
+
+        [JsiiOptional]
+        [JsiiProperty(name: "roles", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.RamRoles\"}", isOptional: true)]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IRamRoles? Roles
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IRamRoles?>();
+            set => SetInstanceProperty(value);
         }
     }
 }

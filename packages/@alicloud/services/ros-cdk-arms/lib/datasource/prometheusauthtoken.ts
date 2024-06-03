@@ -16,7 +16,7 @@ export interface PrometheusAuthTokenProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ARMS::PrometheusAuthToken`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ARMS::PrometheusAuthToken`, which is used to query an authentication token for read and write over the Internet.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPrometheusAuthToken`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-prometheusauthtoken
  */

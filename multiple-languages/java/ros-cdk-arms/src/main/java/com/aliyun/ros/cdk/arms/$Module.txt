@@ -2,6 +2,8 @@
 @alicloud/ros-cdk-arms.AlertContactGroup=com.aliyun.ros.cdk.arms.AlertContactGroup
 @alicloud/ros-cdk-arms.AlertContactGroupProps=com.aliyun.ros.cdk.arms.AlertContactGroupProps
 @alicloud/ros-cdk-arms.AlertContactProps=com.aliyun.ros.cdk.arms.AlertContactProps
+@alicloud/ros-cdk-arms.ApplyAlertRuleTemplate=com.aliyun.ros.cdk.arms.ApplyAlertRuleTemplate
+@alicloud/ros-cdk-arms.ApplyAlertRuleTemplateProps=com.aliyun.ros.cdk.arms.ApplyAlertRuleTemplateProps
 @alicloud/ros-cdk-arms.ManagedPrometheus=com.aliyun.ros.cdk.arms.ManagedPrometheus
 @alicloud/ros-cdk-arms.ManagedPrometheusProps=com.aliyun.ros.cdk.arms.ManagedPrometheusProps
 @alicloud/ros-cdk-arms.Prometheus=com.aliyun.ros.cdk.arms.Prometheus
@@ -12,6 +14,8 @@
 @alicloud/ros-cdk-arms.RosAlertContactGroup=com.aliyun.ros.cdk.arms.RosAlertContactGroup
 @alicloud/ros-cdk-arms.RosAlertContactGroupProps=com.aliyun.ros.cdk.arms.RosAlertContactGroupProps
 @alicloud/ros-cdk-arms.RosAlertContactProps=com.aliyun.ros.cdk.arms.RosAlertContactProps
+@alicloud/ros-cdk-arms.RosApplyAlertRuleTemplate=com.aliyun.ros.cdk.arms.RosApplyAlertRuleTemplate
+@alicloud/ros-cdk-arms.RosApplyAlertRuleTemplateProps=com.aliyun.ros.cdk.arms.RosApplyAlertRuleTemplateProps
 @alicloud/ros-cdk-arms.RosManagedPrometheus=com.aliyun.ros.cdk.arms.RosManagedPrometheus
 @alicloud/ros-cdk-arms.RosManagedPrometheusProps=com.aliyun.ros.cdk.arms.RosManagedPrometheusProps
 @alicloud/ros-cdk-arms.RosPrometheus=com.aliyun.ros.cdk.arms.RosPrometheus

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.slb;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SLB::Rule</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SLB::Rule</code>, which is used to add forwarding rules to an HTTP or HTTPS listener.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:35.304Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:54.505Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosRule")
 public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
 

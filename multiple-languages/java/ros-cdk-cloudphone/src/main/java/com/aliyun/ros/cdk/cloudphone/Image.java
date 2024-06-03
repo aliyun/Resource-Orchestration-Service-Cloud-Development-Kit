@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cloudphone;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CloudPhone::Image</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CloudPhone::Image</code>, which is used to create a custom image for an Elastic Cloud Phone (ECP) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:30.957Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:50.164Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudphone.$Module.class, fqn = "@alicloud/ros-cdk-cloudphone.Image")
 public class Image extends com.aliyun.ros.cdk.core.Resource {
 

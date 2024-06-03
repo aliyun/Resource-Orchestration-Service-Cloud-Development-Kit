@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oss;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::OSS::Bucket</code>, which is used to create an Object Storage Service (OSS) bucket.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-04-09T06:05:34.270Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:53.120Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.Bucket")
 public class Bucket extends com.aliyun.ros.cdk.core.Resource {
 
@@ -38,6 +38,15 @@ public class Bucket extends com.aliyun.ros.cdk.core.Resource {
     public Bucket(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.oss.BucketProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
         software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), java.util.Objects.requireNonNull(props, "props is required") });
+    }
+
+    /**
+     * Thrown an exception if the given bucket name is not valid.
+     * <p>
+     * @param physicalName name of the bucket. This parameter is required.
+     */
+    public static void validateBucketName(final @org.jetbrains.annotations.NotNull java.lang.String physicalName) {
+        software.amazon.jsii.JsiiObject.jsiiStaticCall(com.aliyun.ros.cdk.oss.Bucket.class, "validateBucketName", software.amazon.jsii.NativeType.VOID, new Object[] { java.util.Objects.requireNonNull(physicalName, "physicalName is required") });
     }
 
     /**

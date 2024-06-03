@@ -62,7 +62,7 @@ export interface VSwitchCidrReservationProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VSwitchCidrReservation`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VSwitchCidrReservation`, which is used to create a reserved CIDR block for a vSwitch.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVSwitchCidrReservation`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vswitchcidrreservation
  */
