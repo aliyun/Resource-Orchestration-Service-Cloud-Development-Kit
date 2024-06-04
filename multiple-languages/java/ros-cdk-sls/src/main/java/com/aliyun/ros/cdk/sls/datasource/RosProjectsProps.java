@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.sls.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-sls-projects
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:54.655Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:57.690Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.datasource.RosProjectsProps")
 @software.amazon.jsii.Jsii.Proxy(RosProjectsProps.Jsii$Proxy.class)
 public interface RosProjectsProps extends software.amazon.jsii.JsiiSerializable {

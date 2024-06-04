@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ehpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-autoscaleconfig
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:51.961Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:55.269Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.RosAutoScaleConfigProps")
 @software.amazon.jsii.Jsii.Proxy(RosAutoScaleConfigProps.Jsii$Proxy.class)
 public interface RosAutoScaleConfigProps extends software.amazon.jsii.JsiiSerializable {

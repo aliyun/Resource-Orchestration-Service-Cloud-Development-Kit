@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Configuration properties for DefaultStackSynthesizer.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:49.254Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:52.165Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.DefaultStackSynthesizerProps")
 @software.amazon.jsii.Jsii.Proxy(DefaultStackSynthesizerProps.Jsii$Proxy.class)
 public interface DefaultStackSynthesizerProps extends software.amazon.jsii.JsiiSerializable {

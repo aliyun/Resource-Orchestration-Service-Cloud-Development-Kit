@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.redis.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::REDIS::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:54.150Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:57.160Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.datasource.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dns;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DNS::Domain</code>, which is used to add a domain name.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:50.900Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:53.891Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dns.$Module.class, fqn = "@alicloud/ros-cdk-dns.RosDomain")
 public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.waf;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::WAF::Instance</code>, which is used to create a Web Application Firewall (WAF) instance 2.0.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:55.169Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:58.238Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.waf.$Module.class, fqn = "@alicloud/ros-cdk-waf.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 

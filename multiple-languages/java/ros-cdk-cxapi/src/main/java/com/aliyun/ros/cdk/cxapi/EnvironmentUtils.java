@@ -1,6 +1,6 @@
 package com.aliyun.ros.cdk.cxapi;
 
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:49.227Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:52.130Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cxapi.$Module.class, fqn = "@alicloud/ros-cdk-cxapi.EnvironmentUtils")
 public class EnvironmentUtils extends software.amazon.jsii.JsiiObject {
 

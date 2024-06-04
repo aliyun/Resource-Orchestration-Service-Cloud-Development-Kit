@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cen.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-ceninstances
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:50.046Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:52.963Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.datasource.CenInstancesProps")
 @software.amazon.jsii.Jsii.Proxy(CenInstancesProps.Jsii$Proxy.class)
 public interface CenInstancesProps extends software.amazon.jsii.JsiiSerializable {

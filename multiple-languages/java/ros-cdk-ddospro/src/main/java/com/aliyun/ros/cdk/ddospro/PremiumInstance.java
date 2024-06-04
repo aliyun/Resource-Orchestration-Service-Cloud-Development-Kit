@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ddospro;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::DDoSPro::PremiumInstance</code>, which is used to create an Anti-DDoS Proxy (Outside Chinese Mainland) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:50.767Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:53.753Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ddospro.$Module.class, fqn = "@alicloud/ros-cdk-ddospro.PremiumInstance")
 public class PremiumInstance extends com.aliyun.ros.cdk.core.Resource {
 

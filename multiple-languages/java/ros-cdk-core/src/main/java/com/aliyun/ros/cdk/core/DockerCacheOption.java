@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Options for configuring the Docker cache backend.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:49.258Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:52.169Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.DockerCacheOption")
 @software.amazon.jsii.Jsii.Proxy(DockerCacheOption.Jsii$Proxy.class)
 public interface DockerCacheOption extends software.amazon.jsii.JsiiSerializable {

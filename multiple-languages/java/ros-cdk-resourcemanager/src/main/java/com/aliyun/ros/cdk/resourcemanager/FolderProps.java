@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.resourcemanager;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-folder
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:54.180Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:57.196Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.resourcemanager.$Module.class, fqn = "@alicloud/ros-cdk-resourcemanager.FolderProps")
 @software.amazon.jsii.Jsii.Proxy(FolderProps.Jsii$Proxy.class)
 public interface FolderProps extends software.amazon.jsii.JsiiSerializable {

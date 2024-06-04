@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.devops;
  * <p>
  * YAML-based pipelines are supported.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:50.811Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:53.801Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.devops.$Module.class, fqn = "@alicloud/ros-cdk-devops.RosPipeline")
 public class RosPipeline extends com.aliyun.ros.cdk.core.RosResource {
 

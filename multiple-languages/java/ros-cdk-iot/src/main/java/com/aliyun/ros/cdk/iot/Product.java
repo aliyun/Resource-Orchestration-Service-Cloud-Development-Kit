@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.iot;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::IOT::Product</code>, which is used to create a product.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:52.637Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:55.923Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.iot.$Module.class, fqn = "@alicloud/ros-cdk-iot.Product")
 public class Product extends com.aliyun.ros.cdk.core.Resource {
 

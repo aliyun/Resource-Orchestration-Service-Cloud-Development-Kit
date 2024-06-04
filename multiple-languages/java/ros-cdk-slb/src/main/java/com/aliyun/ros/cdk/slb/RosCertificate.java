@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.slb;
  * <p>
  * Server certificates and certificate authority (CA) certificates are supported.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:54.487Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:57.522Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosCertificate")
 public class RosCertificate extends com.aliyun.ros.cdk.core.RosResource {
 

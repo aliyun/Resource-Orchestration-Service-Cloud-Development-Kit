@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.hbr.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-hbr-vaults
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:52.601Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:55.888Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.datasource.VaultsProps")
 @software.amazon.jsii.Jsii.Proxy(VaultsProps.Jsii$Proxy.class)
 public interface VaultsProps extends software.amazon.jsii.JsiiSerializable {

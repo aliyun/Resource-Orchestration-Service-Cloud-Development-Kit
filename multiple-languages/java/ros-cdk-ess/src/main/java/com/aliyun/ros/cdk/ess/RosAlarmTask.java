@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ESS::AlarmTask</code>, which is used to create a metric-based alarm task.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:52.142Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:55.452Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosAlarmTask")
 public class RosAlarmTask extends com.aliyun.ros.cdk.core.RosResource {
 

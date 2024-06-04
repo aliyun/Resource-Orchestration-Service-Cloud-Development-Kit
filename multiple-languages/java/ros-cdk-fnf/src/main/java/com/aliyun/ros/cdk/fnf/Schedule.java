@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fnf;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::FNF::Schedule</code>, which is used to create a time-based schedule.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:52.334Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:55.649Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fnf.$Module.class, fqn = "@alicloud/ros-cdk-fnf.Schedule")
 public class Schedule extends com.aliyun.ros.cdk.core.Resource {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dts.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::DTS::MigrationInstances</code>, which is used to query information about Data Transmission Service (DTS) tasks.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:51.045Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:54.044Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.datasource.RosMigrationInstances")
 public class RosMigrationInstances extends com.aliyun.ros.cdk.core.RosResource {
 

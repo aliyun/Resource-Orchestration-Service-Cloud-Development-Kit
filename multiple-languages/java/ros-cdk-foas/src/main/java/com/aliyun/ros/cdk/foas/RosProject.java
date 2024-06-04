@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.foas;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::FOAS::Project</code>, which is used to create a project in a Realtime Compute cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:52.365Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:55.662Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.foas.$Module.class, fqn = "@alicloud/ros-cdk-foas.RosProject")
 public class RosProject extends com.aliyun.ros.cdk.core.RosResource {
 

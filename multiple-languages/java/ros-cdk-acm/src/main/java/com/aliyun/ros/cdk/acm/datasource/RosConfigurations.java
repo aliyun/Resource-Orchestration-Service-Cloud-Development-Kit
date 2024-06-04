@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.acm.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::ACM::Configurations</code>, which is used to query the details of configurations.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:49.373Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:52.287Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.acm.$Module.class, fqn = "@alicloud/ros-cdk-acm.datasource.RosConfigurations")
 public class RosConfigurations extends com.aliyun.ros.cdk.core.RosResource {
 

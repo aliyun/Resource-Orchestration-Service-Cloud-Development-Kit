@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.kms.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kms-secrets
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:52.737Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:56.038Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.datasource.SecretsProps")
 @software.amazon.jsii.Jsii.Proxy(SecretsProps.Jsii$Proxy.class)
 public interface SecretsProps extends software.amazon.jsii.JsiiSerializable {

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.devops;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-pipelinerun
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:50.815Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:53.805Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.devops.$Module.class, fqn = "@alicloud/ros-cdk-devops.RosPipelineRunProps")
 @software.amazon.jsii.Jsii.Proxy(RosPipelineRunProps.Jsii$Proxy.class)
 public interface RosPipelineRunProps extends software.amazon.jsii.JsiiSerializable {

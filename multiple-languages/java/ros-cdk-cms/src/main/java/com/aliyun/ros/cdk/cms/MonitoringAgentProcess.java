@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CMS::MonitoringAgentProcess</code>, which is used to create a task to monitor a process.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:50.287Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:53.237Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.MonitoringAgentProcess")
 public class MonitoringAgentProcess extends com.aliyun.ros.cdk.core.Resource {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mongodb;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::MONGODB::Instance</code>, which is used to create or clone an ApsaraDB for MongoDB replica set instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:52.864Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:56.144Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 

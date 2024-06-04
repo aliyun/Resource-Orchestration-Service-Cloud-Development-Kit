@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ddospro;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DDoSPro::Port</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:50.785Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:53.775Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ddospro.$Module.class, fqn = "@alicloud/ros-cdk-ddospro.RosPort")
 public class RosPort extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.fc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-layer
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:55.225Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:58.313Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosLayerProps")
 @software.amazon.jsii.Jsii.Proxy(RosLayerProps.Jsii$Proxy.class)
 public interface RosLayerProps extends software.amazon.jsii.JsiiSerializable {

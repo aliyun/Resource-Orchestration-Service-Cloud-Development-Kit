@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sag;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SAG::SerialNumberBinding</code>, which is used to associate a Smart Access Gateway (SAG) device with an SAG instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:54.397Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:57.419Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.RosSerialNumberBinding")
 public class RosSerialNumberBinding extends com.aliyun.ros.cdk.core.RosResource {
 

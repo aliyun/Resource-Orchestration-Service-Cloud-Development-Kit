@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pvtz;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::PVTZ::UserVpcAuthorization</code>, which is used to associate virtual private clouds (VPCs) across accounts.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:53.414Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:56.780Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.RosUserVpcAuthorization")
 public class RosUserVpcAuthorization extends com.aliyun.ros.cdk.core.RosResource {
 

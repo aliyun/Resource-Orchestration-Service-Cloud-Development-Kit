@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.sag;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-qos
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:54.397Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:57.419Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.RosQosProps")
 @software.amazon.jsii.Jsii.Proxy(RosQosProps.Jsii$Proxy.class)
 public interface RosQosProps extends software.amazon.jsii.JsiiSerializable {

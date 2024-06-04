@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::RDS::MigrateTask</code>, which is used to create a migration task to restore backup files from an Object Storage Service (OSS) bucket to an ApsaraDB RDS for SQL Server instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:54.013Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:57.059Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosMigrateTask")
 public class RosMigrateTask extends com.aliyun.ros.cdk.core.RosResource {
 

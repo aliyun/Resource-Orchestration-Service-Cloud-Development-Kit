@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ehpc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::EHPC::AutoScaleConfig</code>, which is used to configure the auto scaling settings of a cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:51.930Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:55.236Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.AutoScaleConfig")
 public class AutoScaleConfig extends com.aliyun.ros.cdk.core.Resource {
 

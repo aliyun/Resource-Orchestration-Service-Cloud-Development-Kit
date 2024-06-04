@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.arms;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ARMS::ApplyAlertRuleTemplate</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:49.745Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:52.669Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.ApplyAlertRuleTemplate")
 public class ApplyAlertRuleTemplate extends com.aliyun.ros.cdk.core.Resource {
 

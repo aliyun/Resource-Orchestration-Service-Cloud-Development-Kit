@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cddc.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cddc-dedicatedhostgroups
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:49.893Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:52.825Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cddc.$Module.class, fqn = "@alicloud/ros-cdk-cddc.datasource.RosDedicatedHostGroupsProps")
 @software.amazon.jsii.Jsii.Proxy(RosDedicatedHostGroupsProps.Jsii$Proxy.class)
 public interface RosDedicatedHostGroupsProps extends software.amazon.jsii.JsiiSerializable {

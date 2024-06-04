@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CEN::CenBandwidthPackageAssociation</code>, which is used to bind a bandwidth package to the specified Cloud Enterprise Network (CEN) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:49.954Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:52.879Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosCenBandwidthPackageAssociation")
 public class RosCenBandwidthPackageAssociation extends com.aliyun.ros.cdk.core.RosResource {
 

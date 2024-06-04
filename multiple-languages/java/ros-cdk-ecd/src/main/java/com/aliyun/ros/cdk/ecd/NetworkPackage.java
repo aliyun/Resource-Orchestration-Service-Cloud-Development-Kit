@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecd;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECD::NetworkPackage</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:51.119Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:54.122Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecd.$Module.class, fqn = "@alicloud/ros-cdk-ecd.NetworkPackage")
 public class NetworkPackage extends com.aliyun.ros.cdk.core.Resource {
 

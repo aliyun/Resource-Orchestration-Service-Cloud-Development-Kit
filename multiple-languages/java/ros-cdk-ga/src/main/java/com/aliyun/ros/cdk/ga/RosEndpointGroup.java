@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::GA::EndpointGroup</code>, which is used to create an endpoint group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:52.436Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-04T02:47:55.741Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.RosEndpointGroup")
 public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
 
