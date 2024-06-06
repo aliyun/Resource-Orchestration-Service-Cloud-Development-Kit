@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.emr.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-emr-flowprojects
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:52.045Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:15.054Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.emr.$Module.class, fqn = "@alicloud/ros-cdk-emr.datasource.FlowProjectsProps")
 @software.amazon.jsii.Jsii.Proxy(FlowProjectsProps.Jsii$Proxy.class)
 public interface FlowProjectsProps extends software.amazon.jsii.JsiiSerializable {

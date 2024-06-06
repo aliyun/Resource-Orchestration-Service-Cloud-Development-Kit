@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.paiplugin;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paiplugin-campaign
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:53.270Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:16.638Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.paiplugin.$Module.class, fqn = "@alicloud/ros-cdk-paiplugin.RosCampaignProps")
 @software.amazon.jsii.Jsii.Proxy(RosCampaignProps.Jsii$Proxy.class)
 public interface RosCampaignProps extends software.amazon.jsii.JsiiSerializable {

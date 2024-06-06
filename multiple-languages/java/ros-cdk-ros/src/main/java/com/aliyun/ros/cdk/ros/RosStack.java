@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ros;
  * <p>
  * You can nest stacks up to five levels of depth.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:54.277Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:17.281Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.RosStack")
 public class RosStack extends com.aliyun.ros.cdk.core.RosResource {
 

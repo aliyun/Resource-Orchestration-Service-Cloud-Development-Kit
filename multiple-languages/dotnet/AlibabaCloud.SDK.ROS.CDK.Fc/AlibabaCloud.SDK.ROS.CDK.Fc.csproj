@@ -157,7 +157,7 @@
 		
     
 		
-		<PackageReference Include="AlibabaCloud.SDK.ROS.CDK.OssAssets" Version="[1.0.25,2.0.0)"/>
+		<PackageReference Include="AlibabaCloud.SDK.ROS.CDK.Ossassets" Version="[1.0.25,2.0.0)"/>
 		
 		
     

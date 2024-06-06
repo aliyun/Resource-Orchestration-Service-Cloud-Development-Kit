@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ROS::CustomResource</code>, which is used to create a custom resource.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:54.249Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:17.262Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.CustomResource")
 public class CustomResource extends com.aliyun.ros.cdk.core.Resource {
 
