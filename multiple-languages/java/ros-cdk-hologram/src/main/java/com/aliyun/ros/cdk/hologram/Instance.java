@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hologram;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::Hologram::Instance</code>, which is used to create a Hologres instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:52.602Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:15.601Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hologram.$Module.class, fqn = "@alicloud/ros-cdk-hologram.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 

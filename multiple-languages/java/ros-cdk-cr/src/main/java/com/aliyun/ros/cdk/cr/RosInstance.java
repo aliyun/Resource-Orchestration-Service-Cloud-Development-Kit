@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cr;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CR::Instance</code>, which is used to create a Container Registry Enterprise Edition instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:50.472Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:13.387Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.edas;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::EDAS::K8sCluster</code>, which is used to create a cluster of Container Service for Kubernetes (ACK).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:51.897Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:14.893Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.RosK8sCluster")
 public class RosK8sCluster extends com.aliyun.ros.cdk.core.RosResource {
 

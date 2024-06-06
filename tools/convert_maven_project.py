@@ -234,7 +234,7 @@ def write_xml():
     plugins_node.appendChild(plugin_4_node)
     plugins_node.appendChild(plugin_5_node)
 
-    # write executions
+    # write executions and update version
     artifact_id_nodes = root_node.getElementsByTagName("artifactId")
     for artifact_id_node in artifact_id_nodes:
         if artifact_id_node.childNodes[0].data == "maven-compiler-plugin":
@@ -260,6 +260,13 @@ def write_xml():
                     childNode2.appendChild(encoding_2_node)
                 elif childNode2.nodeName == "executions":
                     new_plugin_id_node_2.removeChild(childNode2)
+
+        if artifact_id_node.childNodes[0].data == "maven-source-plugin":
+            new_plugin_id_node_3 = artifact_id_node.parentNode
+            for childNode3 in new_plugin_id_node_3.childNodes:
+                if childNode3.nodeName == "version":
+                    childNode3.firstChild.replaceWholeText("3.2.1")
+                    break
     # write properties
     properties_nodes = root_node.getElementsByTagName("properties")
     for property_node in properties_nodes:

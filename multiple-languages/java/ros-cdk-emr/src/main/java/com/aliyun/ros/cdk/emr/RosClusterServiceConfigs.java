@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.emr;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::EMR::ClusterServiceConfigs</code>, which is used to create or modify the configurations of a specified service in a cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:52.039Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:15.048Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.emr.$Module.class, fqn = "@alicloud/ros-cdk-emr.RosClusterServiceConfigs")
 public class RosClusterServiceConfigs extends com.aliyun.ros.cdk.core.RosResource {
 

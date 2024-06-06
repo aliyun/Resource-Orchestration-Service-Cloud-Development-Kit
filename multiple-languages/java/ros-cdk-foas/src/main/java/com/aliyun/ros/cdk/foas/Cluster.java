@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.foas;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::FOAS::Cluster</code>, which is used to create a cluster for an order in exclusive mode.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:52.342Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:15.355Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.foas.$Module.class, fqn = "@alicloud/ros-cdk-foas.Cluster")
 public class Cluster extends com.aliyun.ros.cdk.core.Resource {
 

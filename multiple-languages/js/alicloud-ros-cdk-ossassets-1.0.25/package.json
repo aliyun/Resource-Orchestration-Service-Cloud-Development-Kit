@@ -28,8 +28,8 @@
         ]
       },
       "dotnet": {
-        "namespace": "AlibabaCloud.SDK.ROS.CDK.OssAssets",
-        "packageId": "AlibabaCloud.SDK.ROS.CDK.OssAssets"
+        "namespace": "AlibabaCloud.SDK.ROS.CDK.Ossassets",
+        "packageId": "AlibabaCloud.SDK.ROS.CDK.Ossassets"
       }
     }
   },

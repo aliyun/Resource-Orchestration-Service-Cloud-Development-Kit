@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.assembly.schema;
 /**
  * Destination for assets that need to be uploaded to AliCloud.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:49.176Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:11.893Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.assembly.schema.$Module.class, fqn = "@alicloud/ros-cdk-assembly-schema.AliCloudDestination")
 @software.amazon.jsii.Jsii.Proxy(AliCloudDestination.Jsii$Proxy.class)
 public interface AliCloudDestination extends software.amazon.jsii.JsiiSerializable {

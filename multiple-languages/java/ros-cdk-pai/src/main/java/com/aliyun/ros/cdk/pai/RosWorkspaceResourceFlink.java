@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pai;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::PAI::WorkspaceResourceFlink</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:53.200Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:16.561Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pai.$Module.class, fqn = "@alicloud/ros-cdk-pai.RosWorkspaceResourceFlink")
 public class RosWorkspaceResourceFlink extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cddc;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CDDC::MyBase</code>, which is used to create hosts in a dedicated cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-03T08:19:49.886Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:12.769Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cddc.$Module.class, fqn = "@alicloud/ros-cdk-cddc.RosMyBase")
 public class RosMyBase extends com.aliyun.ros.cdk.core.RosResource {
 
