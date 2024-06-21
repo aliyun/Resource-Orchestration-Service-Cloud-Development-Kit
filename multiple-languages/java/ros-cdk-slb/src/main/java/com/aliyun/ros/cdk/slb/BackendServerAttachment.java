@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SLB::BackendServerAttachment</code>, which is used to attach backend servers to an SLB instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:17.453Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:12.283Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.BackendServerAttachment")
 public class BackendServerAttachment extends com.aliyun.ros.cdk.core.Resource {
 

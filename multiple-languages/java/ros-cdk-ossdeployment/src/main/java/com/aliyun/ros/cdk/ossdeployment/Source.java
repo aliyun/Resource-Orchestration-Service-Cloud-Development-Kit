@@ -13,7 +13,7 @@ package com.aliyun.ros.cdk.ossdeployment;
  *  Source.jsonData('config.json', { key: value })
  * </pre></blockquote>
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:18.311Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:13.134Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ossdeployment.$Module.class, fqn = "@alicloud/ros-cdk-ossdeployment.Source")
 public class Source extends software.amazon.jsii.JsiiObject {
 
@@ -28,6 +28,23 @@ public class Source extends software.amazon.jsii.JsiiObject {
     public Source() {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
         software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this);
+    }
+
+    /**
+     * Uses a local file path as the source of the target bucket contents.
+     * <p>
+     * ROS CDK will create a temporary bucket and upload the files you want to upload to it.
+     * Make sure that the region id you specify in synth and deploy is the same region id as the destination upload bucket.
+     * <p>
+     * If the local asset is a .zip archive, make sure you trust the
+     * producer of the archive.
+     * <p>
+     * @param path The path to a local file or a directory. This parameter is required.
+     * @param options Options for the Asset.
+     * @param objectPrefix The prefix of object key.
+     */
+    public static @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ossdeployment.ISource asset(final @org.jetbrains.annotations.NotNull java.lang.String path, final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.ossassets.AssetOptions options, final @org.jetbrains.annotations.Nullable java.lang.String objectPrefix) {
+        return software.amazon.jsii.JsiiObject.jsiiStaticCall(com.aliyun.ros.cdk.ossdeployment.Source.class, "asset", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ossdeployment.ISource.class), new Object[] { java.util.Objects.requireNonNull(path, "path is required"), options, objectPrefix });
     }
 
     /**

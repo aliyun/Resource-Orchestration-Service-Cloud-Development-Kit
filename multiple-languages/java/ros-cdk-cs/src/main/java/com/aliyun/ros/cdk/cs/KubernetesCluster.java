@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CS::KubernetesCluster</code>, which is used to create a Container Service for Kubernetes (ACK) dedicated cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:13.448Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:08.304Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.KubernetesCluster")
 public class KubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -194,7 +194,7 @@ public class KubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param masterInstanceTypes Property masterInstanceTypes: Master node ECS specification type code. This parameter is required.
          */
-        public Builder masterInstanceTypes(final java.util.List<? extends java.lang.Object> masterInstanceTypes) {
+        public Builder masterInstanceTypes(final com.aliyun.ros.cdk.core.IResolvable masterInstanceTypes) {
             this.props.masterInstanceTypes(masterInstanceTypes);
             return this;
         }
@@ -207,7 +207,7 @@ public class KubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param masterInstanceTypes Property masterInstanceTypes: Master node ECS specification type code. This parameter is required.
          */
-        public Builder masterInstanceTypes(final com.aliyun.ros.cdk.core.IResolvable masterInstanceTypes) {
+        public Builder masterInstanceTypes(final java.util.List<? extends java.lang.Object> masterInstanceTypes) {
             this.props.masterInstanceTypes(masterInstanceTypes);
             return this;
         }
@@ -220,7 +220,7 @@ public class KubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param masterVSwitchIds Property masterVSwitchIds: Master node switch ID. This parameter is required.
          */
-        public Builder masterVSwitchIds(final java.util.List<? extends java.lang.Object> masterVSwitchIds) {
+        public Builder masterVSwitchIds(final com.aliyun.ros.cdk.core.IResolvable masterVSwitchIds) {
             this.props.masterVSwitchIds(masterVSwitchIds);
             return this;
         }
@@ -232,7 +232,7 @@ public class KubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param masterVSwitchIds Property masterVSwitchIds: Master node switch ID. This parameter is required.
          */
-        public Builder masterVSwitchIds(final com.aliyun.ros.cdk.core.IResolvable masterVSwitchIds) {
+        public Builder masterVSwitchIds(final java.util.List<? extends java.lang.Object> masterVSwitchIds) {
             this.props.masterVSwitchIds(masterVSwitchIds);
             return this;
         }
@@ -289,7 +289,7 @@ public class KubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param workerVSwitchIds Property workerVSwitchIds: The virtual switch ID of the worker node. This parameter is required.
          */
-        public Builder workerVSwitchIds(final java.util.List<? extends java.lang.Object> workerVSwitchIds) {
+        public Builder workerVSwitchIds(final com.aliyun.ros.cdk.core.IResolvable workerVSwitchIds) {
             this.props.workerVSwitchIds(workerVSwitchIds);
             return this;
         }
@@ -299,7 +299,7 @@ public class KubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param workerVSwitchIds Property workerVSwitchIds: The virtual switch ID of the worker node. This parameter is required.
          */
-        public Builder workerVSwitchIds(final com.aliyun.ros.cdk.core.IResolvable workerVSwitchIds) {
+        public Builder workerVSwitchIds(final java.util.List<? extends java.lang.Object> workerVSwitchIds) {
             this.props.workerVSwitchIds(workerVSwitchIds);
             return this;
         }
@@ -484,6 +484,27 @@ public class KubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder cpuPolicy(final com.aliyun.ros.cdk.core.IResolvable cpuPolicy) {
             this.props.cpuPolicy(cpuPolicy);
+            return this;
+        }
+
+        /**
+         * Property deleteOptions: Delete options, only work for deleting resource.
+         * <p>
+         * @return {@code this}
+         * @param deleteOptions Property deleteOptions: Delete options, only work for deleting resource. This parameter is required.
+         */
+        public Builder deleteOptions(final com.aliyun.ros.cdk.core.IResolvable deleteOptions) {
+            this.props.deleteOptions(deleteOptions);
+            return this;
+        }
+        /**
+         * Property deleteOptions: Delete options, only work for deleting resource.
+         * <p>
+         * @return {@code this}
+         * @param deleteOptions Property deleteOptions: Delete options, only work for deleting resource. This parameter is required.
+         */
+        public Builder deleteOptions(final java.util.List<? extends java.lang.Object> deleteOptions) {
+            this.props.deleteOptions(deleteOptions);
             return this;
         }
 

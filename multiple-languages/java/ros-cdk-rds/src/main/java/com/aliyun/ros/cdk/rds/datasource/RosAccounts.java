@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::RDS::Accounts</code>, which is used to query the database accounts of an ApsaraDB RDS instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:17.076Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:11.888Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.datasource.RosAccounts")
 public class RosAccounts extends com.aliyun.ros.cdk.core.RosResource {
 

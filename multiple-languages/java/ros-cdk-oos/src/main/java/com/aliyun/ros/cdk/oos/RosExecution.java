@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oos;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::OOS::Execution</code>, which is used to start an execution.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:16.287Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:11.179Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.RosExecution")
 public class RosExecution extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -117,6 +117,42 @@ public class RosExecution extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setTemplateName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "templateName", java.util.Objects.requireNonNull(value, "templateName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDescription(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "description", value);
+    }
+
+    /**
+     */
+    public void setDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "description", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getLoopMode() {
+        return software.amazon.jsii.Kernel.get(this, "loopMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setLoopMode(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "loopMode", value);
+    }
+
+    /**
+     */
+    public void setLoopMode(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "loopMode", value);
     }
 
     /**
@@ -567,6 +603,40 @@ public class RosExecution extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder templateName(final com.aliyun.ros.cdk.core.IResolvable templateName) {
             this.props.templateName(templateName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param description This parameter is required.
+         */
+        public Builder description(final java.lang.String description) {
+            this.props.description(description);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param description This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props.description(description);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param loopMode This parameter is required.
+         */
+        public Builder loopMode(final java.lang.String loopMode) {
+            this.props.loopMode(loopMode);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param loopMode This parameter is required.
+         */
+        public Builder loopMode(final com.aliyun.ros.cdk.core.IResolvable loopMode) {
+            this.props.loopMode(loopMode);
             return this;
         }
 

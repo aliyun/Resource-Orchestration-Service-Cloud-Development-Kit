@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kms;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::KMS::Alias</code>, which is used to create an alias for a Customer Master Key (CMK).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:15.721Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:10.490Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.RosAlias")
 public class RosAlias extends com.aliyun.ros.cdk.core.RosResource {
 

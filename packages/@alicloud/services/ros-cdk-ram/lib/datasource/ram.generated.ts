@@ -3,6 +3,84 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosAccountAlias`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-accountalias
+ */
+export interface RosAccountAliasProps {
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAccountAliasProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAccountAliasProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAccountAliasPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    return errors.wrap('supplied properties not correct for "RosAccountAliasProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::RAM::AccountAlias` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAccountAliasProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::RAM::AccountAlias` resource.
+ */
+// @ts-ignore TS6133
+function rosAccountAliasPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAccountAliasPropsValidator(properties).assertSuccess();
+    }
+    return {
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::RAM::AccountAlias`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AccountAlias` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-accountalias
+ */
+export class RosAccountAlias extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::RAM::AccountAlias";
+
+    /**
+     * @Attribute AccountAlias: Account alias.
+     */
+    public readonly attrAccountAlias: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAccountAliasProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAccountAlias.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAccountAlias = this.getAtt('AccountAlias');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAccountAliasPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosGroups`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-groups
  */
@@ -275,6 +353,134 @@ export class RosPolicies extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosRole`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-role
+ */
+export interface RosRoleProps {
+
+    /**
+     * @Property roleName: RAM role name. If not specified, the current ram role will be used.
+     */
+    readonly roleName?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosRoleProps`
+ *
+ * @param properties - the TypeScript properties of a `RosRoleProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosRolePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('roleName', ros.validateString)(properties.roleName));
+    return errors.wrap('supplied properties not correct for "RosRoleProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::RAM::Role` resource
+ *
+ * @param properties - the TypeScript properties of a `RosRoleProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::RAM::Role` resource.
+ */
+// @ts-ignore TS6133
+function rosRolePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosRolePropsValidator(properties).assertSuccess();
+    }
+    return {
+      RoleName: ros.stringToRosTemplate(properties.roleName),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::RAM::Role`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Role` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-role
+ */
+export class RosRole extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::RAM::Role";
+
+    /**
+     * @Attribute Arn: The ARN of the RAM role.
+     */
+    public readonly attrArn: ros.IResolvable;
+
+    /**
+     * @Attribute CreateDate: The time when the RAM role was created.
+     */
+    public readonly attrCreateDate: ros.IResolvable;
+
+    /**
+     * @Attribute Description: The description of the RAM role.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute MaxSessionDuration: The maximum session duration of the RAM role.
+     */
+    public readonly attrMaxSessionDuration: ros.IResolvable;
+
+    /**
+     * @Attribute RoleId: The ID of the RAM role.
+     */
+    public readonly attrRoleId: ros.IResolvable;
+
+    /**
+     * @Attribute RoleName: The name of the RAM role.
+     */
+    public readonly attrRoleName: ros.IResolvable;
+
+    /**
+     * @Attribute UpdateDate: The time when the RAM role was last updated.
+     */
+    public readonly attrUpdateDate: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property roleName: RAM role name. If not specified, the current ram role will be used.
+     */
+    public roleName: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosRoleProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosRole.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
+        this.attrCreateDate = this.getAtt('CreateDate');
+        this.attrDescription = this.getAtt('Description');
+        this.attrMaxSessionDuration = this.getAtt('MaxSessionDuration');
+        this.attrRoleId = this.getAtt('RoleId');
+        this.attrRoleName = this.getAtt('RoleName');
+        this.attrUpdateDate = this.getAtt('UpdateDate');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.roleName = props.roleName;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            roleName: this.roleName,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosRolePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosRoles`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-roles
  */
@@ -369,6 +575,142 @@ export class RosRoles extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosRolesPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosUser`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-user
+ */
+export interface RosUserProps {
+
+    /**
+     * @Property userId: RAM user ID. At most one UserName and UserId can be specified; if both are specified, UserName will be used. If neither is specified, the current user ID will be used.
+     */
+    readonly userId?: string | ros.IResolvable;
+
+    /**
+     * @Property userName: RAM user name. At most one UserName and UserId can be specified; if both are specified, UserName will be used. If neither is specified, the current user ID will be used.
+     */
+    readonly userName?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosUserProps`
+ *
+ * @param properties - the TypeScript properties of a `RosUserProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosUserPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('userName', ros.validateString)(properties.userName));
+    errors.collect(ros.propertyValidator('userId', ros.validateString)(properties.userId));
+    return errors.wrap('supplied properties not correct for "RosUserProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::RAM::User` resource
+ *
+ * @param properties - the TypeScript properties of a `RosUserProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::RAM::User` resource.
+ */
+// @ts-ignore TS6133
+function rosUserPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosUserPropsValidator(properties).assertSuccess();
+    }
+    return {
+      UserId: ros.stringToRosTemplate(properties.userId),
+      UserName: ros.stringToRosTemplate(properties.userName),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::RAM::User`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `User` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-user
+ */
+export class RosUser extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::RAM::User";
+
+    /**
+     * @Attribute Comments: The comments of the RAM user.
+     */
+    public readonly attrComments: ros.IResolvable;
+
+    /**
+     * @Attribute DisplayName: The display name of the RAM user.
+     */
+    public readonly attrDisplayName: ros.IResolvable;
+
+    /**
+     * @Attribute Email: The email address of the RAM user.
+     */
+    public readonly attrEmail: ros.IResolvable;
+
+    /**
+     * @Attribute MobilePhone: The mobile phone number of the RAM user.
+     */
+    public readonly attrMobilePhone: ros.IResolvable;
+
+    /**
+     * @Attribute UserId: The ID of the RAM user.
+     */
+    public readonly attrUserId: ros.IResolvable;
+
+    /**
+     * @Attribute UserName: The name of the RAM user.
+     */
+    public readonly attrUserName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property userId: RAM user ID. At most one UserName and UserId can be specified; if both are specified, UserName will be used. If neither is specified, the current user ID will be used.
+     */
+    public userId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property userName: RAM user name. At most one UserName and UserId can be specified; if both are specified, UserName will be used. If neither is specified, the current user ID will be used.
+     */
+    public userName: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosUserProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosUser.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrComments = this.getAtt('Comments');
+        this.attrDisplayName = this.getAtt('DisplayName');
+        this.attrEmail = this.getAtt('Email');
+        this.attrMobilePhone = this.getAtt('MobilePhone');
+        this.attrUserId = this.getAtt('UserId');
+        this.attrUserName = this.getAtt('UserName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.userId = props.userId;
+        this.userName = props.userName;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            userId: this.userId,
+            userName: this.userName,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosUserPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
 

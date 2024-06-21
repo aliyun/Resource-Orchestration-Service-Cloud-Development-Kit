@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.privatelink;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::PrivateLink::VpcEndpoint</code>, which is used to create an endpoint.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:16.779Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:11.527Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.VpcEndpoint")
 public class VpcEndpoint extends com.aliyun.ros.cdk.core.Resource {
 

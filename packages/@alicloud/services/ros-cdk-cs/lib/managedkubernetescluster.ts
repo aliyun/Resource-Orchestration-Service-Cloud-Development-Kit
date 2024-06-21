@@ -22,7 +22,7 @@ export interface ManagedKubernetesClusterProps {
     /**
      * Property vSwitchIds: The virtual switch ID of the worker node.
      */
-    readonly vSwitchIds: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly vSwitchIds: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property addons: A combination of addon plugins for Kubernetes clusters.
@@ -76,6 +76,11 @@ export interface ManagedKubernetesClusterProps {
      * Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0\/16 is used by default.
      */
     readonly containerCidr?: string | ros.IResolvable;
+
+    /**
+     * Property deleteOptions: Delete options, only work for deleting resource.
+     */
+    readonly deleteOptions?: Array<RosManagedKubernetesCluster.DeleteOptionsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property deletionProtection: Specifies whether to enable deletion protection for the cluster. 
@@ -446,6 +451,7 @@ export class ManagedKubernetesCluster extends ros.Resource {
             disableRollback: props.disableRollback === undefined || props.disableRollback === null ? true : props.disableRollback,
             tags: props.tags,
             containerCidr: props.containerCidr === undefined || props.containerCidr === null ? '172.16.0.0/16' : props.containerCidr,
+            deleteOptions: props.deleteOptions,
             keyPair: props.keyPair,
             nodeCidrMask: props.nodeCidrMask,
             vSwitchIds: props.vSwitchIds,

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ens.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::ENS::Instances</code>, which is used to query the details of Edge Node Service (ENS) instances.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:15.137Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:09.931Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ens.$Module.class, fqn = "@alicloud/ros-cdk-ens.datasource.RosInstances")
 public class RosInstances extends com.aliyun.ros.cdk.core.RosResource {
 

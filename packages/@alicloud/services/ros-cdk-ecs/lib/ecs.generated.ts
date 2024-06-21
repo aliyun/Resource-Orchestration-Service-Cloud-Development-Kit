@@ -8532,11 +8532,6 @@ export class RosInstanceGroup extends ros.RosResource {
     public readonly attrPublicIps: ros.IResolvable;
 
     /**
-     * @Attribute RelatedOrderIds: The related order id list of created ecs instances
-     */
-    public readonly attrRelatedOrderIds: ros.IResolvable;
-
-    /**
      * @Attribute ZoneIds: Zone id of created instances.
      */
     public readonly attrZoneIds: ros.IResolvable;
@@ -9026,7 +9021,6 @@ export class RosInstanceGroup extends ros.RosResource {
         this.attrOrderId = this.getAtt('OrderId');
         this.attrPrivateIps = this.getAtt('PrivateIps');
         this.attrPublicIps = this.getAtt('PublicIps');
-        this.attrRelatedOrderIds = this.getAtt('RelatedOrderIds');
         this.attrZoneIds = this.getAtt('ZoneIds');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
@@ -10460,11 +10454,6 @@ export class RosInstanceGroupClone extends ros.RosResource {
     public readonly attrPublicIps: ros.IResolvable;
 
     /**
-     * @Attribute RelatedOrderIds: The related order id list of created ecs instances
-     */
-    public readonly attrRelatedOrderIds: ros.IResolvable;
-
-    /**
      * @Attribute ZoneIds: Zone id of created instances.
      */
     public readonly attrZoneIds: ros.IResolvable;
@@ -10790,7 +10779,6 @@ export class RosInstanceGroupClone extends ros.RosResource {
         this.attrOrderId = this.getAtt('OrderId');
         this.attrPrivateIps = this.getAtt('PrivateIps');
         this.attrPublicIps = this.getAtt('PublicIps');
-        this.attrRelatedOrderIds = this.getAtt('RelatedOrderIds');
         this.attrZoneIds = this.getAtt('ZoneIds');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
@@ -13202,7 +13190,6 @@ function RosNetworkInterfacePropsValidator(properties: any): ros.ValidationResul
     }
     errors.collect(ros.propertyValidator('networkInterfaceTrafficMode', ros.validateString)(properties.networkInterfaceTrafficMode));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('deleteOnRelease', ros.validateBoolean)(properties.deleteOnRelease));
     if(properties.privateIpAddresses && (Array.isArray(properties.privateIpAddresses) || (typeof properties.privateIpAddresses) === 'string')) {
         errors.collect(ros.propertyValidator('privateIpAddresses', ros.validateLength)({
@@ -13212,6 +13199,14 @@ function RosNetworkInterfacePropsValidator(properties: any): ros.ValidationResul
           }));
     }
     errors.collect(ros.propertyValidator('privateIpAddresses', ros.listValidator(ros.validateString))(properties.privateIpAddresses));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    if(properties.secondaryPrivateIpAddressCount && (typeof properties.secondaryPrivateIpAddressCount) !== 'object') {
+        errors.collect(ros.propertyValidator('secondaryPrivateIpAddressCount', ros.validateRange)({
+            data: properties.secondaryPrivateIpAddressCount,
+            min: 1,
+            max: 49,
+          }));
+    }
     errors.collect(ros.propertyValidator('secondaryPrivateIpAddressCount', ros.validateNumber)(properties.secondaryPrivateIpAddressCount));
     if(properties.ipv6PrefixCount && (typeof properties.ipv6PrefixCount) !== 'object') {
         errors.collect(ros.propertyValidator('ipv6PrefixCount', ros.validateRange)({
@@ -13229,9 +13224,10 @@ function RosNetworkInterfacePropsValidator(properties: any): ros.ValidationResul
           }));
     }
     errors.collect(ros.propertyValidator('ipv4Prefixes', ros.listValidator(ros.validateString))(properties.ipv4Prefixes));
-    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('networkInterfaceName', ros.validateString)(properties.networkInterfaceName));
     if(properties.ipv4PrefixCount && (typeof properties.ipv4PrefixCount) !== 'object') {
         errors.collect(ros.propertyValidator('ipv4PrefixCount', ros.validateRange)({
             data: properties.ipv4PrefixCount,
@@ -13240,7 +13236,6 @@ function RosNetworkInterfacePropsValidator(properties: any): ros.ValidationResul
           }));
     }
     errors.collect(ros.propertyValidator('ipv4PrefixCount', ros.validateNumber)(properties.ipv4PrefixCount));
-    errors.collect(ros.propertyValidator('networkInterfaceName', ros.validateString)(properties.networkInterfaceName));
     errors.collect(ros.propertyValidator('primaryIpAddress', ros.validateString)(properties.primaryIpAddress));
     if(properties.ipv6Prefixes && (Array.isArray(properties.ipv6Prefixes) || (typeof properties.ipv6Prefixes) === 'string')) {
         errors.collect(ros.propertyValidator('ipv6Prefixes', ros.validateLength)({

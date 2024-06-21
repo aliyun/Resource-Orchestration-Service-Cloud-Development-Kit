@@ -45,7 +45,7 @@ public final class $Module extends JsiiModule {
     private final Map<String, Class<?>> cache = new HashMap<>();
 
     public $Module() {
-        super("@alicloud/ros-cdk-core", "1.0.27", $Module.class, "ros-cdk-core@1.0.27.jsii.tgz");
+        super("@alicloud/ros-cdk-core", "1.0.28", $Module.class, "ros-cdk-core@1.0.28.jsii.tgz");
     }
 
     @Override

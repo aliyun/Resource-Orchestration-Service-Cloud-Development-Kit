@@ -1,0 +1,4 @@
+@alicloud/ros-cdk-ice.RosSearchLib=com.aliyun.ros.cdk.ice.RosSearchLib
+@alicloud/ros-cdk-ice.RosSearchLibProps=com.aliyun.ros.cdk.ice.RosSearchLibProps
+@alicloud/ros-cdk-ice.SearchLib=com.aliyun.ros.cdk.ice.SearchLib
+@alicloud/ros-cdk-ice.SearchLibProps=com.aliyun.ros.cdk.ice.SearchLibProps

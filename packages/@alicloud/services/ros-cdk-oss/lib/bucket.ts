@@ -83,7 +83,7 @@ export interface BucketProps {
     readonly deletionForce?: boolean | ros.IResolvable;
 
     /**
-     * Property enableOssHdfsService: Whether enable OSS-HDFS service.
+     * Property enableOssHdfsService: Whether enable OSS-HDFS service. 
      * **Note**: Once it's enabled, it can't be disabled again.
      */
     readonly enableOssHdfsService?: boolean | ros.IResolvable;

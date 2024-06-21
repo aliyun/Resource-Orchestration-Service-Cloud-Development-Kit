@@ -41,6 +41,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
             }
         }
 
+        /// <summary>Property deletionForce: Specifies whether to delete the endpoint service even if it has endpoint connections.</summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <description>True</description>
+        /// <description>False (default)</description>
+        /// </list>
+        /// </remarks>
+        [JsiiProperty(name: "deletionForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DeletionForce
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property payer: The payer of the endpoint service.</summary>
         /// <remarks>
         /// Valid values:
@@ -61,6 +78,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
         [JsiiProperty(name: "resource", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-privatelink.RosVpcEndpointService.ResourceProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Resource
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property resourceGroupId: The ID of the resource group.</summary>
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ResourceGroupId
         {
             get
             {
@@ -165,6 +193,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property deletionForce: Specifies whether to delete the endpoint service even if it has endpoint connections.</summary>
+            /// <remarks>
+            /// <list type="bullet">
+            /// <description>True</description>
+            /// <description>False (default)</description>
+            /// </list>
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "deletionForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DeletionForce
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property payer: The payer of the endpoint service.</summary>
             /// <remarks>
             /// Valid values:
@@ -182,6 +224,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
             [JsiiOptional]
             [JsiiProperty(name: "resource", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-privatelink.RosVpcEndpointService.ResourceProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? Resource
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property resourceGroupId: The ID of the resource group.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ResourceGroupId
             {
                 get => GetInstanceProperty<object?>();
             }

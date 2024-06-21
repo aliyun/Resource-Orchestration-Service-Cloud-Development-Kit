@@ -108,7 +108,7 @@ export interface RosASKClusterProps {
      * @Property vSwitchIds: The IDs of VSwitches. If you leave this property empty, the system automatically creates a VSwitch.
      * Note You must specify both the VpcId and VSwitchIds or leave both of them empty.
      */
-    readonly vSwitchIds?: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly vSwitchIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property zoneId: The zone ID.
@@ -137,7 +137,7 @@ function RosASKClusterPropsValidator(properties: any): ros.ValidationResult {
             max: 3,
           }));
     }
-    errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateAny))(properties.vSwitchIds));
+    errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateString))(properties.vSwitchIds));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('addons', ros.listValidator(RosASKCluster_AddonsPropertyValidator))(properties.addons));
     errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
@@ -190,7 +190,7 @@ function rosASKClusterPropsToRosTemplate(properties: any, enableResourceProperty
       Tags: ros.listMapper(rosASKClusterTagsPropertyToRosTemplate)(properties.tags),
       TimeZone: ros.stringToRosTemplate(properties.timeZone),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitchIds: ros.listMapper(ros.objectToRosTemplate)(properties.vSwitchIds),
+      VSwitchIds: ros.listMapper(ros.stringToRosTemplate)(properties.vSwitchIds),
       ZoneId: ros.stringToRosTemplate(properties.zoneId),
     };
 }
@@ -364,7 +364,7 @@ export class RosASKCluster extends ros.RosResource {
      * @Property vSwitchIds: The IDs of VSwitches. If you leave this property empty, the system automatically creates a VSwitch.
      * Note You must specify both the VpcId and VSwitchIds or leave both of them empty.
      */
-    public vSwitchIds: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
+    public vSwitchIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property zoneId: The zone ID.
@@ -3334,12 +3334,12 @@ export interface RosKubernetesClusterProps {
      * @Property masterInstanceTypes: Master node ECS specification type code. For more details, see Instance Type Family. Each item correspond to MasterVSwitchIds.
      * List size must be 3, Instance Type can be repeated.
      */
-    readonly masterInstanceTypes: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly masterInstanceTypes: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property masterVSwitchIds: Master node switch ID. To ensure high availability of the cluster, it is recommended that you select 3 switches and distribute them in different Availability Zones.
      */
-    readonly masterVSwitchIds: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly masterVSwitchIds: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property name: The name of the cluster. The cluster name can use uppercase and lowercase letters, Chinese characters, numbers, and dashes.
@@ -3354,7 +3354,7 @@ export interface RosKubernetesClusterProps {
     /**
      * @Property workerVSwitchIds: The virtual switch ID of the worker node.
      */
-    readonly workerVSwitchIds: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly workerVSwitchIds: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property addons: A combination of addon plugins for Kubernetes clusters.
@@ -3405,6 +3405,11 @@ export interface RosKubernetesClusterProps {
      * @Property cpuPolicy: CPU policy. The cluster version is 1.12.6 and above supports both static and none strategies.
      */
     readonly cpuPolicy?: string | ros.IResolvable;
+
+    /**
+     * @Property deleteOptions: Delete options, only work for deleting resource.
+     */
+    readonly deleteOptions?: Array<RosKubernetesCluster.DeleteOptionsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property deletionProtection: Specifies whether to enable deletion protection for the cluster. 
@@ -3787,6 +3792,7 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
     errors.collect(ros.propertyValidator('disableRollback', ros.validateBoolean)(properties.disableRollback));
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosKubernetesCluster_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('containerCidr', ros.validateString)(properties.containerCidr));
+    errors.collect(ros.propertyValidator('deleteOptions', ros.listValidator(RosKubernetesCluster_DeleteOptionsPropertyValidator))(properties.deleteOptions));
     errors.collect(ros.propertyValidator('cpuPolicy', ros.validateString)(properties.cpuPolicy));
     errors.collect(ros.propertyValidator('keyPair', ros.validateString)(properties.keyPair));
     errors.collect(ros.propertyValidator('nodeCidrMask', ros.validateString)(properties.nodeCidrMask));
@@ -3833,7 +3839,6 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
     }
     errors.collect(ros.propertyValidator('masterSystemDiskSize', ros.validateNumber)(properties.masterSystemDiskSize));
     errors.collect(ros.propertyValidator('workerSystemDiskCategory', ros.validateString)(properties.workerSystemDiskCategory));
-    errors.collect(ros.propertyValidator('nodePortRange', ros.validateString)(properties.nodePortRange));
     if(properties.workerSystemDiskSize && (typeof properties.workerSystemDiskSize) !== 'object') {
         errors.collect(ros.propertyValidator('workerSystemDiskSize', ros.validateRange)({
             data: properties.workerSystemDiskSize,
@@ -3842,6 +3847,7 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
           }));
     }
     errors.collect(ros.propertyValidator('workerSystemDiskSize', ros.validateNumber)(properties.workerSystemDiskSize));
+    errors.collect(ros.propertyValidator('nodePortRange', ros.validateString)(properties.nodePortRange));
     errors.collect(ros.propertyValidator('masterVSwitchIds', ros.requiredValidator)(properties.masterVSwitchIds));
     if(properties.masterVSwitchIds && (Array.isArray(properties.masterVSwitchIds) || (typeof properties.masterVSwitchIds) === 'string')) {
         errors.collect(ros.propertyValidator('masterVSwitchIds', ros.validateLength)({
@@ -3850,7 +3856,7 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
             max: 3,
           }));
     }
-    errors.collect(ros.propertyValidator('masterVSwitchIds', ros.listValidator(ros.validateAny))(properties.masterVSwitchIds));
+    errors.collect(ros.propertyValidator('masterVSwitchIds', ros.listValidator(ros.validateString))(properties.masterVSwitchIds));
     errors.collect(ros.propertyValidator('cloudMonitorFlags', ros.validateBoolean)(properties.cloudMonitorFlags));
     errors.collect(ros.propertyValidator('securityHardeningOs', ros.validateBoolean)(properties.securityHardeningOs));
     errors.collect(ros.propertyValidator('serviceCidr', ros.validateString)(properties.serviceCidr));
@@ -3880,7 +3886,7 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
             max: 3,
           }));
     }
-    errors.collect(ros.propertyValidator('masterInstanceTypes', ros.listValidator(ros.validateAny))(properties.masterInstanceTypes));
+    errors.collect(ros.propertyValidator('masterInstanceTypes', ros.listValidator(ros.validateString))(properties.masterInstanceTypes));
     errors.collect(ros.propertyValidator('masterSystemDiskPerformanceLevel', ros.validateString)(properties.masterSystemDiskPerformanceLevel));
     errors.collect(ros.propertyValidator('workerDataDisks', ros.listValidator(RosKubernetesCluster_WorkerDataDisksPropertyValidator))(properties.workerDataDisks));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
@@ -3911,7 +3917,7 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
             max: undefined,
           }));
     }
-    errors.collect(ros.propertyValidator('workerVSwitchIds', ros.listValidator(ros.validateAny))(properties.workerVSwitchIds));
+    errors.collect(ros.propertyValidator('workerVSwitchIds', ros.listValidator(ros.validateString))(properties.workerVSwitchIds));
     return errors.wrap('supplied properties not correct for "RosKubernetesClusterProps"');
 }
 
@@ -3929,11 +3935,11 @@ function rosKubernetesClusterPropsToRosTemplate(properties: any, enableResourceP
         RosKubernetesClusterPropsValidator(properties).assertSuccess();
     }
     return {
-      MasterInstanceTypes: ros.listMapper(ros.objectToRosTemplate)(properties.masterInstanceTypes),
-      MasterVSwitchIds: ros.listMapper(ros.objectToRosTemplate)(properties.masterVSwitchIds),
+      MasterInstanceTypes: ros.listMapper(ros.stringToRosTemplate)(properties.masterInstanceTypes),
+      MasterVSwitchIds: ros.listMapper(ros.stringToRosTemplate)(properties.masterVSwitchIds),
       Name: ros.stringToRosTemplate(properties.name),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
-      WorkerVSwitchIds: ros.listMapper(ros.objectToRosTemplate)(properties.workerVSwitchIds),
+      WorkerVSwitchIds: ros.listMapper(ros.stringToRosTemplate)(properties.workerVSwitchIds),
       Addons: ros.listMapper(rosKubernetesClusterAddonsPropertyToRosTemplate)(properties.addons),
       AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
       AutoRenewPeriod: ros.numberToRosTemplate(properties.autoRenewPeriod),
@@ -3941,6 +3947,7 @@ function rosKubernetesClusterPropsToRosTemplate(properties: any, enableResourceP
       CloudMonitorFlags: ros.booleanToRosTemplate(properties.cloudMonitorFlags),
       ContainerCidr: ros.stringToRosTemplate(properties.containerCidr),
       CpuPolicy: ros.stringToRosTemplate(properties.cpuPolicy),
+      DeleteOptions: ros.listMapper(rosKubernetesClusterDeleteOptionsPropertyToRosTemplate)(properties.deleteOptions),
       DeletionProtection: ros.booleanToRosTemplate(properties.deletionProtection),
       DisableRollback: ros.booleanToRosTemplate(properties.disableRollback),
       EndpointPublicAccess: ros.booleanToRosTemplate(properties.endpointPublicAccess),
@@ -4067,12 +4074,12 @@ export class RosKubernetesCluster extends ros.RosResource {
      * @Property masterInstanceTypes: Master node ECS specification type code. For more details, see Instance Type Family. Each item correspond to MasterVSwitchIds.
      * List size must be 3, Instance Type can be repeated.
      */
-    public masterInstanceTypes: Array<any | ros.IResolvable> | ros.IResolvable;
+    public masterInstanceTypes: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property masterVSwitchIds: Master node switch ID. To ensure high availability of the cluster, it is recommended that you select 3 switches and distribute them in different Availability Zones.
      */
-    public masterVSwitchIds: Array<any | ros.IResolvable> | ros.IResolvable;
+    public masterVSwitchIds: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property name: The name of the cluster. The cluster name can use uppercase and lowercase letters, Chinese characters, numbers, and dashes.
@@ -4087,7 +4094,7 @@ export class RosKubernetesCluster extends ros.RosResource {
     /**
      * @Property workerVSwitchIds: The virtual switch ID of the worker node.
      */
-    public workerVSwitchIds: Array<any | ros.IResolvable> | ros.IResolvable;
+    public workerVSwitchIds: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property addons: A combination of addon plugins for Kubernetes clusters.
@@ -4138,6 +4145,11 @@ export class RosKubernetesCluster extends ros.RosResource {
      * @Property cpuPolicy: CPU policy. The cluster version is 1.12.6 and above supports both static and none strategies.
      */
     public cpuPolicy: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property deleteOptions: Delete options, only work for deleting resource.
+     */
+    public deleteOptions: Array<RosKubernetesCluster.DeleteOptionsProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property deletionProtection: Specifies whether to enable deletion protection for the cluster. 
@@ -4507,6 +4519,7 @@ export class RosKubernetesCluster extends ros.RosResource {
         this.cloudMonitorFlags = props.cloudMonitorFlags;
         this.containerCidr = props.containerCidr;
         this.cpuPolicy = props.cpuPolicy;
+        this.deleteOptions = props.deleteOptions;
         this.deletionProtection = props.deletionProtection;
         this.disableRollback = props.disableRollback;
         this.endpointPublicAccess = props.endpointPublicAccess;
@@ -4574,6 +4587,7 @@ export class RosKubernetesCluster extends ros.RosResource {
             cloudMonitorFlags: this.cloudMonitorFlags,
             containerCidr: this.containerCidr,
             cpuPolicy: this.cpuPolicy,
+            deleteOptions: this.deleteOptions,
             deletionProtection: this.deletionProtection,
             disableRollback: this.disableRollback,
             endpointPublicAccess: this.endpointPublicAccess,
@@ -4761,6 +4775,73 @@ function rosKubernetesClusterDataDisksPropertyToRosTemplate(properties: any): an
       PerformanceLevel: ros.stringToRosTemplate(properties.performanceLevel),
       Size: ros.numberToRosTemplate(properties.size),
       AutoSnapshotPolicyId: ros.stringToRosTemplate(properties.autoSnapshotPolicyId),
+    };
+}
+
+export namespace RosKubernetesCluster {
+    /**
+     * @stability external
+     */
+    export interface DeleteOptionsProperty {
+        /**
+         * @Property deleteMode: Deletion policy of this type of resource. The value can be:
+     * - delete: delete the resource.
+     * - retain: retain the resource.
+         */
+        readonly deleteMode?: string | ros.IResolvable;
+        /**
+         * @Property resourceType: Resource type. The value can be:
+     * - SLB: SLB resource created by service. It is deleted by default but can be retained
+     * - ALB: ALB Ingress Controller Created ALB resource. It is reserved by default and can be deleted
+     * - SLS_Data: log service Project used by the cluster log function. This service is reserved by default and can be deleted
+     * - SLS_ControlPlane: Project log service used for logs of the managed cluster control plane. This service is reserved by default and can be deleted
+     * - PrivateZone: ACK Serverless PrivateZone resource created in the cluster. It is reserved by default and can be deleted
+     *
+         */
+        readonly resourceType?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DeleteOptionsProperty`
+ *
+ * @param properties - the TypeScript properties of a `DeleteOptionsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosKubernetesCluster_DeleteOptionsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.deleteMode && (typeof properties.deleteMode) !== 'object') {
+        errors.collect(ros.propertyValidator('deleteMode', ros.validateAllowedValues)({
+          data: properties.deleteMode,
+          allowedValues: ["delete","retain"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('deleteMode', ros.validateString)(properties.deleteMode));
+    if(properties.resourceType && (typeof properties.resourceType) !== 'object') {
+        errors.collect(ros.propertyValidator('resourceType', ros.validateAllowedValues)({
+          data: properties.resourceType,
+          allowedValues: ["SLB","ALB","SLS_Data","SLS_ControlPlane","PrivateZone"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
+    return errors.wrap('supplied properties not correct for "DeleteOptionsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::KubernetesCluster.DeleteOptions` resource
+ *
+ * @param properties - the TypeScript properties of a `DeleteOptionsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::KubernetesCluster.DeleteOptions` resource.
+ */
+// @ts-ignore TS6133
+function rosKubernetesClusterDeleteOptionsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosKubernetesCluster_DeleteOptionsPropertyValidator(properties).assertSuccess();
+    return {
+      DeleteMode: ros.stringToRosTemplate(properties.deleteMode),
+      ResourceType: ros.stringToRosTemplate(properties.resourceType),
     };
 }
 
@@ -6540,7 +6621,7 @@ export interface RosManagedKubernetesClusterProps {
     /**
      * @Property vSwitchIds: The virtual switch ID of the worker node.
      */
-    readonly vSwitchIds: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly vSwitchIds: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property addons: A combination of addon plugins for Kubernetes clusters.
@@ -6594,6 +6675,11 @@ export interface RosManagedKubernetesClusterProps {
      * @Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0\/16 is used by default.
      */
     readonly containerCidr?: string | ros.IResolvable;
+
+    /**
+     * @Property deleteOptions: Delete options, only work for deleting resource.
+     */
+    readonly deleteOptions?: Array<RosManagedKubernetesCluster.DeleteOptionsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property deletionProtection: Specifies whether to enable deletion protection for the cluster. 
@@ -6902,6 +6988,7 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
     errors.collect(ros.propertyValidator('disableRollback', ros.validateBoolean)(properties.disableRollback));
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosManagedKubernetesCluster_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('containerCidr', ros.validateString)(properties.containerCidr));
+    errors.collect(ros.propertyValidator('deleteOptions', ros.listValidator(RosManagedKubernetesCluster_DeleteOptionsPropertyValidator))(properties.deleteOptions));
     errors.collect(ros.propertyValidator('keyPair', ros.validateString)(properties.keyPair));
     errors.collect(ros.propertyValidator('nodeCidrMask', ros.validateString)(properties.nodeCidrMask));
     errors.collect(ros.propertyValidator('vSwitchIds', ros.requiredValidator)(properties.vSwitchIds));
@@ -6912,7 +6999,7 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
             max: undefined,
           }));
     }
-    errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateAny))(properties.vSwitchIds));
+    errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateString))(properties.vSwitchIds));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
           data: properties.period,
@@ -7016,7 +7103,7 @@ function rosManagedKubernetesClusterPropsToRosTemplate(properties: any, enableRe
     return {
       Name: ros.stringToRosTemplate(properties.name),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitchIds: ros.listMapper(ros.objectToRosTemplate)(properties.vSwitchIds),
+      VSwitchIds: ros.listMapper(ros.stringToRosTemplate)(properties.vSwitchIds),
       Addons: ros.listMapper(rosManagedKubernetesClusterAddonsPropertyToRosTemplate)(properties.addons),
       AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
       AutoRenewPeriod: ros.numberToRosTemplate(properties.autoRenewPeriod),
@@ -7024,6 +7111,7 @@ function rosManagedKubernetesClusterPropsToRosTemplate(properties: any, enableRe
       CloudMonitorFlags: ros.booleanToRosTemplate(properties.cloudMonitorFlags),
       ClusterSpec: ros.stringToRosTemplate(properties.clusterSpec),
       ContainerCidr: ros.stringToRosTemplate(properties.containerCidr),
+      DeleteOptions: ros.listMapper(rosManagedKubernetesClusterDeleteOptionsPropertyToRosTemplate)(properties.deleteOptions),
       DeletionProtection: ros.booleanToRosTemplate(properties.deletionProtection),
       DisableRollback: ros.booleanToRosTemplate(properties.disableRollback),
       EncryptionProviderKey: ros.stringToRosTemplate(properties.encryptionProviderKey),
@@ -7148,7 +7236,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
     /**
      * @Property vSwitchIds: The virtual switch ID of the worker node.
      */
-    public vSwitchIds: Array<any | ros.IResolvable> | ros.IResolvable;
+    public vSwitchIds: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property addons: A combination of addon plugins for Kubernetes clusters.
@@ -7202,6 +7290,11 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
      * @Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0\/16 is used by default.
      */
     public containerCidr: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property deleteOptions: Delete options, only work for deleting resource.
+     */
+    public deleteOptions: Array<RosManagedKubernetesCluster.DeleteOptionsProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property deletionProtection: Specifies whether to enable deletion protection for the cluster. 
@@ -7507,6 +7600,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
         this.cloudMonitorFlags = props.cloudMonitorFlags;
         this.clusterSpec = props.clusterSpec;
         this.containerCidr = props.containerCidr;
+        this.deleteOptions = props.deleteOptions;
         this.deletionProtection = props.deletionProtection;
         this.disableRollback = props.disableRollback;
         this.encryptionProviderKey = props.encryptionProviderKey;
@@ -7561,6 +7655,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
             cloudMonitorFlags: this.cloudMonitorFlags,
             clusterSpec: this.clusterSpec,
             containerCidr: this.containerCidr,
+            deleteOptions: this.deleteOptions,
             deletionProtection: this.deletionProtection,
             disableRollback: this.disableRollback,
             encryptionProviderKey: this.encryptionProviderKey,
@@ -7743,6 +7838,73 @@ function rosManagedKubernetesClusterDataDisksPropertyToRosTemplate(properties: a
       PerformanceLevel: ros.stringToRosTemplate(properties.performanceLevel),
       Size: ros.numberToRosTemplate(properties.size),
       AutoSnapshotPolicyId: ros.stringToRosTemplate(properties.autoSnapshotPolicyId),
+    };
+}
+
+export namespace RosManagedKubernetesCluster {
+    /**
+     * @stability external
+     */
+    export interface DeleteOptionsProperty {
+        /**
+         * @Property deleteMode: Deletion policy of this type of resource. The value can be:
+     * - delete: delete the resource.
+     * - retain: retain the resource.
+         */
+        readonly deleteMode?: string | ros.IResolvable;
+        /**
+         * @Property resourceType: Resource type. The value can be:
+     * - SLB: SLB resource created by service. It is deleted by default but can be retained
+     * - ALB: ALB Ingress Controller Created ALB resource. It is reserved by default and can be deleted
+     * - SLS_Data: log service Project used by the cluster log function. This service is reserved by default and can be deleted
+     * - SLS_ControlPlane: Project log service used for logs of the managed cluster control plane. This service is reserved by default and can be deleted
+     * - PrivateZone: ACK Serverless PrivateZone resource created in the cluster. It is reserved by default and can be deleted
+     *
+         */
+        readonly resourceType?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DeleteOptionsProperty`
+ *
+ * @param properties - the TypeScript properties of a `DeleteOptionsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosManagedKubernetesCluster_DeleteOptionsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.deleteMode && (typeof properties.deleteMode) !== 'object') {
+        errors.collect(ros.propertyValidator('deleteMode', ros.validateAllowedValues)({
+          data: properties.deleteMode,
+          allowedValues: ["delete","retain"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('deleteMode', ros.validateString)(properties.deleteMode));
+    if(properties.resourceType && (typeof properties.resourceType) !== 'object') {
+        errors.collect(ros.propertyValidator('resourceType', ros.validateAllowedValues)({
+          data: properties.resourceType,
+          allowedValues: ["SLB","ALB","SLS_Data","SLS_ControlPlane","PrivateZone"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
+    return errors.wrap('supplied properties not correct for "DeleteOptionsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedKubernetesCluster.DeleteOptions` resource
+ *
+ * @param properties - the TypeScript properties of a `DeleteOptionsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedKubernetesCluster.DeleteOptions` resource.
+ */
+// @ts-ignore TS6133
+function rosManagedKubernetesClusterDeleteOptionsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosManagedKubernetesCluster_DeleteOptionsPropertyValidator(properties).assertSuccess();
+    return {
+      DeleteMode: ros.stringToRosTemplate(properties.deleteMode),
+      ResourceType: ros.stringToRosTemplate(properties.resourceType),
     };
 }
 

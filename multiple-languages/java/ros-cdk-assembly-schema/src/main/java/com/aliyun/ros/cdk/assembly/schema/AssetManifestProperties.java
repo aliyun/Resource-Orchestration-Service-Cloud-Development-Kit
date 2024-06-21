@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.assembly.schema;
 /**
  * Artifact properties for the Asset Manifest.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:11.902Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:06.959Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.assembly.schema.$Module.class, fqn = "@alicloud/ros-cdk-assembly-schema.AssetManifestProperties")
 @software.amazon.jsii.Jsii.Proxy(AssetManifestProperties.Jsii$Proxy.class)
 public interface AssetManifestProperties extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.assembly.schema.AssetManifestOptions {

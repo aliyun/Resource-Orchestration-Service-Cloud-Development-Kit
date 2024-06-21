@@ -1,0 +1,6 @@
+@alicloud/ros-cdk-serverlessdev.Project=com.aliyun.ros.cdk.serverlessdev.Project
+@alicloud/ros-cdk-serverlessdev.ProjectProps=com.aliyun.ros.cdk.serverlessdev.ProjectProps
+@alicloud/ros-cdk-serverlessdev.RosProject=com.aliyun.ros.cdk.serverlessdev.RosProject
+@alicloud/ros-cdk-serverlessdev.RosProject.SpecProperty=com.aliyun.ros.cdk.serverlessdev.RosProject$SpecProperty
+@alicloud/ros-cdk-serverlessdev.RosProject.TemplateConfigProperty=com.aliyun.ros.cdk.serverlessdev.RosProject$TemplateConfigProperty
+@alicloud/ros-cdk-serverlessdev.RosProjectProps=com.aliyun.ros.cdk.serverlessdev.RosProjectProps

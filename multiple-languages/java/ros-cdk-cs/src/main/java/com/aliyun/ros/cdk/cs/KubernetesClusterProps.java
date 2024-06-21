@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-kubernetescluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:13.468Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:08.311Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.KubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(KubernetesClusterProps.Jsii$Proxy.class)
 public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -106,6 +106,13 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
      * The cluster version is 1.12.6 and above supports both static and none strategies.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCpuPolicy() {
+        return null;
+    }
+
+    /**
+     * Property deleteOptions: Delete options, only work for deleting resource.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeleteOptions() {
         return null;
     }
 
@@ -624,6 +631,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
         java.lang.Object cloudMonitorFlags;
         java.lang.Object containerCidr;
         java.lang.Object cpuPolicy;
+        java.lang.Object deleteOptions;
         java.lang.Object deletionProtection;
         java.lang.Object disableRollback;
         java.lang.Object endpointPublicAccess;
@@ -682,7 +690,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
          *                            List size must be 3, Instance Type can be repeated.
          * @return {@code this}
          */
-        public Builder masterInstanceTypes(java.util.List<? extends java.lang.Object> masterInstanceTypes) {
+        public Builder masterInstanceTypes(com.aliyun.ros.cdk.core.IResolvable masterInstanceTypes) {
             this.masterInstanceTypes = masterInstanceTypes;
             return this;
         }
@@ -694,7 +702,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
          *                            List size must be 3, Instance Type can be repeated.
          * @return {@code this}
          */
-        public Builder masterInstanceTypes(com.aliyun.ros.cdk.core.IResolvable masterInstanceTypes) {
+        public Builder masterInstanceTypes(java.util.List<? extends java.lang.Object> masterInstanceTypes) {
             this.masterInstanceTypes = masterInstanceTypes;
             return this;
         }
@@ -705,7 +713,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
          *                         To ensure high availability of the cluster, it is recommended that you select 3 switches and distribute them in different Availability Zones.
          * @return {@code this}
          */
-        public Builder masterVSwitchIds(java.util.List<? extends java.lang.Object> masterVSwitchIds) {
+        public Builder masterVSwitchIds(com.aliyun.ros.cdk.core.IResolvable masterVSwitchIds) {
             this.masterVSwitchIds = masterVSwitchIds;
             return this;
         }
@@ -716,7 +724,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
          *                         To ensure high availability of the cluster, it is recommended that you select 3 switches and distribute them in different Availability Zones.
          * @return {@code this}
          */
-        public Builder masterVSwitchIds(com.aliyun.ros.cdk.core.IResolvable masterVSwitchIds) {
+        public Builder masterVSwitchIds(java.util.List<? extends java.lang.Object> masterVSwitchIds) {
             this.masterVSwitchIds = masterVSwitchIds;
             return this;
         }
@@ -768,7 +776,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
          * @param workerVSwitchIds Property workerVSwitchIds: The virtual switch ID of the worker node. This parameter is required.
          * @return {@code this}
          */
-        public Builder workerVSwitchIds(java.util.List<? extends java.lang.Object> workerVSwitchIds) {
+        public Builder workerVSwitchIds(com.aliyun.ros.cdk.core.IResolvable workerVSwitchIds) {
             this.workerVSwitchIds = workerVSwitchIds;
             return this;
         }
@@ -778,7 +786,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
          * @param workerVSwitchIds Property workerVSwitchIds: The virtual switch ID of the worker node. This parameter is required.
          * @return {@code this}
          */
-        public Builder workerVSwitchIds(com.aliyun.ros.cdk.core.IResolvable workerVSwitchIds) {
+        public Builder workerVSwitchIds(java.util.List<? extends java.lang.Object> workerVSwitchIds) {
             this.workerVSwitchIds = workerVSwitchIds;
             return this;
         }
@@ -946,6 +954,26 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
          */
         public Builder cpuPolicy(com.aliyun.ros.cdk.core.IResolvable cpuPolicy) {
             this.cpuPolicy = cpuPolicy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link KubernetesClusterProps#getDeleteOptions}
+         * @param deleteOptions Property deleteOptions: Delete options, only work for deleting resource.
+         * @return {@code this}
+         */
+        public Builder deleteOptions(com.aliyun.ros.cdk.core.IResolvable deleteOptions) {
+            this.deleteOptions = deleteOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link KubernetesClusterProps#getDeleteOptions}
+         * @param deleteOptions Property deleteOptions: Delete options, only work for deleting resource.
+         * @return {@code this}
+         */
+        public Builder deleteOptions(java.util.List<? extends java.lang.Object> deleteOptions) {
+            this.deleteOptions = deleteOptions;
             return this;
         }
 
@@ -2180,6 +2208,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
         private final java.lang.Object cloudMonitorFlags;
         private final java.lang.Object containerCidr;
         private final java.lang.Object cpuPolicy;
+        private final java.lang.Object deleteOptions;
         private final java.lang.Object deletionProtection;
         private final java.lang.Object disableRollback;
         private final java.lang.Object endpointPublicAccess;
@@ -2249,6 +2278,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
             this.cloudMonitorFlags = software.amazon.jsii.Kernel.get(this, "cloudMonitorFlags", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.containerCidr = software.amazon.jsii.Kernel.get(this, "containerCidr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.cpuPolicy = software.amazon.jsii.Kernel.get(this, "cpuPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.deleteOptions = software.amazon.jsii.Kernel.get(this, "deleteOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.disableRollback = software.amazon.jsii.Kernel.get(this, "disableRollback", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.endpointPublicAccess = software.amazon.jsii.Kernel.get(this, "endpointPublicAccess", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -2319,6 +2349,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
             this.cloudMonitorFlags = builder.cloudMonitorFlags;
             this.containerCidr = builder.containerCidr;
             this.cpuPolicy = builder.cpuPolicy;
+            this.deleteOptions = builder.deleteOptions;
             this.deletionProtection = builder.deletionProtection;
             this.disableRollback = builder.disableRollback;
             this.endpointPublicAccess = builder.endpointPublicAccess;
@@ -2429,6 +2460,11 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
         @Override
         public final java.lang.Object getCpuPolicy() {
             return this.cpuPolicy;
+        }
+
+        @Override
+        public final java.lang.Object getDeleteOptions() {
+            return this.deleteOptions;
         }
 
         @Override
@@ -2713,6 +2749,9 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
             if (this.getCpuPolicy() != null) {
                 data.set("cpuPolicy", om.valueToTree(this.getCpuPolicy()));
             }
+            if (this.getDeleteOptions() != null) {
+                data.set("deleteOptions", om.valueToTree(this.getDeleteOptions()));
+            }
             if (this.getDeletionProtection() != null) {
                 data.set("deletionProtection", om.valueToTree(this.getDeletionProtection()));
             }
@@ -2893,6 +2932,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
             if (this.cloudMonitorFlags != null ? !this.cloudMonitorFlags.equals(that.cloudMonitorFlags) : that.cloudMonitorFlags != null) return false;
             if (this.containerCidr != null ? !this.containerCidr.equals(that.containerCidr) : that.containerCidr != null) return false;
             if (this.cpuPolicy != null ? !this.cpuPolicy.equals(that.cpuPolicy) : that.cpuPolicy != null) return false;
+            if (this.deleteOptions != null ? !this.deleteOptions.equals(that.deleteOptions) : that.deleteOptions != null) return false;
             if (this.deletionProtection != null ? !this.deletionProtection.equals(that.deletionProtection) : that.deletionProtection != null) return false;
             if (this.disableRollback != null ? !this.disableRollback.equals(that.disableRollback) : that.disableRollback != null) return false;
             if (this.endpointPublicAccess != null ? !this.endpointPublicAccess.equals(that.endpointPublicAccess) : that.endpointPublicAccess != null) return false;
@@ -2959,6 +2999,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
             result = 31 * result + (this.cloudMonitorFlags != null ? this.cloudMonitorFlags.hashCode() : 0);
             result = 31 * result + (this.containerCidr != null ? this.containerCidr.hashCode() : 0);
             result = 31 * result + (this.cpuPolicy != null ? this.cpuPolicy.hashCode() : 0);
+            result = 31 * result + (this.deleteOptions != null ? this.deleteOptions.hashCode() : 0);
             result = 31 * result + (this.deletionProtection != null ? this.deletionProtection.hashCode() : 0);
             result = 31 * result + (this.disableRollback != null ? this.disableRollback.hashCode() : 0);
             result = 31 * result + (this.endpointPublicAccess != null ? this.endpointPublicAccess.hashCode() : 0);

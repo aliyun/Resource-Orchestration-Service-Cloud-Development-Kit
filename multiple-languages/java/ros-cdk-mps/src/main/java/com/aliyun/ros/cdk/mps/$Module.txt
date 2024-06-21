@@ -1,5 +1,9 @@
+@alicloud/ros-cdk-mps.MediaWorkflow=com.aliyun.ros.cdk.mps.MediaWorkflow
+@alicloud/ros-cdk-mps.MediaWorkflowProps=com.aliyun.ros.cdk.mps.MediaWorkflowProps
 @alicloud/ros-cdk-mps.Pipeline=com.aliyun.ros.cdk.mps.Pipeline
 @alicloud/ros-cdk-mps.PipelineProps=com.aliyun.ros.cdk.mps.PipelineProps
+@alicloud/ros-cdk-mps.RosMediaWorkflow=com.aliyun.ros.cdk.mps.RosMediaWorkflow
+@alicloud/ros-cdk-mps.RosMediaWorkflowProps=com.aliyun.ros.cdk.mps.RosMediaWorkflowProps
 @alicloud/ros-cdk-mps.RosPipeline=com.aliyun.ros.cdk.mps.RosPipeline
 @alicloud/ros-cdk-mps.RosPipeline.NotifyConfigProperty=com.aliyun.ros.cdk.mps.RosPipeline$NotifyConfigProperty
 @alicloud/ros-cdk-mps.RosPipelineProps=com.aliyun.ros.cdk.mps.RosPipelineProps

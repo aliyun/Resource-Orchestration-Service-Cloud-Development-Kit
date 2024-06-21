@@ -79,9 +79,10 @@ export class Source {
    * producer of the archive.
    *
    * @param path The path to a local file or a directory.
-   * @param options Options for the Asset
+   * @param options Options for the Asset.
+   * @param objectPrefix The prefix of object key. You can use it to specify the location of the object in the target bucket.
    */
-  public static asset(path: string, options?: AssetOptions): ISource {
+  public static asset(path: string, options?: AssetOptions, objectPrefix?: string): ISource {
     return {
       bind(scope: ros.Construct): SourceConfig {
         let id = 1;
@@ -96,13 +97,13 @@ export class Source {
           return {
             bucket: asset.bucketName,
             objectKey: asset.objectKey,
-            fileName: basename(path)
+            fileName: objectPrefix ? objectPrefix + basename(path) : basename(path)
           };
         } else {
           return {
             bucket: asset.bucketName,
             objectKey: asset.objectKey,
-            fileName: basename(path) + '.zip'
+            fileName: objectPrefix ? objectPrefix + basename(path) + '.zip' : basename(path) + '.zip'
           };
         }
       }

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.rds;
  * <p>
  * The new instance is the clone of the instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:17.008Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:11.815Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosDBInstanceClone")
 public class RosDBInstanceClone extends com.aliyun.ros.cdk.core.RosResource {
 

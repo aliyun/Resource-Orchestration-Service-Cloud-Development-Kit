@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.privatelink;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::PrivateLink::VpcEndpointService</code>, which is used to create an endpoint service.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:16.782Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:11.530Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.VpcEndpointService")
 public class VpcEndpointService extends com.aliyun.ros.cdk.core.Resource {
 
@@ -213,6 +213,37 @@ public class VpcEndpointService extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property deletionForce: Specifies whether to delete the endpoint service even if it has endpoint connections.
+         * <p>
+         * <ul>
+         * <li>True</li>
+         * <li>False (default)</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param deletionForce Property deletionForce: Specifies whether to delete the endpoint service even if it has endpoint connections. This parameter is required.
+         */
+        public Builder deletionForce(final java.lang.Boolean deletionForce) {
+            this.props().deletionForce(deletionForce);
+            return this;
+        }
+        /**
+         * Property deletionForce: Specifies whether to delete the endpoint service even if it has endpoint connections.
+         * <p>
+         * <ul>
+         * <li>True</li>
+         * <li>False (default)</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param deletionForce Property deletionForce: Specifies whether to delete the endpoint service even if it has endpoint connections. This parameter is required.
+         */
+        public Builder deletionForce(final com.aliyun.ros.cdk.core.IResolvable deletionForce) {
+            this.props().deletionForce(deletionForce);
+            return this;
+        }
+
+        /**
          * Property payer: The payer of the endpoint service.
          * <p>
          * Valid values:
@@ -259,6 +290,27 @@ public class VpcEndpointService extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder resource(final java.util.List<? extends java.lang.Object> resource) {
             this.props().resource(resource);
+            return this;
+        }
+
+        /**
+         * Property resourceGroupId: The ID of the resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props().resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: The ID of the resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props().resourceGroupId(resourceGroupId);
             return this;
         }
 

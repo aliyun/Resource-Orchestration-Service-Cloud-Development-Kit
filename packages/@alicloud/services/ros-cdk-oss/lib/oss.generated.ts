@@ -1152,3 +1152,126 @@ export class RosDomain extends ros.RosResource {
         return rosDomainPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
+
+/**
+ * Properties for defining a `RosObjectAcl`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-objectacl
+ */
+export interface RosObjectAclProps {
+
+    /**
+     * @Property bucket: Bucket name.
+     */
+    readonly bucket: string | ros.IResolvable;
+
+    /**
+     * @Property objectAcl: Object acl.
+     */
+    readonly objectAcl: string | ros.IResolvable;
+
+    /**
+     * @Property objectKey: Object key.
+     */
+    readonly objectKey: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosObjectAclProps`
+ *
+ * @param properties - the TypeScript properties of a `RosObjectAclProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosObjectAclPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('objectAcl', ros.requiredValidator)(properties.objectAcl));
+    if(properties.objectAcl && (typeof properties.objectAcl) !== 'object') {
+        errors.collect(ros.propertyValidator('objectAcl', ros.validateAllowedValues)({
+          data: properties.objectAcl,
+          allowedValues: ["private","public-read","public-read-write","default"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('objectAcl', ros.validateString)(properties.objectAcl));
+    errors.collect(ros.propertyValidator('bucket', ros.requiredValidator)(properties.bucket));
+    errors.collect(ros.propertyValidator('bucket', ros.validateString)(properties.bucket));
+    errors.collect(ros.propertyValidator('objectKey', ros.requiredValidator)(properties.objectKey));
+    errors.collect(ros.propertyValidator('objectKey', ros.validateString)(properties.objectKey));
+    return errors.wrap('supplied properties not correct for "RosObjectAclProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OSS::ObjectAcl` resource
+ *
+ * @param properties - the TypeScript properties of a `RosObjectAclProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OSS::ObjectAcl` resource.
+ */
+// @ts-ignore TS6133
+function rosObjectAclPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosObjectAclPropsValidator(properties).assertSuccess();
+    }
+    return {
+      Bucket: ros.stringToRosTemplate(properties.bucket),
+      ObjectAcl: ros.stringToRosTemplate(properties.objectAcl),
+      ObjectKey: ros.stringToRosTemplate(properties.objectKey),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::ObjectAcl`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ObjectAcl` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-objectacl
+ */
+export class RosObjectAcl extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OSS::ObjectAcl";
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property bucket: Bucket name.
+     */
+    public bucket: string | ros.IResolvable;
+
+    /**
+     * @Property objectAcl: Object acl.
+     */
+    public objectAcl: string | ros.IResolvable;
+
+    /**
+     * @Property objectKey: Object key.
+     */
+    public objectKey: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosObjectAclProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosObjectAcl.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.bucket = props.bucket;
+        this.objectAcl = props.objectAcl;
+        this.objectKey = props.objectKey;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            bucket: this.bucket,
+            objectAcl: this.objectAcl,
+            objectKey: this.objectKey,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosObjectAclPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}

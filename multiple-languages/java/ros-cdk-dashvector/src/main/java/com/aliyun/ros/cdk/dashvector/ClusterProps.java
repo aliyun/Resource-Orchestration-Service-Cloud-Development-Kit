@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.dashvector;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dashvector-cluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:13.637Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:08.485Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dashvector.$Module.class, fqn = "@alicloud/ros-cdk-dashvector.ClusterProps")
 @software.amazon.jsii.Jsii.Proxy(ClusterProps.Jsii$Proxy.class)
 public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {

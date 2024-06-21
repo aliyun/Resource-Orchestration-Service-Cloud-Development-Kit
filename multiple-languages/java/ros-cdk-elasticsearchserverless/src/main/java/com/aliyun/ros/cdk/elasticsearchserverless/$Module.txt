@@ -1,0 +1,11 @@
+@alicloud/ros-cdk-elasticsearchserverless.App=com.aliyun.ros.cdk.elasticsearchserverless.App
+@alicloud/ros-cdk-elasticsearchserverless.AppProps=com.aliyun.ros.cdk.elasticsearchserverless.AppProps
+@alicloud/ros-cdk-elasticsearchserverless.RosApp=com.aliyun.ros.cdk.elasticsearchserverless.RosApp
+@alicloud/ros-cdk-elasticsearchserverless.RosApp.AuthenticationProperty=com.aliyun.ros.cdk.elasticsearchserverless.RosApp$AuthenticationProperty
+@alicloud/ros-cdk-elasticsearchserverless.RosApp.BasicAuthProperty=com.aliyun.ros.cdk.elasticsearchserverless.RosApp$BasicAuthProperty
+@alicloud/ros-cdk-elasticsearchserverless.RosApp.NetworkProperty=com.aliyun.ros.cdk.elasticsearchserverless.RosApp$NetworkProperty
+@alicloud/ros-cdk-elasticsearchserverless.RosApp.PrivateNetworkProperty=com.aliyun.ros.cdk.elasticsearchserverless.RosApp$PrivateNetworkProperty
+@alicloud/ros-cdk-elasticsearchserverless.RosApp.PrivateNetworkWhiteIpGroupProperty=com.aliyun.ros.cdk.elasticsearchserverless.RosApp$PrivateNetworkWhiteIpGroupProperty
+@alicloud/ros-cdk-elasticsearchserverless.RosApp.QuotaInfoProperty=com.aliyun.ros.cdk.elasticsearchserverless.RosApp$QuotaInfoProperty
+@alicloud/ros-cdk-elasticsearchserverless.RosApp.WhiteIpGroupProperty=com.aliyun.ros.cdk.elasticsearchserverless.RosApp$WhiteIpGroupProperty
+@alicloud/ros-cdk-elasticsearchserverless.RosAppProps=com.aliyun.ros.cdk.elasticsearchserverless.RosAppProps

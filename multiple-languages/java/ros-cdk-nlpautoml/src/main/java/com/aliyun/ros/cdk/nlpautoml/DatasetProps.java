@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.nlpautoml;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlpautoml-dataset
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:16.209Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:11.144Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlpautoml.$Module.class, fqn = "@alicloud/ros-cdk-nlpautoml.DatasetProps")
 @software.amazon.jsii.Jsii.Proxy(DatasetProps.Jsii$Proxy.class)
 public interface DatasetProps extends software.amazon.jsii.JsiiSerializable {
