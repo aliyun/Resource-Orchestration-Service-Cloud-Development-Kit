@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CS::ManagedKubernetesCluster</code>, which is used to create a Container Service for Kubernetes (ACK) managed cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:13.498Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:08.341Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ManagedKubernetesCluster")
 public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -237,7 +237,7 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param vSwitchIds Property vSwitchIds: The virtual switch ID of the worker node. This parameter is required.
          */
-        public Builder vSwitchIds(final java.util.List<? extends java.lang.Object> vSwitchIds) {
+        public Builder vSwitchIds(final com.aliyun.ros.cdk.core.IResolvable vSwitchIds) {
             this.props.vSwitchIds(vSwitchIds);
             return this;
         }
@@ -247,7 +247,7 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param vSwitchIds Property vSwitchIds: The virtual switch ID of the worker node. This parameter is required.
          */
-        public Builder vSwitchIds(final com.aliyun.ros.cdk.core.IResolvable vSwitchIds) {
+        public Builder vSwitchIds(final java.util.List<? extends java.lang.Object> vSwitchIds) {
             this.props.vSwitchIds(vSwitchIds);
             return this;
         }
@@ -438,6 +438,27 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder containerCidr(final com.aliyun.ros.cdk.core.IResolvable containerCidr) {
             this.props.containerCidr(containerCidr);
+            return this;
+        }
+
+        /**
+         * Property deleteOptions: Delete options, only work for deleting resource.
+         * <p>
+         * @return {@code this}
+         * @param deleteOptions Property deleteOptions: Delete options, only work for deleting resource. This parameter is required.
+         */
+        public Builder deleteOptions(final com.aliyun.ros.cdk.core.IResolvable deleteOptions) {
+            this.props.deleteOptions(deleteOptions);
+            return this;
+        }
+        /**
+         * Property deleteOptions: Delete options, only work for deleting resource.
+         * <p>
+         * @return {@code this}
+         * @param deleteOptions Property deleteOptions: Delete options, only work for deleting resource. This parameter is required.
+         */
+        public Builder deleteOptions(final java.util.List<? extends java.lang.Object> deleteOptions) {
+            this.props.deleteOptions(deleteOptions);
             return this;
         }
 

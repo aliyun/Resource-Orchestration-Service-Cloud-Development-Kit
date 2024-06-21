@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CS::KubernetesCluster</code>, which is used to create a Container Service for Kubernetes (ACK) dedicated cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:13.547Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:08.388Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosKubernetesCluster")
 public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -127,18 +127,29 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public void setMasterInstanceTypes(final @org.jetbrains.annotations.NotNull java.util.List<java.lang.Object> value) {
-        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
-            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
-                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
-            }
-        }
+    public void setMasterInstanceTypes(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "masterInstanceTypes", java.util.Objects.requireNonNull(value, "masterInstanceTypes is required"));
     }
 
     /**
      */
-    public void setMasterInstanceTypes(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+    public void setMasterInstanceTypes(final @org.jetbrains.annotations.NotNull java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "masterInstanceTypes", java.util.Objects.requireNonNull(value, "masterInstanceTypes is required"));
     }
 
@@ -150,18 +161,29 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public void setMasterVSwitchIds(final @org.jetbrains.annotations.NotNull java.util.List<java.lang.Object> value) {
-        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
-            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
-                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
-            }
-        }
+    public void setMasterVSwitchIds(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "masterVSwitchIds", java.util.Objects.requireNonNull(value, "masterVSwitchIds is required"));
     }
 
     /**
      */
-    public void setMasterVSwitchIds(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+    public void setMasterVSwitchIds(final @org.jetbrains.annotations.NotNull java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "masterVSwitchIds", java.util.Objects.requireNonNull(value, "masterVSwitchIds is required"));
     }
 
@@ -209,18 +231,29 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public void setWorkerVSwitchIds(final @org.jetbrains.annotations.NotNull java.util.List<java.lang.Object> value) {
-        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
-            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
-                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
-            }
-        }
+    public void setWorkerVSwitchIds(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "workerVSwitchIds", java.util.Objects.requireNonNull(value, "workerVSwitchIds is required"));
     }
 
     /**
      */
-    public void setWorkerVSwitchIds(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+    public void setWorkerVSwitchIds(final @org.jetbrains.annotations.NotNull java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "workerVSwitchIds", java.util.Objects.requireNonNull(value, "workerVSwitchIds is required"));
     }
 
@@ -364,6 +397,40 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setCpuPolicy(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "cpuPolicy", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDeleteOptions() {
+        return software.amazon.jsii.Kernel.get(this, "deleteOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDeleteOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "deleteOptions", value);
+    }
+
+    /**
+     */
+    public void setDeleteOptions(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.cs.RosKubernetesCluster.DeleteOptionsProperty)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.cs.RosKubernetesCluster.DeleteOptionsProperty; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "deleteOptions", value);
     }
 
     /**
@@ -1894,6 +1961,178 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.encrypted != null ? this.encrypted.hashCode() : 0);
                 result = 31 * result + (this.performanceLevel != null ? this.performanceLevel.hashCode() : 0);
                 result = 31 * result + (this.size != null ? this.size.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosKubernetesCluster.DeleteOptionsProperty")
+    @software.amazon.jsii.Jsii.Proxy(DeleteOptionsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface DeleteOptionsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDeleteMode() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getResourceType() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link DeleteOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link DeleteOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<DeleteOptionsProperty> {
+            java.lang.Object deleteMode;
+            java.lang.Object resourceType;
+
+            /**
+             * Sets the value of {@link DeleteOptionsProperty#getDeleteMode}
+             * @param deleteMode the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder deleteMode(java.lang.String deleteMode) {
+                this.deleteMode = deleteMode;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DeleteOptionsProperty#getDeleteMode}
+             * @param deleteMode the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder deleteMode(com.aliyun.ros.cdk.core.IResolvable deleteMode) {
+                this.deleteMode = deleteMode;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DeleteOptionsProperty#getResourceType}
+             * @param resourceType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder resourceType(java.lang.String resourceType) {
+                this.resourceType = resourceType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DeleteOptionsProperty#getResourceType}
+             * @param resourceType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder resourceType(com.aliyun.ros.cdk.core.IResolvable resourceType) {
+                this.resourceType = resourceType;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link DeleteOptionsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public DeleteOptionsProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link DeleteOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DeleteOptionsProperty {
+            private final java.lang.Object deleteMode;
+            private final java.lang.Object resourceType;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.deleteMode = software.amazon.jsii.Kernel.get(this, "deleteMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.resourceType = software.amazon.jsii.Kernel.get(this, "resourceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.deleteMode = builder.deleteMode;
+                this.resourceType = builder.resourceType;
+            }
+
+            @Override
+            public final java.lang.Object getDeleteMode() {
+                return this.deleteMode;
+            }
+
+            @Override
+            public final java.lang.Object getResourceType() {
+                return this.resourceType;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getDeleteMode() != null) {
+                    data.set("deleteMode", om.valueToTree(this.getDeleteMode()));
+                }
+                if (this.getResourceType() != null) {
+                    data.set("resourceType", om.valueToTree(this.getResourceType()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-cs.RosKubernetesCluster.DeleteOptionsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                DeleteOptionsProperty.Jsii$Proxy that = (DeleteOptionsProperty.Jsii$Proxy) o;
+
+                if (this.deleteMode != null ? !this.deleteMode.equals(that.deleteMode) : that.deleteMode != null) return false;
+                return this.resourceType != null ? this.resourceType.equals(that.resourceType) : that.resourceType == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.deleteMode != null ? this.deleteMode.hashCode() : 0;
+                result = 31 * result + (this.resourceType != null ? this.resourceType.hashCode() : 0);
                 return result;
             }
         }
@@ -4811,7 +5050,7 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param masterInstanceTypes This parameter is required.
          */
-        public Builder masterInstanceTypes(final java.util.List<? extends java.lang.Object> masterInstanceTypes) {
+        public Builder masterInstanceTypes(final com.aliyun.ros.cdk.core.IResolvable masterInstanceTypes) {
             this.props.masterInstanceTypes(masterInstanceTypes);
             return this;
         }
@@ -4819,7 +5058,7 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param masterInstanceTypes This parameter is required.
          */
-        public Builder masterInstanceTypes(final com.aliyun.ros.cdk.core.IResolvable masterInstanceTypes) {
+        public Builder masterInstanceTypes(final java.util.List<? extends java.lang.Object> masterInstanceTypes) {
             this.props.masterInstanceTypes(masterInstanceTypes);
             return this;
         }
@@ -4828,7 +5067,7 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param masterVSwitchIds This parameter is required.
          */
-        public Builder masterVSwitchIds(final java.util.List<? extends java.lang.Object> masterVSwitchIds) {
+        public Builder masterVSwitchIds(final com.aliyun.ros.cdk.core.IResolvable masterVSwitchIds) {
             this.props.masterVSwitchIds(masterVSwitchIds);
             return this;
         }
@@ -4836,7 +5075,7 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param masterVSwitchIds This parameter is required.
          */
-        public Builder masterVSwitchIds(final com.aliyun.ros.cdk.core.IResolvable masterVSwitchIds) {
+        public Builder masterVSwitchIds(final java.util.List<? extends java.lang.Object> masterVSwitchIds) {
             this.props.masterVSwitchIds(masterVSwitchIds);
             return this;
         }
@@ -4879,7 +5118,7 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param workerVSwitchIds This parameter is required.
          */
-        public Builder workerVSwitchIds(final java.util.List<? extends java.lang.Object> workerVSwitchIds) {
+        public Builder workerVSwitchIds(final com.aliyun.ros.cdk.core.IResolvable workerVSwitchIds) {
             this.props.workerVSwitchIds(workerVSwitchIds);
             return this;
         }
@@ -4887,7 +5126,7 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param workerVSwitchIds This parameter is required.
          */
-        public Builder workerVSwitchIds(final com.aliyun.ros.cdk.core.IResolvable workerVSwitchIds) {
+        public Builder workerVSwitchIds(final java.util.List<? extends java.lang.Object> workerVSwitchIds) {
             this.props.workerVSwitchIds(workerVSwitchIds);
             return this;
         }
@@ -5008,6 +5247,23 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder cpuPolicy(final com.aliyun.ros.cdk.core.IResolvable cpuPolicy) {
             this.props.cpuPolicy(cpuPolicy);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param deleteOptions This parameter is required.
+         */
+        public Builder deleteOptions(final com.aliyun.ros.cdk.core.IResolvable deleteOptions) {
+            this.props.deleteOptions(deleteOptions);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param deleteOptions This parameter is required.
+         */
+        public Builder deleteOptions(final java.util.List<? extends java.lang.Object> deleteOptions) {
+            this.props.deleteOptions(deleteOptions);
             return this;
         }
 

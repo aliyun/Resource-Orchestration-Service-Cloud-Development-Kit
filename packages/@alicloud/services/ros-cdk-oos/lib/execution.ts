@@ -15,6 +15,19 @@ export interface ExecutionProps {
     readonly templateName: string | ros.IResolvable;
 
     /**
+     * Property description: The description of OOS Execution.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * Property loopMode: The loop mode of OOS Execution. Valid values:
+     * - Automatic(Default): does not pause.
+     * - FirstBatchPause: The first batch of pauses.
+     * - EveryBatchPause: pause each batch.
+     */
+    readonly loopMode?: string | ros.IResolvable;
+
+    /**
      * Property mode: Execution mode.
      */
     readonly mode?: string | ros.IResolvable;
@@ -130,6 +143,8 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
         const rosExecution = new RosExecution(this, id,  {
             parentExecutionId: props.parentExecutionId,
             resourceOptions: props.resourceOptions,
+            loopMode: props.loopMode,
+            description: props.description,
             parameters: props.parameters,
             safetyCheck: props.safetyCheck === undefined || props.safetyCheck === null ? 'ConfirmEveryHighRiskAction' : props.safetyCheck,
             resourceGroupId: props.resourceGroupId,

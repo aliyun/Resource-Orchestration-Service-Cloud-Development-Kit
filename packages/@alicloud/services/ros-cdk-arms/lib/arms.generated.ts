@@ -3,6 +3,175 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosAddonRelease`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-addonrelease
+ */
+export interface RosAddonReleaseProps {
+
+    /**
+     * @Property addonVersion: The version of the add-on.
+     */
+    readonly addonVersion: string | ros.IResolvable;
+
+    /**
+     * @Property environmentId: The id of the environment.
+     */
+    readonly environmentId: string | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the add-on.
+     */
+    readonly name: string | ros.IResolvable;
+
+    /**
+     * @Property releaseName: The name of the add-on after it is installed. If you do not specify this parameter, a default rule name is generated.
+     */
+    readonly releaseName?: string | ros.IResolvable;
+
+    /**
+     * @Property values: The metadata.
+     */
+    readonly values?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAddonReleaseProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAddonReleaseProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAddonReleasePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('environmentId', ros.requiredValidator)(properties.environmentId));
+    errors.collect(ros.propertyValidator('environmentId', ros.validateString)(properties.environmentId));
+    errors.collect(ros.propertyValidator('addonVersion', ros.requiredValidator)(properties.addonVersion));
+    errors.collect(ros.propertyValidator('addonVersion', ros.validateString)(properties.addonVersion));
+    errors.collect(ros.propertyValidator('values', ros.hashValidator(ros.validateAny))(properties.values));
+    errors.collect(ros.propertyValidator('releaseName', ros.validateString)(properties.releaseName));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "RosAddonReleaseProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ARMS::AddonRelease` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAddonReleaseProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ARMS::AddonRelease` resource.
+ */
+// @ts-ignore TS6133
+function rosAddonReleasePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAddonReleasePropsValidator(properties).assertSuccess();
+    }
+    return {
+      AddonVersion: ros.stringToRosTemplate(properties.addonVersion),
+      EnvironmentId: ros.stringToRosTemplate(properties.environmentId),
+      Name: ros.stringToRosTemplate(properties.name),
+      ReleaseName: ros.stringToRosTemplate(properties.releaseName),
+      Values: ros.hashMapper(ros.objectToRosTemplate)(properties.values),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::AddonRelease`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AddonRelease` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-addonrelease
+ */
+export class RosAddonRelease extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ARMS::AddonRelease";
+
+    /**
+     * @Attribute Config: AddonRelease configuration information.
+     */
+    public readonly attrConfig: ros.IResolvable;
+
+    /**
+     * @Attribute EnvironmentId: The environment ID.
+     */
+    public readonly attrEnvironmentId: ros.IResolvable;
+
+    /**
+     * @Attribute Release: Release information.
+     */
+    public readonly attrRelease: ros.IResolvable;
+
+    /**
+     * @Attribute ReleaseName: The name of the add-on.
+     */
+    public readonly attrReleaseName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property addonVersion: The version of the add-on.
+     */
+    public addonVersion: string | ros.IResolvable;
+
+    /**
+     * @Property environmentId: The id of the environment.
+     */
+    public environmentId: string | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the add-on.
+     */
+    public name: string | ros.IResolvable;
+
+    /**
+     * @Property releaseName: The name of the add-on after it is installed. If you do not specify this parameter, a default rule name is generated.
+     */
+    public releaseName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property values: The metadata.
+     */
+    public values: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAddonReleaseProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAddonRelease.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrConfig = this.getAtt('Config');
+        this.attrEnvironmentId = this.getAtt('EnvironmentId');
+        this.attrRelease = this.getAtt('Release');
+        this.attrReleaseName = this.getAtt('ReleaseName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.addonVersion = props.addonVersion;
+        this.environmentId = props.environmentId;
+        this.name = props.name;
+        this.releaseName = props.releaseName;
+        this.values = props.values;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            addonVersion: this.addonVersion,
+            environmentId: this.environmentId,
+            name: this.name,
+            releaseName: this.releaseName,
+            values: this.values,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAddonReleasePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosAlertContact`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-alertcontact
  */
@@ -452,6 +621,532 @@ export class RosApplyAlertRuleTemplate extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosApplyAlertRuleTemplatePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosEnvironment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-environment
+ */
+export interface RosEnvironmentProps {
+
+    /**
+     * @Property bindResourceId: The ID of the resource bound to the environment, such as the container ID or VPC ID. For a Cloud environment, specify the region ID.
+     */
+    readonly bindResourceId: string | ros.IResolvable;
+
+    /**
+     * @Property environmentName: The name of the environment.
+     */
+    readonly environmentName: string | ros.IResolvable;
+
+    /**
+     * @Property environmentSubType: The subtype of the environment. Valid values:
+     * One: CS type environment
+     * ACK: CS type environment
+     * ECS: ECS type environment
+     * Cloud: cloud service
+     */
+    readonly environmentSubType: string | ros.IResolvable;
+
+    /**
+     * @Property environmentType: The type of the environment. Valid values:
+     * CS: ACK
+     * ECS: ECS
+     * Cloud: cloud service
+     */
+    readonly environmentType: string | ros.IResolvable;
+
+    /**
+     * @Property feePackage: The payable resource plan. Valid values:
+     * If the EnvironmentType parameter is set to CS, set the value to CS_Basic or CS_Pro. Default value: CS_Basic.
+     * Otherwise, leave the parameter empty.
+     */
+    readonly feePackage?: string | ros.IResolvable;
+
+    /**
+     * @Property grafanaWorkspaceId: The ID of the grafana workspace bound to the environment. When passing space, the default share grafana is used.
+     */
+    readonly grafanaWorkspaceId?: string | ros.IResolvable;
+
+    /**
+     * @Property managedType: Specifies whether agents or exporters are managed. Valid values:
+     * none: No. By default, no managed agents or exporters are provided for ACK clusters.
+     * agent: Agents are managed. By default, managed agents are provided for ASK clusters, ACS clusters, and ACK One clusters.
+     * agent-exporter: Agents and exporters are managed. By default, managed agents and exporters are provided for cloud services.
+     */
+    readonly managedType?: string | ros.IResolvable;
+
+    /**
+     * @Property prometheusInstanceId: The ID of the Prometheus instance. If no Prometheus instance is created, call the InitEnvironment operation to initialize a storage instance.
+     */
+    readonly prometheusInstanceId?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags of Environment.
+     */
+    readonly tags?: RosEnvironment.TagsProperty[];
+}
+
+/**
+ * Determine whether the given properties match those of a `RosEnvironmentProps`
+ *
+ * @param properties - the TypeScript properties of a `RosEnvironmentProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosEnvironmentPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.managedType && (typeof properties.managedType) !== 'object') {
+        errors.collect(ros.propertyValidator('managedType', ros.validateAllowedValues)({
+          data: properties.managedType,
+          allowedValues: ["none","agent","agent-exporter"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('managedType', ros.validateString)(properties.managedType));
+    errors.collect(ros.propertyValidator('environmentSubType', ros.requiredValidator)(properties.environmentSubType));
+    if(properties.environmentSubType && (typeof properties.environmentSubType) !== 'object') {
+        errors.collect(ros.propertyValidator('environmentSubType', ros.validateAllowedValues)({
+          data: properties.environmentSubType,
+          allowedValues: ["ACK","ECS","One","Cloud"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('environmentSubType', ros.validateString)(properties.environmentSubType));
+    errors.collect(ros.propertyValidator('environmentType', ros.requiredValidator)(properties.environmentType));
+    if(properties.environmentType && (typeof properties.environmentType) !== 'object') {
+        errors.collect(ros.propertyValidator('environmentType', ros.validateAllowedValues)({
+          data: properties.environmentType,
+          allowedValues: ["CS","ECS","Cloud"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('environmentType', ros.validateString)(properties.environmentType));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('environmentName', ros.requiredValidator)(properties.environmentName));
+    errors.collect(ros.propertyValidator('environmentName', ros.validateString)(properties.environmentName));
+    errors.collect(ros.propertyValidator('bindResourceId', ros.requiredValidator)(properties.bindResourceId));
+    errors.collect(ros.propertyValidator('bindResourceId', ros.validateString)(properties.bindResourceId));
+    errors.collect(ros.propertyValidator('grafanaWorkspaceId', ros.validateString)(properties.grafanaWorkspaceId));
+    errors.collect(ros.propertyValidator('prometheusInstanceId', ros.validateString)(properties.prometheusInstanceId));
+    errors.collect(ros.propertyValidator('feePackage', ros.validateString)(properties.feePackage));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosEnvironment_TagsPropertyValidator))(properties.tags));
+    return errors.wrap('supplied properties not correct for "RosEnvironmentProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ARMS::Environment` resource
+ *
+ * @param properties - the TypeScript properties of a `RosEnvironmentProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ARMS::Environment` resource.
+ */
+// @ts-ignore TS6133
+function rosEnvironmentPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosEnvironmentPropsValidator(properties).assertSuccess();
+    }
+    return {
+      BindResourceId: ros.stringToRosTemplate(properties.bindResourceId),
+      EnvironmentName: ros.stringToRosTemplate(properties.environmentName),
+      EnvironmentSubType: ros.stringToRosTemplate(properties.environmentSubType),
+      EnvironmentType: ros.stringToRosTemplate(properties.environmentType),
+      FeePackage: ros.stringToRosTemplate(properties.feePackage),
+      GrafanaWorkspaceId: ros.stringToRosTemplate(properties.grafanaWorkspaceId),
+      ManagedType: ros.stringToRosTemplate(properties.managedType),
+      PrometheusInstanceId: ros.stringToRosTemplate(properties.prometheusInstanceId),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      Tags: ros.listMapper(rosEnvironmentTagsPropertyToRosTemplate)(properties.tags),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::Environment`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Environment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-environment
+ */
+export class RosEnvironment extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ARMS::Environment";
+
+    /**
+     * @Attribute EnvironmentId: The id of the environment.
+     */
+    public readonly attrEnvironmentId: ros.IResolvable;
+
+    /**
+     * @Attribute EnvironmentName: The name of the environment.
+     */
+    public readonly attrEnvironmentName: ros.IResolvable;
+
+    /**
+     * @Attribute EnvironmentSubType: The subtype of the environment.
+     */
+    public readonly attrEnvironmentSubType: ros.IResolvable;
+
+    /**
+     * @Attribute EnvironmentType: The type of the environment.
+     */
+    public readonly attrEnvironmentType: ros.IResolvable;
+
+    /**
+     * @Attribute FeePackage: The payable resource plan.
+     */
+    public readonly attrFeePackage: ros.IResolvable;
+
+    /**
+     * @Attribute GrafanaWorkspaceId: The ID of the grafana workspace bound to the environment.
+     */
+    public readonly attrGrafanaWorkspaceId: ros.IResolvable;
+
+    /**
+     * @Attribute ManagedType: Specifies whether agents or exporters are managed.
+     */
+    public readonly attrManagedType: ros.IResolvable;
+
+    /**
+     * @Attribute PrometheusInstanceId: The ID of the Prometheus instance.
+     */
+    public readonly attrPrometheusInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The ID of the resource group.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property bindResourceId: The ID of the resource bound to the environment, such as the container ID or VPC ID. For a Cloud environment, specify the region ID.
+     */
+    public bindResourceId: string | ros.IResolvable;
+
+    /**
+     * @Property environmentName: The name of the environment.
+     */
+    public environmentName: string | ros.IResolvable;
+
+    /**
+     * @Property environmentSubType: The subtype of the environment. Valid values:
+     * One: CS type environment
+     * ACK: CS type environment
+     * ECS: ECS type environment
+     * Cloud: cloud service
+     */
+    public environmentSubType: string | ros.IResolvable;
+
+    /**
+     * @Property environmentType: The type of the environment. Valid values:
+     * CS: ACK
+     * ECS: ECS
+     * Cloud: cloud service
+     */
+    public environmentType: string | ros.IResolvable;
+
+    /**
+     * @Property feePackage: The payable resource plan. Valid values:
+     * If the EnvironmentType parameter is set to CS, set the value to CS_Basic or CS_Pro. Default value: CS_Basic.
+     * Otherwise, leave the parameter empty.
+     */
+    public feePackage: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property grafanaWorkspaceId: The ID of the grafana workspace bound to the environment. When passing space, the default share grafana is used.
+     */
+    public grafanaWorkspaceId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property managedType: Specifies whether agents or exporters are managed. Valid values:
+     * none: No. By default, no managed agents or exporters are provided for ACK clusters.
+     * agent: Agents are managed. By default, managed agents are provided for ASK clusters, ACS clusters, and ACK One clusters.
+     * agent-exporter: Agents and exporters are managed. By default, managed agents and exporters are provided for cloud services.
+     */
+    public managedType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property prometheusInstanceId: The ID of the Prometheus instance. If no Prometheus instance is created, call the InitEnvironment operation to initialize a storage instance.
+     */
+    public prometheusInstanceId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags of Environment.
+     */
+    public tags: RosEnvironment.TagsProperty[] | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosEnvironmentProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosEnvironment.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrEnvironmentId = this.getAtt('EnvironmentId');
+        this.attrEnvironmentName = this.getAtt('EnvironmentName');
+        this.attrEnvironmentSubType = this.getAtt('EnvironmentSubType');
+        this.attrEnvironmentType = this.getAtt('EnvironmentType');
+        this.attrFeePackage = this.getAtt('FeePackage');
+        this.attrGrafanaWorkspaceId = this.getAtt('GrafanaWorkspaceId');
+        this.attrManagedType = this.getAtt('ManagedType');
+        this.attrPrometheusInstanceId = this.getAtt('PrometheusInstanceId');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.bindResourceId = props.bindResourceId;
+        this.environmentName = props.environmentName;
+        this.environmentSubType = props.environmentSubType;
+        this.environmentType = props.environmentType;
+        this.feePackage = props.feePackage;
+        this.grafanaWorkspaceId = props.grafanaWorkspaceId;
+        this.managedType = props.managedType;
+        this.prometheusInstanceId = props.prometheusInstanceId;
+        this.resourceGroupId = props.resourceGroupId;
+        this.tags = props.tags;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            bindResourceId: this.bindResourceId,
+            environmentName: this.environmentName,
+            environmentSubType: this.environmentSubType,
+            environmentType: this.environmentType,
+            feePackage: this.feePackage,
+            grafanaWorkspaceId: this.grafanaWorkspaceId,
+            managedType: this.managedType,
+            prometheusInstanceId: this.prometheusInstanceId,
+            resourceGroupId: this.resourceGroupId,
+            tags: this.tags,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosEnvironmentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosEnvironment {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosEnvironment_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ARMS::Environment.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ARMS::Environment.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosEnvironmentTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosEnvironment_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
+ * Properties for defining a `RosEnvironmentFeature`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-environmentfeature
+ */
+export interface RosEnvironmentFeatureProps {
+
+    /**
+     * @Property environmentId: The id of the environment.
+     */
+    readonly environmentId: string | ros.IResolvable;
+
+    /**
+     * @Property featureName: The name of the feature. Valid values:
+     * app-agent-pilot
+     * metric-agent
+     */
+    readonly featureName: string | ros.IResolvable;
+
+    /**
+     * @Property featureVersion: The version of the feature.
+     */
+    readonly featureVersion: string | ros.IResolvable;
+
+    /**
+     * @Property config: The metadata of the feature.
+     */
+    readonly config?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosEnvironmentFeatureProps`
+ *
+ * @param properties - the TypeScript properties of a `RosEnvironmentFeatureProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosEnvironmentFeaturePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('environmentId', ros.requiredValidator)(properties.environmentId));
+    errors.collect(ros.propertyValidator('environmentId', ros.validateString)(properties.environmentId));
+    errors.collect(ros.propertyValidator('config', ros.hashValidator(ros.validateAny))(properties.config));
+    errors.collect(ros.propertyValidator('featureVersion', ros.requiredValidator)(properties.featureVersion));
+    errors.collect(ros.propertyValidator('featureVersion', ros.validateString)(properties.featureVersion));
+    errors.collect(ros.propertyValidator('featureName', ros.requiredValidator)(properties.featureName));
+    errors.collect(ros.propertyValidator('featureName', ros.validateString)(properties.featureName));
+    return errors.wrap('supplied properties not correct for "RosEnvironmentFeatureProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ARMS::EnvironmentFeature` resource
+ *
+ * @param properties - the TypeScript properties of a `RosEnvironmentFeatureProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ARMS::EnvironmentFeature` resource.
+ */
+// @ts-ignore TS6133
+function rosEnvironmentFeaturePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosEnvironmentFeaturePropsValidator(properties).assertSuccess();
+    }
+    return {
+      EnvironmentId: ros.stringToRosTemplate(properties.environmentId),
+      FeatureName: ros.stringToRosTemplate(properties.featureName),
+      FeatureVersion: ros.stringToRosTemplate(properties.featureVersion),
+      Config: ros.hashMapper(ros.objectToRosTemplate)(properties.config),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::EnvironmentFeature`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `EnvironmentFeature` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-environmentfeature
+ */
+export class RosEnvironmentFeature extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ARMS::EnvironmentFeature";
+
+    /**
+     * @Attribute EnvironmentId: The environment ID.
+     */
+    public readonly attrEnvironmentId: ros.IResolvable;
+
+    /**
+     * @Attribute Feature: The installation information of the feature.
+     */
+    public readonly attrFeature: ros.IResolvable;
+
+    /**
+     * @Attribute FeatureName: The name of the feature.
+     */
+    public readonly attrFeatureName: ros.IResolvable;
+
+    /**
+     * @Attribute FeatureStatus: The status of the feature.
+     */
+    public readonly attrFeatureStatus: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property environmentId: The id of the environment.
+     */
+    public environmentId: string | ros.IResolvable;
+
+    /**
+     * @Property featureName: The name of the feature. Valid values:
+     * app-agent-pilot
+     * metric-agent
+     */
+    public featureName: string | ros.IResolvable;
+
+    /**
+     * @Property featureVersion: The version of the feature.
+     */
+    public featureVersion: string | ros.IResolvable;
+
+    /**
+     * @Property config: The metadata of the feature.
+     */
+    public config: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosEnvironmentFeatureProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosEnvironmentFeature.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrEnvironmentId = this.getAtt('EnvironmentId');
+        this.attrFeature = this.getAtt('Feature');
+        this.attrFeatureName = this.getAtt('FeatureName');
+        this.attrFeatureStatus = this.getAtt('FeatureStatus');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.environmentId = props.environmentId;
+        this.featureName = props.featureName;
+        this.featureVersion = props.featureVersion;
+        this.config = props.config;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            environmentId: this.environmentId,
+            featureName: this.featureName,
+            featureVersion: this.featureVersion,
+            config: this.config,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosEnvironmentFeaturePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
 

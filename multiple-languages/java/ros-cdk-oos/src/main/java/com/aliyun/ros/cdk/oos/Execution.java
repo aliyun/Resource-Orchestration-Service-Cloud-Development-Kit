@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oos;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::OOS::Execution</code>, which is used to start an execution.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:16.265Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:11.157Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.Execution")
 public class Execution extends com.aliyun.ros.cdk.core.Resource {
 
@@ -194,6 +194,64 @@ public class Execution extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder templateName(final com.aliyun.ros.cdk.core.IResolvable templateName) {
             this.props.templateName(templateName);
+            return this;
+        }
+
+        /**
+         * Property description: The description of OOS Execution.
+         * <p>
+         * @return {@code this}
+         * @param description Property description: The description of OOS Execution. This parameter is required.
+         */
+        public Builder description(final java.lang.String description) {
+            this.props.description(description);
+            return this;
+        }
+        /**
+         * Property description: The description of OOS Execution.
+         * <p>
+         * @return {@code this}
+         * @param description Property description: The description of OOS Execution. This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props.description(description);
+            return this;
+        }
+
+        /**
+         * Property loopMode: The loop mode of OOS Execution.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Automatic(Default): does not pause.</li>
+         * <li>FirstBatchPause: The first batch of pauses.</li>
+         * <li>EveryBatchPause: pause each batch.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param loopMode Property loopMode: The loop mode of OOS Execution. This parameter is required.
+         */
+        public Builder loopMode(final java.lang.String loopMode) {
+            this.props.loopMode(loopMode);
+            return this;
+        }
+        /**
+         * Property loopMode: The loop mode of OOS Execution.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Automatic(Default): does not pause.</li>
+         * <li>FirstBatchPause: The first batch of pauses.</li>
+         * <li>EveryBatchPause: pause each batch.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param loopMode Property loopMode: The loop mode of OOS Execution. This parameter is required.
+         */
+        public Builder loopMode(final com.aliyun.ros.cdk.core.IResolvable loopMode) {
+            this.props.loopMode(loopMode);
             return this;
         }
 

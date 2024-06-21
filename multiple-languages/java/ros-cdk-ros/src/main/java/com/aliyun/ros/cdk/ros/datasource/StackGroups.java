@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::ROS::StackGroups</code>, which is used to query the details of stack groups.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:17.313Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:12.143Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.datasource.StackGroups")
 public class StackGroups extends com.aliyun.ros.cdk.core.Resource {
 

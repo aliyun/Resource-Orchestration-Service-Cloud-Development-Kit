@@ -443,6 +443,13 @@ export interface RosVpcEndpointServiceProps {
     readonly connectBandwidth?: number | ros.IResolvable;
 
     /**
+     * @Property deletionForce: Specifies whether to delete the endpoint service even if it has endpoint connections.
+     * - True
+     * - False (default)
+     */
+    readonly deletionForce?: boolean | ros.IResolvable;
+
+    /**
      * @Property payer: The payer of the endpoint service. Valid values: 
      * Endpoint: the service consumer. 
      * EndpointService: the service provider.
@@ -453,6 +460,11 @@ export interface RosVpcEndpointServiceProps {
      * @Property resource:
      */
     readonly resource?: Array<RosVpcEndpointService.ResourceProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
      * @Property serviceDescription: The description for the endpoint service.
@@ -507,6 +519,8 @@ function RosVpcEndpointServicePropsValidator(properties: any): ros.ValidationRes
           }));
     }
     errors.collect(ros.propertyValidator('user', ros.listValidator(ros.validateString))(properties.user));
+    errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.serviceDescription && (Array.isArray(properties.serviceDescription) || (typeof properties.serviceDescription) === 'string')) {
         errors.collect(ros.propertyValidator('serviceDescription', ros.validateLength)({
             data: properties.serviceDescription.length,
@@ -561,8 +575,10 @@ function rosVpcEndpointServicePropsToRosTemplate(properties: any, enableResource
     return {
       AutoAcceptEnabled: ros.booleanToRosTemplate(properties.autoAcceptEnabled),
       ConnectBandwidth: ros.numberToRosTemplate(properties.connectBandwidth),
+      DeletionForce: ros.booleanToRosTemplate(properties.deletionForce),
       Payer: ros.stringToRosTemplate(properties.payer),
       Resource: ros.listMapper(rosVpcEndpointServiceResourcePropertyToRosTemplate)(properties.resource),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       ServiceDescription: ros.stringToRosTemplate(properties.serviceDescription),
       ServiceResourceType: ros.stringToRosTemplate(properties.serviceResourceType),
       Tags: ros.listMapper(rosVpcEndpointServiceTagsPropertyToRosTemplate)(properties.tags),
@@ -628,6 +644,13 @@ export class RosVpcEndpointService extends ros.RosResource {
     public connectBandwidth: number | ros.IResolvable | undefined;
 
     /**
+     * @Property deletionForce: Specifies whether to delete the endpoint service even if it has endpoint connections.
+     * - True
+     * - False (default)
+     */
+    public deletionForce: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property payer: The payer of the endpoint service. Valid values: 
      * Endpoint: the service consumer. 
      * EndpointService: the service provider.
@@ -638,6 +661,11 @@ export class RosVpcEndpointService extends ros.RosResource {
      * @Property resource:
      */
     public resource: Array<RosVpcEndpointService.ResourceProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
      * @Property serviceDescription: The description for the endpoint service.
@@ -683,8 +711,10 @@ export class RosVpcEndpointService extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.autoAcceptEnabled = props.autoAcceptEnabled;
         this.connectBandwidth = props.connectBandwidth;
+        this.deletionForce = props.deletionForce;
         this.payer = props.payer;
         this.resource = props.resource;
+        this.resourceGroupId = props.resourceGroupId;
         this.serviceDescription = props.serviceDescription;
         this.serviceResourceType = props.serviceResourceType;
         this.tags = props.tags;
@@ -697,8 +727,10 @@ export class RosVpcEndpointService extends ros.RosResource {
         return {
             autoAcceptEnabled: this.autoAcceptEnabled,
             connectBandwidth: this.connectBandwidth,
+            deletionForce: this.deletionForce,
             payer: this.payer,
             resource: this.resource,
+            resourceGroupId: this.resourceGroupId,
             serviceDescription: this.serviceDescription,
             serviceResourceType: this.serviceResourceType,
             tags: this.tags,

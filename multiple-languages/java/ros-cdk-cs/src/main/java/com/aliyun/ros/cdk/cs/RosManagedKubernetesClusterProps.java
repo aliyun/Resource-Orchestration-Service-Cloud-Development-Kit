@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managedkubernetescluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:13.595Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:08.437Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedKubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosManagedKubernetesClusterProps.Jsii$Proxy.class)
 public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -61,6 +61,12 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getContainerCidr() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeleteOptions() {
         return null;
     }
 
@@ -318,6 +324,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
         java.lang.Object cloudMonitorFlags;
         java.lang.Object clusterSpec;
         java.lang.Object containerCidr;
+        java.lang.Object deleteOptions;
         java.lang.Object deletionProtection;
         java.lang.Object disableRollback;
         java.lang.Object encryptionProviderKey;
@@ -403,7 +410,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
          * @param vSwitchIds the value to be set. This parameter is required.
          * @return {@code this}
          */
-        public Builder vSwitchIds(java.util.List<? extends java.lang.Object> vSwitchIds) {
+        public Builder vSwitchIds(com.aliyun.ros.cdk.core.IResolvable vSwitchIds) {
             this.vSwitchIds = vSwitchIds;
             return this;
         }
@@ -413,7 +420,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
          * @param vSwitchIds the value to be set. This parameter is required.
          * @return {@code this}
          */
-        public Builder vSwitchIds(com.aliyun.ros.cdk.core.IResolvable vSwitchIds) {
+        public Builder vSwitchIds(java.util.List<? extends java.lang.Object> vSwitchIds) {
             this.vSwitchIds = vSwitchIds;
             return this;
         }
@@ -555,6 +562,26 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
          */
         public Builder containerCidr(com.aliyun.ros.cdk.core.IResolvable containerCidr) {
             this.containerCidr = containerCidr;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosManagedKubernetesClusterProps#getDeleteOptions}
+         * @param deleteOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder deleteOptions(com.aliyun.ros.cdk.core.IResolvable deleteOptions) {
+            this.deleteOptions = deleteOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosManagedKubernetesClusterProps#getDeleteOptions}
+         * @param deleteOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder deleteOptions(java.util.List<? extends java.lang.Object> deleteOptions) {
+            this.deleteOptions = deleteOptions;
             return this;
         }
 
@@ -1355,6 +1382,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
         private final java.lang.Object cloudMonitorFlags;
         private final java.lang.Object clusterSpec;
         private final java.lang.Object containerCidr;
+        private final java.lang.Object deleteOptions;
         private final java.lang.Object deletionProtection;
         private final java.lang.Object disableRollback;
         private final java.lang.Object encryptionProviderKey;
@@ -1411,6 +1439,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             this.cloudMonitorFlags = software.amazon.jsii.Kernel.get(this, "cloudMonitorFlags", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.clusterSpec = software.amazon.jsii.Kernel.get(this, "clusterSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.containerCidr = software.amazon.jsii.Kernel.get(this, "containerCidr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.deleteOptions = software.amazon.jsii.Kernel.get(this, "deleteOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.disableRollback = software.amazon.jsii.Kernel.get(this, "disableRollback", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.encryptionProviderKey = software.amazon.jsii.Kernel.get(this, "encryptionProviderKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1468,6 +1497,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             this.cloudMonitorFlags = builder.cloudMonitorFlags;
             this.clusterSpec = builder.clusterSpec;
             this.containerCidr = builder.containerCidr;
+            this.deleteOptions = builder.deleteOptions;
             this.deletionProtection = builder.deletionProtection;
             this.disableRollback = builder.disableRollback;
             this.encryptionProviderKey = builder.encryptionProviderKey;
@@ -1557,6 +1587,11 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
         @Override
         public final java.lang.Object getContainerCidr() {
             return this.containerCidr;
+        }
+
+        @Override
+        public final java.lang.Object getDeleteOptions() {
+            return this.deleteOptions;
         }
 
         @Override
@@ -1784,6 +1819,9 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             if (this.getContainerCidr() != null) {
                 data.set("containerCidr", om.valueToTree(this.getContainerCidr()));
             }
+            if (this.getDeleteOptions() != null) {
+                data.set("deleteOptions", om.valueToTree(this.getDeleteOptions()));
+            }
             if (this.getDeletionProtection() != null) {
                 data.set("deletionProtection", om.valueToTree(this.getDeletionProtection()));
             }
@@ -1929,6 +1967,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             if (this.cloudMonitorFlags != null ? !this.cloudMonitorFlags.equals(that.cloudMonitorFlags) : that.cloudMonitorFlags != null) return false;
             if (this.clusterSpec != null ? !this.clusterSpec.equals(that.clusterSpec) : that.clusterSpec != null) return false;
             if (this.containerCidr != null ? !this.containerCidr.equals(that.containerCidr) : that.containerCidr != null) return false;
+            if (this.deleteOptions != null ? !this.deleteOptions.equals(that.deleteOptions) : that.deleteOptions != null) return false;
             if (this.deletionProtection != null ? !this.deletionProtection.equals(that.deletionProtection) : that.deletionProtection != null) return false;
             if (this.disableRollback != null ? !this.disableRollback.equals(that.disableRollback) : that.disableRollback != null) return false;
             if (this.encryptionProviderKey != null ? !this.encryptionProviderKey.equals(that.encryptionProviderKey) : that.encryptionProviderKey != null) return false;
@@ -1982,6 +2021,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             result = 31 * result + (this.cloudMonitorFlags != null ? this.cloudMonitorFlags.hashCode() : 0);
             result = 31 * result + (this.clusterSpec != null ? this.clusterSpec.hashCode() : 0);
             result = 31 * result + (this.containerCidr != null ? this.containerCidr.hashCode() : 0);
+            result = 31 * result + (this.deleteOptions != null ? this.deleteOptions.hashCode() : 0);
             result = 31 * result + (this.deletionProtection != null ? this.deletionProtection.hashCode() : 0);
             result = 31 * result + (this.disableRollback != null ? this.disableRollback.hashCode() : 0);
             result = 31 * result + (this.encryptionProviderKey != null ? this.encryptionProviderKey.hashCode() : 0);

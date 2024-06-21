@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.redis;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::REDIS::AuditLogConfig</code>, which is used to modify the audit log settings of an ApsaraDB for Redis instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:17.092Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:11.914Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.AuditLogConfig")
 public class AuditLogConfig extends com.aliyun.ros.cdk.core.Resource {
 

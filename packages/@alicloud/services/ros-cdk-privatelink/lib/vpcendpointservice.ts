@@ -22,6 +22,13 @@ export interface VpcEndpointServiceProps {
     readonly connectBandwidth?: number | ros.IResolvable;
 
     /**
+     * Property deletionForce: Specifies whether to delete the endpoint service even if it has endpoint connections.
+     * - True
+     * - False (default)
+     */
+    readonly deletionForce?: boolean | ros.IResolvable;
+
+    /**
      * Property payer: The payer of the endpoint service. Valid values: 
      * Endpoint: the service consumer. 
      * EndpointService: the service provider.
@@ -32,6 +39,11 @@ export interface VpcEndpointServiceProps {
      * Property resource:
      */
     readonly resource?: Array<RosVpcEndpointService.ResourceProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
      * Property serviceDescription: The description for the endpoint service.
@@ -117,6 +129,8 @@ export class VpcEndpointService extends ros.Resource {
         const rosVpcEndpointService = new RosVpcEndpointService(this, id,  {
             payer: props.payer,
             user: props.user,
+            deletionForce: props.deletionForce,
+            resourceGroupId: props.resourceGroupId,
             serviceDescription: props.serviceDescription,
             resource: props.resource,
             connectBandwidth: props.connectBandwidth,

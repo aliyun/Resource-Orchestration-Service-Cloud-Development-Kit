@@ -21,6 +21,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
             get;
         }
 
+        /// <summary>Property description: The description of OOS Execution.</summary>
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Description
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property loopMode: The loop mode of OOS Execution.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>Automatic(Default): does not pause.</description>
+        /// <description>FirstBatchPause: The first batch of pauses.</description>
+        /// <description>EveryBatchPause: pause each batch.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiProperty(name: "loopMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? LoopMode
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property mode: Execution mode.</summary>
         [JsiiProperty(name: "mode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -139,6 +170,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
             public object TemplateName
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property description: The description of OOS Execution.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Description
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property loopMode: The loop mode of OOS Execution.</summary>
+            /// <remarks>
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>Automatic(Default): does not pause.</description>
+            /// <description>FirstBatchPause: The first batch of pauses.</description>
+            /// <description>EveryBatchPause: pause each batch.</description>
+            /// </list>
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "loopMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? LoopMode
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property mode: Execution mode.</summary>

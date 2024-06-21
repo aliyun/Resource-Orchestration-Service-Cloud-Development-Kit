@@ -5589,7 +5589,7 @@ function RosScalingGroup_ServerGroupsPropertyValidator(properties: any): ros.Val
     if(properties.port && (typeof properties.port) !== 'object') {
         errors.collect(ros.propertyValidator('port', ros.validateRange)({
             data: properties.port,
-            min: 1,
+            min: 0,
             max: 65535,
           }));
     }

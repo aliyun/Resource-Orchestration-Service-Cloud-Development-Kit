@@ -13,12 +13,12 @@ export interface KubernetesClusterProps {
      * Property masterInstanceTypes: Master node ECS specification type code. For more details, see Instance Type Family. Each item correspond to MasterVSwitchIds.
      * List size must be 3, Instance Type can be repeated.
      */
-    readonly masterInstanceTypes: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly masterInstanceTypes: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property masterVSwitchIds: Master node switch ID. To ensure high availability of the cluster, it is recommended that you select 3 switches and distribute them in different Availability Zones.
      */
-    readonly masterVSwitchIds: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly masterVSwitchIds: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property name: The name of the cluster. The cluster name can use uppercase and lowercase letters, Chinese characters, numbers, and dashes.
@@ -33,7 +33,7 @@ export interface KubernetesClusterProps {
     /**
      * Property workerVSwitchIds: The virtual switch ID of the worker node.
      */
-    readonly workerVSwitchIds: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly workerVSwitchIds: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property addons: A combination of addon plugins for Kubernetes clusters.
@@ -84,6 +84,11 @@ export interface KubernetesClusterProps {
      * Property cpuPolicy: CPU policy. The cluster version is 1.12.6 and above supports both static and none strategies.
      */
     readonly cpuPolicy?: string | ros.IResolvable;
+
+    /**
+     * Property deleteOptions: Delete options, only work for deleting resource.
+     */
+    readonly deleteOptions?: Array<RosKubernetesCluster.DeleteOptionsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property deletionProtection: Specifies whether to enable deletion protection for the cluster. 
@@ -522,6 +527,7 @@ export class KubernetesCluster extends ros.Resource {
             disableRollback: props.disableRollback === undefined || props.disableRollback === null ? true : props.disableRollback,
             tags: props.tags,
             containerCidr: props.containerCidr === undefined || props.containerCidr === null ? '172.16.0.0/16' : props.containerCidr,
+            deleteOptions: props.deleteOptions,
             cpuPolicy: props.cpuPolicy,
             keyPair: props.keyPair,
             nodeCidrMask: props.nodeCidrMask,
@@ -541,8 +547,8 @@ export class KubernetesCluster extends ros.Resource {
             addons: props.addons,
             masterSystemDiskSize: props.masterSystemDiskSize === undefined || props.masterSystemDiskSize === null ? 120 : props.masterSystemDiskSize,
             workerSystemDiskCategory: props.workerSystemDiskCategory === undefined || props.workerSystemDiskCategory === null ? 'cloud_efficiency' : props.workerSystemDiskCategory,
-            nodePortRange: props.nodePortRange === undefined || props.nodePortRange === null ? '30000-65535' : props.nodePortRange,
             workerSystemDiskSize: props.workerSystemDiskSize === undefined || props.workerSystemDiskSize === null ? 120 : props.workerSystemDiskSize,
+            nodePortRange: props.nodePortRange === undefined || props.nodePortRange === null ? '30000-65535' : props.nodePortRange,
             masterVSwitchIds: props.masterVSwitchIds,
             cloudMonitorFlags: props.cloudMonitorFlags === undefined || props.cloudMonitorFlags === null ? false : props.cloudMonitorFlags,
             securityHardeningOs: props.securityHardeningOs,

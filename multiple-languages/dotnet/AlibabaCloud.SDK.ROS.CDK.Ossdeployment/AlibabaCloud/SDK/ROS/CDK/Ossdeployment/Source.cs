@@ -46,6 +46,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ossdeployment
         /// <summary>Uses a local file path as the source of the target bucket contents.</summary>
         /// <param name="path">The path to a local file or a directory.</param>
         /// <param name="options">Options for the Asset.</param>
+        /// <param name="objectPrefix">The prefix of object key.</param>
         /// <remarks>
         /// ROS CDK will create a temporary bucket and upload the files you want to upload to it.
         /// Make sure that the region id you specify in synth and deploy is the same region id as the destination upload bucket.
@@ -53,10 +54,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ossdeployment
         /// If the local asset is a .zip archive, make sure you trust the
         /// producer of the archive.
         /// </remarks>
-        [JsiiMethod(name: "asset", returnsJson: "{\"type\":{\"fqn\":\"@alicloud/ros-cdk-ossdeployment.ISource\"}}", parametersJson: "[{\"docs\":{\"summary\":\"The path to a local file or a directory.\"},\"name\":\"path\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"Options for the Asset.\"},\"name\":\"options\",\"optional\":true,\"type\":{\"fqn\":\"@alicloud/ros-cdk-ossassets.AssetOptions\"}}]")]
-        public static AlibabaCloud.SDK.ROS.CDK.Ossdeployment.ISource Asset(string path, AlibabaCloud.SDK.ROS.CDK.Ossassets.IAssetOptions? options = null)
+        [JsiiMethod(name: "asset", returnsJson: "{\"type\":{\"fqn\":\"@alicloud/ros-cdk-ossdeployment.ISource\"}}", parametersJson: "[{\"docs\":{\"summary\":\"The path to a local file or a directory.\"},\"name\":\"path\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"Options for the Asset.\"},\"name\":\"options\",\"optional\":true,\"type\":{\"fqn\":\"@alicloud/ros-cdk-ossassets.AssetOptions\"}},{\"docs\":{\"remarks\":\"You can use it to specify the location of the object in the target bucket.\",\"summary\":\"The prefix of object key.\"},\"name\":\"objectPrefix\",\"optional\":true,\"type\":{\"primitive\":\"string\"}}]")]
+        public static AlibabaCloud.SDK.ROS.CDK.Ossdeployment.ISource Asset(string path, AlibabaCloud.SDK.ROS.CDK.Ossassets.IAssetOptions? options = null, string? objectPrefix = null)
         {
-            return InvokeStaticMethod<AlibabaCloud.SDK.ROS.CDK.Ossdeployment.ISource>(typeof(AlibabaCloud.SDK.ROS.CDK.Ossdeployment.Source), new System.Type[]{typeof(string), typeof(AlibabaCloud.SDK.ROS.CDK.Ossassets.IAssetOptions)}, new object?[]{path, options})!;
+            return InvokeStaticMethod<AlibabaCloud.SDK.ROS.CDK.Ossdeployment.ISource>(typeof(AlibabaCloud.SDK.ROS.CDK.Ossdeployment.Source), new System.Type[]{typeof(string), typeof(AlibabaCloud.SDK.ROS.CDK.Ossassets.IAssetOptions), typeof(string)}, new object?[]{path, options, objectPrefix})!;
         }
 
         /// <summary>Uses a file stored in an OSS bucket as the source for the destination bucket contents.</summary>

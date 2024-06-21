@@ -2849,6 +2849,111 @@ function rosDisksTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
+ * Properties for defining a `RosHpcCluster`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-hpccluster
+ */
+export interface RosHpcClusterProps {
+
+    /**
+     * @Property hpcClusterId: The ID of cluster.
+     */
+    readonly hpcClusterId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosHpcClusterProps`
+ *
+ * @param properties - the TypeScript properties of a `RosHpcClusterProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosHpcClusterPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('hpcClusterId', ros.requiredValidator)(properties.hpcClusterId));
+    errors.collect(ros.propertyValidator('hpcClusterId', ros.validateString)(properties.hpcClusterId));
+    return errors.wrap('supplied properties not correct for "RosHpcClusterProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::HpcCluster` resource
+ *
+ * @param properties - the TypeScript properties of a `RosHpcClusterProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::HpcCluster` resource.
+ */
+// @ts-ignore TS6133
+function rosHpcClusterPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosHpcClusterPropsValidator(properties).assertSuccess();
+    }
+    return {
+      HpcClusterId: ros.stringToRosTemplate(properties.hpcClusterId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::HpcCluster`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `HpcCluster` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-hpccluster
+ */
+export class RosHpcCluster extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::HpcCluster";
+
+    /**
+     * @Attribute Description: The description of the HPC cluster.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute HpcClusterId: The ID of cluster.
+     */
+    public readonly attrHpcClusterId: ros.IResolvable;
+
+    /**
+     * @Attribute HpcClusterName: The name of the HPC cluster.
+     */
+    public readonly attrHpcClusterName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property hpcClusterId: The ID of cluster.
+     */
+    public hpcClusterId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosHpcClusterProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosHpcCluster.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDescription = this.getAtt('Description');
+        this.attrHpcClusterId = this.getAtt('HpcClusterId');
+        this.attrHpcClusterName = this.getAtt('HpcClusterName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.hpcClusterId = props.hpcClusterId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            hpcClusterId: this.hpcClusterId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosHpcClusterPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosHpcClusters`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-hpcclusters
  */
@@ -3398,6 +3503,495 @@ function rosImagesTagsPropertyToRosTemplate(properties: any): any {
       Value: ros.stringToRosTemplate(properties.value),
       Key: ros.stringToRosTemplate(properties.key),
     };
+}
+
+/**
+ * Properties for defining a `RosInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-instance
+ */
+export interface RosInstanceProps {
+
+    /**
+     * @Property instanceId: Instance ID.
+     */
+    readonly instanceId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosInstanceProps`
+ *
+ * @param properties - the TypeScript properties of a `RosInstanceProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstancePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    return errors.wrap('supplied properties not correct for "RosInstanceProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Instance` resource
+ *
+ * @param properties - the TypeScript properties of a `RosInstanceProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Instance` resource.
+ */
+// @ts-ignore TS6133
+function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosInstancePropsValidator(properties).assertSuccess();
+    }
+    return {
+      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Instance`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-instance
+ */
+export class RosInstance extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::Instance";
+
+    /**
+     * @Attribute ActionOnMaintenance: The O&M action attribute of the instance.
+     */
+    public readonly attrActionOnMaintenance: ros.IResolvable;
+
+    /**
+     * @Attribute AutoRebootTime: Automatic reboot time after instance configuration change.
+     */
+    public readonly attrAutoRebootTime: ros.IResolvable;
+
+    /**
+     * @Attribute AutoReleaseTime: The time when to automatically release the pay-as-you-go instance.
+     */
+    public readonly attrAutoReleaseTime: ros.IResolvable;
+
+    /**
+     * @Attribute AutoRenewEnabled: Whether automatic renewal has been set.
+     */
+    public readonly attrAutoRenewEnabled: ros.IResolvable;
+
+    /**
+     * @Attribute ClusterId: The ID of the cluster to which the instance belongs.
+     */
+    public readonly attrClusterId: ros.IResolvable;
+
+    /**
+     * @Attribute Cpu: The number of vCPUs.
+     */
+    public readonly attrCpu: ros.IResolvable;
+
+    /**
+     * @Attribute CpuOptions: Details about the CPU options.
+     */
+    public readonly attrCpuOptions: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: The create time.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute CreditSpecification: The performance mode of the burstable instance.
+     */
+    public readonly attrCreditSpecification: ros.IResolvable;
+
+    /**
+     * @Attribute DedicatedHostAttribute: Details about the dedicated host. It is an array that consists of the DedicatedHostClusterId, DedicatedHostId, and DedicatedHostName parameters.
+     */
+    public readonly attrDedicatedHostAttribute: ros.IResolvable;
+
+    /**
+     * @Attribute DedicatedInstanceAttribute: The attributes of the instance on the dedicated host.
+     */
+    public readonly attrDedicatedInstanceAttribute: ros.IResolvable;
+
+    /**
+     * @Attribute DeletionProtection: The release protection attribute of the instance. This parameter indicates whether you can use the ECS console or call the DeleteInstance operation to release the instance.
+     */
+    public readonly attrDeletionProtection: ros.IResolvable;
+
+    /**
+     * @Attribute DeploymentSetGroupNo: The number of the deployment set group to which the instance belongs in a deployment set.
+     */
+    public readonly attrDeploymentSetGroupNo: ros.IResolvable;
+
+    /**
+     * @Attribute DeploymentSetId: The ID of the deployment set in which the instance is deployed.
+     */
+    public readonly attrDeploymentSetId: ros.IResolvable;
+
+    /**
+     * @Attribute Description: The description of the instance.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute DeviceAvailable: Indicates whether data disks can be attached to the instance.
+     */
+    public readonly attrDeviceAvailable: ros.IResolvable;
+
+    /**
+     * @Attribute Duration: The duration of automatic renewal.
+     */
+    public readonly attrDuration: ros.IResolvable;
+
+    /**
+     * @Attribute EcsCapacityReservationAttr: Details about the capacity reservation related to the instance.
+     */
+    public readonly attrEcsCapacityReservationAttr: ros.IResolvable;
+
+    /**
+     * @Attribute EipAddress: Details about the EIP associated with the instance.
+     */
+    public readonly attrEipAddress: ros.IResolvable;
+
+    /**
+     * @Attribute ExpiredTime: The time when the instance expires. The time follows the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format. The time is displayed in UTC.
+     */
+    public readonly attrExpiredTime: ros.IResolvable;
+
+    /**
+     * @Attribute GpuAmount: The number of GPUs for the instance type.
+     */
+    public readonly attrGpuAmount: ros.IResolvable;
+
+    /**
+     * @Attribute GpuSpec: The category of GPUs for the instance type.
+     */
+    public readonly attrGpuSpec: ros.IResolvable;
+
+    /**
+     * @Attribute HostName: The hostname of the instance.
+     */
+    public readonly attrHostName: ros.IResolvable;
+
+    /**
+     * @Attribute HpcClusterId: ID of the HPC cluster to which the instance belongs.
+     */
+    public readonly attrHpcClusterId: ros.IResolvable;
+
+    /**
+     * @Attribute ImageId: The ID of the image.
+     */
+    public readonly attrImageId: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceId: The ID of the instance.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceName: The name of the instance. Fuzzy search with the asterisk (*) wildcard characters is supported.
+     */
+    public readonly attrInstanceName: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceNetworkType: The network type of the instance.
+     */
+    public readonly attrInstanceNetworkType: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceType: The instance type of the instance.
+     */
+    public readonly attrInstanceType: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceTypeFamily: The instance family of the instance.
+     */
+    public readonly attrInstanceTypeFamily: ros.IResolvable;
+
+    /**
+     * @Attribute InternetChargeType: The billing method for network usage.
+     */
+    public readonly attrInternetChargeType: ros.IResolvable;
+
+    /**
+     * @Attribute InternetMaxBandwidthIn: The maximum inbound public bandwidth. Unit: Mbit/s.
+     */
+    public readonly attrInternetMaxBandwidthIn: ros.IResolvable;
+
+    /**
+     * @Attribute InternetMaxBandwidthOut: The maximum outbound public bandwidth. Unit: Mbit/s.
+     */
+    public readonly attrInternetMaxBandwidthOut: ros.IResolvable;
+
+    /**
+     * @Attribute IoOptimized: Specifies whether the instance is I/O optimized.
+     */
+    public readonly attrIoOptimized: ros.IResolvable;
+
+    /**
+     * @Attribute KeyPairName: The name of the SSH key pair bound to the instance.
+     */
+    public readonly attrKeyPairName: ros.IResolvable;
+
+    /**
+     * @Attribute LocalStorageAmount: The number of local disks attached to the instance.
+     */
+    public readonly attrLocalStorageAmount: ros.IResolvable;
+
+    /**
+     * @Attribute LocalStorageCapacity: The capacity of local disks attached to the instance.
+     */
+    public readonly attrLocalStorageCapacity: ros.IResolvable;
+
+    /**
+     * @Attribute MaintenanceWindows: The list of operations window instances.
+     */
+    public readonly attrMaintenanceWindows: ros.IResolvable;
+
+    /**
+     * @Attribute Memory: The memory size of the instance. Unit: MiB.
+     */
+    public readonly attrMemory: ros.IResolvable;
+
+    /**
+     * @Attribute MetadataOptions: Details about the metadata options.
+     */
+    public readonly attrMetadataOptions: ros.IResolvable;
+
+    /**
+     * @Attribute NetworkInterfaces: Details about the ENIs bound to the instance.
+     */
+    public readonly attrNetworkInterfaces: ros.IResolvable;
+
+    /**
+     * @Attribute NotifyOnMaintenance: Whether to send an event notification before the instance goes down.
+     */
+    public readonly attrNotifyOnMaintenance: ros.IResolvable;
+
+    /**
+     * @Attribute OperationLocks: The reasons why the instance was locked.
+     */
+    public readonly attrOperationLocks: ros.IResolvable;
+
+    /**
+     * @Attribute OsName: The name of the operating system of the instance.
+     */
+    public readonly attrOsName: ros.IResolvable;
+
+    /**
+     * @Attribute OsNameEn: The English name of the operating system of the instance.
+     */
+    public readonly attrOsNameEn: ros.IResolvable;
+
+    /**
+     * @Attribute OsType: The type of the operating system of the instance.
+     */
+    public readonly attrOsType: ros.IResolvable;
+
+    /**
+     * @Attribute PaymentType: The billing method of the instance.
+     */
+    public readonly attrPaymentType: ros.IResolvable;
+
+    /**
+     * @Attribute PeriodUnit: Renewal unit.
+     */
+    public readonly attrPeriodUnit: ros.IResolvable;
+
+    /**
+     * @Attribute PrivatePoolOptionsId: Private pool ID. When the return value is open, the private pool ID is the private pool ID assigned when the system automatically matches.
+     */
+    public readonly attrPrivatePoolOptionsId: ros.IResolvable;
+
+    /**
+     * @Attribute PrivatePoolOptionsMatchCriteria: The private pool matching pattern of the instance.
+     */
+    public readonly attrPrivatePoolOptionsMatchCriteria: ros.IResolvable;
+
+    /**
+     * @Attribute PublicIpAddress: The public IP addresses of the instance.
+     */
+    public readonly attrPublicIpAddress: ros.IResolvable;
+
+    /**
+     * @Attribute RdmaIpAddress: The RDMA network IP of the HPC instance.
+     */
+    public readonly attrRdmaIpAddress: ros.IResolvable;
+
+    /**
+     * @Attribute Recyclable: Indicates whether the instance can be recycled.
+     */
+    public readonly attrRecyclable: ros.IResolvable;
+
+    /**
+     * @Attribute RenewalStatus: The automatic renewal status of the instance.
+     */
+    public readonly attrRenewalStatus: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The ID of the resource group to which the instance belongs. If this parameter is specified to query resources, up to 1,000 resources that belong to the specified resource group can be displayed in the response.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute SaleCycle: Instance billing cycles.
+     */
+    public readonly attrSaleCycle: ros.IResolvable;
+
+    /**
+     * @Attribute SecurityGroupIds: The IDs of the security groups to which the instance belongs.
+     */
+    public readonly attrSecurityGroupIds: ros.IResolvable;
+
+    /**
+     * @Attribute SerialNumber: The serial number of the instance.
+     */
+    public readonly attrSerialNumber: ros.IResolvable;
+
+    /**
+     * @Attribute SpotDuration: The protection period of the preemptible instance. Unit: hours.
+     */
+    public readonly attrSpotDuration: ros.IResolvable;
+
+    /**
+     * @Attribute SpotPriceLimit: The maximum hourly price of the instance. It can be accurate to three decimal places. This parameter is valid only when the SpotStrategy parameter is set to SpotWithPriceLimit.
+     */
+    public readonly attrSpotPriceLimit: ros.IResolvable;
+
+    /**
+     * @Attribute SpotStrategy: The bidding policy for the pay-as-you-go instance.
+     */
+    public readonly attrSpotStrategy: ros.IResolvable;
+
+    /**
+     * @Attribute StartTime: The time when the instance was last started. The time follows the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format. The time is displayed in UTC.
+     */
+    public readonly attrStartTime: ros.IResolvable;
+
+    /**
+     * @Attribute StoppedMode: Indicates whether the instance continues to be billed after it is stopped.
+     */
+    public readonly attrStoppedMode: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: The tags of the instance.
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    /**
+     * @Attribute UserData: The custom data of the instance.
+     */
+    public readonly attrUserData: ros.IResolvable;
+
+    /**
+     * @Attribute VpcAttributes: The VPC attributes of the instance.
+     */
+    public readonly attrVpcAttributes: ros.IResolvable;
+
+    /**
+     * @Attribute ZoneId: The zone ID of the instance.
+     */
+    public readonly attrZoneId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property instanceId: Instance ID.
+     */
+    public instanceId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosInstanceProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrActionOnMaintenance = this.getAtt('ActionOnMaintenance');
+        this.attrAutoRebootTime = this.getAtt('AutoRebootTime');
+        this.attrAutoReleaseTime = this.getAtt('AutoReleaseTime');
+        this.attrAutoRenewEnabled = this.getAtt('AutoRenewEnabled');
+        this.attrClusterId = this.getAtt('ClusterId');
+        this.attrCpu = this.getAtt('Cpu');
+        this.attrCpuOptions = this.getAtt('CpuOptions');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrCreditSpecification = this.getAtt('CreditSpecification');
+        this.attrDedicatedHostAttribute = this.getAtt('DedicatedHostAttribute');
+        this.attrDedicatedInstanceAttribute = this.getAtt('DedicatedInstanceAttribute');
+        this.attrDeletionProtection = this.getAtt('DeletionProtection');
+        this.attrDeploymentSetGroupNo = this.getAtt('DeploymentSetGroupNo');
+        this.attrDeploymentSetId = this.getAtt('DeploymentSetId');
+        this.attrDescription = this.getAtt('Description');
+        this.attrDeviceAvailable = this.getAtt('DeviceAvailable');
+        this.attrDuration = this.getAtt('Duration');
+        this.attrEcsCapacityReservationAttr = this.getAtt('EcsCapacityReservationAttr');
+        this.attrEipAddress = this.getAtt('EipAddress');
+        this.attrExpiredTime = this.getAtt('ExpiredTime');
+        this.attrGpuAmount = this.getAtt('GpuAmount');
+        this.attrGpuSpec = this.getAtt('GpuSpec');
+        this.attrHostName = this.getAtt('HostName');
+        this.attrHpcClusterId = this.getAtt('HpcClusterId');
+        this.attrImageId = this.getAtt('ImageId');
+        this.attrInstanceId = this.getAtt('InstanceId');
+        this.attrInstanceName = this.getAtt('InstanceName');
+        this.attrInstanceNetworkType = this.getAtt('InstanceNetworkType');
+        this.attrInstanceType = this.getAtt('InstanceType');
+        this.attrInstanceTypeFamily = this.getAtt('InstanceTypeFamily');
+        this.attrInternetChargeType = this.getAtt('InternetChargeType');
+        this.attrInternetMaxBandwidthIn = this.getAtt('InternetMaxBandwidthIn');
+        this.attrInternetMaxBandwidthOut = this.getAtt('InternetMaxBandwidthOut');
+        this.attrIoOptimized = this.getAtt('IoOptimized');
+        this.attrKeyPairName = this.getAtt('KeyPairName');
+        this.attrLocalStorageAmount = this.getAtt('LocalStorageAmount');
+        this.attrLocalStorageCapacity = this.getAtt('LocalStorageCapacity');
+        this.attrMaintenanceWindows = this.getAtt('MaintenanceWindows');
+        this.attrMemory = this.getAtt('Memory');
+        this.attrMetadataOptions = this.getAtt('MetadataOptions');
+        this.attrNetworkInterfaces = this.getAtt('NetworkInterfaces');
+        this.attrNotifyOnMaintenance = this.getAtt('NotifyOnMaintenance');
+        this.attrOperationLocks = this.getAtt('OperationLocks');
+        this.attrOsName = this.getAtt('OsName');
+        this.attrOsNameEn = this.getAtt('OsNameEn');
+        this.attrOsType = this.getAtt('OsType');
+        this.attrPaymentType = this.getAtt('PaymentType');
+        this.attrPeriodUnit = this.getAtt('PeriodUnit');
+        this.attrPrivatePoolOptionsId = this.getAtt('PrivatePoolOptionsId');
+        this.attrPrivatePoolOptionsMatchCriteria = this.getAtt('PrivatePoolOptionsMatchCriteria');
+        this.attrPublicIpAddress = this.getAtt('PublicIpAddress');
+        this.attrRdmaIpAddress = this.getAtt('RdmaIpAddress');
+        this.attrRecyclable = this.getAtt('Recyclable');
+        this.attrRenewalStatus = this.getAtt('RenewalStatus');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrSaleCycle = this.getAtt('SaleCycle');
+        this.attrSecurityGroupIds = this.getAtt('SecurityGroupIds');
+        this.attrSerialNumber = this.getAtt('SerialNumber');
+        this.attrSpotDuration = this.getAtt('SpotDuration');
+        this.attrSpotPriceLimit = this.getAtt('SpotPriceLimit');
+        this.attrSpotStrategy = this.getAtt('SpotStrategy');
+        this.attrStartTime = this.getAtt('StartTime');
+        this.attrStoppedMode = this.getAtt('StoppedMode');
+        this.attrTags = this.getAtt('Tags');
+        this.attrUserData = this.getAtt('UserData');
+        this.attrVpcAttributes = this.getAtt('VpcAttributes');
+        this.attrZoneId = this.getAtt('ZoneId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.instanceId = props.instanceId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            instanceId: this.instanceId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosInstancePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
 }
 
 /**
@@ -4385,6 +4979,483 @@ function rosKeyPairsTagsPropertyToRosTemplate(properties: any): any {
       Value: ros.stringToRosTemplate(properties.value),
       Key: ros.stringToRosTemplate(properties.key),
     };
+}
+
+/**
+ * Properties for defining a `RosLaunchTemplate`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-launchtemplate
+ */
+export interface RosLaunchTemplateProps {
+
+    /**
+     * @Property launchTemplateId: Template ID.
+     */
+    readonly launchTemplateId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosLaunchTemplateProps`
+ *
+ * @param properties - the TypeScript properties of a `RosLaunchTemplateProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosLaunchTemplatePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('launchTemplateId', ros.requiredValidator)(properties.launchTemplateId));
+    errors.collect(ros.propertyValidator('launchTemplateId', ros.validateString)(properties.launchTemplateId));
+    return errors.wrap('supplied properties not correct for "RosLaunchTemplateProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::LaunchTemplate` resource
+ *
+ * @param properties - the TypeScript properties of a `RosLaunchTemplateProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::LaunchTemplate` resource.
+ */
+// @ts-ignore TS6133
+function rosLaunchTemplatePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosLaunchTemplatePropsValidator(properties).assertSuccess();
+    }
+    return {
+      LaunchTemplateId: ros.stringToRosTemplate(properties.launchTemplateId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::LaunchTemplate`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `LaunchTemplate` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-launchtemplate
+ */
+export class RosLaunchTemplate extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::LaunchTemplate";
+
+    /**
+     * @Attribute AutoReleaseTime: Automatic release time. According to the [ISO8601](~~ 25696 ~~) standard, and need to use UTC time. The format is: yyyy-MM-ddTHH:mm:ssZ.
+     */
+    public readonly attrAutoReleaseTime: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: The time when the instance launch template was created.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute CreatedBy: The creator of the launch template.
+     */
+    public readonly attrCreatedBy: ros.IResolvable;
+
+    /**
+     * @Attribute DataDisk: Data disk information list.
+     */
+    public readonly attrDataDisk: ros.IResolvable;
+
+    /**
+     * @Attribute DefaultVersionNumber: The default version number of the template.
+     */
+    public readonly attrDefaultVersionNumber: ros.IResolvable;
+
+    /**
+     * @Attribute DeletionProtection: Instance deletion protection attribute.
+     */
+    public readonly attrDeletionProtection: ros.IResolvable;
+
+    /**
+     * @Attribute DeploymentSetId: The ID of the deployment set.
+     */
+    public readonly attrDeploymentSetId: ros.IResolvable;
+
+    /**
+     * @Attribute Description: Instance description. 2 to 256 English or Chinese characters in length and cannot start with' http:// 'or' https.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute HostName: The hostname of the instance.
+     */
+    public readonly attrHostName: ros.IResolvable;
+
+    /**
+     * @Attribute ImageId: The ID of the image.
+     */
+    public readonly attrImageId: ros.IResolvable;
+
+    /**
+     * @Attribute ImageOwnerAlias: The source of the image.
+     */
+    public readonly attrImageOwnerAlias: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceChargeType: The billing method of the instance.
+     */
+    public readonly attrInstanceChargeType: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceName: The name of the instance. The length is 2~128 English or Chinese characters. It must start with a large or small letter or Chinese, and cannot start with' http:// 'or' https. It can contain numbers, colons (:), underscores (_), or dashes (-).
+     */
+    public readonly attrInstanceName: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceType: The instance type.
+     */
+    public readonly attrInstanceType: ros.IResolvable;
+
+    /**
+     * @Attribute InternetChargeType: Network billing method.
+     */
+    public readonly attrInternetChargeType: ros.IResolvable;
+
+    /**
+     * @Attribute InternetMaxBandwidthIn: The maximum public inbound bandwidth, in Mbit/s.
+     */
+    public readonly attrInternetMaxBandwidthIn: ros.IResolvable;
+
+    /**
+     * @Attribute InternetMaxBandwidthOut: The maximum outbound bandwidth of the public network. The unit is Mbit/s. The value range is 0~100.
+     */
+    public readonly attrInternetMaxBandwidthOut: ros.IResolvable;
+
+    /**
+     * @Attribute IoOptimized: Whether to optimize the instance for I/O.
+     */
+    public readonly attrIoOptimized: ros.IResolvable;
+
+    /**
+     * @Attribute Ipv6AddressCount: Specify the number of randomly generated IPv6 addresses for the primary network card. The value range is 1 to 10.
+     */
+    public readonly attrIpv6AddressCount: ros.IResolvable;
+
+    /**
+     * @Attribute KeyPairName: The name of the key pair.
+     */
+    public readonly attrKeyPairName: ros.IResolvable;
+
+    /**
+     * @Attribute LatestVersionNumber: The latest version number of the template.
+     */
+    public readonly attrLatestVersionNumber: ros.IResolvable;
+
+    /**
+     * @Attribute LaunchTemplateId: The ID of the launch template.
+     */
+    public readonly attrLaunchTemplateId: ros.IResolvable;
+
+    /**
+     * @Attribute LaunchTemplateName: The name of the launch template.
+     */
+    public readonly attrLaunchTemplateName: ros.IResolvable;
+
+    /**
+     * @Attribute ModifiedTime: The time when the launch template was modified.
+     */
+    public readonly attrModifiedTime: ros.IResolvable;
+
+    /**
+     * @Attribute NetworkInterface: The elastic network interfaces (ENIs).
+     */
+    public readonly attrNetworkInterface: ros.IResolvable;
+
+    /**
+     * @Attribute NetworkType: The network type of the instance.
+     */
+    public readonly attrNetworkType: ros.IResolvable;
+
+    /**
+     * @Attribute PasswordInherit: Whether to use the password preset by the image.
+     */
+    public readonly attrPasswordInherit: ros.IResolvable;
+
+    /**
+     * @Attribute Period: The duration of the purchase of resources, in months. When creating an instance, the parameter 'InstanceChargeType' takes effect and is required only when the value of the parameter 'PrePaid' is 'PrePaid. Value range: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36, 48, 60.
+     */
+    public readonly attrPeriod: ros.IResolvable;
+
+    /**
+     * @Attribute PrivateIpAddress: The private IP address of the instance.
+     */
+    public readonly attrPrivateIpAddress: ros.IResolvable;
+
+    /**
+     * @Attribute RamRoleName: The instance RAM role name. You can use the RAM API [ListRoles](~~ 28713 ~~) to query the created instance RAM roles.
+     */
+    public readonly attrRamRoleName: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The ID of the resource group to which the instance, Elastic Block Storage (EBS) device, and ENI belong.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute SecurityEnhancementStrategy: Whether to turn on security reinforcement for the operating system.
+     */
+    public readonly attrSecurityEnhancementStrategy: ros.IResolvable;
+
+    /**
+     * @Attribute SecurityGroupIds: The IDs of one or more security groups to which you want to add the instance.
+     */
+    public readonly attrSecurityGroupIds: ros.IResolvable;
+
+    /**
+     * @Attribute SpotPriceLimit: Set the maximum price per hour for the instance. The maximum number of 3 decimal places is supported. The value of the parameter 'SpotStrategy' is 'SpotWithPriceLimit.
+     */
+    public readonly attrSpotPriceLimit: ros.IResolvable;
+
+    /**
+     * @Attribute SpotStrategy: The preemption policy for a pay-as-you-go instance. This parameter takes effect when the value of the parameter 'InstanceChargeType' is 'PostPaid.
+     */
+    public readonly attrSpotStrategy: ros.IResolvable;
+
+    /**
+     * @Attribute SystemDisk: System disk configuration.
+     */
+    public readonly attrSystemDisk: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: The tags of the launch template.
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    /**
+     * @Attribute TemplateResourceGroupId: Q
+     */
+    public readonly attrTemplateResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute TemplateTag: The tags of the launch template.
+     */
+    public readonly attrTemplateTag: ros.IResolvable;
+
+    /**
+     * @Attribute UserData: The user-defined data of the instance must be encoded in Base64. The maximum original data is 16KB.
+     */
+    public readonly attrUserData: ros.IResolvable;
+
+    /**
+     * @Attribute VSwitchId: The ID of the vSwitch.
+     */
+    public readonly attrVSwitchId: ros.IResolvable;
+
+    /**
+     * @Attribute VersionDescription: Instance launch template version description. 2 to 256 English or Chinese characters in length and cannot start with' http:// 'or' https.
+     */
+    public readonly attrVersionDescription: ros.IResolvable;
+
+    /**
+     * @Attribute VpcId: VPC Id.
+     */
+    public readonly attrVpcId: ros.IResolvable;
+
+    /**
+     * @Attribute ZoneId: The ID of the zone to which the instance belongs.
+     */
+    public readonly attrZoneId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property launchTemplateId: Template ID.
+     */
+    public launchTemplateId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosLaunchTemplateProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosLaunchTemplate.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAutoReleaseTime = this.getAtt('AutoReleaseTime');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrCreatedBy = this.getAtt('CreatedBy');
+        this.attrDataDisk = this.getAtt('DataDisk');
+        this.attrDefaultVersionNumber = this.getAtt('DefaultVersionNumber');
+        this.attrDeletionProtection = this.getAtt('DeletionProtection');
+        this.attrDeploymentSetId = this.getAtt('DeploymentSetId');
+        this.attrDescription = this.getAtt('Description');
+        this.attrHostName = this.getAtt('HostName');
+        this.attrImageId = this.getAtt('ImageId');
+        this.attrImageOwnerAlias = this.getAtt('ImageOwnerAlias');
+        this.attrInstanceChargeType = this.getAtt('InstanceChargeType');
+        this.attrInstanceName = this.getAtt('InstanceName');
+        this.attrInstanceType = this.getAtt('InstanceType');
+        this.attrInternetChargeType = this.getAtt('InternetChargeType');
+        this.attrInternetMaxBandwidthIn = this.getAtt('InternetMaxBandwidthIn');
+        this.attrInternetMaxBandwidthOut = this.getAtt('InternetMaxBandwidthOut');
+        this.attrIoOptimized = this.getAtt('IoOptimized');
+        this.attrIpv6AddressCount = this.getAtt('Ipv6AddressCount');
+        this.attrKeyPairName = this.getAtt('KeyPairName');
+        this.attrLatestVersionNumber = this.getAtt('LatestVersionNumber');
+        this.attrLaunchTemplateId = this.getAtt('LaunchTemplateId');
+        this.attrLaunchTemplateName = this.getAtt('LaunchTemplateName');
+        this.attrModifiedTime = this.getAtt('ModifiedTime');
+        this.attrNetworkInterface = this.getAtt('NetworkInterface');
+        this.attrNetworkType = this.getAtt('NetworkType');
+        this.attrPasswordInherit = this.getAtt('PasswordInherit');
+        this.attrPeriod = this.getAtt('Period');
+        this.attrPrivateIpAddress = this.getAtt('PrivateIpAddress');
+        this.attrRamRoleName = this.getAtt('RamRoleName');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrSecurityEnhancementStrategy = this.getAtt('SecurityEnhancementStrategy');
+        this.attrSecurityGroupIds = this.getAtt('SecurityGroupIds');
+        this.attrSpotPriceLimit = this.getAtt('SpotPriceLimit');
+        this.attrSpotStrategy = this.getAtt('SpotStrategy');
+        this.attrSystemDisk = this.getAtt('SystemDisk');
+        this.attrTags = this.getAtt('Tags');
+        this.attrTemplateResourceGroupId = this.getAtt('TemplateResourceGroupId');
+        this.attrTemplateTag = this.getAtt('TemplateTag');
+        this.attrUserData = this.getAtt('UserData');
+        this.attrVSwitchId = this.getAtt('VSwitchId');
+        this.attrVersionDescription = this.getAtt('VersionDescription');
+        this.attrVpcId = this.getAtt('VpcId');
+        this.attrZoneId = this.getAtt('ZoneId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.launchTemplateId = props.launchTemplateId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            launchTemplateId: this.launchTemplateId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosLaunchTemplatePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosLaunchTemplates`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-launchtemplates
+ */
+export interface RosLaunchTemplatesProps {
+
+    /**
+     * @Property launchTemplateId: The ID of the launch template.
+     */
+    readonly launchTemplateId?: string | ros.IResolvable;
+
+    /**
+     * @Property launchTemplateName: The name of the launch template.
+     */
+    readonly launchTemplateName?: string | ros.IResolvable;
+
+    /**
+     * @Property templateResourceGroupId: The ID of the enterprise resource group to which the template is launched.
+     */
+    readonly templateResourceGroupId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosLaunchTemplatesProps`
+ *
+ * @param properties - the TypeScript properties of a `RosLaunchTemplatesProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosLaunchTemplatesPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('launchTemplateName', ros.validateString)(properties.launchTemplateName));
+    errors.collect(ros.propertyValidator('launchTemplateId', ros.validateString)(properties.launchTemplateId));
+    errors.collect(ros.propertyValidator('templateResourceGroupId', ros.validateString)(properties.templateResourceGroupId));
+    return errors.wrap('supplied properties not correct for "RosLaunchTemplatesProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::LaunchTemplates` resource
+ *
+ * @param properties - the TypeScript properties of a `RosLaunchTemplatesProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::LaunchTemplates` resource.
+ */
+// @ts-ignore TS6133
+function rosLaunchTemplatesPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosLaunchTemplatesPropsValidator(properties).assertSuccess();
+    }
+    return {
+      LaunchTemplateId: ros.stringToRosTemplate(properties.launchTemplateId),
+      LaunchTemplateName: ros.stringToRosTemplate(properties.launchTemplateName),
+      TemplateResourceGroupId: ros.stringToRosTemplate(properties.templateResourceGroupId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::LaunchTemplates`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `LaunchTemplates` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-launchtemplates
+ */
+export class RosLaunchTemplates extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::LaunchTemplates";
+
+    /**
+     * @Attribute LaunchTemplateIds: The list of launch template IDs.
+     */
+    public readonly attrLaunchTemplateIds: ros.IResolvable;
+
+    /**
+     * @Attribute LaunchTemplates: The list of launch templates.
+     */
+    public readonly attrLaunchTemplates: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property launchTemplateId: The ID of the launch template.
+     */
+    public launchTemplateId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property launchTemplateName: The name of the launch template.
+     */
+    public launchTemplateName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property templateResourceGroupId: The ID of the enterprise resource group to which the template is launched.
+     */
+    public templateResourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosLaunchTemplatesProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosLaunchTemplates.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrLaunchTemplateIds = this.getAtt('LaunchTemplateIds');
+        this.attrLaunchTemplates = this.getAtt('LaunchTemplates');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.launchTemplateId = props.launchTemplateId;
+        this.launchTemplateName = props.launchTemplateName;
+        this.templateResourceGroupId = props.templateResourceGroupId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            launchTemplateId: this.launchTemplateId,
+            launchTemplateName: this.launchTemplateName,
+            templateResourceGroupId: this.templateResourceGroupId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosLaunchTemplatesPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
 }
 
 /**

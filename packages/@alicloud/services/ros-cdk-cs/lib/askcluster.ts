@@ -109,7 +109,7 @@ export interface ASKClusterProps {
      * Property vSwitchIds: The IDs of VSwitches. If you leave this property empty, the system automatically creates a VSwitch.
      * Note You must specify both the VpcId and VSwitchIds or leave both of them empty.
      */
-    readonly vSwitchIds?: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly vSwitchIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property zoneId: The zone ID.

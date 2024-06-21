@@ -3,6 +3,176 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosMediaWorkflow`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mps-mediaworkflow
+ */
+export interface RosMediaWorkflowProps {
+
+    /**
+     * @Property name: The topology of the media workflow.
+     * The value cannot be empty.
+     * The name cannot be the same as that of an existing media workflow within the current Alibaba Cloud account.
+     * The name can be up to 64 characters in length.
+     * The value must be encoded in the UTF-8 format.
+     */
+    readonly name: string | ros.IResolvable;
+
+    /**
+     * @Property topology: The topology of the media workflow. The value must be a JSON object that contains the activities and activity dependencies. For more information, see the Sample topology section of this topic.Note The Object Storage Service (OSS) bucket must reside in the same region as your MPS service.
+     */
+    readonly topology: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property triggerMode: The triggering mode of the media workflow. Valid values:
+     * OssAutoTrigger: The media workflow is automatically triggered.
+     * NotInAuto: The media workflow is not automatically triggered.
+     */
+    readonly triggerMode?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosMediaWorkflowProps`
+ *
+ * @param properties - the TypeScript properties of a `RosMediaWorkflowProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosMediaWorkflowPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.triggerMode && (typeof properties.triggerMode) !== 'object') {
+        errors.collect(ros.propertyValidator('triggerMode', ros.validateAllowedValues)({
+          data: properties.triggerMode,
+          allowedValues: ["OssAutoTrigger","NotInAuto"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('triggerMode', ros.validateString)(properties.triggerMode));
+    errors.collect(ros.propertyValidator('topology', ros.requiredValidator)(properties.topology));
+    errors.collect(ros.propertyValidator('topology', ros.hashValidator(ros.validateAny))(properties.topology));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "RosMediaWorkflowProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MPS::MediaWorkflow` resource
+ *
+ * @param properties - the TypeScript properties of a `RosMediaWorkflowProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MPS::MediaWorkflow` resource.
+ */
+// @ts-ignore TS6133
+function rosMediaWorkflowPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosMediaWorkflowPropsValidator(properties).assertSuccess();
+    }
+    return {
+      Name: ros.stringToRosTemplate(properties.name),
+      Topology: ros.hashMapper(ros.objectToRosTemplate)(properties.topology),
+      TriggerMode: ros.stringToRosTemplate(properties.triggerMode),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MPS::MediaWorkflow`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `MediaWorkflow` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mps-mediaworkflow
+ */
+export class RosMediaWorkflow extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::MPS::MediaWorkflow";
+
+    /**
+     * @Attribute CreationTime: The time when the media workflow was created.
+     */
+    public readonly attrCreationTime: ros.IResolvable;
+
+    /**
+     * @Attribute MediaWorkflowId: The ID of the media workflow.
+     */
+    public readonly attrMediaWorkflowId: ros.IResolvable;
+
+    /**
+     * @Attribute Name: The name of the media workflow.
+     */
+    public readonly attrName: ros.IResolvable;
+
+    /**
+     * @Attribute State: The state of the media workflow.
+     */
+    public readonly attrState: ros.IResolvable;
+
+    /**
+     * @Attribute Topology: The topology of the media workflow.
+     */
+    public readonly attrTopology: ros.IResolvable;
+
+    /**
+     * @Attribute TriggerMode: The trigger mode of the media workflow.
+     */
+    public readonly attrTriggerMode: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property name: The topology of the media workflow.
+     * The value cannot be empty.
+     * The name cannot be the same as that of an existing media workflow within the current Alibaba Cloud account.
+     * The name can be up to 64 characters in length.
+     * The value must be encoded in the UTF-8 format.
+     */
+    public name: string | ros.IResolvable;
+
+    /**
+     * @Property topology: The topology of the media workflow. The value must be a JSON object that contains the activities and activity dependencies. For more information, see the Sample topology section of this topic.Note The Object Storage Service (OSS) bucket must reside in the same region as your MPS service.
+     */
+    public topology: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property triggerMode: The triggering mode of the media workflow. Valid values:
+     * OssAutoTrigger: The media workflow is automatically triggered.
+     * NotInAuto: The media workflow is not automatically triggered.
+     */
+    public triggerMode: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosMediaWorkflowProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosMediaWorkflow.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreationTime = this.getAtt('CreationTime');
+        this.attrMediaWorkflowId = this.getAtt('MediaWorkflowId');
+        this.attrName = this.getAtt('Name');
+        this.attrState = this.getAtt('State');
+        this.attrTopology = this.getAtt('Topology');
+        this.attrTriggerMode = this.getAtt('TriggerMode');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.name = props.name;
+        this.topology = props.topology;
+        this.triggerMode = props.triggerMode;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            name: this.name,
+            topology: this.topology,
+            triggerMode: this.triggerMode,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosMediaWorkflowPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosPipeline`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mps-pipeline
  */

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.oos;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-execution
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:16.291Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:11.181Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.RosExecutionProps")
 @software.amazon.jsii.Jsii.Proxy(RosExecutionProps.Jsii$Proxy.class)
 public interface RosExecutionProps extends software.amazon.jsii.JsiiSerializable {
@@ -13,6 +13,18 @@ public interface RosExecutionProps extends software.amazon.jsii.JsiiSerializable
     /**
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getTemplateName();
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLoopMode() {
+        return null;
+    }
 
     /**
      */
@@ -73,6 +85,8 @@ public interface RosExecutionProps extends software.amazon.jsii.JsiiSerializable
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosExecutionProps> {
         java.lang.Object templateName;
+        java.lang.Object description;
+        java.lang.Object loopMode;
         java.lang.Object mode;
         java.lang.Object parameters;
         java.lang.Object parentExecutionId;
@@ -99,6 +113,46 @@ public interface RosExecutionProps extends software.amazon.jsii.JsiiSerializable
          */
         public Builder templateName(com.aliyun.ros.cdk.core.IResolvable templateName) {
             this.templateName = templateName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosExecutionProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(java.lang.String description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosExecutionProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosExecutionProps#getLoopMode}
+         * @param loopMode the value to be set.
+         * @return {@code this}
+         */
+        public Builder loopMode(java.lang.String loopMode) {
+            this.loopMode = loopMode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosExecutionProps#getLoopMode}
+         * @param loopMode the value to be set.
+         * @return {@code this}
+         */
+        public Builder loopMode(com.aliyun.ros.cdk.core.IResolvable loopMode) {
+            this.loopMode = loopMode;
             return this;
         }
 
@@ -270,6 +324,8 @@ public interface RosExecutionProps extends software.amazon.jsii.JsiiSerializable
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosExecutionProps {
         private final java.lang.Object templateName;
+        private final java.lang.Object description;
+        private final java.lang.Object loopMode;
         private final java.lang.Object mode;
         private final java.lang.Object parameters;
         private final java.lang.Object parentExecutionId;
@@ -286,6 +342,8 @@ public interface RosExecutionProps extends software.amazon.jsii.JsiiSerializable
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.templateName = software.amazon.jsii.Kernel.get(this, "templateName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.loopMode = software.amazon.jsii.Kernel.get(this, "loopMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.mode = software.amazon.jsii.Kernel.get(this, "mode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.parameters = software.amazon.jsii.Kernel.get(this, "parameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.parentExecutionId = software.amazon.jsii.Kernel.get(this, "parentExecutionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -303,6 +361,8 @@ public interface RosExecutionProps extends software.amazon.jsii.JsiiSerializable
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.templateName = java.util.Objects.requireNonNull(builder.templateName, "templateName is required");
+            this.description = builder.description;
+            this.loopMode = builder.loopMode;
             this.mode = builder.mode;
             this.parameters = builder.parameters;
             this.parentExecutionId = builder.parentExecutionId;
@@ -316,6 +376,16 @@ public interface RosExecutionProps extends software.amazon.jsii.JsiiSerializable
         @Override
         public final java.lang.Object getTemplateName() {
             return this.templateName;
+        }
+
+        @Override
+        public final java.lang.Object getDescription() {
+            return this.description;
+        }
+
+        @Override
+        public final java.lang.Object getLoopMode() {
+            return this.loopMode;
         }
 
         @Override
@@ -365,6 +435,12 @@ public interface RosExecutionProps extends software.amazon.jsii.JsiiSerializable
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
             data.set("templateName", om.valueToTree(this.getTemplateName()));
+            if (this.getDescription() != null) {
+                data.set("description", om.valueToTree(this.getDescription()));
+            }
+            if (this.getLoopMode() != null) {
+                data.set("loopMode", om.valueToTree(this.getLoopMode()));
+            }
             if (this.getMode() != null) {
                 data.set("mode", om.valueToTree(this.getMode()));
             }
@@ -408,6 +484,8 @@ public interface RosExecutionProps extends software.amazon.jsii.JsiiSerializable
             RosExecutionProps.Jsii$Proxy that = (RosExecutionProps.Jsii$Proxy) o;
 
             if (!templateName.equals(that.templateName)) return false;
+            if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
+            if (this.loopMode != null ? !this.loopMode.equals(that.loopMode) : that.loopMode != null) return false;
             if (this.mode != null ? !this.mode.equals(that.mode) : that.mode != null) return false;
             if (this.parameters != null ? !this.parameters.equals(that.parameters) : that.parameters != null) return false;
             if (this.parentExecutionId != null ? !this.parentExecutionId.equals(that.parentExecutionId) : that.parentExecutionId != null) return false;
@@ -421,6 +499,8 @@ public interface RosExecutionProps extends software.amazon.jsii.JsiiSerializable
         @Override
         public final int hashCode() {
             int result = this.templateName.hashCode();
+            result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+            result = 31 * result + (this.loopMode != null ? this.loopMode.hashCode() : 0);
             result = 31 * result + (this.mode != null ? this.mode.hashCode() : 0);
             result = 31 * result + (this.parameters != null ? this.parameters.hashCode() : 0);
             result = 31 * result + (this.parentExecutionId != null ? this.parentExecutionId.hashCode() : 0);

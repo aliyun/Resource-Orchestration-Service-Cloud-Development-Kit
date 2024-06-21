@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.privatelink;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpointservice
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:16.784Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:11.534Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.VpcEndpointServiceProps")
 @software.amazon.jsii.Jsii.Proxy(VpcEndpointServiceProps.Jsii$Proxy.class)
 public interface VpcEndpointServiceProps extends software.amazon.jsii.JsiiSerializable {
@@ -31,6 +31,18 @@ public interface VpcEndpointServiceProps extends software.amazon.jsii.JsiiSerial
     }
 
     /**
+     * Property deletionForce: Specifies whether to delete the endpoint service even if it has endpoint connections.
+     * <p>
+     * <ul>
+     * <li>True</li>
+     * <li>False (default)</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeletionForce() {
+        return null;
+    }
+
+    /**
      * Property payer: The payer of the endpoint service.
      * <p>
      * Valid values:
@@ -45,6 +57,13 @@ public interface VpcEndpointServiceProps extends software.amazon.jsii.JsiiSerial
      * Property resource:.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getResource() {
+        return null;
+    }
+
+    /**
+     * Property resourceGroupId: The ID of the resource group.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
 
@@ -100,8 +119,10 @@ public interface VpcEndpointServiceProps extends software.amazon.jsii.JsiiSerial
     public static final class Builder implements software.amazon.jsii.Builder<VpcEndpointServiceProps> {
         java.lang.Object autoAcceptEnabled;
         java.lang.Object connectBandwidth;
+        java.lang.Object deletionForce;
         java.lang.Object payer;
         java.lang.Object resource;
+        java.lang.Object resourceGroupId;
         java.lang.Object serviceDescription;
         java.lang.Object serviceResourceType;
         java.util.List<com.aliyun.ros.cdk.privatelink.RosVpcEndpointService.TagsProperty> tags;
@@ -157,6 +178,34 @@ public interface VpcEndpointServiceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link VpcEndpointServiceProps#getDeletionForce}
+         * @param deletionForce Property deletionForce: Specifies whether to delete the endpoint service even if it has endpoint connections.
+         *                      <ul>
+         *                      <li>True</li>
+         *                      <li>False (default)</li>
+         *                      </ul>
+         * @return {@code this}
+         */
+        public Builder deletionForce(java.lang.Boolean deletionForce) {
+            this.deletionForce = deletionForce;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link VpcEndpointServiceProps#getDeletionForce}
+         * @param deletionForce Property deletionForce: Specifies whether to delete the endpoint service even if it has endpoint connections.
+         *                      <ul>
+         *                      <li>True</li>
+         *                      <li>False (default)</li>
+         *                      </ul>
+         * @return {@code this}
+         */
+        public Builder deletionForce(com.aliyun.ros.cdk.core.IResolvable deletionForce) {
+            this.deletionForce = deletionForce;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link VpcEndpointServiceProps#getPayer}
          * @param payer Property payer: The payer of the endpoint service.
          *              Valid values:
@@ -199,6 +248,26 @@ public interface VpcEndpointServiceProps extends software.amazon.jsii.JsiiSerial
          */
         public Builder resource(java.util.List<? extends java.lang.Object> resource) {
             this.resource = resource;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link VpcEndpointServiceProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link VpcEndpointServiceProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
             return this;
         }
 
@@ -316,8 +385,10 @@ public interface VpcEndpointServiceProps extends software.amazon.jsii.JsiiSerial
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements VpcEndpointServiceProps {
         private final java.lang.Object autoAcceptEnabled;
         private final java.lang.Object connectBandwidth;
+        private final java.lang.Object deletionForce;
         private final java.lang.Object payer;
         private final java.lang.Object resource;
+        private final java.lang.Object resourceGroupId;
         private final java.lang.Object serviceDescription;
         private final java.lang.Object serviceResourceType;
         private final java.util.List<com.aliyun.ros.cdk.privatelink.RosVpcEndpointService.TagsProperty> tags;
@@ -332,8 +403,10 @@ public interface VpcEndpointServiceProps extends software.amazon.jsii.JsiiSerial
             super(objRef);
             this.autoAcceptEnabled = software.amazon.jsii.Kernel.get(this, "autoAcceptEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.connectBandwidth = software.amazon.jsii.Kernel.get(this, "connectBandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.deletionForce = software.amazon.jsii.Kernel.get(this, "deletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.payer = software.amazon.jsii.Kernel.get(this, "payer", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resource = software.amazon.jsii.Kernel.get(this, "resource", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serviceDescription = software.amazon.jsii.Kernel.get(this, "serviceDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serviceResourceType = software.amazon.jsii.Kernel.get(this, "serviceResourceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.privatelink.RosVpcEndpointService.TagsProperty.class)));
@@ -349,8 +422,10 @@ public interface VpcEndpointServiceProps extends software.amazon.jsii.JsiiSerial
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.autoAcceptEnabled = builder.autoAcceptEnabled;
             this.connectBandwidth = builder.connectBandwidth;
+            this.deletionForce = builder.deletionForce;
             this.payer = builder.payer;
             this.resource = builder.resource;
+            this.resourceGroupId = builder.resourceGroupId;
             this.serviceDescription = builder.serviceDescription;
             this.serviceResourceType = builder.serviceResourceType;
             this.tags = (java.util.List<com.aliyun.ros.cdk.privatelink.RosVpcEndpointService.TagsProperty>)builder.tags;
@@ -369,6 +444,11 @@ public interface VpcEndpointServiceProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
+        public final java.lang.Object getDeletionForce() {
+            return this.deletionForce;
+        }
+
+        @Override
         public final java.lang.Object getPayer() {
             return this.payer;
         }
@@ -376,6 +456,11 @@ public interface VpcEndpointServiceProps extends software.amazon.jsii.JsiiSerial
         @Override
         public final java.lang.Object getResource() {
             return this.resource;
+        }
+
+        @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
         }
 
         @Override
@@ -415,11 +500,17 @@ public interface VpcEndpointServiceProps extends software.amazon.jsii.JsiiSerial
             if (this.getConnectBandwidth() != null) {
                 data.set("connectBandwidth", om.valueToTree(this.getConnectBandwidth()));
             }
+            if (this.getDeletionForce() != null) {
+                data.set("deletionForce", om.valueToTree(this.getDeletionForce()));
+            }
             if (this.getPayer() != null) {
                 data.set("payer", om.valueToTree(this.getPayer()));
             }
             if (this.getResource() != null) {
                 data.set("resource", om.valueToTree(this.getResource()));
+            }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
             if (this.getServiceDescription() != null) {
                 data.set("serviceDescription", om.valueToTree(this.getServiceDescription()));
@@ -456,8 +547,10 @@ public interface VpcEndpointServiceProps extends software.amazon.jsii.JsiiSerial
 
             if (this.autoAcceptEnabled != null ? !this.autoAcceptEnabled.equals(that.autoAcceptEnabled) : that.autoAcceptEnabled != null) return false;
             if (this.connectBandwidth != null ? !this.connectBandwidth.equals(that.connectBandwidth) : that.connectBandwidth != null) return false;
+            if (this.deletionForce != null ? !this.deletionForce.equals(that.deletionForce) : that.deletionForce != null) return false;
             if (this.payer != null ? !this.payer.equals(that.payer) : that.payer != null) return false;
             if (this.resource != null ? !this.resource.equals(that.resource) : that.resource != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.serviceDescription != null ? !this.serviceDescription.equals(that.serviceDescription) : that.serviceDescription != null) return false;
             if (this.serviceResourceType != null ? !this.serviceResourceType.equals(that.serviceResourceType) : that.serviceResourceType != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
@@ -469,8 +562,10 @@ public interface VpcEndpointServiceProps extends software.amazon.jsii.JsiiSerial
         public final int hashCode() {
             int result = this.autoAcceptEnabled != null ? this.autoAcceptEnabled.hashCode() : 0;
             result = 31 * result + (this.connectBandwidth != null ? this.connectBandwidth.hashCode() : 0);
+            result = 31 * result + (this.deletionForce != null ? this.deletionForce.hashCode() : 0);
             result = 31 * result + (this.payer != null ? this.payer.hashCode() : 0);
             result = 31 * result + (this.resource != null ? this.resource.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.serviceDescription != null ? this.serviceDescription.hashCode() : 0);
             result = 31 * result + (this.serviceResourceType != null ? this.serviceResourceType.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);

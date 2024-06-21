@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-askcluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:13.432Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:08.278Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ASKClusterProps")
 @software.amazon.jsii.Jsii.Proxy(ASKClusterProps.Jsii$Proxy.class)
 public interface ASKClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -529,7 +529,7 @@ public interface ASKClusterProps extends software.amazon.jsii.JsiiSerializable {
          *                   Note You must specify both the VpcId and VSwitchIds or leave both of them empty.
          * @return {@code this}
          */
-        public Builder vSwitchIds(java.util.List<? extends java.lang.Object> vSwitchIds) {
+        public Builder vSwitchIds(com.aliyun.ros.cdk.core.IResolvable vSwitchIds) {
             this.vSwitchIds = vSwitchIds;
             return this;
         }
@@ -541,7 +541,7 @@ public interface ASKClusterProps extends software.amazon.jsii.JsiiSerializable {
          *                   Note You must specify both the VpcId and VSwitchIds or leave both of them empty.
          * @return {@code this}
          */
-        public Builder vSwitchIds(com.aliyun.ros.cdk.core.IResolvable vSwitchIds) {
+        public Builder vSwitchIds(java.util.List<? extends java.lang.Object> vSwitchIds) {
             this.vSwitchIds = vSwitchIds;
             return this;
         }

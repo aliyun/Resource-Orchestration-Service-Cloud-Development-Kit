@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * ROS template options for a stack.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:12.068Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:07.078Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.ITemplateOptions")
 @software.amazon.jsii.Jsii.Proxy(ITemplateOptions.Jsii$Proxy.class)
 public interface ITemplateOptions extends software.amazon.jsii.JsiiSerializable {

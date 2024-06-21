@@ -161,6 +161,19 @@ export interface RosExecutionProps {
     readonly templateName: string | ros.IResolvable;
 
     /**
+     * @Property description: The description of OOS Execution.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property loopMode: The loop mode of OOS Execution. Valid values:
+     * - Automatic(Default): does not pause.
+     * - FirstBatchPause: The first batch of pauses.
+     * - EveryBatchPause: pause each batch.
+     */
+    readonly loopMode?: string | ros.IResolvable;
+
+    /**
      * @Property mode: Execution mode.
      */
     readonly mode?: string | ros.IResolvable;
@@ -215,6 +228,14 @@ function RosExecutionPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('parentExecutionId', ros.validateString)(properties.parentExecutionId));
     errors.collect(ros.propertyValidator('resourceOptions', RosExecution_ResourceOptionsPropertyValidator)(properties.resourceOptions));
+    if(properties.loopMode && (typeof properties.loopMode) !== 'object') {
+        errors.collect(ros.propertyValidator('loopMode', ros.validateAllowedValues)({
+          data: properties.loopMode,
+          allowedValues: ["Automatic","FirstBatchPause","EveryBatchPause"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('loopMode', ros.validateString)(properties.loopMode));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('parameters', ros.hashValidator(ros.validateAny))(properties.parameters));
     if(properties.safetyCheck && (typeof properties.safetyCheck) !== 'object') {
         errors.collect(ros.propertyValidator('safetyCheck', ros.validateAllowedValues)({
@@ -260,6 +281,8 @@ function rosExecutionPropsToRosTemplate(properties: any, enableResourcePropertyC
     }
     return {
       TemplateName: ros.stringToRosTemplate(properties.templateName),
+      Description: ros.stringToRosTemplate(properties.description),
+      LoopMode: ros.stringToRosTemplate(properties.loopMode),
       Mode: ros.stringToRosTemplate(properties.mode),
       Parameters: ros.hashMapper(ros.objectToRosTemplate)(properties.parameters),
       ParentExecutionId: ros.stringToRosTemplate(properties.parentExecutionId),
@@ -338,6 +361,19 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
     public templateName: string | ros.IResolvable;
 
     /**
+     * @Property description: The description of OOS Execution.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property loopMode: The loop mode of OOS Execution. Valid values:
+     * - Automatic(Default): does not pause.
+     * - FirstBatchPause: The first batch of pauses.
+     * - EveryBatchPause: pause each batch.
+     */
+    public loopMode: string | ros.IResolvable | undefined;
+
+    /**
      * @Property mode: Execution mode.
      */
     public mode: string | ros.IResolvable | undefined;
@@ -397,6 +433,8 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.templateName = props.templateName;
+        this.description = props.description;
+        this.loopMode = props.loopMode;
         this.mode = props.mode;
         this.parameters = props.parameters;
         this.parentExecutionId = props.parentExecutionId;
@@ -411,6 +449,8 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
     protected get rosProperties(): { [key: string]: any }  {
         return {
             templateName: this.templateName,
+            description: this.description,
+            loopMode: this.loopMode,
             mode: this.mode,
             parameters: this.parameters,
             parentExecutionId: this.parentExecutionId,

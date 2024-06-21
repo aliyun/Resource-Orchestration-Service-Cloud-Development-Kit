@@ -1,5 +1,12 @@
 # Aliyun ROS Cloud Development Toolkit Changelog
 
+## [ros-cdk-cli 1.0.51] (2024-06-21)
+### Features
+- Update ROS resource sdk packages (Added the ALIYUN::ElasticSearchServerless::App, ALIYUN::ServerlessDev::Project, ALIYUN::ICE::SearchLib, ALIYUN::ARMS::Environment, ALIYUN::ARMS::EnvironmentFeature, ALIYUN::ARMS::AddonRelease, ALIYUN::SLS::OssExport, DATASOURCE::RAM::User, DATASOURCE::RAM::AccountAlias, DATASOURCE::RAM::Role, ALIYUN::ECS::NetworkInterfaces resource type).
+- Source.asset supports specifying the object prefix.
+- Extend the ossdeployment default timeout and change the resource Id and property name to fixed values.
+- Delete the cache bucket on deployment failure.
+
 ## [ros-cdk-cli 1.0.50] (2024-05-29)
 ### Features
 - Update ROS resource sdk packages (Added the ALIYUN::ADBLake::DBCluster, ALIYUN::ARMS::ApplyAlertRuleTemplate, ALIYUN::DataWorks::Project, ALIYUN::DDoSPro::Port, ALIYUN::DDoSPro::SceneDefensePolicy, ALIYUN::DDoSPro::SchedulerRule, ALIYUN::DEVOPS::HostGroup, ALIYUN::ECD::DesktopGroup, ALIYUN::ECD::NetworkPackage, DATASOURCE::ECS::Activation, DATASOURCE::ECS::DedicatedHostCluster, DATASOURCE::ECS::DeploymentSet, ALIYUN::GA::AclsListenerAssociation, ALIYUN::GA::ApplicationMonitor, ALIYUN::GA::BasicAccelerateIp, ALIYUN::GA::BasicAccelerator, ALIYUN::GA::BasicAcceleratorIpEndpointRelation, ALIYUN::GA::BasicEndpoint, ALIYUN::GA::BasicEndpointGroup, ALIYUN::GA::BasicIpSet, ALIYUN::GA::EndpointGroups, ALIYUN::KMS::Instance, ALIYUN::NLS::Project, ALIYUN::PAI::WorkspaceResourceDlc, ALIYUN::PAI::WorkspaceResourceFlink, ALIYUN::PAI::WorkspaceResourceMaxCompute, ALIYUN::PAIPlugin::Campaign, ALIYUN::PAIPlugin::InferenceJob, ALIYUN::PAIPlugin::TrainingJob, ALIYUN::SLB::TLSPolicy; deleted the ALIYUN::BrainIndustrial::PidOrganization, ALIYUN::BrainIndustrial::PidProject).

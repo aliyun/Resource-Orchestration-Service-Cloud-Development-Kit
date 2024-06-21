@@ -4551,6 +4551,436 @@ export class RosMetricStore extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosOssExport`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-ossexport
+ */
+export interface RosOssExportProps {
+
+    /**
+     * @Property configuration: The configuration of the export job.
+     */
+    readonly configuration: RosOssExport.ConfigurationProperty | ros.IResolvable;
+
+    /**
+     * @Property displayName: The display name of the export job. It must be 4 to 100 characters in length.
+     */
+    readonly displayName: string | ros.IResolvable;
+
+    /**
+     * @Property exportName: The name of the export job. This value should be unique. It must be 2 to 64 characters in length and can contain lowercase letters, digits, hyphens (-), and underscores (_). It must start and end with a lowercase letter or a digit.
+     */
+    readonly exportName: string | ros.IResolvable;
+
+    /**
+     * @Property projectName: The project name of SLS.
+     */
+    readonly projectName: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the export job. It could be 0 to 256 characters in length.
+     */
+    readonly description?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosOssExportProps`
+ *
+ * @param properties - the TypeScript properties of a `RosOssExportProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosOssExportPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
+        errors.collect(ros.propertyValidator('description', ros.validateLength)({
+            data: properties.description.length,
+            min: 0,
+            max: 256,
+          }));
+    }
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('configuration', ros.requiredValidator)(properties.configuration));
+    errors.collect(ros.propertyValidator('configuration', RosOssExport_ConfigurationPropertyValidator)(properties.configuration));
+    errors.collect(ros.propertyValidator('projectName', ros.requiredValidator)(properties.projectName));
+    if(properties.projectName && (Array.isArray(properties.projectName) || (typeof properties.projectName) === 'string')) {
+        errors.collect(ros.propertyValidator('projectName', ros.validateLength)({
+            data: properties.projectName.length,
+            min: 3,
+            max: 63,
+          }));
+    }
+    if(properties.projectName && (typeof properties.projectName) !== 'object') {
+        errors.collect(ros.propertyValidator('projectName', ros.validateAllowedPattern)({
+          data: properties.projectName,
+          reg: /^[a-zA-Z0-9_-]+$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('projectName', ros.validateString)(properties.projectName));
+    errors.collect(ros.propertyValidator('displayName', ros.requiredValidator)(properties.displayName));
+    if(properties.displayName && (Array.isArray(properties.displayName) || (typeof properties.displayName) === 'string')) {
+        errors.collect(ros.propertyValidator('displayName', ros.validateLength)({
+            data: properties.displayName.length,
+            min: 4,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('displayName', ros.validateString)(properties.displayName));
+    errors.collect(ros.propertyValidator('exportName', ros.requiredValidator)(properties.exportName));
+    if(properties.exportName && (Array.isArray(properties.exportName) || (typeof properties.exportName) === 'string')) {
+        errors.collect(ros.propertyValidator('exportName', ros.validateLength)({
+            data: properties.exportName.length,
+            min: 2,
+            max: 64,
+          }));
+    }
+    if(properties.exportName && (typeof properties.exportName) !== 'object') {
+        errors.collect(ros.propertyValidator('exportName', ros.validateAllowedPattern)({
+          data: properties.exportName,
+          reg: /^[a-zA-Z0-9_-]+$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('exportName', ros.validateString)(properties.exportName));
+    return errors.wrap('supplied properties not correct for "RosOssExportProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLS::OssExport` resource
+ *
+ * @param properties - the TypeScript properties of a `RosOssExportProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLS::OssExport` resource.
+ */
+// @ts-ignore TS6133
+function rosOssExportPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosOssExportPropsValidator(properties).assertSuccess();
+    }
+    return {
+      Configuration: rosOssExportConfigurationPropertyToRosTemplate(properties.configuration),
+      DisplayName: ros.stringToRosTemplate(properties.displayName),
+      ExportName: ros.stringToRosTemplate(properties.exportName),
+      ProjectName: ros.stringToRosTemplate(properties.projectName),
+      Description: ros.stringToRosTemplate(properties.description),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::OssExport`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `OssExport` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-ossexport
+ */
+export class RosOssExport extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLS::OssExport";
+
+    /**
+     * @Attribute ExportName: The name of the export job.
+     */
+    public readonly attrExportName: ros.IResolvable;
+
+    /**
+     * @Attribute ProjectName: The project name of SLS.
+     */
+    public readonly attrProjectName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property configuration: The configuration of the export job.
+     */
+    public configuration: RosOssExport.ConfigurationProperty | ros.IResolvable;
+
+    /**
+     * @Property displayName: The display name of the export job. It must be 4 to 100 characters in length.
+     */
+    public displayName: string | ros.IResolvable;
+
+    /**
+     * @Property exportName: The name of the export job. This value should be unique. It must be 2 to 64 characters in length and can contain lowercase letters, digits, hyphens (-), and underscores (_). It must start and end with a lowercase letter or a digit.
+     */
+    public exportName: string | ros.IResolvable;
+
+    /**
+     * @Property projectName: The project name of SLS.
+     */
+    public projectName: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the export job. It could be 0 to 256 characters in length.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosOssExportProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosOssExport.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrExportName = this.getAtt('ExportName');
+        this.attrProjectName = this.getAtt('ProjectName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.configuration = props.configuration;
+        this.displayName = props.displayName;
+        this.exportName = props.exportName;
+        this.projectName = props.projectName;
+        this.description = props.description;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            configuration: this.configuration,
+            displayName: this.displayName,
+            exportName: this.exportName,
+            projectName: this.projectName,
+            description: this.description,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosOssExportPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosOssExport {
+    /**
+     * @stability external
+     */
+    export interface ConfigurationProperty {
+        /**
+         * @Property toTime: The end time of the time range.
+         */
+        readonly toTime?: number | ros.IResolvable;
+        /**
+         * @Property sink: The sink name.
+         */
+        readonly sink: RosOssExport.SinkProperty | ros.IResolvable;
+        /**
+         * @Property logstore: The logstore name of the project.
+         */
+        readonly logstore: string | ros.IResolvable;
+        /**
+         * @Property fromTime: The start time of the time range.
+         */
+        readonly fromTime?: number | ros.IResolvable;
+        /**
+         * @Property roleArn: Used to control permissions of writing data to OSS and reading data in Logstores. Example: acs:ram::13234:role\/aliyunlogdefaultrole.
+         */
+        readonly roleArn: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ConfigurationProperty`
+ *
+ * @param properties - the TypeScript properties of a `ConfigurationProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosOssExport_ConfigurationPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('toTime', ros.validateNumber)(properties.toTime));
+    errors.collect(ros.propertyValidator('sink', ros.requiredValidator)(properties.sink));
+    errors.collect(ros.propertyValidator('sink', RosOssExport_SinkPropertyValidator)(properties.sink));
+    errors.collect(ros.propertyValidator('logstore', ros.requiredValidator)(properties.logstore));
+    errors.collect(ros.propertyValidator('logstore', ros.validateString)(properties.logstore));
+    errors.collect(ros.propertyValidator('fromTime', ros.validateNumber)(properties.fromTime));
+    errors.collect(ros.propertyValidator('roleArn', ros.requiredValidator)(properties.roleArn));
+    errors.collect(ros.propertyValidator('roleArn', ros.validateString)(properties.roleArn));
+    return errors.wrap('supplied properties not correct for "ConfigurationProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLS::OssExport.Configuration` resource
+ *
+ * @param properties - the TypeScript properties of a `ConfigurationProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLS::OssExport.Configuration` resource.
+ */
+// @ts-ignore TS6133
+function rosOssExportConfigurationPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosOssExport_ConfigurationPropertyValidator(properties).assertSuccess();
+    return {
+      ToTime: ros.numberToRosTemplate(properties.toTime),
+      Sink: rosOssExportSinkPropertyToRosTemplate(properties.sink),
+      Logstore: ros.stringToRosTemplate(properties.logstore),
+      FromTime: ros.numberToRosTemplate(properties.fromTime),
+      RoleArn: ros.stringToRosTemplate(properties.roleArn),
+    };
+}
+
+export namespace RosOssExport {
+    /**
+     * @stability external
+     */
+    export interface SinkProperty {
+        /**
+         * @Property bufferInterval: The shipping time. The maximum interval at which data is shipped. Valid values: 300 to 900. Unit: seconds.
+         */
+        readonly bufferInterval: number | ros.IResolvable;
+        /**
+         * @Property contentType: The storage format. You can store data in the Parquet format for data analysis. Compared with data stored in the CSV or JSON format, data stored in the Parquet format can be scanned at a higher efficiency.You are charged more fees when you ship data in the Parquet format than in the CSV or JSON format. Select a storage format for data shipping based on your business requirements.
+         */
+        readonly contentType: string | ros.IResolvable;
+        /**
+         * @Property contentDetail: The content detail. If ContentType=json, the default value is {"EnableTag": false}.
+         */
+        readonly contentDetail?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+        /**
+         * @Property pathFormat: The partition format is used to generate subdirectories. A subdirectory is dynamically generated based on the shipping time. The default partition format is %Y\/%m\/%d\/%H\/%M. Example: 2017\/01\/23\/12\/00. Note that the partition format cannot start with a forward slash (\/). For more information about how to integrate with the compute engines of E-MapReduce such as Hive and Impala to query and analyze data
+         */
+        readonly pathFormat?: string | ros.IResolvable;
+        /**
+         * @Property prefix: The prefix of the OSS object name.
+         */
+        readonly prefix?: string | ros.IResolvable;
+        /**
+         * @Property pathFormatType: The partition format type. Only support time.
+         */
+        readonly pathFormatType?: string | ros.IResolvable;
+        /**
+         * @Property roleArn: Used to control permissions of writing data to OSS and reading data in Logstores. Example: acs:ram::13234:role\/aliyunlogdefaultrole.
+         */
+        readonly roleArn: string | ros.IResolvable;
+        /**
+         * @Property bufferSize: The shipping size. The value of this parameter determines the maximum size of raw log data that is shipped and stored in an object. Unit: MB. If the size of log data that you want to ship reaches the specified value, a shipping job is automatically created.
+         */
+        readonly bufferSize: number | ros.IResolvable;
+        /**
+         * @Property timeZone: The time zone. Partition paths vary based on time zones. The value should be -1200 to +1400. For example, +0800.
+         */
+        readonly timeZone?: string | ros.IResolvable;
+        /**
+         * @Property suffix: The suffix of the OSS object name.
+         */
+        readonly suffix?: string | ros.IResolvable;
+        /**
+         * @Property endpoint: The endpoint of the OSS bucket.
+         */
+        readonly endpoint?: string | ros.IResolvable;
+        /**
+         * @Property delaySeconds: The shipping latency. The period of time after which data is shipped. Valid values: 900 to 63244800. Unit: seconds.
+     * Note: Do not specify a latency that exceeds the data retention period of the Logstore. We recommend that you reserve a buffer period of a few days for the latency. Otherwise, data loss may occur.
+         */
+        readonly delaySeconds?: number | ros.IResolvable;
+        /**
+         * @Property bucket: The name of the OSS bucket.
+         */
+        readonly bucket: string | ros.IResolvable;
+        /**
+         * @Property compressionType: The compression method of OSS data. Valid values: none, snappy, gzip, and zstd. The value none indicates that raw data is not compressed. The value snappy, gzip, or zstd indicates that a specified algorithm is used to compress data, which can reduce the storage space usage of OSS buckets. The compression methods vary based on storage formats.
+         */
+        readonly compressionType?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `SinkProperty`
+ *
+ * @param properties - the TypeScript properties of a `SinkProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosOssExport_SinkPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('bufferInterval', ros.requiredValidator)(properties.bufferInterval));
+    if(properties.bufferInterval && (typeof properties.bufferInterval) !== 'object') {
+        errors.collect(ros.propertyValidator('bufferInterval', ros.validateRange)({
+            data: properties.bufferInterval,
+            min: 300,
+            max: 900,
+          }));
+    }
+    errors.collect(ros.propertyValidator('bufferInterval', ros.validateNumber)(properties.bufferInterval));
+    errors.collect(ros.propertyValidator('contentType', ros.requiredValidator)(properties.contentType));
+    if(properties.contentType && (typeof properties.contentType) !== 'object') {
+        errors.collect(ros.propertyValidator('contentType', ros.validateAllowedValues)({
+          data: properties.contentType,
+          allowedValues: ["json","parquet","csv","orc"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('contentType', ros.validateString)(properties.contentType));
+    errors.collect(ros.propertyValidator('contentDetail', ros.hashValidator(ros.validateAny))(properties.contentDetail));
+    errors.collect(ros.propertyValidator('pathFormat', ros.validateString)(properties.pathFormat));
+    errors.collect(ros.propertyValidator('prefix', ros.validateString)(properties.prefix));
+    if(properties.pathFormatType && (typeof properties.pathFormatType) !== 'object') {
+        errors.collect(ros.propertyValidator('pathFormatType', ros.validateAllowedValues)({
+          data: properties.pathFormatType,
+          allowedValues: ["time"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('pathFormatType', ros.validateString)(properties.pathFormatType));
+    errors.collect(ros.propertyValidator('roleArn', ros.requiredValidator)(properties.roleArn));
+    errors.collect(ros.propertyValidator('roleArn', ros.validateString)(properties.roleArn));
+    errors.collect(ros.propertyValidator('bufferSize', ros.requiredValidator)(properties.bufferSize));
+    if(properties.bufferSize && (typeof properties.bufferSize) !== 'object') {
+        errors.collect(ros.propertyValidator('bufferSize', ros.validateRange)({
+            data: properties.bufferSize,
+            min: 5,
+            max: 256,
+          }));
+    }
+    errors.collect(ros.propertyValidator('bufferSize', ros.validateNumber)(properties.bufferSize));
+    errors.collect(ros.propertyValidator('timeZone', ros.validateString)(properties.timeZone));
+    errors.collect(ros.propertyValidator('suffix', ros.validateString)(properties.suffix));
+    errors.collect(ros.propertyValidator('endpoint', ros.validateString)(properties.endpoint));
+    if(properties.delaySeconds && (typeof properties.delaySeconds) !== 'object') {
+        errors.collect(ros.propertyValidator('delaySeconds', ros.validateRange)({
+            data: properties.delaySeconds,
+            min: 900,
+            max: 63244800,
+          }));
+    }
+    errors.collect(ros.propertyValidator('delaySeconds', ros.validateNumber)(properties.delaySeconds));
+    errors.collect(ros.propertyValidator('bucket', ros.requiredValidator)(properties.bucket));
+    errors.collect(ros.propertyValidator('bucket', ros.validateString)(properties.bucket));
+    if(properties.compressionType && (typeof properties.compressionType) !== 'object') {
+        errors.collect(ros.propertyValidator('compressionType', ros.validateAllowedValues)({
+          data: properties.compressionType,
+          allowedValues: ["none","snappy","gzip","zstd"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('compressionType', ros.validateString)(properties.compressionType));
+    return errors.wrap('supplied properties not correct for "SinkProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLS::OssExport.Sink` resource
+ *
+ * @param properties - the TypeScript properties of a `SinkProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLS::OssExport.Sink` resource.
+ */
+// @ts-ignore TS6133
+function rosOssExportSinkPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosOssExport_SinkPropertyValidator(properties).assertSuccess();
+    return {
+      BufferInterval: ros.numberToRosTemplate(properties.bufferInterval),
+      ContentType: ros.stringToRosTemplate(properties.contentType),
+      ContentDetail: ros.hashMapper(ros.objectToRosTemplate)(properties.contentDetail),
+      PathFormat: ros.stringToRosTemplate(properties.pathFormat),
+      Prefix: ros.stringToRosTemplate(properties.prefix),
+      PathFormatType: ros.stringToRosTemplate(properties.pathFormatType),
+      RoleArn: ros.stringToRosTemplate(properties.roleArn),
+      BufferSize: ros.numberToRosTemplate(properties.bufferSize),
+      TimeZone: ros.stringToRosTemplate(properties.timeZone),
+      Suffix: ros.stringToRosTemplate(properties.suffix),
+      Endpoint: ros.stringToRosTemplate(properties.endpoint),
+      DelaySeconds: ros.numberToRosTemplate(properties.delaySeconds),
+      Bucket: ros.stringToRosTemplate(properties.bucket),
+      CompressionType: ros.stringToRosTemplate(properties.compressionType),
+    };
+}
+
+/**
  * Properties for defining a `RosProject`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-project
  */

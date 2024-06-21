@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * The type of output that a bundling operation is producing.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-06T03:35:11.953Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:07.018Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.BundlingOutput")
 public enum BundlingOutput {
     /**

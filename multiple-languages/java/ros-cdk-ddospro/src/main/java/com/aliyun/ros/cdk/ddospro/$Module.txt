@@ -16,7 +16,11 @@
 @alicloud/ros-cdk-ddospro.RosSceneDefensePolicyProps=com.aliyun.ros.cdk.ddospro.RosSceneDefensePolicyProps
 @alicloud/ros-cdk-ddospro.RosSchedulerRule=com.aliyun.ros.cdk.ddospro.RosSchedulerRule
 @alicloud/ros-cdk-ddospro.RosSchedulerRuleProps=com.aliyun.ros.cdk.ddospro.RosSchedulerRuleProps
+@alicloud/ros-cdk-ddospro.RosWebRule=com.aliyun.ros.cdk.ddospro.RosWebRule
+@alicloud/ros-cdk-ddospro.RosWebRuleProps=com.aliyun.ros.cdk.ddospro.RosWebRuleProps
 @alicloud/ros-cdk-ddospro.SceneDefensePolicy=com.aliyun.ros.cdk.ddospro.SceneDefensePolicy
 @alicloud/ros-cdk-ddospro.SceneDefensePolicyProps=com.aliyun.ros.cdk.ddospro.SceneDefensePolicyProps
 @alicloud/ros-cdk-ddospro.SchedulerRule=com.aliyun.ros.cdk.ddospro.SchedulerRule
 @alicloud/ros-cdk-ddospro.SchedulerRuleProps=com.aliyun.ros.cdk.ddospro.SchedulerRuleProps
+@alicloud/ros-cdk-ddospro.WebRule=com.aliyun.ros.cdk.ddospro.WebRule
+@alicloud/ros-cdk-ddospro.WebRuleProps=com.aliyun.ros.cdk.ddospro.WebRuleProps

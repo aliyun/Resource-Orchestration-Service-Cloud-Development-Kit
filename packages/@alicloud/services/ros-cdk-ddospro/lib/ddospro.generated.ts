@@ -9,7 +9,7 @@ import * as ros from '@alicloud/ros-cdk-core';
 export interface RosPortProps {
 
     /**
-     * @Property frontendProtocol: The type of the protocol. Valid values:
+     * @Property frontendProtocol: The type of the protocol. Valid values: 
      * tcp
      * udp
      */
@@ -112,7 +112,7 @@ export class RosPort extends ros.RosResource {
 
 
     /**
-     * @Property frontendProtocol: The type of the protocol. Valid values:
+     * @Property frontendProtocol: The type of the protocol. Valid values: 
      * tcp
      * udp
      */
@@ -1150,28 +1150,28 @@ export interface RosSchedulerRuleProps {
     readonly ruleName: string | ros.IResolvable;
 
     /**
-     * @Property rules: The details of the scheduling rule. This parameter is a JSON string. The following list describes the fields in the value of the parameter:
+     * @Property rules: The details of the scheduling rule. This parameter is a JSON string. The following list describes the fields in the value of the parameter: 
      * Type: the address type of the interaction resource that you want to use in the scheduling rule. This field is required and must be of the string type. Valid values: A: IP address. CNAME: domain name
      * Value: the address of the interaction resource that you want to use in the scheduling rule. This field is required and must be of the string type.
      * Priority: the priority of the scheduling rule. This field is required and must be of the integer type. Valid values: 0 to 100. A larger value indicates a higher priority.
-     * ValueType: the type of the interaction resource that you want to use in the scheduling rule. This field is required and must be of the integer type. Valid values: 1: the IP address of the Anti-DDoS Pro or Anti-DDoS Premium instance. 2: the IP address of the interaction resource in the tiered protection scenario. 3: the IP address that is used to accelerate access in the network acceleration scenario. 5: the domain name that is configured in Alibaba Cloud CDN (CDN) in the CDN interaction scenario. 6 the IP address of the interaction resource in the cloud service interaction scenario
+     * ValueType: the type of the interaction resource that you want to use in the scheduling rule. This field is required and must be of the integer type. Valid values: 1: the IP address of the Anti-DDoS Pro or Anti-DDoS Premium instance. 2: the IP address of the interaction resource in the tiered protection scenario. 3: the IP address that is used to accelerate access in the network acceleration scenario. 5: the domain name that is configured in Alibaba Cloud CDN (CDN) in the CDN interaction scenario. 6 the IP address of the interaction resource in the cloud service interaction scenario 
      * RegionId: the region where the interaction resource is deployed. This parameter must be specified when ValueType is set to 2. The value must be of the string type.
      */
     readonly rules: string | ros.IResolvable;
 
     /**
-     * @Property ruleType: The type of the custom defense rule. Valid values:
-     * 2: tiered protection
-     * 3: network acceleration
-     * 5: CDN interaction
+     * @Property ruleType: The type of the custom defense rule. Valid values: 
+     * 2: tiered protection 
+     * 3: network acceleration 
+     * 5: CDN interaction 
      * 6: cloud service interaction
      * 8: secure acceleration
      */
     readonly ruleType: number | ros.IResolvable;
 
     /**
-     * @Property param: The details of the CDN interaction rule. This parameter is a JSON string. The following list describes the fields in the value of the parameter:
-     * ParamType: the type of the scheduling rule. This field is required and must be of the string type. Set the value to cdn. This indicates that you want to modify a CDN interaction rule.
+     * @Property param: The details of the CDN interaction rule. This parameter is a JSON string. The following list describes the fields in the value of the parameter: 
+     * ParamType: the type of the scheduling rule. This field is required and must be of the string type. Set the value to cdn. This indicates that you want to modify a CDN interaction rule. 
      * ParamData: the values of parameters that you want to modify for the CDN interaction rule. This field is required and must be of the map type. ParamData contains the following parameters: Domain: the accelerated domain in CDN. This parameter is required and must be of the string type; Cname: the CNAME that is assigned to the accelerated domain. This parameter is required and must be of the string type; AccessQps: the queries per second (QPS) threshold that is used to switch service traffic to Anti-DDoS Pro or Anti-DDoS Premium. This parameter is required and must be of the integer type; UpstreamQps: the QPS threshold that is used to switch service traffic to CDN. This parameter is optional and must be of the integer type.
      */
     readonly param?: string | ros.IResolvable;
@@ -1256,28 +1256,28 @@ export class RosSchedulerRule extends ros.RosResource {
     public ruleName: string | ros.IResolvable;
 
     /**
-     * @Property rules: The details of the scheduling rule. This parameter is a JSON string. The following list describes the fields in the value of the parameter:
+     * @Property rules: The details of the scheduling rule. This parameter is a JSON string. The following list describes the fields in the value of the parameter: 
      * Type: the address type of the interaction resource that you want to use in the scheduling rule. This field is required and must be of the string type. Valid values: A: IP address. CNAME: domain name
      * Value: the address of the interaction resource that you want to use in the scheduling rule. This field is required and must be of the string type.
      * Priority: the priority of the scheduling rule. This field is required and must be of the integer type. Valid values: 0 to 100. A larger value indicates a higher priority.
-     * ValueType: the type of the interaction resource that you want to use in the scheduling rule. This field is required and must be of the integer type. Valid values: 1: the IP address of the Anti-DDoS Pro or Anti-DDoS Premium instance. 2: the IP address of the interaction resource in the tiered protection scenario. 3: the IP address that is used to accelerate access in the network acceleration scenario. 5: the domain name that is configured in Alibaba Cloud CDN (CDN) in the CDN interaction scenario. 6 the IP address of the interaction resource in the cloud service interaction scenario
+     * ValueType: the type of the interaction resource that you want to use in the scheduling rule. This field is required and must be of the integer type. Valid values: 1: the IP address of the Anti-DDoS Pro or Anti-DDoS Premium instance. 2: the IP address of the interaction resource in the tiered protection scenario. 3: the IP address that is used to accelerate access in the network acceleration scenario. 5: the domain name that is configured in Alibaba Cloud CDN (CDN) in the CDN interaction scenario. 6 the IP address of the interaction resource in the cloud service interaction scenario 
      * RegionId: the region where the interaction resource is deployed. This parameter must be specified when ValueType is set to 2. The value must be of the string type.
      */
     public rules: string | ros.IResolvable;
 
     /**
-     * @Property ruleType: The type of the custom defense rule. Valid values:
-     * 2: tiered protection
-     * 3: network acceleration
-     * 5: CDN interaction
+     * @Property ruleType: The type of the custom defense rule. Valid values: 
+     * 2: tiered protection 
+     * 3: network acceleration 
+     * 5: CDN interaction 
      * 6: cloud service interaction
      * 8: secure acceleration
      */
     public ruleType: number | ros.IResolvable;
 
     /**
-     * @Property param: The details of the CDN interaction rule. This parameter is a JSON string. The following list describes the fields in the value of the parameter:
-     * ParamType: the type of the scheduling rule. This field is required and must be of the string type. Set the value to cdn. This indicates that you want to modify a CDN interaction rule.
+     * @Property param: The details of the CDN interaction rule. This parameter is a JSON string. The following list describes the fields in the value of the parameter: 
+     * ParamType: the type of the scheduling rule. This field is required and must be of the string type. Set the value to cdn. This indicates that you want to modify a CDN interaction rule. 
      * ParamData: the values of parameters that you want to modify for the CDN interaction rule. This field is required and must be of the map type. ParamData contains the following parameters: Domain: the accelerated domain in CDN. This parameter is required and must be of the string type; Cname: the CNAME that is assigned to the accelerated domain. This parameter is required and must be of the string type; AccessQps: the queries per second (QPS) threshold that is used to switch service traffic to Anti-DDoS Pro or Anti-DDoS Premium. This parameter is required and must be of the integer type; UpstreamQps: the QPS threshold that is used to switch service traffic to CDN. This parameter is optional and must be of the integer type.
      */
     public param: string | ros.IResolvable | undefined;
@@ -1316,5 +1316,211 @@ export class RosSchedulerRule extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosSchedulerRulePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosWebRule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-webrule
+ */
+export interface RosWebRuleProps {
+
+    /**
+     * @Property domain: The domain name of the website that you want to add to the instance.
+     */
+    readonly domain: string | ros.IResolvable;
+
+    /**
+     * @Property rsType: The address type of the origin server. Valid values:
+     * 0: IP address
+     * 1: domain name The domain name of the origin server is returned if you deploy proxies, such as Web Application Firewall (WAF), between the origin server and the instance. In this case, the address of the proxy, such as the CNAME provided by WAF, is returned.
+     */
+    readonly rsType: number | ros.IResolvable;
+
+    /**
+     * @Property rules: The details of the forwarding rule. The value is a string that consists of JSON arrays. Each element in a JSON array is a JSON struct that contains the following fields: 
+     * ProxyRules: the information about the origin server. The information includes the port number and IP address. This field is required and must be a JSON array. Each element in a JSON array is a JSON struct that contains the following fields: ProxyPort: the port number. This field is required and must be an integer; RealServers: the IP address. This field is required and must be a string array.
+     * ProxyType: the protocol type. This field is required and must be a string. Valid values: http, https, websocket, and websockets.
+     */
+    readonly rules: string | ros.IResolvable;
+
+    /**
+     * @Property defenseId: The ID of the associated defense. This parameter applies to scenarios in which other cloud services, such as Object Storage Service (OSS), are integrated with Anti-DDoS Pro or Anti-DDoS Premium.
+     */
+    readonly defenseId?: string | ros.IResolvable;
+
+    /**
+     * @Property httpsExt: The advanced HTTPS settings. This parameter takes effect only when the value of the ProxyType parameter includes https. The value is a string that consists of a JSON struct. The JSON struct contains the following fields: 
+     * Http2https: specifies whether to turn on Enforce HTTPS Routing. This field is optional and must be an integer. Valid values: 0 and 1. The value 0 indicates that Enforce HTTPS Routing is turned off. The value 1 indicates that Enforce HTTPS Routing is turned on. The default value is 0. If your website supports both HTTP and HTTPS, this feature meets your business requirements. If you enable this feature, all HTTP requests to access the website are redirected to HTTPS requests on the standard port 443.
+     * Https2http: specifies whether to turn on Enable HTTP. This field is optional and must be an integer. Valid values: 0 and 1. The value 0 indicates that Enable HTTP is turned off. The value 1 indicates that Enable HTTP is turned on. The default value is 0. If your website does not support HTTPS, this feature meets your business requirements If this feature is enabled, all HTTPS requests are redirected to HTTP requests and forwarded to origin servers. This feature can redirect WebSockets requests to WebSocket requests. Requests are redirected over the standard port 80.
+     * Http2: specifies whether to turn on Enable HTTP\/2. This field is optional and must be an integer. Valid values: 0 and 1. The value 0 indicates that Enable HTTP\/2 is turned off. The value 1 indicates that Enable HTTP\/2 is turned on. The default value is 0. After you turn on Enable HTTP\/2, the protocol type is HTTP\/2.
+     */
+    readonly httpsExt?: string | ros.IResolvable;
+
+    /**
+     * @Property instanceIds: An array consisting of the IDs of instances that you want to associate.
+     */
+    readonly instanceIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the instance belongs in Resource Management. This parameter is empty by default, which indicates that the instance belongs to the default resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosWebRuleProps`
+ *
+ * @param properties - the TypeScript properties of a `RosWebRuleProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosWebRulePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('rsType', ros.requiredValidator)(properties.rsType));
+    if(properties.rsType && (typeof properties.rsType) !== 'object') {
+        errors.collect(ros.propertyValidator('rsType', ros.validateAllowedValues)({
+          data: properties.rsType,
+          allowedValues: [0,1],
+        }));
+    }
+    errors.collect(ros.propertyValidator('rsType', ros.validateNumber)(properties.rsType));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('defenseId', ros.validateString)(properties.defenseId));
+    errors.collect(ros.propertyValidator('domain', ros.requiredValidator)(properties.domain));
+    errors.collect(ros.propertyValidator('domain', ros.validateString)(properties.domain));
+    if(properties.instanceIds && (Array.isArray(properties.instanceIds) || (typeof properties.instanceIds) === 'string')) {
+        errors.collect(ros.propertyValidator('instanceIds', ros.validateLength)({
+            data: properties.instanceIds.length,
+            min: 0,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('instanceIds', ros.listValidator(ros.validateString))(properties.instanceIds));
+    errors.collect(ros.propertyValidator('rules', ros.requiredValidator)(properties.rules));
+    errors.collect(ros.propertyValidator('rules', ros.validateString)(properties.rules));
+    errors.collect(ros.propertyValidator('httpsExt', ros.validateString)(properties.httpsExt));
+    return errors.wrap('supplied properties not correct for "RosWebRuleProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DDoSPro::WebRule` resource
+ *
+ * @param properties - the TypeScript properties of a `RosWebRuleProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DDoSPro::WebRule` resource.
+ */
+// @ts-ignore TS6133
+function rosWebRulePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosWebRulePropsValidator(properties).assertSuccess();
+    }
+    return {
+      Domain: ros.stringToRosTemplate(properties.domain),
+      RsType: ros.numberToRosTemplate(properties.rsType),
+      Rules: ros.stringToRosTemplate(properties.rules),
+      DefenseId: ros.stringToRosTemplate(properties.defenseId),
+      HttpsExt: ros.stringToRosTemplate(properties.httpsExt),
+      InstanceIds: ros.listMapper(ros.stringToRosTemplate)(properties.instanceIds),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::WebRule`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `WebRule` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-webrule
+ */
+export class RosWebRule extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DDoSPro::WebRule";
+
+    /**
+     * @Attribute Domain: The domain name of the website that you want to add to the instance.
+     */
+    public readonly attrDomain: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property domain: The domain name of the website that you want to add to the instance.
+     */
+    public domain: string | ros.IResolvable;
+
+    /**
+     * @Property rsType: The address type of the origin server. Valid values:
+     * 0: IP address
+     * 1: domain name The domain name of the origin server is returned if you deploy proxies, such as Web Application Firewall (WAF), between the origin server and the instance. In this case, the address of the proxy, such as the CNAME provided by WAF, is returned.
+     */
+    public rsType: number | ros.IResolvable;
+
+    /**
+     * @Property rules: The details of the forwarding rule. The value is a string that consists of JSON arrays. Each element in a JSON array is a JSON struct that contains the following fields: 
+     * ProxyRules: the information about the origin server. The information includes the port number and IP address. This field is required and must be a JSON array. Each element in a JSON array is a JSON struct that contains the following fields: ProxyPort: the port number. This field is required and must be an integer; RealServers: the IP address. This field is required and must be a string array.
+     * ProxyType: the protocol type. This field is required and must be a string. Valid values: http, https, websocket, and websockets.
+     */
+    public rules: string | ros.IResolvable;
+
+    /**
+     * @Property defenseId: The ID of the associated defense. This parameter applies to scenarios in which other cloud services, such as Object Storage Service (OSS), are integrated with Anti-DDoS Pro or Anti-DDoS Premium.
+     */
+    public defenseId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property httpsExt: The advanced HTTPS settings. This parameter takes effect only when the value of the ProxyType parameter includes https. The value is a string that consists of a JSON struct. The JSON struct contains the following fields: 
+     * Http2https: specifies whether to turn on Enforce HTTPS Routing. This field is optional and must be an integer. Valid values: 0 and 1. The value 0 indicates that Enforce HTTPS Routing is turned off. The value 1 indicates that Enforce HTTPS Routing is turned on. The default value is 0. If your website supports both HTTP and HTTPS, this feature meets your business requirements. If you enable this feature, all HTTP requests to access the website are redirected to HTTPS requests on the standard port 443.
+     * Https2http: specifies whether to turn on Enable HTTP. This field is optional and must be an integer. Valid values: 0 and 1. The value 0 indicates that Enable HTTP is turned off. The value 1 indicates that Enable HTTP is turned on. The default value is 0. If your website does not support HTTPS, this feature meets your business requirements If this feature is enabled, all HTTPS requests are redirected to HTTP requests and forwarded to origin servers. This feature can redirect WebSockets requests to WebSocket requests. Requests are redirected over the standard port 80.
+     * Http2: specifies whether to turn on Enable HTTP\/2. This field is optional and must be an integer. Valid values: 0 and 1. The value 0 indicates that Enable HTTP\/2 is turned off. The value 1 indicates that Enable HTTP\/2 is turned on. The default value is 0. After you turn on Enable HTTP\/2, the protocol type is HTTP\/2.
+     */
+    public httpsExt: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceIds: An array consisting of the IDs of instances that you want to associate.
+     */
+    public instanceIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the instance belongs in Resource Management. This parameter is empty by default, which indicates that the instance belongs to the default resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosWebRuleProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosWebRule.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDomain = this.getAtt('Domain');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.domain = props.domain;
+        this.rsType = props.rsType;
+        this.rules = props.rules;
+        this.defenseId = props.defenseId;
+        this.httpsExt = props.httpsExt;
+        this.instanceIds = props.instanceIds;
+        this.resourceGroupId = props.resourceGroupId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            domain: this.domain,
+            rsType: this.rsType,
+            rules: this.rules,
+            defenseId: this.defenseId,
+            httpsExt: this.httpsExt,
+            instanceIds: this.instanceIds,
+            resourceGroupId: this.resourceGroupId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosWebRulePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }

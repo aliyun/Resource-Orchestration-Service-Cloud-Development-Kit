@@ -35,7 +35,7 @@ def handler(event, context):
     sources = res_props['sources']
     dest_bucket_name = res_props['destinationBucket']
     dest_bucket = oss2.Bucket(auth, endpoint, dest_bucket_name)
-    if request_type == 'Create':
+    if request_type == 'Create' or request_type == 'Update':
         try:
             if not does_bucket_exist(dest_bucket):
                 result.update({
@@ -44,30 +44,28 @@ def handler(event, context):
                 })
                 callback_ros(result, evt)
                 return
-            asset_bucket = None
             object_keys_to_be_deleted = []
+            src_bucket_name = sources[0]['bucket']
+            src_bucket = oss2.Bucket(auth, endpoint, src_bucket_name)
+            if not does_bucket_exist(src_bucket):
+                result.update({
+                    'Status': 'FAILED',
+                    'Reason': 'The source bucket({}) not exist'.format(src_bucket_name)
+                })
+                callback_ros(result, evt)
+                return
             for source in sources:
-                src_bucket_name = source['bucket']
-                src_bucket = oss2.Bucket(auth, endpoint, src_bucket_name)
-                if not does_bucket_exist(src_bucket):
-                    result.update({
-                        'Status': 'FAILED',
-                        'Reason': 'The source bucket({}) not exist'.format(src_bucket_name)
-                    })
-                    callback_ros(result, evt)
-                    return
                 fileName = source.get('fileName', None)
                 object_key = source['objectKey']
                 if fileName:
-                    asset_bucket = src_bucket
-                    object_keys_to_be_deleted.append(fileName)
                     dest_object_key = fileName
                 else:
                     dest_object_key = object_key
+                object_keys_to_be_deleted.append(dest_object_key)
                 copy_file(src_bucket_name, src_bucket, dest_bucket, object_key, dest_object_key)
             if not retain_on_create:
                 for object_key in object_keys_to_be_deleted:
-                    asset_bucket.delete_object(object_key)
+                    src_bucket.delete_object(object_key)
             result.update({
                 'Status': 'SUCCESS'
             })

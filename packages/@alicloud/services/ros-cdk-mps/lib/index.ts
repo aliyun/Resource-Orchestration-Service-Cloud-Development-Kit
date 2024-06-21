@@ -1,3 +1,4 @@
+export * from './mediaworkflow';
 export * from './pipeline';
 
 // ALIYUN::MPS Resources:

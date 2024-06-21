@@ -83,19 +83,19 @@ export class BucketDeployment extends ros.Resource {
     constructor(scope: ros.Construct, id: string, props: BucketDeploymentProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
         const stack = ros.Stack.of(this);
-        const suffix = ros.generateRandomString(5);
         if (props.destinationBucket instanceof Bucket) {
             this.destinationBucket = props.destinationBucket.attrName;
         } else {
             this.destinationBucket = props.destinationBucket;
         }
         this.sources = props.sources.map((source: ISource) => source.bind(this));
+        const name = new ros.FnJoin('-', ['ros-cdk', new ros.FnSelect([0, new ros.FnSplit(['-', ros.RosPseudo.stackId])])]);
         if (!props.roleArn) {
             if (stack.roles && stack.roles.fcRole) {
                 this.handlerRoleArn = stack.roles.fcRole;
             } else {
-                const role = new Role(this, `FCRole${suffix}`, {
-                    roleName: `ros-cdk-oss-deployment-${suffix}`,
+                const role = new Role(this, `FCRoleFor${id}`, {
+                    roleName: name,
                     assumeRolePolicyDocument: {
                         version: '1',
                         statement: [
@@ -172,16 +172,16 @@ export class BucketDeployment extends ros.Resource {
 
         const logMonitoring = props.logMonitoring ?? false;
         if (logMonitoring) {
-            const project = new Project(this, `SLSProject${suffix}`, {
-                name: `ros-cdk-oss-deployment-${suffix}`,
+            const project = new Project(this, `SLSProjectFor${id}`, {
+                name: name,
                 description: 'SLS project for oss deployment by CDK',
             });
-            const logStore = new Logstore(this, `SLSLogStore${suffix}`, {
+            const logStore = new Logstore(this, `SLSLogStoreFor${id}`, {
                 logstoreName: `function-log`,
                 projectName: project.attrName,
             });
 
-            const slsIndex = new Index(this, `SLSIndex${suffix}`, {
+            const slsIndex = new Index(this, `SLSIndexFor${id}`, {
                 projectName: project.attrName,
                 logstoreName: logStore.attrLogstoreName,
                 fullTextIndex: {
@@ -189,8 +189,8 @@ export class BucketDeployment extends ros.Resource {
                 },
             });
 
-            this.fcService = new Service(this, `FCService${suffix}`, {
-                serviceName: `ros-cdk-oss-deployment-${suffix}`,
+            this.fcService = new Service(this, `FCServiceFor${id}`, {
+                serviceName: name,
                 description: 'FC service for oss deployment by CDK',
                 role: this.handlerRoleArn,
                 logConfig: {
@@ -201,19 +201,19 @@ export class BucketDeployment extends ros.Resource {
             });
             this.fcService.addDependency(slsIndex);
         } else {
-            this.fcService = new Service(this, `FCService${suffix}`, {
-                serviceName: `ros-cdk-oss-deployment-${suffix}`,
+            this.fcService = new Service(this, `FCServiceFor${id}`, {
+                serviceName: name,
                 description: 'FC service for oss deployment by CDK',
                 role: this.handlerRoleArn
             });
         }
 
-        const codeIndexAsset = new Asset(scope, `Asset${suffix}`, {
+        const codeIndexAsset = new Asset(scope, `AssetFor${id}`, {
             path: Path.join(__dirname, './codes/code.zip'),
         });
 
-        this.fcFunction = new Function(this, `FCFunction${suffix}`, {
-            functionName: `ros-cdk-oss-deployment-${suffix}`,
+        this.fcFunction = new Function(this, `FCFunctionFor${id}`, {
+            functionName: name,
             serviceName: this.fcService.attrServiceName,
             runtime: 'python3.10',
             code: {
@@ -221,6 +221,7 @@ export class BucketDeployment extends ros.Resource {
                 ossObjectName: codeIndexAsset.objectKey,
             },
             handler: 'index.handler',
+            timeout: props.timeout ?? 600
         });
 
         this.resource = this.cr = new RosCustomResource(this, id, {
@@ -230,7 +231,7 @@ export class BucketDeployment extends ros.Resource {
                 destinationBucket: this.destinationBucket,
                 retainOnCreate: props.retainOnCreate ?? false
             },
-            timeout: props.timeout ?? 60
+            timeout: props.timeout ?? 600
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
     }
 }
