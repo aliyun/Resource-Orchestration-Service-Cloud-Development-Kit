@@ -2,6 +2,10 @@
 
 ## [ros-cdk-cli 1.0.51] (2024-06-21)
 ### Features
+- Supplement the minimatch library dependency of the ros-cdk-core library.
+
+## [ros-cdk-cli 1.0.51] (2024-06-21)
+### Features
 - Update ROS resource sdk packages (Added the ALIYUN::ElasticSearchServerless::App, ALIYUN::ServerlessDev::Project, ALIYUN::ICE::SearchLib, ALIYUN::ARMS::Environment, ALIYUN::ARMS::EnvironmentFeature, ALIYUN::ARMS::AddonRelease, ALIYUN::SLS::OssExport, DATASOURCE::RAM::User, DATASOURCE::RAM::AccountAlias, DATASOURCE::RAM::Role, ALIYUN::ECS::NetworkInterfaces resource type).
 - Source.asset supports specifying the object prefix.
 - Extend the ossdeployment default timeout and change the resource Id and property name to fixed values.

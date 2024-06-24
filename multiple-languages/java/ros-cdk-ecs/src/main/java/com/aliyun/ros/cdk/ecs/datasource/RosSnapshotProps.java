@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-snapshot
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:09.612Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:06.662Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.datasource.RosSnapshotProps")
 @software.amazon.jsii.Jsii.Proxy(RosSnapshotProps.Jsii$Proxy.class)
 public interface RosSnapshotProps extends software.amazon.jsii.JsiiSerializable {

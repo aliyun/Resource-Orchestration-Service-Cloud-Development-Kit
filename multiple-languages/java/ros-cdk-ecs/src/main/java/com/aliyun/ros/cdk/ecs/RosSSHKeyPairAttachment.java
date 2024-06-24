@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ECS::SSHKeyPairAttachment</code>, which is used to attach an SSH key pair to Elastic Compute Service (ECS) instances.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:09.352Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:06.425Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosSSHKeyPairAttachment")
 public class RosSSHKeyPairAttachment extends com.aliyun.ros.cdk.core.RosResource {
 

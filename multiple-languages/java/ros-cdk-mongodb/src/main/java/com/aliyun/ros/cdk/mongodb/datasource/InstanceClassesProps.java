@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.mongodb.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mongodb-instanceclasses
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:10.927Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:07.700Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.datasource.InstanceClassesProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceClassesProps.Jsii$Proxy.class)
 public interface InstanceClassesProps extends software.amazon.jsii.JsiiSerializable {

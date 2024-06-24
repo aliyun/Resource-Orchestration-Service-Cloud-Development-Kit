@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.sae;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-slbbinding
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:12.168Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.161Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.SlbBindingProps")
 @software.amazon.jsii.Jsii.Proxy(SlbBindingProps.Jsii$Proxy.class)
 public interface SlbBindingProps extends software.amazon.jsii.JsiiSerializable {

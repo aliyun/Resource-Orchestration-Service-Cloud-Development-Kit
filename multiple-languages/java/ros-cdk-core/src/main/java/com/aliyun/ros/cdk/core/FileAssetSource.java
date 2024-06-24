@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Represents the source for a file asset.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:07.037Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:03.927Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.FileAssetSource")
 @software.amazon.jsii.Jsii.Proxy(FileAssetSource.Jsii$Proxy.class)
 public interface FileAssetSource extends software.amazon.jsii.JsiiSerializable {

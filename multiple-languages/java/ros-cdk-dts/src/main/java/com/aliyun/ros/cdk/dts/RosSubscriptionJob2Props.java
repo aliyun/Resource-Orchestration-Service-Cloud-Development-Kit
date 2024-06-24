@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.dts;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-subscriptionjob2
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:08.803Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:05.861Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.RosSubscriptionJob2Props")
 @software.amazon.jsii.Jsii.Proxy(RosSubscriptionJob2Props.Jsii$Proxy.class)
 public interface RosSubscriptionJob2Props extends software.amazon.jsii.JsiiSerializable {

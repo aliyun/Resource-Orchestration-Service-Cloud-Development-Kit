@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.config;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::Config::Aggregator</code>, which is used to create an account group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:08.202Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:05.259Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.config.$Module.class, fqn = "@alicloud/ros-cdk-config.Aggregator")
 public class Aggregator extends com.aliyun.ros.cdk.core.Resource {
 

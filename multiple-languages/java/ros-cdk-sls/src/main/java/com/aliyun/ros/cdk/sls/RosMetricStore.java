@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SLS::MetricStore</code>, which is used to create a Logstore.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:12.481Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.471Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosMetricStore")
 public class RosMetricStore extends com.aliyun.ros.cdk.core.RosResource {
 

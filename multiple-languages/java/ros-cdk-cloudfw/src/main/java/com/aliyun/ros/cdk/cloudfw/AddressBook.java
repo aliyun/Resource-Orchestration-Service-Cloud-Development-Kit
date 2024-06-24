@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cloudfw;
  * <p>
  * Access control address books include IP address books, Elastic Compute Service (ECS) tag address books, port address books, and domain address books.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:07.879Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:04.895Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.AddressBook")
 public class AddressBook extends com.aliyun.ros.cdk.core.Resource {
 

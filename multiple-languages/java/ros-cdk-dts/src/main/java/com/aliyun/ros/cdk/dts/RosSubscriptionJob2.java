@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dts;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DTS::SubscriptionJob2</code>, which is used to configure a change tracking task.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:08.799Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:05.858Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.RosSubscriptionJob2")
 public class RosSubscriptionJob2 extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.hbr;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-backupclients
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:10.359Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:07.413Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.RosBackupClientsProps")
 @software.amazon.jsii.Jsii.Proxy(RosBackupClientsProps.Jsii$Proxy.class)
 public interface RosBackupClientsProps extends software.amazon.jsii.JsiiSerializable {

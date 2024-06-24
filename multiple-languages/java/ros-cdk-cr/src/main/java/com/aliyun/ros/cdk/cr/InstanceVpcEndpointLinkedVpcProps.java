@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cr;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instancevpcendpointlinkedvpc
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:08.244Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:05.304Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.InstanceVpcEndpointLinkedVpcProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceVpcEndpointLinkedVpcProps.Jsii$Proxy.class)
 public interface InstanceVpcEndpointLinkedVpcProps extends software.amazon.jsii.JsiiSerializable {

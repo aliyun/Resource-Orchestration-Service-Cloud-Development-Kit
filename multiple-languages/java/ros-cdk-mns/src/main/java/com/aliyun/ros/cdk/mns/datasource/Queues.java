@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mns.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::MNS::Queues</code>, which is used to query all Message Service (MNS) queues within a specified Alibaba Cloud account.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:10.736Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:07.660Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.datasource.Queues")
 public class Queues extends com.aliyun.ros.cdk.core.Resource {
 

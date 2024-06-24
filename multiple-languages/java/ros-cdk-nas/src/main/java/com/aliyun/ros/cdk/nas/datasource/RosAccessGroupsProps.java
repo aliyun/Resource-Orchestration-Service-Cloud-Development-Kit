@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.nas.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-accessgroups
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:11.089Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:07.820Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.datasource.RosAccessGroupsProps")
 @software.amazon.jsii.Jsii.Proxy(RosAccessGroupsProps.Jsii$Proxy.class)
 public interface RosAccessGroupsProps extends software.amazon.jsii.JsiiSerializable {

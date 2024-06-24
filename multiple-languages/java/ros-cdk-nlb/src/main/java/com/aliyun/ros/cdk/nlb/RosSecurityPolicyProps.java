@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.nlb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-securitypolicy
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:11.115Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:07.844Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.RosSecurityPolicyProps")
 @software.amazon.jsii.Jsii.Proxy(RosSecurityPolicyProps.Jsii$Proxy.class)
 public interface RosSecurityPolicyProps extends software.amazon.jsii.JsiiSerializable {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Common interface for all assets.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:07.054Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:03.958Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.IAsset")
 @software.amazon.jsii.Jsii.Proxy(IAsset.Jsii$Proxy.class)
 public interface IAsset extends software.amazon.jsii.JsiiSerializable {

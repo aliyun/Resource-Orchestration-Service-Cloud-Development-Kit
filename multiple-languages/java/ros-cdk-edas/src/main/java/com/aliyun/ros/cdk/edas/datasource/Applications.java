@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.edas.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::EDAS::Applications</code>, which is used to query applications.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:09.723Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:06.765Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.datasource.Applications")
 public class Applications extends com.aliyun.ros.cdk.core.Resource {
 

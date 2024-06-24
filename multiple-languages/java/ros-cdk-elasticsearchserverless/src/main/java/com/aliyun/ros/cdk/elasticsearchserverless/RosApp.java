@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.elasticsearchserverless;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ElasticSearchServerless::App</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:09.808Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:06.852Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.elasticsearchserverless.$Module.class, fqn = "@alicloud/ros-cdk-elasticsearchserverless.RosApp")
 public class RosApp extends com.aliyun.ros.cdk.core.RosResource {
 
