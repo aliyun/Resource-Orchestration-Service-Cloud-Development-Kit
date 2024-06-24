@@ -28,7 +28,7 @@
 		
     
 		
-		<PackageVersion>1.0.26</PackageVersion>
+		<PackageVersion>1.0.27</PackageVersion>
 		
 		
     
@@ -127,7 +127,7 @@
 		
     
 		
-		<EmbeddedResource Include="alicloud-ros-cdk-ecd-1.0.26.tgz"/>
+		<EmbeddedResource Include="alicloud-ros-cdk-ecd-1.0.27.tgz"/>
 		
 		
   

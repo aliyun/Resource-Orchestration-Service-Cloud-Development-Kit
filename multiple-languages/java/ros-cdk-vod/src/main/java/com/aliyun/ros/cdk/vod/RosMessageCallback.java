@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vod;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VOD::MessageCallback</code>, which is used to configure the callback method, callback URL, and event types for an event notification.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:12.580Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.554Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vod.$Module.class, fqn = "@alicloud/ros-cdk-vod.RosMessageCallback")
 public class RosMessageCallback extends com.aliyun.ros.cdk.core.RosResource {
 

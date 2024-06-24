@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::CEN::TransitRouterRouteTables</code>, which is used to query the route tables of an Enterprise Edition transit router.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:07.826Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:04.836Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.datasource.TransitRouterRouteTables")
 public class TransitRouterRouteTables extends com.aliyun.ros.cdk.core.Resource {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CMS::MetricRuleTargets</code>, which is used to add or modify one or more message resources of an alert rule.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:08.098Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:05.147Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosMetricRuleTargets")
 public class RosMetricRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
 

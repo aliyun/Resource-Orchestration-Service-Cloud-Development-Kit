@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.resourcemanager;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-controlpolicyattachment
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:12.010Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.007Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.resourcemanager.$Module.class, fqn = "@alicloud/ros-cdk-resourcemanager.RosControlPolicyAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(RosControlPolicyAttachmentProps.Jsii$Proxy.class)
 public interface RosControlPolicyAttachmentProps extends software.amazon.jsii.JsiiSerializable {

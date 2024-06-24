@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.lindorm;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::Lindorm::MultiZoneInstance</code>, which is used to create a multi-zone Lindorm instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:10.525Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:07.583Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.lindorm.$Module.class, fqn = "@alicloud/ros-cdk-lindorm.MultiZoneInstance")
 public class MultiZoneInstance extends com.aliyun.ros.cdk.core.Resource {
 

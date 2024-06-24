@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.paiplugin;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paiplugin-trainingjob
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:11.397Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:08.431Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.paiplugin.$Module.class, fqn = "@alicloud/ros-cdk-paiplugin.TrainingJobProps")
 @software.amazon.jsii.Jsii.Proxy(TrainingJobProps.Jsii$Proxy.class)
 public interface TrainingJobProps extends software.amazon.jsii.JsiiSerializable {

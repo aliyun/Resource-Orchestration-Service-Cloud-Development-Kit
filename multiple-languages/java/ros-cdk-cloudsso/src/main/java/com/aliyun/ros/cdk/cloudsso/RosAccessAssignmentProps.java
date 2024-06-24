@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cloudsso;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsso-accessassignment
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:07.984Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:05.012Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudsso.$Module.class, fqn = "@alicloud/ros-cdk-cloudsso.RosAccessAssignmentProps")
 @software.amazon.jsii.Jsii.Proxy(RosAccessAssignmentProps.Jsii$Proxy.class)
 public interface RosAccessAssignmentProps extends software.amazon.jsii.JsiiSerializable {

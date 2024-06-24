@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.mps;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mps-mediaworkflow
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:10.987Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:07.715Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mps.$Module.class, fqn = "@alicloud/ros-cdk-mps.RosMediaWorkflowProps")
 @software.amazon.jsii.Jsii.Proxy(RosMediaWorkflowProps.Jsii$Proxy.class)
 public interface RosMediaWorkflowProps extends software.amazon.jsii.JsiiSerializable {

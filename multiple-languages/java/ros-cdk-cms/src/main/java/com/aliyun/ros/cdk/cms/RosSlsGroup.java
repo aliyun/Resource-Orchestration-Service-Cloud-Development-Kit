@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CMS::SlsGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:08.134Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:05.185Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosSlsGroup")
 public class RosSlsGroup extends com.aliyun.ros.cdk.core.RosResource {
 

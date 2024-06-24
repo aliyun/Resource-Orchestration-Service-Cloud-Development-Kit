@@ -28,7 +28,7 @@
 		
     
 		
-		<PackageVersion>1.0.28</PackageVersion>
+		<PackageVersion>1.0.29</PackageVersion>
 		
 		
     
@@ -127,7 +127,7 @@
 		
     
 		
-		<EmbeddedResource Include="alicloud-ros-cdk-core-1.0.28.tgz"/>
+		<EmbeddedResource Include="alicloud-ros-cdk-core-1.0.29.tgz"/>
 		
 		
   
@@ -147,12 +147,12 @@
 		
     
 		
-		<PackageReference Include="AlibabaCloud.SDK.ROS.CDK.Assembly.Schema" Version="[1.0.28,2.0.0)"/>
+		<PackageReference Include="AlibabaCloud.SDK.ROS.CDK.Assembly.Schema" Version="[1.0.29,2.0.0)"/>
 		
 		
     
 		
-		<PackageReference Include="AlibabaCloud.SDK.ROS.CDK.Cxapi" Version="[1.0.28,2.0.0)"/>
+		<PackageReference Include="AlibabaCloud.SDK.ROS.CDK.Cxapi" Version="[1.0.29,2.0.0)"/>
 		
 		
     

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CMS::SiteMonitor</code>, which is used to create a site monitoring job.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:08.136Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:05.187Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.SiteMonitor")
 public class SiteMonitor extends com.aliyun.ros.cdk.core.Resource {
 

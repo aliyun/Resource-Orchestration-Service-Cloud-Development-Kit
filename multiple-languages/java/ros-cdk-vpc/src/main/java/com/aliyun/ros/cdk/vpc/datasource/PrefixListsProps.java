@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-prefixlists
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:12.913Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.882Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.PrefixListsProps")
 @software.amazon.jsii.Jsii.Proxy(PrefixListsProps.Jsii$Proxy.class)
 public interface PrefixListsProps extends software.amazon.jsii.JsiiSerializable {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sae;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SAE::Namespace</code>, which is used to create a Namespace.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:12.162Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.154Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.RosNamespace")
 public class RosNamespace extends com.aliyun.ros.cdk.core.RosResource {
 

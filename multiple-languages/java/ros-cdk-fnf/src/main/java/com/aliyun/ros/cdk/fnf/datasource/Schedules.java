@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fnf.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::FNF::Schedules</code>, which is used to query time-based schedules.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:10.138Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:07.204Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fnf.$Module.class, fqn = "@alicloud/ros-cdk-fnf.datasource.Schedules")
 public class Schedules extends com.aliyun.ros.cdk.core.Resource {
 

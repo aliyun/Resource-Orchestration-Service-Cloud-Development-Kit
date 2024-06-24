@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::ApiGateway::Instances</code>, which is used to query instances.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:07.485Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:04.504Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.datasource.Instances")
 public class Instances extends com.aliyun.ros.cdk.core.Resource {
 

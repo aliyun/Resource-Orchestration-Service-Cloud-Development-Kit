@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::CS::KubernetesCluster</code>, which is used to query the information about a Container Service for Kubernetes (ACK) cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:08.471Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:05.533Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.datasource.KubernetesCluster")
 public class KubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
 

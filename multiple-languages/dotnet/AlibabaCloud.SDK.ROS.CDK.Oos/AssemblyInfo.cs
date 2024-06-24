@@ -1,3 +1,3 @@
 using Amazon.JSII.Runtime.Deputy;
 
-[assembly: JsiiAssembly("@alicloud/ros-cdk-oos", "1.0.26", "alicloud-ros-cdk-oos-1.0.26.tgz")]
+[assembly: JsiiAssembly("@alicloud/ros-cdk-oos", "1.0.27", "alicloud-ros-cdk-oos-1.0.27.tgz")]

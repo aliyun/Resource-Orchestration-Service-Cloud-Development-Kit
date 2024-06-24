@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CEN::ChildInstanceRouteEntryToAttachment</code>, which is used to add a route to a network instance that is connected to an Enterprise Edition transit router.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:07.744Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:04.754Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosChildInstanceRouteEntryToAttachment")
 public class RosChildInstanceRouteEntryToAttachment extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.rds;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-readonlydbinstance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:11.787Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:08.814Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.ReadOnlyDBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(ReadOnlyDBInstanceProps.Jsii$Proxy.class)
 public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerializable {

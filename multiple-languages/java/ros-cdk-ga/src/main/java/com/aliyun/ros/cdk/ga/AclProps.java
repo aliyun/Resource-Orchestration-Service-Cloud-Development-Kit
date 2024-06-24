@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ga;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-acl
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:10.161Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:07.218Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.AclProps")
 @software.amazon.jsii.Jsii.Proxy(AclProps.Jsii$Proxy.class)
 public interface AclProps extends software.amazon.jsii.JsiiSerializable {

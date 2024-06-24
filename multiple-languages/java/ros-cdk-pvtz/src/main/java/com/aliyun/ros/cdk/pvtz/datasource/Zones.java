@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pvtz.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::PVTZ::Zones</code>, which is used to query private zones.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:11.566Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:08.626Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.datasource.Zones")
 public class Zones extends com.aliyun.ros.cdk.core.Resource {
 

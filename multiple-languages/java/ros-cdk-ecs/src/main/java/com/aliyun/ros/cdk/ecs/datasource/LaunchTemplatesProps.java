@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-launchtemplates
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:09.513Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:06.580Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.datasource.LaunchTemplatesProps")
 @software.amazon.jsii.Jsii.Proxy(LaunchTemplatesProps.Jsii$Proxy.class)
 public interface LaunchTemplatesProps extends software.amazon.jsii.JsiiSerializable {

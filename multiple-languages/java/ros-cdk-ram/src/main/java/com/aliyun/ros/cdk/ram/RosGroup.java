@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::RAM::Group</code>, which is used to create a Resource Access Management (RAM) user group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:11.594Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:08.656Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosGroup")
 public class RosGroup extends com.aliyun.ros.cdk.core.RosResource {
 

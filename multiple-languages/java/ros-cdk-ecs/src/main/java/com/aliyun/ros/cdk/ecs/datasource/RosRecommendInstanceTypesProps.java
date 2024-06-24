@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-recommendinstancetypes
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:09.592Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:06.657Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.datasource.RosRecommendInstanceTypesProps")
 @software.amazon.jsii.Jsii.Proxy(RosRecommendInstanceTypesProps.Jsii$Proxy.class)
 public interface RosRecommendInstanceTypesProps extends software.amazon.jsii.JsiiSerializable {

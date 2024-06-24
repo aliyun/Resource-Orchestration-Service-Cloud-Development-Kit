@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.alb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-additionalcertificateassociation
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:07.216Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:04.234Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.AdditionalCertificateAssociationProps")
 @software.amazon.jsii.Jsii.Proxy(AdditionalCertificateAssociationProps.Jsii$Proxy.class)
 public interface AdditionalCertificateAssociationProps extends software.amazon.jsii.JsiiSerializable {

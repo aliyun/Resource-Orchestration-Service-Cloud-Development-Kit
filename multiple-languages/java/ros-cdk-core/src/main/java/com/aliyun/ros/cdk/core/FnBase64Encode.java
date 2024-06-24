@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * The intrinsic function <code>Fn::Base64</code> returns the Base64 representation of the input string.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-21T05:59:07.048Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:03.947Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.FnBase64Encode")
 public class FnBase64Encode extends com.aliyun.ros.cdk.core.Intrinsic {
 
