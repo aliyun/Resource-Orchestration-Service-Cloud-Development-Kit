@@ -20,6 +20,14 @@ export interface InstancesProps {
     readonly queryStr?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property resourceGroupId: The resource group id of lindorm instance.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -82,9 +90,10 @@ export class Instances extends ros.Resource {
             resourceGroupId: props.resourceGroupId,
             serviceType: props.serviceType,
             queryStr: props.queryStr,
-            instanceIds: props.instanceIds,
             supportEngine: props.supportEngine,
+            instanceIds: props.instanceIds,
             tags: props.tags,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstances;
         this.attrInstanceIds = rosInstances.attrInstanceIds;

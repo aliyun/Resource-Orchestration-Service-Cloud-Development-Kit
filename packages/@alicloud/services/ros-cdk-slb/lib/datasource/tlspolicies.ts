@@ -15,6 +15,14 @@ export interface TLSPoliciesProps {
     readonly instanceId: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property tlsPolicyName: The name of the TLS policy. The name must be 2 to 128 characters in length, and can contain letters, digits, periods (.), underscores (_), and hyphens (-). The name must start with a letter.
      */
     readonly tlsPolicyName?: string | ros.IResolvable;
@@ -56,6 +64,7 @@ export class TLSPolicies extends ros.Resource {
         const rosTLSPolicies = new RosTLSPolicies(this, id,  {
             tlsPolicyName: props.tlsPolicyName,
             instanceId: props.instanceId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosTLSPolicies;
         this.attrInstanceIds = rosTLSPolicies.attrInstanceIds;

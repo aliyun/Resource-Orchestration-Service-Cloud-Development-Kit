@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.emr.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::EMR::Cluster2</code>, which is used to query E-MapReduce (EMR) clusters.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:06.915Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:10.738Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.emr.$Module.class, fqn = "@alicloud/ros-cdk-emr.datasource.RosCluster2")
 public class RosCluster2 extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -217,6 +217,24 @@ public class RosCluster2 extends com.aliyun.ros.cdk.core.RosResource {
             }
         }
         software.amazon.jsii.Kernel.set(this, "paymentTypes", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setRefreshOptions(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "refreshOptions", value);
+    }
+
+    /**
+     */
+    public void setRefreshOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "refreshOptions", value);
     }
 
     /**
@@ -525,6 +543,23 @@ public class RosCluster2 extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder paymentTypes(final java.util.List<? extends java.lang.Object> paymentTypes) {
             this.props.paymentTypes(paymentTypes);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param refreshOptions This parameter is required.
+         */
+        public Builder refreshOptions(final java.lang.String refreshOptions) {
+            this.props.refreshOptions(refreshOptions);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param refreshOptions This parameter is required.
+         */
+        public Builder refreshOptions(final com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.props.refreshOptions(refreshOptions);
             return this;
         }
 

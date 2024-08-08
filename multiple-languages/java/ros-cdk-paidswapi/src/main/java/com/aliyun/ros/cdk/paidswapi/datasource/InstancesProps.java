@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.paidswapi.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-paidswapi-instances
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:08.409Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:12.947Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.paidswapi.$Module.class, fqn = "@alicloud/ros-cdk-paidswapi.datasource.InstancesProps")
 @software.amazon.jsii.Jsii.Proxy(InstancesProps.Jsii$Proxy.class)
 public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {
@@ -32,6 +32,21 @@ public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
      * Property workspaceId: The Id of the workspace.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getWorkspaceId() {
@@ -51,6 +66,7 @@ public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object accessibility;
         java.lang.Object instanceId;
         java.lang.Object instanceName;
+        java.lang.Object refreshOptions;
         java.lang.Object workspaceId;
 
         /**
@@ -114,6 +130,40 @@ public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InstancesProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstancesProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstancesProps#getWorkspaceId}
          * @param workspaceId Property workspaceId: The Id of the workspace.
          * @return {@code this}
@@ -152,6 +202,7 @@ public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object accessibility;
         private final java.lang.Object instanceId;
         private final java.lang.Object instanceName;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object workspaceId;
 
         /**
@@ -163,6 +214,7 @@ public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {
             this.accessibility = software.amazon.jsii.Kernel.get(this, "accessibility", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workspaceId = software.amazon.jsii.Kernel.get(this, "workspaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -174,6 +226,7 @@ public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {
             this.accessibility = builder.accessibility;
             this.instanceId = builder.instanceId;
             this.instanceName = builder.instanceName;
+            this.refreshOptions = builder.refreshOptions;
             this.workspaceId = builder.workspaceId;
         }
 
@@ -190,6 +243,11 @@ public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getInstanceName() {
             return this.instanceName;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -211,6 +269,9 @@ public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getInstanceName() != null) {
                 data.set("instanceName", om.valueToTree(this.getInstanceName()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
             if (this.getWorkspaceId() != null) {
                 data.set("workspaceId", om.valueToTree(this.getWorkspaceId()));
@@ -236,6 +297,7 @@ public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {
             if (this.accessibility != null ? !this.accessibility.equals(that.accessibility) : that.accessibility != null) return false;
             if (this.instanceId != null ? !this.instanceId.equals(that.instanceId) : that.instanceId != null) return false;
             if (this.instanceName != null ? !this.instanceName.equals(that.instanceName) : that.instanceName != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             return this.workspaceId != null ? this.workspaceId.equals(that.workspaceId) : that.workspaceId == null;
         }
 
@@ -244,6 +306,7 @@ public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {
             int result = this.accessibility != null ? this.accessibility.hashCode() : 0;
             result = 31 * result + (this.instanceId != null ? this.instanceId.hashCode() : 0);
             result = 31 * result + (this.instanceName != null ? this.instanceName.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.workspaceId != null ? this.workspaceId.hashCode() : 0);
             return result;
         }

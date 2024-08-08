@@ -85,6 +85,11 @@ export class VSwitch extends ros.Resource {
     public readonly attrVSwitchId: ros.IResolvable;
 
     /**
+     * Attribute VSwitchName: The name of the VSwitch
+     */
+    public readonly attrVSwitchName: ros.IResolvable;
+
+    /**
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties
@@ -111,5 +116,6 @@ export class VSwitch extends ros.Resource {
         this.attrCidrBlock = rosVSwitch.attrCidrBlock;
         this.attrIpv6CidrBlock = rosVSwitch.attrIpv6CidrBlock;
         this.attrVSwitchId = rosVSwitch.attrVSwitchId;
+        this.attrVSwitchName = rosVSwitch.attrVSwitchName;
     }
 }

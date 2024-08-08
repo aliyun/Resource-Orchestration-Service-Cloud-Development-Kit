@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oss;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::OSS::Directory</code>, which is used to create a directory for a specified bucket.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:08.078Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:12.612Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.Directory")
 public class Directory extends com.aliyun.ros.cdk.core.Resource {
 

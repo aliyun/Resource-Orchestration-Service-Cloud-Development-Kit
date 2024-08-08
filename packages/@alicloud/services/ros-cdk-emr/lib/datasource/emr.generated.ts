@@ -34,6 +34,14 @@ export interface RosCluster2Props {
     readonly paymentTypes?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * @Property resourceGroupId: The resource group id of emr cluster.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -68,6 +76,13 @@ function RosCluster2PropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosCluster2_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('clusterStates', ros.listValidator(ros.validateString))(properties.clusterStates));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosCluster2Props"');
 }
 
@@ -90,6 +105,7 @@ function rosCluster2PropsToRosTemplate(properties: any, enableResourcePropertyCo
       ClusterStates: ros.listMapper(ros.stringToRosTemplate)(properties.clusterStates),
       ClusterType: ros.listMapper(ros.stringToRosTemplate)(properties.clusterType),
       PaymentTypes: ros.listMapper(ros.stringToRosTemplate)(properties.paymentTypes),
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       Tags: ros.listMapper(rosCluster2TagsPropertyToRosTemplate)(properties.tags),
     };
@@ -145,6 +161,14 @@ export class RosCluster2 extends ros.RosResource {
     public paymentTypes: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property resourceGroupId: The resource group id of emr cluster.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
@@ -170,6 +194,7 @@ export class RosCluster2 extends ros.RosResource {
         this.clusterStates = props.clusterStates;
         this.clusterType = props.clusterType;
         this.paymentTypes = props.paymentTypes;
+        this.refreshOptions = props.refreshOptions;
         this.resourceGroupId = props.resourceGroupId;
         this.tags = props.tags;
     }
@@ -182,6 +207,7 @@ export class RosCluster2 extends ros.RosResource {
             clusterStates: this.clusterStates,
             clusterType: this.clusterType,
             paymentTypes: this.paymentTypes,
+            refreshOptions: this.refreshOptions,
             resourceGroupId: this.resourceGroupId,
             tags: this.tags,
         };
@@ -254,6 +280,14 @@ export interface RosFlowProjectsProps {
      * @Property flowProjectName: Project name.
      */
     readonly flowProjectName?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -268,6 +302,13 @@ function RosFlowProjectsPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('flowProjectName', ros.validateString)(properties.flowProjectName));
     errors.collect(ros.propertyValidator('flowProjectId', ros.validateString)(properties.flowProjectId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosFlowProjectsProps"');
 }
 
@@ -287,6 +328,7 @@ function rosFlowProjectsPropsToRosTemplate(properties: any, enableResourceProper
     return {
       FlowProjectId: ros.stringToRosTemplate(properties.flowProjectId),
       FlowProjectName: ros.stringToRosTemplate(properties.flowProjectName),
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -325,6 +367,14 @@ export class RosFlowProjects extends ros.RosResource {
     public flowProjectName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -337,6 +387,7 @@ export class RosFlowProjects extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.flowProjectId = props.flowProjectId;
         this.flowProjectName = props.flowProjectName;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
@@ -344,6 +395,7 @@ export class RosFlowProjects extends ros.RosResource {
         return {
             flowProjectId: this.flowProjectId,
             flowProjectName: this.flowProjectName,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

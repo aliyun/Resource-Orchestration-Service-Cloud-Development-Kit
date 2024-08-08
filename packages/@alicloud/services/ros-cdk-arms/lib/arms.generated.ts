@@ -658,6 +658,11 @@ export interface RosEnvironmentProps {
     readonly environmentType: string | ros.IResolvable;
 
     /**
+     * @Property deletePromInstance: Cascade delete Prometheus instance. Default value: true.
+     */
+    readonly deletePromInstance?: boolean | ros.IResolvable;
+
+    /**
      * @Property feePackage: The payable resource plan. Valid values:
      * If the EnvironmentType parameter is set to CS, set the value to CS_Basic or CS_Pro. Default value: CS_Basic.
      * Otherwise, leave the parameter empty.
@@ -733,6 +738,7 @@ function RosEnvironmentPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('bindResourceId', ros.validateString)(properties.bindResourceId));
     errors.collect(ros.propertyValidator('grafanaWorkspaceId', ros.validateString)(properties.grafanaWorkspaceId));
     errors.collect(ros.propertyValidator('prometheusInstanceId', ros.validateString)(properties.prometheusInstanceId));
+    errors.collect(ros.propertyValidator('deletePromInstance', ros.validateBoolean)(properties.deletePromInstance));
     errors.collect(ros.propertyValidator('feePackage', ros.validateString)(properties.feePackage));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
@@ -763,6 +769,7 @@ function rosEnvironmentPropsToRosTemplate(properties: any, enableResourcePropert
       EnvironmentName: ros.stringToRosTemplate(properties.environmentName),
       EnvironmentSubType: ros.stringToRosTemplate(properties.environmentSubType),
       EnvironmentType: ros.stringToRosTemplate(properties.environmentType),
+      DeletePromInstance: ros.booleanToRosTemplate(properties.deletePromInstance),
       FeePackage: ros.stringToRosTemplate(properties.feePackage),
       GrafanaWorkspaceId: ros.stringToRosTemplate(properties.grafanaWorkspaceId),
       ManagedType: ros.stringToRosTemplate(properties.managedType),
@@ -859,6 +866,11 @@ export class RosEnvironment extends ros.RosResource {
     public environmentType: string | ros.IResolvable;
 
     /**
+     * @Property deletePromInstance: Cascade delete Prometheus instance. Default value: true.
+     */
+    public deletePromInstance: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property feePackage: The payable resource plan. Valid values:
      * If the EnvironmentType parameter is set to CS, set the value to CS_Basic or CS_Pro. Default value: CS_Basic.
      * Otherwise, leave the parameter empty.
@@ -915,6 +927,7 @@ export class RosEnvironment extends ros.RosResource {
         this.environmentName = props.environmentName;
         this.environmentSubType = props.environmentSubType;
         this.environmentType = props.environmentType;
+        this.deletePromInstance = props.deletePromInstance;
         this.feePackage = props.feePackage;
         this.grafanaWorkspaceId = props.grafanaWorkspaceId;
         this.managedType = props.managedType;
@@ -930,6 +943,7 @@ export class RosEnvironment extends ros.RosResource {
             environmentName: this.environmentName,
             environmentSubType: this.environmentSubType,
             environmentType: this.environmentType,
+            deletePromInstance: this.deletePromInstance,
             feePackage: this.feePackage,
             grafanaWorkspaceId: this.grafanaWorkspaceId,
             managedType: this.managedType,

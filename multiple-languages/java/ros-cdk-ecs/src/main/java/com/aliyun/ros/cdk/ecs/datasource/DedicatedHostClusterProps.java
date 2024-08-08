@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-dedicatedhostcluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:06.528Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:10.166Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.datasource.DedicatedHostClusterProps")
 @software.amazon.jsii.Jsii.Proxy(DedicatedHostClusterProps.Jsii$Proxy.class)
 public interface DedicatedHostClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -14,6 +14,21 @@ public interface DedicatedHostClusterProps extends software.amazon.jsii.JsiiSeri
      * Property dedicatedHostClusterId: Dedicated host cluster id.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getDedicatedHostClusterId();
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
 
     /**
      * @return a {@link Builder} of {@link DedicatedHostClusterProps}
@@ -26,6 +41,7 @@ public interface DedicatedHostClusterProps extends software.amazon.jsii.JsiiSeri
      */
     public static final class Builder implements software.amazon.jsii.Builder<DedicatedHostClusterProps> {
         java.lang.Object dedicatedHostClusterId;
+        java.lang.Object refreshOptions;
 
         /**
          * Sets the value of {@link DedicatedHostClusterProps#getDedicatedHostClusterId}
@@ -48,6 +64,40 @@ public interface DedicatedHostClusterProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link DedicatedHostClusterProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DedicatedHostClusterProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link DedicatedHostClusterProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -64,6 +114,7 @@ public interface DedicatedHostClusterProps extends software.amazon.jsii.JsiiSeri
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DedicatedHostClusterProps {
         private final java.lang.Object dedicatedHostClusterId;
+        private final java.lang.Object refreshOptions;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -72,6 +123,7 @@ public interface DedicatedHostClusterProps extends software.amazon.jsii.JsiiSeri
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.dedicatedHostClusterId = software.amazon.jsii.Kernel.get(this, "dedicatedHostClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -80,11 +132,17 @@ public interface DedicatedHostClusterProps extends software.amazon.jsii.JsiiSeri
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.dedicatedHostClusterId = java.util.Objects.requireNonNull(builder.dedicatedHostClusterId, "dedicatedHostClusterId is required");
+            this.refreshOptions = builder.refreshOptions;
         }
 
         @Override
         public final java.lang.Object getDedicatedHostClusterId() {
             return this.dedicatedHostClusterId;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -94,6 +152,9 @@ public interface DedicatedHostClusterProps extends software.amazon.jsii.JsiiSeri
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
             data.set("dedicatedHostClusterId", om.valueToTree(this.getDedicatedHostClusterId()));
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ecs.datasource.DedicatedHostClusterProps"));
@@ -112,12 +173,14 @@ public interface DedicatedHostClusterProps extends software.amazon.jsii.JsiiSeri
 
             DedicatedHostClusterProps.Jsii$Proxy that = (DedicatedHostClusterProps.Jsii$Proxy) o;
 
-            return this.dedicatedHostClusterId.equals(that.dedicatedHostClusterId);
+            if (!dedicatedHostClusterId.equals(that.dedicatedHostClusterId)) return false;
+            return this.refreshOptions != null ? this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.dedicatedHostClusterId.hashCode();
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             return result;
         }
     }

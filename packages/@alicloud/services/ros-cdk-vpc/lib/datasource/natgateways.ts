@@ -37,6 +37,14 @@ export interface NatGatewaysProps {
     readonly networkType?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property resourceGroupId: The ID of the resource group to which the NAT gateway belongs.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -105,6 +113,7 @@ export class NatGateways extends ros.Resource {
             natType: props.natType,
             natGatewayId: props.natGatewayId,
             name: props.name,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosNatGateways;
         this.attrNatGatewayIds = rosNatGateways.attrNatGatewayIds;

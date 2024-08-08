@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.redis.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-instanceclasses
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:08.968Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:13.681Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.datasource.InstanceClassesProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceClassesProps.Jsii$Proxy.class)
 public interface InstanceClassesProps extends software.amazon.jsii.JsiiSerializable {
@@ -89,6 +89,21 @@ public interface InstanceClassesProps extends software.amazon.jsii.JsiiSerializa
     }
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
      * Property resourceGroupId: The ID of the instance.
      * <p>
      * Note This parameter is required only if the OrderType parameter is set to UPGRADE or RENEW.
@@ -123,6 +138,7 @@ public interface InstanceClassesProps extends software.amazon.jsii.JsiiSerializa
         java.lang.Object nodeId;
         java.lang.Object orderType;
         java.lang.Object productType;
+        java.lang.Object refreshOptions;
         java.lang.Object resourceGroupId;
         java.lang.Object zoneId;
 
@@ -311,6 +327,40 @@ public interface InstanceClassesProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link InstanceClassesProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceClassesProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceClassesProps#getResourceGroupId}
          * @param resourceGroupId Property resourceGroupId: The ID of the instance.
          *                        Note This parameter is required only if the OrderType parameter is set to UPGRADE or RENEW.
@@ -377,6 +427,7 @@ public interface InstanceClassesProps extends software.amazon.jsii.JsiiSerializa
         private final java.lang.Object nodeId;
         private final java.lang.Object orderType;
         private final java.lang.Object productType;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object zoneId;
 
@@ -393,6 +444,7 @@ public interface InstanceClassesProps extends software.amazon.jsii.JsiiSerializa
             this.nodeId = software.amazon.jsii.Kernel.get(this, "nodeId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.orderType = software.amazon.jsii.Kernel.get(this, "orderType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.productType = software.amazon.jsii.Kernel.get(this, "productType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -409,6 +461,7 @@ public interface InstanceClassesProps extends software.amazon.jsii.JsiiSerializa
             this.nodeId = builder.nodeId;
             this.orderType = builder.orderType;
             this.productType = builder.productType;
+            this.refreshOptions = builder.refreshOptions;
             this.resourceGroupId = builder.resourceGroupId;
             this.zoneId = builder.zoneId;
         }
@@ -449,6 +502,11 @@ public interface InstanceClassesProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
+        }
+
+        @Override
         public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
         }
@@ -485,6 +543,9 @@ public interface InstanceClassesProps extends software.amazon.jsii.JsiiSerializa
             if (this.getProductType() != null) {
                 data.set("productType", om.valueToTree(this.getProductType()));
             }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
+            }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
@@ -516,6 +577,7 @@ public interface InstanceClassesProps extends software.amazon.jsii.JsiiSerializa
             if (this.nodeId != null ? !this.nodeId.equals(that.nodeId) : that.nodeId != null) return false;
             if (this.orderType != null ? !this.orderType.equals(that.orderType) : that.orderType != null) return false;
             if (this.productType != null ? !this.productType.equals(that.productType) : that.productType != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             return this.zoneId != null ? this.zoneId.equals(that.zoneId) : that.zoneId == null;
         }
@@ -529,6 +591,7 @@ public interface InstanceClassesProps extends software.amazon.jsii.JsiiSerializa
             result = 31 * result + (this.nodeId != null ? this.nodeId.hashCode() : 0);
             result = 31 * result + (this.orderType != null ? this.orderType.hashCode() : 0);
             result = 31 * result + (this.productType != null ? this.productType.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.zoneId != null ? this.zoneId.hashCode() : 0);
             return result;

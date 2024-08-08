@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oos;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::OOS::Execution</code>, which is used to start an execution.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:07.918Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:12.421Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.Execution")
 public class Execution extends com.aliyun.ros.cdk.core.Resource {
 
@@ -20,12 +20,12 @@ public class Execution extends com.aliyun.ros.cdk.core.Resource {
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
-     * @param props This parameter is required.
+     * @param props
      * @param enableResourcePropertyConstraint
      */
-    public Execution(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.oos.ExecutionProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
+    public Execution(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.oos.ExecutionProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-        software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), java.util.Objects.requireNonNull(props, "props is required"), enableResourcePropertyConstraint });
+        software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), props, enableResourcePropertyConstraint });
     }
 
     /**
@@ -33,11 +33,22 @@ public class Execution extends com.aliyun.ros.cdk.core.Resource {
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
-     * @param props This parameter is required.
+     * @param props
      */
-    public Execution(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.oos.ExecutionProps props) {
+    public Execution(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.oos.ExecutionProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-        software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), java.util.Objects.requireNonNull(props, "props is required") });
+        software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), props });
+    }
+
+    /**
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     */
+    public Execution(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id) {
+        super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+        software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required") });
     }
 
     /**
@@ -163,38 +174,12 @@ public class Execution extends com.aliyun.ros.cdk.core.Resource {
         private final com.aliyun.ros.cdk.core.Construct scope;
         private final java.lang.String id;
         private final java.lang.Boolean enableResourcePropertyConstraint;
-        private final com.aliyun.ros.cdk.oos.ExecutionProps.Builder props;
+        private com.aliyun.ros.cdk.oos.ExecutionProps.Builder props;
 
         private Builder(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
             this.scope = scope;
             this.id = id;
             this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-            this.props = new com.aliyun.ros.cdk.oos.ExecutionProps.Builder();
-        }
-
-        /**
-         * Property templateName: Template name.
-         * <p>
-         * Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
-         * <p>
-         * @return {@code this}
-         * @param templateName Property templateName: Template name. This parameter is required.
-         */
-        public Builder templateName(final java.lang.String templateName) {
-            this.props.templateName(templateName);
-            return this;
-        }
-        /**
-         * Property templateName: Template name.
-         * <p>
-         * Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
-         * <p>
-         * @return {@code this}
-         * @param templateName Property templateName: Template name. This parameter is required.
-         */
-        public Builder templateName(final com.aliyun.ros.cdk.core.IResolvable templateName) {
-            this.props.templateName(templateName);
-            return this;
         }
 
         /**
@@ -204,7 +189,7 @@ public class Execution extends com.aliyun.ros.cdk.core.Resource {
          * @param description Property description: The description of OOS Execution. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
-            this.props.description(description);
+            this.props().description(description);
             return this;
         }
         /**
@@ -214,7 +199,7 @@ public class Execution extends com.aliyun.ros.cdk.core.Resource {
          * @param description Property description: The description of OOS Execution. This parameter is required.
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
-            this.props.description(description);
+            this.props().description(description);
             return this;
         }
 
@@ -233,7 +218,7 @@ public class Execution extends com.aliyun.ros.cdk.core.Resource {
          * @param loopMode Property loopMode: The loop mode of OOS Execution. This parameter is required.
          */
         public Builder loopMode(final java.lang.String loopMode) {
-            this.props.loopMode(loopMode);
+            this.props().loopMode(loopMode);
             return this;
         }
         /**
@@ -251,7 +236,7 @@ public class Execution extends com.aliyun.ros.cdk.core.Resource {
          * @param loopMode Property loopMode: The loop mode of OOS Execution. This parameter is required.
          */
         public Builder loopMode(final com.aliyun.ros.cdk.core.IResolvable loopMode) {
-            this.props.loopMode(loopMode);
+            this.props().loopMode(loopMode);
             return this;
         }
 
@@ -262,7 +247,7 @@ public class Execution extends com.aliyun.ros.cdk.core.Resource {
          * @param mode Property mode: Execution mode. This parameter is required.
          */
         public Builder mode(final java.lang.String mode) {
-            this.props.mode(mode);
+            this.props().mode(mode);
             return this;
         }
         /**
@@ -272,7 +257,7 @@ public class Execution extends com.aliyun.ros.cdk.core.Resource {
          * @param mode Property mode: Execution mode. This parameter is required.
          */
         public Builder mode(final com.aliyun.ros.cdk.core.IResolvable mode) {
-            this.props.mode(mode);
+            this.props().mode(mode);
             return this;
         }
 
@@ -283,7 +268,7 @@ public class Execution extends com.aliyun.ros.cdk.core.Resource {
          * @param parameters Property parameters: Parameters for the execution of template. This parameter is required.
          */
         public Builder parameters(final com.aliyun.ros.cdk.core.IResolvable parameters) {
-            this.props.parameters(parameters);
+            this.props().parameters(parameters);
             return this;
         }
         /**
@@ -293,7 +278,7 @@ public class Execution extends com.aliyun.ros.cdk.core.Resource {
          * @param parameters Property parameters: Parameters for the execution of template. This parameter is required.
          */
         public Builder parameters(final java.util.Map<java.lang.String, ? extends java.lang.Object> parameters) {
-            this.props.parameters(parameters);
+            this.props().parameters(parameters);
             return this;
         }
 
@@ -304,7 +289,7 @@ public class Execution extends com.aliyun.ros.cdk.core.Resource {
          * @param parentExecutionId Property parentExecutionId: Parent execution ID. This parameter is required.
          */
         public Builder parentExecutionId(final java.lang.String parentExecutionId) {
-            this.props.parentExecutionId(parentExecutionId);
+            this.props().parentExecutionId(parentExecutionId);
             return this;
         }
         /**
@@ -314,7 +299,7 @@ public class Execution extends com.aliyun.ros.cdk.core.Resource {
          * @param parentExecutionId Property parentExecutionId: Parent execution ID. This parameter is required.
          */
         public Builder parentExecutionId(final com.aliyun.ros.cdk.core.IResolvable parentExecutionId) {
-            this.props.parentExecutionId(parentExecutionId);
+            this.props().parentExecutionId(parentExecutionId);
             return this;
         }
 
@@ -325,7 +310,7 @@ public class Execution extends com.aliyun.ros.cdk.core.Resource {
          * @param resourceGroupId Property resourceGroupId: Resource group id. This parameter is required.
          */
         public Builder resourceGroupId(final java.lang.String resourceGroupId) {
-            this.props.resourceGroupId(resourceGroupId);
+            this.props().resourceGroupId(resourceGroupId);
             return this;
         }
         /**
@@ -335,7 +320,7 @@ public class Execution extends com.aliyun.ros.cdk.core.Resource {
          * @param resourceGroupId Property resourceGroupId: Resource group id. This parameter is required.
          */
         public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
-            this.props.resourceGroupId(resourceGroupId);
+            this.props().resourceGroupId(resourceGroupId);
             return this;
         }
 
@@ -346,7 +331,7 @@ public class Execution extends com.aliyun.ros.cdk.core.Resource {
          * @param resourceOptions Property resourceOptions: Resource options user by ROS. This parameter is required.
          */
         public Builder resourceOptions(final com.aliyun.ros.cdk.core.IResolvable resourceOptions) {
-            this.props.resourceOptions(resourceOptions);
+            this.props().resourceOptions(resourceOptions);
             return this;
         }
         /**
@@ -356,7 +341,7 @@ public class Execution extends com.aliyun.ros.cdk.core.Resource {
          * @param resourceOptions Property resourceOptions: Resource options user by ROS. This parameter is required.
          */
         public Builder resourceOptions(final com.aliyun.ros.cdk.oos.RosExecution.ResourceOptionsProperty resourceOptions) {
-            this.props.resourceOptions(resourceOptions);
+            this.props().resourceOptions(resourceOptions);
             return this;
         }
 
@@ -374,7 +359,7 @@ public class Execution extends com.aliyun.ros.cdk.core.Resource {
          * @param safetyCheck Property safetyCheck: Security check mode. This parameter is required.
          */
         public Builder safetyCheck(final java.lang.String safetyCheck) {
-            this.props.safetyCheck(safetyCheck);
+            this.props().safetyCheck(safetyCheck);
             return this;
         }
         /**
@@ -391,7 +376,7 @@ public class Execution extends com.aliyun.ros.cdk.core.Resource {
          * @param safetyCheck Property safetyCheck: Security check mode. This parameter is required.
          */
         public Builder safetyCheck(final com.aliyun.ros.cdk.core.IResolvable safetyCheck) {
-            this.props.safetyCheck(safetyCheck);
+            this.props().safetyCheck(safetyCheck);
             return this;
         }
 
@@ -402,7 +387,82 @@ public class Execution extends com.aliyun.ros.cdk.core.Resource {
          * @param tags Property tags: Tag value and the key mapping, the label of the key number can be up to 20. This parameter is required.
          */
         public Builder tags(final java.util.Map<java.lang.String, ? extends java.lang.Object> tags) {
-            this.props.tags(tags);
+            this.props().tags(tags);
+            return this;
+        }
+
+        /**
+         * Property templateContent: The content of the template in the JSON or YAML format.
+         * <p>
+         * This parameter is the same as the Content parameter that you can specify when you call the CreateTemplate operation. You can use this parameter to specify the tasks that you want to run. This way, you do not need to create a template before you start an execution. If you select an existing template, you do not need to specify this parameter.
+         * <p>
+         * @return {@code this}
+         * @param templateContent Property templateContent: The content of the template in the JSON or YAML format. This parameter is required.
+         */
+        public Builder templateContent(final java.lang.String templateContent) {
+            this.props().templateContent(templateContent);
+            return this;
+        }
+        /**
+         * Property templateContent: The content of the template in the JSON or YAML format.
+         * <p>
+         * This parameter is the same as the Content parameter that you can specify when you call the CreateTemplate operation. You can use this parameter to specify the tasks that you want to run. This way, you do not need to create a template before you start an execution. If you select an existing template, you do not need to specify this parameter.
+         * <p>
+         * @return {@code this}
+         * @param templateContent Property templateContent: The content of the template in the JSON or YAML format. This parameter is required.
+         */
+        public Builder templateContent(final com.aliyun.ros.cdk.core.IResolvable templateContent) {
+            this.props().templateContent(templateContent);
+            return this;
+        }
+
+        /**
+         * Property templateName: Template name.
+         * <p>
+         * Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
+         * <p>
+         * @return {@code this}
+         * @param templateName Property templateName: Template name. This parameter is required.
+         */
+        public Builder templateName(final java.lang.String templateName) {
+            this.props().templateName(templateName);
+            return this;
+        }
+        /**
+         * Property templateName: Template name.
+         * <p>
+         * Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
+         * <p>
+         * @return {@code this}
+         * @param templateName Property templateName: Template name. This parameter is required.
+         */
+        public Builder templateName(final com.aliyun.ros.cdk.core.IResolvable templateName) {
+            this.props().templateName(templateName);
+            return this;
+        }
+
+        /**
+         * Property templateUrl: The Object Storage Service (OSS) URL of the object that stores the content of the Operation Orchestration Service (OOS) template.
+         * <p>
+         * The access control list (ACL) of the object must be public-read. You can use this parameter to specify the tasks that you want to run. This way, you do not need to create a template before you start an execution. If you select an existing template, you do not need to specify this parameter.
+         * <p>
+         * @return {@code this}
+         * @param templateUrl Property templateUrl: The Object Storage Service (OSS) URL of the object that stores the content of the Operation Orchestration Service (OOS) template. This parameter is required.
+         */
+        public Builder templateUrl(final java.lang.String templateUrl) {
+            this.props().templateUrl(templateUrl);
+            return this;
+        }
+        /**
+         * Property templateUrl: The Object Storage Service (OSS) URL of the object that stores the content of the Operation Orchestration Service (OOS) template.
+         * <p>
+         * The access control list (ACL) of the object must be public-read. You can use this parameter to specify the tasks that you want to run. This way, you do not need to create a template before you start an execution. If you select an existing template, you do not need to specify this parameter.
+         * <p>
+         * @return {@code this}
+         * @param templateUrl Property templateUrl: The Object Storage Service (OSS) URL of the object that stores the content of the Operation Orchestration Service (OOS) template. This parameter is required.
+         */
+        public Builder templateUrl(final com.aliyun.ros.cdk.core.IResolvable templateUrl) {
+            this.props().templateUrl(templateUrl);
             return this;
         }
 
@@ -415,7 +475,7 @@ public class Execution extends com.aliyun.ros.cdk.core.Resource {
          * @param templateVersion Property templateVersion: Version number of template. This parameter is required.
          */
         public Builder templateVersion(final java.lang.String templateVersion) {
-            this.props.templateVersion(templateVersion);
+            this.props().templateVersion(templateVersion);
             return this;
         }
         /**
@@ -427,7 +487,7 @@ public class Execution extends com.aliyun.ros.cdk.core.Resource {
          * @param templateVersion Property templateVersion: Version number of template. This parameter is required.
          */
         public Builder templateVersion(final com.aliyun.ros.cdk.core.IResolvable templateVersion) {
-            this.props.templateVersion(templateVersion);
+            this.props().templateVersion(templateVersion);
             return this;
         }
 
@@ -439,9 +499,16 @@ public class Execution extends com.aliyun.ros.cdk.core.Resource {
             return new com.aliyun.ros.cdk.oos.Execution(
                 this.scope,
                 this.id,
-                this.props.build(),
+                this.props != null ? this.props.build() : null,
                 this.enableResourcePropertyConstraint
             );
+        }
+
+        private com.aliyun.ros.cdk.oos.ExecutionProps.Builder props() {
+            if (this.props == null) {
+                this.props = new com.aliyun.ros.cdk.oos.ExecutionProps.Builder();
+            }
+            return this.props;
         }
     }
 }

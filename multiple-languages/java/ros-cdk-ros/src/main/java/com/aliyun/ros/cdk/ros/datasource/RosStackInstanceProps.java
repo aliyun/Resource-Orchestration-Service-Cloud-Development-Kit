@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ros.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ros-stackinstance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.119Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:13.905Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.datasource.RosStackInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosStackInstanceProps.Jsii$Proxy.class)
 public interface RosStackInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -29,6 +29,12 @@ public interface RosStackInstanceProps extends software.amazon.jsii.JsiiSerializ
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosStackInstanceProps}
      */
     static Builder builder() {
@@ -42,6 +48,7 @@ public interface RosStackInstanceProps extends software.amazon.jsii.JsiiSerializ
         java.lang.Object stackInstanceAccountId;
         java.lang.Object stackInstanceRegionId;
         java.lang.Object outputOption;
+        java.lang.Object refreshOptions;
 
         /**
          * Sets the value of {@link RosStackInstanceProps#getStackGroupName}
@@ -124,6 +131,26 @@ public interface RosStackInstanceProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosStackInstanceProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosStackInstanceProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosStackInstanceProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -143,6 +170,7 @@ public interface RosStackInstanceProps extends software.amazon.jsii.JsiiSerializ
         private final java.lang.Object stackInstanceAccountId;
         private final java.lang.Object stackInstanceRegionId;
         private final java.lang.Object outputOption;
+        private final java.lang.Object refreshOptions;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -154,6 +182,7 @@ public interface RosStackInstanceProps extends software.amazon.jsii.JsiiSerializ
             this.stackInstanceAccountId = software.amazon.jsii.Kernel.get(this, "stackInstanceAccountId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.stackInstanceRegionId = software.amazon.jsii.Kernel.get(this, "stackInstanceRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.outputOption = software.amazon.jsii.Kernel.get(this, "outputOption", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -165,6 +194,7 @@ public interface RosStackInstanceProps extends software.amazon.jsii.JsiiSerializ
             this.stackInstanceAccountId = java.util.Objects.requireNonNull(builder.stackInstanceAccountId, "stackInstanceAccountId is required");
             this.stackInstanceRegionId = java.util.Objects.requireNonNull(builder.stackInstanceRegionId, "stackInstanceRegionId is required");
             this.outputOption = builder.outputOption;
+            this.refreshOptions = builder.refreshOptions;
         }
 
         @Override
@@ -188,6 +218,11 @@ public interface RosStackInstanceProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -198,6 +233,9 @@ public interface RosStackInstanceProps extends software.amazon.jsii.JsiiSerializ
             data.set("stackInstanceRegionId", om.valueToTree(this.getStackInstanceRegionId()));
             if (this.getOutputOption() != null) {
                 data.set("outputOption", om.valueToTree(this.getOutputOption()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -220,7 +258,8 @@ public interface RosStackInstanceProps extends software.amazon.jsii.JsiiSerializ
             if (!stackGroupName.equals(that.stackGroupName)) return false;
             if (!stackInstanceAccountId.equals(that.stackInstanceAccountId)) return false;
             if (!stackInstanceRegionId.equals(that.stackInstanceRegionId)) return false;
-            return this.outputOption != null ? this.outputOption.equals(that.outputOption) : that.outputOption == null;
+            if (this.outputOption != null ? !this.outputOption.equals(that.outputOption) : that.outputOption != null) return false;
+            return this.refreshOptions != null ? this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions == null;
         }
 
         @Override
@@ -229,6 +268,7 @@ public interface RosStackInstanceProps extends software.amazon.jsii.JsiiSerializ
             result = 31 * result + (this.stackInstanceAccountId.hashCode());
             result = 31 * result + (this.stackInstanceRegionId.hashCode());
             result = 31 * result + (this.outputOption != null ? this.outputOption.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             return result;
         }
     }

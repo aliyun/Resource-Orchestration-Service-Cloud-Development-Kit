@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::RDS::PrepayDBInstance</code>, which is used to create subscription ApsaraDB RDS instances.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:08.785Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:13.425Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.PrepayDBInstance")
 public class PrepayDBInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -585,6 +585,27 @@ public class PrepayDBInstance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property burstingEnabled: Whether to enable bursting.
+         * <p>
+         * @return {@code this}
+         * @param burstingEnabled Property burstingEnabled: Whether to enable bursting. This parameter is required.
+         */
+        public Builder burstingEnabled(final java.lang.Boolean burstingEnabled) {
+            this.props.burstingEnabled(burstingEnabled);
+            return this;
+        }
+        /**
+         * Property burstingEnabled: Whether to enable bursting.
+         * <p>
+         * @return {@code this}
+         * @param burstingEnabled Property burstingEnabled: Whether to enable bursting. This parameter is required.
+         */
+        public Builder burstingEnabled(final com.aliyun.ros.cdk.core.IResolvable burstingEnabled) {
+            this.props.burstingEnabled(burstingEnabled);
+            return this;
+        }
+
+        /**
          * Property category: The edition of the instance.
          * <p>
          * Valid values:
@@ -618,6 +639,27 @@ public class PrepayDBInstance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder category(final com.aliyun.ros.cdk.core.IResolvable category) {
             this.props.category(category);
+            return this;
+        }
+
+        /**
+         * Property coldDataEnabled: Whether to enable cold data storage.
+         * <p>
+         * @return {@code this}
+         * @param coldDataEnabled Property coldDataEnabled: Whether to enable cold data storage. This parameter is required.
+         */
+        public Builder coldDataEnabled(final java.lang.Boolean coldDataEnabled) {
+            this.props.coldDataEnabled(coldDataEnabled);
+            return this;
+        }
+        /**
+         * Property coldDataEnabled: Whether to enable cold data storage.
+         * <p>
+         * @return {@code this}
+         * @param coldDataEnabled Property coldDataEnabled: Whether to enable cold data storage. This parameter is required.
+         */
+        public Builder coldDataEnabled(final com.aliyun.ros.cdk.core.IResolvable coldDataEnabled) {
+            this.props.coldDataEnabled(coldDataEnabled);
             return this;
         }
 
@@ -1051,6 +1093,27 @@ public class PrepayDBInstance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder instanceNetworkType(final com.aliyun.ros.cdk.core.IResolvable instanceNetworkType) {
             this.props.instanceNetworkType(instanceNetworkType);
+            return this;
+        }
+
+        /**
+         * Property ioAccelerationEnabled: Whether to enable IO Acceleration, 1 for enable 0 for disable.
+         * <p>
+         * @return {@code this}
+         * @param ioAccelerationEnabled Property ioAccelerationEnabled: Whether to enable IO Acceleration, 1 for enable 0 for disable. This parameter is required.
+         */
+        public Builder ioAccelerationEnabled(final java.lang.String ioAccelerationEnabled) {
+            this.props.ioAccelerationEnabled(ioAccelerationEnabled);
+            return this;
+        }
+        /**
+         * Property ioAccelerationEnabled: Whether to enable IO Acceleration, 1 for enable 0 for disable.
+         * <p>
+         * @return {@code this}
+         * @param ioAccelerationEnabled Property ioAccelerationEnabled: Whether to enable IO Acceleration, 1 for enable 0 for disable. This parameter is required.
+         */
+        public Builder ioAccelerationEnabled(final com.aliyun.ros.cdk.core.IResolvable ioAccelerationEnabled) {
+            this.props.ioAccelerationEnabled(ioAccelerationEnabled);
             return this;
         }
 

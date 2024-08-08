@@ -27,6 +27,14 @@ export interface RosConfigurationsProps {
      * @Property group: The group of configuration
      */
     readonly group?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -43,6 +51,13 @@ function RosConfigurationsPropsValidator(properties: any): ros.ValidationResult 
     errors.collect(ros.propertyValidator('dataId', ros.validateString)(properties.dataId));
     errors.collect(ros.propertyValidator('namespaceId', ros.requiredValidator)(properties.namespaceId));
     errors.collect(ros.propertyValidator('namespaceId', ros.validateString)(properties.namespaceId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     errors.collect(ros.propertyValidator('appName', ros.validateString)(properties.appName));
     return errors.wrap('supplied properties not correct for "RosConfigurationsProps"');
 }
@@ -65,6 +80,7 @@ function rosConfigurationsPropsToRosTemplate(properties: any, enableResourceProp
       AppName: ros.stringToRosTemplate(properties.appName),
       DataId: ros.stringToRosTemplate(properties.dataId),
       Group: ros.stringToRosTemplate(properties.group),
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -113,6 +129,14 @@ export class RosConfigurations extends ros.RosResource {
     public group: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -127,6 +151,7 @@ export class RosConfigurations extends ros.RosResource {
         this.appName = props.appName;
         this.dataId = props.dataId;
         this.group = props.group;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
@@ -136,6 +161,7 @@ export class RosConfigurations extends ros.RosResource {
             appName: this.appName,
             dataId: this.dataId,
             group: this.group,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -148,6 +174,14 @@ export class RosConfigurations extends ros.RosResource {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-acm-namespaces
  */
 export interface RosNamespacesProps {
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -160,6 +194,13 @@ export interface RosNamespacesProps {
 function RosNamespacesPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosNamespacesProps"');
 }
 
@@ -177,6 +218,7 @@ function rosNamespacesPropsToRosTemplate(properties: any, enableResourceProperty
         RosNamespacesPropsValidator(properties).assertSuccess();
     }
     return {
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -205,6 +247,14 @@ export class RosNamespaces extends ros.RosResource {
 
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -215,11 +265,13 @@ export class RosNamespaces extends ros.RosResource {
         this.attrNamespaces = this.getAtt('Namespaces');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

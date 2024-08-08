@@ -34,6 +34,14 @@ export interface RosNodesProps {
     readonly privateIpAddress?: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * @Property role: The type of the node. Valid values:
      * Manager: management node
      * Login: logon node
@@ -59,6 +67,13 @@ function RosNodesPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('clusterId', ros.validateString)(properties.clusterId));
     errors.collect(ros.propertyValidator('hostNamePrefix', ros.validateString)(properties.hostNamePrefix));
     errors.collect(ros.propertyValidator('hostName', ros.validateString)(properties.hostName));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosNodesProps"');
 }
 
@@ -81,6 +96,7 @@ function rosNodesPropsToRosTemplate(properties: any, enableResourcePropertyConst
       HostNamePrefix: ros.stringToRosTemplate(properties.hostNamePrefix),
       HostNameSuffix: ros.stringToRosTemplate(properties.hostNameSuffix),
       PrivateIpAddress: ros.stringToRosTemplate(properties.privateIpAddress),
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
       Role: ros.stringToRosTemplate(properties.role),
     };
 }
@@ -135,6 +151,14 @@ export class RosNodes extends ros.RosResource {
     public privateIpAddress: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property role: The type of the node. Valid values:
      * Manager: management node
      * Login: logon node
@@ -158,6 +182,7 @@ export class RosNodes extends ros.RosResource {
         this.hostNamePrefix = props.hostNamePrefix;
         this.hostNameSuffix = props.hostNameSuffix;
         this.privateIpAddress = props.privateIpAddress;
+        this.refreshOptions = props.refreshOptions;
         this.role = props.role;
     }
 
@@ -169,6 +194,7 @@ export class RosNodes extends ros.RosResource {
             hostNamePrefix: this.hostNamePrefix,
             hostNameSuffix: this.hostNameSuffix,
             privateIpAddress: this.privateIpAddress,
+            refreshOptions: this.refreshOptions,
             role: this.role,
         };
     }

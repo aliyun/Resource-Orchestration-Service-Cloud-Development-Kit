@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-zones
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:06.678Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:10.445Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.datasource.ZonesProps")
 @software.amazon.jsii.Jsii.Proxy(ZonesProps.Jsii$Proxy.class)
 public interface ZonesProps extends software.amazon.jsii.JsiiSerializable {
@@ -56,6 +56,21 @@ public interface ZonesProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
      * Property resourceType: The type of the resource.
      * <p>
      * Valid values:
@@ -96,6 +111,7 @@ public interface ZonesProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object instanceChargeType;
         java.lang.Object instanceType;
         java.lang.Object ioOptimized;
+        java.lang.Object refreshOptions;
         java.lang.Object resourceType;
         java.lang.Object systemDiskCategory;
 
@@ -208,6 +224,40 @@ public interface ZonesProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ZonesProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ZonesProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ZonesProps#getResourceType}
          * @param resourceType Property resourceType: The type of the resource.
          *                     Valid values:
@@ -289,6 +339,7 @@ public interface ZonesProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object instanceChargeType;
         private final java.lang.Object instanceType;
         private final java.lang.Object ioOptimized;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object resourceType;
         private final java.lang.Object systemDiskCategory;
 
@@ -302,6 +353,7 @@ public interface ZonesProps extends software.amazon.jsii.JsiiSerializable {
             this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceType = software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ioOptimized = software.amazon.jsii.Kernel.get(this, "ioOptimized", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceType = software.amazon.jsii.Kernel.get(this, "resourceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskCategory = software.amazon.jsii.Kernel.get(this, "systemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -315,6 +367,7 @@ public interface ZonesProps extends software.amazon.jsii.JsiiSerializable {
             this.instanceChargeType = builder.instanceChargeType;
             this.instanceType = builder.instanceType;
             this.ioOptimized = builder.ioOptimized;
+            this.refreshOptions = builder.refreshOptions;
             this.resourceType = builder.resourceType;
             this.systemDiskCategory = builder.systemDiskCategory;
         }
@@ -337,6 +390,11 @@ public interface ZonesProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getIoOptimized() {
             return this.ioOptimized;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -367,6 +425,9 @@ public interface ZonesProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getIoOptimized() != null) {
                 data.set("ioOptimized", om.valueToTree(this.getIoOptimized()));
             }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
+            }
             if (this.getResourceType() != null) {
                 data.set("resourceType", om.valueToTree(this.getResourceType()));
             }
@@ -395,6 +456,7 @@ public interface ZonesProps extends software.amazon.jsii.JsiiSerializable {
             if (this.instanceChargeType != null ? !this.instanceChargeType.equals(that.instanceChargeType) : that.instanceChargeType != null) return false;
             if (this.instanceType != null ? !this.instanceType.equals(that.instanceType) : that.instanceType != null) return false;
             if (this.ioOptimized != null ? !this.ioOptimized.equals(that.ioOptimized) : that.ioOptimized != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             if (this.resourceType != null ? !this.resourceType.equals(that.resourceType) : that.resourceType != null) return false;
             return this.systemDiskCategory != null ? this.systemDiskCategory.equals(that.systemDiskCategory) : that.systemDiskCategory == null;
         }
@@ -405,6 +467,7 @@ public interface ZonesProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.instanceChargeType != null ? this.instanceChargeType.hashCode() : 0);
             result = 31 * result + (this.instanceType != null ? this.instanceType.hashCode() : 0);
             result = 31 * result + (this.ioOptimized != null ? this.ioOptimized.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.resourceType != null ? this.resourceType.hashCode() : 0);
             result = 31 * result + (this.systemDiskCategory != null ? this.systemDiskCategory.hashCode() : 0);
             return result;

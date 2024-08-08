@@ -13,6 +13,14 @@ export interface InstanceProps {
      * Property dbInstanceId: Database instance id.
      */
     readonly dbInstanceId: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -235,6 +243,7 @@ export class Instance extends ros.Resource {
 
         const rosInstance = new RosInstance(this, id,  {
             dbInstanceId: props.dbInstanceId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstance;
         this.attrArchitectureType = rosInstance.attrArchitectureType;

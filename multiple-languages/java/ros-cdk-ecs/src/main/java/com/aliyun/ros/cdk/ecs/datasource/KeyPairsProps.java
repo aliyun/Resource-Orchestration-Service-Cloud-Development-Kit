@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-keypairs
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:06.576Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:10.259Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.datasource.KeyPairsProps")
 @software.amazon.jsii.Jsii.Proxy(KeyPairsProps.Jsii$Proxy.class)
 public interface KeyPairsProps extends software.amazon.jsii.JsiiSerializable {
@@ -29,6 +29,21 @@ public interface KeyPairsProps extends software.amazon.jsii.JsiiSerializable {
      * SshKey: queries the key pair named SshKey.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getKeyPairName() {
+        return null;
+    }
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
         return null;
     }
 
@@ -60,6 +75,7 @@ public interface KeyPairsProps extends software.amazon.jsii.JsiiSerializable {
     public static final class Builder implements software.amazon.jsii.Builder<KeyPairsProps> {
         java.lang.Object keyPairFingerPrint;
         java.lang.Object keyPairName;
+        java.lang.Object refreshOptions;
         java.lang.Object resourceGroupId;
         java.util.List<com.aliyun.ros.cdk.ecs.datasource.RosKeyPairs.TagsProperty> tags;
 
@@ -116,6 +132,40 @@ public interface KeyPairsProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link KeyPairsProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link KeyPairsProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link KeyPairsProps#getResourceGroupId}
          * @param resourceGroupId Property resourceGroupId: The ID of the resource group to which the key pair belongs.
          *                        If this parameter is specified to query resources, up to 1,000 resources that belong to the specified resource group can be displayed in the response.
@@ -166,6 +216,7 @@ public interface KeyPairsProps extends software.amazon.jsii.JsiiSerializable {
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements KeyPairsProps {
         private final java.lang.Object keyPairFingerPrint;
         private final java.lang.Object keyPairName;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object resourceGroupId;
         private final java.util.List<com.aliyun.ros.cdk.ecs.datasource.RosKeyPairs.TagsProperty> tags;
 
@@ -177,6 +228,7 @@ public interface KeyPairsProps extends software.amazon.jsii.JsiiSerializable {
             super(objRef);
             this.keyPairFingerPrint = software.amazon.jsii.Kernel.get(this, "keyPairFingerPrint", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.keyPairName = software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.datasource.RosKeyPairs.TagsProperty.class)));
         }
@@ -189,6 +241,7 @@ public interface KeyPairsProps extends software.amazon.jsii.JsiiSerializable {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.keyPairFingerPrint = builder.keyPairFingerPrint;
             this.keyPairName = builder.keyPairName;
+            this.refreshOptions = builder.refreshOptions;
             this.resourceGroupId = builder.resourceGroupId;
             this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.datasource.RosKeyPairs.TagsProperty>)builder.tags;
         }
@@ -201,6 +254,11 @@ public interface KeyPairsProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getKeyPairName() {
             return this.keyPairName;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -224,6 +282,9 @@ public interface KeyPairsProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getKeyPairName() != null) {
                 data.set("keyPairName", om.valueToTree(this.getKeyPairName()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
@@ -251,6 +312,7 @@ public interface KeyPairsProps extends software.amazon.jsii.JsiiSerializable {
 
             if (this.keyPairFingerPrint != null ? !this.keyPairFingerPrint.equals(that.keyPairFingerPrint) : that.keyPairFingerPrint != null) return false;
             if (this.keyPairName != null ? !this.keyPairName.equals(that.keyPairName) : that.keyPairName != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
@@ -259,6 +321,7 @@ public interface KeyPairsProps extends software.amazon.jsii.JsiiSerializable {
         public final int hashCode() {
             int result = this.keyPairFingerPrint != null ? this.keyPairFingerPrint.hashCode() : 0;
             result = 31 * result + (this.keyPairName != null ? this.keyPairName.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;

@@ -3,9 +3,9 @@ package com.aliyun.ros.cdk.core;
 /**
  * Resource Orchestration Service intrinsic functions.
  * <p>
- * https://help.aliyun.com/document_detail/28852.html
+ * https://help.aliyun.com/zh/ros/user-guide/functions
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:03.936Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:06.829Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Fn")
 public class Fn extends software.amazon.jsii.JsiiObject {
 
@@ -55,6 +55,37 @@ public class Fn extends software.amazon.jsii.JsiiObject {
         return software.amazon.jsii.JsiiObject.jsiiStaticCall(com.aliyun.ros.cdk.core.Fn.class, "add", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class), new Object[] { java.util.Objects.requireNonNull(values, "values is required") });
     }
 
+    /**
+     * Returns whether a value in the specified array is true or false.
+     * <p>
+     * Returns true if any item in the array is true, and false otherwise.
+     * <p>
+     * @param values An array of values. This parameter is required.
+     */
+    public static @org.jetbrains.annotations.NotNull java.lang.String any(final @org.jetbrains.annotations.NotNull java.lang.Object values) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            if (
+                 !(values instanceof java.util.List)
+                && !(values instanceof com.aliyun.ros.cdk.core.IResolvable)
+                && !(values.getClass().equals(software.amazon.jsii.JsiiObject.class))
+            ) {
+                throw new IllegalArgumentException(
+                    new java.lang.StringBuilder("Expected ")
+                        .append("values")
+                        .append(" to be one of: java.util.List<java.lang.Object>, com.aliyun.ros.cdk.core.IResolvable; received ")
+                        .append(values.getClass()).toString());
+            }
+            if (values instanceof java.util.List) {
+                @SuppressWarnings("unchecked")
+                final java.util.List<java.lang.Object> __cast_89445e = (java.util.List<java.lang.Object>)values;
+                for (int __idx_96736d = 0; __idx_96736d < __cast_89445e.size(); __idx_96736d++) {
+                    final java.lang.Object __val_96736d = __cast_89445e.get(__idx_96736d);
+                }
+            }
+        }
+        return software.amazon.jsii.JsiiObject.jsiiStaticCall(com.aliyun.ros.cdk.core.Fn.class, "any", software.amazon.jsii.NativeType.forClass(java.lang.String.class), new Object[] { java.util.Objects.requireNonNull(values, "values is required") });
+    }
+
     public static @org.jetbrains.annotations.NotNull java.lang.Number avg(final @org.jetbrains.annotations.NotNull java.lang.Number ndigits, final @org.jetbrains.annotations.NotNull java.util.List<? extends java.lang.Number> values) {
         return software.amazon.jsii.JsiiObject.jsiiStaticCall(com.aliyun.ros.cdk.core.Fn.class, "avg", software.amazon.jsii.NativeType.forClass(java.lang.Number.class), new Object[] { java.util.Objects.requireNonNull(ndigits, "ndigits is required"), java.util.Objects.requireNonNull(values, "values is required") });
     }
@@ -75,6 +106,52 @@ public class Fn extends software.amazon.jsii.JsiiObject {
 
     public static @org.jetbrains.annotations.NotNull java.lang.Number calculate(final @org.jetbrains.annotations.NotNull java.lang.String values, final @org.jetbrains.annotations.NotNull java.lang.Number ndigits, final @org.jetbrains.annotations.NotNull java.util.List<? extends java.lang.Number> para) {
         return software.amazon.jsii.JsiiObject.jsiiStaticCall(com.aliyun.ros.cdk.core.Fn.class, "calculate", software.amazon.jsii.NativeType.forClass(java.lang.Number.class), new Object[] { java.util.Objects.requireNonNull(values, "values is required"), java.util.Objects.requireNonNull(ndigits, "ndigits is required"), java.util.Objects.requireNonNull(para, "para is required") });
+    }
+
+    /**
+     * Returns a list of CIDR addresses.
+     * <p>
+     * @param ipBlock The IP address block from which you want to allocate the CIDR. This parameter is required.
+     * @param count The number of IPv4 CIDRs to generate. This parameter is required.
+     * @param cidrBits The number of subnet bits of the new CIDR. This parameter is required.
+     */
+    public static @org.jetbrains.annotations.NotNull java.lang.String cidr(final @org.jetbrains.annotations.NotNull java.lang.Object ipBlock, final @org.jetbrains.annotations.NotNull java.lang.Object count, final @org.jetbrains.annotations.NotNull java.lang.Object cidrBits) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            if (
+                 !(ipBlock instanceof java.lang.String)
+                && !(ipBlock instanceof com.aliyun.ros.cdk.core.IResolvable)
+                && !(ipBlock.getClass().equals(software.amazon.jsii.JsiiObject.class))
+            ) {
+                throw new IllegalArgumentException(
+                    new java.lang.StringBuilder("Expected ")
+                        .append("ipBlock")
+                        .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                        .append(ipBlock.getClass()).toString());
+            }
+            if (
+                 !(count instanceof java.lang.Number)
+                && !(count instanceof com.aliyun.ros.cdk.core.IResolvable)
+                && !(count.getClass().equals(software.amazon.jsii.JsiiObject.class))
+            ) {
+                throw new IllegalArgumentException(
+                    new java.lang.StringBuilder("Expected ")
+                        .append("count")
+                        .append(" to be one of: java.lang.Number, com.aliyun.ros.cdk.core.IResolvable; received ")
+                        .append(count.getClass()).toString());
+            }
+            if (
+                 !(cidrBits instanceof java.lang.Number)
+                && !(cidrBits instanceof com.aliyun.ros.cdk.core.IResolvable)
+                && !(cidrBits.getClass().equals(software.amazon.jsii.JsiiObject.class))
+            ) {
+                throw new IllegalArgumentException(
+                    new java.lang.StringBuilder("Expected ")
+                        .append("cidrBits")
+                        .append(" to be one of: java.lang.Number, com.aliyun.ros.cdk.core.IResolvable; received ")
+                        .append(cidrBits.getClass()).toString());
+            }
+        }
+        return software.amazon.jsii.JsiiObject.jsiiStaticCall(com.aliyun.ros.cdk.core.Fn.class, "cidr", software.amazon.jsii.NativeType.forClass(java.lang.String.class), new Object[] { java.util.Objects.requireNonNull(ipBlock, "ipBlock is required"), java.util.Objects.requireNonNull(count, "count is required"), java.util.Objects.requireNonNull(cidrBits, "cidrBits is required") });
     }
 
     /**
@@ -204,6 +281,84 @@ public class Fn extends software.amazon.jsii.JsiiObject {
     }
 
     /**
+     * Returns true if at least one member of the list matches the specified value and false otherwise.
+     * <p>
+     * @param values An array of values. This parameter is required.
+     * @param value A value. This parameter is required.
+     */
+    public static @org.jetbrains.annotations.NotNull java.lang.String contains(final @org.jetbrains.annotations.NotNull java.lang.Object values, final @org.jetbrains.annotations.NotNull java.lang.Object value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            if (
+                 !(values instanceof java.util.List)
+                && !(values instanceof com.aliyun.ros.cdk.core.IResolvable)
+                && !(values.getClass().equals(software.amazon.jsii.JsiiObject.class))
+            ) {
+                throw new IllegalArgumentException(
+                    new java.lang.StringBuilder("Expected ")
+                        .append("values")
+                        .append(" to be one of: java.util.List<java.lang.Object>, com.aliyun.ros.cdk.core.IResolvable; received ")
+                        .append(values.getClass()).toString());
+            }
+            if (values instanceof java.util.List) {
+                @SuppressWarnings("unchecked")
+                final java.util.List<java.lang.Object> __cast_89445e = (java.util.List<java.lang.Object>)values;
+                for (int __idx_96736d = 0; __idx_96736d < __cast_89445e.size(); __idx_96736d++) {
+                    final java.lang.Object __val_96736d = __cast_89445e.get(__idx_96736d);
+                }
+            }
+        }
+        return software.amazon.jsii.JsiiObject.jsiiStaticCall(com.aliyun.ros.cdk.core.Fn.class, "contains", software.amazon.jsii.NativeType.forClass(java.lang.String.class), new Object[] { java.util.Objects.requireNonNull(values, "values is required"), value });
+    }
+
+    /**
+     * Returns true if every member of the first list is equal to at least one value in the second list, and false otherwise.
+     * <p>
+     * @param values1 An array of values. This parameter is required.
+     * @param values2 An array of values. This parameter is required.
+     */
+    public static @org.jetbrains.annotations.NotNull java.lang.String eachMemberIn(final @org.jetbrains.annotations.NotNull java.lang.Object values1, final @org.jetbrains.annotations.NotNull java.lang.Object values2) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            if (
+                 !(values1 instanceof java.util.List)
+                && !(values1 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                && !(values1.getClass().equals(software.amazon.jsii.JsiiObject.class))
+            ) {
+                throw new IllegalArgumentException(
+                    new java.lang.StringBuilder("Expected ")
+                        .append("values1")
+                        .append(" to be one of: java.util.List<java.lang.Object>, com.aliyun.ros.cdk.core.IResolvable; received ")
+                        .append(values1.getClass()).toString());
+            }
+            if (values1 instanceof java.util.List) {
+                @SuppressWarnings("unchecked")
+                final java.util.List<java.lang.Object> __cast_4ae8e1 = (java.util.List<java.lang.Object>)values1;
+                for (int __idx_82abbb = 0; __idx_82abbb < __cast_4ae8e1.size(); __idx_82abbb++) {
+                    final java.lang.Object __val_82abbb = __cast_4ae8e1.get(__idx_82abbb);
+                }
+            }
+            if (
+                 !(values2 instanceof java.util.List)
+                && !(values2 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                && !(values2.getClass().equals(software.amazon.jsii.JsiiObject.class))
+            ) {
+                throw new IllegalArgumentException(
+                    new java.lang.StringBuilder("Expected ")
+                        .append("values2")
+                        .append(" to be one of: java.util.List<java.lang.Object>, com.aliyun.ros.cdk.core.IResolvable; received ")
+                        .append(values2.getClass()).toString());
+            }
+            if (values2 instanceof java.util.List) {
+                @SuppressWarnings("unchecked")
+                final java.util.List<java.lang.Object> __cast_b92750 = (java.util.List<java.lang.Object>)values2;
+                for (int __idx_9f591a = 0; __idx_9f591a < __cast_b92750.size(); __idx_9f591a++) {
+                    final java.lang.Object __val_9f591a = __cast_b92750.get(__idx_9f591a);
+                }
+            }
+        }
+        return software.amazon.jsii.JsiiObject.jsiiStaticCall(com.aliyun.ros.cdk.core.Fn.class, "eachMemberIn", software.amazon.jsii.NativeType.forClass(java.lang.String.class), new Object[] { java.util.Objects.requireNonNull(values1, "values1 is required"), java.util.Objects.requireNonNull(values2, "values2 is required") });
+    }
+
+    /**
      * The intrinsic function <code>Fn::FindInMap</code> returns the value corresponding to keys in a two-level map that is declared in the Mappings section.
      * <p>
      * @return a token represented as a string
@@ -213,6 +368,40 @@ public class Fn extends software.amazon.jsii.JsiiObject {
      */
     public static @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable findInMap(final @org.jetbrains.annotations.NotNull java.lang.String mapName, final @org.jetbrains.annotations.NotNull java.lang.String topLevelKey, final @org.jetbrains.annotations.NotNull java.lang.String secondLevelKey) {
         return software.amazon.jsii.JsiiObject.jsiiStaticCall(com.aliyun.ros.cdk.core.Fn.class, "findInMap", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class), new Object[] { java.util.Objects.requireNonNull(mapName, "mapName is required"), java.util.Objects.requireNonNull(topLevelKey, "topLevelKey is required"), java.util.Objects.requireNonNull(secondLevelKey, "secondLevelKey is required") });
+    }
+
+    /**
+     * Returns the formatted time of the object.
+     * <p>
+     * @param format The format of the time. This parameter is required.
+     * @param timeZone The time zone. This parameter is required.
+     */
+    public static @org.jetbrains.annotations.NotNull java.lang.String formatTime(final @org.jetbrains.annotations.NotNull java.lang.Object format, final @org.jetbrains.annotations.NotNull java.lang.Object timeZone) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            if (
+                 !(format instanceof java.lang.String)
+                && !(format instanceof com.aliyun.ros.cdk.core.IResolvable)
+                && !(format.getClass().equals(software.amazon.jsii.JsiiObject.class))
+            ) {
+                throw new IllegalArgumentException(
+                    new java.lang.StringBuilder("Expected ")
+                        .append("format")
+                        .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                        .append(format.getClass()).toString());
+            }
+            if (
+                 !(timeZone instanceof java.lang.String)
+                && !(timeZone instanceof com.aliyun.ros.cdk.core.IResolvable)
+                && !(timeZone.getClass().equals(software.amazon.jsii.JsiiObject.class))
+            ) {
+                throw new IllegalArgumentException(
+                    new java.lang.StringBuilder("Expected ")
+                        .append("timeZone")
+                        .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                        .append(timeZone.getClass()).toString());
+            }
+        }
+        return software.amazon.jsii.JsiiObject.jsiiStaticCall(com.aliyun.ros.cdk.core.Fn.class, "formatTime", software.amazon.jsii.NativeType.forClass(java.lang.String.class), new Object[] { java.util.Objects.requireNonNull(format, "format is required"), java.util.Objects.requireNonNull(timeZone, "timeZone is required") });
     }
 
     /**
@@ -267,6 +456,116 @@ public class Fn extends software.amazon.jsii.JsiiObject {
      */
     public static @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getStackOutput(final @org.jetbrains.annotations.NotNull java.lang.String stackID, final @org.jetbrains.annotations.NotNull java.lang.String outputKey) {
         return software.amazon.jsii.JsiiObject.jsiiStaticCall(com.aliyun.ros.cdk.core.Fn.class, "getStackOutput", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class), new Object[] { java.util.Objects.requireNonNull(stackID, "stackID is required"), java.util.Objects.requireNonNull(outputKey, "outputKey is required") });
+    }
+
+    /**
+     * The intrinsic function Fn::Indent adjust the indentation of the string.
+     * <p>
+     * @param str Strings that need to be indented. This parameter is required.
+     * @param level Indentation level. This parameter is required.
+     * @param indent Optional, defaults to 2 for two Spaces per level, in the range [0,4].
+     */
+    public static @org.jetbrains.annotations.NotNull java.lang.String indent(final @org.jetbrains.annotations.NotNull java.lang.Object str, final @org.jetbrains.annotations.NotNull java.lang.Object level, final @org.jetbrains.annotations.Nullable java.lang.Object indent) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            if (
+                 !(str instanceof java.lang.String)
+                && !(str instanceof com.aliyun.ros.cdk.core.IResolvable)
+                && !(str.getClass().equals(software.amazon.jsii.JsiiObject.class))
+            ) {
+                throw new IllegalArgumentException(
+                    new java.lang.StringBuilder("Expected ")
+                        .append("str")
+                        .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                        .append(str.getClass()).toString());
+            }
+            if (
+                 !(level instanceof java.lang.Number)
+                && !(level instanceof com.aliyun.ros.cdk.core.IResolvable)
+                && !(level.getClass().equals(software.amazon.jsii.JsiiObject.class))
+            ) {
+                throw new IllegalArgumentException(
+                    new java.lang.StringBuilder("Expected ")
+                        .append("level")
+                        .append(" to be one of: java.lang.Number, com.aliyun.ros.cdk.core.IResolvable; received ")
+                        .append(level.getClass()).toString());
+            }
+            if (
+                 !(indent instanceof java.lang.Number)
+                && !(indent instanceof com.aliyun.ros.cdk.core.IResolvable)
+                && !(indent.getClass().equals(software.amazon.jsii.JsiiObject.class))
+            ) {
+                throw new IllegalArgumentException(
+                    new java.lang.StringBuilder("Expected ")
+                        .append("indent")
+                        .append(" to be one of: java.lang.Number, com.aliyun.ros.cdk.core.IResolvable; received ")
+                        .append(indent.getClass()).toString());
+            }
+        }
+        return software.amazon.jsii.JsiiObject.jsiiStaticCall(com.aliyun.ros.cdk.core.Fn.class, "indent", software.amazon.jsii.NativeType.forClass(java.lang.String.class), new Object[] { java.util.Objects.requireNonNull(str, "str is required"), java.util.Objects.requireNonNull(level, "level is required"), indent });
+    }
+
+    /**
+     * The intrinsic function Fn::Indent adjust the indentation of the string.
+     * <p>
+     * @param str Strings that need to be indented. This parameter is required.
+     * @param level Indentation level. This parameter is required.
+     */
+    public static @org.jetbrains.annotations.NotNull java.lang.String indent(final @org.jetbrains.annotations.NotNull java.lang.Object str, final @org.jetbrains.annotations.NotNull java.lang.Object level) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            if (
+                 !(str instanceof java.lang.String)
+                && !(str instanceof com.aliyun.ros.cdk.core.IResolvable)
+                && !(str.getClass().equals(software.amazon.jsii.JsiiObject.class))
+            ) {
+                throw new IllegalArgumentException(
+                    new java.lang.StringBuilder("Expected ")
+                        .append("str")
+                        .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                        .append(str.getClass()).toString());
+            }
+            if (
+                 !(level instanceof java.lang.Number)
+                && !(level instanceof com.aliyun.ros.cdk.core.IResolvable)
+                && !(level.getClass().equals(software.amazon.jsii.JsiiObject.class))
+            ) {
+                throw new IllegalArgumentException(
+                    new java.lang.StringBuilder("Expected ")
+                        .append("level")
+                        .append(" to be one of: java.lang.Number, com.aliyun.ros.cdk.core.IResolvable; received ")
+                        .append(level.getClass()).toString());
+            }
+        }
+        return software.amazon.jsii.JsiiObject.jsiiStaticCall(com.aliyun.ros.cdk.core.Fn.class, "indent", software.amazon.jsii.NativeType.forClass(java.lang.String.class), new Object[] { java.util.Objects.requireNonNull(str, "str is required"), java.util.Objects.requireNonNull(level, "level is required") });
+    }
+
+    /**
+     * Returns the index of the item in the list.
+     * <p>
+     * @param itemToFindIndex The item to find in the list. This parameter is required.
+     * @param itemList The list to find the item in. This parameter is required.
+     */
+    public static @org.jetbrains.annotations.NotNull java.lang.String index(final @org.jetbrains.annotations.NotNull java.lang.Object itemToFindIndex, final @org.jetbrains.annotations.NotNull java.lang.Object itemList) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            if (
+                 !(itemList instanceof java.util.List)
+                && !(itemList instanceof com.aliyun.ros.cdk.core.IResolvable)
+                && !(itemList.getClass().equals(software.amazon.jsii.JsiiObject.class))
+            ) {
+                throw new IllegalArgumentException(
+                    new java.lang.StringBuilder("Expected ")
+                        .append("itemList")
+                        .append(" to be one of: java.util.List<java.lang.Object>, com.aliyun.ros.cdk.core.IResolvable; received ")
+                        .append(itemList.getClass()).toString());
+            }
+            if (itemList instanceof java.util.List) {
+                @SuppressWarnings("unchecked")
+                final java.util.List<java.lang.Object> __cast_9dda49 = (java.util.List<java.lang.Object>)itemList;
+                for (int __idx_c9f5b5 = 0; __idx_c9f5b5 < __cast_9dda49.size(); __idx_c9f5b5++) {
+                    final java.lang.Object __val_c9f5b5 = __cast_9dda49.get(__idx_c9f5b5);
+                }
+            }
+        }
+        return software.amazon.jsii.JsiiObject.jsiiStaticCall(com.aliyun.ros.cdk.core.Fn.class, "index", software.amazon.jsii.NativeType.forClass(java.lang.String.class), new Object[] { itemToFindIndex, java.util.Objects.requireNonNull(itemList, "itemList is required") });
     }
 
     /**
@@ -329,6 +628,15 @@ public class Fn extends software.amazon.jsii.JsiiObject {
         return software.amazon.jsii.JsiiObject.jsiiStaticCall(com.aliyun.ros.cdk.core.Fn.class, "jq", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class), new Object[] { java.util.Objects.requireNonNull(method, "method is required"), java.util.Objects.requireNonNull(script, "script is required"), java.util.Objects.requireNonNull(inputString, "inputString is required") });
     }
 
+    /**
+     * Returns the length of the object.
+     * <p>
+     * @param obj An object whose length needs to be computed. This parameter is required.
+     */
+    public static @org.jetbrains.annotations.NotNull java.lang.String lengthOf(final @org.jetbrains.annotations.NotNull java.lang.Object obj) {
+        return software.amazon.jsii.JsiiObject.jsiiStaticCall(com.aliyun.ros.cdk.core.Fn.class, "lengthOf", software.amazon.jsii.NativeType.forClass(java.lang.String.class), new Object[] { obj });
+    }
+
     public static @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable listMerge(final @org.jetbrains.annotations.NotNull java.util.List<? extends java.lang.Object> valueList) {
         if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
             for (int __idx_dfc316 = 0; __idx_dfc316 < valueList.size(); __idx_dfc316++) {
@@ -354,6 +662,62 @@ public class Fn extends software.amazon.jsii.JsiiObject {
             }
         }
         return software.amazon.jsii.JsiiObject.jsiiStaticCall(com.aliyun.ros.cdk.core.Fn.class, "listMerge", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class), new Object[] { java.util.Objects.requireNonNull(valueList, "valueList is required") });
+    }
+
+    /**
+     * The intrinsic function Fn::MarketplaceImage returns the default image ID of the specified cloud marketplace image product Code.
+     * <p>
+     * @param imageProductCode The product code of the cloud marketplace image. This parameter is required.
+     */
+    public static @org.jetbrains.annotations.NotNull java.lang.String marketplaceImage(final @org.jetbrains.annotations.NotNull java.lang.Object imageProductCode) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            if (
+                 !(imageProductCode instanceof java.lang.String)
+                && !(imageProductCode instanceof com.aliyun.ros.cdk.core.IResolvable)
+                && !(imageProductCode.getClass().equals(software.amazon.jsii.JsiiObject.class))
+            ) {
+                throw new IllegalArgumentException(
+                    new java.lang.StringBuilder("Expected ")
+                        .append("imageProductCode")
+                        .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                        .append(imageProductCode.getClass()).toString());
+            }
+        }
+        return software.amazon.jsii.JsiiObject.jsiiStaticCall(com.aliyun.ros.cdk.core.Fn.class, "marketplaceImage", software.amazon.jsii.NativeType.forClass(java.lang.String.class), new Object[] { java.util.Objects.requireNonNull(imageProductCode, "imageProductCode is required") });
+    }
+
+    /**
+     * Returns true if a specified string matches a specified pattern.
+     * <p>
+     * @param pattern A regular expression in string form. This parameter is required.
+     * @param value The string to match. This parameter is required.
+     */
+    public static @org.jetbrains.annotations.NotNull java.lang.String matchPattern(final @org.jetbrains.annotations.NotNull java.lang.Object pattern, final @org.jetbrains.annotations.NotNull java.lang.Object value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            if (
+                 !(pattern instanceof java.lang.String)
+                && !(pattern instanceof com.aliyun.ros.cdk.core.IResolvable)
+                && !(pattern.getClass().equals(software.amazon.jsii.JsiiObject.class))
+            ) {
+                throw new IllegalArgumentException(
+                    new java.lang.StringBuilder("Expected ")
+                        .append("pattern")
+                        .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                        .append(pattern.getClass()).toString());
+            }
+            if (
+                 !(value instanceof java.lang.String)
+                && !(value instanceof com.aliyun.ros.cdk.core.IResolvable)
+                && !(value.getClass().equals(software.amazon.jsii.JsiiObject.class))
+            ) {
+                throw new IllegalArgumentException(
+                    new java.lang.StringBuilder("Expected ")
+                        .append("value")
+                        .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                        .append(value.getClass()).toString());
+            }
+        }
+        return software.amazon.jsii.JsiiObject.jsiiStaticCall(com.aliyun.ros.cdk.core.Fn.class, "matchPattern", software.amazon.jsii.NativeType.forClass(java.lang.String.class), new Object[] { java.util.Objects.requireNonNull(pattern, "pattern is required"), java.util.Objects.requireNonNull(value, "value is required") });
     }
 
     public static @org.jetbrains.annotations.NotNull java.lang.Number max(final @org.jetbrains.annotations.NotNull java.util.List<? extends java.lang.Number> values) {

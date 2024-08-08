@@ -1040,7 +1040,7 @@ function RosClusterAddons_WaitUntilPropertyValidator(properties: any): ros.Valid
         errors.collect(ros.propertyValidator('timeout', ros.validateRange)({
             data: properties.timeout,
             min: 10,
-            max: 3600,
+            max: 10800,
           }));
     }
     errors.collect(ros.propertyValidator('timeout', ros.validateNumber)(properties.timeout));
@@ -1402,7 +1402,7 @@ function RosClusterApplication_WaitUntilPropertyValidator(properties: any): ros.
         errors.collect(ros.propertyValidator('timeout', ros.validateRange)({
             data: properties.timeout,
             min: 10,
-            max: 3600,
+            max: 10800,
           }));
     }
     errors.collect(ros.propertyValidator('timeout', ros.validateNumber)(properties.timeout));
@@ -1827,7 +1827,7 @@ function RosClusterHelmApplication_WaitUntilPropertyValidator(properties: any): 
         errors.collect(ros.propertyValidator('timeout', ros.validateRange)({
             data: properties.timeout,
             min: 10,
-            max: 3600,
+            max: 10800,
           }));
     }
     errors.collect(ros.propertyValidator('timeout', ros.validateNumber)(properties.timeout));

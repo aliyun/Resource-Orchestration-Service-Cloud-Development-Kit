@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.rocketmq.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rocketmq-groups
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.027Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:13.789Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq.datasource.RosGroupsProps")
 @software.amazon.jsii.Jsii.Proxy(RosGroupsProps.Jsii$Proxy.class)
 public interface RosGroupsProps extends software.amazon.jsii.JsiiSerializable {
@@ -29,6 +29,12 @@ public interface RosGroupsProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosGroupsProps}
      */
     static Builder builder() {
@@ -41,6 +47,7 @@ public interface RosGroupsProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object groupName;
         java.lang.Object groupType;
         java.lang.Object instanceId;
+        java.lang.Object refreshOptions;
 
         /**
          * Sets the value of {@link RosGroupsProps#getGroupName}
@@ -103,6 +110,26 @@ public interface RosGroupsProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosGroupsProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosGroupsProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosGroupsProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -121,6 +148,7 @@ public interface RosGroupsProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object groupName;
         private final java.lang.Object groupType;
         private final java.lang.Object instanceId;
+        private final java.lang.Object refreshOptions;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -131,6 +159,7 @@ public interface RosGroupsProps extends software.amazon.jsii.JsiiSerializable {
             this.groupName = software.amazon.jsii.Kernel.get(this, "groupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.groupType = software.amazon.jsii.Kernel.get(this, "groupType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -141,6 +170,7 @@ public interface RosGroupsProps extends software.amazon.jsii.JsiiSerializable {
             this.groupName = builder.groupName;
             this.groupType = builder.groupType;
             this.instanceId = builder.instanceId;
+            this.refreshOptions = builder.refreshOptions;
         }
 
         @Override
@@ -159,6 +189,11 @@ public interface RosGroupsProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -172,6 +207,9 @@ public interface RosGroupsProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getInstanceId() != null) {
                 data.set("instanceId", om.valueToTree(this.getInstanceId()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -193,7 +231,8 @@ public interface RosGroupsProps extends software.amazon.jsii.JsiiSerializable {
 
             if (this.groupName != null ? !this.groupName.equals(that.groupName) : that.groupName != null) return false;
             if (this.groupType != null ? !this.groupType.equals(that.groupType) : that.groupType != null) return false;
-            return this.instanceId != null ? this.instanceId.equals(that.instanceId) : that.instanceId == null;
+            if (this.instanceId != null ? !this.instanceId.equals(that.instanceId) : that.instanceId != null) return false;
+            return this.refreshOptions != null ? this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions == null;
         }
 
         @Override
@@ -201,6 +240,7 @@ public interface RosGroupsProps extends software.amazon.jsii.JsiiSerializable {
             int result = this.groupName != null ? this.groupName.hashCode() : 0;
             result = 31 * result + (this.groupType != null ? this.groupType.hashCode() : 0);
             result = 31 * result + (this.instanceId != null ? this.instanceId.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             return result;
         }
     }

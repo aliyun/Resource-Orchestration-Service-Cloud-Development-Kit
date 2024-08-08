@@ -5,10 +5,25 @@ package com.aliyun.ros.cdk.cr.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cr-repositories
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:05.326Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:08.668Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.datasource.RepositoriesProps")
 @software.amazon.jsii.Jsii.Proxy(RepositoriesProps.Jsii$Proxy.class)
 public interface RepositoriesProps extends software.amazon.jsii.JsiiSerializable {
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
 
     /**
      * Property repoNamespace: The namespace of repository.
@@ -34,8 +49,43 @@ public interface RepositoriesProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link RepositoriesProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RepositoriesProps> {
+        java.lang.Object refreshOptions;
         java.lang.Object repoNamespace;
         java.lang.Object status;
+
+        /**
+         * Sets the value of {@link RepositoriesProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RepositoriesProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
 
         /**
          * Sets the value of {@link RepositoriesProps#getRepoNamespace}
@@ -93,6 +143,7 @@ public interface RepositoriesProps extends software.amazon.jsii.JsiiSerializable
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RepositoriesProps {
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object repoNamespace;
         private final java.lang.Object status;
 
@@ -102,6 +153,7 @@ public interface RepositoriesProps extends software.amazon.jsii.JsiiSerializable
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.repoNamespace = software.amazon.jsii.Kernel.get(this, "repoNamespace", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.status = software.amazon.jsii.Kernel.get(this, "status", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -111,8 +163,14 @@ public interface RepositoriesProps extends software.amazon.jsii.JsiiSerializable
          */
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+            this.refreshOptions = builder.refreshOptions;
             this.repoNamespace = builder.repoNamespace;
             this.status = builder.status;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -131,6 +189,9 @@ public interface RepositoriesProps extends software.amazon.jsii.JsiiSerializable
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
+            }
             if (this.getRepoNamespace() != null) {
                 data.set("repoNamespace", om.valueToTree(this.getRepoNamespace()));
             }
@@ -155,13 +216,15 @@ public interface RepositoriesProps extends software.amazon.jsii.JsiiSerializable
 
             RepositoriesProps.Jsii$Proxy that = (RepositoriesProps.Jsii$Proxy) o;
 
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             if (this.repoNamespace != null ? !this.repoNamespace.equals(that.repoNamespace) : that.repoNamespace != null) return false;
             return this.status != null ? this.status.equals(that.status) : that.status == null;
         }
 
         @Override
         public final int hashCode() {
-            int result = this.repoNamespace != null ? this.repoNamespace.hashCode() : 0;
+            int result = this.refreshOptions != null ? this.refreshOptions.hashCode() : 0;
+            result = 31 * result + (this.repoNamespace != null ? this.repoNamespace.hashCode() : 0);
             result = 31 * result + (this.status != null ? this.status.hashCode() : 0);
             return result;
         }

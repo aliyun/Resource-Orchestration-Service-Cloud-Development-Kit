@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.arms.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-prometheusauthtoken
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:04.566Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:07.720Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.datasource.RosPrometheusAuthTokenProps")
 @software.amazon.jsii.Jsii.Proxy(RosPrometheusAuthTokenProps.Jsii$Proxy.class)
 public interface RosPrometheusAuthTokenProps extends software.amazon.jsii.JsiiSerializable {
@@ -13,6 +13,12 @@ public interface RosPrometheusAuthTokenProps extends software.amazon.jsii.JsiiSe
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getClusterId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
         return null;
     }
 
@@ -27,6 +33,7 @@ public interface RosPrometheusAuthTokenProps extends software.amazon.jsii.JsiiSe
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosPrometheusAuthTokenProps> {
         java.lang.Object clusterId;
+        java.lang.Object refreshOptions;
 
         /**
          * Sets the value of {@link RosPrometheusAuthTokenProps#getClusterId}
@@ -49,6 +56,26 @@ public interface RosPrometheusAuthTokenProps extends software.amazon.jsii.JsiiSe
         }
 
         /**
+         * Sets the value of {@link RosPrometheusAuthTokenProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrometheusAuthTokenProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosPrometheusAuthTokenProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -65,6 +92,7 @@ public interface RosPrometheusAuthTokenProps extends software.amazon.jsii.JsiiSe
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosPrometheusAuthTokenProps {
         private final java.lang.Object clusterId;
+        private final java.lang.Object refreshOptions;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -73,6 +101,7 @@ public interface RosPrometheusAuthTokenProps extends software.amazon.jsii.JsiiSe
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.clusterId = software.amazon.jsii.Kernel.get(this, "clusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -81,11 +110,17 @@ public interface RosPrometheusAuthTokenProps extends software.amazon.jsii.JsiiSe
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.clusterId = builder.clusterId;
+            this.refreshOptions = builder.refreshOptions;
         }
 
         @Override
         public final java.lang.Object getClusterId() {
             return this.clusterId;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -96,6 +131,9 @@ public interface RosPrometheusAuthTokenProps extends software.amazon.jsii.JsiiSe
 
             if (this.getClusterId() != null) {
                 data.set("clusterId", om.valueToTree(this.getClusterId()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -115,12 +153,14 @@ public interface RosPrometheusAuthTokenProps extends software.amazon.jsii.JsiiSe
 
             RosPrometheusAuthTokenProps.Jsii$Proxy that = (RosPrometheusAuthTokenProps.Jsii$Proxy) o;
 
-            return this.clusterId != null ? this.clusterId.equals(that.clusterId) : that.clusterId == null;
+            if (this.clusterId != null ? !this.clusterId.equals(that.clusterId) : that.clusterId != null) return false;
+            return this.refreshOptions != null ? this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.clusterId != null ? this.clusterId.hashCode() : 0;
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             return result;
         }
     }

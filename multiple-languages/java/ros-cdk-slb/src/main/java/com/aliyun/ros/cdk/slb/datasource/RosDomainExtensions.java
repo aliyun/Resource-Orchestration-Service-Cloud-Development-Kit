@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::SLB::DomainExtensions</code>, which is used to query the domain name extensions that are added to a listener of a Server Load Balancer (SLB) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.373Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:14.235Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.datasource.RosDomainExtensions")
 public class RosDomainExtensions extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -120,6 +120,24 @@ public class RosDomainExtensions extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setRefreshOptions(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "refreshOptions", value);
+    }
+
+    /**
+     */
+    public void setRefreshOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "refreshOptions", value);
+    }
+
+    /**
      * A fluent builder for {@link com.aliyun.ros.cdk.slb.datasource.RosDomainExtensions}.
      */
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.slb.datasource.RosDomainExtensions> {
@@ -193,6 +211,23 @@ public class RosDomainExtensions extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder domainExtensionId(final com.aliyun.ros.cdk.core.IResolvable domainExtensionId) {
             this.props.domainExtensionId(domainExtensionId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param refreshOptions This parameter is required.
+         */
+        public Builder refreshOptions(final java.lang.String refreshOptions) {
+            this.props.refreshOptions(refreshOptions);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param refreshOptions This parameter is required.
+         */
+        public Builder refreshOptions(final com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.props.refreshOptions(refreshOptions);
             return this;
         }
 

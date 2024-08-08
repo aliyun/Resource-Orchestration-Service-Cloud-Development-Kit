@@ -3,6 +3,168 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosAccount`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-account
+ */
+export interface RosAccountProps {
+
+    /**
+     * @Property accountName: The name of the account that you want to query.
+     */
+    readonly accountName: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The ID of the Redis instance.
+     */
+    readonly instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAccountProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAccountProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAccountPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
+    errors.collect(ros.propertyValidator('accountName', ros.requiredValidator)(properties.accountName));
+    errors.collect(ros.propertyValidator('accountName', ros.validateString)(properties.accountName));
+    return errors.wrap('supplied properties not correct for "RosAccountProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::REDIS::Account` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAccountProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::REDIS::Account` resource.
+ */
+// @ts-ignore TS6133
+function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAccountPropsValidator(properties).assertSuccess();
+    }
+    return {
+      AccountName: ros.stringToRosTemplate(properties.accountName),
+      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::REDIS::Account`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-account
+ */
+export class RosAccount extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::REDIS::Account";
+
+    /**
+     * @Attribute AccountName: The name of the account.
+     */
+    public readonly attrAccountName: ros.IResolvable;
+
+    /**
+     * @Attribute AccountPrivilege: The permission of the account. Default value: RoleReadWrite. Valid values:
+* RoleReadOnly: The account has the read-only permissions.
+* RoleReadWrite: The account has the read and write permissions.
+     */
+    public readonly attrAccountPrivilege: ros.IResolvable;
+
+    /**
+     * @Attribute AccountType: The type of the account. Valid values:
+* Normal: standard account
+* Super: super account
+     */
+    public readonly attrAccountType: ros.IResolvable;
+
+    /**
+     * @Attribute Description: The description of the account.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceId: The ID of the Redis instance.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property accountName: The name of the account that you want to query.
+     */
+    public accountName: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The ID of the Redis instance.
+     */
+    public instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAccountProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAccount.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAccountName = this.getAtt('AccountName');
+        this.attrAccountPrivilege = this.getAtt('AccountPrivilege');
+        this.attrAccountType = this.getAtt('AccountType');
+        this.attrDescription = this.getAtt('Description');
+        this.attrInstanceId = this.getAtt('InstanceId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.accountName = props.accountName;
+        this.instanceId = props.instanceId;
+        this.refreshOptions = props.refreshOptions;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            accountName: this.accountName,
+            instanceId: this.instanceId,
+            refreshOptions: this.refreshOptions,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAccountPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosAccounts`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-accounts
  */
@@ -17,6 +179,14 @@ export interface RosAccountsProps {
      * @Property accountName: The name of the Redis account.
      */
     readonly accountName?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -31,6 +201,13 @@ function RosAccountsPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     errors.collect(ros.propertyValidator('accountName', ros.validateString)(properties.accountName));
     return errors.wrap('supplied properties not correct for "RosAccountsProps"');
 }
@@ -51,6 +228,7 @@ function rosAccountsPropsToRosTemplate(properties: any, enableResourcePropertyCo
     return {
       InstanceId: ros.stringToRosTemplate(properties.instanceId),
       AccountName: ros.stringToRosTemplate(properties.accountName),
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -89,6 +267,14 @@ export class RosAccounts extends ros.RosResource {
     public accountName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -101,6 +287,7 @@ export class RosAccounts extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.instanceId = props.instanceId;
         this.accountName = props.accountName;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
@@ -108,6 +295,7 @@ export class RosAccounts extends ros.RosResource {
         return {
             instanceId: this.instanceId,
             accountName: this.accountName,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -125,6 +313,14 @@ export interface RosInstanceProps {
      * @Property dbInstanceId: Database instance id.
      */
     readonly dbInstanceId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -139,6 +335,13 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('dbInstanceId', ros.requiredValidator)(properties.dbInstanceId));
     errors.collect(ros.propertyValidator('dbInstanceId', ros.validateString)(properties.dbInstanceId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosInstanceProps"');
 }
 
@@ -157,6 +360,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
     }
     return {
       DBInstanceId: ros.stringToRosTemplate(properties.dbInstanceId),
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -375,6 +579,14 @@ export class RosInstance extends ros.RosResource {
     public dbInstanceId: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -423,12 +635,14 @@ export class RosInstance extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.dbInstanceId = props.dbInstanceId;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             dbInstanceId: this.dbInstanceId,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -493,6 +707,14 @@ export interface RosInstanceClassesProps {
     readonly productType?: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * @Property resourceGroupId: The ID of the instance.
      *  Note This parameter is required only if the OrderType parameter is set to UPGRADE or RENEW.
      */
@@ -524,6 +746,13 @@ function RosInstanceClassesPropsValidator(properties: any): ros.ValidationResult
     errors.collect(ros.propertyValidator('productType', ros.validateString)(properties.productType));
     errors.collect(ros.propertyValidator('acceptLanguage', ros.validateString)(properties.acceptLanguage));
     errors.collect(ros.propertyValidator('engine', ros.validateString)(properties.engine));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosInstanceClassesProps"');
 }
 
@@ -548,6 +777,7 @@ function rosInstanceClassesPropsToRosTemplate(properties: any, enableResourcePro
       NodeId: ros.stringToRosTemplate(properties.nodeId),
       OrderType: ros.stringToRosTemplate(properties.orderType),
       ProductType: ros.stringToRosTemplate(properties.productType),
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       ZoneId: ros.stringToRosTemplate(properties.zoneId),
     };
@@ -628,6 +858,14 @@ export class RosInstanceClasses extends ros.RosResource {
     public productType: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property resourceGroupId: The ID of the instance.
      *  Note This parameter is required only if the OrderType parameter is set to UPGRADE or RENEW.
      */
@@ -657,6 +895,7 @@ export class RosInstanceClasses extends ros.RosResource {
         this.nodeId = props.nodeId;
         this.orderType = props.orderType;
         this.productType = props.productType;
+        this.refreshOptions = props.refreshOptions;
         this.resourceGroupId = props.resourceGroupId;
         this.zoneId = props.zoneId;
     }
@@ -671,6 +910,7 @@ export class RosInstanceClasses extends ros.RosResource {
             nodeId: this.nodeId,
             orderType: this.orderType,
             productType: this.productType,
+            refreshOptions: this.refreshOptions,
             resourceGroupId: this.resourceGroupId,
             zoneId: this.zoneId,
         };
@@ -780,6 +1020,14 @@ export interface RosInstancesProps {
     readonly privateIp?: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * @Property resourceGroupId: The ID of the resource group to which the instance belongs.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -841,6 +1089,13 @@ function RosInstancesPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('expired', ros.validateString)(properties.expired));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('privateIp', ros.validateString)(properties.privateIp));
     if(properties.instanceStatus && (typeof properties.instanceStatus) !== 'object') {
@@ -909,6 +1164,7 @@ function rosInstancesPropsToRosTemplate(properties: any, enableResourcePropertyC
       InstanceType: ros.stringToRosTemplate(properties.instanceType),
       NetworkType: ros.stringToRosTemplate(properties.networkType),
       PrivateIp: ros.stringToRosTemplate(properties.privateIp),
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       SearchKey: ros.stringToRosTemplate(properties.searchKey),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
@@ -1035,6 +1291,14 @@ export class RosInstances extends ros.RosResource {
     public privateIp: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property resourceGroupId: The ID of the resource group to which the instance belongs.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
@@ -1082,6 +1346,7 @@ export class RosInstances extends ros.RosResource {
         this.instanceType = props.instanceType;
         this.networkType = props.networkType;
         this.privateIp = props.privateIp;
+        this.refreshOptions = props.refreshOptions;
         this.resourceGroupId = props.resourceGroupId;
         this.searchKey = props.searchKey;
         this.vpcId = props.vpcId;
@@ -1104,6 +1369,7 @@ export class RosInstances extends ros.RosResource {
             instanceType: this.instanceType,
             networkType: this.networkType,
             privateIp: this.privateIp,
+            refreshOptions: this.refreshOptions,
             resourceGroupId: this.resourceGroupId,
             searchKey: this.searchKey,
             vpcId: this.vpcId,

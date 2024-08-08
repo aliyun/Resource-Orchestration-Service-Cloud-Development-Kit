@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-diskcategories
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:06.617Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:10.324Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.datasource.RosDiskCategoriesProps")
 @software.amazon.jsii.Jsii.Proxy(RosDiskCategoriesProps.Jsii$Proxy.class)
 public interface RosDiskCategoriesProps extends software.amazon.jsii.JsiiSerializable {
@@ -32,6 +32,12 @@ public interface RosDiskCategoriesProps extends software.amazon.jsii.JsiiSeriali
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskCategory() {
         return null;
     }
@@ -50,6 +56,7 @@ public interface RosDiskCategoriesProps extends software.amazon.jsii.JsiiSeriali
         java.lang.Object zoneId;
         java.lang.Object dataDiskCategory;
         java.lang.Object instanceType;
+        java.lang.Object refreshOptions;
         java.lang.Object systemDiskCategory;
 
         /**
@@ -133,6 +140,26 @@ public interface RosDiskCategoriesProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosDiskCategoriesProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDiskCategoriesProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDiskCategoriesProps#getSystemDiskCategory}
          * @param systemDiskCategory the value to be set.
          * @return {@code this}
@@ -172,6 +199,7 @@ public interface RosDiskCategoriesProps extends software.amazon.jsii.JsiiSeriali
         private final java.lang.Object zoneId;
         private final java.lang.Object dataDiskCategory;
         private final java.lang.Object instanceType;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object systemDiskCategory;
 
         /**
@@ -184,6 +212,7 @@ public interface RosDiskCategoriesProps extends software.amazon.jsii.JsiiSeriali
             this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dataDiskCategory = software.amazon.jsii.Kernel.get(this, "dataDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceType = software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskCategory = software.amazon.jsii.Kernel.get(this, "systemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -196,6 +225,7 @@ public interface RosDiskCategoriesProps extends software.amazon.jsii.JsiiSeriali
             this.zoneId = java.util.Objects.requireNonNull(builder.zoneId, "zoneId is required");
             this.dataDiskCategory = builder.dataDiskCategory;
             this.instanceType = builder.instanceType;
+            this.refreshOptions = builder.refreshOptions;
             this.systemDiskCategory = builder.systemDiskCategory;
         }
 
@@ -220,6 +250,11 @@ public interface RosDiskCategoriesProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
+        }
+
+        @Override
         public final java.lang.Object getSystemDiskCategory() {
             return this.systemDiskCategory;
         }
@@ -237,6 +272,9 @@ public interface RosDiskCategoriesProps extends software.amazon.jsii.JsiiSeriali
             }
             if (this.getInstanceType() != null) {
                 data.set("instanceType", om.valueToTree(this.getInstanceType()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
             if (this.getSystemDiskCategory() != null) {
                 data.set("systemDiskCategory", om.valueToTree(this.getSystemDiskCategory()));
@@ -263,6 +301,7 @@ public interface RosDiskCategoriesProps extends software.amazon.jsii.JsiiSeriali
             if (!zoneId.equals(that.zoneId)) return false;
             if (this.dataDiskCategory != null ? !this.dataDiskCategory.equals(that.dataDiskCategory) : that.dataDiskCategory != null) return false;
             if (this.instanceType != null ? !this.instanceType.equals(that.instanceType) : that.instanceType != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             return this.systemDiskCategory != null ? this.systemDiskCategory.equals(that.systemDiskCategory) : that.systemDiskCategory == null;
         }
 
@@ -272,6 +311,7 @@ public interface RosDiskCategoriesProps extends software.amazon.jsii.JsiiSeriali
             result = 31 * result + (this.zoneId.hashCode());
             result = 31 * result + (this.dataDiskCategory != null ? this.dataDiskCategory.hashCode() : 0);
             result = 31 * result + (this.instanceType != null ? this.instanceType.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.systemDiskCategory != null ? this.systemDiskCategory.hashCode() : 0);
             return result;
         }

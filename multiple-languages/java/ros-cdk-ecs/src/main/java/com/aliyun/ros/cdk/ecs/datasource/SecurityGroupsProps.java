@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-securitygroups
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:06.670Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:10.432Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.datasource.SecurityGroupsProps")
 @software.amazon.jsii.Jsii.Proxy(SecurityGroupsProps.Jsii$Proxy.class)
 public interface SecurityGroupsProps extends software.amazon.jsii.JsiiSerializable {
@@ -18,6 +18,21 @@ public interface SecurityGroupsProps extends software.amazon.jsii.JsiiSerializab
      * classic
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNetworkType() {
+        return null;
+    }
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
         return null;
     }
 
@@ -90,6 +105,7 @@ public interface SecurityGroupsProps extends software.amazon.jsii.JsiiSerializab
      */
     public static final class Builder implements software.amazon.jsii.Builder<SecurityGroupsProps> {
         java.lang.Object networkType;
+        java.lang.Object refreshOptions;
         java.lang.Object resourceGroupId;
         java.lang.Object securityGroupId;
         java.lang.Object securityGroupIds;
@@ -121,6 +137,40 @@ public interface SecurityGroupsProps extends software.amazon.jsii.JsiiSerializab
          */
         public Builder networkType(com.aliyun.ros.cdk.core.IResolvable networkType) {
             this.networkType = networkType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SecurityGroupsProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SecurityGroupsProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
             return this;
         }
 
@@ -284,6 +334,7 @@ public interface SecurityGroupsProps extends software.amazon.jsii.JsiiSerializab
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements SecurityGroupsProps {
         private final java.lang.Object networkType;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object securityGroupId;
         private final java.lang.Object securityGroupIds;
@@ -299,6 +350,7 @@ public interface SecurityGroupsProps extends software.amazon.jsii.JsiiSerializab
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupIds = software.amazon.jsii.Kernel.get(this, "securityGroupIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -315,6 +367,7 @@ public interface SecurityGroupsProps extends software.amazon.jsii.JsiiSerializab
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.networkType = builder.networkType;
+            this.refreshOptions = builder.refreshOptions;
             this.resourceGroupId = builder.resourceGroupId;
             this.securityGroupId = builder.securityGroupId;
             this.securityGroupIds = builder.securityGroupIds;
@@ -327,6 +380,11 @@ public interface SecurityGroupsProps extends software.amazon.jsii.JsiiSerializab
         @Override
         public final java.lang.Object getNetworkType() {
             return this.networkType;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -373,6 +431,9 @@ public interface SecurityGroupsProps extends software.amazon.jsii.JsiiSerializab
             if (this.getNetworkType() != null) {
                 data.set("networkType", om.valueToTree(this.getNetworkType()));
             }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
+            }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
@@ -413,6 +474,7 @@ public interface SecurityGroupsProps extends software.amazon.jsii.JsiiSerializab
             SecurityGroupsProps.Jsii$Proxy that = (SecurityGroupsProps.Jsii$Proxy) o;
 
             if (this.networkType != null ? !this.networkType.equals(that.networkType) : that.networkType != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
             if (this.securityGroupIds != null ? !this.securityGroupIds.equals(that.securityGroupIds) : that.securityGroupIds != null) return false;
@@ -425,6 +487,7 @@ public interface SecurityGroupsProps extends software.amazon.jsii.JsiiSerializab
         @Override
         public final int hashCode() {
             int result = this.networkType != null ? this.networkType.hashCode() : 0;
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
             result = 31 * result + (this.securityGroupIds != null ? this.securityGroupIds.hashCode() : 0);

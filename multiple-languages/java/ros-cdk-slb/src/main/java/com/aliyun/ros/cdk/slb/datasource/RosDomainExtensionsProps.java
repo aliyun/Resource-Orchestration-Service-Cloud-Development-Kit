@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.slb.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-domainextensions
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.374Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:14.236Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.datasource.RosDomainExtensionsProps")
 @software.amazon.jsii.Jsii.Proxy(RosDomainExtensionsProps.Jsii$Proxy.class)
 public interface RosDomainExtensionsProps extends software.amazon.jsii.JsiiSerializable {
@@ -25,6 +25,12 @@ public interface RosDomainExtensionsProps extends software.amazon.jsii.JsiiSeria
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosDomainExtensionsProps}
      */
     static Builder builder() {
@@ -37,6 +43,7 @@ public interface RosDomainExtensionsProps extends software.amazon.jsii.JsiiSeria
         java.lang.Object listenerPort;
         java.lang.Object loadBalancerId;
         java.lang.Object domainExtensionId;
+        java.lang.Object refreshOptions;
 
         /**
          * Sets the value of {@link RosDomainExtensionsProps#getListenerPort}
@@ -99,6 +106,26 @@ public interface RosDomainExtensionsProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosDomainExtensionsProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDomainExtensionsProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosDomainExtensionsProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -117,6 +144,7 @@ public interface RosDomainExtensionsProps extends software.amazon.jsii.JsiiSeria
         private final java.lang.Object listenerPort;
         private final java.lang.Object loadBalancerId;
         private final java.lang.Object domainExtensionId;
+        private final java.lang.Object refreshOptions;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -127,6 +155,7 @@ public interface RosDomainExtensionsProps extends software.amazon.jsii.JsiiSeria
             this.listenerPort = software.amazon.jsii.Kernel.get(this, "listenerPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loadBalancerId = software.amazon.jsii.Kernel.get(this, "loadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.domainExtensionId = software.amazon.jsii.Kernel.get(this, "domainExtensionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -137,6 +166,7 @@ public interface RosDomainExtensionsProps extends software.amazon.jsii.JsiiSeria
             this.listenerPort = java.util.Objects.requireNonNull(builder.listenerPort, "listenerPort is required");
             this.loadBalancerId = java.util.Objects.requireNonNull(builder.loadBalancerId, "loadBalancerId is required");
             this.domainExtensionId = builder.domainExtensionId;
+            this.refreshOptions = builder.refreshOptions;
         }
 
         @Override
@@ -155,6 +185,11 @@ public interface RosDomainExtensionsProps extends software.amazon.jsii.JsiiSeria
         }
 
         @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -164,6 +199,9 @@ public interface RosDomainExtensionsProps extends software.amazon.jsii.JsiiSeria
             data.set("loadBalancerId", om.valueToTree(this.getLoadBalancerId()));
             if (this.getDomainExtensionId() != null) {
                 data.set("domainExtensionId", om.valueToTree(this.getDomainExtensionId()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -185,7 +223,8 @@ public interface RosDomainExtensionsProps extends software.amazon.jsii.JsiiSeria
 
             if (!listenerPort.equals(that.listenerPort)) return false;
             if (!loadBalancerId.equals(that.loadBalancerId)) return false;
-            return this.domainExtensionId != null ? this.domainExtensionId.equals(that.domainExtensionId) : that.domainExtensionId == null;
+            if (this.domainExtensionId != null ? !this.domainExtensionId.equals(that.domainExtensionId) : that.domainExtensionId != null) return false;
+            return this.refreshOptions != null ? this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions == null;
         }
 
         @Override
@@ -193,6 +232,7 @@ public interface RosDomainExtensionsProps extends software.amazon.jsii.JsiiSeria
             int result = this.listenerPort.hashCode();
             result = 31 * result + (this.loadBalancerId.hashCode());
             result = 31 * result + (this.domainExtensionId != null ? this.domainExtensionId.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             return result;
         }
     }

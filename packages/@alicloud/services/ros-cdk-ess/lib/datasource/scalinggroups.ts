@@ -18,6 +18,14 @@ export interface ScalingGroupsProps {
     readonly groupType?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property scalingGroupIds: The ID of scaling group that you want to query.Valid values: 1 to 20. The IDs of inactive scaling groups are not displayed in the query results, and no error is reported.
      */
     readonly scalingGroupIds?: Array<string | ros.IResolvable> | ros.IResolvable;
@@ -65,6 +73,7 @@ export class ScalingGroups extends ros.Resource {
             scalingGroupNames: props.scalingGroupNames,
             groupType: props.groupType === undefined || props.groupType === null ? 'ECS' : props.groupType,
             scalingGroupIds: props.scalingGroupIds,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosScalingGroups;
         this.attrScalingGroupIds = rosScalingGroups.attrScalingGroupIds;

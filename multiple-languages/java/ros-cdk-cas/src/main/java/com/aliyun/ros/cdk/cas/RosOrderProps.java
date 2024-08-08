@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cas;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cas-order
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:04.627Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:07.824Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cas.$Module.class, fqn = "@alicloud/ros-cdk-cas.RosOrderProps")
 @software.amazon.jsii.Jsii.Proxy(RosOrderProps.Jsii$Proxy.class)
 public interface RosOrderProps extends software.amazon.jsii.JsiiSerializable {

@@ -19,6 +19,14 @@ export interface RosInstancesProps {
     readonly queryStr?: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * @Property resourceGroupId: The resource group id of lindorm instance.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -63,6 +71,7 @@ function RosInstancesPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('serviceType', ros.validateString)(properties.serviceType));
     errors.collect(ros.propertyValidator('queryStr', ros.validateString)(properties.queryStr));
+    errors.collect(ros.propertyValidator('supportEngine', ros.validateNumber)(properties.supportEngine));
     if(properties.instanceIds && (Array.isArray(properties.instanceIds) || (typeof properties.instanceIds) === 'string')) {
         errors.collect(ros.propertyValidator('instanceIds', ros.validateLength)({
             data: properties.instanceIds.length,
@@ -71,7 +80,6 @@ function RosInstancesPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('instanceIds', ros.listValidator(ros.validateString))(properties.instanceIds));
-    errors.collect(ros.propertyValidator('supportEngine', ros.validateNumber)(properties.supportEngine));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -80,6 +88,13 @@ function RosInstancesPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosInstances_TagsPropertyValidator))(properties.tags));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosInstancesProps"');
 }
 
@@ -99,6 +114,7 @@ function rosInstancesPropsToRosTemplate(properties: any, enableResourcePropertyC
     return {
       InstanceIds: ros.listMapper(ros.stringToRosTemplate)(properties.instanceIds),
       QueryStr: ros.stringToRosTemplate(properties.queryStr),
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       ServiceType: ros.stringToRosTemplate(properties.serviceType),
       SupportEngine: ros.numberToRosTemplate(properties.supportEngine),
@@ -141,6 +157,14 @@ export class RosInstances extends ros.RosResource {
     public queryStr: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property resourceGroupId: The resource group id of lindorm instance.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
@@ -178,6 +202,7 @@ export class RosInstances extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.instanceIds = props.instanceIds;
         this.queryStr = props.queryStr;
+        this.refreshOptions = props.refreshOptions;
         this.resourceGroupId = props.resourceGroupId;
         this.serviceType = props.serviceType;
         this.supportEngine = props.supportEngine;
@@ -189,6 +214,7 @@ export class RosInstances extends ros.RosResource {
         return {
             instanceIds: this.instanceIds,
             queryStr: this.queryStr,
+            refreshOptions: this.refreshOptions,
             resourceGroupId: this.resourceGroupId,
             serviceType: this.serviceType,
             supportEngine: this.supportEngine,

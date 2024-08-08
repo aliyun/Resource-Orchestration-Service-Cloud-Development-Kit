@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ros.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ros-stackinstance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.122Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:13.910Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.datasource.StackInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(StackInstanceProps.Jsii$Proxy.class)
 public interface StackInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -39,6 +39,21 @@ public interface StackInstanceProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link StackInstanceProps}
      */
     static Builder builder() {
@@ -52,6 +67,7 @@ public interface StackInstanceProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object stackInstanceAccountId;
         java.lang.Object stackInstanceRegionId;
         java.lang.Object outputOption;
+        java.lang.Object refreshOptions;
 
         /**
          * Sets the value of {@link StackInstanceProps#getStackGroupName}
@@ -142,6 +158,40 @@ public interface StackInstanceProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link StackInstanceProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link StackInstanceProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link StackInstanceProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -161,6 +211,7 @@ public interface StackInstanceProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object stackInstanceAccountId;
         private final java.lang.Object stackInstanceRegionId;
         private final java.lang.Object outputOption;
+        private final java.lang.Object refreshOptions;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -172,6 +223,7 @@ public interface StackInstanceProps extends software.amazon.jsii.JsiiSerializabl
             this.stackInstanceAccountId = software.amazon.jsii.Kernel.get(this, "stackInstanceAccountId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.stackInstanceRegionId = software.amazon.jsii.Kernel.get(this, "stackInstanceRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.outputOption = software.amazon.jsii.Kernel.get(this, "outputOption", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -183,6 +235,7 @@ public interface StackInstanceProps extends software.amazon.jsii.JsiiSerializabl
             this.stackInstanceAccountId = java.util.Objects.requireNonNull(builder.stackInstanceAccountId, "stackInstanceAccountId is required");
             this.stackInstanceRegionId = java.util.Objects.requireNonNull(builder.stackInstanceRegionId, "stackInstanceRegionId is required");
             this.outputOption = builder.outputOption;
+            this.refreshOptions = builder.refreshOptions;
         }
 
         @Override
@@ -206,6 +259,11 @@ public interface StackInstanceProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -216,6 +274,9 @@ public interface StackInstanceProps extends software.amazon.jsii.JsiiSerializabl
             data.set("stackInstanceRegionId", om.valueToTree(this.getStackInstanceRegionId()));
             if (this.getOutputOption() != null) {
                 data.set("outputOption", om.valueToTree(this.getOutputOption()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -238,7 +299,8 @@ public interface StackInstanceProps extends software.amazon.jsii.JsiiSerializabl
             if (!stackGroupName.equals(that.stackGroupName)) return false;
             if (!stackInstanceAccountId.equals(that.stackInstanceAccountId)) return false;
             if (!stackInstanceRegionId.equals(that.stackInstanceRegionId)) return false;
-            return this.outputOption != null ? this.outputOption.equals(that.outputOption) : that.outputOption == null;
+            if (this.outputOption != null ? !this.outputOption.equals(that.outputOption) : that.outputOption != null) return false;
+            return this.refreshOptions != null ? this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions == null;
         }
 
         @Override
@@ -247,6 +309,7 @@ public interface StackInstanceProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.stackInstanceAccountId.hashCode());
             result = 31 * result + (this.stackInstanceRegionId.hashCode());
             result = 31 * result + (this.outputOption != null ? this.outputOption.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             return result;
         }
     }

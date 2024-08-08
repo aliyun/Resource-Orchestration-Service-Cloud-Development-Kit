@@ -1211,6 +1211,11 @@ export class RosDBCluster extends ros.RosResource {
     public readonly attrCustomEndpointIds: ros.IResolvable;
 
     /**
+     * @Attribute DBClusterDescription: The description of the db cluster.
+     */
+    public readonly attrDbClusterDescription: ros.IResolvable;
+
+    /**
      * @Attribute DBClusterId: The ID of the ApsaraDB for POLARDB cluster.
      */
     public readonly attrDbClusterId: ros.IResolvable;
@@ -1631,6 +1636,7 @@ export class RosDBCluster extends ros.RosResource {
         this.attrColdStorageInstanceId = this.getAtt('ColdStorageInstanceId');
         this.attrCustomConnectionStrings = this.getAtt('CustomConnectionStrings');
         this.attrCustomEndpointIds = this.getAtt('CustomEndpointIds');
+        this.attrDbClusterDescription = this.getAtt('DBClusterDescription');
         this.attrDbClusterId = this.getAtt('DBClusterId');
         this.attrDbNodeIds = this.getAtt('DBNodeIds');
         this.attrOrderId = this.getAtt('OrderId');

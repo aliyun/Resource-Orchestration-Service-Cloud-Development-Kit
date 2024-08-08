@@ -1,4 +1,5 @@
 export * from './application';
+export * from './ingress';
 export * from './namespace';
 export * from './slbbinding';
 

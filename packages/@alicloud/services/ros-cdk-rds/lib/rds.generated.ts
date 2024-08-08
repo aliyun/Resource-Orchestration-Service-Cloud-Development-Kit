@@ -784,6 +784,11 @@ export interface RosDBInstanceProps {
     readonly backupRetentionPeriod?: number | ros.IResolvable;
 
     /**
+     * @Property burstingEnabled: Whether to enable bursting.
+     */
+    readonly burstingEnabled?: boolean | ros.IResolvable;
+
+    /**
      * @Property category: The edition of the instance. Valid values:
      * Basic: RDS Basic Edition
      * HighAvailability: RDS High-availability Edition
@@ -793,6 +798,11 @@ export interface RosDBInstanceProps {
      * serverless_basic: RDS Serverless Basic Edition
      */
     readonly category?: string | ros.IResolvable;
+
+    /**
+     * @Property coldDataEnabled: Whether to enable cold data storage.
+     */
+    readonly coldDataEnabled?: boolean | ros.IResolvable;
 
     /**
      * @Property compressType: The format used to compress backups. Valid values: 
@@ -895,6 +905,11 @@ export interface RosDBInstanceProps {
      * @Property instanceNetworkType: Instance network type, VPC or Classic
      */
     readonly instanceNetworkType?: string | ros.IResolvable;
+
+    /**
+     * @Property ioAccelerationEnabled: Whether to enable IO Acceleration, 1 for enable 0 for disable.
+     */
+    readonly ioAccelerationEnabled?: string | ros.IResolvable;
 
     /**
      * @Property localLogRetentionHours: The number of hours for which to retain log backup files on the instance. 
@@ -1197,6 +1212,13 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('engine', ros.validateString)(properties.engine));
     errors.collect(ros.propertyValidator('dbInstanceDescription', ros.validateString)(properties.dbInstanceDescription));
+    if(properties.ioAccelerationEnabled && (typeof properties.ioAccelerationEnabled) !== 'object') {
+        errors.collect(ros.propertyValidator('ioAccelerationEnabled', ros.validateAllowedValues)({
+          data: properties.ioAccelerationEnabled,
+          allowedValues: ["0","1"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ioAccelerationEnabled', ros.validateString)(properties.ioAccelerationEnabled));
     errors.collect(ros.propertyValidator('targetDedicatedHostIdForMaster', ros.validateString)(properties.targetDedicatedHostIdForMaster));
     errors.collect(ros.propertyValidator('engineVersion', ros.requiredValidator)(properties.engineVersion));
     if(properties.engineVersion && (Array.isArray(properties.engineVersion) || (typeof properties.engineVersion) === 'string')) {
@@ -1336,6 +1358,8 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('dbIsIgnoreCase', ros.validateNumber)(properties.dbIsIgnoreCase));
     errors.collect(ros.propertyValidator('maintainTime', ros.validateString)(properties.maintainTime));
     errors.collect(ros.propertyValidator('dbParamGroupId', ros.validateString)(properties.dbParamGroupId));
+    errors.collect(ros.propertyValidator('burstingEnabled', ros.validateBoolean)(properties.burstingEnabled));
+    errors.collect(ros.propertyValidator('coldDataEnabled', ros.validateBoolean)(properties.coldDataEnabled));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('targetDedicatedHostIdForLog', ros.validateString)(properties.targetDedicatedHostIdForLog));
     errors.collect(ros.propertyValidator('allocatePublicConnection', ros.validateBoolean)(properties.allocatePublicConnection));
@@ -1405,7 +1429,9 @@ function rosDBInstancePropsToRosTemplate(properties: any, enableResourceProperty
       BackUpCategory: ros.stringToRosTemplate(properties.backUpCategory),
       BackupPolicyMode: ros.stringToRosTemplate(properties.backupPolicyMode),
       BackupRetentionPeriod: ros.numberToRosTemplate(properties.backupRetentionPeriod),
+      BurstingEnabled: ros.booleanToRosTemplate(properties.burstingEnabled),
       Category: ros.stringToRosTemplate(properties.category),
+      ColdDataEnabled: ros.booleanToRosTemplate(properties.coldDataEnabled),
       CompressType: ros.numberToRosTemplate(properties.compressType),
       ConnectionMode: ros.stringToRosTemplate(properties.connectionMode),
       ConnectionStringPrefix: ros.stringToRosTemplate(properties.connectionStringPrefix),
@@ -1422,6 +1448,7 @@ function rosDBInstancePropsToRosTemplate(properties: any, enableResourceProperty
       EncryptionKey: ros.stringToRosTemplate(properties.encryptionKey),
       HighSpaceUsageProtection: ros.stringToRosTemplate(properties.highSpaceUsageProtection),
       InstanceNetworkType: ros.stringToRosTemplate(properties.instanceNetworkType),
+      IoAccelerationEnabled: ros.stringToRosTemplate(properties.ioAccelerationEnabled),
       LocalLogRetentionHours: ros.numberToRosTemplate(properties.localLogRetentionHours),
       LocalLogRetentionSpace: ros.numberToRosTemplate(properties.localLogRetentionSpace),
       LogBackupFrequency: ros.stringToRosTemplate(properties.logBackupFrequency),
@@ -1599,6 +1626,11 @@ export class RosDBInstance extends ros.RosResource {
     public backupRetentionPeriod: number | ros.IResolvable | undefined;
 
     /**
+     * @Property burstingEnabled: Whether to enable bursting.
+     */
+    public burstingEnabled: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property category: The edition of the instance. Valid values:
      * Basic: RDS Basic Edition
      * HighAvailability: RDS High-availability Edition
@@ -1608,6 +1640,11 @@ export class RosDBInstance extends ros.RosResource {
      * serverless_basic: RDS Serverless Basic Edition
      */
     public category: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property coldDataEnabled: Whether to enable cold data storage.
+     */
+    public coldDataEnabled: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property compressType: The format used to compress backups. Valid values: 
@@ -1710,6 +1747,11 @@ export class RosDBInstance extends ros.RosResource {
      * @Property instanceNetworkType: Instance network type, VPC or Classic
      */
     public instanceNetworkType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ioAccelerationEnabled: Whether to enable IO Acceleration, 1 for enable 0 for disable.
+     */
+    public ioAccelerationEnabled: string | ros.IResolvable | undefined;
 
     /**
      * @Property localLogRetentionHours: The number of hours for which to retain log backup files on the instance. 
@@ -1959,7 +2001,9 @@ export class RosDBInstance extends ros.RosResource {
         this.backUpCategory = props.backUpCategory;
         this.backupPolicyMode = props.backupPolicyMode;
         this.backupRetentionPeriod = props.backupRetentionPeriod;
+        this.burstingEnabled = props.burstingEnabled;
         this.category = props.category;
+        this.coldDataEnabled = props.coldDataEnabled;
         this.compressType = props.compressType;
         this.connectionMode = props.connectionMode;
         this.connectionStringPrefix = props.connectionStringPrefix;
@@ -1976,6 +2020,7 @@ export class RosDBInstance extends ros.RosResource {
         this.encryptionKey = props.encryptionKey;
         this.highSpaceUsageProtection = props.highSpaceUsageProtection;
         this.instanceNetworkType = props.instanceNetworkType;
+        this.ioAccelerationEnabled = props.ioAccelerationEnabled;
         this.localLogRetentionHours = props.localLogRetentionHours;
         this.localLogRetentionSpace = props.localLogRetentionSpace;
         this.logBackupFrequency = props.logBackupFrequency;
@@ -2029,7 +2074,9 @@ export class RosDBInstance extends ros.RosResource {
             backUpCategory: this.backUpCategory,
             backupPolicyMode: this.backupPolicyMode,
             backupRetentionPeriod: this.backupRetentionPeriod,
+            burstingEnabled: this.burstingEnabled,
             category: this.category,
+            coldDataEnabled: this.coldDataEnabled,
             compressType: this.compressType,
             connectionMode: this.connectionMode,
             connectionStringPrefix: this.connectionStringPrefix,
@@ -2046,6 +2093,7 @@ export class RosDBInstance extends ros.RosResource {
             encryptionKey: this.encryptionKey,
             highSpaceUsageProtection: this.highSpaceUsageProtection,
             instanceNetworkType: this.instanceNetworkType,
+            ioAccelerationEnabled: this.ioAccelerationEnabled,
             localLogRetentionHours: this.localLogRetentionHours,
             localLogRetentionSpace: this.localLogRetentionSpace,
             logBackupFrequency: this.logBackupFrequency,
@@ -4288,6 +4336,11 @@ export interface RosPrepayDBInstanceProps {
     readonly backupRetentionPeriod?: number | ros.IResolvable;
 
     /**
+     * @Property burstingEnabled: Whether to enable bursting.
+     */
+    readonly burstingEnabled?: boolean | ros.IResolvable;
+
+    /**
      * @Property category: The edition of the instance. Valid values:
      * Basic: RDS Basic Edition
      * HighAvailability: RDS High-availability Edition
@@ -4297,6 +4350,11 @@ export interface RosPrepayDBInstanceProps {
      * serverless_basic: RDS Serverless Basic Edition
      */
     readonly category?: string | ros.IResolvable;
+
+    /**
+     * @Property coldDataEnabled: Whether to enable cold data storage.
+     */
+    readonly coldDataEnabled?: boolean | ros.IResolvable;
 
     /**
      * @Property compressType: The format used to compress backups. Valid values: 
@@ -4404,6 +4462,11 @@ export interface RosPrepayDBInstanceProps {
      * @Property instanceNetworkType: Instance network type, VPC or Classic
      */
     readonly instanceNetworkType?: string | ros.IResolvable;
+
+    /**
+     * @Property ioAccelerationEnabled: Whether to enable IO Acceleration, 1 for enable 0 for disable.
+     */
+    readonly ioAccelerationEnabled?: string | ros.IResolvable;
 
     /**
      * @Property localLogRetentionHours: The number of hours for which to retain log backup files on the instance. 
@@ -4695,6 +4758,13 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
         }));
     }
     errors.collect(ros.propertyValidator('engine', ros.validateString)(properties.engine));
+    if(properties.ioAccelerationEnabled && (typeof properties.ioAccelerationEnabled) !== 'object') {
+        errors.collect(ros.propertyValidator('ioAccelerationEnabled', ros.validateAllowedValues)({
+          data: properties.ioAccelerationEnabled,
+          allowedValues: ["0","1"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ioAccelerationEnabled', ros.validateString)(properties.ioAccelerationEnabled));
     errors.collect(ros.propertyValidator('targetDedicatedHostIdForMaster', ros.validateString)(properties.targetDedicatedHostIdForMaster));
     errors.collect(ros.propertyValidator('engineVersion', ros.requiredValidator)(properties.engineVersion));
     if(properties.engineVersion && (Array.isArray(properties.engineVersion) || (typeof properties.engineVersion) === 'string')) {
@@ -4835,6 +4905,8 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
     errors.collect(ros.propertyValidator('commodityCode', ros.validateString)(properties.commodityCode));
     errors.collect(ros.propertyValidator('maintainTime', ros.validateString)(properties.maintainTime));
     errors.collect(ros.propertyValidator('dbParamGroupId', ros.validateString)(properties.dbParamGroupId));
+    errors.collect(ros.propertyValidator('burstingEnabled', ros.validateBoolean)(properties.burstingEnabled));
+    errors.collect(ros.propertyValidator('coldDataEnabled', ros.validateBoolean)(properties.coldDataEnabled));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('targetDedicatedHostIdForLog', ros.validateString)(properties.targetDedicatedHostIdForLog));
     errors.collect(ros.propertyValidator('allocatePublicConnection', ros.validateBoolean)(properties.allocatePublicConnection));
@@ -4858,6 +4930,7 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
     }
     errors.collect(ros.propertyValidator('backUpCategory', ros.validateString)(properties.backUpCategory));
     errors.collect(ros.propertyValidator('compressType', ros.validateNumber)(properties.compressType));
+    errors.collect(ros.propertyValidator('logBackupFrequency', ros.validateString)(properties.logBackupFrequency));
     if(properties.connectionStringType && (typeof properties.connectionStringType) !== 'object') {
         errors.collect(ros.propertyValidator('connectionStringType', ros.validateAllowedValues)({
           data: properties.connectionStringType,
@@ -4865,7 +4938,6 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
         }));
     }
     errors.collect(ros.propertyValidator('connectionStringType', ros.validateString)(properties.connectionStringType));
-    errors.collect(ros.propertyValidator('logBackupFrequency', ros.validateString)(properties.logBackupFrequency));
     errors.collect(ros.propertyValidator('couponCode', ros.validateString)(properties.couponCode));
     if(properties.masterUserType && (typeof properties.masterUserType) !== 'object') {
         errors.collect(ros.propertyValidator('masterUserType', ros.validateAllowedValues)({
@@ -4917,7 +4989,9 @@ function rosPrepayDBInstancePropsToRosTemplate(properties: any, enableResourcePr
       BackUpCategory: ros.stringToRosTemplate(properties.backUpCategory),
       BackupPolicyMode: ros.stringToRosTemplate(properties.backupPolicyMode),
       BackupRetentionPeriod: ros.numberToRosTemplate(properties.backupRetentionPeriod),
+      BurstingEnabled: ros.booleanToRosTemplate(properties.burstingEnabled),
       Category: ros.stringToRosTemplate(properties.category),
+      ColdDataEnabled: ros.booleanToRosTemplate(properties.coldDataEnabled),
       CompressType: ros.numberToRosTemplate(properties.compressType),
       ConnectionMode: ros.stringToRosTemplate(properties.connectionMode),
       ConnectionStringPrefix: ros.stringToRosTemplate(properties.connectionStringPrefix),
@@ -4935,6 +5009,7 @@ function rosPrepayDBInstancePropsToRosTemplate(properties: any, enableResourcePr
       EncryptionKey: ros.stringToRosTemplate(properties.encryptionKey),
       HighSpaceUsageProtection: ros.stringToRosTemplate(properties.highSpaceUsageProtection),
       InstanceNetworkType: ros.stringToRosTemplate(properties.instanceNetworkType),
+      IoAccelerationEnabled: ros.stringToRosTemplate(properties.ioAccelerationEnabled),
       LocalLogRetentionHours: ros.numberToRosTemplate(properties.localLogRetentionHours),
       LocalLogRetentionSpace: ros.numberToRosTemplate(properties.localLogRetentionSpace),
       LogBackupFrequency: ros.stringToRosTemplate(properties.logBackupFrequency),
@@ -5128,6 +5203,11 @@ export class RosPrepayDBInstance extends ros.RosResource {
     public backupRetentionPeriod: number | ros.IResolvable | undefined;
 
     /**
+     * @Property burstingEnabled: Whether to enable bursting.
+     */
+    public burstingEnabled: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property category: The edition of the instance. Valid values:
      * Basic: RDS Basic Edition
      * HighAvailability: RDS High-availability Edition
@@ -5137,6 +5217,11 @@ export class RosPrepayDBInstance extends ros.RosResource {
      * serverless_basic: RDS Serverless Basic Edition
      */
     public category: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property coldDataEnabled: Whether to enable cold data storage.
+     */
+    public coldDataEnabled: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property compressType: The format used to compress backups. Valid values: 
@@ -5244,6 +5329,11 @@ export class RosPrepayDBInstance extends ros.RosResource {
      * @Property instanceNetworkType: Instance network type, VPC or Classic
      */
     public instanceNetworkType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ioAccelerationEnabled: Whether to enable IO Acceleration, 1 for enable 0 for disable.
+     */
+    public ioAccelerationEnabled: string | ros.IResolvable | undefined;
 
     /**
      * @Property localLogRetentionHours: The number of hours for which to retain log backup files on the instance. 
@@ -5485,7 +5575,9 @@ export class RosPrepayDBInstance extends ros.RosResource {
         this.backUpCategory = props.backUpCategory;
         this.backupPolicyMode = props.backupPolicyMode;
         this.backupRetentionPeriod = props.backupRetentionPeriod;
+        this.burstingEnabled = props.burstingEnabled;
         this.category = props.category;
+        this.coldDataEnabled = props.coldDataEnabled;
         this.compressType = props.compressType;
         this.connectionMode = props.connectionMode;
         this.connectionStringPrefix = props.connectionStringPrefix;
@@ -5503,6 +5595,7 @@ export class RosPrepayDBInstance extends ros.RosResource {
         this.encryptionKey = props.encryptionKey;
         this.highSpaceUsageProtection = props.highSpaceUsageProtection;
         this.instanceNetworkType = props.instanceNetworkType;
+        this.ioAccelerationEnabled = props.ioAccelerationEnabled;
         this.localLogRetentionHours = props.localLogRetentionHours;
         this.localLogRetentionSpace = props.localLogRetentionSpace;
         this.logBackupFrequency = props.logBackupFrequency;
@@ -5557,7 +5650,9 @@ export class RosPrepayDBInstance extends ros.RosResource {
             backUpCategory: this.backUpCategory,
             backupPolicyMode: this.backupPolicyMode,
             backupRetentionPeriod: this.backupRetentionPeriod,
+            burstingEnabled: this.burstingEnabled,
             category: this.category,
+            coldDataEnabled: this.coldDataEnabled,
             compressType: this.compressType,
             connectionMode: this.connectionMode,
             connectionStringPrefix: this.connectionStringPrefix,
@@ -5575,6 +5670,7 @@ export class RosPrepayDBInstance extends ros.RosResource {
             encryptionKey: this.encryptionKey,
             highSpaceUsageProtection: this.highSpaceUsageProtection,
             instanceNetworkType: this.instanceNetworkType,
+            ioAccelerationEnabled: this.ioAccelerationEnabled,
             localLogRetentionHours: this.localLogRetentionHours,
             localLogRetentionSpace: this.localLogRetentionSpace,
             logBackupFrequency: this.logBackupFrequency,

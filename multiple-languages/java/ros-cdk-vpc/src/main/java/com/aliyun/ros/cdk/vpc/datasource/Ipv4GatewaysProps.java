@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-ipv4gateways
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.862Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:14.981Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.Ipv4GatewaysProps")
 @software.amazon.jsii.Jsii.Proxy(Ipv4GatewaysProps.Jsii$Proxy.class)
 public interface Ipv4GatewaysProps extends software.amazon.jsii.JsiiSerializable {
@@ -21,6 +21,21 @@ public interface Ipv4GatewaysProps extends software.amazon.jsii.JsiiSerializable
      * Property ipv4GatewayName: Resource name.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getIpv4GatewayName() {
+        return null;
+    }
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
         return null;
     }
 
@@ -43,6 +58,7 @@ public interface Ipv4GatewaysProps extends software.amazon.jsii.JsiiSerializable
     public static final class Builder implements software.amazon.jsii.Builder<Ipv4GatewaysProps> {
         java.lang.Object ipv4GatewayId;
         java.lang.Object ipv4GatewayName;
+        java.lang.Object refreshOptions;
         java.lang.Object vpcId;
 
         /**
@@ -86,6 +102,40 @@ public interface Ipv4GatewaysProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link Ipv4GatewaysProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link Ipv4GatewaysProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link Ipv4GatewaysProps#getVpcId}
          * @param vpcId Property vpcId: The ID of the VPC associated with the IPv4 Gateway.
          * @return {@code this}
@@ -123,6 +173,7 @@ public interface Ipv4GatewaysProps extends software.amazon.jsii.JsiiSerializable
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements Ipv4GatewaysProps {
         private final java.lang.Object ipv4GatewayId;
         private final java.lang.Object ipv4GatewayName;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object vpcId;
 
         /**
@@ -133,6 +184,7 @@ public interface Ipv4GatewaysProps extends software.amazon.jsii.JsiiSerializable
             super(objRef);
             this.ipv4GatewayId = software.amazon.jsii.Kernel.get(this, "ipv4GatewayId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ipv4GatewayName = software.amazon.jsii.Kernel.get(this, "ipv4GatewayName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -143,6 +195,7 @@ public interface Ipv4GatewaysProps extends software.amazon.jsii.JsiiSerializable
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.ipv4GatewayId = builder.ipv4GatewayId;
             this.ipv4GatewayName = builder.ipv4GatewayName;
+            this.refreshOptions = builder.refreshOptions;
             this.vpcId = builder.vpcId;
         }
 
@@ -154,6 +207,11 @@ public interface Ipv4GatewaysProps extends software.amazon.jsii.JsiiSerializable
         @Override
         public final java.lang.Object getIpv4GatewayName() {
             return this.ipv4GatewayName;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -172,6 +230,9 @@ public interface Ipv4GatewaysProps extends software.amazon.jsii.JsiiSerializable
             }
             if (this.getIpv4GatewayName() != null) {
                 data.set("ipv4GatewayName", om.valueToTree(this.getIpv4GatewayName()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
             if (this.getVpcId() != null) {
                 data.set("vpcId", om.valueToTree(this.getVpcId()));
@@ -196,6 +257,7 @@ public interface Ipv4GatewaysProps extends software.amazon.jsii.JsiiSerializable
 
             if (this.ipv4GatewayId != null ? !this.ipv4GatewayId.equals(that.ipv4GatewayId) : that.ipv4GatewayId != null) return false;
             if (this.ipv4GatewayName != null ? !this.ipv4GatewayName.equals(that.ipv4GatewayName) : that.ipv4GatewayName != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             return this.vpcId != null ? this.vpcId.equals(that.vpcId) : that.vpcId == null;
         }
 
@@ -203,6 +265,7 @@ public interface Ipv4GatewaysProps extends software.amazon.jsii.JsiiSerializable
         public final int hashCode() {
             int result = this.ipv4GatewayId != null ? this.ipv4GatewayId.hashCode() : 0;
             result = 31 * result + (this.ipv4GatewayName != null ? this.ipv4GatewayName.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
             return result;
         }

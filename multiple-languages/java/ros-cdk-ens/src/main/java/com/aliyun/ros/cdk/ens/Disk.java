@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ens;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ENS::Disk</code>, which is used to create a pay-as-you-go or subscription data disk.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:06.919Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:10.744Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ens.$Module.class, fqn = "@alicloud/ros-cdk-ens.Disk")
 public class Disk extends com.aliyun.ros.cdk.core.Resource {
 

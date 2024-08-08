@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * The destination for a docker image asset, when it is given to the AssetManifestBuilder.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:03.852Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:06.793Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.AssetManifestDockerImageDestination")
 @software.amazon.jsii.Jsii.Proxy(AssetManifestDockerImageDestination.Jsii$Proxy.class)
 public interface AssetManifestDockerImageDestination extends software.amazon.jsii.JsiiSerializable {

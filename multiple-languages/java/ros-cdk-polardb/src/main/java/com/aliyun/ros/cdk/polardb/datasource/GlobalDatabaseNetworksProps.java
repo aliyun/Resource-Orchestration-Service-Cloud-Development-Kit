@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.polardb.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-globaldatabasenetworks
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:08.529Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:13.084Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.datasource.GlobalDatabaseNetworksProps")
 @software.amazon.jsii.Jsii.Proxy(GlobalDatabaseNetworksProps.Jsii$Proxy.class)
 public interface GlobalDatabaseNetworksProps extends software.amazon.jsii.JsiiSerializable {
@@ -25,6 +25,21 @@ public interface GlobalDatabaseNetworksProps extends software.amazon.jsii.JsiiSe
     }
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link GlobalDatabaseNetworksProps}
      */
     static Builder builder() {
@@ -36,6 +51,7 @@ public interface GlobalDatabaseNetworksProps extends software.amazon.jsii.JsiiSe
     public static final class Builder implements software.amazon.jsii.Builder<GlobalDatabaseNetworksProps> {
         java.lang.Object dbClusterId;
         java.lang.Object gdnId;
+        java.lang.Object refreshOptions;
 
         /**
          * Sets the value of {@link GlobalDatabaseNetworksProps#getDbClusterId}
@@ -78,6 +94,40 @@ public interface GlobalDatabaseNetworksProps extends software.amazon.jsii.JsiiSe
         }
 
         /**
+         * Sets the value of {@link GlobalDatabaseNetworksProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link GlobalDatabaseNetworksProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link GlobalDatabaseNetworksProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -95,6 +145,7 @@ public interface GlobalDatabaseNetworksProps extends software.amazon.jsii.JsiiSe
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements GlobalDatabaseNetworksProps {
         private final java.lang.Object dbClusterId;
         private final java.lang.Object gdnId;
+        private final java.lang.Object refreshOptions;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -104,6 +155,7 @@ public interface GlobalDatabaseNetworksProps extends software.amazon.jsii.JsiiSe
             super(objRef);
             this.dbClusterId = software.amazon.jsii.Kernel.get(this, "dbClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.gdnId = software.amazon.jsii.Kernel.get(this, "gdnId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -113,6 +165,7 @@ public interface GlobalDatabaseNetworksProps extends software.amazon.jsii.JsiiSe
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.dbClusterId = builder.dbClusterId;
             this.gdnId = builder.gdnId;
+            this.refreshOptions = builder.refreshOptions;
         }
 
         @Override
@@ -126,6 +179,11 @@ public interface GlobalDatabaseNetworksProps extends software.amazon.jsii.JsiiSe
         }
 
         @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -136,6 +194,9 @@ public interface GlobalDatabaseNetworksProps extends software.amazon.jsii.JsiiSe
             }
             if (this.getGdnId() != null) {
                 data.set("gdnId", om.valueToTree(this.getGdnId()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -156,13 +217,15 @@ public interface GlobalDatabaseNetworksProps extends software.amazon.jsii.JsiiSe
             GlobalDatabaseNetworksProps.Jsii$Proxy that = (GlobalDatabaseNetworksProps.Jsii$Proxy) o;
 
             if (this.dbClusterId != null ? !this.dbClusterId.equals(that.dbClusterId) : that.dbClusterId != null) return false;
-            return this.gdnId != null ? this.gdnId.equals(that.gdnId) : that.gdnId == null;
+            if (this.gdnId != null ? !this.gdnId.equals(that.gdnId) : that.gdnId != null) return false;
+            return this.refreshOptions != null ? this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.dbClusterId != null ? this.dbClusterId.hashCode() : 0;
             result = 31 * result + (this.gdnId != null ? this.gdnId.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             return result;
         }
     }

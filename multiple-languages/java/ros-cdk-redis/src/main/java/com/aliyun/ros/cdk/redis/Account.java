@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.redis;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::REDIS::Account</code>, which is used to create an account that has the specified permissions on an ApsaraDB for Redis instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:08.905Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:13.582Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.Account")
 public class Account extends com.aliyun.ros.cdk.core.Resource {
 

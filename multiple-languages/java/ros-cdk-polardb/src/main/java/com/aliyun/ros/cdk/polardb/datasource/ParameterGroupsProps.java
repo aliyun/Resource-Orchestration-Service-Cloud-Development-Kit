@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.polardb.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-parametergroups
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:08.530Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:13.088Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.datasource.ParameterGroupsProps")
 @software.amazon.jsii.Jsii.Proxy(ParameterGroupsProps.Jsii$Proxy.class)
 public interface ParameterGroupsProps extends software.amazon.jsii.JsiiSerializable {
@@ -25,6 +25,21 @@ public interface ParameterGroupsProps extends software.amazon.jsii.JsiiSerializa
     }
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link ParameterGroupsProps}
      */
     static Builder builder() {
@@ -36,6 +51,7 @@ public interface ParameterGroupsProps extends software.amazon.jsii.JsiiSerializa
     public static final class Builder implements software.amazon.jsii.Builder<ParameterGroupsProps> {
         java.lang.Object dbType;
         java.lang.Object dbVersion;
+        java.lang.Object refreshOptions;
 
         /**
          * Sets the value of {@link ParameterGroupsProps#getDbType}
@@ -78,6 +94,40 @@ public interface ParameterGroupsProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link ParameterGroupsProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ParameterGroupsProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link ParameterGroupsProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -95,6 +145,7 @@ public interface ParameterGroupsProps extends software.amazon.jsii.JsiiSerializa
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ParameterGroupsProps {
         private final java.lang.Object dbType;
         private final java.lang.Object dbVersion;
+        private final java.lang.Object refreshOptions;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -104,6 +155,7 @@ public interface ParameterGroupsProps extends software.amazon.jsii.JsiiSerializa
             super(objRef);
             this.dbType = software.amazon.jsii.Kernel.get(this, "dbType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbVersion = software.amazon.jsii.Kernel.get(this, "dbVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -113,6 +165,7 @@ public interface ParameterGroupsProps extends software.amazon.jsii.JsiiSerializa
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.dbType = builder.dbType;
             this.dbVersion = builder.dbVersion;
+            this.refreshOptions = builder.refreshOptions;
         }
 
         @Override
@@ -126,6 +179,11 @@ public interface ParameterGroupsProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -136,6 +194,9 @@ public interface ParameterGroupsProps extends software.amazon.jsii.JsiiSerializa
             }
             if (this.getDbVersion() != null) {
                 data.set("dbVersion", om.valueToTree(this.getDbVersion()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -156,13 +217,15 @@ public interface ParameterGroupsProps extends software.amazon.jsii.JsiiSerializa
             ParameterGroupsProps.Jsii$Proxy that = (ParameterGroupsProps.Jsii$Proxy) o;
 
             if (this.dbType != null ? !this.dbType.equals(that.dbType) : that.dbType != null) return false;
-            return this.dbVersion != null ? this.dbVersion.equals(that.dbVersion) : that.dbVersion == null;
+            if (this.dbVersion != null ? !this.dbVersion.equals(that.dbVersion) : that.dbVersion != null) return false;
+            return this.refreshOptions != null ? this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.dbType != null ? this.dbType.hashCode() : 0;
             result = 31 * result + (this.dbVersion != null ? this.dbVersion.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             return result;
         }
     }

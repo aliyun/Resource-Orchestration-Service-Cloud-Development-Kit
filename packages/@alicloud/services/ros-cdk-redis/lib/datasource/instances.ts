@@ -103,6 +103,14 @@ export interface InstancesProps {
     readonly privateIp?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property resourceGroupId: The ID of the resource group to which the instance belongs.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -170,6 +178,7 @@ export class Instances extends ros.Resource {
             vSwitchId: props.vSwitchId,
             instanceClass: props.instanceClass,
             expired: props.expired,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
             vpcId: props.vpcId,
             privateIp: props.privateIp,
             instanceStatus: props.instanceStatus,

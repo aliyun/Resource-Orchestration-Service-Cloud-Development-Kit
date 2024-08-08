@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.apigateway.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-apis
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:04.498Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:07.578Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.datasource.ApisProps")
 @software.amazon.jsii.Jsii.Proxy(ApisProps.Jsii$Proxy.class)
 public interface ApisProps extends software.amazon.jsii.JsiiSerializable {
@@ -46,6 +46,21 @@ public interface ApisProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
      * Property visibility: Whether the API is public.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVisibility() {
@@ -67,6 +82,7 @@ public interface ApisProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object catalogId;
         java.lang.Object enableTagAuth;
         java.lang.Object groupId;
+        java.lang.Object refreshOptions;
         java.lang.Object visibility;
 
         /**
@@ -170,6 +186,40 @@ public interface ApisProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ApisProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ApisProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ApisProps#getVisibility}
          * @param visibility Property visibility: Whether the API is public.
          * @return {@code this}
@@ -210,6 +260,7 @@ public interface ApisProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object catalogId;
         private final java.lang.Object enableTagAuth;
         private final java.lang.Object groupId;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object visibility;
 
         /**
@@ -223,6 +274,7 @@ public interface ApisProps extends software.amazon.jsii.JsiiSerializable {
             this.catalogId = software.amazon.jsii.Kernel.get(this, "catalogId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enableTagAuth = software.amazon.jsii.Kernel.get(this, "enableTagAuth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.groupId = software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.visibility = software.amazon.jsii.Kernel.get(this, "visibility", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -236,6 +288,7 @@ public interface ApisProps extends software.amazon.jsii.JsiiSerializable {
             this.catalogId = builder.catalogId;
             this.enableTagAuth = builder.enableTagAuth;
             this.groupId = builder.groupId;
+            this.refreshOptions = builder.refreshOptions;
             this.visibility = builder.visibility;
         }
 
@@ -265,6 +318,11 @@ public interface ApisProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
+        }
+
+        @Override
         public final java.lang.Object getVisibility() {
             return this.visibility;
         }
@@ -289,6 +347,9 @@ public interface ApisProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getGroupId() != null) {
                 data.set("groupId", om.valueToTree(this.getGroupId()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
             if (this.getVisibility() != null) {
                 data.set("visibility", om.valueToTree(this.getVisibility()));
@@ -316,6 +377,7 @@ public interface ApisProps extends software.amazon.jsii.JsiiSerializable {
             if (this.catalogId != null ? !this.catalogId.equals(that.catalogId) : that.catalogId != null) return false;
             if (this.enableTagAuth != null ? !this.enableTagAuth.equals(that.enableTagAuth) : that.enableTagAuth != null) return false;
             if (this.groupId != null ? !this.groupId.equals(that.groupId) : that.groupId != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             return this.visibility != null ? this.visibility.equals(that.visibility) : that.visibility == null;
         }
 
@@ -326,6 +388,7 @@ public interface ApisProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.catalogId != null ? this.catalogId.hashCode() : 0);
             result = 31 * result + (this.enableTagAuth != null ? this.enableTagAuth.hashCode() : 0);
             result = 31 * result + (this.groupId != null ? this.groupId.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.visibility != null ? this.visibility.hashCode() : 0);
             return result;
         }

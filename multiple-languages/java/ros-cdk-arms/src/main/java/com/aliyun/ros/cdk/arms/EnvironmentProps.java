@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.arms;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-environment
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:04.527Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:07.675Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.EnvironmentProps")
 @software.amazon.jsii.Jsii.Proxy(EnvironmentProps.Jsii$Proxy.class)
 public interface EnvironmentProps extends software.amazon.jsii.JsiiSerializable {
@@ -42,6 +42,15 @@ public interface EnvironmentProps extends software.amazon.jsii.JsiiSerializable 
      * Cloud: cloud service
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getEnvironmentType();
+
+    /**
+     * Property deletePromInstance: Cascade delete Prometheus instance.
+     * <p>
+     * Default value: true.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeletePromInstance() {
+        return null;
+    }
 
     /**
      * Property feePackage: The payable resource plan.
@@ -112,6 +121,7 @@ public interface EnvironmentProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object environmentName;
         java.lang.Object environmentSubType;
         java.lang.Object environmentType;
+        java.lang.Object deletePromInstance;
         java.lang.Object feePackage;
         java.lang.Object grafanaWorkspaceId;
         java.lang.Object managedType;
@@ -216,6 +226,28 @@ public interface EnvironmentProps extends software.amazon.jsii.JsiiSerializable 
          */
         public Builder environmentType(com.aliyun.ros.cdk.core.IResolvable environmentType) {
             this.environmentType = environmentType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link EnvironmentProps#getDeletePromInstance}
+         * @param deletePromInstance Property deletePromInstance: Cascade delete Prometheus instance.
+         *                           Default value: true.
+         * @return {@code this}
+         */
+        public Builder deletePromInstance(java.lang.Boolean deletePromInstance) {
+            this.deletePromInstance = deletePromInstance;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link EnvironmentProps#getDeletePromInstance}
+         * @param deletePromInstance Property deletePromInstance: Cascade delete Prometheus instance.
+         *                           Default value: true.
+         * @return {@code this}
+         */
+        public Builder deletePromInstance(com.aliyun.ros.cdk.core.IResolvable deletePromInstance) {
+            this.deletePromInstance = deletePromInstance;
             return this;
         }
 
@@ -368,6 +400,7 @@ public interface EnvironmentProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object environmentName;
         private final java.lang.Object environmentSubType;
         private final java.lang.Object environmentType;
+        private final java.lang.Object deletePromInstance;
         private final java.lang.Object feePackage;
         private final java.lang.Object grafanaWorkspaceId;
         private final java.lang.Object managedType;
@@ -385,6 +418,7 @@ public interface EnvironmentProps extends software.amazon.jsii.JsiiSerializable 
             this.environmentName = software.amazon.jsii.Kernel.get(this, "environmentName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.environmentSubType = software.amazon.jsii.Kernel.get(this, "environmentSubType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.environmentType = software.amazon.jsii.Kernel.get(this, "environmentType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.deletePromInstance = software.amazon.jsii.Kernel.get(this, "deletePromInstance", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.feePackage = software.amazon.jsii.Kernel.get(this, "feePackage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.grafanaWorkspaceId = software.amazon.jsii.Kernel.get(this, "grafanaWorkspaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.managedType = software.amazon.jsii.Kernel.get(this, "managedType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -403,6 +437,7 @@ public interface EnvironmentProps extends software.amazon.jsii.JsiiSerializable 
             this.environmentName = java.util.Objects.requireNonNull(builder.environmentName, "environmentName is required");
             this.environmentSubType = java.util.Objects.requireNonNull(builder.environmentSubType, "environmentSubType is required");
             this.environmentType = java.util.Objects.requireNonNull(builder.environmentType, "environmentType is required");
+            this.deletePromInstance = builder.deletePromInstance;
             this.feePackage = builder.feePackage;
             this.grafanaWorkspaceId = builder.grafanaWorkspaceId;
             this.managedType = builder.managedType;
@@ -429,6 +464,11 @@ public interface EnvironmentProps extends software.amazon.jsii.JsiiSerializable 
         @Override
         public final java.lang.Object getEnvironmentType() {
             return this.environmentType;
+        }
+
+        @Override
+        public final java.lang.Object getDeletePromInstance() {
+            return this.deletePromInstance;
         }
 
         @Override
@@ -471,6 +511,9 @@ public interface EnvironmentProps extends software.amazon.jsii.JsiiSerializable 
             data.set("environmentName", om.valueToTree(this.getEnvironmentName()));
             data.set("environmentSubType", om.valueToTree(this.getEnvironmentSubType()));
             data.set("environmentType", om.valueToTree(this.getEnvironmentType()));
+            if (this.getDeletePromInstance() != null) {
+                data.set("deletePromInstance", om.valueToTree(this.getDeletePromInstance()));
+            }
             if (this.getFeePackage() != null) {
                 data.set("feePackage", om.valueToTree(this.getFeePackage()));
             }
@@ -511,6 +554,7 @@ public interface EnvironmentProps extends software.amazon.jsii.JsiiSerializable 
             if (!environmentName.equals(that.environmentName)) return false;
             if (!environmentSubType.equals(that.environmentSubType)) return false;
             if (!environmentType.equals(that.environmentType)) return false;
+            if (this.deletePromInstance != null ? !this.deletePromInstance.equals(that.deletePromInstance) : that.deletePromInstance != null) return false;
             if (this.feePackage != null ? !this.feePackage.equals(that.feePackage) : that.feePackage != null) return false;
             if (this.grafanaWorkspaceId != null ? !this.grafanaWorkspaceId.equals(that.grafanaWorkspaceId) : that.grafanaWorkspaceId != null) return false;
             if (this.managedType != null ? !this.managedType.equals(that.managedType) : that.managedType != null) return false;
@@ -525,6 +569,7 @@ public interface EnvironmentProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.environmentName.hashCode());
             result = 31 * result + (this.environmentSubType.hashCode());
             result = 31 * result + (this.environmentType.hashCode());
+            result = 31 * result + (this.deletePromInstance != null ? this.deletePromInstance.hashCode() : 0);
             result = 31 * result + (this.feePackage != null ? this.feePackage.hashCode() : 0);
             result = 31 * result + (this.grafanaWorkspaceId != null ? this.grafanaWorkspaceId.hashCode() : 0);
             result = 31 * result + (this.managedType != null ? this.managedType.hashCode() : 0);

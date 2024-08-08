@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-networkacls
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.879Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:14.998Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.NetworkAclsProps")
 @software.amazon.jsii.Jsii.Proxy(NetworkAclsProps.Jsii$Proxy.class)
 public interface NetworkAclsProps extends software.amazon.jsii.JsiiSerializable {
@@ -23,6 +23,21 @@ public interface NetworkAclsProps extends software.amazon.jsii.JsiiSerializable 
      * The name must be 2 to 128 characters in length, and can contain letters, digits, underscores (_), and hyphens (-). The name must start with a letter but cannot start with http:// or https://.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNetworkAclName() {
+        return null;
+    }
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
         return null;
     }
 
@@ -62,6 +77,7 @@ public interface NetworkAclsProps extends software.amazon.jsii.JsiiSerializable 
     public static final class Builder implements software.amazon.jsii.Builder<NetworkAclsProps> {
         java.lang.Object networkAclId;
         java.lang.Object networkAclName;
+        java.lang.Object refreshOptions;
         java.lang.Object resourceId;
         java.lang.Object resourceType;
         java.lang.Object vpcId;
@@ -105,6 +121,40 @@ public interface NetworkAclsProps extends software.amazon.jsii.JsiiSerializable 
          */
         public Builder networkAclName(com.aliyun.ros.cdk.core.IResolvable networkAclName) {
             this.networkAclName = networkAclName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link NetworkAclsProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link NetworkAclsProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
             return this;
         }
 
@@ -190,6 +240,7 @@ public interface NetworkAclsProps extends software.amazon.jsii.JsiiSerializable 
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements NetworkAclsProps {
         private final java.lang.Object networkAclId;
         private final java.lang.Object networkAclName;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object resourceId;
         private final java.lang.Object resourceType;
         private final java.lang.Object vpcId;
@@ -202,6 +253,7 @@ public interface NetworkAclsProps extends software.amazon.jsii.JsiiSerializable 
             super(objRef);
             this.networkAclId = software.amazon.jsii.Kernel.get(this, "networkAclId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.networkAclName = software.amazon.jsii.Kernel.get(this, "networkAclName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceId = software.amazon.jsii.Kernel.get(this, "resourceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceType = software.amazon.jsii.Kernel.get(this, "resourceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -214,6 +266,7 @@ public interface NetworkAclsProps extends software.amazon.jsii.JsiiSerializable 
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.networkAclId = builder.networkAclId;
             this.networkAclName = builder.networkAclName;
+            this.refreshOptions = builder.refreshOptions;
             this.resourceId = builder.resourceId;
             this.resourceType = builder.resourceType;
             this.vpcId = builder.vpcId;
@@ -227,6 +280,11 @@ public interface NetworkAclsProps extends software.amazon.jsii.JsiiSerializable 
         @Override
         public final java.lang.Object getNetworkAclName() {
             return this.networkAclName;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -255,6 +313,9 @@ public interface NetworkAclsProps extends software.amazon.jsii.JsiiSerializable 
             }
             if (this.getNetworkAclName() != null) {
                 data.set("networkAclName", om.valueToTree(this.getNetworkAclName()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
             if (this.getResourceId() != null) {
                 data.set("resourceId", om.valueToTree(this.getResourceId()));
@@ -285,6 +346,7 @@ public interface NetworkAclsProps extends software.amazon.jsii.JsiiSerializable 
 
             if (this.networkAclId != null ? !this.networkAclId.equals(that.networkAclId) : that.networkAclId != null) return false;
             if (this.networkAclName != null ? !this.networkAclName.equals(that.networkAclName) : that.networkAclName != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             if (this.resourceId != null ? !this.resourceId.equals(that.resourceId) : that.resourceId != null) return false;
             if (this.resourceType != null ? !this.resourceType.equals(that.resourceType) : that.resourceType != null) return false;
             return this.vpcId != null ? this.vpcId.equals(that.vpcId) : that.vpcId == null;
@@ -294,6 +356,7 @@ public interface NetworkAclsProps extends software.amazon.jsii.JsiiSerializable 
         public final int hashCode() {
             int result = this.networkAclId != null ? this.networkAclId.hashCode() : 0;
             result = 31 * result + (this.networkAclName != null ? this.networkAclName.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.resourceId != null ? this.resourceId.hashCode() : 0);
             result = 31 * result + (this.resourceType != null ? this.resourceType.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);

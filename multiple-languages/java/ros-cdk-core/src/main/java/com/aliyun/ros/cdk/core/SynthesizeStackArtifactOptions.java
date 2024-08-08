@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Stack artifact options.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:04.075Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:06.925Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.SynthesizeStackArtifactOptions")
 @software.amazon.jsii.Jsii.Proxy(SynthesizeStackArtifactOptions.Jsii$Proxy.class)
 public interface SynthesizeStackArtifactOptions extends software.amazon.jsii.JsiiSerializable {

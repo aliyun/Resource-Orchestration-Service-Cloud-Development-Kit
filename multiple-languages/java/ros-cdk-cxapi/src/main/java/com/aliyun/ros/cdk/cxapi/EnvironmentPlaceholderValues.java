@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cxapi;
 /**
  * Return the appropriate values for the environment placeholders.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:03.826Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:06.761Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cxapi.$Module.class, fqn = "@alicloud/ros-cdk-cxapi.EnvironmentPlaceholderValues")
 @software.amazon.jsii.Jsii.Proxy(EnvironmentPlaceholderValues.Jsii$Proxy.class)
 public interface EnvironmentPlaceholderValues extends software.amazon.jsii.JsiiSerializable {

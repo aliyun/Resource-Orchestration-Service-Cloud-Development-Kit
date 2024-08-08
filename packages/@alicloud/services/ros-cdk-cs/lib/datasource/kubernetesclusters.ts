@@ -40,6 +40,14 @@ export interface KubernetesClustersProps {
      * By default, this parameter is empty. This indicates that the parameter is not used to filter clusters.
      */
     readonly profile?: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -79,6 +87,7 @@ export class KubernetesClusters extends ros.Resource {
             clusterSpec: props.clusterSpec,
             clusterType: props.clusterType,
             profile: props.profile,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosKubernetesClusters;

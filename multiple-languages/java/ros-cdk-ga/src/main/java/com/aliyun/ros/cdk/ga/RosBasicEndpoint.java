@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::GA::BasicEndpoint</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:07.269Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:11.292Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.RosBasicEndpoint")
 public class RosBasicEndpoint extends com.aliyun.ros.cdk.core.RosResource {
 

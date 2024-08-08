@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * A single dependency.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:03.887Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:06.813Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Dependency")
 @software.amazon.jsii.Jsii.Proxy(Dependency.Jsii$Proxy.class)
 public interface Dependency extends software.amazon.jsii.JsiiSerializable {

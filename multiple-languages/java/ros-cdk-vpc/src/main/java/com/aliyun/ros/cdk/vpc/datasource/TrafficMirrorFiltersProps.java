@@ -5,10 +5,25 @@ package com.aliyun.ros.cdk.vpc.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-trafficmirrorfilters
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.941Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:15.109Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.TrafficMirrorFiltersProps")
 @software.amazon.jsii.Jsii.Proxy(TrafficMirrorFiltersProps.Jsii$Proxy.class)
 public interface TrafficMirrorFiltersProps extends software.amazon.jsii.JsiiSerializable {
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
 
     /**
      * Property trafficMirrorFilterName: The name of the TrafficMirrorFilter.
@@ -27,7 +42,42 @@ public interface TrafficMirrorFiltersProps extends software.amazon.jsii.JsiiSeri
      * A builder for {@link TrafficMirrorFiltersProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<TrafficMirrorFiltersProps> {
+        java.lang.Object refreshOptions;
         java.lang.Object trafficMirrorFilterName;
+
+        /**
+         * Sets the value of {@link TrafficMirrorFiltersProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TrafficMirrorFiltersProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
 
         /**
          * Sets the value of {@link TrafficMirrorFiltersProps#getTrafficMirrorFilterName}
@@ -65,6 +115,7 @@ public interface TrafficMirrorFiltersProps extends software.amazon.jsii.JsiiSeri
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TrafficMirrorFiltersProps {
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object trafficMirrorFilterName;
 
         /**
@@ -73,6 +124,7 @@ public interface TrafficMirrorFiltersProps extends software.amazon.jsii.JsiiSeri
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.trafficMirrorFilterName = software.amazon.jsii.Kernel.get(this, "trafficMirrorFilterName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -81,7 +133,13 @@ public interface TrafficMirrorFiltersProps extends software.amazon.jsii.JsiiSeri
          */
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+            this.refreshOptions = builder.refreshOptions;
             this.trafficMirrorFilterName = builder.trafficMirrorFilterName;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -95,6 +153,9 @@ public interface TrafficMirrorFiltersProps extends software.amazon.jsii.JsiiSeri
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
+            }
             if (this.getTrafficMirrorFilterName() != null) {
                 data.set("trafficMirrorFilterName", om.valueToTree(this.getTrafficMirrorFilterName()));
             }
@@ -116,12 +177,14 @@ public interface TrafficMirrorFiltersProps extends software.amazon.jsii.JsiiSeri
 
             TrafficMirrorFiltersProps.Jsii$Proxy that = (TrafficMirrorFiltersProps.Jsii$Proxy) o;
 
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             return this.trafficMirrorFilterName != null ? this.trafficMirrorFilterName.equals(that.trafficMirrorFilterName) : that.trafficMirrorFilterName == null;
         }
 
         @Override
         public final int hashCode() {
-            int result = this.trafficMirrorFilterName != null ? this.trafficMirrorFilterName.hashCode() : 0;
+            int result = this.refreshOptions != null ? this.refreshOptions.hashCode() : 0;
+            result = 31 * result + (this.trafficMirrorFilterName != null ? this.trafficMirrorFilterName.hashCode() : 0);
             return result;
         }
     }

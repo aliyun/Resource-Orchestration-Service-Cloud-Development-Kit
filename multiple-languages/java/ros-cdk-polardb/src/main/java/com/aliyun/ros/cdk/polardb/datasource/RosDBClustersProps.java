@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.polardb.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-dbclusters
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:08.531Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:13.090Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.datasource.RosDBClustersProps")
 @software.amazon.jsii.Jsii.Proxy(RosDBClustersProps.Jsii$Proxy.class)
 public interface RosDBClustersProps extends software.amazon.jsii.JsiiSerializable {
@@ -42,6 +42,12 @@ public interface RosDBClustersProps extends software.amazon.jsii.JsiiSerializabl
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
@@ -61,6 +67,7 @@ public interface RosDBClustersProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object dbVersion;
         java.lang.Object description;
         java.lang.Object expired;
+        java.lang.Object refreshOptions;
         java.lang.Object resourceGroupId;
 
         /**
@@ -164,6 +171,26 @@ public interface RosDBClustersProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosDBClustersProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClustersProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBClustersProps#getResourceGroupId}
          * @param resourceGroupId the value to be set.
          * @return {@code this}
@@ -204,6 +231,7 @@ public interface RosDBClustersProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object dbVersion;
         private final java.lang.Object description;
         private final java.lang.Object expired;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object resourceGroupId;
 
         /**
@@ -217,6 +245,7 @@ public interface RosDBClustersProps extends software.amazon.jsii.JsiiSerializabl
             this.dbVersion = software.amazon.jsii.Kernel.get(this, "dbVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.expired = software.amazon.jsii.Kernel.get(this, "expired", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -230,6 +259,7 @@ public interface RosDBClustersProps extends software.amazon.jsii.JsiiSerializabl
             this.dbVersion = builder.dbVersion;
             this.description = builder.description;
             this.expired = builder.expired;
+            this.refreshOptions = builder.refreshOptions;
             this.resourceGroupId = builder.resourceGroupId;
         }
 
@@ -259,6 +289,11 @@ public interface RosDBClustersProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
+        }
+
+        @Override
         public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
         }
@@ -283,6 +318,9 @@ public interface RosDBClustersProps extends software.amazon.jsii.JsiiSerializabl
             }
             if (this.getExpired() != null) {
                 data.set("expired", om.valueToTree(this.getExpired()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
@@ -310,6 +348,7 @@ public interface RosDBClustersProps extends software.amazon.jsii.JsiiSerializabl
             if (this.dbVersion != null ? !this.dbVersion.equals(that.dbVersion) : that.dbVersion != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.expired != null ? !this.expired.equals(that.expired) : that.expired != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             return this.resourceGroupId != null ? this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId == null;
         }
 
@@ -320,6 +359,7 @@ public interface RosDBClustersProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.dbVersion != null ? this.dbVersion.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.expired != null ? this.expired.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             return result;
         }

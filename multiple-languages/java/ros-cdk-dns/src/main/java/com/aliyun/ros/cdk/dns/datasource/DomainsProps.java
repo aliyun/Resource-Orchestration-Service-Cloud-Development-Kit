@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.dns.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dns-domains
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:05.769Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:09.192Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dns.$Module.class, fqn = "@alicloud/ros-cdk-dns.datasource.DomainsProps")
 @software.amazon.jsii.Jsii.Proxy(DomainsProps.Jsii$Proxy.class)
 public interface DomainsProps extends software.amazon.jsii.JsiiSerializable {
@@ -32,6 +32,21 @@ public interface DomainsProps extends software.amazon.jsii.JsiiSerializable {
      * Property lang: The language type.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getLang() {
+        return null;
+    }
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
         return null;
     }
 
@@ -69,6 +84,7 @@ public interface DomainsProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object groupId;
         java.lang.Object keyWord;
         java.lang.Object lang;
+        java.lang.Object refreshOptions;
         java.lang.Object resourceGroupId;
         java.lang.Object searchMode;
         java.lang.Object starmark;
@@ -134,6 +150,40 @@ public interface DomainsProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder lang(com.aliyun.ros.cdk.core.IResolvable lang) {
             this.lang = lang;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DomainsProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DomainsProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
             return this;
         }
 
@@ -216,6 +266,7 @@ public interface DomainsProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object groupId;
         private final java.lang.Object keyWord;
         private final java.lang.Object lang;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object searchMode;
         private final java.lang.Object starmark;
@@ -229,6 +280,7 @@ public interface DomainsProps extends software.amazon.jsii.JsiiSerializable {
             this.groupId = software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.keyWord = software.amazon.jsii.Kernel.get(this, "keyWord", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.lang = software.amazon.jsii.Kernel.get(this, "lang", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.searchMode = software.amazon.jsii.Kernel.get(this, "searchMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.starmark = software.amazon.jsii.Kernel.get(this, "starmark", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -242,6 +294,7 @@ public interface DomainsProps extends software.amazon.jsii.JsiiSerializable {
             this.groupId = builder.groupId;
             this.keyWord = builder.keyWord;
             this.lang = builder.lang;
+            this.refreshOptions = builder.refreshOptions;
             this.resourceGroupId = builder.resourceGroupId;
             this.searchMode = builder.searchMode;
             this.starmark = builder.starmark;
@@ -260,6 +313,11 @@ public interface DomainsProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getLang() {
             return this.lang;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -292,6 +350,9 @@ public interface DomainsProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getLang() != null) {
                 data.set("lang", om.valueToTree(this.getLang()));
             }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
+            }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
@@ -322,6 +383,7 @@ public interface DomainsProps extends software.amazon.jsii.JsiiSerializable {
             if (this.groupId != null ? !this.groupId.equals(that.groupId) : that.groupId != null) return false;
             if (this.keyWord != null ? !this.keyWord.equals(that.keyWord) : that.keyWord != null) return false;
             if (this.lang != null ? !this.lang.equals(that.lang) : that.lang != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.searchMode != null ? !this.searchMode.equals(that.searchMode) : that.searchMode != null) return false;
             return this.starmark != null ? this.starmark.equals(that.starmark) : that.starmark == null;
@@ -332,6 +394,7 @@ public interface DomainsProps extends software.amazon.jsii.JsiiSerializable {
             int result = this.groupId != null ? this.groupId.hashCode() : 0;
             result = 31 * result + (this.keyWord != null ? this.keyWord.hashCode() : 0);
             result = 31 * result + (this.lang != null ? this.lang.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.searchMode != null ? this.searchMode.hashCode() : 0);
             result = 31 * result + (this.starmark != null ? this.starmark.hashCode() : 0);

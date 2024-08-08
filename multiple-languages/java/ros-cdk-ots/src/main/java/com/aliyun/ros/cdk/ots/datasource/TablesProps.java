@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ots.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ots-tables
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:08.244Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:12.741Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.datasource.TablesProps")
 @software.amazon.jsii.Jsii.Proxy(TablesProps.Jsii$Proxy.class)
 public interface TablesProps extends software.amazon.jsii.JsiiSerializable {
@@ -14,6 +14,21 @@ public interface TablesProps extends software.amazon.jsii.JsiiSerializable {
      * Property instanceName: The name of the instance to which the table belongs.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getInstanceName();
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
 
     /**
      * Property tableName: The name of table.
@@ -33,6 +48,7 @@ public interface TablesProps extends software.amazon.jsii.JsiiSerializable {
      */
     public static final class Builder implements software.amazon.jsii.Builder<TablesProps> {
         java.lang.Object instanceName;
+        java.lang.Object refreshOptions;
         java.lang.Object tableName;
 
         /**
@@ -52,6 +68,40 @@ public interface TablesProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder instanceName(com.aliyun.ros.cdk.core.IResolvable instanceName) {
             this.instanceName = instanceName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TablesProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TablesProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
             return this;
         }
 
@@ -92,6 +142,7 @@ public interface TablesProps extends software.amazon.jsii.JsiiSerializable {
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TablesProps {
         private final java.lang.Object instanceName;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object tableName;
 
         /**
@@ -101,6 +152,7 @@ public interface TablesProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tableName = software.amazon.jsii.Kernel.get(this, "tableName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -110,12 +162,18 @@ public interface TablesProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.instanceName = java.util.Objects.requireNonNull(builder.instanceName, "instanceName is required");
+            this.refreshOptions = builder.refreshOptions;
             this.tableName = builder.tableName;
         }
 
         @Override
         public final java.lang.Object getInstanceName() {
             return this.instanceName;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -130,6 +188,9 @@ public interface TablesProps extends software.amazon.jsii.JsiiSerializable {
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
             data.set("instanceName", om.valueToTree(this.getInstanceName()));
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
+            }
             if (this.getTableName() != null) {
                 data.set("tableName", om.valueToTree(this.getTableName()));
             }
@@ -152,12 +213,14 @@ public interface TablesProps extends software.amazon.jsii.JsiiSerializable {
             TablesProps.Jsii$Proxy that = (TablesProps.Jsii$Proxy) o;
 
             if (!instanceName.equals(that.instanceName)) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             return this.tableName != null ? this.tableName.equals(that.tableName) : that.tableName == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.instanceName.hashCode();
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.tableName != null ? this.tableName.hashCode() : 0);
             return result;
         }

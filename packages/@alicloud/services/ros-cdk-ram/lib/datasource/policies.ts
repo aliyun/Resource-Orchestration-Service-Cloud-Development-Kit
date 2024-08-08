@@ -25,6 +25,14 @@ export interface PoliciesProps {
     readonly policyType?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property roleName: The specific role to which policies attached.Only one of UserName, GroupName, and RoleName can be specified at most.
      */
     readonly roleName?: string | ros.IResolvable;
@@ -74,6 +82,7 @@ export class Policies extends ros.Resource {
             roleName: props.roleName,
             userName: props.userName,
             policyName: props.policyName,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosPolicies;
         this.attrPolicies = rosPolicies.attrPolicies;

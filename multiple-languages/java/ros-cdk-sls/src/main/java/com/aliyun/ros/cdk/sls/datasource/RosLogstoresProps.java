@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.sls.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-sls-logstores
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.499Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:14.405Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.datasource.RosLogstoresProps")
 @software.amazon.jsii.Jsii.Proxy(RosLogstoresProps.Jsii$Proxy.class)
 public interface RosLogstoresProps extends software.amazon.jsii.JsiiSerializable {
@@ -21,6 +21,12 @@ public interface RosLogstoresProps extends software.amazon.jsii.JsiiSerializable
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosLogstoresProps}
      */
     static Builder builder() {
@@ -32,6 +38,7 @@ public interface RosLogstoresProps extends software.amazon.jsii.JsiiSerializable
     public static final class Builder implements software.amazon.jsii.Builder<RosLogstoresProps> {
         java.lang.Object project;
         java.lang.Object logstoreName;
+        java.lang.Object refreshOptions;
 
         /**
          * Sets the value of {@link RosLogstoresProps#getProject}
@@ -74,6 +81,26 @@ public interface RosLogstoresProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link RosLogstoresProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLogstoresProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosLogstoresProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -91,6 +118,7 @@ public interface RosLogstoresProps extends software.amazon.jsii.JsiiSerializable
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosLogstoresProps {
         private final java.lang.Object project;
         private final java.lang.Object logstoreName;
+        private final java.lang.Object refreshOptions;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -100,6 +128,7 @@ public interface RosLogstoresProps extends software.amazon.jsii.JsiiSerializable
             super(objRef);
             this.project = software.amazon.jsii.Kernel.get(this, "project", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.logstoreName = software.amazon.jsii.Kernel.get(this, "logstoreName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -109,6 +138,7 @@ public interface RosLogstoresProps extends software.amazon.jsii.JsiiSerializable
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.project = java.util.Objects.requireNonNull(builder.project, "project is required");
             this.logstoreName = builder.logstoreName;
+            this.refreshOptions = builder.refreshOptions;
         }
 
         @Override
@@ -122,6 +152,11 @@ public interface RosLogstoresProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -130,6 +165,9 @@ public interface RosLogstoresProps extends software.amazon.jsii.JsiiSerializable
             data.set("project", om.valueToTree(this.getProject()));
             if (this.getLogstoreName() != null) {
                 data.set("logstoreName", om.valueToTree(this.getLogstoreName()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -150,13 +188,15 @@ public interface RosLogstoresProps extends software.amazon.jsii.JsiiSerializable
             RosLogstoresProps.Jsii$Proxy that = (RosLogstoresProps.Jsii$Proxy) o;
 
             if (!project.equals(that.project)) return false;
-            return this.logstoreName != null ? this.logstoreName.equals(that.logstoreName) : that.logstoreName == null;
+            if (this.logstoreName != null ? !this.logstoreName.equals(that.logstoreName) : that.logstoreName != null) return false;
+            return this.refreshOptions != null ? this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.project.hashCode();
             result = 31 * result + (this.logstoreName != null ? this.logstoreName.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             return result;
         }
     }

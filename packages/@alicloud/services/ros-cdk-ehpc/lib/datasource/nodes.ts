@@ -35,6 +35,14 @@ export interface NodesProps {
     readonly privateIpAddress?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property role: The type of the node. Valid values:
      * Manager: management node
      * Login: logon node
@@ -83,6 +91,7 @@ export class Nodes extends ros.Resource {
             clusterId: props.clusterId,
             hostNamePrefix: props.hostNamePrefix,
             hostName: props.hostName,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosNodes;
         this.attrNodeIds = rosNodes.attrNodeIds;

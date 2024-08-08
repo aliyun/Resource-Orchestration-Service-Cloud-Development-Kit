@@ -18,6 +18,14 @@ export interface AppsProps {
      * Property appOwner: Alibaba Cloud account ID of the app owner.
      */
     readonly appOwner?: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -56,6 +64,7 @@ export class Apps extends ros.Resource {
         const rosApps = new RosApps(this, id,  {
             appOwner: props.appOwner,
             appId: props.appId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosApps;
         this.attrAppIds = rosApps.attrAppIds;

@@ -13,6 +13,14 @@ export interface PublicIpAddressPoolProps {
      * Property publicIpAddressPoolId: The first ID of the resource.
      */
     readonly publicIpAddressPoolId: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -90,6 +98,7 @@ export class PublicIpAddressPool extends ros.Resource {
 
         const rosPublicIpAddressPool = new RosPublicIpAddressPool(this, id,  {
             publicIpAddressPoolId: props.publicIpAddressPoolId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosPublicIpAddressPool;
         this.attrCreateTime = rosPublicIpAddressPool.attrCreateTime;

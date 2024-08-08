@@ -594,11 +594,11 @@ export namespace RosInstance {
         /**
          * @Property vpcId: VPC primary key.
          */
-        readonly vpcId: string | ros.IResolvable;
+        readonly vpcId?: string | ros.IResolvable;
         /**
          * @Property vSwitchId: The ID of the virtual switch.
          */
-        readonly vSwitchId: string | ros.IResolvable;
+        readonly vSwitchId?: string | ros.IResolvable;
         /**
          * @Property enabled: Whether to turn on the network.
          */
@@ -625,9 +625,7 @@ function RosInstance_EndpointsPropertyValidator(properties: any): ros.Validation
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
     errors.collect(ros.propertyValidator('endpoint', ros.validateString)(properties.endpoint));
-    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
-    errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('enabled', ros.validateBoolean)(properties.enabled));
     errors.collect(ros.propertyValidator('vpcInstanceId', ros.validateString)(properties.vpcInstanceId));

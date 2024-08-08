@@ -10,6 +10,14 @@ export { RosUser as UserProperty };
 export interface UserProps {
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property userId: RAM user ID. At most one UserName and UserId can be specified; if both are specified, UserName will be used. If neither is specified, the current user ID will be used.
      */
     readonly userId?: string | ros.IResolvable;
@@ -76,6 +84,7 @@ export class User extends ros.Resource {
         const rosUser = new RosUser(this, id,  {
             userName: props.userName,
             userId: props.userId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosUser;
         this.attrComments = rosUser.attrComments;

@@ -10,6 +10,8 @@
 @alicloud/ros-cdk-ram.AttachPolicyToUserProps=com.aliyun.ros.cdk.ram.AttachPolicyToUserProps
 @alicloud/ros-cdk-ram.Group=com.aliyun.ros.cdk.ram.Group
 @alicloud/ros-cdk-ram.GroupProps=com.aliyun.ros.cdk.ram.GroupProps
+@alicloud/ros-cdk-ram.LoginProfile=com.aliyun.ros.cdk.ram.LoginProfile
+@alicloud/ros-cdk-ram.LoginProfileProps=com.aliyun.ros.cdk.ram.LoginProfileProps
 @alicloud/ros-cdk-ram.ManagedPolicy=com.aliyun.ros.cdk.ram.ManagedPolicy
 @alicloud/ros-cdk-ram.ManagedPolicyProps=com.aliyun.ros.cdk.ram.ManagedPolicyProps
 @alicloud/ros-cdk-ram.RamAccountAlias=com.aliyun.ros.cdk.ram.RamAccountAlias
@@ -32,6 +34,8 @@
 @alicloud/ros-cdk-ram.RosGroup.PolicyDocumentProperty=com.aliyun.ros.cdk.ram.RosGroup$PolicyDocumentProperty
 @alicloud/ros-cdk-ram.RosGroup.StatementProperty=com.aliyun.ros.cdk.ram.RosGroup$StatementProperty
 @alicloud/ros-cdk-ram.RosGroupProps=com.aliyun.ros.cdk.ram.RosGroupProps
+@alicloud/ros-cdk-ram.RosLoginProfile=com.aliyun.ros.cdk.ram.RosLoginProfile
+@alicloud/ros-cdk-ram.RosLoginProfileProps=com.aliyun.ros.cdk.ram.RosLoginProfileProps
 @alicloud/ros-cdk-ram.RosManagedPolicy=com.aliyun.ros.cdk.ram.RosManagedPolicy
 @alicloud/ros-cdk-ram.RosManagedPolicy.PolicyDocumentProperty=com.aliyun.ros.cdk.ram.RosManagedPolicy$PolicyDocumentProperty
 @alicloud/ros-cdk-ram.RosManagedPolicy.StatementProperty=com.aliyun.ros.cdk.ram.RosManagedPolicy$StatementProperty

@@ -18,6 +18,14 @@ export interface ActivationsProps {
      * Property instanceName: The default prefix of the instance name.
      */
     readonly instanceName?: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -56,6 +64,7 @@ export class Activations extends ros.Resource {
         const rosActivations = new RosActivations(this, id,  {
             instanceName: props.instanceName,
             activationId: props.activationId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosActivations;
         this.attrActivationIds = rosActivations.attrActivationIds;

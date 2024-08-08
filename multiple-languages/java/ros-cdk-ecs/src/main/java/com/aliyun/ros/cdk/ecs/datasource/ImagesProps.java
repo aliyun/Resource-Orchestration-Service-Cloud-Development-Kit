@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-images
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:06.549Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:10.221Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.datasource.ImagesProps")
 @software.amazon.jsii.Jsii.Proxy(ImagesProps.Jsii$Proxy.class)
 public interface ImagesProps extends software.amazon.jsii.JsiiSerializable {
@@ -123,6 +123,21 @@ public interface ImagesProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
      * Property resourceGroupId: The ID of the resource group to which the custom image belongs.
      * <p>
      * If this parameter is specified to query resources, up to 1,000 resources that belong to the specified resource group can be displayed in the response.
@@ -193,6 +208,7 @@ public interface ImagesProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object isSupportCloudinit;
         java.lang.Object isSupportIoOptimized;
         java.lang.Object osType;
+        java.lang.Object refreshOptions;
         java.lang.Object resourceGroupId;
         java.lang.Object snapshotId;
         java.lang.Object status;
@@ -476,6 +492,40 @@ public interface ImagesProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ImagesProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ImagesProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ImagesProps#getResourceGroupId}
          * @param resourceGroupId Property resourceGroupId: The ID of the resource group to which the custom image belongs.
          *                        If this parameter is specified to query resources, up to 1,000 resources that belong to the specified resource group can be displayed in the response.
@@ -617,6 +667,7 @@ public interface ImagesProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object isSupportCloudinit;
         private final java.lang.Object isSupportIoOptimized;
         private final java.lang.Object osType;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object snapshotId;
         private final java.lang.Object status;
@@ -640,6 +691,7 @@ public interface ImagesProps extends software.amazon.jsii.JsiiSerializable {
             this.isSupportCloudinit = software.amazon.jsii.Kernel.get(this, "isSupportCloudinit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.isSupportIoOptimized = software.amazon.jsii.Kernel.get(this, "isSupportIoOptimized", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.osType = software.amazon.jsii.Kernel.get(this, "osType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.snapshotId = software.amazon.jsii.Kernel.get(this, "snapshotId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.status = software.amazon.jsii.Kernel.get(this, "status", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -664,6 +716,7 @@ public interface ImagesProps extends software.amazon.jsii.JsiiSerializable {
             this.isSupportCloudinit = builder.isSupportCloudinit;
             this.isSupportIoOptimized = builder.isSupportIoOptimized;
             this.osType = builder.osType;
+            this.refreshOptions = builder.refreshOptions;
             this.resourceGroupId = builder.resourceGroupId;
             this.snapshotId = builder.snapshotId;
             this.status = builder.status;
@@ -724,6 +777,11 @@ public interface ImagesProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getOsType() {
             return this.osType;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -790,6 +848,9 @@ public interface ImagesProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getOsType() != null) {
                 data.set("osType", om.valueToTree(this.getOsType()));
             }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
+            }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
@@ -834,6 +895,7 @@ public interface ImagesProps extends software.amazon.jsii.JsiiSerializable {
             if (this.isSupportCloudinit != null ? !this.isSupportCloudinit.equals(that.isSupportCloudinit) : that.isSupportCloudinit != null) return false;
             if (this.isSupportIoOptimized != null ? !this.isSupportIoOptimized.equals(that.isSupportIoOptimized) : that.isSupportIoOptimized != null) return false;
             if (this.osType != null ? !this.osType.equals(that.osType) : that.osType != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.snapshotId != null ? !this.snapshotId.equals(that.snapshotId) : that.snapshotId != null) return false;
             if (this.status != null ? !this.status.equals(that.status) : that.status != null) return false;
@@ -854,6 +916,7 @@ public interface ImagesProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.isSupportCloudinit != null ? this.isSupportCloudinit.hashCode() : 0);
             result = 31 * result + (this.isSupportIoOptimized != null ? this.isSupportIoOptimized.hashCode() : 0);
             result = 31 * result + (this.osType != null ? this.osType.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.snapshotId != null ? this.snapshotId.hashCode() : 0);
             result = 31 * result + (this.status != null ? this.status.hashCode() : 0);

@@ -10,11 +10,6 @@ export { RosExecution as ExecutionProperty };
 export interface ExecutionProps {
 
     /**
-     * Property templateName: Template name. Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
-     */
-    readonly templateName: string | ros.IResolvable;
-
-    /**
      * Property description: The description of OOS Execution.
      */
     readonly description?: string | ros.IResolvable;
@@ -63,6 +58,21 @@ export interface ExecutionProps {
      * Property tags: Tag value and the key mapping, the label of the key number can be up to 20.
      */
     readonly tags?: { [key: string]: (any) };
+
+    /**
+     * Property templateContent: The content of the template in the JSON or YAML format. This parameter is the same as the Content parameter that you can specify when you call the CreateTemplate operation. You can use this parameter to specify the tasks that you want to run. This way, you do not need to create a template before you start an execution. If you select an existing template, you do not need to specify this parameter.
+     */
+    readonly templateContent?: string | ros.IResolvable;
+
+    /**
+     * Property templateName: Template name. Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
+     */
+    readonly templateName?: string | ros.IResolvable;
+
+    /**
+     * Property templateUrl: The Object Storage Service (OSS) URL of the object that stores the content of the Operation Orchestration Service (OOS) template. The access control list (ACL) of the object must be public-read. You can use this parameter to specify the tasks that you want to run. This way, you do not need to create a template before you start an execution. If you select an existing template, you do not need to specify this parameter.
+     */
+    readonly templateUrl?: string | ros.IResolvable;
 
     /**
      * Property templateVersion: Version number of template. Default to the latest version.
@@ -133,7 +143,7 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
      * Param id    - scoped id of the resource
      * Param props - resource properties
      */
-    constructor(scope: ros.Construct, id: string, props: ExecutionProps, enableResourcePropertyConstraint:boolean = true) {
+    constructor(scope: ros.Construct, id: string, props: ExecutionProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
         this.scope = scope;
         this.id = id;
@@ -146,11 +156,13 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
             loopMode: props.loopMode,
             description: props.description,
             parameters: props.parameters,
-            safetyCheck: props.safetyCheck === undefined || props.safetyCheck === null ? 'ConfirmEveryHighRiskAction' : props.safetyCheck,
             resourceGroupId: props.resourceGroupId,
+            templateContent: props.templateContent,
             mode: props.mode === undefined || props.mode === null ? 'Automatic' : props.mode,
-            templateName: props.templateName,
             templateVersion: props.templateVersion,
+            templateUrl: props.templateUrl,
+            safetyCheck: props.safetyCheck === undefined || props.safetyCheck === null ? 'ConfirmEveryHighRiskAction' : props.safetyCheck,
+            templateName: props.templateName,
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosExecution;

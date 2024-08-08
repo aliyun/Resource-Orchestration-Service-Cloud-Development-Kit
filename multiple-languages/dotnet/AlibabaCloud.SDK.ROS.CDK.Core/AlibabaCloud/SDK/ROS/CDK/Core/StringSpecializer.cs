@@ -32,17 +32,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         }
 
         /// <summary>Validate that the given string does not contain tokens.</summary>
-        [JsiiMethod(name: "validateNoTokens", parametersJson: "[{\"name\":\"s\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"what\",\"type\":{\"primitive\":\"string\"}}]")]
-        public static void ValidateNoTokens(string s, string what)
+        [JsiiMethod(name: "validateNoTokens", parametersJson: "[{\"name\":\"str\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"what\",\"type\":{\"primitive\":\"string\"}}]")]
+        public static void ValidateNoTokens(string str, string what)
         {
-            InvokeStaticVoidMethod(typeof(AlibabaCloud.SDK.ROS.CDK.Core.StringSpecializer), new System.Type[]{typeof(string), typeof(string)}, new object[]{s, what});
+            InvokeStaticVoidMethod(typeof(AlibabaCloud.SDK.ROS.CDK.Core.StringSpecializer), new System.Type[]{typeof(string), typeof(string)}, new object[]{str, what});
         }
 
         /// <summary>Specialize only the qualifier.</summary>
-        [JsiiMethod(name: "qualifierOnly", returnsJson: "{\"type\":{\"primitive\":\"string\"}}", parametersJson: "[{\"name\":\"s\",\"type\":{\"primitive\":\"string\"}}]")]
-        public virtual string QualifierOnly(string s)
+        [JsiiMethod(name: "qualifierOnly", returnsJson: "{\"type\":{\"primitive\":\"string\"}}", parametersJson: "[{\"name\":\"str\",\"type\":{\"primitive\":\"string\"}}]")]
+        public virtual string QualifierOnly(string str)
         {
-            return InvokeInstanceMethod<string>(new System.Type[]{typeof(string)}, new object[]{s})!;
+            return InvokeInstanceMethod<string>(new System.Type[]{typeof(string)}, new object[]{str})!;
         }
 
         /// <summary>Function to replace placeholders in the input string as much as possible.</summary>
@@ -54,17 +54,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <description>${ALIYUN::AccountId}, ${ALIYUN::Region}: only if we have the actual values available</description>
         /// </list>
         /// </remarks>
-        [JsiiMethod(name: "specialize", returnsJson: "{\"type\":{\"primitive\":\"string\"}}", parametersJson: "[{\"name\":\"s\",\"type\":{\"primitive\":\"string\"}}]")]
-        public virtual string Specialize(string s)
+        [JsiiMethod(name: "specialize", returnsJson: "{\"type\":{\"primitive\":\"string\"}}", parametersJson: "[{\"name\":\"str\",\"type\":{\"primitive\":\"string\"}}]")]
+        public virtual string Specialize(string str)
         {
-            return InvokeInstanceMethod<string>(new System.Type[]{typeof(string)}, new object[]{s})!;
+            return InvokeInstanceMethod<string>(new System.Type[]{typeof(string)}, new object[]{str})!;
         }
 
         /// <summary>Specialize the given string, make sure it doesn't contain tokens.</summary>
-        [JsiiMethod(name: "specializeNoTokens", returnsJson: "{\"type\":{\"primitive\":\"string\"}}", parametersJson: "[{\"name\":\"s\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"what\",\"type\":{\"primitive\":\"string\"}}]")]
-        public virtual string SpecializeNoTokens(string s, string what)
+        [JsiiMethod(name: "specializeNoTokens", returnsJson: "{\"type\":{\"primitive\":\"string\"}}", parametersJson: "[{\"name\":\"str\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"what\",\"type\":{\"primitive\":\"string\"}}]")]
+        public virtual string SpecializeNoTokens(string str, string what)
         {
-            return InvokeInstanceMethod<string>(new System.Type[]{typeof(string), typeof(string)}, new object[]{s, what})!;
+            return InvokeInstanceMethod<string>(new System.Type[]{typeof(string), typeof(string)}, new object[]{str, what})!;
         }
     }
 }

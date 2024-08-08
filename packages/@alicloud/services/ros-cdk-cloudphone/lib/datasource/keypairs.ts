@@ -18,6 +18,14 @@ export interface KeyPairsProps {
      * Property keyPairName: The Key Name.
      */
     readonly keyPairName?: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -56,6 +64,7 @@ export class KeyPairs extends ros.Resource {
         const rosKeyPairs = new RosKeyPairs(this, id,  {
             keyPairFingerPrint: props.keyPairFingerPrint,
             keyPairName: props.keyPairName,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosKeyPairs;
         this.attrKeyPairNames = rosKeyPairs.attrKeyPairNames;

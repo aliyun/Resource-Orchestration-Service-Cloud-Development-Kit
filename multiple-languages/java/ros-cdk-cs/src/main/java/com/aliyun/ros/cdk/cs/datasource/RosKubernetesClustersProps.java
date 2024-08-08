@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cs.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-kubernetesclusters
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:05.545Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:08.937Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.datasource.RosKubernetesClustersProps")
 @software.amazon.jsii.Jsii.Proxy(RosKubernetesClustersProps.Jsii$Proxy.class)
 public interface RosKubernetesClustersProps extends software.amazon.jsii.JsiiSerializable {
@@ -35,6 +35,12 @@ public interface RosKubernetesClustersProps extends software.amazon.jsii.JsiiSer
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosKubernetesClustersProps}
      */
     static Builder builder() {
@@ -48,6 +54,7 @@ public interface RosKubernetesClustersProps extends software.amazon.jsii.JsiiSer
         java.lang.Object clusterType;
         java.lang.Object name;
         java.lang.Object profile;
+        java.lang.Object refreshOptions;
 
         /**
          * Sets the value of {@link RosKubernetesClustersProps#getClusterSpec}
@@ -130,6 +137,26 @@ public interface RosKubernetesClustersProps extends software.amazon.jsii.JsiiSer
         }
 
         /**
+         * Sets the value of {@link RosKubernetesClustersProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosKubernetesClustersProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosKubernetesClustersProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -149,6 +176,7 @@ public interface RosKubernetesClustersProps extends software.amazon.jsii.JsiiSer
         private final java.lang.Object clusterType;
         private final java.lang.Object name;
         private final java.lang.Object profile;
+        private final java.lang.Object refreshOptions;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -160,6 +188,7 @@ public interface RosKubernetesClustersProps extends software.amazon.jsii.JsiiSer
             this.clusterType = software.amazon.jsii.Kernel.get(this, "clusterType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.profile = software.amazon.jsii.Kernel.get(this, "profile", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -171,6 +200,7 @@ public interface RosKubernetesClustersProps extends software.amazon.jsii.JsiiSer
             this.clusterType = builder.clusterType;
             this.name = builder.name;
             this.profile = builder.profile;
+            this.refreshOptions = builder.refreshOptions;
         }
 
         @Override
@@ -194,6 +224,11 @@ public interface RosKubernetesClustersProps extends software.amazon.jsii.JsiiSer
         }
 
         @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -210,6 +245,9 @@ public interface RosKubernetesClustersProps extends software.amazon.jsii.JsiiSer
             }
             if (this.getProfile() != null) {
                 data.set("profile", om.valueToTree(this.getProfile()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -232,7 +270,8 @@ public interface RosKubernetesClustersProps extends software.amazon.jsii.JsiiSer
             if (this.clusterSpec != null ? !this.clusterSpec.equals(that.clusterSpec) : that.clusterSpec != null) return false;
             if (this.clusterType != null ? !this.clusterType.equals(that.clusterType) : that.clusterType != null) return false;
             if (this.name != null ? !this.name.equals(that.name) : that.name != null) return false;
-            return this.profile != null ? this.profile.equals(that.profile) : that.profile == null;
+            if (this.profile != null ? !this.profile.equals(that.profile) : that.profile != null) return false;
+            return this.refreshOptions != null ? this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions == null;
         }
 
         @Override
@@ -241,6 +280,7 @@ public interface RosKubernetesClustersProps extends software.amazon.jsii.JsiiSer
             result = 31 * result + (this.clusterType != null ? this.clusterType.hashCode() : 0);
             result = 31 * result + (this.name != null ? this.name.hashCode() : 0);
             result = 31 * result + (this.profile != null ? this.profile.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             return result;
         }
     }

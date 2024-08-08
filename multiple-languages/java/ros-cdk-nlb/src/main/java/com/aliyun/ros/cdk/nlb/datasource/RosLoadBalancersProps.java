@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.nlb.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nlb-loadbalancers
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:07.882Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:12.340Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.datasource.RosLoadBalancersProps")
 @software.amazon.jsii.Jsii.Proxy(RosLoadBalancersProps.Jsii$Proxy.class)
 public interface RosLoadBalancersProps extends software.amazon.jsii.JsiiSerializable {
@@ -54,6 +54,12 @@ public interface RosLoadBalancersProps extends software.amazon.jsii.JsiiSerializ
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
@@ -93,6 +99,7 @@ public interface RosLoadBalancersProps extends software.amazon.jsii.JsiiSerializ
         java.lang.Object loadBalancerIds;
         java.lang.Object loadBalancerNames;
         java.lang.Object loadBalancerStatus;
+        java.lang.Object refreshOptions;
         java.lang.Object resourceGroupId;
         java.util.List<com.aliyun.ros.cdk.nlb.datasource.RosLoadBalancers.TagsProperty> tags;
         java.lang.Object vpcIds;
@@ -239,6 +246,26 @@ public interface RosLoadBalancersProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosLoadBalancersProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLoadBalancersProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosLoadBalancersProps#getResourceGroupId}
          * @param resourceGroupId the value to be set.
          * @return {@code this}
@@ -332,6 +359,7 @@ public interface RosLoadBalancersProps extends software.amazon.jsii.JsiiSerializ
         private final java.lang.Object loadBalancerIds;
         private final java.lang.Object loadBalancerNames;
         private final java.lang.Object loadBalancerStatus;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object resourceGroupId;
         private final java.util.List<com.aliyun.ros.cdk.nlb.datasource.RosLoadBalancers.TagsProperty> tags;
         private final java.lang.Object vpcIds;
@@ -350,6 +378,7 @@ public interface RosLoadBalancersProps extends software.amazon.jsii.JsiiSerializ
             this.loadBalancerIds = software.amazon.jsii.Kernel.get(this, "loadBalancerIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loadBalancerNames = software.amazon.jsii.Kernel.get(this, "loadBalancerNames", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loadBalancerStatus = software.amazon.jsii.Kernel.get(this, "loadBalancerStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.nlb.datasource.RosLoadBalancers.TagsProperty.class)));
             this.vpcIds = software.amazon.jsii.Kernel.get(this, "vpcIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -369,6 +398,7 @@ public interface RosLoadBalancersProps extends software.amazon.jsii.JsiiSerializ
             this.loadBalancerIds = builder.loadBalancerIds;
             this.loadBalancerNames = builder.loadBalancerNames;
             this.loadBalancerStatus = builder.loadBalancerStatus;
+            this.refreshOptions = builder.refreshOptions;
             this.resourceGroupId = builder.resourceGroupId;
             this.tags = (java.util.List<com.aliyun.ros.cdk.nlb.datasource.RosLoadBalancers.TagsProperty>)builder.tags;
             this.vpcIds = builder.vpcIds;
@@ -408,6 +438,11 @@ public interface RosLoadBalancersProps extends software.amazon.jsii.JsiiSerializ
         @Override
         public final java.lang.Object getLoadBalancerStatus() {
             return this.loadBalancerStatus;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -457,6 +492,9 @@ public interface RosLoadBalancersProps extends software.amazon.jsii.JsiiSerializ
             if (this.getLoadBalancerStatus() != null) {
                 data.set("loadBalancerStatus", om.valueToTree(this.getLoadBalancerStatus()));
             }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
+            }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
@@ -494,6 +532,7 @@ public interface RosLoadBalancersProps extends software.amazon.jsii.JsiiSerializ
             if (this.loadBalancerIds != null ? !this.loadBalancerIds.equals(that.loadBalancerIds) : that.loadBalancerIds != null) return false;
             if (this.loadBalancerNames != null ? !this.loadBalancerNames.equals(that.loadBalancerNames) : that.loadBalancerNames != null) return false;
             if (this.loadBalancerStatus != null ? !this.loadBalancerStatus.equals(that.loadBalancerStatus) : that.loadBalancerStatus != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.vpcIds != null ? !this.vpcIds.equals(that.vpcIds) : that.vpcIds != null) return false;
@@ -509,6 +548,7 @@ public interface RosLoadBalancersProps extends software.amazon.jsii.JsiiSerializ
             result = 31 * result + (this.loadBalancerIds != null ? this.loadBalancerIds.hashCode() : 0);
             result = 31 * result + (this.loadBalancerNames != null ? this.loadBalancerNames.hashCode() : 0);
             result = 31 * result + (this.loadBalancerStatus != null ? this.loadBalancerStatus.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.vpcIds != null ? this.vpcIds.hashCode() : 0);

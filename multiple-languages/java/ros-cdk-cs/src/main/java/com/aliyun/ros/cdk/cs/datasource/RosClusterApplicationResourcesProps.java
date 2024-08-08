@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cs.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-clusterapplicationresources
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:05.540Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:08.930Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.datasource.RosClusterApplicationResourcesProps")
 @software.amazon.jsii.Jsii.Proxy(RosClusterApplicationResourcesProps.Jsii$Proxy.class)
 public interface RosClusterApplicationResourcesProps extends software.amazon.jsii.JsiiSerializable {
@@ -43,6 +43,12 @@ public interface RosClusterApplicationResourcesProps extends software.amazon.jsi
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosClusterApplicationResourcesProps}
      */
     static Builder builder() {
@@ -58,6 +64,7 @@ public interface RosClusterApplicationResourcesProps extends software.amazon.jsi
         java.lang.Object jsonPath;
         java.lang.Object name;
         java.lang.Object namespace;
+        java.lang.Object refreshOptions;
 
         /**
          * Sets the value of {@link RosClusterApplicationResourcesProps#getClusterId}
@@ -180,6 +187,26 @@ public interface RosClusterApplicationResourcesProps extends software.amazon.jsi
         }
 
         /**
+         * Sets the value of {@link RosClusterApplicationResourcesProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterApplicationResourcesProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosClusterApplicationResourcesProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -201,6 +228,7 @@ public interface RosClusterApplicationResourcesProps extends software.amazon.jsi
         private final java.lang.Object jsonPath;
         private final java.lang.Object name;
         private final java.lang.Object namespace;
+        private final java.lang.Object refreshOptions;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -214,6 +242,7 @@ public interface RosClusterApplicationResourcesProps extends software.amazon.jsi
             this.jsonPath = software.amazon.jsii.Kernel.get(this, "jsonPath", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.namespace = software.amazon.jsii.Kernel.get(this, "namespace", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -227,6 +256,7 @@ public interface RosClusterApplicationResourcesProps extends software.amazon.jsi
             this.jsonPath = builder.jsonPath;
             this.name = builder.name;
             this.namespace = builder.namespace;
+            this.refreshOptions = builder.refreshOptions;
         }
 
         @Override
@@ -260,6 +290,11 @@ public interface RosClusterApplicationResourcesProps extends software.amazon.jsi
         }
 
         @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -278,6 +313,9 @@ public interface RosClusterApplicationResourcesProps extends software.amazon.jsi
             }
             if (this.getNamespace() != null) {
                 data.set("namespace", om.valueToTree(this.getNamespace()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -302,7 +340,8 @@ public interface RosClusterApplicationResourcesProps extends software.amazon.jsi
             if (this.firstMatch != null ? !this.firstMatch.equals(that.firstMatch) : that.firstMatch != null) return false;
             if (this.jsonPath != null ? !this.jsonPath.equals(that.jsonPath) : that.jsonPath != null) return false;
             if (this.name != null ? !this.name.equals(that.name) : that.name != null) return false;
-            return this.namespace != null ? this.namespace.equals(that.namespace) : that.namespace == null;
+            if (this.namespace != null ? !this.namespace.equals(that.namespace) : that.namespace != null) return false;
+            return this.refreshOptions != null ? this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions == null;
         }
 
         @Override
@@ -313,6 +352,7 @@ public interface RosClusterApplicationResourcesProps extends software.amazon.jsi
             result = 31 * result + (this.jsonPath != null ? this.jsonPath.hashCode() : 0);
             result = 31 * result + (this.name != null ? this.name.hashCode() : 0);
             result = 31 * result + (this.namespace != null ? this.namespace.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             return result;
         }
     }

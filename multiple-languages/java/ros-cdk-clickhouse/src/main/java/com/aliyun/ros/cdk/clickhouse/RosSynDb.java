@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.clickhouse;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ClickHouse::SynDb</code>, which is used to create a synchronization task for an ApsaraDB for ClickHouse Community-compatible Edition cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:04.867Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:08.102Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.clickhouse.$Module.class, fqn = "@alicloud/ros-cdk-clickhouse.RosSynDb")
 public class RosSynDb extends com.aliyun.ros.cdk.core.RosResource {
 

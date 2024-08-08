@@ -9,6 +9,14 @@ import * as ros from '@alicloud/ros-cdk-core';
 export interface RosDiskReplicaGroupsProps {
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * @Property resourceGroupId: The ID of resource group.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -33,6 +41,13 @@ function RosDiskReplicaGroupsPropsValidator(properties: any): ros.ValidationResu
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('site', ros.validateString)(properties.site));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosDiskReplicaGroupsProps"');
 }
 
@@ -50,6 +65,7 @@ function rosDiskReplicaGroupsPropsToRosTemplate(properties: any, enableResourceP
         RosDiskReplicaGroupsPropsValidator(properties).assertSuccess();
     }
     return {
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       Site: ros.stringToRosTemplate(properties.site),
     };
@@ -80,6 +96,14 @@ export class RosDiskReplicaGroups extends ros.RosResource {
 
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property resourceGroupId: The ID of resource group.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
@@ -102,6 +126,7 @@ export class RosDiskReplicaGroups extends ros.RosResource {
         this.attrReplicaGroupIds = this.getAtt('ReplicaGroupIds');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.refreshOptions = props.refreshOptions;
         this.resourceGroupId = props.resourceGroupId;
         this.site = props.site;
     }
@@ -109,6 +134,7 @@ export class RosDiskReplicaGroups extends ros.RosResource {
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
+            refreshOptions: this.refreshOptions,
             resourceGroupId: this.resourceGroupId,
             site: this.site,
         };
@@ -123,6 +149,14 @@ export class RosDiskReplicaGroups extends ros.RosResource {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ebs-diskreplicapairs
  */
 export interface RosDiskReplicaPairsProps {
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 
     /**
      * @Property resourceGroupId: The ID of the resource group.
@@ -141,6 +175,13 @@ function RosDiskReplicaPairsPropsValidator(properties: any): ros.ValidationResul
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosDiskReplicaPairsProps"');
 }
 
@@ -158,6 +199,7 @@ function rosDiskReplicaPairsPropsToRosTemplate(properties: any, enableResourcePr
         RosDiskReplicaPairsPropsValidator(properties).assertSuccess();
     }
     return {
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
     };
 }
@@ -187,6 +229,14 @@ export class RosDiskReplicaPairs extends ros.RosResource {
 
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property resourceGroupId: The ID of the resource group.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
@@ -202,12 +252,14 @@ export class RosDiskReplicaPairs extends ros.RosResource {
         this.attrReplicaPairIds = this.getAtt('ReplicaPairIds');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.refreshOptions = props.refreshOptions;
         this.resourceGroupId = props.resourceGroupId;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
+            refreshOptions: this.refreshOptions,
             resourceGroupId: this.resourceGroupId,
         };
     }

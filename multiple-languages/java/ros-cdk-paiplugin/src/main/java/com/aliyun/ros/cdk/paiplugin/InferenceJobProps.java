@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.paiplugin;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paiplugin-inferencejob
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:08.425Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:12.955Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.paiplugin.$Module.class, fqn = "@alicloud/ros-cdk-paiplugin.InferenceJobProps")
 @software.amazon.jsii.Jsii.Proxy(InferenceJobProps.Jsii$Proxy.class)
 public interface InferenceJobProps extends software.amazon.jsii.JsiiSerializable {

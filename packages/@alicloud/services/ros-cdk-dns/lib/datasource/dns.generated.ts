@@ -17,6 +17,14 @@ export interface RosDomainGroupsProps {
      * @Property lang: The language type.
      */
     readonly lang?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -31,6 +39,13 @@ function RosDomainGroupsPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('keyWord', ros.validateString)(properties.keyWord));
     errors.collect(ros.propertyValidator('lang', ros.validateString)(properties.lang));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosDomainGroupsProps"');
 }
 
@@ -50,6 +65,7 @@ function rosDomainGroupsPropsToRosTemplate(properties: any, enableResourceProper
     return {
       KeyWord: ros.stringToRosTemplate(properties.keyWord),
       Lang: ros.stringToRosTemplate(properties.lang),
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -88,6 +104,14 @@ export class RosDomainGroups extends ros.RosResource {
     public lang: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -100,6 +124,7 @@ export class RosDomainGroups extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.keyWord = props.keyWord;
         this.lang = props.lang;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
@@ -107,6 +132,7 @@ export class RosDomainGroups extends ros.RosResource {
         return {
             keyWord: this.keyWord,
             lang: this.lang,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -154,6 +180,14 @@ export interface RosDomainRecordsProps {
      * @Property orderBy: The method that is used to sort the returned DNS records.
      */
     readonly orderBy?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 
     /**
      * @Property rrKeyWord: The resource record (RR) keyword based on which the system queries DNS records.
@@ -210,6 +244,13 @@ function RosDomainRecordsPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('typeKeyWord', ros.validateString)(properties.typeKeyWord));
     errors.collect(ros.propertyValidator('lang', ros.validateString)(properties.lang));
     errors.collect(ros.propertyValidator('direction', ros.validateString)(properties.direction));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     errors.collect(ros.propertyValidator('groupId', ros.validateString)(properties.groupId));
     errors.collect(ros.propertyValidator('line', ros.validateString)(properties.line));
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
@@ -246,6 +287,7 @@ function rosDomainRecordsPropsToRosTemplate(properties: any, enableResourcePrope
       Lang: ros.stringToRosTemplate(properties.lang),
       Line: ros.stringToRosTemplate(properties.line),
       OrderBy: ros.stringToRosTemplate(properties.orderBy),
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
       RRKeyWord: ros.stringToRosTemplate(properties.rrKeyWord),
       SearchMode: ros.stringToRosTemplate(properties.searchMode),
       Status: ros.stringToRosTemplate(properties.status),
@@ -315,6 +357,14 @@ export class RosDomainRecords extends ros.RosResource {
     public orderBy: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property rrKeyWord: The resource record (RR) keyword based on which the system queries DNS records.
      */
     public rrKeyWord: string | ros.IResolvable | undefined;
@@ -362,6 +412,7 @@ export class RosDomainRecords extends ros.RosResource {
         this.lang = props.lang;
         this.line = props.line;
         this.orderBy = props.orderBy;
+        this.refreshOptions = props.refreshOptions;
         this.rrKeyWord = props.rrKeyWord;
         this.searchMode = props.searchMode;
         this.status = props.status;
@@ -380,6 +431,7 @@ export class RosDomainRecords extends ros.RosResource {
             lang: this.lang,
             line: this.line,
             orderBy: this.orderBy,
+            refreshOptions: this.refreshOptions,
             rrKeyWord: this.rrKeyWord,
             searchMode: this.searchMode,
             status: this.status,
@@ -413,6 +465,14 @@ export interface RosDomainsProps {
      * @Property lang: The language type.
      */
     readonly lang?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 
     /**
      * @Property resourceGroupId: The ID of the resource group.
@@ -451,6 +511,13 @@ function RosDomainsPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('searchMode', ros.validateString)(properties.searchMode));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     errors.collect(ros.propertyValidator('groupId', ros.validateString)(properties.groupId));
     return errors.wrap('supplied properties not correct for "RosDomainsProps"');
 }
@@ -472,6 +539,7 @@ function rosDomainsPropsToRosTemplate(properties: any, enableResourcePropertyCon
       GroupId: ros.stringToRosTemplate(properties.groupId),
       KeyWord: ros.stringToRosTemplate(properties.keyWord),
       Lang: ros.stringToRosTemplate(properties.lang),
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       SearchMode: ros.stringToRosTemplate(properties.searchMode),
       Starmark: ros.booleanToRosTemplate(properties.starmark),
@@ -518,6 +586,14 @@ export class RosDomains extends ros.RosResource {
     public lang: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property resourceGroupId: The ID of the resource group.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
@@ -546,6 +622,7 @@ export class RosDomains extends ros.RosResource {
         this.groupId = props.groupId;
         this.keyWord = props.keyWord;
         this.lang = props.lang;
+        this.refreshOptions = props.refreshOptions;
         this.resourceGroupId = props.resourceGroupId;
         this.searchMode = props.searchMode;
         this.starmark = props.starmark;
@@ -557,6 +634,7 @@ export class RosDomains extends ros.RosResource {
             groupId: this.groupId,
             keyWord: this.keyWord,
             lang: this.lang,
+            refreshOptions: this.refreshOptions,
             resourceGroupId: this.resourceGroupId,
             searchMode: this.searchMode,
             starmark: this.starmark,

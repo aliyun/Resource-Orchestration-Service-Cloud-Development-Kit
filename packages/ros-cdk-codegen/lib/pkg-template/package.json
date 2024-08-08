@@ -1,6 +1,6 @@
 {
   "name": "replace-content",
-  "version": "1.0.27",
+  "version": "1.1.0",
   "description": "Aliyun SDK Copyright (C) Alibaba Cloud Computing All rights reserved. http://www.aliyun.com",
   "author": "ROS Development Team",
   "license": "Apache-2.0",
@@ -29,6 +29,9 @@
       "dotnet": {
         "namespace": "AlibabaCloud.SDK.ROS.CDK.replace-content",
         "packageId": "AlibabaCloud.SDK.ROS.CDK.replace-content"
+      },
+      "go": {
+        "module": "github.com/alibabacloud-go/ros-cdk/replace-content"
       }
     }
   },

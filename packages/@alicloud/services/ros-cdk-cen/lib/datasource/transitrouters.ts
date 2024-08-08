@@ -15,6 +15,14 @@ export interface TransitRoutersProps {
     readonly cenId: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property regionId: The ID of the region where the transit router is deployed. 
      * You can call the DescribeRegions operation to query region IDs.
      */
@@ -63,6 +71,7 @@ export class TransitRouters extends ros.Resource {
             cenId: props.cenId,
             regionId: props.regionId,
             transitRouterId: props.transitRouterId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosTransitRouters;
         this.attrTransitRouterIds = rosTransitRouters.attrTransitRouterIds;

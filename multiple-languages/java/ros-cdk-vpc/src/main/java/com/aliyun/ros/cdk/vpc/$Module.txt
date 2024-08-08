@@ -230,6 +230,8 @@
 @alicloud/ros-cdk-vpc.datasource.AddressProps=com.aliyun.ros.cdk.vpc.datasource.AddressProps
 @alicloud/ros-cdk-vpc.datasource.Addresses=com.aliyun.ros.cdk.vpc.datasource.Addresses
 @alicloud/ros-cdk-vpc.datasource.AddressesProps=com.aliyun.ros.cdk.vpc.datasource.AddressesProps
+@alicloud/ros-cdk-vpc.datasource.AnycastEipAddress=com.aliyun.ros.cdk.vpc.datasource.AnycastEipAddress
+@alicloud/ros-cdk-vpc.datasource.AnycastEipAddressProps=com.aliyun.ros.cdk.vpc.datasource.AnycastEipAddressProps
 @alicloud/ros-cdk-vpc.datasource.CommonBandwidthPackages=com.aliyun.ros.cdk.vpc.datasource.CommonBandwidthPackages
 @alicloud/ros-cdk-vpc.datasource.CommonBandwidthPackagesProps=com.aliyun.ros.cdk.vpc.datasource.CommonBandwidthPackagesProps
 @alicloud/ros-cdk-vpc.datasource.CustomerGateway=com.aliyun.ros.cdk.vpc.datasource.CustomerGateway
@@ -248,6 +250,8 @@
 @alicloud/ros-cdk-vpc.datasource.Ipv4GatewayProps=com.aliyun.ros.cdk.vpc.datasource.Ipv4GatewayProps
 @alicloud/ros-cdk-vpc.datasource.Ipv4Gateways=com.aliyun.ros.cdk.vpc.datasource.Ipv4Gateways
 @alicloud/ros-cdk-vpc.datasource.Ipv4GatewaysProps=com.aliyun.ros.cdk.vpc.datasource.Ipv4GatewaysProps
+@alicloud/ros-cdk-vpc.datasource.NatGateway=com.aliyun.ros.cdk.vpc.datasource.NatGateway
+@alicloud/ros-cdk-vpc.datasource.NatGatewayProps=com.aliyun.ros.cdk.vpc.datasource.NatGatewayProps
 @alicloud/ros-cdk-vpc.datasource.NatGatewayZones=com.aliyun.ros.cdk.vpc.datasource.NatGatewayZones
 @alicloud/ros-cdk-vpc.datasource.NatGatewayZonesProps=com.aliyun.ros.cdk.vpc.datasource.NatGatewayZonesProps
 @alicloud/ros-cdk-vpc.datasource.NatGateways=com.aliyun.ros.cdk.vpc.datasource.NatGateways
@@ -268,6 +272,8 @@
 @alicloud/ros-cdk-vpc.datasource.RosAddressProps=com.aliyun.ros.cdk.vpc.datasource.RosAddressProps
 @alicloud/ros-cdk-vpc.datasource.RosAddresses=com.aliyun.ros.cdk.vpc.datasource.RosAddresses
 @alicloud/ros-cdk-vpc.datasource.RosAddressesProps=com.aliyun.ros.cdk.vpc.datasource.RosAddressesProps
+@alicloud/ros-cdk-vpc.datasource.RosAnycastEipAddress=com.aliyun.ros.cdk.vpc.datasource.RosAnycastEipAddress
+@alicloud/ros-cdk-vpc.datasource.RosAnycastEipAddressProps=com.aliyun.ros.cdk.vpc.datasource.RosAnycastEipAddressProps
 @alicloud/ros-cdk-vpc.datasource.RosCommonBandwidthPackages=com.aliyun.ros.cdk.vpc.datasource.RosCommonBandwidthPackages
 @alicloud/ros-cdk-vpc.datasource.RosCommonBandwidthPackagesProps=com.aliyun.ros.cdk.vpc.datasource.RosCommonBandwidthPackagesProps
 @alicloud/ros-cdk-vpc.datasource.RosCustomerGateway=com.aliyun.ros.cdk.vpc.datasource.RosCustomerGateway
@@ -286,6 +292,8 @@
 @alicloud/ros-cdk-vpc.datasource.RosIpv4GatewayProps=com.aliyun.ros.cdk.vpc.datasource.RosIpv4GatewayProps
 @alicloud/ros-cdk-vpc.datasource.RosIpv4Gateways=com.aliyun.ros.cdk.vpc.datasource.RosIpv4Gateways
 @alicloud/ros-cdk-vpc.datasource.RosIpv4GatewaysProps=com.aliyun.ros.cdk.vpc.datasource.RosIpv4GatewaysProps
+@alicloud/ros-cdk-vpc.datasource.RosNatGateway=com.aliyun.ros.cdk.vpc.datasource.RosNatGateway
+@alicloud/ros-cdk-vpc.datasource.RosNatGatewayProps=com.aliyun.ros.cdk.vpc.datasource.RosNatGatewayProps
 @alicloud/ros-cdk-vpc.datasource.RosNatGatewayZones=com.aliyun.ros.cdk.vpc.datasource.RosNatGatewayZones
 @alicloud/ros-cdk-vpc.datasource.RosNatGatewayZonesProps=com.aliyun.ros.cdk.vpc.datasource.RosNatGatewayZonesProps
 @alicloud/ros-cdk-vpc.datasource.RosNatGateways=com.aliyun.ros.cdk.vpc.datasource.RosNatGateways

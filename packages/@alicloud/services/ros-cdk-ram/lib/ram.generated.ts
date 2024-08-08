@@ -1153,6 +1153,183 @@ function rosGroupStatementPropertyToRosTemplate(properties: any): any {
 }
 
 /**
+ * Properties for defining a `RosLoginProfile`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-loginprofile
+ */
+export interface RosLoginProfileProps {
+
+    /**
+     * @Property userPrincipalName: The login name of the RAM user.
+     */
+    readonly userPrincipalName: string | ros.IResolvable;
+
+    /**
+     * @Property generateRandomPassword: Whether to generate a random password for the RAM user.
+     */
+    readonly generateRandomPassword?: boolean | ros.IResolvable;
+
+    /**
+     * @Property mfaBindRequired: Whether to force RAM users to enable multi-factor authentication. Valid values:
+     * - true: This is required. RAM users must bind the multifactor authentication device the next time they log in.
+     * - false (default) : This is not required.
+     */
+    readonly mfaBindRequired?: boolean | ros.IResolvable;
+
+    /**
+     * @Property password: The password of the RAM user.
+     */
+    readonly password?: string | ros.IResolvable;
+
+    /**
+     * @Property passwordResetRequired: Whether RAM users must reset their password the next time they log in.
+     */
+    readonly passwordResetRequired?: boolean | ros.IResolvable;
+
+    /**
+     * @Property status: Enable or disable console password login. Valid values:
+     * - Activate (default): Enable.
+     * - Inactivate: Disable.
+     */
+    readonly status?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosLoginProfileProps`
+ *
+ * @param properties - the TypeScript properties of a `RosLoginProfileProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosLoginProfilePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.status && (typeof properties.status) !== 'object') {
+        errors.collect(ros.propertyValidator('status', ros.validateAllowedValues)({
+          data: properties.status,
+          allowedValues: ["Activate","Inactivate"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('status', ros.validateString)(properties.status));
+    errors.collect(ros.propertyValidator('passwordResetRequired', ros.validateBoolean)(properties.passwordResetRequired));
+    errors.collect(ros.propertyValidator('userPrincipalName', ros.requiredValidator)(properties.userPrincipalName));
+    errors.collect(ros.propertyValidator('userPrincipalName', ros.validateString)(properties.userPrincipalName));
+    errors.collect(ros.propertyValidator('generateRandomPassword', ros.validateBoolean)(properties.generateRandomPassword));
+    errors.collect(ros.propertyValidator('mfaBindRequired', ros.validateBoolean)(properties.mfaBindRequired));
+    errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
+    return errors.wrap('supplied properties not correct for "RosLoginProfileProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::RAM::LoginProfile` resource
+ *
+ * @param properties - the TypeScript properties of a `RosLoginProfileProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::RAM::LoginProfile` resource.
+ */
+// @ts-ignore TS6133
+function rosLoginProfilePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosLoginProfilePropsValidator(properties).assertSuccess();
+    }
+    return {
+      UserPrincipalName: ros.stringToRosTemplate(properties.userPrincipalName),
+      GenerateRandomPassword: ros.booleanToRosTemplate(properties.generateRandomPassword),
+      MFABindRequired: ros.booleanToRosTemplate(properties.mfaBindRequired),
+      Password: ros.stringToRosTemplate(properties.password),
+      PasswordResetRequired: ros.booleanToRosTemplate(properties.passwordResetRequired),
+      Status: ros.stringToRosTemplate(properties.status),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::LoginProfile`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `LoginProfile` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-loginprofile
+ */
+export class RosLoginProfile extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::RAM::LoginProfile";
+
+    /**
+     * @Attribute Password: The password of the RAM user.
+     */
+    public readonly attrPassword: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property userPrincipalName: The login name of the RAM user.
+     */
+    public userPrincipalName: string | ros.IResolvable;
+
+    /**
+     * @Property generateRandomPassword: Whether to generate a random password for the RAM user.
+     */
+    public generateRandomPassword: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property mfaBindRequired: Whether to force RAM users to enable multi-factor authentication. Valid values:
+     * - true: This is required. RAM users must bind the multifactor authentication device the next time they log in.
+     * - false (default) : This is not required.
+     */
+    public mfaBindRequired: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property password: The password of the RAM user.
+     */
+    public password: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property passwordResetRequired: Whether RAM users must reset their password the next time they log in.
+     */
+    public passwordResetRequired: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property status: Enable or disable console password login. Valid values:
+     * - Activate (default): Enable.
+     * - Inactivate: Disable.
+     */
+    public status: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosLoginProfileProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosLoginProfile.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrPassword = this.getAtt('Password');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.userPrincipalName = props.userPrincipalName;
+        this.generateRandomPassword = props.generateRandomPassword;
+        this.mfaBindRequired = props.mfaBindRequired;
+        this.password = props.password;
+        this.passwordResetRequired = props.passwordResetRequired;
+        this.status = props.status;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            userPrincipalName: this.userPrincipalName,
+            generateRandomPassword: this.generateRandomPassword,
+            mfaBindRequired: this.mfaBindRequired,
+            password: this.password,
+            passwordResetRequired: this.passwordResetRequired,
+            status: this.status,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosLoginProfilePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosManagedPolicy`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-managedpolicy
  */

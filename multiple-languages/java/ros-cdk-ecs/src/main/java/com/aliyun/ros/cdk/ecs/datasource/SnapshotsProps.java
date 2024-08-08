@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-snapshots
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:06.674Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:10.440Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.datasource.SnapshotsProps")
 @software.amazon.jsii.Jsii.Proxy(SnapshotsProps.Jsii$Proxy.class)
 public interface SnapshotsProps extends software.amazon.jsii.JsiiSerializable {
@@ -59,6 +59,21 @@ public interface SnapshotsProps extends software.amazon.jsii.JsiiSerializable {
      * Property kmsKeyId: The ID of the Key Management Service (KMS) key used by the data disk.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getKmsKeyId() {
+        return null;
+    }
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
         return null;
     }
 
@@ -167,6 +182,7 @@ public interface SnapshotsProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object filters;
         java.lang.Object instanceId;
         java.lang.Object kmsKeyId;
+        java.lang.Object refreshOptions;
         java.lang.Object resourceGroupId;
         java.lang.Object snapshotIds;
         java.lang.Object snapshotLinkId;
@@ -310,6 +326,40 @@ public interface SnapshotsProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder kmsKeyId(com.aliyun.ros.cdk.core.IResolvable kmsKeyId) {
             this.kmsKeyId = kmsKeyId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SnapshotsProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SnapshotsProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
             return this;
         }
 
@@ -546,6 +596,7 @@ public interface SnapshotsProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object filters;
         private final java.lang.Object instanceId;
         private final java.lang.Object kmsKeyId;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object snapshotIds;
         private final java.lang.Object snapshotLinkId;
@@ -568,6 +619,7 @@ public interface SnapshotsProps extends software.amazon.jsii.JsiiSerializable {
             this.filters = software.amazon.jsii.Kernel.get(this, "filters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.kmsKeyId = software.amazon.jsii.Kernel.get(this, "kmsKeyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.snapshotIds = software.amazon.jsii.Kernel.get(this, "snapshotIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.snapshotLinkId = software.amazon.jsii.Kernel.get(this, "snapshotLinkId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -591,6 +643,7 @@ public interface SnapshotsProps extends software.amazon.jsii.JsiiSerializable {
             this.filters = builder.filters;
             this.instanceId = builder.instanceId;
             this.kmsKeyId = builder.kmsKeyId;
+            this.refreshOptions = builder.refreshOptions;
             this.resourceGroupId = builder.resourceGroupId;
             this.snapshotIds = builder.snapshotIds;
             this.snapshotLinkId = builder.snapshotLinkId;
@@ -630,6 +683,11 @@ public interface SnapshotsProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getKmsKeyId() {
             return this.kmsKeyId;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -701,6 +759,9 @@ public interface SnapshotsProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getKmsKeyId() != null) {
                 data.set("kmsKeyId", om.valueToTree(this.getKmsKeyId()));
             }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
+            }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
@@ -752,6 +813,7 @@ public interface SnapshotsProps extends software.amazon.jsii.JsiiSerializable {
             if (this.filters != null ? !this.filters.equals(that.filters) : that.filters != null) return false;
             if (this.instanceId != null ? !this.instanceId.equals(that.instanceId) : that.instanceId != null) return false;
             if (this.kmsKeyId != null ? !this.kmsKeyId.equals(that.kmsKeyId) : that.kmsKeyId != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.snapshotIds != null ? !this.snapshotIds.equals(that.snapshotIds) : that.snapshotIds != null) return false;
             if (this.snapshotLinkId != null ? !this.snapshotLinkId.equals(that.snapshotLinkId) : that.snapshotLinkId != null) return false;
@@ -771,6 +833,7 @@ public interface SnapshotsProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.filters != null ? this.filters.hashCode() : 0);
             result = 31 * result + (this.instanceId != null ? this.instanceId.hashCode() : 0);
             result = 31 * result + (this.kmsKeyId != null ? this.kmsKeyId.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.snapshotIds != null ? this.snapshotIds.hashCode() : 0);
             result = 31 * result + (this.snapshotLinkId != null ? this.snapshotLinkId.hashCode() : 0);

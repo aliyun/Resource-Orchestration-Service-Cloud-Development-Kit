@@ -651,6 +651,421 @@ function rosApplicationTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
+ * Properties for defining a `RosIngress`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-ingress
+ */
+export interface RosIngressProps {
+
+    /**
+     * @Property defaultRule: The default forwarding rule. You can specify a port and an application in the default forwarding rule to forward traffic based on the IP address of the application.
+     */
+    readonly defaultRule: RosIngress.DefaultRuleProperty | ros.IResolvable;
+
+    /**
+     * @Property description: The name of the routing rule.
+     */
+    readonly description: string | ros.IResolvable;
+
+    /**
+     * @Property listenerPort: The listener port of the SLB instance. You must specify a vacant port.
+     */
+    readonly listenerPort: number | ros.IResolvable;
+
+    /**
+     * @Property namespaceId: The ID of the namespace to which the application belongs. You can specify only one namespace ID each time you call this operation.
+     */
+    readonly namespaceId: string | ros.IResolvable;
+
+    /**
+     * @Property rules: The forwarding rules. You can specify a port and an application in a forwarding rule to forward traffic based on the specified domain name and request path.
+     */
+    readonly rules: Array<RosIngress.RulesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property slbId: The Server Load Balancer (SLB) instance that is used by the routing rule.
+     */
+    readonly slbId: string | ros.IResolvable;
+
+    /**
+     * @Property certId: The ID of the certificate that is associated with the Classic Load Balancer (CLB) instance.
+     * If LoadBalanceType is set to clb, specify this parameter to configure a certificate for the HTTP listener.
+     */
+    readonly certId?: string | ros.IResolvable;
+
+    /**
+     * @Property certIds: The IDs of the certificates that are associated with the Application Load Balancer (ALB) instance.
+     */
+    readonly certIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property listenerProtocol: The protocol that is used to forward requests.
+     */
+    readonly listenerProtocol?: string | ros.IResolvable;
+
+    /**
+     * @Property loadBalanceType: The type of the SLB instance based on the processing capabilities. The instance type can be specified only when you create a routing rule. You cannot change the instance type when you update the routing rule.
+     */
+    readonly loadBalanceType?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosIngressProps`
+ *
+ * @param properties - the TypeScript properties of a `RosIngressProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosIngressPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('defaultRule', ros.requiredValidator)(properties.defaultRule));
+    errors.collect(ros.propertyValidator('defaultRule', RosIngress_DefaultRulePropertyValidator)(properties.defaultRule));
+    errors.collect(ros.propertyValidator('slbId', ros.requiredValidator)(properties.slbId));
+    errors.collect(ros.propertyValidator('slbId', ros.validateString)(properties.slbId));
+    errors.collect(ros.propertyValidator('listenerPort', ros.requiredValidator)(properties.listenerPort));
+    if(properties.listenerPort && (typeof properties.listenerPort) !== 'object') {
+        errors.collect(ros.propertyValidator('listenerPort', ros.validateRange)({
+            data: properties.listenerPort,
+            min: 0,
+            max: 65535,
+          }));
+    }
+    errors.collect(ros.propertyValidator('listenerPort', ros.validateNumber)(properties.listenerPort));
+    errors.collect(ros.propertyValidator('description', ros.requiredValidator)(properties.description));
+    if(properties.description && (typeof properties.description) !== 'object') {
+        errors.collect(ros.propertyValidator('description', ros.validateAllowedPattern)({
+          data: properties.description,
+          reg: /^[a-z0-9]([a-z0-9.-]{0,61}[a-z0-9])?$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    if(properties.certIds && (Array.isArray(properties.certIds) || (typeof properties.certIds) === 'string')) {
+        errors.collect(ros.propertyValidator('certIds', ros.validateLength)({
+            data: properties.certIds.length,
+            min: 1,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('certIds', ros.listValidator(ros.validateString))(properties.certIds));
+    errors.collect(ros.propertyValidator('certId', ros.validateString)(properties.certId));
+    errors.collect(ros.propertyValidator('loadBalanceType', ros.validateString)(properties.loadBalanceType));
+    errors.collect(ros.propertyValidator('namespaceId', ros.requiredValidator)(properties.namespaceId));
+    errors.collect(ros.propertyValidator('namespaceId', ros.validateString)(properties.namespaceId));
+    if(properties.listenerProtocol && (typeof properties.listenerProtocol) !== 'object') {
+        errors.collect(ros.propertyValidator('listenerProtocol', ros.validateAllowedValues)({
+          data: properties.listenerProtocol,
+          allowedValues: ["HTTP","HTTPS"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('listenerProtocol', ros.validateString)(properties.listenerProtocol));
+    errors.collect(ros.propertyValidator('rules', ros.requiredValidator)(properties.rules));
+    if(properties.rules && (Array.isArray(properties.rules) || (typeof properties.rules) === 'string')) {
+        errors.collect(ros.propertyValidator('rules', ros.validateLength)({
+            data: properties.rules.length,
+            min: 1,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('rules', ros.listValidator(RosIngress_RulesPropertyValidator))(properties.rules));
+    return errors.wrap('supplied properties not correct for "RosIngressProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SAE::Ingress` resource
+ *
+ * @param properties - the TypeScript properties of a `RosIngressProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SAE::Ingress` resource.
+ */
+// @ts-ignore TS6133
+function rosIngressPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosIngressPropsValidator(properties).assertSuccess();
+    }
+    return {
+      DefaultRule: rosIngressDefaultRulePropertyToRosTemplate(properties.defaultRule),
+      Description: ros.stringToRosTemplate(properties.description),
+      ListenerPort: ros.numberToRosTemplate(properties.listenerPort),
+      NamespaceId: ros.stringToRosTemplate(properties.namespaceId),
+      Rules: ros.listMapper(rosIngressRulesPropertyToRosTemplate)(properties.rules),
+      SlbId: ros.stringToRosTemplate(properties.slbId),
+      CertId: ros.stringToRosTemplate(properties.certId),
+      CertIds: ros.listMapper(ros.stringToRosTemplate)(properties.certIds),
+      ListenerProtocol: ros.stringToRosTemplate(properties.listenerProtocol),
+      LoadBalanceType: ros.stringToRosTemplate(properties.loadBalanceType),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::Ingress`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Ingress` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-ingress
+ */
+export class RosIngress extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SAE::Ingress";
+
+    /**
+     * @Attribute IngressId: The ID of the routing rule.
+     */
+    public readonly attrIngressId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property defaultRule: The default forwarding rule. You can specify a port and an application in the default forwarding rule to forward traffic based on the IP address of the application.
+     */
+    public defaultRule: RosIngress.DefaultRuleProperty | ros.IResolvable;
+
+    /**
+     * @Property description: The name of the routing rule.
+     */
+    public description: string | ros.IResolvable;
+
+    /**
+     * @Property listenerPort: The listener port of the SLB instance. You must specify a vacant port.
+     */
+    public listenerPort: number | ros.IResolvable;
+
+    /**
+     * @Property namespaceId: The ID of the namespace to which the application belongs. You can specify only one namespace ID each time you call this operation.
+     */
+    public namespaceId: string | ros.IResolvable;
+
+    /**
+     * @Property rules: The forwarding rules. You can specify a port and an application in a forwarding rule to forward traffic based on the specified domain name and request path.
+     */
+    public rules: Array<RosIngress.RulesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property slbId: The Server Load Balancer (SLB) instance that is used by the routing rule.
+     */
+    public slbId: string | ros.IResolvable;
+
+    /**
+     * @Property certId: The ID of the certificate that is associated with the Classic Load Balancer (CLB) instance.
+     * If LoadBalanceType is set to clb, specify this parameter to configure a certificate for the HTTP listener.
+     */
+    public certId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property certIds: The IDs of the certificates that are associated with the Application Load Balancer (ALB) instance.
+     */
+    public certIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property listenerProtocol: The protocol that is used to forward requests.
+     */
+    public listenerProtocol: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property loadBalanceType: The type of the SLB instance based on the processing capabilities. The instance type can be specified only when you create a routing rule. You cannot change the instance type when you update the routing rule.
+     */
+    public loadBalanceType: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosIngressProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosIngress.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrIngressId = this.getAtt('IngressId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.defaultRule = props.defaultRule;
+        this.description = props.description;
+        this.listenerPort = props.listenerPort;
+        this.namespaceId = props.namespaceId;
+        this.rules = props.rules;
+        this.slbId = props.slbId;
+        this.certId = props.certId;
+        this.certIds = props.certIds;
+        this.listenerProtocol = props.listenerProtocol;
+        this.loadBalanceType = props.loadBalanceType;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            defaultRule: this.defaultRule,
+            description: this.description,
+            listenerPort: this.listenerPort,
+            namespaceId: this.namespaceId,
+            rules: this.rules,
+            slbId: this.slbId,
+            certId: this.certId,
+            certIds: this.certIds,
+            listenerProtocol: this.listenerProtocol,
+            loadBalanceType: this.loadBalanceType,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosIngressPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosIngress {
+    /**
+     * @stability external
+     */
+    export interface DefaultRuleProperty {
+        /**
+         * @Property backendProtocol: The protocol of the application.
+         */
+        readonly backendProtocol?: string | ros.IResolvable;
+        /**
+         * @Property appId: The application ID
+         */
+        readonly appId: string | ros.IResolvable;
+        /**
+         * @Property containerPort: The container port of the application.
+         */
+        readonly containerPort: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DefaultRuleProperty`
+ *
+ * @param properties - the TypeScript properties of a `DefaultRuleProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosIngress_DefaultRulePropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.backendProtocol && (typeof properties.backendProtocol) !== 'object') {
+        errors.collect(ros.propertyValidator('backendProtocol', ros.validateAllowedValues)({
+          data: properties.backendProtocol,
+          allowedValues: ["http","https","grpc"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('backendProtocol', ros.validateString)(properties.backendProtocol));
+    errors.collect(ros.propertyValidator('appId', ros.requiredValidator)(properties.appId));
+    errors.collect(ros.propertyValidator('appId', ros.validateString)(properties.appId));
+    errors.collect(ros.propertyValidator('containerPort', ros.requiredValidator)(properties.containerPort));
+    if(properties.containerPort && (typeof properties.containerPort) !== 'object') {
+        errors.collect(ros.propertyValidator('containerPort', ros.validateRange)({
+            data: properties.containerPort,
+            min: 0,
+            max: 65535,
+          }));
+    }
+    errors.collect(ros.propertyValidator('containerPort', ros.validateNumber)(properties.containerPort));
+    return errors.wrap('supplied properties not correct for "DefaultRuleProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SAE::Ingress.DefaultRule` resource
+ *
+ * @param properties - the TypeScript properties of a `DefaultRuleProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SAE::Ingress.DefaultRule` resource.
+ */
+// @ts-ignore TS6133
+function rosIngressDefaultRulePropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosIngress_DefaultRulePropertyValidator(properties).assertSuccess();
+    return {
+      BackendProtocol: ros.stringToRosTemplate(properties.backendProtocol),
+      AppId: ros.stringToRosTemplate(properties.appId),
+      ContainerPort: ros.numberToRosTemplate(properties.containerPort),
+    };
+}
+
+export namespace RosIngress {
+    /**
+     * @stability external
+     */
+    export interface RulesProperty {
+        /**
+         * @Property path: The request path.
+         */
+        readonly path: string | ros.IResolvable;
+        /**
+         * @Property backendProtocol: The protocol of the application.
+         */
+        readonly backendProtocol?: string | ros.IResolvable;
+        /**
+         * @Property appId: The application ID
+         */
+        readonly appId: string | ros.IResolvable;
+        /**
+         * @Property rewritePath: The rewrite path.
+         */
+        readonly rewritePath?: string | ros.IResolvable;
+        /**
+         * @Property containerPort: The container port of the application.
+         */
+        readonly containerPort: number | ros.IResolvable;
+        /**
+         * @Property domain: The domain name.
+         */
+        readonly domain: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `RulesProperty`
+ *
+ * @param properties - the TypeScript properties of a `RulesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosIngress_RulesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('path', ros.requiredValidator)(properties.path));
+    errors.collect(ros.propertyValidator('path', ros.validateString)(properties.path));
+    if(properties.backendProtocol && (typeof properties.backendProtocol) !== 'object') {
+        errors.collect(ros.propertyValidator('backendProtocol', ros.validateAllowedValues)({
+          data: properties.backendProtocol,
+          allowedValues: ["http","https","grpc"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('backendProtocol', ros.validateString)(properties.backendProtocol));
+    errors.collect(ros.propertyValidator('appId', ros.requiredValidator)(properties.appId));
+    errors.collect(ros.propertyValidator('appId', ros.validateString)(properties.appId));
+    errors.collect(ros.propertyValidator('rewritePath', ros.validateString)(properties.rewritePath));
+    errors.collect(ros.propertyValidator('containerPort', ros.requiredValidator)(properties.containerPort));
+    if(properties.containerPort && (typeof properties.containerPort) !== 'object') {
+        errors.collect(ros.propertyValidator('containerPort', ros.validateRange)({
+            data: properties.containerPort,
+            min: 0,
+            max: 65535,
+          }));
+    }
+    errors.collect(ros.propertyValidator('containerPort', ros.validateNumber)(properties.containerPort));
+    errors.collect(ros.propertyValidator('domain', ros.requiredValidator)(properties.domain));
+    errors.collect(ros.propertyValidator('domain', ros.validateString)(properties.domain));
+    return errors.wrap('supplied properties not correct for "RulesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SAE::Ingress.Rules` resource
+ *
+ * @param properties - the TypeScript properties of a `RulesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SAE::Ingress.Rules` resource.
+ */
+// @ts-ignore TS6133
+function rosIngressRulesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosIngress_RulesPropertyValidator(properties).assertSuccess();
+    return {
+      Path: ros.stringToRosTemplate(properties.path),
+      BackendProtocol: ros.stringToRosTemplate(properties.backendProtocol),
+      AppId: ros.stringToRosTemplate(properties.appId),
+      RewritePath: ros.stringToRosTemplate(properties.rewritePath),
+      ContainerPort: ros.numberToRosTemplate(properties.containerPort),
+      Domain: ros.stringToRosTemplate(properties.domain),
+    };
+}
+
+/**
  * Properties for defining a `RosNamespace`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-namespace
  */

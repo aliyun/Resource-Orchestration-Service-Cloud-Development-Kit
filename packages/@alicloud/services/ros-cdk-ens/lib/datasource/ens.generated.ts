@@ -42,6 +42,14 @@ export interface RosInstancesProps {
     readonly instanceResourceType?: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * @Property status: The status of instance.
      */
     readonly status?: string | ros.IResolvable;
@@ -78,6 +86,13 @@ function RosInstancesPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('ensRegionIds', ros.listValidator(ros.validateAny))(properties.ensRegionIds));
     errors.collect(ros.propertyValidator('instanceResourceType', ros.validateString)(properties.instanceResourceType));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosInstancesProps"');
 }
 
@@ -101,6 +116,7 @@ function rosInstancesPropsToRosTemplate(properties: any, enableResourcePropertyC
       InstanceIds: ros.listMapper(ros.objectToRosTemplate)(properties.instanceIds),
       InstanceName: ros.stringToRosTemplate(properties.instanceName),
       InstanceResourceType: ros.stringToRosTemplate(properties.instanceResourceType),
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
       Status: ros.stringToRosTemplate(properties.status),
     };
 }
@@ -163,6 +179,14 @@ export class RosInstances extends ros.RosResource {
     public instanceResourceType: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property status: The status of instance.
      */
     public status: string | ros.IResolvable | undefined;
@@ -184,6 +208,7 @@ export class RosInstances extends ros.RosResource {
         this.instanceIds = props.instanceIds;
         this.instanceName = props.instanceName;
         this.instanceResourceType = props.instanceResourceType;
+        this.refreshOptions = props.refreshOptions;
         this.status = props.status;
     }
 
@@ -196,6 +221,7 @@ export class RosInstances extends ros.RosResource {
             instanceIds: this.instanceIds,
             instanceName: this.instanceName,
             instanceResourceType: this.instanceResourceType,
+            refreshOptions: this.refreshOptions,
             status: this.status,
         };
     }

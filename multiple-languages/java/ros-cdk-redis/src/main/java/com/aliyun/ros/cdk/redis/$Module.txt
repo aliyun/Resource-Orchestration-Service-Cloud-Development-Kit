@@ -40,6 +40,8 @@
 @alicloud/ros-cdk-redis.RosWhitelistProps=com.aliyun.ros.cdk.redis.RosWhitelistProps
 @alicloud/ros-cdk-redis.Whitelist=com.aliyun.ros.cdk.redis.Whitelist
 @alicloud/ros-cdk-redis.WhitelistProps=com.aliyun.ros.cdk.redis.WhitelistProps
+@alicloud/ros-cdk-redis.datasource.Account=com.aliyun.ros.cdk.redis.datasource.Account
+@alicloud/ros-cdk-redis.datasource.AccountProps=com.aliyun.ros.cdk.redis.datasource.AccountProps
 @alicloud/ros-cdk-redis.datasource.Accounts=com.aliyun.ros.cdk.redis.datasource.Accounts
 @alicloud/ros-cdk-redis.datasource.AccountsProps=com.aliyun.ros.cdk.redis.datasource.AccountsProps
 @alicloud/ros-cdk-redis.datasource.Instance=com.aliyun.ros.cdk.redis.datasource.Instance
@@ -48,6 +50,8 @@
 @alicloud/ros-cdk-redis.datasource.InstanceProps=com.aliyun.ros.cdk.redis.datasource.InstanceProps
 @alicloud/ros-cdk-redis.datasource.Instances=com.aliyun.ros.cdk.redis.datasource.Instances
 @alicloud/ros-cdk-redis.datasource.InstancesProps=com.aliyun.ros.cdk.redis.datasource.InstancesProps
+@alicloud/ros-cdk-redis.datasource.RosAccount=com.aliyun.ros.cdk.redis.datasource.RosAccount
+@alicloud/ros-cdk-redis.datasource.RosAccountProps=com.aliyun.ros.cdk.redis.datasource.RosAccountProps
 @alicloud/ros-cdk-redis.datasource.RosAccounts=com.aliyun.ros.cdk.redis.datasource.RosAccounts
 @alicloud/ros-cdk-redis.datasource.RosAccountsProps=com.aliyun.ros.cdk.redis.datasource.RosAccountsProps
 @alicloud/ros-cdk-redis.datasource.RosInstance=com.aliyun.ros.cdk.redis.datasource.RosInstance

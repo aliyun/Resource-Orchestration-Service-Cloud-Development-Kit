@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cdn;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CDN::Domain</code>, which is used to add a domain name to Alibaba Cloud CDN (CDN).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:04.677Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:07.883Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cdn.$Module.class, fqn = "@alicloud/ros-cdk-cdn.Domain")
 public class Domain extends com.aliyun.ros.cdk.core.Resource {
 

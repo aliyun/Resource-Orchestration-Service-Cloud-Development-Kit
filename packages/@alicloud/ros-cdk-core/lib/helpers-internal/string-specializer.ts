@@ -6,8 +6,8 @@ import { Token } from '../token';
 /**
  * A "replace-all" function that doesn't require us escaping a literal string to a regex
  */
-function replaceAll(s: string, search: string, replace: string) {
-  return s.split(search).join(replace);
+function replaceAll(str: string, search: string, replace: string) {
+  return str.split(search).join(replace);
 }
 
 export function generateRandomString(length: number): string {
@@ -24,13 +24,13 @@ export class StringSpecializer {
   /**
    * Validate that the given string does not contain tokens
    */
-  public static validateNoTokens(s: string, what: string) {
-    if (Token.isUnresolved(s)) {
+  public static validateNoTokens(str: string, what: string) {
+    if (Token.isUnresolved(str)) {
       throw new Error(`${what} may not contain tokens; only the following literal placeholder strings are allowed: ` + [
         '${Qualifier}',
         cxapi.EnvironmentPlaceholders.CURRENT_REGION,
         cxapi.EnvironmentPlaceholders.CURRENT_ACCOUNT,
-      ].join(', ') + `. Got: ${s}`);
+      ].join(', ') + `. Got: ${str}`);
     }
   }
 
@@ -43,9 +43,9 @@ export class StringSpecializer {
    * - ${Qualifier}: always
    * - ${ALIYUN::AccountId}, ${ALIYUN::Region}: only if we have the actual values available
    */
-  public specialize(s: string): string {
-    s = replaceAll(s, '${Qualifier}', this.qualifier);
-    return cxapi.EnvironmentPlaceholders.replace(s, {
+  public specialize(str: string): string {
+    str = replaceAll(str, '${Qualifier}', this.qualifier);
+    return cxapi.EnvironmentPlaceholders.replace(str, {
       region: resolvedOr(this.stack.region, cxapi.EnvironmentPlaceholders.CURRENT_REGION),
       accountId: resolvedOr(this.stack.account, cxapi.EnvironmentPlaceholders.CURRENT_ACCOUNT),
     });
@@ -54,16 +54,16 @@ export class StringSpecializer {
   /**
    * Specialize the given string, make sure it doesn't contain tokens
    */
-  public specializeNoTokens(s: string, what: string): string {
-    StringSpecializer.validateNoTokens(s, what);
-    return this.specialize(s);
+  public specializeNoTokens(str: string, what: string): string {
+    StringSpecializer.validateNoTokens(str, what);
+    return this.specialize(str);
   }
 
   /**
    * Specialize only the qualifier
    */
-  public qualifierOnly(s: string): string {
-    return replaceAll(s, '${Qualifier}', this.qualifier);
+  public qualifierOnly(str: string): string {
+    return replaceAll(str, '${Qualifier}', this.qualifier);
   }
 }
 

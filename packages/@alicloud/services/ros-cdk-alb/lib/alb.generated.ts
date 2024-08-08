@@ -3,6 +3,249 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosAScript`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-ascript
+ */
+export interface RosAScriptProps {
+
+    /**
+     * @Property aScriptName: The name of the AScript rule.
+     * The name must be 2 to 128 character in length, and can contain letters, digits, periods (.), underscores (_), and hyphens (-). It must start with a letter.
+     */
+    readonly aScriptName: string | ros.IResolvable;
+
+    /**
+     * @Property listenerId: The listener ID.
+     */
+    readonly listenerId: string | ros.IResolvable;
+
+    /**
+     * @Property scriptContent: The content of the AScript rule.
+     */
+    readonly scriptContent: string | ros.IResolvable;
+
+    /**
+     * @Property enabled: Specifies whether to enable the AScript rule. Valid values:
+     * true
+     * false (default)
+     */
+    readonly enabled?: boolean | ros.IResolvable;
+
+    /**
+     * @Property extAttributeEnabled: Specifies whether to enable the extended attributes of the AScript rule. Valid values:
+     * true
+     * false (default)
+     */
+    readonly extAttributeEnabled?: boolean | ros.IResolvable;
+
+    /**
+     * @Property extAttributes: The extended attributes.
+     */
+    readonly extAttributes?: Array<RosAScript.ExtAttributesProperty | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAScriptProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAScriptProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAScriptPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('scriptContent', ros.requiredValidator)(properties.scriptContent));
+    errors.collect(ros.propertyValidator('scriptContent', ros.validateString)(properties.scriptContent));
+    errors.collect(ros.propertyValidator('aScriptName', ros.requiredValidator)(properties.aScriptName));
+    if(properties.aScriptName && (typeof properties.aScriptName) !== 'object') {
+        errors.collect(ros.propertyValidator('aScriptName', ros.validateAllowedPattern)({
+          data: properties.aScriptName,
+          reg: /^[a-zA-Z][.-_a-zA-Z0-9]{1,127}$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('aScriptName', ros.validateString)(properties.aScriptName));
+    errors.collect(ros.propertyValidator('enabled', ros.validateBoolean)(properties.enabled));
+    errors.collect(ros.propertyValidator('extAttributeEnabled', ros.validateBoolean)(properties.extAttributeEnabled));
+    if(properties.extAttributes && (Array.isArray(properties.extAttributes) || (typeof properties.extAttributes) === 'string')) {
+        errors.collect(ros.propertyValidator('extAttributes', ros.validateLength)({
+            data: properties.extAttributes.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('extAttributes', ros.listValidator(RosAScript_ExtAttributesPropertyValidator))(properties.extAttributes));
+    errors.collect(ros.propertyValidator('listenerId', ros.requiredValidator)(properties.listenerId));
+    errors.collect(ros.propertyValidator('listenerId', ros.validateString)(properties.listenerId));
+    return errors.wrap('supplied properties not correct for "RosAScriptProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ALB::AScript` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAScriptProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ALB::AScript` resource.
+ */
+// @ts-ignore TS6133
+function rosAScriptPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAScriptPropsValidator(properties).assertSuccess();
+    }
+    return {
+      AScriptName: ros.stringToRosTemplate(properties.aScriptName),
+      ListenerId: ros.stringToRosTemplate(properties.listenerId),
+      ScriptContent: ros.stringToRosTemplate(properties.scriptContent),
+      Enabled: ros.booleanToRosTemplate(properties.enabled),
+      ExtAttributeEnabled: ros.booleanToRosTemplate(properties.extAttributeEnabled),
+      ExtAttributes: ros.listMapper(rosAScriptExtAttributesPropertyToRosTemplate)(properties.extAttributes),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::AScript`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AScript` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-ascript
+ */
+export class RosAScript extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ALB::AScript";
+
+    /**
+     * @Attribute AScriptId: The AScript rule ID.
+     */
+    public readonly attrAScriptId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property aScriptName: The name of the AScript rule.
+     * The name must be 2 to 128 character in length, and can contain letters, digits, periods (.), underscores (_), and hyphens (-). It must start with a letter.
+     */
+    public aScriptName: string | ros.IResolvable;
+
+    /**
+     * @Property listenerId: The listener ID.
+     */
+    public listenerId: string | ros.IResolvable;
+
+    /**
+     * @Property scriptContent: The content of the AScript rule.
+     */
+    public scriptContent: string | ros.IResolvable;
+
+    /**
+     * @Property enabled: Specifies whether to enable the AScript rule. Valid values:
+     * true
+     * false (default)
+     */
+    public enabled: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property extAttributeEnabled: Specifies whether to enable the extended attributes of the AScript rule. Valid values:
+     * true
+     * false (default)
+     */
+    public extAttributeEnabled: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property extAttributes: The extended attributes.
+     */
+    public extAttributes: Array<RosAScript.ExtAttributesProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAScriptProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAScript.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAScriptId = this.getAtt('AScriptId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.aScriptName = props.aScriptName;
+        this.listenerId = props.listenerId;
+        this.scriptContent = props.scriptContent;
+        this.enabled = props.enabled;
+        this.extAttributeEnabled = props.extAttributeEnabled;
+        this.extAttributes = props.extAttributes;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            aScriptName: this.aScriptName,
+            listenerId: this.listenerId,
+            scriptContent: this.scriptContent,
+            enabled: this.enabled,
+            extAttributeEnabled: this.extAttributeEnabled,
+            extAttributes: this.extAttributes,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAScriptPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosAScript {
+    /**
+     * @stability external
+     */
+    export interface ExtAttributesProperty {
+        /**
+         * @Property attributeKey: The attribute name.
+     * Set the value to EsDebug, which specifies that if requests carry the _es_dbg parameter and the value is the specified key, the debugging header is enabled to output the execution result.
+         */
+        readonly attributeKey?: string | ros.IResolvable;
+        /**
+         * @Property attributeValue: The attribute value, which must be 1 to 128 characters in length, and can contain letters or digits.
+         */
+        readonly attributeValue?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ExtAttributesProperty`
+ *
+ * @param properties - the TypeScript properties of a `ExtAttributesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosAScript_ExtAttributesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('attributeKey', ros.validateString)(properties.attributeKey));
+    if(properties.attributeValue && (Array.isArray(properties.attributeValue) || (typeof properties.attributeValue) === 'string')) {
+        errors.collect(ros.propertyValidator('attributeValue', ros.validateLength)({
+            data: properties.attributeValue.length,
+            min: 1,
+            max: 128,
+          }));
+    }
+    errors.collect(ros.propertyValidator('attributeValue', ros.validateString)(properties.attributeValue));
+    return errors.wrap('supplied properties not correct for "ExtAttributesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ALB::AScript.ExtAttributes` resource
+ *
+ * @param properties - the TypeScript properties of a `ExtAttributesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ALB::AScript.ExtAttributes` resource.
+ */
+// @ts-ignore TS6133
+function rosAScriptExtAttributesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosAScript_ExtAttributesPropertyValidator(properties).assertSuccess();
+    return {
+      AttributeKey: ros.stringToRosTemplate(properties.attributeKey),
+      AttributeValue: ros.stringToRosTemplate(properties.attributeValue),
+    };
+}
+
+/**
  * Properties for defining a `RosAcl`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-acl
  */
@@ -1965,6 +2208,11 @@ export interface RosLoadBalancerProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
+     * @Property securityGroupIds: The IDs of the security group to which the ALB instance join.
+     */
+    readonly securityGroupIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosLoadBalancer.TagsProperty[];
@@ -1980,13 +2228,6 @@ export interface RosLoadBalancerProps {
 function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    if(properties.addressIpVersion && (typeof properties.addressIpVersion) !== 'object') {
-        errors.collect(ros.propertyValidator('addressIpVersion', ros.validateAllowedValues)({
-          data: properties.addressIpVersion,
-          allowedValues: ["IPv4","DualStack"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('addressIpVersion', ros.validateString)(properties.addressIpVersion));
     errors.collect(ros.propertyValidator('loadBalancerEdition', ros.requiredValidator)(properties.loadBalancerEdition));
     if(properties.loadBalancerEdition && (typeof properties.loadBalancerEdition) !== 'object') {
         errors.collect(ros.propertyValidator('loadBalancerEdition', ros.validateAllowedValues)({
@@ -1995,6 +2236,13 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('loadBalancerEdition', ros.validateString)(properties.loadBalancerEdition));
+    if(properties.addressIpVersion && (typeof properties.addressIpVersion) !== 'object') {
+        errors.collect(ros.propertyValidator('addressIpVersion', ros.validateAllowedValues)({
+          data: properties.addressIpVersion,
+          allowedValues: ["IPv4","DualStack"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('addressIpVersion', ros.validateString)(properties.addressIpVersion));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('loadBalancerBillingConfig', ros.requiredValidator)(properties.loadBalancerBillingConfig));
     errors.collect(ros.propertyValidator('loadBalancerBillingConfig', RosLoadBalancer_LoadBalancerBillingConfigPropertyValidator)(properties.loadBalancerBillingConfig));
@@ -2008,6 +2256,14 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('zoneMappings', ros.listValidator(RosLoadBalancer_ZoneMappingsPropertyValidator))(properties.zoneMappings));
     errors.collect(ros.propertyValidator('modificationProtectionConfig', RosLoadBalancer_ModificationProtectionConfigPropertyValidator)(properties.modificationProtectionConfig));
+    if(properties.securityGroupIds && (Array.isArray(properties.securityGroupIds) || (typeof properties.securityGroupIds) === 'string')) {
+        errors.collect(ros.propertyValidator('securityGroupIds', ros.validateLength)({
+            data: properties.securityGroupIds.length,
+            min: 0,
+            max: 4,
+          }));
+    }
+    errors.collect(ros.propertyValidator('securityGroupIds', ros.listValidator(ros.validateString))(properties.securityGroupIds));
     errors.collect(ros.propertyValidator('loadBalancerName', ros.requiredValidator)(properties.loadBalancerName));
     errors.collect(ros.propertyValidator('loadBalancerName', ros.validateString)(properties.loadBalancerName));
     errors.collect(ros.propertyValidator('accessLogConfig', RosLoadBalancer_AccessLogConfigPropertyValidator)(properties.accessLogConfig));
@@ -2068,6 +2324,7 @@ function rosLoadBalancerPropsToRosTemplate(properties: any, enableResourceProper
       DeletionProtectionEnabled: ros.booleanToRosTemplate(properties.deletionProtectionEnabled),
       ModificationProtectionConfig: rosLoadBalancerModificationProtectionConfigPropertyToRosTemplate(properties.modificationProtectionConfig),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      SecurityGroupIds: ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupIds),
       Tags: ros.listMapper(rosLoadBalancerTagsPropertyToRosTemplate)(properties.tags),
     };
 }
@@ -2192,6 +2449,11 @@ export class RosLoadBalancer extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property securityGroupIds: The IDs of the security group to which the ALB instance join.
+     */
+    public securityGroupIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     public tags: RosLoadBalancer.TagsProperty[] | undefined;
@@ -2224,6 +2486,7 @@ export class RosLoadBalancer extends ros.RosResource {
         this.deletionProtectionEnabled = props.deletionProtectionEnabled;
         this.modificationProtectionConfig = props.modificationProtectionConfig;
         this.resourceGroupId = props.resourceGroupId;
+        this.securityGroupIds = props.securityGroupIds;
         this.tags = props.tags;
     }
 
@@ -2243,6 +2506,7 @@ export class RosLoadBalancer extends ros.RosResource {
             deletionProtectionEnabled: this.deletionProtectionEnabled,
             modificationProtectionConfig: this.modificationProtectionConfig,
             resourceGroupId: this.resourceGroupId,
+            securityGroupIds: this.securityGroupIds,
             tags: this.tags,
         };
     }
@@ -2801,6 +3065,83 @@ function rosRuleCookieConfigPropertyToRosTemplate(properties: any): any {
     RosRule_CookieConfigPropertyValidator(properties).assertSuccess();
     return {
       Values: ros.listMapper(rosRuleValuesPropertyToRosTemplate)(properties.values),
+    };
+}
+
+export namespace RosRule {
+    /**
+     * @stability external
+     */
+    export interface CorsConfigProperty {
+        /**
+         * @Property allowCredentials: Whether to allow credentials.
+         */
+        readonly allowCredentials?: string | ros.IResolvable;
+        /**
+         * @Property exposeHeaders: The headers that are exposed.
+         */
+        readonly exposeHeaders?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property allowOrigin: The origin of the request.
+         */
+        readonly allowOrigin?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property allowHeaders: The headers that are allowed to be forwarded.
+         */
+        readonly allowHeaders?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property maxAge: The maximum cache time of the preflight request in the browser. Unit: Second
+         */
+        readonly maxAge?: number | ros.IResolvable;
+        /**
+         * @Property allowMethods: The HTTP methods that are allowed to be forwarded.
+         */
+        readonly allowMethods?: Array<string | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `CorsConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `CorsConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosRule_CorsConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.allowCredentials && (typeof properties.allowCredentials) !== 'object') {
+        errors.collect(ros.propertyValidator('allowCredentials', ros.validateAllowedValues)({
+          data: properties.allowCredentials,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('allowCredentials', ros.validateString)(properties.allowCredentials));
+    errors.collect(ros.propertyValidator('exposeHeaders', ros.listValidator(ros.validateString))(properties.exposeHeaders));
+    errors.collect(ros.propertyValidator('allowOrigin', ros.listValidator(ros.validateString))(properties.allowOrigin));
+    errors.collect(ros.propertyValidator('allowHeaders', ros.listValidator(ros.validateString))(properties.allowHeaders));
+    errors.collect(ros.propertyValidator('maxAge', ros.validateNumber)(properties.maxAge));
+    errors.collect(ros.propertyValidator('allowMethods', ros.listValidator(ros.validateString))(properties.allowMethods));
+    return errors.wrap('supplied properties not correct for "CorsConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ALB::Rule.CorsConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `CorsConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ALB::Rule.CorsConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosRuleCorsConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosRule_CorsConfigPropertyValidator(properties).assertSuccess();
+    return {
+      AllowCredentials: ros.stringToRosTemplate(properties.allowCredentials),
+      ExposeHeaders: ros.listMapper(ros.stringToRosTemplate)(properties.exposeHeaders),
+      AllowOrigin: ros.listMapper(ros.stringToRosTemplate)(properties.allowOrigin),
+      AllowHeaders: ros.listMapper(ros.stringToRosTemplate)(properties.allowHeaders),
+      MaxAge: ros.numberToRosTemplate(properties.maxAge),
+      AllowMethods: ros.listMapper(ros.stringToRosTemplate)(properties.allowMethods),
     };
 }
 
@@ -3522,6 +3863,108 @@ export namespace RosRule {
     /**
      * @stability external
      */
+    export interface ResponseHeaderConfigProperty {
+        /**
+         * @Property values: The list of response headers.
+         */
+        readonly values?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property key: The key of the response header.
+         */
+        readonly key?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ResponseHeaderConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `ResponseHeaderConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosRule_ResponseHeaderConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.values && (Array.isArray(properties.values) || (typeof properties.values) === 'string')) {
+        errors.collect(ros.propertyValidator('values', ros.validateLength)({
+            data: properties.values.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('values', ros.listValidator(ros.validateString))(properties.values));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "ResponseHeaderConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ALB::Rule.ResponseHeaderConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `ResponseHeaderConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ALB::Rule.ResponseHeaderConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosRuleResponseHeaderConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosRule_ResponseHeaderConfigPropertyValidator(properties).assertSuccess();
+    return {
+      Values: ros.listMapper(ros.stringToRosTemplate)(properties.values),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+export namespace RosRule {
+    /**
+     * @stability external
+     */
+    export interface ResponseStatusCodeConfigProperty {
+        /**
+         * @Property values: The list of response status code.
+         */
+        readonly values?: Array<string | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ResponseStatusCodeConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `ResponseStatusCodeConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosRule_ResponseStatusCodeConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.values && (Array.isArray(properties.values) || (typeof properties.values) === 'string')) {
+        errors.collect(ros.propertyValidator('values', ros.validateLength)({
+            data: properties.values.length,
+            min: undefined,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('values', ros.listValidator(ros.validateString))(properties.values));
+    return errors.wrap('supplied properties not correct for "ResponseStatusCodeConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ALB::Rule.ResponseStatusCodeConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `ResponseStatusCodeConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ALB::Rule.ResponseStatusCodeConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosRuleResponseStatusCodeConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosRule_ResponseStatusCodeConfigPropertyValidator(properties).assertSuccess();
+    return {
+      Values: ros.listMapper(ros.stringToRosTemplate)(properties.values),
+    };
+}
+
+export namespace RosRule {
+    /**
+     * @stability external
+     */
     export interface RewriteConfigProperty {
         /**
          * @Property path: The path to jump. Valid values:
@@ -3619,6 +4062,7 @@ export namespace RosRule {
      * FixedResponse: returns a fixed response.
      * Rewrite: rewrites a request.
      * InsertHeader: adds a header to a request.
+     * Cors: adds a cors info to a request.
      * The type of the action. You can specify the last action and the actions 
      * that you want to perform before the last action: 
      * FinalType: the last action that you want to perform in a forwarding rule. Each forwarding rule can contain only one FinalType action. 
@@ -3631,6 +4075,10 @@ export namespace RosRule {
          * @Property redirectConfig: The configuration of the external redirect action.
          */
         readonly redirectConfig?: RosRule.RedirectConfigProperty | ros.IResolvable;
+        /**
+         * @Property corsConfig: The configuration of the CORS.
+         */
+        readonly corsConfig?: RosRule.CorsConfigProperty | ros.IResolvable;
         /**
          * @Property forwardGroupConfig: The configuration of the server group.
          */
@@ -3681,11 +4129,12 @@ function RosRule_RuleActionsPropertyValidator(properties: any): ros.ValidationRe
     if(properties.type && (typeof properties.type) !== 'object') {
         errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
           data: properties.type,
-          allowedValues: ["ForwardGroup","Redirect","FixedResponse","Rewrite","InsertHeader","RemoveHeader","TrafficLimit","TrafficMirror"],
+          allowedValues: ["ForwardGroup","Redirect","FixedResponse","Rewrite","InsertHeader","RemoveHeader","TrafficLimit","TrafficMirror","Cors"],
         }));
     }
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
     errors.collect(ros.propertyValidator('redirectConfig', RosRule_RedirectConfigPropertyValidator)(properties.redirectConfig));
+    errors.collect(ros.propertyValidator('corsConfig', RosRule_CorsConfigPropertyValidator)(properties.corsConfig));
     errors.collect(ros.propertyValidator('forwardGroupConfig', RosRule_ForwardGroupConfigPropertyValidator)(properties.forwardGroupConfig));
     errors.collect(ros.propertyValidator('removeHeaderConfig', RosRule_RemoveHeaderConfigPropertyValidator)(properties.removeHeaderConfig));
     errors.collect(ros.propertyValidator('insertHeaderConfig', RosRule_InsertHeaderConfigPropertyValidator)(properties.insertHeaderConfig));
@@ -3711,6 +4160,7 @@ function rosRuleRuleActionsPropertyToRosTemplate(properties: any): any {
       FixedResponseConfig: rosRuleFixedResponseConfigPropertyToRosTemplate(properties.fixedResponseConfig),
       Type: ros.stringToRosTemplate(properties.type),
       RedirectConfig: rosRuleRedirectConfigPropertyToRosTemplate(properties.redirectConfig),
+      CorsConfig: rosRuleCorsConfigPropertyToRosTemplate(properties.corsConfig),
       ForwardGroupConfig: rosRuleForwardGroupConfigPropertyToRosTemplate(properties.forwardGroupConfig),
       RemoveHeaderConfig: rosRuleRemoveHeaderConfigPropertyToRosTemplate(properties.removeHeaderConfig),
       InsertHeaderConfig: rosRuleInsertHeaderConfigPropertyToRosTemplate(properties.insertHeaderConfig),
@@ -3741,8 +4191,14 @@ export namespace RosRule {
      * QueryString: Requests are forwarded based on query strings.
      * Method: Request are forwarded based on request methods.
      * Cookie: Request are forwarded based on cookies.
+     * ResponseHeader: Request are forwarded based on response header.
+     * ResponseStatusCode: Request are forwarded based on response status code.
          */
         readonly type: string | ros.IResolvable;
+        /**
+         * @Property responseHeaderConfig: The configuration of the response header.
+         */
+        readonly responseHeaderConfig?: RosRule.ResponseHeaderConfigProperty | ros.IResolvable;
         /**
          * @Property queryStringConfig: The configuration of the query string.
          */
@@ -3755,6 +4211,10 @@ export namespace RosRule {
          * @Property cookieConfig: The configuration of the cookie.
          */
         readonly cookieConfig?: RosRule.CookieConfigProperty | ros.IResolvable;
+        /**
+         * @Property responseStatusCodeConfig: The configuration of the response status code.
+         */
+        readonly responseStatusCodeConfig?: RosRule.ResponseStatusCodeConfigProperty | ros.IResolvable;
         /**
          * @Property headerConfig: The configuration of the header.
          */
@@ -3781,13 +4241,15 @@ function RosRule_RuleConditionsPropertyValidator(properties: any): ros.Validatio
     if(properties.type && (typeof properties.type) !== 'object') {
         errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
           data: properties.type,
-          allowedValues: ["Cookie","Header","Host","Method","Path","QueryString","SourceIp"],
+          allowedValues: ["Cookie","Header","Host","Method","Path","QueryString","SourceIp","ResponseHeader","ResponseStatusCode"],
         }));
     }
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('responseHeaderConfig', RosRule_ResponseHeaderConfigPropertyValidator)(properties.responseHeaderConfig));
     errors.collect(ros.propertyValidator('queryStringConfig', RosRule_QueryStringConfigPropertyValidator)(properties.queryStringConfig));
     errors.collect(ros.propertyValidator('hostConfig', RosRule_HostConfigPropertyValidator)(properties.hostConfig));
     errors.collect(ros.propertyValidator('cookieConfig', RosRule_CookieConfigPropertyValidator)(properties.cookieConfig));
+    errors.collect(ros.propertyValidator('responseStatusCodeConfig', RosRule_ResponseStatusCodeConfigPropertyValidator)(properties.responseStatusCodeConfig));
     errors.collect(ros.propertyValidator('headerConfig', RosRule_HeaderConfigPropertyValidator)(properties.headerConfig));
     errors.collect(ros.propertyValidator('sourceIpConfig', RosRule_SourceIpConfigPropertyValidator)(properties.sourceIpConfig));
     return errors.wrap('supplied properties not correct for "RuleConditionsProperty"');
@@ -3808,9 +4270,11 @@ function rosRuleRuleConditionsPropertyToRosTemplate(properties: any): any {
       MethodConfig: rosRuleMethodConfigPropertyToRosTemplate(properties.methodConfig),
       PathConfig: rosRulePathConfigPropertyToRosTemplate(properties.pathConfig),
       Type: ros.stringToRosTemplate(properties.type),
+      ResponseHeaderConfig: rosRuleResponseHeaderConfigPropertyToRosTemplate(properties.responseHeaderConfig),
       QueryStringConfig: rosRuleQueryStringConfigPropertyToRosTemplate(properties.queryStringConfig),
       HostConfig: rosRuleHostConfigPropertyToRosTemplate(properties.hostConfig),
       CookieConfig: rosRuleCookieConfigPropertyToRosTemplate(properties.cookieConfig),
+      ResponseStatusCodeConfig: rosRuleResponseStatusCodeConfigPropertyToRosTemplate(properties.responseStatusCodeConfig),
       HeaderConfig: rosRuleHeaderConfigPropertyToRosTemplate(properties.headerConfig),
       SourceIpConfig: rosRuleSourceIpConfigPropertyToRosTemplate(properties.sourceIpConfig),
     };
@@ -4140,6 +4604,114 @@ function rosRuleValuesPropertyToRosTemplate(properties: any): any {
       Value: ros.stringToRosTemplate(properties.value),
       Key: ros.stringToRosTemplate(properties.key),
     };
+}
+
+/**
+ * Properties for defining a `RosSecurityGroupAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-securitygroupattachment
+ */
+export interface RosSecurityGroupAttachmentProps {
+
+    /**
+     * @Property loadBalancerId: The ID of ALB instance.
+     */
+    readonly loadBalancerId: string | ros.IResolvable;
+
+    /**
+     * @Property securityGroupIds: The IDs of the security group to which the ALB instance join.
+     */
+    readonly securityGroupIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSecurityGroupAttachmentProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSecurityGroupAttachmentProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSecurityGroupAttachmentPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('loadBalancerId', ros.requiredValidator)(properties.loadBalancerId));
+    errors.collect(ros.propertyValidator('loadBalancerId', ros.validateString)(properties.loadBalancerId));
+    if(properties.securityGroupIds && (Array.isArray(properties.securityGroupIds) || (typeof properties.securityGroupIds) === 'string')) {
+        errors.collect(ros.propertyValidator('securityGroupIds', ros.validateLength)({
+            data: properties.securityGroupIds.length,
+            min: 0,
+            max: 4,
+          }));
+    }
+    errors.collect(ros.propertyValidator('securityGroupIds', ros.listValidator(ros.validateString))(properties.securityGroupIds));
+    return errors.wrap('supplied properties not correct for "RosSecurityGroupAttachmentProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ALB::SecurityGroupAttachment` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSecurityGroupAttachmentProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ALB::SecurityGroupAttachment` resource.
+ */
+// @ts-ignore TS6133
+function rosSecurityGroupAttachmentPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSecurityGroupAttachmentPropsValidator(properties).assertSuccess();
+    }
+    return {
+      LoadBalancerId: ros.stringToRosTemplate(properties.loadBalancerId),
+      SecurityGroupIds: ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupIds),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::SecurityGroupAttachment`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SecurityGroupAttachment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-securitygroupattachment
+ */
+export class RosSecurityGroupAttachment extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ALB::SecurityGroupAttachment";
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property loadBalancerId: The ID of ALB instance.
+     */
+    public loadBalancerId: string | ros.IResolvable;
+
+    /**
+     * @Property securityGroupIds: The IDs of the security group to which the ALB instance join.
+     */
+    public securityGroupIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSecurityGroupAttachmentProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSecurityGroupAttachment.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.loadBalancerId = props.loadBalancerId;
+        this.securityGroupIds = props.securityGroupIds;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            loadBalancerId: this.loadBalancerId,
+            securityGroupIds: this.securityGroupIds,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSecurityGroupAttachmentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
 }
 
 /**

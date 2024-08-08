@@ -10,6 +10,14 @@ export { RosEditingProjects as EditingProjectsProperty };
 export interface EditingProjectsProps {
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property title: The title of the online editing project.
      */
     readonly title?: string | ros.IResolvable;
@@ -50,6 +58,7 @@ export class EditingProjects extends ros.Resource {
 
         const rosEditingProjects = new RosEditingProjects(this, id,  {
             title: props.title,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosEditingProjects;
         this.attrEditingProjectIds = rosEditingProjects.attrEditingProjectIds;

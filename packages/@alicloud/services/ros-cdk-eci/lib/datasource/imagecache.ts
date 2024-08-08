@@ -13,6 +13,14 @@ export interface ImageCacheProps {
      * Property imageCacheId: ImageCacheId.
      */
     readonly imageCacheId: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -110,6 +118,7 @@ export class ImageCache extends ros.Resource {
 
         const rosImageCache = new RosImageCache(this, id,  {
             imageCacheId: props.imageCacheId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosImageCache;
         this.attrContainerGroupId = rosImageCache.attrContainerGroupId;

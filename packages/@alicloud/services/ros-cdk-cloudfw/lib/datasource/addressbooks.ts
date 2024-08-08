@@ -24,6 +24,14 @@ export interface AddressBooksProps {
      * - **en**: English.
      */
     readonly lang?: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -62,6 +70,7 @@ export class AddressBooks extends ros.Resource {
         const rosAddressBooks = new RosAddressBooks(this, id,  {
             groupType: props.groupType,
             lang: props.lang,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosAddressBooks;
         this.attrAddressBooks = rosAddressBooks.attrAddressBooks;

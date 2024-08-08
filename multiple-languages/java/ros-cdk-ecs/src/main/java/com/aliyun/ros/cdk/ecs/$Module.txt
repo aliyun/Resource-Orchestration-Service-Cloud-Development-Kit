@@ -200,6 +200,9 @@
 @alicloud/ros-cdk-ecs.RosSecurityGroupProps=com.aliyun.ros.cdk.ecs.RosSecurityGroupProps
 @alicloud/ros-cdk-ecs.RosSnapshot=com.aliyun.ros.cdk.ecs.RosSnapshot
 @alicloud/ros-cdk-ecs.RosSnapshot.TagsProperty=com.aliyun.ros.cdk.ecs.RosSnapshot$TagsProperty
+@alicloud/ros-cdk-ecs.RosSnapshotGroup=com.aliyun.ros.cdk.ecs.RosSnapshotGroup
+@alicloud/ros-cdk-ecs.RosSnapshotGroup.TagsProperty=com.aliyun.ros.cdk.ecs.RosSnapshotGroup$TagsProperty
+@alicloud/ros-cdk-ecs.RosSnapshotGroupProps=com.aliyun.ros.cdk.ecs.RosSnapshotGroupProps
 @alicloud/ros-cdk-ecs.RosSnapshotProps=com.aliyun.ros.cdk.ecs.RosSnapshotProps
 @alicloud/ros-cdk-ecs.RosVPC=com.aliyun.ros.cdk.ecs.RosVPC
 @alicloud/ros-cdk-ecs.RosVPC.TagsProperty=com.aliyun.ros.cdk.ecs.RosVPC$TagsProperty
@@ -230,6 +233,8 @@
 @alicloud/ros-cdk-ecs.SecurityGroupIngressesProps=com.aliyun.ros.cdk.ecs.SecurityGroupIngressesProps
 @alicloud/ros-cdk-ecs.SecurityGroupProps=com.aliyun.ros.cdk.ecs.SecurityGroupProps
 @alicloud/ros-cdk-ecs.Snapshot=com.aliyun.ros.cdk.ecs.Snapshot
+@alicloud/ros-cdk-ecs.SnapshotGroup=com.aliyun.ros.cdk.ecs.SnapshotGroup
+@alicloud/ros-cdk-ecs.SnapshotGroupProps=com.aliyun.ros.cdk.ecs.SnapshotGroupProps
 @alicloud/ros-cdk-ecs.SnapshotProps=com.aliyun.ros.cdk.ecs.SnapshotProps
 @alicloud/ros-cdk-ecs.VPCProps=com.aliyun.ros.cdk.ecs.VPCProps
 @alicloud/ros-cdk-ecs.VSwitch=com.aliyun.ros.cdk.ecs.VSwitch

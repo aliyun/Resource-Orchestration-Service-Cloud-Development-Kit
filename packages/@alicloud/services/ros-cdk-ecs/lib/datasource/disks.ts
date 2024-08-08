@@ -138,6 +138,14 @@ export interface DisksProps {
     readonly portable?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property resourceGroupId: The ID of the resource group to which the disk belongs. 
      * If this parameter is specified to query resources,up to 1,000 resources that belong to the specified resource group can be displayed in the response.
      */
@@ -223,6 +231,7 @@ export class Disks extends ros.Resource {
             autoSnapshotPolicyId: props.autoSnapshotPolicyId,
             diskName: props.diskName,
             multiAttach: props.multiAttach,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
             diskType: props.diskType,
             snapshotId: props.snapshotId,
             portable: props.portable,

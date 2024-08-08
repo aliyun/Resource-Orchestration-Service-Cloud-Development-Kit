@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.rds;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:08.769Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:13.393Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.DBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(DBInstanceProps.Jsii$Proxy.class)
 public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -133,6 +133,13 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property burstingEnabled: Whether to enable bursting.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBurstingEnabled() {
+        return null;
+    }
+
+    /**
      * Property category: The edition of the instance.
      * <p>
      * Valid values:
@@ -144,6 +151,13 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
      * serverless_basic: RDS Serverless Basic Edition
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCategory() {
+        return null;
+    }
+
+    /**
+     * Property coldDataEnabled: Whether to enable cold data storage.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getColdDataEnabled() {
         return null;
     }
 
@@ -294,6 +308,13 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
      * Property instanceNetworkType: Instance network type, VPC or Classic.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceNetworkType() {
+        return null;
+    }
+
+    /**
+     * Property ioAccelerationEnabled: Whether to enable IO Acceleration, 1 for enable 0 for disable.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIoAccelerationEnabled() {
         return null;
     }
 
@@ -643,7 +664,9 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object backUpCategory;
         java.lang.Object backupPolicyMode;
         java.lang.Object backupRetentionPeriod;
+        java.lang.Object burstingEnabled;
         java.lang.Object category;
+        java.lang.Object coldDataEnabled;
         java.lang.Object compressType;
         java.lang.Object connectionMode;
         java.lang.Object connectionStringPrefix;
@@ -660,6 +683,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object encryptionKey;
         java.lang.Object highSpaceUsageProtection;
         java.lang.Object instanceNetworkType;
+        java.lang.Object ioAccelerationEnabled;
         java.lang.Object localLogRetentionHours;
         java.lang.Object localLogRetentionSpace;
         java.lang.Object logBackupFrequency;
@@ -1019,6 +1043,26 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link DBInstanceProps#getBurstingEnabled}
+         * @param burstingEnabled Property burstingEnabled: Whether to enable bursting.
+         * @return {@code this}
+         */
+        public Builder burstingEnabled(java.lang.Boolean burstingEnabled) {
+            this.burstingEnabled = burstingEnabled;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBInstanceProps#getBurstingEnabled}
+         * @param burstingEnabled Property burstingEnabled: Whether to enable bursting.
+         * @return {@code this}
+         */
+        public Builder burstingEnabled(com.aliyun.ros.cdk.core.IResolvable burstingEnabled) {
+            this.burstingEnabled = burstingEnabled;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DBInstanceProps#getCategory}
          * @param category Property category: The edition of the instance.
          *                 Valid values:
@@ -1049,6 +1093,26 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder category(com.aliyun.ros.cdk.core.IResolvable category) {
             this.category = category;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBInstanceProps#getColdDataEnabled}
+         * @param coldDataEnabled Property coldDataEnabled: Whether to enable cold data storage.
+         * @return {@code this}
+         */
+        public Builder coldDataEnabled(java.lang.Boolean coldDataEnabled) {
+            this.coldDataEnabled = coldDataEnabled;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBInstanceProps#getColdDataEnabled}
+         * @param coldDataEnabled Property coldDataEnabled: Whether to enable cold data storage.
+         * @return {@code this}
+         */
+        public Builder coldDataEnabled(com.aliyun.ros.cdk.core.IResolvable coldDataEnabled) {
+            this.coldDataEnabled = coldDataEnabled;
             return this;
         }
 
@@ -1427,6 +1491,26 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder instanceNetworkType(com.aliyun.ros.cdk.core.IResolvable instanceNetworkType) {
             this.instanceNetworkType = instanceNetworkType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBInstanceProps#getIoAccelerationEnabled}
+         * @param ioAccelerationEnabled Property ioAccelerationEnabled: Whether to enable IO Acceleration, 1 for enable 0 for disable.
+         * @return {@code this}
+         */
+        public Builder ioAccelerationEnabled(java.lang.String ioAccelerationEnabled) {
+            this.ioAccelerationEnabled = ioAccelerationEnabled;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBInstanceProps#getIoAccelerationEnabled}
+         * @param ioAccelerationEnabled Property ioAccelerationEnabled: Whether to enable IO Acceleration, 1 for enable 0 for disable.
+         * @return {@code this}
+         */
+        public Builder ioAccelerationEnabled(com.aliyun.ros.cdk.core.IResolvable ioAccelerationEnabled) {
+            this.ioAccelerationEnabled = ioAccelerationEnabled;
             return this;
         }
 
@@ -2252,7 +2336,9 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object backUpCategory;
         private final java.lang.Object backupPolicyMode;
         private final java.lang.Object backupRetentionPeriod;
+        private final java.lang.Object burstingEnabled;
         private final java.lang.Object category;
+        private final java.lang.Object coldDataEnabled;
         private final java.lang.Object compressType;
         private final java.lang.Object connectionMode;
         private final java.lang.Object connectionStringPrefix;
@@ -2269,6 +2355,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object encryptionKey;
         private final java.lang.Object highSpaceUsageProtection;
         private final java.lang.Object instanceNetworkType;
+        private final java.lang.Object ioAccelerationEnabled;
         private final java.lang.Object localLogRetentionHours;
         private final java.lang.Object localLogRetentionSpace;
         private final java.lang.Object logBackupFrequency;
@@ -2324,7 +2411,9 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.backUpCategory = software.amazon.jsii.Kernel.get(this, "backUpCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.backupPolicyMode = software.amazon.jsii.Kernel.get(this, "backupPolicyMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.backupRetentionPeriod = software.amazon.jsii.Kernel.get(this, "backupRetentionPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.burstingEnabled = software.amazon.jsii.Kernel.get(this, "burstingEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.category = software.amazon.jsii.Kernel.get(this, "category", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.coldDataEnabled = software.amazon.jsii.Kernel.get(this, "coldDataEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.compressType = software.amazon.jsii.Kernel.get(this, "compressType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.connectionMode = software.amazon.jsii.Kernel.get(this, "connectionMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.connectionStringPrefix = software.amazon.jsii.Kernel.get(this, "connectionStringPrefix", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -2341,6 +2430,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.encryptionKey = software.amazon.jsii.Kernel.get(this, "encryptionKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.highSpaceUsageProtection = software.amazon.jsii.Kernel.get(this, "highSpaceUsageProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceNetworkType = software.amazon.jsii.Kernel.get(this, "instanceNetworkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ioAccelerationEnabled = software.amazon.jsii.Kernel.get(this, "ioAccelerationEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.localLogRetentionHours = software.amazon.jsii.Kernel.get(this, "localLogRetentionHours", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.localLogRetentionSpace = software.amazon.jsii.Kernel.get(this, "localLogRetentionSpace", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.logBackupFrequency = software.amazon.jsii.Kernel.get(this, "logBackupFrequency", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -2397,7 +2487,9 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.backUpCategory = builder.backUpCategory;
             this.backupPolicyMode = builder.backupPolicyMode;
             this.backupRetentionPeriod = builder.backupRetentionPeriod;
+            this.burstingEnabled = builder.burstingEnabled;
             this.category = builder.category;
+            this.coldDataEnabled = builder.coldDataEnabled;
             this.compressType = builder.compressType;
             this.connectionMode = builder.connectionMode;
             this.connectionStringPrefix = builder.connectionStringPrefix;
@@ -2414,6 +2506,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.encryptionKey = builder.encryptionKey;
             this.highSpaceUsageProtection = builder.highSpaceUsageProtection;
             this.instanceNetworkType = builder.instanceNetworkType;
+            this.ioAccelerationEnabled = builder.ioAccelerationEnabled;
             this.localLogRetentionHours = builder.localLogRetentionHours;
             this.localLogRetentionSpace = builder.localLogRetentionSpace;
             this.logBackupFrequency = builder.logBackupFrequency;
@@ -2517,8 +2610,18 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getBurstingEnabled() {
+            return this.burstingEnabled;
+        }
+
+        @Override
         public final java.lang.Object getCategory() {
             return this.category;
+        }
+
+        @Override
+        public final java.lang.Object getColdDataEnabled() {
+            return this.coldDataEnabled;
         }
 
         @Override
@@ -2599,6 +2702,11 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getInstanceNetworkType() {
             return this.instanceNetworkType;
+        }
+
+        @Override
+        public final java.lang.Object getIoAccelerationEnabled() {
+            return this.ioAccelerationEnabled;
         }
 
         @Override
@@ -2811,8 +2919,14 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getBackupRetentionPeriod() != null) {
                 data.set("backupRetentionPeriod", om.valueToTree(this.getBackupRetentionPeriod()));
             }
+            if (this.getBurstingEnabled() != null) {
+                data.set("burstingEnabled", om.valueToTree(this.getBurstingEnabled()));
+            }
             if (this.getCategory() != null) {
                 data.set("category", om.valueToTree(this.getCategory()));
+            }
+            if (this.getColdDataEnabled() != null) {
+                data.set("coldDataEnabled", om.valueToTree(this.getColdDataEnabled()));
             }
             if (this.getCompressType() != null) {
                 data.set("compressType", om.valueToTree(this.getCompressType()));
@@ -2861,6 +2975,9 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getInstanceNetworkType() != null) {
                 data.set("instanceNetworkType", om.valueToTree(this.getInstanceNetworkType()));
+            }
+            if (this.getIoAccelerationEnabled() != null) {
+                data.set("ioAccelerationEnabled", om.valueToTree(this.getIoAccelerationEnabled()));
             }
             if (this.getLocalLogRetentionHours() != null) {
                 data.set("localLogRetentionHours", om.valueToTree(this.getLocalLogRetentionHours()));
@@ -2998,7 +3115,9 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.backUpCategory != null ? !this.backUpCategory.equals(that.backUpCategory) : that.backUpCategory != null) return false;
             if (this.backupPolicyMode != null ? !this.backupPolicyMode.equals(that.backupPolicyMode) : that.backupPolicyMode != null) return false;
             if (this.backupRetentionPeriod != null ? !this.backupRetentionPeriod.equals(that.backupRetentionPeriod) : that.backupRetentionPeriod != null) return false;
+            if (this.burstingEnabled != null ? !this.burstingEnabled.equals(that.burstingEnabled) : that.burstingEnabled != null) return false;
             if (this.category != null ? !this.category.equals(that.category) : that.category != null) return false;
+            if (this.coldDataEnabled != null ? !this.coldDataEnabled.equals(that.coldDataEnabled) : that.coldDataEnabled != null) return false;
             if (this.compressType != null ? !this.compressType.equals(that.compressType) : that.compressType != null) return false;
             if (this.connectionMode != null ? !this.connectionMode.equals(that.connectionMode) : that.connectionMode != null) return false;
             if (this.connectionStringPrefix != null ? !this.connectionStringPrefix.equals(that.connectionStringPrefix) : that.connectionStringPrefix != null) return false;
@@ -3015,6 +3134,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.encryptionKey != null ? !this.encryptionKey.equals(that.encryptionKey) : that.encryptionKey != null) return false;
             if (this.highSpaceUsageProtection != null ? !this.highSpaceUsageProtection.equals(that.highSpaceUsageProtection) : that.highSpaceUsageProtection != null) return false;
             if (this.instanceNetworkType != null ? !this.instanceNetworkType.equals(that.instanceNetworkType) : that.instanceNetworkType != null) return false;
+            if (this.ioAccelerationEnabled != null ? !this.ioAccelerationEnabled.equals(that.ioAccelerationEnabled) : that.ioAccelerationEnabled != null) return false;
             if (this.localLogRetentionHours != null ? !this.localLogRetentionHours.equals(that.localLogRetentionHours) : that.localLogRetentionHours != null) return false;
             if (this.localLogRetentionSpace != null ? !this.localLogRetentionSpace.equals(that.localLogRetentionSpace) : that.localLogRetentionSpace != null) return false;
             if (this.logBackupFrequency != null ? !this.logBackupFrequency.equals(that.logBackupFrequency) : that.logBackupFrequency != null) return false;
@@ -3067,7 +3187,9 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.backUpCategory != null ? this.backUpCategory.hashCode() : 0);
             result = 31 * result + (this.backupPolicyMode != null ? this.backupPolicyMode.hashCode() : 0);
             result = 31 * result + (this.backupRetentionPeriod != null ? this.backupRetentionPeriod.hashCode() : 0);
+            result = 31 * result + (this.burstingEnabled != null ? this.burstingEnabled.hashCode() : 0);
             result = 31 * result + (this.category != null ? this.category.hashCode() : 0);
+            result = 31 * result + (this.coldDataEnabled != null ? this.coldDataEnabled.hashCode() : 0);
             result = 31 * result + (this.compressType != null ? this.compressType.hashCode() : 0);
             result = 31 * result + (this.connectionMode != null ? this.connectionMode.hashCode() : 0);
             result = 31 * result + (this.connectionStringPrefix != null ? this.connectionStringPrefix.hashCode() : 0);
@@ -3084,6 +3206,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.encryptionKey != null ? this.encryptionKey.hashCode() : 0);
             result = 31 * result + (this.highSpaceUsageProtection != null ? this.highSpaceUsageProtection.hashCode() : 0);
             result = 31 * result + (this.instanceNetworkType != null ? this.instanceNetworkType.hashCode() : 0);
+            result = 31 * result + (this.ioAccelerationEnabled != null ? this.ioAccelerationEnabled.hashCode() : 0);
             result = 31 * result + (this.localLogRetentionHours != null ? this.localLogRetentionHours.hashCode() : 0);
             result = 31 * result + (this.localLogRetentionSpace != null ? this.localLogRetentionSpace.hashCode() : 0);
             result = 31 * result + (this.logBackupFrequency != null ? this.logBackupFrequency.hashCode() : 0);

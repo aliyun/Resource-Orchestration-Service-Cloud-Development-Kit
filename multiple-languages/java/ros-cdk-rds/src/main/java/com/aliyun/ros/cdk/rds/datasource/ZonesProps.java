@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.rds.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-zones
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:08.903Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:13.577Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.datasource.ZonesProps")
 @software.amazon.jsii.Jsii.Proxy(ZonesProps.Jsii$Proxy.class)
 public interface ZonesProps extends software.amazon.jsii.JsiiSerializable {
@@ -55,6 +55,21 @@ public interface ZonesProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
      * Property zoneId: The ID of the zone in which the instance is located.
      * <p>
      * If the instance spans more than one zone, the value of this parameter contains an MAZ part,such as cn-hangzhou-MAZ6(b,f) and cn-hangzhou-MAZ5(b,e,f)
@@ -78,6 +93,7 @@ public interface ZonesProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object commodityCode;
         java.lang.Object dispenseMode;
         java.lang.Object engineVersion;
+        java.lang.Object refreshOptions;
         java.lang.Object zoneId;
 
         /**
@@ -199,6 +215,40 @@ public interface ZonesProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ZonesProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ZonesProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ZonesProps#getZoneId}
          * @param zoneId Property zoneId: The ID of the zone in which the instance is located.
          *               If the instance spans more than one zone, the value of this parameter contains an MAZ part,such as cn-hangzhou-MAZ6(b,f) and cn-hangzhou-MAZ5(b,e,f)
@@ -241,6 +291,7 @@ public interface ZonesProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object commodityCode;
         private final java.lang.Object dispenseMode;
         private final java.lang.Object engineVersion;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object zoneId;
 
         /**
@@ -254,6 +305,7 @@ public interface ZonesProps extends software.amazon.jsii.JsiiSerializable {
             this.commodityCode = software.amazon.jsii.Kernel.get(this, "commodityCode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dispenseMode = software.amazon.jsii.Kernel.get(this, "dispenseMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.engineVersion = software.amazon.jsii.Kernel.get(this, "engineVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -267,6 +319,7 @@ public interface ZonesProps extends software.amazon.jsii.JsiiSerializable {
             this.commodityCode = builder.commodityCode;
             this.dispenseMode = builder.dispenseMode;
             this.engineVersion = builder.engineVersion;
+            this.refreshOptions = builder.refreshOptions;
             this.zoneId = builder.zoneId;
         }
 
@@ -296,6 +349,11 @@ public interface ZonesProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
+        }
+
+        @Override
         public final java.lang.Object getZoneId() {
             return this.zoneId;
         }
@@ -318,6 +376,9 @@ public interface ZonesProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getEngineVersion() != null) {
                 data.set("engineVersion", om.valueToTree(this.getEngineVersion()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
             if (this.getZoneId() != null) {
                 data.set("zoneId", om.valueToTree(this.getZoneId()));
@@ -345,6 +406,7 @@ public interface ZonesProps extends software.amazon.jsii.JsiiSerializable {
             if (this.commodityCode != null ? !this.commodityCode.equals(that.commodityCode) : that.commodityCode != null) return false;
             if (this.dispenseMode != null ? !this.dispenseMode.equals(that.dispenseMode) : that.dispenseMode != null) return false;
             if (this.engineVersion != null ? !this.engineVersion.equals(that.engineVersion) : that.engineVersion != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             return this.zoneId != null ? this.zoneId.equals(that.zoneId) : that.zoneId == null;
         }
 
@@ -355,6 +417,7 @@ public interface ZonesProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.commodityCode != null ? this.commodityCode.hashCode() : 0);
             result = 31 * result + (this.dispenseMode != null ? this.dispenseMode.hashCode() : 0);
             result = 31 * result + (this.engineVersion != null ? this.engineVersion.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.zoneId != null ? this.zoneId.hashCode() : 0);
             return result;
         }

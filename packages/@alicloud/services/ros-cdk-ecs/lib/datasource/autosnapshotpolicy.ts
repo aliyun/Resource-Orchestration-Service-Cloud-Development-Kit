@@ -13,6 +13,14 @@ export interface AutoSnapshotPolicyProps {
      * Property autoSnapshotPolicyId: The name of the automatic snapshot policy.
      */
     readonly autoSnapshotPolicyId: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -87,6 +95,7 @@ export class AutoSnapshotPolicy extends ros.Resource {
 
         const rosAutoSnapshotPolicy = new RosAutoSnapshotPolicy(this, id,  {
             autoSnapshotPolicyId: props.autoSnapshotPolicyId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosAutoSnapshotPolicy;
         this.attrAutoSnapshotPolicyName = rosAutoSnapshotPolicy.attrAutoSnapshotPolicyName;

@@ -1,5 +1,6 @@
 export * from './address';
 export * from './addresses';
+export * from './anycasteipaddress';
 export * from './commonbandwidthpackages';
 export * from './customergateway';
 export * from './customergateways';
@@ -9,6 +10,7 @@ export * from './havip';
 export * from './havips';
 export * from './ipv4gateway';
 export * from './ipv4gateways';
+export * from './natgateway';
 export * from './natgatewayzones';
 export * from './natgateways';
 export * from './natipcidrs';

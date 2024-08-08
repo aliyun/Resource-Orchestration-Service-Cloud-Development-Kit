@@ -5,10 +5,25 @@ package com.aliyun.ros.cdk.ess.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ess-scalingconfigurations
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:07.160Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:11.147Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.datasource.ScalingConfigurationsProps")
 @software.amazon.jsii.Jsii.Proxy(ScalingConfigurationsProps.Jsii$Proxy.class)
 public interface ScalingConfigurationsProps extends software.amazon.jsii.JsiiSerializable {
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
 
     /**
      * Property scalingConfigurationIds: The ID of scaling configuration that you want to query.
@@ -47,9 +62,44 @@ public interface ScalingConfigurationsProps extends software.amazon.jsii.JsiiSer
      * A builder for {@link ScalingConfigurationsProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ScalingConfigurationsProps> {
+        java.lang.Object refreshOptions;
         java.lang.Object scalingConfigurationIds;
         java.lang.Object scalingConfigurationNames;
         java.lang.Object scalingGroupId;
+
+        /**
+         * Sets the value of {@link ScalingConfigurationsProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ScalingConfigurationsProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
 
         /**
          * Sets the value of {@link ScalingConfigurationsProps#getScalingConfigurationIds}
@@ -133,6 +183,7 @@ public interface ScalingConfigurationsProps extends software.amazon.jsii.JsiiSer
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ScalingConfigurationsProps {
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object scalingConfigurationIds;
         private final java.lang.Object scalingConfigurationNames;
         private final java.lang.Object scalingGroupId;
@@ -143,6 +194,7 @@ public interface ScalingConfigurationsProps extends software.amazon.jsii.JsiiSer
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.scalingConfigurationIds = software.amazon.jsii.Kernel.get(this, "scalingConfigurationIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.scalingConfigurationNames = software.amazon.jsii.Kernel.get(this, "scalingConfigurationNames", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.scalingGroupId = software.amazon.jsii.Kernel.get(this, "scalingGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -153,9 +205,15 @@ public interface ScalingConfigurationsProps extends software.amazon.jsii.JsiiSer
          */
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+            this.refreshOptions = builder.refreshOptions;
             this.scalingConfigurationIds = builder.scalingConfigurationIds;
             this.scalingConfigurationNames = builder.scalingConfigurationNames;
             this.scalingGroupId = builder.scalingGroupId;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -179,6 +237,9 @@ public interface ScalingConfigurationsProps extends software.amazon.jsii.JsiiSer
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
+            }
             if (this.getScalingConfigurationIds() != null) {
                 data.set("scalingConfigurationIds", om.valueToTree(this.getScalingConfigurationIds()));
             }
@@ -206,6 +267,7 @@ public interface ScalingConfigurationsProps extends software.amazon.jsii.JsiiSer
 
             ScalingConfigurationsProps.Jsii$Proxy that = (ScalingConfigurationsProps.Jsii$Proxy) o;
 
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             if (this.scalingConfigurationIds != null ? !this.scalingConfigurationIds.equals(that.scalingConfigurationIds) : that.scalingConfigurationIds != null) return false;
             if (this.scalingConfigurationNames != null ? !this.scalingConfigurationNames.equals(that.scalingConfigurationNames) : that.scalingConfigurationNames != null) return false;
             return this.scalingGroupId != null ? this.scalingGroupId.equals(that.scalingGroupId) : that.scalingGroupId == null;
@@ -213,7 +275,8 @@ public interface ScalingConfigurationsProps extends software.amazon.jsii.JsiiSer
 
         @Override
         public final int hashCode() {
-            int result = this.scalingConfigurationIds != null ? this.scalingConfigurationIds.hashCode() : 0;
+            int result = this.refreshOptions != null ? this.refreshOptions.hashCode() : 0;
+            result = 31 * result + (this.scalingConfigurationIds != null ? this.scalingConfigurationIds.hashCode() : 0);
             result = 31 * result + (this.scalingConfigurationNames != null ? this.scalingConfigurationNames.hashCode() : 0);
             result = 31 * result + (this.scalingGroupId != null ? this.scalingGroupId.hashCode() : 0);
             return result;

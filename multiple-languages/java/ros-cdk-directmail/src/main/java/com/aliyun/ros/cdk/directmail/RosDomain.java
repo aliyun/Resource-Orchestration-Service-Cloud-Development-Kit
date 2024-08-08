@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.directmail;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DirectMail::Domain</code>, which is used to create a domain name in Direct Mail.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:05.704Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:09.127Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.directmail.$Module.class, fqn = "@alicloud/ros-cdk-directmail.RosDomain")
 public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
 

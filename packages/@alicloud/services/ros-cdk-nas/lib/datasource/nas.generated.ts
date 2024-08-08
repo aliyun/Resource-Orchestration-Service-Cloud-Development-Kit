@@ -3,6 +3,149 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosAccessGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-accessgroup
+ */
+export interface RosAccessGroupProps {
+
+    /**
+     * @Property accessGroupName: The name of the permission group.
+     */
+    readonly accessGroupName: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAccessGroupProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAccessGroupProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAccessGroupPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('accessGroupName', ros.requiredValidator)(properties.accessGroupName));
+    errors.collect(ros.propertyValidator('accessGroupName', ros.validateString)(properties.accessGroupName));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
+    return errors.wrap('supplied properties not correct for "RosAccessGroupProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::NAS::AccessGroup` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAccessGroupProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::NAS::AccessGroup` resource.
+ */
+// @ts-ignore TS6133
+function rosAccessGroupPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAccessGroupPropsValidator(properties).assertSuccess();
+    }
+    return {
+      AccessGroupName: ros.stringToRosTemplate(properties.accessGroupName),
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::NAS::AccessGroup`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AccessGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-accessgroup
+ */
+export class RosAccessGroup extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::NAS::AccessGroup";
+
+    /**
+     * @Attribute AccessGroupName: The name of the permission group.
+     */
+    public readonly attrAccessGroupName: ros.IResolvable;
+
+    /**
+     * @Attribute AccessGroupType: Permission group types, including VPC and Classic.
+     */
+    public readonly attrAccessGroupType: ros.IResolvable;
+
+    /**
+     * @Attribute Description: Permission group description information.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute MountTargetCount: The number of Mount points to which this permission group is applied.
+     */
+    public readonly attrMountTargetCount: ros.IResolvable;
+
+    /**
+     * @Attribute RuleCount: The number of permission group rules contained in this permission group.
+     */
+    public readonly attrRuleCount: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property accessGroupName: The name of the permission group.
+     */
+    public accessGroupName: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAccessGroupProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAccessGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAccessGroupName = this.getAtt('AccessGroupName');
+        this.attrAccessGroupType = this.getAtt('AccessGroupType');
+        this.attrDescription = this.getAtt('Description');
+        this.attrMountTargetCount = this.getAtt('MountTargetCount');
+        this.attrRuleCount = this.getAtt('RuleCount');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.accessGroupName = props.accessGroupName;
+        this.refreshOptions = props.refreshOptions;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            accessGroupName: this.accessGroupName,
+            refreshOptions: this.refreshOptions,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAccessGroupPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosAccessGroups`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-accessgroups
  */
@@ -12,6 +155,14 @@ export interface RosAccessGroupsProps {
      * @Property accessGroupName: The name of the permission group.
      */
     readonly accessGroupName?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -25,6 +176,13 @@ function RosAccessGroupsPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('accessGroupName', ros.validateString)(properties.accessGroupName));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosAccessGroupsProps"');
 }
 
@@ -43,6 +201,7 @@ function rosAccessGroupsPropsToRosTemplate(properties: any, enableResourceProper
     }
     return {
       AccessGroupName: ros.stringToRosTemplate(properties.accessGroupName),
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -76,6 +235,14 @@ export class RosAccessGroups extends ros.RosResource {
     public accessGroupName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -87,12 +254,14 @@ export class RosAccessGroups extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.accessGroupName = props.accessGroupName;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             accessGroupName: this.accessGroupName,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -110,6 +279,14 @@ export interface RosFileSystemProps {
      * @Property fileSystemId: The ID of the file system to be created.
      */
     readonly fileSystemId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -124,6 +301,13 @@ function RosFileSystemPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('fileSystemId', ros.requiredValidator)(properties.fileSystemId));
     errors.collect(ros.propertyValidator('fileSystemId', ros.validateString)(properties.fileSystemId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosFileSystemProps"');
 }
 
@@ -142,6 +326,7 @@ function rosFileSystemPropsToRosTemplate(properties: any, enableResourceProperty
     }
     return {
       FileSystemId: ros.stringToRosTemplate(properties.fileSystemId),
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -245,6 +430,14 @@ export class RosFileSystem extends ros.RosResource {
     public fileSystemId: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -270,12 +463,14 @@ export class RosFileSystem extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.fileSystemId = props.fileSystemId;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             fileSystemId: this.fileSystemId,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -302,6 +497,14 @@ export interface RosFileSystemsProps {
      * -cpfs: file storage CPFS
      */
     readonly fileSystemType?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -322,6 +525,13 @@ function RosFileSystemsPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('fileSystemType', ros.validateString)(properties.fileSystemType));
     errors.collect(ros.propertyValidator('fileSystemId', ros.validateString)(properties.fileSystemId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosFileSystemsProps"');
 }
 
@@ -341,6 +551,7 @@ function rosFileSystemsPropsToRosTemplate(properties: any, enableResourcePropert
     return {
       FileSystemId: ros.stringToRosTemplate(properties.fileSystemId),
       FileSystemType: ros.stringToRosTemplate(properties.fileSystemType),
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -383,6 +594,14 @@ export class RosFileSystems extends ros.RosResource {
     public fileSystemType: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -395,6 +614,7 @@ export class RosFileSystems extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.fileSystemId = props.fileSystemId;
         this.fileSystemType = props.fileSystemType;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
@@ -402,6 +622,7 @@ export class RosFileSystems extends ros.RosResource {
         return {
             fileSystemId: this.fileSystemId,
             fileSystemType: this.fileSystemType,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -422,6 +643,14 @@ export interface RosZonesProps {
      * cpfs: CPFS file system
      */
     readonly fileSystemType?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -435,6 +664,13 @@ function RosZonesPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('fileSystemType', ros.validateString)(properties.fileSystemType));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosZonesProps"');
 }
 
@@ -453,6 +689,7 @@ function rosZonesPropsToRosTemplate(properties: any, enableResourcePropertyConst
     }
     return {
       FileSystemType: ros.stringToRosTemplate(properties.fileSystemType),
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -489,6 +726,14 @@ export class RosZones extends ros.RosResource {
     public fileSystemType: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -500,12 +745,14 @@ export class RosZones extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.fileSystemType = props.fileSystemType;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             fileSystemType: this.fileSystemType,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

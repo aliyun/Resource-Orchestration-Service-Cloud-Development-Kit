@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SLS::ServiceLog</code>, which is used to enable the service log feature.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.496Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:14.399Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.ServiceLog")
 public class ServiceLog extends com.aliyun.ros.cdk.core.Resource {
 

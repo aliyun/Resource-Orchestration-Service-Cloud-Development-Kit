@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.rds.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-dbinstances
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:08.890Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:13.559Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.datasource.DBInstancesProps")
 @software.amazon.jsii.Jsii.Proxy(DBInstancesProps.Jsii$Proxy.class)
 public interface DBInstancesProps extends software.amazon.jsii.JsiiSerializable {
@@ -116,6 +116,21 @@ public interface DBInstancesProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
      * Property resourceGroupId: The ID of the resource group to which the instances belong.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
@@ -175,6 +190,7 @@ public interface DBInstancesProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object instanceNetworkType;
         java.lang.Object payType;
         java.lang.Object proxyId;
+        java.lang.Object refreshOptions;
         java.lang.Object resourceGroupId;
         java.lang.Object searchKey;
         java.lang.Object vpcId;
@@ -482,6 +498,40 @@ public interface DBInstancesProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link DBInstancesProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBInstancesProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DBInstancesProps#getResourceGroupId}
          * @param resourceGroupId Property resourceGroupId: The ID of the resource group to which the instances belong.
          * @return {@code this}
@@ -612,6 +662,7 @@ public interface DBInstancesProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object instanceNetworkType;
         private final java.lang.Object payType;
         private final java.lang.Object proxyId;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object searchKey;
         private final java.lang.Object vpcId;
@@ -639,6 +690,7 @@ public interface DBInstancesProps extends software.amazon.jsii.JsiiSerializable 
             this.instanceNetworkType = software.amazon.jsii.Kernel.get(this, "instanceNetworkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.payType = software.amazon.jsii.Kernel.get(this, "payType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.proxyId = software.amazon.jsii.Kernel.get(this, "proxyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.searchKey = software.amazon.jsii.Kernel.get(this, "searchKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -666,6 +718,7 @@ public interface DBInstancesProps extends software.amazon.jsii.JsiiSerializable 
             this.instanceNetworkType = builder.instanceNetworkType;
             this.payType = builder.payType;
             this.proxyId = builder.proxyId;
+            this.refreshOptions = builder.refreshOptions;
             this.resourceGroupId = builder.resourceGroupId;
             this.searchKey = builder.searchKey;
             this.vpcId = builder.vpcId;
@@ -749,6 +802,11 @@ public interface DBInstancesProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
+        }
+
+        @Override
         public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
         }
@@ -824,6 +882,9 @@ public interface DBInstancesProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getProxyId() != null) {
                 data.set("proxyId", om.valueToTree(this.getProxyId()));
             }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
+            }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
@@ -872,6 +933,7 @@ public interface DBInstancesProps extends software.amazon.jsii.JsiiSerializable 
             if (this.instanceNetworkType != null ? !this.instanceNetworkType.equals(that.instanceNetworkType) : that.instanceNetworkType != null) return false;
             if (this.payType != null ? !this.payType.equals(that.payType) : that.payType != null) return false;
             if (this.proxyId != null ? !this.proxyId.equals(that.proxyId) : that.proxyId != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.searchKey != null ? !this.searchKey.equals(that.searchKey) : that.searchKey != null) return false;
             if (this.vpcId != null ? !this.vpcId.equals(that.vpcId) : that.vpcId != null) return false;
@@ -896,6 +958,7 @@ public interface DBInstancesProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.instanceNetworkType != null ? this.instanceNetworkType.hashCode() : 0);
             result = 31 * result + (this.payType != null ? this.payType.hashCode() : 0);
             result = 31 * result + (this.proxyId != null ? this.proxyId.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.searchKey != null ? this.searchKey.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);

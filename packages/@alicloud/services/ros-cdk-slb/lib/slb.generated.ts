@@ -1322,7 +1322,7 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
         errors.collect(ros.propertyValidator('bandwidth', ros.validateRange)({
             data: properties.bandwidth,
             min: -1,
-            max: 1000,
+            max: 5120,
           }));
     }
     errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));

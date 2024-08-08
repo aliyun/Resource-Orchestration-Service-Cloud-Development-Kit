@@ -13,6 +13,14 @@ export interface CommandProps {
      * Property commandId: Command ID.
      */
     readonly commandId: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -95,6 +103,7 @@ export class Command extends ros.Resource {
 
         const rosCommand = new RosCommand(this, id,  {
             commandId: props.commandId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosCommand;
         this.attrCommandContent = rosCommand.attrCommandContent;

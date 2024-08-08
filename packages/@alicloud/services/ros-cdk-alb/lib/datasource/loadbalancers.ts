@@ -40,6 +40,14 @@ export interface LoadBalancersProps {
     readonly payType?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property resourceGroupId: Resource group id
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -104,6 +112,7 @@ export class LoadBalancers extends ros.Resource {
             addressType: props.addressType,
             loadBalancerStatus: props.loadBalancerStatus,
             tags: props.tags,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosLoadBalancers;
         this.attrLoadBalancerIds = rosLoadBalancers.attrLoadBalancerIds;

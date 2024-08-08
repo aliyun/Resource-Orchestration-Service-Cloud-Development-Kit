@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.emr.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-emr-cluster2
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:06.913Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:10.734Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.emr.$Module.class, fqn = "@alicloud/ros-cdk-emr.datasource.Cluster2Props")
 @software.amazon.jsii.Jsii.Proxy(Cluster2Props.Jsii$Proxy.class)
 public interface Cluster2Props extends software.amazon.jsii.JsiiSerializable {
@@ -46,6 +46,21 @@ public interface Cluster2Props extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
      * Property resourceGroupId: The resource group id of emr cluster.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
@@ -74,6 +89,7 @@ public interface Cluster2Props extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object clusterStates;
         java.lang.Object clusterType;
         java.lang.Object paymentTypes;
+        java.lang.Object refreshOptions;
         java.lang.Object resourceGroupId;
         java.util.List<com.aliyun.ros.cdk.emr.datasource.RosCluster2.TagsProperty> tags;
 
@@ -178,6 +194,40 @@ public interface Cluster2Props extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link Cluster2Props#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link Cluster2Props#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link Cluster2Props#getResourceGroupId}
          * @param resourceGroupId Property resourceGroupId: The resource group id of emr cluster.
          * @return {@code this}
@@ -229,6 +279,7 @@ public interface Cluster2Props extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object clusterStates;
         private final java.lang.Object clusterType;
         private final java.lang.Object paymentTypes;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object resourceGroupId;
         private final java.util.List<com.aliyun.ros.cdk.emr.datasource.RosCluster2.TagsProperty> tags;
 
@@ -243,6 +294,7 @@ public interface Cluster2Props extends software.amazon.jsii.JsiiSerializable {
             this.clusterStates = software.amazon.jsii.Kernel.get(this, "clusterStates", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.clusterType = software.amazon.jsii.Kernel.get(this, "clusterType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.paymentTypes = software.amazon.jsii.Kernel.get(this, "paymentTypes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.emr.datasource.RosCluster2.TagsProperty.class)));
         }
@@ -258,6 +310,7 @@ public interface Cluster2Props extends software.amazon.jsii.JsiiSerializable {
             this.clusterStates = builder.clusterStates;
             this.clusterType = builder.clusterType;
             this.paymentTypes = builder.paymentTypes;
+            this.refreshOptions = builder.refreshOptions;
             this.resourceGroupId = builder.resourceGroupId;
             this.tags = (java.util.List<com.aliyun.ros.cdk.emr.datasource.RosCluster2.TagsProperty>)builder.tags;
         }
@@ -285,6 +338,11 @@ public interface Cluster2Props extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getPaymentTypes() {
             return this.paymentTypes;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -318,6 +376,9 @@ public interface Cluster2Props extends software.amazon.jsii.JsiiSerializable {
             if (this.getPaymentTypes() != null) {
                 data.set("paymentTypes", om.valueToTree(this.getPaymentTypes()));
             }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
+            }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
@@ -347,6 +408,7 @@ public interface Cluster2Props extends software.amazon.jsii.JsiiSerializable {
             if (this.clusterStates != null ? !this.clusterStates.equals(that.clusterStates) : that.clusterStates != null) return false;
             if (this.clusterType != null ? !this.clusterType.equals(that.clusterType) : that.clusterType != null) return false;
             if (this.paymentTypes != null ? !this.paymentTypes.equals(that.paymentTypes) : that.paymentTypes != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
@@ -358,6 +420,7 @@ public interface Cluster2Props extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.clusterStates != null ? this.clusterStates.hashCode() : 0);
             result = 31 * result + (this.clusterType != null ? this.clusterType.hashCode() : 0);
             result = 31 * result + (this.paymentTypes != null ? this.paymentTypes.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;

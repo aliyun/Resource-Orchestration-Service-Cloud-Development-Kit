@@ -19,6 +19,14 @@ export interface RosAccessControlsProps {
     readonly addressIpVersion?: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * @Property resourceGroupId: The ID of the resource group to which the network ACL belongs.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -37,6 +45,13 @@ function RosAccessControlsPropsValidator(properties: any): ros.ValidationResult 
     errors.collect(ros.propertyValidator('addressIpVersion', ros.validateString)(properties.addressIpVersion));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('aclName', ros.validateString)(properties.aclName));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosAccessControlsProps"');
 }
 
@@ -56,6 +71,7 @@ function rosAccessControlsPropsToRosTemplate(properties: any, enableResourceProp
     return {
       AclName: ros.stringToRosTemplate(properties.aclName),
       AddressIpVersion: ros.stringToRosTemplate(properties.addressIpVersion),
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
     };
 }
@@ -95,6 +111,14 @@ export class RosAccessControls extends ros.RosResource {
     public addressIpVersion: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property resourceGroupId: The ID of the resource group to which the network ACL belongs.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
@@ -112,6 +136,7 @@ export class RosAccessControls extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.aclName = props.aclName;
         this.addressIpVersion = props.addressIpVersion;
+        this.refreshOptions = props.refreshOptions;
         this.resourceGroupId = props.resourceGroupId;
     }
 
@@ -120,6 +145,7 @@ export class RosAccessControls extends ros.RosResource {
         return {
             aclName: this.aclName,
             addressIpVersion: this.addressIpVersion,
+            refreshOptions: this.refreshOptions,
             resourceGroupId: this.resourceGroupId,
         };
     }
@@ -149,6 +175,14 @@ export interface RosDomainExtensionsProps {
      * @Property domainExtensionId: The ID of the additional certificate.
      */
     readonly domainExtensionId?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -166,6 +200,13 @@ function RosDomainExtensionsPropsValidator(properties: any): ros.ValidationResul
     errors.collect(ros.propertyValidator('domainExtensionId', ros.validateString)(properties.domainExtensionId));
     errors.collect(ros.propertyValidator('loadBalancerId', ros.requiredValidator)(properties.loadBalancerId));
     errors.collect(ros.propertyValidator('loadBalancerId', ros.validateString)(properties.loadBalancerId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosDomainExtensionsProps"');
 }
 
@@ -186,6 +227,7 @@ function rosDomainExtensionsPropsToRosTemplate(properties: any, enableResourcePr
       ListenerPort: ros.numberToRosTemplate(properties.listenerPort),
       LoadBalancerId: ros.stringToRosTemplate(properties.loadBalancerId),
       DomainExtensionId: ros.stringToRosTemplate(properties.domainExtensionId),
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -230,6 +272,14 @@ export class RosDomainExtensions extends ros.RosResource {
     public domainExtensionId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -243,6 +293,7 @@ export class RosDomainExtensions extends ros.RosResource {
         this.listenerPort = props.listenerPort;
         this.loadBalancerId = props.loadBalancerId;
         this.domainExtensionId = props.domainExtensionId;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
@@ -251,6 +302,7 @@ export class RosDomainExtensions extends ros.RosResource {
             listenerPort: this.listenerPort,
             loadBalancerId: this.loadBalancerId,
             domainExtensionId: this.domainExtensionId,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -310,6 +362,14 @@ export interface RosLoadBalancersProps {
     readonly paymentType?: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * @Property resourceGroupId: Resource group id
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -359,6 +419,13 @@ function RosLoadBalancersPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('loadBalancerId', ros.validateString)(properties.loadBalancerId));
     errors.collect(ros.propertyValidator('slaveZoneId', ros.validateString)(properties.slaveZoneId));
     errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     errors.collect(ros.propertyValidator('loadBalancerName', ros.validateString)(properties.loadBalancerName));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     if(properties.networkType && (typeof properties.networkType) !== 'object') {
@@ -403,6 +470,7 @@ function rosLoadBalancersPropsToRosTemplate(properties: any, enableResourcePrope
       MasterZoneId: ros.stringToRosTemplate(properties.masterZoneId),
       NetworkType: ros.stringToRosTemplate(properties.networkType),
       PaymentType: ros.stringToRosTemplate(properties.paymentType),
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       SlaveZoneId: ros.stringToRosTemplate(properties.slaveZoneId),
       Status: ros.stringToRosTemplate(properties.status),
@@ -481,6 +549,14 @@ export class RosLoadBalancers extends ros.RosResource {
     public paymentType: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property resourceGroupId: Resource group id
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
@@ -525,6 +601,7 @@ export class RosLoadBalancers extends ros.RosResource {
         this.masterZoneId = props.masterZoneId;
         this.networkType = props.networkType;
         this.paymentType = props.paymentType;
+        this.refreshOptions = props.refreshOptions;
         this.resourceGroupId = props.resourceGroupId;
         this.slaveZoneId = props.slaveZoneId;
         this.status = props.status;
@@ -544,6 +621,7 @@ export class RosLoadBalancers extends ros.RosResource {
             masterZoneId: this.masterZoneId,
             networkType: this.networkType,
             paymentType: this.paymentType,
+            refreshOptions: this.refreshOptions,
             resourceGroupId: this.resourceGroupId,
             slaveZoneId: this.slaveZoneId,
             status: this.status,
@@ -576,6 +654,14 @@ export interface RosRulesProps {
      * @Property listenerProtocol: The frontend listener protocol that is used by the SLB instance.
      */
     readonly listenerProtocol?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -593,6 +679,13 @@ function RosRulesPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('loadBalancerId', ros.requiredValidator)(properties.loadBalancerId));
     errors.collect(ros.propertyValidator('loadBalancerId', ros.validateString)(properties.loadBalancerId));
     errors.collect(ros.propertyValidator('listenerProtocol', ros.validateString)(properties.listenerProtocol));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosRulesProps"');
 }
 
@@ -613,6 +706,7 @@ function rosRulesPropsToRosTemplate(properties: any, enableResourcePropertyConst
       ListenerPort: ros.stringToRosTemplate(properties.listenerPort),
       LoadBalancerId: ros.stringToRosTemplate(properties.loadBalancerId),
       ListenerProtocol: ros.stringToRosTemplate(properties.listenerProtocol),
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -656,6 +750,14 @@ export class RosRules extends ros.RosResource {
     public listenerProtocol: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -669,6 +771,7 @@ export class RosRules extends ros.RosResource {
         this.listenerPort = props.listenerPort;
         this.loadBalancerId = props.loadBalancerId;
         this.listenerProtocol = props.listenerProtocol;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
@@ -677,6 +780,7 @@ export class RosRules extends ros.RosResource {
             listenerPort: this.listenerPort,
             loadBalancerId: this.loadBalancerId,
             listenerProtocol: this.listenerProtocol,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -694,6 +798,14 @@ export interface RosTLSPoliciesProps {
      * @Property instanceId: The ID of the TLS policy.
      */
     readonly instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 
     /**
      * @Property tlsPolicyName: The name of the TLS policy. The name must be 2 to 128 characters in length, and can contain letters, digits, periods (.), underscores (_), and hyphens (-). The name must start with a letter.
@@ -714,6 +826,13 @@ function RosTLSPoliciesPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('tlsPolicyName', ros.validateString)(properties.tlsPolicyName));
     errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosTLSPoliciesProps"');
 }
 
@@ -732,6 +851,7 @@ function rosTLSPoliciesPropsToRosTemplate(properties: any, enableResourcePropert
     }
     return {
       InstanceId: ros.stringToRosTemplate(properties.instanceId),
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
       TLSPolicyName: ros.stringToRosTemplate(properties.tlsPolicyName),
     };
 }
@@ -766,6 +886,14 @@ export class RosTLSPolicies extends ros.RosResource {
     public instanceId: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property tlsPolicyName: The name of the TLS policy. The name must be 2 to 128 characters in length, and can contain letters, digits, periods (.), underscores (_), and hyphens (-). The name must start with a letter.
      */
     public tlsPolicyName: string | ros.IResolvable | undefined;
@@ -782,6 +910,7 @@ export class RosTLSPolicies extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.instanceId = props.instanceId;
+        this.refreshOptions = props.refreshOptions;
         this.tlsPolicyName = props.tlsPolicyName;
     }
 
@@ -789,6 +918,7 @@ export class RosTLSPolicies extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             instanceId: this.instanceId,
+            refreshOptions: this.refreshOptions,
             tlsPolicyName: this.tlsPolicyName,
         };
     }
@@ -807,6 +937,14 @@ export interface RosVServerGroupsProps {
      * @Property loadBalancerId: The ID of the CLB instance.
      */
     readonly loadBalancerId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -821,6 +959,13 @@ function RosVServerGroupsPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('loadBalancerId', ros.requiredValidator)(properties.loadBalancerId));
     errors.collect(ros.propertyValidator('loadBalancerId', ros.validateString)(properties.loadBalancerId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosVServerGroupsProps"');
 }
 
@@ -839,6 +984,7 @@ function rosVServerGroupsPropsToRosTemplate(properties: any, enableResourcePrope
     }
     return {
       LoadBalancerId: ros.stringToRosTemplate(properties.loadBalancerId),
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -872,6 +1018,14 @@ export class RosVServerGroups extends ros.RosResource {
     public loadBalancerId: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -883,12 +1037,14 @@ export class RosVServerGroups extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.loadBalancerId = props.loadBalancerId;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             loadBalancerId: this.loadBalancerId,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -915,6 +1071,14 @@ export interface RosZonesProps {
      * classic_intranet: an internal SLB instance that is deployed in a classic network.
      */
     readonly addressType?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -929,6 +1093,13 @@ function RosZonesPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('addressIpVersion', ros.validateString)(properties.addressIpVersion));
     errors.collect(ros.propertyValidator('addressType', ros.validateString)(properties.addressType));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosZonesProps"');
 }
 
@@ -948,6 +1119,7 @@ function rosZonesPropsToRosTemplate(properties: any, enableResourcePropertyConst
     return {
       AddressIPVersion: ros.stringToRosTemplate(properties.addressIpVersion),
       AddressType: ros.stringToRosTemplate(properties.addressType),
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -990,6 +1162,14 @@ export class RosZones extends ros.RosResource {
     public addressType: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1002,6 +1182,7 @@ export class RosZones extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.addressIpVersion = props.addressIpVersion;
         this.addressType = props.addressType;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
@@ -1009,6 +1190,7 @@ export class RosZones extends ros.RosResource {
         return {
             addressIpVersion: this.addressIpVersion,
             addressType: this.addressType,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

@@ -13,6 +13,14 @@ export interface HpcClustersProps {
      * Property hpcClusterIds: The IDs of the HPC clusters. You can specify up to 100 HPC cluster IDs.
      */
     readonly hpcClusterIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -50,6 +58,7 @@ export class HpcClusters extends ros.Resource {
 
         const rosHpcClusters = new RosHpcClusters(this, id,  {
             hpcClusterIds: props.hpcClusterIds,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosHpcClusters;
         this.attrHpcClusterIds = rosHpcClusters.attrHpcClusterIds;

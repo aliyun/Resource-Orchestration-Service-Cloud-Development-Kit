@@ -20,6 +20,14 @@ export interface AccessControlsProps {
     readonly addressIpVersion?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property resourceGroupId: The ID of the resource group to which the network ACL belongs.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -62,6 +70,7 @@ export class AccessControls extends ros.Resource {
             addressIpVersion: props.addressIpVersion,
             resourceGroupId: props.resourceGroupId,
             aclName: props.aclName,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosAccessControls;
         this.attrAccessControls = rosAccessControls.attrAccessControls;

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Determines how symlinks are followed.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:04.074Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:06.925Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.SymlinkFollowMode")
 public enum SymlinkFollowMode {
     /**

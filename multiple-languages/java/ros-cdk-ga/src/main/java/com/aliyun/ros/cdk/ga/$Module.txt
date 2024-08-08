@@ -75,12 +75,16 @@
 @alicloud/ros-cdk-ga.RosListener.PortRangesProperty=com.aliyun.ros.cdk.ga.RosListener$PortRangesProperty
 @alicloud/ros-cdk-ga.RosListener.XForwardedForConfigProperty=com.aliyun.ros.cdk.ga.RosListener$XForwardedForConfigProperty
 @alicloud/ros-cdk-ga.RosListenerProps=com.aliyun.ros.cdk.ga.RosListenerProps
+@alicloud/ros-cdk-ga.datasource.Acl=com.aliyun.ros.cdk.ga.datasource.Acl
+@alicloud/ros-cdk-ga.datasource.AclProps=com.aliyun.ros.cdk.ga.datasource.AclProps
 @alicloud/ros-cdk-ga.datasource.Acls=com.aliyun.ros.cdk.ga.datasource.Acls
 @alicloud/ros-cdk-ga.datasource.AclsProps=com.aliyun.ros.cdk.ga.datasource.AclsProps
 @alicloud/ros-cdk-ga.datasource.BandwidthPackage=com.aliyun.ros.cdk.ga.datasource.BandwidthPackage
 @alicloud/ros-cdk-ga.datasource.BandwidthPackageProps=com.aliyun.ros.cdk.ga.datasource.BandwidthPackageProps
 @alicloud/ros-cdk-ga.datasource.BandwidthPackages=com.aliyun.ros.cdk.ga.datasource.BandwidthPackages
 @alicloud/ros-cdk-ga.datasource.BandwidthPackagesProps=com.aliyun.ros.cdk.ga.datasource.BandwidthPackagesProps
+@alicloud/ros-cdk-ga.datasource.RosAcl=com.aliyun.ros.cdk.ga.datasource.RosAcl
+@alicloud/ros-cdk-ga.datasource.RosAclProps=com.aliyun.ros.cdk.ga.datasource.RosAclProps
 @alicloud/ros-cdk-ga.datasource.RosAcls=com.aliyun.ros.cdk.ga.datasource.RosAcls
 @alicloud/ros-cdk-ga.datasource.RosAclsProps=com.aliyun.ros.cdk.ga.datasource.RosAclsProps
 @alicloud/ros-cdk-ga.datasource.RosBandwidthPackage=com.aliyun.ros.cdk.ga.datasource.RosBandwidthPackage

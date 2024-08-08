@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sag;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SAG::AppUser</code>, which is used to create a client account for a Smart Access Gateway (SAG) app instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.183Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:13.971Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.AppUser")
 public class AppUser extends com.aliyun.ros.cdk.core.Resource {
 
@@ -48,7 +48,7 @@ public class AppUser extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Attribute UserName: &lt;heat.engine.properties.Schema object at 0x7f054fbe3d10&gt;.
+     * Attribute UserName: &lt;heat.engine.properties.Schema object at 0x7fe1dcaf5f90&gt;.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrUserName() {
         return software.amazon.jsii.Kernel.get(this, "attrUserName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));

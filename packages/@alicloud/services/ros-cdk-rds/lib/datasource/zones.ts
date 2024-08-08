@@ -42,6 +42,14 @@ export interface ZonesProps {
     readonly engineVersion?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property zoneId: The ID of the zone in which the instance is located. 
      * If the instance spans more than one zone, the value of this parameter contains an MAZ part,such as cn-hangzhou-MAZ6(b,f) and cn-hangzhou-MAZ5(b,e,f)
      */
@@ -88,6 +96,7 @@ export class Zones extends ros.Resource {
             zoneId: props.zoneId,
             commodityCode: props.commodityCode,
             engine: props.engine,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosZones;
         this.attrZoneIds = rosZones.attrZoneIds;

@@ -13,6 +13,14 @@ export interface HaVipProps {
      * Property haVipId: The  ID of the resource.
      */
     readonly haVipId: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -95,6 +103,7 @@ export class HaVip extends ros.Resource {
 
         const rosHaVip = new RosHaVip(this, id,  {
             haVipId: props.haVipId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosHaVip;
         this.attrAssociatedEipAddresses = rosHaVip.attrAssociatedEipAddresses;

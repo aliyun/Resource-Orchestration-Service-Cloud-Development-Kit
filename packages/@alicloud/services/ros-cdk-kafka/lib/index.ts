@@ -1,5 +1,7 @@
+export * from './acl';
 export * from './consumergroup';
 export * from './instance';
+export * from './sasluser';
 export * from './topic';
 
 // ALIYUN::KAFKA Resources:

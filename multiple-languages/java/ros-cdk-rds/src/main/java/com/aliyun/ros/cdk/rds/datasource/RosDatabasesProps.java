@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.rds.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-databases
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:08.900Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:13.573Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.datasource.RosDatabasesProps")
 @software.amazon.jsii.Jsii.Proxy(RosDatabasesProps.Jsii$Proxy.class)
 public interface RosDatabasesProps extends software.amazon.jsii.JsiiSerializable {
@@ -27,6 +27,12 @@ public interface RosDatabasesProps extends software.amazon.jsii.JsiiSerializable
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosDatabasesProps}
      */
     static Builder builder() {
@@ -39,6 +45,7 @@ public interface RosDatabasesProps extends software.amazon.jsii.JsiiSerializable
         java.lang.Object dbInstanceId;
         java.lang.Object dbName;
         java.lang.Object dbStatus;
+        java.lang.Object refreshOptions;
 
         /**
          * Sets the value of {@link RosDatabasesProps#getDbInstanceId}
@@ -101,6 +108,26 @@ public interface RosDatabasesProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link RosDatabasesProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDatabasesProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosDatabasesProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -119,6 +146,7 @@ public interface RosDatabasesProps extends software.amazon.jsii.JsiiSerializable
         private final java.lang.Object dbInstanceId;
         private final java.lang.Object dbName;
         private final java.lang.Object dbStatus;
+        private final java.lang.Object refreshOptions;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -129,6 +157,7 @@ public interface RosDatabasesProps extends software.amazon.jsii.JsiiSerializable
             this.dbInstanceId = software.amazon.jsii.Kernel.get(this, "dbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbName = software.amazon.jsii.Kernel.get(this, "dbName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbStatus = software.amazon.jsii.Kernel.get(this, "dbStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -139,6 +168,7 @@ public interface RosDatabasesProps extends software.amazon.jsii.JsiiSerializable
             this.dbInstanceId = java.util.Objects.requireNonNull(builder.dbInstanceId, "dbInstanceId is required");
             this.dbName = builder.dbName;
             this.dbStatus = builder.dbStatus;
+            this.refreshOptions = builder.refreshOptions;
         }
 
         @Override
@@ -157,6 +187,11 @@ public interface RosDatabasesProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -168,6 +203,9 @@ public interface RosDatabasesProps extends software.amazon.jsii.JsiiSerializable
             }
             if (this.getDbStatus() != null) {
                 data.set("dbStatus", om.valueToTree(this.getDbStatus()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -189,7 +227,8 @@ public interface RosDatabasesProps extends software.amazon.jsii.JsiiSerializable
 
             if (!dbInstanceId.equals(that.dbInstanceId)) return false;
             if (this.dbName != null ? !this.dbName.equals(that.dbName) : that.dbName != null) return false;
-            return this.dbStatus != null ? this.dbStatus.equals(that.dbStatus) : that.dbStatus == null;
+            if (this.dbStatus != null ? !this.dbStatus.equals(that.dbStatus) : that.dbStatus != null) return false;
+            return this.refreshOptions != null ? this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions == null;
         }
 
         @Override
@@ -197,6 +236,7 @@ public interface RosDatabasesProps extends software.amazon.jsii.JsiiSerializable
             int result = this.dbInstanceId.hashCode();
             result = 31 * result + (this.dbName != null ? this.dbName.hashCode() : 0);
             result = 31 * result + (this.dbStatus != null ? this.dbStatus.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             return result;
         }
     }

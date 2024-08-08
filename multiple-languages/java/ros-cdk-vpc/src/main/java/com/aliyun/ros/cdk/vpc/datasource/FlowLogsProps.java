@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-flowlogs
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.858Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:14.967Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.FlowLogsProps")
 @software.amazon.jsii.Jsii.Proxy(FlowLogsProps.Jsii$Proxy.class)
 public interface FlowLogsProps extends software.amazon.jsii.JsiiSerializable {
@@ -42,6 +42,21 @@ public interface FlowLogsProps extends software.amazon.jsii.JsiiSerializable {
      * Property projectName: Manage the captured traffic of the Project.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getProjectName() {
+        return null;
+    }
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
         return null;
     }
 
@@ -91,6 +106,7 @@ public interface FlowLogsProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object flowLogName;
         java.lang.Object logStoreName;
         java.lang.Object projectName;
+        java.lang.Object refreshOptions;
         java.lang.Object resourceId;
         java.lang.Object resourceType;
         java.lang.Object trafficType;
@@ -196,6 +212,40 @@ public interface FlowLogsProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link FlowLogsProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link FlowLogsProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link FlowLogsProps#getResourceId}
          * @param resourceId Property resourceId: The ID of the resource group to which the flow log belongs.
          * @return {@code this}
@@ -292,6 +342,7 @@ public interface FlowLogsProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object flowLogName;
         private final java.lang.Object logStoreName;
         private final java.lang.Object projectName;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object resourceId;
         private final java.lang.Object resourceType;
         private final java.lang.Object trafficType;
@@ -307,6 +358,7 @@ public interface FlowLogsProps extends software.amazon.jsii.JsiiSerializable {
             this.flowLogName = software.amazon.jsii.Kernel.get(this, "flowLogName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.logStoreName = software.amazon.jsii.Kernel.get(this, "logStoreName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.projectName = software.amazon.jsii.Kernel.get(this, "projectName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceId = software.amazon.jsii.Kernel.get(this, "resourceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceType = software.amazon.jsii.Kernel.get(this, "resourceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.trafficType = software.amazon.jsii.Kernel.get(this, "trafficType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -322,6 +374,7 @@ public interface FlowLogsProps extends software.amazon.jsii.JsiiSerializable {
             this.flowLogName = builder.flowLogName;
             this.logStoreName = builder.logStoreName;
             this.projectName = builder.projectName;
+            this.refreshOptions = builder.refreshOptions;
             this.resourceId = builder.resourceId;
             this.resourceType = builder.resourceType;
             this.trafficType = builder.trafficType;
@@ -350,6 +403,11 @@ public interface FlowLogsProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getProjectName() {
             return this.projectName;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -388,6 +446,9 @@ public interface FlowLogsProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getProjectName() != null) {
                 data.set("projectName", om.valueToTree(this.getProjectName()));
             }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
+            }
             if (this.getResourceId() != null) {
                 data.set("resourceId", om.valueToTree(this.getResourceId()));
             }
@@ -420,6 +481,7 @@ public interface FlowLogsProps extends software.amazon.jsii.JsiiSerializable {
             if (this.flowLogName != null ? !this.flowLogName.equals(that.flowLogName) : that.flowLogName != null) return false;
             if (this.logStoreName != null ? !this.logStoreName.equals(that.logStoreName) : that.logStoreName != null) return false;
             if (this.projectName != null ? !this.projectName.equals(that.projectName) : that.projectName != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             if (this.resourceId != null ? !this.resourceId.equals(that.resourceId) : that.resourceId != null) return false;
             if (this.resourceType != null ? !this.resourceType.equals(that.resourceType) : that.resourceType != null) return false;
             return this.trafficType != null ? this.trafficType.equals(that.trafficType) : that.trafficType == null;
@@ -432,6 +494,7 @@ public interface FlowLogsProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.flowLogName != null ? this.flowLogName.hashCode() : 0);
             result = 31 * result + (this.logStoreName != null ? this.logStoreName.hashCode() : 0);
             result = 31 * result + (this.projectName != null ? this.projectName.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.resourceId != null ? this.resourceId.hashCode() : 0);
             result = 31 * result + (this.resourceType != null ? this.resourceType.hashCode() : 0);
             result = 31 * result + (this.trafficType != null ? this.trafficType.hashCode() : 0);

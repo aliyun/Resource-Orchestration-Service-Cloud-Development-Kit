@@ -15,6 +15,14 @@ export interface GroupsProps {
     readonly groupName?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property userName: The specific user which groups contains.
      */
     readonly userName?: string | ros.IResolvable;
@@ -56,6 +64,7 @@ export class Groups extends ros.Resource {
         const rosGroups = new RosGroups(this, id,  {
             groupName: props.groupName,
             userName: props.userName,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosGroups;
         this.attrGroupNames = rosGroups.attrGroupNames;

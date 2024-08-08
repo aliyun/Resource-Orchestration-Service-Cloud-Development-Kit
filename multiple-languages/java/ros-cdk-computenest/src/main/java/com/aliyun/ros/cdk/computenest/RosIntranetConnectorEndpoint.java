@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.computenest;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ComputeNest::IntranetConnectorEndpoint</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:05.223Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:08.536Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.computenest.$Module.class, fqn = "@alicloud/ros-cdk-computenest.RosIntranetConnectorEndpoint")
 public class RosIntranetConnectorEndpoint extends com.aliyun.ros.cdk.core.RosResource {
 

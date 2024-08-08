@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.apigateway.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-groups
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:04.509Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:07.638Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.datasource.RosGroupsProps")
 @software.amazon.jsii.Jsii.Proxy(RosGroupsProps.Jsii$Proxy.class)
 public interface RosGroupsProps extends software.amazon.jsii.JsiiSerializable {
@@ -30,6 +30,12 @@ public interface RosGroupsProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSort() {
         return null;
     }
@@ -47,6 +53,7 @@ public interface RosGroupsProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object groupId;
         java.lang.Object groupName;
         java.lang.Object instanceId;
+        java.lang.Object refreshOptions;
         java.lang.Object sort;
 
         /**
@@ -110,6 +117,26 @@ public interface RosGroupsProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosGroupsProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosGroupsProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosGroupsProps#getSort}
          * @param sort the value to be set.
          * @return {@code this}
@@ -148,6 +175,7 @@ public interface RosGroupsProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object groupId;
         private final java.lang.Object groupName;
         private final java.lang.Object instanceId;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object sort;
 
         /**
@@ -159,6 +187,7 @@ public interface RosGroupsProps extends software.amazon.jsii.JsiiSerializable {
             this.groupId = software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.groupName = software.amazon.jsii.Kernel.get(this, "groupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sort = software.amazon.jsii.Kernel.get(this, "sort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -170,6 +199,7 @@ public interface RosGroupsProps extends software.amazon.jsii.JsiiSerializable {
             this.groupId = builder.groupId;
             this.groupName = builder.groupName;
             this.instanceId = builder.instanceId;
+            this.refreshOptions = builder.refreshOptions;
             this.sort = builder.sort;
         }
 
@@ -186,6 +216,11 @@ public interface RosGroupsProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getInstanceId() {
             return this.instanceId;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -207,6 +242,9 @@ public interface RosGroupsProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getInstanceId() != null) {
                 data.set("instanceId", om.valueToTree(this.getInstanceId()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
             if (this.getSort() != null) {
                 data.set("sort", om.valueToTree(this.getSort()));
@@ -232,6 +270,7 @@ public interface RosGroupsProps extends software.amazon.jsii.JsiiSerializable {
             if (this.groupId != null ? !this.groupId.equals(that.groupId) : that.groupId != null) return false;
             if (this.groupName != null ? !this.groupName.equals(that.groupName) : that.groupName != null) return false;
             if (this.instanceId != null ? !this.instanceId.equals(that.instanceId) : that.instanceId != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             return this.sort != null ? this.sort.equals(that.sort) : that.sort == null;
         }
 
@@ -240,6 +279,7 @@ public interface RosGroupsProps extends software.amazon.jsii.JsiiSerializable {
             int result = this.groupId != null ? this.groupId.hashCode() : 0;
             result = 31 * result + (this.groupName != null ? this.groupName.hashCode() : 0);
             result = 31 * result + (this.instanceId != null ? this.instanceId.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.sort != null ? this.sort.hashCode() : 0);
             return result;
         }

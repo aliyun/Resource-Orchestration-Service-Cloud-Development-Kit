@@ -8,6 +8,14 @@ export { RosIpfilters as IpfiltersProperty };
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-directmail-ipfilters
  */
 export interface IpfiltersProps {
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -44,8 +52,8 @@ export class Ipfilters extends ros.Resource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosIpfilters = new RosIpfilters(this, id,  {
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
-        props;
         this.resource = rosIpfilters;
         this.attrIpfilterIds = rosIpfilters.attrIpfilterIds;
         this.attrIpfilters = rosIpfilters.attrIpfilters;

@@ -13,6 +13,14 @@ export interface FlowLogProps {
      * Property flowLogId: The flow log ID.
      */
     readonly flowLogId: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -95,6 +103,7 @@ export class FlowLog extends ros.Resource {
 
         const rosFlowLog = new RosFlowLog(this, id,  {
             flowLogId: props.flowLogId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosFlowLog;
         this.attrAggregationInterval = rosFlowLog.attrAggregationInterval;

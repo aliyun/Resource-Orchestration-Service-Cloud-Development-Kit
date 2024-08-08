@@ -14,6 +14,14 @@ export interface RosInstancesProps {
     readonly instanceName?: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * @Property status: The status of instance.
      */
     readonly status?: string | ros.IResolvable;
@@ -31,6 +39,13 @@ function RosInstancesPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('status', ros.validateString)(properties.status));
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosInstancesProps"');
 }
 
@@ -49,6 +64,7 @@ function rosInstancesPropsToRosTemplate(properties: any, enableResourcePropertyC
     }
     return {
       InstanceName: ros.stringToRosTemplate(properties.instanceName),
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
       Status: ros.stringToRosTemplate(properties.status),
     };
 }
@@ -83,6 +99,14 @@ export class RosInstances extends ros.RosResource {
     public instanceName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property status: The status of instance.
      */
     public status: string | ros.IResolvable | undefined;
@@ -99,6 +123,7 @@ export class RosInstances extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.instanceName = props.instanceName;
+        this.refreshOptions = props.refreshOptions;
         this.status = props.status;
     }
 
@@ -106,6 +131,7 @@ export class RosInstances extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             instanceName: this.instanceName,
+            refreshOptions: this.refreshOptions,
             status: this.status,
         };
     }
@@ -126,6 +152,14 @@ export interface RosTablesProps {
     readonly instanceName: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * @Property tableName: The name of table.
      */
     readonly tableName?: string | ros.IResolvable;
@@ -144,6 +178,13 @@ function RosTablesPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('instanceName', ros.requiredValidator)(properties.instanceName));
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
     errors.collect(ros.propertyValidator('tableName', ros.validateString)(properties.tableName));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosTablesProps"');
 }
 
@@ -162,6 +203,7 @@ function rosTablesPropsToRosTemplate(properties: any, enableResourcePropertyCons
     }
     return {
       InstanceName: ros.stringToRosTemplate(properties.instanceName),
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
       TableName: ros.stringToRosTemplate(properties.tableName),
     };
 }
@@ -196,6 +238,14 @@ export class RosTables extends ros.RosResource {
     public instanceName: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property tableName: The name of table.
      */
     public tableName: string | ros.IResolvable | undefined;
@@ -212,6 +262,7 @@ export class RosTables extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.instanceName = props.instanceName;
+        this.refreshOptions = props.refreshOptions;
         this.tableName = props.tableName;
     }
 
@@ -219,6 +270,7 @@ export class RosTables extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             instanceName: this.instanceName,
+            refreshOptions: this.refreshOptions,
             tableName: this.tableName,
         };
     }

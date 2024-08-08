@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.arms;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ARMS::Environment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:04.522Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:07.670Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.Environment")
 public class Environment extends com.aliyun.ros.cdk.core.Resource {
 
@@ -276,6 +276,31 @@ public class Environment extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder environmentType(final com.aliyun.ros.cdk.core.IResolvable environmentType) {
             this.props.environmentType(environmentType);
+            return this;
+        }
+
+        /**
+         * Property deletePromInstance: Cascade delete Prometheus instance.
+         * <p>
+         * Default value: true.
+         * <p>
+         * @return {@code this}
+         * @param deletePromInstance Property deletePromInstance: Cascade delete Prometheus instance. This parameter is required.
+         */
+        public Builder deletePromInstance(final java.lang.Boolean deletePromInstance) {
+            this.props.deletePromInstance(deletePromInstance);
+            return this;
+        }
+        /**
+         * Property deletePromInstance: Cascade delete Prometheus instance.
+         * <p>
+         * Default value: true.
+         * <p>
+         * @return {@code this}
+         * @param deletePromInstance Property deletePromInstance: Cascade delete Prometheus instance. This parameter is required.
+         */
+        public Builder deletePromInstance(final com.aliyun.ros.cdk.core.IResolvable deletePromInstance) {
+            this.props.deletePromInstance(deletePromInstance);
             return this;
         }
 

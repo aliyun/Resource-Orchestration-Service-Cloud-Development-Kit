@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.polardb.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-dbnodeclasses
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:08.528Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:13.079Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.datasource.DBNodeClassesProps")
 @software.amazon.jsii.Jsii.Proxy(DBNodeClassesProps.Jsii$Proxy.class)
 public interface DBNodeClassesProps extends software.amazon.jsii.JsiiSerializable {
@@ -48,6 +48,21 @@ public interface DBNodeClassesProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
      * Property zoneId: The ID of the zone where PolarDB resources that you want to query reside.
      * <p>
      * Note You can call the DescribeRegions operation to query information about zones.
@@ -70,6 +85,7 @@ public interface DBNodeClassesProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object dbNodeClass;
         java.lang.Object dbType;
         java.lang.Object dbVersion;
+        java.lang.Object refreshOptions;
         java.lang.Object zoneId;
 
         /**
@@ -169,6 +185,40 @@ public interface DBNodeClassesProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link DBNodeClassesProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBNodeClassesProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DBNodeClassesProps#getZoneId}
          * @param zoneId Property zoneId: The ID of the zone where PolarDB resources that you want to query reside.
          *               Note You can call the DescribeRegions operation to query information about zones.
@@ -210,6 +260,7 @@ public interface DBNodeClassesProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object dbNodeClass;
         private final java.lang.Object dbType;
         private final java.lang.Object dbVersion;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object zoneId;
 
         /**
@@ -222,6 +273,7 @@ public interface DBNodeClassesProps extends software.amazon.jsii.JsiiSerializabl
             this.dbNodeClass = software.amazon.jsii.Kernel.get(this, "dbNodeClass", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbType = software.amazon.jsii.Kernel.get(this, "dbType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbVersion = software.amazon.jsii.Kernel.get(this, "dbVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -234,6 +286,7 @@ public interface DBNodeClassesProps extends software.amazon.jsii.JsiiSerializabl
             this.dbNodeClass = builder.dbNodeClass;
             this.dbType = builder.dbType;
             this.dbVersion = builder.dbVersion;
+            this.refreshOptions = builder.refreshOptions;
             this.zoneId = builder.zoneId;
         }
 
@@ -258,6 +311,11 @@ public interface DBNodeClassesProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
+        }
+
+        @Override
         public final java.lang.Object getZoneId() {
             return this.zoneId;
         }
@@ -277,6 +335,9 @@ public interface DBNodeClassesProps extends software.amazon.jsii.JsiiSerializabl
             }
             if (this.getDbVersion() != null) {
                 data.set("dbVersion", om.valueToTree(this.getDbVersion()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
             if (this.getZoneId() != null) {
                 data.set("zoneId", om.valueToTree(this.getZoneId()));
@@ -303,6 +364,7 @@ public interface DBNodeClassesProps extends software.amazon.jsii.JsiiSerializabl
             if (this.dbNodeClass != null ? !this.dbNodeClass.equals(that.dbNodeClass) : that.dbNodeClass != null) return false;
             if (this.dbType != null ? !this.dbType.equals(that.dbType) : that.dbType != null) return false;
             if (this.dbVersion != null ? !this.dbVersion.equals(that.dbVersion) : that.dbVersion != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             return this.zoneId != null ? this.zoneId.equals(that.zoneId) : that.zoneId == null;
         }
 
@@ -312,6 +374,7 @@ public interface DBNodeClassesProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.dbNodeClass != null ? this.dbNodeClass.hashCode() : 0);
             result = 31 * result + (this.dbType != null ? this.dbType.hashCode() : 0);
             result = 31 * result + (this.dbVersion != null ? this.dbVersion.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.zoneId != null ? this.zoneId.hashCode() : 0);
             return result;
         }

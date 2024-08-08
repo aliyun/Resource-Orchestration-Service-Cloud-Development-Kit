@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-disks
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:06.621Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:10.332Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.datasource.RosDisksProps")
 @software.amazon.jsii.Jsii.Proxy(RosDisksProps.Jsii$Proxy.class)
 public interface RosDisksProps extends software.amazon.jsii.JsiiSerializable {
@@ -120,6 +120,12 @@ public interface RosDisksProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
@@ -176,6 +182,7 @@ public interface RosDisksProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object kmsKeyId;
         java.lang.Object multiAttach;
         java.lang.Object portable;
+        java.lang.Object refreshOptions;
         java.lang.Object resourceGroupId;
         java.lang.Object snapshotId;
         java.lang.Object status;
@@ -543,6 +550,26 @@ public interface RosDisksProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosDisksProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDisksProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDisksProps#getResourceGroupId}
          * @param resourceGroupId the value to be set.
          * @return {@code this}
@@ -667,6 +694,7 @@ public interface RosDisksProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object kmsKeyId;
         private final java.lang.Object multiAttach;
         private final java.lang.Object portable;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object snapshotId;
         private final java.lang.Object status;
@@ -697,6 +725,7 @@ public interface RosDisksProps extends software.amazon.jsii.JsiiSerializable {
             this.kmsKeyId = software.amazon.jsii.Kernel.get(this, "kmsKeyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.multiAttach = software.amazon.jsii.Kernel.get(this, "multiAttach", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.portable = software.amazon.jsii.Kernel.get(this, "portable", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.snapshotId = software.amazon.jsii.Kernel.get(this, "snapshotId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.status = software.amazon.jsii.Kernel.get(this, "status", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -728,6 +757,7 @@ public interface RosDisksProps extends software.amazon.jsii.JsiiSerializable {
             this.kmsKeyId = builder.kmsKeyId;
             this.multiAttach = builder.multiAttach;
             this.portable = builder.portable;
+            this.refreshOptions = builder.refreshOptions;
             this.resourceGroupId = builder.resourceGroupId;
             this.snapshotId = builder.snapshotId;
             this.status = builder.status;
@@ -826,6 +856,11 @@ public interface RosDisksProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
+        }
+
+        @Override
         public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
         }
@@ -910,6 +945,9 @@ public interface RosDisksProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getPortable() != null) {
                 data.set("portable", om.valueToTree(this.getPortable()));
             }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
+            }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
@@ -961,6 +999,7 @@ public interface RosDisksProps extends software.amazon.jsii.JsiiSerializable {
             if (this.kmsKeyId != null ? !this.kmsKeyId.equals(that.kmsKeyId) : that.kmsKeyId != null) return false;
             if (this.multiAttach != null ? !this.multiAttach.equals(that.multiAttach) : that.multiAttach != null) return false;
             if (this.portable != null ? !this.portable.equals(that.portable) : that.portable != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.snapshotId != null ? !this.snapshotId.equals(that.snapshotId) : that.snapshotId != null) return false;
             if (this.status != null ? !this.status.equals(that.status) : that.status != null) return false;
@@ -988,6 +1027,7 @@ public interface RosDisksProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.kmsKeyId != null ? this.kmsKeyId.hashCode() : 0);
             result = 31 * result + (this.multiAttach != null ? this.multiAttach.hashCode() : 0);
             result = 31 * result + (this.portable != null ? this.portable.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.snapshotId != null ? this.snapshotId.hashCode() : 0);
             result = 31 * result + (this.status != null ? this.status.hashCode() : 0);

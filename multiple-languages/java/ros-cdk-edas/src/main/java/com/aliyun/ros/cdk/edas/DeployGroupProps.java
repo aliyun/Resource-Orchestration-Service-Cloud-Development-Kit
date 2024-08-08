@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.edas;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-deploygroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:06.703Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:10.474Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.DeployGroupProps")
 @software.amazon.jsii.Jsii.Proxy(DeployGroupProps.Jsii$Proxy.class)
 public interface DeployGroupProps extends software.amazon.jsii.JsiiSerializable {

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-managedinstances
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:06.581Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:10.270Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.datasource.ManagedInstancesProps")
 @software.amazon.jsii.Jsii.Proxy(ManagedInstancesProps.Jsii$Proxy.class)
 public interface ManagedInstancesProps extends software.amazon.jsii.JsiiSerializable {
@@ -52,6 +52,21 @@ public interface ManagedInstancesProps extends software.amazon.jsii.JsiiSerializ
     }
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
      * Property tags: Tags of managedinstance.
      */
     default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ecs.datasource.RosManagedInstances.TagsProperty> getTags() {
@@ -73,6 +88,7 @@ public interface ManagedInstancesProps extends software.amazon.jsii.JsiiSerializ
         java.lang.Object instanceIp;
         java.lang.Object instanceName;
         java.lang.Object osType;
+        java.lang.Object refreshOptions;
         java.util.List<com.aliyun.ros.cdk.ecs.datasource.RosManagedInstances.TagsProperty> tags;
 
         /**
@@ -184,6 +200,40 @@ public interface ManagedInstancesProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link ManagedInstancesProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedInstancesProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ManagedInstancesProps#getTags}
          * @param tags Property tags: Tags of managedinstance.
          * @return {@code this}
@@ -215,6 +265,7 @@ public interface ManagedInstancesProps extends software.amazon.jsii.JsiiSerializ
         private final java.lang.Object instanceIp;
         private final java.lang.Object instanceName;
         private final java.lang.Object osType;
+        private final java.lang.Object refreshOptions;
         private final java.util.List<com.aliyun.ros.cdk.ecs.datasource.RosManagedInstances.TagsProperty> tags;
 
         /**
@@ -228,6 +279,7 @@ public interface ManagedInstancesProps extends software.amazon.jsii.JsiiSerializ
             this.instanceIp = software.amazon.jsii.Kernel.get(this, "instanceIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.osType = software.amazon.jsii.Kernel.get(this, "osType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.datasource.RosManagedInstances.TagsProperty.class)));
         }
 
@@ -242,6 +294,7 @@ public interface ManagedInstancesProps extends software.amazon.jsii.JsiiSerializ
             this.instanceIp = builder.instanceIp;
             this.instanceName = builder.instanceName;
             this.osType = builder.osType;
+            this.refreshOptions = builder.refreshOptions;
             this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.datasource.RosManagedInstances.TagsProperty>)builder.tags;
         }
 
@@ -271,6 +324,11 @@ public interface ManagedInstancesProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
+        }
+
+        @Override
         public final java.util.List<com.aliyun.ros.cdk.ecs.datasource.RosManagedInstances.TagsProperty> getTags() {
             return this.tags;
         }
@@ -295,6 +353,9 @@ public interface ManagedInstancesProps extends software.amazon.jsii.JsiiSerializ
             }
             if (this.getOsType() != null) {
                 data.set("osType", om.valueToTree(this.getOsType()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
@@ -322,6 +383,7 @@ public interface ManagedInstancesProps extends software.amazon.jsii.JsiiSerializ
             if (this.instanceIp != null ? !this.instanceIp.equals(that.instanceIp) : that.instanceIp != null) return false;
             if (this.instanceName != null ? !this.instanceName.equals(that.instanceName) : that.instanceName != null) return false;
             if (this.osType != null ? !this.osType.equals(that.osType) : that.osType != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
@@ -332,6 +394,7 @@ public interface ManagedInstancesProps extends software.amazon.jsii.JsiiSerializ
             result = 31 * result + (this.instanceIp != null ? this.instanceIp.hashCode() : 0);
             result = 31 * result + (this.instanceName != null ? this.instanceName.hashCode() : 0);
             result = 31 * result + (this.osType != null ? this.osType.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }

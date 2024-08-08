@@ -16,6 +16,14 @@ export interface BucketProps {
      * The length must be between 3 and 63 characters.
      */
     readonly bucketName: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -78,6 +86,7 @@ export class Bucket extends ros.Resource {
 
         const rosBucket = new RosBucket(this, id,  {
             bucketName: props.bucketName,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosBucket;
         this.attrCreateTime = rosBucket.attrCreateTime;

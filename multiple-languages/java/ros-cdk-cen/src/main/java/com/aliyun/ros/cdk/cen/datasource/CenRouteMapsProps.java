@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cen.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-cenroutemaps
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:04.817Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:08.051Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.datasource.CenRouteMapsProps")
 @software.amazon.jsii.Jsii.Proxy(CenRouteMapsProps.Jsii$Proxy.class)
 public interface CenRouteMapsProps extends software.amazon.jsii.JsiiSerializable {
@@ -19,6 +19,21 @@ public interface CenRouteMapsProps extends software.amazon.jsii.JsiiSerializable
      * Property cenRegionId: The ID of the region where the routing policy is applied.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCenRegionId() {
+        return null;
+    }
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
         return null;
     }
 
@@ -55,6 +70,7 @@ public interface CenRouteMapsProps extends software.amazon.jsii.JsiiSerializable
     public static final class Builder implements software.amazon.jsii.Builder<CenRouteMapsProps> {
         java.lang.Object cenId;
         java.lang.Object cenRegionId;
+        java.lang.Object refreshOptions;
         java.lang.Object routeMapId;
         java.lang.Object transitRouterRouteTableId;
         java.lang.Object transmitDirection;
@@ -96,6 +112,40 @@ public interface CenRouteMapsProps extends software.amazon.jsii.JsiiSerializable
          */
         public Builder cenRegionId(com.aliyun.ros.cdk.core.IResolvable cenRegionId) {
             this.cenRegionId = cenRegionId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link CenRouteMapsProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link CenRouteMapsProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
             return this;
         }
 
@@ -177,6 +227,7 @@ public interface CenRouteMapsProps extends software.amazon.jsii.JsiiSerializable
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements CenRouteMapsProps {
         private final java.lang.Object cenId;
         private final java.lang.Object cenRegionId;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object routeMapId;
         private final java.lang.Object transitRouterRouteTableId;
         private final java.lang.Object transmitDirection;
@@ -189,6 +240,7 @@ public interface CenRouteMapsProps extends software.amazon.jsii.JsiiSerializable
             super(objRef);
             this.cenId = software.amazon.jsii.Kernel.get(this, "cenId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.cenRegionId = software.amazon.jsii.Kernel.get(this, "cenRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.routeMapId = software.amazon.jsii.Kernel.get(this, "routeMapId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.transitRouterRouteTableId = software.amazon.jsii.Kernel.get(this, "transitRouterRouteTableId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.transmitDirection = software.amazon.jsii.Kernel.get(this, "transmitDirection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -201,6 +253,7 @@ public interface CenRouteMapsProps extends software.amazon.jsii.JsiiSerializable
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.cenId = java.util.Objects.requireNonNull(builder.cenId, "cenId is required");
             this.cenRegionId = builder.cenRegionId;
+            this.refreshOptions = builder.refreshOptions;
             this.routeMapId = builder.routeMapId;
             this.transitRouterRouteTableId = builder.transitRouterRouteTableId;
             this.transmitDirection = builder.transmitDirection;
@@ -214,6 +267,11 @@ public interface CenRouteMapsProps extends software.amazon.jsii.JsiiSerializable
         @Override
         public final java.lang.Object getCenRegionId() {
             return this.cenRegionId;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -240,6 +298,9 @@ public interface CenRouteMapsProps extends software.amazon.jsii.JsiiSerializable
             data.set("cenId", om.valueToTree(this.getCenId()));
             if (this.getCenRegionId() != null) {
                 data.set("cenRegionId", om.valueToTree(this.getCenRegionId()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
             if (this.getRouteMapId() != null) {
                 data.set("routeMapId", om.valueToTree(this.getRouteMapId()));
@@ -270,6 +331,7 @@ public interface CenRouteMapsProps extends software.amazon.jsii.JsiiSerializable
 
             if (!cenId.equals(that.cenId)) return false;
             if (this.cenRegionId != null ? !this.cenRegionId.equals(that.cenRegionId) : that.cenRegionId != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             if (this.routeMapId != null ? !this.routeMapId.equals(that.routeMapId) : that.routeMapId != null) return false;
             if (this.transitRouterRouteTableId != null ? !this.transitRouterRouteTableId.equals(that.transitRouterRouteTableId) : that.transitRouterRouteTableId != null) return false;
             return this.transmitDirection != null ? this.transmitDirection.equals(that.transmitDirection) : that.transmitDirection == null;
@@ -279,6 +341,7 @@ public interface CenRouteMapsProps extends software.amazon.jsii.JsiiSerializable
         public final int hashCode() {
             int result = this.cenId.hashCode();
             result = 31 * result + (this.cenRegionId != null ? this.cenRegionId.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.routeMapId != null ? this.routeMapId.hashCode() : 0);
             result = 31 * result + (this.transitRouterRouteTableId != null ? this.transitRouterRouteTableId.hashCode() : 0);
             result = 31 * result + (this.transmitDirection != null ? this.transmitDirection.hashCode() : 0);

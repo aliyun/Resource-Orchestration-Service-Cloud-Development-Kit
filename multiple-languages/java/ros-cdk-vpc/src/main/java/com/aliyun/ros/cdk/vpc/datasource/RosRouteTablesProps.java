@@ -5,10 +5,16 @@ package com.aliyun.ros.cdk.vpc.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-routetables
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.918Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:15.070Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.RosRouteTablesProps")
 @software.amazon.jsii.Jsii.Proxy(RosRouteTablesProps.Jsii$Proxy.class)
 public interface RosRouteTablesProps extends software.amazon.jsii.JsiiSerializable {
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
 
     /**
      */
@@ -56,12 +62,33 @@ public interface RosRouteTablesProps extends software.amazon.jsii.JsiiSerializab
      * A builder for {@link RosRouteTablesProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosRouteTablesProps> {
+        java.lang.Object refreshOptions;
         java.lang.Object resourceGroupId;
         java.lang.Object routerId;
         java.lang.Object routerType;
         java.lang.Object routeTableId;
         java.lang.Object routeTableName;
         java.lang.Object vpcId;
+
+        /**
+         * Sets the value of {@link RosRouteTablesProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRouteTablesProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
 
         /**
          * Sets the value of {@link RosRouteTablesProps#getResourceGroupId}
@@ -199,6 +226,7 @@ public interface RosRouteTablesProps extends software.amazon.jsii.JsiiSerializab
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosRouteTablesProps {
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object routerId;
         private final java.lang.Object routerType;
@@ -212,6 +240,7 @@ public interface RosRouteTablesProps extends software.amazon.jsii.JsiiSerializab
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.routerId = software.amazon.jsii.Kernel.get(this, "routerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.routerType = software.amazon.jsii.Kernel.get(this, "routerType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -225,12 +254,18 @@ public interface RosRouteTablesProps extends software.amazon.jsii.JsiiSerializab
          */
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+            this.refreshOptions = builder.refreshOptions;
             this.resourceGroupId = builder.resourceGroupId;
             this.routerId = builder.routerId;
             this.routerType = builder.routerType;
             this.routeTableId = builder.routeTableId;
             this.routeTableName = builder.routeTableName;
             this.vpcId = builder.vpcId;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -269,6 +304,9 @@ public interface RosRouteTablesProps extends software.amazon.jsii.JsiiSerializab
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
+            }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
@@ -305,6 +343,7 @@ public interface RosRouteTablesProps extends software.amazon.jsii.JsiiSerializab
 
             RosRouteTablesProps.Jsii$Proxy that = (RosRouteTablesProps.Jsii$Proxy) o;
 
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.routerId != null ? !this.routerId.equals(that.routerId) : that.routerId != null) return false;
             if (this.routerType != null ? !this.routerType.equals(that.routerType) : that.routerType != null) return false;
@@ -315,7 +354,8 @@ public interface RosRouteTablesProps extends software.amazon.jsii.JsiiSerializab
 
         @Override
         public final int hashCode() {
-            int result = this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0;
+            int result = this.refreshOptions != null ? this.refreshOptions.hashCode() : 0;
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.routerId != null ? this.routerId.hashCode() : 0);
             result = 31 * result + (this.routerType != null ? this.routerType.hashCode() : 0);
             result = 31 * result + (this.routeTableId != null ? this.routeTableId.hashCode() : 0);

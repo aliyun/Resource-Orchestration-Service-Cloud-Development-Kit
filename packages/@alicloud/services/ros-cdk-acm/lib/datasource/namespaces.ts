@@ -8,6 +8,14 @@ export { RosNamespaces as NamespacesProperty };
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-acm-namespaces
  */
 export interface NamespacesProps {
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -44,8 +52,8 @@ export class Namespaces extends ros.Resource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosNamespaces = new RosNamespaces(this, id,  {
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
-        props;
         this.resource = rosNamespaces;
         this.attrNamespaceIds = rosNamespaces.attrNamespaceIds;
         this.attrNamespaces = rosNamespaces.attrNamespaces;

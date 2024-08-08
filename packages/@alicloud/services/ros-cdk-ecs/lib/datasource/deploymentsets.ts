@@ -25,6 +25,14 @@ export interface DeploymentSetsProps {
     readonly domain?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property strategy: The deployment strategy. Valid values:
      * Availability: high availability strategy.
      *  AvailabilityGroup: high availability group strategy.
@@ -70,6 +78,7 @@ export class DeploymentSets extends ros.Resource {
             strategy: props.strategy,
             deploymentSetName: props.deploymentSetName,
             domain: props.domain,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDeploymentSets;
         this.attrDeploymentSetIds = rosDeploymentSets.attrDeploymentSetIds;

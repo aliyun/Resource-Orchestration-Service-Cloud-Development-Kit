@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-natgateways
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.876Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:14.990Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.NatGatewaysProps")
 @software.amazon.jsii.Jsii.Proxy(NatGatewaysProps.Jsii$Proxy.class)
 public interface NatGatewaysProps extends software.amazon.jsii.JsiiSerializable {
@@ -50,6 +50,21 @@ public interface NatGatewaysProps extends software.amazon.jsii.JsiiSerializable 
      * intranet: a VPC NAT gateway
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNetworkType() {
+        return null;
+    }
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
         return null;
     }
 
@@ -103,6 +118,7 @@ public interface NatGatewaysProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object natGatewayId;
         java.lang.Object natType;
         java.lang.Object networkType;
+        java.lang.Object refreshOptions;
         java.lang.Object resourceGroupId;
         java.lang.Object status;
         java.lang.Object vpcId;
@@ -219,6 +235,40 @@ public interface NatGatewaysProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link NatGatewaysProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link NatGatewaysProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link NatGatewaysProps#getResourceGroupId}
          * @param resourceGroupId Property resourceGroupId: The ID of the resource group to which the NAT gateway belongs.
          * @return {@code this}
@@ -331,6 +381,7 @@ public interface NatGatewaysProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object natGatewayId;
         private final java.lang.Object natType;
         private final java.lang.Object networkType;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object status;
         private final java.lang.Object vpcId;
@@ -347,6 +398,7 @@ public interface NatGatewaysProps extends software.amazon.jsii.JsiiSerializable 
             this.natGatewayId = software.amazon.jsii.Kernel.get(this, "natGatewayId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.natType = software.amazon.jsii.Kernel.get(this, "natType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.status = software.amazon.jsii.Kernel.get(this, "status", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -363,6 +415,7 @@ public interface NatGatewaysProps extends software.amazon.jsii.JsiiSerializable 
             this.natGatewayId = builder.natGatewayId;
             this.natType = builder.natType;
             this.networkType = builder.networkType;
+            this.refreshOptions = builder.refreshOptions;
             this.resourceGroupId = builder.resourceGroupId;
             this.status = builder.status;
             this.vpcId = builder.vpcId;
@@ -392,6 +445,11 @@ public interface NatGatewaysProps extends software.amazon.jsii.JsiiSerializable 
         @Override
         public final java.lang.Object getNetworkType() {
             return this.networkType;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -435,6 +493,9 @@ public interface NatGatewaysProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getNetworkType() != null) {
                 data.set("networkType", om.valueToTree(this.getNetworkType()));
             }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
+            }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
@@ -470,6 +531,7 @@ public interface NatGatewaysProps extends software.amazon.jsii.JsiiSerializable 
             if (this.natGatewayId != null ? !this.natGatewayId.equals(that.natGatewayId) : that.natGatewayId != null) return false;
             if (this.natType != null ? !this.natType.equals(that.natType) : that.natType != null) return false;
             if (this.networkType != null ? !this.networkType.equals(that.networkType) : that.networkType != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.status != null ? !this.status.equals(that.status) : that.status != null) return false;
             if (this.vpcId != null ? !this.vpcId.equals(that.vpcId) : that.vpcId != null) return false;
@@ -483,6 +545,7 @@ public interface NatGatewaysProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.natGatewayId != null ? this.natGatewayId.hashCode() : 0);
             result = 31 * result + (this.natType != null ? this.natType.hashCode() : 0);
             result = 31 * result + (this.networkType != null ? this.networkType.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.status != null ? this.status.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);

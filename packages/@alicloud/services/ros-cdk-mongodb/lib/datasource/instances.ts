@@ -76,6 +76,14 @@ export interface InstancesProps {
     readonly networkType?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property replicationFactor: The number of nodes in a replica set instance. Valid values: 3, 5, and 7.
      */
     readonly replicationFactor?: string | ros.IResolvable;
@@ -149,6 +157,7 @@ export class Instances extends ros.Resource {
             vSwitchId: props.vSwitchId,
             dbInstanceType: props.dbInstanceType === undefined || props.dbInstanceType === null ? 'replicate' : props.dbInstanceType,
             expired: props.expired,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
             connectionDomain: props.connectionDomain,
             vpcId: props.vpcId,
             dbInstanceId: props.dbInstanceId,

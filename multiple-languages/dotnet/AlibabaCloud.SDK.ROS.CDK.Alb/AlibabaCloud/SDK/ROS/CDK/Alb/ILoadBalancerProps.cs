@@ -163,6 +163,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
         }
 
+        /// <summary>Property securityGroupIds: The IDs of the security group to which the ALB instance join.</summary>
+        [JsiiProperty(name: "securityGroupIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SecurityGroupIds
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property tags: Tags to attach to instance.</summary>
         /// <remarks>
         /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
@@ -315,6 +326,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiOptional]
             [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ResourceGroupId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property securityGroupIds: The IDs of the security group to which the ALB instance join.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "securityGroupIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? SecurityGroupIds
             {
                 get => GetInstanceProperty<object?>();
             }

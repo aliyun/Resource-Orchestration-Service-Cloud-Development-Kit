@@ -645,6 +645,11 @@ export class RosInstance extends ros.RosResource {
      */
     public readonly attrPrivateEndpoint: ros.IResolvable;
 
+    /**
+     * @Attribute PublicEndpoint: The public endpoint of the instance.
+     */
+    public readonly attrPublicEndpoint: ros.IResolvable;
+
     public enableResourcePropertyConstraint: boolean;
 
 
@@ -738,6 +743,7 @@ export class RosInstance extends ros.RosResource {
         this.attrClassicEndpoint = this.getAtt('ClassicEndpoint');
         this.attrInstanceId = this.getAtt('InstanceId');
         this.attrPrivateEndpoint = this.getAtt('PrivateEndpoint');
+        this.attrPublicEndpoint = this.getAtt('PublicEndpoint');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.instanceName = props.instanceName;

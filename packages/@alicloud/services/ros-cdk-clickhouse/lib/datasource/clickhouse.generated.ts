@@ -12,6 +12,14 @@ export interface RosDBClusterProps {
      * @Property dbClusterId: Instance ID.
      */
     readonly dbClusterId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -26,6 +34,13 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('dbClusterId', ros.requiredValidator)(properties.dbClusterId));
     errors.collect(ros.propertyValidator('dbClusterId', ros.validateString)(properties.dbClusterId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosDBClusterProps"');
 }
 
@@ -44,6 +59,7 @@ function rosDBClusterPropsToRosTemplate(properties: any, enableResourcePropertyC
     }
     return {
       DBClusterId: ros.stringToRosTemplate(properties.dbClusterId),
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -272,6 +288,14 @@ export class RosDBCluster extends ros.RosResource {
     public dbClusterId: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -322,12 +346,14 @@ export class RosDBCluster extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.dbClusterId = props.dbClusterId;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             dbClusterId: this.dbClusterId,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -350,6 +376,14 @@ export interface RosDBClustersProps {
      * @Property dbClusterName: The cluster description information.
      */
     readonly dbClusterName?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -364,6 +398,13 @@ function RosDBClustersPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('dbClusterName', ros.validateString)(properties.dbClusterName));
     errors.collect(ros.propertyValidator('dbClusterId', ros.validateString)(properties.dbClusterId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosDBClustersProps"');
 }
 
@@ -383,6 +424,7 @@ function rosDBClustersPropsToRosTemplate(properties: any, enableResourceProperty
     return {
       DBClusterId: ros.stringToRosTemplate(properties.dbClusterId),
       DBClusterName: ros.stringToRosTemplate(properties.dbClusterName),
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -421,6 +463,14 @@ export class RosDBClusters extends ros.RosResource {
     public dbClusterName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -433,6 +483,7 @@ export class RosDBClusters extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.dbClusterId = props.dbClusterId;
         this.dbClusterName = props.dbClusterName;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
@@ -440,6 +491,7 @@ export class RosDBClusters extends ros.RosResource {
         return {
             dbClusterId: this.dbClusterId,
             dbClusterName: this.dbClusterName,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

@@ -23,6 +23,14 @@ export interface FunctionsProps {
      * Property qualifier: The service version, which can be version ID or alias name.
      */
     readonly qualifier?: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -62,6 +70,7 @@ export class Functions extends ros.Resource {
             serviceName: props.serviceName,
             qualifier: props.qualifier,
             prefix: props.prefix,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosFunctions;
         this.attrFunctionNames = rosFunctions.attrFunctionNames;

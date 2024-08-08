@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.computenest;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ComputeNest::ServiceInstance</code>, which is used to create and deploy a service instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:05.247Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:08.543Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.computenest.$Module.class, fqn = "@alicloud/ros-cdk-computenest.ServiceInstance")
 public class ServiceInstance extends com.aliyun.ros.cdk.core.Resource {
 

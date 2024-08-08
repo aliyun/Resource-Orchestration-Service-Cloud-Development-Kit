@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rocketmq5;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ROCKETMQ5::Topic</code>, which is used to create a topic for a Message Queue for Apache RocketMQ V5.0 instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.058Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:13.813Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq5.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq5.Topic")
 public class Topic extends com.aliyun.ros.cdk.core.Resource {
 

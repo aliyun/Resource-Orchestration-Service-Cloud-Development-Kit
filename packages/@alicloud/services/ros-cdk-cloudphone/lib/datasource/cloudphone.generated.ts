@@ -12,6 +12,14 @@ export interface RosImageProps {
      * @Property imageId: Image ID.
      */
     readonly imageId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -26,6 +34,13 @@ function RosImagePropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('imageId', ros.requiredValidator)(properties.imageId));
     errors.collect(ros.propertyValidator('imageId', ros.validateString)(properties.imageId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosImageProps"');
 }
 
@@ -44,6 +59,7 @@ function rosImagePropsToRosTemplate(properties: any, enableResourcePropertyConst
     }
     return {
       ImageId: ros.stringToRosTemplate(properties.imageId),
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -132,6 +148,14 @@ export class RosImage extends ros.RosResource {
     public imageId: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -154,12 +178,14 @@ export class RosImage extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.imageId = props.imageId;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             imageId: this.imageId,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -187,6 +213,14 @@ export interface RosImagesProps {
      * @Property imageName: The name of the mirror image.
      */
     readonly imageName?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -202,6 +236,13 @@ function RosImagesPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('imageName', ros.validateString)(properties.imageName));
     errors.collect(ros.propertyValidator('imageCategory', ros.validateString)(properties.imageCategory));
     errors.collect(ros.propertyValidator('imageId', ros.validateString)(properties.imageId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosImagesProps"');
 }
 
@@ -222,6 +263,7 @@ function rosImagesPropsToRosTemplate(properties: any, enableResourcePropertyCons
       ImageCategory: ros.stringToRosTemplate(properties.imageCategory),
       ImageId: ros.stringToRosTemplate(properties.imageId),
       ImageName: ros.stringToRosTemplate(properties.imageName),
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -265,6 +307,14 @@ export class RosImages extends ros.RosResource {
     public imageName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -278,6 +328,7 @@ export class RosImages extends ros.RosResource {
         this.imageCategory = props.imageCategory;
         this.imageId = props.imageId;
         this.imageName = props.imageName;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
@@ -286,6 +337,7 @@ export class RosImages extends ros.RosResource {
             imageCategory: this.imageCategory,
             imageId: this.imageId,
             imageName: this.imageName,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -303,6 +355,14 @@ export interface RosKeyPairProps {
      * @Property keyPairName: The Key Name.
      */
     readonly keyPairName: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -317,6 +377,13 @@ function RosKeyPairPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('keyPairName', ros.requiredValidator)(properties.keyPairName));
     errors.collect(ros.propertyValidator('keyPairName', ros.validateString)(properties.keyPairName));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosKeyPairProps"');
 }
 
@@ -335,6 +402,7 @@ function rosKeyPairPropsToRosTemplate(properties: any, enableResourcePropertyCon
     }
     return {
       KeyPairName: ros.stringToRosTemplate(properties.keyPairName),
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -373,6 +441,14 @@ export class RosKeyPair extends ros.RosResource {
     public keyPairName: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -385,12 +461,14 @@ export class RosKeyPair extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.keyPairName = props.keyPairName;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             keyPairName: this.keyPairName,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -413,6 +491,14 @@ export interface RosKeyPairsProps {
      * @Property keyPairName: The Key Name.
      */
     readonly keyPairName?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -427,6 +513,13 @@ function RosKeyPairsPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('keyPairFingerPrint', ros.validateString)(properties.keyPairFingerPrint));
     errors.collect(ros.propertyValidator('keyPairName', ros.validateString)(properties.keyPairName));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosKeyPairsProps"');
 }
 
@@ -446,6 +539,7 @@ function rosKeyPairsPropsToRosTemplate(properties: any, enableResourcePropertyCo
     return {
       KeyPairFingerPrint: ros.stringToRosTemplate(properties.keyPairFingerPrint),
       KeyPairName: ros.stringToRosTemplate(properties.keyPairName),
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -484,6 +578,14 @@ export class RosKeyPairs extends ros.RosResource {
     public keyPairName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -496,6 +598,7 @@ export class RosKeyPairs extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.keyPairFingerPrint = props.keyPairFingerPrint;
         this.keyPairName = props.keyPairName;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
@@ -503,6 +606,7 @@ export class RosKeyPairs extends ros.RosResource {
         return {
             keyPairFingerPrint: this.keyPairFingerPrint,
             keyPairName: this.keyPairName,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

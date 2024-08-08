@@ -9,6 +9,14 @@ import * as ros from '@alicloud/ros-cdk-core';
 export interface RosScalingConfigurationsProps {
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * @Property scalingConfigurationIds: The ID of scaling configuration that you want to query. Valid values : 1 to 10. The IDs of active and inactive scaling configurations are displayed in the query results, and can be differentiated by LifecycleState.
      */
     readonly scalingConfigurationIds?: Array<string | ros.IResolvable> | ros.IResolvable;
@@ -51,6 +59,13 @@ function RosScalingConfigurationsPropsValidator(properties: any): ros.Validation
           }));
     }
     errors.collect(ros.propertyValidator('scalingConfigurationNames', ros.listValidator(ros.validateString))(properties.scalingConfigurationNames));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosScalingConfigurationsProps"');
 }
 
@@ -68,6 +83,7 @@ function rosScalingConfigurationsPropsToRosTemplate(properties: any, enableResou
         RosScalingConfigurationsPropsValidator(properties).assertSuccess();
     }
     return {
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
       ScalingConfigurationIds: ros.listMapper(ros.stringToRosTemplate)(properties.scalingConfigurationIds),
       ScalingConfigurationNames: ros.listMapper(ros.stringToRosTemplate)(properties.scalingConfigurationNames),
       ScalingGroupId: ros.stringToRosTemplate(properties.scalingGroupId),
@@ -99,6 +115,14 @@ export class RosScalingConfigurations extends ros.RosResource {
 
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property scalingConfigurationIds: The ID of scaling configuration that you want to query. Valid values : 1 to 10. The IDs of active and inactive scaling configurations are displayed in the query results, and can be differentiated by LifecycleState.
      */
     public scalingConfigurationIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
@@ -124,6 +148,7 @@ export class RosScalingConfigurations extends ros.RosResource {
         this.attrScalingConfigurations = this.getAtt('ScalingConfigurations');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.refreshOptions = props.refreshOptions;
         this.scalingConfigurationIds = props.scalingConfigurationIds;
         this.scalingConfigurationNames = props.scalingConfigurationNames;
         this.scalingGroupId = props.scalingGroupId;
@@ -132,6 +157,7 @@ export class RosScalingConfigurations extends ros.RosResource {
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
+            refreshOptions: this.refreshOptions,
             scalingConfigurationIds: this.scalingConfigurationIds,
             scalingConfigurationNames: this.scalingConfigurationNames,
             scalingGroupId: this.scalingGroupId,
@@ -155,6 +181,14 @@ export interface RosScalingGroupsProps {
      * Default value: ECS.
      */
     readonly groupType?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 
     /**
      * @Property scalingGroupIds: The ID of scaling group that you want to query.Valid values: 1 to 20. The IDs of inactive scaling groups are not displayed in the query results, and no error is reported.
@@ -194,6 +228,13 @@ function RosScalingGroupsPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('scalingGroupIds', ros.listValidator(ros.validateString))(properties.scalingGroupIds));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosScalingGroupsProps"');
 }
 
@@ -212,6 +253,7 @@ function rosScalingGroupsPropsToRosTemplate(properties: any, enableResourcePrope
     }
     return {
       GroupType: ros.stringToRosTemplate(properties.groupType),
+      RefreshOptions: ros.stringToRosTemplate(properties.refreshOptions),
       ScalingGroupIds: ros.listMapper(ros.stringToRosTemplate)(properties.scalingGroupIds),
       ScalingGroupNames: ros.listMapper(ros.stringToRosTemplate)(properties.scalingGroupNames),
     };
@@ -250,6 +292,14 @@ export class RosScalingGroups extends ros.RosResource {
     public groupType: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property scalingGroupIds: The ID of scaling group that you want to query.Valid values: 1 to 20. The IDs of inactive scaling groups are not displayed in the query results, and no error is reported.
      */
     public scalingGroupIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
@@ -271,6 +321,7 @@ export class RosScalingGroups extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.groupType = props.groupType;
+        this.refreshOptions = props.refreshOptions;
         this.scalingGroupIds = props.scalingGroupIds;
         this.scalingGroupNames = props.scalingGroupNames;
     }
@@ -279,6 +330,7 @@ export class RosScalingGroups extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             groupType: this.groupType,
+            refreshOptions: this.refreshOptions,
             scalingGroupIds: this.scalingGroupIds,
             scalingGroupNames: this.scalingGroupNames,
         };

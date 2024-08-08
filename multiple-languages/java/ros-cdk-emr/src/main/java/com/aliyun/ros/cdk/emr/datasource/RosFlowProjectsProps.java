@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.emr.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-emr-flowprojects
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:06.918Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:10.743Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.emr.$Module.class, fqn = "@alicloud/ros-cdk-emr.datasource.RosFlowProjectsProps")
 @software.amazon.jsii.Jsii.Proxy(RosFlowProjectsProps.Jsii$Proxy.class)
 public interface RosFlowProjectsProps extends software.amazon.jsii.JsiiSerializable {
@@ -23,6 +23,12 @@ public interface RosFlowProjectsProps extends software.amazon.jsii.JsiiSerializa
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosFlowProjectsProps}
      */
     static Builder builder() {
@@ -34,6 +40,7 @@ public interface RosFlowProjectsProps extends software.amazon.jsii.JsiiSerializa
     public static final class Builder implements software.amazon.jsii.Builder<RosFlowProjectsProps> {
         java.lang.Object flowProjectId;
         java.lang.Object flowProjectName;
+        java.lang.Object refreshOptions;
 
         /**
          * Sets the value of {@link RosFlowProjectsProps#getFlowProjectId}
@@ -76,6 +83,26 @@ public interface RosFlowProjectsProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosFlowProjectsProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFlowProjectsProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosFlowProjectsProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -93,6 +120,7 @@ public interface RosFlowProjectsProps extends software.amazon.jsii.JsiiSerializa
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosFlowProjectsProps {
         private final java.lang.Object flowProjectId;
         private final java.lang.Object flowProjectName;
+        private final java.lang.Object refreshOptions;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -102,6 +130,7 @@ public interface RosFlowProjectsProps extends software.amazon.jsii.JsiiSerializa
             super(objRef);
             this.flowProjectId = software.amazon.jsii.Kernel.get(this, "flowProjectId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.flowProjectName = software.amazon.jsii.Kernel.get(this, "flowProjectName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -111,6 +140,7 @@ public interface RosFlowProjectsProps extends software.amazon.jsii.JsiiSerializa
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.flowProjectId = builder.flowProjectId;
             this.flowProjectName = builder.flowProjectName;
+            this.refreshOptions = builder.refreshOptions;
         }
 
         @Override
@@ -124,6 +154,11 @@ public interface RosFlowProjectsProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -134,6 +169,9 @@ public interface RosFlowProjectsProps extends software.amazon.jsii.JsiiSerializa
             }
             if (this.getFlowProjectName() != null) {
                 data.set("flowProjectName", om.valueToTree(this.getFlowProjectName()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -154,13 +192,15 @@ public interface RosFlowProjectsProps extends software.amazon.jsii.JsiiSerializa
             RosFlowProjectsProps.Jsii$Proxy that = (RosFlowProjectsProps.Jsii$Proxy) o;
 
             if (this.flowProjectId != null ? !this.flowProjectId.equals(that.flowProjectId) : that.flowProjectId != null) return false;
-            return this.flowProjectName != null ? this.flowProjectName.equals(that.flowProjectName) : that.flowProjectName == null;
+            if (this.flowProjectName != null ? !this.flowProjectName.equals(that.flowProjectName) : that.flowProjectName != null) return false;
+            return this.refreshOptions != null ? this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.flowProjectId != null ? this.flowProjectId.hashCode() : 0;
             result = 31 * result + (this.flowProjectName != null ? this.flowProjectName.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             return result;
         }
     }

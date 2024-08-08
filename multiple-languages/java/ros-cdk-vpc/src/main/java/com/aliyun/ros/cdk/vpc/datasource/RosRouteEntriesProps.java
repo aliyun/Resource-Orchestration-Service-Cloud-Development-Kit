@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-routeentries
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.915Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:15.062Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.RosRouteEntriesProps")
 @software.amazon.jsii.Jsii.Proxy(RosRouteEntriesProps.Jsii$Proxy.class)
 public interface RosRouteEntriesProps extends software.amazon.jsii.JsiiSerializable {
@@ -35,6 +35,12 @@ public interface RosRouteEntriesProps extends software.amazon.jsii.JsiiSerializa
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNextHopType() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
         return null;
     }
 
@@ -71,6 +77,7 @@ public interface RosRouteEntriesProps extends software.amazon.jsii.JsiiSerializa
         java.lang.Object ipVersion;
         java.lang.Object nextHopId;
         java.lang.Object nextHopType;
+        java.lang.Object refreshOptions;
         java.lang.Object routeEntryId;
         java.lang.Object routeEntryName;
         java.lang.Object routeEntryType;
@@ -176,6 +183,26 @@ public interface RosRouteEntriesProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosRouteEntriesProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRouteEntriesProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRouteEntriesProps#getRouteEntryId}
          * @param routeEntryId the value to be set.
          * @return {@code this}
@@ -256,6 +283,7 @@ public interface RosRouteEntriesProps extends software.amazon.jsii.JsiiSerializa
         private final java.lang.Object ipVersion;
         private final java.lang.Object nextHopId;
         private final java.lang.Object nextHopType;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object routeEntryId;
         private final java.lang.Object routeEntryName;
         private final java.lang.Object routeEntryType;
@@ -271,6 +299,7 @@ public interface RosRouteEntriesProps extends software.amazon.jsii.JsiiSerializa
             this.ipVersion = software.amazon.jsii.Kernel.get(this, "ipVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.nextHopId = software.amazon.jsii.Kernel.get(this, "nextHopId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.nextHopType = software.amazon.jsii.Kernel.get(this, "nextHopType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.routeEntryId = software.amazon.jsii.Kernel.get(this, "routeEntryId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.routeEntryName = software.amazon.jsii.Kernel.get(this, "routeEntryName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.routeEntryType = software.amazon.jsii.Kernel.get(this, "routeEntryType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -286,6 +315,7 @@ public interface RosRouteEntriesProps extends software.amazon.jsii.JsiiSerializa
             this.ipVersion = builder.ipVersion;
             this.nextHopId = builder.nextHopId;
             this.nextHopType = builder.nextHopType;
+            this.refreshOptions = builder.refreshOptions;
             this.routeEntryId = builder.routeEntryId;
             this.routeEntryName = builder.routeEntryName;
             this.routeEntryType = builder.routeEntryType;
@@ -314,6 +344,11 @@ public interface RosRouteEntriesProps extends software.amazon.jsii.JsiiSerializa
         @Override
         public final java.lang.Object getNextHopType() {
             return this.nextHopType;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -350,6 +385,9 @@ public interface RosRouteEntriesProps extends software.amazon.jsii.JsiiSerializa
             if (this.getNextHopType() != null) {
                 data.set("nextHopType", om.valueToTree(this.getNextHopType()));
             }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
+            }
             if (this.getRouteEntryId() != null) {
                 data.set("routeEntryId", om.valueToTree(this.getRouteEntryId()));
             }
@@ -382,6 +420,7 @@ public interface RosRouteEntriesProps extends software.amazon.jsii.JsiiSerializa
             if (this.ipVersion != null ? !this.ipVersion.equals(that.ipVersion) : that.ipVersion != null) return false;
             if (this.nextHopId != null ? !this.nextHopId.equals(that.nextHopId) : that.nextHopId != null) return false;
             if (this.nextHopType != null ? !this.nextHopType.equals(that.nextHopType) : that.nextHopType != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             if (this.routeEntryId != null ? !this.routeEntryId.equals(that.routeEntryId) : that.routeEntryId != null) return false;
             if (this.routeEntryName != null ? !this.routeEntryName.equals(that.routeEntryName) : that.routeEntryName != null) return false;
             return this.routeEntryType != null ? this.routeEntryType.equals(that.routeEntryType) : that.routeEntryType == null;
@@ -394,6 +433,7 @@ public interface RosRouteEntriesProps extends software.amazon.jsii.JsiiSerializa
             result = 31 * result + (this.ipVersion != null ? this.ipVersion.hashCode() : 0);
             result = 31 * result + (this.nextHopId != null ? this.nextHopId.hashCode() : 0);
             result = 31 * result + (this.nextHopType != null ? this.nextHopType.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.routeEntryId != null ? this.routeEntryId.hashCode() : 0);
             result = 31 * result + (this.routeEntryName != null ? this.routeEntryName.hashCode() : 0);
             result = 31 * result + (this.routeEntryType != null ? this.routeEntryType.hashCode() : 0);

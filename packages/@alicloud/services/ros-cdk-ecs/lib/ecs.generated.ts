@@ -8532,6 +8532,11 @@ export class RosInstanceGroup extends ros.RosResource {
     public readonly attrPublicIps: ros.IResolvable;
 
     /**
+     * @Attribute RelatedOrderIds: The related order id list of created ecs instances
+     */
+    public readonly attrRelatedOrderIds: ros.IResolvable;
+
+    /**
      * @Attribute ZoneIds: Zone id of created instances.
      */
     public readonly attrZoneIds: ros.IResolvable;
@@ -9021,6 +9026,7 @@ export class RosInstanceGroup extends ros.RosResource {
         this.attrOrderId = this.getAtt('OrderId');
         this.attrPrivateIps = this.getAtt('PrivateIps');
         this.attrPublicIps = this.getAtt('PublicIps');
+        this.attrRelatedOrderIds = this.getAtt('RelatedOrderIds');
         this.attrZoneIds = this.getAtt('ZoneIds');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
@@ -17718,6 +17724,254 @@ function rosSnapshotTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
+ * Properties for defining a `RosSnapshotGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-snapshotgroup
+ */
+export interface RosSnapshotGroupProps {
+
+    /**
+     * @Property description: The description of the snapshot-consistent group. The description must be 2 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property diskIds: The IDs of cloud disk for which you want to create snapshots. You can specify multiple cloud disk IDs across instances within the same zone. The length of the list ranges from 1 to 16. A single snapshot-consistent group can contain snapshots of up to 16 cloud disks whose total disk size does not exceed 32 TiB.
+     * Take note of the following items:
+     * You cannot specify both DiskIds and ExcludeDiskIdin the same request.
+     * If InstanceId is set, you can use DiskIds to specify only cloud disks attached to the instance specified by InstanceId, and you cannot use DiskIds to specify cloud disks attached to multiple instances.
+     */
+    readonly diskIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property excludeDiskIds: The IDs of cloud disk for which you do not want to create snapshots. If this parameter is specified, the created snapshot-consistent group does not contain snapshots of the cloud disk. The length of the list ranges from 1 to 16.
+     * This parameter is empty by default, which indicates that snapshots are created for all the disks of the instance.
+     * Note You cannot specify ExcludeDiskIds and DiskIds in the same request.
+     */
+    readonly excludeDiskIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The instance ID.
+     */
+    readonly instanceId?: string | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the snapshot-consistent group. The name must be 2 to 128 characters in length. The name can contain letters, digits, periods (.), underscores (_), hyphens (-), and colons (:). It must start with a letter and cannot start with http:\/\/ or https:\/\/.
+     */
+    readonly name?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the snapshot-consistent group belongs.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to snapshot-consistent group. Max support 20 tags to add during create snapshot-consistent group. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosSnapshotGroup.TagsProperty[];
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSnapshotGroupProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSnapshotGroupProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSnapshotGroupPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('diskIds', ros.listValidator(ros.validateString))(properties.diskIds));
+    if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
+        errors.collect(ros.propertyValidator('description', ros.validateLength)({
+            data: properties.description.length,
+            min: 2,
+            max: 256,
+          }));
+    }
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosSnapshotGroup_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('excludeDiskIds', ros.listValidator(ros.validateString))(properties.excludeDiskIds));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "RosSnapshotGroupProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECS::SnapshotGroup` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSnapshotGroupProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECS::SnapshotGroup` resource.
+ */
+// @ts-ignore TS6133
+function rosSnapshotGroupPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSnapshotGroupPropsValidator(properties).assertSuccess();
+    }
+    return {
+      Description: ros.stringToRosTemplate(properties.description),
+      DiskIds: ros.listMapper(ros.stringToRosTemplate)(properties.diskIds),
+      ExcludeDiskIds: ros.listMapper(ros.stringToRosTemplate)(properties.excludeDiskIds),
+      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+      Name: ros.stringToRosTemplate(properties.name),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      Tags: ros.listMapper(rosSnapshotGroupTagsPropertyToRosTemplate)(properties.tags),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SnapshotGroup`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SnapshotGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-snapshotgroup
+ */
+export class RosSnapshotGroup extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::SnapshotGroup";
+
+    /**
+     * @Attribute SnapshotGroupId: The ID of the snapshot-consistent group.
+     */
+    public readonly attrSnapshotGroupId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property description: The description of the snapshot-consistent group. The description must be 2 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property diskIds: The IDs of cloud disk for which you want to create snapshots. You can specify multiple cloud disk IDs across instances within the same zone. The length of the list ranges from 1 to 16. A single snapshot-consistent group can contain snapshots of up to 16 cloud disks whose total disk size does not exceed 32 TiB.
+     * Take note of the following items:
+     * You cannot specify both DiskIds and ExcludeDiskIdin the same request.
+     * If InstanceId is set, you can use DiskIds to specify only cloud disks attached to the instance specified by InstanceId, and you cannot use DiskIds to specify cloud disks attached to multiple instances.
+     */
+    public diskIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property excludeDiskIds: The IDs of cloud disk for which you do not want to create snapshots. If this parameter is specified, the created snapshot-consistent group does not contain snapshots of the cloud disk. The length of the list ranges from 1 to 16.
+     * This parameter is empty by default, which indicates that snapshots are created for all the disks of the instance.
+     * Note You cannot specify ExcludeDiskIds and DiskIds in the same request.
+     */
+    public excludeDiskIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceId: The instance ID.
+     */
+    public instanceId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property name: The name of the snapshot-consistent group. The name must be 2 to 128 characters in length. The name can contain letters, digits, periods (.), underscores (_), hyphens (-), and colons (:). It must start with a letter and cannot start with http:\/\/ or https:\/\/.
+     */
+    public name: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the snapshot-consistent group belongs.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags to attach to snapshot-consistent group. Max support 20 tags to add during create snapshot-consistent group. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosSnapshotGroup.TagsProperty[] | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSnapshotGroupProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSnapshotGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrSnapshotGroupId = this.getAtt('SnapshotGroupId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.description = props.description;
+        this.diskIds = props.diskIds;
+        this.excludeDiskIds = props.excludeDiskIds;
+        this.instanceId = props.instanceId;
+        this.name = props.name;
+        this.resourceGroupId = props.resourceGroupId;
+        this.tags = props.tags;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            description: this.description,
+            diskIds: this.diskIds,
+            excludeDiskIds: this.excludeDiskIds,
+            instanceId: this.instanceId,
+            name: this.name,
+            resourceGroupId: this.resourceGroupId,
+            tags: this.tags,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSnapshotGroupPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosSnapshotGroup {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSnapshotGroup_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECS::SnapshotGroup.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECS::SnapshotGroup.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosSnapshotGroupTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSnapshotGroup_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
  * Properties for defining a `RosVPC`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-vpc
  */
@@ -17880,6 +18134,11 @@ export class RosVPC extends ros.RosResource {
      */
     public readonly attrVpcId: ros.IResolvable;
 
+    /**
+     * @Attribute VpcName: The name of VPC
+     */
+    public readonly attrVpcName: ros.IResolvable;
+
     public enableResourcePropertyConstraint: boolean;
 
 
@@ -17952,6 +18211,7 @@ export class RosVPC extends ros.RosResource {
         this.attrRouteTableId = this.getAtt('RouteTableId');
         this.attrVRouterId = this.getAtt('VRouterId');
         this.attrVpcId = this.getAtt('VpcId');
+        this.attrVpcName = this.getAtt('VpcName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.cidrBlock = props.cidrBlock;
@@ -18180,6 +18440,11 @@ export class RosVSwitch extends ros.RosResource {
      */
     public readonly attrVSwitchId: ros.IResolvable;
 
+    /**
+     * @Attribute VSwitchName: The name of the VSwitch
+     */
+    public readonly attrVSwitchName: ros.IResolvable;
+
     public enableResourcePropertyConstraint: boolean;
 
 
@@ -18241,6 +18506,7 @@ export class RosVSwitch extends ros.RosResource {
         this.attrCidrBlock = this.getAtt('CidrBlock');
         this.attrIpv6CidrBlock = this.getAtt('Ipv6CidrBlock');
         this.attrVSwitchId = this.getAtt('VSwitchId');
+        this.attrVSwitchName = this.getAtt('VSwitchName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.cidrBlock = props.cidrBlock;

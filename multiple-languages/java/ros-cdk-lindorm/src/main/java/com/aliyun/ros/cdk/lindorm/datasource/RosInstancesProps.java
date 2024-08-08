@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.lindorm.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-lindorm-instances
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:07.616Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:11.818Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.lindorm.$Module.class, fqn = "@alicloud/ros-cdk-lindorm.datasource.RosInstancesProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstancesProps.Jsii$Proxy.class)
 public interface RosInstancesProps extends software.amazon.jsii.JsiiSerializable {
@@ -19,6 +19,12 @@ public interface RosInstancesProps extends software.amazon.jsii.JsiiSerializable
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getQueryStr() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
         return null;
     }
 
@@ -58,6 +64,7 @@ public interface RosInstancesProps extends software.amazon.jsii.JsiiSerializable
     public static final class Builder implements software.amazon.jsii.Builder<RosInstancesProps> {
         java.lang.Object instanceIds;
         java.lang.Object queryStr;
+        java.lang.Object refreshOptions;
         java.lang.Object resourceGroupId;
         java.lang.Object serviceType;
         java.lang.Object supportEngine;
@@ -100,6 +107,26 @@ public interface RosInstancesProps extends software.amazon.jsii.JsiiSerializable
          */
         public Builder queryStr(com.aliyun.ros.cdk.core.IResolvable queryStr) {
             this.queryStr = queryStr;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstancesProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstancesProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
             return this;
         }
 
@@ -192,6 +219,7 @@ public interface RosInstancesProps extends software.amazon.jsii.JsiiSerializable
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosInstancesProps {
         private final java.lang.Object instanceIds;
         private final java.lang.Object queryStr;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object serviceType;
         private final java.lang.Object supportEngine;
@@ -205,6 +233,7 @@ public interface RosInstancesProps extends software.amazon.jsii.JsiiSerializable
             super(objRef);
             this.instanceIds = software.amazon.jsii.Kernel.get(this, "instanceIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.queryStr = software.amazon.jsii.Kernel.get(this, "queryStr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serviceType = software.amazon.jsii.Kernel.get(this, "serviceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.supportEngine = software.amazon.jsii.Kernel.get(this, "supportEngine", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -219,6 +248,7 @@ public interface RosInstancesProps extends software.amazon.jsii.JsiiSerializable
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.instanceIds = builder.instanceIds;
             this.queryStr = builder.queryStr;
+            this.refreshOptions = builder.refreshOptions;
             this.resourceGroupId = builder.resourceGroupId;
             this.serviceType = builder.serviceType;
             this.supportEngine = builder.supportEngine;
@@ -233,6 +263,11 @@ public interface RosInstancesProps extends software.amazon.jsii.JsiiSerializable
         @Override
         public final java.lang.Object getQueryStr() {
             return this.queryStr;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -267,6 +302,9 @@ public interface RosInstancesProps extends software.amazon.jsii.JsiiSerializable
             if (this.getQueryStr() != null) {
                 data.set("queryStr", om.valueToTree(this.getQueryStr()));
             }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
+            }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
@@ -299,6 +337,7 @@ public interface RosInstancesProps extends software.amazon.jsii.JsiiSerializable
 
             if (this.instanceIds != null ? !this.instanceIds.equals(that.instanceIds) : that.instanceIds != null) return false;
             if (this.queryStr != null ? !this.queryStr.equals(that.queryStr) : that.queryStr != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.serviceType != null ? !this.serviceType.equals(that.serviceType) : that.serviceType != null) return false;
             if (this.supportEngine != null ? !this.supportEngine.equals(that.supportEngine) : that.supportEngine != null) return false;
@@ -309,6 +348,7 @@ public interface RosInstancesProps extends software.amazon.jsii.JsiiSerializable
         public final int hashCode() {
             int result = this.instanceIds != null ? this.instanceIds.hashCode() : 0;
             result = 31 * result + (this.queryStr != null ? this.queryStr.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.serviceType != null ? this.serviceType.hashCode() : 0);
             result = 31 * result + (this.supportEngine != null ? this.supportEngine.hashCode() : 0);

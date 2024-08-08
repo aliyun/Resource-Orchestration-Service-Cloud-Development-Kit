@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.iot;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-producttopic
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:07.486Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:11.594Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.iot.$Module.class, fqn = "@alicloud/ros-cdk-iot.RosProductTopicProps")
 @software.amazon.jsii.Jsii.Proxy(RosProductTopicProps.Jsii$Proxy.class)
 public interface RosProductTopicProps extends software.amazon.jsii.JsiiSerializable {

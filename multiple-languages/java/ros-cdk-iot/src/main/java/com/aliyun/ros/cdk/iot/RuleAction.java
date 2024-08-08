@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.iot;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::IOT::RuleAction</code>, which is used to create a rule action for a specified rule.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:07.492Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-08T09:17:11.617Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.iot.$Module.class, fqn = "@alicloud/ros-cdk-iot.RuleAction")
 public class RuleAction extends com.aliyun.ros.cdk.core.Resource {
 
