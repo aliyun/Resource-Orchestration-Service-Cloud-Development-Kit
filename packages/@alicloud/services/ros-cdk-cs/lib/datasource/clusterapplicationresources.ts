@@ -38,6 +38,14 @@ export interface ClusterApplicationResourcesProps {
      * Property namespace: The namespace of kubernetes containing the resource. Default value is default
      */
     readonly namespace?: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -75,6 +83,7 @@ export class ClusterApplicationResources extends ros.Resource {
             jsonPath: props.jsonPath,
             namespace: props.namespace === undefined || props.namespace === null ? 'default' : props.namespace,
             name: props.name,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosClusterApplicationResources;
         this.attrResponse = rosClusterApplicationResources.attrResponse;

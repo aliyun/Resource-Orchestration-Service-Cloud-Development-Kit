@@ -2,3 +2,11 @@
 @alicloud/ros-cdk-waf3.InstanceProps=com.aliyun.ros.cdk.waf3.InstanceProps
 @alicloud/ros-cdk-waf3.RosInstance=com.aliyun.ros.cdk.waf3.RosInstance
 @alicloud/ros-cdk-waf3.RosInstanceProps=com.aliyun.ros.cdk.waf3.RosInstanceProps
+@alicloud/ros-cdk-waf3.RosTGW=com.aliyun.ros.cdk.waf3.RosTGW
+@alicloud/ros-cdk-waf3.RosTGW.CertificatesProperty=com.aliyun.ros.cdk.waf3.RosTGW$CertificatesProperty
+@alicloud/ros-cdk-waf3.RosTGW.ListenProperty=com.aliyun.ros.cdk.waf3.RosTGW$ListenProperty
+@alicloud/ros-cdk-waf3.RosTGW.RedirectProperty=com.aliyun.ros.cdk.waf3.RosTGW$RedirectProperty
+@alicloud/ros-cdk-waf3.RosTGW.RequestHeadersProperty=com.aliyun.ros.cdk.waf3.RosTGW$RequestHeadersProperty
+@alicloud/ros-cdk-waf3.RosTGWProps=com.aliyun.ros.cdk.waf3.RosTGWProps
+@alicloud/ros-cdk-waf3.TGWProps=com.aliyun.ros.cdk.waf3.TGWProps
+@alicloud/ros-cdk-waf3.Tgw=com.aliyun.ros.cdk.waf3.Tgw

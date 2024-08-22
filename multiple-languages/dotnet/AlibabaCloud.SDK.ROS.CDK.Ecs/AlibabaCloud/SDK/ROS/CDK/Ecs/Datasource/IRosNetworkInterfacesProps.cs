@@ -90,6 +90,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+        /// - Never: Never refresh the datasource resource when the stack is updated.
+        /// - Always: Always refresh the datasource resource when the stack is updated.
+        /// Default is Never.
+        /// </remarks>
+        [JsiiProperty(name: "refreshOptions", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? RefreshOptions
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: resourceGroupId: The ID of the resource group to which the eni belongs.
         /// If this parameter is specified to query resources,up to 1,000 resources that belong to the specified resource group can be displayed in the response.
         /// </remarks>
@@ -274,6 +290,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
             [JsiiOptional]
             [JsiiProperty(name: "privateIpAddresses", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? PrivateIpAddresses
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+            /// - Never: Never refresh the datasource resource when the stack is updated.
+            /// - Always: Always refresh the datasource resource when the stack is updated.
+            /// Default is Never.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "refreshOptions", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RefreshOptions
             {
                 get => GetInstanceProperty<object?>();
             }

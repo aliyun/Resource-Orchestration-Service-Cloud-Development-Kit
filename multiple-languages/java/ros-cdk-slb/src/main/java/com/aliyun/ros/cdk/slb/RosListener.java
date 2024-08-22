@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SLB::Listener</code>, which is used to create a Server Load Balancer (SLB) listener.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.325Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:24.204Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosListener")
 public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -629,6 +629,13 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getExp() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckMethod() {
             return null;
         }
@@ -665,6 +672,13 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getPort() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getReq() {
             return null;
         }
 
@@ -709,12 +723,14 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<HealthCheckProperty> {
             java.lang.Object domain;
+            java.lang.Object exp;
             java.lang.Object healthCheckMethod;
             java.lang.Object healthCheckType;
             java.lang.Object healthyThreshold;
             java.lang.Object httpCode;
             java.lang.Object interval;
             java.lang.Object port;
+            java.lang.Object req;
             java.lang.Object switchValue;
             java.lang.Object timeout;
             java.lang.Object unhealthyThreshold;
@@ -739,6 +755,28 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder domain(com.aliyun.ros.cdk.core.IResolvable domain) {
                 this.domain = domain;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link HealthCheckProperty#getExp}
+             * @param exp the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder exp(java.lang.String exp) {
+                this.exp = exp;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link HealthCheckProperty#getExp}
+             * @param exp the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder exp(com.aliyun.ros.cdk.core.IResolvable exp) {
+                this.exp = exp;
                 return this;
             }
 
@@ -875,6 +913,28 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link HealthCheckProperty#getReq}
+             * @param req the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder req(java.lang.String req) {
+                this.req = req;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link HealthCheckProperty#getReq}
+             * @param req the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder req(com.aliyun.ros.cdk.core.IResolvable req) {
+                this.req = req;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link HealthCheckProperty#getSwitchValue}
              * @param switchValue the value to be set.
              * @return {@code this}
@@ -981,12 +1041,14 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements HealthCheckProperty {
             private final java.lang.Object domain;
+            private final java.lang.Object exp;
             private final java.lang.Object healthCheckMethod;
             private final java.lang.Object healthCheckType;
             private final java.lang.Object healthyThreshold;
             private final java.lang.Object httpCode;
             private final java.lang.Object interval;
             private final java.lang.Object port;
+            private final java.lang.Object req;
             private final java.lang.Object switchValue;
             private final java.lang.Object timeout;
             private final java.lang.Object unhealthyThreshold;
@@ -999,12 +1061,14 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
                 this.domain = software.amazon.jsii.Kernel.get(this, "domain", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.exp = software.amazon.jsii.Kernel.get(this, "exp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.healthCheckMethod = software.amazon.jsii.Kernel.get(this, "healthCheckMethod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.healthCheckType = software.amazon.jsii.Kernel.get(this, "healthCheckType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.healthyThreshold = software.amazon.jsii.Kernel.get(this, "healthyThreshold", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.httpCode = software.amazon.jsii.Kernel.get(this, "httpCode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.interval = software.amazon.jsii.Kernel.get(this, "interval", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.port = software.amazon.jsii.Kernel.get(this, "port", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.req = software.amazon.jsii.Kernel.get(this, "req", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.switchValue = software.amazon.jsii.Kernel.get(this, "switch", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.timeout = software.amazon.jsii.Kernel.get(this, "timeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.unhealthyThreshold = software.amazon.jsii.Kernel.get(this, "unhealthyThreshold", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1017,12 +1081,14 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.domain = builder.domain;
+                this.exp = builder.exp;
                 this.healthCheckMethod = builder.healthCheckMethod;
                 this.healthCheckType = builder.healthCheckType;
                 this.healthyThreshold = builder.healthyThreshold;
                 this.httpCode = builder.httpCode;
                 this.interval = builder.interval;
                 this.port = builder.port;
+                this.req = builder.req;
                 this.switchValue = builder.switchValue;
                 this.timeout = builder.timeout;
                 this.unhealthyThreshold = builder.unhealthyThreshold;
@@ -1032,6 +1098,11 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final java.lang.Object getDomain() {
                 return this.domain;
+            }
+
+            @Override
+            public final java.lang.Object getExp() {
+                return this.exp;
             }
 
             @Override
@@ -1065,6 +1136,11 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getReq() {
+                return this.req;
+            }
+
+            @Override
             public final java.lang.Object getSwitchValue() {
                 return this.switchValue;
             }
@@ -1093,6 +1169,9 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.getDomain() != null) {
                     data.set("domain", om.valueToTree(this.getDomain()));
                 }
+                if (this.getExp() != null) {
+                    data.set("exp", om.valueToTree(this.getExp()));
+                }
                 if (this.getHealthCheckMethod() != null) {
                     data.set("healthCheckMethod", om.valueToTree(this.getHealthCheckMethod()));
                 }
@@ -1110,6 +1189,9 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
                 }
                 if (this.getPort() != null) {
                     data.set("port", om.valueToTree(this.getPort()));
+                }
+                if (this.getReq() != null) {
+                    data.set("req", om.valueToTree(this.getReq()));
                 }
                 if (this.getSwitchValue() != null) {
                     data.set("switch", om.valueToTree(this.getSwitchValue()));
@@ -1142,12 +1224,14 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
                 HealthCheckProperty.Jsii$Proxy that = (HealthCheckProperty.Jsii$Proxy) o;
 
                 if (this.domain != null ? !this.domain.equals(that.domain) : that.domain != null) return false;
+                if (this.exp != null ? !this.exp.equals(that.exp) : that.exp != null) return false;
                 if (this.healthCheckMethod != null ? !this.healthCheckMethod.equals(that.healthCheckMethod) : that.healthCheckMethod != null) return false;
                 if (this.healthCheckType != null ? !this.healthCheckType.equals(that.healthCheckType) : that.healthCheckType != null) return false;
                 if (this.healthyThreshold != null ? !this.healthyThreshold.equals(that.healthyThreshold) : that.healthyThreshold != null) return false;
                 if (this.httpCode != null ? !this.httpCode.equals(that.httpCode) : that.httpCode != null) return false;
                 if (this.interval != null ? !this.interval.equals(that.interval) : that.interval != null) return false;
                 if (this.port != null ? !this.port.equals(that.port) : that.port != null) return false;
+                if (this.req != null ? !this.req.equals(that.req) : that.req != null) return false;
                 if (this.switchValue != null ? !this.switchValue.equals(that.switchValue) : that.switchValue != null) return false;
                 if (this.timeout != null ? !this.timeout.equals(that.timeout) : that.timeout != null) return false;
                 if (this.unhealthyThreshold != null ? !this.unhealthyThreshold.equals(that.unhealthyThreshold) : that.unhealthyThreshold != null) return false;
@@ -1157,12 +1241,14 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final int hashCode() {
                 int result = this.domain != null ? this.domain.hashCode() : 0;
+                result = 31 * result + (this.exp != null ? this.exp.hashCode() : 0);
                 result = 31 * result + (this.healthCheckMethod != null ? this.healthCheckMethod.hashCode() : 0);
                 result = 31 * result + (this.healthCheckType != null ? this.healthCheckType.hashCode() : 0);
                 result = 31 * result + (this.healthyThreshold != null ? this.healthyThreshold.hashCode() : 0);
                 result = 31 * result + (this.httpCode != null ? this.httpCode.hashCode() : 0);
                 result = 31 * result + (this.interval != null ? this.interval.hashCode() : 0);
                 result = 31 * result + (this.port != null ? this.port.hashCode() : 0);
+                result = 31 * result + (this.req != null ? this.req.hashCode() : 0);
                 result = 31 * result + (this.switchValue != null ? this.switchValue.hashCode() : 0);
                 result = 31 * result + (this.timeout != null ? this.timeout.hashCode() : 0);
                 result = 31 * result + (this.unhealthyThreshold != null ? this.unhealthyThreshold.hashCode() : 0);

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cloudphone;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CloudPhone::RunCommand</code>, which is used to run a command on Elastic Cloud Phone (ECP) instances.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:04.970Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:18.472Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudphone.$Module.class, fqn = "@alicloud/ros-cdk-cloudphone.RosRunCommand")
 public class RosRunCommand extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -258,34 +258,34 @@ function rosContainerGroupPropsToRosTemplate(properties: any, enableResourceProp
         RosContainerGroupPropsValidator(properties).assertSuccess();
     }
     return {
-      Container: ros.listMapper(rosContainerGroupContainerPropertyToRosTemplate)(properties.container),
-      ContainerGroupName: ros.stringToRosTemplate(properties.containerGroupName),
-      AcrRegistryInfo: ros.listMapper(rosContainerGroupAcrRegistryInfoPropertyToRosTemplate)(properties.acrRegistryInfo),
-      ActiveDeadlineSeconds: ros.numberToRosTemplate(properties.activeDeadlineSeconds),
-      AutoMatchImageCache: ros.booleanToRosTemplate(properties.autoMatchImageCache),
-      Cpu: ros.numberToRosTemplate(properties.cpu),
-      DnsConfig: rosContainerGroupDnsConfigPropertyToRosTemplate(properties.dnsConfig),
-      EipInstanceId: ros.stringToRosTemplate(properties.eipInstanceId),
-      HostAliase: ros.listMapper(rosContainerGroupHostAliasePropertyToRosTemplate)(properties.hostAliase),
-      ImageRegistryCredential: ros.listMapper(rosContainerGroupImageRegistryCredentialPropertyToRosTemplate)(properties.imageRegistryCredential),
-      ImageSnapshotId: ros.stringToRosTemplate(properties.imageSnapshotId),
-      InitContainer: ros.listMapper(rosContainerGroupInitContainerPropertyToRosTemplate)(properties.initContainer),
-      InstanceType: ros.stringToRosTemplate(properties.instanceType),
-      Ipv6AddressCount: ros.numberToRosTemplate(properties.ipv6AddressCount),
-      Memory: ros.numberToRosTemplate(properties.memory),
-      RamRoleName: ros.stringToRosTemplate(properties.ramRoleName),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      RestartPolicy: ros.stringToRosTemplate(properties.restartPolicy),
-      SecurityContextSysctl: ros.listMapper(rosContainerGroupSecurityContextSysctlPropertyToRosTemplate)(properties.securityContextSysctl),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
-      SlsEnable: ros.booleanToRosTemplate(properties.slsEnable),
-      SpotPriceLimit: ros.numberToRosTemplate(properties.spotPriceLimit),
-      SpotStrategy: ros.stringToRosTemplate(properties.spotStrategy),
-      Tag: ros.listMapper(ros.rosTagToRosTemplate)(properties.tag),
-      TerminationGracePeriodSeconds: ros.numberToRosTemplate(properties.terminationGracePeriodSeconds),
-      Volume: ros.listMapper(rosContainerGroupVolumePropertyToRosTemplate)(properties.volume),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      'Container': ros.listMapper(rosContainerGroupContainerPropertyToRosTemplate)(properties.container),
+      'ContainerGroupName': ros.stringToRosTemplate(properties.containerGroupName),
+      'AcrRegistryInfo': ros.listMapper(rosContainerGroupAcrRegistryInfoPropertyToRosTemplate)(properties.acrRegistryInfo),
+      'ActiveDeadlineSeconds': ros.numberToRosTemplate(properties.activeDeadlineSeconds),
+      'AutoMatchImageCache': ros.booleanToRosTemplate(properties.autoMatchImageCache),
+      'Cpu': ros.numberToRosTemplate(properties.cpu),
+      'DnsConfig': rosContainerGroupDnsConfigPropertyToRosTemplate(properties.dnsConfig),
+      'EipInstanceId': ros.stringToRosTemplate(properties.eipInstanceId),
+      'HostAliase': ros.listMapper(rosContainerGroupHostAliasePropertyToRosTemplate)(properties.hostAliase),
+      'ImageRegistryCredential': ros.listMapper(rosContainerGroupImageRegistryCredentialPropertyToRosTemplate)(properties.imageRegistryCredential),
+      'ImageSnapshotId': ros.stringToRosTemplate(properties.imageSnapshotId),
+      'InitContainer': ros.listMapper(rosContainerGroupInitContainerPropertyToRosTemplate)(properties.initContainer),
+      'InstanceType': ros.stringToRosTemplate(properties.instanceType),
+      'Ipv6AddressCount': ros.numberToRosTemplate(properties.ipv6AddressCount),
+      'Memory': ros.numberToRosTemplate(properties.memory),
+      'RamRoleName': ros.stringToRosTemplate(properties.ramRoleName),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'RestartPolicy': ros.stringToRosTemplate(properties.restartPolicy),
+      'SecurityContextSysctl': ros.listMapper(rosContainerGroupSecurityContextSysctlPropertyToRosTemplate)(properties.securityContextSysctl),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
+      'SlsEnable': ros.booleanToRosTemplate(properties.slsEnable),
+      'SpotPriceLimit': ros.numberToRosTemplate(properties.spotPriceLimit),
+      'SpotStrategy': ros.stringToRosTemplate(properties.spotStrategy),
+      'Tag': ros.listMapper(ros.rosTagToRosTemplate)(properties.tag),
+      'TerminationGracePeriodSeconds': ros.numberToRosTemplate(properties.terminationGracePeriodSeconds),
+      'Volume': ros.listMapper(rosContainerGroupVolumePropertyToRosTemplate)(properties.volume),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
     };
 }
 
@@ -645,10 +645,10 @@ function rosContainerGroupAcrRegistryInfoPropertyToRosTemplate(properties: any):
     if (!ros.canInspect(properties)) { return properties; }
     RosContainerGroup_AcrRegistryInfoPropertyValidator(properties).assertSuccess();
     return {
-      InstanceName: ros.stringToRosTemplate(properties.instanceName),
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
-      RegionId: ros.stringToRosTemplate(properties.regionId),
-      Domain: ros.listMapper(ros.stringToRosTemplate)(properties.domain),
+      'InstanceName': ros.stringToRosTemplate(properties.instanceName),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'RegionId': ros.stringToRosTemplate(properties.regionId),
+      'Domain': ros.listMapper(ros.stringToRosTemplate)(properties.domain),
     };
 }
 
@@ -695,8 +695,8 @@ function rosContainerGroupConfigFileVolumeConfigFileToPathPropertyToRosTemplate(
     if (!ros.canInspect(properties)) { return properties; }
     RosContainerGroup_ConfigFileVolumeConfigFileToPathPropertyValidator(properties).assertSuccess();
     return {
-      Path: ros.stringToRosTemplate(properties.path),
-      Content: ros.stringToRosTemplate(properties.content),
+      'Path': ros.stringToRosTemplate(properties.path),
+      'Content': ros.stringToRosTemplate(properties.content),
     };
 }
 
@@ -854,23 +854,23 @@ function rosContainerGroupContainerPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosContainerGroup_ContainerPropertyValidator(properties).assertSuccess();
     return {
-      ReadinessProbe: rosContainerGroupReadinessProbePropertyToRosTemplate(properties.readinessProbe),
-      LivenessProbe: rosContainerGroupLivenessProbePropertyToRosTemplate(properties.livenessProbe),
-      Memory: ros.numberToRosTemplate(properties.memory),
-      Port: ros.listMapper(rosContainerGroupPortPropertyToRosTemplate)(properties.port),
-      Cpu: ros.numberToRosTemplate(properties.cpu),
-      Image: ros.stringToRosTemplate(properties.image),
-      StdinOnce: ros.booleanToRosTemplate(properties.stdinOnce),
-      Name: ros.stringToRosTemplate(properties.name),
-      Stdin: ros.booleanToRosTemplate(properties.stdin),
-      WorkingDir: ros.stringToRosTemplate(properties.workingDir),
-      ImagePullPolicy: ros.stringToRosTemplate(properties.imagePullPolicy),
-      Command: ros.listMapper(ros.stringToRosTemplate)(properties.command),
-      Arg: ros.listMapper(ros.stringToRosTemplate)(properties.arg),
-      Tty: ros.booleanToRosTemplate(properties.tty),
-      SecurityContext: rosContainerGroupSecurityContextPropertyToRosTemplate(properties.securityContext),
-      VolumeMount: ros.listMapper(rosContainerGroupVolumeMountPropertyToRosTemplate)(properties.volumeMount),
-      EnvironmentVar: ros.listMapper(rosContainerGroupEnvironmentVarPropertyToRosTemplate)(properties.environmentVar),
+      'ReadinessProbe': rosContainerGroupReadinessProbePropertyToRosTemplate(properties.readinessProbe),
+      'LivenessProbe': rosContainerGroupLivenessProbePropertyToRosTemplate(properties.livenessProbe),
+      'Memory': ros.numberToRosTemplate(properties.memory),
+      'Port': ros.listMapper(rosContainerGroupPortPropertyToRosTemplate)(properties.port),
+      'Cpu': ros.numberToRosTemplate(properties.cpu),
+      'Image': ros.stringToRosTemplate(properties.image),
+      'StdinOnce': ros.booleanToRosTemplate(properties.stdinOnce),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'Stdin': ros.booleanToRosTemplate(properties.stdin),
+      'WorkingDir': ros.stringToRosTemplate(properties.workingDir),
+      'ImagePullPolicy': ros.stringToRosTemplate(properties.imagePullPolicy),
+      'Command': ros.listMapper(ros.stringToRosTemplate)(properties.command),
+      'Arg': ros.listMapper(ros.stringToRosTemplate)(properties.arg),
+      'Tty': ros.booleanToRosTemplate(properties.tty),
+      'SecurityContext': rosContainerGroupSecurityContextPropertyToRosTemplate(properties.securityContext),
+      'VolumeMount': ros.listMapper(rosContainerGroupVolumeMountPropertyToRosTemplate)(properties.volumeMount),
+      'EnvironmentVar': ros.listMapper(rosContainerGroupEnvironmentVarPropertyToRosTemplate)(properties.environmentVar),
     };
 }
 
@@ -921,9 +921,9 @@ function rosContainerGroupDnsConfigPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosContainerGroup_DnsConfigPropertyValidator(properties).assertSuccess();
     return {
-      NameServer: ros.listMapper(ros.stringToRosTemplate)(properties.nameServer),
-      Search: ros.listMapper(ros.stringToRosTemplate)(properties.search),
-      Option: ros.listMapper(rosContainerGroupOptionPropertyToRosTemplate)(properties.option),
+      'NameServer': ros.listMapper(ros.stringToRosTemplate)(properties.nameServer),
+      'Search': ros.listMapper(ros.stringToRosTemplate)(properties.search),
+      'Option': ros.listMapper(rosContainerGroupOptionPropertyToRosTemplate)(properties.option),
     };
 }
 
@@ -994,9 +994,9 @@ function rosContainerGroupEnvironmentVarPropertyToRosTemplate(properties: any): 
     if (!ros.canInspect(properties)) { return properties; }
     RosContainerGroup_EnvironmentVarPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
-      FieldRefFieldPath: ros.stringToRosTemplate(properties.fieldRefFieldPath),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+      'FieldRef.FieldPath': ros.stringToRosTemplate(properties.fieldRefFieldPath),
     };
 }
 
@@ -1042,8 +1042,8 @@ function rosContainerGroupHostAliasePropertyToRosTemplate(properties: any): any 
     if (!ros.canInspect(properties)) { return properties; }
     RosContainerGroup_HostAliasePropertyValidator(properties).assertSuccess();
     return {
-      Ip: ros.stringToRosTemplate(properties.ip),
-      Hostname: ros.listMapper(ros.stringToRosTemplate)(properties.hostname),
+      'Ip': ros.stringToRosTemplate(properties.ip),
+      'Hostname': ros.listMapper(ros.stringToRosTemplate)(properties.hostname),
     };
 }
 
@@ -1097,9 +1097,9 @@ function rosContainerGroupImageRegistryCredentialPropertyToRosTemplate(propertie
     if (!ros.canInspect(properties)) { return properties; }
     RosContainerGroup_ImageRegistryCredentialPropertyValidator(properties).assertSuccess();
     return {
-      UserName: ros.stringToRosTemplate(properties.userName),
-      Server: ros.stringToRosTemplate(properties.server),
-      Password: ros.stringToRosTemplate(properties.password),
+      'UserName': ros.stringToRosTemplate(properties.userName),
+      'Server': ros.stringToRosTemplate(properties.server),
+      'Password': ros.stringToRosTemplate(properties.password),
     };
 }
 
@@ -1230,18 +1230,18 @@ function rosContainerGroupInitContainerPropertyToRosTemplate(properties: any): a
     if (!ros.canInspect(properties)) { return properties; }
     RosContainerGroup_InitContainerPropertyValidator(properties).assertSuccess();
     return {
-      WorkingDir: ros.stringToRosTemplate(properties.workingDir),
-      ImagePullPolicy: ros.stringToRosTemplate(properties.imagePullPolicy),
-      Command: ros.listMapper(ros.stringToRosTemplate)(properties.command),
-      Memory: ros.numberToRosTemplate(properties.memory),
-      Port: ros.listMapper(rosContainerGroupInitContainerPortPropertyToRosTemplate)(properties.port),
-      Arg: ros.listMapper(ros.stringToRosTemplate)(properties.arg),
-      SecurityContext: rosContainerGroupInitContainerSecurityContextPropertyToRosTemplate(properties.securityContext),
-      VolumeMount: ros.listMapper(rosContainerGroupInitContainerVolumeMountPropertyToRosTemplate)(properties.volumeMount),
-      Cpu: ros.numberToRosTemplate(properties.cpu),
-      Image: ros.stringToRosTemplate(properties.image),
-      EnvironmentVar: ros.listMapper(rosContainerGroupInitContainerEnvironmentVarPropertyToRosTemplate)(properties.environmentVar),
-      Name: ros.stringToRosTemplate(properties.name),
+      'WorkingDir': ros.stringToRosTemplate(properties.workingDir),
+      'ImagePullPolicy': ros.stringToRosTemplate(properties.imagePullPolicy),
+      'Command': ros.listMapper(ros.stringToRosTemplate)(properties.command),
+      'Memory': ros.numberToRosTemplate(properties.memory),
+      'Port': ros.listMapper(rosContainerGroupInitContainerPortPropertyToRosTemplate)(properties.port),
+      'Arg': ros.listMapper(ros.stringToRosTemplate)(properties.arg),
+      'SecurityContext': rosContainerGroupInitContainerSecurityContextPropertyToRosTemplate(properties.securityContext),
+      'VolumeMount': ros.listMapper(rosContainerGroupInitContainerVolumeMountPropertyToRosTemplate)(properties.volumeMount),
+      'Cpu': ros.numberToRosTemplate(properties.cpu),
+      'Image': ros.stringToRosTemplate(properties.image),
+      'EnvironmentVar': ros.listMapper(rosContainerGroupInitContainerEnvironmentVarPropertyToRosTemplate)(properties.environmentVar),
+      'Name': ros.stringToRosTemplate(properties.name),
     };
 }
 
@@ -1312,9 +1312,9 @@ function rosContainerGroupInitContainerEnvironmentVarPropertyToRosTemplate(prope
     if (!ros.canInspect(properties)) { return properties; }
     RosContainerGroup_InitContainerEnvironmentVarPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
-      FieldRefFieldPath: ros.stringToRosTemplate(properties.fieldRefFieldPath),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+      'FieldRef.FieldPath': ros.stringToRosTemplate(properties.fieldRefFieldPath),
     };
 }
 
@@ -1373,8 +1373,8 @@ function rosContainerGroupInitContainerPortPropertyToRosTemplate(properties: any
     if (!ros.canInspect(properties)) { return properties; }
     RosContainerGroup_InitContainerPortPropertyValidator(properties).assertSuccess();
     return {
-      Port: ros.numberToRosTemplate(properties.port),
-      Protocol: ros.stringToRosTemplate(properties.protocol),
+      'Port': ros.numberToRosTemplate(properties.port),
+      'Protocol': ros.stringToRosTemplate(properties.protocol),
     };
 }
 
@@ -1437,9 +1437,9 @@ function rosContainerGroupInitContainerSecurityContextPropertyToRosTemplate(prop
     if (!ros.canInspect(properties)) { return properties; }
     RosContainerGroup_InitContainerSecurityContextPropertyValidator(properties).assertSuccess();
     return {
-      RunAsUser: ros.numberToRosTemplate(properties.runAsUser),
-      ReadOnlyRootFilesystem: ros.booleanToRosTemplate(properties.readOnlyRootFilesystem),
-      CapabilityAdd: ros.listMapper(ros.stringToRosTemplate)(properties.capabilityAdd),
+      'RunAsUser': ros.numberToRosTemplate(properties.runAsUser),
+      'ReadOnlyRootFilesystem': ros.booleanToRosTemplate(properties.readOnlyRootFilesystem),
+      'Capability.Add': ros.listMapper(ros.stringToRosTemplate)(properties.capabilityAdd),
     };
 }
 
@@ -1490,9 +1490,9 @@ function rosContainerGroupInitContainerVolumeMountPropertyToRosTemplate(properti
     if (!ros.canInspect(properties)) { return properties; }
     RosContainerGroup_InitContainerVolumeMountPropertyValidator(properties).assertSuccess();
     return {
-      ReadOnly: ros.booleanToRosTemplate(properties.readOnly),
-      MountPath: ros.stringToRosTemplate(properties.mountPath),
-      Name: ros.numberToRosTemplate(properties.name),
+      'ReadOnly': ros.booleanToRosTemplate(properties.readOnly),
+      'MountPath': ros.stringToRosTemplate(properties.mountPath),
+      'Name': ros.numberToRosTemplate(properties.name),
     };
 }
 
@@ -1598,16 +1598,16 @@ function rosContainerGroupLivenessProbePropertyToRosTemplate(properties: any): a
     if (!ros.canInspect(properties)) { return properties; }
     RosContainerGroup_LivenessProbePropertyValidator(properties).assertSuccess();
     return {
-      TimeoutSeconds: ros.numberToRosTemplate(properties.timeoutSeconds),
-      InitialDelaySeconds: ros.numberToRosTemplate(properties.initialDelaySeconds),
-      PeriodSeconds: ros.numberToRosTemplate(properties.periodSeconds),
-      FailureThreshold: ros.numberToRosTemplate(properties.failureThreshold),
-      SuccessThreshold: ros.numberToRosTemplate(properties.successThreshold),
-      ExecCommand: ros.listMapper(ros.stringToRosTemplate)(properties.execCommand),
-      HttpGetPath: ros.stringToRosTemplate(properties.httpGetPath),
-      HttpGetPort: ros.numberToRosTemplate(properties.httpGetPort),
-      HttpGetScheme: ros.stringToRosTemplate(properties.httpGetScheme),
-      TcpSocketPort: ros.numberToRosTemplate(properties.tcpSocketPort),
+      'TimeoutSeconds': ros.numberToRosTemplate(properties.timeoutSeconds),
+      'InitialDelaySeconds': ros.numberToRosTemplate(properties.initialDelaySeconds),
+      'PeriodSeconds': ros.numberToRosTemplate(properties.periodSeconds),
+      'FailureThreshold': ros.numberToRosTemplate(properties.failureThreshold),
+      'SuccessThreshold': ros.numberToRosTemplate(properties.successThreshold),
+      'Exec.Command': ros.listMapper(ros.stringToRosTemplate)(properties.execCommand),
+      'HttpGet.Path': ros.stringToRosTemplate(properties.httpGetPath),
+      'HttpGet.Port': ros.numberToRosTemplate(properties.httpGetPort),
+      'HttpGet.Scheme': ros.stringToRosTemplate(properties.httpGetScheme),
+      'TcpSocket.Port': ros.numberToRosTemplate(properties.tcpSocketPort),
     };
 }
 
@@ -1653,8 +1653,8 @@ function rosContainerGroupOptionPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosContainerGroup_OptionPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Name: ros.stringToRosTemplate(properties.name),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Name': ros.stringToRosTemplate(properties.name),
     };
 }
 
@@ -1713,8 +1713,8 @@ function rosContainerGroupPortPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosContainerGroup_PortPropertyValidator(properties).assertSuccess();
     return {
-      Port: ros.numberToRosTemplate(properties.port),
-      Protocol: ros.stringToRosTemplate(properties.protocol),
+      'Port': ros.numberToRosTemplate(properties.port),
+      'Protocol': ros.stringToRosTemplate(properties.protocol),
     };
 }
 
@@ -1820,16 +1820,16 @@ function rosContainerGroupReadinessProbePropertyToRosTemplate(properties: any): 
     if (!ros.canInspect(properties)) { return properties; }
     RosContainerGroup_ReadinessProbePropertyValidator(properties).assertSuccess();
     return {
-      TimeoutSeconds: ros.numberToRosTemplate(properties.timeoutSeconds),
-      InitialDelaySeconds: ros.numberToRosTemplate(properties.initialDelaySeconds),
-      PeriodSeconds: ros.numberToRosTemplate(properties.periodSeconds),
-      FailureThreshold: ros.numberToRosTemplate(properties.failureThreshold),
-      SuccessThreshold: ros.numberToRosTemplate(properties.successThreshold),
-      ExecCommand: ros.listMapper(ros.stringToRosTemplate)(properties.execCommand),
-      HttpGetPath: ros.stringToRosTemplate(properties.httpGetPath),
-      HttpGetPort: ros.numberToRosTemplate(properties.httpGetPort),
-      HttpGetScheme: ros.stringToRosTemplate(properties.httpGetScheme),
-      TcpSocketPort: ros.numberToRosTemplate(properties.tcpSocketPort),
+      'TimeoutSeconds': ros.numberToRosTemplate(properties.timeoutSeconds),
+      'InitialDelaySeconds': ros.numberToRosTemplate(properties.initialDelaySeconds),
+      'PeriodSeconds': ros.numberToRosTemplate(properties.periodSeconds),
+      'FailureThreshold': ros.numberToRosTemplate(properties.failureThreshold),
+      'SuccessThreshold': ros.numberToRosTemplate(properties.successThreshold),
+      'Exec.Command': ros.listMapper(ros.stringToRosTemplate)(properties.execCommand),
+      'HttpGet.Path': ros.stringToRosTemplate(properties.httpGetPath),
+      'HttpGet.Port': ros.numberToRosTemplate(properties.httpGetPort),
+      'HttpGet.Scheme': ros.stringToRosTemplate(properties.httpGetScheme),
+      'TcpSocket.Port': ros.numberToRosTemplate(properties.tcpSocketPort),
     };
 }
 
@@ -1886,9 +1886,9 @@ function rosContainerGroupSecurityContextPropertyToRosTemplate(properties: any):
     if (!ros.canInspect(properties)) { return properties; }
     RosContainerGroup_SecurityContextPropertyValidator(properties).assertSuccess();
     return {
-      RunAsUser: ros.numberToRosTemplate(properties.runAsUser),
-      ReadOnlyRootFilesystem: ros.booleanToRosTemplate(properties.readOnlyRootFilesystem),
-      CapabilityAdd: ros.listMapper(ros.stringToRosTemplate)(properties.capabilityAdd),
+      'RunAsUser': ros.numberToRosTemplate(properties.runAsUser),
+      'ReadOnlyRootFilesystem': ros.booleanToRosTemplate(properties.readOnlyRootFilesystem),
+      'Capability.Add': ros.listMapper(ros.stringToRosTemplate)(properties.capabilityAdd),
     };
 }
 
@@ -1940,8 +1940,8 @@ function rosContainerGroupSecurityContextSysctlPropertyToRosTemplate(properties:
     if (!ros.canInspect(properties)) { return properties; }
     RosContainerGroup_SecurityContextSysctlPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Name: ros.stringToRosTemplate(properties.name),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Name': ros.stringToRosTemplate(properties.name),
     };
 }
 
@@ -1988,8 +1988,8 @@ function rosContainerGroupTagPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosContainerGroup_TagPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -2104,16 +2104,16 @@ function rosContainerGroupVolumePropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosContainerGroup_VolumePropertyValidator(properties).assertSuccess();
     return {
-      Type: ros.stringToRosTemplate(properties.type),
-      Name: ros.stringToRosTemplate(properties.name),
-      ConfigFileVolumeConfigFileToPath: ros.listMapper(rosContainerGroupConfigFileVolumeConfigFileToPathPropertyToRosTemplate)(properties.configFileVolumeConfigFileToPath),
-      EmptyDirVolumeMedium: ros.stringToRosTemplate(properties.emptyDirVolumeMedium),
-      FlexVolumeDriver: ros.stringToRosTemplate(properties.flexVolumeDriver),
-      FlexVolumeFsType: ros.stringToRosTemplate(properties.flexVolumeFsType),
-      FlexVolumeOptions: ros.hashMapper(ros.objectToRosTemplate)(properties.flexVolumeOptions),
-      NFSVolumePath: ros.stringToRosTemplate(properties.nfsVolumePath),
-      NFSVolumeReadOnly: ros.booleanToRosTemplate(properties.nfsVolumeReadOnly),
-      NFSVolumeServer: ros.stringToRosTemplate(properties.nfsVolumeServer),
+      'Type': ros.stringToRosTemplate(properties.type),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'ConfigFileVolume.ConfigFileToPath': ros.listMapper(rosContainerGroupConfigFileVolumeConfigFileToPathPropertyToRosTemplate)(properties.configFileVolumeConfigFileToPath),
+      'EmptyDirVolume.Medium': ros.stringToRosTemplate(properties.emptyDirVolumeMedium),
+      'FlexVolume.Driver': ros.stringToRosTemplate(properties.flexVolumeDriver),
+      'FlexVolume.FsType': ros.stringToRosTemplate(properties.flexVolumeFsType),
+      'FlexVolume.Options': ros.hashMapper(ros.objectToRosTemplate)(properties.flexVolumeOptions),
+      'NFSVolume.Path': ros.stringToRosTemplate(properties.nfsVolumePath),
+      'NFSVolume.ReadOnly': ros.booleanToRosTemplate(properties.nfsVolumeReadOnly),
+      'NFSVolume.Server': ros.stringToRosTemplate(properties.nfsVolumeServer),
     };
 }
 
@@ -2184,11 +2184,11 @@ function rosContainerGroupVolumeMountPropertyToRosTemplate(properties: any): any
     if (!ros.canInspect(properties)) { return properties; }
     RosContainerGroup_VolumeMountPropertyValidator(properties).assertSuccess();
     return {
-      MountPath: ros.stringToRosTemplate(properties.mountPath),
-      ReadOnly: ros.booleanToRosTemplate(properties.readOnly),
-      SubPath: ros.stringToRosTemplate(properties.subPath),
-      MountPropagation: ros.stringToRosTemplate(properties.mountPropagation),
-      Name: ros.stringToRosTemplate(properties.name),
+      'MountPath': ros.stringToRosTemplate(properties.mountPath),
+      'ReadOnly': ros.booleanToRosTemplate(properties.readOnly),
+      'SubPath': ros.stringToRosTemplate(properties.subPath),
+      'MountPropagation': ros.stringToRosTemplate(properties.mountPropagation),
+      'Name': ros.stringToRosTemplate(properties.name),
     };
 }
 
@@ -2322,18 +2322,18 @@ function rosImageCachePropsToRosTemplate(properties: any, enableResourceProperty
         RosImageCachePropsValidator(properties).assertSuccess();
     }
     return {
-      Image: ros.listMapper(ros.stringToRosTemplate)(properties.image),
-      ImageCacheName: ros.stringToRosTemplate(properties.imageCacheName),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      AcrRegistryInfo: ros.listMapper(rosImageCacheAcrRegistryInfoPropertyToRosTemplate)(properties.acrRegistryInfo),
-      AutoMatchImageCache: ros.booleanToRosTemplate(properties.autoMatchImageCache),
-      EipInstanceId: ros.stringToRosTemplate(properties.eipInstanceId),
-      ImageCacheSize: ros.numberToRosTemplate(properties.imageCacheSize),
-      ImageRegistryCredential: ros.listMapper(ros.stringToRosTemplate)(properties.imageRegistryCredential),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      RetentionDays: ros.numberToRosTemplate(properties.retentionDays),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      'Image': ros.listMapper(ros.stringToRosTemplate)(properties.image),
+      'ImageCacheName': ros.stringToRosTemplate(properties.imageCacheName),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'AcrRegistryInfo': ros.listMapper(rosImageCacheAcrRegistryInfoPropertyToRosTemplate)(properties.acrRegistryInfo),
+      'AutoMatchImageCache': ros.booleanToRosTemplate(properties.autoMatchImageCache),
+      'EipInstanceId': ros.stringToRosTemplate(properties.eipInstanceId),
+      'ImageCacheSize': ros.numberToRosTemplate(properties.imageCacheSize),
+      'ImageRegistryCredential': ros.listMapper(ros.stringToRosTemplate)(properties.imageRegistryCredential),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'RetentionDays': ros.numberToRosTemplate(properties.retentionDays),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
     };
 }
 
@@ -2521,9 +2521,9 @@ function rosImageCacheAcrRegistryInfoPropertyToRosTemplate(properties: any): any
     if (!ros.canInspect(properties)) { return properties; }
     RosImageCache_AcrRegistryInfoPropertyValidator(properties).assertSuccess();
     return {
-      InstanceName: ros.stringToRosTemplate(properties.instanceName),
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
-      RegionId: ros.stringToRosTemplate(properties.regionId),
-      Domain: ros.listMapper(ros.stringToRosTemplate)(properties.domain),
+      'InstanceName': ros.stringToRosTemplate(properties.instanceName),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'RegionId': ros.stringToRosTemplate(properties.regionId),
+      'Domain': ros.listMapper(ros.stringToRosTemplate)(properties.domain),
     };
 }

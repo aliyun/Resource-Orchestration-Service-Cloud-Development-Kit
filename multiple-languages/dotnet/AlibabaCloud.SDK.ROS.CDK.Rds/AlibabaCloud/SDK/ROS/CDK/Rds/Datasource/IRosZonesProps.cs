@@ -80,6 +80,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds.Datasource
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+        /// - Never: Never refresh the datasource resource when the stack is updated.
+        /// - Always: Always refresh the datasource resource when the stack is updated.
+        /// Default is Never.
+        /// </remarks>
+        [JsiiProperty(name: "refreshOptions", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? RefreshOptions
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: zoneId: The ID of the zone in which the instance is located.
         /// If the instance spans more than one zone, the value of this parameter contains an MAZ part,such as cn-hangzhou-MAZ6(b,f) and cn-hangzhou-MAZ5(b,e,f)
         /// </remarks>
@@ -156,6 +172,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds.Datasource
             [JsiiOptional]
             [JsiiProperty(name: "engineVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? EngineVersion
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+            /// - Never: Never refresh the datasource resource when the stack is updated.
+            /// - Always: Always refresh the datasource resource when the stack is updated.
+            /// Default is Never.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "refreshOptions", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RefreshOptions
             {
                 get => GetInstanceProperty<object?>();
             }

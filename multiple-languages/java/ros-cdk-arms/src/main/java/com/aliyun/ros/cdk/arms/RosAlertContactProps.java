@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.arms;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-alertcontact
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:04.550Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:17.894Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.RosAlertContactProps")
 @software.amazon.jsii.Jsii.Proxy(RosAlertContactProps.Jsii$Proxy.class)
 public interface RosAlertContactProps extends software.amazon.jsii.JsiiSerializable {

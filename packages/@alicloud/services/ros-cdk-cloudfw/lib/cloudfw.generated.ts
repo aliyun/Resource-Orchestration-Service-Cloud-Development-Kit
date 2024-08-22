@@ -129,14 +129,14 @@ function rosAddressBookPropsToRosTemplate(properties: any, enableResourcePropert
         RosAddressBookPropsValidator(properties).assertSuccess();
     }
     return {
-      Description: ros.stringToRosTemplate(properties.description),
-      GroupName: ros.stringToRosTemplate(properties.groupName),
-      GroupType: ros.stringToRosTemplate(properties.groupType),
-      AddressList: ros.stringToRosTemplate(properties.addressList),
-      AutoAddTagEcs: ros.booleanToRosTemplate(properties.autoAddTagEcs),
-      RegionId: ros.stringToRosTemplate(properties.regionId),
-      TagList: ros.listMapper(rosAddressBookTagListPropertyToRosTemplate)(properties.tagList),
-      TagRelation: ros.stringToRosTemplate(properties.tagRelation),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'GroupName': ros.stringToRosTemplate(properties.groupName),
+      'GroupType': ros.stringToRosTemplate(properties.groupType),
+      'AddressList': ros.stringToRosTemplate(properties.addressList),
+      'AutoAddTagEcs': ros.booleanToRosTemplate(properties.autoAddTagEcs),
+      'RegionId': ros.stringToRosTemplate(properties.regionId),
+      'TagList': ros.listMapper(rosAddressBookTagListPropertyToRosTemplate)(properties.tagList),
+      'TagRelation': ros.stringToRosTemplate(properties.tagRelation),
     };
 }
 
@@ -289,8 +289,8 @@ function rosAddressBookTagListPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosAddressBook_TagListPropertyValidator(properties).assertSuccess();
     return {
-      TagKey: ros.stringToRosTemplate(properties.tagKey),
-      TagValue: ros.stringToRosTemplate(properties.tagValue),
+      'TagKey': ros.stringToRosTemplate(properties.tagKey),
+      'TagValue': ros.stringToRosTemplate(properties.tagValue),
     };
 }
 
@@ -334,7 +334,7 @@ function rosAllFwSwitchPropsToRosTemplate(properties: any, enableResourcePropert
         RosAllFwSwitchPropsValidator(properties).assertSuccess();
     }
     return {
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
     };
 }
 
@@ -611,20 +611,20 @@ function rosControlPolicyPropsToRosTemplate(properties: any, enableResourcePrope
         RosControlPolicyPropsValidator(properties).assertSuccess();
     }
     return {
-      AclAction: ros.stringToRosTemplate(properties.aclAction),
-      ApplicationName: ros.stringToRosTemplate(properties.applicationName),
-      Description: ros.stringToRosTemplate(properties.description),
-      Destination: ros.stringToRosTemplate(properties.destination),
-      DestinationType: ros.stringToRosTemplate(properties.destinationType),
-      Direction: ros.stringToRosTemplate(properties.direction),
-      NewOrder: ros.numberToRosTemplate(properties.newOrder),
-      Proto: ros.stringToRosTemplate(properties.proto),
-      Source: ros.stringToRosTemplate(properties.source),
-      SourceType: ros.stringToRosTemplate(properties.sourceType),
-      DestPort: ros.stringToRosTemplate(properties.destPort),
-      DestPortGroup: ros.stringToRosTemplate(properties.destPortGroup),
-      DestPortType: ros.stringToRosTemplate(properties.destPortType),
-      RegionId: ros.stringToRosTemplate(properties.regionId),
+      'AclAction': ros.stringToRosTemplate(properties.aclAction),
+      'ApplicationName': ros.stringToRosTemplate(properties.applicationName),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Destination': ros.stringToRosTemplate(properties.destination),
+      'DestinationType': ros.stringToRosTemplate(properties.destinationType),
+      'Direction': ros.stringToRosTemplate(properties.direction),
+      'NewOrder': ros.numberToRosTemplate(properties.newOrder),
+      'Proto': ros.stringToRosTemplate(properties.proto),
+      'Source': ros.stringToRosTemplate(properties.source),
+      'SourceType': ros.stringToRosTemplate(properties.sourceType),
+      'DestPort': ros.stringToRosTemplate(properties.destPort),
+      'DestPortGroup': ros.stringToRosTemplate(properties.destPortGroup),
+      'DestPortType': ros.stringToRosTemplate(properties.destPortType),
+      'RegionId': ros.stringToRosTemplate(properties.regionId),
     };
 }
 
@@ -881,9 +881,9 @@ function rosFwSwitchPropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosFwSwitchPropsValidator(properties).assertSuccess();
     }
     return {
-      IpaddrList: ros.listMapper(ros.objectToRosTemplate)(properties.ipaddrList),
-      RegionList: ros.listMapper(ros.objectToRosTemplate)(properties.regionList),
-      ResourceTypeList: ros.listMapper(ros.objectToRosTemplate)(properties.resourceTypeList),
+      'IpaddrList': ros.listMapper(ros.objectToRosTemplate)(properties.ipaddrList),
+      'RegionList': ros.listMapper(ros.objectToRosTemplate)(properties.regionList),
+      'ResourceTypeList': ros.listMapper(ros.objectToRosTemplate)(properties.resourceTypeList),
     };
 }
 
@@ -1189,24 +1189,24 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      PayType: ros.stringToRosTemplate(properties.payType),
-      AccountNum: ros.numberToRosTemplate(properties.accountNum),
-      AclExtension: ros.numberToRosTemplate(properties.aclExtension),
-      AutoPay: ros.booleanToRosTemplate(properties.autoPay),
-      AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
-      Bandwidth: ros.numberToRosTemplate(properties.bandwidth),
-      IgnoreExisting: ros.booleanToRosTemplate(properties.ignoreExisting),
-      IpNum: ros.numberToRosTemplate(properties.ipNum),
-      LogAnalysis: ros.booleanToRosTemplate(properties.logAnalysis),
-      LogStorage: ros.numberToRosTemplate(properties.logStorage),
-      MultiAccountManagement: ros.booleanToRosTemplate(properties.multiAccountManagement),
-      NatBandwidth: ros.numberToRosTemplate(properties.natBandwidth),
-      NatFirewallNum: ros.numberToRosTemplate(properties.natFirewallNum),
-      Period: ros.numberToRosTemplate(properties.period),
-      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
-      Spec: ros.stringToRosTemplate(properties.spec),
-      VpcBandwidth: ros.numberToRosTemplate(properties.vpcBandwidth),
-      VpcFirewallNum: ros.numberToRosTemplate(properties.vpcFirewallNum),
+      'PayType': ros.stringToRosTemplate(properties.payType),
+      'AccountNum': ros.numberToRosTemplate(properties.accountNum),
+      'AclExtension': ros.numberToRosTemplate(properties.aclExtension),
+      'AutoPay': ros.booleanToRosTemplate(properties.autoPay),
+      'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
+      'Bandwidth': ros.numberToRosTemplate(properties.bandwidth),
+      'IgnoreExisting': ros.booleanToRosTemplate(properties.ignoreExisting),
+      'IpNum': ros.numberToRosTemplate(properties.ipNum),
+      'LogAnalysis': ros.booleanToRosTemplate(properties.logAnalysis),
+      'LogStorage': ros.numberToRosTemplate(properties.logStorage),
+      'MultiAccountManagement': ros.booleanToRosTemplate(properties.multiAccountManagement),
+      'NatBandwidth': ros.numberToRosTemplate(properties.natBandwidth),
+      'NatFirewallNum': ros.numberToRosTemplate(properties.natFirewallNum),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
+      'Spec': ros.stringToRosTemplate(properties.spec),
+      'VpcBandwidth': ros.numberToRosTemplate(properties.vpcBandwidth),
+      'VpcFirewallNum': ros.numberToRosTemplate(properties.vpcFirewallNum),
     };
 }
 
@@ -1383,6 +1383,570 @@ export class RosInstance extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosInstancePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosNatFirewallControlPolicy`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-natfirewallcontrolpolicy
+ */
+export interface RosNatFirewallControlPolicyProps {
+
+    /**
+     * @Property aclAction: The action that Cloud Firewall performs on the traffic.Valid values:
+     * accept: allows the traffic.
+     * drop: denies the traffic.
+     * log: monitors the traffic.
+     */
+    readonly aclAction: string | ros.IResolvable;
+
+    /**
+     * @Property applicationNameList: The application types supported by the access control policy.
+     */
+    readonly applicationNameList: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the access control policy.
+     */
+    readonly description: string | ros.IResolvable;
+
+    /**
+     * @Property destination: The destination address in the access control policy.
+     * Valid values:
+     * If DestinationType is set to net, the value of this parameter is a CIDR block.
+     * Example: 1.2.XX.XX\/24
+     * If DestinationType is set to group, the value of this parameter is an address book.
+     * Example: db_group
+     * If DestinationType is set to domain, the value of this parameter is a domain name.
+     * Example: *.aliyuncs.com
+     * DestinationType is set to location, the value of this parameter is a location.
+     * Example: ["BJ11", "ZB"]
+     */
+    readonly destination: string | ros.IResolvable;
+
+    /**
+     * @Property destinationType: The type of the destination address in the access control policy. Valid values:
+     * net: CIDR block
+     * group: address book
+     * domain: domain name
+     */
+    readonly destinationType: string | ros.IResolvable;
+
+    /**
+     * @Property direction: The direction of the traffic to which the access control policy applies. Valid values:
+     * out: outbound traffic
+     */
+    readonly direction: string | ros.IResolvable;
+
+    /**
+     * @Property natGatewayId: The ID of the NAT gateway.
+     */
+    readonly natGatewayId: string | ros.IResolvable;
+
+    /**
+     * @Property newOrder: The priority of the access control policy. The priority value starts from 1. A small priority value indicates a high priority.
+     */
+    readonly newOrder: number | ros.IResolvable;
+
+    /**
+     * @Property proto: The protocol type in the access control policy.Valid values:
+     * ANY: all types of protocols
+     * TCP
+     * UDP
+     * ICMP
+     */
+    readonly proto: string | ros.IResolvable;
+
+    /**
+     * @Property source: The source address in the access control policy.Valid values:
+     * If SourceType is set to net, the value of Source is a CIDR block.Example: 10.2.4.0\/24
+     * If SourceType is set to group, the value of this parameter must be an address book name.Example: db_group
+     */
+    readonly source: string | ros.IResolvable;
+
+    /**
+     * @Property sourceType: The type of the source address in the access control policy.Valid values:
+     * net: source CIDR block
+     * group: source address book
+     */
+    readonly sourceType: string | ros.IResolvable;
+
+    /**
+     * @Property destPort: The destination port in the access control policy. Valid values:
+     * If Proto is set to ICMP, DestPort is automatically left empty.
+     * If Proto is set to TCP, UDP, or ANY and DestPortType is set to group, DestPort is empty.
+     * If Proto is set to TCP, UDP, or ANY and DestPortType is set to port, the value of DestPort is the destination port number.
+     */
+    readonly destPort?: number | ros.IResolvable;
+
+    /**
+     * @Property destPortGroup: The name of the destination port address book in the access control policy.
+     */
+    readonly destPortGroup?: string | ros.IResolvable;
+
+    /**
+     * @Property destPortType: The type of the destination port in the access control policy. Valid values:
+     * net: source CIDR block
+     * group: source address book
+     */
+    readonly destPortType?: string | ros.IResolvable;
+
+    /**
+     * @Property domainResolveType: The domain name resolution method of the access control policy. Valid values:
+     * 0: fully qualified domain name (FQDN)-based resolution
+     * 1: Domain Name System (DNS)-based dynamic resolution
+     * 2: FQDN and DNS-based dynamic resolution
+     */
+    readonly domainResolveType?: number | ros.IResolvable;
+
+    /**
+     * @Property endTime: The time when the access control policy stops taking effect. The value is a UNIX timestamp. Unit: seconds. The value must be on the hour or on the half hour, and at least 30 minutes later than the value of StartTime.
+     */
+    readonly endTime?: string | ros.IResolvable;
+
+    /**
+     * @Property ipVersion: The IP version supported by the access control policy. Valid values:
+     * 4: IPv4 (default)
+     */
+    readonly ipVersion?: number | ros.IResolvable;
+
+    /**
+     * @Property release: Specifies whether to enable the access control policy. By default, an access control policy is enabled after it is created. Valid values:
+     * true
+     * false
+     */
+    readonly release?: boolean | ros.IResolvable;
+
+    /**
+     * @Property repeatDays: The days of a week or of a month on which the access control policy takes effect.
+     * If RepeatType is set to Permanent, None, or Daily, RepeatDays is left empty. Example: [].
+     * If RepeatType is set to Weekly, RepeatDays must be specified. Example: [0, 6].
+     * If RepeatType is set to Monthly, RepeatDays must be specified. Example: [1, 31].
+     */
+    readonly repeatDays?: Array<any | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property repeatEndTime: The point in time when the recurrence ends. Example: 23:30. The value must be on the hour or on the half hour, and at least 30 minutes later than the value of RepeatStartTime.
+     */
+    readonly repeatEndTime?: string | ros.IResolvable;
+
+    /**
+     * @Property repeatStartTime: The point in time when the recurrence starts. Example: 08:00. The value must be on the hour or on the half hour, and at least 30 minutes earlier than the value of RepeatEndTime.
+     */
+    readonly repeatStartTime?: string | ros.IResolvable;
+
+    /**
+     * @Property repeatType: The recurrence type for the access control policy to take effect. Valid values:
+     * Permanent (default): The policy always takes effect.
+     * None: The policy takes effect for only once.
+     * Daily: The policy takes effect on a daily basis.
+     * Weekly: The policy takes effect on a weekly basis.
+     * Monthly: The policy takes effect on a monthly basis.
+     */
+    readonly repeatType?: string | ros.IResolvable;
+
+    /**
+     * @Property startTime: The time when the access control policy starts to take effect. The value is a UNIX timestamp. Unit: seconds. The value must be on the hour or on the half hour, and at least 30 minutes earlier than the value of EndTime.
+     */
+    readonly startTime?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosNatFirewallControlPolicyProps`
+ *
+ * @param properties - the TypeScript properties of a `RosNatFirewallControlPolicyProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosNatFirewallControlPolicyPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('destination', ros.requiredValidator)(properties.destination));
+    errors.collect(ros.propertyValidator('destination', ros.validateString)(properties.destination));
+    errors.collect(ros.propertyValidator('description', ros.requiredValidator)(properties.description));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('endTime', ros.validateString)(properties.endTime));
+    errors.collect(ros.propertyValidator('ipVersion', ros.validateNumber)(properties.ipVersion));
+    errors.collect(ros.propertyValidator('sourceType', ros.requiredValidator)(properties.sourceType));
+    if(properties.sourceType && (typeof properties.sourceType) !== 'object') {
+        errors.collect(ros.propertyValidator('sourceType', ros.validateAllowedValues)({
+          data: properties.sourceType,
+          allowedValues: ["net","group"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('sourceType', ros.validateString)(properties.sourceType));
+    errors.collect(ros.propertyValidator('destPort', ros.validateNumber)(properties.destPort));
+    errors.collect(ros.propertyValidator('applicationNameList', ros.requiredValidator)(properties.applicationNameList));
+    if(properties.applicationNameList && (Array.isArray(properties.applicationNameList) || (typeof properties.applicationNameList) === 'string')) {
+        errors.collect(ros.propertyValidator('applicationNameList', ros.validateLength)({
+            data: properties.applicationNameList.length,
+            min: 1,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('applicationNameList', ros.listValidator(ros.validateString))(properties.applicationNameList));
+    errors.collect(ros.propertyValidator('startTime', ros.validateString)(properties.startTime));
+    errors.collect(ros.propertyValidator('aclAction', ros.requiredValidator)(properties.aclAction));
+    if(properties.aclAction && (typeof properties.aclAction) !== 'object') {
+        errors.collect(ros.propertyValidator('aclAction', ros.validateAllowedValues)({
+          data: properties.aclAction,
+          allowedValues: ["accept","drop","log"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('aclAction', ros.validateString)(properties.aclAction));
+    errors.collect(ros.propertyValidator('destinationType', ros.requiredValidator)(properties.destinationType));
+    if(properties.destinationType && (typeof properties.destinationType) !== 'object') {
+        errors.collect(ros.propertyValidator('destinationType', ros.validateAllowedValues)({
+          data: properties.destinationType,
+          allowedValues: ["net","group","domain"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('destinationType', ros.validateString)(properties.destinationType));
+    errors.collect(ros.propertyValidator('direction', ros.requiredValidator)(properties.direction));
+    if(properties.direction && (typeof properties.direction) !== 'object') {
+        errors.collect(ros.propertyValidator('direction', ros.validateAllowedValues)({
+          data: properties.direction,
+          allowedValues: ["out"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('direction', ros.validateString)(properties.direction));
+    errors.collect(ros.propertyValidator('source', ros.requiredValidator)(properties.source));
+    errors.collect(ros.propertyValidator('source', ros.validateString)(properties.source));
+    if(properties.destPortType && (typeof properties.destPortType) !== 'object') {
+        errors.collect(ros.propertyValidator('destPortType', ros.validateAllowedValues)({
+          data: properties.destPortType,
+          allowedValues: ["net","group"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('destPortType', ros.validateString)(properties.destPortType));
+    errors.collect(ros.propertyValidator('proto', ros.requiredValidator)(properties.proto));
+    if(properties.proto && (typeof properties.proto) !== 'object') {
+        errors.collect(ros.propertyValidator('proto', ros.validateAllowedValues)({
+          data: properties.proto,
+          allowedValues: ["ANY","TCP","UDP","ICMP"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('proto', ros.validateString)(properties.proto));
+    errors.collect(ros.propertyValidator('repeatEndTime', ros.validateString)(properties.repeatEndTime));
+    if(properties.domainResolveType && (typeof properties.domainResolveType) !== 'object') {
+        errors.collect(ros.propertyValidator('domainResolveType', ros.validateAllowedValues)({
+          data: properties.domainResolveType,
+          allowedValues: [0,1,2],
+        }));
+    }
+    errors.collect(ros.propertyValidator('domainResolveType', ros.validateNumber)(properties.domainResolveType));
+    errors.collect(ros.propertyValidator('repeatDays', ros.listValidator(ros.validateAny))(properties.repeatDays));
+    if(properties.repeatType && (typeof properties.repeatType) !== 'object') {
+        errors.collect(ros.propertyValidator('repeatType', ros.validateAllowedValues)({
+          data: properties.repeatType,
+          allowedValues: ["Permanent","None","Daily","Weekly","Monthly"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('repeatType', ros.validateString)(properties.repeatType));
+    errors.collect(ros.propertyValidator('repeatStartTime', ros.validateString)(properties.repeatStartTime));
+    errors.collect(ros.propertyValidator('natGatewayId', ros.requiredValidator)(properties.natGatewayId));
+    errors.collect(ros.propertyValidator('natGatewayId', ros.validateString)(properties.natGatewayId));
+    errors.collect(ros.propertyValidator('release', ros.validateBoolean)(properties.release));
+    errors.collect(ros.propertyValidator('newOrder', ros.requiredValidator)(properties.newOrder));
+    errors.collect(ros.propertyValidator('newOrder', ros.validateNumber)(properties.newOrder));
+    errors.collect(ros.propertyValidator('destPortGroup', ros.validateString)(properties.destPortGroup));
+    return errors.wrap('supplied properties not correct for "RosNatFirewallControlPolicyProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CLOUDFW::NatFirewallControlPolicy` resource
+ *
+ * @param properties - the TypeScript properties of a `RosNatFirewallControlPolicyProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CLOUDFW::NatFirewallControlPolicy` resource.
+ */
+// @ts-ignore TS6133
+function rosNatFirewallControlPolicyPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosNatFirewallControlPolicyPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'AclAction': ros.stringToRosTemplate(properties.aclAction),
+      'ApplicationNameList': ros.listMapper(ros.stringToRosTemplate)(properties.applicationNameList),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Destination': ros.stringToRosTemplate(properties.destination),
+      'DestinationType': ros.stringToRosTemplate(properties.destinationType),
+      'Direction': ros.stringToRosTemplate(properties.direction),
+      'NatGatewayId': ros.stringToRosTemplate(properties.natGatewayId),
+      'NewOrder': ros.numberToRosTemplate(properties.newOrder),
+      'Proto': ros.stringToRosTemplate(properties.proto),
+      'Source': ros.stringToRosTemplate(properties.source),
+      'SourceType': ros.stringToRosTemplate(properties.sourceType),
+      'DestPort': ros.numberToRosTemplate(properties.destPort),
+      'DestPortGroup': ros.stringToRosTemplate(properties.destPortGroup),
+      'DestPortType': ros.stringToRosTemplate(properties.destPortType),
+      'DomainResolveType': ros.numberToRosTemplate(properties.domainResolveType),
+      'EndTime': ros.stringToRosTemplate(properties.endTime),
+      'IpVersion': ros.numberToRosTemplate(properties.ipVersion),
+      'Release': ros.booleanToRosTemplate(properties.release),
+      'RepeatDays': ros.listMapper(ros.objectToRosTemplate)(properties.repeatDays),
+      'RepeatEndTime': ros.stringToRosTemplate(properties.repeatEndTime),
+      'RepeatStartTime': ros.stringToRosTemplate(properties.repeatStartTime),
+      'RepeatType': ros.stringToRosTemplate(properties.repeatType),
+      'StartTime': ros.stringToRosTemplate(properties.startTime),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::NatFirewallControlPolicy`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `NatFirewallControlPolicy` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-natfirewallcontrolpolicy
+ */
+export class RosNatFirewallControlPolicy extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CLOUDFW::NatFirewallControlPolicy";
+
+    /**
+     * @Attribute AclUuid: The unique ID of the access control policy.
+     */
+    public readonly attrAclUuid: ros.IResolvable;
+
+    /**
+     * @Attribute Direction: The direction of the traffic to which the access control policy applies.
+     */
+    public readonly attrDirection: ros.IResolvable;
+
+    /**
+     * @Attribute NatGatewayId: The ID of the NAT gateway.
+     */
+    public readonly attrNatGatewayId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property aclAction: The action that Cloud Firewall performs on the traffic.Valid values:
+     * accept: allows the traffic.
+     * drop: denies the traffic.
+     * log: monitors the traffic.
+     */
+    public aclAction: string | ros.IResolvable;
+
+    /**
+     * @Property applicationNameList: The application types supported by the access control policy.
+     */
+    public applicationNameList: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the access control policy.
+     */
+    public description: string | ros.IResolvable;
+
+    /**
+     * @Property destination: The destination address in the access control policy.
+     * Valid values:
+     * If DestinationType is set to net, the value of this parameter is a CIDR block.
+     * Example: 1.2.XX.XX\/24
+     * If DestinationType is set to group, the value of this parameter is an address book.
+     * Example: db_group
+     * If DestinationType is set to domain, the value of this parameter is a domain name.
+     * Example: *.aliyuncs.com
+     * DestinationType is set to location, the value of this parameter is a location.
+     * Example: ["BJ11", "ZB"]
+     */
+    public destination: string | ros.IResolvable;
+
+    /**
+     * @Property destinationType: The type of the destination address in the access control policy. Valid values:
+     * net: CIDR block
+     * group: address book
+     * domain: domain name
+     */
+    public destinationType: string | ros.IResolvable;
+
+    /**
+     * @Property direction: The direction of the traffic to which the access control policy applies. Valid values:
+     * out: outbound traffic
+     */
+    public direction: string | ros.IResolvable;
+
+    /**
+     * @Property natGatewayId: The ID of the NAT gateway.
+     */
+    public natGatewayId: string | ros.IResolvable;
+
+    /**
+     * @Property newOrder: The priority of the access control policy. The priority value starts from 1. A small priority value indicates a high priority.
+     */
+    public newOrder: number | ros.IResolvable;
+
+    /**
+     * @Property proto: The protocol type in the access control policy.Valid values:
+     * ANY: all types of protocols
+     * TCP
+     * UDP
+     * ICMP
+     */
+    public proto: string | ros.IResolvable;
+
+    /**
+     * @Property source: The source address in the access control policy.Valid values:
+     * If SourceType is set to net, the value of Source is a CIDR block.Example: 10.2.4.0\/24
+     * If SourceType is set to group, the value of this parameter must be an address book name.Example: db_group
+     */
+    public source: string | ros.IResolvable;
+
+    /**
+     * @Property sourceType: The type of the source address in the access control policy.Valid values:
+     * net: source CIDR block
+     * group: source address book
+     */
+    public sourceType: string | ros.IResolvable;
+
+    /**
+     * @Property destPort: The destination port in the access control policy. Valid values:
+     * If Proto is set to ICMP, DestPort is automatically left empty.
+     * If Proto is set to TCP, UDP, or ANY and DestPortType is set to group, DestPort is empty.
+     * If Proto is set to TCP, UDP, or ANY and DestPortType is set to port, the value of DestPort is the destination port number.
+     */
+    public destPort: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property destPortGroup: The name of the destination port address book in the access control policy.
+     */
+    public destPortGroup: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property destPortType: The type of the destination port in the access control policy. Valid values:
+     * net: source CIDR block
+     * group: source address book
+     */
+    public destPortType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property domainResolveType: The domain name resolution method of the access control policy. Valid values:
+     * 0: fully qualified domain name (FQDN)-based resolution
+     * 1: Domain Name System (DNS)-based dynamic resolution
+     * 2: FQDN and DNS-based dynamic resolution
+     */
+    public domainResolveType: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property endTime: The time when the access control policy stops taking effect. The value is a UNIX timestamp. Unit: seconds. The value must be on the hour or on the half hour, and at least 30 minutes later than the value of StartTime.
+     */
+    public endTime: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipVersion: The IP version supported by the access control policy. Valid values:
+     * 4: IPv4 (default)
+     */
+    public ipVersion: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property release: Specifies whether to enable the access control policy. By default, an access control policy is enabled after it is created. Valid values:
+     * true
+     * false
+     */
+    public release: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property repeatDays: The days of a week or of a month on which the access control policy takes effect.
+     * If RepeatType is set to Permanent, None, or Daily, RepeatDays is left empty. Example: [].
+     * If RepeatType is set to Weekly, RepeatDays must be specified. Example: [0, 6].
+     * If RepeatType is set to Monthly, RepeatDays must be specified. Example: [1, 31].
+     */
+    public repeatDays: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property repeatEndTime: The point in time when the recurrence ends. Example: 23:30. The value must be on the hour or on the half hour, and at least 30 minutes later than the value of RepeatStartTime.
+     */
+    public repeatEndTime: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property repeatStartTime: The point in time when the recurrence starts. Example: 08:00. The value must be on the hour or on the half hour, and at least 30 minutes earlier than the value of RepeatEndTime.
+     */
+    public repeatStartTime: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property repeatType: The recurrence type for the access control policy to take effect. Valid values:
+     * Permanent (default): The policy always takes effect.
+     * None: The policy takes effect for only once.
+     * Daily: The policy takes effect on a daily basis.
+     * Weekly: The policy takes effect on a weekly basis.
+     * Monthly: The policy takes effect on a monthly basis.
+     */
+    public repeatType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property startTime: The time when the access control policy starts to take effect. The value is a UNIX timestamp. Unit: seconds. The value must be on the hour or on the half hour, and at least 30 minutes earlier than the value of EndTime.
+     */
+    public startTime: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosNatFirewallControlPolicyProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosNatFirewallControlPolicy.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAclUuid = this.getAtt('AclUuid');
+        this.attrDirection = this.getAtt('Direction');
+        this.attrNatGatewayId = this.getAtt('NatGatewayId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.aclAction = props.aclAction;
+        this.applicationNameList = props.applicationNameList;
+        this.description = props.description;
+        this.destination = props.destination;
+        this.destinationType = props.destinationType;
+        this.direction = props.direction;
+        this.natGatewayId = props.natGatewayId;
+        this.newOrder = props.newOrder;
+        this.proto = props.proto;
+        this.source = props.source;
+        this.sourceType = props.sourceType;
+        this.destPort = props.destPort;
+        this.destPortGroup = props.destPortGroup;
+        this.destPortType = props.destPortType;
+        this.domainResolveType = props.domainResolveType;
+        this.endTime = props.endTime;
+        this.ipVersion = props.ipVersion;
+        this.release = props.release;
+        this.repeatDays = props.repeatDays;
+        this.repeatEndTime = props.repeatEndTime;
+        this.repeatStartTime = props.repeatStartTime;
+        this.repeatType = props.repeatType;
+        this.startTime = props.startTime;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            aclAction: this.aclAction,
+            applicationNameList: this.applicationNameList,
+            description: this.description,
+            destination: this.destination,
+            destinationType: this.destinationType,
+            direction: this.direction,
+            natGatewayId: this.natGatewayId,
+            newOrder: this.newOrder,
+            proto: this.proto,
+            source: this.source,
+            sourceType: this.sourceType,
+            destPort: this.destPort,
+            destPortGroup: this.destPortGroup,
+            destPortType: this.destPortType,
+            domainResolveType: this.domainResolveType,
+            endTime: this.endTime,
+            ipVersion: this.ipVersion,
+            release: this.release,
+            repeatDays: this.repeatDays,
+            repeatEndTime: this.repeatEndTime,
+            repeatStartTime: this.repeatStartTime,
+            repeatType: this.repeatType,
+            startTime: this.startTime,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosNatFirewallControlPolicyPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
 
@@ -1614,21 +2178,21 @@ function rosVpcFirewallControlPolicyPropsToRosTemplate(properties: any, enableRe
         RosVpcFirewallControlPolicyPropsValidator(properties).assertSuccess();
     }
     return {
-      AclAction: ros.stringToRosTemplate(properties.aclAction),
-      ApplicationName: ros.stringToRosTemplate(properties.applicationName),
-      Description: ros.stringToRosTemplate(properties.description),
-      Destination: ros.stringToRosTemplate(properties.destination),
-      DestinationType: ros.stringToRosTemplate(properties.destinationType),
-      NewOrder: ros.stringToRosTemplate(properties.newOrder),
-      Proto: ros.stringToRosTemplate(properties.proto),
-      Source: ros.stringToRosTemplate(properties.source),
-      SourceType: ros.stringToRosTemplate(properties.sourceType),
-      VpcFirewallId: ros.stringToRosTemplate(properties.vpcFirewallId),
-      DestPort: ros.stringToRosTemplate(properties.destPort),
-      DestPortGroup: ros.stringToRosTemplate(properties.destPortGroup),
-      DestPortType: ros.stringToRosTemplate(properties.destPortType),
-      Lang: ros.stringToRosTemplate(properties.lang),
-      RegionId: ros.stringToRosTemplate(properties.regionId),
+      'AclAction': ros.stringToRosTemplate(properties.aclAction),
+      'ApplicationName': ros.stringToRosTemplate(properties.applicationName),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Destination': ros.stringToRosTemplate(properties.destination),
+      'DestinationType': ros.stringToRosTemplate(properties.destinationType),
+      'NewOrder': ros.stringToRosTemplate(properties.newOrder),
+      'Proto': ros.stringToRosTemplate(properties.proto),
+      'Source': ros.stringToRosTemplate(properties.source),
+      'SourceType': ros.stringToRosTemplate(properties.sourceType),
+      'VpcFirewallId': ros.stringToRosTemplate(properties.vpcFirewallId),
+      'DestPort': ros.stringToRosTemplate(properties.destPort),
+      'DestPortGroup': ros.stringToRosTemplate(properties.destPortGroup),
+      'DestPortType': ros.stringToRosTemplate(properties.destPortType),
+      'Lang': ros.stringToRosTemplate(properties.lang),
+      'RegionId': ros.stringToRosTemplate(properties.regionId),
     };
 }
 

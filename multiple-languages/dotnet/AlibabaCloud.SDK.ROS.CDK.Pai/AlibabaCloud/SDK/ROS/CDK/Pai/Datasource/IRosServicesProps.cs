@@ -25,6 +25,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pai.Datasource
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+        /// - Never: Never refresh the datasource resource when the stack is updated.
+        /// - Always: Always refresh the datasource resource when the stack is updated.
+        /// Default is Never.
+        /// </remarks>
+        [JsiiProperty(name: "refreshOptions", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? RefreshOptions
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: serviceName: Service Name.
         /// </remarks>
         [JsiiProperty(name: "serviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -54,6 +70,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pai.Datasource
             [JsiiOptional]
             [JsiiProperty(name: "labels", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
             public object? Labels
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+            /// - Never: Never refresh the datasource resource when the stack is updated.
+            /// - Always: Always refresh the datasource resource when the stack is updated.
+            /// Default is Never.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "refreshOptions", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RefreshOptions
             {
                 get => GetInstanceProperty<object?>();
             }

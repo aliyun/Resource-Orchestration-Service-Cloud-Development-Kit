@@ -23,6 +23,14 @@ export interface TriggersProps {
      * Property prefix: Qualified returned trigger names must be prefixed with Prefix. For example, if the Prefix is "a", the returned trigger names should be started with "a".
      */
     readonly prefix?: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -62,6 +70,7 @@ export class Triggers extends ros.Resource {
             functionName: props.functionName,
             serviceName: props.serviceName,
             prefix: props.prefix,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosTriggers;
         this.attrTriggerNames = rosTriggers.attrTriggerNames;

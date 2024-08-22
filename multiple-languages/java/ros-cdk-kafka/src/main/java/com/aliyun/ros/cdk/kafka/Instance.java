@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kafka;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::KAFKA::Instance</code>, which is used to create an ApsaraMQ for Kafka instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:07.499Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:22.100Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kafka.$Module.class, fqn = "@alicloud/ros-cdk-kafka.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -192,6 +192,52 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property deletionForce: Whether delete all topics, consumer groups of the kafka instance and then delete instance.
+         * <p>
+         * Default is false
+         * <p>
+         * @return {@code this}
+         * @param deletionForce Property deletionForce: Whether delete all topics, consumer groups of the kafka instance and then delete instance. This parameter is required.
+         */
+        public Builder deletionForce(final java.lang.Boolean deletionForce) {
+            this.props.deletionForce(deletionForce);
+            return this;
+        }
+        /**
+         * Property deletionForce: Whether delete all topics, consumer groups of the kafka instance and then delete instance.
+         * <p>
+         * Default is false
+         * <p>
+         * @return {@code this}
+         * @param deletionForce Property deletionForce: Whether delete all topics, consumer groups of the kafka instance and then delete instance. This parameter is required.
+         */
+        public Builder deletionForce(final com.aliyun.ros.cdk.core.IResolvable deletionForce) {
+            this.props.deletionForce(deletionForce);
+            return this;
+        }
+
+        /**
+         * Property deployOption: If you want to deploy instance after create at once, the VSwitchId and DeployModule parameters is required.
+         * <p>
+         * @return {@code this}
+         * @param deployOption Property deployOption: If you want to deploy instance after create at once, the VSwitchId and DeployModule parameters is required. This parameter is required.
+         */
+        public Builder deployOption(final com.aliyun.ros.cdk.core.IResolvable deployOption) {
+            this.props.deployOption(deployOption);
+            return this;
+        }
+        /**
+         * Property deployOption: If you want to deploy instance after create at once, the VSwitchId and DeployModule parameters is required.
+         * <p>
+         * @return {@code this}
+         * @param deployOption Property deployOption: If you want to deploy instance after create at once, the VSwitchId and DeployModule parameters is required. This parameter is required.
+         */
+        public Builder deployOption(final com.aliyun.ros.cdk.kafka.RosInstance.DeployOptionProperty deployOption) {
+            this.props.deployOption(deployOption);
+            return this;
+        }
+
+        /**
          * Property diskSize: The size of the disk to be configured for the Message Queue for Apache Kafka instance.
          * <p>
          * @return {@code this}
@@ -238,52 +284,6 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder diskType(final com.aliyun.ros.cdk.core.IResolvable diskType) {
             this.props.diskType(diskType);
-            return this;
-        }
-
-        /**
-         * Property deletionForce: Whether delete all topics, consumer groups of the kafka instance and then delete instance.
-         * <p>
-         * Default is false
-         * <p>
-         * @return {@code this}
-         * @param deletionForce Property deletionForce: Whether delete all topics, consumer groups of the kafka instance and then delete instance. This parameter is required.
-         */
-        public Builder deletionForce(final java.lang.Boolean deletionForce) {
-            this.props.deletionForce(deletionForce);
-            return this;
-        }
-        /**
-         * Property deletionForce: Whether delete all topics, consumer groups of the kafka instance and then delete instance.
-         * <p>
-         * Default is false
-         * <p>
-         * @return {@code this}
-         * @param deletionForce Property deletionForce: Whether delete all topics, consumer groups of the kafka instance and then delete instance. This parameter is required.
-         */
-        public Builder deletionForce(final com.aliyun.ros.cdk.core.IResolvable deletionForce) {
-            this.props.deletionForce(deletionForce);
-            return this;
-        }
-
-        /**
-         * Property deployOption: If you want to deploy instance after create at once, the VSwitchId and DeployModule parameters is required.
-         * <p>
-         * @return {@code this}
-         * @param deployOption Property deployOption: If you want to deploy instance after create at once, the VSwitchId and DeployModule parameters is required. This parameter is required.
-         */
-        public Builder deployOption(final com.aliyun.ros.cdk.core.IResolvable deployOption) {
-            this.props.deployOption(deployOption);
-            return this;
-        }
-        /**
-         * Property deployOption: If you want to deploy instance after create at once, the VSwitchId and DeployModule parameters is required.
-         * <p>
-         * @return {@code this}
-         * @param deployOption Property deployOption: If you want to deploy instance after create at once, the VSwitchId and DeployModule parameters is required. This parameter is required.
-         */
-        public Builder deployOption(final com.aliyun.ros.cdk.kafka.RosInstance.DeployOptionProperty deployOption) {
-            this.props.deployOption(deployOption);
             return this;
         }
 
@@ -432,6 +432,27 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder payType(final com.aliyun.ros.cdk.core.IResolvable payType) {
             this.props.payType(payType);
+            return this;
+        }
+
+        /**
+         * Property serverlessConfig: Serverless instance related settings.
+         * <p>
+         * @return {@code this}
+         * @param serverlessConfig Property serverlessConfig: Serverless instance related settings. This parameter is required.
+         */
+        public Builder serverlessConfig(final com.aliyun.ros.cdk.core.IResolvable serverlessConfig) {
+            this.props.serverlessConfig(serverlessConfig);
+            return this;
+        }
+        /**
+         * Property serverlessConfig: Serverless instance related settings.
+         * <p>
+         * @return {@code this}
+         * @param serverlessConfig Property serverlessConfig: Serverless instance related settings. This parameter is required.
+         */
+        public Builder serverlessConfig(final com.aliyun.ros.cdk.kafka.RosInstance.ServerlessConfigProperty serverlessConfig) {
+            this.props.serverlessConfig(serverlessConfig);
             return this;
         }
 

@@ -46,6 +46,14 @@ export interface SnapshotsProps {
     readonly kmsKeyId?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property resourceGroupId: The ID of the resource group to which the snapshot belongs. If this parameter is specified to query resources, up to 1,000 resources that belong to the specified resource group can be displayed in the response.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -149,6 +157,7 @@ export class Snapshots extends ros.Resource {
             snapshotLinkId: props.snapshotLinkId,
             snapshotIds: props.snapshotIds,
             snapshotName: props.snapshotName,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
             filters: props.filters,
             snapshotType: props.snapshotType,
             sourceDiskType: props.sourceDiskType,

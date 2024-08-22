@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.fc.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-functions
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:10.077Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:25.301Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.datasource.FunctionsProps")
 @software.amazon.jsii.Jsii.Proxy(FunctionsProps.Jsii$Proxy.class)
 public interface FunctionsProps extends software.amazon.jsii.JsiiSerializable {
@@ -32,6 +32,21 @@ public interface FunctionsProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link FunctionsProps}
      */
     static Builder builder() {
@@ -44,6 +59,7 @@ public interface FunctionsProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object serviceName;
         java.lang.Object prefix;
         java.lang.Object qualifier;
+        java.lang.Object refreshOptions;
 
         /**
          * Sets the value of {@link FunctionsProps#getServiceName}
@@ -108,6 +124,40 @@ public interface FunctionsProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link FunctionsProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link FunctionsProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link FunctionsProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -126,6 +176,7 @@ public interface FunctionsProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object serviceName;
         private final java.lang.Object prefix;
         private final java.lang.Object qualifier;
+        private final java.lang.Object refreshOptions;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -136,6 +187,7 @@ public interface FunctionsProps extends software.amazon.jsii.JsiiSerializable {
             this.serviceName = software.amazon.jsii.Kernel.get(this, "serviceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.prefix = software.amazon.jsii.Kernel.get(this, "prefix", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.qualifier = software.amazon.jsii.Kernel.get(this, "qualifier", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -146,6 +198,7 @@ public interface FunctionsProps extends software.amazon.jsii.JsiiSerializable {
             this.serviceName = java.util.Objects.requireNonNull(builder.serviceName, "serviceName is required");
             this.prefix = builder.prefix;
             this.qualifier = builder.qualifier;
+            this.refreshOptions = builder.refreshOptions;
         }
 
         @Override
@@ -164,6 +217,11 @@ public interface FunctionsProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -175,6 +233,9 @@ public interface FunctionsProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getQualifier() != null) {
                 data.set("qualifier", om.valueToTree(this.getQualifier()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -196,7 +257,8 @@ public interface FunctionsProps extends software.amazon.jsii.JsiiSerializable {
 
             if (!serviceName.equals(that.serviceName)) return false;
             if (this.prefix != null ? !this.prefix.equals(that.prefix) : that.prefix != null) return false;
-            return this.qualifier != null ? this.qualifier.equals(that.qualifier) : that.qualifier == null;
+            if (this.qualifier != null ? !this.qualifier.equals(that.qualifier) : that.qualifier != null) return false;
+            return this.refreshOptions != null ? this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions == null;
         }
 
         @Override
@@ -204,6 +266,7 @@ public interface FunctionsProps extends software.amazon.jsii.JsiiSerializable {
             int result = this.serviceName.hashCode();
             result = 31 * result + (this.prefix != null ? this.prefix.hashCode() : 0);
             result = 31 * result + (this.qualifier != null ? this.qualifier.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             return result;
         }
     }

@@ -13,6 +13,14 @@ export interface CustomDomainsProps {
      * Property prefix: Qualified returned custom domain names must be prefixed with Prefix. For example, if the Prefix is "a", the returned custom domain names should be started with "a".
      */
     readonly prefix?: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -50,6 +58,7 @@ export class CustomDomains extends ros.Resource {
 
         const rosCustomDomains = new RosCustomDomains(this, id,  {
             prefix: props.prefix,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosCustomDomains;
         this.attrCustomDomains = rosCustomDomains.attrCustomDomains;

@@ -1,3 +1,5 @@
+@alicloud/ros-cdk-alb.AScript=com.aliyun.ros.cdk.alb.AScript
+@alicloud/ros-cdk-alb.AScriptProps=com.aliyun.ros.cdk.alb.AScriptProps
 @alicloud/ros-cdk-alb.Acl=com.aliyun.ros.cdk.alb.Acl
 @alicloud/ros-cdk-alb.AclAssociation=com.aliyun.ros.cdk.alb.AclAssociation
 @alicloud/ros-cdk-alb.AclAssociationProps=com.aliyun.ros.cdk.alb.AclAssociationProps
@@ -12,6 +14,9 @@
 @alicloud/ros-cdk-alb.ListenerProps=com.aliyun.ros.cdk.alb.ListenerProps
 @alicloud/ros-cdk-alb.LoadBalancer=com.aliyun.ros.cdk.alb.LoadBalancer
 @alicloud/ros-cdk-alb.LoadBalancerProps=com.aliyun.ros.cdk.alb.LoadBalancerProps
+@alicloud/ros-cdk-alb.RosAScript=com.aliyun.ros.cdk.alb.RosAScript
+@alicloud/ros-cdk-alb.RosAScript.ExtAttributesProperty=com.aliyun.ros.cdk.alb.RosAScript$ExtAttributesProperty
+@alicloud/ros-cdk-alb.RosAScriptProps=com.aliyun.ros.cdk.alb.RosAScriptProps
 @alicloud/ros-cdk-alb.RosAcl=com.aliyun.ros.cdk.alb.RosAcl
 @alicloud/ros-cdk-alb.RosAcl.AclEntriesProperty=com.aliyun.ros.cdk.alb.RosAcl$AclEntriesProperty
 @alicloud/ros-cdk-alb.RosAclAssociation=com.aliyun.ros.cdk.alb.RosAclAssociation
@@ -44,6 +49,7 @@
 @alicloud/ros-cdk-alb.RosLoadBalancerProps=com.aliyun.ros.cdk.alb.RosLoadBalancerProps
 @alicloud/ros-cdk-alb.RosRule=com.aliyun.ros.cdk.alb.RosRule
 @alicloud/ros-cdk-alb.RosRule.CookieConfigProperty=com.aliyun.ros.cdk.alb.RosRule$CookieConfigProperty
+@alicloud/ros-cdk-alb.RosRule.CorsConfigProperty=com.aliyun.ros.cdk.alb.RosRule$CorsConfigProperty
 @alicloud/ros-cdk-alb.RosRule.FixedResponseConfigProperty=com.aliyun.ros.cdk.alb.RosRule$FixedResponseConfigProperty
 @alicloud/ros-cdk-alb.RosRule.ForwardGroupConfigProperty=com.aliyun.ros.cdk.alb.RosRule$ForwardGroupConfigProperty
 @alicloud/ros-cdk-alb.RosRule.HeaderConfigProperty=com.aliyun.ros.cdk.alb.RosRule$HeaderConfigProperty
@@ -57,6 +63,8 @@
 @alicloud/ros-cdk-alb.RosRule.QueryStringConfigValuesProperty=com.aliyun.ros.cdk.alb.RosRule$QueryStringConfigValuesProperty
 @alicloud/ros-cdk-alb.RosRule.RedirectConfigProperty=com.aliyun.ros.cdk.alb.RosRule$RedirectConfigProperty
 @alicloud/ros-cdk-alb.RosRule.RemoveHeaderConfigProperty=com.aliyun.ros.cdk.alb.RosRule$RemoveHeaderConfigProperty
+@alicloud/ros-cdk-alb.RosRule.ResponseHeaderConfigProperty=com.aliyun.ros.cdk.alb.RosRule$ResponseHeaderConfigProperty
+@alicloud/ros-cdk-alb.RosRule.ResponseStatusCodeConfigProperty=com.aliyun.ros.cdk.alb.RosRule$ResponseStatusCodeConfigProperty
 @alicloud/ros-cdk-alb.RosRule.RewriteConfigProperty=com.aliyun.ros.cdk.alb.RosRule$RewriteConfigProperty
 @alicloud/ros-cdk-alb.RosRule.RuleActionsProperty=com.aliyun.ros.cdk.alb.RosRule$RuleActionsProperty
 @alicloud/ros-cdk-alb.RosRule.RuleConditionsProperty=com.aliyun.ros.cdk.alb.RosRule$RuleConditionsProperty
@@ -67,6 +75,8 @@
 @alicloud/ros-cdk-alb.RosRule.TrafficMirrorConfigProperty=com.aliyun.ros.cdk.alb.RosRule$TrafficMirrorConfigProperty
 @alicloud/ros-cdk-alb.RosRule.ValuesProperty=com.aliyun.ros.cdk.alb.RosRule$ValuesProperty
 @alicloud/ros-cdk-alb.RosRuleProps=com.aliyun.ros.cdk.alb.RosRuleProps
+@alicloud/ros-cdk-alb.RosSecurityGroupAttachment=com.aliyun.ros.cdk.alb.RosSecurityGroupAttachment
+@alicloud/ros-cdk-alb.RosSecurityGroupAttachmentProps=com.aliyun.ros.cdk.alb.RosSecurityGroupAttachmentProps
 @alicloud/ros-cdk-alb.RosSecurityPolicy=com.aliyun.ros.cdk.alb.RosSecurityPolicy
 @alicloud/ros-cdk-alb.RosSecurityPolicyProps=com.aliyun.ros.cdk.alb.RosSecurityPolicyProps
 @alicloud/ros-cdk-alb.RosServerGroup=com.aliyun.ros.cdk.alb.RosServerGroup
@@ -76,6 +86,8 @@
 @alicloud/ros-cdk-alb.RosServerGroupProps=com.aliyun.ros.cdk.alb.RosServerGroupProps
 @alicloud/ros-cdk-alb.Rule=com.aliyun.ros.cdk.alb.Rule
 @alicloud/ros-cdk-alb.RuleProps=com.aliyun.ros.cdk.alb.RuleProps
+@alicloud/ros-cdk-alb.SecurityGroupAttachment=com.aliyun.ros.cdk.alb.SecurityGroupAttachment
+@alicloud/ros-cdk-alb.SecurityGroupAttachmentProps=com.aliyun.ros.cdk.alb.SecurityGroupAttachmentProps
 @alicloud/ros-cdk-alb.SecurityPolicy=com.aliyun.ros.cdk.alb.SecurityPolicy
 @alicloud/ros-cdk-alb.SecurityPolicyProps=com.aliyun.ros.cdk.alb.SecurityPolicyProps
 @alicloud/ros-cdk-alb.ServerGroup=com.aliyun.ros.cdk.alb.ServerGroup

@@ -10,6 +10,14 @@ export { RosDiskReplicaGroups as DiskReplicaGroupsProperty };
 export interface DiskReplicaGroupsProps {
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property resourceGroupId: The ID of resource group.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -58,6 +66,7 @@ export class DiskReplicaGroups extends ros.Resource {
         const rosDiskReplicaGroups = new RosDiskReplicaGroups(this, id,  {
             site: props.site,
             resourceGroupId: props.resourceGroupId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDiskReplicaGroups;
         this.attrDiskReplicaGroups = rosDiskReplicaGroups.attrDiskReplicaGroups;

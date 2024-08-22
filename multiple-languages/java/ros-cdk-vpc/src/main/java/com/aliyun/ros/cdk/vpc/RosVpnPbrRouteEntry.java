@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::VpnPbrRouteEntry</code>, which is used to create a policy-based route for a VPN gateway.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.777Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:24.851Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosVpnPbrRouteEntry")
 public class RosVpnPbrRouteEntry extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -222,6 +222,24 @@ public class RosVpnPbrRouteEntry extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPriority() {
+        return software.amazon.jsii.Kernel.get(this, "priority", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPriority(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "priority", value);
+    }
+
+    /**
+     */
+    public void setPriority(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "priority", value);
+    }
+
+    /**
      * A fluent builder for {@link com.aliyun.ros.cdk.vpc.RosVpnPbrRouteEntry}.
      */
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.vpc.RosVpnPbrRouteEntry> {
@@ -380,6 +398,23 @@ public class RosVpnPbrRouteEntry extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder overlayMode(final com.aliyun.ros.cdk.core.IResolvable overlayMode) {
             this.props.overlayMode(overlayMode);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param priority This parameter is required.
+         */
+        public Builder priority(final java.lang.Number priority) {
+            this.props.priority(priority);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param priority This parameter is required.
+         */
+        public Builder priority(final com.aliyun.ros.cdk.core.IResolvable priority) {
+            this.props.priority(priority);
             return this;
         }
 

@@ -11,7 +11,7 @@ package com.aliyun.ros.cdk.core;
  * those constructs are deployed before the resources depending ON them are
  * deployed.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:03.962Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:16.991Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.IDependable")
 @software.amazon.jsii.Jsii.Proxy(IDependable.Jsii$Proxy.class)
 public interface IDependable extends software.amazon.jsii.JsiiSerializable {

@@ -471,5 +471,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
                 _resourceGroupId = value;
             }
         }
+
+        /// <remarks>
+        /// <strong>Property</strong>: tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-cen.RosCenBandwidthPackage.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        public AlibabaCloud.SDK.ROS.CDK.Cen.RosCenBandwidthPackage.ITagsProperty[]? Tags
+        {
+            get;
+            set;
+        }
     }
 }

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cen.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-transitrouterroutetables
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:04.837Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:18.274Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.datasource.TransitRouterRouteTablesProps")
 @software.amazon.jsii.Jsii.Proxy(TransitRouterRouteTablesProps.Jsii$Proxy.class)
 public interface TransitRouterRouteTablesProps extends software.amazon.jsii.JsiiSerializable {
@@ -14,6 +14,21 @@ public interface TransitRouterRouteTablesProps extends software.amazon.jsii.Jsii
      * Property transitRouterId: The ID of the Enterprise Edition transit router.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getTransitRouterId();
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
 
     /**
      * Property transitRouterRouteTableIds: The ID of the route table.
@@ -68,6 +83,7 @@ public interface TransitRouterRouteTablesProps extends software.amazon.jsii.Jsii
      */
     public static final class Builder implements software.amazon.jsii.Builder<TransitRouterRouteTablesProps> {
         java.lang.Object transitRouterId;
+        java.lang.Object refreshOptions;
         java.lang.Object transitRouterRouteTableIds;
         java.lang.Object transitRouterRouteTableNames;
         java.lang.Object transitRouterRouteTableStatus;
@@ -90,6 +106,40 @@ public interface TransitRouterRouteTablesProps extends software.amazon.jsii.Jsii
          */
         public Builder transitRouterId(com.aliyun.ros.cdk.core.IResolvable transitRouterId) {
             this.transitRouterId = transitRouterId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TransitRouterRouteTablesProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TransitRouterRouteTablesProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
             return this;
         }
 
@@ -210,6 +260,7 @@ public interface TransitRouterRouteTablesProps extends software.amazon.jsii.Jsii
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TransitRouterRouteTablesProps {
         private final java.lang.Object transitRouterId;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object transitRouterRouteTableIds;
         private final java.lang.Object transitRouterRouteTableNames;
         private final java.lang.Object transitRouterRouteTableStatus;
@@ -222,6 +273,7 @@ public interface TransitRouterRouteTablesProps extends software.amazon.jsii.Jsii
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.transitRouterId = software.amazon.jsii.Kernel.get(this, "transitRouterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.transitRouterRouteTableIds = software.amazon.jsii.Kernel.get(this, "transitRouterRouteTableIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.transitRouterRouteTableNames = software.amazon.jsii.Kernel.get(this, "transitRouterRouteTableNames", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.transitRouterRouteTableStatus = software.amazon.jsii.Kernel.get(this, "transitRouterRouteTableStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -234,6 +286,7 @@ public interface TransitRouterRouteTablesProps extends software.amazon.jsii.Jsii
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.transitRouterId = java.util.Objects.requireNonNull(builder.transitRouterId, "transitRouterId is required");
+            this.refreshOptions = builder.refreshOptions;
             this.transitRouterRouteTableIds = builder.transitRouterRouteTableIds;
             this.transitRouterRouteTableNames = builder.transitRouterRouteTableNames;
             this.transitRouterRouteTableStatus = builder.transitRouterRouteTableStatus;
@@ -243,6 +296,11 @@ public interface TransitRouterRouteTablesProps extends software.amazon.jsii.Jsii
         @Override
         public final java.lang.Object getTransitRouterId() {
             return this.transitRouterId;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -272,6 +330,9 @@ public interface TransitRouterRouteTablesProps extends software.amazon.jsii.Jsii
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
             data.set("transitRouterId", om.valueToTree(this.getTransitRouterId()));
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
+            }
             if (this.getTransitRouterRouteTableIds() != null) {
                 data.set("transitRouterRouteTableIds", om.valueToTree(this.getTransitRouterRouteTableIds()));
             }
@@ -303,6 +364,7 @@ public interface TransitRouterRouteTablesProps extends software.amazon.jsii.Jsii
             TransitRouterRouteTablesProps.Jsii$Proxy that = (TransitRouterRouteTablesProps.Jsii$Proxy) o;
 
             if (!transitRouterId.equals(that.transitRouterId)) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             if (this.transitRouterRouteTableIds != null ? !this.transitRouterRouteTableIds.equals(that.transitRouterRouteTableIds) : that.transitRouterRouteTableIds != null) return false;
             if (this.transitRouterRouteTableNames != null ? !this.transitRouterRouteTableNames.equals(that.transitRouterRouteTableNames) : that.transitRouterRouteTableNames != null) return false;
             if (this.transitRouterRouteTableStatus != null ? !this.transitRouterRouteTableStatus.equals(that.transitRouterRouteTableStatus) : that.transitRouterRouteTableStatus != null) return false;
@@ -312,6 +374,7 @@ public interface TransitRouterRouteTablesProps extends software.amazon.jsii.Jsii
         @Override
         public final int hashCode() {
             int result = this.transitRouterId.hashCode();
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.transitRouterRouteTableIds != null ? this.transitRouterRouteTableIds.hashCode() : 0);
             result = 31 * result + (this.transitRouterRouteTableNames != null ? this.transitRouterRouteTableNames.hashCode() : 0);
             result = 31 * result + (this.transitRouterRouteTableStatus != null ? this.transitRouterRouteTableStatus.hashCode() : 0);

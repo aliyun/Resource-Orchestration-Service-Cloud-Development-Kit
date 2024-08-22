@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-bgpgroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.575Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:24.600Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.BgpGroupProps")
 @software.amazon.jsii.Jsii.Proxy(BgpGroupProps.Jsii$Proxy.class)
 public interface BgpGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -34,6 +34,15 @@ public interface BgpGroupProps extends software.amazon.jsii.JsiiSerializable {
      * It must start with a letter but cannot start with http:// or https://.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return null;
+    }
+
+    /**
+     * Property ipVersion: The IP version of the BGP group.
+     * <p>
+     * Valid values: IPv4 and IPv6.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIpVersion() {
         return null;
     }
 
@@ -67,6 +76,15 @@ public interface BgpGroupProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property routeQuota: The upper limit of the BGP neighbor's route entries.
+     * <p>
+     * Unit: entries, default value: 110.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRouteQuota() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link BgpGroupProps}
      */
     static Builder builder() {
@@ -80,9 +98,11 @@ public interface BgpGroupProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object routerId;
         java.lang.Object authKey;
         java.lang.Object description;
+        java.lang.Object ipVersion;
         java.lang.Object isFakeAsn;
         java.lang.Object localAsn;
         java.lang.Object name;
+        java.lang.Object routeQuota;
 
         /**
          * Sets the value of {@link BgpGroupProps#getPeerAsn}
@@ -169,6 +189,28 @@ public interface BgpGroupProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link BgpGroupProps#getIpVersion}
+         * @param ipVersion Property ipVersion: The IP version of the BGP group.
+         *                  Valid values: IPv4 and IPv6.
+         * @return {@code this}
+         */
+        public Builder ipVersion(java.lang.String ipVersion) {
+            this.ipVersion = ipVersion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link BgpGroupProps#getIpVersion}
+         * @param ipVersion Property ipVersion: The IP version of the BGP group.
+         *                  Valid values: IPv4 and IPv6.
+         * @return {@code this}
+         */
+        public Builder ipVersion(com.aliyun.ros.cdk.core.IResolvable ipVersion) {
+            this.ipVersion = ipVersion;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link BgpGroupProps#getIsFakeAsn}
          * @param isFakeAsn Property isFakeAsn: A router that runs BGP typically belongs to only one AS.
          *                  In some cases, for example,
@@ -241,6 +283,28 @@ public interface BgpGroupProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link BgpGroupProps#getRouteQuota}
+         * @param routeQuota Property routeQuota: The upper limit of the BGP neighbor's route entries.
+         *                   Unit: entries, default value: 110.
+         * @return {@code this}
+         */
+        public Builder routeQuota(java.lang.Number routeQuota) {
+            this.routeQuota = routeQuota;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link BgpGroupProps#getRouteQuota}
+         * @param routeQuota Property routeQuota: The upper limit of the BGP neighbor's route entries.
+         *                   Unit: entries, default value: 110.
+         * @return {@code this}
+         */
+        public Builder routeQuota(com.aliyun.ros.cdk.core.IResolvable routeQuota) {
+            this.routeQuota = routeQuota;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link BgpGroupProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -260,9 +324,11 @@ public interface BgpGroupProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object routerId;
         private final java.lang.Object authKey;
         private final java.lang.Object description;
+        private final java.lang.Object ipVersion;
         private final java.lang.Object isFakeAsn;
         private final java.lang.Object localAsn;
         private final java.lang.Object name;
+        private final java.lang.Object routeQuota;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -274,9 +340,11 @@ public interface BgpGroupProps extends software.amazon.jsii.JsiiSerializable {
             this.routerId = software.amazon.jsii.Kernel.get(this, "routerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.authKey = software.amazon.jsii.Kernel.get(this, "authKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ipVersion = software.amazon.jsii.Kernel.get(this, "ipVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.isFakeAsn = software.amazon.jsii.Kernel.get(this, "isFakeAsn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.localAsn = software.amazon.jsii.Kernel.get(this, "localAsn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.routeQuota = software.amazon.jsii.Kernel.get(this, "routeQuota", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -288,9 +356,11 @@ public interface BgpGroupProps extends software.amazon.jsii.JsiiSerializable {
             this.routerId = java.util.Objects.requireNonNull(builder.routerId, "routerId is required");
             this.authKey = builder.authKey;
             this.description = builder.description;
+            this.ipVersion = builder.ipVersion;
             this.isFakeAsn = builder.isFakeAsn;
             this.localAsn = builder.localAsn;
             this.name = builder.name;
+            this.routeQuota = builder.routeQuota;
         }
 
         @Override
@@ -314,6 +384,11 @@ public interface BgpGroupProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getIpVersion() {
+            return this.ipVersion;
+        }
+
+        @Override
         public final java.lang.Object getIsFakeAsn() {
             return this.isFakeAsn;
         }
@@ -326,6 +401,11 @@ public interface BgpGroupProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getName() {
             return this.name;
+        }
+
+        @Override
+        public final java.lang.Object getRouteQuota() {
+            return this.routeQuota;
         }
 
         @Override
@@ -342,6 +422,9 @@ public interface BgpGroupProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
             }
+            if (this.getIpVersion() != null) {
+                data.set("ipVersion", om.valueToTree(this.getIpVersion()));
+            }
             if (this.getIsFakeAsn() != null) {
                 data.set("isFakeAsn", om.valueToTree(this.getIsFakeAsn()));
             }
@@ -350,6 +433,9 @@ public interface BgpGroupProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getName() != null) {
                 data.set("name", om.valueToTree(this.getName()));
+            }
+            if (this.getRouteQuota() != null) {
+                data.set("routeQuota", om.valueToTree(this.getRouteQuota()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -373,9 +459,11 @@ public interface BgpGroupProps extends software.amazon.jsii.JsiiSerializable {
             if (!routerId.equals(that.routerId)) return false;
             if (this.authKey != null ? !this.authKey.equals(that.authKey) : that.authKey != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
+            if (this.ipVersion != null ? !this.ipVersion.equals(that.ipVersion) : that.ipVersion != null) return false;
             if (this.isFakeAsn != null ? !this.isFakeAsn.equals(that.isFakeAsn) : that.isFakeAsn != null) return false;
             if (this.localAsn != null ? !this.localAsn.equals(that.localAsn) : that.localAsn != null) return false;
-            return this.name != null ? this.name.equals(that.name) : that.name == null;
+            if (this.name != null ? !this.name.equals(that.name) : that.name != null) return false;
+            return this.routeQuota != null ? this.routeQuota.equals(that.routeQuota) : that.routeQuota == null;
         }
 
         @Override
@@ -384,9 +472,11 @@ public interface BgpGroupProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.routerId.hashCode());
             result = 31 * result + (this.authKey != null ? this.authKey.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+            result = 31 * result + (this.ipVersion != null ? this.ipVersion.hashCode() : 0);
             result = 31 * result + (this.isFakeAsn != null ? this.isFakeAsn.hashCode() : 0);
             result = 31 * result + (this.localAsn != null ? this.localAsn.hashCode() : 0);
             result = 31 * result + (this.name != null ? this.name.hashCode() : 0);
+            result = 31 * result + (this.routeQuota != null ? this.routeQuota.hashCode() : 0);
             return result;
         }
     }

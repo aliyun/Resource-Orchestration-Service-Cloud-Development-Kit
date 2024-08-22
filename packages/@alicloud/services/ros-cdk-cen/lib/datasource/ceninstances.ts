@@ -13,6 +13,14 @@ export interface CenInstancesProps {
      * Property filter: Filter value when querying resources
      */
     readonly filter?: Array<RosCenInstances.FilterProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -50,6 +58,7 @@ export class CenInstances extends ros.Resource {
 
         const rosCenInstances = new RosCenInstances(this, id,  {
             filter: props.filter,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosCenInstances;
         this.attrCenIds = rosCenInstances.attrCenIds;

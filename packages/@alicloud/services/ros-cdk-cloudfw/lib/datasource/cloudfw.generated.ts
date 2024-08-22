@@ -23,6 +23,14 @@ export interface RosAddressBooksProps {
      * - **en**: English.
      */
     readonly lang?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -43,6 +51,13 @@ function RosAddressBooksPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('groupType', ros.validateString)(properties.groupType));
     errors.collect(ros.propertyValidator('lang', ros.validateString)(properties.lang));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosAddressBooksProps"');
 }
 
@@ -60,8 +75,9 @@ function rosAddressBooksPropsToRosTemplate(properties: any, enableResourceProper
         RosAddressBooksPropsValidator(properties).assertSuccess();
     }
     return {
-      GroupType: ros.stringToRosTemplate(properties.groupType),
-      Lang: ros.stringToRosTemplate(properties.lang),
+      'GroupType': ros.stringToRosTemplate(properties.groupType),
+      'Lang': ros.stringToRosTemplate(properties.lang),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -106,6 +122,14 @@ export class RosAddressBooks extends ros.RosResource {
     public lang: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -118,6 +142,7 @@ export class RosAddressBooks extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.groupType = props.groupType;
         this.lang = props.lang;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
@@ -125,6 +150,7 @@ export class RosAddressBooks extends ros.RosResource {
         return {
             groupType: this.groupType,
             lang: this.lang,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

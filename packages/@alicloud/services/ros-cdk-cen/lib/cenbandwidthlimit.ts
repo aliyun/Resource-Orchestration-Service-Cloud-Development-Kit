@@ -28,6 +28,11 @@ export interface CenBandwidthLimitProps {
      * Property oppositeRegionId: The ID of the other interconnected region.
      */
     readonly oppositeRegionId: string | ros.IResolvable;
+
+    /**
+     * Property bandwidthType: Bandwidth allocation mode. Value: BandwidthPackage: Allocates bandwidth from the bandwidth package.
+     */
+    readonly bandwidthType?: string | ros.IResolvable;
 }
 
 /**
@@ -54,6 +59,7 @@ export class CenBandwidthLimit extends ros.Resource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCenBandwidthLimit = new RosCenBandwidthLimit(this, id,  {
+            bandwidthType: props.bandwidthType,
             oppositeRegionId: props.oppositeRegionId,
             cenId: props.cenId,
             bandwidthLimit: props.bandwidthLimit,

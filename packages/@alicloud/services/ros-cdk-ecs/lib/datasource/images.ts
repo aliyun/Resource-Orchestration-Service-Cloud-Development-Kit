@@ -83,6 +83,14 @@ export interface ImagesProps {
     readonly osType?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property resourceGroupId: The ID of the resource group to which the custom image belongs. If this parameter is specified to query resources, up to 1,000 resources that belong to the specified resource group can be displayed in the response.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -159,6 +167,7 @@ export class Images extends ros.Resource {
             architecture: props.architecture,
             imageFamily: props.imageFamily,
             isSupportIoOptimized: props.isSupportIoOptimized,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
             isSupportCloudinit: props.isSupportCloudinit,
             imageName: props.imageName,
             snapshotId: props.snapshotId,

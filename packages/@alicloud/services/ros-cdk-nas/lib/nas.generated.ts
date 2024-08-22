@@ -81,10 +81,10 @@ function rosAccessGroupPropsToRosTemplate(properties: any, enableResourcePropert
         RosAccessGroupPropsValidator(properties).assertSuccess();
     }
     return {
-      AccessGroupName: ros.stringToRosTemplate(properties.accessGroupName),
-      AccessGroupType: ros.stringToRosTemplate(properties.accessGroupType),
-      Description: ros.stringToRosTemplate(properties.description),
-      FileSystemType: ros.stringToRosTemplate(properties.fileSystemType),
+      'AccessGroupName': ros.stringToRosTemplate(properties.accessGroupName),
+      'AccessGroupType': ros.stringToRosTemplate(properties.accessGroupType),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'FileSystemType': ros.stringToRosTemplate(properties.fileSystemType),
     };
 }
 
@@ -265,13 +265,13 @@ function rosAccessRulePropsToRosTemplate(properties: any, enableResourceProperty
         RosAccessRulePropsValidator(properties).assertSuccess();
     }
     return {
-      AccessGroupName: ros.stringToRosTemplate(properties.accessGroupName),
-      FileSystemType: ros.stringToRosTemplate(properties.fileSystemType),
-      Ipv6SourceCidrIp: ros.stringToRosTemplate(properties.ipv6SourceCidrIp),
-      Priority: ros.numberToRosTemplate(properties.priority),
-      RWAccessType: ros.stringToRosTemplate(properties.rwAccessType),
-      SourceCidrIp: ros.stringToRosTemplate(properties.sourceCidrIp),
-      UserAccessType: ros.stringToRosTemplate(properties.userAccessType),
+      'AccessGroupName': ros.stringToRosTemplate(properties.accessGroupName),
+      'FileSystemType': ros.stringToRosTemplate(properties.fileSystemType),
+      'Ipv6SourceCidrIp': ros.stringToRosTemplate(properties.ipv6SourceCidrIp),
+      'Priority': ros.numberToRosTemplate(properties.priority),
+      'RWAccessType': ros.stringToRosTemplate(properties.rwAccessType),
+      'SourceCidrIp': ros.stringToRosTemplate(properties.sourceCidrIp),
+      'UserAccessType': ros.stringToRosTemplate(properties.userAccessType),
     };
 }
 
@@ -510,15 +510,15 @@ function rosDataFlowPropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosDataFlowPropsValidator(properties).assertSuccess();
     }
     return {
-      FileSystemId: ros.stringToRosTemplate(properties.fileSystemId),
-      FsetId: ros.stringToRosTemplate(properties.fsetId),
-      SourceStorage: ros.stringToRosTemplate(properties.sourceStorage),
-      Throughput: ros.numberToRosTemplate(properties.throughput),
-      AutoRefreshInterval: ros.numberToRosTemplate(properties.autoRefreshInterval),
-      AutoRefreshPolicy: ros.stringToRosTemplate(properties.autoRefreshPolicy),
-      AutoRefreshs: ros.listMapper(rosDataFlowAutoRefreshsPropertyToRosTemplate)(properties.autoRefreshs),
-      Description: ros.stringToRosTemplate(properties.description),
-      SourceSecurityType: ros.stringToRosTemplate(properties.sourceSecurityType),
+      'FileSystemId': ros.stringToRosTemplate(properties.fileSystemId),
+      'FsetId': ros.stringToRosTemplate(properties.fsetId),
+      'SourceStorage': ros.stringToRosTemplate(properties.sourceStorage),
+      'Throughput': ros.numberToRosTemplate(properties.throughput),
+      'AutoRefreshInterval': ros.numberToRosTemplate(properties.autoRefreshInterval),
+      'AutoRefreshPolicy': ros.stringToRosTemplate(properties.autoRefreshPolicy),
+      'AutoRefreshs': ros.listMapper(rosDataFlowAutoRefreshsPropertyToRosTemplate)(properties.autoRefreshs),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'SourceSecurityType': ros.stringToRosTemplate(properties.sourceSecurityType),
     };
 }
 
@@ -699,7 +699,7 @@ function rosDataFlowAutoRefreshsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosDataFlow_AutoRefreshsPropertyValidator(properties).assertSuccess();
     return {
-      RefreshPath: ros.stringToRosTemplate(properties.refreshPath),
+      'RefreshPath': ros.stringToRosTemplate(properties.refreshPath),
     };
 }
 
@@ -870,21 +870,21 @@ function rosFileSystemPropsToRosTemplate(properties: any, enableResourceProperty
         RosFileSystemPropsValidator(properties).assertSuccess();
     }
     return {
-      ProtocolType: ros.stringToRosTemplate(properties.protocolType),
-      StorageType: ros.stringToRosTemplate(properties.storageType),
-      Bandwidth: ros.numberToRosTemplate(properties.bandwidth),
-      Capacity: ros.numberToRosTemplate(properties.capacity),
-      ChargeType: ros.stringToRosTemplate(properties.chargeType),
-      DeletionForce: ros.booleanToRosTemplate(properties.deletionForce),
-      Description: ros.stringToRosTemplate(properties.description),
-      Duration: ros.numberToRosTemplate(properties.duration),
-      EncryptType: ros.numberToRosTemplate(properties.encryptType),
-      FileSystemType: ros.stringToRosTemplate(properties.fileSystemType),
-      SnapshotId: ros.stringToRosTemplate(properties.snapshotId),
-      Tags: ros.listMapper(rosFileSystemTagsPropertyToRosTemplate)(properties.tags),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      'ProtocolType': ros.stringToRosTemplate(properties.protocolType),
+      'StorageType': ros.stringToRosTemplate(properties.storageType),
+      'Bandwidth': ros.numberToRosTemplate(properties.bandwidth),
+      'Capacity': ros.numberToRosTemplate(properties.capacity),
+      'ChargeType': ros.stringToRosTemplate(properties.chargeType),
+      'DeletionForce': ros.booleanToRosTemplate(properties.deletionForce),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Duration': ros.numberToRosTemplate(properties.duration),
+      'EncryptType': ros.numberToRosTemplate(properties.encryptType),
+      'FileSystemType': ros.stringToRosTemplate(properties.fileSystemType),
+      'SnapshotId': ros.stringToRosTemplate(properties.snapshotId),
+      'Tags': ros.listMapper(rosFileSystemTagsPropertyToRosTemplate)(properties.tags),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
     };
 }
 
@@ -1087,8 +1087,8 @@ function rosFileSystemTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosFileSystem_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -1152,9 +1152,9 @@ function rosFilesetPropsToRosTemplate(properties: any, enableResourcePropertyCon
         RosFilesetPropsValidator(properties).assertSuccess();
     }
     return {
-      FileSystemId: ros.stringToRosTemplate(properties.fileSystemId),
-      FileSystemPath: ros.stringToRosTemplate(properties.fileSystemPath),
-      Description: ros.stringToRosTemplate(properties.description),
+      'FileSystemId': ros.stringToRosTemplate(properties.fileSystemId),
+      'FileSystemPath': ros.stringToRosTemplate(properties.fileSystemPath),
+      'Description': ros.stringToRosTemplate(properties.description),
     };
 }
 
@@ -1338,14 +1338,14 @@ function rosMountTargetPropsToRosTemplate(properties: any, enableResourcePropert
         RosMountTargetPropsValidator(properties).assertSuccess();
     }
     return {
-      AccessGroupName: ros.stringToRosTemplate(properties.accessGroupName),
-      FileSystemId: ros.stringToRosTemplate(properties.fileSystemId),
-      NetworkType: ros.stringToRosTemplate(properties.networkType),
-      EnableIpv6: ros.booleanToRosTemplate(properties.enableIpv6),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
-      Status: ros.stringToRosTemplate(properties.status),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
+      'AccessGroupName': ros.stringToRosTemplate(properties.accessGroupName),
+      'FileSystemId': ros.stringToRosTemplate(properties.fileSystemId),
+      'NetworkType': ros.stringToRosTemplate(properties.networkType),
+      'EnableIpv6': ros.booleanToRosTemplate(properties.enableIpv6),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
+      'Status': ros.stringToRosTemplate(properties.status),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
     };
 }
 
@@ -1552,14 +1552,14 @@ function rosProtocolMountTargetPropsToRosTemplate(properties: any, enableResourc
         RosProtocolMountTargetPropsValidator(properties).assertSuccess();
     }
     return {
-      FileSystemId: ros.stringToRosTemplate(properties.fileSystemId),
-      ProtocolServiceId: ros.stringToRosTemplate(properties.protocolServiceId),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      AccessGroupName: ros.stringToRosTemplate(properties.accessGroupName),
-      Description: ros.stringToRosTemplate(properties.description),
-      FsetId: ros.stringToRosTemplate(properties.fsetId),
-      Path: ros.stringToRosTemplate(properties.path),
+      'FileSystemId': ros.stringToRosTemplate(properties.fileSystemId),
+      'ProtocolServiceId': ros.stringToRosTemplate(properties.protocolServiceId),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'AccessGroupName': ros.stringToRosTemplate(properties.accessGroupName),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'FsetId': ros.stringToRosTemplate(properties.fsetId),
+      'Path': ros.stringToRosTemplate(properties.path),
     };
 }
 
@@ -1796,13 +1796,13 @@ function rosProtocolServicePropsToRosTemplate(properties: any, enableResourcePro
         RosProtocolServicePropsValidator(properties).assertSuccess();
     }
     return {
-      FileSystemId: ros.stringToRosTemplate(properties.fileSystemId),
-      ProtocolSpec: ros.stringToRosTemplate(properties.protocolSpec),
-      ProtocolType: ros.stringToRosTemplate(properties.protocolType),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      Description: ros.stringToRosTemplate(properties.description),
-      Throughput: ros.numberToRosTemplate(properties.throughput),
+      'FileSystemId': ros.stringToRosTemplate(properties.fileSystemId),
+      'ProtocolSpec': ros.stringToRosTemplate(properties.protocolSpec),
+      'ProtocolType': ros.stringToRosTemplate(properties.protocolType),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Throughput': ros.numberToRosTemplate(properties.throughput),
     };
 }
 

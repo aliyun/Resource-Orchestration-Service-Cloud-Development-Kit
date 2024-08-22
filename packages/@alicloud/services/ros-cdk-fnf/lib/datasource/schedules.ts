@@ -18,6 +18,14 @@ export interface SchedulesProps {
      * The name must be 1 to 128 characters in length.
      */
     readonly flowName: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -55,6 +63,7 @@ export class Schedules extends ros.Resource {
 
         const rosSchedules = new RosSchedules(this, id,  {
             flowName: props.flowName,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosSchedules;
         this.attrScheduleNames = rosSchedules.attrScheduleNames;

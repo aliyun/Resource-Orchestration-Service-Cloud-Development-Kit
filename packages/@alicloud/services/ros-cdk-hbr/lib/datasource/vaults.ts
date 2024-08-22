@@ -10,6 +10,14 @@ export { RosVaults as VaultsProperty };
 export interface VaultsProps {
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property vaultId: VaultId.
      */
     readonly vaultId?: string | ros.IResolvable;
@@ -58,6 +66,7 @@ export class Vaults extends ros.Resource {
         const rosVaults = new RosVaults(this, id,  {
             vaultType: props.vaultType,
             vaultId: props.vaultId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosVaults;
         this.attrVaultIds = rosVaults.attrVaultIds;

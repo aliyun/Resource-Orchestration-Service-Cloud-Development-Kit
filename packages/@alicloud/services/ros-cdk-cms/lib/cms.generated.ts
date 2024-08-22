@@ -57,9 +57,9 @@ function rosContactPropsToRosTemplate(properties: any, enableResourcePropertyCon
         RosContactPropsValidator(properties).assertSuccess();
     }
     return {
-      Channels: rosContactChannelsPropertyToRosTemplate(properties.channels),
-      ContactName: ros.stringToRosTemplate(properties.contactName),
-      Describe: ros.stringToRosTemplate(properties.describe),
+      'Channels': rosContactChannelsPropertyToRosTemplate(properties.channels),
+      'ContactName': ros.stringToRosTemplate(properties.contactName),
+      'Describe': ros.stringToRosTemplate(properties.describe),
     };
 }
 
@@ -177,10 +177,10 @@ function rosContactChannelsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosContact_ChannelsPropertyValidator(properties).assertSuccess();
     return {
-      Mail: ros.stringToRosTemplate(properties.mail),
-      AliIM: ros.stringToRosTemplate(properties.aliIm),
-      DingWebHook: ros.stringToRosTemplate(properties.dingWebHook),
-      SMS: ros.stringToRosTemplate(properties.sms),
+      'Mail': ros.stringToRosTemplate(properties.mail),
+      'AliIM': ros.stringToRosTemplate(properties.aliIm),
+      'DingWebHook': ros.stringToRosTemplate(properties.dingWebHook),
+      'SMS': ros.stringToRosTemplate(properties.sms),
     };
 }
 
@@ -246,9 +246,9 @@ function rosContactGroupPropsToRosTemplate(properties: any, enableResourceProper
         RosContactGroupPropsValidator(properties).assertSuccess();
     }
     return {
-      ContactGroupName: ros.stringToRosTemplate(properties.contactGroupName),
-      ContactNames: ros.listMapper(ros.stringToRosTemplate)(properties.contactNames),
-      Describe: ros.stringToRosTemplate(properties.describe),
+      'ContactGroupName': ros.stringToRosTemplate(properties.contactGroupName),
+      'ContactNames': ros.listMapper(ros.stringToRosTemplate)(properties.contactNames),
+      'Describe': ros.stringToRosTemplate(properties.describe),
     };
 }
 
@@ -421,13 +421,13 @@ function rosDynamicTagGroupPropsToRosTemplate(properties: any, enableResourcePro
         RosDynamicTagGroupPropsValidator(properties).assertSuccess();
     }
     return {
-      ContactGroupList: ros.listMapper(ros.stringToRosTemplate)(properties.contactGroupList),
-      TagKey: ros.stringToRosTemplate(properties.tagKey),
-      EnableInstallAgent: ros.booleanToRosTemplate(properties.enableInstallAgent),
-      EnableSubscribeEvent: ros.booleanToRosTemplate(properties.enableSubscribeEvent),
-      MatchExpress: ros.listMapper(rosDynamicTagGroupMatchExpressPropertyToRosTemplate)(properties.matchExpress),
-      MatchExpressFilterRelation: ros.stringToRosTemplate(properties.matchExpressFilterRelation),
-      TemplateIdList: ros.listMapper(ros.stringToRosTemplate)(properties.templateIdList),
+      'ContactGroupList': ros.listMapper(ros.stringToRosTemplate)(properties.contactGroupList),
+      'TagKey': ros.stringToRosTemplate(properties.tagKey),
+      'EnableInstallAgent': ros.booleanToRosTemplate(properties.enableInstallAgent),
+      'EnableSubscribeEvent': ros.booleanToRosTemplate(properties.enableSubscribeEvent),
+      'MatchExpress': ros.listMapper(rosDynamicTagGroupMatchExpressPropertyToRosTemplate)(properties.matchExpress),
+      'MatchExpressFilterRelation': ros.stringToRosTemplate(properties.matchExpressFilterRelation),
+      'TemplateIdList': ros.listMapper(ros.stringToRosTemplate)(properties.templateIdList),
     };
 }
 
@@ -592,8 +592,8 @@ function rosDynamicTagGroupMatchExpressPropertyToRosTemplate(properties: any): a
     if (!ros.canInspect(properties)) { return properties; }
     RosDynamicTagGroup_MatchExpressPropertyValidator(properties).assertSuccess();
     return {
-      TagValue: ros.stringToRosTemplate(properties.tagValue),
-      TagValueMatchFunction: ros.stringToRosTemplate(properties.tagValueMatchFunction),
+      'TagValue': ros.stringToRosTemplate(properties.tagValue),
+      'TagValueMatchFunction': ros.stringToRosTemplate(properties.tagValueMatchFunction),
     };
 }
 
@@ -680,12 +680,12 @@ function rosEventRulePropsToRosTemplate(properties: any, enableResourcePropertyC
         RosEventRulePropsValidator(properties).assertSuccess();
     }
     return {
-      EventPattern: ros.listMapper(rosEventRuleEventPatternPropertyToRosTemplate)(properties.eventPattern),
-      RuleName: ros.stringToRosTemplate(properties.ruleName),
-      Description: ros.stringToRosTemplate(properties.description),
-      EventType: ros.stringToRosTemplate(properties.eventType),
-      GroupId: ros.stringToRosTemplate(properties.groupId),
-      State: ros.stringToRosTemplate(properties.state),
+      'EventPattern': ros.listMapper(rosEventRuleEventPatternPropertyToRosTemplate)(properties.eventPattern),
+      'RuleName': ros.stringToRosTemplate(properties.ruleName),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'EventType': ros.stringToRosTemplate(properties.eventType),
+      'GroupId': ros.stringToRosTemplate(properties.groupId),
+      'State': ros.stringToRosTemplate(properties.state),
     };
 }
 
@@ -834,11 +834,11 @@ function rosEventRuleEventPatternPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosEventRule_EventPatternPropertyValidator(properties).assertSuccess();
     return {
-      NameList: ros.listMapper(ros.objectToRosTemplate)(properties.nameList),
-      LevelList: ros.listMapper(ros.objectToRosTemplate)(properties.levelList),
-      StatusList: ros.listMapper(ros.objectToRosTemplate)(properties.statusList),
-      EventTypeList: ros.listMapper(ros.objectToRosTemplate)(properties.eventTypeList),
-      Product: ros.stringToRosTemplate(properties.product),
+      'NameList': ros.listMapper(ros.objectToRosTemplate)(properties.nameList),
+      'LevelList': ros.listMapper(ros.objectToRosTemplate)(properties.levelList),
+      'StatusList': ros.listMapper(ros.objectToRosTemplate)(properties.statusList),
+      'EventTypeList': ros.listMapper(ros.objectToRosTemplate)(properties.eventTypeList),
+      'Product': ros.stringToRosTemplate(properties.product),
     };
 }
 
@@ -948,12 +948,12 @@ function rosEventRuleTargetsPropsToRosTemplate(properties: any, enableResourcePr
         RosEventRuleTargetsPropsValidator(properties).assertSuccess();
     }
     return {
-      RuleName: ros.stringToRosTemplate(properties.ruleName),
-      ContactParameters: ros.listMapper(rosEventRuleTargetsContactParametersPropertyToRosTemplate)(properties.contactParameters),
-      FcParameters: ros.listMapper(rosEventRuleTargetsFcParametersPropertyToRosTemplate)(properties.fcParameters),
-      MnsParameters: ros.listMapper(rosEventRuleTargetsMnsParametersPropertyToRosTemplate)(properties.mnsParameters),
-      SlsParameters: ros.listMapper(rosEventRuleTargetsSlsParametersPropertyToRosTemplate)(properties.slsParameters),
-      WebhookParameters: ros.listMapper(rosEventRuleTargetsWebhookParametersPropertyToRosTemplate)(properties.webhookParameters),
+      'RuleName': ros.stringToRosTemplate(properties.ruleName),
+      'ContactParameters': ros.listMapper(rosEventRuleTargetsContactParametersPropertyToRosTemplate)(properties.contactParameters),
+      'FcParameters': ros.listMapper(rosEventRuleTargetsFcParametersPropertyToRosTemplate)(properties.fcParameters),
+      'MnsParameters': ros.listMapper(rosEventRuleTargetsMnsParametersPropertyToRosTemplate)(properties.mnsParameters),
+      'SlsParameters': ros.listMapper(rosEventRuleTargetsSlsParametersPropertyToRosTemplate)(properties.slsParameters),
+      'WebhookParameters': ros.listMapper(rosEventRuleTargetsWebhookParametersPropertyToRosTemplate)(properties.webhookParameters),
     };
 }
 
@@ -1048,9 +1048,9 @@ export namespace RosEventRuleTargets {
          */
         readonly level?: string | ros.IResolvable;
         /**
-         * @Property id: The unique ID of the alert contact group notification.
+         * @Property identity: The unique ID of the alert contact group notification.
          */
-        readonly id?: string | ros.IResolvable;
+        readonly identity?: string | ros.IResolvable;
     }
 }
 /**
@@ -1065,7 +1065,7 @@ function RosEventRuleTargets_ContactParametersPropertyValidator(properties: any)
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('contactGroupName', ros.validateString)(properties.contactGroupName));
     errors.collect(ros.propertyValidator('level', ros.validateString)(properties.level));
-    errors.collect(ros.propertyValidator('id', ros.validateString)(properties.id));
+    errors.collect(ros.propertyValidator('identity', ros.validateString)(properties.identity));
     return errors.wrap('supplied properties not correct for "ContactParametersProperty"');
 }
 
@@ -1081,9 +1081,9 @@ function rosEventRuleTargetsContactParametersPropertyToRosTemplate(properties: a
     if (!ros.canInspect(properties)) { return properties; }
     RosEventRuleTargets_ContactParametersPropertyValidator(properties).assertSuccess();
     return {
-      ContactGroupName: ros.stringToRosTemplate(properties.contactGroupName),
-      Level: ros.stringToRosTemplate(properties.level),
-      Id: ros.stringToRosTemplate(properties.id),
+      'ContactGroupName': ros.stringToRosTemplate(properties.contactGroupName),
+      'Level': ros.stringToRosTemplate(properties.level),
+      'Id': ros.stringToRosTemplate(properties.identity),
     };
 }
 
@@ -1105,9 +1105,9 @@ export namespace RosEventRuleTargets {
          */
         readonly region?: string | ros.IResolvable;
         /**
-         * @Property id: The unique ID of the Function Compute notification.
+         * @Property identity: The unique ID of the Function Compute notification.
          */
-        readonly id?: string | ros.IResolvable;
+        readonly identity?: string | ros.IResolvable;
     }
 }
 /**
@@ -1123,7 +1123,7 @@ function RosEventRuleTargets_FcParametersPropertyValidator(properties: any): ros
     errors.collect(ros.propertyValidator('functionName', ros.validateString)(properties.functionName));
     errors.collect(ros.propertyValidator('serviceName', ros.validateString)(properties.serviceName));
     errors.collect(ros.propertyValidator('region', ros.validateString)(properties.region));
-    errors.collect(ros.propertyValidator('id', ros.validateString)(properties.id));
+    errors.collect(ros.propertyValidator('identity', ros.validateString)(properties.identity));
     return errors.wrap('supplied properties not correct for "FcParametersProperty"');
 }
 
@@ -1139,10 +1139,10 @@ function rosEventRuleTargetsFcParametersPropertyToRosTemplate(properties: any): 
     if (!ros.canInspect(properties)) { return properties; }
     RosEventRuleTargets_FcParametersPropertyValidator(properties).assertSuccess();
     return {
-      FunctionName: ros.stringToRosTemplate(properties.functionName),
-      ServiceName: ros.stringToRosTemplate(properties.serviceName),
-      Region: ros.stringToRosTemplate(properties.region),
-      Id: ros.stringToRosTemplate(properties.id),
+      'FunctionName': ros.stringToRosTemplate(properties.functionName),
+      'ServiceName': ros.stringToRosTemplate(properties.serviceName),
+      'Region': ros.stringToRosTemplate(properties.region),
+      'Id': ros.stringToRosTemplate(properties.identity),
     };
 }
 
@@ -1156,13 +1156,13 @@ export namespace RosEventRuleTargets {
          */
         readonly region?: string | ros.IResolvable;
         /**
-         * @Property id: The unique ID of the Message Service (MNS) notification.
-         */
-        readonly id?: string | ros.IResolvable;
-        /**
          * @Property queue: The name of the MNS queue.
          */
         readonly queue?: string | ros.IResolvable;
+        /**
+         * @Property identity: The unique ID of the Message Service (MNS) notification.
+         */
+        readonly identity?: string | ros.IResolvable;
     }
 }
 /**
@@ -1176,8 +1176,8 @@ function RosEventRuleTargets_MnsParametersPropertyValidator(properties: any): ro
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('region', ros.validateString)(properties.region));
-    errors.collect(ros.propertyValidator('id', ros.validateString)(properties.id));
     errors.collect(ros.propertyValidator('queue', ros.validateString)(properties.queue));
+    errors.collect(ros.propertyValidator('identity', ros.validateString)(properties.identity));
     return errors.wrap('supplied properties not correct for "MnsParametersProperty"');
 }
 
@@ -1193,9 +1193,9 @@ function rosEventRuleTargetsMnsParametersPropertyToRosTemplate(properties: any):
     if (!ros.canInspect(properties)) { return properties; }
     RosEventRuleTargets_MnsParametersPropertyValidator(properties).assertSuccess();
     return {
-      Region: ros.stringToRosTemplate(properties.region),
-      Id: ros.stringToRosTemplate(properties.id),
-      Queue: ros.stringToRosTemplate(properties.queue),
+      'Region': ros.stringToRosTemplate(properties.region),
+      'Queue': ros.stringToRosTemplate(properties.queue),
+      'Id': ros.stringToRosTemplate(properties.identity),
     };
 }
 
@@ -1217,9 +1217,9 @@ export namespace RosEventRuleTargets {
          */
         readonly region?: string | ros.IResolvable;
         /**
-         * @Property id: The unique ID of the Log Service notification.
+         * @Property identity: The unique ID of the Log Service notification.
          */
-        readonly id?: string | ros.IResolvable;
+        readonly identity?: string | ros.IResolvable;
     }
 }
 /**
@@ -1235,7 +1235,7 @@ function RosEventRuleTargets_SlsParametersPropertyValidator(properties: any): ro
     errors.collect(ros.propertyValidator('project', ros.validateString)(properties.project));
     errors.collect(ros.propertyValidator('logStore', ros.validateString)(properties.logStore));
     errors.collect(ros.propertyValidator('region', ros.validateString)(properties.region));
-    errors.collect(ros.propertyValidator('id', ros.validateString)(properties.id));
+    errors.collect(ros.propertyValidator('identity', ros.validateString)(properties.identity));
     return errors.wrap('supplied properties not correct for "SlsParametersProperty"');
 }
 
@@ -1251,10 +1251,10 @@ function rosEventRuleTargetsSlsParametersPropertyToRosTemplate(properties: any):
     if (!ros.canInspect(properties)) { return properties; }
     RosEventRuleTargets_SlsParametersPropertyValidator(properties).assertSuccess();
     return {
-      Project: ros.stringToRosTemplate(properties.project),
-      LogStore: ros.stringToRosTemplate(properties.logStore),
-      Region: ros.stringToRosTemplate(properties.region),
-      Id: ros.stringToRosTemplate(properties.id),
+      'Project': ros.stringToRosTemplate(properties.project),
+      'LogStore': ros.stringToRosTemplate(properties.logStore),
+      'Region': ros.stringToRosTemplate(properties.region),
+      'Id': ros.stringToRosTemplate(properties.identity),
     };
 }
 
@@ -1263,10 +1263,6 @@ export namespace RosEventRuleTargets {
      * @stability external
      */
     export interface WebhookParametersProperty {
-        /**
-         * @Property id: The unique ID of the HTTP callback notification.
-         */
-        readonly id?: string | ros.IResolvable;
         /**
          * @Property method: The request method of the HTTP callback. Valid values: GET and POST.
          */
@@ -1279,6 +1275,10 @@ export namespace RosEventRuleTargets {
          * @Property url: The callback URL.
          */
         readonly url?: string | ros.IResolvable;
+        /**
+         * @Property identity: The unique ID of the HTTP callback notification.
+         */
+        readonly identity?: string | ros.IResolvable;
     }
 }
 /**
@@ -1291,10 +1291,10 @@ export namespace RosEventRuleTargets {
 function RosEventRuleTargets_WebhookParametersPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('id', ros.validateString)(properties.id));
     errors.collect(ros.propertyValidator('method', ros.validateString)(properties.method));
     errors.collect(ros.propertyValidator('protocol', ros.validateString)(properties.protocol));
     errors.collect(ros.propertyValidator('url', ros.validateString)(properties.url));
+    errors.collect(ros.propertyValidator('identity', ros.validateString)(properties.identity));
     return errors.wrap('supplied properties not correct for "WebhookParametersProperty"');
 }
 
@@ -1310,10 +1310,10 @@ function rosEventRuleTargetsWebhookParametersPropertyToRosTemplate(properties: a
     if (!ros.canInspect(properties)) { return properties; }
     RosEventRuleTargets_WebhookParametersPropertyValidator(properties).assertSuccess();
     return {
-      Id: ros.stringToRosTemplate(properties.id),
-      Method: ros.stringToRosTemplate(properties.method),
-      Protocol: ros.stringToRosTemplate(properties.protocol),
-      Url: ros.stringToRosTemplate(properties.url),
+      'Method': ros.stringToRosTemplate(properties.method),
+      'Protocol': ros.stringToRosTemplate(properties.protocol),
+      'Url': ros.stringToRosTemplate(properties.url),
+      'Id': ros.stringToRosTemplate(properties.identity),
     };
 }
 
@@ -1493,21 +1493,21 @@ function rosGroupMetricRulePropsToRosTemplate(properties: any, enableResourcePro
         RosGroupMetricRulePropsValidator(properties).assertSuccess();
     }
     return {
-      Category: ros.stringToRosTemplate(properties.category),
-      Escalations: rosGroupMetricRuleEscalationsPropertyToRosTemplate(properties.escalations),
-      GroupId: ros.stringToRosTemplate(properties.groupId),
-      MetricName: ros.stringToRosTemplate(properties.metricName),
-      Namespace: ros.stringToRosTemplate(properties.namespace),
-      RuleId: ros.stringToRosTemplate(properties.ruleId),
-      RuleName: ros.stringToRosTemplate(properties.ruleName),
-      Dimensions: ros.stringToRosTemplate(properties.dimensions),
-      EffectiveInterval: ros.stringToRosTemplate(properties.effectiveInterval),
-      EmailSubject: ros.stringToRosTemplate(properties.emailSubject),
-      Interval: ros.numberToRosTemplate(properties.interval),
-      NoEffectiveInterval: ros.stringToRosTemplate(properties.noEffectiveInterval),
-      Period: ros.numberToRosTemplate(properties.period),
-      SilenceTime: ros.numberToRosTemplate(properties.silenceTime),
-      Webhook: ros.stringToRosTemplate(properties.webhook),
+      'Category': ros.stringToRosTemplate(properties.category),
+      'Escalations': rosGroupMetricRuleEscalationsPropertyToRosTemplate(properties.escalations),
+      'GroupId': ros.stringToRosTemplate(properties.groupId),
+      'MetricName': ros.stringToRosTemplate(properties.metricName),
+      'Namespace': ros.stringToRosTemplate(properties.namespace),
+      'RuleId': ros.stringToRosTemplate(properties.ruleId),
+      'RuleName': ros.stringToRosTemplate(properties.ruleName),
+      'Dimensions': ros.stringToRosTemplate(properties.dimensions),
+      'EffectiveInterval': ros.stringToRosTemplate(properties.effectiveInterval),
+      'EmailSubject': ros.stringToRosTemplate(properties.emailSubject),
+      'Interval': ros.numberToRosTemplate(properties.interval),
+      'NoEffectiveInterval': ros.stringToRosTemplate(properties.noEffectiveInterval),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'SilenceTime': ros.numberToRosTemplate(properties.silenceTime),
+      'Webhook': ros.stringToRosTemplate(properties.webhook),
     };
 }
 
@@ -1764,10 +1764,10 @@ function rosGroupMetricRuleCriticalPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosGroupMetricRule_CriticalPropertyValidator(properties).assertSuccess();
     return {
-      ComparisonOperator: ros.stringToRosTemplate(properties.comparisonOperator),
-      Times: ros.numberToRosTemplate(properties.times),
-      Statistics: ros.stringToRosTemplate(properties.statistics),
-      Threshold: ros.numberToRosTemplate(properties.threshold),
+      'ComparisonOperator': ros.stringToRosTemplate(properties.comparisonOperator),
+      'Times': ros.numberToRosTemplate(properties.times),
+      'Statistics': ros.stringToRosTemplate(properties.statistics),
+      'Threshold': ros.numberToRosTemplate(properties.threshold),
     };
 }
 
@@ -1818,9 +1818,9 @@ function rosGroupMetricRuleEscalationsPropertyToRosTemplate(properties: any): an
     if (!ros.canInspect(properties)) { return properties; }
     RosGroupMetricRule_EscalationsPropertyValidator(properties).assertSuccess();
     return {
-      Critical: rosGroupMetricRuleCriticalPropertyToRosTemplate(properties.critical),
-      Info: rosGroupMetricRuleInfoPropertyToRosTemplate(properties.info),
-      Warn: rosGroupMetricRuleWarnPropertyToRosTemplate(properties.warn),
+      'Critical': rosGroupMetricRuleCriticalPropertyToRosTemplate(properties.critical),
+      'Info': rosGroupMetricRuleInfoPropertyToRosTemplate(properties.info),
+      'Warn': rosGroupMetricRuleWarnPropertyToRosTemplate(properties.warn),
     };
 }
 
@@ -1892,10 +1892,10 @@ function rosGroupMetricRuleInfoPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosGroupMetricRule_InfoPropertyValidator(properties).assertSuccess();
     return {
-      ComparisonOperator: ros.stringToRosTemplate(properties.comparisonOperator),
-      Times: ros.numberToRosTemplate(properties.times),
-      Statistics: ros.stringToRosTemplate(properties.statistics),
-      Threshold: ros.numberToRosTemplate(properties.threshold),
+      'ComparisonOperator': ros.stringToRosTemplate(properties.comparisonOperator),
+      'Times': ros.numberToRosTemplate(properties.times),
+      'Statistics': ros.stringToRosTemplate(properties.statistics),
+      'Threshold': ros.numberToRosTemplate(properties.threshold),
     };
 }
 
@@ -1967,10 +1967,10 @@ function rosGroupMetricRuleWarnPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosGroupMetricRule_WarnPropertyValidator(properties).assertSuccess();
     return {
-      ComparisonOperator: ros.stringToRosTemplate(properties.comparisonOperator),
-      Times: ros.numberToRosTemplate(properties.times),
-      Statistics: ros.stringToRosTemplate(properties.statistics),
-      Threshold: ros.numberToRosTemplate(properties.threshold),
+      'ComparisonOperator': ros.stringToRosTemplate(properties.comparisonOperator),
+      'Times': ros.numberToRosTemplate(properties.times),
+      'Statistics': ros.stringToRosTemplate(properties.statistics),
+      'Threshold': ros.numberToRosTemplate(properties.threshold),
     };
 }
 
@@ -2029,8 +2029,8 @@ function rosMetricRuleTargetsPropsToRosTemplate(properties: any, enableResourceP
         RosMetricRuleTargetsPropsValidator(properties).assertSuccess();
     }
     return {
-      RuleId: ros.stringToRosTemplate(properties.ruleId),
-      Targets: ros.listMapper(rosMetricRuleTargetsTargetsPropertyToRosTemplate)(properties.targets),
+      'RuleId': ros.stringToRosTemplate(properties.ruleId),
+      'Targets': ros.listMapper(rosMetricRuleTargetsTargetsPropertyToRosTemplate)(properties.targets),
     };
 }
 
@@ -2108,10 +2108,6 @@ export namespace RosMetricRuleTargets {
          */
         readonly level?: string | ros.IResolvable;
         /**
-         * @Property id: The ID of the message resource. The ID must be unique in the alert rule.
-         */
-        readonly id: string | ros.IResolvable;
-        /**
          * @Property arn: The resource description in the format of acs:{Service name abbreviation}:{regionId}:{userId}:\/{Message resource type}\/{Resource
      * name}\/message. Example: acs:mns:cn-hangzhou:111:\/queues\/test\/message.
      * {Service name abbreviation}: the abbreviation of the service name. Set this value
@@ -2124,6 +2120,10 @@ export namespace RosMetricRuleTargets {
      * a topic if the type is topics.
          */
         readonly arn: string | ros.IResolvable;
+        /**
+         * @Property identity: The ID of the message resource. The ID must be unique in the alert rule.
+         */
+        readonly identity: string | ros.IResolvable;
     }
 }
 /**
@@ -2137,10 +2137,10 @@ function RosMetricRuleTargets_TargetsPropertyValidator(properties: any): ros.Val
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('level', ros.validateString)(properties.level));
-    errors.collect(ros.propertyValidator('id', ros.requiredValidator)(properties.id));
-    errors.collect(ros.propertyValidator('id', ros.validateString)(properties.id));
     errors.collect(ros.propertyValidator('arn', ros.requiredValidator)(properties.arn));
     errors.collect(ros.propertyValidator('arn', ros.validateString)(properties.arn));
+    errors.collect(ros.propertyValidator('identity', ros.requiredValidator)(properties.identity));
+    errors.collect(ros.propertyValidator('identity', ros.validateString)(properties.identity));
     return errors.wrap('supplied properties not correct for "TargetsProperty"');
 }
 
@@ -2156,9 +2156,9 @@ function rosMetricRuleTargetsTargetsPropertyToRosTemplate(properties: any): any 
     if (!ros.canInspect(properties)) { return properties; }
     RosMetricRuleTargets_TargetsPropertyValidator(properties).assertSuccess();
     return {
-      Level: ros.stringToRosTemplate(properties.level),
-      Id: ros.stringToRosTemplate(properties.id),
-      Arn: ros.stringToRosTemplate(properties.arn),
+      'Level': ros.stringToRosTemplate(properties.level),
+      'Arn': ros.stringToRosTemplate(properties.arn),
+      'Id': ros.stringToRosTemplate(properties.identity),
     };
 }
 
@@ -2236,11 +2236,11 @@ function rosMetricRuleTemplatePropsToRosTemplate(properties: any, enableResource
         RosMetricRuleTemplatePropsValidator(properties).assertSuccess();
     }
     return {
-      Name: ros.stringToRosTemplate(properties.name),
-      AlertTemplates: ros.listMapper(rosMetricRuleTemplateAlertTemplatesPropertyToRosTemplate)(properties.alertTemplates),
-      Description: ros.stringToRosTemplate(properties.description),
-      RestVersion: ros.numberToRosTemplate(properties.restVersion),
-      TemplateId: ros.numberToRosTemplate(properties.templateId),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'AlertTemplates': ros.listMapper(rosMetricRuleTemplateAlertTemplatesPropertyToRosTemplate)(properties.alertTemplates),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'RestVersion': ros.numberToRosTemplate(properties.restVersion),
+      'TemplateId': ros.numberToRosTemplate(properties.templateId),
     };
 }
 
@@ -2439,14 +2439,14 @@ function rosMetricRuleTemplateAlertTemplatesPropertyToRosTemplate(properties: an
     if (!ros.canInspect(properties)) { return properties; }
     RosMetricRuleTemplate_AlertTemplatesPropertyValidator(properties).assertSuccess();
     return {
-      MetricName: ros.stringToRosTemplate(properties.metricName),
-      Category: ros.stringToRosTemplate(properties.category),
-      Escalations: rosMetricRuleTemplateEscalationsPropertyToRosTemplate(properties.escalations),
-      Period: ros.numberToRosTemplate(properties.period),
-      Webhook: ros.stringToRosTemplate(properties.webhook),
-      Namespace: ros.stringToRosTemplate(properties.namespace),
-      RuleName: ros.stringToRosTemplate(properties.ruleName),
-      Selector: ros.stringToRosTemplate(properties.selector),
+      'MetricName': ros.stringToRosTemplate(properties.metricName),
+      'Category': ros.stringToRosTemplate(properties.category),
+      'Escalations': rosMetricRuleTemplateEscalationsPropertyToRosTemplate(properties.escalations),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'Webhook': ros.stringToRosTemplate(properties.webhook),
+      'Namespace': ros.stringToRosTemplate(properties.namespace),
+      'RuleName': ros.stringToRosTemplate(properties.ruleName),
+      'Selector': ros.stringToRosTemplate(properties.selector),
     };
 }
 
@@ -2523,10 +2523,10 @@ function rosMetricRuleTemplateCriticalPropertyToRosTemplate(properties: any): an
     if (!ros.canInspect(properties)) { return properties; }
     RosMetricRuleTemplate_CriticalPropertyValidator(properties).assertSuccess();
     return {
-      ComparisonOperator: ros.stringToRosTemplate(properties.comparisonOperator),
-      Times: ros.numberToRosTemplate(properties.times),
-      Statistics: ros.stringToRosTemplate(properties.statistics),
-      Threshold: ros.stringToRosTemplate(properties.threshold),
+      'ComparisonOperator': ros.stringToRosTemplate(properties.comparisonOperator),
+      'Times': ros.numberToRosTemplate(properties.times),
+      'Statistics': ros.stringToRosTemplate(properties.statistics),
+      'Threshold': ros.stringToRosTemplate(properties.threshold),
     };
 }
 
@@ -2578,9 +2578,9 @@ function rosMetricRuleTemplateEscalationsPropertyToRosTemplate(properties: any):
     if (!ros.canInspect(properties)) { return properties; }
     RosMetricRuleTemplate_EscalationsPropertyValidator(properties).assertSuccess();
     return {
-      Critical: rosMetricRuleTemplateCriticalPropertyToRosTemplate(properties.critical),
-      Info: rosMetricRuleTemplateInfoPropertyToRosTemplate(properties.info),
-      Warn: rosMetricRuleTemplateWarnPropertyToRosTemplate(properties.warn),
+      'Critical': rosMetricRuleTemplateCriticalPropertyToRosTemplate(properties.critical),
+      'Info': rosMetricRuleTemplateInfoPropertyToRosTemplate(properties.info),
+      'Warn': rosMetricRuleTemplateWarnPropertyToRosTemplate(properties.warn),
     };
 }
 
@@ -2657,10 +2657,10 @@ function rosMetricRuleTemplateInfoPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosMetricRuleTemplate_InfoPropertyValidator(properties).assertSuccess();
     return {
-      ComparisonOperator: ros.stringToRosTemplate(properties.comparisonOperator),
-      Times: ros.numberToRosTemplate(properties.times),
-      Statistics: ros.stringToRosTemplate(properties.statistics),
-      Threshold: ros.stringToRosTemplate(properties.threshold),
+      'ComparisonOperator': ros.stringToRosTemplate(properties.comparisonOperator),
+      'Times': ros.numberToRosTemplate(properties.times),
+      'Statistics': ros.stringToRosTemplate(properties.statistics),
+      'Threshold': ros.stringToRosTemplate(properties.threshold),
     };
 }
 
@@ -2737,10 +2737,10 @@ function rosMetricRuleTemplateWarnPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosMetricRuleTemplate_WarnPropertyValidator(properties).assertSuccess();
     return {
-      ComparisonOperator: ros.stringToRosTemplate(properties.comparisonOperator),
-      Times: ros.numberToRosTemplate(properties.times),
-      Statistics: ros.stringToRosTemplate(properties.statistics),
-      Threshold: ros.stringToRosTemplate(properties.threshold),
+      'ComparisonOperator': ros.stringToRosTemplate(properties.comparisonOperator),
+      'Times': ros.numberToRosTemplate(properties.times),
+      'Statistics': ros.stringToRosTemplate(properties.statistics),
+      'Threshold': ros.stringToRosTemplate(properties.threshold),
     };
 }
 
@@ -2792,8 +2792,8 @@ function rosMonitorGroupPropsToRosTemplate(properties: any, enableResourceProper
         RosMonitorGroupPropsValidator(properties).assertSuccess();
     }
     return {
-      GroupName: ros.stringToRosTemplate(properties.groupName),
-      ContactGroups: ros.stringToRosTemplate(properties.contactGroups),
+      'GroupName': ros.stringToRosTemplate(properties.groupName),
+      'ContactGroups': ros.stringToRosTemplate(properties.contactGroups),
     };
 }
 
@@ -2908,8 +2908,8 @@ function rosMonitorGroupInstancesPropsToRosTemplate(properties: any, enableResou
         RosMonitorGroupInstancesPropsValidator(properties).assertSuccess();
     }
     return {
-      GroupId: ros.stringToRosTemplate(properties.groupId),
-      Instances: ros.listMapper(rosMonitorGroupInstancesInstancesPropertyToRosTemplate)(properties.instances),
+      'GroupId': ros.stringToRosTemplate(properties.groupId),
+      'Instances': ros.listMapper(rosMonitorGroupInstancesInstancesPropertyToRosTemplate)(properties.instances),
     };
 }
 
@@ -3059,10 +3059,10 @@ function rosMonitorGroupInstancesInstancesPropertyToRosTemplate(properties: any)
     if (!ros.canInspect(properties)) { return properties; }
     RosMonitorGroupInstances_InstancesPropertyValidator(properties).assertSuccess();
     return {
-      InstanceName: ros.stringToRosTemplate(properties.instanceName),
-      Category: ros.stringToRosTemplate(properties.category),
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
-      RegionId: ros.stringToRosTemplate(properties.regionId),
+      'InstanceName': ros.stringToRosTemplate(properties.instanceName),
+      'Category': ros.stringToRosTemplate(properties.category),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'RegionId': ros.stringToRosTemplate(properties.regionId),
     };
 }
 
@@ -3139,9 +3139,9 @@ function rosMonitoringAgentPropsToRosTemplate(properties: any, enableResourcePro
         RosMonitoringAgentPropsValidator(properties).assertSuccess();
     }
     return {
-      Force: ros.booleanToRosTemplate(properties.force),
-      InstallCommand: ros.stringToRosTemplate(properties.installCommand),
-      InstanceIds: ros.listMapper(ros.objectToRosTemplate)(properties.instanceIds),
+      'Force': ros.booleanToRosTemplate(properties.force),
+      'InstallCommand': ros.stringToRosTemplate(properties.installCommand),
+      'InstanceIds': ros.listMapper(ros.objectToRosTemplate)(properties.instanceIds),
     };
 }
 
@@ -3262,9 +3262,9 @@ function rosMonitoringAgentProcessPropsToRosTemplate(properties: any, enableReso
         RosMonitoringAgentProcessPropsValidator(properties).assertSuccess();
     }
     return {
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
-      ProcessName: ros.stringToRosTemplate(properties.processName),
-      ProcessUser: ros.stringToRosTemplate(properties.processUser),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'ProcessName': ros.stringToRosTemplate(properties.processName),
+      'ProcessUser': ros.stringToRosTemplate(properties.processUser),
     };
 }
 
@@ -3402,9 +3402,9 @@ function rosNamespacePropsToRosTemplate(properties: any, enableResourcePropertyC
         RosNamespacePropsValidator(properties).assertSuccess();
     }
     return {
-      Namespace: ros.stringToRosTemplate(properties.namespace),
-      Description: ros.stringToRosTemplate(properties.description),
-      Specification: ros.stringToRosTemplate(properties.specification),
+      'Namespace': ros.stringToRosTemplate(properties.namespace),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Specification': ros.stringToRosTemplate(properties.specification),
     };
 }
 
@@ -3701,25 +3701,25 @@ function rosResourceMetricRulePropsToRosTemplate(properties: any, enableResource
         RosResourceMetricRulePropsValidator(properties).assertSuccess();
     }
     return {
-      ContactGroups: ros.listMapper(ros.stringToRosTemplate)(properties.contactGroups),
-      Escalations: rosResourceMetricRuleEscalationsPropertyToRosTemplate(properties.escalations),
-      MetricName: ros.stringToRosTemplate(properties.metricName),
-      Namespace: ros.stringToRosTemplate(properties.namespace),
-      Resources: ros.listMapper(ros.anyDictToRosTemplate)(properties.resources),
-      CompositeExpression: rosResourceMetricRuleCompositeExpressionPropertyToRosTemplate(properties.compositeExpression),
-      DeletionForce: ros.booleanToRosTemplate(properties.deletionForce),
-      EffectiveInterval: ros.stringToRosTemplate(properties.effectiveInterval),
-      EmailSubject: ros.stringToRosTemplate(properties.emailSubject),
-      Interval: ros.numberToRosTemplate(properties.interval),
-      Labels: ros.listMapper(rosResourceMetricRuleLabelsPropertyToRosTemplate)(properties.labels),
-      NoDataPolicy: ros.stringToRosTemplate(properties.noDataPolicy),
-      NoEffectiveInterval: ros.stringToRosTemplate(properties.noEffectiveInterval),
-      Period: ros.numberToRosTemplate(properties.period),
-      Prometheus: rosResourceMetricRulePrometheusPropertyToRosTemplate(properties.prometheus),
-      RuleId: ros.stringToRosTemplate(properties.ruleId),
-      RuleName: ros.stringToRosTemplate(properties.ruleName),
-      SilenceTime: ros.numberToRosTemplate(properties.silenceTime),
-      Webhook: ros.stringToRosTemplate(properties.webhook),
+      'ContactGroups': ros.listMapper(ros.stringToRosTemplate)(properties.contactGroups),
+      'Escalations': rosResourceMetricRuleEscalationsPropertyToRosTemplate(properties.escalations),
+      'MetricName': ros.stringToRosTemplate(properties.metricName),
+      'Namespace': ros.stringToRosTemplate(properties.namespace),
+      'Resources': ros.listMapper(ros.anyDictToRosTemplate)(properties.resources),
+      'CompositeExpression': rosResourceMetricRuleCompositeExpressionPropertyToRosTemplate(properties.compositeExpression),
+      'DeletionForce': ros.booleanToRosTemplate(properties.deletionForce),
+      'EffectiveInterval': ros.stringToRosTemplate(properties.effectiveInterval),
+      'EmailSubject': ros.stringToRosTemplate(properties.emailSubject),
+      'Interval': ros.numberToRosTemplate(properties.interval),
+      'Labels': ros.listMapper(rosResourceMetricRuleLabelsPropertyToRosTemplate)(properties.labels),
+      'NoDataPolicy': ros.stringToRosTemplate(properties.noDataPolicy),
+      'NoEffectiveInterval': ros.stringToRosTemplate(properties.noEffectiveInterval),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'Prometheus': rosResourceMetricRulePrometheusPropertyToRosTemplate(properties.prometheus),
+      'RuleId': ros.stringToRosTemplate(properties.ruleId),
+      'RuleName': ros.stringToRosTemplate(properties.ruleName),
+      'SilenceTime': ros.numberToRosTemplate(properties.silenceTime),
+      'Webhook': ros.stringToRosTemplate(properties.webhook),
     };
 }
 
@@ -3965,8 +3965,8 @@ function rosResourceMetricRuleAnnotationsPropertyToRosTemplate(properties: any):
     if (!ros.canInspect(properties)) { return properties; }
     RosResourceMetricRule_AnnotationsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -4050,11 +4050,11 @@ function rosResourceMetricRuleCompositeExpressionPropertyToRosTemplate(propertie
     if (!ros.canInspect(properties)) { return properties; }
     RosResourceMetricRule_CompositeExpressionPropertyValidator(properties).assertSuccess();
     return {
-      Times: ros.numberToRosTemplate(properties.times),
-      ExpressionRaw: ros.stringToRosTemplate(properties.expressionRaw),
-      ExpressionListJoin: ros.stringToRosTemplate(properties.expressionListJoin),
-      Level: ros.stringToRosTemplate(properties.level),
-      ExpressionList: ros.listMapper(rosResourceMetricRuleExpressionListPropertyToRosTemplate)(properties.expressionList),
+      'Times': ros.numberToRosTemplate(properties.times),
+      'ExpressionRaw': ros.stringToRosTemplate(properties.expressionRaw),
+      'ExpressionListJoin': ros.stringToRosTemplate(properties.expressionListJoin),
+      'Level': ros.stringToRosTemplate(properties.level),
+      'ExpressionList': ros.listMapper(rosResourceMetricRuleExpressionListPropertyToRosTemplate)(properties.expressionList),
     };
 }
 
@@ -4141,10 +4141,10 @@ function rosResourceMetricRuleCriticalPropertyToRosTemplate(properties: any): an
     if (!ros.canInspect(properties)) { return properties; }
     RosResourceMetricRule_CriticalPropertyValidator(properties).assertSuccess();
     return {
-      ComparisonOperator: ros.stringToRosTemplate(properties.comparisonOperator),
-      Times: ros.numberToRosTemplate(properties.times),
-      Statistics: ros.stringToRosTemplate(properties.statistics),
-      Threshold: ros.stringToRosTemplate(properties.threshold),
+      'ComparisonOperator': ros.stringToRosTemplate(properties.comparisonOperator),
+      'Times': ros.numberToRosTemplate(properties.times),
+      'Statistics': ros.stringToRosTemplate(properties.statistics),
+      'Threshold': ros.stringToRosTemplate(properties.threshold),
     };
 }
 
@@ -4195,9 +4195,9 @@ function rosResourceMetricRuleEscalationsPropertyToRosTemplate(properties: any):
     if (!ros.canInspect(properties)) { return properties; }
     RosResourceMetricRule_EscalationsPropertyValidator(properties).assertSuccess();
     return {
-      Critical: rosResourceMetricRuleCriticalPropertyToRosTemplate(properties.critical),
-      Info: rosResourceMetricRuleInfoPropertyToRosTemplate(properties.info),
-      Warn: rosResourceMetricRuleWarnPropertyToRosTemplate(properties.warn),
+      'Critical': rosResourceMetricRuleCriticalPropertyToRosTemplate(properties.critical),
+      'Info': rosResourceMetricRuleInfoPropertyToRosTemplate(properties.info),
+      'Warn': rosResourceMetricRuleWarnPropertyToRosTemplate(properties.warn),
     };
 }
 
@@ -4292,11 +4292,11 @@ function rosResourceMetricRuleExpressionListPropertyToRosTemplate(properties: an
     if (!ros.canInspect(properties)) { return properties; }
     RosResourceMetricRule_ExpressionListPropertyValidator(properties).assertSuccess();
     return {
-      MetricName: ros.stringToRosTemplate(properties.metricName),
-      ComparisonOperator: ros.stringToRosTemplate(properties.comparisonOperator),
-      Period: ros.numberToRosTemplate(properties.period),
-      Statistics: ros.stringToRosTemplate(properties.statistics),
-      Threshold: ros.stringToRosTemplate(properties.threshold),
+      'MetricName': ros.stringToRosTemplate(properties.metricName),
+      'ComparisonOperator': ros.stringToRosTemplate(properties.comparisonOperator),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'Statistics': ros.stringToRosTemplate(properties.statistics),
+      'Threshold': ros.stringToRosTemplate(properties.threshold),
     };
 }
 
@@ -4383,10 +4383,10 @@ function rosResourceMetricRuleInfoPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosResourceMetricRule_InfoPropertyValidator(properties).assertSuccess();
     return {
-      ComparisonOperator: ros.stringToRosTemplate(properties.comparisonOperator),
-      Times: ros.numberToRosTemplate(properties.times),
-      Statistics: ros.stringToRosTemplate(properties.statistics),
-      Threshold: ros.stringToRosTemplate(properties.threshold),
+      'ComparisonOperator': ros.stringToRosTemplate(properties.comparisonOperator),
+      'Times': ros.numberToRosTemplate(properties.times),
+      'Statistics': ros.stringToRosTemplate(properties.statistics),
+      'Threshold': ros.stringToRosTemplate(properties.threshold),
     };
 }
 
@@ -4434,8 +4434,8 @@ function rosResourceMetricRuleLabelsPropertyToRosTemplate(properties: any): any 
     if (!ros.canInspect(properties)) { return properties; }
     RosResourceMetricRule_LabelsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -4505,10 +4505,10 @@ function rosResourceMetricRulePrometheusPropertyToRosTemplate(properties: any): 
     if (!ros.canInspect(properties)) { return properties; }
     RosResourceMetricRule_PrometheusPropertyValidator(properties).assertSuccess();
     return {
-      Annotations: ros.listMapper(rosResourceMetricRuleAnnotationsPropertyToRosTemplate)(properties.annotations),
-      PromQL: ros.stringToRosTemplate(properties.promQl),
-      Times: ros.numberToRosTemplate(properties.times),
-      Level: ros.stringToRosTemplate(properties.level),
+      'Annotations': ros.listMapper(rosResourceMetricRuleAnnotationsPropertyToRosTemplate)(properties.annotations),
+      'PromQL': ros.stringToRosTemplate(properties.promQl),
+      'Times': ros.numberToRosTemplate(properties.times),
+      'Level': ros.stringToRosTemplate(properties.level),
     };
 }
 
@@ -4595,10 +4595,10 @@ function rosResourceMetricRuleWarnPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosResourceMetricRule_WarnPropertyValidator(properties).assertSuccess();
     return {
-      ComparisonOperator: ros.stringToRosTemplate(properties.comparisonOperator),
-      Times: ros.numberToRosTemplate(properties.times),
-      Statistics: ros.stringToRosTemplate(properties.statistics),
-      Threshold: ros.stringToRosTemplate(properties.threshold),
+      'ComparisonOperator': ros.stringToRosTemplate(properties.comparisonOperator),
+      'Times': ros.numberToRosTemplate(properties.times),
+      'Statistics': ros.stringToRosTemplate(properties.statistics),
+      'Threshold': ros.stringToRosTemplate(properties.threshold),
     };
 }
 
@@ -4690,13 +4690,13 @@ function rosSiteMonitorPropsToRosTemplate(properties: any, enableResourcePropert
         RosSiteMonitorPropsValidator(properties).assertSuccess();
     }
     return {
-      Address: ros.stringToRosTemplate(properties.address),
-      TaskName: ros.stringToRosTemplate(properties.taskName),
-      TaskType: ros.stringToRosTemplate(properties.taskType),
-      AlertIds: ros.listMapper(ros.stringToRosTemplate)(properties.alertIds),
-      Interval: ros.numberToRosTemplate(properties.interval),
-      IspCities: ros.listMapper(rosSiteMonitorIspCitiesPropertyToRosTemplate)(properties.ispCities),
-      OptionsJson: ros.stringToRosTemplate(properties.optionsJson),
+      'Address': ros.stringToRosTemplate(properties.address),
+      'TaskName': ros.stringToRosTemplate(properties.taskName),
+      'TaskType': ros.stringToRosTemplate(properties.taskType),
+      'AlertIds': ros.listMapper(ros.stringToRosTemplate)(properties.alertIds),
+      'Interval': ros.numberToRosTemplate(properties.interval),
+      'IspCities': ros.listMapper(rosSiteMonitorIspCitiesPropertyToRosTemplate)(properties.ispCities),
+      'OptionsJson': ros.stringToRosTemplate(properties.optionsJson),
     };
 }
 
@@ -4843,8 +4843,8 @@ function rosSiteMonitorIspCitiesPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosSiteMonitor_IspCitiesPropertyValidator(properties).assertSuccess();
     return {
-      Isp: ros.stringToRosTemplate(properties.isp),
-      City: ros.stringToRosTemplate(properties.city),
+      'Isp': ros.stringToRosTemplate(properties.isp),
+      'City': ros.stringToRosTemplate(properties.city),
     };
 }
 
@@ -4902,9 +4902,9 @@ function rosSlsGroupPropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosSlsGroupPropsValidator(properties).assertSuccess();
     }
     return {
-      SlsGroupConfig: ros.listMapper(rosSlsGroupSlsGroupConfigPropertyToRosTemplate)(properties.slsGroupConfig),
-      SlsGroupName: ros.stringToRosTemplate(properties.slsGroupName),
-      SlsGroupDescription: ros.stringToRosTemplate(properties.slsGroupDescription),
+      'SlsGroupConfig': ros.listMapper(rosSlsGroupSlsGroupConfigPropertyToRosTemplate)(properties.slsGroupConfig),
+      'SlsGroupName': ros.stringToRosTemplate(properties.slsGroupName),
+      'SlsGroupDescription': ros.stringToRosTemplate(properties.slsGroupDescription),
     };
 }
 
@@ -5043,9 +5043,9 @@ function rosSlsGroupSlsGroupConfigPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosSlsGroup_SlsGroupConfigPropertyValidator(properties).assertSuccess();
     return {
-      SlsProject: ros.stringToRosTemplate(properties.slsProject),
-      SlsRegion: ros.stringToRosTemplate(properties.slsRegion),
-      SlsUserId: ros.stringToRosTemplate(properties.slsUserId),
-      SlsLogstore: ros.stringToRosTemplate(properties.slsLogstore),
+      'SlsProject': ros.stringToRosTemplate(properties.slsProject),
+      'SlsRegion': ros.stringToRosTemplate(properties.slsRegion),
+      'SlsUserId': ros.stringToRosTemplate(properties.slsUserId),
+      'SlsLogstore': ros.stringToRosTemplate(properties.slsLogstore),
     };
 }

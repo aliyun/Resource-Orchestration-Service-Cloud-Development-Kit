@@ -112,17 +112,17 @@ function rosHostGroupPropsToRosTemplate(properties: any, enableResourcePropertyC
         RosHostGroupPropsValidator(properties).assertSuccess();
     }
     return {
-      Name: ros.stringToRosTemplate(properties.name),
-      OrganizationId: ros.stringToRosTemplate(properties.organizationId),
-      ServiceConnectionId: ros.numberToRosTemplate(properties.serviceConnectionId),
-      AliyunRegion: ros.stringToRosTemplate(properties.aliyunRegion),
-      EcsLabelKey: ros.stringToRosTemplate(properties.ecsLabelKey),
-      EcsLabelValue: ros.stringToRosTemplate(properties.ecsLabelValue),
-      EcsType: ros.stringToRosTemplate(properties.ecsType),
-      EnvId: ros.stringToRosTemplate(properties.envId),
-      MachineInfos: ros.listMapper(rosHostGroupMachineInfosPropertyToRosTemplate)(properties.machineInfos),
-      TagIds: ros.listMapper(ros.stringToRosTemplate)(properties.tagIds),
-      Type: ros.stringToRosTemplate(properties.type),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'OrganizationId': ros.stringToRosTemplate(properties.organizationId),
+      'ServiceConnectionId': ros.numberToRosTemplate(properties.serviceConnectionId),
+      'AliyunRegion': ros.stringToRosTemplate(properties.aliyunRegion),
+      'EcsLabelKey': ros.stringToRosTemplate(properties.ecsLabelKey),
+      'EcsLabelValue': ros.stringToRosTemplate(properties.ecsLabelValue),
+      'EcsType': ros.stringToRosTemplate(properties.ecsType),
+      'EnvId': ros.stringToRosTemplate(properties.envId),
+      'MachineInfos': ros.listMapper(rosHostGroupMachineInfosPropertyToRosTemplate)(properties.machineInfos),
+      'TagIds': ros.listMapper(ros.stringToRosTemplate)(properties.tagIds),
+      'Type': ros.stringToRosTemplate(properties.type),
     };
 }
 
@@ -297,10 +297,10 @@ function rosHostGroupMachineInfosPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosHostGroup_MachineInfosPropertyValidator(properties).assertSuccess();
     return {
-      InstanceName: ros.stringToRosTemplate(properties.instanceName),
-      MachineSn: ros.stringToRosTemplate(properties.machineSn),
-      Ip: ros.stringToRosTemplate(properties.ip),
-      AliyunRegionId: ros.stringToRosTemplate(properties.aliyunRegionId),
+      'InstanceName': ros.stringToRosTemplate(properties.instanceName),
+      'MachineSn': ros.stringToRosTemplate(properties.machineSn),
+      'Ip': ros.stringToRosTemplate(properties.ip),
+      'AliyunRegionId': ros.stringToRosTemplate(properties.aliyunRegionId),
     };
 }
 
@@ -359,9 +359,9 @@ function rosPipelinePropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosPipelinePropsValidator(properties).assertSuccess();
     }
     return {
-      Content: ros.stringToRosTemplate(properties.content),
-      Name: ros.stringToRosTemplate(properties.name),
-      OrganizationId: ros.stringToRosTemplate(properties.organizationId),
+      'Content': ros.stringToRosTemplate(properties.content),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'OrganizationId': ros.stringToRosTemplate(properties.organizationId),
     };
 }
 
@@ -492,10 +492,10 @@ function rosPipelineRelationsPropsToRosTemplate(properties: any, enableResourceP
         RosPipelineRelationsPropsValidator(properties).assertSuccess();
     }
     return {
-      OrganizationId: ros.stringToRosTemplate(properties.organizationId),
-      PipelineId: ros.numberToRosTemplate(properties.pipelineId),
-      RelObjectIds: ros.listMapper(ros.numberToRosTemplate)(properties.relObjectIds),
-      RelObjectType: ros.stringToRosTemplate(properties.relObjectType),
+      'OrganizationId': ros.stringToRosTemplate(properties.organizationId),
+      'PipelineId': ros.numberToRosTemplate(properties.pipelineId),
+      'RelObjectIds': ros.listMapper(ros.numberToRosTemplate)(properties.relObjectIds),
+      'RelObjectType': ros.stringToRosTemplate(properties.relObjectType),
     };
 }
 
@@ -643,11 +643,11 @@ function rosPipelineRunPropsToRosTemplate(properties: any, enableResourcePropert
         RosPipelineRunPropsValidator(properties).assertSuccess();
     }
     return {
-      OrganizationId: ros.stringToRosTemplate(properties.organizationId),
-      PipelineId: ros.numberToRosTemplate(properties.pipelineId),
-      Params: ros.hashMapper(ros.objectToRosTemplate)(properties.params),
-      Sync: ros.booleanToRosTemplate(properties.sync),
-      Timeout: ros.numberToRosTemplate(properties.timeout),
+      'OrganizationId': ros.stringToRosTemplate(properties.organizationId),
+      'PipelineId': ros.numberToRosTemplate(properties.pipelineId),
+      'Params': ros.hashMapper(ros.objectToRosTemplate)(properties.params),
+      'Sync': ros.booleanToRosTemplate(properties.sync),
+      'Timeout': ros.numberToRosTemplate(properties.timeout),
     };
 }
 
@@ -793,10 +793,10 @@ function rosVariableGroupPropsToRosTemplate(properties: any, enableResourcePrope
         RosVariableGroupPropsValidator(properties).assertSuccess();
     }
     return {
-      Name: ros.stringToRosTemplate(properties.name),
-      OrganizationId: ros.stringToRosTemplate(properties.organizationId),
-      Variables: ros.listMapper(rosVariableGroupVariablesPropertyToRosTemplate)(properties.variables),
-      Description: ros.stringToRosTemplate(properties.description),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'OrganizationId': ros.stringToRosTemplate(properties.organizationId),
+      'Variables': ros.listMapper(rosVariableGroupVariablesPropertyToRosTemplate)(properties.variables),
+      'Description': ros.stringToRosTemplate(properties.description),
     };
 }
 
@@ -919,8 +919,8 @@ function rosVariableGroupVariablesPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosVariableGroup_VariablesPropertyValidator(properties).assertSuccess();
     return {
-      isEncrypted: ros.booleanToRosTemplate(properties.isEncrypted),
-      name: ros.stringToRosTemplate(properties.name),
-      value: ros.stringToRosTemplate(properties.value),
+      'isEncrypted': ros.booleanToRosTemplate(properties.isEncrypted),
+      'name': ros.stringToRosTemplate(properties.name),
+      'value': ros.stringToRosTemplate(properties.value),
     };
 }

@@ -85,13 +85,13 @@ function rosTrailPropsToRosTemplate(properties: any, enableResourcePropertyConst
         RosTrailPropsValidator(properties).assertSuccess();
     }
     return {
-      Name: ros.stringToRosTemplate(properties.name),
-      EventRW: ros.stringToRosTemplate(properties.eventRw),
-      OssBucketName: ros.stringToRosTemplate(properties.ossBucketName),
-      OssKeyPrefix: ros.stringToRosTemplate(properties.ossKeyPrefix),
-      RoleName: ros.stringToRosTemplate(properties.roleName),
-      SlsProjectArn: ros.stringToRosTemplate(properties.slsProjectArn),
-      SlsWriteRoleArn: ros.stringToRosTemplate(properties.slsWriteRoleArn),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'EventRW': ros.stringToRosTemplate(properties.eventRw),
+      'OssBucketName': ros.stringToRosTemplate(properties.ossBucketName),
+      'OssKeyPrefix': ros.stringToRosTemplate(properties.ossKeyPrefix),
+      'RoleName': ros.stringToRosTemplate(properties.roleName),
+      'SlsProjectArn': ros.stringToRosTemplate(properties.slsProjectArn),
+      'SlsWriteRoleArn': ros.stringToRosTemplate(properties.slsWriteRoleArn),
     };
 }
 
@@ -233,8 +233,8 @@ function rosTrailLoggingPropsToRosTemplate(properties: any, enableResourceProper
         RosTrailLoggingPropsValidator(properties).assertSuccess();
     }
     return {
-      Enable: ros.booleanToRosTemplate(properties.enable),
-      Name: ros.stringToRosTemplate(properties.name),
+      'Enable': ros.booleanToRosTemplate(properties.enable),
+      'Name': ros.stringToRosTemplate(properties.name),
     };
 }
 

@@ -82,12 +82,12 @@ function rosResourcePackagePropsToRosTemplate(properties: any, enableResourcePro
         RosResourcePackagePropsValidator(properties).assertSuccess();
     }
     return {
-      Duration: ros.numberToRosTemplate(properties.duration),
-      PackageType: ros.stringToRosTemplate(properties.packageType),
-      ProductCode: ros.stringToRosTemplate(properties.productCode),
-      Specification: ros.stringToRosTemplate(properties.specification),
-      EffectiveDate: ros.stringToRosTemplate(properties.effectiveDate),
-      PricingCycle: ros.stringToRosTemplate(properties.pricingCycle),
+      'Duration': ros.numberToRosTemplate(properties.duration),
+      'PackageType': ros.stringToRosTemplate(properties.packageType),
+      'ProductCode': ros.stringToRosTemplate(properties.productCode),
+      'Specification': ros.stringToRosTemplate(properties.specification),
+      'EffectiveDate': ros.stringToRosTemplate(properties.effectiveDate),
+      'PricingCycle': ros.stringToRosTemplate(properties.pricingCycle),
     };
 }
 
@@ -241,9 +241,9 @@ function rosWaitOrderPropsToRosTemplate(properties: any, enableResourcePropertyC
         RosWaitOrderPropsValidator(properties).assertSuccess();
     }
     return {
-      OrderIds: ros.listMapper(ros.objectToRosTemplate)(properties.orderIds),
-      CancelOnDelete: ros.booleanToRosTemplate(properties.cancelOnDelete),
-      WaitForOrderProduced: ros.booleanToRosTemplate(properties.waitForOrderProduced),
+      'OrderIds': ros.listMapper(ros.objectToRosTemplate)(properties.orderIds),
+      'CancelOnDelete': ros.booleanToRosTemplate(properties.cancelOnDelete),
+      'WaitForOrderProduced': ros.booleanToRosTemplate(properties.waitForOrderProduced),
     };
 }
 

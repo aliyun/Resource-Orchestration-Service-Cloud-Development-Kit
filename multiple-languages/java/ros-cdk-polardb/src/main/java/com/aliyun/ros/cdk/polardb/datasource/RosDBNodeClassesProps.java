@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.polardb.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-dbnodeclasses
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:08.533Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:23.188Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.datasource.RosDBNodeClassesProps")
 @software.amazon.jsii.Jsii.Proxy(RosDBNodeClassesProps.Jsii$Proxy.class)
 public interface RosDBNodeClassesProps extends software.amazon.jsii.JsiiSerializable {
@@ -34,6 +34,12 @@ public interface RosDBNodeClassesProps extends software.amazon.jsii.JsiiSerializ
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
         return null;
     }
@@ -52,6 +58,7 @@ public interface RosDBNodeClassesProps extends software.amazon.jsii.JsiiSerializ
         java.lang.Object dbNodeClass;
         java.lang.Object dbType;
         java.lang.Object dbVersion;
+        java.lang.Object refreshOptions;
         java.lang.Object zoneId;
 
         /**
@@ -135,6 +142,26 @@ public interface RosDBNodeClassesProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosDBNodeClassesProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBNodeClassesProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBNodeClassesProps#getZoneId}
          * @param zoneId the value to be set.
          * @return {@code this}
@@ -174,6 +201,7 @@ public interface RosDBNodeClassesProps extends software.amazon.jsii.JsiiSerializ
         private final java.lang.Object dbNodeClass;
         private final java.lang.Object dbType;
         private final java.lang.Object dbVersion;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object zoneId;
 
         /**
@@ -186,6 +214,7 @@ public interface RosDBNodeClassesProps extends software.amazon.jsii.JsiiSerializ
             this.dbNodeClass = software.amazon.jsii.Kernel.get(this, "dbNodeClass", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbType = software.amazon.jsii.Kernel.get(this, "dbType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbVersion = software.amazon.jsii.Kernel.get(this, "dbVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -198,6 +227,7 @@ public interface RosDBNodeClassesProps extends software.amazon.jsii.JsiiSerializ
             this.dbNodeClass = builder.dbNodeClass;
             this.dbType = builder.dbType;
             this.dbVersion = builder.dbVersion;
+            this.refreshOptions = builder.refreshOptions;
             this.zoneId = builder.zoneId;
         }
 
@@ -222,6 +252,11 @@ public interface RosDBNodeClassesProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
+        }
+
+        @Override
         public final java.lang.Object getZoneId() {
             return this.zoneId;
         }
@@ -241,6 +276,9 @@ public interface RosDBNodeClassesProps extends software.amazon.jsii.JsiiSerializ
             }
             if (this.getDbVersion() != null) {
                 data.set("dbVersion", om.valueToTree(this.getDbVersion()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
             if (this.getZoneId() != null) {
                 data.set("zoneId", om.valueToTree(this.getZoneId()));
@@ -267,6 +305,7 @@ public interface RosDBNodeClassesProps extends software.amazon.jsii.JsiiSerializ
             if (this.dbNodeClass != null ? !this.dbNodeClass.equals(that.dbNodeClass) : that.dbNodeClass != null) return false;
             if (this.dbType != null ? !this.dbType.equals(that.dbType) : that.dbType != null) return false;
             if (this.dbVersion != null ? !this.dbVersion.equals(that.dbVersion) : that.dbVersion != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             return this.zoneId != null ? this.zoneId.equals(that.zoneId) : that.zoneId == null;
         }
 
@@ -276,6 +315,7 @@ public interface RosDBNodeClassesProps extends software.amazon.jsii.JsiiSerializ
             result = 31 * result + (this.dbNodeClass != null ? this.dbNodeClass.hashCode() : 0);
             result = 31 * result + (this.dbType != null ? this.dbType.hashCode() : 0);
             result = 31 * result + (this.dbVersion != null ? this.dbVersion.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.zoneId != null ? this.zoneId.hashCode() : 0);
             return result;
         }

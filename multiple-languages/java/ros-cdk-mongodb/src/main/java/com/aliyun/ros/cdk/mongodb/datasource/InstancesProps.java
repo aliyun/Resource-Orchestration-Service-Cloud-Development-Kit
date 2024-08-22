@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.mongodb.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mongodb-instances
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:07.703Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:22.419Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.datasource.InstancesProps")
 @software.amazon.jsii.Jsii.Proxy(InstancesProps.Jsii$Proxy.class)
 public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {
@@ -113,6 +113,21 @@ public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
      * Property replicationFactor: The number of nodes in a replica set instance.
      * <p>
      * Valid values: 3, 5, and 7.
@@ -178,6 +193,7 @@ public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object engineVersion;
         java.lang.Object expired;
         java.lang.Object networkType;
+        java.lang.Object refreshOptions;
         java.lang.Object replicationFactor;
         java.lang.Object resourceGroupId;
         java.util.List<com.aliyun.ros.cdk.mongodb.datasource.RosInstances.TagsProperty> tags;
@@ -434,6 +450,40 @@ public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InstancesProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstancesProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstancesProps#getReplicationFactor}
          * @param replicationFactor Property replicationFactor: The number of nodes in a replica set instance.
          *                          Valid values: 3, 5, and 7.
@@ -574,6 +624,7 @@ public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object engineVersion;
         private final java.lang.Object expired;
         private final java.lang.Object networkType;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object replicationFactor;
         private final java.lang.Object resourceGroupId;
         private final java.util.List<com.aliyun.ros.cdk.mongodb.datasource.RosInstances.TagsProperty> tags;
@@ -597,6 +648,7 @@ public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {
             this.engineVersion = software.amazon.jsii.Kernel.get(this, "engineVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.expired = software.amazon.jsii.Kernel.get(this, "expired", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.replicationFactor = software.amazon.jsii.Kernel.get(this, "replicationFactor", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.mongodb.datasource.RosInstances.TagsProperty.class)));
@@ -621,6 +673,7 @@ public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {
             this.engineVersion = builder.engineVersion;
             this.expired = builder.expired;
             this.networkType = builder.networkType;
+            this.refreshOptions = builder.refreshOptions;
             this.replicationFactor = builder.replicationFactor;
             this.resourceGroupId = builder.resourceGroupId;
             this.tags = (java.util.List<com.aliyun.ros.cdk.mongodb.datasource.RosInstances.TagsProperty>)builder.tags;
@@ -677,6 +730,11 @@ public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getNetworkType() {
             return this.networkType;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -745,6 +803,9 @@ public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getNetworkType() != null) {
                 data.set("networkType", om.valueToTree(this.getNetworkType()));
             }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
+            }
             if (this.getReplicationFactor() != null) {
                 data.set("replicationFactor", om.valueToTree(this.getReplicationFactor()));
             }
@@ -791,6 +852,7 @@ public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {
             if (this.engineVersion != null ? !this.engineVersion.equals(that.engineVersion) : that.engineVersion != null) return false;
             if (this.expired != null ? !this.expired.equals(that.expired) : that.expired != null) return false;
             if (this.networkType != null ? !this.networkType.equals(that.networkType) : that.networkType != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             if (this.replicationFactor != null ? !this.replicationFactor.equals(that.replicationFactor) : that.replicationFactor != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
@@ -811,6 +873,7 @@ public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.engineVersion != null ? this.engineVersion.hashCode() : 0);
             result = 31 * result + (this.expired != null ? this.expired.hashCode() : 0);
             result = 31 * result + (this.networkType != null ? this.networkType.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.replicationFactor != null ? this.replicationFactor.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);

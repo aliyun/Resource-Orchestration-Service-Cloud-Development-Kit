@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cen;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthpackage
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:04.728Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:18.157Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosCenBandwidthPackageProps")
 @software.amazon.jsii.Jsii.Proxy(RosCenBandwidthPackageProps.Jsii$Proxy.class)
 public interface RosCenBandwidthPackageProps extends software.amazon.jsii.JsiiSerializable {
@@ -77,6 +77,12 @@ public interface RosCenBandwidthPackageProps extends software.amazon.jsii.JsiiSe
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.cen.RosCenBandwidthPackage.TagsProperty> getTags() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosCenBandwidthPackageProps}
      */
     static Builder builder() {
@@ -98,6 +104,7 @@ public interface RosCenBandwidthPackageProps extends software.amazon.jsii.JsiiSe
         java.lang.Object period;
         java.lang.Object pricingCycle;
         java.lang.Object resourceGroupId;
+        java.util.List<com.aliyun.ros.cdk.cen.RosCenBandwidthPackage.TagsProperty> tags;
 
         /**
          * Sets the value of {@link RosCenBandwidthPackageProps#getBandwidth}
@@ -340,6 +347,17 @@ public interface RosCenBandwidthPackageProps extends software.amazon.jsii.JsiiSe
         }
 
         /**
+         * Sets the value of {@link RosCenBandwidthPackageProps#getTags}
+         * @param tags the value to be set.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.cen.RosCenBandwidthPackage.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.cen.RosCenBandwidthPackage.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosCenBandwidthPackageProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -367,6 +385,7 @@ public interface RosCenBandwidthPackageProps extends software.amazon.jsii.JsiiSe
         private final java.lang.Object period;
         private final java.lang.Object pricingCycle;
         private final java.lang.Object resourceGroupId;
+        private final java.util.List<com.aliyun.ros.cdk.cen.RosCenBandwidthPackage.TagsProperty> tags;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -386,11 +405,13 @@ public interface RosCenBandwidthPackageProps extends software.amazon.jsii.JsiiSe
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cen.RosCenBandwidthPackage.TagsProperty.class)));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
+        @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.bandwidth = java.util.Objects.requireNonNull(builder.bandwidth, "bandwidth is required");
@@ -405,6 +426,7 @@ public interface RosCenBandwidthPackageProps extends software.amazon.jsii.JsiiSe
             this.period = builder.period;
             this.pricingCycle = builder.pricingCycle;
             this.resourceGroupId = builder.resourceGroupId;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.cen.RosCenBandwidthPackage.TagsProperty>)builder.tags;
         }
 
         @Override
@@ -468,6 +490,11 @@ public interface RosCenBandwidthPackageProps extends software.amazon.jsii.JsiiSe
         }
 
         @Override
+        public final java.util.List<com.aliyun.ros.cdk.cen.RosCenBandwidthPackage.TagsProperty> getTags() {
+            return this.tags;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -503,6 +530,9 @@ public interface RosCenBandwidthPackageProps extends software.amazon.jsii.JsiiSe
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-cen.RosCenBandwidthPackageProps"));
@@ -532,7 +562,8 @@ public interface RosCenBandwidthPackageProps extends software.amazon.jsii.JsiiSe
             if (this.name != null ? !this.name.equals(that.name) : that.name != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
             if (this.pricingCycle != null ? !this.pricingCycle.equals(that.pricingCycle) : that.pricingCycle != null) return false;
-            return this.resourceGroupId != null ? this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId == null;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
+            return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
         @Override
@@ -549,6 +580,7 @@ public interface RosCenBandwidthPackageProps extends software.amazon.jsii.JsiiSe
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
             result = 31 * result + (this.pricingCycle != null ? this.pricingCycle.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }
     }

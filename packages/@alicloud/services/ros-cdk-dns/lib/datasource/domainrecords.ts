@@ -45,6 +45,14 @@ export interface DomainRecordsProps {
     readonly orderBy?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property rrKeyWord: The resource record (RR) keyword based on which the system queries DNS records.
      */
     readonly rrKeyWord?: string | ros.IResolvable;
@@ -116,6 +124,7 @@ export class DomainRecords extends ros.Resource {
             typeKeyWord: props.typeKeyWord,
             lang: props.lang,
             direction: props.direction,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
             groupId: props.groupId,
             line: props.line,
             type: props.type,

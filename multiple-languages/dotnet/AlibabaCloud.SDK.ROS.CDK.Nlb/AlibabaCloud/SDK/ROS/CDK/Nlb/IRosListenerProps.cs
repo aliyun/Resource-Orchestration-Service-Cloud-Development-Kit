@@ -208,6 +208,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: proxyProtocolV2Config: ProxyProtocolV2Config of the listener
+        /// </remarks>
+        [JsiiProperty(name: "proxyProtocolV2Config", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-nlb.RosListener.ProxyProtocolV2ConfigProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ProxyProtocolV2Config
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: secSensorEnabled: Whether to enable the second-level monitoring function
         /// </remarks>
         [JsiiProperty(name: "secSensorEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -423,6 +436,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             [JsiiOptional]
             [JsiiProperty(name: "proxyProtocolEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ProxyProtocolEnabled
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: proxyProtocolV2Config: ProxyProtocolV2Config of the listener
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "proxyProtocolV2Config", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-nlb.RosListener.ProxyProtocolV2ConfigProperty\"}]}}", isOptional: true)]
+            public object? ProxyProtocolV2Config
             {
                 get => GetInstanceProperty<object?>();
             }

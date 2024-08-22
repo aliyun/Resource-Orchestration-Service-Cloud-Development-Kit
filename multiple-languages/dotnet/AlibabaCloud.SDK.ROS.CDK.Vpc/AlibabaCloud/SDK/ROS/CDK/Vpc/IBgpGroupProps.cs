@@ -51,6 +51,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
+        /// <summary>Property ipVersion: The IP version of the BGP group.</summary>
+        /// <remarks>
+        /// Valid values: IPv4 and IPv6.
+        /// </remarks>
+        [JsiiProperty(name: "ipVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? IpVersion
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property isFakeAsn: A router that runs BGP typically belongs to only one AS.</summary>
         /// <remarks>
         /// In some cases, for example,
@@ -87,6 +101,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Name
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property routeQuota: The upper limit of the BGP neighbor's route entries.</summary>
+        /// <remarks>
+        /// Unit: entries, default value: 110.
+        /// </remarks>
+        [JsiiProperty(name: "routeQuota", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? RouteQuota
         {
             get
             {
@@ -139,6 +167,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property ipVersion: The IP version of the BGP group.</summary>
+            /// <remarks>
+            /// Valid values: IPv4 and IPv6.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ipVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IpVersion
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property isFakeAsn: A router that runs BGP typically belongs to only one AS.</summary>
             /// <remarks>
             /// In some cases, for example,
@@ -169,6 +208,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             [JsiiOptional]
             [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Name
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property routeQuota: The upper limit of the BGP neighbor's route entries.</summary>
+            /// <remarks>
+            /// Unit: entries, default value: 110.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "routeQuota", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RouteQuota
             {
                 get => GetInstanceProperty<object?>();
             }

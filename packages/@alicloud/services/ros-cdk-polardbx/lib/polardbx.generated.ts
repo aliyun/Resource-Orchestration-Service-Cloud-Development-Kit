@@ -63,10 +63,10 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
         RosAccountPropsValidator(properties).assertSuccess();
     }
     return {
-      AccountName: ros.stringToRosTemplate(properties.accountName),
-      AccountPassword: ros.stringToRosTemplate(properties.accountPassword),
-      DBInstanceId: ros.stringToRosTemplate(properties.dbInstanceId),
-      AccountDescription: ros.stringToRosTemplate(properties.accountDescription),
+      'AccountName': ros.stringToRosTemplate(properties.accountName),
+      'AccountPassword': ros.stringToRosTemplate(properties.accountPassword),
+      'DBInstanceId': ros.stringToRosTemplate(properties.dbInstanceId),
+      'AccountDescription': ros.stringToRosTemplate(properties.accountDescription),
     };
 }
 
@@ -320,22 +320,22 @@ function rosDBInstancePropsToRosTemplate(properties: any, enableResourceProperty
         RosDBInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      DBNodeClass: ros.stringToRosTemplate(properties.dbNodeClass),
-      DBNodeCount: ros.numberToRosTemplate(properties.dbNodeCount),
-      EngineVersion: ros.stringToRosTemplate(properties.engineVersion),
-      PrimaryZone: ros.stringToRosTemplate(properties.primaryZone),
-      TopologyType: ros.stringToRosTemplate(properties.topologyType),
-      VPCId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
-      DBInstanceDescription: ros.stringToRosTemplate(properties.dbInstanceDescription),
-      PayType: ros.stringToRosTemplate(properties.payType),
-      Period: ros.stringToRosTemplate(properties.period),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      SecondaryZone: ros.stringToRosTemplate(properties.secondaryZone),
-      SecurityIpConfig: rosDBInstanceSecurityIpConfigPropertyToRosTemplate(properties.securityIpConfig),
-      TertiaryZone: ros.stringToRosTemplate(properties.tertiaryZone),
-      UsedTime: ros.numberToRosTemplate(properties.usedTime),
+      'DBNodeClass': ros.stringToRosTemplate(properties.dbNodeClass),
+      'DBNodeCount': ros.numberToRosTemplate(properties.dbNodeCount),
+      'EngineVersion': ros.stringToRosTemplate(properties.engineVersion),
+      'PrimaryZone': ros.stringToRosTemplate(properties.primaryZone),
+      'TopologyType': ros.stringToRosTemplate(properties.topologyType),
+      'VPCId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
+      'DBInstanceDescription': ros.stringToRosTemplate(properties.dbInstanceDescription),
+      'PayType': ros.stringToRosTemplate(properties.payType),
+      'Period': ros.stringToRosTemplate(properties.period),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'SecondaryZone': ros.stringToRosTemplate(properties.secondaryZone),
+      'SecurityIpConfig': rosDBInstanceSecurityIpConfigPropertyToRosTemplate(properties.securityIpConfig),
+      'TertiaryZone': ros.stringToRosTemplate(properties.tertiaryZone),
+      'UsedTime': ros.numberToRosTemplate(properties.usedTime),
     };
 }
 
@@ -558,9 +558,9 @@ function rosDBInstanceSecurityIpConfigPropertyToRosTemplate(properties: any): an
     if (!ros.canInspect(properties)) { return properties; }
     RosDBInstance_SecurityIpConfigPropertyValidator(properties).assertSuccess();
     return {
-      GroupName: ros.stringToRosTemplate(properties.groupName),
-      SecurityIPList: ros.stringToRosTemplate(properties.securityIpList),
-      ModifyMode: ros.stringToRosTemplate(properties.modifyMode),
+      'GroupName': ros.stringToRosTemplate(properties.groupName),
+      'SecurityIPList': ros.stringToRosTemplate(properties.securityIpList),
+      'ModifyMode': ros.stringToRosTemplate(properties.modifyMode),
     };
 }
 
@@ -650,12 +650,12 @@ function rosDatabasePropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosDatabasePropsValidator(properties).assertSuccess();
     }
     return {
-      Accounts: ros.listMapper(rosDatabaseAccountsPropertyToRosTemplate)(properties.accounts),
-      CharacterSetName: ros.stringToRosTemplate(properties.characterSetName),
-      DatabaseName: ros.stringToRosTemplate(properties.databaseName),
-      DBInstanceId: ros.stringToRosTemplate(properties.dbInstanceId),
-      DatabaseDescription: ros.stringToRosTemplate(properties.databaseDescription),
-      Mode: ros.stringToRosTemplate(properties.mode),
+      'Accounts': ros.listMapper(rosDatabaseAccountsPropertyToRosTemplate)(properties.accounts),
+      'CharacterSetName': ros.stringToRosTemplate(properties.characterSetName),
+      'DatabaseName': ros.stringToRosTemplate(properties.databaseName),
+      'DBInstanceId': ros.stringToRosTemplate(properties.dbInstanceId),
+      'DatabaseDescription': ros.stringToRosTemplate(properties.databaseDescription),
+      'Mode': ros.stringToRosTemplate(properties.mode),
     };
 }
 
@@ -822,7 +822,7 @@ function rosDatabaseAccountsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosDatabase_AccountsPropertyValidator(properties).assertSuccess();
     return {
-      AccountPrivilege: ros.stringToRosTemplate(properties.accountPrivilege),
-      AccountName: ros.stringToRosTemplate(properties.accountName),
+      'AccountPrivilege': ros.stringToRosTemplate(properties.accountPrivilege),
+      'AccountName': ros.stringToRosTemplate(properties.accountName),
     };
 }

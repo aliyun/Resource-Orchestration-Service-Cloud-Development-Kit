@@ -37,6 +37,11 @@ export interface EnvironmentProps {
     readonly environmentType: string | ros.IResolvable;
 
     /**
+     * Property deletePromInstance: Cascade delete Prometheus instance. Default value: true.
+     */
+    readonly deletePromInstance?: boolean | ros.IResolvable;
+
+    /**
      * Property feePackage: The payable resource plan. Valid values:
      * If the EnvironmentType parameter is set to CS, set the value to CS_Basic or CS_Pro. Default value: CS_Basic.
      * Otherwise, leave the parameter empty.
@@ -149,6 +154,7 @@ export class Environment extends ros.Resource {
             bindResourceId: props.bindResourceId,
             grafanaWorkspaceId: props.grafanaWorkspaceId,
             prometheusInstanceId: props.prometheusInstanceId,
+            deletePromInstance: props.deletePromInstance === undefined || props.deletePromInstance === null ? true : props.deletePromInstance,
             feePackage: props.feePackage,
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

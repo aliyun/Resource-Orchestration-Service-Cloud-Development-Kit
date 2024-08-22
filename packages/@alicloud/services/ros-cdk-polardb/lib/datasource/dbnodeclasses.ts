@@ -42,6 +42,14 @@ export interface DBNodeClassesProps {
     readonly dbVersion?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property zoneId: The ID of the zone where PolarDB resources that you want to query reside.
      * Note You can call the DescribeRegions operation to query information about zones.
      */
@@ -87,6 +95,7 @@ export class DBNodeClasses extends ros.Resource {
             dbType: props.dbType,
             payType: props.payType === undefined || props.payType === null ? 'Postpaid' : props.payType,
             dbNodeClass: props.dbNodeClass,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDBNodeClasses;
         this.attrDbNodeClassIds = rosDBNodeClasses.attrDbNodeClassIds;

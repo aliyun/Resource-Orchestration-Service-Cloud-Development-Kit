@@ -13,6 +13,14 @@ export interface PrefixListProps {
      * Property prefixListId: The ID of the query Prefix List.
      */
     readonly prefixListId: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -95,6 +103,7 @@ export class PrefixList extends ros.Resource {
 
         const rosPrefixList = new RosPrefixList(this, id,  {
             prefixListId: props.prefixListId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosPrefixList;
         this.attrCreateTime = rosPrefixList.attrCreateTime;

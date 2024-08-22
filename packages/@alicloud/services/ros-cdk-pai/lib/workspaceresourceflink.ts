@@ -54,7 +54,7 @@ export class WorkspaceResourceFlink extends ros.Resource {
     public readonly attrCreateTime: ros.IResolvable;
 
     /**
-     * Attribute GroupName: Resource group name. If you want to obtain a resource group name, see [ListResources](~~ 449143 ~~).
+     * Attribute GroupName: Resource group name. If you want to obtain a resource group name, see [ListResources].
      */
     public readonly attrGroupName: ros.IResolvable;
 

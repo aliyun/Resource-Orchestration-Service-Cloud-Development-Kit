@@ -93,11 +93,11 @@ function rosConsumerGroupPropsToRosTemplate(properties: any, enableResourcePrope
         RosConsumerGroupPropsValidator(properties).assertSuccess();
     }
     return {
-      ConsumeRetryPolicy: rosConsumerGroupConsumeRetryPolicyPropertyToRosTemplate(properties.consumeRetryPolicy),
-      ConsumerGroupId: ros.stringToRosTemplate(properties.consumerGroupId),
-      DeliveryOrderType: ros.stringToRosTemplate(properties.deliveryOrderType),
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
-      Remark: ros.stringToRosTemplate(properties.remark),
+      'ConsumeRetryPolicy': rosConsumerGroupConsumeRetryPolicyPropertyToRosTemplate(properties.consumeRetryPolicy),
+      'ConsumerGroupId': ros.stringToRosTemplate(properties.consumerGroupId),
+      'DeliveryOrderType': ros.stringToRosTemplate(properties.deliveryOrderType),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'Remark': ros.stringToRosTemplate(properties.remark),
     };
 }
 
@@ -248,8 +248,8 @@ function rosConsumerGroupConsumeRetryPolicyPropertyToRosTemplate(properties: any
     if (!ros.canInspect(properties)) { return properties; }
     RosConsumerGroup_ConsumeRetryPolicyPropertyValidator(properties).assertSuccess();
     return {
-      RetryPolicy: ros.stringToRosTemplate(properties.retryPolicy),
-      MaxRetryTimes: ros.numberToRosTemplate(properties.maxRetryTimes),
+      'RetryPolicy': ros.stringToRosTemplate(properties.retryPolicy),
+      'MaxRetryTimes': ros.numberToRosTemplate(properties.maxRetryTimes),
     };
 }
 
@@ -415,19 +415,19 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      InternetInfo: rosInstanceInternetInfoPropertyToRosTemplate(properties.internetInfo),
-      ProductInfo: rosInstanceProductInfoPropertyToRosTemplate(properties.productInfo),
-      SeriesCode: ros.stringToRosTemplate(properties.seriesCode),
-      SubSeriesCode: ros.stringToRosTemplate(properties.subSeriesCode),
-      VpcInfo: rosInstanceVpcInfoPropertyToRosTemplate(properties.vpcInfo),
-      AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
-      AutoRenewPeriod: ros.numberToRosTemplate(properties.autoRenewPeriod),
-      InstanceName: ros.stringToRosTemplate(properties.instanceName),
-      PaymentType: ros.stringToRosTemplate(properties.paymentType),
-      Period: ros.numberToRosTemplate(properties.period),
-      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
-      Remark: ros.stringToRosTemplate(properties.remark),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      'InternetInfo': rosInstanceInternetInfoPropertyToRosTemplate(properties.internetInfo),
+      'ProductInfo': rosInstanceProductInfoPropertyToRosTemplate(properties.productInfo),
+      'SeriesCode': ros.stringToRosTemplate(properties.seriesCode),
+      'SubSeriesCode': ros.stringToRosTemplate(properties.subSeriesCode),
+      'VpcInfo': rosInstanceVpcInfoPropertyToRosTemplate(properties.vpcInfo),
+      'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
+      'AutoRenewPeriod': ros.numberToRosTemplate(properties.autoRenewPeriod),
+      'InstanceName': ros.stringToRosTemplate(properties.instanceName),
+      'PaymentType': ros.stringToRosTemplate(properties.paymentType),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
+      'Remark': ros.stringToRosTemplate(properties.remark),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
     };
 }
 
@@ -645,9 +645,9 @@ function rosInstanceInternetInfoPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosInstance_InternetInfoPropertyValidator(properties).assertSuccess();
     return {
-      IpWhitelist: ros.listMapper(ros.stringToRosTemplate)(properties.ipWhitelist),
-      InternetSpec: ros.stringToRosTemplate(properties.internetSpec),
-      FlowOutBandwidth: ros.numberToRosTemplate(properties.flowOutBandwidth),
+      'IpWhitelist': ros.listMapper(ros.stringToRosTemplate)(properties.ipWhitelist),
+      'InternetSpec': ros.stringToRosTemplate(properties.internetSpec),
+      'FlowOutBandwidth': ros.numberToRosTemplate(properties.flowOutBandwidth),
     };
 }
 
@@ -712,10 +712,10 @@ function rosInstanceProductInfoPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosInstance_ProductInfoPropertyValidator(properties).assertSuccess();
     return {
-      SendReceiveRatio: ros.numberToRosTemplate(properties.sendReceiveRatio),
-      MessageRetentionTime: ros.numberToRosTemplate(properties.messageRetentionTime),
-      AutoScaling: ros.booleanToRosTemplate(properties.autoScaling),
-      MsgProcessSpec: ros.stringToRosTemplate(properties.msgProcessSpec),
+      'SendReceiveRatio': ros.numberToRosTemplate(properties.sendReceiveRatio),
+      'MessageRetentionTime': ros.numberToRosTemplate(properties.messageRetentionTime),
+      'AutoScaling': ros.booleanToRosTemplate(properties.autoScaling),
+      'MsgProcessSpec': ros.stringToRosTemplate(properties.msgProcessSpec),
     };
 }
 
@@ -780,10 +780,10 @@ function rosInstanceVpcInfoPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosInstance_VpcInfoPropertyValidator(properties).assertSuccess();
     return {
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitchIds: ros.listMapper(ros.stringToRosTemplate)(properties.vSwitchIds),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchIds': ros.listMapper(ros.stringToRosTemplate)(properties.vSwitchIds),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
     };
 }
 
@@ -875,10 +875,10 @@ function rosTopicPropsToRosTemplate(properties: any, enableResourcePropertyConst
         RosTopicPropsValidator(properties).assertSuccess();
     }
     return {
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
-      MessageType: ros.stringToRosTemplate(properties.messageType),
-      TopicName: ros.stringToRosTemplate(properties.topicName),
-      Remark: ros.stringToRosTemplate(properties.remark),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'MessageType': ros.stringToRosTemplate(properties.messageType),
+      'TopicName': ros.stringToRosTemplate(properties.topicName),
+      'Remark': ros.stringToRosTemplate(properties.remark),
     };
 }
 

@@ -1,6 +1,6 @@
 package com.aliyun.ros.cdk.core;
 
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:04.073Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:17.090Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.StringSpecializer")
 public class StringSpecializer extends software.amazon.jsii.JsiiObject {
 
@@ -20,20 +20,20 @@ public class StringSpecializer extends software.amazon.jsii.JsiiObject {
     /**
      * Validate that the given string does not contain tokens.
      * <p>
-     * @param s This parameter is required.
+     * @param str This parameter is required.
      * @param what This parameter is required.
      */
-    public static void validateNoTokens(final @org.jetbrains.annotations.NotNull java.lang.String s, final @org.jetbrains.annotations.NotNull java.lang.String what) {
-        software.amazon.jsii.JsiiObject.jsiiStaticCall(com.aliyun.ros.cdk.core.StringSpecializer.class, "validateNoTokens", software.amazon.jsii.NativeType.VOID, new Object[] { java.util.Objects.requireNonNull(s, "s is required"), java.util.Objects.requireNonNull(what, "what is required") });
+    public static void validateNoTokens(final @org.jetbrains.annotations.NotNull java.lang.String str, final @org.jetbrains.annotations.NotNull java.lang.String what) {
+        software.amazon.jsii.JsiiObject.jsiiStaticCall(com.aliyun.ros.cdk.core.StringSpecializer.class, "validateNoTokens", software.amazon.jsii.NativeType.VOID, new Object[] { java.util.Objects.requireNonNull(str, "str is required"), java.util.Objects.requireNonNull(what, "what is required") });
     }
 
     /**
      * Specialize only the qualifier.
      * <p>
-     * @param s This parameter is required.
+     * @param str This parameter is required.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String qualifierOnly(final @org.jetbrains.annotations.NotNull java.lang.String s) {
-        return software.amazon.jsii.Kernel.call(this, "qualifierOnly", software.amazon.jsii.NativeType.forClass(java.lang.String.class), new Object[] { java.util.Objects.requireNonNull(s, "s is required") });
+    public @org.jetbrains.annotations.NotNull java.lang.String qualifierOnly(final @org.jetbrains.annotations.NotNull java.lang.String str) {
+        return software.amazon.jsii.Kernel.call(this, "qualifierOnly", software.amazon.jsii.NativeType.forClass(java.lang.String.class), new Object[] { java.util.Objects.requireNonNull(str, "str is required") });
     }
 
     /**
@@ -46,19 +46,19 @@ public class StringSpecializer extends software.amazon.jsii.JsiiObject {
      * <li>${ALIYUN::AccountId}, ${ALIYUN::Region}: only if we have the actual values available</li>
      * </ul>
      * <p>
-     * @param s This parameter is required.
+     * @param str This parameter is required.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String specialize(final @org.jetbrains.annotations.NotNull java.lang.String s) {
-        return software.amazon.jsii.Kernel.call(this, "specialize", software.amazon.jsii.NativeType.forClass(java.lang.String.class), new Object[] { java.util.Objects.requireNonNull(s, "s is required") });
+    public @org.jetbrains.annotations.NotNull java.lang.String specialize(final @org.jetbrains.annotations.NotNull java.lang.String str) {
+        return software.amazon.jsii.Kernel.call(this, "specialize", software.amazon.jsii.NativeType.forClass(java.lang.String.class), new Object[] { java.util.Objects.requireNonNull(str, "str is required") });
     }
 
     /**
      * Specialize the given string, make sure it doesn't contain tokens.
      * <p>
-     * @param s This parameter is required.
+     * @param str This parameter is required.
      * @param what This parameter is required.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String specializeNoTokens(final @org.jetbrains.annotations.NotNull java.lang.String s, final @org.jetbrains.annotations.NotNull java.lang.String what) {
-        return software.amazon.jsii.Kernel.call(this, "specializeNoTokens", software.amazon.jsii.NativeType.forClass(java.lang.String.class), new Object[] { java.util.Objects.requireNonNull(s, "s is required"), java.util.Objects.requireNonNull(what, "what is required") });
+    public @org.jetbrains.annotations.NotNull java.lang.String specializeNoTokens(final @org.jetbrains.annotations.NotNull java.lang.String str, final @org.jetbrains.annotations.NotNull java.lang.String what) {
+        return software.amazon.jsii.Kernel.call(this, "specializeNoTokens", software.amazon.jsii.NativeType.forClass(java.lang.String.class), new Object[] { java.util.Objects.requireNonNull(str, "str is required"), java.util.Objects.requireNonNull(what, "what is required") });
     }
 }

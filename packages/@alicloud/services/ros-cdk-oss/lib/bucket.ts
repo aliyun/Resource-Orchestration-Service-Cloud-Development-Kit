@@ -141,9 +141,9 @@ export interface BucketProps {
     readonly versioningConfiguration?: RosBucket.VersioningConfigurationProperty | ros.IResolvable;
 
     /**
-     * Property websiteConfiguration: The properties of website config.
+     * Property websiteConfigurationV2: Website configuration.
      */
-    readonly websiteConfiguration?: RosBucket.WebsiteConfigurationProperty | ros.IResolvable;
+    readonly websiteConfigurationV2?: RosBucket.WebsiteConfigurationV2Property | ros.IResolvable;
 }
 
 /**
@@ -190,7 +190,6 @@ export class Bucket extends ros.Resource {
             resourceGroupId: props.resourceGroupId,
             storageClass: props.storageClass,
             redundancyType: props.redundancyType === undefined || props.redundancyType === null ? 'LRS' : props.redundancyType,
-            websiteConfiguration: props.websiteConfiguration,
             lifecycleConfiguration: props.lifecycleConfiguration,
             serverSideEncryptionConfiguration: props.serverSideEncryptionConfiguration,
             versioningConfiguration: props.versioningConfiguration,
@@ -199,6 +198,7 @@ export class Bucket extends ros.Resource {
             bucketName: props.bucketName,
             deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
             loggingConfiguration: props.loggingConfiguration,
+            websiteConfigurationV2: props.websiteConfigurationV2,
             refererConfiguration: props.refererConfiguration,
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

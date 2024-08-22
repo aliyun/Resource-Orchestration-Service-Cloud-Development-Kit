@@ -127,14 +127,14 @@ function rosProjectPropsToRosTemplate(properties: any, enableResourcePropertyCon
         RosProjectPropsValidator(properties).assertSuccess();
     }
     return {
-      ProjectIdentifier: ros.stringToRosTemplate(properties.projectIdentifier),
-      DisableDevelopment: ros.booleanToRosTemplate(properties.disableDevelopment),
-      IsAllowDownload: ros.booleanToRosTemplate(properties.isAllowDownload),
-      ProjectDescription: ros.stringToRosTemplate(properties.projectDescription),
-      ProjectMode: ros.numberToRosTemplate(properties.projectMode),
-      ProjectName: ros.stringToRosTemplate(properties.projectName),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      Tags: ros.listMapper(rosProjectTagsPropertyToRosTemplate)(properties.tags),
+      'ProjectIdentifier': ros.stringToRosTemplate(properties.projectIdentifier),
+      'DisableDevelopment': ros.booleanToRosTemplate(properties.disableDevelopment),
+      'IsAllowDownload': ros.booleanToRosTemplate(properties.isAllowDownload),
+      'ProjectDescription': ros.stringToRosTemplate(properties.projectDescription),
+      'ProjectMode': ros.numberToRosTemplate(properties.projectMode),
+      'ProjectName': ros.stringToRosTemplate(properties.projectName),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tags': ros.listMapper(rosProjectTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -343,7 +343,7 @@ function rosProjectTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosProject_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }

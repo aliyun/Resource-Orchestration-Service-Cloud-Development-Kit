@@ -15,6 +15,14 @@ export interface SubscriptionsProps {
     readonly topicName: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property subscriptionName: Subscription name.
      */
     readonly subscriptionName?: string | ros.IResolvable;
@@ -55,6 +63,7 @@ export class Subscriptions extends ros.Resource {
 
         const rosSubscriptions = new RosSubscriptions(this, id,  {
             subscriptionName: props.subscriptionName,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
             topicName: props.topicName,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosSubscriptions;

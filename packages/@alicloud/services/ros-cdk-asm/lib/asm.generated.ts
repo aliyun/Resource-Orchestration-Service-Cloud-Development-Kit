@@ -153,23 +153,23 @@ function rosServiceMeshPropsToRosTemplate(properties: any, enableResourcePropert
         RosServiceMeshPropsValidator(properties).assertSuccess();
     }
     return {
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitches: ros.listMapper(ros.objectToRosTemplate)(properties.vSwitches),
-      ApiServerPublicEip: ros.booleanToRosTemplate(properties.apiServerPublicEip),
-      AuditProject: ros.stringToRosTemplate(properties.auditProject),
-      CustomizedZipkin: ros.booleanToRosTemplate(properties.customizedZipkin),
-      EnableAudit: ros.booleanToRosTemplate(properties.enableAudit),
-      IncludeIPRanges: ros.stringToRosTemplate(properties.includeIpRanges),
-      IstioVersion: ros.stringToRosTemplate(properties.istioVersion),
-      LocalityLoadBalancing: ros.booleanToRosTemplate(properties.localityLoadBalancing),
-      Name: ros.stringToRosTemplate(properties.name),
-      OPA: rosServiceMeshOPAPropertyToRosTemplate(properties.opa),
-      OutboundTrafficPolicy: ros.stringToRosTemplate(properties.outboundTrafficPolicy),
-      PilotPublicEip: ros.booleanToRosTemplate(properties.pilotPublicEip),
-      Proxy: rosServiceMeshProxyPropertyToRosTemplate(properties.proxy),
-      Telemetry: ros.booleanToRosTemplate(properties.telemetry),
-      TraceSampling: ros.numberToRosTemplate(properties.traceSampling),
-      Tracing: ros.booleanToRosTemplate(properties.tracing),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitches': ros.listMapper(ros.objectToRosTemplate)(properties.vSwitches),
+      'ApiServerPublicEip': ros.booleanToRosTemplate(properties.apiServerPublicEip),
+      'AuditProject': ros.stringToRosTemplate(properties.auditProject),
+      'CustomizedZipkin': ros.booleanToRosTemplate(properties.customizedZipkin),
+      'EnableAudit': ros.booleanToRosTemplate(properties.enableAudit),
+      'IncludeIPRanges': ros.stringToRosTemplate(properties.includeIpRanges),
+      'IstioVersion': ros.stringToRosTemplate(properties.istioVersion),
+      'LocalityLoadBalancing': ros.booleanToRosTemplate(properties.localityLoadBalancing),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'OPA': rosServiceMeshOPAPropertyToRosTemplate(properties.opa),
+      'OutboundTrafficPolicy': ros.stringToRosTemplate(properties.outboundTrafficPolicy),
+      'PilotPublicEip': ros.booleanToRosTemplate(properties.pilotPublicEip),
+      'Proxy': rosServiceMeshProxyPropertyToRosTemplate(properties.proxy),
+      'Telemetry': ros.booleanToRosTemplate(properties.telemetry),
+      'TraceSampling': ros.numberToRosTemplate(properties.traceSampling),
+      'Tracing': ros.booleanToRosTemplate(properties.tracing),
     };
 }
 
@@ -409,12 +409,12 @@ function rosServiceMeshOPAPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosServiceMesh_OPAPropertyValidator(properties).assertSuccess();
     return {
-      OPARequestCPU: ros.stringToRosTemplate(properties.opaRequestCpu),
-      OpenAgentPolicy: ros.booleanToRosTemplate(properties.openAgentPolicy),
-      OPALogLevel: ros.stringToRosTemplate(properties.opaLogLevel),
-      OPALimitCPU: ros.stringToRosTemplate(properties.opaLimitCpu),
-      OPALimitMemory: ros.stringToRosTemplate(properties.opaLimitMemory),
-      OPARequestMemory: ros.stringToRosTemplate(properties.opaRequestMemory),
+      'OPARequestCPU': ros.stringToRosTemplate(properties.opaRequestCpu),
+      'OpenAgentPolicy': ros.booleanToRosTemplate(properties.openAgentPolicy),
+      'OPALogLevel': ros.stringToRosTemplate(properties.opaLogLevel),
+      'OPALimitCPU': ros.stringToRosTemplate(properties.opaLimitCpu),
+      'OPALimitMemory': ros.stringToRosTemplate(properties.opaLimitMemory),
+      'OPARequestMemory': ros.stringToRosTemplate(properties.opaRequestMemory),
     };
 }
 
@@ -475,10 +475,10 @@ function rosServiceMeshProxyPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosServiceMesh_ProxyPropertyValidator(properties).assertSuccess();
     return {
-      ClusterDomain: ros.stringToRosTemplate(properties.clusterDomain),
-      ProxyLimitCPU: ros.stringToRosTemplate(properties.proxyLimitCpu),
-      ProxyLimitMemory: ros.stringToRosTemplate(properties.proxyLimitMemory),
-      ProxyRequestCPU: ros.stringToRosTemplate(properties.proxyRequestCpu),
-      ProxyRequestMemory: ros.stringToRosTemplate(properties.proxyRequestMemory),
+      'ClusterDomain': ros.stringToRosTemplate(properties.clusterDomain),
+      'ProxyLimitCPU': ros.stringToRosTemplate(properties.proxyLimitCpu),
+      'ProxyLimitMemory': ros.stringToRosTemplate(properties.proxyLimitMemory),
+      'ProxyRequestCPU': ros.stringToRosTemplate(properties.proxyRequestCpu),
+      'ProxyRequestMemory': ros.stringToRosTemplate(properties.proxyRequestMemory),
     };
 }

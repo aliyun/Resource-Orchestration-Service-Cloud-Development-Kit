@@ -17,6 +17,14 @@ export interface RosDedicatedHostGroupsProps {
      * @Property engine: Database Engine Type.
      */
     readonly engine?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -31,6 +39,13 @@ function RosDedicatedHostGroupsPropsValidator(properties: any): ros.ValidationRe
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('dedicatedHostGroupId', ros.validateString)(properties.dedicatedHostGroupId));
     errors.collect(ros.propertyValidator('engine', ros.validateString)(properties.engine));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosDedicatedHostGroupsProps"');
 }
 
@@ -48,8 +63,9 @@ function rosDedicatedHostGroupsPropsToRosTemplate(properties: any, enableResourc
         RosDedicatedHostGroupsPropsValidator(properties).assertSuccess();
     }
     return {
-      DedicatedHostGroupId: ros.stringToRosTemplate(properties.dedicatedHostGroupId),
-      Engine: ros.stringToRosTemplate(properties.engine),
+      'DedicatedHostGroupId': ros.stringToRosTemplate(properties.dedicatedHostGroupId),
+      'Engine': ros.stringToRosTemplate(properties.engine),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -88,6 +104,14 @@ export class RosDedicatedHostGroups extends ros.RosResource {
     public engine: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -100,6 +124,7 @@ export class RosDedicatedHostGroups extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.dedicatedHostGroupId = props.dedicatedHostGroupId;
         this.engine = props.engine;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
@@ -107,6 +132,7 @@ export class RosDedicatedHostGroups extends ros.RosResource {
         return {
             dedicatedHostGroupId: this.dedicatedHostGroupId,
             engine: this.engine,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

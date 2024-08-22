@@ -90,12 +90,12 @@ function rosAnycastEIPPropsToRosTemplate(properties: any, enableResourceProperty
         RosAnycastEIPPropsValidator(properties).assertSuccess();
     }
     return {
-      Bandwidth: ros.numberToRosTemplate(properties.bandwidth),
-      Description: ros.stringToRosTemplate(properties.description),
-      InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
-      InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
-      Name: ros.stringToRosTemplate(properties.name),
-      ServiceLocation: ros.stringToRosTemplate(properties.serviceLocation),
+      'Bandwidth': ros.numberToRosTemplate(properties.bandwidth),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'InstanceChargeType': ros.stringToRosTemplate(properties.instanceChargeType),
+      'InternetChargeType': ros.stringToRosTemplate(properties.internetChargeType),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'ServiceLocation': ros.stringToRosTemplate(properties.serviceLocation),
     };
 }
 
@@ -262,10 +262,10 @@ function rosAnycastEIPAssociationPropsToRosTemplate(properties: any, enableResou
         RosAnycastEIPAssociationPropsValidator(properties).assertSuccess();
     }
     return {
-      AnycastId: ros.stringToRosTemplate(properties.anycastId),
-      BindInstanceId: ros.stringToRosTemplate(properties.bindInstanceId),
-      BindInstanceRegionId: ros.stringToRosTemplate(properties.bindInstanceRegionId),
-      BindInstanceType: ros.stringToRosTemplate(properties.bindInstanceType),
+      'AnycastId': ros.stringToRosTemplate(properties.anycastId),
+      'BindInstanceId': ros.stringToRosTemplate(properties.bindInstanceId),
+      'BindInstanceRegionId': ros.stringToRosTemplate(properties.bindInstanceRegionId),
+      'BindInstanceType': ros.stringToRosTemplate(properties.bindInstanceType),
     };
 }
 
@@ -384,6 +384,11 @@ export interface RosBgpGroupProps {
     readonly description?: string | ros.IResolvable;
 
     /**
+     * @Property ipVersion: The IP version of the BGP group. Valid values: IPv4 and IPv6.
+     */
+    readonly ipVersion?: string | ros.IResolvable;
+
+    /**
      * @Property isFakeAsn: A router that runs BGP typically belongs to only one AS. In some cases, for example,
      * the AS needs to be migrated or is merged with another AS, a new AS number replaces
      * the original one.
@@ -401,6 +406,11 @@ export interface RosBgpGroupProps {
      * with a letter but cannot start with http:\/\/ or https:\/\/.
      */
     readonly name?: string | ros.IResolvable;
+
+    /**
+     * @Property routeQuota: The upper limit of the BGP neighbor's route entries. Unit: entries, default value: 110.
+     */
+    readonly routeQuota?: number | ros.IResolvable;
 }
 
 /**
@@ -415,12 +425,27 @@ function RosBgpGroupPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('localAsn', ros.validateNumber)(properties.localAsn));
+    if(properties.ipVersion && (typeof properties.ipVersion) !== 'object') {
+        errors.collect(ros.propertyValidator('ipVersion', ros.validateAllowedValues)({
+          data: properties.ipVersion,
+          allowedValues: ["IPv4","IPv6"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ipVersion', ros.validateString)(properties.ipVersion));
     errors.collect(ros.propertyValidator('authKey', ros.validateString)(properties.authKey));
     errors.collect(ros.propertyValidator('routerId', ros.requiredValidator)(properties.routerId));
     errors.collect(ros.propertyValidator('routerId', ros.validateString)(properties.routerId));
     errors.collect(ros.propertyValidator('peerAsn', ros.requiredValidator)(properties.peerAsn));
     errors.collect(ros.propertyValidator('peerAsn', ros.validateNumber)(properties.peerAsn));
     errors.collect(ros.propertyValidator('isFakeAsn', ros.validateBoolean)(properties.isFakeAsn));
+    if(properties.routeQuota && (typeof properties.routeQuota) !== 'object') {
+        errors.collect(ros.propertyValidator('routeQuota', ros.validateRange)({
+            data: properties.routeQuota,
+            min: 1,
+            max: 110,
+          }));
+    }
+    errors.collect(ros.propertyValidator('routeQuota', ros.validateNumber)(properties.routeQuota));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     return errors.wrap('supplied properties not correct for "RosBgpGroupProps"');
 }
@@ -439,13 +464,15 @@ function rosBgpGroupPropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosBgpGroupPropsValidator(properties).assertSuccess();
     }
     return {
-      PeerAsn: ros.numberToRosTemplate(properties.peerAsn),
-      RouterId: ros.stringToRosTemplate(properties.routerId),
-      AuthKey: ros.stringToRosTemplate(properties.authKey),
-      Description: ros.stringToRosTemplate(properties.description),
-      IsFakeAsn: ros.booleanToRosTemplate(properties.isFakeAsn),
-      LocalAsn: ros.numberToRosTemplate(properties.localAsn),
-      Name: ros.stringToRosTemplate(properties.name),
+      'PeerAsn': ros.numberToRosTemplate(properties.peerAsn),
+      'RouterId': ros.stringToRosTemplate(properties.routerId),
+      'AuthKey': ros.stringToRosTemplate(properties.authKey),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'IpVersion': ros.stringToRosTemplate(properties.ipVersion),
+      'IsFakeAsn': ros.booleanToRosTemplate(properties.isFakeAsn),
+      'LocalAsn': ros.numberToRosTemplate(properties.localAsn),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'RouteQuota': ros.numberToRosTemplate(properties.routeQuota),
     };
 }
 
@@ -495,6 +522,11 @@ export class RosBgpGroup extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
+     * @Property ipVersion: The IP version of the BGP group. Valid values: IPv4 and IPv6.
+     */
+    public ipVersion: string | ros.IResolvable | undefined;
+
+    /**
      * @Property isFakeAsn: A router that runs BGP typically belongs to only one AS. In some cases, for example,
      * the AS needs to be migrated or is merged with another AS, a new AS number replaces
      * the original one.
@@ -514,6 +546,11 @@ export class RosBgpGroup extends ros.RosResource {
     public name: string | ros.IResolvable | undefined;
 
     /**
+     * @Property routeQuota: The upper limit of the BGP neighbor's route entries. Unit: entries, default value: 110.
+     */
+    public routeQuota: number | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -528,9 +565,11 @@ export class RosBgpGroup extends ros.RosResource {
         this.routerId = props.routerId;
         this.authKey = props.authKey;
         this.description = props.description;
+        this.ipVersion = props.ipVersion;
         this.isFakeAsn = props.isFakeAsn;
         this.localAsn = props.localAsn;
         this.name = props.name;
+        this.routeQuota = props.routeQuota;
     }
 
 
@@ -540,9 +579,11 @@ export class RosBgpGroup extends ros.RosResource {
             routerId: this.routerId,
             authKey: this.authKey,
             description: this.description,
+            ipVersion: this.ipVersion,
             isFakeAsn: this.isFakeAsn,
             localAsn: this.localAsn,
             name: this.name,
+            routeQuota: this.routeQuota,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -599,8 +640,8 @@ function rosBgpNetworkPropsToRosTemplate(properties: any, enableResourceProperty
         RosBgpNetworkPropsValidator(properties).assertSuccess();
     }
     return {
-      DstCidrBlock: ros.stringToRosTemplate(properties.dstCidrBlock),
-      RouterId: ros.stringToRosTemplate(properties.routerId),
+      'DstCidrBlock': ros.stringToRosTemplate(properties.dstCidrBlock),
+      'RouterId': ros.stringToRosTemplate(properties.routerId),
     };
 }
 
@@ -723,9 +764,9 @@ function rosBgpPeerPropsToRosTemplate(properties: any, enableResourcePropertyCon
         RosBgpPeerPropsValidator(properties).assertSuccess();
     }
     return {
-      BgpGroupId: ros.stringToRosTemplate(properties.bgpGroupId),
-      EnableBfd: ros.booleanToRosTemplate(properties.enableBfd),
-      PeerIpAddress: ros.stringToRosTemplate(properties.peerIpAddress),
+      'BgpGroupId': ros.stringToRosTemplate(properties.bgpGroupId),
+      'EnableBfd': ros.booleanToRosTemplate(properties.enableBfd),
+      'PeerIpAddress': ros.stringToRosTemplate(properties.peerIpAddress),
     };
 }
 
@@ -933,16 +974,16 @@ function rosCommonBandwidthPackagePropsToRosTemplate(properties: any, enableReso
         RosCommonBandwidthPackagePropsValidator(properties).assertSuccess();
     }
     return {
-      Bandwidth: ros.numberToRosTemplate(properties.bandwidth),
-      DeletionProtection: ros.booleanToRosTemplate(properties.deletionProtection),
-      Description: ros.stringToRosTemplate(properties.description),
-      InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
-      ISP: ros.stringToRosTemplate(properties.isp),
-      Name: ros.stringToRosTemplate(properties.name),
-      Ratio: ros.numberToRosTemplate(properties.ratio),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      Tags: ros.listMapper(rosCommonBandwidthPackageTagsPropertyToRosTemplate)(properties.tags),
-      Zone: ros.stringToRosTemplate(properties.zone),
+      'Bandwidth': ros.numberToRosTemplate(properties.bandwidth),
+      'DeletionProtection': ros.booleanToRosTemplate(properties.deletionProtection),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'InternetChargeType': ros.stringToRosTemplate(properties.internetChargeType),
+      'ISP': ros.stringToRosTemplate(properties.isp),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'Ratio': ros.numberToRosTemplate(properties.ratio),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tags': ros.listMapper(rosCommonBandwidthPackageTagsPropertyToRosTemplate)(properties.tags),
+      'Zone': ros.stringToRosTemplate(properties.zone),
     };
 }
 
@@ -1109,8 +1150,8 @@ function rosCommonBandwidthPackageTagsPropertyToRosTemplate(properties: any): an
     if (!ros.canInspect(properties)) { return properties; }
     RosCommonBandwidthPackage_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -1162,8 +1203,8 @@ function rosCommonBandwidthPackageIpPropsToRosTemplate(properties: any, enableRe
         RosCommonBandwidthPackageIpPropsValidator(properties).assertSuccess();
     }
     return {
-      BandwidthPackageId: ros.stringToRosTemplate(properties.bandwidthPackageId),
-      Eips: ros.listMapper(rosCommonBandwidthPackageIpEipsPropertyToRosTemplate)(properties.eips),
+      'BandwidthPackageId': ros.stringToRosTemplate(properties.bandwidthPackageId),
+      'Eips': ros.listMapper(rosCommonBandwidthPackageIpEipsPropertyToRosTemplate)(properties.eips),
     };
 }
 
@@ -1280,8 +1321,8 @@ function rosCommonBandwidthPackageIpEipsPropertyToRosTemplate(properties: any): 
     if (!ros.canInspect(properties)) { return properties; }
     RosCommonBandwidthPackageIp_EipsPropertyValidator(properties).assertSuccess();
     return {
-      Bandwidth: ros.numberToRosTemplate(properties.bandwidth),
-      AllocationId: ros.stringToRosTemplate(properties.allocationId),
+      'Bandwidth': ros.numberToRosTemplate(properties.bandwidth),
+      'AllocationId': ros.stringToRosTemplate(properties.allocationId),
     };
 }
 
@@ -1367,10 +1408,10 @@ function rosCustomerGatewayPropsToRosTemplate(properties: any, enableResourcePro
         RosCustomerGatewayPropsValidator(properties).assertSuccess();
     }
     return {
-      IpAddress: ros.stringToRosTemplate(properties.ipAddress),
-      Asn: ros.numberToRosTemplate(properties.asn),
-      Description: ros.stringToRosTemplate(properties.description),
-      Name: ros.stringToRosTemplate(properties.name),
+      'IpAddress': ros.stringToRosTemplate(properties.ipAddress),
+      'Asn': ros.numberToRosTemplate(properties.asn),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Name': ros.stringToRosTemplate(properties.name),
     };
 }
 
@@ -1513,10 +1554,10 @@ function rosDhcpOptionsSetPropsToRosTemplate(properties: any, enableResourceProp
         RosDhcpOptionsSetPropsValidator(properties).assertSuccess();
     }
     return {
-      DhcpOptionsSetDescription: ros.stringToRosTemplate(properties.dhcpOptionsSetDescription),
-      DhcpOptionsSetName: ros.stringToRosTemplate(properties.dhcpOptionsSetName),
-      DomainName: ros.stringToRosTemplate(properties.domainName),
-      DomainNameServers: ros.listMapper(ros.stringToRosTemplate)(properties.domainNameServers),
+      'DhcpOptionsSetDescription': ros.stringToRosTemplate(properties.dhcpOptionsSetDescription),
+      'DhcpOptionsSetName': ros.stringToRosTemplate(properties.dhcpOptionsSetName),
+      'DomainName': ros.stringToRosTemplate(properties.domainName),
+      'DomainNameServers': ros.listMapper(ros.stringToRosTemplate)(properties.domainNameServers),
     };
 }
 
@@ -1640,8 +1681,8 @@ function rosDhcpOptionsSetAttachmentPropsToRosTemplate(properties: any, enableRe
         RosDhcpOptionsSetAttachmentPropsValidator(properties).assertSuccess();
     }
     return {
-      DhcpOptionsSetId: ros.stringToRosTemplate(properties.dhcpOptionsSetId),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
+      'DhcpOptionsSetId': ros.stringToRosTemplate(properties.dhcpOptionsSetId),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
     };
 }
 
@@ -1880,22 +1921,22 @@ function rosEIPPropsToRosTemplate(properties: any, enableResourcePropertyConstra
         RosEIPPropsValidator(properties).assertSuccess();
     }
     return {
-      AutoPay: ros.booleanToRosTemplate(properties.autoPay),
-      Bandwidth: ros.numberToRosTemplate(properties.bandwidth),
-      DeletionProtection: ros.booleanToRosTemplate(properties.deletionProtection),
-      Description: ros.stringToRosTemplate(properties.description),
-      InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
-      InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
-      Isp: ros.stringToRosTemplate(properties.isp),
-      Name: ros.stringToRosTemplate(properties.name),
-      Netmode: ros.stringToRosTemplate(properties.netmode),
-      Period: ros.numberToRosTemplate(properties.period),
-      PricingCycle: ros.stringToRosTemplate(properties.pricingCycle),
-      PublicIpAddressPoolId: ros.stringToRosTemplate(properties.publicIpAddressPoolId),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      SecurityProtectionTypes: ros.listMapper(ros.stringToRosTemplate)(properties.securityProtectionTypes),
-      Tags: ros.listMapper(rosEIPTagsPropertyToRosTemplate)(properties.tags),
-      Zone: ros.stringToRosTemplate(properties.zone),
+      'AutoPay': ros.booleanToRosTemplate(properties.autoPay),
+      'Bandwidth': ros.numberToRosTemplate(properties.bandwidth),
+      'DeletionProtection': ros.booleanToRosTemplate(properties.deletionProtection),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'InstanceChargeType': ros.stringToRosTemplate(properties.instanceChargeType),
+      'InternetChargeType': ros.stringToRosTemplate(properties.internetChargeType),
+      'Isp': ros.stringToRosTemplate(properties.isp),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'Netmode': ros.stringToRosTemplate(properties.netmode),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PricingCycle': ros.stringToRosTemplate(properties.pricingCycle),
+      'PublicIpAddressPoolId': ros.stringToRosTemplate(properties.publicIpAddressPoolId),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'SecurityProtectionTypes': ros.listMapper(ros.stringToRosTemplate)(properties.securityProtectionTypes),
+      'Tags': ros.listMapper(rosEIPTagsPropertyToRosTemplate)(properties.tags),
+      'Zone': ros.stringToRosTemplate(properties.zone),
     };
 }
 
@@ -2119,8 +2160,8 @@ function rosEIPTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosEIP_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -2202,10 +2243,10 @@ function rosEIPAssociationPropsToRosTemplate(properties: any, enableResourceProp
         RosEIPAssociationPropsValidator(properties).assertSuccess();
     }
     return {
-      AllocationId: ros.stringToRosTemplate(properties.allocationId),
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
-      Mode: ros.stringToRosTemplate(properties.mode),
-      PrivateIpAddress: ros.stringToRosTemplate(properties.privateIpAddress),
+      'AllocationId': ros.stringToRosTemplate(properties.allocationId),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'Mode': ros.stringToRosTemplate(properties.mode),
+      'PrivateIpAddress': ros.stringToRosTemplate(properties.privateIpAddress),
     };
 }
 
@@ -2469,23 +2510,23 @@ function rosEIPProPropsToRosTemplate(properties: any, enableResourcePropertyCons
         RosEIPProPropsValidator(properties).assertSuccess();
     }
     return {
-      AutoPay: ros.booleanToRosTemplate(properties.autoPay),
-      Bandwidth: ros.numberToRosTemplate(properties.bandwidth),
-      DeletionProtection: ros.booleanToRosTemplate(properties.deletionProtection),
-      Description: ros.stringToRosTemplate(properties.description),
-      InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
-      InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
-      IpAddress: ros.stringToRosTemplate(properties.ipAddress),
-      ISP: ros.stringToRosTemplate(properties.isp),
-      Name: ros.stringToRosTemplate(properties.name),
-      Netmode: ros.stringToRosTemplate(properties.netmode),
-      Period: ros.numberToRosTemplate(properties.period),
-      PricingCycle: ros.stringToRosTemplate(properties.pricingCycle),
-      PublicIpAddressPoolId: ros.stringToRosTemplate(properties.publicIpAddressPoolId),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      SecurityProtectionTypes: ros.listMapper(ros.stringToRosTemplate)(properties.securityProtectionTypes),
-      Tags: ros.listMapper(rosEIPProTagsPropertyToRosTemplate)(properties.tags),
+      'AutoPay': ros.booleanToRosTemplate(properties.autoPay),
+      'Bandwidth': ros.numberToRosTemplate(properties.bandwidth),
+      'DeletionProtection': ros.booleanToRosTemplate(properties.deletionProtection),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'InstanceChargeType': ros.stringToRosTemplate(properties.instanceChargeType),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'InternetChargeType': ros.stringToRosTemplate(properties.internetChargeType),
+      'IpAddress': ros.stringToRosTemplate(properties.ipAddress),
+      'ISP': ros.stringToRosTemplate(properties.isp),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'Netmode': ros.stringToRosTemplate(properties.netmode),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PricingCycle': ros.stringToRosTemplate(properties.pricingCycle),
+      'PublicIpAddressPoolId': ros.stringToRosTemplate(properties.publicIpAddressPoolId),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'SecurityProtectionTypes': ros.listMapper(ros.stringToRosTemplate)(properties.securityProtectionTypes),
+      'Tags': ros.listMapper(rosEIPProTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -2716,8 +2757,8 @@ function rosEIPProTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosEIPPro_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -2820,11 +2861,11 @@ function rosEIPSegmentPropsToRosTemplate(properties: any, enableResourceProperty
         RosEIPSegmentPropsValidator(properties).assertSuccess();
     }
     return {
-      EipMask: ros.numberToRosTemplate(properties.eipMask),
-      Bandwidth: ros.numberToRosTemplate(properties.bandwidth),
-      InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
-      Netmode: ros.stringToRosTemplate(properties.netmode),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      'EipMask': ros.numberToRosTemplate(properties.eipMask),
+      'Bandwidth': ros.numberToRosTemplate(properties.bandwidth),
+      'InternetChargeType': ros.stringToRosTemplate(properties.internetChargeType),
+      'Netmode': ros.stringToRosTemplate(properties.netmode),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
     };
 }
 
@@ -3007,13 +3048,13 @@ function rosFlowLogPropsToRosTemplate(properties: any, enableResourcePropertyCon
         RosFlowLogPropsValidator(properties).assertSuccess();
     }
     return {
-      LogStoreName: ros.stringToRosTemplate(properties.logStoreName),
-      ProjectName: ros.stringToRosTemplate(properties.projectName),
-      ResourceId: ros.stringToRosTemplate(properties.resourceId),
-      ResourceType: ros.stringToRosTemplate(properties.resourceType),
-      TrafficType: ros.stringToRosTemplate(properties.trafficType),
-      Description: ros.stringToRosTemplate(properties.description),
-      FlowLogName: ros.stringToRosTemplate(properties.flowLogName),
+      'LogStoreName': ros.stringToRosTemplate(properties.logStoreName),
+      'ProjectName': ros.stringToRosTemplate(properties.projectName),
+      'ResourceId': ros.stringToRosTemplate(properties.resourceId),
+      'ResourceType': ros.stringToRosTemplate(properties.resourceType),
+      'TrafficType': ros.stringToRosTemplate(properties.trafficType),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'FlowLogName': ros.stringToRosTemplate(properties.flowLogName),
     };
 }
 
@@ -3243,14 +3284,14 @@ function rosForwardEntryPropsToRosTemplate(properties: any, enableResourceProper
         RosForwardEntryPropsValidator(properties).assertSuccess();
     }
     return {
-      ExternalIp: ros.stringToRosTemplate(properties.externalIp),
-      ExternalPort: ros.stringToRosTemplate(properties.externalPort),
-      ForwardTableId: ros.stringToRosTemplate(properties.forwardTableId),
-      InternalIp: ros.stringToRosTemplate(properties.internalIp),
-      InternalPort: ros.stringToRosTemplate(properties.internalPort),
-      IpProtocol: ros.stringToRosTemplate(properties.ipProtocol),
-      ForwardEntryName: ros.stringToRosTemplate(properties.forwardEntryName),
-      PortBreak: ros.booleanToRosTemplate(properties.portBreak),
+      'ExternalIp': ros.stringToRosTemplate(properties.externalIp),
+      'ExternalPort': ros.stringToRosTemplate(properties.externalPort),
+      'ForwardTableId': ros.stringToRosTemplate(properties.forwardTableId),
+      'InternalIp': ros.stringToRosTemplate(properties.internalIp),
+      'InternalPort': ros.stringToRosTemplate(properties.internalPort),
+      'IpProtocol': ros.stringToRosTemplate(properties.ipProtocol),
+      'ForwardEntryName': ros.stringToRosTemplate(properties.forwardEntryName),
+      'PortBreak': ros.booleanToRosTemplate(properties.portBreak),
     };
 }
 
@@ -3455,15 +3496,15 @@ function rosFullNatEntryPropsToRosTemplate(properties: any, enableResourceProper
         RosFullNatEntryPropsValidator(properties).assertSuccess();
     }
     return {
-      AccessIp: ros.stringToRosTemplate(properties.accessIp),
-      AccessPort: ros.stringToRosTemplate(properties.accessPort),
-      FullNatTableId: ros.stringToRosTemplate(properties.fullNatTableId),
-      IpProtocol: ros.stringToRosTemplate(properties.ipProtocol),
-      NatIp: ros.stringToRosTemplate(properties.natIp),
-      NatIpPort: ros.stringToRosTemplate(properties.natIpPort),
-      NetworkInterfaceId: ros.stringToRosTemplate(properties.networkInterfaceId),
-      FullNatEntryDescription: ros.stringToRosTemplate(properties.fullNatEntryDescription),
-      FullNatEntryName: ros.stringToRosTemplate(properties.fullNatEntryName),
+      'AccessIp': ros.stringToRosTemplate(properties.accessIp),
+      'AccessPort': ros.stringToRosTemplate(properties.accessPort),
+      'FullNatTableId': ros.stringToRosTemplate(properties.fullNatTableId),
+      'IpProtocol': ros.stringToRosTemplate(properties.ipProtocol),
+      'NatIp': ros.stringToRosTemplate(properties.natIp),
+      'NatIpPort': ros.stringToRosTemplate(properties.natIpPort),
+      'NetworkInterfaceId': ros.stringToRosTemplate(properties.networkInterfaceId),
+      'FullNatEntryDescription': ros.stringToRosTemplate(properties.fullNatEntryDescription),
+      'FullNatEntryName': ros.stringToRosTemplate(properties.fullNatEntryName),
     };
 }
 
@@ -3645,10 +3686,10 @@ function rosGrantInstanceToCenPropsToRosTemplate(properties: any, enableResource
         RosGrantInstanceToCenPropsValidator(properties).assertSuccess();
     }
     return {
-      CenId: ros.stringToRosTemplate(properties.cenId),
-      CenOwnerId: ros.numberToRosTemplate(properties.cenOwnerId),
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
-      InstanceType: ros.stringToRosTemplate(properties.instanceType),
+      'CenId': ros.stringToRosTemplate(properties.cenId),
+      'CenOwnerId': ros.numberToRosTemplate(properties.cenOwnerId),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'InstanceType': ros.stringToRosTemplate(properties.instanceType),
     };
 }
 
@@ -3810,12 +3851,12 @@ function rosHaVipPropsToRosTemplate(properties: any, enableResourcePropertyConst
         RosHaVipPropsValidator(properties).assertSuccess();
     }
     return {
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      Description: ros.stringToRosTemplate(properties.description),
-      IpAddress: ros.stringToRosTemplate(properties.ipAddress),
-      Name: ros.stringToRosTemplate(properties.name),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      Tags: ros.listMapper(rosHaVipTagsPropertyToRosTemplate)(properties.tags),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'IpAddress': ros.stringToRosTemplate(properties.ipAddress),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tags': ros.listMapper(rosHaVipTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -3953,8 +3994,8 @@ function rosHaVipTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosHaVip_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -4014,9 +4055,9 @@ function rosHaVipAssociationPropsToRosTemplate(properties: any, enableResourcePr
         RosHaVipAssociationPropsValidator(properties).assertSuccess();
     }
     return {
-      HaVipId: ros.stringToRosTemplate(properties.haVipId),
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
-      InstanceType: ros.stringToRosTemplate(properties.instanceType),
+      'HaVipId': ros.stringToRosTemplate(properties.haVipId),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'InstanceType': ros.stringToRosTemplate(properties.instanceType),
     };
 }
 
@@ -4170,15 +4211,15 @@ function rosIpsecServerPropsToRosTemplate(properties: any, enableResourcePropert
         RosIpsecServerPropsValidator(properties).assertSuccess();
     }
     return {
-      ClientIpPool: ros.stringToRosTemplate(properties.clientIpPool),
-      LocalSubnet: ros.stringToRosTemplate(properties.localSubnet),
-      VpnGatewayId: ros.stringToRosTemplate(properties.vpnGatewayId),
-      EffectImmediately: ros.booleanToRosTemplate(properties.effectImmediately),
-      IkeConfig: rosIpsecServerIkeConfigPropertyToRosTemplate(properties.ikeConfig),
-      IpsecConfig: rosIpsecServerIpsecConfigPropertyToRosTemplate(properties.ipsecConfig),
-      IpsecServerName: ros.stringToRosTemplate(properties.ipsecServerName),
-      Psk: ros.stringToRosTemplate(properties.psk),
-      PskEnabled: ros.booleanToRosTemplate(properties.pskEnabled),
+      'ClientIpPool': ros.stringToRosTemplate(properties.clientIpPool),
+      'LocalSubnet': ros.stringToRosTemplate(properties.localSubnet),
+      'VpnGatewayId': ros.stringToRosTemplate(properties.vpnGatewayId),
+      'EffectImmediately': ros.booleanToRosTemplate(properties.effectImmediately),
+      'IkeConfig': rosIpsecServerIkeConfigPropertyToRosTemplate(properties.ikeConfig),
+      'IpsecConfig': rosIpsecServerIpsecConfigPropertyToRosTemplate(properties.ipsecConfig),
+      'IpsecServerName': ros.stringToRosTemplate(properties.ipsecServerName),
+      'Psk': ros.stringToRosTemplate(properties.psk),
+      'PskEnabled': ros.booleanToRosTemplate(properties.pskEnabled),
     };
 }
 
@@ -4365,14 +4406,14 @@ function rosIpsecServerIkeConfigPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosIpsecServer_IkeConfigPropertyValidator(properties).assertSuccess();
     return {
-      IkeAuthAlg: ros.stringToRosTemplate(properties.ikeAuthAlg),
-      LocalId: ros.stringToRosTemplate(properties.localId),
-      IkeEncAlg: ros.stringToRosTemplate(properties.ikeEncAlg),
-      IkeVersion: ros.stringToRosTemplate(properties.ikeVersion),
-      IkeMode: ros.stringToRosTemplate(properties.ikeMode),
-      IkeLifetime: ros.numberToRosTemplate(properties.ikeLifetime),
-      RemoteId: ros.stringToRosTemplate(properties.remoteId),
-      IkePfs: ros.stringToRosTemplate(properties.ikePfs),
+      'IkeAuthAlg': ros.stringToRosTemplate(properties.ikeAuthAlg),
+      'LocalId': ros.stringToRosTemplate(properties.localId),
+      'IkeEncAlg': ros.stringToRosTemplate(properties.ikeEncAlg),
+      'IkeVersion': ros.stringToRosTemplate(properties.ikeVersion),
+      'IkeMode': ros.stringToRosTemplate(properties.ikeMode),
+      'IkeLifetime': ros.numberToRosTemplate(properties.ikeLifetime),
+      'RemoteId': ros.stringToRosTemplate(properties.remoteId),
+      'IkePfs': ros.stringToRosTemplate(properties.ikePfs),
     };
 }
 
@@ -4428,10 +4469,10 @@ function rosIpsecServerIpsecConfigPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosIpsecServer_IpsecConfigPropertyValidator(properties).assertSuccess();
     return {
-      IpsecPfs: ros.stringToRosTemplate(properties.ipsecPfs),
-      IpsecEncAlg: ros.stringToRosTemplate(properties.ipsecEncAlg),
-      IpsecAuthAlg: ros.stringToRosTemplate(properties.ipsecAuthAlg),
-      IpsecLifetime: ros.numberToRosTemplate(properties.ipsecLifetime),
+      'IpsecPfs': ros.stringToRosTemplate(properties.ipsecPfs),
+      'IpsecEncAlg': ros.stringToRosTemplate(properties.ipsecEncAlg),
+      'IpsecAuthAlg': ros.stringToRosTemplate(properties.ipsecAuthAlg),
+      'IpsecLifetime': ros.numberToRosTemplate(properties.ipsecLifetime),
     };
 }
 
@@ -4488,9 +4529,9 @@ function rosIpv4GatewayPropsToRosTemplate(properties: any, enableResourcePropert
         RosIpv4GatewayPropsValidator(properties).assertSuccess();
     }
     return {
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      Ipv4GatewayDescription: ros.stringToRosTemplate(properties.ipv4GatewayDescription),
-      Ipv4GatewayName: ros.stringToRosTemplate(properties.ipv4GatewayName),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'Ipv4GatewayDescription': ros.stringToRosTemplate(properties.ipv4GatewayDescription),
+      'Ipv4GatewayName': ros.stringToRosTemplate(properties.ipv4GatewayName),
     };
 }
 
@@ -4664,11 +4705,11 @@ function rosIpv6GatewayPropsToRosTemplate(properties: any, enableResourcePropert
         RosIpv6GatewayPropsValidator(properties).assertSuccess();
     }
     return {
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      Description: ros.stringToRosTemplate(properties.description),
-      Name: ros.stringToRosTemplate(properties.name),
-      Spec: ros.stringToRosTemplate(properties.spec),
-      Tags: ros.listMapper(rosIpv6GatewayTagsPropertyToRosTemplate)(properties.tags),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'Spec': ros.stringToRosTemplate(properties.spec),
+      'Tags': ros.listMapper(rosIpv6GatewayTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -4797,8 +4838,8 @@ function rosIpv6GatewayTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosIpv6Gateway_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -4883,10 +4924,10 @@ function rosIpv6InternetBandwidthPropsToRosTemplate(properties: any, enableResou
         RosIpv6InternetBandwidthPropsValidator(properties).assertSuccess();
     }
     return {
-      Bandwidth: ros.numberToRosTemplate(properties.bandwidth),
-      Ipv6AddressId: ros.stringToRosTemplate(properties.ipv6AddressId),
-      Ipv6GatewayId: ros.stringToRosTemplate(properties.ipv6GatewayId),
-      InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
+      'Bandwidth': ros.numberToRosTemplate(properties.bandwidth),
+      'Ipv6AddressId': ros.stringToRosTemplate(properties.ipv6AddressId),
+      'Ipv6GatewayId': ros.stringToRosTemplate(properties.ipv6GatewayId),
+      'InternetChargeType': ros.stringToRosTemplate(properties.internetChargeType),
     };
 }
 
@@ -5158,23 +5199,23 @@ function rosNatGatewayPropsToRosTemplate(properties: any, enableResourceProperty
         RosNatGatewayPropsValidator(properties).assertSuccess();
     }
     return {
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      AutoPay: ros.booleanToRosTemplate(properties.autoPay),
-      DeletionForce: ros.booleanToRosTemplate(properties.deletionForce),
-      DeletionProtection: ros.booleanToRosTemplate(properties.deletionProtection),
-      Description: ros.stringToRosTemplate(properties.description),
-      Duration: ros.numberToRosTemplate(properties.duration),
-      EipBindMode: ros.stringToRosTemplate(properties.eipBindMode),
-      IcmpReplyEnabled: ros.booleanToRosTemplate(properties.icmpReplyEnabled),
-      InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
-      InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
-      NatGatewayName: ros.stringToRosTemplate(properties.natGatewayName),
-      NatType: ros.stringToRosTemplate(properties.natType),
-      NetworkType: ros.stringToRosTemplate(properties.networkType),
-      PricingCycle: ros.stringToRosTemplate(properties.pricingCycle),
-      SecurityProtectionEnabled: ros.booleanToRosTemplate(properties.securityProtectionEnabled),
-      Tags: ros.listMapper(rosNatGatewayTagsPropertyToRosTemplate)(properties.tags),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'AutoPay': ros.booleanToRosTemplate(properties.autoPay),
+      'DeletionForce': ros.booleanToRosTemplate(properties.deletionForce),
+      'DeletionProtection': ros.booleanToRosTemplate(properties.deletionProtection),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Duration': ros.numberToRosTemplate(properties.duration),
+      'EipBindMode': ros.stringToRosTemplate(properties.eipBindMode),
+      'IcmpReplyEnabled': ros.booleanToRosTemplate(properties.icmpReplyEnabled),
+      'InstanceChargeType': ros.stringToRosTemplate(properties.instanceChargeType),
+      'InternetChargeType': ros.stringToRosTemplate(properties.internetChargeType),
+      'NatGatewayName': ros.stringToRosTemplate(properties.natGatewayName),
+      'NatType': ros.stringToRosTemplate(properties.natType),
+      'NetworkType': ros.stringToRosTemplate(properties.networkType),
+      'PricingCycle': ros.stringToRosTemplate(properties.pricingCycle),
+      'SecurityProtectionEnabled': ros.booleanToRosTemplate(properties.securityProtectionEnabled),
+      'Tags': ros.listMapper(rosNatGatewayTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -5404,8 +5445,8 @@ function rosNatGatewayTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosNatGateway_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -5505,12 +5546,12 @@ function rosNatIpPropsToRosTemplate(properties: any, enableResourcePropertyConst
         RosNatIpPropsValidator(properties).assertSuccess();
     }
     return {
-      NatGatewayId: ros.stringToRosTemplate(properties.natGatewayId),
-      NatIpCidr: ros.stringToRosTemplate(properties.natIpCidr),
-      NatIpDescription: ros.stringToRosTemplate(properties.natIpDescription),
-      NatIpName: ros.stringToRosTemplate(properties.natIpName),
-      NatIp: ros.stringToRosTemplate(properties.natIp),
-      NatIpCidrId: ros.stringToRosTemplate(properties.natIpCidrId),
+      'NatGatewayId': ros.stringToRosTemplate(properties.natGatewayId),
+      'NatIpCidr': ros.stringToRosTemplate(properties.natIpCidr),
+      'NatIpDescription': ros.stringToRosTemplate(properties.natIpDescription),
+      'NatIpName': ros.stringToRosTemplate(properties.natIpName),
+      'NatIp': ros.stringToRosTemplate(properties.natIp),
+      'NatIpCidrId': ros.stringToRosTemplate(properties.natIpCidrId),
     };
 }
 
@@ -5680,10 +5721,10 @@ function rosNatIpCidrPropsToRosTemplate(properties: any, enableResourcePropertyC
         RosNatIpCidrPropsValidator(properties).assertSuccess();
     }
     return {
-      NatGatewayId: ros.stringToRosTemplate(properties.natGatewayId),
-      NatIpCidr: ros.stringToRosTemplate(properties.natIpCidr),
-      NatIpCidrDescription: ros.stringToRosTemplate(properties.natIpCidrDescription),
-      NatIpCidrName: ros.stringToRosTemplate(properties.natIpCidrName),
+      'NatGatewayId': ros.stringToRosTemplate(properties.natGatewayId),
+      'NatIpCidr': ros.stringToRosTemplate(properties.natIpCidr),
+      'NatIpCidrDescription': ros.stringToRosTemplate(properties.natIpCidrDescription),
+      'NatIpCidrName': ros.stringToRosTemplate(properties.natIpCidrName),
     };
 }
 
@@ -5847,11 +5888,11 @@ function rosNetworkAclPropsToRosTemplate(properties: any, enableResourceProperty
         RosNetworkAclPropsValidator(properties).assertSuccess();
     }
     return {
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      Description: ros.stringToRosTemplate(properties.description),
-      EgressAclEntries: ros.listMapper(rosNetworkAclEgressAclEntriesPropertyToRosTemplate)(properties.egressAclEntries),
-      IngressAclEntries: ros.listMapper(rosNetworkAclIngressAclEntriesPropertyToRosTemplate)(properties.ingressAclEntries),
-      NetworkAclName: ros.stringToRosTemplate(properties.networkAclName),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'EgressAclEntries': ros.listMapper(rosNetworkAclEgressAclEntriesPropertyToRosTemplate)(properties.egressAclEntries),
+      'IngressAclEntries': ros.listMapper(rosNetworkAclIngressAclEntriesPropertyToRosTemplate)(properties.ingressAclEntries),
+      'NetworkAclName': ros.stringToRosTemplate(properties.networkAclName),
     };
 }
 
@@ -6039,13 +6080,13 @@ function rosNetworkAclEgressAclEntriesPropertyToRosTemplate(properties: any): an
     if (!ros.canInspect(properties)) { return properties; }
     RosNetworkAcl_EgressAclEntriesPropertyValidator(properties).assertSuccess();
     return {
-      Policy: ros.stringToRosTemplate(properties.policy),
-      Description: ros.stringToRosTemplate(properties.description),
-      DestinationCidrIp: ros.stringToRosTemplate(properties.destinationCidrIp),
-      EntryType: ros.stringToRosTemplate(properties.entryType),
-      Port: ros.stringToRosTemplate(properties.port),
-      Protocol: ros.stringToRosTemplate(properties.protocol),
-      NetworkAclEntryName: ros.stringToRosTemplate(properties.networkAclEntryName),
+      'Policy': ros.stringToRosTemplate(properties.policy),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'DestinationCidrIp': ros.stringToRosTemplate(properties.destinationCidrIp),
+      'EntryType': ros.stringToRosTemplate(properties.entryType),
+      'Port': ros.stringToRosTemplate(properties.port),
+      'Protocol': ros.stringToRosTemplate(properties.protocol),
+      'NetworkAclEntryName': ros.stringToRosTemplate(properties.networkAclEntryName),
     };
 }
 
@@ -6146,13 +6187,13 @@ function rosNetworkAclIngressAclEntriesPropertyToRosTemplate(properties: any): a
     if (!ros.canInspect(properties)) { return properties; }
     RosNetworkAcl_IngressAclEntriesPropertyValidator(properties).assertSuccess();
     return {
-      Policy: ros.stringToRosTemplate(properties.policy),
-      Description: ros.stringToRosTemplate(properties.description),
-      EntryType: ros.stringToRosTemplate(properties.entryType),
-      Port: ros.stringToRosTemplate(properties.port),
-      SourceCidrIp: ros.stringToRosTemplate(properties.sourceCidrIp),
-      Protocol: ros.stringToRosTemplate(properties.protocol),
-      NetworkAclEntryName: ros.stringToRosTemplate(properties.networkAclEntryName),
+      'Policy': ros.stringToRosTemplate(properties.policy),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'EntryType': ros.stringToRosTemplate(properties.entryType),
+      'Port': ros.stringToRosTemplate(properties.port),
+      'SourceCidrIp': ros.stringToRosTemplate(properties.sourceCidrIp),
+      'Protocol': ros.stringToRosTemplate(properties.protocol),
+      'NetworkAclEntryName': ros.stringToRosTemplate(properties.networkAclEntryName),
     };
 }
 
@@ -6211,8 +6252,8 @@ function rosNetworkAclAssociationPropsToRosTemplate(properties: any, enableResou
         RosNetworkAclAssociationPropsValidator(properties).assertSuccess();
     }
     return {
-      NetworkAclId: ros.stringToRosTemplate(properties.networkAclId),
-      Resources: ros.listMapper(rosNetworkAclAssociationResourcesPropertyToRosTemplate)(properties.resources),
+      'NetworkAclId': ros.stringToRosTemplate(properties.networkAclId),
+      'Resources': ros.listMapper(rosNetworkAclAssociationResourcesPropertyToRosTemplate)(properties.resources),
     };
 }
 
@@ -6320,8 +6361,8 @@ function rosNetworkAclAssociationResourcesPropertyToRosTemplate(properties: any)
     if (!ros.canInspect(properties)) { return properties; }
     RosNetworkAclAssociation_ResourcesPropertyValidator(properties).assertSuccess();
     return {
-      ResourceId: ros.stringToRosTemplate(properties.resourceId),
-      ResourceType: ros.stringToRosTemplate(properties.resourceType),
+      'ResourceId': ros.stringToRosTemplate(properties.resourceId),
+      'ResourceType': ros.stringToRosTemplate(properties.resourceType),
     };
 }
 
@@ -6385,10 +6426,10 @@ function rosPeeringRouterInterfaceBindingPropsToRosTemplate(properties: any, ena
         RosPeeringRouterInterfaceBindingPropsValidator(properties).assertSuccess();
     }
     return {
-      OppositeInterfaceId: ros.stringToRosTemplate(properties.oppositeInterfaceId),
-      RouterInterfaceId: ros.stringToRosTemplate(properties.routerInterfaceId),
-      OppositeInterfaceOwnerId: ros.stringToRosTemplate(properties.oppositeInterfaceOwnerId),
-      OppositeRouterId: ros.stringToRosTemplate(properties.oppositeRouterId),
+      'OppositeInterfaceId': ros.stringToRosTemplate(properties.oppositeInterfaceId),
+      'RouterInterfaceId': ros.stringToRosTemplate(properties.routerInterfaceId),
+      'OppositeInterfaceOwnerId': ros.stringToRosTemplate(properties.oppositeInterfaceOwnerId),
+      'OppositeRouterId': ros.stringToRosTemplate(properties.oppositeRouterId),
     };
 }
 
@@ -6509,8 +6550,8 @@ function rosPeeringRouterInterfaceConnectionPropsToRosTemplate(properties: any, 
         RosPeeringRouterInterfaceConnectionPropsValidator(properties).assertSuccess();
     }
     return {
-      OppositeInterfaceId: ros.stringToRosTemplate(properties.oppositeInterfaceId),
-      RouterInterfaceId: ros.stringToRosTemplate(properties.routerInterfaceId),
+      'OppositeInterfaceId': ros.stringToRosTemplate(properties.oppositeInterfaceId),
+      'RouterInterfaceId': ros.stringToRosTemplate(properties.routerInterfaceId),
     };
 }
 
@@ -6674,13 +6715,13 @@ function rosPrefixListPropsToRosTemplate(properties: any, enableResourceProperty
         RosPrefixListPropsValidator(properties).assertSuccess();
     }
     return {
-      Entries: ros.listMapper(rosPrefixListEntriesPropertyToRosTemplate)(properties.entries),
-      IpVersion: ros.stringToRosTemplate(properties.ipVersion),
-      MaxEntries: ros.numberToRosTemplate(properties.maxEntries),
-      PrefixListDescription: ros.stringToRosTemplate(properties.prefixListDescription),
-      PrefixListName: ros.stringToRosTemplate(properties.prefixListName),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      Tags: ros.listMapper(rosPrefixListTagsPropertyToRosTemplate)(properties.tags),
+      'Entries': ros.listMapper(rosPrefixListEntriesPropertyToRosTemplate)(properties.entries),
+      'IpVersion': ros.stringToRosTemplate(properties.ipVersion),
+      'MaxEntries': ros.numberToRosTemplate(properties.maxEntries),
+      'PrefixListDescription': ros.stringToRosTemplate(properties.prefixListDescription),
+      'PrefixListName': ros.stringToRosTemplate(properties.prefixListName),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tags': ros.listMapper(rosPrefixListTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -6880,8 +6921,8 @@ function rosPrefixListEntriesPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosPrefixList_EntriesPropertyValidator(properties).assertSuccess();
     return {
-      Description: ros.stringToRosTemplate(properties.description),
-      Cidr: ros.stringToRosTemplate(properties.cidr),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Cidr': ros.stringToRosTemplate(properties.cidr),
     };
 }
 
@@ -6928,8 +6969,8 @@ function rosPrefixListTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosPrefixList_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -7001,10 +7042,10 @@ function rosRouteTablePropsToRosTemplate(properties: any, enableResourceProperty
         RosRouteTablePropsValidator(properties).assertSuccess();
     }
     return {
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      Description: ros.stringToRosTemplate(properties.description),
-      RouteTableName: ros.stringToRosTemplate(properties.routeTableName),
-      Tags: ros.listMapper(rosRouteTableTagsPropertyToRosTemplate)(properties.tags),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'RouteTableName': ros.stringToRosTemplate(properties.routeTableName),
+      'Tags': ros.listMapper(rosRouteTableTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -7146,8 +7187,8 @@ function rosRouteTableTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosRouteTable_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -7199,8 +7240,8 @@ function rosRouteTableAssociationPropsToRosTemplate(properties: any, enableResou
         RosRouteTableAssociationPropsValidator(properties).assertSuccess();
     }
     return {
-      RouteTableId: ros.stringToRosTemplate(properties.routeTableId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
+      'RouteTableId': ros.stringToRosTemplate(properties.routeTableId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
     };
 }
 
@@ -7454,25 +7495,25 @@ function rosRouterInterfacePropsToRosTemplate(properties: any, enableResourcePro
         RosRouterInterfacePropsValidator(properties).assertSuccess();
     }
     return {
-      Role: ros.stringToRosTemplate(properties.role),
-      RouterId: ros.stringToRosTemplate(properties.routerId),
-      AccessPointId: ros.stringToRosTemplate(properties.accessPointId),
-      AutoPay: ros.booleanToRosTemplate(properties.autoPay),
-      Description: ros.stringToRosTemplate(properties.description),
-      HealthCheckSourceIp: ros.stringToRosTemplate(properties.healthCheckSourceIp),
-      HealthCheckTargetIp: ros.stringToRosTemplate(properties.healthCheckTargetIp),
-      InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
-      Name: ros.stringToRosTemplate(properties.name),
-      OppositeAccessPointId: ros.stringToRosTemplate(properties.oppositeAccessPointId),
-      OppositeInterfaceId: ros.stringToRosTemplate(properties.oppositeInterfaceId),
-      OppositeInterfaceOwnerId: ros.stringToRosTemplate(properties.oppositeInterfaceOwnerId),
-      OppositeRegionId: ros.stringToRosTemplate(properties.oppositeRegionId),
-      OppositeRouterId: ros.stringToRosTemplate(properties.oppositeRouterId),
-      OppositeRouterType: ros.stringToRosTemplate(properties.oppositeRouterType),
-      Period: ros.numberToRosTemplate(properties.period),
-      PricingCycle: ros.stringToRosTemplate(properties.pricingCycle),
-      RouterType: ros.stringToRosTemplate(properties.routerType),
-      Spec: ros.stringToRosTemplate(properties.spec),
+      'Role': ros.stringToRosTemplate(properties.role),
+      'RouterId': ros.stringToRosTemplate(properties.routerId),
+      'AccessPointId': ros.stringToRosTemplate(properties.accessPointId),
+      'AutoPay': ros.booleanToRosTemplate(properties.autoPay),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'HealthCheckSourceIp': ros.stringToRosTemplate(properties.healthCheckSourceIp),
+      'HealthCheckTargetIp': ros.stringToRosTemplate(properties.healthCheckTargetIp),
+      'InstanceChargeType': ros.stringToRosTemplate(properties.instanceChargeType),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'OppositeAccessPointId': ros.stringToRosTemplate(properties.oppositeAccessPointId),
+      'OppositeInterfaceId': ros.stringToRosTemplate(properties.oppositeInterfaceId),
+      'OppositeInterfaceOwnerId': ros.stringToRosTemplate(properties.oppositeInterfaceOwnerId),
+      'OppositeRegionId': ros.stringToRosTemplate(properties.oppositeRegionId),
+      'OppositeRouterId': ros.stringToRosTemplate(properties.oppositeRouterId),
+      'OppositeRouterType': ros.stringToRosTemplate(properties.oppositeRouterType),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PricingCycle': ros.stringToRosTemplate(properties.pricingCycle),
+      'RouterType': ros.stringToRosTemplate(properties.routerType),
+      'Spec': ros.stringToRosTemplate(properties.spec),
     };
 }
 
@@ -7734,12 +7775,12 @@ function rosSnatEntryPropsToRosTemplate(properties: any, enableResourcePropertyC
         RosSnatEntryPropsValidator(properties).assertSuccess();
     }
     return {
-      SnatIp: ros.stringToRosTemplate(properties.snatIp),
-      SnatTableId: ros.stringToRosTemplate(properties.snatTableId),
-      EipAffinity: ros.numberToRosTemplate(properties.eipAffinity),
-      SnatEntryName: ros.stringToRosTemplate(properties.snatEntryName),
-      SourceCIDR: ros.stringToRosTemplate(properties.sourceCidr),
-      SourceVSwitchIds: ros.listMapper(ros.stringToRosTemplate)(properties.sourceVSwitchIds),
+      'SnatIp': ros.stringToRosTemplate(properties.snatIp),
+      'SnatTableId': ros.stringToRosTemplate(properties.snatTableId),
+      'EipAffinity': ros.numberToRosTemplate(properties.eipAffinity),
+      'SnatEntryName': ros.stringToRosTemplate(properties.snatEntryName),
+      'SourceCIDR': ros.stringToRosTemplate(properties.sourceCidr),
+      'SourceVSwitchIds': ros.listMapper(ros.stringToRosTemplate)(properties.sourceVSwitchIds),
     };
 }
 
@@ -7884,8 +7925,8 @@ function rosSslVpnClientCertPropsToRosTemplate(properties: any, enableResourcePr
         RosSslVpnClientCertPropsValidator(properties).assertSuccess();
     }
     return {
-      SslVpnServerId: ros.stringToRosTemplate(properties.sslVpnServerId),
-      Name: ros.stringToRosTemplate(properties.name),
+      'SslVpnServerId': ros.stringToRosTemplate(properties.sslVpnServerId),
+      'Name': ros.stringToRosTemplate(properties.name),
     };
 }
 
@@ -7981,6 +8022,26 @@ export interface RosSslVpnServerProps {
     readonly compress?: boolean | ros.IResolvable;
 
     /**
+     * @Property enableMultiFactorAuth: Whether to enable multi-factor authentication. The default value is false.
+     */
+    readonly enableMultiFactorAuth?: boolean | ros.IResolvable;
+
+    /**
+     * @Property iDaaSApplicationId: The ID of the IDaaS application.
+     */
+    readonly iDaaSApplicationId?: string | ros.IResolvable;
+
+    /**
+     * @Property iDaaSInstanceId: The ID of the IDaaS instance.
+     */
+    readonly iDaaSInstanceId?: string | ros.IResolvable;
+
+    /**
+     * @Property iDaaSRegionId: The region ID of the IDaaS instance.
+     */
+    readonly iDaaSRegionId?: string | ros.IResolvable;
+
+    /**
      * @Property name: The name of the SSL-VPN server. The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-).
      * But it can't start with http:\/\/ or https:\/\/.
      */
@@ -8013,6 +8074,8 @@ function RosSslVpnServerPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('localSubnet', ros.validateString)(properties.localSubnet));
     errors.collect(ros.propertyValidator('clientIpPool', ros.requiredValidator)(properties.clientIpPool));
     errors.collect(ros.propertyValidator('clientIpPool', ros.validateString)(properties.clientIpPool));
+    errors.collect(ros.propertyValidator('iDaaSInstanceId', ros.validateString)(properties.iDaaSInstanceId));
+    errors.collect(ros.propertyValidator('iDaaSApplicationId', ros.validateString)(properties.iDaaSApplicationId));
     if(properties.proto && (typeof properties.proto) !== 'object') {
         errors.collect(ros.propertyValidator('proto', ros.validateAllowedValues)({
           data: properties.proto,
@@ -8022,7 +8085,9 @@ function RosSslVpnServerPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('proto', ros.validateString)(properties.proto));
     errors.collect(ros.propertyValidator('vpnGatewayId', ros.requiredValidator)(properties.vpnGatewayId));
     errors.collect(ros.propertyValidator('vpnGatewayId', ros.validateString)(properties.vpnGatewayId));
+    errors.collect(ros.propertyValidator('enableMultiFactorAuth', ros.validateBoolean)(properties.enableMultiFactorAuth));
     errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
+    errors.collect(ros.propertyValidator('iDaaSRegionId', ros.validateString)(properties.iDaaSRegionId));
     if(properties.cipher && (typeof properties.cipher) !== 'object') {
         errors.collect(ros.propertyValidator('cipher', ros.validateAllowedValues)({
           data: properties.cipher,
@@ -8055,14 +8120,18 @@ function rosSslVpnServerPropsToRosTemplate(properties: any, enableResourceProper
         RosSslVpnServerPropsValidator(properties).assertSuccess();
     }
     return {
-      ClientIpPool: ros.stringToRosTemplate(properties.clientIpPool),
-      LocalSubnet: ros.stringToRosTemplate(properties.localSubnet),
-      VpnGatewayId: ros.stringToRosTemplate(properties.vpnGatewayId),
-      Cipher: ros.stringToRosTemplate(properties.cipher),
-      Compress: ros.booleanToRosTemplate(properties.compress),
-      Name: ros.stringToRosTemplate(properties.name),
-      Port: ros.numberToRosTemplate(properties.port),
-      Proto: ros.stringToRosTemplate(properties.proto),
+      'ClientIpPool': ros.stringToRosTemplate(properties.clientIpPool),
+      'LocalSubnet': ros.stringToRosTemplate(properties.localSubnet),
+      'VpnGatewayId': ros.stringToRosTemplate(properties.vpnGatewayId),
+      'Cipher': ros.stringToRosTemplate(properties.cipher),
+      'Compress': ros.booleanToRosTemplate(properties.compress),
+      'EnableMultiFactorAuth': ros.booleanToRosTemplate(properties.enableMultiFactorAuth),
+      'IDaaSApplicationId': ros.stringToRosTemplate(properties.iDaaSApplicationId),
+      'IDaaSInstanceId': ros.stringToRosTemplate(properties.iDaaSInstanceId),
+      'IDaaSRegionId': ros.stringToRosTemplate(properties.iDaaSRegionId),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'Port': ros.numberToRosTemplate(properties.port),
+      'Proto': ros.stringToRosTemplate(properties.proto),
     };
 }
 
@@ -8115,6 +8184,26 @@ export class RosSslVpnServer extends ros.RosResource {
     public compress: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property enableMultiFactorAuth: Whether to enable multi-factor authentication. The default value is false.
+     */
+    public enableMultiFactorAuth: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property iDaaSApplicationId: The ID of the IDaaS application.
+     */
+    public iDaaSApplicationId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property iDaaSInstanceId: The ID of the IDaaS instance.
+     */
+    public iDaaSInstanceId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property iDaaSRegionId: The region ID of the IDaaS instance.
+     */
+    public iDaaSRegionId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property name: The name of the SSL-VPN server. The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-).
      * But it can't start with http:\/\/ or https:\/\/.
      */
@@ -8146,6 +8235,10 @@ export class RosSslVpnServer extends ros.RosResource {
         this.vpnGatewayId = props.vpnGatewayId;
         this.cipher = props.cipher;
         this.compress = props.compress;
+        this.enableMultiFactorAuth = props.enableMultiFactorAuth;
+        this.iDaaSApplicationId = props.iDaaSApplicationId;
+        this.iDaaSInstanceId = props.iDaaSInstanceId;
+        this.iDaaSRegionId = props.iDaaSRegionId;
         this.name = props.name;
         this.port = props.port;
         this.proto = props.proto;
@@ -8159,6 +8252,10 @@ export class RosSslVpnServer extends ros.RosResource {
             vpnGatewayId: this.vpnGatewayId,
             cipher: this.cipher,
             compress: this.compress,
+            enableMultiFactorAuth: this.enableMultiFactorAuth,
+            iDaaSApplicationId: this.iDaaSApplicationId,
+            iDaaSInstanceId: this.iDaaSInstanceId,
+            iDaaSRegionId: this.iDaaSRegionId,
             name: this.name,
             port: this.port,
             proto: this.proto,
@@ -8241,10 +8338,10 @@ function rosTrafficMirrorFilterPropsToRosTemplate(properties: any, enableResourc
         RosTrafficMirrorFilterPropsValidator(properties).assertSuccess();
     }
     return {
-      EgressRules: ros.listMapper(rosTrafficMirrorFilterEgressRulesPropertyToRosTemplate)(properties.egressRules),
-      IngressRules: ros.listMapper(rosTrafficMirrorFilterIngressRulesPropertyToRosTemplate)(properties.ingressRules),
-      TrafficMirrorFilterDescription: ros.stringToRosTemplate(properties.trafficMirrorFilterDescription),
-      TrafficMirrorFilterName: ros.stringToRosTemplate(properties.trafficMirrorFilterName),
+      'EgressRules': ros.listMapper(rosTrafficMirrorFilterEgressRulesPropertyToRosTemplate)(properties.egressRules),
+      'IngressRules': ros.listMapper(rosTrafficMirrorFilterIngressRulesPropertyToRosTemplate)(properties.ingressRules),
+      'TrafficMirrorFilterDescription': ros.stringToRosTemplate(properties.trafficMirrorFilterDescription),
+      'TrafficMirrorFilterName': ros.stringToRosTemplate(properties.trafficMirrorFilterName),
     };
 }
 
@@ -8428,13 +8525,13 @@ function rosTrafficMirrorFilterEgressRulesPropertyToRosTemplate(properties: any)
     if (!ros.canInspect(properties)) { return properties; }
     RosTrafficMirrorFilter_EgressRulesPropertyValidator(properties).assertSuccess();
     return {
-      DestinationPortRange: ros.stringToRosTemplate(properties.destinationPortRange),
-      Action: ros.stringToRosTemplate(properties.action),
-      SourcePortRange: ros.stringToRosTemplate(properties.sourcePortRange),
-      Priority: ros.numberToRosTemplate(properties.priority),
-      SourceCidrBlock: ros.stringToRosTemplate(properties.sourceCidrBlock),
-      DestinationCidrBlock: ros.stringToRosTemplate(properties.destinationCidrBlock),
-      Protocol: ros.stringToRosTemplate(properties.protocol),
+      'DestinationPortRange': ros.stringToRosTemplate(properties.destinationPortRange),
+      'Action': ros.stringToRosTemplate(properties.action),
+      'SourcePortRange': ros.stringToRosTemplate(properties.sourcePortRange),
+      'Priority': ros.numberToRosTemplate(properties.priority),
+      'SourceCidrBlock': ros.stringToRosTemplate(properties.sourceCidrBlock),
+      'DestinationCidrBlock': ros.stringToRosTemplate(properties.destinationCidrBlock),
+      'Protocol': ros.stringToRosTemplate(properties.protocol),
     };
 }
 
@@ -8525,13 +8622,13 @@ function rosTrafficMirrorFilterIngressRulesPropertyToRosTemplate(properties: any
     if (!ros.canInspect(properties)) { return properties; }
     RosTrafficMirrorFilter_IngressRulesPropertyValidator(properties).assertSuccess();
     return {
-      DestinationPortRange: ros.stringToRosTemplate(properties.destinationPortRange),
-      Action: ros.stringToRosTemplate(properties.action),
-      SourcePortRange: ros.stringToRosTemplate(properties.sourcePortRange),
-      Priority: ros.numberToRosTemplate(properties.priority),
-      SourceCidrBlock: ros.stringToRosTemplate(properties.sourceCidrBlock),
-      DestinationCidrBlock: ros.stringToRosTemplate(properties.destinationCidrBlock),
-      Protocol: ros.stringToRosTemplate(properties.protocol),
+      'DestinationPortRange': ros.stringToRosTemplate(properties.destinationPortRange),
+      'Action': ros.stringToRosTemplate(properties.action),
+      'SourcePortRange': ros.stringToRosTemplate(properties.sourcePortRange),
+      'Priority': ros.numberToRosTemplate(properties.priority),
+      'SourceCidrBlock': ros.stringToRosTemplate(properties.sourceCidrBlock),
+      'DestinationCidrBlock': ros.stringToRosTemplate(properties.destinationCidrBlock),
+      'Protocol': ros.stringToRosTemplate(properties.protocol),
     };
 }
 
@@ -8682,18 +8779,18 @@ function rosTrafficMirrorSessionPropsToRosTemplate(properties: any, enableResour
         RosTrafficMirrorSessionPropsValidator(properties).assertSuccess();
     }
     return {
-      Priority: ros.numberToRosTemplate(properties.priority),
-      TrafficMirrorFilterId: ros.stringToRosTemplate(properties.trafficMirrorFilterId),
-      TrafficMirrorSourceIds: ros.listMapper(ros.stringToRosTemplate)(properties.trafficMirrorSourceIds),
-      TrafficMirrorTargetId: ros.stringToRosTemplate(properties.trafficMirrorTargetId),
-      TrafficMirrorTargetType: ros.stringToRosTemplate(properties.trafficMirrorTargetType),
-      Enabled: ros.booleanToRosTemplate(properties.enabled),
-      PacketLength: ros.numberToRosTemplate(properties.packetLength),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      Tag: ros.listMapper(ros.rosTagToRosTemplate)(properties.tag),
-      TrafficMirrorSessionDescription: ros.stringToRosTemplate(properties.trafficMirrorSessionDescription),
-      TrafficMirrorSessionName: ros.stringToRosTemplate(properties.trafficMirrorSessionName),
-      VirtualNetworkId: ros.numberToRosTemplate(properties.virtualNetworkId),
+      'Priority': ros.numberToRosTemplate(properties.priority),
+      'TrafficMirrorFilterId': ros.stringToRosTemplate(properties.trafficMirrorFilterId),
+      'TrafficMirrorSourceIds': ros.listMapper(ros.stringToRosTemplate)(properties.trafficMirrorSourceIds),
+      'TrafficMirrorTargetId': ros.stringToRosTemplate(properties.trafficMirrorTargetId),
+      'TrafficMirrorTargetType': ros.stringToRosTemplate(properties.trafficMirrorTargetType),
+      'Enabled': ros.booleanToRosTemplate(properties.enabled),
+      'PacketLength': ros.numberToRosTemplate(properties.packetLength),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tag': ros.listMapper(ros.rosTagToRosTemplate)(properties.tag),
+      'TrafficMirrorSessionDescription': ros.stringToRosTemplate(properties.trafficMirrorSessionDescription),
+      'TrafficMirrorSessionName': ros.stringToRosTemplate(properties.trafficMirrorSessionName),
+      'VirtualNetworkId': ros.numberToRosTemplate(properties.virtualNetworkId),
     };
 }
 
@@ -8872,8 +8969,8 @@ function rosTrafficMirrorSessionTagPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosTrafficMirrorSession_TagPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -8925,8 +9022,8 @@ function rosTrafficMirrorSessionSourcesAdditionPropsToRosTemplate(properties: an
         RosTrafficMirrorSessionSourcesAdditionPropsValidator(properties).assertSuccess();
     }
     return {
-      TrafficMirrorSessionId: ros.stringToRosTemplate(properties.trafficMirrorSessionId),
-      TrafficMirrorSourceIds: ros.listMapper(ros.stringToRosTemplate)(properties.trafficMirrorSourceIds),
+      'TrafficMirrorSessionId': ros.stringToRosTemplate(properties.trafficMirrorSessionId),
+      'TrafficMirrorSourceIds': ros.listMapper(ros.stringToRosTemplate)(properties.trafficMirrorSourceIds),
     };
 }
 
@@ -9092,14 +9189,14 @@ function rosVSwitchCidrReservationPropsToRosTemplate(properties: any, enableReso
         RosVSwitchCidrReservationPropsValidator(properties).assertSuccess();
     }
     return {
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      IpVersion: ros.stringToRosTemplate(properties.ipVersion),
-      Tags: ros.listMapper(rosVSwitchCidrReservationTagsPropertyToRosTemplate)(properties.tags),
-      VSwitchCidrReservationCidr: ros.stringToRosTemplate(properties.vSwitchCidrReservationCidr),
-      VSwitchCidrReservationDescription: ros.stringToRosTemplate(properties.vSwitchCidrReservationDescription),
-      VSwitchCidrReservationMask: ros.stringToRosTemplate(properties.vSwitchCidrReservationMask),
-      VSwitchCidrReservationName: ros.stringToRosTemplate(properties.vSwitchCidrReservationName),
-      VSwitchCidrReservationType: ros.stringToRosTemplate(properties.vSwitchCidrReservationType),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'IpVersion': ros.stringToRosTemplate(properties.ipVersion),
+      'Tags': ros.listMapper(rosVSwitchCidrReservationTagsPropertyToRosTemplate)(properties.tags),
+      'VSwitchCidrReservationCidr': ros.stringToRosTemplate(properties.vSwitchCidrReservationCidr),
+      'VSwitchCidrReservationDescription': ros.stringToRosTemplate(properties.vSwitchCidrReservationDescription),
+      'VSwitchCidrReservationMask': ros.stringToRosTemplate(properties.vSwitchCidrReservationMask),
+      'VSwitchCidrReservationName': ros.stringToRosTemplate(properties.vSwitchCidrReservationName),
+      'VSwitchCidrReservationType': ros.stringToRosTemplate(properties.vSwitchCidrReservationType),
     };
 }
 
@@ -9253,8 +9350,8 @@ function rosVSwitchCidrReservationTagsPropertyToRosTemplate(properties: any): an
     if (!ros.canInspect(properties)) { return properties; }
     RosVSwitchCidrReservation_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -9365,14 +9462,14 @@ function rosVirtualBorderRouterPropsToRosTemplate(properties: any, enableResourc
         RosVirtualBorderRouterPropsValidator(properties).assertSuccess();
     }
     return {
-      LocalGatewayIp: ros.stringToRosTemplate(properties.localGatewayIp),
-      PeerGatewayIp: ros.stringToRosTemplate(properties.peerGatewayIp),
-      PeeringSubnetMask: ros.stringToRosTemplate(properties.peeringSubnetMask),
-      PhysicalConnectionId: ros.stringToRosTemplate(properties.physicalConnectionId),
-      VlanId: ros.numberToRosTemplate(properties.vlanId),
-      CircuitCode: ros.stringToRosTemplate(properties.circuitCode),
-      Description: ros.stringToRosTemplate(properties.description),
-      Name: ros.stringToRosTemplate(properties.name),
+      'LocalGatewayIp': ros.stringToRosTemplate(properties.localGatewayIp),
+      'PeerGatewayIp': ros.stringToRosTemplate(properties.peerGatewayIp),
+      'PeeringSubnetMask': ros.stringToRosTemplate(properties.peeringSubnetMask),
+      'PhysicalConnectionId': ros.stringToRosTemplate(properties.physicalConnectionId),
+      'VlanId': ros.numberToRosTemplate(properties.vlanId),
+      'CircuitCode': ros.stringToRosTemplate(properties.circuitCode),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Name': ros.stringToRosTemplate(properties.name),
     };
 }
 
@@ -9598,13 +9695,13 @@ function rosVpcPeerConnectionPropsToRosTemplate(properties: any, enableResourceP
         RosVpcPeerConnectionPropsValidator(properties).assertSuccess();
     }
     return {
-      AcceptingVpcId: ros.stringToRosTemplate(properties.acceptingVpcId),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      AcceptingAliUid: ros.numberToRosTemplate(properties.acceptingAliUid),
-      AcceptingRegionId: ros.stringToRosTemplate(properties.acceptingRegionId),
-      DeletionForce: ros.booleanToRosTemplate(properties.deletionForce),
-      Description: ros.stringToRosTemplate(properties.description),
-      Name: ros.stringToRosTemplate(properties.name),
+      'AcceptingVpcId': ros.stringToRosTemplate(properties.acceptingVpcId),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'AcceptingAliUid': ros.numberToRosTemplate(properties.acceptingAliUid),
+      'AcceptingRegionId': ros.stringToRosTemplate(properties.acceptingRegionId),
+      'DeletionForce': ros.booleanToRosTemplate(properties.deletionForce),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Name': ros.stringToRosTemplate(properties.name),
     };
 }
 
@@ -9865,20 +9962,20 @@ function rosVpnAttachmentPropsToRosTemplate(properties: any, enableResourcePrope
         RosVpnAttachmentPropsValidator(properties).assertSuccess();
     }
     return {
-      CustomerGatewayId: ros.stringToRosTemplate(properties.customerGatewayId),
-      LocalSubnet: ros.stringToRosTemplate(properties.localSubnet),
-      RemoteSubnet: ros.stringToRosTemplate(properties.remoteSubnet),
-      AutoConfigRoute: ros.booleanToRosTemplate(properties.autoConfigRoute),
-      BgpConfig: rosVpnAttachmentBgpConfigPropertyToRosTemplate(properties.bgpConfig),
-      EffectImmediately: ros.booleanToRosTemplate(properties.effectImmediately),
-      EnableDpd: ros.booleanToRosTemplate(properties.enableDpd),
-      EnableNatTraversal: ros.booleanToRosTemplate(properties.enableNatTraversal),
-      HealthCheckConfig: rosVpnAttachmentHealthCheckConfigPropertyToRosTemplate(properties.healthCheckConfig),
-      IkeConfig: rosVpnAttachmentIkeConfigPropertyToRosTemplate(properties.ikeConfig),
-      IpsecConfig: rosVpnAttachmentIpsecConfigPropertyToRosTemplate(properties.ipsecConfig),
-      Name: ros.stringToRosTemplate(properties.name),
-      NetworkType: ros.stringToRosTemplate(properties.networkType),
-      RemoteCaCert: ros.stringToRosTemplate(properties.remoteCaCert),
+      'CustomerGatewayId': ros.stringToRosTemplate(properties.customerGatewayId),
+      'LocalSubnet': ros.stringToRosTemplate(properties.localSubnet),
+      'RemoteSubnet': ros.stringToRosTemplate(properties.remoteSubnet),
+      'AutoConfigRoute': ros.booleanToRosTemplate(properties.autoConfigRoute),
+      'BgpConfig': rosVpnAttachmentBgpConfigPropertyToRosTemplate(properties.bgpConfig),
+      'EffectImmediately': ros.booleanToRosTemplate(properties.effectImmediately),
+      'EnableDpd': ros.booleanToRosTemplate(properties.enableDpd),
+      'EnableNatTraversal': ros.booleanToRosTemplate(properties.enableNatTraversal),
+      'HealthCheckConfig': rosVpnAttachmentHealthCheckConfigPropertyToRosTemplate(properties.healthCheckConfig),
+      'IkeConfig': rosVpnAttachmentIkeConfigPropertyToRosTemplate(properties.ikeConfig),
+      'IpsecConfig': rosVpnAttachmentIpsecConfigPropertyToRosTemplate(properties.ipsecConfig),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'NetworkType': ros.stringToRosTemplate(properties.networkType),
+      'RemoteCaCert': ros.stringToRosTemplate(properties.remoteCaCert),
     };
 }
 
@@ -10111,10 +10208,10 @@ function rosVpnAttachmentBgpConfigPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosVpnAttachment_BgpConfigPropertyValidator(properties).assertSuccess();
     return {
-      EnableBgp: ros.booleanToRosTemplate(properties.enableBgp),
-      LocalAsn: ros.numberToRosTemplate(properties.localAsn),
-      TunnelCidr: ros.stringToRosTemplate(properties.tunnelCidr),
-      LocalBgpIp: ros.stringToRosTemplate(properties.localBgpIp),
+      'EnableBgp': ros.booleanToRosTemplate(properties.enableBgp),
+      'LocalAsn': ros.numberToRosTemplate(properties.localAsn),
+      'TunnelCidr': ros.stringToRosTemplate(properties.tunnelCidr),
+      'LocalBgpIp': ros.stringToRosTemplate(properties.localBgpIp),
     };
 }
 
@@ -10180,12 +10277,12 @@ function rosVpnAttachmentHealthCheckConfigPropertyToRosTemplate(properties: any)
     if (!ros.canInspect(properties)) { return properties; }
     RosVpnAttachment_HealthCheckConfigPropertyValidator(properties).assertSuccess();
     return {
-      Policy: ros.stringToRosTemplate(properties.policy),
-      Enable: ros.booleanToRosTemplate(properties.enable),
-      Dip: ros.stringToRosTemplate(properties.dip),
-      Retry: ros.numberToRosTemplate(properties.retry),
-      Sip: ros.stringToRosTemplate(properties.sip),
-      Interval: ros.numberToRosTemplate(properties.interval),
+      'Policy': ros.stringToRosTemplate(properties.policy),
+      'Enable': ros.booleanToRosTemplate(properties.enable),
+      'Dip': ros.stringToRosTemplate(properties.dip),
+      'Retry': ros.numberToRosTemplate(properties.retry),
+      'Sip': ros.stringToRosTemplate(properties.sip),
+      'Interval': ros.numberToRosTemplate(properties.interval),
     };
 }
 
@@ -10328,15 +10425,15 @@ function rosVpnAttachmentIkeConfigPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosVpnAttachment_IkeConfigPropertyValidator(properties).assertSuccess();
     return {
-      IkeAuthAlg: ros.stringToRosTemplate(properties.ikeAuthAlg),
-      LocalId: ros.stringToRosTemplate(properties.localId),
-      IkeEncAlg: ros.stringToRosTemplate(properties.ikeEncAlg),
-      IkeVersion: ros.stringToRosTemplate(properties.ikeVersion),
-      IkeMode: ros.stringToRosTemplate(properties.ikeMode),
-      IkeLifetime: ros.numberToRosTemplate(properties.ikeLifetime),
-      RemoteId: ros.stringToRosTemplate(properties.remoteId),
-      Psk: ros.stringToRosTemplate(properties.psk),
-      IkePfs: ros.stringToRosTemplate(properties.ikePfs),
+      'IkeAuthAlg': ros.stringToRosTemplate(properties.ikeAuthAlg),
+      'LocalId': ros.stringToRosTemplate(properties.localId),
+      'IkeEncAlg': ros.stringToRosTemplate(properties.ikeEncAlg),
+      'IkeVersion': ros.stringToRosTemplate(properties.ikeVersion),
+      'IkeMode': ros.stringToRosTemplate(properties.ikeMode),
+      'IkeLifetime': ros.numberToRosTemplate(properties.ikeLifetime),
+      'RemoteId': ros.stringToRosTemplate(properties.remoteId),
+      'Psk': ros.stringToRosTemplate(properties.psk),
+      'IkePfs': ros.stringToRosTemplate(properties.ikePfs),
     };
 }
 
@@ -10421,10 +10518,10 @@ function rosVpnAttachmentIpsecConfigPropertyToRosTemplate(properties: any): any 
     if (!ros.canInspect(properties)) { return properties; }
     RosVpnAttachment_IpsecConfigPropertyValidator(properties).assertSuccess();
     return {
-      IpsecPfs: ros.stringToRosTemplate(properties.ipsecPfs),
-      IpsecEncAlg: ros.stringToRosTemplate(properties.ipsecEncAlg),
-      IpsecAuthAlg: ros.stringToRosTemplate(properties.ipsecAuthAlg),
-      IpsecLifetime: ros.numberToRosTemplate(properties.ipsecLifetime),
+      'IpsecPfs': ros.stringToRosTemplate(properties.ipsecPfs),
+      'IpsecEncAlg': ros.stringToRosTemplate(properties.ipsecEncAlg),
+      'IpsecAuthAlg': ros.stringToRosTemplate(properties.ipsecAuthAlg),
+      'IpsecLifetime': ros.numberToRosTemplate(properties.ipsecLifetime),
     };
 }
 
@@ -10587,22 +10684,22 @@ function rosVpnConnectionPropsToRosTemplate(properties: any, enableResourcePrope
         RosVpnConnectionPropsValidator(properties).assertSuccess();
     }
     return {
-      LocalSubnet: ros.stringToRosTemplate(properties.localSubnet),
-      RemoteSubnet: ros.stringToRosTemplate(properties.remoteSubnet),
-      VpnGatewayId: ros.stringToRosTemplate(properties.vpnGatewayId),
-      AutoConfigRoute: ros.booleanToRosTemplate(properties.autoConfigRoute),
-      BgpConfig: rosVpnConnectionBgpConfigPropertyToRosTemplate(properties.bgpConfig),
-      CustomerGatewayId: ros.stringToRosTemplate(properties.customerGatewayId),
-      EffectImmediately: ros.booleanToRosTemplate(properties.effectImmediately),
-      EnableDpd: ros.booleanToRosTemplate(properties.enableDpd),
-      EnableNatTraversal: ros.booleanToRosTemplate(properties.enableNatTraversal),
-      EnableTunnelsBgp: ros.booleanToRosTemplate(properties.enableTunnelsBgp),
-      HealthCheckConfig: rosVpnConnectionHealthCheckConfigPropertyToRosTemplate(properties.healthCheckConfig),
-      IkeConfig: rosVpnConnectionIkeConfigPropertyToRosTemplate(properties.ikeConfig),
-      IpsecConfig: rosVpnConnectionIpsecConfigPropertyToRosTemplate(properties.ipsecConfig),
-      Name: ros.stringToRosTemplate(properties.name),
-      RemoteCaCertificate: ros.stringToRosTemplate(properties.remoteCaCertificate),
-      TunnelOptionsSpecification: ros.listMapper(rosVpnConnectionTunnelOptionsSpecificationPropertyToRosTemplate)(properties.tunnelOptionsSpecification),
+      'LocalSubnet': ros.stringToRosTemplate(properties.localSubnet),
+      'RemoteSubnet': ros.stringToRosTemplate(properties.remoteSubnet),
+      'VpnGatewayId': ros.stringToRosTemplate(properties.vpnGatewayId),
+      'AutoConfigRoute': ros.booleanToRosTemplate(properties.autoConfigRoute),
+      'BgpConfig': rosVpnConnectionBgpConfigPropertyToRosTemplate(properties.bgpConfig),
+      'CustomerGatewayId': ros.stringToRosTemplate(properties.customerGatewayId),
+      'EffectImmediately': ros.booleanToRosTemplate(properties.effectImmediately),
+      'EnableDpd': ros.booleanToRosTemplate(properties.enableDpd),
+      'EnableNatTraversal': ros.booleanToRosTemplate(properties.enableNatTraversal),
+      'EnableTunnelsBgp': ros.booleanToRosTemplate(properties.enableTunnelsBgp),
+      'HealthCheckConfig': rosVpnConnectionHealthCheckConfigPropertyToRosTemplate(properties.healthCheckConfig),
+      'IkeConfig': rosVpnConnectionIkeConfigPropertyToRosTemplate(properties.ikeConfig),
+      'IpsecConfig': rosVpnConnectionIpsecConfigPropertyToRosTemplate(properties.ipsecConfig),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'RemoteCaCertificate': ros.stringToRosTemplate(properties.remoteCaCertificate),
+      'TunnelOptionsSpecification': ros.listMapper(rosVpnConnectionTunnelOptionsSpecificationPropertyToRosTemplate)(properties.tunnelOptionsSpecification),
     };
 }
 
@@ -10851,10 +10948,10 @@ function rosVpnConnectionBgpConfigPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosVpnConnection_BgpConfigPropertyValidator(properties).assertSuccess();
     return {
-      EnableBgp: ros.booleanToRosTemplate(properties.enableBgp),
-      LocalAsn: ros.numberToRosTemplate(properties.localAsn),
-      TunnelCidr: ros.stringToRosTemplate(properties.tunnelCidr),
-      LocalBgpIp: ros.stringToRosTemplate(properties.localBgpIp),
+      'EnableBgp': ros.booleanToRosTemplate(properties.enableBgp),
+      'LocalAsn': ros.numberToRosTemplate(properties.localAsn),
+      'TunnelCidr': ros.stringToRosTemplate(properties.tunnelCidr),
+      'LocalBgpIp': ros.stringToRosTemplate(properties.localBgpIp),
     };
 }
 
@@ -10920,12 +11017,12 @@ function rosVpnConnectionHealthCheckConfigPropertyToRosTemplate(properties: any)
     if (!ros.canInspect(properties)) { return properties; }
     RosVpnConnection_HealthCheckConfigPropertyValidator(properties).assertSuccess();
     return {
-      Policy: ros.stringToRosTemplate(properties.policy),
-      Enable: ros.booleanToRosTemplate(properties.enable),
-      Dip: ros.stringToRosTemplate(properties.dip),
-      Retry: ros.numberToRosTemplate(properties.retry),
-      Sip: ros.stringToRosTemplate(properties.sip),
-      Interval: ros.numberToRosTemplate(properties.interval),
+      'Policy': ros.stringToRosTemplate(properties.policy),
+      'Enable': ros.booleanToRosTemplate(properties.enable),
+      'Dip': ros.stringToRosTemplate(properties.dip),
+      'Retry': ros.numberToRosTemplate(properties.retry),
+      'Sip': ros.stringToRosTemplate(properties.sip),
+      'Interval': ros.numberToRosTemplate(properties.interval),
     };
 }
 
@@ -11068,15 +11165,15 @@ function rosVpnConnectionIkeConfigPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosVpnConnection_IkeConfigPropertyValidator(properties).assertSuccess();
     return {
-      IkeAuthAlg: ros.stringToRosTemplate(properties.ikeAuthAlg),
-      LocalId: ros.stringToRosTemplate(properties.localId),
-      IkeEncAlg: ros.stringToRosTemplate(properties.ikeEncAlg),
-      IkeVersion: ros.stringToRosTemplate(properties.ikeVersion),
-      IkeMode: ros.stringToRosTemplate(properties.ikeMode),
-      IkeLifetime: ros.numberToRosTemplate(properties.ikeLifetime),
-      RemoteId: ros.stringToRosTemplate(properties.remoteId),
-      Psk: ros.stringToRosTemplate(properties.psk),
-      IkePfs: ros.stringToRosTemplate(properties.ikePfs),
+      'IkeAuthAlg': ros.stringToRosTemplate(properties.ikeAuthAlg),
+      'LocalId': ros.stringToRosTemplate(properties.localId),
+      'IkeEncAlg': ros.stringToRosTemplate(properties.ikeEncAlg),
+      'IkeVersion': ros.stringToRosTemplate(properties.ikeVersion),
+      'IkeMode': ros.stringToRosTemplate(properties.ikeMode),
+      'IkeLifetime': ros.numberToRosTemplate(properties.ikeLifetime),
+      'RemoteId': ros.stringToRosTemplate(properties.remoteId),
+      'Psk': ros.stringToRosTemplate(properties.psk),
+      'IkePfs': ros.stringToRosTemplate(properties.ikePfs),
     };
 }
 
@@ -11161,10 +11258,10 @@ function rosVpnConnectionIpsecConfigPropertyToRosTemplate(properties: any): any 
     if (!ros.canInspect(properties)) { return properties; }
     RosVpnConnection_IpsecConfigPropertyValidator(properties).assertSuccess();
     return {
-      IpsecPfs: ros.stringToRosTemplate(properties.ipsecPfs),
-      IpsecEncAlg: ros.stringToRosTemplate(properties.ipsecEncAlg),
-      IpsecAuthAlg: ros.stringToRosTemplate(properties.ipsecAuthAlg),
-      IpsecLifetime: ros.numberToRosTemplate(properties.ipsecLifetime),
+      'IpsecPfs': ros.stringToRosTemplate(properties.ipsecPfs),
+      'IpsecEncAlg': ros.stringToRosTemplate(properties.ipsecEncAlg),
+      'IpsecAuthAlg': ros.stringToRosTemplate(properties.ipsecAuthAlg),
+      'IpsecLifetime': ros.numberToRosTemplate(properties.ipsecLifetime),
     };
 }
 
@@ -11223,9 +11320,9 @@ function rosVpnConnectionTunnelBgpConfigPropertyToRosTemplate(properties: any): 
     if (!ros.canInspect(properties)) { return properties; }
     RosVpnConnection_TunnelBgpConfigPropertyValidator(properties).assertSuccess();
     return {
-      LocalAsn: ros.numberToRosTemplate(properties.localAsn),
-      TunnelCidr: ros.stringToRosTemplate(properties.tunnelCidr),
-      LocalBgpIp: ros.stringToRosTemplate(properties.localBgpIp),
+      'LocalAsn': ros.numberToRosTemplate(properties.localAsn),
+      'TunnelCidr': ros.stringToRosTemplate(properties.tunnelCidr),
+      'LocalBgpIp': ros.stringToRosTemplate(properties.localBgpIp),
     };
 }
 
@@ -11368,15 +11465,15 @@ function rosVpnConnectionTunnelIkeConfigPropertyToRosTemplate(properties: any): 
     if (!ros.canInspect(properties)) { return properties; }
     RosVpnConnection_TunnelIkeConfigPropertyValidator(properties).assertSuccess();
     return {
-      IkeAuthAlg: ros.stringToRosTemplate(properties.ikeAuthAlg),
-      LocalId: ros.stringToRosTemplate(properties.localId),
-      IkeEncAlg: ros.stringToRosTemplate(properties.ikeEncAlg),
-      IkeVersion: ros.stringToRosTemplate(properties.ikeVersion),
-      IkeMode: ros.stringToRosTemplate(properties.ikeMode),
-      IkeLifetime: ros.numberToRosTemplate(properties.ikeLifetime),
-      RemoteId: ros.stringToRosTemplate(properties.remoteId),
-      Psk: ros.stringToRosTemplate(properties.psk),
-      IkePfs: ros.stringToRosTemplate(properties.ikePfs),
+      'IkeAuthAlg': ros.stringToRosTemplate(properties.ikeAuthAlg),
+      'LocalId': ros.stringToRosTemplate(properties.localId),
+      'IkeEncAlg': ros.stringToRosTemplate(properties.ikeEncAlg),
+      'IkeVersion': ros.stringToRosTemplate(properties.ikeVersion),
+      'IkeMode': ros.stringToRosTemplate(properties.ikeMode),
+      'IkeLifetime': ros.numberToRosTemplate(properties.ikeLifetime),
+      'RemoteId': ros.stringToRosTemplate(properties.remoteId),
+      'Psk': ros.stringToRosTemplate(properties.psk),
+      'IkePfs': ros.stringToRosTemplate(properties.ikePfs),
     };
 }
 
@@ -11461,10 +11558,10 @@ function rosVpnConnectionTunnelIpsecConfigPropertyToRosTemplate(properties: any)
     if (!ros.canInspect(properties)) { return properties; }
     RosVpnConnection_TunnelIpsecConfigPropertyValidator(properties).assertSuccess();
     return {
-      IpsecPfs: ros.stringToRosTemplate(properties.ipsecPfs),
-      IpsecEncAlg: ros.stringToRosTemplate(properties.ipsecEncAlg),
-      IpsecAuthAlg: ros.stringToRosTemplate(properties.ipsecAuthAlg),
-      IpsecLifetime: ros.numberToRosTemplate(properties.ipsecLifetime),
+      'IpsecPfs': ros.stringToRosTemplate(properties.ipsecPfs),
+      'IpsecEncAlg': ros.stringToRosTemplate(properties.ipsecEncAlg),
+      'IpsecAuthAlg': ros.stringToRosTemplate(properties.ipsecAuthAlg),
+      'IpsecLifetime': ros.numberToRosTemplate(properties.ipsecLifetime),
     };
 }
 
@@ -11552,14 +11649,14 @@ function rosVpnConnectionTunnelOptionsSpecificationPropertyToRosTemplate(propert
     if (!ros.canInspect(properties)) { return properties; }
     RosVpnConnection_TunnelOptionsSpecificationPropertyValidator(properties).assertSuccess();
     return {
-      Role: ros.stringToRosTemplate(properties.role),
-      TunnelIkeConfig: rosVpnConnectionTunnelIkeConfigPropertyToRosTemplate(properties.tunnelIkeConfig),
-      CustomerGatewayId: ros.stringToRosTemplate(properties.customerGatewayId),
-      TunnelBgpConfig: rosVpnConnectionTunnelBgpConfigPropertyToRosTemplate(properties.tunnelBgpConfig),
-      RemoteCaCertificate: ros.stringToRosTemplate(properties.remoteCaCertificate),
-      EnableNatTraversal: ros.booleanToRosTemplate(properties.enableNatTraversal),
-      TunnelIpsecConfig: rosVpnConnectionTunnelIpsecConfigPropertyToRosTemplate(properties.tunnelIpsecConfig),
-      EnableDpd: ros.booleanToRosTemplate(properties.enableDpd),
+      'Role': ros.stringToRosTemplate(properties.role),
+      'TunnelIkeConfig': rosVpnConnectionTunnelIkeConfigPropertyToRosTemplate(properties.tunnelIkeConfig),
+      'CustomerGatewayId': ros.stringToRosTemplate(properties.customerGatewayId),
+      'TunnelBgpConfig': rosVpnConnectionTunnelBgpConfigPropertyToRosTemplate(properties.tunnelBgpConfig),
+      'RemoteCaCertificate': ros.stringToRosTemplate(properties.remoteCaCertificate),
+      'EnableNatTraversal': ros.booleanToRosTemplate(properties.enableNatTraversal),
+      'TunnelIpsecConfig': rosVpnConnectionTunnelIpsecConfigPropertyToRosTemplate(properties.tunnelIpsecConfig),
+      'EnableDpd': ros.booleanToRosTemplate(properties.enableDpd),
     };
 }
 
@@ -11750,21 +11847,21 @@ function rosVpnGatewayPropsToRosTemplate(properties: any, enableResourceProperty
         RosVpnGatewayPropsValidator(properties).assertSuccess();
     }
     return {
-      Bandwidth: ros.numberToRosTemplate(properties.bandwidth),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      AutoPay: ros.booleanToRosTemplate(properties.autoPay),
-      Description: ros.stringToRosTemplate(properties.description),
-      DisasterRecoveryVSwitchId: ros.stringToRosTemplate(properties.disasterRecoveryVSwitchId),
-      EnableIpsec: ros.booleanToRosTemplate(properties.enableIpsec),
-      EnableSsl: ros.booleanToRosTemplate(properties.enableSsl),
-      InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
-      Name: ros.stringToRosTemplate(properties.name),
-      NetworkType: ros.stringToRosTemplate(properties.networkType),
-      Period: ros.numberToRosTemplate(properties.period),
-      SslConnections: ros.numberToRosTemplate(properties.sslConnections),
-      Tags: ros.listMapper(rosVpnGatewayTagsPropertyToRosTemplate)(properties.tags),
-      VpnType: ros.stringToRosTemplate(properties.vpnType),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
+      'Bandwidth': ros.numberToRosTemplate(properties.bandwidth),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'AutoPay': ros.booleanToRosTemplate(properties.autoPay),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'DisasterRecoveryVSwitchId': ros.stringToRosTemplate(properties.disasterRecoveryVSwitchId),
+      'EnableIpsec': ros.booleanToRosTemplate(properties.enableIpsec),
+      'EnableSsl': ros.booleanToRosTemplate(properties.enableSsl),
+      'InstanceChargeType': ros.stringToRosTemplate(properties.instanceChargeType),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'NetworkType': ros.stringToRosTemplate(properties.networkType),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'SslConnections': ros.numberToRosTemplate(properties.sslConnections),
+      'Tags': ros.listMapper(rosVpnGatewayTagsPropertyToRosTemplate)(properties.tags),
+      'VpnType': ros.stringToRosTemplate(properties.vpnType),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
     };
 }
 
@@ -12033,8 +12130,8 @@ function rosVpnGatewayTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosVpnGateway_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -12085,6 +12182,12 @@ export interface RosVpnPbrRouteEntryProps {
      * @Property overlayMode: The overlay mode.
      */
     readonly overlayMode?: string | ros.IResolvable;
+
+    /**
+     * @Property priority: Policy priority for policy routing. Range: 1-100 Default value: 10.
+     * The smaller the policy priority number, the higher the priority of the policy route.
+     */
+    readonly priority?: number | ros.IResolvable;
 }
 
 /**
@@ -12105,6 +12208,14 @@ function RosVpnPbrRouteEntryPropsValidator(properties: any): ros.ValidationResul
     errors.collect(ros.propertyValidator('vpnGatewayId', ros.validateString)(properties.vpnGatewayId));
     errors.collect(ros.propertyValidator('nextHop', ros.requiredValidator)(properties.nextHop));
     errors.collect(ros.propertyValidator('nextHop', ros.validateString)(properties.nextHop));
+    if(properties.priority && (typeof properties.priority) !== 'object') {
+        errors.collect(ros.propertyValidator('priority', ros.validateRange)({
+            data: properties.priority,
+            min: 1,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('priority', ros.validateNumber)(properties.priority));
     errors.collect(ros.propertyValidator('routeSource', ros.requiredValidator)(properties.routeSource));
     errors.collect(ros.propertyValidator('routeSource', ros.validateString)(properties.routeSource));
     errors.collect(ros.propertyValidator('publishVpc', ros.requiredValidator)(properties.publishVpc));
@@ -12128,14 +12239,15 @@ function rosVpnPbrRouteEntryPropsToRosTemplate(properties: any, enableResourcePr
         RosVpnPbrRouteEntryPropsValidator(properties).assertSuccess();
     }
     return {
-      NextHop: ros.stringToRosTemplate(properties.nextHop),
-      PublishVpc: ros.booleanToRosTemplate(properties.publishVpc),
-      RouteDest: ros.stringToRosTemplate(properties.routeDest),
-      RouteSource: ros.stringToRosTemplate(properties.routeSource),
-      VpnGatewayId: ros.stringToRosTemplate(properties.vpnGatewayId),
-      Weight: ros.numberToRosTemplate(properties.weight),
-      Description: ros.stringToRosTemplate(properties.description),
-      OverlayMode: ros.stringToRosTemplate(properties.overlayMode),
+      'NextHop': ros.stringToRosTemplate(properties.nextHop),
+      'PublishVpc': ros.booleanToRosTemplate(properties.publishVpc),
+      'RouteDest': ros.stringToRosTemplate(properties.routeDest),
+      'RouteSource': ros.stringToRosTemplate(properties.routeSource),
+      'VpnGatewayId': ros.stringToRosTemplate(properties.vpnGatewayId),
+      'Weight': ros.numberToRosTemplate(properties.weight),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'OverlayMode': ros.stringToRosTemplate(properties.overlayMode),
+      'Priority': ros.numberToRosTemplate(properties.priority),
     };
 }
 
@@ -12216,6 +12328,12 @@ export class RosVpnPbrRouteEntry extends ros.RosResource {
     public overlayMode: string | ros.IResolvable | undefined;
 
     /**
+     * @Property priority: Policy priority for policy routing. Range: 1-100 Default value: 10.
+     * The smaller the policy priority number, the higher the priority of the policy route.
+     */
+    public priority: number | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -12236,6 +12354,7 @@ export class RosVpnPbrRouteEntry extends ros.RosResource {
         this.weight = props.weight;
         this.description = props.description;
         this.overlayMode = props.overlayMode;
+        this.priority = props.priority;
     }
 
 
@@ -12249,6 +12368,7 @@ export class RosVpnPbrRouteEntry extends ros.RosResource {
             weight: this.weight,
             description: this.description,
             overlayMode: this.overlayMode,
+            priority: this.priority,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -12339,13 +12459,13 @@ function rosVpnRouteEntryPropsToRosTemplate(properties: any, enableResourcePrope
         RosVpnRouteEntryPropsValidator(properties).assertSuccess();
     }
     return {
-      NextHop: ros.stringToRosTemplate(properties.nextHop),
-      PublishVpc: ros.booleanToRosTemplate(properties.publishVpc),
-      RouteDest: ros.stringToRosTemplate(properties.routeDest),
-      VpnGatewayId: ros.stringToRosTemplate(properties.vpnGatewayId),
-      Weight: ros.numberToRosTemplate(properties.weight),
-      Description: ros.stringToRosTemplate(properties.description),
-      OverlayMode: ros.stringToRosTemplate(properties.overlayMode),
+      'NextHop': ros.stringToRosTemplate(properties.nextHop),
+      'PublishVpc': ros.booleanToRosTemplate(properties.publishVpc),
+      'RouteDest': ros.stringToRosTemplate(properties.routeDest),
+      'VpnGatewayId': ros.stringToRosTemplate(properties.vpnGatewayId),
+      'Weight': ros.numberToRosTemplate(properties.weight),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'OverlayMode': ros.stringToRosTemplate(properties.overlayMode),
     };
 }
 

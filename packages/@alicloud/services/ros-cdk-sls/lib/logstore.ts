@@ -91,6 +91,11 @@ export class Logstore extends ros.Resource {
     public readonly attrLogstoreName: ros.IResolvable;
 
     /**
+     * Attribute ProjectName: Project name.
+     */
+    public readonly attrProjectName: ros.IResolvable;
+
+    /**
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties
@@ -116,5 +121,6 @@ export class Logstore extends ros.Resource {
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosLogstore;
         this.attrLogstoreName = rosLogstore.attrLogstoreName;
+        this.attrProjectName = rosLogstore.attrProjectName;
     }
 }

@@ -13,6 +13,14 @@ export interface NamespacesProps {
      * Property namespace: Indicator warehouse name.
      */
     readonly namespace?: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -45,6 +53,7 @@ export class Namespaces extends ros.Resource {
 
         const rosNamespaces = new RosNamespaces(this, id,  {
             namespace: props.namespace,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosNamespaces;
         this.attrNamespaces = rosNamespaces.attrNamespaces;

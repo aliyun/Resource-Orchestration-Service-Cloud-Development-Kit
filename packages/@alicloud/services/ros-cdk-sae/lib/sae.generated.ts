@@ -40,9 +40,43 @@ export interface RosApplicationProps {
     readonly replicas: number | ros.IResolvable;
 
     /**
+     * @Property acrAssumeRoleArn: The ARN of the RAM role required when pulling the image across accounts.
+     */
+    readonly acrAssumeRoleArn?: string | ros.IResolvable;
+
+    /**
+     * @Property acrInstanceId: Container Image service ACR Enterprise Edition instance ID. Required when ImageUrl serves enterprise edition for container images.
+     */
+    readonly acrInstanceId?: string | ros.IResolvable;
+
+    /**
      * @Property appDescription: Application description. No more than 1024 characters.
      */
     readonly appDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property appSource: Application source.
+     */
+    readonly appSource?: string | ros.IResolvable;
+
+    /**
+     * @Property associateEip: Whether to bind EIP. The values are explained as follows:
+     * - true: Binding.
+     * - false: No binding
+     */
+    readonly associateEip?: boolean | ros.IResolvable;
+
+    /**
+     * @Property autoConfig: Whether to automatically configure the network environment. The values are explained as follows:
+     * - true: SAE automatically config the network environment when creating the application. The values for NamespaceId, VpcId, vSwitchId, and SecurityGroupId are ignored.
+     * - false: SAE manually config the network environment when creating the application.
+     */
+    readonly autoConfig?: boolean | ros.IResolvable;
+
+    /**
+     * @Property baseAppId: Base application ID.
+     */
+    readonly baseAppId?: string | ros.IResolvable;
 
     /**
      * @Property command: Mirroring the start command. The command object in memory executable container must be. For example: sleep. This command will cause the image to set the original startup command failure.
@@ -53,6 +87,11 @@ export interface RosApplicationProps {
      * @Property commandArgs: Mirroring the start command parameters. Parameters required for the start-command. For example: [ "1d"]
      */
     readonly commandArgs?: string | ros.IResolvable;
+
+    /**
+     * @Property configMapMountDesc: ConfigMap mount description. Use the configuration items created on the namespace configuration items page to inject configuration information into the container.
+     */
+    readonly configMapMountDesc?: string | ros.IResolvable;
 
     /**
      * @Property customHostAlias: Custom mapping host vessel. For example: [{ "hostName": "samplehost", "ip": "127.0.0.1"}]
@@ -70,9 +109,21 @@ export interface RosApplicationProps {
     readonly edasContainerVersion?: string | ros.IResolvable;
 
     /**
+     * @Property enableEbpf: Whether to enable EBPF. Enable application monitoring for non-Java applications. The values are explained as follows:
+     * - true: Enable.
+     * - false: Disable.
+     */
+    readonly enableEbpf?: string | ros.IResolvable;
+
+    /**
      * @Property envs: Container environment variable parameters. For example: [{ "name": "envtmp", "value": "0"}]
      */
     readonly envs?: string | ros.IResolvable;
+
+    /**
+     * @Property imagePullSecrets: Corresponding to the secret dictionary ID.
+     */
+    readonly imagePullSecrets?: string | ros.IResolvable;
 
     /**
      * @Property imageUrl: Mirroring address. Image only type of application can be configured to mirror address.
@@ -97,9 +148,30 @@ export interface RosApplicationProps {
     readonly jdk?: string | ros.IResolvable;
 
     /**
+     * @Property kafkaConfigs: Logs are ingested to Kafka configuration summary information. The values are explained as follows:
+     * - kafkaEndpoint: The service access address for the Kafka API
+     * - kafkaInstanceId: Kafka instance ID
+     * - kafkaConfigs: Configuration summary information for one or more logs See Request parameters kafkaConfigs for a description of these values.
+     */
+    readonly kafkaConfigs?: string | ros.IResolvable;
+
+    /**
      * @Property liveness: Container health check, health check fails container will be killed and recovery. Currently only supports mode command issued in the container. The columns: { "exec": { "command": [ "sleep", "5s"]}, "initialDelaySeconds": 10, "timeoutSeconds": 11}
      */
     readonly liveness?: string | ros.IResolvable;
+
+    /**
+     * @Property microRegistration: Select the Nacos registry with the following values:
+     * - 0: SAE built-in Nacos.
+     * - 1: User-built Nacos.
+     * - 2: MSE commercial version of Nacos.
+     */
+    readonly microRegistration?: string | ros.IResolvable;
+
+    /**
+     * @Property microRegistrationConfig: Registry configuration information.
+     */
+    readonly microRegistrationConfig?: string | ros.IResolvable;
 
     /**
      * @Property mountDesc: Mount Description
@@ -112,9 +184,40 @@ export interface RosApplicationProps {
     readonly mountHost?: string | ros.IResolvable;
 
     /**
+     * @Property nasConfigs: Configuration to mount the NAS. The values are explained as follows:
+     * - mountPath: The container mount path
+     * - readOnly: A value of false indicates read and write permission.
+     * - nasId: NAS ID
+     * - mountDomain: The container mount point address For more information, see DescribeMountTargets.
+     * - nasPath: NAS relative file directory
+     */
+    readonly nasConfigs?: string | ros.IResolvable;
+
+    /**
      * @Property nasId: Mount the NAS ID, you must be in the same region and cluster. It must be available to create a mount point limit, or switch on its mount point already in the VPC. If you do not fill, and there mountDescs field, the default will automatically purchase a NAS and mount it onto the switch within the VPC.
      */
     readonly nasId?: string | ros.IResolvable;
+
+    /**
+     * @Property ossAkId: AccessKey ID of the OSS.
+     */
+    readonly ossAkId?: string | ros.IResolvable;
+
+    /**
+     * @Property ossAkSecret: AccessKey Secret of the OSS.
+     */
+    readonly ossAkSecret?: string | ros.IResolvable;
+
+    /**
+     * @Property ossMountDescs: OSS mount description information. The parameters are described as follows:
+     * - bucketName: The name of the Bucket
+     * - bucketPath: The directory or OSS object you created in OSS that will raise an exception if the OSS mount directory does not exist.
+     * - mountPath: Your container path in SAE. If the path already exists, it is a covering relationship. If the path doesn't exist, it will be created.
+     * - readOnly: This specifies whether the container path has read-only permissions for mount directory resources:
+     *   - true: Read-only permission
+     *   - false: Read and write permissions
+     */
+    readonly ossMountDescs?: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property packageUrl: Deployment packages address. Only FatJar War or the type of application can be configured to deploy packet address.
@@ -127,6 +230,26 @@ export interface RosApplicationProps {
     readonly packageVersion?: string | ros.IResolvable;
 
     /**
+     * @Property php: PHP version.
+     */
+    readonly php?: string | ros.IResolvable;
+
+    /**
+     * @Property phpArmsConfigLocation: The PHP application monitors the mount path and requires you to ensure that the PHP server loads the configuration file for this path. You don't need to worry about the configuration content; SAE will automatically render the correct configuration file.
+     */
+    readonly phpArmsConfigLocation?: string | ros.IResolvable;
+
+    /**
+     * @Property phpConfig: PHP configuration file contents.
+     */
+    readonly phpConfig?: string | ros.IResolvable;
+
+    /**
+     * @Property phpConfigLocation: PHP application launch configuration mount path, you need to ensure that the PHP server will be started with this configuration file.
+     */
+    readonly phpConfigLocation?: string | ros.IResolvable;
+
+    /**
      * @Property postStart: Executing the script, such as after starting the format: { "exec": { "command": "cat", "\/ etc \/ group"}}
      */
     readonly postStart?: string | ros.IResolvable;
@@ -137,14 +260,52 @@ export interface RosApplicationProps {
     readonly preStop?: string | ros.IResolvable;
 
     /**
+     * @Property programmingLanguage: Create the stack language for the application. The values are explained as follows:
+     * - java: The Java language
+     * - php: PHP language.
+     * - other: Multiple languages such as Python, C++, Go,.NET, Node.js, etc.
+     */
+    readonly programmingLanguage?: string | ros.IResolvable;
+
+    /**
+     * @Property pvtzDiscoverySvc: Enable K8s Service registration discovery. The values are explained as follows:
+     * - serviceName: The name of the service The format is custom-namespace ID, in which the postfix-namespace ID does not support customization and needs to be filled in according to the namespace of the application. For example, choosing the default namespace for the North China 2 (Beijing) region would be -cn-beijing-default.
+     * - namespaceId: The namespace ID
+     * - portProtocols: Ports and protocols The port is in the range [1,65535] and supports both TCP and UDP protocols.
+     * - portAndProtocol: Ports and protocols The port is in the range [1,65535] and supports both TCP and UDP protocols. portProtocols is preferred. If portProtocols is set, only portProtocols will take effect.
+     * - enable: Enable K8s Service registration discovery.
+     */
+    readonly pvtzDiscoverySvc?: string | ros.IResolvable;
+
+    /**
+     * @Property python: Python version. Supports PYTHON 3.9.15
+     */
+    readonly python?: string | ros.IResolvable;
+
+    /**
+     * @Property pythonModules: Install custom module dependencies. The dependencies defined in requirements.txt in the root directory are installed by default. If the package is not configured or customized, you can specify the dependencies to install.
+     */
+    readonly pythonModules?: string | ros.IResolvable;
+
+    /**
      * @Property readiness: Application launch status check, health check fails repeatedly container will be killed and restarted. Do not pass health check of the vessel will not have to enter SLB traffic. For example: { "exec": { "command": [ "sleep", "6s"]}, "initialDelaySeconds": 15, "timeoutSeconds": 12}
      */
     readonly readiness?: string | ros.IResolvable;
 
     /**
+     * @Property saeVersion: SAE version.
+     */
+    readonly saeVersion?: string | ros.IResolvable;
+
+    /**
      * @Property securityGroupId: Security group ID.
      */
     readonly securityGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property serviceTags: Service tags.
+     */
+    readonly serviceTags?: string | ros.IResolvable;
 
     /**
      * @Property slsConfigs: Log collection configuration file
@@ -157,9 +318,24 @@ export interface RosApplicationProps {
     readonly tags?: RosApplication.TagsProperty[];
 
     /**
+     * @Property terminationGracePeriodSeconds: Graceful offline timeout, default 30, unit of seconds. The value ranges from 1 to 300.
+     */
+    readonly terminationGracePeriodSeconds?: number | ros.IResolvable;
+
+    /**
      * @Property timezone: Application time zone. Default Asia\/Shanghai.
      */
     readonly timezone?: string | ros.IResolvable;
+
+    /**
+     * @Property tomcatConfig: Tomcat file configuration, set to "" or "{}" to delete the configuration:
+     * - port: Ports in the range of 1024 to 65535 require Root privileges to operate on ports below 1024 Because the container is configured with Admin access, please specify a port greater than 1024. If not configured, it defaults to 8080.
+     * - contextPath: The access path, defaults to the root directory "\/"
+     * - maxThreads: This config the number of connections in the pool; the default is 400.
+     * - uriEncoding: Tomcat's encoding formats, including UTF-8, ISO-8859-1, GBK, and GB2312 If not set, it defaults to ISO-8859-1.
+     * - useBodyEncodingForUri: Whether to useBodyEncoding for URL (defaults to true).
+     */
+    readonly tomcatConfig?: string | ros.IResolvable;
 
     /**
      * @Property vpcId: EDAS namespace corresponding VPC. In Serverless in a corresponding one of the VPC namespace only, and can not be modified. Serverless first created in the application name space will form a binding relationship. You may correspond to a plurality of namespaces VPC. Do not fill was VpcId namespace binding.
@@ -193,18 +369,11 @@ function RosApplicationPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('timezone', ros.validateString)(properties.timezone));
-    if(properties.appDescription && (Array.isArray(properties.appDescription) || (typeof properties.appDescription) === 'string')) {
-        errors.collect(ros.propertyValidator('appDescription', ros.validateLength)({
-            data: properties.appDescription.length,
-            min: undefined,
-            max: 1024,
-          }));
-    }
-    errors.collect(ros.propertyValidator('appDescription', ros.validateString)(properties.appDescription));
+    errors.collect(ros.propertyValidator('phpConfig', ros.validateString)(properties.phpConfig));
     errors.collect(ros.propertyValidator('mountDesc', ros.validateString)(properties.mountDesc));
-    errors.collect(ros.propertyValidator('nasId', ros.validateString)(properties.nasId));
-    errors.collect(ros.propertyValidator('warStartOptions', ros.validateString)(properties.warStartOptions));
+    errors.collect(ros.propertyValidator('microRegistrationConfig', ros.validateString)(properties.microRegistrationConfig));
     errors.collect(ros.propertyValidator('liveness', ros.validateString)(properties.liveness));
+    errors.collect(ros.propertyValidator('warStartOptions', ros.validateString)(properties.warStartOptions));
     errors.collect(ros.propertyValidator('memory', ros.requiredValidator)(properties.memory));
     if(properties.memory && (typeof properties.memory) !== 'object') {
         errors.collect(ros.propertyValidator('memory', ros.validateRange)({
@@ -215,7 +384,6 @@ function RosApplicationPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('memory', ros.validateNumber)(properties.memory));
     errors.collect(ros.propertyValidator('webContainer', ros.validateString)(properties.webContainer));
-    errors.collect(ros.propertyValidator('slsConfigs', ros.validateString)(properties.slsConfigs));
     errors.collect(ros.propertyValidator('cpu', ros.requiredValidator)(properties.cpu));
     if(properties.cpu && (typeof properties.cpu) !== 'object') {
         errors.collect(ros.propertyValidator('cpu', ros.validateRange)({
@@ -225,16 +393,13 @@ function RosApplicationPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('cpu', ros.validateNumber)(properties.cpu));
-    errors.collect(ros.propertyValidator('deploy', ros.validateBoolean)(properties.deploy));
-    errors.collect(ros.propertyValidator('packageVersion', ros.validateString)(properties.packageVersion));
-    errors.collect(ros.propertyValidator('appName', ros.requiredValidator)(properties.appName));
-    errors.collect(ros.propertyValidator('appName', ros.validateString)(properties.appName));
-    errors.collect(ros.propertyValidator('jdk', ros.validateString)(properties.jdk));
+    errors.collect(ros.propertyValidator('nasConfigs', ros.validateString)(properties.nasConfigs));
     errors.collect(ros.propertyValidator('jarStartArgs', ros.validateString)(properties.jarStartArgs));
     errors.collect(ros.propertyValidator('preStop', ros.validateString)(properties.preStop));
-    errors.collect(ros.propertyValidator('readiness', ros.validateString)(properties.readiness));
+    errors.collect(ros.propertyValidator('phpArmsConfigLocation', ros.validateString)(properties.phpArmsConfigLocation));
     errors.collect(ros.propertyValidator('packageType', ros.requiredValidator)(properties.packageType));
     errors.collect(ros.propertyValidator('packageType', ros.validateString)(properties.packageType));
+    errors.collect(ros.propertyValidator('autoConfig', ros.validateBoolean)(properties.autoConfig));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -243,23 +408,87 @@ function RosApplicationPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosApplication_TagsPropertyValidator))(properties.tags));
-    errors.collect(ros.propertyValidator('commandArgs', ros.validateString)(properties.commandArgs));
-    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
-    errors.collect(ros.propertyValidator('envs', ros.validateString)(properties.envs));
+    errors.collect(ros.propertyValidator('python', ros.validateString)(properties.python));
+    errors.collect(ros.propertyValidator('ossAkSecret', ros.validateString)(properties.ossAkSecret));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('imageUrl', ros.validateString)(properties.imageUrl));
     errors.collect(ros.propertyValidator('postStart', ros.validateString)(properties.postStart));
+    errors.collect(ros.propertyValidator('baseAppId', ros.validateString)(properties.baseAppId));
+    errors.collect(ros.propertyValidator('configMapMountDesc', ros.validateString)(properties.configMapMountDesc));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    if(properties.enableEbpf && (typeof properties.enableEbpf) !== 'object') {
+        errors.collect(ros.propertyValidator('enableEbpf', ros.validateAllowedValues)({
+          data: properties.enableEbpf,
+          allowedValues: ["true","false"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('enableEbpf', ros.validateString)(properties.enableEbpf));
+    errors.collect(ros.propertyValidator('edasContainerVersion', ros.validateString)(properties.edasContainerVersion));
+    errors.collect(ros.propertyValidator('serviceTags', ros.validateString)(properties.serviceTags));
+    errors.collect(ros.propertyValidator('namespaceId', ros.requiredValidator)(properties.namespaceId));
+    errors.collect(ros.propertyValidator('namespaceId', ros.validateString)(properties.namespaceId));
+    errors.collect(ros.propertyValidator('tomcatConfig', ros.validateString)(properties.tomcatConfig));
+    if(properties.appDescription && (Array.isArray(properties.appDescription) || (typeof properties.appDescription) === 'string')) {
+        errors.collect(ros.propertyValidator('appDescription', ros.validateLength)({
+            data: properties.appDescription.length,
+            min: undefined,
+            max: 1024,
+          }));
+    }
+    errors.collect(ros.propertyValidator('appDescription', ros.validateString)(properties.appDescription));
+    errors.collect(ros.propertyValidator('nasId', ros.validateString)(properties.nasId));
+    errors.collect(ros.propertyValidator('pythonModules', ros.validateString)(properties.pythonModules));
+    errors.collect(ros.propertyValidator('acrInstanceId', ros.validateString)(properties.acrInstanceId));
+    errors.collect(ros.propertyValidator('kafkaConfigs', ros.validateString)(properties.kafkaConfigs));
+    errors.collect(ros.propertyValidator('slsConfigs', ros.validateString)(properties.slsConfigs));
+    errors.collect(ros.propertyValidator('ossAkId', ros.validateString)(properties.ossAkId));
+    errors.collect(ros.propertyValidator('ossMountDescs', ros.listValidator(ros.validateAny))(properties.ossMountDescs));
+    errors.collect(ros.propertyValidator('deploy', ros.validateBoolean)(properties.deploy));
+    errors.collect(ros.propertyValidator('packageVersion', ros.validateString)(properties.packageVersion));
+    errors.collect(ros.propertyValidator('appName', ros.requiredValidator)(properties.appName));
+    errors.collect(ros.propertyValidator('appName', ros.validateString)(properties.appName));
+    errors.collect(ros.propertyValidator('jdk', ros.validateString)(properties.jdk));
+    errors.collect(ros.propertyValidator('readiness', ros.validateString)(properties.readiness));
+    if(properties.microRegistration && (typeof properties.microRegistration) !== 'object') {
+        errors.collect(ros.propertyValidator('microRegistration', ros.validateAllowedValues)({
+          data: properties.microRegistration,
+          allowedValues: ["0","1","2"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('microRegistration', ros.validateString)(properties.microRegistration));
+    errors.collect(ros.propertyValidator('php', ros.validateString)(properties.php));
+    errors.collect(ros.propertyValidator('commandArgs', ros.validateString)(properties.commandArgs));
+    errors.collect(ros.propertyValidator('acrAssumeRoleArn', ros.validateString)(properties.acrAssumeRoleArn));
+    errors.collect(ros.propertyValidator('saeVersion', ros.validateString)(properties.saeVersion));
+    if(properties.terminationGracePeriodSeconds && (typeof properties.terminationGracePeriodSeconds) !== 'object') {
+        errors.collect(ros.propertyValidator('terminationGracePeriodSeconds', ros.validateRange)({
+            data: properties.terminationGracePeriodSeconds,
+            min: 1,
+            max: 300,
+          }));
+    }
+    errors.collect(ros.propertyValidator('terminationGracePeriodSeconds', ros.validateNumber)(properties.terminationGracePeriodSeconds));
+    errors.collect(ros.propertyValidator('envs', ros.validateString)(properties.envs));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('pvtzDiscoverySvc', ros.validateString)(properties.pvtzDiscoverySvc));
     errors.collect(ros.propertyValidator('jarStartOptions', ros.validateString)(properties.jarStartOptions));
+    errors.collect(ros.propertyValidator('imagePullSecrets', ros.validateString)(properties.imagePullSecrets));
     errors.collect(ros.propertyValidator('mountHost', ros.validateString)(properties.mountHost));
     errors.collect(ros.propertyValidator('replicas', ros.requiredValidator)(properties.replicas));
     errors.collect(ros.propertyValidator('replicas', ros.validateNumber)(properties.replicas));
     errors.collect(ros.propertyValidator('customHostAlias', ros.validateString)(properties.customHostAlias));
-    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('appSource', ros.validateString)(properties.appSource));
+    errors.collect(ros.propertyValidator('associateEip', ros.validateBoolean)(properties.associateEip));
     errors.collect(ros.propertyValidator('command', ros.validateString)(properties.command));
-    errors.collect(ros.propertyValidator('edasContainerVersion', ros.validateString)(properties.edasContainerVersion));
     errors.collect(ros.propertyValidator('packageUrl', ros.validateString)(properties.packageUrl));
-    errors.collect(ros.propertyValidator('namespaceId', ros.requiredValidator)(properties.namespaceId));
-    errors.collect(ros.propertyValidator('namespaceId', ros.validateString)(properties.namespaceId));
+    errors.collect(ros.propertyValidator('phpConfigLocation', ros.validateString)(properties.phpConfigLocation));
+    if(properties.programmingLanguage && (typeof properties.programmingLanguage) !== 'object') {
+        errors.collect(ros.propertyValidator('programmingLanguage', ros.validateAllowedValues)({
+          data: properties.programmingLanguage,
+          allowedValues: ["java","php","other"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('programmingLanguage', ros.validateString)(properties.programmingLanguage));
     return errors.wrap('supplied properties not correct for "RosApplicationProps"');
 }
 
@@ -277,40 +506,68 @@ function rosApplicationPropsToRosTemplate(properties: any, enableResourcePropert
         RosApplicationPropsValidator(properties).assertSuccess();
     }
     return {
-      AppName: ros.stringToRosTemplate(properties.appName),
-      Cpu: ros.numberToRosTemplate(properties.cpu),
-      Memory: ros.numberToRosTemplate(properties.memory),
-      NamespaceId: ros.stringToRosTemplate(properties.namespaceId),
-      PackageType: ros.stringToRosTemplate(properties.packageType),
-      Replicas: ros.numberToRosTemplate(properties.replicas),
-      AppDescription: ros.stringToRosTemplate(properties.appDescription),
-      Command: ros.stringToRosTemplate(properties.command),
-      CommandArgs: ros.stringToRosTemplate(properties.commandArgs),
-      CustomHostAlias: ros.stringToRosTemplate(properties.customHostAlias),
-      Deploy: ros.booleanToRosTemplate(properties.deploy),
-      EdasContainerVersion: ros.stringToRosTemplate(properties.edasContainerVersion),
-      Envs: ros.stringToRosTemplate(properties.envs),
-      ImageUrl: ros.stringToRosTemplate(properties.imageUrl),
-      JarStartArgs: ros.stringToRosTemplate(properties.jarStartArgs),
-      JarStartOptions: ros.stringToRosTemplate(properties.jarStartOptions),
-      Jdk: ros.stringToRosTemplate(properties.jdk),
-      Liveness: ros.stringToRosTemplate(properties.liveness),
-      MountDesc: ros.stringToRosTemplate(properties.mountDesc),
-      MountHost: ros.stringToRosTemplate(properties.mountHost),
-      NasId: ros.stringToRosTemplate(properties.nasId),
-      PackageUrl: ros.stringToRosTemplate(properties.packageUrl),
-      PackageVersion: ros.stringToRosTemplate(properties.packageVersion),
-      PostStart: ros.stringToRosTemplate(properties.postStart),
-      PreStop: ros.stringToRosTemplate(properties.preStop),
-      Readiness: ros.stringToRosTemplate(properties.readiness),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
-      SlsConfigs: ros.stringToRosTemplate(properties.slsConfigs),
-      Tags: ros.listMapper(rosApplicationTagsPropertyToRosTemplate)(properties.tags),
-      Timezone: ros.stringToRosTemplate(properties.timezone),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      WarStartOptions: ros.stringToRosTemplate(properties.warStartOptions),
-      WebContainer: ros.stringToRosTemplate(properties.webContainer),
+      'AppName': ros.stringToRosTemplate(properties.appName),
+      'Cpu': ros.numberToRosTemplate(properties.cpu),
+      'Memory': ros.numberToRosTemplate(properties.memory),
+      'NamespaceId': ros.stringToRosTemplate(properties.namespaceId),
+      'PackageType': ros.stringToRosTemplate(properties.packageType),
+      'Replicas': ros.numberToRosTemplate(properties.replicas),
+      'AcrAssumeRoleArn': ros.stringToRosTemplate(properties.acrAssumeRoleArn),
+      'AcrInstanceId': ros.stringToRosTemplate(properties.acrInstanceId),
+      'AppDescription': ros.stringToRosTemplate(properties.appDescription),
+      'AppSource': ros.stringToRosTemplate(properties.appSource),
+      'AssociateEip': ros.booleanToRosTemplate(properties.associateEip),
+      'AutoConfig': ros.booleanToRosTemplate(properties.autoConfig),
+      'BaseAppId': ros.stringToRosTemplate(properties.baseAppId),
+      'Command': ros.stringToRosTemplate(properties.command),
+      'CommandArgs': ros.stringToRosTemplate(properties.commandArgs),
+      'ConfigMapMountDesc': ros.stringToRosTemplate(properties.configMapMountDesc),
+      'CustomHostAlias': ros.stringToRosTemplate(properties.customHostAlias),
+      'Deploy': ros.booleanToRosTemplate(properties.deploy),
+      'EdasContainerVersion': ros.stringToRosTemplate(properties.edasContainerVersion),
+      'EnableEbpf': ros.stringToRosTemplate(properties.enableEbpf),
+      'Envs': ros.stringToRosTemplate(properties.envs),
+      'ImagePullSecrets': ros.stringToRosTemplate(properties.imagePullSecrets),
+      'ImageUrl': ros.stringToRosTemplate(properties.imageUrl),
+      'JarStartArgs': ros.stringToRosTemplate(properties.jarStartArgs),
+      'JarStartOptions': ros.stringToRosTemplate(properties.jarStartOptions),
+      'Jdk': ros.stringToRosTemplate(properties.jdk),
+      'KafkaConfigs': ros.stringToRosTemplate(properties.kafkaConfigs),
+      'Liveness': ros.stringToRosTemplate(properties.liveness),
+      'MicroRegistration': ros.stringToRosTemplate(properties.microRegistration),
+      'MicroRegistrationConfig': ros.stringToRosTemplate(properties.microRegistrationConfig),
+      'MountDesc': ros.stringToRosTemplate(properties.mountDesc),
+      'MountHost': ros.stringToRosTemplate(properties.mountHost),
+      'NasConfigs': ros.stringToRosTemplate(properties.nasConfigs),
+      'NasId': ros.stringToRosTemplate(properties.nasId),
+      'OssAkId': ros.stringToRosTemplate(properties.ossAkId),
+      'OssAkSecret': ros.stringToRosTemplate(properties.ossAkSecret),
+      'OssMountDescs': ros.listMapper(ros.objectToRosTemplate)(properties.ossMountDescs),
+      'PackageUrl': ros.stringToRosTemplate(properties.packageUrl),
+      'PackageVersion': ros.stringToRosTemplate(properties.packageVersion),
+      'Php': ros.stringToRosTemplate(properties.php),
+      'PhpArmsConfigLocation': ros.stringToRosTemplate(properties.phpArmsConfigLocation),
+      'PhpConfig': ros.stringToRosTemplate(properties.phpConfig),
+      'PhpConfigLocation': ros.stringToRosTemplate(properties.phpConfigLocation),
+      'PostStart': ros.stringToRosTemplate(properties.postStart),
+      'PreStop': ros.stringToRosTemplate(properties.preStop),
+      'ProgrammingLanguage': ros.stringToRosTemplate(properties.programmingLanguage),
+      'PvtzDiscoverySvc': ros.stringToRosTemplate(properties.pvtzDiscoverySvc),
+      'Python': ros.stringToRosTemplate(properties.python),
+      'PythonModules': ros.stringToRosTemplate(properties.pythonModules),
+      'Readiness': ros.stringToRosTemplate(properties.readiness),
+      'SaeVersion': ros.stringToRosTemplate(properties.saeVersion),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
+      'ServiceTags': ros.stringToRosTemplate(properties.serviceTags),
+      'SlsConfigs': ros.stringToRosTemplate(properties.slsConfigs),
+      'Tags': ros.listMapper(rosApplicationTagsPropertyToRosTemplate)(properties.tags),
+      'TerminationGracePeriodSeconds': ros.numberToRosTemplate(properties.terminationGracePeriodSeconds),
+      'Timezone': ros.stringToRosTemplate(properties.timezone),
+      'TomcatConfig': ros.stringToRosTemplate(properties.tomcatConfig),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'WarStartOptions': ros.stringToRosTemplate(properties.warStartOptions),
+      'WebContainer': ros.stringToRosTemplate(properties.webContainer),
     };
 }
 
@@ -370,9 +627,43 @@ export class RosApplication extends ros.RosResource {
     public replicas: number | ros.IResolvable;
 
     /**
+     * @Property acrAssumeRoleArn: The ARN of the RAM role required when pulling the image across accounts.
+     */
+    public acrAssumeRoleArn: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property acrInstanceId: Container Image service ACR Enterprise Edition instance ID. Required when ImageUrl serves enterprise edition for container images.
+     */
+    public acrInstanceId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property appDescription: Application description. No more than 1024 characters.
      */
     public appDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property appSource: Application source.
+     */
+    public appSource: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property associateEip: Whether to bind EIP. The values are explained as follows:
+     * - true: Binding.
+     * - false: No binding
+     */
+    public associateEip: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property autoConfig: Whether to automatically configure the network environment. The values are explained as follows:
+     * - true: SAE automatically config the network environment when creating the application. The values for NamespaceId, VpcId, vSwitchId, and SecurityGroupId are ignored.
+     * - false: SAE manually config the network environment when creating the application.
+     */
+    public autoConfig: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property baseAppId: Base application ID.
+     */
+    public baseAppId: string | ros.IResolvable | undefined;
 
     /**
      * @Property command: Mirroring the start command. The command object in memory executable container must be. For example: sleep. This command will cause the image to set the original startup command failure.
@@ -383,6 +674,11 @@ export class RosApplication extends ros.RosResource {
      * @Property commandArgs: Mirroring the start command parameters. Parameters required for the start-command. For example: [ "1d"]
      */
     public commandArgs: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property configMapMountDesc: ConfigMap mount description. Use the configuration items created on the namespace configuration items page to inject configuration information into the container.
+     */
+    public configMapMountDesc: string | ros.IResolvable | undefined;
 
     /**
      * @Property customHostAlias: Custom mapping host vessel. For example: [{ "hostName": "samplehost", "ip": "127.0.0.1"}]
@@ -400,9 +696,21 @@ export class RosApplication extends ros.RosResource {
     public edasContainerVersion: string | ros.IResolvable | undefined;
 
     /**
+     * @Property enableEbpf: Whether to enable EBPF. Enable application monitoring for non-Java applications. The values are explained as follows:
+     * - true: Enable.
+     * - false: Disable.
+     */
+    public enableEbpf: string | ros.IResolvable | undefined;
+
+    /**
      * @Property envs: Container environment variable parameters. For example: [{ "name": "envtmp", "value": "0"}]
      */
     public envs: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property imagePullSecrets: Corresponding to the secret dictionary ID.
+     */
+    public imagePullSecrets: string | ros.IResolvable | undefined;
 
     /**
      * @Property imageUrl: Mirroring address. Image only type of application can be configured to mirror address.
@@ -427,9 +735,30 @@ export class RosApplication extends ros.RosResource {
     public jdk: string | ros.IResolvable | undefined;
 
     /**
+     * @Property kafkaConfigs: Logs are ingested to Kafka configuration summary information. The values are explained as follows:
+     * - kafkaEndpoint: The service access address for the Kafka API
+     * - kafkaInstanceId: Kafka instance ID
+     * - kafkaConfigs: Configuration summary information for one or more logs See Request parameters kafkaConfigs for a description of these values.
+     */
+    public kafkaConfigs: string | ros.IResolvable | undefined;
+
+    /**
      * @Property liveness: Container health check, health check fails container will be killed and recovery. Currently only supports mode command issued in the container. The columns: { "exec": { "command": [ "sleep", "5s"]}, "initialDelaySeconds": 10, "timeoutSeconds": 11}
      */
     public liveness: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property microRegistration: Select the Nacos registry with the following values:
+     * - 0: SAE built-in Nacos.
+     * - 1: User-built Nacos.
+     * - 2: MSE commercial version of Nacos.
+     */
+    public microRegistration: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property microRegistrationConfig: Registry configuration information.
+     */
+    public microRegistrationConfig: string | ros.IResolvable | undefined;
 
     /**
      * @Property mountDesc: Mount Description
@@ -442,9 +771,40 @@ export class RosApplication extends ros.RosResource {
     public mountHost: string | ros.IResolvable | undefined;
 
     /**
+     * @Property nasConfigs: Configuration to mount the NAS. The values are explained as follows:
+     * - mountPath: The container mount path
+     * - readOnly: A value of false indicates read and write permission.
+     * - nasId: NAS ID
+     * - mountDomain: The container mount point address For more information, see DescribeMountTargets.
+     * - nasPath: NAS relative file directory
+     */
+    public nasConfigs: string | ros.IResolvable | undefined;
+
+    /**
      * @Property nasId: Mount the NAS ID, you must be in the same region and cluster. It must be available to create a mount point limit, or switch on its mount point already in the VPC. If you do not fill, and there mountDescs field, the default will automatically purchase a NAS and mount it onto the switch within the VPC.
      */
     public nasId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ossAkId: AccessKey ID of the OSS.
+     */
+    public ossAkId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ossAkSecret: AccessKey Secret of the OSS.
+     */
+    public ossAkSecret: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ossMountDescs: OSS mount description information. The parameters are described as follows:
+     * - bucketName: The name of the Bucket
+     * - bucketPath: The directory or OSS object you created in OSS that will raise an exception if the OSS mount directory does not exist.
+     * - mountPath: Your container path in SAE. If the path already exists, it is a covering relationship. If the path doesn't exist, it will be created.
+     * - readOnly: This specifies whether the container path has read-only permissions for mount directory resources:
+     *   - true: Read-only permission
+     *   - false: Read and write permissions
+     */
+    public ossMountDescs: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property packageUrl: Deployment packages address. Only FatJar War or the type of application can be configured to deploy packet address.
@@ -457,6 +817,26 @@ export class RosApplication extends ros.RosResource {
     public packageVersion: string | ros.IResolvable | undefined;
 
     /**
+     * @Property php: PHP version.
+     */
+    public php: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property phpArmsConfigLocation: The PHP application monitors the mount path and requires you to ensure that the PHP server loads the configuration file for this path. You don't need to worry about the configuration content; SAE will automatically render the correct configuration file.
+     */
+    public phpArmsConfigLocation: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property phpConfig: PHP configuration file contents.
+     */
+    public phpConfig: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property phpConfigLocation: PHP application launch configuration mount path, you need to ensure that the PHP server will be started with this configuration file.
+     */
+    public phpConfigLocation: string | ros.IResolvable | undefined;
+
+    /**
      * @Property postStart: Executing the script, such as after starting the format: { "exec": { "command": "cat", "\/ etc \/ group"}}
      */
     public postStart: string | ros.IResolvable | undefined;
@@ -467,14 +847,52 @@ export class RosApplication extends ros.RosResource {
     public preStop: string | ros.IResolvable | undefined;
 
     /**
+     * @Property programmingLanguage: Create the stack language for the application. The values are explained as follows:
+     * - java: The Java language
+     * - php: PHP language.
+     * - other: Multiple languages such as Python, C++, Go,.NET, Node.js, etc.
+     */
+    public programmingLanguage: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property pvtzDiscoverySvc: Enable K8s Service registration discovery. The values are explained as follows:
+     * - serviceName: The name of the service The format is custom-namespace ID, in which the postfix-namespace ID does not support customization and needs to be filled in according to the namespace of the application. For example, choosing the default namespace for the North China 2 (Beijing) region would be -cn-beijing-default.
+     * - namespaceId: The namespace ID
+     * - portProtocols: Ports and protocols The port is in the range [1,65535] and supports both TCP and UDP protocols.
+     * - portAndProtocol: Ports and protocols The port is in the range [1,65535] and supports both TCP and UDP protocols. portProtocols is preferred. If portProtocols is set, only portProtocols will take effect.
+     * - enable: Enable K8s Service registration discovery.
+     */
+    public pvtzDiscoverySvc: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property python: Python version. Supports PYTHON 3.9.15
+     */
+    public python: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property pythonModules: Install custom module dependencies. The dependencies defined in requirements.txt in the root directory are installed by default. If the package is not configured or customized, you can specify the dependencies to install.
+     */
+    public pythonModules: string | ros.IResolvable | undefined;
+
+    /**
      * @Property readiness: Application launch status check, health check fails repeatedly container will be killed and restarted. Do not pass health check of the vessel will not have to enter SLB traffic. For example: { "exec": { "command": [ "sleep", "6s"]}, "initialDelaySeconds": 15, "timeoutSeconds": 12}
      */
     public readiness: string | ros.IResolvable | undefined;
 
     /**
+     * @Property saeVersion: SAE version.
+     */
+    public saeVersion: string | ros.IResolvable | undefined;
+
+    /**
      * @Property securityGroupId: Security group ID.
      */
     public securityGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property serviceTags: Service tags.
+     */
+    public serviceTags: string | ros.IResolvable | undefined;
 
     /**
      * @Property slsConfigs: Log collection configuration file
@@ -487,9 +905,24 @@ export class RosApplication extends ros.RosResource {
     public tags: RosApplication.TagsProperty[] | undefined;
 
     /**
+     * @Property terminationGracePeriodSeconds: Graceful offline timeout, default 30, unit of seconds. The value ranges from 1 to 300.
+     */
+    public terminationGracePeriodSeconds: number | ros.IResolvable | undefined;
+
+    /**
      * @Property timezone: Application time zone. Default Asia\/Shanghai.
      */
     public timezone: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tomcatConfig: Tomcat file configuration, set to "" or "{}" to delete the configuration:
+     * - port: Ports in the range of 1024 to 65535 require Root privileges to operate on ports below 1024 Because the container is configured with Admin access, please specify a port greater than 1024. If not configured, it defaults to 8080.
+     * - contextPath: The access path, defaults to the root directory "\/"
+     * - maxThreads: This config the number of connections in the pool; the default is 400.
+     * - uriEncoding: Tomcat's encoding formats, including UTF-8, ISO-8859-1, GBK, and GB2312 If not set, it defaults to ISO-8859-1.
+     * - useBodyEncodingForUri: Whether to useBodyEncoding for URL (defaults to true).
+     */
+    public tomcatConfig: string | ros.IResolvable | undefined;
 
     /**
      * @Property vpcId: EDAS namespace corresponding VPC. In Serverless in a corresponding one of the VPC namespace only, and can not be modified. Serverless first created in the application name space will form a binding relationship. You may correspond to a plurality of namespaces VPC. Do not fill was VpcId namespace binding.
@@ -528,30 +961,58 @@ export class RosApplication extends ros.RosResource {
         this.namespaceId = props.namespaceId;
         this.packageType = props.packageType;
         this.replicas = props.replicas;
+        this.acrAssumeRoleArn = props.acrAssumeRoleArn;
+        this.acrInstanceId = props.acrInstanceId;
         this.appDescription = props.appDescription;
+        this.appSource = props.appSource;
+        this.associateEip = props.associateEip;
+        this.autoConfig = props.autoConfig;
+        this.baseAppId = props.baseAppId;
         this.command = props.command;
         this.commandArgs = props.commandArgs;
+        this.configMapMountDesc = props.configMapMountDesc;
         this.customHostAlias = props.customHostAlias;
         this.deploy = props.deploy;
         this.edasContainerVersion = props.edasContainerVersion;
+        this.enableEbpf = props.enableEbpf;
         this.envs = props.envs;
+        this.imagePullSecrets = props.imagePullSecrets;
         this.imageUrl = props.imageUrl;
         this.jarStartArgs = props.jarStartArgs;
         this.jarStartOptions = props.jarStartOptions;
         this.jdk = props.jdk;
+        this.kafkaConfigs = props.kafkaConfigs;
         this.liveness = props.liveness;
+        this.microRegistration = props.microRegistration;
+        this.microRegistrationConfig = props.microRegistrationConfig;
         this.mountDesc = props.mountDesc;
         this.mountHost = props.mountHost;
+        this.nasConfigs = props.nasConfigs;
         this.nasId = props.nasId;
+        this.ossAkId = props.ossAkId;
+        this.ossAkSecret = props.ossAkSecret;
+        this.ossMountDescs = props.ossMountDescs;
         this.packageUrl = props.packageUrl;
         this.packageVersion = props.packageVersion;
+        this.php = props.php;
+        this.phpArmsConfigLocation = props.phpArmsConfigLocation;
+        this.phpConfig = props.phpConfig;
+        this.phpConfigLocation = props.phpConfigLocation;
         this.postStart = props.postStart;
         this.preStop = props.preStop;
+        this.programmingLanguage = props.programmingLanguage;
+        this.pvtzDiscoverySvc = props.pvtzDiscoverySvc;
+        this.python = props.python;
+        this.pythonModules = props.pythonModules;
         this.readiness = props.readiness;
+        this.saeVersion = props.saeVersion;
         this.securityGroupId = props.securityGroupId;
+        this.serviceTags = props.serviceTags;
         this.slsConfigs = props.slsConfigs;
         this.tags = props.tags;
+        this.terminationGracePeriodSeconds = props.terminationGracePeriodSeconds;
         this.timezone = props.timezone;
+        this.tomcatConfig = props.tomcatConfig;
         this.vpcId = props.vpcId;
         this.vSwitchId = props.vSwitchId;
         this.warStartOptions = props.warStartOptions;
@@ -567,30 +1028,58 @@ export class RosApplication extends ros.RosResource {
             namespaceId: this.namespaceId,
             packageType: this.packageType,
             replicas: this.replicas,
+            acrAssumeRoleArn: this.acrAssumeRoleArn,
+            acrInstanceId: this.acrInstanceId,
             appDescription: this.appDescription,
+            appSource: this.appSource,
+            associateEip: this.associateEip,
+            autoConfig: this.autoConfig,
+            baseAppId: this.baseAppId,
             command: this.command,
             commandArgs: this.commandArgs,
+            configMapMountDesc: this.configMapMountDesc,
             customHostAlias: this.customHostAlias,
             deploy: this.deploy,
             edasContainerVersion: this.edasContainerVersion,
+            enableEbpf: this.enableEbpf,
             envs: this.envs,
+            imagePullSecrets: this.imagePullSecrets,
             imageUrl: this.imageUrl,
             jarStartArgs: this.jarStartArgs,
             jarStartOptions: this.jarStartOptions,
             jdk: this.jdk,
+            kafkaConfigs: this.kafkaConfigs,
             liveness: this.liveness,
+            microRegistration: this.microRegistration,
+            microRegistrationConfig: this.microRegistrationConfig,
             mountDesc: this.mountDesc,
             mountHost: this.mountHost,
+            nasConfigs: this.nasConfigs,
             nasId: this.nasId,
+            ossAkId: this.ossAkId,
+            ossAkSecret: this.ossAkSecret,
+            ossMountDescs: this.ossMountDescs,
             packageUrl: this.packageUrl,
             packageVersion: this.packageVersion,
+            php: this.php,
+            phpArmsConfigLocation: this.phpArmsConfigLocation,
+            phpConfig: this.phpConfig,
+            phpConfigLocation: this.phpConfigLocation,
             postStart: this.postStart,
             preStop: this.preStop,
+            programmingLanguage: this.programmingLanguage,
+            pvtzDiscoverySvc: this.pvtzDiscoverySvc,
+            python: this.python,
+            pythonModules: this.pythonModules,
             readiness: this.readiness,
+            saeVersion: this.saeVersion,
             securityGroupId: this.securityGroupId,
+            serviceTags: this.serviceTags,
             slsConfigs: this.slsConfigs,
             tags: this.tags,
+            terminationGracePeriodSeconds: this.terminationGracePeriodSeconds,
             timezone: this.timezone,
+            tomcatConfig: this.tomcatConfig,
             vpcId: this.vpcId,
             vSwitchId: this.vSwitchId,
             warStartOptions: this.warStartOptions,
@@ -645,8 +1134,570 @@ function rosApplicationTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosApplication_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
+ * Properties for defining a `RosConfigMap`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-configmap
+ */
+export interface RosConfigMapProps {
+
+    /**
+     * @Property data: Configmap key value pairs of data, json format.The format is as follows:
+     * {"k1":"v1", "k2":"v2"}
+     * K means key, V represents value.For more information about configuration items, see management and use of configuration items.
+     */
+    readonly data: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the config map.
+     */
+    readonly name: string | ros.IResolvable;
+
+    /**
+     * @Property namespaceId: The ID of the namespace to which this config map instance belongs.
+     */
+    readonly namespaceId: string | ros.IResolvable;
+
+    /**
+     * @Property description: Describe information, do not enter the space without more than 255 characters.
+     */
+    readonly description?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosConfigMapProps`
+ *
+ * @param properties - the TypeScript properties of a `RosConfigMapProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosConfigMapPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('data', ros.requiredValidator)(properties.data));
+    errors.collect(ros.propertyValidator('data', ros.hashValidator(ros.validateAny))(properties.data));
+    errors.collect(ros.propertyValidator('namespaceId', ros.requiredValidator)(properties.namespaceId));
+    errors.collect(ros.propertyValidator('namespaceId', ros.validateString)(properties.namespaceId));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "RosConfigMapProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SAE::ConfigMap` resource
+ *
+ * @param properties - the TypeScript properties of a `RosConfigMapProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SAE::ConfigMap` resource.
+ */
+// @ts-ignore TS6133
+function rosConfigMapPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosConfigMapPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'Data': ros.hashMapper(ros.objectToRosTemplate)(properties.data),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'NamespaceId': ros.stringToRosTemplate(properties.namespaceId),
+      'Description': ros.stringToRosTemplate(properties.description),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::ConfigMap`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ConfigMap` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-configmap
+ */
+export class RosConfigMap extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SAE::ConfigMap";
+
+    /**
+     * @Attribute ConfigMapId: The ID of the config map.
+     */
+    public readonly attrConfigMapId: ros.IResolvable;
+
+    /**
+     * @Attribute NamespaceId: The ID of the namespace to which this config map instance belongs.
+     */
+    public readonly attrNamespaceId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property data: Configmap key value pairs of data, json format.The format is as follows:
+     * {"k1":"v1", "k2":"v2"}
+     * K means key, V represents value.For more information about configuration items, see management and use of configuration items.
+     */
+    public data: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the config map.
+     */
+    public name: string | ros.IResolvable;
+
+    /**
+     * @Property namespaceId: The ID of the namespace to which this config map instance belongs.
+     */
+    public namespaceId: string | ros.IResolvable;
+
+    /**
+     * @Property description: Describe information, do not enter the space without more than 255 characters.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosConfigMapProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosConfigMap.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrConfigMapId = this.getAtt('ConfigMapId');
+        this.attrNamespaceId = this.getAtt('NamespaceId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.data = props.data;
+        this.name = props.name;
+        this.namespaceId = props.namespaceId;
+        this.description = props.description;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            data: this.data,
+            name: this.name,
+            namespaceId: this.namespaceId,
+            description: this.description,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosConfigMapPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosIngress`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-ingress
+ */
+export interface RosIngressProps {
+
+    /**
+     * @Property defaultRule: The default forwarding rule. You can specify a port and an application in the default forwarding rule to forward traffic based on the IP address of the application.
+     */
+    readonly defaultRule: RosIngress.DefaultRuleProperty | ros.IResolvable;
+
+    /**
+     * @Property description: The name of the routing rule.
+     */
+    readonly description: string | ros.IResolvable;
+
+    /**
+     * @Property listenerPort: The listener port of the SLB instance. You must specify a vacant port.
+     */
+    readonly listenerPort: number | ros.IResolvable;
+
+    /**
+     * @Property namespaceId: The ID of the namespace to which the application belongs. You can specify only one namespace ID each time you call this operation.
+     */
+    readonly namespaceId: string | ros.IResolvable;
+
+    /**
+     * @Property rules: The forwarding rules. You can specify a port and an application in a forwarding rule to forward traffic based on the specified domain name and request path.
+     */
+    readonly rules: Array<RosIngress.RulesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property slbId: The Server Load Balancer (SLB) instance that is used by the routing rule.
+     */
+    readonly slbId: string | ros.IResolvable;
+
+    /**
+     * @Property certId: The ID of the certificate that is associated with the Classic Load Balancer (CLB) instance.
+     * If LoadBalanceType is set to clb, specify this parameter to configure a certificate for the HTTP listener.
+     */
+    readonly certId?: string | ros.IResolvable;
+
+    /**
+     * @Property certIds: The IDs of the certificates that are associated with the Application Load Balancer (ALB) instance.
+     */
+    readonly certIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property listenerProtocol: The protocol that is used to forward requests.
+     */
+    readonly listenerProtocol?: string | ros.IResolvable;
+
+    /**
+     * @Property loadBalanceType: The type of the SLB instance based on the processing capabilities. The instance type can be specified only when you create a routing rule. You cannot change the instance type when you update the routing rule.
+     */
+    readonly loadBalanceType?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosIngressProps`
+ *
+ * @param properties - the TypeScript properties of a `RosIngressProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosIngressPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('defaultRule', ros.requiredValidator)(properties.defaultRule));
+    errors.collect(ros.propertyValidator('defaultRule', RosIngress_DefaultRulePropertyValidator)(properties.defaultRule));
+    errors.collect(ros.propertyValidator('slbId', ros.requiredValidator)(properties.slbId));
+    errors.collect(ros.propertyValidator('slbId', ros.validateString)(properties.slbId));
+    errors.collect(ros.propertyValidator('listenerPort', ros.requiredValidator)(properties.listenerPort));
+    if(properties.listenerPort && (typeof properties.listenerPort) !== 'object') {
+        errors.collect(ros.propertyValidator('listenerPort', ros.validateRange)({
+            data: properties.listenerPort,
+            min: 0,
+            max: 65535,
+          }));
+    }
+    errors.collect(ros.propertyValidator('listenerPort', ros.validateNumber)(properties.listenerPort));
+    errors.collect(ros.propertyValidator('description', ros.requiredValidator)(properties.description));
+    if(properties.description && (typeof properties.description) !== 'object') {
+        errors.collect(ros.propertyValidator('description', ros.validateAllowedPattern)({
+          data: properties.description,
+          reg: /^[a-z0-9]([a-z0-9.-]{0,61}[a-z0-9])?$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    if(properties.certIds && (Array.isArray(properties.certIds) || (typeof properties.certIds) === 'string')) {
+        errors.collect(ros.propertyValidator('certIds', ros.validateLength)({
+            data: properties.certIds.length,
+            min: 1,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('certIds', ros.listValidator(ros.validateString))(properties.certIds));
+    errors.collect(ros.propertyValidator('certId', ros.validateString)(properties.certId));
+    errors.collect(ros.propertyValidator('loadBalanceType', ros.validateString)(properties.loadBalanceType));
+    errors.collect(ros.propertyValidator('namespaceId', ros.requiredValidator)(properties.namespaceId));
+    errors.collect(ros.propertyValidator('namespaceId', ros.validateString)(properties.namespaceId));
+    if(properties.listenerProtocol && (typeof properties.listenerProtocol) !== 'object') {
+        errors.collect(ros.propertyValidator('listenerProtocol', ros.validateAllowedValues)({
+          data: properties.listenerProtocol,
+          allowedValues: ["HTTP","HTTPS"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('listenerProtocol', ros.validateString)(properties.listenerProtocol));
+    errors.collect(ros.propertyValidator('rules', ros.requiredValidator)(properties.rules));
+    if(properties.rules && (Array.isArray(properties.rules) || (typeof properties.rules) === 'string')) {
+        errors.collect(ros.propertyValidator('rules', ros.validateLength)({
+            data: properties.rules.length,
+            min: 1,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('rules', ros.listValidator(RosIngress_RulesPropertyValidator))(properties.rules));
+    return errors.wrap('supplied properties not correct for "RosIngressProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SAE::Ingress` resource
+ *
+ * @param properties - the TypeScript properties of a `RosIngressProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SAE::Ingress` resource.
+ */
+// @ts-ignore TS6133
+function rosIngressPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosIngressPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'DefaultRule': rosIngressDefaultRulePropertyToRosTemplate(properties.defaultRule),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'ListenerPort': ros.numberToRosTemplate(properties.listenerPort),
+      'NamespaceId': ros.stringToRosTemplate(properties.namespaceId),
+      'Rules': ros.listMapper(rosIngressRulesPropertyToRosTemplate)(properties.rules),
+      'SlbId': ros.stringToRosTemplate(properties.slbId),
+      'CertId': ros.stringToRosTemplate(properties.certId),
+      'CertIds': ros.listMapper(ros.stringToRosTemplate)(properties.certIds),
+      'ListenerProtocol': ros.stringToRosTemplate(properties.listenerProtocol),
+      'LoadBalanceType': ros.stringToRosTemplate(properties.loadBalanceType),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::Ingress`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Ingress` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-ingress
+ */
+export class RosIngress extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SAE::Ingress";
+
+    /**
+     * @Attribute IngressId: The ID of the routing rule.
+     */
+    public readonly attrIngressId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property defaultRule: The default forwarding rule. You can specify a port and an application in the default forwarding rule to forward traffic based on the IP address of the application.
+     */
+    public defaultRule: RosIngress.DefaultRuleProperty | ros.IResolvable;
+
+    /**
+     * @Property description: The name of the routing rule.
+     */
+    public description: string | ros.IResolvable;
+
+    /**
+     * @Property listenerPort: The listener port of the SLB instance. You must specify a vacant port.
+     */
+    public listenerPort: number | ros.IResolvable;
+
+    /**
+     * @Property namespaceId: The ID of the namespace to which the application belongs. You can specify only one namespace ID each time you call this operation.
+     */
+    public namespaceId: string | ros.IResolvable;
+
+    /**
+     * @Property rules: The forwarding rules. You can specify a port and an application in a forwarding rule to forward traffic based on the specified domain name and request path.
+     */
+    public rules: Array<RosIngress.RulesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property slbId: The Server Load Balancer (SLB) instance that is used by the routing rule.
+     */
+    public slbId: string | ros.IResolvable;
+
+    /**
+     * @Property certId: The ID of the certificate that is associated with the Classic Load Balancer (CLB) instance.
+     * If LoadBalanceType is set to clb, specify this parameter to configure a certificate for the HTTP listener.
+     */
+    public certId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property certIds: The IDs of the certificates that are associated with the Application Load Balancer (ALB) instance.
+     */
+    public certIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property listenerProtocol: The protocol that is used to forward requests.
+     */
+    public listenerProtocol: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property loadBalanceType: The type of the SLB instance based on the processing capabilities. The instance type can be specified only when you create a routing rule. You cannot change the instance type when you update the routing rule.
+     */
+    public loadBalanceType: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosIngressProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosIngress.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrIngressId = this.getAtt('IngressId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.defaultRule = props.defaultRule;
+        this.description = props.description;
+        this.listenerPort = props.listenerPort;
+        this.namespaceId = props.namespaceId;
+        this.rules = props.rules;
+        this.slbId = props.slbId;
+        this.certId = props.certId;
+        this.certIds = props.certIds;
+        this.listenerProtocol = props.listenerProtocol;
+        this.loadBalanceType = props.loadBalanceType;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            defaultRule: this.defaultRule,
+            description: this.description,
+            listenerPort: this.listenerPort,
+            namespaceId: this.namespaceId,
+            rules: this.rules,
+            slbId: this.slbId,
+            certId: this.certId,
+            certIds: this.certIds,
+            listenerProtocol: this.listenerProtocol,
+            loadBalanceType: this.loadBalanceType,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosIngressPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosIngress {
+    /**
+     * @stability external
+     */
+    export interface DefaultRuleProperty {
+        /**
+         * @Property backendProtocol: The protocol of the application.
+         */
+        readonly backendProtocol?: string | ros.IResolvable;
+        /**
+         * @Property appId: The application ID
+         */
+        readonly appId: string | ros.IResolvable;
+        /**
+         * @Property containerPort: The container port of the application.
+         */
+        readonly containerPort: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DefaultRuleProperty`
+ *
+ * @param properties - the TypeScript properties of a `DefaultRuleProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosIngress_DefaultRulePropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.backendProtocol && (typeof properties.backendProtocol) !== 'object') {
+        errors.collect(ros.propertyValidator('backendProtocol', ros.validateAllowedValues)({
+          data: properties.backendProtocol,
+          allowedValues: ["http","https","grpc"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('backendProtocol', ros.validateString)(properties.backendProtocol));
+    errors.collect(ros.propertyValidator('appId', ros.requiredValidator)(properties.appId));
+    errors.collect(ros.propertyValidator('appId', ros.validateString)(properties.appId));
+    errors.collect(ros.propertyValidator('containerPort', ros.requiredValidator)(properties.containerPort));
+    if(properties.containerPort && (typeof properties.containerPort) !== 'object') {
+        errors.collect(ros.propertyValidator('containerPort', ros.validateRange)({
+            data: properties.containerPort,
+            min: 0,
+            max: 65535,
+          }));
+    }
+    errors.collect(ros.propertyValidator('containerPort', ros.validateNumber)(properties.containerPort));
+    return errors.wrap('supplied properties not correct for "DefaultRuleProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SAE::Ingress.DefaultRule` resource
+ *
+ * @param properties - the TypeScript properties of a `DefaultRuleProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SAE::Ingress.DefaultRule` resource.
+ */
+// @ts-ignore TS6133
+function rosIngressDefaultRulePropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosIngress_DefaultRulePropertyValidator(properties).assertSuccess();
+    return {
+      'BackendProtocol': ros.stringToRosTemplate(properties.backendProtocol),
+      'AppId': ros.stringToRosTemplate(properties.appId),
+      'ContainerPort': ros.numberToRosTemplate(properties.containerPort),
+    };
+}
+
+export namespace RosIngress {
+    /**
+     * @stability external
+     */
+    export interface RulesProperty {
+        /**
+         * @Property path: The request path.
+         */
+        readonly path: string | ros.IResolvable;
+        /**
+         * @Property backendProtocol: The protocol of the application.
+         */
+        readonly backendProtocol?: string | ros.IResolvable;
+        /**
+         * @Property appId: The application ID
+         */
+        readonly appId: string | ros.IResolvable;
+        /**
+         * @Property rewritePath: The rewrite path.
+         */
+        readonly rewritePath?: string | ros.IResolvable;
+        /**
+         * @Property containerPort: The container port of the application.
+         */
+        readonly containerPort: number | ros.IResolvable;
+        /**
+         * @Property domain: The domain name.
+         */
+        readonly domain: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `RulesProperty`
+ *
+ * @param properties - the TypeScript properties of a `RulesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosIngress_RulesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('path', ros.requiredValidator)(properties.path));
+    errors.collect(ros.propertyValidator('path', ros.validateString)(properties.path));
+    if(properties.backendProtocol && (typeof properties.backendProtocol) !== 'object') {
+        errors.collect(ros.propertyValidator('backendProtocol', ros.validateAllowedValues)({
+          data: properties.backendProtocol,
+          allowedValues: ["http","https","grpc"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('backendProtocol', ros.validateString)(properties.backendProtocol));
+    errors.collect(ros.propertyValidator('appId', ros.requiredValidator)(properties.appId));
+    errors.collect(ros.propertyValidator('appId', ros.validateString)(properties.appId));
+    errors.collect(ros.propertyValidator('rewritePath', ros.validateString)(properties.rewritePath));
+    errors.collect(ros.propertyValidator('containerPort', ros.requiredValidator)(properties.containerPort));
+    if(properties.containerPort && (typeof properties.containerPort) !== 'object') {
+        errors.collect(ros.propertyValidator('containerPort', ros.validateRange)({
+            data: properties.containerPort,
+            min: 0,
+            max: 65535,
+          }));
+    }
+    errors.collect(ros.propertyValidator('containerPort', ros.validateNumber)(properties.containerPort));
+    errors.collect(ros.propertyValidator('domain', ros.requiredValidator)(properties.domain));
+    errors.collect(ros.propertyValidator('domain', ros.validateString)(properties.domain));
+    return errors.wrap('supplied properties not correct for "RulesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SAE::Ingress.Rules` resource
+ *
+ * @param properties - the TypeScript properties of a `RulesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SAE::Ingress.Rules` resource.
+ */
+// @ts-ignore TS6133
+function rosIngressRulesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosIngress_RulesPropertyValidator(properties).assertSuccess();
+    return {
+      'Path': ros.stringToRosTemplate(properties.path),
+      'BackendProtocol': ros.stringToRosTemplate(properties.backendProtocol),
+      'AppId': ros.stringToRosTemplate(properties.appId),
+      'RewritePath': ros.stringToRosTemplate(properties.rewritePath),
+      'ContainerPort': ros.numberToRosTemplate(properties.containerPort),
+      'Domain': ros.stringToRosTemplate(properties.domain),
     };
 }
 
@@ -704,9 +1755,9 @@ function rosNamespacePropsToRosTemplate(properties: any, enableResourcePropertyC
         RosNamespacePropsValidator(properties).assertSuccess();
     }
     return {
-      NamespaceId: ros.stringToRosTemplate(properties.namespaceId),
-      NamespaceName: ros.stringToRosTemplate(properties.namespaceName),
-      NamespaceDescription: ros.stringToRosTemplate(properties.namespaceDescription),
+      'NamespaceId': ros.stringToRosTemplate(properties.namespaceId),
+      'NamespaceName': ros.stringToRosTemplate(properties.namespaceName),
+      'NamespaceDescription': ros.stringToRosTemplate(properties.namespaceDescription),
     };
 }
 
@@ -837,11 +1888,11 @@ function rosSlbBindingPropsToRosTemplate(properties: any, enableResourceProperty
         RosSlbBindingPropsValidator(properties).assertSuccess();
     }
     return {
-      AppId: ros.stringToRosTemplate(properties.appId),
-      Internet: ros.stringToRosTemplate(properties.internet),
-      InternetSlbId: ros.stringToRosTemplate(properties.internetSlbId),
-      Intranet: ros.stringToRosTemplate(properties.intranet),
-      IntranetSlbId: ros.stringToRosTemplate(properties.intranetSlbId),
+      'AppId': ros.stringToRosTemplate(properties.appId),
+      'Internet': ros.stringToRosTemplate(properties.internet),
+      'InternetSlbId': ros.stringToRosTemplate(properties.internetSlbId),
+      'Intranet': ros.stringToRosTemplate(properties.intranet),
+      'IntranetSlbId': ros.stringToRosTemplate(properties.intranetSlbId),
     };
 }
 

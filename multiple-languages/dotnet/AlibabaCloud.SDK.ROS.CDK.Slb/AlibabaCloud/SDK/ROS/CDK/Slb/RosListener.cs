@@ -1156,6 +1156,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: exp: The response string for UDP listening health check is limited to letters and numbers, and the maximum length is 64 characters.
+            /// </remarks>
+            [JsiiProperty(name: "exp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Exp
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: healthCheckMethod: The health check method used in HTTP or HTTPS health checks. Valid values: head and get.
             /// </remarks>
             [JsiiProperty(name: "healthCheckMethod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1169,7 +1182,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: healthCheckType: The type of health check. It takes effect when Protocol=tcp. Valid values: tcp and http. Default value: tcp.
+            /// <strong>Property</strong>: healthCheckType: The type of health check.Valid values: tcp, udp, https and http. Default value: tcp.
             /// </remarks>
             [JsiiProperty(name: "healthCheckType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1226,6 +1239,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
             object? Port
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: req: The request string for UDP listening health check is limited to letters and numbers, and the maximum length is 64 characters.
+            /// </remarks>
+            [JsiiProperty(name: "req", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Req
             {
                 get
                 {
@@ -1304,6 +1330,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
                 }
 
                 /// <remarks>
+                /// <strong>Property</strong>: exp: The response string for UDP listening health check is limited to letters and numbers, and the maximum length is 64 characters.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "exp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Exp
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
                 /// <strong>Property</strong>: healthCheckMethod: The health check method used in HTTP or HTTPS health checks. Valid values: head and get.
                 /// </remarks>
                 [JsiiOptional]
@@ -1314,7 +1350,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: healthCheckType: The type of health check. It takes effect when Protocol=tcp. Valid values: tcp and http. Default value: tcp.
+                /// <strong>Property</strong>: healthCheckType: The type of health check.Valid values: tcp, udp, https and http. Default value: tcp.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "healthCheckType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1359,6 +1395,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
                 [JsiiOptional]
                 [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? Port
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: req: The request string for UDP listening health check is limited to letters and numbers, and the maximum length is 64 characters.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "req", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Req
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -1441,6 +1487,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
                 }
             }
 
+            private object? _exp;
+
+            /// <remarks>
+            /// <strong>Property</strong>: exp: The response string for UDP listening health check is limited to letters and numbers, and the maximum length is 64 characters.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "exp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Exp
+            {
+                get => _exp;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _exp = value;
+                }
+            }
+
             private object? _healthCheckMethod;
 
             /// <remarks>
@@ -1477,7 +1556,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             private object? _healthCheckType;
 
             /// <remarks>
-            /// <strong>Property</strong>: healthCheckType: The type of health check. It takes effect when Protocol=tcp. Valid values: tcp and http. Default value: tcp.
+            /// <strong>Property</strong>: healthCheckType: The type of health check.Valid values: tcp, udp, https and http. Default value: tcp.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "healthCheckType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1696,6 +1775,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
                         }
                     }
                     _port = value;
+                }
+            }
+
+            private object? _req;
+
+            /// <remarks>
+            /// <strong>Property</strong>: req: The request string for UDP listening health check is limited to letters and numbers, and the maximum length is 64 characters.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "req", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Req
+            {
+                get => _req;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _req = value;
                 }
             }
 

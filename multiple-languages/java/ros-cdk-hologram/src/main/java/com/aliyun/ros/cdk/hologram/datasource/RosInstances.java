@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hologram.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::Hologram::Instances</code>, which is used to query Hologres instances.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:07.455Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:22.037Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hologram.$Module.class, fqn = "@alicloud/ros-cdk-hologram.datasource.RosInstances")
 public class RosInstances extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -67,6 +67,24 @@ public class RosInstances extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setRefreshOptions(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "refreshOptions", value);
+    }
+
+    /**
+     */
+    public void setRefreshOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "refreshOptions", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -107,6 +125,23 @@ public class RosInstances extends com.aliyun.ros.cdk.core.RosResource {
             this.id = id;
             this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
             this.props = new com.aliyun.ros.cdk.hologram.datasource.RosInstancesProps.Builder();
+        }
+
+        /**
+         * @return {@code this}
+         * @param refreshOptions This parameter is required.
+         */
+        public Builder refreshOptions(final java.lang.String refreshOptions) {
+            this.props.refreshOptions(refreshOptions);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param refreshOptions This parameter is required.
+         */
+        public Builder refreshOptions(final com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.props.refreshOptions(refreshOptions);
+            return this;
         }
 
         /**

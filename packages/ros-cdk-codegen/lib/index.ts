@@ -70,7 +70,7 @@ export default async function (
   for (const scope of scopes) {
     if (scope.startsWith('DATASOURCE')) {
       // 处理DATASOURCE::EIP::Addresses 这个原属于VPC的特殊资源，不再创建资源根目录
-      if (scope === 'DATASOURCE::EIP') {
+      if (scope === 'DATASOURCE::EIP' || scope === 'DATASOURCE::Eipanycast') {
         continue
       }
       const dataSourceSpec = rosSpec.filteredSpecification((s) => s.startsWith(`${scope}::`));
@@ -78,10 +78,15 @@ export default async function (
       let dataSourceResourceTypes: string[] = new Array();
       dataSourceResourceTypes = Object.keys(dataSourceSpec.ResourceTypes)
       // 处理DATASOURCE::EIP::Addresses 这个原属于VPC的特殊资源，添加到VPC所属资源目录
-      if (cloudProductResourceName === 'VPC' && scopes.indexOf('DATASOURCE::EIP') !== -1)
-      {
-        const datasourceEipResourceSpec = rosSpec.filteredSpecification((s) => s.startsWith('DATASOURCE::EIP::'));
-        dataSourceResourceTypes = dataSourceResourceTypes.concat(Object.keys(datasourceEipResourceSpec.ResourceTypes))
+      if (cloudProductResourceName === 'VPC') {
+        if (scopes.indexOf('DATASOURCE::EIP') !== -1) {
+          const datasourceEipResourceSpec = rosSpec.filteredSpecification((s) => s.startsWith('DATASOURCE::EIP::'));
+          dataSourceResourceTypes = dataSourceResourceTypes.concat(Object.keys(datasourceEipResourceSpec.ResourceTypes))
+        }
+        if (scopes.indexOf('DATASOURCE::Eipanycast') !== -1) {
+          const datasourceEipanycastResourceSpec = rosSpec.filteredSpecification((s) => s.startsWith('DATASOURCE::Eipanycast::'));
+          dataSourceResourceTypes = dataSourceResourceTypes.concat(Object.keys(datasourceEipanycastResourceSpec.ResourceTypes))
+        }
       }
 
       if (dataSourceResourceTypes.length === 0) {

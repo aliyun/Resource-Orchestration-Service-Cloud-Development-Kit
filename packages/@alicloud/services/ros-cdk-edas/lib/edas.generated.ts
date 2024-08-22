@@ -121,17 +121,17 @@ function rosApplicationPropsToRosTemplate(properties: any, enableResourcePropert
         RosApplicationPropsValidator(properties).assertSuccess();
     }
     return {
-      ApplicationName: ros.stringToRosTemplate(properties.applicationName),
-      ClusterId: ros.stringToRosTemplate(properties.clusterId),
-      BuildPackId: ros.numberToRosTemplate(properties.buildPackId),
-      ComponentIds: ros.stringToRosTemplate(properties.componentIds),
-      Deployment: rosApplicationDeploymentPropertyToRosTemplate(properties.deployment),
-      Description: ros.stringToRosTemplate(properties.description),
-      EcuInfo: ros.stringToRosTemplate(properties.ecuInfo),
-      HealthCheckURL: ros.stringToRosTemplate(properties.healthCheckUrl),
-      LogicalRegionId: ros.stringToRosTemplate(properties.logicalRegionId),
-      PackageType: ros.stringToRosTemplate(properties.packageType),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      'ApplicationName': ros.stringToRosTemplate(properties.applicationName),
+      'ClusterId': ros.stringToRosTemplate(properties.clusterId),
+      'BuildPackId': ros.numberToRosTemplate(properties.buildPackId),
+      'ComponentIds': ros.stringToRosTemplate(properties.componentIds),
+      'Deployment': rosApplicationDeploymentPropertyToRosTemplate(properties.deployment),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'EcuInfo': ros.stringToRosTemplate(properties.ecuInfo),
+      'HealthCheckURL': ros.stringToRosTemplate(properties.healthCheckUrl),
+      'LogicalRegionId': ros.stringToRosTemplate(properties.logicalRegionId),
+      'PackageType': ros.stringToRosTemplate(properties.packageType),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
     };
 }
 
@@ -380,16 +380,16 @@ function rosApplicationDeploymentPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosApplication_DeploymentPropertyValidator(properties).assertSuccess();
     return {
-      ReleaseType: ros.numberToRosTemplate(properties.releaseType),
-      Desc: ros.stringToRosTemplate(properties.desc),
-      Gray: ros.booleanToRosTemplate(properties.gray),
-      AppEnv: ros.stringToRosTemplate(properties.appEnv),
-      Batch: ros.numberToRosTemplate(properties.batch),
-      WarUrl: ros.stringToRosTemplate(properties.warUrl),
-      TrafficControlStrategy: ros.stringToRosTemplate(properties.trafficControlStrategy),
-      BatchWaitTime: ros.numberToRosTemplate(properties.batchWaitTime),
-      PackageVersion: ros.stringToRosTemplate(properties.packageVersion),
-      GroupId: ros.stringToRosTemplate(properties.groupId),
+      'ReleaseType': ros.numberToRosTemplate(properties.releaseType),
+      'Desc': ros.stringToRosTemplate(properties.desc),
+      'Gray': ros.booleanToRosTemplate(properties.gray),
+      'AppEnv': ros.stringToRosTemplate(properties.appEnv),
+      'Batch': ros.numberToRosTemplate(properties.batch),
+      'WarUrl': ros.stringToRosTemplate(properties.warUrl),
+      'TrafficControlStrategy': ros.stringToRosTemplate(properties.trafficControlStrategy),
+      'BatchWaitTime': ros.numberToRosTemplate(properties.batchWaitTime),
+      'PackageVersion': ros.stringToRosTemplate(properties.packageVersion),
+      'GroupId': ros.stringToRosTemplate(properties.groupId),
     };
 }
 
@@ -478,13 +478,13 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
         RosClusterPropsValidator(properties).assertSuccess();
     }
     return {
-      ClusterName: ros.stringToRosTemplate(properties.clusterName),
-      ClusterType: ros.numberToRosTemplate(properties.clusterType),
-      NetworkMode: ros.numberToRosTemplate(properties.networkMode),
-      LogicalRegionId: ros.stringToRosTemplate(properties.logicalRegionId),
-      OversoldFactor: ros.numberToRosTemplate(properties.oversoldFactor),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
+      'ClusterName': ros.stringToRosTemplate(properties.clusterName),
+      'ClusterType': ros.numberToRosTemplate(properties.clusterType),
+      'NetworkMode': ros.numberToRosTemplate(properties.networkMode),
+      'LogicalRegionId': ros.stringToRosTemplate(properties.logicalRegionId),
+      'OversoldFactor': ros.numberToRosTemplate(properties.oversoldFactor),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
     };
 }
 
@@ -658,9 +658,9 @@ function rosClusterMemberPropsToRosTemplate(properties: any, enableResourcePrope
         RosClusterMemberPropsValidator(properties).assertSuccess();
     }
     return {
-      ClusterId: ros.stringToRosTemplate(properties.clusterId),
-      InstanceIds: ros.listMapper(ros.stringToRosTemplate)(properties.instanceIds),
-      Password: ros.stringToRosTemplate(properties.password),
+      'ClusterId': ros.stringToRosTemplate(properties.clusterId),
+      'InstanceIds': ros.listMapper(ros.stringToRosTemplate)(properties.instanceIds),
+      'Password': ros.stringToRosTemplate(properties.password),
     };
 }
 
@@ -799,8 +799,8 @@ function rosDeployGroupPropsToRosTemplate(properties: any, enableResourcePropert
         RosDeployGroupPropsValidator(properties).assertSuccess();
     }
     return {
-      AppId: ros.stringToRosTemplate(properties.appId),
-      GroupName: ros.stringToRosTemplate(properties.groupName),
+      'AppId': ros.stringToRosTemplate(properties.appId),
+      'GroupName': ros.stringToRosTemplate(properties.groupName),
     };
 }
 
@@ -1279,54 +1279,54 @@ function rosK8sApplicationPropsToRosTemplate(properties: any, enableResourceProp
         RosK8sApplicationPropsValidator(properties).assertSuccess();
     }
     return {
-      AppName: ros.stringToRosTemplate(properties.appName),
-      ClusterId: ros.stringToRosTemplate(properties.clusterId),
-      ApplicationDescription: ros.stringToRosTemplate(properties.applicationDescription),
-      Command: ros.stringToRosTemplate(properties.command),
-      CommandArgs: ros.listMapper(rosK8sApplicationCommandArgsPropertyToRosTemplate)(properties.commandArgs),
-      DeployAcrossNodes: ros.booleanToRosTemplate(properties.deployAcrossNodes),
-      DeployAcrossZones: ros.booleanToRosTemplate(properties.deployAcrossZones),
-      EdasContainerVersion: ros.stringToRosTemplate(properties.edasContainerVersion),
-      EnableAhas: ros.booleanToRosTemplate(properties.enableAhas),
-      Envs: ros.listMapper(rosK8sApplicationEnvsPropertyToRosTemplate)(properties.envs),
-      ImageUrl: ros.stringToRosTemplate(properties.imageUrl),
-      InternetSlbId: ros.stringToRosTemplate(properties.internetSlbId),
-      InternetSlbPort: ros.numberToRosTemplate(properties.internetSlbPort),
-      InternetSlbProtocol: ros.stringToRosTemplate(properties.internetSlbProtocol),
-      InternetTargetPort: ros.numberToRosTemplate(properties.internetTargetPort),
-      IntranetSlbId: ros.stringToRosTemplate(properties.intranetSlbId),
-      IntranetSlbPort: ros.numberToRosTemplate(properties.intranetSlbPort),
-      IntranetSlbProtocol: ros.stringToRosTemplate(properties.intranetSlbProtocol),
-      IntranetTargetPort: ros.numberToRosTemplate(properties.intranetTargetPort),
-      IsMultilingualApp: ros.booleanToRosTemplate(properties.isMultilingualApp),
-      JavaStartUpConfig: rosK8sApplicationJavaStartUpConfigPropertyToRosTemplate(properties.javaStartUpConfig),
-      JDK: ros.stringToRosTemplate(properties.jdk),
-      LimitCpu: ros.numberToRosTemplate(properties.limitCpu),
-      LimitMem: ros.numberToRosTemplate(properties.limitMem),
-      Liveness: rosK8sApplicationLivenessPropertyToRosTemplate(properties.liveness),
-      LocalVolume: ros.listMapper(rosK8sApplicationLocalVolumePropertyToRosTemplate)(properties.localVolume),
-      LogicalRegionId: ros.stringToRosTemplate(properties.logicalRegionId),
-      MountDescs: ros.listMapper(rosK8sApplicationMountDescsPropertyToRosTemplate)(properties.mountDescs),
-      Namespace: ros.stringToRosTemplate(properties.namespace),
-      NasId: ros.stringToRosTemplate(properties.nasId),
-      PackageType: ros.stringToRosTemplate(properties.packageType),
-      PackageUrl: ros.stringToRosTemplate(properties.packageUrl),
-      PackageVersion: ros.stringToRosTemplate(properties.packageVersion),
-      PostStart: rosK8sApplicationPostStartPropertyToRosTemplate(properties.postStart),
-      PreStop: rosK8sApplicationPreStopPropertyToRosTemplate(properties.preStop),
-      Readiness: rosK8sApplicationReadinessPropertyToRosTemplate(properties.readiness),
-      Replicas: ros.numberToRosTemplate(properties.replicas),
-      RepoId: ros.stringToRosTemplate(properties.repoId),
-      RequestsCpu: ros.numberToRosTemplate(properties.requestsCpu),
-      RequestsMem: ros.numberToRosTemplate(properties.requestsMem),
-      RuntimeClassName: ros.stringToRosTemplate(properties.runtimeClassName),
-      SlsConfigs: ros.listMapper(rosK8sApplicationSlsConfigsPropertyToRosTemplate)(properties.slsConfigs),
-      StorageType: ros.stringToRosTemplate(properties.storageType),
-      Timeout: ros.numberToRosTemplate(properties.timeout),
-      UriEncoding: ros.stringToRosTemplate(properties.uriEncoding),
-      UseBodyEncoding: ros.booleanToRosTemplate(properties.useBodyEncoding),
-      WebContainer: ros.stringToRosTemplate(properties.webContainer),
-      WebContainerConfig: rosK8sApplicationWebContainerConfigPropertyToRosTemplate(properties.webContainerConfig),
+      'AppName': ros.stringToRosTemplate(properties.appName),
+      'ClusterId': ros.stringToRosTemplate(properties.clusterId),
+      'ApplicationDescription': ros.stringToRosTemplate(properties.applicationDescription),
+      'Command': ros.stringToRosTemplate(properties.command),
+      'CommandArgs': ros.listMapper(rosK8sApplicationCommandArgsPropertyToRosTemplate)(properties.commandArgs),
+      'DeployAcrossNodes': ros.booleanToRosTemplate(properties.deployAcrossNodes),
+      'DeployAcrossZones': ros.booleanToRosTemplate(properties.deployAcrossZones),
+      'EdasContainerVersion': ros.stringToRosTemplate(properties.edasContainerVersion),
+      'EnableAhas': ros.booleanToRosTemplate(properties.enableAhas),
+      'Envs': ros.listMapper(rosK8sApplicationEnvsPropertyToRosTemplate)(properties.envs),
+      'ImageUrl': ros.stringToRosTemplate(properties.imageUrl),
+      'InternetSlbId': ros.stringToRosTemplate(properties.internetSlbId),
+      'InternetSlbPort': ros.numberToRosTemplate(properties.internetSlbPort),
+      'InternetSlbProtocol': ros.stringToRosTemplate(properties.internetSlbProtocol),
+      'InternetTargetPort': ros.numberToRosTemplate(properties.internetTargetPort),
+      'IntranetSlbId': ros.stringToRosTemplate(properties.intranetSlbId),
+      'IntranetSlbPort': ros.numberToRosTemplate(properties.intranetSlbPort),
+      'IntranetSlbProtocol': ros.stringToRosTemplate(properties.intranetSlbProtocol),
+      'IntranetTargetPort': ros.numberToRosTemplate(properties.intranetTargetPort),
+      'IsMultilingualApp': ros.booleanToRosTemplate(properties.isMultilingualApp),
+      'JavaStartUpConfig': rosK8sApplicationJavaStartUpConfigPropertyToRosTemplate(properties.javaStartUpConfig),
+      'JDK': ros.stringToRosTemplate(properties.jdk),
+      'LimitCpu': ros.numberToRosTemplate(properties.limitCpu),
+      'LimitMem': ros.numberToRosTemplate(properties.limitMem),
+      'Liveness': rosK8sApplicationLivenessPropertyToRosTemplate(properties.liveness),
+      'LocalVolume': ros.listMapper(rosK8sApplicationLocalVolumePropertyToRosTemplate)(properties.localVolume),
+      'LogicalRegionId': ros.stringToRosTemplate(properties.logicalRegionId),
+      'MountDescs': ros.listMapper(rosK8sApplicationMountDescsPropertyToRosTemplate)(properties.mountDescs),
+      'Namespace': ros.stringToRosTemplate(properties.namespace),
+      'NasId': ros.stringToRosTemplate(properties.nasId),
+      'PackageType': ros.stringToRosTemplate(properties.packageType),
+      'PackageUrl': ros.stringToRosTemplate(properties.packageUrl),
+      'PackageVersion': ros.stringToRosTemplate(properties.packageVersion),
+      'PostStart': rosK8sApplicationPostStartPropertyToRosTemplate(properties.postStart),
+      'PreStop': rosK8sApplicationPreStopPropertyToRosTemplate(properties.preStop),
+      'Readiness': rosK8sApplicationReadinessPropertyToRosTemplate(properties.readiness),
+      'Replicas': ros.numberToRosTemplate(properties.replicas),
+      'RepoId': ros.stringToRosTemplate(properties.repoId),
+      'RequestsCpu': ros.numberToRosTemplate(properties.requestsCpu),
+      'RequestsMem': ros.numberToRosTemplate(properties.requestsMem),
+      'RuntimeClassName': ros.stringToRosTemplate(properties.runtimeClassName),
+      'SlsConfigs': ros.listMapper(rosK8sApplicationSlsConfigsPropertyToRosTemplate)(properties.slsConfigs),
+      'StorageType': ros.stringToRosTemplate(properties.storageType),
+      'Timeout': ros.numberToRosTemplate(properties.timeout),
+      'UriEncoding': ros.stringToRosTemplate(properties.uriEncoding),
+      'UseBodyEncoding': ros.booleanToRosTemplate(properties.useBodyEncoding),
+      'WebContainer': ros.stringToRosTemplate(properties.webContainer),
+      'WebContainerConfig': rosK8sApplicationWebContainerConfigPropertyToRosTemplate(properties.webContainerConfig),
     };
 }
 
@@ -1784,7 +1784,7 @@ function rosK8sApplicationCommandArgsPropertyToRosTemplate(properties: any): any
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_CommandArgsPropertyValidator(properties).assertSuccess();
     return {
-      Argument: ros.stringToRosTemplate(properties.argument),
+      'Argument': ros.stringToRosTemplate(properties.argument),
     };
 }
 
@@ -1830,8 +1830,8 @@ function rosK8sApplicationConcGCThreadsPropertyToRosTemplate(properties: any): a
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_ConcGCThreadsPropertyValidator(properties).assertSuccess();
     return {
-      Original: ros.numberToRosTemplate(properties.original),
-      Startup: ros.stringToRosTemplate(properties.startup),
+      'Original': ros.numberToRosTemplate(properties.original),
+      'Startup': ros.stringToRosTemplate(properties.startup),
     };
 }
 
@@ -1877,8 +1877,8 @@ function rosK8sApplicationCustomParamsPropertyToRosTemplate(properties: any): an
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_CustomParamsPropertyValidator(properties).assertSuccess();
     return {
-      Original: ros.stringToRosTemplate(properties.original),
-      Startup: ros.stringToRosTemplate(properties.startup),
+      'Original': ros.stringToRosTemplate(properties.original),
+      'Startup': ros.stringToRosTemplate(properties.startup),
     };
 }
 
@@ -1924,8 +1924,8 @@ function rosK8sApplicationEnvsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_EnvsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Name: ros.stringToRosTemplate(properties.name),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Name': ros.stringToRosTemplate(properties.name),
     };
 }
 
@@ -1966,7 +1966,7 @@ function rosK8sApplicationExecPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_ExecPropertyValidator(properties).assertSuccess();
     return {
-      Command: ros.listMapper(ros.stringToRosTemplate)(properties.command),
+      'Command': ros.listMapper(ros.stringToRosTemplate)(properties.command),
     };
 }
 
@@ -2012,8 +2012,8 @@ function rosK8sApplicationG1HeapRegionSizePropertyToRosTemplate(properties: any)
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_G1HeapRegionSizePropertyValidator(properties).assertSuccess();
     return {
-      Original: ros.numberToRosTemplate(properties.original),
-      Startup: ros.stringToRosTemplate(properties.startup),
+      'Original': ros.numberToRosTemplate(properties.original),
+      'Startup': ros.stringToRosTemplate(properties.startup),
     };
 }
 
@@ -2059,8 +2059,8 @@ function rosK8sApplicationGCLogFilePathPropertyToRosTemplate(properties: any): a
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_GCLogFilePathPropertyValidator(properties).assertSuccess();
     return {
-      Original: ros.stringToRosTemplate(properties.original),
-      Startup: ros.stringToRosTemplate(properties.startup),
+      'Original': ros.stringToRosTemplate(properties.original),
+      'Startup': ros.stringToRosTemplate(properties.startup),
     };
 }
 
@@ -2106,8 +2106,8 @@ function rosK8sApplicationGCLogFileSizePropertyToRosTemplate(properties: any): a
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_GCLogFileSizePropertyValidator(properties).assertSuccess();
     return {
-      Original: ros.numberToRosTemplate(properties.original),
-      Startup: ros.stringToRosTemplate(properties.startup),
+      'Original': ros.numberToRosTemplate(properties.original),
+      'Startup': ros.stringToRosTemplate(properties.startup),
     };
 }
 
@@ -2153,8 +2153,8 @@ function rosK8sApplicationHeapDumpOnOutOfMemoryErrorPropertyToRosTemplate(proper
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_HeapDumpOnOutOfMemoryErrorPropertyValidator(properties).assertSuccess();
     return {
-      Original: ros.booleanToRosTemplate(properties.original),
-      Startup: ros.stringToRosTemplate(properties.startup),
+      'Original': ros.booleanToRosTemplate(properties.original),
+      'Startup': ros.stringToRosTemplate(properties.startup),
     };
 }
 
@@ -2200,8 +2200,8 @@ function rosK8sApplicationHeapDumpPathPropertyToRosTemplate(properties: any): an
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_HeapDumpPathPropertyValidator(properties).assertSuccess();
     return {
-      Original: ros.stringToRosTemplate(properties.original),
-      Startup: ros.stringToRosTemplate(properties.startup),
+      'Original': ros.stringToRosTemplate(properties.original),
+      'Startup': ros.stringToRosTemplate(properties.startup),
     };
 }
 
@@ -2268,11 +2268,11 @@ function rosK8sApplicationHttpGetPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_HttpGetPropertyValidator(properties).assertSuccess();
     return {
-      Path: ros.stringToRosTemplate(properties.path),
-      HttpHeaders: ros.listMapper(rosK8sApplicationHttpHeadersPropertyToRosTemplate)(properties.httpHeaders),
-      Scheme: ros.stringToRosTemplate(properties.scheme),
-      Port: ros.stringToRosTemplate(properties.port),
-      Host: ros.stringToRosTemplate(properties.host),
+      'Path': ros.stringToRosTemplate(properties.path),
+      'HttpHeaders': ros.listMapper(rosK8sApplicationHttpHeadersPropertyToRosTemplate)(properties.httpHeaders),
+      'Scheme': ros.stringToRosTemplate(properties.scheme),
+      'Port': ros.stringToRosTemplate(properties.port),
+      'Host': ros.stringToRosTemplate(properties.host),
     };
 }
 
@@ -2318,8 +2318,8 @@ function rosK8sApplicationHttpGetHttpHeadersPropertyToRosTemplate(properties: an
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_HttpGetHttpHeadersPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Name: ros.stringToRosTemplate(properties.name),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Name': ros.stringToRosTemplate(properties.name),
     };
 }
 
@@ -2365,8 +2365,8 @@ function rosK8sApplicationHttpHeadersPropertyToRosTemplate(properties: any): any
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_HttpHeadersPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Name: ros.stringToRosTemplate(properties.name),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Name': ros.stringToRosTemplate(properties.name),
     };
 }
 
@@ -2412,8 +2412,8 @@ function rosK8sApplicationInitialHeapSizePropertyToRosTemplate(properties: any):
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_InitialHeapSizePropertyValidator(properties).assertSuccess();
     return {
-      Original: ros.numberToRosTemplate(properties.original),
-      Startup: ros.stringToRosTemplate(properties.startup),
+      'Original': ros.numberToRosTemplate(properties.original),
+      'Startup': ros.stringToRosTemplate(properties.startup),
     };
 }
 
@@ -2574,31 +2574,31 @@ function rosK8sApplicationJavaStartUpConfigPropertyToRosTemplate(properties: any
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_JavaStartUpConfigPropertyValidator(properties).assertSuccess();
     return {
-      MaxHeapSize: rosK8sApplicationMaxHeapSizePropertyToRosTemplate(properties.maxHeapSize),
-      UseGCLogFileRotation: rosK8sApplicationUseGCLogFileRotationPropertyToRosTemplate(properties.useGcLogFileRotation),
-      CustomParams: rosK8sApplicationCustomParamsPropertyToRosTemplate(properties.customParams),
-      ParallelGCThreads: rosK8sApplicationParallelGCThreadsPropertyToRosTemplate(properties.parallelGcThreads),
-      InitialHeapSize: rosK8sApplicationInitialHeapSizePropertyToRosTemplate(properties.initialHeapSize),
-      NacosUseEndpointParsingRule: rosK8sApplicationNacosUseEndpointParsingRulePropertyToRosTemplate(properties.nacosUseEndpointParsingRule),
-      ThreadStackSize: rosK8sApplicationThreadStackSizePropertyToRosTemplate(properties.threadStackSize),
-      SurvivorRatio: rosK8sApplicationSurvivorRatioPropertyToRosTemplate(properties.survivorRatio),
-      PermSize: rosK8sApplicationPermSizePropertyToRosTemplate(properties.permSize),
-      NewSize: rosK8sApplicationNewSizePropertyToRosTemplate(properties.newSize),
-      ConcGCThreads: rosK8sApplicationConcGCThreadsPropertyToRosTemplate(properties.concGcThreads),
-      NewRatio: rosK8sApplicationNewRatioPropertyToRosTemplate(properties.newRatio),
-      GCLogFileSize: rosK8sApplicationGCLogFileSizePropertyToRosTemplate(properties.gcLogFileSize),
-      MaxNewSize: rosK8sApplicationMaxNewSizePropertyToRosTemplate(properties.maxNewSize),
-      G1HeapRegionSize: rosK8sApplicationG1HeapRegionSizePropertyToRosTemplate(properties.g1HeapRegionSize),
-      PrintGC: rosK8sApplicationPrintGCPropertyToRosTemplate(properties.printGc),
-      MaxDirectMemorySize: rosK8sApplicationMaxDirectMemorySizePropertyToRosTemplate(properties.maxDirectMemorySize),
-      MaxPermSize: rosK8sApplicationMaxPermSizePropertyToRosTemplate(properties.maxPermSize),
-      HeapDumpOnOutOfMemoryError: rosK8sApplicationHeapDumpOnOutOfMemoryErrorPropertyToRosTemplate(properties.heapDumpOnOutOfMemoryError),
-      NacosUseCloudNamespaceParsing: rosK8sApplicationNacosUseCloudNamespaceParsingPropertyToRosTemplate(properties.nacosUseCloudNamespaceParsing),
-      HeapDumpPath: rosK8sApplicationHeapDumpPathPropertyToRosTemplate(properties.heapDumpPath),
-      GCLogFilePath: rosK8sApplicationGCLogFilePathPropertyToRosTemplate(properties.gcLogFilePath),
-      PrintGCDateStamps: rosK8sApplicationPrintGCDateStampsPropertyToRosTemplate(properties.printGcDateStamps),
-      YoungGarbageCollector: rosK8sApplicationYoungGarbageCollectorPropertyToRosTemplate(properties.youngGarbageCollector),
-      OldGarbageCollector: rosK8sApplicationOldGarbageCollectorPropertyToRosTemplate(properties.oldGarbageCollector),
+      'MaxHeapSize': rosK8sApplicationMaxHeapSizePropertyToRosTemplate(properties.maxHeapSize),
+      'UseGCLogFileRotation': rosK8sApplicationUseGCLogFileRotationPropertyToRosTemplate(properties.useGcLogFileRotation),
+      'CustomParams': rosK8sApplicationCustomParamsPropertyToRosTemplate(properties.customParams),
+      'ParallelGCThreads': rosK8sApplicationParallelGCThreadsPropertyToRosTemplate(properties.parallelGcThreads),
+      'InitialHeapSize': rosK8sApplicationInitialHeapSizePropertyToRosTemplate(properties.initialHeapSize),
+      'NacosUseEndpointParsingRule': rosK8sApplicationNacosUseEndpointParsingRulePropertyToRosTemplate(properties.nacosUseEndpointParsingRule),
+      'ThreadStackSize': rosK8sApplicationThreadStackSizePropertyToRosTemplate(properties.threadStackSize),
+      'SurvivorRatio': rosK8sApplicationSurvivorRatioPropertyToRosTemplate(properties.survivorRatio),
+      'PermSize': rosK8sApplicationPermSizePropertyToRosTemplate(properties.permSize),
+      'NewSize': rosK8sApplicationNewSizePropertyToRosTemplate(properties.newSize),
+      'ConcGCThreads': rosK8sApplicationConcGCThreadsPropertyToRosTemplate(properties.concGcThreads),
+      'NewRatio': rosK8sApplicationNewRatioPropertyToRosTemplate(properties.newRatio),
+      'GCLogFileSize': rosK8sApplicationGCLogFileSizePropertyToRosTemplate(properties.gcLogFileSize),
+      'MaxNewSize': rosK8sApplicationMaxNewSizePropertyToRosTemplate(properties.maxNewSize),
+      'G1HeapRegionSize': rosK8sApplicationG1HeapRegionSizePropertyToRosTemplate(properties.g1HeapRegionSize),
+      'PrintGC': rosK8sApplicationPrintGCPropertyToRosTemplate(properties.printGc),
+      'MaxDirectMemorySize': rosK8sApplicationMaxDirectMemorySizePropertyToRosTemplate(properties.maxDirectMemorySize),
+      'MaxPermSize': rosK8sApplicationMaxPermSizePropertyToRosTemplate(properties.maxPermSize),
+      'HeapDumpOnOutOfMemoryError': rosK8sApplicationHeapDumpOnOutOfMemoryErrorPropertyToRosTemplate(properties.heapDumpOnOutOfMemoryError),
+      'NacosUseCloudNamespaceParsing': rosK8sApplicationNacosUseCloudNamespaceParsingPropertyToRosTemplate(properties.nacosUseCloudNamespaceParsing),
+      'HeapDumpPath': rosK8sApplicationHeapDumpPathPropertyToRosTemplate(properties.heapDumpPath),
+      'GCLogFilePath': rosK8sApplicationGCLogFilePathPropertyToRosTemplate(properties.gcLogFilePath),
+      'PrintGCDateStamps': rosK8sApplicationPrintGCDateStampsPropertyToRosTemplate(properties.printGcDateStamps),
+      'YoungGarbageCollector': rosK8sApplicationYoungGarbageCollectorPropertyToRosTemplate(properties.youngGarbageCollector),
+      'OldGarbageCollector': rosK8sApplicationOldGarbageCollectorPropertyToRosTemplate(properties.oldGarbageCollector),
     };
 }
 
@@ -2709,14 +2709,14 @@ function rosK8sApplicationLivenessPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_LivenessPropertyValidator(properties).assertSuccess();
     return {
-      TimeoutSeconds: ros.numberToRosTemplate(properties.timeoutSeconds),
-      Exec: rosK8sApplicationExecPropertyToRosTemplate(properties.exec),
-      InitialDelaySeconds: ros.numberToRosTemplate(properties.initialDelaySeconds),
-      HttpGet: rosK8sApplicationHttpGetPropertyToRosTemplate(properties.httpGet),
-      PeriodSeconds: ros.numberToRosTemplate(properties.periodSeconds),
-      TcpSocket: rosK8sApplicationTcpSocketPropertyToRosTemplate(properties.tcpSocket),
-      FailureThreshold: ros.numberToRosTemplate(properties.failureThreshold),
-      SuccessThreshold: ros.numberToRosTemplate(properties.successThreshold),
+      'TimeoutSeconds': ros.numberToRosTemplate(properties.timeoutSeconds),
+      'Exec': rosK8sApplicationExecPropertyToRosTemplate(properties.exec),
+      'InitialDelaySeconds': ros.numberToRosTemplate(properties.initialDelaySeconds),
+      'HttpGet': rosK8sApplicationHttpGetPropertyToRosTemplate(properties.httpGet),
+      'PeriodSeconds': ros.numberToRosTemplate(properties.periodSeconds),
+      'TcpSocket': rosK8sApplicationTcpSocketPropertyToRosTemplate(properties.tcpSocket),
+      'FailureThreshold': ros.numberToRosTemplate(properties.failureThreshold),
+      'SuccessThreshold': ros.numberToRosTemplate(properties.successThreshold),
     };
 }
 
@@ -2767,9 +2767,9 @@ function rosK8sApplicationLocalVolumePropertyToRosTemplate(properties: any): any
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_LocalVolumePropertyValidator(properties).assertSuccess();
     return {
-      MountPath: ros.stringToRosTemplate(properties.mountPath),
-      Type: ros.stringToRosTemplate(properties.type),
-      NodePath: ros.stringToRosTemplate(properties.nodePath),
+      'MountPath': ros.stringToRosTemplate(properties.mountPath),
+      'Type': ros.stringToRosTemplate(properties.type),
+      'NodePath': ros.stringToRosTemplate(properties.nodePath),
     };
 }
 
@@ -2815,8 +2815,8 @@ function rosK8sApplicationMaxDirectMemorySizePropertyToRosTemplate(properties: a
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_MaxDirectMemorySizePropertyValidator(properties).assertSuccess();
     return {
-      Original: ros.numberToRosTemplate(properties.original),
-      Startup: ros.stringToRosTemplate(properties.startup),
+      'Original': ros.numberToRosTemplate(properties.original),
+      'Startup': ros.stringToRosTemplate(properties.startup),
     };
 }
 
@@ -2862,8 +2862,8 @@ function rosK8sApplicationMaxHeapSizePropertyToRosTemplate(properties: any): any
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_MaxHeapSizePropertyValidator(properties).assertSuccess();
     return {
-      Original: ros.numberToRosTemplate(properties.original),
-      Startup: ros.stringToRosTemplate(properties.startup),
+      'Original': ros.numberToRosTemplate(properties.original),
+      'Startup': ros.stringToRosTemplate(properties.startup),
     };
 }
 
@@ -2909,8 +2909,8 @@ function rosK8sApplicationMaxNewSizePropertyToRosTemplate(properties: any): any 
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_MaxNewSizePropertyValidator(properties).assertSuccess();
     return {
-      Original: ros.numberToRosTemplate(properties.original),
-      Startup: ros.stringToRosTemplate(properties.startup),
+      'Original': ros.numberToRosTemplate(properties.original),
+      'Startup': ros.stringToRosTemplate(properties.startup),
     };
 }
 
@@ -2956,8 +2956,8 @@ function rosK8sApplicationMaxPermSizePropertyToRosTemplate(properties: any): any
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_MaxPermSizePropertyValidator(properties).assertSuccess();
     return {
-      Original: ros.numberToRosTemplate(properties.original),
-      Startup: ros.stringToRosTemplate(properties.startup),
+      'Original': ros.numberToRosTemplate(properties.original),
+      'Startup': ros.stringToRosTemplate(properties.startup),
     };
 }
 
@@ -3003,8 +3003,8 @@ function rosK8sApplicationMountDescsPropertyToRosTemplate(properties: any): any 
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_MountDescsPropertyValidator(properties).assertSuccess();
     return {
-      MountPath: ros.stringToRosTemplate(properties.mountPath),
-      NasPath: ros.stringToRosTemplate(properties.nasPath),
+      'MountPath': ros.stringToRosTemplate(properties.mountPath),
+      'NasPath': ros.stringToRosTemplate(properties.nasPath),
     };
 }
 
@@ -3050,8 +3050,8 @@ function rosK8sApplicationNacosUseCloudNamespaceParsingPropertyToRosTemplate(pro
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_NacosUseCloudNamespaceParsingPropertyValidator(properties).assertSuccess();
     return {
-      Original: ros.booleanToRosTemplate(properties.original),
-      Startup: ros.stringToRosTemplate(properties.startup),
+      'Original': ros.booleanToRosTemplate(properties.original),
+      'Startup': ros.stringToRosTemplate(properties.startup),
     };
 }
 
@@ -3097,8 +3097,8 @@ function rosK8sApplicationNacosUseEndpointParsingRulePropertyToRosTemplate(prope
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_NacosUseEndpointParsingRulePropertyValidator(properties).assertSuccess();
     return {
-      Original: ros.booleanToRosTemplate(properties.original),
-      Startup: ros.stringToRosTemplate(properties.startup),
+      'Original': ros.booleanToRosTemplate(properties.original),
+      'Startup': ros.stringToRosTemplate(properties.startup),
     };
 }
 
@@ -3144,8 +3144,8 @@ function rosK8sApplicationNewRatioPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_NewRatioPropertyValidator(properties).assertSuccess();
     return {
-      Original: ros.numberToRosTemplate(properties.original),
-      Startup: ros.stringToRosTemplate(properties.startup),
+      'Original': ros.numberToRosTemplate(properties.original),
+      'Startup': ros.stringToRosTemplate(properties.startup),
     };
 }
 
@@ -3191,8 +3191,8 @@ function rosK8sApplicationNewSizePropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_NewSizePropertyValidator(properties).assertSuccess();
     return {
-      Original: ros.numberToRosTemplate(properties.original),
-      Startup: ros.stringToRosTemplate(properties.startup),
+      'Original': ros.numberToRosTemplate(properties.original),
+      'Startup': ros.stringToRosTemplate(properties.startup),
     };
 }
 
@@ -3238,8 +3238,8 @@ function rosK8sApplicationOldGarbageCollectorPropertyToRosTemplate(properties: a
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_OldGarbageCollectorPropertyValidator(properties).assertSuccess();
     return {
-      Original: ros.stringToRosTemplate(properties.original),
-      Startup: ros.stringToRosTemplate(properties.startup),
+      'Original': ros.stringToRosTemplate(properties.original),
+      'Startup': ros.stringToRosTemplate(properties.startup),
     };
 }
 
@@ -3285,8 +3285,8 @@ function rosK8sApplicationParallelGCThreadsPropertyToRosTemplate(properties: any
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_ParallelGCThreadsPropertyValidator(properties).assertSuccess();
     return {
-      Original: ros.numberToRosTemplate(properties.original),
-      Startup: ros.stringToRosTemplate(properties.startup),
+      'Original': ros.numberToRosTemplate(properties.original),
+      'Startup': ros.stringToRosTemplate(properties.startup),
     };
 }
 
@@ -3332,8 +3332,8 @@ function rosK8sApplicationPermSizePropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_PermSizePropertyValidator(properties).assertSuccess();
     return {
-      Original: ros.numberToRosTemplate(properties.original),
-      Startup: ros.stringToRosTemplate(properties.startup),
+      'Original': ros.numberToRosTemplate(properties.original),
+      'Startup': ros.stringToRosTemplate(properties.startup),
     };
 }
 
@@ -3379,8 +3379,8 @@ function rosK8sApplicationPostStartPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_PostStartPropertyValidator(properties).assertSuccess();
     return {
-      Exec: rosK8sApplicationPostStartExecPropertyToRosTemplate(properties.exec),
-      HttpGet: rosK8sApplicationPostStartHttpGetPropertyToRosTemplate(properties.httpGet),
+      'Exec': rosK8sApplicationPostStartExecPropertyToRosTemplate(properties.exec),
+      'HttpGet': rosK8sApplicationPostStartHttpGetPropertyToRosTemplate(properties.httpGet),
     };
 }
 
@@ -3421,7 +3421,7 @@ function rosK8sApplicationPostStartExecPropertyToRosTemplate(properties: any): a
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_PostStartExecPropertyValidator(properties).assertSuccess();
     return {
-      Command: ros.listMapper(ros.stringToRosTemplate)(properties.command),
+      'Command': ros.listMapper(ros.stringToRosTemplate)(properties.command),
     };
 }
 
@@ -3488,11 +3488,11 @@ function rosK8sApplicationPostStartHttpGetPropertyToRosTemplate(properties: any)
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_PostStartHttpGetPropertyValidator(properties).assertSuccess();
     return {
-      Path: ros.stringToRosTemplate(properties.path),
-      HttpHeaders: ros.listMapper(rosK8sApplicationHttpGetHttpHeadersPropertyToRosTemplate)(properties.httpHeaders),
-      Scheme: ros.stringToRosTemplate(properties.scheme),
-      Port: ros.stringToRosTemplate(properties.port),
-      Host: ros.stringToRosTemplate(properties.host),
+      'Path': ros.stringToRosTemplate(properties.path),
+      'HttpHeaders': ros.listMapper(rosK8sApplicationHttpGetHttpHeadersPropertyToRosTemplate)(properties.httpHeaders),
+      'Scheme': ros.stringToRosTemplate(properties.scheme),
+      'Port': ros.stringToRosTemplate(properties.port),
+      'Host': ros.stringToRosTemplate(properties.host),
     };
 }
 
@@ -3538,8 +3538,8 @@ function rosK8sApplicationPreStopPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_PreStopPropertyValidator(properties).assertSuccess();
     return {
-      Exec: rosK8sApplicationPreStopExecPropertyToRosTemplate(properties.exec),
-      HttpGet: rosK8sApplicationPreStopHttpGetPropertyToRosTemplate(properties.httpGet),
+      'Exec': rosK8sApplicationPreStopExecPropertyToRosTemplate(properties.exec),
+      'HttpGet': rosK8sApplicationPreStopHttpGetPropertyToRosTemplate(properties.httpGet),
     };
 }
 
@@ -3580,7 +3580,7 @@ function rosK8sApplicationPreStopExecPropertyToRosTemplate(properties: any): any
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_PreStopExecPropertyValidator(properties).assertSuccess();
     return {
-      Command: ros.listMapper(ros.stringToRosTemplate)(properties.command),
+      'Command': ros.listMapper(ros.stringToRosTemplate)(properties.command),
     };
 }
 
@@ -3647,11 +3647,11 @@ function rosK8sApplicationPreStopHttpGetPropertyToRosTemplate(properties: any): 
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_PreStopHttpGetPropertyValidator(properties).assertSuccess();
     return {
-      Path: ros.stringToRosTemplate(properties.path),
-      HttpHeaders: ros.listMapper(rosK8sApplicationPreStopHttpGetHttpHeadersPropertyToRosTemplate)(properties.httpHeaders),
-      Scheme: ros.stringToRosTemplate(properties.scheme),
-      Port: ros.stringToRosTemplate(properties.port),
-      Host: ros.stringToRosTemplate(properties.host),
+      'Path': ros.stringToRosTemplate(properties.path),
+      'HttpHeaders': ros.listMapper(rosK8sApplicationPreStopHttpGetHttpHeadersPropertyToRosTemplate)(properties.httpHeaders),
+      'Scheme': ros.stringToRosTemplate(properties.scheme),
+      'Port': ros.stringToRosTemplate(properties.port),
+      'Host': ros.stringToRosTemplate(properties.host),
     };
 }
 
@@ -3697,8 +3697,8 @@ function rosK8sApplicationPreStopHttpGetHttpHeadersPropertyToRosTemplate(propert
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_PreStopHttpGetHttpHeadersPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Name: ros.stringToRosTemplate(properties.name),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Name': ros.stringToRosTemplate(properties.name),
     };
 }
 
@@ -3744,8 +3744,8 @@ function rosK8sApplicationPrintGCPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_PrintGCPropertyValidator(properties).assertSuccess();
     return {
-      Original: ros.booleanToRosTemplate(properties.original),
-      Startup: ros.stringToRosTemplate(properties.startup),
+      'Original': ros.booleanToRosTemplate(properties.original),
+      'Startup': ros.stringToRosTemplate(properties.startup),
     };
 }
 
@@ -3791,8 +3791,8 @@ function rosK8sApplicationPrintGCDateStampsPropertyToRosTemplate(properties: any
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_PrintGCDateStampsPropertyValidator(properties).assertSuccess();
     return {
-      Original: ros.booleanToRosTemplate(properties.original),
-      Startup: ros.stringToRosTemplate(properties.startup),
+      'Original': ros.booleanToRosTemplate(properties.original),
+      'Startup': ros.stringToRosTemplate(properties.startup),
     };
 }
 
@@ -3903,14 +3903,14 @@ function rosK8sApplicationReadinessPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_ReadinessPropertyValidator(properties).assertSuccess();
     return {
-      TimeoutSeconds: ros.numberToRosTemplate(properties.timeoutSeconds),
-      Exec: rosK8sApplicationReadinessExecPropertyToRosTemplate(properties.exec),
-      InitialDelaySeconds: ros.numberToRosTemplate(properties.initialDelaySeconds),
-      HttpGet: rosK8sApplicationReadinessHttpGetPropertyToRosTemplate(properties.httpGet),
-      PeriodSeconds: ros.numberToRosTemplate(properties.periodSeconds),
-      TcpSocket: rosK8sApplicationReadinessTcpSocketPropertyToRosTemplate(properties.tcpSocket),
-      FailureThreshold: ros.numberToRosTemplate(properties.failureThreshold),
-      SuccessThreshold: ros.numberToRosTemplate(properties.successThreshold),
+      'TimeoutSeconds': ros.numberToRosTemplate(properties.timeoutSeconds),
+      'Exec': rosK8sApplicationReadinessExecPropertyToRosTemplate(properties.exec),
+      'InitialDelaySeconds': ros.numberToRosTemplate(properties.initialDelaySeconds),
+      'HttpGet': rosK8sApplicationReadinessHttpGetPropertyToRosTemplate(properties.httpGet),
+      'PeriodSeconds': ros.numberToRosTemplate(properties.periodSeconds),
+      'TcpSocket': rosK8sApplicationReadinessTcpSocketPropertyToRosTemplate(properties.tcpSocket),
+      'FailureThreshold': ros.numberToRosTemplate(properties.failureThreshold),
+      'SuccessThreshold': ros.numberToRosTemplate(properties.successThreshold),
     };
 }
 
@@ -3951,7 +3951,7 @@ function rosK8sApplicationReadinessExecPropertyToRosTemplate(properties: any): a
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_ReadinessExecPropertyValidator(properties).assertSuccess();
     return {
-      Command: ros.listMapper(ros.stringToRosTemplate)(properties.command),
+      'Command': ros.listMapper(ros.stringToRosTemplate)(properties.command),
     };
 }
 
@@ -4018,11 +4018,11 @@ function rosK8sApplicationReadinessHttpGetPropertyToRosTemplate(properties: any)
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_ReadinessHttpGetPropertyValidator(properties).assertSuccess();
     return {
-      Path: ros.stringToRosTemplate(properties.path),
-      HttpHeaders: ros.listMapper(rosK8sApplicationReadinessHttpGetHttpHeadersPropertyToRosTemplate)(properties.httpHeaders),
-      Scheme: ros.stringToRosTemplate(properties.scheme),
-      Port: ros.stringToRosTemplate(properties.port),
-      Host: ros.stringToRosTemplate(properties.host),
+      'Path': ros.stringToRosTemplate(properties.path),
+      'HttpHeaders': ros.listMapper(rosK8sApplicationReadinessHttpGetHttpHeadersPropertyToRosTemplate)(properties.httpHeaders),
+      'Scheme': ros.stringToRosTemplate(properties.scheme),
+      'Port': ros.stringToRosTemplate(properties.port),
+      'Host': ros.stringToRosTemplate(properties.host),
     };
 }
 
@@ -4068,8 +4068,8 @@ function rosK8sApplicationReadinessHttpGetHttpHeadersPropertyToRosTemplate(prope
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_ReadinessHttpGetHttpHeadersPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Name: ros.stringToRosTemplate(properties.name),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Name': ros.stringToRosTemplate(properties.name),
     };
 }
 
@@ -4115,8 +4115,8 @@ function rosK8sApplicationReadinessTcpSocketPropertyToRosTemplate(properties: an
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_ReadinessTcpSocketPropertyValidator(properties).assertSuccess();
     return {
-      Port: ros.stringToRosTemplate(properties.port),
-      Host: ros.stringToRosTemplate(properties.host),
+      'Port': ros.stringToRosTemplate(properties.port),
+      'Host': ros.stringToRosTemplate(properties.host),
     };
 }
 
@@ -4176,9 +4176,9 @@ function rosK8sApplicationSlsConfigsPropertyToRosTemplate(properties: any): any 
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_SlsConfigsPropertyValidator(properties).assertSuccess();
     return {
-      Type: ros.stringToRosTemplate(properties.type),
-      LogDir: ros.stringToRosTemplate(properties.logDir),
-      Logstore: ros.stringToRosTemplate(properties.logstore),
+      'Type': ros.stringToRosTemplate(properties.type),
+      'LogDir': ros.stringToRosTemplate(properties.logDir),
+      'Logstore': ros.stringToRosTemplate(properties.logstore),
     };
 }
 
@@ -4224,8 +4224,8 @@ function rosK8sApplicationSurvivorRatioPropertyToRosTemplate(properties: any): a
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_SurvivorRatioPropertyValidator(properties).assertSuccess();
     return {
-      Original: ros.numberToRosTemplate(properties.original),
-      Startup: ros.stringToRosTemplate(properties.startup),
+      'Original': ros.numberToRosTemplate(properties.original),
+      'Startup': ros.stringToRosTemplate(properties.startup),
     };
 }
 
@@ -4271,8 +4271,8 @@ function rosK8sApplicationTcpSocketPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_TcpSocketPropertyValidator(properties).assertSuccess();
     return {
-      Port: ros.stringToRosTemplate(properties.port),
-      Host: ros.stringToRosTemplate(properties.host),
+      'Port': ros.stringToRosTemplate(properties.port),
+      'Host': ros.stringToRosTemplate(properties.host),
     };
 }
 
@@ -4318,8 +4318,8 @@ function rosK8sApplicationThreadStackSizePropertyToRosTemplate(properties: any):
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_ThreadStackSizePropertyValidator(properties).assertSuccess();
     return {
-      Original: ros.numberToRosTemplate(properties.original),
-      Startup: ros.stringToRosTemplate(properties.startup),
+      'Original': ros.numberToRosTemplate(properties.original),
+      'Startup': ros.stringToRosTemplate(properties.startup),
     };
 }
 
@@ -4365,8 +4365,8 @@ function rosK8sApplicationUseGCLogFileRotationPropertyToRosTemplate(properties: 
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_UseGCLogFileRotationPropertyValidator(properties).assertSuccess();
     return {
-      Original: ros.booleanToRosTemplate(properties.original),
-      Startup: ros.stringToRosTemplate(properties.startup),
+      'Original': ros.booleanToRosTemplate(properties.original),
+      'Startup': ros.stringToRosTemplate(properties.startup),
     };
 }
 
@@ -4459,15 +4459,15 @@ function rosK8sApplicationWebContainerConfigPropertyToRosTemplate(properties: an
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_WebContainerConfigPropertyValidator(properties).assertSuccess();
     return {
-      HttpPort: ros.numberToRosTemplate(properties.httpPort),
-      UriEncoding: ros.stringToRosTemplate(properties.uriEncoding),
-      ContextPath: ros.stringToRosTemplate(properties.contextPath),
-      ContextInputType: ros.stringToRosTemplate(properties.contextInputType),
-      UseBodyEncoding: ros.booleanToRosTemplate(properties.useBodyEncoding),
-      ServerXml: ros.stringToRosTemplate(properties.serverXml),
-      MaxThreads: ros.numberToRosTemplate(properties.maxThreads),
-      UseAdvancedServerXml: ros.booleanToRosTemplate(properties.useAdvancedServerXml),
-      UseDefaultConfig: ros.booleanToRosTemplate(properties.useDefaultConfig),
+      'HttpPort': ros.numberToRosTemplate(properties.httpPort),
+      'UriEncoding': ros.stringToRosTemplate(properties.uriEncoding),
+      'ContextPath': ros.stringToRosTemplate(properties.contextPath),
+      'ContextInputType': ros.stringToRosTemplate(properties.contextInputType),
+      'UseBodyEncoding': ros.booleanToRosTemplate(properties.useBodyEncoding),
+      'ServerXml': ros.stringToRosTemplate(properties.serverXml),
+      'MaxThreads': ros.numberToRosTemplate(properties.maxThreads),
+      'UseAdvancedServerXml': ros.booleanToRosTemplate(properties.useAdvancedServerXml),
+      'UseDefaultConfig': ros.booleanToRosTemplate(properties.useDefaultConfig),
     };
 }
 
@@ -4513,8 +4513,8 @@ function rosK8sApplicationYoungGarbageCollectorPropertyToRosTemplate(properties:
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sApplication_YoungGarbageCollectorPropertyValidator(properties).assertSuccess();
     return {
-      Original: ros.stringToRosTemplate(properties.original),
-      Startup: ros.stringToRosTemplate(properties.startup),
+      'Original': ros.stringToRosTemplate(properties.original),
+      'Startup': ros.stringToRosTemplate(properties.startup),
     };
 }
 
@@ -4571,9 +4571,9 @@ function rosK8sClusterPropsToRosTemplate(properties: any, enableResourceProperty
         RosK8sClusterPropsValidator(properties).assertSuccess();
     }
     return {
-      CsClusterId: ros.stringToRosTemplate(properties.csClusterId),
-      EnableAsm: ros.stringToRosTemplate(properties.enableAsm),
-      NamespaceId: ros.stringToRosTemplate(properties.namespaceId),
+      'CsClusterId': ros.stringToRosTemplate(properties.csClusterId),
+      'EnableAsm': ros.stringToRosTemplate(properties.enableAsm),
+      'NamespaceId': ros.stringToRosTemplate(properties.namespaceId),
     };
 }
 
@@ -4787,13 +4787,13 @@ function rosK8sSlbBindingPropsToRosTemplate(properties: any, enableResourcePrope
         RosK8sSlbBindingPropsValidator(properties).assertSuccess();
     }
     return {
-      AppId: ros.stringToRosTemplate(properties.appId),
-      ClusterId: ros.stringToRosTemplate(properties.clusterId),
-      ServicePortInfos: ros.listMapper(rosK8sSlbBindingServicePortInfosPropertyToRosTemplate)(properties.servicePortInfos),
-      Type: ros.stringToRosTemplate(properties.type),
-      LoadBalancerId: ros.stringToRosTemplate(properties.loadBalancerId),
-      Scheduler: ros.stringToRosTemplate(properties.scheduler),
-      Specification: ros.stringToRosTemplate(properties.specification),
+      'AppId': ros.stringToRosTemplate(properties.appId),
+      'ClusterId': ros.stringToRosTemplate(properties.clusterId),
+      'ServicePortInfos': ros.listMapper(rosK8sSlbBindingServicePortInfosPropertyToRosTemplate)(properties.servicePortInfos),
+      'Type': ros.stringToRosTemplate(properties.type),
+      'LoadBalancerId': ros.stringToRosTemplate(properties.loadBalancerId),
+      'Scheduler': ros.stringToRosTemplate(properties.scheduler),
+      'Specification': ros.stringToRosTemplate(properties.specification),
     };
 }
 
@@ -4989,10 +4989,10 @@ function rosK8sSlbBindingServicePortInfosPropertyToRosTemplate(properties: any):
     if (!ros.canInspect(properties)) { return properties; }
     RosK8sSlbBinding_ServicePortInfosPropertyValidator(properties).assertSuccess();
     return {
-      TargetPort: ros.numberToRosTemplate(properties.targetPort),
-      LoadBalancerProtocol: ros.stringToRosTemplate(properties.loadBalancerProtocol),
-      CertId: ros.stringToRosTemplate(properties.certId),
-      Port: ros.numberToRosTemplate(properties.port),
+      'TargetPort': ros.numberToRosTemplate(properties.targetPort),
+      'LoadBalancerProtocol': ros.stringToRosTemplate(properties.loadBalancerProtocol),
+      'CertId': ros.stringToRosTemplate(properties.certId),
+      'Port': ros.numberToRosTemplate(properties.port),
     };
 }
 
@@ -5056,10 +5056,10 @@ function rosUserDefineRegionPropsToRosTemplate(properties: any, enableResourcePr
         RosUserDefineRegionPropsValidator(properties).assertSuccess();
     }
     return {
-      RegionName: ros.stringToRosTemplate(properties.regionName),
-      RegionTag: ros.stringToRosTemplate(properties.regionTag),
-      DebugEnable: ros.booleanToRosTemplate(properties.debugEnable),
-      Description: ros.stringToRosTemplate(properties.description),
+      'RegionName': ros.stringToRosTemplate(properties.regionName),
+      'RegionTag': ros.stringToRosTemplate(properties.regionTag),
+      'DebugEnable': ros.booleanToRosTemplate(properties.debugEnable),
+      'Description': ros.stringToRosTemplate(properties.description),
     };
 }
 

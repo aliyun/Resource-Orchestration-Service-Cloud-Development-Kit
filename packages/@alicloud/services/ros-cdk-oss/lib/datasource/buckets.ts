@@ -8,6 +8,14 @@ export { RosBuckets as BucketsProperty };
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oss-buckets
  */
 export interface BucketsProps {
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -44,8 +52,8 @@ export class Buckets extends ros.Resource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosBuckets = new RosBuckets(this, id,  {
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
-        props;
         this.resource = rosBuckets;
         this.attrBucketNames = rosBuckets.attrBucketNames;
         this.attrBuckets = rosBuckets.attrBuckets;

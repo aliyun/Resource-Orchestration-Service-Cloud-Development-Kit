@@ -11,7 +11,7 @@ import * as ros from "./index";
 
 /**
  * Resource Orchestration Service intrinsic functions.
- * https://help.aliyun.com/document_detail/28852.html
+ * https://help.aliyun.com/zh/ros/user-guide/functions
  */
 export class Fn {
   public static str(value: any): string {
@@ -304,6 +304,95 @@ export class Fn {
   }
 
   /**
+   * The intrinsic function Fn::Indent adjust the indentation of the string.
+   * @param str Strings that need to be indented.
+   * @param level Indentation level. The range is [0,20].
+   * @param indent Optional, defaults to 2 for two Spaces per level, in the range [0,4].
+   */
+  public static indent(str: string | ros.IResolvable, level: number | ros.IResolvable, indent?: number | ros.IResolvable): string {
+    return new FnIndent(str, level, indent).toString();
+  }
+
+  /**
+   * Returns the index of the item in the list.
+   * @param itemToFindIndex The item to find in the list.
+   * @param itemList The list to find the item in.
+   */
+  public static index(itemToFindIndex: any, itemList: any[] | ros.IResolvable): string {
+    return new FnIndex(itemToFindIndex, itemList).toString();
+  }
+
+  /**
+   * Returns the length of the object.
+   * @param obj An object whose length needs to be computed. Three types are supported: strings, lists, and dictionaries.
+   */
+  public static lengthOf(obj: any): string {
+    return new FnLength(obj).toString();
+  }
+
+  /**
+   * Returns the formatted time of the object.
+   * @param format The format of the time.
+   * @param timeZone The time zone.
+   */
+  public static formatTime(format: string | ros.IResolvable, timeZone: string | ros.IResolvable): string {
+    return new FnFormatTime(format, timeZone).toString();
+  }
+
+  /**
+   * The intrinsic function Fn::MarketplaceImage returns the default image ID of the specified cloud marketplace image product Code.
+   * @param imageProductCode The product code of the cloud marketplace image.
+   */
+  public static marketplaceImage(imageProductCode: string | ros.IResolvable): string {
+    return new FnMarketplaceImage(imageProductCode).toString();
+  }
+
+  /**
+   * Returns whether a value in the specified array is true or false. Returns true if any item in the array is true, and false otherwise.
+   * @param values An array of values.
+   */
+  public static any(values: any[] | ros.IResolvable): string {
+    return new FnAny(values).toString();
+  }
+
+  /**
+   * Returns true if at least one member of the list matches the specified value and false otherwise.
+   * @param values An array of values.
+   * @param value A value.
+   */
+  public static contains(values: any[] | ros.IResolvable, value: any): string {
+    return new FnContains(values, value).toString();
+  }
+
+  /**
+   * Returns true if every member of the first list is equal to at least one value in the second list, and false otherwise.
+   * @param values1 An array of values.
+   * @param values2 An array of values.
+   */
+  public static eachMemberIn(values1: any[] | ros.IResolvable, values2: any[] | ros.IResolvable): string {
+    return new FnEachMemberIn(values1, values2).toString();
+  }
+
+  /**
+   * Returns true if a specified string matches a specified pattern.
+   * @param pattern A regular expression in string form.
+   * @param value The string to match.
+   */
+  public static matchPattern(pattern: string | ros.IResolvable, value: string | ros.IResolvable): string {
+    return new FnMatchPattern(pattern, value).toString();
+  }
+
+  /**
+   * Returns a list of CIDR addresses.
+   * @param ipBlock The IP address block from which you want to allocate the CIDR. The block must be expressed in CIDR notation.
+   * @param count The number of IPv4 CIDRs to generate. Valid input values range from 1 to 256 and are used to decide the total number of final subnets.
+   * @param cidrBits The number of subnet bits of the new CIDR. For example, if the value "8" is specified for this parameter, a CIDR with a "/24" mask will be created.
+   */
+  public static cidr(ipBlock: string | ros.IResolvable, count: number | ros.IResolvable, cidrBits: number | ros.IResolvable): string {
+    return new FnCidr(ipBlock, count, cidrBits).toString();
+  }
+
+  /**
    * Returns true if a specified string matches all values in a list.
    * param listOfStrings A list of strings, such as "A", "B", "C".
    * param value A string, such as "A", that you want to compare against a list
@@ -326,6 +415,102 @@ export class Fn {
 class FnBase extends Intrinsic {
   constructor(name: string, value: any) {
     super({ [name]: value });
+  }
+}
+
+export class FnIndent extends FnBase {
+  /**
+   * Creates an ``Indent`` function.
+   */
+  constructor(str: string | ros.IResolvable, level: number | ros.IResolvable, indent?: number | ros.IResolvable) {
+    if (typeof level === 'number' && (level < 0 || level > 20)) {
+      throw new Error("level must be greater than 0 or less than 20");
+    }
+    if (indent && typeof level === 'number' && (indent < 0 || indent > 4)) {
+      throw new Error("indent must be greater than 0 or less than 4");
+    }
+    super("Fn::Indent", [str, level, indent]);
+  }
+}
+
+export class FnIndex extends FnBase {
+  /**
+   * Creates an ``Index`` function.
+   */
+  constructor(itemToFindIndex: any, itemList: any[] | ros.IResolvable) {
+    super("Fn::Index", [itemToFindIndex, itemList]);
+  }
+}
+
+export class FnLength extends FnBase {
+  /**
+   * Creates an ``Length`` function.
+   */
+  constructor(obj: any) {
+    super("Fn::Length", obj);
+  }
+}
+
+export class FnFormatTime extends FnBase {
+  /**
+   * Creates an ``FormatTime`` function.
+   */
+  constructor(format: string | ros.IResolvable, timeZone: string | ros.IResolvable) {
+    super("Fn::FormatTime", [format, timeZone]);
+  }
+}
+
+export class FnMarketplaceImage extends FnBase {
+  /**
+   * Creates an ``MarketplaceImage`` function.
+   */
+  constructor(imageProductCode: string | ros.IResolvable) {
+    super("Fn::MarketplaceImage", imageProductCode);
+  }
+}
+
+export class FnAny extends FnBase {
+  /**
+   * Creates an ``Any`` function.
+   */
+  constructor(values: any[] | ros.IResolvable) {
+    super("Fn::Any", values);
+  }
+}
+
+export class FnContains extends FnBase {
+  /**
+   * Creates an ``Contains`` function.
+   */
+  constructor(values: any[] | ros.IResolvable, value: any) {
+    super("Fn::Contains", [values, value]);
+  }
+}
+
+export class FnEachMemberIn extends FnBase {
+  /**
+   * Creates an ``EachMemberIn`` function.
+   */
+  constructor(values1: any[] | ros.IResolvable, values2: any[] | ros.IResolvable) {
+    super("Fn::EachMemberIn", [values1, values2]);
+  }
+}
+
+export class FnMatchPattern extends FnBase {
+  /**
+   * Creates an ``MatchPattern`` function.
+   */
+  constructor(pattern: string | ros.IResolvable, value: string | ros.IResolvable) {
+    super("Fn::MatchPattern", [pattern, value]);
+  }
+}
+
+export class FnCidr extends FnBase {
+  /**
+   * Creates an ``Cidr`` function.
+   */
+  constructor(ipBlock: string | ros.IResolvable, count: number | ros.IResolvable, cidrBits: number | ros.IResolvable) {
+    super("Fn::Cidr", [ipBlock, count, cidrBits]);
   }
 }
 

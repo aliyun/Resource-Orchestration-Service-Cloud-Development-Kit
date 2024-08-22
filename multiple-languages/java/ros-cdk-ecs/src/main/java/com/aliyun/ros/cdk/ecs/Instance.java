@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::Instance</code>, which is used to create an Elastic Compute Service (ECS) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:06.133Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:19.906Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 

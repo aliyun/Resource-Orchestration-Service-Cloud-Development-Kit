@@ -71,6 +71,14 @@ export interface RecommendInstanceTypesProps {
     readonly priorityStrategy?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property scene: Specifies the scenario in which the instance type is recommended. Valid values:
      * UPGRADE: instance type upgrade or downgrade
      * CREATE: instance creation
@@ -154,12 +162,13 @@ export class RecommendInstanceTypes extends ros.Resource {
             memory: props.memory,
             scene: props.scene,
             systemDiskCategory: props.systemDiskCategory,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
             cores: props.cores,
             priorityStrategy: props.priorityStrategy,
             instanceFamilyLevel: props.instanceFamilyLevel,
+            instanceTypeFamilies: props.instanceTypeFamilies,
             maxPrice: props.maxPrice,
             instanceType: props.instanceType,
-            instanceTypeFamilies: props.instanceTypeFamilies,
             spotStrategy: props.spotStrategy,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosRecommendInstanceTypes;

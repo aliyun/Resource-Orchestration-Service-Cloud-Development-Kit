@@ -145,16 +145,16 @@ function rosHostPropsToRosTemplate(properties: any, enableResourcePropertyConstr
         RosHostPropsValidator(properties).assertSuccess();
     }
     return {
-      ActiveAddressType: ros.stringToRosTemplate(properties.activeAddressType),
-      HostName: ros.stringToRosTemplate(properties.hostName),
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
-      OSType: ros.stringToRosTemplate(properties.osType),
-      Source: ros.stringToRosTemplate(properties.source),
-      Comment: ros.stringToRosTemplate(properties.comment),
-      HostPrivateAddress: ros.stringToRosTemplate(properties.hostPrivateAddress),
-      HostPublicAddress: ros.stringToRosTemplate(properties.hostPublicAddress),
-      InstanceRegionId: ros.stringToRosTemplate(properties.instanceRegionId),
-      SourceInstanceId: ros.stringToRosTemplate(properties.sourceInstanceId),
+      'ActiveAddressType': ros.stringToRosTemplate(properties.activeAddressType),
+      'HostName': ros.stringToRosTemplate(properties.hostName),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'OSType': ros.stringToRosTemplate(properties.osType),
+      'Source': ros.stringToRosTemplate(properties.source),
+      'Comment': ros.stringToRosTemplate(properties.comment),
+      'HostPrivateAddress': ros.stringToRosTemplate(properties.hostPrivateAddress),
+      'HostPublicAddress': ros.stringToRosTemplate(properties.hostPublicAddress),
+      'InstanceRegionId': ros.stringToRosTemplate(properties.instanceRegionId),
+      'SourceInstanceId': ros.stringToRosTemplate(properties.sourceInstanceId),
     };
 }
 
@@ -433,16 +433,16 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      ExtendedStoragePlans: ros.numberToRosTemplate(properties.extendedStoragePlans),
-      ExtraBandwidth: ros.numberToRosTemplate(properties.extraBandwidth),
-      Plan: ros.numberToRosTemplate(properties.plan),
-      StartInstanceParam: rosInstanceStartInstanceParamPropertyToRosTemplate(properties.startInstanceParam),
-      Version: ros.stringToRosTemplate(properties.version),
-      AutoPay: ros.booleanToRosTemplate(properties.autoPay),
-      AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
-      Period: ros.numberToRosTemplate(properties.period),
-      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      'ExtendedStoragePlans': ros.numberToRosTemplate(properties.extendedStoragePlans),
+      'ExtraBandwidth': ros.numberToRosTemplate(properties.extraBandwidth),
+      'Plan': ros.numberToRosTemplate(properties.plan),
+      'StartInstanceParam': rosInstanceStartInstanceParamPropertyToRosTemplate(properties.startInstanceParam),
+      'Version': ros.stringToRosTemplate(properties.version),
+      'AutoPay': ros.booleanToRosTemplate(properties.autoPay),
+      'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
     };
 }
 
@@ -623,7 +623,7 @@ function rosInstanceStartInstanceParamPropertyToRosTemplate(properties: any): an
     if (!ros.canInspect(properties)) { return properties; }
     RosInstance_StartInstanceParamPropertyValidator(properties).assertSuccess();
     return {
-      VswitchId: ros.stringToRosTemplate(properties.vswitchId),
-      SecurityGroupIds: ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupIds),
+      'VswitchId': ros.stringToRosTemplate(properties.vswitchId),
+      'SecurityGroupIds': ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupIds),
     };
 }

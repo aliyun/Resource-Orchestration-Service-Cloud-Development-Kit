@@ -92,12 +92,12 @@ function rosAccessAssignmentPropsToRosTemplate(properties: any, enableResourcePr
         RosAccessAssignmentPropsValidator(properties).assertSuccess();
     }
     return {
-      AccessConfigurationId: ros.stringToRosTemplate(properties.accessConfigurationId),
-      DirectoryId: ros.stringToRosTemplate(properties.directoryId),
-      PrincipalId: ros.stringToRosTemplate(properties.principalId),
-      PrincipalType: ros.stringToRosTemplate(properties.principalType),
-      TargetId: ros.stringToRosTemplate(properties.targetId),
-      TargetType: ros.stringToRosTemplate(properties.targetType),
+      'AccessConfigurationId': ros.stringToRosTemplate(properties.accessConfigurationId),
+      'DirectoryId': ros.stringToRosTemplate(properties.directoryId),
+      'PrincipalId': ros.stringToRosTemplate(properties.principalId),
+      'PrincipalType': ros.stringToRosTemplate(properties.principalType),
+      'TargetId': ros.stringToRosTemplate(properties.targetId),
+      'TargetType': ros.stringToRosTemplate(properties.targetType),
     };
 }
 
@@ -273,11 +273,11 @@ function rosAccessConfigurationPropsToRosTemplate(properties: any, enableResourc
         RosAccessConfigurationPropsValidator(properties).assertSuccess();
     }
     return {
-      AccessConfigurationName: ros.stringToRosTemplate(properties.accessConfigurationName),
-      DirectoryId: ros.stringToRosTemplate(properties.directoryId),
-      Description: ros.stringToRosTemplate(properties.description),
-      RelayState: ros.stringToRosTemplate(properties.relayState),
-      SessionDuration: ros.numberToRosTemplate(properties.sessionDuration),
+      'AccessConfigurationName': ros.stringToRosTemplate(properties.accessConfigurationName),
+      'DirectoryId': ros.stringToRosTemplate(properties.directoryId),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'RelayState': ros.stringToRosTemplate(properties.relayState),
+      'SessionDuration': ros.numberToRosTemplate(properties.sessionDuration),
     };
 }
 
@@ -432,10 +432,10 @@ function rosAccessConfigurationProvisionPropsToRosTemplate(properties: any, enab
         RosAccessConfigurationProvisionPropsValidator(properties).assertSuccess();
     }
     return {
-      AccessConfigurationId: ros.stringToRosTemplate(properties.accessConfigurationId),
-      DirectoryId: ros.stringToRosTemplate(properties.directoryId),
-      TargetId: ros.stringToRosTemplate(properties.targetId),
-      TargetType: ros.stringToRosTemplate(properties.targetType),
+      'AccessConfigurationId': ros.stringToRosTemplate(properties.accessConfigurationId),
+      'DirectoryId': ros.stringToRosTemplate(properties.directoryId),
+      'TargetId': ros.stringToRosTemplate(properties.targetId),
+      'TargetType': ros.stringToRosTemplate(properties.targetType),
     };
 }
 
@@ -545,7 +545,7 @@ function rosDirectoryPropsToRosTemplate(properties: any, enableResourcePropertyC
         RosDirectoryPropsValidator(properties).assertSuccess();
     }
     return {
-      DirectoryName: ros.stringToRosTemplate(properties.directoryName),
+      'DirectoryName': ros.stringToRosTemplate(properties.directoryName),
     };
 }
 
@@ -670,9 +670,9 @@ function rosGroupPropsToRosTemplate(properties: any, enableResourcePropertyConst
         RosGroupPropsValidator(properties).assertSuccess();
     }
     return {
-      DirectoryId: ros.stringToRosTemplate(properties.directoryId),
-      GroupName: ros.stringToRosTemplate(properties.groupName),
-      Description: ros.stringToRosTemplate(properties.description),
+      'DirectoryId': ros.stringToRosTemplate(properties.directoryId),
+      'GroupName': ros.stringToRosTemplate(properties.groupName),
+      'Description': ros.stringToRosTemplate(properties.description),
     };
 }
 
@@ -821,11 +821,11 @@ function rosPermissionPolicyToAccessConfigurationAdditionPropsToRosTemplate(prop
         RosPermissionPolicyToAccessConfigurationAdditionPropsValidator(properties).assertSuccess();
     }
     return {
-      AccessConfigurationId: ros.stringToRosTemplate(properties.accessConfigurationId),
-      DirectoryId: ros.stringToRosTemplate(properties.directoryId),
-      PermissionPolicyName: ros.stringToRosTemplate(properties.permissionPolicyName),
-      PermissionPolicyType: ros.stringToRosTemplate(properties.permissionPolicyType),
-      InlinePolicyDocument: ros.hashMapper(ros.objectToRosTemplate)(properties.inlinePolicyDocument),
+      'AccessConfigurationId': ros.stringToRosTemplate(properties.accessConfigurationId),
+      'DirectoryId': ros.stringToRosTemplate(properties.directoryId),
+      'PermissionPolicyName': ros.stringToRosTemplate(properties.permissionPolicyName),
+      'PermissionPolicyType': ros.stringToRosTemplate(properties.permissionPolicyType),
+      'InlinePolicyDocument': ros.hashMapper(ros.objectToRosTemplate)(properties.inlinePolicyDocument),
     };
 }
 
@@ -993,13 +993,13 @@ function rosSAMLIdentityProviderPropsToRosTemplate(properties: any, enableResour
         RosSAMLIdentityProviderPropsValidator(properties).assertSuccess();
     }
     return {
-      DirectoryId: ros.stringToRosTemplate(properties.directoryId),
-      EncodedMetadataDocument: ros.stringToRosTemplate(properties.encodedMetadataDocument),
-      EntityId: ros.stringToRosTemplate(properties.entityId),
-      LoginUrl: ros.stringToRosTemplate(properties.loginUrl),
-      SSOStatus: ros.stringToRosTemplate(properties.ssoStatus),
-      WantRequestSigned: ros.booleanToRosTemplate(properties.wantRequestSigned),
-      X509Certificate: ros.stringToRosTemplate(properties.x509Certificate),
+      'DirectoryId': ros.stringToRosTemplate(properties.directoryId),
+      'EncodedMetadataDocument': ros.stringToRosTemplate(properties.encodedMetadataDocument),
+      'EntityId': ros.stringToRosTemplate(properties.entityId),
+      'LoginUrl': ros.stringToRosTemplate(properties.loginUrl),
+      'SSOStatus': ros.stringToRosTemplate(properties.ssoStatus),
+      'WantRequestSigned': ros.booleanToRosTemplate(properties.wantRequestSigned),
+      'X509Certificate': ros.stringToRosTemplate(properties.x509Certificate),
     };
 }
 
@@ -1148,8 +1148,8 @@ function rosSCIMServerCredentialPropsToRosTemplate(properties: any, enableResour
         RosSCIMServerCredentialPropsValidator(properties).assertSuccess();
     }
     return {
-      DirectoryId: ros.stringToRosTemplate(properties.directoryId),
-      Status: ros.stringToRosTemplate(properties.status),
+      'DirectoryId': ros.stringToRosTemplate(properties.directoryId),
+      'Status': ros.stringToRosTemplate(properties.status),
     };
 }
 
@@ -1273,8 +1273,8 @@ function rosSCIMSynchronizationPropsToRosTemplate(properties: any, enableResourc
         RosSCIMSynchronizationPropsValidator(properties).assertSuccess();
     }
     return {
-      DirectoryId: ros.stringToRosTemplate(properties.directoryId),
-      SCIMSynchronizationStatus: ros.stringToRosTemplate(properties.scimSynchronizationStatus),
+      'DirectoryId': ros.stringToRosTemplate(properties.directoryId),
+      'SCIMSynchronizationStatus': ros.stringToRosTemplate(properties.scimSynchronizationStatus),
     };
 }
 
@@ -1470,14 +1470,14 @@ function rosUserPropsToRosTemplate(properties: any, enableResourcePropertyConstr
         RosUserPropsValidator(properties).assertSuccess();
     }
     return {
-      DirectoryId: ros.stringToRosTemplate(properties.directoryId),
-      UserName: ros.stringToRosTemplate(properties.userName),
-      Description: ros.stringToRosTemplate(properties.description),
-      DisplayName: ros.stringToRosTemplate(properties.displayName),
-      Email: ros.stringToRosTemplate(properties.email),
-      FirstName: ros.stringToRosTemplate(properties.firstName),
-      LastName: ros.stringToRosTemplate(properties.lastName),
-      Status: ros.stringToRosTemplate(properties.status),
+      'DirectoryId': ros.stringToRosTemplate(properties.directoryId),
+      'UserName': ros.stringToRosTemplate(properties.userName),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'DisplayName': ros.stringToRosTemplate(properties.displayName),
+      'Email': ros.stringToRosTemplate(properties.email),
+      'FirstName': ros.stringToRosTemplate(properties.firstName),
+      'LastName': ros.stringToRosTemplate(properties.lastName),
+      'Status': ros.stringToRosTemplate(properties.status),
     };
 }
 
@@ -1708,14 +1708,14 @@ function rosUserProvisionPropsToRosTemplate(properties: any, enableResourcePrope
         RosUserProvisionPropsValidator(properties).assertSuccess();
     }
     return {
-      DeletionStrategy: ros.stringToRosTemplate(properties.deletionStrategy),
-      DirectoryId: ros.stringToRosTemplate(properties.directoryId),
-      DuplicationStrategy: ros.stringToRosTemplate(properties.duplicationStrategy),
-      PrincipalId: ros.stringToRosTemplate(properties.principalId),
-      PrincipalType: ros.stringToRosTemplate(properties.principalType),
-      TargetId: ros.stringToRosTemplate(properties.targetId),
-      TargetType: ros.stringToRosTemplate(properties.targetType),
-      Description: ros.stringToRosTemplate(properties.description),
+      'DeletionStrategy': ros.stringToRosTemplate(properties.deletionStrategy),
+      'DirectoryId': ros.stringToRosTemplate(properties.directoryId),
+      'DuplicationStrategy': ros.stringToRosTemplate(properties.duplicationStrategy),
+      'PrincipalId': ros.stringToRosTemplate(properties.principalId),
+      'PrincipalType': ros.stringToRosTemplate(properties.principalType),
+      'TargetId': ros.stringToRosTemplate(properties.targetId),
+      'TargetType': ros.stringToRosTemplate(properties.targetType),
+      'Description': ros.stringToRosTemplate(properties.description),
     };
 }
 
@@ -1879,9 +1879,9 @@ function rosUserToGroupAdditionPropsToRosTemplate(properties: any, enableResourc
         RosUserToGroupAdditionPropsValidator(properties).assertSuccess();
     }
     return {
-      DirectoryId: ros.stringToRosTemplate(properties.directoryId),
-      GroupId: ros.stringToRosTemplate(properties.groupId),
-      UserId: ros.stringToRosTemplate(properties.userId),
+      'DirectoryId': ros.stringToRosTemplate(properties.directoryId),
+      'GroupId': ros.stringToRosTemplate(properties.groupId),
+      'UserId': ros.stringToRosTemplate(properties.userId),
     };
 }
 

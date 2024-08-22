@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.dfs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-accessgroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:05.676Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:19.308Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dfs.$Module.class, fqn = "@alicloud/ros-cdk-dfs.AccessGroupProps")
 @software.amazon.jsii.Jsii.Proxy(AccessGroupProps.Jsii$Proxy.class)
 public interface AccessGroupProps extends software.amazon.jsii.JsiiSerializable {

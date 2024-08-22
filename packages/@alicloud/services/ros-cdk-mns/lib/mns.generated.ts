@@ -127,13 +127,13 @@ function rosQueuePropsToRosTemplate(properties: any, enableResourcePropertyConst
         RosQueuePropsValidator(properties).assertSuccess();
     }
     return {
-      QueueName: ros.stringToRosTemplate(properties.queueName),
-      DelaySeconds: ros.numberToRosTemplate(properties.delaySeconds),
-      LoggingEnabled: ros.booleanToRosTemplate(properties.loggingEnabled),
-      MaximumMessageSize: ros.numberToRosTemplate(properties.maximumMessageSize),
-      MessageRetentionPeriod: ros.numberToRosTemplate(properties.messageRetentionPeriod),
-      PollingWaitSeconds: ros.numberToRosTemplate(properties.pollingWaitSeconds),
-      VisibilityTimeout: ros.numberToRosTemplate(properties.visibilityTimeout),
+      'QueueName': ros.stringToRosTemplate(properties.queueName),
+      'DelaySeconds': ros.numberToRosTemplate(properties.delaySeconds),
+      'LoggingEnabled': ros.booleanToRosTemplate(properties.loggingEnabled),
+      'MaximumMessageSize': ros.numberToRosTemplate(properties.maximumMessageSize),
+      'MessageRetentionPeriod': ros.numberToRosTemplate(properties.messageRetentionPeriod),
+      'PollingWaitSeconds': ros.numberToRosTemplate(properties.pollingWaitSeconds),
+      'VisibilityTimeout': ros.numberToRosTemplate(properties.visibilityTimeout),
     };
 }
 
@@ -359,12 +359,12 @@ function rosSubscriptionPropsToRosTemplate(properties: any, enableResourceProper
         RosSubscriptionPropsValidator(properties).assertSuccess();
     }
     return {
-      Endpoint: ros.stringToRosTemplate(properties.endpoint),
-      SubscriptionName: ros.stringToRosTemplate(properties.subscriptionName),
-      TopicName: ros.stringToRosTemplate(properties.topicName),
-      FilterTag: ros.stringToRosTemplate(properties.filterTag),
-      NotifyContentFormat: ros.stringToRosTemplate(properties.notifyContentFormat),
-      NotifyStrategy: ros.stringToRosTemplate(properties.notifyStrategy),
+      'Endpoint': ros.stringToRosTemplate(properties.endpoint),
+      'SubscriptionName': ros.stringToRosTemplate(properties.subscriptionName),
+      'TopicName': ros.stringToRosTemplate(properties.topicName),
+      'FilterTag': ros.stringToRosTemplate(properties.filterTag),
+      'NotifyContentFormat': ros.stringToRosTemplate(properties.notifyContentFormat),
+      'NotifyStrategy': ros.stringToRosTemplate(properties.notifyStrategy),
     };
 }
 
@@ -540,9 +540,9 @@ function rosTopicPropsToRosTemplate(properties: any, enableResourcePropertyConst
         RosTopicPropsValidator(properties).assertSuccess();
     }
     return {
-      TopicName: ros.stringToRosTemplate(properties.topicName),
-      LoggingEnabled: ros.booleanToRosTemplate(properties.loggingEnabled),
-      MaximumMessageSize: ros.numberToRosTemplate(properties.maximumMessageSize),
+      'TopicName': ros.stringToRosTemplate(properties.topicName),
+      'LoggingEnabled': ros.booleanToRosTemplate(properties.loggingEnabled),
+      'MaximumMessageSize': ros.numberToRosTemplate(properties.maximumMessageSize),
     };
 }
 

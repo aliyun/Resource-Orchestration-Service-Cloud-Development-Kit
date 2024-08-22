@@ -11,12 +11,16 @@
 @alicloud/ros-cdk-mongodb.RosShardingInstanceProps=com.aliyun.ros.cdk.mongodb.RosShardingInstanceProps
 @alicloud/ros-cdk-mongodb.ShardingInstance=com.aliyun.ros.cdk.mongodb.ShardingInstance
 @alicloud/ros-cdk-mongodb.ShardingInstanceProps=com.aliyun.ros.cdk.mongodb.ShardingInstanceProps
+@alicloud/ros-cdk-mongodb.datasource.Instance=com.aliyun.ros.cdk.mongodb.datasource.Instance
 @alicloud/ros-cdk-mongodb.datasource.InstanceClasses=com.aliyun.ros.cdk.mongodb.datasource.InstanceClasses
 @alicloud/ros-cdk-mongodb.datasource.InstanceClassesProps=com.aliyun.ros.cdk.mongodb.datasource.InstanceClassesProps
+@alicloud/ros-cdk-mongodb.datasource.InstanceProps=com.aliyun.ros.cdk.mongodb.datasource.InstanceProps
 @alicloud/ros-cdk-mongodb.datasource.Instances=com.aliyun.ros.cdk.mongodb.datasource.Instances
 @alicloud/ros-cdk-mongodb.datasource.InstancesProps=com.aliyun.ros.cdk.mongodb.datasource.InstancesProps
+@alicloud/ros-cdk-mongodb.datasource.RosInstance=com.aliyun.ros.cdk.mongodb.datasource.RosInstance
 @alicloud/ros-cdk-mongodb.datasource.RosInstanceClasses=com.aliyun.ros.cdk.mongodb.datasource.RosInstanceClasses
 @alicloud/ros-cdk-mongodb.datasource.RosInstanceClassesProps=com.aliyun.ros.cdk.mongodb.datasource.RosInstanceClassesProps
+@alicloud/ros-cdk-mongodb.datasource.RosInstanceProps=com.aliyun.ros.cdk.mongodb.datasource.RosInstanceProps
 @alicloud/ros-cdk-mongodb.datasource.RosInstances=com.aliyun.ros.cdk.mongodb.datasource.RosInstances
 @alicloud/ros-cdk-mongodb.datasource.RosInstances.TagsProperty=com.aliyun.ros.cdk.mongodb.datasource.RosInstances$TagsProperty
 @alicloud/ros-cdk-mongodb.datasource.RosInstancesProps=com.aliyun.ros.cdk.mongodb.datasource.RosInstancesProps

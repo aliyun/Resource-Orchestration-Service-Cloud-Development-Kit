@@ -101,15 +101,15 @@ function rosDiskReplicaGroupPropsToRosTemplate(properties: any, enableResourcePr
         RosDiskReplicaGroupPropsValidator(properties).assertSuccess();
     }
     return {
-      DestinationRegionId: ros.stringToRosTemplate(properties.destinationRegionId),
-      DestinationZoneId: ros.stringToRosTemplate(properties.destinationZoneId),
-      SourceRegionId: ros.stringToRosTemplate(properties.sourceRegionId),
-      SourceZoneId: ros.stringToRosTemplate(properties.sourceZoneId),
-      Description: ros.stringToRosTemplate(properties.description),
-      DiskReplicaGroupName: ros.stringToRosTemplate(properties.diskReplicaGroupName),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      RPO: ros.numberToRosTemplate(properties.rpo),
-      Tags: ros.listMapper(rosDiskReplicaGroupTagsPropertyToRosTemplate)(properties.tags),
+      'DestinationRegionId': ros.stringToRosTemplate(properties.destinationRegionId),
+      'DestinationZoneId': ros.stringToRosTemplate(properties.destinationZoneId),
+      'SourceRegionId': ros.stringToRosTemplate(properties.sourceRegionId),
+      'SourceZoneId': ros.stringToRosTemplate(properties.sourceZoneId),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'DiskReplicaGroupName': ros.stringToRosTemplate(properties.diskReplicaGroupName),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'RPO': ros.numberToRosTemplate(properties.rpo),
+      'Tags': ros.listMapper(rosDiskReplicaGroupTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -362,8 +362,8 @@ function rosDiskReplicaGroupTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosDiskReplicaGroup_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -523,20 +523,20 @@ function rosDiskReplicaPairPropsToRosTemplate(properties: any, enableResourcePro
         RosDiskReplicaPairPropsValidator(properties).assertSuccess();
     }
     return {
-      DestinationDiskId: ros.stringToRosTemplate(properties.destinationDiskId),
-      DestinationRegionId: ros.stringToRosTemplate(properties.destinationRegionId),
-      DestinationZoneId: ros.stringToRosTemplate(properties.destinationZoneId),
-      DiskId: ros.stringToRosTemplate(properties.diskId),
-      SourceZoneId: ros.stringToRosTemplate(properties.sourceZoneId),
-      Bandwidth: ros.numberToRosTemplate(properties.bandwidth),
-      Description: ros.stringToRosTemplate(properties.description),
-      DiskReplicaPairName: ros.stringToRosTemplate(properties.diskReplicaPairName),
-      PaymentType: ros.stringToRosTemplate(properties.paymentType),
-      Period: ros.numberToRosTemplate(properties.period),
-      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      RPO: ros.numberToRosTemplate(properties.rpo),
-      Tags: ros.listMapper(rosDiskReplicaPairTagsPropertyToRosTemplate)(properties.tags),
+      'DestinationDiskId': ros.stringToRosTemplate(properties.destinationDiskId),
+      'DestinationRegionId': ros.stringToRosTemplate(properties.destinationRegionId),
+      'DestinationZoneId': ros.stringToRosTemplate(properties.destinationZoneId),
+      'DiskId': ros.stringToRosTemplate(properties.diskId),
+      'SourceZoneId': ros.stringToRosTemplate(properties.sourceZoneId),
+      'Bandwidth': ros.numberToRosTemplate(properties.bandwidth),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'DiskReplicaPairName': ros.stringToRosTemplate(properties.diskReplicaPairName),
+      'PaymentType': ros.stringToRosTemplate(properties.paymentType),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'RPO': ros.numberToRosTemplate(properties.rpo),
+      'Tags': ros.listMapper(rosDiskReplicaPairTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -808,8 +808,8 @@ function rosDiskReplicaPairTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosDiskReplicaPair_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -861,8 +861,8 @@ function rosDiskReplicaPairAdditionPropsToRosTemplate(properties: any, enableRes
         RosDiskReplicaPairAdditionPropsValidator(properties).assertSuccess();
     }
     return {
-      ReplicaGroupId: ros.stringToRosTemplate(properties.replicaGroupId),
-      ReplicaPairId: ros.stringToRosTemplate(properties.replicaPairId),
+      'ReplicaGroupId': ros.stringToRosTemplate(properties.replicaGroupId),
+      'ReplicaPairId': ros.stringToRosTemplate(properties.replicaPairId),
     };
 }
 

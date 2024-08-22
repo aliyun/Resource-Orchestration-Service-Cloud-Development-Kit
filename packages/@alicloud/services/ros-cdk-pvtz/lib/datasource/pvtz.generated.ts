@@ -12,6 +12,14 @@ export interface RosRulesProps {
      * @Property endpointId: EndpointId
      */
     readonly endpointId?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -25,6 +33,13 @@ function RosRulesPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('endpointId', ros.validateString)(properties.endpointId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosRulesProps"');
 }
 
@@ -42,7 +57,8 @@ function rosRulesPropsToRosTemplate(properties: any, enableResourcePropertyConst
         RosRulesPropsValidator(properties).assertSuccess();
     }
     return {
-      EndpointId: ros.stringToRosTemplate(properties.endpointId),
+      'EndpointId': ros.stringToRosTemplate(properties.endpointId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -76,6 +92,14 @@ export class RosRules extends ros.RosResource {
     public endpointId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -87,12 +111,14 @@ export class RosRules extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.endpointId = props.endpointId;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             endpointId: this.endpointId,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -105,6 +131,14 @@ export class RosRules extends ros.RosResource {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pvtz-zones
  */
 export interface RosZonesProps {
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 
     /**
      * @Property resourceGroupId: ResourceGroupId
@@ -123,6 +157,13 @@ function RosZonesPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosZonesProps"');
 }
 
@@ -140,7 +181,8 @@ function rosZonesPropsToRosTemplate(properties: any, enableResourcePropertyConst
         RosZonesPropsValidator(properties).assertSuccess();
     }
     return {
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
     };
 }
 
@@ -169,6 +211,14 @@ export class RosZones extends ros.RosResource {
 
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property resourceGroupId: ResourceGroupId
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
@@ -184,12 +234,14 @@ export class RosZones extends ros.RosResource {
         this.attrZones = this.getAtt('Zones');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.refreshOptions = props.refreshOptions;
         this.resourceGroupId = props.resourceGroupId;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
+            refreshOptions: this.refreshOptions,
             resourceGroupId: this.resourceGroupId,
         };
     }

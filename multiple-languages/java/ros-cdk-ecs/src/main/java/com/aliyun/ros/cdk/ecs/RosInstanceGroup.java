@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ECS::InstanceGroup</code>, which is used to create a group of Elastic Compute Service (ECS) instances that have the same configurations.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:06.332Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:20.158Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInstanceGroup")
 public class RosInstanceGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -3437,7 +3437,7 @@ public class RosInstanceGroup extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Object getId() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getIdentity() {
             return null;
         }
 
@@ -3460,28 +3460,28 @@ public class RosInstanceGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<PrivatePoolOptionsProperty> {
-            java.lang.Object id;
+            java.lang.Object identity;
             java.lang.Object matchCriteria;
 
             /**
-             * Sets the value of {@link PrivatePoolOptionsProperty#getId}
-             * @param id the value to be set.
+             * Sets the value of {@link PrivatePoolOptionsProperty#getIdentity}
+             * @param identity the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder id(java.lang.String id) {
-                this.id = id;
+            public Builder identity(java.lang.String identity) {
+                this.identity = identity;
                 return this;
             }
 
             /**
-             * Sets the value of {@link PrivatePoolOptionsProperty#getId}
-             * @param id the value to be set.
+             * Sets the value of {@link PrivatePoolOptionsProperty#getIdentity}
+             * @param identity the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder id(com.aliyun.ros.cdk.core.IResolvable id) {
-                this.id = id;
+            public Builder identity(com.aliyun.ros.cdk.core.IResolvable identity) {
+                this.identity = identity;
                 return this;
             }
 
@@ -3525,7 +3525,7 @@ public class RosInstanceGroup extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements PrivatePoolOptionsProperty {
-            private final java.lang.Object id;
+            private final java.lang.Object identity;
             private final java.lang.Object matchCriteria;
 
             /**
@@ -3534,7 +3534,7 @@ public class RosInstanceGroup extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.id = software.amazon.jsii.Kernel.get(this, "id", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.identity = software.amazon.jsii.Kernel.get(this, "identity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.matchCriteria = software.amazon.jsii.Kernel.get(this, "matchCriteria", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
@@ -3543,13 +3543,13 @@ public class RosInstanceGroup extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.id = builder.id;
+                this.identity = builder.identity;
                 this.matchCriteria = builder.matchCriteria;
             }
 
             @Override
-            public final java.lang.Object getId() {
-                return this.id;
+            public final java.lang.Object getIdentity() {
+                return this.identity;
             }
 
             @Override
@@ -3563,8 +3563,8 @@ public class RosInstanceGroup extends com.aliyun.ros.cdk.core.RosResource {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
-                if (this.getId() != null) {
-                    data.set("id", om.valueToTree(this.getId()));
+                if (this.getIdentity() != null) {
+                    data.set("identity", om.valueToTree(this.getIdentity()));
                 }
                 if (this.getMatchCriteria() != null) {
                     data.set("matchCriteria", om.valueToTree(this.getMatchCriteria()));
@@ -3587,13 +3587,13 @@ public class RosInstanceGroup extends com.aliyun.ros.cdk.core.RosResource {
 
                 PrivatePoolOptionsProperty.Jsii$Proxy that = (PrivatePoolOptionsProperty.Jsii$Proxy) o;
 
-                if (this.id != null ? !this.id.equals(that.id) : that.id != null) return false;
+                if (this.identity != null ? !this.identity.equals(that.identity) : that.identity != null) return false;
                 return this.matchCriteria != null ? this.matchCriteria.equals(that.matchCriteria) : that.matchCriteria == null;
             }
 
             @Override
             public final int hashCode() {
-                int result = this.id != null ? this.id.hashCode() : 0;
+                int result = this.identity != null ? this.identity.hashCode() : 0;
                 result = 31 * result + (this.matchCriteria != null ? this.matchCriteria.hashCode() : 0);
                 return result;
             }

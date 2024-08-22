@@ -112,6 +112,11 @@ export interface PrepayDBInstanceProps {
     readonly backupRetentionPeriod?: number | ros.IResolvable;
 
     /**
+     * Property burstingEnabled: Whether to enable bursting.
+     */
+    readonly burstingEnabled?: boolean | ros.IResolvable;
+
+    /**
      * Property category: The edition of the instance. Valid values:
      * Basic: RDS Basic Edition
      * HighAvailability: RDS High-availability Edition
@@ -121,6 +126,11 @@ export interface PrepayDBInstanceProps {
      * serverless_basic: RDS Serverless Basic Edition
      */
     readonly category?: string | ros.IResolvable;
+
+    /**
+     * Property coldDataEnabled: Whether to enable cold data storage.
+     */
+    readonly coldDataEnabled?: boolean | ros.IResolvable;
 
     /**
      * Property compressType: The format used to compress backups. Valid values: 
@@ -228,6 +238,11 @@ export interface PrepayDBInstanceProps {
      * Property instanceNetworkType: Instance network type, VPC or Classic
      */
     readonly instanceNetworkType?: string | ros.IResolvable;
+
+    /**
+     * Property ioAccelerationEnabled: Whether to enable IO Acceleration, 1 for enable 0 for disable.
+     */
+    readonly ioAccelerationEnabled?: string | ros.IResolvable;
 
     /**
      * Property localLogRetentionHours: The number of hours for which to retain log backup files on the instance. 
@@ -518,6 +533,7 @@ export class PrepayDBInstance extends ros.Resource {
             tags: props.tags,
             dbInstanceDescription: props.dbInstanceDescription,
             engine: props.engine,
+            ioAccelerationEnabled: props.ioAccelerationEnabled,
             targetDedicatedHostIdForMaster: props.targetDedicatedHostIdForMaster,
             engineVersion: props.engineVersion,
             dbInstanceClass: props.dbInstanceClass,
@@ -550,6 +566,8 @@ export class PrepayDBInstance extends ros.Resource {
             commodityCode: props.commodityCode === undefined || props.commodityCode === null ? 'rds' : props.commodityCode,
             maintainTime: props.maintainTime,
             dbParamGroupId: props.dbParamGroupId,
+            burstingEnabled: props.burstingEnabled,
+            coldDataEnabled: props.coldDataEnabled,
             zoneId: props.zoneId,
             targetDedicatedHostIdForLog: props.targetDedicatedHostIdForLog,
             allocatePublicConnection: props.allocatePublicConnection,
@@ -560,8 +578,8 @@ export class PrepayDBInstance extends ros.Resource {
             dbInstanceStorageType: props.dbInstanceStorageType,
             backUpCategory: props.backUpCategory,
             compressType: props.compressType,
-            connectionStringType: props.connectionStringType === undefined || props.connectionStringType === null ? 'Inner' : props.connectionStringType,
             logBackupFrequency: props.logBackupFrequency,
+            connectionStringType: props.connectionStringType === undefined || props.connectionStringType === null ? 'Inner' : props.connectionStringType,
             couponCode: props.couponCode,
             masterUserType: props.masterUserType === undefined || props.masterUserType === null ? 'Normal' : props.masterUserType,
             serverlessConfig: props.serverlessConfig,

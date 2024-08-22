@@ -643,6 +643,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             }
         }
 
+        private object? _proxyProtocolV2Config;
+
+        /// <summary>Property proxyProtocolV2Config: ProxyProtocolV2Config of the listener.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "proxyProtocolV2Config", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-nlb.RosListener.ProxyProtocolV2ConfigProperty\"}]}}", isOptional: true)]
+        public object? ProxyProtocolV2Config
+        {
+            get => _proxyProtocolV2Config;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Nlb.RosListener.IProxyProtocolV2ConfigProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Nlb.RosListener.IProxyProtocolV2ConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _proxyProtocolV2Config = value;
+            }
+        }
+
         private object? _secSensorEnabled;
 
         /// <summary>Property secSensorEnabled: Whether to enable the second-level monitoring function.</summary>

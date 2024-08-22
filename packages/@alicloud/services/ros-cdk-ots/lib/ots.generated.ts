@@ -102,11 +102,11 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      InstanceName: ros.stringToRosTemplate(properties.instanceName),
-      ClusterType: ros.stringToRosTemplate(properties.clusterType),
-      Description: ros.stringToRosTemplate(properties.description),
-      Network: ros.stringToRosTemplate(properties.network),
-      Tags: ros.listMapper(rosInstanceTagsPropertyToRosTemplate)(properties.tags),
+      'InstanceName': ros.stringToRosTemplate(properties.instanceName),
+      'ClusterType': ros.stringToRosTemplate(properties.clusterType),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Network': ros.stringToRosTemplate(properties.network),
+      'Tags': ros.listMapper(rosInstanceTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -250,8 +250,8 @@ function rosInstanceTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosInstance_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -343,12 +343,12 @@ function rosSearchIndexPropsToRosTemplate(properties: any, enableResourcePropert
         RosSearchIndexPropsValidator(properties).assertSuccess();
     }
     return {
-      FieldSchemas: ros.listMapper(rosSearchIndexFieldSchemasPropertyToRosTemplate)(properties.fieldSchemas),
-      IndexName: ros.stringToRosTemplate(properties.indexName),
-      InstanceName: ros.stringToRosTemplate(properties.instanceName),
-      TableName: ros.stringToRosTemplate(properties.tableName),
-      IndexSetting: rosSearchIndexIndexSettingPropertyToRosTemplate(properties.indexSetting),
-      IndexSort: rosSearchIndexIndexSortPropertyToRosTemplate(properties.indexSort),
+      'FieldSchemas': ros.listMapper(rosSearchIndexFieldSchemasPropertyToRosTemplate)(properties.fieldSchemas),
+      'IndexName': ros.stringToRosTemplate(properties.indexName),
+      'InstanceName': ros.stringToRosTemplate(properties.instanceName),
+      'TableName': ros.stringToRosTemplate(properties.tableName),
+      'IndexSetting': rosSearchIndexIndexSettingPropertyToRosTemplate(properties.indexSetting),
+      'IndexSort': rosSearchIndexIndexSortPropertyToRosTemplate(properties.indexSort),
     };
 }
 
@@ -520,14 +520,14 @@ function rosSearchIndexFieldSchemasPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosSearchIndex_FieldSchemasPropertyValidator(properties).assertSuccess();
     return {
-      IsArray: ros.booleanToRosTemplate(properties.isArray),
-      EnableSortAndAgg: ros.booleanToRosTemplate(properties.enableSortAndAgg),
-      Store: ros.booleanToRosTemplate(properties.store),
-      Index: ros.booleanToRosTemplate(properties.index),
-      Analyzer: ros.stringToRosTemplate(properties.analyzer),
-      SubFieldSchemas: ros.listMapper(rosSearchIndexSubFieldSchemasPropertyToRosTemplate)(properties.subFieldSchemas),
-      FieldName: ros.stringToRosTemplate(properties.fieldName),
-      FieldType: ros.stringToRosTemplate(properties.fieldType),
+      'IsArray': ros.booleanToRosTemplate(properties.isArray),
+      'EnableSortAndAgg': ros.booleanToRosTemplate(properties.enableSortAndAgg),
+      'Store': ros.booleanToRosTemplate(properties.store),
+      'Index': ros.booleanToRosTemplate(properties.index),
+      'Analyzer': ros.stringToRosTemplate(properties.analyzer),
+      'SubFieldSchemas': ros.listMapper(rosSearchIndexSubFieldSchemasPropertyToRosTemplate)(properties.subFieldSchemas),
+      'FieldName': ros.stringToRosTemplate(properties.fieldName),
+      'FieldType': ros.stringToRosTemplate(properties.fieldType),
     };
 }
 
@@ -579,9 +579,9 @@ function rosSearchIndexFieldSortPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosSearchIndex_FieldSortPropertyValidator(properties).assertSuccess();
     return {
-      SortMode: ros.stringToRosTemplate(properties.sortMode),
-      SortOrder: ros.stringToRosTemplate(properties.sortOrder),
-      FieldName: ros.stringToRosTemplate(properties.fieldName),
+      'SortMode': ros.stringToRosTemplate(properties.sortMode),
+      'SortOrder': ros.stringToRosTemplate(properties.sortOrder),
+      'FieldName': ros.stringToRosTemplate(properties.fieldName),
     };
 }
 
@@ -639,10 +639,10 @@ function rosSearchIndexGeoDistanceSortPropertyToRosTemplate(properties: any): an
     if (!ros.canInspect(properties)) { return properties; }
     RosSearchIndex_GeoDistanceSortPropertyValidator(properties).assertSuccess();
     return {
-      Points: ros.listMapper(ros.objectToRosTemplate)(properties.points),
-      SortMode: ros.stringToRosTemplate(properties.sortMode),
-      SortOrder: ros.stringToRosTemplate(properties.sortOrder),
-      FieldName: ros.stringToRosTemplate(properties.fieldName),
+      'Points': ros.listMapper(ros.objectToRosTemplate)(properties.points),
+      'SortMode': ros.stringToRosTemplate(properties.sortMode),
+      'SortOrder': ros.stringToRosTemplate(properties.sortOrder),
+      'FieldName': ros.stringToRosTemplate(properties.fieldName),
     };
 }
 
@@ -686,7 +686,7 @@ function rosSearchIndexIndexSettingPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosSearchIndex_IndexSettingPropertyValidator(properties).assertSuccess();
     return {
-      RoutingFields: ros.listMapper(ros.objectToRosTemplate)(properties.routingFields),
+      'RoutingFields': ros.listMapper(ros.objectToRosTemplate)(properties.routingFields),
     };
 }
 
@@ -730,7 +730,7 @@ function rosSearchIndexIndexSortPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosSearchIndex_IndexSortPropertyValidator(properties).assertSuccess();
     return {
-      Sorters: ros.listMapper(rosSearchIndexSortersPropertyToRosTemplate)(properties.sorters),
+      'Sorters': ros.listMapper(rosSearchIndexSortersPropertyToRosTemplate)(properties.sorters),
     };
 }
 
@@ -771,7 +771,7 @@ function rosSearchIndexPrimaryKeySortPropertyToRosTemplate(properties: any): any
     if (!ros.canInspect(properties)) { return properties; }
     RosSearchIndex_PrimaryKeySortPropertyValidator(properties).assertSuccess();
     return {
-      SortOrder: ros.stringToRosTemplate(properties.sortOrder),
+      'SortOrder': ros.stringToRosTemplate(properties.sortOrder),
     };
 }
 
@@ -812,7 +812,7 @@ function rosSearchIndexScoreSortPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosSearchIndex_ScoreSortPropertyValidator(properties).assertSuccess();
     return {
-      SortOrder: ros.stringToRosTemplate(properties.sortOrder),
+      'SortOrder': ros.stringToRosTemplate(properties.sortOrder),
     };
 }
 
@@ -871,10 +871,10 @@ function rosSearchIndexSortersPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosSearchIndex_SortersPropertyValidator(properties).assertSuccess();
     return {
-      FieldSort: rosSearchIndexFieldSortPropertyToRosTemplate(properties.fieldSort),
-      PrimaryKeySort: rosSearchIndexPrimaryKeySortPropertyToRosTemplate(properties.primaryKeySort),
-      ScoreSort: rosSearchIndexScoreSortPropertyToRosTemplate(properties.scoreSort),
-      GeoDistanceSort: rosSearchIndexGeoDistanceSortPropertyToRosTemplate(properties.geoDistanceSort),
+      'FieldSort': rosSearchIndexFieldSortPropertyToRosTemplate(properties.fieldSort),
+      'PrimaryKeySort': rosSearchIndexPrimaryKeySortPropertyToRosTemplate(properties.primaryKeySort),
+      'ScoreSort': rosSearchIndexScoreSortPropertyToRosTemplate(properties.scoreSort),
+      'GeoDistanceSort': rosSearchIndexGeoDistanceSortPropertyToRosTemplate(properties.geoDistanceSort),
     };
 }
 
@@ -955,13 +955,13 @@ function rosSearchIndexSubFieldSchemasPropertyToRosTemplate(properties: any): an
     if (!ros.canInspect(properties)) { return properties; }
     RosSearchIndex_SubFieldSchemasPropertyValidator(properties).assertSuccess();
     return {
-      IsArray: ros.booleanToRosTemplate(properties.isArray),
-      EnableSortAndAgg: ros.booleanToRosTemplate(properties.enableSortAndAgg),
-      Store: ros.booleanToRosTemplate(properties.store),
-      Index: ros.booleanToRosTemplate(properties.index),
-      Analyzer: ros.stringToRosTemplate(properties.analyzer),
-      FieldName: ros.stringToRosTemplate(properties.fieldName),
-      FieldType: ros.stringToRosTemplate(properties.fieldType),
+      'IsArray': ros.booleanToRosTemplate(properties.isArray),
+      'EnableSortAndAgg': ros.booleanToRosTemplate(properties.enableSortAndAgg),
+      'Store': ros.booleanToRosTemplate(properties.store),
+      'Index': ros.booleanToRosTemplate(properties.index),
+      'Analyzer': ros.stringToRosTemplate(properties.analyzer),
+      'FieldName': ros.stringToRosTemplate(properties.fieldName),
+      'FieldType': ros.stringToRosTemplate(properties.fieldType),
     };
 }
 
@@ -1096,15 +1096,15 @@ function rosTablePropsToRosTemplate(properties: any, enableResourcePropertyConst
         RosTablePropsValidator(properties).assertSuccess();
     }
     return {
-      InstanceName: ros.stringToRosTemplate(properties.instanceName),
-      PrimaryKey: ros.listMapper(rosTablePrimaryKeyPropertyToRosTemplate)(properties.primaryKey),
-      TableName: ros.stringToRosTemplate(properties.tableName),
-      Columns: ros.listMapper(rosTableColumnsPropertyToRosTemplate)(properties.columns),
-      DeviationCellVersionInSec: ros.numberToRosTemplate(properties.deviationCellVersionInSec),
-      MaxVersions: ros.numberToRosTemplate(properties.maxVersions),
-      ReservedThroughput: rosTableReservedThroughputPropertyToRosTemplate(properties.reservedThroughput),
-      SecondaryIndices: ros.listMapper(rosTableSecondaryIndicesPropertyToRosTemplate)(properties.secondaryIndices),
-      TimeToLive: ros.numberToRosTemplate(properties.timeToLive),
+      'InstanceName': ros.stringToRosTemplate(properties.instanceName),
+      'PrimaryKey': ros.listMapper(rosTablePrimaryKeyPropertyToRosTemplate)(properties.primaryKey),
+      'TableName': ros.stringToRosTemplate(properties.tableName),
+      'Columns': ros.listMapper(rosTableColumnsPropertyToRosTemplate)(properties.columns),
+      'DeviationCellVersionInSec': ros.numberToRosTemplate(properties.deviationCellVersionInSec),
+      'MaxVersions': ros.numberToRosTemplate(properties.maxVersions),
+      'ReservedThroughput': rosTableReservedThroughputPropertyToRosTemplate(properties.reservedThroughput),
+      'SecondaryIndices': ros.listMapper(rosTableSecondaryIndicesPropertyToRosTemplate)(properties.secondaryIndices),
+      'TimeToLive': ros.numberToRosTemplate(properties.timeToLive),
     };
 }
 
@@ -1268,8 +1268,8 @@ function rosTableColumnsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosTable_ColumnsPropertyValidator(properties).assertSuccess();
     return {
-      Type: ros.stringToRosTemplate(properties.type),
-      Name: ros.stringToRosTemplate(properties.name),
+      'Type': ros.stringToRosTemplate(properties.type),
+      'Name': ros.stringToRosTemplate(properties.name),
     };
 }
 
@@ -1329,8 +1329,8 @@ function rosTablePrimaryKeyPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosTable_PrimaryKeyPropertyValidator(properties).assertSuccess();
     return {
-      Type: ros.stringToRosTemplate(properties.type),
-      Name: ros.stringToRosTemplate(properties.name),
+      'Type': ros.stringToRosTemplate(properties.type),
+      'Name': ros.stringToRosTemplate(properties.name),
     };
 }
 
@@ -1392,8 +1392,8 @@ function rosTableReservedThroughputPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosTable_ReservedThroughputPropertyValidator(properties).assertSuccess();
     return {
-      Read: ros.numberToRosTemplate(properties.read),
-      Write: ros.numberToRosTemplate(properties.write),
+      'Read': ros.numberToRosTemplate(properties.read),
+      'Write': ros.numberToRosTemplate(properties.write),
     };
 }
 
@@ -1458,10 +1458,10 @@ function rosTableSecondaryIndicesPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosTable_SecondaryIndicesPropertyValidator(properties).assertSuccess();
     return {
-      IndexName: ros.stringToRosTemplate(properties.indexName),
-      Columns: ros.listMapper(ros.stringToRosTemplate)(properties.columns),
-      PrimaryKeys: ros.listMapper(ros.stringToRosTemplate)(properties.primaryKeys),
-      IndexType: ros.stringToRosTemplate(properties.indexType),
+      'IndexName': ros.stringToRosTemplate(properties.indexName),
+      'Columns': ros.listMapper(ros.stringToRosTemplate)(properties.columns),
+      'PrimaryKeys': ros.listMapper(ros.stringToRosTemplate)(properties.primaryKeys),
+      'IndexType': ros.stringToRosTemplate(properties.indexType),
     };
 }
 
@@ -1520,8 +1520,8 @@ function rosVpcBinderPropsToRosTemplate(properties: any, enableResourcePropertyC
         RosVpcBinderPropsValidator(properties).assertSuccess();
     }
     return {
-      InstanceName: ros.stringToRosTemplate(properties.instanceName),
-      Vpcs: ros.listMapper(rosVpcBinderVpcsPropertyToRosTemplate)(properties.vpcs),
+      'InstanceName': ros.stringToRosTemplate(properties.instanceName),
+      'Vpcs': ros.listMapper(rosVpcBinderVpcsPropertyToRosTemplate)(properties.vpcs),
     };
 }
 
@@ -1657,9 +1657,9 @@ function rosVpcBinderVpcsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosVpcBinder_VpcsPropertyValidator(properties).assertSuccess();
     return {
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      InstanceVpcName: ros.stringToRosTemplate(properties.instanceVpcName),
-      Network: ros.stringToRosTemplate(properties.network),
-      VirtualSwitchId: ros.stringToRosTemplate(properties.virtualSwitchId),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'InstanceVpcName': ros.stringToRosTemplate(properties.instanceVpcName),
+      'Network': ros.stringToRosTemplate(properties.network),
+      'VirtualSwitchId': ros.stringToRosTemplate(properties.virtualSwitchId),
     };
 }

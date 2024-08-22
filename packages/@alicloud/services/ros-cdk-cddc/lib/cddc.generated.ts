@@ -113,18 +113,18 @@ function rosDedicatedHostPropsToRosTemplate(properties: any, enableResourcePrope
         RosDedicatedHostPropsValidator(properties).assertSuccess();
     }
     return {
-      DedicatedHostGroupId: ros.stringToRosTemplate(properties.dedicatedHostGroupId),
-      HostClass: ros.stringToRosTemplate(properties.hostClass),
-      PaymentType: ros.stringToRosTemplate(properties.paymentType),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
-      AutoRenew: ros.stringToRosTemplate(properties.autoRenew),
-      HostName: ros.stringToRosTemplate(properties.hostName),
-      ImageCategory: ros.stringToRosTemplate(properties.imageCategory),
-      OsPassword: ros.stringToRosTemplate(properties.osPassword),
-      Period: ros.stringToRosTemplate(properties.period),
-      Tags: ros.listMapper(rosDedicatedHostTagsPropertyToRosTemplate)(properties.tags),
-      UsedTime: ros.stringToRosTemplate(properties.usedTime),
+      'DedicatedHostGroupId': ros.stringToRosTemplate(properties.dedicatedHostGroupId),
+      'HostClass': ros.stringToRosTemplate(properties.hostClass),
+      'PaymentType': ros.stringToRosTemplate(properties.paymentType),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+      'AutoRenew': ros.stringToRosTemplate(properties.autoRenew),
+      'HostName': ros.stringToRosTemplate(properties.hostName),
+      'ImageCategory': ros.stringToRosTemplate(properties.imageCategory),
+      'OsPassword': ros.stringToRosTemplate(properties.osPassword),
+      'Period': ros.stringToRosTemplate(properties.period),
+      'Tags': ros.listMapper(rosDedicatedHostTagsPropertyToRosTemplate)(properties.tags),
+      'UsedTime': ros.stringToRosTemplate(properties.usedTime),
     };
 }
 
@@ -427,8 +427,8 @@ function rosDedicatedHostTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosDedicatedHost_TagsPropertyValidator(properties).assertSuccess();
     return {
-      TagKey: ros.stringToRosTemplate(properties.tagKey),
-      TagValue: ros.stringToRosTemplate(properties.tagValue),
+      'TagKey': ros.stringToRosTemplate(properties.tagKey),
+      'TagValue': ros.stringToRosTemplate(properties.tagValue),
     };
 }
 
@@ -522,15 +522,15 @@ function rosDedicatedHostGroupPropsToRosTemplate(properties: any, enableResource
         RosDedicatedHostGroupPropsValidator(properties).assertSuccess();
     }
     return {
-      Engine: ros.stringToRosTemplate(properties.engine),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      AllocationPolicy: ros.stringToRosTemplate(properties.allocationPolicy),
-      CpuAllocationRatio: ros.numberToRosTemplate(properties.cpuAllocationRatio),
-      DedicatedHostGroupDesc: ros.stringToRosTemplate(properties.dedicatedHostGroupDesc),
-      DiskAllocationRatio: ros.numberToRosTemplate(properties.diskAllocationRatio),
-      HostReplacePolicy: ros.stringToRosTemplate(properties.hostReplacePolicy),
-      MemAllocationRatio: ros.numberToRosTemplate(properties.memAllocationRatio),
-      OpenPermission: ros.stringToRosTemplate(properties.openPermission),
+      'Engine': ros.stringToRosTemplate(properties.engine),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'AllocationPolicy': ros.stringToRosTemplate(properties.allocationPolicy),
+      'CpuAllocationRatio': ros.numberToRosTemplate(properties.cpuAllocationRatio),
+      'DedicatedHostGroupDesc': ros.stringToRosTemplate(properties.dedicatedHostGroupDesc),
+      'DiskAllocationRatio': ros.numberToRosTemplate(properties.diskAllocationRatio),
+      'HostReplacePolicy': ros.stringToRosTemplate(properties.hostReplacePolicy),
+      'MemAllocationRatio': ros.numberToRosTemplate(properties.memAllocationRatio),
+      'OpenPermission': ros.stringToRosTemplate(properties.openPermission),
     };
 }
 
@@ -1011,31 +1011,31 @@ function rosMyBasePropsToRosTemplate(properties: any, enableResourcePropertyCons
         RosMyBasePropsValidator(properties).assertSuccess();
     }
     return {
-      ECSClassList: ros.listMapper(ros.anyDictToRosTemplate)(properties.ecsClassList),
-      Engine: ros.stringToRosTemplate(properties.engine),
-      PayType: ros.stringToRosTemplate(properties.payType),
-      Period: ros.numberToRosTemplate(properties.period),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
-      AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
-      DedicatedHostGroupDescription: ros.stringToRosTemplate(properties.dedicatedHostGroupDescription),
-      DedicatedHostGroupId: ros.stringToRosTemplate(properties.dedicatedHostGroupId),
-      EcsDeploymentSetId: ros.stringToRosTemplate(properties.ecsDeploymentSetId),
-      EcsHostName: ros.stringToRosTemplate(properties.ecsHostName),
-      EcsInstanceName: ros.stringToRosTemplate(properties.ecsInstanceName),
-      EcsUniqueSuffix: ros.booleanToRosTemplate(properties.ecsUniqueSuffix),
-      ImageId: ros.stringToRosTemplate(properties.imageId),
-      InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
-      InternetMaxBandwidthOut: ros.numberToRosTemplate(properties.internetMaxBandwidthOut),
-      KeyPairName: ros.stringToRosTemplate(properties.keyPairName),
-      OsPassword: ros.stringToRosTemplate(properties.osPassword),
-      PasswordInherit: ros.booleanToRosTemplate(properties.passwordInherit),
-      PeriodType: ros.stringToRosTemplate(properties.periodType),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      UserData: ros.stringToRosTemplate(properties.userData),
-      UserDataInBase64: ros.booleanToRosTemplate(properties.userDataInBase64),
+      'ECSClassList': ros.listMapper(ros.anyDictToRosTemplate)(properties.ecsClassList),
+      'Engine': ros.stringToRosTemplate(properties.engine),
+      'PayType': ros.stringToRosTemplate(properties.payType),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+      'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
+      'DedicatedHostGroupDescription': ros.stringToRosTemplate(properties.dedicatedHostGroupDescription),
+      'DedicatedHostGroupId': ros.stringToRosTemplate(properties.dedicatedHostGroupId),
+      'EcsDeploymentSetId': ros.stringToRosTemplate(properties.ecsDeploymentSetId),
+      'EcsHostName': ros.stringToRosTemplate(properties.ecsHostName),
+      'EcsInstanceName': ros.stringToRosTemplate(properties.ecsInstanceName),
+      'EcsUniqueSuffix': ros.booleanToRosTemplate(properties.ecsUniqueSuffix),
+      'ImageId': ros.stringToRosTemplate(properties.imageId),
+      'InternetChargeType': ros.stringToRosTemplate(properties.internetChargeType),
+      'InternetMaxBandwidthOut': ros.numberToRosTemplate(properties.internetMaxBandwidthOut),
+      'KeyPairName': ros.stringToRosTemplate(properties.keyPairName),
+      'OsPassword': ros.stringToRosTemplate(properties.osPassword),
+      'PasswordInherit': ros.booleanToRosTemplate(properties.passwordInherit),
+      'PeriodType': ros.stringToRosTemplate(properties.periodType),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'UserData': ros.stringToRosTemplate(properties.userData),
+      'UserDataInBase64': ros.booleanToRosTemplate(properties.userDataInBase64),
     };
 }
 

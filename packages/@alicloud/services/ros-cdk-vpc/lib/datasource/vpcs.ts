@@ -22,6 +22,14 @@ export interface VpcsProps {
     readonly isDefault?: boolean | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property resourceGroupId: The ID of the resource group to which the VPC to be queried belongs.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -83,6 +91,7 @@ export class Vpcs extends ros.Resource {
             vpcIds: props.vpcIds,
             vpcName: props.vpcName,
             vpcOwnerId: props.vpcOwnerId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosVpcs;
         this.attrVpcIds = rosVpcs.attrVpcIds;

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-prefixlist
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.905Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:25.078Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.RosPrefixListProps")
 @software.amazon.jsii.Jsii.Proxy(RosPrefixListProps.Jsii$Proxy.class)
 public interface RosPrefixListProps extends software.amazon.jsii.JsiiSerializable {
@@ -13,6 +13,12 @@ public interface RosPrefixListProps extends software.amazon.jsii.JsiiSerializabl
     /**
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getPrefixListId();
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
 
     /**
      * @return a {@link Builder} of {@link RosPrefixListProps}
@@ -25,6 +31,7 @@ public interface RosPrefixListProps extends software.amazon.jsii.JsiiSerializabl
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosPrefixListProps> {
         java.lang.Object prefixListId;
+        java.lang.Object refreshOptions;
 
         /**
          * Sets the value of {@link RosPrefixListProps#getPrefixListId}
@@ -47,6 +54,26 @@ public interface RosPrefixListProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosPrefixListProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrefixListProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosPrefixListProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -63,6 +90,7 @@ public interface RosPrefixListProps extends software.amazon.jsii.JsiiSerializabl
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosPrefixListProps {
         private final java.lang.Object prefixListId;
+        private final java.lang.Object refreshOptions;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -71,6 +99,7 @@ public interface RosPrefixListProps extends software.amazon.jsii.JsiiSerializabl
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.prefixListId = software.amazon.jsii.Kernel.get(this, "prefixListId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -79,11 +108,17 @@ public interface RosPrefixListProps extends software.amazon.jsii.JsiiSerializabl
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.prefixListId = java.util.Objects.requireNonNull(builder.prefixListId, "prefixListId is required");
+            this.refreshOptions = builder.refreshOptions;
         }
 
         @Override
         public final java.lang.Object getPrefixListId() {
             return this.prefixListId;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -93,6 +128,9 @@ public interface RosPrefixListProps extends software.amazon.jsii.JsiiSerializabl
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
             data.set("prefixListId", om.valueToTree(this.getPrefixListId()));
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-vpc.datasource.RosPrefixListProps"));
@@ -111,12 +149,14 @@ public interface RosPrefixListProps extends software.amazon.jsii.JsiiSerializabl
 
             RosPrefixListProps.Jsii$Proxy that = (RosPrefixListProps.Jsii$Proxy) o;
 
-            return this.prefixListId.equals(that.prefixListId);
+            if (!prefixListId.equals(that.prefixListId)) return false;
+            return this.refreshOptions != null ? this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.prefixListId.hashCode();
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             return result;
         }
     }

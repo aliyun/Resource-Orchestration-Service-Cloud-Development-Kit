@@ -10,6 +10,14 @@ export { RosSlsGroups as SlsGroupsProperty };
 export interface SlsGroupsProps {
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property slsGroupName: The name of the Logstore group.
      */
     readonly slsGroupName?: string | ros.IResolvable;
@@ -50,6 +58,7 @@ export class SlsGroups extends ros.Resource {
 
         const rosSlsGroups = new RosSlsGroups(this, id,  {
             slsGroupName: props.slsGroupName,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosSlsGroups;
         this.attrSlsGroupNames = rosSlsGroups.attrSlsGroupNames;

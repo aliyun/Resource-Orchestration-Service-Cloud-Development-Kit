@@ -47,7 +47,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
 
         /// <summary>Property aclEntries: A list of acl entries.</summary>
         /// <remarks>
-        /// Each entry can be IP addresses or CIDR blocks. Max length: 50.
+        /// Each entry can be IP addresses or CIDR blocks. Max length: 300.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "aclEntries", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-slb.RosAccessControl.AclEntriesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]

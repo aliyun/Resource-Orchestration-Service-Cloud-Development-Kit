@@ -8,6 +8,14 @@ export { RosNatGatewayZones as NatGatewayZonesProperty };
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-natgatewayzones
  */
 export interface NatGatewayZonesProps {
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -39,8 +47,8 @@ export class NatGatewayZones extends ros.Resource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosNatGatewayZones = new RosNatGatewayZones(this, id,  {
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
-        props;
         this.resource = rosNatGatewayZones;
         this.attrZoneIds = rosNatGatewayZones.attrZoneIds;
     }

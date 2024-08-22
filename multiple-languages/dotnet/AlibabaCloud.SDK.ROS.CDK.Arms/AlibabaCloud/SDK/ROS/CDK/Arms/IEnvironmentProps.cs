@@ -55,6 +55,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
             get;
         }
 
+        /// <summary>Property deletePromInstance: Cascade delete Prometheus instance.</summary>
+        /// <remarks>
+        /// Default value: true.
+        /// </remarks>
+        [JsiiProperty(name: "deletePromInstance", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DeletePromInstance
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property feePackage: The payable resource plan.</summary>
         /// <remarks>
         /// Valid values:
@@ -191,6 +205,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
             public object EnvironmentType
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property deletePromInstance: Cascade delete Prometheus instance.</summary>
+            /// <remarks>
+            /// Default value: true.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "deletePromInstance", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DeletePromInstance
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property feePackage: The payable resource plan.</summary>

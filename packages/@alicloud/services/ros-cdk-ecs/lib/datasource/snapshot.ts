@@ -13,6 +13,14 @@ export interface SnapshotProps {
      * Property snapshotId: The snapshot id.
      */
     readonly snapshotId: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -140,6 +148,7 @@ export class Snapshot extends ros.Resource {
 
         const rosSnapshot = new RosSnapshot(this, id,  {
             snapshotId: props.snapshotId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosSnapshot;
         this.attrCreateTime = rosSnapshot.attrCreateTime;

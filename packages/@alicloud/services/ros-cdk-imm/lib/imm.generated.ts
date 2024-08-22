@@ -49,8 +49,8 @@ function rosProjectPropsToRosTemplate(properties: any, enableResourcePropertyCon
         RosProjectPropsValidator(properties).assertSuccess();
     }
     return {
-      Project: ros.stringToRosTemplate(properties.project),
-      ServiceRole: ros.stringToRosTemplate(properties.serviceRole),
+      'Project': ros.stringToRosTemplate(properties.project),
+      'ServiceRole': ros.stringToRosTemplate(properties.serviceRole),
     };
 }
 

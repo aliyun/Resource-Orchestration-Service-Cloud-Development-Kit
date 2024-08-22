@@ -20,6 +20,14 @@ export interface CenRouteMapsProps {
     readonly cenRegionId?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property routeMapId: The ID of the routing policy.
      */
     readonly routeMapId?: string | ros.IResolvable;
@@ -70,10 +78,11 @@ export class CenRouteMaps extends ros.Resource {
 
         const rosCenRouteMaps = new RosCenRouteMaps(this, id,  {
             transitRouterRouteTableId: props.transitRouterRouteTableId,
-            transmitDirection: props.transmitDirection,
             cenId: props.cenId,
+            transmitDirection: props.transmitDirection,
             cenRegionId: props.cenRegionId,
             routeMapId: props.routeMapId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosCenRouteMaps;
         this.attrRouteMapIds = rosCenRouteMaps.attrRouteMapIds;

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sae;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SAE::Application</code>, which is used to create an application in Serverless App Engine (SAE).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.123Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:23.955Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.Application")
 public class Application extends com.aliyun.ros.cdk.core.Resource {
 
@@ -269,6 +269,52 @@ public class Application extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property acrAssumeRoleArn: The ARN of the RAM role required when pulling the image across accounts.
+         * <p>
+         * @return {@code this}
+         * @param acrAssumeRoleArn Property acrAssumeRoleArn: The ARN of the RAM role required when pulling the image across accounts. This parameter is required.
+         */
+        public Builder acrAssumeRoleArn(final java.lang.String acrAssumeRoleArn) {
+            this.props.acrAssumeRoleArn(acrAssumeRoleArn);
+            return this;
+        }
+        /**
+         * Property acrAssumeRoleArn: The ARN of the RAM role required when pulling the image across accounts.
+         * <p>
+         * @return {@code this}
+         * @param acrAssumeRoleArn Property acrAssumeRoleArn: The ARN of the RAM role required when pulling the image across accounts. This parameter is required.
+         */
+        public Builder acrAssumeRoleArn(final com.aliyun.ros.cdk.core.IResolvable acrAssumeRoleArn) {
+            this.props.acrAssumeRoleArn(acrAssumeRoleArn);
+            return this;
+        }
+
+        /**
+         * Property acrInstanceId: Container Image service ACR Enterprise Edition instance ID.
+         * <p>
+         * Required when ImageUrl serves enterprise edition for container images.
+         * <p>
+         * @return {@code this}
+         * @param acrInstanceId Property acrInstanceId: Container Image service ACR Enterprise Edition instance ID. This parameter is required.
+         */
+        public Builder acrInstanceId(final java.lang.String acrInstanceId) {
+            this.props.acrInstanceId(acrInstanceId);
+            return this;
+        }
+        /**
+         * Property acrInstanceId: Container Image service ACR Enterprise Edition instance ID.
+         * <p>
+         * Required when ImageUrl serves enterprise edition for container images.
+         * <p>
+         * @return {@code this}
+         * @param acrInstanceId Property acrInstanceId: Container Image service ACR Enterprise Edition instance ID. This parameter is required.
+         */
+        public Builder acrInstanceId(final com.aliyun.ros.cdk.core.IResolvable acrInstanceId) {
+            this.props.acrInstanceId(acrInstanceId);
+            return this;
+        }
+
+        /**
          * Property appDescription: Application description.
          * <p>
          * No more than 1024 characters.
@@ -290,6 +336,118 @@ public class Application extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder appDescription(final com.aliyun.ros.cdk.core.IResolvable appDescription) {
             this.props.appDescription(appDescription);
+            return this;
+        }
+
+        /**
+         * Property appSource: Application source.
+         * <p>
+         * @return {@code this}
+         * @param appSource Property appSource: Application source. This parameter is required.
+         */
+        public Builder appSource(final java.lang.String appSource) {
+            this.props.appSource(appSource);
+            return this;
+        }
+        /**
+         * Property appSource: Application source.
+         * <p>
+         * @return {@code this}
+         * @param appSource Property appSource: Application source. This parameter is required.
+         */
+        public Builder appSource(final com.aliyun.ros.cdk.core.IResolvable appSource) {
+            this.props.appSource(appSource);
+            return this;
+        }
+
+        /**
+         * Property associateEip: Whether to bind EIP.
+         * <p>
+         * The values are explained as follows:
+         * <p>
+         * <ul>
+         * <li>true: Binding.</li>
+         * <li>false: No binding</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param associateEip Property associateEip: Whether to bind EIP. This parameter is required.
+         */
+        public Builder associateEip(final java.lang.Boolean associateEip) {
+            this.props.associateEip(associateEip);
+            return this;
+        }
+        /**
+         * Property associateEip: Whether to bind EIP.
+         * <p>
+         * The values are explained as follows:
+         * <p>
+         * <ul>
+         * <li>true: Binding.</li>
+         * <li>false: No binding</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param associateEip Property associateEip: Whether to bind EIP. This parameter is required.
+         */
+        public Builder associateEip(final com.aliyun.ros.cdk.core.IResolvable associateEip) {
+            this.props.associateEip(associateEip);
+            return this;
+        }
+
+        /**
+         * Property autoConfig: Whether to automatically configure the network environment.
+         * <p>
+         * The values are explained as follows:
+         * <p>
+         * <ul>
+         * <li>true: SAE automatically config the network environment when creating the application. The values for NamespaceId, VpcId, vSwitchId, and SecurityGroupId are ignored.</li>
+         * <li>false: SAE manually config the network environment when creating the application.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param autoConfig Property autoConfig: Whether to automatically configure the network environment. This parameter is required.
+         */
+        public Builder autoConfig(final java.lang.Boolean autoConfig) {
+            this.props.autoConfig(autoConfig);
+            return this;
+        }
+        /**
+         * Property autoConfig: Whether to automatically configure the network environment.
+         * <p>
+         * The values are explained as follows:
+         * <p>
+         * <ul>
+         * <li>true: SAE automatically config the network environment when creating the application. The values for NamespaceId, VpcId, vSwitchId, and SecurityGroupId are ignored.</li>
+         * <li>false: SAE manually config the network environment when creating the application.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param autoConfig Property autoConfig: Whether to automatically configure the network environment. This parameter is required.
+         */
+        public Builder autoConfig(final com.aliyun.ros.cdk.core.IResolvable autoConfig) {
+            this.props.autoConfig(autoConfig);
+            return this;
+        }
+
+        /**
+         * Property baseAppId: Base application ID.
+         * <p>
+         * @return {@code this}
+         * @param baseAppId Property baseAppId: Base application ID. This parameter is required.
+         */
+        public Builder baseAppId(final java.lang.String baseAppId) {
+            this.props.baseAppId(baseAppId);
+            return this;
+        }
+        /**
+         * Property baseAppId: Base application ID.
+         * <p>
+         * @return {@code this}
+         * @param baseAppId Property baseAppId: Base application ID. This parameter is required.
+         */
+        public Builder baseAppId(final com.aliyun.ros.cdk.core.IResolvable baseAppId) {
+            this.props.baseAppId(baseAppId);
             return this;
         }
 
@@ -340,6 +498,31 @@ public class Application extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder commandArgs(final com.aliyun.ros.cdk.core.IResolvable commandArgs) {
             this.props.commandArgs(commandArgs);
+            return this;
+        }
+
+        /**
+         * Property configMapMountDesc: ConfigMap mount description.
+         * <p>
+         * Use the configuration items created on the namespace configuration items page to inject configuration information into the container.
+         * <p>
+         * @return {@code this}
+         * @param configMapMountDesc Property configMapMountDesc: ConfigMap mount description. This parameter is required.
+         */
+        public Builder configMapMountDesc(final java.lang.String configMapMountDesc) {
+            this.props.configMapMountDesc(configMapMountDesc);
+            return this;
+        }
+        /**
+         * Property configMapMountDesc: ConfigMap mount description.
+         * <p>
+         * Use the configuration items created on the namespace configuration items page to inject configuration information into the container.
+         * <p>
+         * @return {@code this}
+         * @param configMapMountDesc Property configMapMountDesc: ConfigMap mount description. This parameter is required.
+         */
+        public Builder configMapMountDesc(final com.aliyun.ros.cdk.core.IResolvable configMapMountDesc) {
+            this.props.configMapMountDesc(configMapMountDesc);
             return this;
         }
 
@@ -411,6 +594,41 @@ public class Application extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property enableEbpf: Whether to enable EBPF.
+         * <p>
+         * Enable application monitoring for non-Java applications. The values are explained as follows:
+         * <p>
+         * <ul>
+         * <li>true: Enable.</li>
+         * <li>false: Disable.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param enableEbpf Property enableEbpf: Whether to enable EBPF. This parameter is required.
+         */
+        public Builder enableEbpf(final java.lang.String enableEbpf) {
+            this.props.enableEbpf(enableEbpf);
+            return this;
+        }
+        /**
+         * Property enableEbpf: Whether to enable EBPF.
+         * <p>
+         * Enable application monitoring for non-Java applications. The values are explained as follows:
+         * <p>
+         * <ul>
+         * <li>true: Enable.</li>
+         * <li>false: Disable.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param enableEbpf Property enableEbpf: Whether to enable EBPF. This parameter is required.
+         */
+        public Builder enableEbpf(final com.aliyun.ros.cdk.core.IResolvable enableEbpf) {
+            this.props.enableEbpf(enableEbpf);
+            return this;
+        }
+
+        /**
          * Property envs: Container environment variable parameters.
          * <p>
          * For example: [{ "name": "envtmp", "value": "0"}]
@@ -432,6 +650,27 @@ public class Application extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder envs(final com.aliyun.ros.cdk.core.IResolvable envs) {
             this.props.envs(envs);
+            return this;
+        }
+
+        /**
+         * Property imagePullSecrets: Corresponding to the secret dictionary ID.
+         * <p>
+         * @return {@code this}
+         * @param imagePullSecrets Property imagePullSecrets: Corresponding to the secret dictionary ID. This parameter is required.
+         */
+        public Builder imagePullSecrets(final java.lang.String imagePullSecrets) {
+            this.props.imagePullSecrets(imagePullSecrets);
+            return this;
+        }
+        /**
+         * Property imagePullSecrets: Corresponding to the secret dictionary ID.
+         * <p>
+         * @return {@code this}
+         * @param imagePullSecrets Property imagePullSecrets: Corresponding to the secret dictionary ID. This parameter is required.
+         */
+        public Builder imagePullSecrets(final com.aliyun.ros.cdk.core.IResolvable imagePullSecrets) {
+            this.props.imagePullSecrets(imagePullSecrets);
             return this;
         }
 
@@ -540,6 +779,43 @@ public class Application extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property kafkaConfigs: Logs are ingested to Kafka configuration summary information.
+         * <p>
+         * The values are explained as follows:
+         * <p>
+         * <ul>
+         * <li>kafkaEndpoint: The service access address for the Kafka API</li>
+         * <li>kafkaInstanceId: Kafka instance ID</li>
+         * <li>kafkaConfigs: Configuration summary information for one or more logs See Request parameters kafkaConfigs for a description of these values.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param kafkaConfigs Property kafkaConfigs: Logs are ingested to Kafka configuration summary information. This parameter is required.
+         */
+        public Builder kafkaConfigs(final java.lang.String kafkaConfigs) {
+            this.props.kafkaConfigs(kafkaConfigs);
+            return this;
+        }
+        /**
+         * Property kafkaConfigs: Logs are ingested to Kafka configuration summary information.
+         * <p>
+         * The values are explained as follows:
+         * <p>
+         * <ul>
+         * <li>kafkaEndpoint: The service access address for the Kafka API</li>
+         * <li>kafkaInstanceId: Kafka instance ID</li>
+         * <li>kafkaConfigs: Configuration summary information for one or more logs See Request parameters kafkaConfigs for a description of these values.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param kafkaConfigs Property kafkaConfigs: Logs are ingested to Kafka configuration summary information. This parameter is required.
+         */
+        public Builder kafkaConfigs(final com.aliyun.ros.cdk.core.IResolvable kafkaConfigs) {
+            this.props.kafkaConfigs(kafkaConfigs);
+            return this;
+        }
+
+        /**
          * Property liveness: Container health check, health check fails container will be killed and recovery.
          * <p>
          * Currently only supports mode command issued in the container. The columns: { "exec": { "command": [ "sleep", "5s"]}, "initialDelaySeconds": 10, "timeoutSeconds": 11}
@@ -561,6 +837,58 @@ public class Application extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder liveness(final com.aliyun.ros.cdk.core.IResolvable liveness) {
             this.props.liveness(liveness);
+            return this;
+        }
+
+        /**
+         * Property microRegistration: Select the Nacos registry with the following values: - 0: SAE built-in Nacos.
+         * <p>
+         * <ul>
+         * <li>1: User-built Nacos.</li>
+         * <li>2: MSE commercial version of Nacos.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param microRegistration Property microRegistration: Select the Nacos registry with the following values: - 0: SAE built-in Nacos. This parameter is required.
+         */
+        public Builder microRegistration(final java.lang.String microRegistration) {
+            this.props.microRegistration(microRegistration);
+            return this;
+        }
+        /**
+         * Property microRegistration: Select the Nacos registry with the following values: - 0: SAE built-in Nacos.
+         * <p>
+         * <ul>
+         * <li>1: User-built Nacos.</li>
+         * <li>2: MSE commercial version of Nacos.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param microRegistration Property microRegistration: Select the Nacos registry with the following values: - 0: SAE built-in Nacos. This parameter is required.
+         */
+        public Builder microRegistration(final com.aliyun.ros.cdk.core.IResolvable microRegistration) {
+            this.props.microRegistration(microRegistration);
+            return this;
+        }
+
+        /**
+         * Property microRegistrationConfig: Registry configuration information.
+         * <p>
+         * @return {@code this}
+         * @param microRegistrationConfig Property microRegistrationConfig: Registry configuration information. This parameter is required.
+         */
+        public Builder microRegistrationConfig(final java.lang.String microRegistrationConfig) {
+            this.props.microRegistrationConfig(microRegistrationConfig);
+            return this;
+        }
+        /**
+         * Property microRegistrationConfig: Registry configuration information.
+         * <p>
+         * @return {@code this}
+         * @param microRegistrationConfig Property microRegistrationConfig: Registry configuration information. This parameter is required.
+         */
+        public Builder microRegistrationConfig(final com.aliyun.ros.cdk.core.IResolvable microRegistrationConfig) {
+            this.props.microRegistrationConfig(microRegistrationConfig);
             return this;
         }
 
@@ -607,6 +935,47 @@ public class Application extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property nasConfigs: Configuration to mount the NAS.
+         * <p>
+         * The values are explained as follows:
+         * <p>
+         * <ul>
+         * <li>mountPath: The container mount path</li>
+         * <li>readOnly: A value of false indicates read and write permission.</li>
+         * <li>nasId: NAS ID</li>
+         * <li>mountDomain: The container mount point address For more information, see DescribeMountTargets.</li>
+         * <li>nasPath: NAS relative file directory</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param nasConfigs Property nasConfigs: Configuration to mount the NAS. This parameter is required.
+         */
+        public Builder nasConfigs(final java.lang.String nasConfigs) {
+            this.props.nasConfigs(nasConfigs);
+            return this;
+        }
+        /**
+         * Property nasConfigs: Configuration to mount the NAS.
+         * <p>
+         * The values are explained as follows:
+         * <p>
+         * <ul>
+         * <li>mountPath: The container mount path</li>
+         * <li>readOnly: A value of false indicates read and write permission.</li>
+         * <li>nasId: NAS ID</li>
+         * <li>mountDomain: The container mount point address For more information, see DescribeMountTargets.</li>
+         * <li>nasPath: NAS relative file directory</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param nasConfigs Property nasConfigs: Configuration to mount the NAS. This parameter is required.
+         */
+        public Builder nasConfigs(final com.aliyun.ros.cdk.core.IResolvable nasConfigs) {
+            this.props.nasConfigs(nasConfigs);
+            return this;
+        }
+
+        /**
          * Property nasId: Mount the NAS ID, you must be in the same region and cluster.
          * <p>
          * It must be available to create a mount point limit, or switch on its mount point already in the VPC. If you do not fill, and there mountDescs field, the default will automatically purchase a NAS and mount it onto the switch within the VPC.
@@ -628,6 +997,97 @@ public class Application extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder nasId(final com.aliyun.ros.cdk.core.IResolvable nasId) {
             this.props.nasId(nasId);
+            return this;
+        }
+
+        /**
+         * Property ossAkId: AccessKey ID of the OSS.
+         * <p>
+         * @return {@code this}
+         * @param ossAkId Property ossAkId: AccessKey ID of the OSS. This parameter is required.
+         */
+        public Builder ossAkId(final java.lang.String ossAkId) {
+            this.props.ossAkId(ossAkId);
+            return this;
+        }
+        /**
+         * Property ossAkId: AccessKey ID of the OSS.
+         * <p>
+         * @return {@code this}
+         * @param ossAkId Property ossAkId: AccessKey ID of the OSS. This parameter is required.
+         */
+        public Builder ossAkId(final com.aliyun.ros.cdk.core.IResolvable ossAkId) {
+            this.props.ossAkId(ossAkId);
+            return this;
+        }
+
+        /**
+         * Property ossAkSecret: AccessKey Secret of the OSS.
+         * <p>
+         * @return {@code this}
+         * @param ossAkSecret Property ossAkSecret: AccessKey Secret of the OSS. This parameter is required.
+         */
+        public Builder ossAkSecret(final java.lang.String ossAkSecret) {
+            this.props.ossAkSecret(ossAkSecret);
+            return this;
+        }
+        /**
+         * Property ossAkSecret: AccessKey Secret of the OSS.
+         * <p>
+         * @return {@code this}
+         * @param ossAkSecret Property ossAkSecret: AccessKey Secret of the OSS. This parameter is required.
+         */
+        public Builder ossAkSecret(final com.aliyun.ros.cdk.core.IResolvable ossAkSecret) {
+            this.props.ossAkSecret(ossAkSecret);
+            return this;
+        }
+
+        /**
+         * Property ossMountDescs: OSS mount description information.
+         * <p>
+         * The parameters are described as follows:
+         * <p>
+         * <ul>
+         * <li>bucketName: The name of the Bucket</li>
+         * <li>bucketPath: The directory or OSS object you created in OSS that will raise an exception if the OSS mount directory does not exist.</li>
+         * <li>mountPath: Your container path in SAE. If the path already exists, it is a covering relationship. If the path doesn't exist, it will be created.</li>
+         * <li>readOnly: This specifies whether the container path has read-only permissions for mount directory resources:
+         * <p>
+         * <ul>
+         * <li>true: Read-only permission</li>
+         * <li>false: Read and write permissions</li>
+         * </ul></li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param ossMountDescs Property ossMountDescs: OSS mount description information. This parameter is required.
+         */
+        public Builder ossMountDescs(final java.util.List<? extends java.lang.Object> ossMountDescs) {
+            this.props.ossMountDescs(ossMountDescs);
+            return this;
+        }
+        /**
+         * Property ossMountDescs: OSS mount description information.
+         * <p>
+         * The parameters are described as follows:
+         * <p>
+         * <ul>
+         * <li>bucketName: The name of the Bucket</li>
+         * <li>bucketPath: The directory or OSS object you created in OSS that will raise an exception if the OSS mount directory does not exist.</li>
+         * <li>mountPath: Your container path in SAE. If the path already exists, it is a covering relationship. If the path doesn't exist, it will be created.</li>
+         * <li>readOnly: This specifies whether the container path has read-only permissions for mount directory resources:
+         * <p>
+         * <ul>
+         * <li>true: Read-only permission</li>
+         * <li>false: Read and write permissions</li>
+         * </ul></li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param ossMountDescs Property ossMountDescs: OSS mount description information. This parameter is required.
+         */
+        public Builder ossMountDescs(final com.aliyun.ros.cdk.core.IResolvable ossMountDescs) {
+            this.props.ossMountDescs(ossMountDescs);
             return this;
         }
 
@@ -682,6 +1142,94 @@ public class Application extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property php: PHP version.
+         * <p>
+         * @return {@code this}
+         * @param php Property php: PHP version. This parameter is required.
+         */
+        public Builder php(final java.lang.String php) {
+            this.props.php(php);
+            return this;
+        }
+        /**
+         * Property php: PHP version.
+         * <p>
+         * @return {@code this}
+         * @param php Property php: PHP version. This parameter is required.
+         */
+        public Builder php(final com.aliyun.ros.cdk.core.IResolvable php) {
+            this.props.php(php);
+            return this;
+        }
+
+        /**
+         * Property phpArmsConfigLocation: The PHP application monitors the mount path and requires you to ensure that the PHP server loads the configuration file for this path.
+         * <p>
+         * You don't need to worry about the configuration content; SAE will automatically render the correct configuration file.
+         * <p>
+         * @return {@code this}
+         * @param phpArmsConfigLocation Property phpArmsConfigLocation: The PHP application monitors the mount path and requires you to ensure that the PHP server loads the configuration file for this path. This parameter is required.
+         */
+        public Builder phpArmsConfigLocation(final java.lang.String phpArmsConfigLocation) {
+            this.props.phpArmsConfigLocation(phpArmsConfigLocation);
+            return this;
+        }
+        /**
+         * Property phpArmsConfigLocation: The PHP application monitors the mount path and requires you to ensure that the PHP server loads the configuration file for this path.
+         * <p>
+         * You don't need to worry about the configuration content; SAE will automatically render the correct configuration file.
+         * <p>
+         * @return {@code this}
+         * @param phpArmsConfigLocation Property phpArmsConfigLocation: The PHP application monitors the mount path and requires you to ensure that the PHP server loads the configuration file for this path. This parameter is required.
+         */
+        public Builder phpArmsConfigLocation(final com.aliyun.ros.cdk.core.IResolvable phpArmsConfigLocation) {
+            this.props.phpArmsConfigLocation(phpArmsConfigLocation);
+            return this;
+        }
+
+        /**
+         * Property phpConfig: PHP configuration file contents.
+         * <p>
+         * @return {@code this}
+         * @param phpConfig Property phpConfig: PHP configuration file contents. This parameter is required.
+         */
+        public Builder phpConfig(final java.lang.String phpConfig) {
+            this.props.phpConfig(phpConfig);
+            return this;
+        }
+        /**
+         * Property phpConfig: PHP configuration file contents.
+         * <p>
+         * @return {@code this}
+         * @param phpConfig Property phpConfig: PHP configuration file contents. This parameter is required.
+         */
+        public Builder phpConfig(final com.aliyun.ros.cdk.core.IResolvable phpConfig) {
+            this.props.phpConfig(phpConfig);
+            return this;
+        }
+
+        /**
+         * Property phpConfigLocation: PHP application launch configuration mount path, you need to ensure that the PHP server will be started with this configuration file.
+         * <p>
+         * @return {@code this}
+         * @param phpConfigLocation Property phpConfigLocation: PHP application launch configuration mount path, you need to ensure that the PHP server will be started with this configuration file. This parameter is required.
+         */
+        public Builder phpConfigLocation(final java.lang.String phpConfigLocation) {
+            this.props.phpConfigLocation(phpConfigLocation);
+            return this;
+        }
+        /**
+         * Property phpConfigLocation: PHP application launch configuration mount path, you need to ensure that the PHP server will be started with this configuration file.
+         * <p>
+         * @return {@code this}
+         * @param phpConfigLocation Property phpConfigLocation: PHP application launch configuration mount path, you need to ensure that the PHP server will be started with this configuration file. This parameter is required.
+         */
+        public Builder phpConfigLocation(final com.aliyun.ros.cdk.core.IResolvable phpConfigLocation) {
+            this.props.phpConfigLocation(phpConfigLocation);
+            return this;
+        }
+
+        /**
          * Property postStart: Executing the script, such as after starting the format: { "exec": { "command": "cat", "/ etc / group"}}.
          * <p>
          * @return {@code this}
@@ -724,6 +1272,134 @@ public class Application extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property programmingLanguage: Create the stack language for the application.
+         * <p>
+         * The values are explained as follows:
+         * <p>
+         * <ul>
+         * <li>java: The Java language</li>
+         * <li>php: PHP language.</li>
+         * <li>other: Multiple languages such as Python, C++, Go,.NET, Node.js, etc.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param programmingLanguage Property programmingLanguage: Create the stack language for the application. This parameter is required.
+         */
+        public Builder programmingLanguage(final java.lang.String programmingLanguage) {
+            this.props.programmingLanguage(programmingLanguage);
+            return this;
+        }
+        /**
+         * Property programmingLanguage: Create the stack language for the application.
+         * <p>
+         * The values are explained as follows:
+         * <p>
+         * <ul>
+         * <li>java: The Java language</li>
+         * <li>php: PHP language.</li>
+         * <li>other: Multiple languages such as Python, C++, Go,.NET, Node.js, etc.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param programmingLanguage Property programmingLanguage: Create the stack language for the application. This parameter is required.
+         */
+        public Builder programmingLanguage(final com.aliyun.ros.cdk.core.IResolvable programmingLanguage) {
+            this.props.programmingLanguage(programmingLanguage);
+            return this;
+        }
+
+        /**
+         * Property pvtzDiscoverySvc: Enable K8s Service registration discovery.
+         * <p>
+         * The values are explained as follows:
+         * <p>
+         * <ul>
+         * <li>serviceName: The name of the service The format is custom-namespace ID, in which the postfix-namespace ID does not support customization and needs to be filled in according to the namespace of the application. For example, choosing the default namespace for the North China 2 (Beijing) region would be -cn-beijing-default.</li>
+         * <li>namespaceId: The namespace ID</li>
+         * <li>portProtocols: Ports and protocols The port is in the range [1,65535] and supports both TCP and UDP protocols.</li>
+         * <li>portAndProtocol: Ports and protocols The port is in the range [1,65535] and supports both TCP and UDP protocols. portProtocols is preferred. If portProtocols is set, only portProtocols will take effect.</li>
+         * <li>enable: Enable K8s Service registration discovery.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param pvtzDiscoverySvc Property pvtzDiscoverySvc: Enable K8s Service registration discovery. This parameter is required.
+         */
+        public Builder pvtzDiscoverySvc(final java.lang.String pvtzDiscoverySvc) {
+            this.props.pvtzDiscoverySvc(pvtzDiscoverySvc);
+            return this;
+        }
+        /**
+         * Property pvtzDiscoverySvc: Enable K8s Service registration discovery.
+         * <p>
+         * The values are explained as follows:
+         * <p>
+         * <ul>
+         * <li>serviceName: The name of the service The format is custom-namespace ID, in which the postfix-namespace ID does not support customization and needs to be filled in according to the namespace of the application. For example, choosing the default namespace for the North China 2 (Beijing) region would be -cn-beijing-default.</li>
+         * <li>namespaceId: The namespace ID</li>
+         * <li>portProtocols: Ports and protocols The port is in the range [1,65535] and supports both TCP and UDP protocols.</li>
+         * <li>portAndProtocol: Ports and protocols The port is in the range [1,65535] and supports both TCP and UDP protocols. portProtocols is preferred. If portProtocols is set, only portProtocols will take effect.</li>
+         * <li>enable: Enable K8s Service registration discovery.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param pvtzDiscoverySvc Property pvtzDiscoverySvc: Enable K8s Service registration discovery. This parameter is required.
+         */
+        public Builder pvtzDiscoverySvc(final com.aliyun.ros.cdk.core.IResolvable pvtzDiscoverySvc) {
+            this.props.pvtzDiscoverySvc(pvtzDiscoverySvc);
+            return this;
+        }
+
+        /**
+         * Property python: Python version.
+         * <p>
+         * Supports PYTHON 3.9.15
+         * <p>
+         * @return {@code this}
+         * @param python Property python: Python version. This parameter is required.
+         */
+        public Builder python(final java.lang.String python) {
+            this.props.python(python);
+            return this;
+        }
+        /**
+         * Property python: Python version.
+         * <p>
+         * Supports PYTHON 3.9.15
+         * <p>
+         * @return {@code this}
+         * @param python Property python: Python version. This parameter is required.
+         */
+        public Builder python(final com.aliyun.ros.cdk.core.IResolvable python) {
+            this.props.python(python);
+            return this;
+        }
+
+        /**
+         * Property pythonModules: Install custom module dependencies.
+         * <p>
+         * The dependencies defined in requirements.txt in the root directory are installed by default. If the package is not configured or customized, you can specify the dependencies to install.
+         * <p>
+         * @return {@code this}
+         * @param pythonModules Property pythonModules: Install custom module dependencies. This parameter is required.
+         */
+        public Builder pythonModules(final java.lang.String pythonModules) {
+            this.props.pythonModules(pythonModules);
+            return this;
+        }
+        /**
+         * Property pythonModules: Install custom module dependencies.
+         * <p>
+         * The dependencies defined in requirements.txt in the root directory are installed by default. If the package is not configured or customized, you can specify the dependencies to install.
+         * <p>
+         * @return {@code this}
+         * @param pythonModules Property pythonModules: Install custom module dependencies. This parameter is required.
+         */
+        public Builder pythonModules(final com.aliyun.ros.cdk.core.IResolvable pythonModules) {
+            this.props.pythonModules(pythonModules);
+            return this;
+        }
+
+        /**
          * Property readiness: Application launch status check, health check fails repeatedly container will be killed and restarted.
          * <p>
          * Do not pass health check of the vessel will not have to enter SLB traffic. For example: { "exec": { "command": [ "sleep", "6s"]}, "initialDelaySeconds": 15, "timeoutSeconds": 12}
@@ -749,6 +1425,27 @@ public class Application extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property saeVersion: SAE version.
+         * <p>
+         * @return {@code this}
+         * @param saeVersion Property saeVersion: SAE version. This parameter is required.
+         */
+        public Builder saeVersion(final java.lang.String saeVersion) {
+            this.props.saeVersion(saeVersion);
+            return this;
+        }
+        /**
+         * Property saeVersion: SAE version.
+         * <p>
+         * @return {@code this}
+         * @param saeVersion Property saeVersion: SAE version. This parameter is required.
+         */
+        public Builder saeVersion(final com.aliyun.ros.cdk.core.IResolvable saeVersion) {
+            this.props.saeVersion(saeVersion);
+            return this;
+        }
+
+        /**
          * Property securityGroupId: Security group ID.
          * <p>
          * @return {@code this}
@@ -766,6 +1463,27 @@ public class Application extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder securityGroupId(final com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
             this.props.securityGroupId(securityGroupId);
+            return this;
+        }
+
+        /**
+         * Property serviceTags: Service tags.
+         * <p>
+         * @return {@code this}
+         * @param serviceTags Property serviceTags: Service tags. This parameter is required.
+         */
+        public Builder serviceTags(final java.lang.String serviceTags) {
+            this.props.serviceTags(serviceTags);
+            return this;
+        }
+        /**
+         * Property serviceTags: Service tags.
+         * <p>
+         * @return {@code this}
+         * @param serviceTags Property serviceTags: Service tags. This parameter is required.
+         */
+        public Builder serviceTags(final com.aliyun.ros.cdk.core.IResolvable serviceTags) {
+            this.props.serviceTags(serviceTags);
             return this;
         }
 
@@ -804,6 +1522,31 @@ public class Application extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property terminationGracePeriodSeconds: Graceful offline timeout, default 30, unit of seconds.
+         * <p>
+         * The value ranges from 1 to 300.
+         * <p>
+         * @return {@code this}
+         * @param terminationGracePeriodSeconds Property terminationGracePeriodSeconds: Graceful offline timeout, default 30, unit of seconds. This parameter is required.
+         */
+        public Builder terminationGracePeriodSeconds(final java.lang.Number terminationGracePeriodSeconds) {
+            this.props.terminationGracePeriodSeconds(terminationGracePeriodSeconds);
+            return this;
+        }
+        /**
+         * Property terminationGracePeriodSeconds: Graceful offline timeout, default 30, unit of seconds.
+         * <p>
+         * The value ranges from 1 to 300.
+         * <p>
+         * @return {@code this}
+         * @param terminationGracePeriodSeconds Property terminationGracePeriodSeconds: Graceful offline timeout, default 30, unit of seconds. This parameter is required.
+         */
+        public Builder terminationGracePeriodSeconds(final com.aliyun.ros.cdk.core.IResolvable terminationGracePeriodSeconds) {
+            this.props.terminationGracePeriodSeconds(terminationGracePeriodSeconds);
+            return this;
+        }
+
+        /**
          * Property timezone: Application time zone.
          * <p>
          * Default Asia/Shanghai.
@@ -825,6 +1568,45 @@ public class Application extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder timezone(final com.aliyun.ros.cdk.core.IResolvable timezone) {
             this.props.timezone(timezone);
+            return this;
+        }
+
+        /**
+         * Property tomcatConfig: Tomcat file configuration, set to "" or "{}" to delete the configuration: - port: Ports in the range of 1024 to 65535 require Root privileges to operate on ports below 1024 Because the container is configured with Admin access, please specify a port greater than 1024.
+         * <p>
+         * If not configured, it defaults to 8080.
+         * <p>
+         * <ul>
+         * <li>contextPath: The access path, defaults to the root directory "/"</li>
+         * <li>maxThreads: This config the number of connections in the pool; the default is 400.</li>
+         * <li>uriEncoding: Tomcat's encoding formats, including UTF-8, ISO-8859-1, GBK, and GB2312 If not set, it defaults to ISO-8859-1.</li>
+         * <li>useBodyEncodingForUri: Whether to useBodyEncoding for URL (defaults to true).</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param tomcatConfig Property tomcatConfig: Tomcat file configuration, set to "" or "{}" to delete the configuration: - port: Ports in the range of 1024 to 65535 require Root privileges to operate on ports below 1024 Because the container is configured with Admin access, please specify a port greater than 1024. This parameter is required.
+         */
+        public Builder tomcatConfig(final java.lang.String tomcatConfig) {
+            this.props.tomcatConfig(tomcatConfig);
+            return this;
+        }
+        /**
+         * Property tomcatConfig: Tomcat file configuration, set to "" or "{}" to delete the configuration: - port: Ports in the range of 1024 to 65535 require Root privileges to operate on ports below 1024 Because the container is configured with Admin access, please specify a port greater than 1024.
+         * <p>
+         * If not configured, it defaults to 8080.
+         * <p>
+         * <ul>
+         * <li>contextPath: The access path, defaults to the root directory "/"</li>
+         * <li>maxThreads: This config the number of connections in the pool; the default is 400.</li>
+         * <li>uriEncoding: Tomcat's encoding formats, including UTF-8, ISO-8859-1, GBK, and GB2312 If not set, it defaults to ISO-8859-1.</li>
+         * <li>useBodyEncodingForUri: Whether to useBodyEncoding for URL (defaults to true).</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param tomcatConfig Property tomcatConfig: Tomcat file configuration, set to "" or "{}" to delete the configuration: - port: Ports in the range of 1024 to 65535 require Root privileges to operate on ports below 1024 Because the container is configured with Admin access, please specify a port greater than 1024. This parameter is required.
+         */
+        public Builder tomcatConfig(final com.aliyun.ros.cdk.core.IResolvable tomcatConfig) {
+            this.props.tomcatConfig(tomcatConfig);
             return this;
         }
 

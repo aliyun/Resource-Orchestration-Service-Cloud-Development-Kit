@@ -64,8 +64,8 @@ function rosProjectPropsToRosTemplate(properties: any, enableResourcePropertyCon
         RosProjectPropsValidator(properties).assertSuccess();
     }
     return {
-      Comment: ros.stringToRosTemplate(properties.comment),
-      ProjectName: ros.stringToRosTemplate(properties.projectName),
+      'Comment': ros.stringToRosTemplate(properties.comment),
+      'ProjectName': ros.stringToRosTemplate(properties.projectName),
     };
 }
 
@@ -238,13 +238,13 @@ function rosTopicPropsToRosTemplate(properties: any, enableResourcePropertyConst
         RosTopicPropsValidator(properties).assertSuccess();
     }
     return {
-      Comment: ros.stringToRosTemplate(properties.comment),
-      ProjectName: ros.stringToRosTemplate(properties.projectName),
-      RecordType: ros.stringToRosTemplate(properties.recordType),
-      TopicName: ros.stringToRosTemplate(properties.topicName),
-      Lifecycle: ros.numberToRosTemplate(properties.lifecycle),
-      RecordSchema: ros.stringToRosTemplate(properties.recordSchema),
-      ShardCount: ros.numberToRosTemplate(properties.shardCount),
+      'Comment': ros.stringToRosTemplate(properties.comment),
+      'ProjectName': ros.stringToRosTemplate(properties.projectName),
+      'RecordType': ros.stringToRosTemplate(properties.recordType),
+      'TopicName': ros.stringToRosTemplate(properties.topicName),
+      'Lifecycle': ros.numberToRosTemplate(properties.lifecycle),
+      'RecordSchema': ros.stringToRosTemplate(properties.recordSchema),
+      'ShardCount': ros.numberToRosTemplate(properties.shardCount),
     };
 }
 

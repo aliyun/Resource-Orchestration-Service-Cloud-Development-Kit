@@ -13,6 +13,14 @@ export interface KubernetesClusterProps {
      * Property clusterId: Cluster instance ID.
      */
     readonly clusterId?: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -223,6 +231,7 @@ The RAM role is assigned to the worker nodes of the cluster and allows the worke
 
         const rosKubernetesCluster = new RosKubernetesCluster(this, id,  {
             clusterId: props.clusterId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosKubernetesCluster;
         this.attrClusterId = rosKubernetesCluster.attrClusterId;

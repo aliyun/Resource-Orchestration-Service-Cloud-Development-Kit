@@ -77,9 +77,9 @@ function rosAccessGroupPropsToRosTemplate(properties: any, enableResourcePropert
         RosAccessGroupPropsValidator(properties).assertSuccess();
     }
     return {
-      AccessGroupName: ros.stringToRosTemplate(properties.accessGroupName),
-      Description: ros.stringToRosTemplate(properties.description),
-      NetworkType: ros.stringToRosTemplate(properties.networkType),
+      'AccessGroupName': ros.stringToRosTemplate(properties.accessGroupName),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'NetworkType': ros.stringToRosTemplate(properties.networkType),
     };
 }
 
@@ -240,11 +240,11 @@ function rosAccessRulePropsToRosTemplate(properties: any, enableResourceProperty
         RosAccessRulePropsValidator(properties).assertSuccess();
     }
     return {
-      AccessGroupId: ros.stringToRosTemplate(properties.accessGroupId),
-      NetworkSegment: ros.stringToRosTemplate(properties.networkSegment),
-      RWAccessType: ros.stringToRosTemplate(properties.rwAccessType),
-      Description: ros.stringToRosTemplate(properties.description),
-      Priority: ros.numberToRosTemplate(properties.priority),
+      'AccessGroupId': ros.stringToRosTemplate(properties.accessGroupId),
+      'NetworkSegment': ros.stringToRosTemplate(properties.networkSegment),
+      'RWAccessType': ros.stringToRosTemplate(properties.rwAccessType),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Priority': ros.numberToRosTemplate(properties.priority),
     };
 }
 
@@ -499,17 +499,17 @@ function rosFileSystemPropsToRosTemplate(properties: any, enableResourceProperty
         RosFileSystemPropsValidator(properties).assertSuccess();
     }
     return {
-      ProtocolType: ros.stringToRosTemplate(properties.protocolType),
-      SpaceCapacity: ros.numberToRosTemplate(properties.spaceCapacity),
-      StorageType: ros.stringToRosTemplate(properties.storageType),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
-      DataRedundancyType: ros.stringToRosTemplate(properties.dataRedundancyType),
-      Description: ros.stringToRosTemplate(properties.description),
-      FileSystemName: ros.stringToRosTemplate(properties.fileSystemName),
-      PartitionNumber: ros.numberToRosTemplate(properties.partitionNumber),
-      ProvisionedThroughputInMiBps: ros.numberToRosTemplate(properties.provisionedThroughputInMiBps),
-      StorageSetName: ros.stringToRosTemplate(properties.storageSetName),
-      ThroughputMode: ros.stringToRosTemplate(properties.throughputMode),
+      'ProtocolType': ros.stringToRosTemplate(properties.protocolType),
+      'SpaceCapacity': ros.numberToRosTemplate(properties.spaceCapacity),
+      'StorageType': ros.stringToRosTemplate(properties.storageType),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+      'DataRedundancyType': ros.stringToRosTemplate(properties.dataRedundancyType),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'FileSystemName': ros.stringToRosTemplate(properties.fileSystemName),
+      'PartitionNumber': ros.numberToRosTemplate(properties.partitionNumber),
+      'ProvisionedThroughputInMiBps': ros.numberToRosTemplate(properties.provisionedThroughputInMiBps),
+      'StorageSetName': ros.stringToRosTemplate(properties.storageSetName),
+      'ThroughputMode': ros.stringToRosTemplate(properties.throughputMode),
     };
 }
 
@@ -739,13 +739,13 @@ function rosMountPointPropsToRosTemplate(properties: any, enableResourceProperty
         RosMountPointPropsValidator(properties).assertSuccess();
     }
     return {
-      AccessGroupId: ros.stringToRosTemplate(properties.accessGroupId),
-      FileSystemId: ros.stringToRosTemplate(properties.fileSystemId),
-      NetworkType: ros.stringToRosTemplate(properties.networkType),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      Description: ros.stringToRosTemplate(properties.description),
-      Status: ros.stringToRosTemplate(properties.status),
+      'AccessGroupId': ros.stringToRosTemplate(properties.accessGroupId),
+      'FileSystemId': ros.stringToRosTemplate(properties.fileSystemId),
+      'NetworkType': ros.stringToRosTemplate(properties.networkType),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Status': ros.stringToRosTemplate(properties.status),
     };
 }
 

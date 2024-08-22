@@ -85,6 +85,14 @@ export interface DBInstancesProps {
     readonly proxyId?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property resourceGroupId: The ID of the resource group to which the instances belong.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -157,6 +165,7 @@ export class DBInstances extends ros.Resource {
             expired: props.expired,
             payType: props.payType,
             instanceNetworkType: props.instanceNetworkType,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
             vpcId: props.vpcId,
             dbInstanceId: props.dbInstanceId,
             searchKey: props.searchKey,

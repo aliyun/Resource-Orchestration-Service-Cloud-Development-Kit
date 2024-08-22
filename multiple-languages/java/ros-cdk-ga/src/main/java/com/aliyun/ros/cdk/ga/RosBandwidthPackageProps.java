@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ga;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-bandwidthpackage
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:07.264Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:21.756Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.RosBandwidthPackageProps")
 @software.amazon.jsii.Jsii.Proxy(RosBandwidthPackageProps.Jsii$Proxy.class)
 public interface RosBandwidthPackageProps extends software.amazon.jsii.JsiiSerializable {

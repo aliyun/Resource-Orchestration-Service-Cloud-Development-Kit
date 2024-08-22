@@ -5,11 +5,13 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--dotnet_dir_path', type=str, default=None)
 parser.add_argument('--java_dir_path', type=str, default=None)
 parser.add_argument('--python_dir_path', type=str, default=None)
+parser.add_argument('--go_dir_path', type=str, default=None)
 parser.add_argument('--packages_json_file', type=str, default=None)
 args = parser.parse_args()
 dotnet_dir_path = args.dotnet_dir_path
 java_dir_path = args.java_dir_path
 python_dir_path = args.python_dir_path
+go_dir_path = args.go_dir_path
 packages_json_file = args.packages_json_file
 
 """
@@ -67,6 +69,18 @@ def sync_python_jsii_version():
         requires_files = find_reset_files(python_dir_path, 'requires.txt')
         for file in requires_files:
             update_python_requires_files_version(file, reset_requires_jsii_version)
+
+
+def sync_go_jsii_version():
+    jsii_version = get_jsii_package_version()
+    if not jsii_version:
+        print('未获取到packages.json内的jsii版本信息')
+        exit(1)
+    go_mod_version = convert_go_mod_version(jsii_version)
+    if os.path.exists(go_dir_path):
+        go_mod_files = find_reset_files(go_dir_path, 'go.mod')
+        for file in go_mod_files:
+            update_go_mod_files_version(file, go_mod_version)
 
 
 def find_reset_files(directory, reset_file_type):
@@ -146,6 +160,18 @@ def convert_python_requires_version(version):
     return version
 
 
+def convert_go_mod_version(version):
+    # 匹配">X.XX.X <=X.XX.X"的模式
+    pattern1 = re.compile(r'>(\d+\.\d+\.\d+)\s+<=(\d+\.\d+\.\d+)')
+    # 匹配"^X.XX.X"的模式
+    pattern2 = re.compile(r'\^(\d+\.\d+\.\d+)')
+
+    version = re.sub(pattern1, r'github.com/aws/jsii-runtime-go v\2', version)
+    version = re.sub(pattern2, r'github.com/aws/jsii-runtime-go v\1', version)
+
+    return version
+
+
 def update_csproj_files_version(csproj_file_path, jsii_version):
     dom_tree = parse(csproj_file_path)
     root_node = dom_tree.documentElement
@@ -180,6 +206,15 @@ def update_python_requires_files_version(requires_file_path, jsii_version):
         file.write(replaced_content)
 
 
+def update_go_mod_files_version(go_mod_file_path, jsii_version):
+    with open(go_mod_file_path, 'r') as file:
+        content = file.read()
+        pattern = r'(github.com/aws/jsii-runtime-go.*)'
+        replaced_content = re.sub(pattern, jsii_version, content, flags=re.MULTILINE)
+    with open(go_mod_file_path, 'w') as file:
+        file.write(replaced_content)
+
+
 def update_pom_files_version(pom_file_path, jsii_version):
     dom_tree = parse(pom_file_path)
     root_node = dom_tree.documentElement
@@ -200,3 +235,4 @@ if __name__ == '__main__':
     sync_dotnet_jsii_version()
     sync_java_jsii_version()
     sync_python_jsii_version()
+    sync_go_jsii_version()

@@ -96,14 +96,14 @@ function rosConfigurationPropsToRosTemplate(properties: any, enableResourcePrope
         RosConfigurationPropsValidator(properties).assertSuccess();
     }
     return {
-      Content: ros.stringToRosTemplate(properties.content),
-      DataId: ros.stringToRosTemplate(properties.dataId),
-      NamespaceId: ros.stringToRosTemplate(properties.namespaceId),
-      AppName: ros.stringToRosTemplate(properties.appName),
-      Desc: ros.stringToRosTemplate(properties.desc),
-      Group: ros.stringToRosTemplate(properties.group),
-      Tags: ros.stringToRosTemplate(properties.tags),
-      Type: ros.stringToRosTemplate(properties.type),
+      'Content': ros.stringToRosTemplate(properties.content),
+      'DataId': ros.stringToRosTemplate(properties.dataId),
+      'NamespaceId': ros.stringToRosTemplate(properties.namespaceId),
+      'AppName': ros.stringToRosTemplate(properties.appName),
+      'Desc': ros.stringToRosTemplate(properties.desc),
+      'Group': ros.stringToRosTemplate(properties.group),
+      'Tags': ros.stringToRosTemplate(properties.tags),
+      'Type': ros.stringToRosTemplate(properties.type),
     };
 }
 
@@ -260,7 +260,7 @@ function rosNamespacePropsToRosTemplate(properties: any, enableResourcePropertyC
         RosNamespacePropsValidator(properties).assertSuccess();
     }
     return {
-      Name: ros.stringToRosTemplate(properties.name),
+      'Name': ros.stringToRosTemplate(properties.name),
     };
 }
 

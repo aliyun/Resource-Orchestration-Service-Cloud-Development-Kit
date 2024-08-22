@@ -12,6 +12,14 @@ export interface RosImageCacheProps {
      * @Property imageCacheId: ImageCacheId.
      */
     readonly imageCacheId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -26,6 +34,13 @@ function RosImageCachePropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('imageCacheId', ros.requiredValidator)(properties.imageCacheId));
     errors.collect(ros.propertyValidator('imageCacheId', ros.validateString)(properties.imageCacheId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosImageCacheProps"');
 }
 
@@ -43,7 +58,8 @@ function rosImageCachePropsToRosTemplate(properties: any, enableResourceProperty
         RosImageCachePropsValidator(properties).assertSuccess();
     }
     return {
-      ImageCacheId: ros.stringToRosTemplate(properties.imageCacheId),
+      'ImageCacheId': ros.stringToRosTemplate(properties.imageCacheId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -137,6 +153,14 @@ export class RosImageCache extends ros.RosResource {
     public imageCacheId: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -160,12 +184,14 @@ export class RosImageCache extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.imageCacheId = props.imageCacheId;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             imageCacheId: this.imageCacheId,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -195,6 +221,14 @@ export interface RosImageCachesProps {
     readonly limit?: number | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * @Property resourceGroupId: ResourceGroupId.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -216,10 +250,17 @@ function RosImageCachesPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('snapshotId', ros.validateString)(properties.snapshotId));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('imageCacheId', ros.validateString)(properties.imageCacheId));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('imageCacheName', ros.validateString)(properties.imageCacheName));
     errors.collect(ros.propertyValidator('limit', ros.validateNumber)(properties.limit));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosImageCachesProps"');
 }
 
@@ -237,11 +278,12 @@ function rosImageCachesPropsToRosTemplate(properties: any, enableResourcePropert
         RosImageCachesPropsValidator(properties).assertSuccess();
     }
     return {
-      ImageCacheId: ros.stringToRosTemplate(properties.imageCacheId),
-      ImageCacheName: ros.stringToRosTemplate(properties.imageCacheName),
-      Limit: ros.numberToRosTemplate(properties.limit),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      SnapshotId: ros.stringToRosTemplate(properties.snapshotId),
+      'ImageCacheId': ros.stringToRosTemplate(properties.imageCacheId),
+      'ImageCacheName': ros.stringToRosTemplate(properties.imageCacheName),
+      'Limit': ros.numberToRosTemplate(properties.limit),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'SnapshotId': ros.stringToRosTemplate(properties.snapshotId),
     };
 }
 
@@ -285,6 +327,14 @@ export class RosImageCaches extends ros.RosResource {
     public limit: number | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property resourceGroupId: ResourceGroupId.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
@@ -308,6 +358,7 @@ export class RosImageCaches extends ros.RosResource {
         this.imageCacheId = props.imageCacheId;
         this.imageCacheName = props.imageCacheName;
         this.limit = props.limit;
+        this.refreshOptions = props.refreshOptions;
         this.resourceGroupId = props.resourceGroupId;
         this.snapshotId = props.snapshotId;
     }
@@ -318,6 +369,7 @@ export class RosImageCaches extends ros.RosResource {
             imageCacheId: this.imageCacheId,
             imageCacheName: this.imageCacheName,
             limit: this.limit,
+            refreshOptions: this.refreshOptions,
             resourceGroupId: this.resourceGroupId,
             snapshotId: this.snapshotId,
         };

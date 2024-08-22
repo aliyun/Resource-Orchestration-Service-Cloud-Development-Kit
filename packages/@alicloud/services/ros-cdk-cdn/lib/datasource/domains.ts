@@ -13,6 +13,14 @@ export interface DomainsProps {
      * Property domainName: The accelerated domain name. You can specify only one domain name.
      */
     readonly domainName: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -50,6 +58,7 @@ export class Domains extends ros.Resource {
 
         const rosDomains = new RosDomains(this, id,  {
             domainName: props.domainName,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDomains;
         this.attrDomainNames = rosDomains.attrDomainNames;

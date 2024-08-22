@@ -73,6 +73,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc.Datasource
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+        /// - Never: Never refresh the datasource resource when the stack is updated.
+        /// - Always: Always refresh the datasource resource when the stack is updated.
+        /// Default is Never.
+        /// </remarks>
+        [JsiiProperty(name: "refreshOptions", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? RefreshOptions
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: role: The type of the node. Valid values:
         /// Manager: management node
         /// Login: logon node
@@ -144,6 +160,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc.Datasource
             [JsiiOptional]
             [JsiiProperty(name: "privateIpAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PrivateIpAddress
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+            /// - Never: Never refresh the datasource resource when the stack is updated.
+            /// - Always: Always refresh the datasource resource when the stack is updated.
+            /// Default is Never.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "refreshOptions", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RefreshOptions
             {
                 get => GetInstanceProperty<object?>();
             }

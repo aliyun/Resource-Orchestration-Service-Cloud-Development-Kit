@@ -3,6 +3,189 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosGitCodeRepo`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-gitcoderepo
+ */
+export interface RosGitCodeRepoProps {
+
+    /**
+     * @Property owner: Git account.
+     */
+    readonly owner: string | ros.IResolvable;
+
+    /**
+     * @Property platform: Git platform.
+     */
+    readonly platform: string | ros.IResolvable;
+
+    /**
+     * @Property repository: Git repository.
+     */
+    readonly repository: string | ros.IResolvable;
+
+    /**
+     * @Property commitId: Git commit id.
+     */
+    readonly commitId?: string | ros.IResolvable;
+
+    /**
+     * @Property organization: Git organization.
+     */
+    readonly organization?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosGitCodeRepoProps`
+ *
+ * @param properties - the TypeScript properties of a `RosGitCodeRepoProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosGitCodeRepoPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('repository', ros.requiredValidator)(properties.repository));
+    errors.collect(ros.propertyValidator('repository', ros.validateString)(properties.repository));
+    errors.collect(ros.propertyValidator('owner', ros.requiredValidator)(properties.owner));
+    errors.collect(ros.propertyValidator('owner', ros.validateString)(properties.owner));
+    errors.collect(ros.propertyValidator('organization', ros.validateString)(properties.organization));
+    errors.collect(ros.propertyValidator('platform', ros.requiredValidator)(properties.platform));
+    if(properties.platform && (typeof properties.platform) !== 'object') {
+        errors.collect(ros.propertyValidator('platform', ros.validateAllowedValues)({
+          data: properties.platform,
+          allowedValues: ["github","gitee"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('platform', ros.validateString)(properties.platform));
+    errors.collect(ros.propertyValidator('commitId', ros.validateString)(properties.commitId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
+    return errors.wrap('supplied properties not correct for "RosGitCodeRepoProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::OOS::GitCodeRepo` resource
+ *
+ * @param properties - the TypeScript properties of a `RosGitCodeRepoProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::OOS::GitCodeRepo` resource.
+ */
+// @ts-ignore TS6133
+function rosGitCodeRepoPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosGitCodeRepoPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'Owner': ros.stringToRosTemplate(properties.owner),
+      'Platform': ros.stringToRosTemplate(properties.platform),
+      'Repository': ros.stringToRosTemplate(properties.repository),
+      'CommitId': ros.stringToRosTemplate(properties.commitId),
+      'Organization': ros.stringToRosTemplate(properties.organization),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::GitCodeRepo`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `GitCodeRepo` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-gitcoderepo
+ */
+export class RosGitCodeRepo extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::OOS::GitCodeRepo";
+
+    /**
+     * @Attribute AuthorizedUrl: Authorized url.
+     */
+    public readonly attrAuthorizedUrl: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property owner: Git account.
+     */
+    public owner: string | ros.IResolvable;
+
+    /**
+     * @Property platform: Git platform.
+     */
+    public platform: string | ros.IResolvable;
+
+    /**
+     * @Property repository: Git repository.
+     */
+    public repository: string | ros.IResolvable;
+
+    /**
+     * @Property commitId: Git commit id.
+     */
+    public commitId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property organization: Git organization.
+     */
+    public organization: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosGitCodeRepoProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosGitCodeRepo.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAuthorizedUrl = this.getAtt('AuthorizedUrl');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.owner = props.owner;
+        this.platform = props.platform;
+        this.repository = props.repository;
+        this.commitId = props.commitId;
+        this.organization = props.organization;
+        this.refreshOptions = props.refreshOptions;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            owner: this.owner,
+            platform: this.platform,
+            repository: this.repository,
+            commitId: this.commitId,
+            organization: this.organization,
+            refreshOptions: this.refreshOptions,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosGitCodeRepoPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosPatchBaseline`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-patchbaseline
  */
@@ -12,6 +195,14 @@ export interface RosPatchBaselineProps {
      * @Property patchBaselineName: The name of the patch baseline.
      */
     readonly patchBaselineName: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -26,6 +217,13 @@ function RosPatchBaselinePropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('patchBaselineName', ros.requiredValidator)(properties.patchBaselineName));
     errors.collect(ros.propertyValidator('patchBaselineName', ros.validateString)(properties.patchBaselineName));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosPatchBaselineProps"');
 }
 
@@ -43,7 +241,8 @@ function rosPatchBaselinePropsToRosTemplate(properties: any, enableResourcePrope
         RosPatchBaselinePropsValidator(properties).assertSuccess();
     }
     return {
-      PatchBaselineName: ros.stringToRosTemplate(properties.patchBaselineName),
+      'PatchBaselineName': ros.stringToRosTemplate(properties.patchBaselineName),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -157,6 +356,14 @@ export class RosPatchBaseline extends ros.RosResource {
     public patchBaselineName: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -184,12 +391,14 @@ export class RosPatchBaseline extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.patchBaselineName = props.patchBaselineName;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             patchBaselineName: this.patchBaselineName,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -212,6 +421,14 @@ export interface RosPatchBaselinesProps {
      * @Property patchBaselineName: The name of the patch baseline.
      */
     readonly patchBaselineName?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 
     /**
      * @Property shareType: Patch baseline sharing type.
@@ -238,6 +455,13 @@ function RosPatchBaselinesPropsValidator(properties: any): ros.ValidationResult 
     }
     errors.collect(ros.propertyValidator('operationSystem', ros.validateString)(properties.operationSystem));
     errors.collect(ros.propertyValidator('shareType', ros.validateString)(properties.shareType));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosPatchBaselinesProps"');
 }
 
@@ -255,9 +479,10 @@ function rosPatchBaselinesPropsToRosTemplate(properties: any, enableResourceProp
         RosPatchBaselinesPropsValidator(properties).assertSuccess();
     }
     return {
-      OperationSystem: ros.stringToRosTemplate(properties.operationSystem),
-      PatchBaselineName: ros.stringToRosTemplate(properties.patchBaselineName),
-      ShareType: ros.stringToRosTemplate(properties.shareType),
+      'OperationSystem': ros.stringToRosTemplate(properties.operationSystem),
+      'PatchBaselineName': ros.stringToRosTemplate(properties.patchBaselineName),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'ShareType': ros.stringToRosTemplate(properties.shareType),
     };
 }
 
@@ -296,6 +521,14 @@ export class RosPatchBaselines extends ros.RosResource {
     public patchBaselineName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property shareType: Patch baseline sharing type.
      */
     public shareType: string | ros.IResolvable | undefined;
@@ -313,6 +546,7 @@ export class RosPatchBaselines extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.operationSystem = props.operationSystem;
         this.patchBaselineName = props.patchBaselineName;
+        this.refreshOptions = props.refreshOptions;
         this.shareType = props.shareType;
     }
 
@@ -321,6 +555,7 @@ export class RosPatchBaselines extends ros.RosResource {
         return {
             operationSystem: this.operationSystem,
             patchBaselineName: this.patchBaselineName,
+            refreshOptions: this.refreshOptions,
             shareType: this.shareType,
         };
     }
@@ -334,6 +569,14 @@ export class RosPatchBaselines extends ros.RosResource {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-secretparameters
  */
 export interface RosSecretParametersProps {
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 
     /**
      * @Property resourceGroupId: The ID of resource group.
@@ -358,6 +601,13 @@ function RosSecretParametersPropsValidator(properties: any): ros.ValidationResul
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('secretParameterName', ros.validateString)(properties.secretParameterName));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosSecretParametersProps"');
 }
 
@@ -375,8 +625,9 @@ function rosSecretParametersPropsToRosTemplate(properties: any, enableResourcePr
         RosSecretParametersPropsValidator(properties).assertSuccess();
     }
     return {
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      SecretParameterName: ros.stringToRosTemplate(properties.secretParameterName),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'SecretParameterName': ros.stringToRosTemplate(properties.secretParameterName),
     };
 }
 
@@ -405,6 +656,14 @@ export class RosSecretParameters extends ros.RosResource {
 
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property resourceGroupId: The ID of resource group.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
@@ -425,6 +684,7 @@ export class RosSecretParameters extends ros.RosResource {
         this.attrSecretParameters = this.getAtt('SecretParameters');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.refreshOptions = props.refreshOptions;
         this.resourceGroupId = props.resourceGroupId;
         this.secretParameterName = props.secretParameterName;
     }
@@ -432,6 +692,7 @@ export class RosSecretParameters extends ros.RosResource {
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
+            refreshOptions: this.refreshOptions,
             resourceGroupId: this.resourceGroupId,
             secretParameterName: this.secretParameterName,
         };

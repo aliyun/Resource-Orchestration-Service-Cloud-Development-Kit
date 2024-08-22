@@ -115,16 +115,16 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      EcsSpec: ros.stringToRosTemplate(properties.ecsSpec),
-      ImageUrl: ros.stringToRosTemplate(properties.imageUrl),
-      InstanceName: ros.stringToRosTemplate(properties.instanceName),
-      Accessibility: ros.stringToRosTemplate(properties.accessibility),
-      Datasets: ros.listMapper(rosInstanceDatasetsPropertyToRosTemplate)(properties.datasets),
-      EnvironmentVariables: ros.hashMapper(ros.objectToRosTemplate)(properties.environmentVariables),
-      Labels: ros.listMapper(rosInstanceLabelsPropertyToRosTemplate)(properties.labels),
-      SaveImage: ros.booleanToRosTemplate(properties.saveImage),
-      UserVpc: rosInstanceUserVpcPropertyToRosTemplate(properties.userVpc),
-      WorkspaceId: ros.stringToRosTemplate(properties.workspaceId),
+      'EcsSpec': ros.stringToRosTemplate(properties.ecsSpec),
+      'ImageUrl': ros.stringToRosTemplate(properties.imageUrl),
+      'InstanceName': ros.stringToRosTemplate(properties.instanceName),
+      'Accessibility': ros.stringToRosTemplate(properties.accessibility),
+      'Datasets': ros.listMapper(rosInstanceDatasetsPropertyToRosTemplate)(properties.datasets),
+      'EnvironmentVariables': ros.hashMapper(ros.objectToRosTemplate)(properties.environmentVariables),
+      'Labels': ros.listMapper(rosInstanceLabelsPropertyToRosTemplate)(properties.labels),
+      'SaveImage': ros.booleanToRosTemplate(properties.saveImage),
+      'UserVpc': rosInstanceUserVpcPropertyToRosTemplate(properties.userVpc),
+      'WorkspaceId': ros.stringToRosTemplate(properties.workspaceId),
     };
 }
 
@@ -369,8 +369,8 @@ function rosInstanceDatasetsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosInstance_DatasetsPropertyValidator(properties).assertSuccess();
     return {
-      MountPath: ros.stringToRosTemplate(properties.mountPath),
-      DatasetId: ros.stringToRosTemplate(properties.datasetId),
+      'MountPath': ros.stringToRosTemplate(properties.mountPath),
+      'DatasetId': ros.stringToRosTemplate(properties.datasetId),
     };
 }
 
@@ -416,8 +416,8 @@ function rosInstanceLabelsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosInstance_LabelsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -463,7 +463,7 @@ function rosInstanceUserVpcPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosInstance_UserVpcPropertyValidator(properties).assertSuccess();
     return {
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
     };
 }

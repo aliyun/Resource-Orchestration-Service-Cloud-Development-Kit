@@ -31,6 +31,11 @@ export interface BgpGroupProps {
     readonly description?: string | ros.IResolvable;
 
     /**
+     * Property ipVersion: The IP version of the BGP group. Valid values: IPv4 and IPv6.
+     */
+    readonly ipVersion?: string | ros.IResolvable;
+
+    /**
      * Property isFakeAsn: A router that runs BGP typically belongs to only one AS. In some cases, for example,
      * the AS needs to be migrated or is merged with another AS, a new AS number replaces
      * the original one.
@@ -48,6 +53,11 @@ export interface BgpGroupProps {
      * with a letter but cannot start with http:\/\/ or https:\/\/.
      */
     readonly name?: string | ros.IResolvable;
+
+    /**
+     * Property routeQuota: The upper limit of the BGP neighbor's route entries. Unit: entries, default value: 110.
+     */
+    readonly routeQuota?: number | ros.IResolvable;
 }
 
 /**
@@ -86,10 +96,12 @@ export class BgpGroup extends ros.Resource {
         const rosBgpGroup = new RosBgpGroup(this, id,  {
             description: props.description,
             localAsn: props.localAsn,
+            ipVersion: props.ipVersion === undefined || props.ipVersion === null ? 'IPv4' : props.ipVersion,
             authKey: props.authKey,
             routerId: props.routerId,
             peerAsn: props.peerAsn,
             isFakeAsn: props.isFakeAsn,
+            routeQuota: props.routeQuota === undefined || props.routeQuota === null ? 110 : props.routeQuota,
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosBgpGroup;

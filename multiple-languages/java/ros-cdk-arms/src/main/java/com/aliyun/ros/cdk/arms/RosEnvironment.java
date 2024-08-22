@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.arms;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ARMS::Environment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:04.552Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:17.901Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.RosEnvironment")
 public class RosEnvironment extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -177,6 +177,24 @@ public class RosEnvironment extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setEnvironmentType(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "environmentType", java.util.Objects.requireNonNull(value, "environmentType is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDeletePromInstance() {
+        return software.amazon.jsii.Kernel.get(this, "deletePromInstance", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDeletePromInstance(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "deletePromInstance", value);
+    }
+
+    /**
+     */
+    public void setDeletePromInstance(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "deletePromInstance", value);
     }
 
     /**
@@ -540,6 +558,23 @@ public class RosEnvironment extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder environmentType(final com.aliyun.ros.cdk.core.IResolvable environmentType) {
             this.props.environmentType(environmentType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param deletePromInstance This parameter is required.
+         */
+        public Builder deletePromInstance(final java.lang.Boolean deletePromInstance) {
+            this.props.deletePromInstance(deletePromInstance);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param deletePromInstance This parameter is required.
+         */
+        public Builder deletePromInstance(final com.aliyun.ros.cdk.core.IResolvable deletePromInstance) {
+            this.props.deletePromInstance(deletePromInstance);
             return this;
         }
 

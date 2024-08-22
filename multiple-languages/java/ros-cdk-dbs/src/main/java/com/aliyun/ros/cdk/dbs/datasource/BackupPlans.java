@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dbs.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::DBS::BackupPlans</code>, which is used to query the information about backup schedules.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:05.593Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:19.196Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dbs.$Module.class, fqn = "@alicloud/ros-cdk-dbs.datasource.BackupPlans")
 public class BackupPlans extends com.aliyun.ros.cdk.core.Resource {
 
@@ -169,6 +169,43 @@ public class BackupPlans extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder backupPlanName(final com.aliyun.ros.cdk.core.IResolvable backupPlanName) {
             this.props().backupPlanName(backupPlanName);
+            return this;
+        }
+
+        /**
+         * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         * <li>Always: Always refresh the datasource resource when the stack is updated.
+         * Default is Never.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. This parameter is required.
+         */
+        public Builder refreshOptions(final java.lang.String refreshOptions) {
+            this.props().refreshOptions(refreshOptions);
+            return this;
+        }
+        /**
+         * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         * <li>Always: Always refresh the datasource resource when the stack is updated.
+         * Default is Never.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. This parameter is required.
+         */
+        public Builder refreshOptions(final com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.props().refreshOptions(refreshOptions);
             return this;
         }
 

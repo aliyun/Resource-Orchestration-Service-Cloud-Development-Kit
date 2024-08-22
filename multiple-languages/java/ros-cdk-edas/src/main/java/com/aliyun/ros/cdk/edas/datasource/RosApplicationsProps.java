@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.edas.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-edas-applications
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:06.768Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:20.834Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.datasource.RosApplicationsProps")
 @software.amazon.jsii.Jsii.Proxy(RosApplicationsProps.Jsii$Proxy.class)
 public interface RosApplicationsProps extends software.amazon.jsii.JsiiSerializable {
@@ -30,6 +30,12 @@ public interface RosApplicationsProps extends software.amazon.jsii.JsiiSerializa
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
@@ -47,6 +53,7 @@ public interface RosApplicationsProps extends software.amazon.jsii.JsiiSerializa
         java.lang.Object appName;
         java.lang.Object clusterId;
         java.lang.Object logicalRegionId;
+        java.lang.Object refreshOptions;
         java.lang.Object resourceGroupId;
 
         /**
@@ -110,6 +117,26 @@ public interface RosApplicationsProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosApplicationsProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplicationsProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosApplicationsProps#getResourceGroupId}
          * @param resourceGroupId the value to be set.
          * @return {@code this}
@@ -148,6 +175,7 @@ public interface RosApplicationsProps extends software.amazon.jsii.JsiiSerializa
         private final java.lang.Object appName;
         private final java.lang.Object clusterId;
         private final java.lang.Object logicalRegionId;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object resourceGroupId;
 
         /**
@@ -159,6 +187,7 @@ public interface RosApplicationsProps extends software.amazon.jsii.JsiiSerializa
             this.appName = software.amazon.jsii.Kernel.get(this, "appName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.clusterId = software.amazon.jsii.Kernel.get(this, "clusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.logicalRegionId = software.amazon.jsii.Kernel.get(this, "logicalRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -170,6 +199,7 @@ public interface RosApplicationsProps extends software.amazon.jsii.JsiiSerializa
             this.appName = builder.appName;
             this.clusterId = builder.clusterId;
             this.logicalRegionId = builder.logicalRegionId;
+            this.refreshOptions = builder.refreshOptions;
             this.resourceGroupId = builder.resourceGroupId;
         }
 
@@ -186,6 +216,11 @@ public interface RosApplicationsProps extends software.amazon.jsii.JsiiSerializa
         @Override
         public final java.lang.Object getLogicalRegionId() {
             return this.logicalRegionId;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -207,6 +242,9 @@ public interface RosApplicationsProps extends software.amazon.jsii.JsiiSerializa
             }
             if (this.getLogicalRegionId() != null) {
                 data.set("logicalRegionId", om.valueToTree(this.getLogicalRegionId()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
@@ -232,6 +270,7 @@ public interface RosApplicationsProps extends software.amazon.jsii.JsiiSerializa
             if (this.appName != null ? !this.appName.equals(that.appName) : that.appName != null) return false;
             if (this.clusterId != null ? !this.clusterId.equals(that.clusterId) : that.clusterId != null) return false;
             if (this.logicalRegionId != null ? !this.logicalRegionId.equals(that.logicalRegionId) : that.logicalRegionId != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             return this.resourceGroupId != null ? this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId == null;
         }
 
@@ -240,6 +279,7 @@ public interface RosApplicationsProps extends software.amazon.jsii.JsiiSerializa
             int result = this.appName != null ? this.appName.hashCode() : 0;
             result = 31 * result + (this.clusterId != null ? this.clusterId.hashCode() : 0);
             result = 31 * result + (this.logicalRegionId != null ? this.logicalRegionId.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             return result;
         }

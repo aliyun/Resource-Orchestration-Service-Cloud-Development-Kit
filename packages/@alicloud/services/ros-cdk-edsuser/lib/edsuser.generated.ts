@@ -88,13 +88,13 @@ function rosUserPropsToRosTemplate(properties: any, enableResourcePropertyConstr
         RosUserPropsValidator(properties).assertSuccess();
     }
     return {
-      EndUserId: ros.stringToRosTemplate(properties.endUserId),
-      Email: ros.stringToRosTemplate(properties.email),
-      OrgId: ros.stringToRosTemplate(properties.orgId),
-      OwnerType: ros.stringToRosTemplate(properties.ownerType),
-      Password: ros.stringToRosTemplate(properties.password),
-      Phone: ros.stringToRosTemplate(properties.phone),
-      Remark: ros.stringToRosTemplate(properties.remark),
+      'EndUserId': ros.stringToRosTemplate(properties.endUserId),
+      'Email': ros.stringToRosTemplate(properties.email),
+      'OrgId': ros.stringToRosTemplate(properties.orgId),
+      'OwnerType': ros.stringToRosTemplate(properties.ownerType),
+      'Password': ros.stringToRosTemplate(properties.password),
+      'Phone': ros.stringToRosTemplate(properties.phone),
+      'Remark': ros.stringToRosTemplate(properties.remark),
     };
 }
 

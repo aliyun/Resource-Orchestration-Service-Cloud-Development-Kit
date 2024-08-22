@@ -241,6 +241,18 @@ convert_js_project(){
     mv ${js_packages}/ $root/multiple-languages/js
 }
 
+convert_go_project(){
+    root=$PWD
+    dist_dir="$PWD/dist"
+    if [ ! -d "$dist_dir" ]; then
+        echo "directory $dist_dir not found"
+        exit 1
+    fi
+    go_dir="$dist_dir/go/"
+    rm -rf $root/multiple-languages/go
+    mv ${go_dir}/ $root/multiple-languages/go
+}
+
 
 generate_package_version() {
   root=$PWD
@@ -349,8 +361,9 @@ set_dependency_jsii_packages() {
   dotnet_dir="$multiple_languages_dir/dotnet"
   java_dir="$multiple_languages_dir/java"
   python_dir="$multiple_languages_dir/python"
+  go_dir="$multiple_languages_dir/go"
 
-  python3 $root/tools/set_dependency_jsii_packages.py --dotnet_dir_path=${dotnet_dir} --java_dir_path=${java_dir} --python_dir_path=${python_dir} --packages_json_file=${packages_json_file}
+  python3 $root/tools/set_dependency_jsii_packages.py --dotnet_dir_path=${dotnet_dir} --java_dir_path=${java_dir} --python_dir_path=${python_dir} --go_dir_path=${go_dir} --packages_json_file=${packages_json_file}
 }
 
 
@@ -393,6 +406,9 @@ case "$ACTION" in
     ;;
     convert-js-project)
           convert_js_project
+    ;;
+    convert-go-project)
+          convert_go_project
     ;;
     set-dependency-jsii-packages)
           set_dependency_jsii_packages

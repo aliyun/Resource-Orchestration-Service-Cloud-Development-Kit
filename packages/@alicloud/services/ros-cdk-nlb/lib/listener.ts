@@ -90,6 +90,11 @@ export interface ListenerProps {
     readonly proxyProtocolEnabled?: boolean | ros.IResolvable;
 
     /**
+     * Property proxyProtocolV2Config: ProxyProtocolV2Config of the listener
+     */
+    readonly proxyProtocolV2Config?: RosListener.ProxyProtocolV2ConfigProperty | ros.IResolvable;
+
+    /**
      * Property secSensorEnabled: Whether to enable the second-level monitoring function
      */
     readonly secSensorEnabled?: boolean | ros.IResolvable;
@@ -150,6 +155,7 @@ export class Listener extends ros.Resource {
             cps: props.cps,
             serverGroupId: props.serverGroupId,
             idleTimeout: props.idleTimeout,
+            proxyProtocolV2Config: props.proxyProtocolV2Config,
             loadBalancerId: props.loadBalancerId,
             mss: props.mss,
             listenerProtocol: props.listenerProtocol,

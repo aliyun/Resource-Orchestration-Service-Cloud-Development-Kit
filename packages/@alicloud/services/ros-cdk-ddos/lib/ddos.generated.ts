@@ -163,16 +163,16 @@ function rosOriginInstancePropsToRosTemplate(properties: any, enableResourceProp
         RosOriginInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      Edition: ros.stringToRosTemplate(properties.edition),
-      ProtectionMode: ros.stringToRosTemplate(properties.protectionMode),
-      ChargeType: ros.stringToRosTemplate(properties.chargeType),
-      CleanBandwidth: ros.numberToRosTemplate(properties.cleanBandwidth),
-      EnableLog: ros.booleanToRosTemplate(properties.enableLog),
-      IpAddresses: ros.numberToRosTemplate(properties.ipAddresses),
-      NetworkProtocol: ros.stringToRosTemplate(properties.networkProtocol),
-      Period: ros.numberToRosTemplate(properties.period),
-      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
-      Tags: ros.listMapper(rosOriginInstanceTagsPropertyToRosTemplate)(properties.tags),
+      'Edition': ros.stringToRosTemplate(properties.edition),
+      'ProtectionMode': ros.stringToRosTemplate(properties.protectionMode),
+      'ChargeType': ros.stringToRosTemplate(properties.chargeType),
+      'CleanBandwidth': ros.numberToRosTemplate(properties.cleanBandwidth),
+      'EnableLog': ros.booleanToRosTemplate(properties.enableLog),
+      'IpAddresses': ros.numberToRosTemplate(properties.ipAddresses),
+      'NetworkProtocol': ros.stringToRosTemplate(properties.networkProtocol),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
+      'Tags': ros.listMapper(rosOriginInstanceTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -343,7 +343,7 @@ function rosOriginInstanceTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosOriginInstance_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }

@@ -49,8 +49,8 @@ function rosStorageBundlePropsToRosTemplate(properties: any, enableResourcePrope
         RosStorageBundlePropsValidator(properties).assertSuccess();
     }
     return {
-      StorageBundleName: ros.stringToRosTemplate(properties.storageBundleName),
-      Description: ros.stringToRosTemplate(properties.description),
+      'StorageBundleName': ros.stringToRosTemplate(properties.storageBundleName),
+      'Description': ros.stringToRosTemplate(properties.description),
     };
 }
 

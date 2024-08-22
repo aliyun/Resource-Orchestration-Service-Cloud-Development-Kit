@@ -69,11 +69,11 @@ function rosCertificatePropsToRosTemplate(properties: any, enableResourcePropert
         RosCertificatePropsValidator(properties).assertSuccess();
     }
     return {
-      Cert: ros.stringToRosTemplate(properties.cert),
-      Key: ros.stringToRosTemplate(properties.key),
-      Name: ros.stringToRosTemplate(properties.name),
-      Lang: ros.stringToRosTemplate(properties.lang),
-      SourceIp: ros.stringToRosTemplate(properties.sourceIp),
+      'Cert': ros.stringToRosTemplate(properties.cert),
+      'Key': ros.stringToRosTemplate(properties.key),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'Lang': ros.stringToRosTemplate(properties.lang),
+      'SourceIp': ros.stringToRosTemplate(properties.sourceIp),
     };
 }
 
@@ -270,12 +270,12 @@ function rosOrderPropsToRosTemplate(properties: any, enableResourcePropertyConst
         RosOrderPropsValidator(properties).assertSuccess();
     }
     return {
-      CertBrand: ros.stringToRosTemplate(properties.certBrand),
-      CertType: ros.stringToRosTemplate(properties.certType),
-      DomainCnt: ros.numberToRosTemplate(properties.domainCnt),
-      DomainType: ros.stringToRosTemplate(properties.domainType),
-      Period: ros.numberToRosTemplate(properties.period),
-      Service: ros.stringToRosTemplate(properties.service),
+      'CertBrand': ros.stringToRosTemplate(properties.certBrand),
+      'CertType': ros.stringToRosTemplate(properties.certType),
+      'DomainCnt': ros.numberToRosTemplate(properties.domainCnt),
+      'DomainType': ros.stringToRosTemplate(properties.domainType),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'Service': ros.stringToRosTemplate(properties.service),
     };
 }
 
@@ -522,17 +522,17 @@ function rosSslCertificatePropsToRosTemplate(properties: any, enableResourceProp
         RosSslCertificatePropsValidator(properties).assertSuccess();
     }
     return {
-      CertBrand: ros.stringToRosTemplate(properties.certBrand),
-      CertType: ros.stringToRosTemplate(properties.certType),
-      CompanyName: ros.stringToRosTemplate(properties.companyName),
-      Csr: ros.stringToRosTemplate(properties.csr),
-      Domains: ros.listMapper(ros.stringToRosTemplate)(properties.domains),
-      DomainType: ros.stringToRosTemplate(properties.domainType),
-      Email: ros.stringToRosTemplate(properties.email),
-      Phone: ros.stringToRosTemplate(properties.phone),
-      ProductCode: ros.stringToRosTemplate(properties.productCode),
-      Username: ros.stringToRosTemplate(properties.username),
-      ValidateType: ros.stringToRosTemplate(properties.validateType),
+      'CertBrand': ros.stringToRosTemplate(properties.certBrand),
+      'CertType': ros.stringToRosTemplate(properties.certType),
+      'CompanyName': ros.stringToRosTemplate(properties.companyName),
+      'Csr': ros.stringToRosTemplate(properties.csr),
+      'Domains': ros.listMapper(ros.stringToRosTemplate)(properties.domains),
+      'DomainType': ros.stringToRosTemplate(properties.domainType),
+      'Email': ros.stringToRosTemplate(properties.email),
+      'Phone': ros.stringToRosTemplate(properties.phone),
+      'ProductCode': ros.stringToRosTemplate(properties.productCode),
+      'Username': ros.stringToRosTemplate(properties.username),
+      'ValidateType': ros.stringToRosTemplate(properties.validateType),
     };
 }
 

@@ -1,0 +1,85 @@
+import * as ros from '@alicloud/ros-cdk-core';
+import { RosAccessGroup } from './nas.generated';
+// Generated from the AliCloud ROS Resource Specification
+export { RosAccessGroup as AccessGroupProperty };
+
+/**
+ * Properties for defining a `AccessGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-accessgroup
+ */
+export interface AccessGroupProps {
+
+    /**
+     * Property accessGroupName: The name of the permission group.
+     */
+    readonly accessGroupName: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+}
+
+/**
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::NAS::AccessGroup`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccessGroup`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-accessgroup
+ */
+export class AccessGroup extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: AccessGroupProps;
+    protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute AccessGroupName: The name of the permission group.
+     */
+    public readonly attrAccessGroupName: ros.IResolvable;
+
+    /**
+     * Attribute AccessGroupType: Permission group types, including VPC and Classic.
+     */
+    public readonly attrAccessGroupType: ros.IResolvable;
+
+    /**
+     * Attribute Description: Permission group description information.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * Attribute MountTargetCount: The number of Mount points to which this permission group is applied.
+     */
+    public readonly attrMountTargetCount: ros.IResolvable;
+
+    /**
+     * Attribute RuleCount: The number of permission group rules contained in this permission group.
+     */
+    public readonly attrRuleCount: ros.IResolvable;
+
+    /**
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: AccessGroupProps, enableResourcePropertyConstraint:boolean = true) {
+        super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+
+        const rosAccessGroup = new RosAccessGroup(this, id,  {
+            accessGroupName: props.accessGroupName,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
+        }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
+        this.resource = rosAccessGroup;
+        this.attrAccessGroupName = rosAccessGroup.attrAccessGroupName;
+        this.attrAccessGroupType = rosAccessGroup.attrAccessGroupType;
+        this.attrDescription = rosAccessGroup.attrDescription;
+        this.attrMountTargetCount = rosAccessGroup.attrMountTargetCount;
+        this.attrRuleCount = rosAccessGroup.attrRuleCount;
+    }
+}

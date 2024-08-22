@@ -12,6 +12,14 @@ export interface RosConsumerGroupsProps {
      * @Property instanceId: Instance ID.
      */
     readonly instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -26,6 +34,13 @@ function RosConsumerGroupsPropsValidator(properties: any): ros.ValidationResult 
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosConsumerGroupsProps"');
 }
 
@@ -43,7 +58,8 @@ function rosConsumerGroupsPropsToRosTemplate(properties: any, enableResourceProp
         RosConsumerGroupsPropsValidator(properties).assertSuccess();
     }
     return {
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -77,6 +93,14 @@ export class RosConsumerGroups extends ros.RosResource {
     public instanceId: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -88,12 +112,14 @@ export class RosConsumerGroups extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.instanceId = props.instanceId;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             instanceId: this.instanceId,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.pvtz;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-rule
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:08.589Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:23.270Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.RosRuleProps")
 @software.amazon.jsii.Jsii.Proxy(RosRuleProps.Jsii$Proxy.class)
 public interface RosRuleProps extends software.amazon.jsii.JsiiSerializable {

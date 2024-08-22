@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::VPC::CommonBandwidthPackages</code>, which is used to query the elastic IP address (EIP) bandwidth plans in a specified region.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.888Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:25.056Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.RosCommonBandwidthPackages")
 public class RosCommonBandwidthPackages extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -103,6 +103,24 @@ public class RosCommonBandwidthPackages extends com.aliyun.ros.cdk.core.RosResou
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setRefreshOptions(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "refreshOptions", value);
+    }
+
+    /**
+     */
+    public void setRefreshOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "refreshOptions", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -176,6 +194,23 @@ public class RosCommonBandwidthPackages extends com.aliyun.ros.cdk.core.RosResou
          */
         public Builder commonBandwidthPackageName(final com.aliyun.ros.cdk.core.IResolvable commonBandwidthPackageName) {
             this.props.commonBandwidthPackageName(commonBandwidthPackageName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param refreshOptions This parameter is required.
+         */
+        public Builder refreshOptions(final java.lang.String refreshOptions) {
+            this.props.refreshOptions(refreshOptions);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param refreshOptions This parameter is required.
+         */
+        public Builder refreshOptions(final com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.props.refreshOptions(refreshOptions);
             return this;
         }
 

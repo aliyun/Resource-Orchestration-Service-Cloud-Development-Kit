@@ -12,6 +12,14 @@ export interface RosClustersProps {
      * @Property clusterAliasName: The alias name of cluster.
      */
     readonly clusterAliasName?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -25,6 +33,13 @@ function RosClustersPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('clusterAliasName', ros.validateString)(properties.clusterAliasName));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosClustersProps"');
 }
 
@@ -42,7 +57,8 @@ function rosClustersPropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosClustersPropsValidator(properties).assertSuccess();
     }
     return {
-      ClusterAliasName: ros.stringToRosTemplate(properties.clusterAliasName),
+      'ClusterAliasName': ros.stringToRosTemplate(properties.clusterAliasName),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -76,6 +92,14 @@ export class RosClusters extends ros.RosResource {
     public clusterAliasName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -87,12 +111,14 @@ export class RosClusters extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.clusterAliasName = props.clusterAliasName;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             clusterAliasName: this.clusterAliasName,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -127,6 +153,14 @@ export interface RosGatewaysProps {
     readonly name?: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * @Property vpc: The vpc ID of gateway.
      */
     readonly vpc?: string | ros.IResolvable;
@@ -147,6 +181,13 @@ function RosGatewaysPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('gatewayType', ros.validateString)(properties.gatewayType));
     errors.collect(ros.propertyValidator('gatewayId', ros.validateString)(properties.gatewayId));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosGatewaysProps"');
 }
 
@@ -164,11 +205,12 @@ function rosGatewaysPropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosGatewaysPropsValidator(properties).assertSuccess();
     }
     return {
-      GatewayId: ros.stringToRosTemplate(properties.gatewayId),
-      GatewayType: ros.stringToRosTemplate(properties.gatewayType),
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
-      Name: ros.stringToRosTemplate(properties.name),
-      Vpc: ros.stringToRosTemplate(properties.vpc),
+      'GatewayId': ros.stringToRosTemplate(properties.gatewayId),
+      'GatewayType': ros.stringToRosTemplate(properties.gatewayType),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'Vpc': ros.stringToRosTemplate(properties.vpc),
     };
 }
 
@@ -217,6 +259,14 @@ export class RosGateways extends ros.RosResource {
     public name: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property vpc: The vpc ID of gateway.
      */
     public vpc: string | ros.IResolvable | undefined;
@@ -236,6 +286,7 @@ export class RosGateways extends ros.RosResource {
         this.gatewayType = props.gatewayType;
         this.instanceId = props.instanceId;
         this.name = props.name;
+        this.refreshOptions = props.refreshOptions;
         this.vpc = props.vpc;
     }
 
@@ -246,6 +297,7 @@ export class RosGateways extends ros.RosResource {
             gatewayType: this.gatewayType,
             instanceId: this.instanceId,
             name: this.name,
+            refreshOptions: this.refreshOptions,
             vpc: this.vpc,
         };
     }

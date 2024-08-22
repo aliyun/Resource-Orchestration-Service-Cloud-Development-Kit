@@ -10,6 +10,14 @@ export { RosRole as RoleProperty };
 export interface RoleProps {
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property roleName: RAM role name. If not specified, the current ram role will be used.
      */
     readonly roleName?: string | ros.IResolvable;
@@ -75,6 +83,7 @@ export class Role extends ros.Resource {
 
         const rosRole = new RosRole(this, id,  {
             roleName: props.roleName,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosRole;
         this.attrArn = rosRole.attrArn;

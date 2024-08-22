@@ -968,24 +968,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hologram
         public interface IEndpointsProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: vpcId: VPC primary key.
-            /// </remarks>
-            [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            object VpcId
-            {
-                get;
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: vSwitchId: The ID of the virtual switch.
-            /// </remarks>
-            [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            object VSwitchId
-            {
-                get;
-            }
-
-            /// <remarks>
             /// <strong>Property</strong>: alternativeEndpoints: Some old instances have both AnyTunnel and SingleTunnel enabled. When switching from AnyTunnel to SingleTunnel, the endpoints of both are retained. Therefore, one more field is required to store the Endpoint.
             /// </remarks>
             [JsiiProperty(name: "alternativeEndpoints", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1038,6 +1020,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hologram
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: vpcId: VPC primary key.
+            /// </remarks>
+            [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? VpcId
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: vpcInstanceId: The vpc instance ID.
             /// </remarks>
             [JsiiProperty(name: "vpcInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1050,29 +1045,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hologram
                 }
             }
 
+            /// <remarks>
+            /// <strong>Property</strong>: vSwitchId: The ID of the virtual switch.
+            /// </remarks>
+            [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? VSwitchId
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
             [JsiiTypeProxy(nativeType: typeof(IEndpointsProperty), fullyQualifiedName: "@alicloud/ros-cdk-hologram.RosInstance.EndpointsProperty")]
             internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Hologram.RosInstance.IEndpointsProperty
             {
                 private _Proxy(ByRefValue reference): base(reference)
                 {
-                }
-
-                /// <remarks>
-                /// <strong>Property</strong>: vpcId: VPC primary key.
-                /// </remarks>
-                [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-                public object VpcId
-                {
-                    get => GetInstanceProperty<object>()!;
-                }
-
-                /// <remarks>
-                /// <strong>Property</strong>: vSwitchId: The ID of the virtual switch.
-                /// </remarks>
-                [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-                public object VSwitchId
-                {
-                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
@@ -1116,6 +1106,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hologram
                 }
 
                 /// <remarks>
+                /// <strong>Property</strong>: vpcId: VPC primary key.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? VpcId
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
                 /// <strong>Property</strong>: vpcInstanceId: The vpc instance ID.
                 /// </remarks>
                 [JsiiOptional]
@@ -1124,77 +1124,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hologram
                 {
                     get => GetInstanceProperty<object?>();
                 }
+
+                /// <remarks>
+                /// <strong>Property</strong>: vSwitchId: The ID of the virtual switch.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? VSwitchId
+                {
+                    get => GetInstanceProperty<object?>();
+                }
             }
         }
-        #pragma warning disable CS8618
-
         [JsiiByValue(fqn: "@alicloud/ros-cdk-hologram.RosInstance.EndpointsProperty")]
         public class EndpointsProperty : AlibabaCloud.SDK.ROS.CDK.Hologram.RosInstance.IEndpointsProperty
         {
-            private object _vpcId;
-
-            /// <remarks>
-            /// <strong>Property</strong>: vpcId: VPC primary key.
-            /// </remarks>
-            [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object VpcId
-            {
-                get => _vpcId;
-                set
-                {
-                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                    {
-                        switch (value)
-                        {
-                            case string cast_cd4240:
-                                break;
-                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                                break;
-                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                                // Not enough information to type-check...
-                                break;
-                            case null:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
-                            default:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                        }
-                    }
-                    _vpcId = value;
-                }
-            }
-
-            private object _vSwitchId;
-
-            /// <remarks>
-            /// <strong>Property</strong>: vSwitchId: The ID of the virtual switch.
-            /// </remarks>
-            [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object VSwitchId
-            {
-                get => _vSwitchId;
-                set
-                {
-                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                    {
-                        switch (value)
-                        {
-                            case string cast_cd4240:
-                                break;
-                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                                break;
-                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                                // Not enough information to type-check...
-                                break;
-                            case null:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
-                            default:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                        }
-                    }
-                    _vSwitchId = value;
-                }
-            }
-
             private object? _alternativeEndpoints;
 
             /// <remarks>
@@ -1327,6 +1271,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hologram
                 }
             }
 
+            private object? _vpcId;
+
+            /// <remarks>
+            /// <strong>Property</strong>: vpcId: VPC primary key.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? VpcId
+            {
+                get => _vpcId;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _vpcId = value;
+                }
+            }
+
             private object? _vpcInstanceId;
 
             /// <remarks>
@@ -1357,6 +1334,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hologram
                         }
                     }
                     _vpcInstanceId = value;
+                }
+            }
+
+            private object? _vSwitchId;
+
+            /// <remarks>
+            /// <strong>Property</strong>: vSwitchId: The ID of the virtual switch.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? VSwitchId
+            {
+                get => _vSwitchId;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _vSwitchId = value;
                 }
             }
         }

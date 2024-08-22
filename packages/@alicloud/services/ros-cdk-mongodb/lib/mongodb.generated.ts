@@ -273,36 +273,36 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      DBInstanceClass: ros.stringToRosTemplate(properties.dbInstanceClass),
-      DBInstanceStorage: ros.numberToRosTemplate(properties.dbInstanceStorage),
-      AccountPassword: ros.stringToRosTemplate(properties.accountPassword),
-      AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
-      BackupId: ros.stringToRosTemplate(properties.backupId),
-      BusinessInfo: ros.stringToRosTemplate(properties.businessInfo),
-      ChargeType: ros.stringToRosTemplate(properties.chargeType),
-      CouponNo: ros.stringToRosTemplate(properties.couponNo),
-      DatabaseNames: ros.stringToRosTemplate(properties.databaseNames),
-      DBInstanceDescription: ros.stringToRosTemplate(properties.dbInstanceDescription),
-      EngineVersion: ros.stringToRosTemplate(properties.engineVersion),
-      HiddenZoneId: ros.stringToRosTemplate(properties.hiddenZoneId),
-      NetworkType: ros.stringToRosTemplate(properties.networkType),
-      Period: ros.numberToRosTemplate(properties.period),
-      ReadonlyReplicas: ros.numberToRosTemplate(properties.readonlyReplicas),
-      ReplicationFactor: ros.numberToRosTemplate(properties.replicationFactor),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      RestoreTime: ros.stringToRosTemplate(properties.restoreTime),
-      SecondaryZoneId: ros.stringToRosTemplate(properties.secondaryZoneId),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
-      SecurityIPArray: ros.stringToRosTemplate(properties.securityIpArray),
-      SrcDBInstanceId: ros.stringToRosTemplate(properties.srcDbInstanceId),
-      StorageEngine: ros.stringToRosTemplate(properties.storageEngine),
-      StorageType: ros.stringToRosTemplate(properties.storageType),
-      Tags: ros.listMapper(rosInstanceTagsPropertyToRosTemplate)(properties.tags),
-      TDEStatus: ros.booleanToRosTemplate(properties.tdeStatus),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      VpcPasswordFree: ros.booleanToRosTemplate(properties.vpcPasswordFree),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      'DBInstanceClass': ros.stringToRosTemplate(properties.dbInstanceClass),
+      'DBInstanceStorage': ros.numberToRosTemplate(properties.dbInstanceStorage),
+      'AccountPassword': ros.stringToRosTemplate(properties.accountPassword),
+      'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
+      'BackupId': ros.stringToRosTemplate(properties.backupId),
+      'BusinessInfo': ros.stringToRosTemplate(properties.businessInfo),
+      'ChargeType': ros.stringToRosTemplate(properties.chargeType),
+      'CouponNo': ros.stringToRosTemplate(properties.couponNo),
+      'DatabaseNames': ros.stringToRosTemplate(properties.databaseNames),
+      'DBInstanceDescription': ros.stringToRosTemplate(properties.dbInstanceDescription),
+      'EngineVersion': ros.stringToRosTemplate(properties.engineVersion),
+      'HiddenZoneId': ros.stringToRosTemplate(properties.hiddenZoneId),
+      'NetworkType': ros.stringToRosTemplate(properties.networkType),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'ReadonlyReplicas': ros.numberToRosTemplate(properties.readonlyReplicas),
+      'ReplicationFactor': ros.numberToRosTemplate(properties.replicationFactor),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'RestoreTime': ros.stringToRosTemplate(properties.restoreTime),
+      'SecondaryZoneId': ros.stringToRosTemplate(properties.secondaryZoneId),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
+      'SecurityIPArray': ros.stringToRosTemplate(properties.securityIpArray),
+      'SrcDBInstanceId': ros.stringToRosTemplate(properties.srcDbInstanceId),
+      'StorageEngine': ros.stringToRosTemplate(properties.storageEngine),
+      'StorageType': ros.stringToRosTemplate(properties.storageType),
+      'Tags': ros.listMapper(rosInstanceTagsPropertyToRosTemplate)(properties.tags),
+      'TDEStatus': ros.booleanToRosTemplate(properties.tdeStatus),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VpcPasswordFree': ros.booleanToRosTemplate(properties.vpcPasswordFree),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
     };
 }
 
@@ -636,8 +636,8 @@ function rosInstanceTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosInstance_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -888,30 +888,30 @@ function rosShardingInstancePropsToRosTemplate(properties: any, enableResourcePr
         RosShardingInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      ConfigServer: ros.listMapper(rosShardingInstanceConfigServerPropertyToRosTemplate)(properties.configServer),
-      Mongos: ros.listMapper(rosShardingInstanceMongosPropertyToRosTemplate)(properties.mongos),
-      ReplicaSet: ros.listMapper(rosShardingInstanceReplicaSetPropertyToRosTemplate)(properties.replicaSet),
-      AccountPassword: ros.stringToRosTemplate(properties.accountPassword),
-      AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
-      ChargeType: ros.stringToRosTemplate(properties.chargeType),
-      DBInstanceDescription: ros.stringToRosTemplate(properties.dbInstanceDescription),
-      EngineVersion: ros.stringToRosTemplate(properties.engineVersion),
-      HiddenZoneId: ros.stringToRosTemplate(properties.hiddenZoneId),
-      NetworkType: ros.stringToRosTemplate(properties.networkType),
-      Period: ros.numberToRosTemplate(properties.period),
-      ProtocolType: ros.stringToRosTemplate(properties.protocolType),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      RestoreTime: ros.stringToRosTemplate(properties.restoreTime),
-      SecondaryZoneId: ros.stringToRosTemplate(properties.secondaryZoneId),
-      SecurityIPArray: ros.stringToRosTemplate(properties.securityIpArray),
-      SrcDBInstanceId: ros.stringToRosTemplate(properties.srcDbInstanceId),
-      StorageEngine: ros.stringToRosTemplate(properties.storageEngine),
-      StorageType: ros.stringToRosTemplate(properties.storageType),
-      Tags: ros.listMapper(rosShardingInstanceTagsPropertyToRosTemplate)(properties.tags),
-      TDEStatus: ros.booleanToRosTemplate(properties.tdeStatus),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      'ConfigServer': ros.listMapper(rosShardingInstanceConfigServerPropertyToRosTemplate)(properties.configServer),
+      'Mongos': ros.listMapper(rosShardingInstanceMongosPropertyToRosTemplate)(properties.mongos),
+      'ReplicaSet': ros.listMapper(rosShardingInstanceReplicaSetPropertyToRosTemplate)(properties.replicaSet),
+      'AccountPassword': ros.stringToRosTemplate(properties.accountPassword),
+      'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
+      'ChargeType': ros.stringToRosTemplate(properties.chargeType),
+      'DBInstanceDescription': ros.stringToRosTemplate(properties.dbInstanceDescription),
+      'EngineVersion': ros.stringToRosTemplate(properties.engineVersion),
+      'HiddenZoneId': ros.stringToRosTemplate(properties.hiddenZoneId),
+      'NetworkType': ros.stringToRosTemplate(properties.networkType),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'ProtocolType': ros.stringToRosTemplate(properties.protocolType),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'RestoreTime': ros.stringToRosTemplate(properties.restoreTime),
+      'SecondaryZoneId': ros.stringToRosTemplate(properties.secondaryZoneId),
+      'SecurityIPArray': ros.stringToRosTemplate(properties.securityIpArray),
+      'SrcDBInstanceId': ros.stringToRosTemplate(properties.srcDbInstanceId),
+      'StorageEngine': ros.stringToRosTemplate(properties.storageEngine),
+      'StorageType': ros.stringToRosTemplate(properties.storageType),
+      'Tags': ros.listMapper(rosShardingInstanceTagsPropertyToRosTemplate)(properties.tags),
+      'TDEStatus': ros.booleanToRosTemplate(properties.tdeStatus),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
     };
 }
 
@@ -1188,8 +1188,8 @@ function rosShardingInstanceConfigServerPropertyToRosTemplate(properties: any): 
     if (!ros.canInspect(properties)) { return properties; }
     RosShardingInstance_ConfigServerPropertyValidator(properties).assertSuccess();
     return {
-      Storage: ros.numberToRosTemplate(properties.storage),
-      Class: ros.stringToRosTemplate(properties.class),
+      'Storage': ros.numberToRosTemplate(properties.storage),
+      'Class': ros.stringToRosTemplate(properties.class),
     };
 }
 
@@ -1231,7 +1231,7 @@ function rosShardingInstanceMongosPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosShardingInstance_MongosPropertyValidator(properties).assertSuccess();
     return {
-      Class: ros.stringToRosTemplate(properties.class),
+      'Class': ros.stringToRosTemplate(properties.class),
     };
 }
 
@@ -1293,9 +1293,9 @@ function rosShardingInstanceReplicaSetPropertyToRosTemplate(properties: any): an
     if (!ros.canInspect(properties)) { return properties; }
     RosShardingInstance_ReplicaSetPropertyValidator(properties).assertSuccess();
     return {
-      Storage: ros.numberToRosTemplate(properties.storage),
-      ReadonlyReplicas: ros.numberToRosTemplate(properties.readonlyReplicas),
-      Class: ros.stringToRosTemplate(properties.class),
+      'Storage': ros.numberToRosTemplate(properties.storage),
+      'ReadonlyReplicas': ros.numberToRosTemplate(properties.readonlyReplicas),
+      'Class': ros.stringToRosTemplate(properties.class),
     };
 }
 
@@ -1342,7 +1342,7 @@ function rosShardingInstanceTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosShardingInstance_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }

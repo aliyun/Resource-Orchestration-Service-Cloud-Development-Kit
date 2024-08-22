@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ess;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-servergroupattachment
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:07.084Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:21.525Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosServerGroupAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(RosServerGroupAttachmentProps.Jsii$Proxy.class)
 public interface RosServerGroupAttachmentProps extends software.amazon.jsii.JsiiSerializable {

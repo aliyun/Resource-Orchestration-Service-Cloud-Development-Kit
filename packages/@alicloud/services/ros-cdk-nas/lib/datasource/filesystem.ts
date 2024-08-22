@@ -13,6 +13,14 @@ export interface FileSystemProps {
      * Property fileSystemId: The ID of the file system to be created.
      */
     readonly fileSystemId: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -120,6 +128,7 @@ export class FileSystem extends ros.Resource {
 
         const rosFileSystem = new RosFileSystem(this, id,  {
             fileSystemId: props.fileSystemId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosFileSystem;
         this.attrBandwidth = rosFileSystem.attrBandwidth;

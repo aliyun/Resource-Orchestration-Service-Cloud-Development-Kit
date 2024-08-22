@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * TagManager facilitates a common implementation of tagging for Constructs.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:04.076Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:17.092Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.TagManager")
 public class TagManager extends software.amazon.jsii.JsiiObject {
 

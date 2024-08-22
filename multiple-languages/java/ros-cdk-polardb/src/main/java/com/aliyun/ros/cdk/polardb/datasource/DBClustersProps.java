@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.polardb.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-dbclusters
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:08.526Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:23.151Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.datasource.DBClustersProps")
 @software.amazon.jsii.Jsii.Proxy(DBClustersProps.Jsii$Proxy.class)
 public interface DBClustersProps extends software.amazon.jsii.JsiiSerializable {
@@ -59,6 +59,21 @@ public interface DBClustersProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
      * Property resourceGroupId: The ID of the resource group.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
@@ -80,6 +95,7 @@ public interface DBClustersProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object dbVersion;
         java.lang.Object description;
         java.lang.Object expired;
+        java.lang.Object refreshOptions;
         java.lang.Object resourceGroupId;
 
         /**
@@ -205,6 +221,40 @@ public interface DBClustersProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link DBClustersProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBClustersProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DBClustersProps#getResourceGroupId}
          * @param resourceGroupId Property resourceGroupId: The ID of the resource group.
          * @return {@code this}
@@ -245,6 +295,7 @@ public interface DBClustersProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object dbVersion;
         private final java.lang.Object description;
         private final java.lang.Object expired;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object resourceGroupId;
 
         /**
@@ -258,6 +309,7 @@ public interface DBClustersProps extends software.amazon.jsii.JsiiSerializable {
             this.dbVersion = software.amazon.jsii.Kernel.get(this, "dbVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.expired = software.amazon.jsii.Kernel.get(this, "expired", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -271,6 +323,7 @@ public interface DBClustersProps extends software.amazon.jsii.JsiiSerializable {
             this.dbVersion = builder.dbVersion;
             this.description = builder.description;
             this.expired = builder.expired;
+            this.refreshOptions = builder.refreshOptions;
             this.resourceGroupId = builder.resourceGroupId;
         }
 
@@ -300,6 +353,11 @@ public interface DBClustersProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
+        }
+
+        @Override
         public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
         }
@@ -324,6 +382,9 @@ public interface DBClustersProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getExpired() != null) {
                 data.set("expired", om.valueToTree(this.getExpired()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
@@ -351,6 +412,7 @@ public interface DBClustersProps extends software.amazon.jsii.JsiiSerializable {
             if (this.dbVersion != null ? !this.dbVersion.equals(that.dbVersion) : that.dbVersion != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.expired != null ? !this.expired.equals(that.expired) : that.expired != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             return this.resourceGroupId != null ? this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId == null;
         }
 
@@ -361,6 +423,7 @@ public interface DBClustersProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.dbVersion != null ? this.dbVersion.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.expired != null ? this.expired.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             return result;
         }

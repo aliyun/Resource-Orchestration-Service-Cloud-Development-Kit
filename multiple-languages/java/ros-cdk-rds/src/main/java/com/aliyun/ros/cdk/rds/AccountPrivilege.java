@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::RDS::AccountPrivilege</code>, which is used to authorize an account to access a database.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:08.736Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:23.440Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.AccountPrivilege")
 public class AccountPrivilege extends com.aliyun.ros.cdk.core.Resource {
 

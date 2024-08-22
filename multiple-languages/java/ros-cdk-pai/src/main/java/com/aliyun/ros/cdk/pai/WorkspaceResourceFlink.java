@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pai;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::PAI::WorkspaceResourceFlink</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:08.366Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:22.889Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pai.$Module.class, fqn = "@alicloud/ros-cdk-pai.WorkspaceResourceFlink")
 public class WorkspaceResourceFlink extends com.aliyun.ros.cdk.core.Resource {
 
@@ -50,7 +50,7 @@ public class WorkspaceResourceFlink extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Attribute GroupName: Resource group name.
      * <p>
-     * If you want to obtain a resource group name, see [ListResources](~~ 449143 ~~).
+     * If you want to obtain a resource group name, see [ListResources].
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrGroupName() {
         return software.amazon.jsii.Kernel.get(this, "attrGroupName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));

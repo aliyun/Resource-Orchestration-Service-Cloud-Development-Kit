@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Options applied when copying directories.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:03.879Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:16.933Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.CopyOptions")
 @software.amazon.jsii.Jsii.Proxy(CopyOptions.Jsii$Proxy.class)
 public interface CopyOptions extends software.amazon.jsii.JsiiSerializable {

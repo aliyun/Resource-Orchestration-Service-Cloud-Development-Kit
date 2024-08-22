@@ -80,10 +80,10 @@ function rosGroupPropsToRosTemplate(properties: any, enableResourcePropertyConst
         RosGroupPropsValidator(properties).assertSuccess();
     }
     return {
-      GroupId: ros.stringToRosTemplate(properties.groupId),
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
-      GroupType: ros.stringToRosTemplate(properties.groupType),
-      Remark: ros.stringToRosTemplate(properties.remark),
+      'GroupId': ros.stringToRosTemplate(properties.groupId),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'GroupType': ros.stringToRosTemplate(properties.groupType),
+      'Remark': ros.stringToRosTemplate(properties.remark),
     };
 }
 
@@ -246,10 +246,10 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      InstanceName: ros.stringToRosTemplate(properties.instanceName),
-      DeletionForce: ros.booleanToRosTemplate(properties.deletionForce),
-      Remark: ros.stringToRosTemplate(properties.remark),
-      Tags: ros.listMapper(rosInstanceTagsPropertyToRosTemplate)(properties.tags),
+      'InstanceName': ros.stringToRosTemplate(properties.instanceName),
+      'DeletionForce': ros.booleanToRosTemplate(properties.deletionForce),
+      'Remark': ros.stringToRosTemplate(properties.remark),
+      'Tags': ros.listMapper(rosInstanceTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -401,8 +401,8 @@ function rosInstanceTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosInstance_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -482,10 +482,10 @@ function rosTopicPropsToRosTemplate(properties: any, enableResourcePropertyConst
         RosTopicPropsValidator(properties).assertSuccess();
     }
     return {
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
-      MessageType: ros.numberToRosTemplate(properties.messageType),
-      Topic: ros.stringToRosTemplate(properties.topic),
-      Remark: ros.stringToRosTemplate(properties.remark),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'MessageType': ros.numberToRosTemplate(properties.messageType),
+      'Topic': ros.stringToRosTemplate(properties.topic),
+      'Remark': ros.stringToRosTemplate(properties.remark),
     };
 }
 

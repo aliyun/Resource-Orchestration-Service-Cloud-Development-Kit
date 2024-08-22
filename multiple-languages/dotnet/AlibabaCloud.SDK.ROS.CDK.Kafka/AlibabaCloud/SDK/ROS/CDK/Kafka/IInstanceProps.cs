@@ -23,25 +23,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             get;
         }
 
-        /// <summary>Property diskSize: The size of the disk to be configured for the Message Queue for Apache Kafka instance.</summary>
-        [JsiiProperty(name: "diskSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object DiskSize
-        {
-            get;
-        }
-
-        /// <summary>Property diskType: The type of the disk to be configured for the Message Queue for Apache Kafka instance.</summary>
-        /// <remarks>
-        /// Valid values:
-        /// 0: Ultra disk
-        /// 1: SSD
-        /// </remarks>
-        [JsiiProperty(name: "diskType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object DiskType
-        {
-            get;
-        }
-
         /// <summary>Property deletionForce: Whether delete all topics, consumer groups of the kafka instance and then delete instance.</summary>
         /// <remarks>
         /// Default is false
@@ -60,6 +41,33 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         [JsiiProperty(name: "deployOption", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-kafka.RosInstance.DeployOptionProperty\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? DeployOption
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property diskSize: The size of the disk to be configured for the Message Queue for Apache Kafka instance.</summary>
+        [JsiiProperty(name: "diskSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DiskSize
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property diskType: The type of the disk to be configured for the Message Queue for Apache Kafka instance.</summary>
+        /// <remarks>
+        /// Valid values:
+        /// 0: Ultra disk
+        /// 1: SSD
+        /// </remarks>
+        [JsiiProperty(name: "diskType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DiskType
         {
             get
             {
@@ -148,6 +156,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             }
         }
 
+        /// <summary>Property serverlessConfig: Serverless instance related settings.</summary>
+        [JsiiProperty(name: "serverlessConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-kafka.RosInstance.ServerlessConfigProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ServerlessConfig
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property specType: The edition of the Message Queue for Apache Kafka instance.</summary>
         /// <remarks>
         /// Valid values:
@@ -221,25 +240,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property diskSize: The size of the disk to be configured for the Message Queue for Apache Kafka instance.</summary>
-            [JsiiProperty(name: "diskSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object DiskSize
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
-            /// <summary>Property diskType: The type of the disk to be configured for the Message Queue for Apache Kafka instance.</summary>
-            /// <remarks>
-            /// Valid values:
-            /// 0: Ultra disk
-            /// 1: SSD
-            /// </remarks>
-            [JsiiProperty(name: "diskType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object DiskType
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
             /// <summary>Property deletionForce: Whether delete all topics, consumer groups of the kafka instance and then delete instance.</summary>
             /// <remarks>
             /// Default is false
@@ -255,6 +255,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             [JsiiOptional]
             [JsiiProperty(name: "deployOption", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-kafka.RosInstance.DeployOptionProperty\"}]}}", isOptional: true)]
             public object? DeployOption
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property diskSize: The size of the disk to be configured for the Message Queue for Apache Kafka instance.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "diskSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DiskSize
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property diskType: The type of the disk to be configured for the Message Queue for Apache Kafka instance.</summary>
+            /// <remarks>
+            /// Valid values:
+            /// 0: Ultra disk
+            /// 1: SSD
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "diskType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DiskType
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -318,6 +339,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             [JsiiOptional]
             [JsiiProperty(name: "payType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PayType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property serverlessConfig: Serverless instance related settings.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "serverlessConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-kafka.RosInstance.ServerlessConfigProperty\"}]}}", isOptional: true)]
+            public object? ServerlessConfig
             {
                 get => GetInstanceProperty<object?>();
             }

@@ -10,6 +10,14 @@ export { RosZones as ZonesProperty };
 export interface ZonesProps {
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property resourceGroupId: ResourceGroupId
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -50,6 +58,7 @@ export class Zones extends ros.Resource {
 
         const rosZones = new RosZones(this, id,  {
             resourceGroupId: props.resourceGroupId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosZones;
         this.attrZoneIds = rosZones.attrZoneIds;

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SLS::Dashboard</code>, which is used to create a dashboard.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.459Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:24.392Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosDashboard")
 public class RosDashboard extends com.aliyun.ros.cdk.core.RosResource {
 

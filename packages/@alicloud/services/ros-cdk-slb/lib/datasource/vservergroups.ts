@@ -13,6 +13,14 @@ export interface VServerGroupsProps {
      * Property loadBalancerId: The ID of the CLB instance.
      */
     readonly loadBalancerId: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -50,6 +58,7 @@ export class VServerGroups extends ros.Resource {
 
         const rosVServerGroups = new RosVServerGroups(this, id,  {
             loadBalancerId: props.loadBalancerId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosVServerGroups;
         this.attrVServerGroupIds = rosVServerGroups.attrVServerGroupIds;

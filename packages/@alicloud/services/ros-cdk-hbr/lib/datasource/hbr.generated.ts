@@ -9,6 +9,14 @@ import * as ros from '@alicloud/ros-cdk-core';
 export interface RosVaultsProps {
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * @Property vaultId: VaultId.
      */
     readonly vaultId?: string | ros.IResolvable;
@@ -33,6 +41,13 @@ function RosVaultsPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('vaultType', ros.validateString)(properties.vaultType));
     errors.collect(ros.propertyValidator('vaultId', ros.validateString)(properties.vaultId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosVaultsProps"');
 }
 
@@ -50,8 +65,9 @@ function rosVaultsPropsToRosTemplate(properties: any, enableResourcePropertyCons
         RosVaultsPropsValidator(properties).assertSuccess();
     }
     return {
-      VaultId: ros.stringToRosTemplate(properties.vaultId),
-      VaultType: ros.stringToRosTemplate(properties.vaultType),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'VaultId': ros.stringToRosTemplate(properties.vaultId),
+      'VaultType': ros.stringToRosTemplate(properties.vaultType),
     };
 }
 
@@ -80,6 +96,14 @@ export class RosVaults extends ros.RosResource {
 
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property vaultId: VaultId.
      */
     public vaultId: string | ros.IResolvable | undefined;
@@ -102,6 +126,7 @@ export class RosVaults extends ros.RosResource {
         this.attrVaults = this.getAtt('Vaults');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.refreshOptions = props.refreshOptions;
         this.vaultId = props.vaultId;
         this.vaultType = props.vaultType;
     }
@@ -109,6 +134,7 @@ export class RosVaults extends ros.RosResource {
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
+            refreshOptions: this.refreshOptions,
             vaultId: this.vaultId,
             vaultType: this.vaultType,
         };

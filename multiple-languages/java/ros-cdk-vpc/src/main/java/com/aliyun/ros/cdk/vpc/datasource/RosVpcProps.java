@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-vpc
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.933Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:25.111Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.RosVpcProps")
 @software.amazon.jsii.Jsii.Proxy(RosVpcProps.Jsii$Proxy.class)
 public interface RosVpcProps extends software.amazon.jsii.JsiiSerializable {
@@ -13,6 +13,12 @@ public interface RosVpcProps extends software.amazon.jsii.JsiiSerializable {
     /**
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getVpcId();
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
 
     /**
      * @return a {@link Builder} of {@link RosVpcProps}
@@ -25,6 +31,7 @@ public interface RosVpcProps extends software.amazon.jsii.JsiiSerializable {
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosVpcProps> {
         java.lang.Object vpcId;
+        java.lang.Object refreshOptions;
 
         /**
          * Sets the value of {@link RosVpcProps#getVpcId}
@@ -47,6 +54,26 @@ public interface RosVpcProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosVpcProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpcProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosVpcProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -63,6 +90,7 @@ public interface RosVpcProps extends software.amazon.jsii.JsiiSerializable {
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosVpcProps {
         private final java.lang.Object vpcId;
+        private final java.lang.Object refreshOptions;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -71,6 +99,7 @@ public interface RosVpcProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -79,11 +108,17 @@ public interface RosVpcProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
+            this.refreshOptions = builder.refreshOptions;
         }
 
         @Override
         public final java.lang.Object getVpcId() {
             return this.vpcId;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -93,6 +128,9 @@ public interface RosVpcProps extends software.amazon.jsii.JsiiSerializable {
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
             data.set("vpcId", om.valueToTree(this.getVpcId()));
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-vpc.datasource.RosVpcProps"));
@@ -111,12 +149,14 @@ public interface RosVpcProps extends software.amazon.jsii.JsiiSerializable {
 
             RosVpcProps.Jsii$Proxy that = (RosVpcProps.Jsii$Proxy) o;
 
-            return this.vpcId.equals(that.vpcId);
+            if (!vpcId.equals(that.vpcId)) return false;
+            return this.refreshOptions != null ? this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.vpcId.hashCode();
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             return result;
         }
     }

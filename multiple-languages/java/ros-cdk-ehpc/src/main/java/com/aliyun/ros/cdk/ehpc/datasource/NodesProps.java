@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ehpc.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ehpc-nodes
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:06.836Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:20.984Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.datasource.NodesProps")
 @software.amazon.jsii.Jsii.Proxy(NodesProps.Jsii$Proxy.class)
 public interface NodesProps extends software.amazon.jsii.JsiiSerializable {
@@ -50,6 +50,21 @@ public interface NodesProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
      * Property role: The type of the node.
      * <p>
      * Valid values:
@@ -76,6 +91,7 @@ public interface NodesProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object hostNamePrefix;
         java.lang.Object hostNameSuffix;
         java.lang.Object privateIpAddress;
+        java.lang.Object refreshOptions;
         java.lang.Object role;
 
         /**
@@ -185,6 +201,40 @@ public interface NodesProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link NodesProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link NodesProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link NodesProps#getRole}
          * @param role Property role: The type of the node.
          *             Valid values:
@@ -233,6 +283,7 @@ public interface NodesProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object hostNamePrefix;
         private final java.lang.Object hostNameSuffix;
         private final java.lang.Object privateIpAddress;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object role;
 
         /**
@@ -246,6 +297,7 @@ public interface NodesProps extends software.amazon.jsii.JsiiSerializable {
             this.hostNamePrefix = software.amazon.jsii.Kernel.get(this, "hostNamePrefix", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.hostNameSuffix = software.amazon.jsii.Kernel.get(this, "hostNameSuffix", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.privateIpAddress = software.amazon.jsii.Kernel.get(this, "privateIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.role = software.amazon.jsii.Kernel.get(this, "role", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -259,6 +311,7 @@ public interface NodesProps extends software.amazon.jsii.JsiiSerializable {
             this.hostNamePrefix = builder.hostNamePrefix;
             this.hostNameSuffix = builder.hostNameSuffix;
             this.privateIpAddress = builder.privateIpAddress;
+            this.refreshOptions = builder.refreshOptions;
             this.role = builder.role;
         }
 
@@ -288,6 +341,11 @@ public interface NodesProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
+        }
+
+        @Override
         public final java.lang.Object getRole() {
             return this.role;
         }
@@ -310,6 +368,9 @@ public interface NodesProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getPrivateIpAddress() != null) {
                 data.set("privateIpAddress", om.valueToTree(this.getPrivateIpAddress()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
             if (this.getRole() != null) {
                 data.set("role", om.valueToTree(this.getRole()));
@@ -337,6 +398,7 @@ public interface NodesProps extends software.amazon.jsii.JsiiSerializable {
             if (this.hostNamePrefix != null ? !this.hostNamePrefix.equals(that.hostNamePrefix) : that.hostNamePrefix != null) return false;
             if (this.hostNameSuffix != null ? !this.hostNameSuffix.equals(that.hostNameSuffix) : that.hostNameSuffix != null) return false;
             if (this.privateIpAddress != null ? !this.privateIpAddress.equals(that.privateIpAddress) : that.privateIpAddress != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             return this.role != null ? this.role.equals(that.role) : that.role == null;
         }
 
@@ -347,6 +409,7 @@ public interface NodesProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.hostNamePrefix != null ? this.hostNamePrefix.hashCode() : 0);
             result = 31 * result + (this.hostNameSuffix != null ? this.hostNameSuffix.hashCode() : 0);
             result = 31 * result + (this.privateIpAddress != null ? this.privateIpAddress.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.role != null ? this.role.hashCode() : 0);
             return result;
         }

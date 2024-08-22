@@ -18,6 +18,14 @@ export interface DBClustersProps {
      * Property dbClusterName: The cluster description information.
      */
     readonly dbClusterName?: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -56,6 +64,7 @@ export class DBClusters extends ros.Resource {
         const rosDBClusters = new RosDBClusters(this, id,  {
             dbClusterName: props.dbClusterName,
             dbClusterId: props.dbClusterId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDBClusters;
         this.attrDbClusterIds = rosDBClusters.attrDbClusterIds;

@@ -1,6 +1,13 @@
 # Aliyun ROS Cloud Development Toolkit Changelog
 
-## [ros-cdk-cli 1.0.51] (2024-06-21)
+## [ros-cdk-cli 1.1.0] (2024-08-22)
+### Features
+- Update ROS resource sdk packages (Added the ALIYUN::OSS::Website, ALIYUN::ACS::Cluster, ALIYUN::ALB::AScript, ALIYUN::ALB::SecurityGroupAttachment, ALIYUN::ARMS::DeliverTask, ALIYUN::CLOUDFW::NatFirewallControlPolicy, DATASOURCE::DRDS::Account, DATASOURCE::DRDS::DrdsDB, DATASOURCE::DRDS::DrdsInstance, ALIYUN::ECS::SnapshotGroup, DATASOURCE::Eipanycast::AnycastEipAddress, DATASOURCE::GA::Acl, DATASOURCE::GraphDatabase::Account, DATASOURCE::GraphDatabase::DbInstance, ALIYUN::KAFKA::Acl, ALIYUN::KAFKA::SaslUser, DATASOURCE::KMS::Instance, DATASOURCE::KMS::NetworkRule, DATASOURCE::KMS::NetworkRules, DATASOURCE::KMS::Policies, DATASOURCE::KMS::Policy, DATASOURCE::MNS::Queue, DATASOURCE::MNS::Subscription, DATASOURCE::MNS::Topic, DATASOURCE::MONGODB::Instance, DATASOURCE::NAS::AccessGroup, DATASOURCE::OOS::GitCodeRepo, DATASOURCE::PAI::Dataset, DATASOURCE::PAI::Service, DATASOURCE::PAI::Workspace, DATASOURCE::PAI::WorkspaceResourceDlc, DATASOURCE::PAI::WorkspaceResourceDlcs, DATASOURCE::PAI::WorkspaceResourceFlink, DATASOURCE::PAI::WorkspaceResourceFlinks, DATASOURCE::PAI::WorkspaceResourceMaxCompute, DATASOURCE::PAI::WorkspaceResourceMaxComputes, DATASOURCE::PaiDswApi::Instance, DATASOURCE::POLARDB::GlobalDatabaseNetwork, DATASOURCE::POLARDB::ParameterGroup, ALIYUN::RAM::LoginProfile, DATASOURCE::REDIS::Account, DATASOURCE::ROCKETMQ::Instance, DATASOURCE::ROCKETMQ::Topic, ALIYUN::SAE::Ingress, DATASOURCE::VPC::NatGateway, ALIYUN::WAF3::TGW).
+- Update ROS function sdk packages (Added the Fn.indent, Fn.index, Fn.lengthOf, Fn.formatTime, Fn.marketplaceImage, Fn.any, Fn.contains, Fn.eachMemberIn, Fn.matchPattern, Fn.cidr).
+- Supports the GO package.
+- Adds the refreshOptions property to all datasource resources
+
+## [ros-cdk-cli 1.0.52] (2024-06-24)
 ### Features
 - Supplement the minimatch library dependency of the ros-cdk-core library.
 

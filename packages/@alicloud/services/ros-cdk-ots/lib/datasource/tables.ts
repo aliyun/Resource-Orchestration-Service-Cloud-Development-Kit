@@ -15,6 +15,14 @@ export interface TablesProps {
     readonly instanceName: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property tableName: The name of table.
      */
     readonly tableName?: string | ros.IResolvable;
@@ -56,6 +64,7 @@ export class Tables extends ros.Resource {
         const rosTables = new RosTables(this, id,  {
             instanceName: props.instanceName,
             tableName: props.tableName,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosTables;
         this.attrTableNames = rosTables.attrTableNames;

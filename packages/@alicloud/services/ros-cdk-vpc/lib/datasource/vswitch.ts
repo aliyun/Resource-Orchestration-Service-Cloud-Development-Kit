@@ -13,6 +13,14 @@ export interface VSwitchProps {
      * Property vSwitchId: The ID of the VSwitch.
      */
     readonly vSwitchId: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -105,6 +113,7 @@ export class VSwitch extends ros.Resource {
 
         const rosVSwitch = new RosVSwitch(this, id,  {
             vSwitchId: props.vSwitchId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosVSwitch;
         this.attrAvailableIpAddressCount = rosVSwitch.attrAvailableIpAddressCount;

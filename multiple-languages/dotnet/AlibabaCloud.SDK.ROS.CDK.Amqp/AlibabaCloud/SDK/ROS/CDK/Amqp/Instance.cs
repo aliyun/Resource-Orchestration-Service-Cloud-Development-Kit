@@ -58,6 +58,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
+        /// <summary>Attribute PublicEndpoint: The public endpoint of the instance.</summary>
+        [JsiiProperty(name: "attrPublicEndpoint", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPublicEndpoint
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
         [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
         protected virtual bool EnableResourcePropertyConstraint
         {

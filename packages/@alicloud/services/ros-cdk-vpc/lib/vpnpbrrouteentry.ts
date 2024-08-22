@@ -50,6 +50,12 @@ export interface VpnPbrRouteEntryProps {
      * Property overlayMode: The overlay mode.
      */
     readonly overlayMode?: string | ros.IResolvable;
+
+    /**
+     * Property priority: Policy priority for policy routing. Range: 1-100 Default value: 10.
+     * The smaller the policy priority number, the higher the priority of the policy route.
+     */
+    readonly priority?: number | ros.IResolvable;
 }
 
 /**
@@ -101,6 +107,7 @@ export class VpnPbrRouteEntry extends ros.Resource {
             overlayMode: props.overlayMode,
             vpnGatewayId: props.vpnGatewayId,
             nextHop: props.nextHop,
+            priority: props.priority,
             routeSource: props.routeSource,
             publishVpc: props.publishVpc,
             weight: props.weight,

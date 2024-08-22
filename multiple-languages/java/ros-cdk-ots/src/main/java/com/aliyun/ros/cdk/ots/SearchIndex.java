@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ots;
  * <p>
  * You can create multiple search indexes for a data table.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:08.205Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:22.823Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.SearchIndex")
 public class SearchIndex extends com.aliyun.ros.cdk.core.Resource {
 

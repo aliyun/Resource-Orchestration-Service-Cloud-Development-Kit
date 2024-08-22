@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nlb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::NLB::Listener</code>, which is used to create a listener.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:07.825Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:22.590Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.Listener")
 public class Listener extends com.aliyun.ros.cdk.core.Resource {
 
@@ -457,6 +457,27 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder proxyProtocolEnabled(final com.aliyun.ros.cdk.core.IResolvable proxyProtocolEnabled) {
             this.props.proxyProtocolEnabled(proxyProtocolEnabled);
+            return this;
+        }
+
+        /**
+         * Property proxyProtocolV2Config: ProxyProtocolV2Config of the listener.
+         * <p>
+         * @return {@code this}
+         * @param proxyProtocolV2Config Property proxyProtocolV2Config: ProxyProtocolV2Config of the listener. This parameter is required.
+         */
+        public Builder proxyProtocolV2Config(final com.aliyun.ros.cdk.core.IResolvable proxyProtocolV2Config) {
+            this.props.proxyProtocolV2Config(proxyProtocolV2Config);
+            return this;
+        }
+        /**
+         * Property proxyProtocolV2Config: ProxyProtocolV2Config of the listener.
+         * <p>
+         * @return {@code this}
+         * @param proxyProtocolV2Config Property proxyProtocolV2Config: ProxyProtocolV2Config of the listener. This parameter is required.
+         */
+        public Builder proxyProtocolV2Config(final com.aliyun.ros.cdk.nlb.RosListener.ProxyProtocolV2ConfigProperty proxyProtocolV2Config) {
+            this.props.proxyProtocolV2Config(proxyProtocolV2Config);
             return this;
         }
 

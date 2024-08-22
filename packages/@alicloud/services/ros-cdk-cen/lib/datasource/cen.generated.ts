@@ -22,6 +22,14 @@ export interface RosCenBandwidthPackagesProps {
      * @Property isOrKey: The logical operator between the filter conditions.
      */
     readonly isOrKey?: boolean | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -37,6 +45,13 @@ function RosCenBandwidthPackagesPropsValidator(properties: any): ros.ValidationR
     errors.collect(ros.propertyValidator('isOrKey', ros.validateBoolean)(properties.isOrKey));
     errors.collect(ros.propertyValidator('filter', ros.listValidator(RosCenBandwidthPackages_FilterPropertyValidator))(properties.filter));
     errors.collect(ros.propertyValidator('includeReservationData', ros.validateBoolean)(properties.includeReservationData));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosCenBandwidthPackagesProps"');
 }
 
@@ -54,9 +69,10 @@ function rosCenBandwidthPackagesPropsToRosTemplate(properties: any, enableResour
         RosCenBandwidthPackagesPropsValidator(properties).assertSuccess();
     }
     return {
-      Filter: ros.listMapper(rosCenBandwidthPackagesFilterPropertyToRosTemplate)(properties.filter),
-      IncludeReservationData: ros.booleanToRosTemplate(properties.includeReservationData),
-      IsOrKey: ros.booleanToRosTemplate(properties.isOrKey),
+      'Filter': ros.listMapper(rosCenBandwidthPackagesFilterPropertyToRosTemplate)(properties.filter),
+      'IncludeReservationData': ros.booleanToRosTemplate(properties.includeReservationData),
+      'IsOrKey': ros.booleanToRosTemplate(properties.isOrKey),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -100,6 +116,14 @@ export class RosCenBandwidthPackages extends ros.RosResource {
     public isOrKey: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -113,6 +137,7 @@ export class RosCenBandwidthPackages extends ros.RosResource {
         this.filter = props.filter;
         this.includeReservationData = props.includeReservationData;
         this.isOrKey = props.isOrKey;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
@@ -121,6 +146,7 @@ export class RosCenBandwidthPackages extends ros.RosResource {
             filter: this.filter,
             includeReservationData: this.includeReservationData,
             isOrKey: this.isOrKey,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -171,8 +197,8 @@ function rosCenBandwidthPackagesFilterPropertyToRosTemplate(properties: any): an
     if (!ros.canInspect(properties)) { return properties; }
     RosCenBandwidthPackages_FilterPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.listMapper(ros.objectToRosTemplate)(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.listMapper(ros.objectToRosTemplate)(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -186,6 +212,14 @@ export interface RosCenInstancesProps {
      * @Property filter: Filter value when querying resources
      */
     readonly filter?: Array<RosCenInstances.FilterProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -199,6 +233,13 @@ function RosCenInstancesPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('filter', ros.listValidator(RosCenInstances_FilterPropertyValidator))(properties.filter));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosCenInstancesProps"');
 }
 
@@ -216,7 +257,8 @@ function rosCenInstancesPropsToRosTemplate(properties: any, enableResourceProper
         RosCenInstancesPropsValidator(properties).assertSuccess();
     }
     return {
-      Filter: ros.listMapper(rosCenInstancesFilterPropertyToRosTemplate)(properties.filter),
+      'Filter': ros.listMapper(rosCenInstancesFilterPropertyToRosTemplate)(properties.filter),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -250,6 +292,14 @@ export class RosCenInstances extends ros.RosResource {
     public filter: Array<RosCenInstances.FilterProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -261,12 +311,14 @@ export class RosCenInstances extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.filter = props.filter;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             filter: this.filter,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -317,8 +369,8 @@ function rosCenInstancesFilterPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosCenInstances_FilterPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.listMapper(ros.objectToRosTemplate)(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.listMapper(ros.objectToRosTemplate)(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -337,6 +389,14 @@ export interface RosCenRouteMapsProps {
      * @Property cenRegionId: The ID of the region where the routing policy is applied.
      */
     readonly cenRegionId?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 
     /**
      * @Property routeMapId: The ID of the routing policy.
@@ -365,6 +425,8 @@ function RosCenRouteMapsPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('transitRouterRouteTableId', ros.validateString)(properties.transitRouterRouteTableId));
+    errors.collect(ros.propertyValidator('cenId', ros.requiredValidator)(properties.cenId));
+    errors.collect(ros.propertyValidator('cenId', ros.validateString)(properties.cenId));
     if(properties.transmitDirection && (typeof properties.transmitDirection) !== 'object') {
         errors.collect(ros.propertyValidator('transmitDirection', ros.validateAllowedValues)({
           data: properties.transmitDirection,
@@ -372,10 +434,15 @@ function RosCenRouteMapsPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('transmitDirection', ros.validateString)(properties.transmitDirection));
-    errors.collect(ros.propertyValidator('cenId', ros.requiredValidator)(properties.cenId));
-    errors.collect(ros.propertyValidator('cenId', ros.validateString)(properties.cenId));
     errors.collect(ros.propertyValidator('cenRegionId', ros.validateString)(properties.cenRegionId));
     errors.collect(ros.propertyValidator('routeMapId', ros.validateString)(properties.routeMapId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosCenRouteMapsProps"');
 }
 
@@ -393,11 +460,12 @@ function rosCenRouteMapsPropsToRosTemplate(properties: any, enableResourceProper
         RosCenRouteMapsPropsValidator(properties).assertSuccess();
     }
     return {
-      CenId: ros.stringToRosTemplate(properties.cenId),
-      CenRegionId: ros.stringToRosTemplate(properties.cenRegionId),
-      RouteMapId: ros.stringToRosTemplate(properties.routeMapId),
-      TransitRouterRouteTableId: ros.stringToRosTemplate(properties.transitRouterRouteTableId),
-      TransmitDirection: ros.stringToRosTemplate(properties.transmitDirection),
+      'CenId': ros.stringToRosTemplate(properties.cenId),
+      'CenRegionId': ros.stringToRosTemplate(properties.cenRegionId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'RouteMapId': ros.stringToRosTemplate(properties.routeMapId),
+      'TransitRouterRouteTableId': ros.stringToRosTemplate(properties.transitRouterRouteTableId),
+      'TransmitDirection': ros.stringToRosTemplate(properties.transmitDirection),
     };
 }
 
@@ -436,6 +504,14 @@ export class RosCenRouteMaps extends ros.RosResource {
     public cenRegionId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property routeMapId: The ID of the routing policy.
      */
     public routeMapId: string | ros.IResolvable | undefined;
@@ -463,6 +539,7 @@ export class RosCenRouteMaps extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.cenId = props.cenId;
         this.cenRegionId = props.cenRegionId;
+        this.refreshOptions = props.refreshOptions;
         this.routeMapId = props.routeMapId;
         this.transitRouterRouteTableId = props.transitRouterRouteTableId;
         this.transmitDirection = props.transmitDirection;
@@ -473,6 +550,7 @@ export class RosCenRouteMaps extends ros.RosResource {
         return {
             cenId: this.cenId,
             cenRegionId: this.cenRegionId,
+            refreshOptions: this.refreshOptions,
             routeMapId: this.routeMapId,
             transitRouterRouteTableId: this.transitRouterRouteTableId,
             transmitDirection: this.transmitDirection,
@@ -493,6 +571,14 @@ export interface RosTransitRouterRouteTablesProps {
      * @Property transitRouterId: The ID of the Enterprise Edition transit router.
      */
     readonly transitRouterId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 
     /**
      * @Property transitRouterRouteTableIds: The ID of the route table.
@@ -553,6 +639,13 @@ function RosTransitRouterRouteTablesPropsValidator(properties: any): ros.Validat
     errors.collect(ros.propertyValidator('transitRouterRouteTableType', ros.validateString)(properties.transitRouterRouteTableType));
     errors.collect(ros.propertyValidator('transitRouterId', ros.requiredValidator)(properties.transitRouterId));
     errors.collect(ros.propertyValidator('transitRouterId', ros.validateString)(properties.transitRouterId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosTransitRouterRouteTablesProps"');
 }
 
@@ -570,11 +663,12 @@ function rosTransitRouterRouteTablesPropsToRosTemplate(properties: any, enableRe
         RosTransitRouterRouteTablesPropsValidator(properties).assertSuccess();
     }
     return {
-      TransitRouterId: ros.stringToRosTemplate(properties.transitRouterId),
-      TransitRouterRouteTableIds: ros.listMapper(ros.stringToRosTemplate)(properties.transitRouterRouteTableIds),
-      TransitRouterRouteTableNames: ros.listMapper(ros.stringToRosTemplate)(properties.transitRouterRouteTableNames),
-      TransitRouterRouteTableStatus: ros.stringToRosTemplate(properties.transitRouterRouteTableStatus),
-      TransitRouterRouteTableType: ros.stringToRosTemplate(properties.transitRouterRouteTableType),
+      'TransitRouterId': ros.stringToRosTemplate(properties.transitRouterId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'TransitRouterRouteTableIds': ros.listMapper(ros.stringToRosTemplate)(properties.transitRouterRouteTableIds),
+      'TransitRouterRouteTableNames': ros.listMapper(ros.stringToRosTemplate)(properties.transitRouterRouteTableNames),
+      'TransitRouterRouteTableStatus': ros.stringToRosTemplate(properties.transitRouterRouteTableStatus),
+      'TransitRouterRouteTableType': ros.stringToRosTemplate(properties.transitRouterRouteTableType),
     };
 }
 
@@ -606,6 +700,14 @@ export class RosTransitRouterRouteTables extends ros.RosResource {
      * @Property transitRouterId: The ID of the Enterprise Edition transit router.
      */
     public transitRouterId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
 
     /**
      * @Property transitRouterRouteTableIds: The ID of the route table.
@@ -647,6 +749,7 @@ export class RosTransitRouterRouteTables extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.transitRouterId = props.transitRouterId;
+        this.refreshOptions = props.refreshOptions;
         this.transitRouterRouteTableIds = props.transitRouterRouteTableIds;
         this.transitRouterRouteTableNames = props.transitRouterRouteTableNames;
         this.transitRouterRouteTableStatus = props.transitRouterRouteTableStatus;
@@ -657,6 +760,7 @@ export class RosTransitRouterRouteTables extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             transitRouterId: this.transitRouterId,
+            refreshOptions: this.refreshOptions,
             transitRouterRouteTableIds: this.transitRouterRouteTableIds,
             transitRouterRouteTableNames: this.transitRouterRouteTableNames,
             transitRouterRouteTableStatus: this.transitRouterRouteTableStatus,
@@ -678,6 +782,14 @@ export interface RosTransitRoutersProps {
      * @Property cenId: The ID of the CEN instance.
      */
     readonly cenId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 
     /**
      * @Property regionId: The ID of the region where the transit router is deployed. 
@@ -705,6 +817,13 @@ function RosTransitRoutersPropsValidator(properties: any): ros.ValidationResult 
     errors.collect(ros.propertyValidator('cenId', ros.validateString)(properties.cenId));
     errors.collect(ros.propertyValidator('regionId', ros.validateString)(properties.regionId));
     errors.collect(ros.propertyValidator('transitRouterId', ros.validateString)(properties.transitRouterId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosTransitRoutersProps"');
 }
 
@@ -722,9 +841,10 @@ function rosTransitRoutersPropsToRosTemplate(properties: any, enableResourceProp
         RosTransitRoutersPropsValidator(properties).assertSuccess();
     }
     return {
-      CenId: ros.stringToRosTemplate(properties.cenId),
-      RegionId: ros.stringToRosTemplate(properties.regionId),
-      TransitRouterId: ros.stringToRosTemplate(properties.transitRouterId),
+      'CenId': ros.stringToRosTemplate(properties.cenId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'RegionId': ros.stringToRosTemplate(properties.regionId),
+      'TransitRouterId': ros.stringToRosTemplate(properties.transitRouterId),
     };
 }
 
@@ -758,6 +878,14 @@ export class RosTransitRouters extends ros.RosResource {
     public cenId: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property regionId: The ID of the region where the transit router is deployed. 
      * You can call the DescribeRegions operation to query region IDs.
      */
@@ -780,6 +908,7 @@ export class RosTransitRouters extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.cenId = props.cenId;
+        this.refreshOptions = props.refreshOptions;
         this.regionId = props.regionId;
         this.transitRouterId = props.transitRouterId;
     }
@@ -788,6 +917,7 @@ export class RosTransitRouters extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             cenId: this.cenId,
+            refreshOptions: this.refreshOptions,
             regionId: this.regionId,
             transitRouterId: this.transitRouterId,
         };

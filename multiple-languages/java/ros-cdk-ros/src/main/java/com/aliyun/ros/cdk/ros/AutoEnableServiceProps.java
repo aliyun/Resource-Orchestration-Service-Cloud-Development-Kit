@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ros;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-autoenableservice
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.065Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:23.887Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.AutoEnableServiceProps")
 @software.amazon.jsii.Jsii.Proxy(AutoEnableServiceProps.Jsii$Proxy.class)
 public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,6 +16,10 @@ public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSeriali
      * Valid values:
      * AHAS: Application High Availability Service
      * ARMS: Realtime Monitoring Service
+     * ARMS/App: Application Monitoring: Basic Edition
+     * ARMS/Web: Front End Monitoring: Basic Edition
+     * ARMS/PrometheusMonitor: Prometheus Monitoring: Expert Edition
+     * ARMS/SyntheticPost: Cloud Dial Test: Expert Edition (pay as you go)
      * ApiGateway: API Gateway
      * BatchCompute: Batch Compute
      * BrainIndustrial: Brain Industrial
@@ -78,6 +82,10 @@ public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSeriali
          *                    Valid values:
          *                    AHAS: Application High Availability Service
          *                    ARMS: Realtime Monitoring Service
+         *                    ARMS/App: Application Monitoring: Basic Edition
+         *                    ARMS/Web: Front End Monitoring: Basic Edition
+         *                    ARMS/PrometheusMonitor: Prometheus Monitoring: Expert Edition
+         *                    ARMS/SyntheticPost: Cloud Dial Test: Expert Edition (pay as you go)
          *                    ApiGateway: API Gateway
          *                    BatchCompute: Batch Compute
          *                    BrainIndustrial: Brain Industrial
@@ -132,6 +140,10 @@ public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSeriali
          *                    Valid values:
          *                    AHAS: Application High Availability Service
          *                    ARMS: Realtime Monitoring Service
+         *                    ARMS/App: Application Monitoring: Basic Edition
+         *                    ARMS/Web: Front End Monitoring: Basic Edition
+         *                    ARMS/PrometheusMonitor: Prometheus Monitoring: Expert Edition
+         *                    ARMS/SyntheticPost: Cloud Dial Test: Expert Edition (pay as you go)
          *                    ApiGateway: API Gateway
          *                    BatchCompute: Batch Compute
          *                    BrainIndustrial: Brain Industrial

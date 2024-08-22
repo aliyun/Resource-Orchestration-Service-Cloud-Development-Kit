@@ -78,11 +78,11 @@ function rosRulePropsToRosTemplate(properties: any, enableResourcePropertyConstr
         RosRulePropsValidator(properties).assertSuccess();
     }
     return {
-      EndpointId: ros.stringToRosTemplate(properties.endpointId),
-      ForwardIp: ros.listMapper(rosRuleForwardIpPropertyToRosTemplate)(properties.forwardIp),
-      RuleName: ros.stringToRosTemplate(properties.ruleName),
-      Type: ros.stringToRosTemplate(properties.type),
-      ZoneName: ros.stringToRosTemplate(properties.zoneName),
+      'EndpointId': ros.stringToRosTemplate(properties.endpointId),
+      'ForwardIp': ros.listMapper(rosRuleForwardIpPropertyToRosTemplate)(properties.forwardIp),
+      'RuleName': ros.stringToRosTemplate(properties.ruleName),
+      'Type': ros.stringToRosTemplate(properties.type),
+      'ZoneName': ros.stringToRosTemplate(properties.zoneName),
     };
 }
 
@@ -249,8 +249,8 @@ function rosRuleForwardIpPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosRule_ForwardIpPropertyValidator(properties).assertSuccess();
     return {
-      Ip: ros.stringToRosTemplate(properties.ip),
-      Port: ros.numberToRosTemplate(properties.port),
+      'Ip': ros.stringToRosTemplate(properties.ip),
+      'Port': ros.numberToRosTemplate(properties.port),
     };
 }
 
@@ -321,11 +321,11 @@ function rosUserVpcAuthorizationPropsToRosTemplate(properties: any, enableResour
         RosUserVpcAuthorizationPropsValidator(properties).assertSuccess();
     }
     return {
-      AuthorizedUserId: ros.stringToRosTemplate(properties.authorizedUserId),
-      AuthChannel: ros.stringToRosTemplate(properties.authChannel),
-      AuthCode: ros.stringToRosTemplate(properties.authCode),
-      AuthType: ros.stringToRosTemplate(properties.authType),
-      IgnoreDeletionForbidden: ros.booleanToRosTemplate(properties.ignoreDeletionForbidden),
+      'AuthorizedUserId': ros.stringToRosTemplate(properties.authorizedUserId),
+      'AuthChannel': ros.stringToRosTemplate(properties.authChannel),
+      'AuthCode': ros.stringToRosTemplate(properties.authCode),
+      'AuthType': ros.stringToRosTemplate(properties.authType),
+      'IgnoreDeletionForbidden': ros.booleanToRosTemplate(properties.ignoreDeletionForbidden),
     };
 }
 
@@ -531,14 +531,14 @@ function rosZonePropsToRosTemplate(properties: any, enableResourcePropertyConstr
         RosZonePropsValidator(properties).assertSuccess();
     }
     return {
-      ZoneName: ros.stringToRosTemplate(properties.zoneName),
-      IgnoredStackTagKeys: ros.listMapper(ros.stringToRosTemplate)(properties.ignoredStackTagKeys),
-      ProxyPattern: ros.stringToRosTemplate(properties.proxyPattern),
-      Remark: ros.stringToRosTemplate(properties.remark),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      Tags: ros.listMapper(rosZoneTagsPropertyToRosTemplate)(properties.tags),
-      ZoneTag: ros.stringToRosTemplate(properties.zoneTag),
-      ZoneType: ros.stringToRosTemplate(properties.zoneType),
+      'ZoneName': ros.stringToRosTemplate(properties.zoneName),
+      'IgnoredStackTagKeys': ros.listMapper(ros.stringToRosTemplate)(properties.ignoredStackTagKeys),
+      'ProxyPattern': ros.stringToRosTemplate(properties.proxyPattern),
+      'Remark': ros.stringToRosTemplate(properties.remark),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tags': ros.listMapper(rosZoneTagsPropertyToRosTemplate)(properties.tags),
+      'ZoneTag': ros.stringToRosTemplate(properties.zoneTag),
+      'ZoneType': ros.stringToRosTemplate(properties.zoneType),
     };
 }
 
@@ -702,8 +702,8 @@ function rosZoneTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosZone_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -807,13 +807,13 @@ function rosZoneRecordPropsToRosTemplate(properties: any, enableResourceProperty
         RosZoneRecordPropsValidator(properties).assertSuccess();
     }
     return {
-      Rr: ros.stringToRosTemplate(properties.rr),
-      Status: ros.stringToRosTemplate(properties.status),
-      Type: ros.stringToRosTemplate(properties.type),
-      Value: ros.stringToRosTemplate(properties.value),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
-      Priority: ros.numberToRosTemplate(properties.priority),
-      Ttl: ros.numberToRosTemplate(properties.ttl),
+      'Rr': ros.stringToRosTemplate(properties.rr),
+      'Status': ros.stringToRosTemplate(properties.status),
+      'Type': ros.stringToRosTemplate(properties.type),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+      'Priority': ros.numberToRosTemplate(properties.priority),
+      'Ttl': ros.numberToRosTemplate(properties.ttl),
     };
 }
 
@@ -974,8 +974,8 @@ function rosZoneVpcBinderPropsToRosTemplate(properties: any, enableResourcePrope
         RosZoneVpcBinderPropsValidator(properties).assertSuccess();
     }
     return {
-      Vpcs: ros.listMapper(rosZoneVpcBinderVpcsPropertyToRosTemplate)(properties.vpcs),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      'Vpcs': ros.listMapper(rosZoneVpcBinderVpcsPropertyToRosTemplate)(properties.vpcs),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
     };
 }
 
@@ -1084,7 +1084,7 @@ function rosZoneVpcBinderVpcsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosZoneVpcBinder_VpcsPropertyValidator(properties).assertSuccess();
     return {
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      RegionId: ros.stringToRosTemplate(properties.regionId),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'RegionId': ros.stringToRosTemplate(properties.regionId),
     };
 }

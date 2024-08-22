@@ -5,14 +5,10 @@ package com.aliyun.ros.cdk.oos;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-execution
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:07.983Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:22.697Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.RosExecutionProps")
 @software.amazon.jsii.Jsii.Proxy(RosExecutionProps.Jsii$Proxy.class)
 public interface RosExecutionProps extends software.amazon.jsii.JsiiSerializable {
-
-    /**
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getTemplateName();
 
     /**
      */
@@ -70,6 +66,24 @@ public interface RosExecutionProps extends software.amazon.jsii.JsiiSerializable
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTemplateContent() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTemplateName() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTemplateUrl() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTemplateVersion() {
         return null;
     }
@@ -84,7 +98,6 @@ public interface RosExecutionProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link RosExecutionProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosExecutionProps> {
-        java.lang.Object templateName;
         java.lang.Object description;
         java.lang.Object loopMode;
         java.lang.Object mode;
@@ -94,27 +107,10 @@ public interface RosExecutionProps extends software.amazon.jsii.JsiiSerializable
         java.lang.Object resourceOptions;
         java.lang.Object safetyCheck;
         java.util.Map<java.lang.String, java.lang.Object> tags;
+        java.lang.Object templateContent;
+        java.lang.Object templateName;
+        java.lang.Object templateUrl;
         java.lang.Object templateVersion;
-
-        /**
-         * Sets the value of {@link RosExecutionProps#getTemplateName}
-         * @param templateName the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder templateName(java.lang.String templateName) {
-            this.templateName = templateName;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosExecutionProps#getTemplateName}
-         * @param templateName the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder templateName(com.aliyun.ros.cdk.core.IResolvable templateName) {
-            this.templateName = templateName;
-            return this;
-        }
 
         /**
          * Sets the value of {@link RosExecutionProps#getDescription}
@@ -288,6 +284,66 @@ public interface RosExecutionProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link RosExecutionProps#getTemplateContent}
+         * @param templateContent the value to be set.
+         * @return {@code this}
+         */
+        public Builder templateContent(java.lang.String templateContent) {
+            this.templateContent = templateContent;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosExecutionProps#getTemplateContent}
+         * @param templateContent the value to be set.
+         * @return {@code this}
+         */
+        public Builder templateContent(com.aliyun.ros.cdk.core.IResolvable templateContent) {
+            this.templateContent = templateContent;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosExecutionProps#getTemplateName}
+         * @param templateName the value to be set.
+         * @return {@code this}
+         */
+        public Builder templateName(java.lang.String templateName) {
+            this.templateName = templateName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosExecutionProps#getTemplateName}
+         * @param templateName the value to be set.
+         * @return {@code this}
+         */
+        public Builder templateName(com.aliyun.ros.cdk.core.IResolvable templateName) {
+            this.templateName = templateName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosExecutionProps#getTemplateUrl}
+         * @param templateUrl the value to be set.
+         * @return {@code this}
+         */
+        public Builder templateUrl(java.lang.String templateUrl) {
+            this.templateUrl = templateUrl;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosExecutionProps#getTemplateUrl}
+         * @param templateUrl the value to be set.
+         * @return {@code this}
+         */
+        public Builder templateUrl(com.aliyun.ros.cdk.core.IResolvable templateUrl) {
+            this.templateUrl = templateUrl;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosExecutionProps#getTemplateVersion}
          * @param templateVersion the value to be set.
          * @return {@code this}
@@ -323,7 +379,6 @@ public interface RosExecutionProps extends software.amazon.jsii.JsiiSerializable
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosExecutionProps {
-        private final java.lang.Object templateName;
         private final java.lang.Object description;
         private final java.lang.Object loopMode;
         private final java.lang.Object mode;
@@ -333,6 +388,9 @@ public interface RosExecutionProps extends software.amazon.jsii.JsiiSerializable
         private final java.lang.Object resourceOptions;
         private final java.lang.Object safetyCheck;
         private final java.util.Map<java.lang.String, java.lang.Object> tags;
+        private final java.lang.Object templateContent;
+        private final java.lang.Object templateName;
+        private final java.lang.Object templateUrl;
         private final java.lang.Object templateVersion;
 
         /**
@@ -341,7 +399,6 @@ public interface RosExecutionProps extends software.amazon.jsii.JsiiSerializable
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.templateName = software.amazon.jsii.Kernel.get(this, "templateName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loopMode = software.amazon.jsii.Kernel.get(this, "loopMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.mode = software.amazon.jsii.Kernel.get(this, "mode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -351,6 +408,9 @@ public interface RosExecutionProps extends software.amazon.jsii.JsiiSerializable
             this.resourceOptions = software.amazon.jsii.Kernel.get(this, "resourceOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.safetyCheck = software.amazon.jsii.Kernel.get(this, "safetyCheck", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class)));
+            this.templateContent = software.amazon.jsii.Kernel.get(this, "templateContent", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.templateName = software.amazon.jsii.Kernel.get(this, "templateName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.templateUrl = software.amazon.jsii.Kernel.get(this, "templateUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.templateVersion = software.amazon.jsii.Kernel.get(this, "templateVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -360,7 +420,6 @@ public interface RosExecutionProps extends software.amazon.jsii.JsiiSerializable
         @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.templateName = java.util.Objects.requireNonNull(builder.templateName, "templateName is required");
             this.description = builder.description;
             this.loopMode = builder.loopMode;
             this.mode = builder.mode;
@@ -370,12 +429,10 @@ public interface RosExecutionProps extends software.amazon.jsii.JsiiSerializable
             this.resourceOptions = builder.resourceOptions;
             this.safetyCheck = builder.safetyCheck;
             this.tags = (java.util.Map<java.lang.String, java.lang.Object>)builder.tags;
+            this.templateContent = builder.templateContent;
+            this.templateName = builder.templateName;
+            this.templateUrl = builder.templateUrl;
             this.templateVersion = builder.templateVersion;
-        }
-
-        @Override
-        public final java.lang.Object getTemplateName() {
-            return this.templateName;
         }
 
         @Override
@@ -424,6 +481,21 @@ public interface RosExecutionProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
+        public final java.lang.Object getTemplateContent() {
+            return this.templateContent;
+        }
+
+        @Override
+        public final java.lang.Object getTemplateName() {
+            return this.templateName;
+        }
+
+        @Override
+        public final java.lang.Object getTemplateUrl() {
+            return this.templateUrl;
+        }
+
+        @Override
         public final java.lang.Object getTemplateVersion() {
             return this.templateVersion;
         }
@@ -434,7 +506,6 @@ public interface RosExecutionProps extends software.amazon.jsii.JsiiSerializable
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
-            data.set("templateName", om.valueToTree(this.getTemplateName()));
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
             }
@@ -462,6 +533,15 @@ public interface RosExecutionProps extends software.amazon.jsii.JsiiSerializable
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
             }
+            if (this.getTemplateContent() != null) {
+                data.set("templateContent", om.valueToTree(this.getTemplateContent()));
+            }
+            if (this.getTemplateName() != null) {
+                data.set("templateName", om.valueToTree(this.getTemplateName()));
+            }
+            if (this.getTemplateUrl() != null) {
+                data.set("templateUrl", om.valueToTree(this.getTemplateUrl()));
+            }
             if (this.getTemplateVersion() != null) {
                 data.set("templateVersion", om.valueToTree(this.getTemplateVersion()));
             }
@@ -483,7 +563,6 @@ public interface RosExecutionProps extends software.amazon.jsii.JsiiSerializable
 
             RosExecutionProps.Jsii$Proxy that = (RosExecutionProps.Jsii$Proxy) o;
 
-            if (!templateName.equals(that.templateName)) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.loopMode != null ? !this.loopMode.equals(that.loopMode) : that.loopMode != null) return false;
             if (this.mode != null ? !this.mode.equals(that.mode) : that.mode != null) return false;
@@ -493,13 +572,15 @@ public interface RosExecutionProps extends software.amazon.jsii.JsiiSerializable
             if (this.resourceOptions != null ? !this.resourceOptions.equals(that.resourceOptions) : that.resourceOptions != null) return false;
             if (this.safetyCheck != null ? !this.safetyCheck.equals(that.safetyCheck) : that.safetyCheck != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
+            if (this.templateContent != null ? !this.templateContent.equals(that.templateContent) : that.templateContent != null) return false;
+            if (this.templateName != null ? !this.templateName.equals(that.templateName) : that.templateName != null) return false;
+            if (this.templateUrl != null ? !this.templateUrl.equals(that.templateUrl) : that.templateUrl != null) return false;
             return this.templateVersion != null ? this.templateVersion.equals(that.templateVersion) : that.templateVersion == null;
         }
 
         @Override
         public final int hashCode() {
-            int result = this.templateName.hashCode();
-            result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+            int result = this.description != null ? this.description.hashCode() : 0;
             result = 31 * result + (this.loopMode != null ? this.loopMode.hashCode() : 0);
             result = 31 * result + (this.mode != null ? this.mode.hashCode() : 0);
             result = 31 * result + (this.parameters != null ? this.parameters.hashCode() : 0);
@@ -508,6 +589,9 @@ public interface RosExecutionProps extends software.amazon.jsii.JsiiSerializable
             result = 31 * result + (this.resourceOptions != null ? this.resourceOptions.hashCode() : 0);
             result = 31 * result + (this.safetyCheck != null ? this.safetyCheck.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
+            result = 31 * result + (this.templateContent != null ? this.templateContent.hashCode() : 0);
+            result = 31 * result + (this.templateName != null ? this.templateName.hashCode() : 0);
+            result = 31 * result + (this.templateUrl != null ? this.templateUrl.hashCode() : 0);
             result = 31 * result + (this.templateVersion != null ? this.templateVersion.hashCode() : 0);
             return result;
         }

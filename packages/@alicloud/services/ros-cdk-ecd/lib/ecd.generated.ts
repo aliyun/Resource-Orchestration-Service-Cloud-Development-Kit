@@ -136,15 +136,15 @@ function rosBundlePropsToRosTemplate(properties: any, enableResourcePropertyCons
         RosBundlePropsValidator(properties).assertSuccess();
     }
     return {
-      DesktopType: ros.stringToRosTemplate(properties.desktopType),
-      ImageId: ros.stringToRosTemplate(properties.imageId),
-      RootDiskSizeGib: ros.numberToRosTemplate(properties.rootDiskSizeGib),
-      UserDiskSizeGib: ros.listMapper(ros.numberToRosTemplate)(properties.userDiskSizeGib),
-      BundleName: ros.stringToRosTemplate(properties.bundleName),
-      Description: ros.stringToRosTemplate(properties.description),
-      Language: ros.stringToRosTemplate(properties.language),
-      RootDiskPerformanceLevel: ros.stringToRosTemplate(properties.rootDiskPerformanceLevel),
-      UserDiskPerformanceLevel: ros.stringToRosTemplate(properties.userDiskPerformanceLevel),
+      'DesktopType': ros.stringToRosTemplate(properties.desktopType),
+      'ImageId': ros.stringToRosTemplate(properties.imageId),
+      'RootDiskSizeGib': ros.numberToRosTemplate(properties.rootDiskSizeGib),
+      'UserDiskSizeGib': ros.listMapper(ros.numberToRosTemplate)(properties.userDiskSizeGib),
+      'BundleName': ros.stringToRosTemplate(properties.bundleName),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Language': ros.stringToRosTemplate(properties.language),
+      'RootDiskPerformanceLevel': ros.stringToRosTemplate(properties.rootDiskPerformanceLevel),
+      'UserDiskPerformanceLevel': ros.stringToRosTemplate(properties.userDiskPerformanceLevel),
     };
 }
 
@@ -557,31 +557,31 @@ function rosDesktopGroupPropsToRosTemplate(properties: any, enableResourceProper
         RosDesktopGroupPropsValidator(properties).assertSuccess();
     }
     return {
-      BundleId: ros.stringToRosTemplate(properties.bundleId),
-      ChargeType: ros.stringToRosTemplate(properties.chargeType),
-      OfficeSiteId: ros.stringToRosTemplate(properties.officeSiteId),
-      PolicyGroupId: ros.stringToRosTemplate(properties.policyGroupId),
-      AllowAutoSetup: ros.numberToRosTemplate(properties.allowAutoSetup),
-      AllowBufferCount: ros.numberToRosTemplate(properties.allowBufferCount),
-      AutoPay: ros.booleanToRosTemplate(properties.autoPay),
-      AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
-      BuyDesktopsCount: ros.numberToRosTemplate(properties.buyDesktopsCount),
-      Comments: ros.stringToRosTemplate(properties.comments),
-      ConnectDuration: ros.numberToRosTemplate(properties.connectDuration),
-      DefaultInitDesktopCount: ros.numberToRosTemplate(properties.defaultInitDesktopCount),
-      DesktopGroupName: ros.stringToRosTemplate(properties.desktopGroupName),
-      EndUserIds: ros.listMapper(ros.stringToRosTemplate)(properties.endUserIds),
-      GroupVersion: ros.numberToRosTemplate(properties.groupVersion),
-      IdleDisconnectDuration: ros.numberToRosTemplate(properties.idleDisconnectDuration),
-      KeepDuration: ros.numberToRosTemplate(properties.keepDuration),
-      MaxDesktopsCount: ros.numberToRosTemplate(properties.maxDesktopsCount),
-      MinDesktopsCount: ros.numberToRosTemplate(properties.minDesktopsCount),
-      Period: ros.numberToRosTemplate(properties.period),
-      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
-      ResetType: ros.numberToRosTemplate(properties.resetType),
-      StopDuration: ros.numberToRosTemplate(properties.stopDuration),
-      VolumeEncryptionEnabled: ros.booleanToRosTemplate(properties.volumeEncryptionEnabled),
-      VolumeEncryptionKey: ros.stringToRosTemplate(properties.volumeEncryptionKey),
+      'BundleId': ros.stringToRosTemplate(properties.bundleId),
+      'ChargeType': ros.stringToRosTemplate(properties.chargeType),
+      'OfficeSiteId': ros.stringToRosTemplate(properties.officeSiteId),
+      'PolicyGroupId': ros.stringToRosTemplate(properties.policyGroupId),
+      'AllowAutoSetup': ros.numberToRosTemplate(properties.allowAutoSetup),
+      'AllowBufferCount': ros.numberToRosTemplate(properties.allowBufferCount),
+      'AutoPay': ros.booleanToRosTemplate(properties.autoPay),
+      'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
+      'BuyDesktopsCount': ros.numberToRosTemplate(properties.buyDesktopsCount),
+      'Comments': ros.stringToRosTemplate(properties.comments),
+      'ConnectDuration': ros.numberToRosTemplate(properties.connectDuration),
+      'DefaultInitDesktopCount': ros.numberToRosTemplate(properties.defaultInitDesktopCount),
+      'DesktopGroupName': ros.stringToRosTemplate(properties.desktopGroupName),
+      'EndUserIds': ros.listMapper(ros.stringToRosTemplate)(properties.endUserIds),
+      'GroupVersion': ros.numberToRosTemplate(properties.groupVersion),
+      'IdleDisconnectDuration': ros.numberToRosTemplate(properties.idleDisconnectDuration),
+      'KeepDuration': ros.numberToRosTemplate(properties.keepDuration),
+      'MaxDesktopsCount': ros.numberToRosTemplate(properties.maxDesktopsCount),
+      'MinDesktopsCount': ros.numberToRosTemplate(properties.minDesktopsCount),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
+      'ResetType': ros.numberToRosTemplate(properties.resetType),
+      'StopDuration': ros.numberToRosTemplate(properties.stopDuration),
+      'VolumeEncryptionEnabled': ros.booleanToRosTemplate(properties.volumeEncryptionEnabled),
+      'VolumeEncryptionKey': ros.stringToRosTemplate(properties.volumeEncryptionKey),
     };
 }
 
@@ -1071,28 +1071,28 @@ function rosDesktopsPropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosDesktopsPropsValidator(properties).assertSuccess();
     }
     return {
-      BundleId: ros.stringToRosTemplate(properties.bundleId),
-      OfficeSiteId: ros.stringToRosTemplate(properties.officeSiteId),
-      PolicyGroupId: ros.stringToRosTemplate(properties.policyGroupId),
-      Amount: ros.numberToRosTemplate(properties.amount),
-      AutoPay: ros.booleanToRosTemplate(properties.autoPay),
-      AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
-      ChargeType: ros.stringToRosTemplate(properties.chargeType),
-      DesktopName: ros.stringToRosTemplate(properties.desktopName),
-      DesktopNameSuffix: ros.booleanToRosTemplate(properties.desktopNameSuffix),
-      DirectoryId: ros.stringToRosTemplate(properties.directoryId),
-      EndUserId: ros.listMapper(ros.objectToRosTemplate)(properties.endUserId),
-      GroupId: ros.stringToRosTemplate(properties.groupId),
-      Hostname: ros.stringToRosTemplate(properties.hostname),
-      Period: ros.numberToRosTemplate(properties.period),
-      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
-      PromotionId: ros.stringToRosTemplate(properties.promotionId),
-      Tags: ros.listMapper(rosDesktopsTagsPropertyToRosTemplate)(properties.tags),
-      UserAssignMode: ros.stringToRosTemplate(properties.userAssignMode),
-      UserName: ros.stringToRosTemplate(properties.userName),
-      VolumeEncryptionEnabled: ros.booleanToRosTemplate(properties.volumeEncryptionEnabled),
-      VolumeEncryptionKey: ros.stringToRosTemplate(properties.volumeEncryptionKey),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
+      'BundleId': ros.stringToRosTemplate(properties.bundleId),
+      'OfficeSiteId': ros.stringToRosTemplate(properties.officeSiteId),
+      'PolicyGroupId': ros.stringToRosTemplate(properties.policyGroupId),
+      'Amount': ros.numberToRosTemplate(properties.amount),
+      'AutoPay': ros.booleanToRosTemplate(properties.autoPay),
+      'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
+      'ChargeType': ros.stringToRosTemplate(properties.chargeType),
+      'DesktopName': ros.stringToRosTemplate(properties.desktopName),
+      'DesktopNameSuffix': ros.booleanToRosTemplate(properties.desktopNameSuffix),
+      'DirectoryId': ros.stringToRosTemplate(properties.directoryId),
+      'EndUserId': ros.listMapper(ros.objectToRosTemplate)(properties.endUserId),
+      'GroupId': ros.stringToRosTemplate(properties.groupId),
+      'Hostname': ros.stringToRosTemplate(properties.hostname),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
+      'PromotionId': ros.stringToRosTemplate(properties.promotionId),
+      'Tags': ros.listMapper(rosDesktopsTagsPropertyToRosTemplate)(properties.tags),
+      'UserAssignMode': ros.stringToRosTemplate(properties.userAssignMode),
+      'UserName': ros.stringToRosTemplate(properties.userName),
+      'VolumeEncryptionEnabled': ros.booleanToRosTemplate(properties.volumeEncryptionEnabled),
+      'VolumeEncryptionKey': ros.stringToRosTemplate(properties.volumeEncryptionKey),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
     };
 }
 
@@ -1394,8 +1394,8 @@ function rosDesktopsTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosDesktops_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -1522,15 +1522,15 @@ function rosNetworkPackagePropsToRosTemplate(properties: any, enableResourceProp
         RosNetworkPackagePropsValidator(properties).assertSuccess();
     }
     return {
-      Bandwidth: ros.numberToRosTemplate(properties.bandwidth),
-      OfficeSiteId: ros.stringToRosTemplate(properties.officeSiteId),
-      AutoPay: ros.booleanToRosTemplate(properties.autoPay),
-      AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
-      InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
-      PayType: ros.stringToRosTemplate(properties.payType),
-      Period: ros.numberToRosTemplate(properties.period),
-      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
-      PromotionId: ros.stringToRosTemplate(properties.promotionId),
+      'Bandwidth': ros.numberToRosTemplate(properties.bandwidth),
+      'OfficeSiteId': ros.stringToRosTemplate(properties.officeSiteId),
+      'AutoPay': ros.booleanToRosTemplate(properties.autoPay),
+      'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
+      'InternetChargeType': ros.stringToRosTemplate(properties.internetChargeType),
+      'PayType': ros.stringToRosTemplate(properties.payType),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
+      'PromotionId': ros.stringToRosTemplate(properties.promotionId),
     };
 }
 
@@ -1774,18 +1774,18 @@ function rosSimpleOfficeSitePropsToRosTemplate(properties: any, enableResourcePr
         RosSimpleOfficeSitePropsValidator(properties).assertSuccess();
     }
     return {
-      Bandwidth: ros.numberToRosTemplate(properties.bandwidth),
-      CenId: ros.stringToRosTemplate(properties.cenId),
-      CenOwnerId: ros.numberToRosTemplate(properties.cenOwnerId),
-      CidrBlock: ros.stringToRosTemplate(properties.cidrBlock),
-      CloudBoxOfficeSite: ros.booleanToRosTemplate(properties.cloudBoxOfficeSite),
-      DesktopAccessType: ros.stringToRosTemplate(properties.desktopAccessType),
-      EnableAdminAccess: ros.booleanToRosTemplate(properties.enableAdminAccess),
-      EnableInternetAccess: ros.booleanToRosTemplate(properties.enableInternetAccess),
-      NeedVerifyZeroDevice: ros.booleanToRosTemplate(properties.needVerifyZeroDevice),
-      OfficeSiteName: ros.stringToRosTemplate(properties.officeSiteName),
-      VerifyCode: ros.stringToRosTemplate(properties.verifyCode),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
+      'Bandwidth': ros.numberToRosTemplate(properties.bandwidth),
+      'CenId': ros.stringToRosTemplate(properties.cenId),
+      'CenOwnerId': ros.numberToRosTemplate(properties.cenOwnerId),
+      'CidrBlock': ros.stringToRosTemplate(properties.cidrBlock),
+      'CloudBoxOfficeSite': ros.booleanToRosTemplate(properties.cloudBoxOfficeSite),
+      'DesktopAccessType': ros.stringToRosTemplate(properties.desktopAccessType),
+      'EnableAdminAccess': ros.booleanToRosTemplate(properties.enableAdminAccess),
+      'EnableInternetAccess': ros.booleanToRosTemplate(properties.enableInternetAccess),
+      'NeedVerifyZeroDevice': ros.booleanToRosTemplate(properties.needVerifyZeroDevice),
+      'OfficeSiteName': ros.stringToRosTemplate(properties.officeSiteName),
+      'VerifyCode': ros.stringToRosTemplate(properties.verifyCode),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
     };
 }
 

@@ -188,23 +188,23 @@ function rosDBClusterPropsToRosTemplate(properties: any, enableResourcePropertyC
         RosDBClusterPropsValidator(properties).assertSuccess();
     }
     return {
-      ComputeResource: ros.stringToRosTemplate(properties.computeResource),
-      DBClusterVersion: ros.stringToRosTemplate(properties.dbClusterVersion),
-      PayType: ros.stringToRosTemplate(properties.payType),
-      StorageResource: ros.stringToRosTemplate(properties.storageResource),
-      VPCId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
-      BackupSetId: ros.stringToRosTemplate(properties.backupSetId),
-      DBClusterDescription: ros.stringToRosTemplate(properties.dbClusterDescription),
-      EnableDefaultResourcePool: ros.booleanToRosTemplate(properties.enableDefaultResourcePool),
-      Period: ros.stringToRosTemplate(properties.period),
-      PeriodType: ros.stringToRosTemplate(properties.periodType),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      RestoreToTime: ros.stringToRosTemplate(properties.restoreToTime),
-      RestoreType: ros.stringToRosTemplate(properties.restoreType),
-      SourceDbClusterId: ros.stringToRosTemplate(properties.sourceDbClusterId),
-      Tags: ros.listMapper(rosDBClusterTagsPropertyToRosTemplate)(properties.tags),
+      'ComputeResource': ros.stringToRosTemplate(properties.computeResource),
+      'DBClusterVersion': ros.stringToRosTemplate(properties.dbClusterVersion),
+      'PayType': ros.stringToRosTemplate(properties.payType),
+      'StorageResource': ros.stringToRosTemplate(properties.storageResource),
+      'VPCId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+      'BackupSetId': ros.stringToRosTemplate(properties.backupSetId),
+      'DBClusterDescription': ros.stringToRosTemplate(properties.dbClusterDescription),
+      'EnableDefaultResourcePool': ros.booleanToRosTemplate(properties.enableDefaultResourcePool),
+      'Period': ros.stringToRosTemplate(properties.period),
+      'PeriodType': ros.stringToRosTemplate(properties.periodType),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'RestoreToTime': ros.stringToRosTemplate(properties.restoreToTime),
+      'RestoreType': ros.stringToRosTemplate(properties.restoreType),
+      'SourceDbClusterId': ros.stringToRosTemplate(properties.sourceDbClusterId),
+      'Tags': ros.listMapper(rosDBClusterTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -441,7 +441,7 @@ function rosDBClusterTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosDBCluster_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }

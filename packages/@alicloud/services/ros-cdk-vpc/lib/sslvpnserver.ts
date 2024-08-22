@@ -39,6 +39,26 @@ export interface SslVpnServerProps {
     readonly compress?: boolean | ros.IResolvable;
 
     /**
+     * Property enableMultiFactorAuth: Whether to enable multi-factor authentication. The default value is false.
+     */
+    readonly enableMultiFactorAuth?: boolean | ros.IResolvable;
+
+    /**
+     * Property iDaaSApplicationId: The ID of the IDaaS application.
+     */
+    readonly iDaaSApplicationId?: string | ros.IResolvable;
+
+    /**
+     * Property iDaaSInstanceId: The ID of the IDaaS instance.
+     */
+    readonly iDaaSInstanceId?: string | ros.IResolvable;
+
+    /**
+     * Property iDaaSRegionId: The region ID of the IDaaS instance.
+     */
+    readonly iDaaSRegionId?: string | ros.IResolvable;
+
+    /**
      * Property name: The name of the SSL-VPN server. The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-).
      * But it can't start with http:\/\/ or https:\/\/.
      */
@@ -88,9 +108,13 @@ export class SslVpnServer extends ros.Resource {
             compress: props.compress === undefined || props.compress === null ? false : props.compress,
             localSubnet: props.localSubnet,
             clientIpPool: props.clientIpPool,
+            iDaaSInstanceId: props.iDaaSInstanceId,
+            iDaaSApplicationId: props.iDaaSApplicationId,
             proto: props.proto === undefined || props.proto === null ? 'UDP' : props.proto,
             vpnGatewayId: props.vpnGatewayId,
+            enableMultiFactorAuth: props.enableMultiFactorAuth === undefined || props.enableMultiFactorAuth === null ? false : props.enableMultiFactorAuth,
             port: props.port === undefined || props.port === null ? 1194 : props.port,
+            iDaaSRegionId: props.iDaaSRegionId,
             cipher: props.cipher === undefined || props.cipher === null ? 'AES-128-CBC' : props.cipher,
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

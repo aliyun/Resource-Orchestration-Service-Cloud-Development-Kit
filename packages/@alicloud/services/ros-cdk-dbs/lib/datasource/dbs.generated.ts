@@ -19,6 +19,14 @@ export interface RosBackupPlansProps {
     readonly backupPlanName?: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * @Property resourceGroupId: The ID of the resource group.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -37,6 +45,13 @@ function RosBackupPlansPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('backupPlanName', ros.validateString)(properties.backupPlanName));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('backupPlanId', ros.validateString)(properties.backupPlanId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosBackupPlansProps"');
 }
 
@@ -54,9 +69,10 @@ function rosBackupPlansPropsToRosTemplate(properties: any, enableResourcePropert
         RosBackupPlansPropsValidator(properties).assertSuccess();
     }
     return {
-      BackupPlanId: ros.stringToRosTemplate(properties.backupPlanId),
-      BackupPlanName: ros.stringToRosTemplate(properties.backupPlanName),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      'BackupPlanId': ros.stringToRosTemplate(properties.backupPlanId),
+      'BackupPlanName': ros.stringToRosTemplate(properties.backupPlanName),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
     };
 }
 
@@ -95,6 +111,14 @@ export class RosBackupPlans extends ros.RosResource {
     public backupPlanName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property resourceGroupId: The ID of the resource group.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
@@ -112,6 +136,7 @@ export class RosBackupPlans extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.backupPlanId = props.backupPlanId;
         this.backupPlanName = props.backupPlanName;
+        this.refreshOptions = props.refreshOptions;
         this.resourceGroupId = props.resourceGroupId;
     }
 
@@ -120,6 +145,7 @@ export class RosBackupPlans extends ros.RosResource {
         return {
             backupPlanId: this.backupPlanId,
             backupPlanName: this.backupPlanName,
+            refreshOptions: this.refreshOptions,
             resourceGroupId: this.resourceGroupId,
         };
     }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oss;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::OSS::Domain</code>, which is used to bind a custom domain name.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:08.088Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:22.752Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.Domain")
 public class Domain extends com.aliyun.ros.cdk.core.Resource {
 

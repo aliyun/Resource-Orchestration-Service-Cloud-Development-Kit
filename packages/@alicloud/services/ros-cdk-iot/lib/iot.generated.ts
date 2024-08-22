@@ -81,12 +81,12 @@ function rosDevicePropsToRosTemplate(properties: any, enableResourcePropertyCons
         RosDevicePropsValidator(properties).assertSuccess();
     }
     return {
-      ProductKey: ros.stringToRosTemplate(properties.productKey),
-      DevEui: ros.stringToRosTemplate(properties.devEui),
-      DeviceName: ros.stringToRosTemplate(properties.deviceName),
-      IotInstanceId: ros.stringToRosTemplate(properties.iotInstanceId),
-      Nickname: ros.stringToRosTemplate(properties.nickname),
-      PinCode: ros.stringToRosTemplate(properties.pinCode),
+      'ProductKey': ros.stringToRosTemplate(properties.productKey),
+      'DevEui': ros.stringToRosTemplate(properties.devEui),
+      'DeviceName': ros.stringToRosTemplate(properties.deviceName),
+      'IotInstanceId': ros.stringToRosTemplate(properties.iotInstanceId),
+      'Nickname': ros.stringToRosTemplate(properties.nickname),
+      'PinCode': ros.stringToRosTemplate(properties.pinCode),
     };
 }
 
@@ -290,10 +290,10 @@ function rosDeviceGroupPropsToRosTemplate(properties: any, enableResourcePropert
         RosDeviceGroupPropsValidator(properties).assertSuccess();
     }
     return {
-      GroupName: ros.stringToRosTemplate(properties.groupName),
-      GroupDesc: ros.stringToRosTemplate(properties.groupDesc),
-      IotInstanceId: ros.stringToRosTemplate(properties.iotInstanceId),
-      SuperGroupId: ros.stringToRosTemplate(properties.superGroupId),
+      'GroupName': ros.stringToRosTemplate(properties.groupName),
+      'GroupDesc': ros.stringToRosTemplate(properties.groupDesc),
+      'IotInstanceId': ros.stringToRosTemplate(properties.iotInstanceId),
+      'SuperGroupId': ros.stringToRosTemplate(properties.superGroupId),
     };
 }
 
@@ -569,20 +569,20 @@ function rosProductPropsToRosTemplate(properties: any, enableResourcePropertyCon
         RosProductPropsValidator(properties).assertSuccess();
     }
     return {
-      NodeType: ros.numberToRosTemplate(properties.nodeType),
-      ProductName: ros.stringToRosTemplate(properties.productName),
-      AliyunCommodityCode: ros.stringToRosTemplate(properties.aliyunCommodityCode),
-      AuthType: ros.stringToRosTemplate(properties.authType),
-      CategoryKey: ros.stringToRosTemplate(properties.categoryKey),
-      DataFormat: ros.numberToRosTemplate(properties.dataFormat),
-      Description: ros.stringToRosTemplate(properties.description),
-      Id2: ros.booleanToRosTemplate(properties.id2),
-      IotInstanceId: ros.stringToRosTemplate(properties.iotInstanceId),
-      JoinPermissionId: ros.stringToRosTemplate(properties.joinPermissionId),
-      NetType: ros.stringToRosTemplate(properties.netType),
-      ProtocolType: ros.stringToRosTemplate(properties.protocolType),
-      PublishAuto: ros.booleanToRosTemplate(properties.publishAuto),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      'NodeType': ros.numberToRosTemplate(properties.nodeType),
+      'ProductName': ros.stringToRosTemplate(properties.productName),
+      'AliyunCommodityCode': ros.stringToRosTemplate(properties.aliyunCommodityCode),
+      'AuthType': ros.stringToRosTemplate(properties.authType),
+      'CategoryKey': ros.stringToRosTemplate(properties.categoryKey),
+      'DataFormat': ros.numberToRosTemplate(properties.dataFormat),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Id2': ros.booleanToRosTemplate(properties.id2),
+      'IotInstanceId': ros.stringToRosTemplate(properties.iotInstanceId),
+      'JoinPermissionId': ros.stringToRosTemplate(properties.joinPermissionId),
+      'NetType': ros.stringToRosTemplate(properties.netType),
+      'ProtocolType': ros.stringToRosTemplate(properties.protocolType),
+      'PublishAuto': ros.booleanToRosTemplate(properties.publishAuto),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
     };
 }
 
@@ -867,11 +867,11 @@ function rosProductTopicPropsToRosTemplate(properties: any, enableResourceProper
         RosProductTopicPropsValidator(properties).assertSuccess();
     }
     return {
-      Operation: ros.stringToRosTemplate(properties.operation),
-      ProductKey: ros.stringToRosTemplate(properties.productKey),
-      TopicShortName: ros.stringToRosTemplate(properties.topicShortName),
-      Desc: ros.stringToRosTemplate(properties.desc),
-      IotInstanceId: ros.stringToRosTemplate(properties.iotInstanceId),
+      'Operation': ros.stringToRosTemplate(properties.operation),
+      'ProductKey': ros.stringToRosTemplate(properties.productKey),
+      'TopicShortName': ros.stringToRosTemplate(properties.topicShortName),
+      'Desc': ros.stringToRosTemplate(properties.desc),
+      'IotInstanceId': ros.stringToRosTemplate(properties.iotInstanceId),
     };
 }
 
@@ -1119,18 +1119,18 @@ function rosRulePropsToRosTemplate(properties: any, enableResourcePropertyConstr
         RosRulePropsValidator(properties).assertSuccess();
     }
     return {
-      Name: ros.stringToRosTemplate(properties.name),
-      DataType: ros.stringToRosTemplate(properties.dataType),
-      IotInstanceId: ros.stringToRosTemplate(properties.iotInstanceId),
-      ProductKey: ros.stringToRosTemplate(properties.productKey),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      RuleAction: ros.listMapper(rosRuleRuleActionPropertyToRosTemplate)(properties.ruleAction),
-      RuleDesc: ros.stringToRosTemplate(properties.ruleDesc),
-      Select: ros.stringToRosTemplate(properties.select),
-      ShortTopic: ros.stringToRosTemplate(properties.shortTopic),
-      StartRule: ros.booleanToRosTemplate(properties.startRule),
-      TopicType: ros.numberToRosTemplate(properties.topicType),
-      Where: ros.stringToRosTemplate(properties.where),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'DataType': ros.stringToRosTemplate(properties.dataType),
+      'IotInstanceId': ros.stringToRosTemplate(properties.iotInstanceId),
+      'ProductKey': ros.stringToRosTemplate(properties.productKey),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'RuleAction': ros.listMapper(rosRuleRuleActionPropertyToRosTemplate)(properties.ruleAction),
+      'RuleDesc': ros.stringToRosTemplate(properties.ruleDesc),
+      'Select': ros.stringToRosTemplate(properties.select),
+      'ShortTopic': ros.stringToRosTemplate(properties.shortTopic),
+      'StartRule': ros.booleanToRosTemplate(properties.startRule),
+      'TopicType': ros.numberToRosTemplate(properties.topicType),
+      'Where': ros.stringToRosTemplate(properties.where),
     };
 }
 
@@ -1392,9 +1392,9 @@ function rosRuleRuleActionPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosRule_RuleActionPropertyValidator(properties).assertSuccess();
     return {
-      ErrorActionFlag: ros.stringToRosTemplate(properties.errorActionFlag),
-      Type: ros.stringToRosTemplate(properties.type),
-      Configuration: ros.stringToRosTemplate(properties.configuration),
+      'ErrorActionFlag': ros.stringToRosTemplate(properties.errorActionFlag),
+      'Type': ros.stringToRosTemplate(properties.type),
+      'Configuration': ros.stringToRosTemplate(properties.configuration),
     };
 }
 
@@ -1495,11 +1495,11 @@ function rosRuleActionPropsToRosTemplate(properties: any, enableResourceProperty
         RosRuleActionPropsValidator(properties).assertSuccess();
     }
     return {
-      Configuration: ros.stringToRosTemplate(properties.configuration),
-      RuleId: ros.numberToRosTemplate(properties.ruleId),
-      Type: ros.stringToRosTemplate(properties.type),
-      ErrorActionFlag: ros.booleanToRosTemplate(properties.errorActionFlag),
-      IotInstanceId: ros.stringToRosTemplate(properties.iotInstanceId),
+      'Configuration': ros.stringToRosTemplate(properties.configuration),
+      'RuleId': ros.numberToRosTemplate(properties.ruleId),
+      'Type': ros.stringToRosTemplate(properties.type),
+      'ErrorActionFlag': ros.booleanToRosTemplate(properties.errorActionFlag),
+      'IotInstanceId': ros.stringToRosTemplate(properties.iotInstanceId),
     };
 }
 

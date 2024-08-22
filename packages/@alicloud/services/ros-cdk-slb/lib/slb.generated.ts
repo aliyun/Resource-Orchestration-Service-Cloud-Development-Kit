@@ -14,7 +14,7 @@ export interface RosAccessControlProps {
     readonly aclName: string | ros.IResolvable;
 
     /**
-     * @Property aclEntries: A list of acl entries. Each entry can be IP addresses or CIDR blocks. Max length: 50.
+     * @Property aclEntries: A list of acl entries. Each entry can be IP addresses or CIDR blocks. Max length: 300.
      */
     readonly aclEntries?: Array<RosAccessControl.AclEntriesProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -48,7 +48,7 @@ function RosAccessControlPropsValidator(properties: any): ros.ValidationResult {
         errors.collect(ros.propertyValidator('aclEntries', ros.validateLength)({
             data: properties.aclEntries.length,
             min: undefined,
-            max: 50,
+            max: 300,
           }));
     }
     errors.collect(ros.propertyValidator('aclEntries', ros.listValidator(RosAccessControl_AclEntriesPropertyValidator))(properties.aclEntries));
@@ -87,11 +87,11 @@ function rosAccessControlPropsToRosTemplate(properties: any, enableResourcePrope
         RosAccessControlPropsValidator(properties).assertSuccess();
     }
     return {
-      AclName: ros.stringToRosTemplate(properties.aclName),
-      AclEntries: ros.listMapper(rosAccessControlAclEntriesPropertyToRosTemplate)(properties.aclEntries),
-      AddressIPVersion: ros.stringToRosTemplate(properties.addressIpVersion),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      Tags: ros.listMapper(rosAccessControlTagsPropertyToRosTemplate)(properties.tags),
+      'AclName': ros.stringToRosTemplate(properties.aclName),
+      'AclEntries': ros.listMapper(rosAccessControlAclEntriesPropertyToRosTemplate)(properties.aclEntries),
+      'AddressIPVersion': ros.stringToRosTemplate(properties.addressIpVersion),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tags': ros.listMapper(rosAccessControlTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -120,7 +120,7 @@ export class RosAccessControl extends ros.RosResource {
     public aclName: string | ros.IResolvable;
 
     /**
-     * @Property aclEntries: A list of acl entries. Each entry can be IP addresses or CIDR blocks. Max length: 50.
+     * @Property aclEntries: A list of acl entries. Each entry can be IP addresses or CIDR blocks. Max length: 300.
      */
     public aclEntries: Array<RosAccessControl.AclEntriesProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -214,8 +214,8 @@ function rosAccessControlAclEntriesPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosAccessControl_AclEntriesPropertyValidator(properties).assertSuccess();
     return {
-      Comment: ros.stringToRosTemplate(properties.comment),
-      Entry: ros.stringToRosTemplate(properties.entry),
+      'Comment': ros.stringToRosTemplate(properties.comment),
+      'Entry': ros.stringToRosTemplate(properties.entry),
     };
 }
 
@@ -262,8 +262,8 @@ function rosAccessControlTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosAccessControl_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -326,10 +326,10 @@ function rosBackendServerAttachmentPropsToRosTemplate(properties: any, enableRes
         RosBackendServerAttachmentPropsValidator(properties).assertSuccess();
     }
     return {
-      LoadBalancerId: ros.stringToRosTemplate(properties.loadBalancerId),
-      BackendServerList: ros.listMapper(ros.stringToRosTemplate)(properties.backendServerList),
-      BackendServers: ros.listMapper(rosBackendServerAttachmentBackendServersPropertyToRosTemplate)(properties.backendServers),
-      BackendServerWeightList: ros.listMapper(ros.objectToRosTemplate)(properties.backendServerWeightList),
+      'LoadBalancerId': ros.stringToRosTemplate(properties.loadBalancerId),
+      'BackendServerList': ros.listMapper(ros.stringToRosTemplate)(properties.backendServerList),
+      'BackendServers': ros.listMapper(rosBackendServerAttachmentBackendServersPropertyToRosTemplate)(properties.backendServers),
+      'BackendServerWeightList': ros.listMapper(ros.objectToRosTemplate)(properties.backendServerWeightList),
     };
 }
 
@@ -474,11 +474,11 @@ function rosBackendServerAttachmentBackendServersPropertyToRosTemplate(propertie
     if (!ros.canInspect(properties)) { return properties; }
     RosBackendServerAttachment_BackendServersPropertyValidator(properties).assertSuccess();
     return {
-      Type: ros.stringToRosTemplate(properties.type),
-      ServerId: ros.stringToRosTemplate(properties.serverId),
-      Description: ros.stringToRosTemplate(properties.description),
-      ServerIp: ros.stringToRosTemplate(properties.serverIp),
-      Weight: ros.numberToRosTemplate(properties.weight),
+      'Type': ros.stringToRosTemplate(properties.type),
+      'ServerId': ros.stringToRosTemplate(properties.serverId),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'ServerIp': ros.stringToRosTemplate(properties.serverIp),
+      'Weight': ros.numberToRosTemplate(properties.weight),
     };
 }
 
@@ -530,8 +530,8 @@ function rosBackendServerToVServerGroupAdditionPropsToRosTemplate(properties: an
         RosBackendServerToVServerGroupAdditionPropsValidator(properties).assertSuccess();
     }
     return {
-      BackendServers: ros.listMapper(rosBackendServerToVServerGroupAdditionBackendServersPropertyToRosTemplate)(properties.backendServers),
-      VServerGroupId: ros.stringToRosTemplate(properties.vServerGroupId),
+      'BackendServers': ros.listMapper(rosBackendServerToVServerGroupAdditionBackendServersPropertyToRosTemplate)(properties.backendServers),
+      'VServerGroupId': ros.stringToRosTemplate(properties.vServerGroupId),
     };
 }
 
@@ -637,6 +637,13 @@ function RosBackendServerToVServerGroupAddition_BackendServersPropertyValidator(
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('serverId', ros.requiredValidator)(properties.serverId));
+    if(properties.serverId && (Array.isArray(properties.serverId) || (typeof properties.serverId) === 'string')) {
+        errors.collect(ros.propertyValidator('serverId', ros.validateLength)({
+            data: properties.serverId.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
     errors.collect(ros.propertyValidator('serverId', ros.validateString)(properties.serverId));
     errors.collect(ros.propertyValidator('serverIp', ros.validateString)(properties.serverIp));
     errors.collect(ros.propertyValidator('port', ros.requiredValidator)(properties.port));
@@ -664,12 +671,12 @@ function rosBackendServerToVServerGroupAdditionBackendServersPropertyToRosTempla
     if (!ros.canInspect(properties)) { return properties; }
     RosBackendServerToVServerGroupAddition_BackendServersPropertyValidator(properties).assertSuccess();
     return {
-      Type: ros.stringToRosTemplate(properties.type),
-      Description: ros.stringToRosTemplate(properties.description),
-      ServerId: ros.stringToRosTemplate(properties.serverId),
-      ServerIp: ros.stringToRosTemplate(properties.serverIp),
-      Port: ros.numberToRosTemplate(properties.port),
-      Weight: ros.numberToRosTemplate(properties.weight),
+      'Type': ros.stringToRosTemplate(properties.type),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'ServerId': ros.stringToRosTemplate(properties.serverId),
+      'ServerIp': ros.stringToRosTemplate(properties.serverIp),
+      'Port': ros.numberToRosTemplate(properties.port),
+      'Weight': ros.numberToRosTemplate(properties.weight),
     };
 }
 
@@ -768,14 +775,14 @@ function rosCertificatePropsToRosTemplate(properties: any, enableResourcePropert
         RosCertificatePropsValidator(properties).assertSuccess();
     }
     return {
-      AliCloudCertificateId: ros.stringToRosTemplate(properties.aliCloudCertificateId),
-      AliCloudCertificateName: ros.stringToRosTemplate(properties.aliCloudCertificateName),
-      Certificate: ros.stringToRosTemplate(properties.certificate),
-      CertificateName: ros.stringToRosTemplate(properties.certificateName),
-      CertificateType: ros.stringToRosTemplate(properties.certificateType),
-      PrivateKey: ros.stringToRosTemplate(properties.privateKey),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      Tags: ros.listMapper(rosCertificateTagsPropertyToRosTemplate)(properties.tags),
+      'AliCloudCertificateId': ros.stringToRosTemplate(properties.aliCloudCertificateId),
+      'AliCloudCertificateName': ros.stringToRosTemplate(properties.aliCloudCertificateName),
+      'Certificate': ros.stringToRosTemplate(properties.certificate),
+      'CertificateName': ros.stringToRosTemplate(properties.certificateName),
+      'CertificateType': ros.stringToRosTemplate(properties.certificateType),
+      'PrivateKey': ros.stringToRosTemplate(properties.privateKey),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tags': ros.listMapper(rosCertificateTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -925,8 +932,8 @@ function rosCertificateTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosCertificate_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -1000,10 +1007,10 @@ function rosDomainExtensionPropsToRosTemplate(properties: any, enableResourcePro
         RosDomainExtensionPropsValidator(properties).assertSuccess();
     }
     return {
-      Domain: ros.stringToRosTemplate(properties.domain),
-      ListenerPort: ros.numberToRosTemplate(properties.listenerPort),
-      LoadBalancerId: ros.stringToRosTemplate(properties.loadBalancerId),
-      ServerCertificateId: ros.stringToRosTemplate(properties.serverCertificateId),
+      'Domain': ros.stringToRosTemplate(properties.domain),
+      'ListenerPort': ros.numberToRosTemplate(properties.listenerPort),
+      'LoadBalancerId': ros.stringToRosTemplate(properties.loadBalancerId),
+      'ServerCertificateId': ros.stringToRosTemplate(properties.serverCertificateId),
     };
 }
 
@@ -1322,7 +1329,7 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
         errors.collect(ros.propertyValidator('bandwidth', ros.validateRange)({
             data: properties.bandwidth,
             min: -1,
-            max: 1000,
+            max: 5120,
           }));
     }
     errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));
@@ -1422,35 +1429,35 @@ function rosListenerPropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosListenerPropsValidator(properties).assertSuccess();
     }
     return {
-      Bandwidth: ros.numberToRosTemplate(properties.bandwidth),
-      ListenerPort: ros.numberToRosTemplate(properties.listenerPort),
-      LoadBalancerId: ros.stringToRosTemplate(properties.loadBalancerId),
-      Protocol: ros.stringToRosTemplate(properties.protocol),
-      AclId: ros.stringToRosTemplate(properties.aclId),
-      AclIds: ros.listMapper(ros.stringToRosTemplate)(properties.aclIds),
-      AclStatus: ros.stringToRosTemplate(properties.aclStatus),
-      AclType: ros.stringToRosTemplate(properties.aclType),
-      BackendServerPort: ros.numberToRosTemplate(properties.backendServerPort),
-      CACertificateId: ros.stringToRosTemplate(properties.caCertificateId),
-      ConnectionDrain: ros.stringToRosTemplate(properties.connectionDrain),
-      ConnectionDrainTimeout: ros.numberToRosTemplate(properties.connectionDrainTimeout),
-      Description: ros.stringToRosTemplate(properties.description),
-      EnableHttp2: ros.stringToRosTemplate(properties.enableHttp2),
-      Gzip: ros.stringToRosTemplate(properties.gzip),
-      HealthCheck: rosListenerHealthCheckPropertyToRosTemplate(properties.healthCheck),
-      HttpConfig: rosListenerHttpConfigPropertyToRosTemplate(properties.httpConfig),
-      IdleTimeout: ros.numberToRosTemplate(properties.idleTimeout),
-      MasterSlaveServerGroupId: ros.stringToRosTemplate(properties.masterSlaveServerGroupId),
-      Persistence: rosListenerPersistencePropertyToRosTemplate(properties.persistence),
-      PortRange: ros.listMapper(rosListenerPortRangePropertyToRosTemplate)(properties.portRange),
-      ProxyProtocolV2Enabled: ros.booleanToRosTemplate(properties.proxyProtocolV2Enabled),
-      RequestTimeout: ros.numberToRosTemplate(properties.requestTimeout),
-      Scheduler: ros.stringToRosTemplate(properties.scheduler),
-      ServerCertificateId: ros.stringToRosTemplate(properties.serverCertificateId),
-      StartListener: ros.booleanToRosTemplate(properties.startListener),
-      Tags: ros.listMapper(rosListenerTagsPropertyToRosTemplate)(properties.tags),
-      TLSCipherPolicy: ros.stringToRosTemplate(properties.tlsCipherPolicy),
-      VServerGroupId: ros.stringToRosTemplate(properties.vServerGroupId),
+      'Bandwidth': ros.numberToRosTemplate(properties.bandwidth),
+      'ListenerPort': ros.numberToRosTemplate(properties.listenerPort),
+      'LoadBalancerId': ros.stringToRosTemplate(properties.loadBalancerId),
+      'Protocol': ros.stringToRosTemplate(properties.protocol),
+      'AclId': ros.stringToRosTemplate(properties.aclId),
+      'AclIds': ros.listMapper(ros.stringToRosTemplate)(properties.aclIds),
+      'AclStatus': ros.stringToRosTemplate(properties.aclStatus),
+      'AclType': ros.stringToRosTemplate(properties.aclType),
+      'BackendServerPort': ros.numberToRosTemplate(properties.backendServerPort),
+      'CACertificateId': ros.stringToRosTemplate(properties.caCertificateId),
+      'ConnectionDrain': ros.stringToRosTemplate(properties.connectionDrain),
+      'ConnectionDrainTimeout': ros.numberToRosTemplate(properties.connectionDrainTimeout),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'EnableHttp2': ros.stringToRosTemplate(properties.enableHttp2),
+      'Gzip': ros.stringToRosTemplate(properties.gzip),
+      'HealthCheck': rosListenerHealthCheckPropertyToRosTemplate(properties.healthCheck),
+      'HttpConfig': rosListenerHttpConfigPropertyToRosTemplate(properties.httpConfig),
+      'IdleTimeout': ros.numberToRosTemplate(properties.idleTimeout),
+      'MasterSlaveServerGroupId': ros.stringToRosTemplate(properties.masterSlaveServerGroupId),
+      'Persistence': rosListenerPersistencePropertyToRosTemplate(properties.persistence),
+      'PortRange': ros.listMapper(rosListenerPortRangePropertyToRosTemplate)(properties.portRange),
+      'ProxyProtocolV2Enabled': ros.booleanToRosTemplate(properties.proxyProtocolV2Enabled),
+      'RequestTimeout': ros.numberToRosTemplate(properties.requestTimeout),
+      'Scheduler': ros.stringToRosTemplate(properties.scheduler),
+      'ServerCertificateId': ros.stringToRosTemplate(properties.serverCertificateId),
+      'StartListener': ros.booleanToRosTemplate(properties.startListener),
+      'Tags': ros.listMapper(rosListenerTagsPropertyToRosTemplate)(properties.tags),
+      'TLSCipherPolicy': ros.stringToRosTemplate(properties.tlsCipherPolicy),
+      'VServerGroupId': ros.stringToRosTemplate(properties.vServerGroupId),
     };
 }
 
@@ -1737,6 +1744,22 @@ export namespace RosListener {
      */
     export interface HealthCheckProperty {
         /**
+         * @Property unhealthyThreshold: The number of consecutive health checks failures required,before identified the backend server in Unhealthy status.
+         */
+        readonly unhealthyThreshold?: number | ros.IResolvable;
+        /**
+         * @Property timeout: The amount of time, in seconds, during which no response means a failed health check.
+         */
+        readonly timeout?: number | ros.IResolvable;
+        /**
+         * @Property port: The port being checked. The range of valid ports is 0 through 65535.
+         */
+        readonly port?: number | ros.IResolvable;
+        /**
+         * @Property uri: The url of health check target.
+         */
+        readonly uri?: string | ros.IResolvable;
+        /**
          * @Property httpCode: The expect status of health check result. Any answer other than referred status within the timeout period is considered unhealthy.
          */
         readonly httpCode?: string | ros.IResolvable;
@@ -1746,14 +1769,6 @@ export namespace RosListener {
          */
         readonly switch?: string | ros.IResolvable;
         /**
-         * @Property unhealthyThreshold: The number of consecutive health checks failures required,before identified the backend server in Unhealthy status.
-         */
-        readonly unhealthyThreshold?: number | ros.IResolvable;
-        /**
-         * @Property timeout: The amount of time, in seconds, during which no response means a failed health check.
-         */
-        readonly timeout?: number | ros.IResolvable;
-        /**
          * @Property healthCheckMethod: The health check method used in HTTP or HTTPS health checks. Valid values: head and get.
          */
         readonly healthCheckMethod?: string | ros.IResolvable;
@@ -1762,21 +1777,21 @@ export namespace RosListener {
          */
         readonly healthyThreshold?: number | ros.IResolvable;
         /**
-         * @Property port: The port being checked. The range of valid ports is 0 through 65535.
-         */
-        readonly port?: number | ros.IResolvable;
-        /**
          * @Property domain: The domain of health check target.
          */
         readonly domain?: string | ros.IResolvable;
         /**
-         * @Property uri: The url of health check target.
+         * @Property exp: The response string for UDP listening health check is limited to letters and numbers, and the maximum length is 64 characters.
          */
-        readonly uri?: string | ros.IResolvable;
+        readonly exp?: string | ros.IResolvable;
         /**
-         * @Property healthCheckType: The type of health check. It takes effect when Protocol=tcp. Valid values: tcp and http. Default value: tcp.
+         * @Property healthCheckType: The type of health check.Valid values: tcp, udp, https and http. Default value: tcp.
          */
         readonly healthCheckType?: string | ros.IResolvable;
+        /**
+         * @Property req: The request string for UDP listening health check is limited to letters and numbers, and the maximum length is 64 characters.
+         */
+        readonly req?: string | ros.IResolvable;
         /**
          * @Property interval: The approximate interval, unit in seconds, between health checks of an backend server.
          */
@@ -1793,14 +1808,6 @@ export namespace RosListener {
 function RosListener_HealthCheckPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('httpCode', ros.validateString)(properties.httpCode));
-    if(properties.switch && (typeof properties.switch) !== 'object') {
-        errors.collect(ros.propertyValidator('switch', ros.validateAllowedValues)({
-          data: properties.switch,
-          allowedValues: ["on","off"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('switch', ros.validateString)(properties.switch));
     if(properties.unhealthyThreshold && (typeof properties.unhealthyThreshold) !== 'object') {
         errors.collect(ros.propertyValidator('unhealthyThreshold', ros.validateRange)({
             data: properties.unhealthyThreshold,
@@ -1817,6 +1824,23 @@ function RosListener_HealthCheckPropertyValidator(properties: any): ros.Validati
           }));
     }
     errors.collect(ros.propertyValidator('timeout', ros.validateNumber)(properties.timeout));
+    if(properties.port && (typeof properties.port) !== 'object') {
+        errors.collect(ros.propertyValidator('port', ros.validateRange)({
+            data: properties.port,
+            min: 0,
+            max: 65535,
+          }));
+    }
+    errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
+    errors.collect(ros.propertyValidator('uri', ros.validateString)(properties.uri));
+    errors.collect(ros.propertyValidator('httpCode', ros.validateString)(properties.httpCode));
+    if(properties.switch && (typeof properties.switch) !== 'object') {
+        errors.collect(ros.propertyValidator('switch', ros.validateAllowedValues)({
+          data: properties.switch,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('switch', ros.validateString)(properties.switch));
     errors.collect(ros.propertyValidator('healthCheckMethod', ros.validateString)(properties.healthCheckMethod));
     if(properties.healthyThreshold && (typeof properties.healthyThreshold) !== 'object') {
         errors.collect(ros.propertyValidator('healthyThreshold', ros.validateRange)({
@@ -1826,23 +1850,16 @@ function RosListener_HealthCheckPropertyValidator(properties: any): ros.Validati
           }));
     }
     errors.collect(ros.propertyValidator('healthyThreshold', ros.validateNumber)(properties.healthyThreshold));
-    if(properties.port && (typeof properties.port) !== 'object') {
-        errors.collect(ros.propertyValidator('port', ros.validateRange)({
-            data: properties.port,
-            min: 0,
-            max: 65535,
-          }));
-    }
-    errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
     errors.collect(ros.propertyValidator('domain', ros.validateString)(properties.domain));
-    errors.collect(ros.propertyValidator('uri', ros.validateString)(properties.uri));
+    errors.collect(ros.propertyValidator('exp', ros.validateString)(properties.exp));
     if(properties.healthCheckType && (typeof properties.healthCheckType) !== 'object') {
         errors.collect(ros.propertyValidator('healthCheckType', ros.validateAllowedValues)({
           data: properties.healthCheckType,
-          allowedValues: ["tcp","http"],
+          allowedValues: ["tcp","http","udp","https"],
         }));
     }
     errors.collect(ros.propertyValidator('healthCheckType', ros.validateString)(properties.healthCheckType));
+    errors.collect(ros.propertyValidator('req', ros.validateString)(properties.req));
     if(properties.interval && (typeof properties.interval) !== 'object') {
         errors.collect(ros.propertyValidator('interval', ros.validateRange)({
             data: properties.interval,
@@ -1866,17 +1883,19 @@ function rosListenerHealthCheckPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosListener_HealthCheckPropertyValidator(properties).assertSuccess();
     return {
-      HttpCode: ros.stringToRosTemplate(properties.httpCode),
-      Switch: ros.stringToRosTemplate(properties.switch),
-      UnhealthyThreshold: ros.numberToRosTemplate(properties.unhealthyThreshold),
-      Timeout: ros.numberToRosTemplate(properties.timeout),
-      HealthCheckMethod: ros.stringToRosTemplate(properties.healthCheckMethod),
-      HealthyThreshold: ros.numberToRosTemplate(properties.healthyThreshold),
-      Port: ros.numberToRosTemplate(properties.port),
-      Domain: ros.stringToRosTemplate(properties.domain),
-      URI: ros.stringToRosTemplate(properties.uri),
-      HealthCheckType: ros.stringToRosTemplate(properties.healthCheckType),
-      Interval: ros.numberToRosTemplate(properties.interval),
+      'UnhealthyThreshold': ros.numberToRosTemplate(properties.unhealthyThreshold),
+      'Timeout': ros.numberToRosTemplate(properties.timeout),
+      'Port': ros.numberToRosTemplate(properties.port),
+      'URI': ros.stringToRosTemplate(properties.uri),
+      'HttpCode': ros.stringToRosTemplate(properties.httpCode),
+      'Switch': ros.stringToRosTemplate(properties.switch),
+      'HealthCheckMethod': ros.stringToRosTemplate(properties.healthCheckMethod),
+      'HealthyThreshold': ros.numberToRosTemplate(properties.healthyThreshold),
+      'Domain': ros.stringToRosTemplate(properties.domain),
+      'Exp': ros.stringToRosTemplate(properties.exp),
+      'HealthCheckType': ros.stringToRosTemplate(properties.healthCheckType),
+      'Req': ros.stringToRosTemplate(properties.req),
+      'Interval': ros.numberToRosTemplate(properties.interval),
     };
 }
 
@@ -1937,8 +1956,8 @@ function rosListenerHttpConfigPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosListener_HttpConfigPropertyValidator(properties).assertSuccess();
     return {
-      ListenerForward: ros.stringToRosTemplate(properties.listenerForward),
-      ForwardPort: ros.numberToRosTemplate(properties.forwardPort),
+      'ListenerForward': ros.stringToRosTemplate(properties.listenerForward),
+      'ForwardPort': ros.numberToRosTemplate(properties.forwardPort),
     };
 }
 
@@ -2091,17 +2110,17 @@ function rosListenerPersistencePropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosListener_PersistencePropertyValidator(properties).assertSuccess();
     return {
-      XForwardedFor_SLBID: ros.stringToRosTemplate(properties.xForwardedForSlbid),
-      CookieTimeout: ros.numberToRosTemplate(properties.cookieTimeout),
-      Cookie: ros.stringToRosTemplate(properties.cookie),
-      StickySession: ros.stringToRosTemplate(properties.stickySession),
-      PersistenceTimeout: ros.numberToRosTemplate(properties.persistenceTimeout),
-      XForwardedFor_SLBPORT: ros.stringToRosTemplate(properties.xForwardedForSlbport),
-      XForwardedFor: ros.stringToRosTemplate(properties.xForwardedFor),
-      XForwardedFor_ClientSrcPort: ros.stringToRosTemplate(properties.xForwardedForClientSrcPort),
-      XForwardedFor_proto: ros.stringToRosTemplate(properties.xForwardedForProto),
-      StickySessionType: ros.stringToRosTemplate(properties.stickySessionType),
-      XForwardedFor_SLBIP: ros.stringToRosTemplate(properties.xForwardedForSlbip),
+      'XForwardedFor_SLBID': ros.stringToRosTemplate(properties.xForwardedForSlbid),
+      'CookieTimeout': ros.numberToRosTemplate(properties.cookieTimeout),
+      'Cookie': ros.stringToRosTemplate(properties.cookie),
+      'StickySession': ros.stringToRosTemplate(properties.stickySession),
+      'PersistenceTimeout': ros.numberToRosTemplate(properties.persistenceTimeout),
+      'XForwardedFor_SLBPORT': ros.stringToRosTemplate(properties.xForwardedForSlbport),
+      'XForwardedFor': ros.stringToRosTemplate(properties.xForwardedFor),
+      'XForwardedFor_ClientSrcPort': ros.stringToRosTemplate(properties.xForwardedForClientSrcPort),
+      'XForwardedFor_proto': ros.stringToRosTemplate(properties.xForwardedForProto),
+      'StickySessionType': ros.stringToRosTemplate(properties.stickySessionType),
+      'XForwardedFor_SLBIP': ros.stringToRosTemplate(properties.xForwardedForSlbip),
     };
 }
 
@@ -2163,8 +2182,8 @@ function rosListenerPortRangePropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosListener_PortRangePropertyValidator(properties).assertSuccess();
     return {
-      StartPort: ros.numberToRosTemplate(properties.startPort),
-      EndPort: ros.numberToRosTemplate(properties.endPort),
+      'StartPort': ros.numberToRosTemplate(properties.startPort),
+      'EndPort': ros.numberToRosTemplate(properties.endPort),
     };
 }
 
@@ -2211,8 +2230,8 @@ function rosListenerTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosListener_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -2483,28 +2502,28 @@ function rosLoadBalancerPropsToRosTemplate(properties: any, enableResourceProper
         RosLoadBalancerPropsValidator(properties).assertSuccess();
     }
     return {
-      AddressIPVersion: ros.stringToRosTemplate(properties.addressIpVersion),
-      AddressType: ros.stringToRosTemplate(properties.addressType),
-      AutoPay: ros.booleanToRosTemplate(properties.autoPay),
-      AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
-      AutoRenewPeriod: ros.numberToRosTemplate(properties.autoRenewPeriod),
-      Bandwidth: ros.numberToRosTemplate(properties.bandwidth),
-      DeletionProtection: ros.booleanToRosTemplate(properties.deletionProtection),
-      Duration: ros.numberToRosTemplate(properties.duration),
-      InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
-      InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
-      LoadBalancerName: ros.stringToRosTemplate(properties.loadBalancerName),
-      LoadBalancerSpec: ros.stringToRosTemplate(properties.loadBalancerSpec),
-      MasterZoneId: ros.stringToRosTemplate(properties.masterZoneId),
-      ModificationProtectionReason: ros.stringToRosTemplate(properties.modificationProtectionReason),
-      ModificationProtectionStatus: ros.stringToRosTemplate(properties.modificationProtectionStatus),
-      PayType: ros.stringToRosTemplate(properties.payType),
-      PricingCycle: ros.stringToRosTemplate(properties.pricingCycle),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      SlaveZoneId: ros.stringToRosTemplate(properties.slaveZoneId),
-      Tags: ros.listMapper(rosLoadBalancerTagsPropertyToRosTemplate)(properties.tags),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
+      'AddressIPVersion': ros.stringToRosTemplate(properties.addressIpVersion),
+      'AddressType': ros.stringToRosTemplate(properties.addressType),
+      'AutoPay': ros.booleanToRosTemplate(properties.autoPay),
+      'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
+      'AutoRenewPeriod': ros.numberToRosTemplate(properties.autoRenewPeriod),
+      'Bandwidth': ros.numberToRosTemplate(properties.bandwidth),
+      'DeletionProtection': ros.booleanToRosTemplate(properties.deletionProtection),
+      'Duration': ros.numberToRosTemplate(properties.duration),
+      'InstanceChargeType': ros.stringToRosTemplate(properties.instanceChargeType),
+      'InternetChargeType': ros.stringToRosTemplate(properties.internetChargeType),
+      'LoadBalancerName': ros.stringToRosTemplate(properties.loadBalancerName),
+      'LoadBalancerSpec': ros.stringToRosTemplate(properties.loadBalancerSpec),
+      'MasterZoneId': ros.stringToRosTemplate(properties.masterZoneId),
+      'ModificationProtectionReason': ros.stringToRosTemplate(properties.modificationProtectionReason),
+      'ModificationProtectionStatus': ros.stringToRosTemplate(properties.modificationProtectionStatus),
+      'PayType': ros.stringToRosTemplate(properties.payType),
+      'PricingCycle': ros.stringToRosTemplate(properties.pricingCycle),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'SlaveZoneId': ros.stringToRosTemplate(properties.slaveZoneId),
+      'Tags': ros.listMapper(rosLoadBalancerTagsPropertyToRosTemplate)(properties.tags),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
     };
 }
 
@@ -2856,8 +2875,8 @@ function rosLoadBalancerTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosLoadBalancer_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -2985,16 +3004,16 @@ function rosLoadBalancerClonePropsToRosTemplate(properties: any, enableResourceP
         RosLoadBalancerClonePropsValidator(properties).assertSuccess();
     }
     return {
-      SourceLoadBalancerId: ros.stringToRosTemplate(properties.sourceLoadBalancerId),
-      BackendServers: ros.listMapper(rosLoadBalancerCloneBackendServersPropertyToRosTemplate)(properties.backendServers),
-      BackendServersPolicy: ros.stringToRosTemplate(properties.backendServersPolicy),
-      InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
-      LoadBalancerName: ros.stringToRosTemplate(properties.loadBalancerName),
-      LoadBalancerSpec: ros.stringToRosTemplate(properties.loadBalancerSpec),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      Tags: ros.listMapper(rosLoadBalancerCloneTagsPropertyToRosTemplate)(properties.tags),
-      TagsPolicy: ros.stringToRosTemplate(properties.tagsPolicy),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
+      'SourceLoadBalancerId': ros.stringToRosTemplate(properties.sourceLoadBalancerId),
+      'BackendServers': ros.listMapper(rosLoadBalancerCloneBackendServersPropertyToRosTemplate)(properties.backendServers),
+      'BackendServersPolicy': ros.stringToRosTemplate(properties.backendServersPolicy),
+      'InstanceChargeType': ros.stringToRosTemplate(properties.instanceChargeType),
+      'LoadBalancerName': ros.stringToRosTemplate(properties.loadBalancerName),
+      'LoadBalancerSpec': ros.stringToRosTemplate(properties.loadBalancerSpec),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tags': ros.listMapper(rosLoadBalancerCloneTagsPropertyToRosTemplate)(properties.tags),
+      'TagsPolicy': ros.stringToRosTemplate(properties.tagsPolicy),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
     };
 }
 
@@ -3179,11 +3198,11 @@ function rosLoadBalancerCloneBackendServersPropertyToRosTemplate(properties: any
     if (!ros.canInspect(properties)) { return properties; }
     RosLoadBalancerClone_BackendServersPropertyValidator(properties).assertSuccess();
     return {
-      Type: ros.stringToRosTemplate(properties.type),
-      ServerId: ros.stringToRosTemplate(properties.serverId),
-      Description: ros.stringToRosTemplate(properties.description),
-      ServerIp: ros.stringToRosTemplate(properties.serverIp),
-      Weight: ros.numberToRosTemplate(properties.weight),
+      'Type': ros.stringToRosTemplate(properties.type),
+      'ServerId': ros.stringToRosTemplate(properties.serverId),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'ServerIp': ros.stringToRosTemplate(properties.serverIp),
+      'Weight': ros.numberToRosTemplate(properties.weight),
     };
 }
 
@@ -3230,8 +3249,8 @@ function rosLoadBalancerCloneTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosLoadBalancerClone_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -3297,9 +3316,9 @@ function rosMasterSlaveServerGroupPropsToRosTemplate(properties: any, enableReso
         RosMasterSlaveServerGroupPropsValidator(properties).assertSuccess();
     }
     return {
-      LoadBalancerId: ros.stringToRosTemplate(properties.loadBalancerId),
-      MasterSlaveBackendServers: ros.listMapper(rosMasterSlaveServerGroupMasterSlaveBackendServersPropertyToRosTemplate)(properties.masterSlaveBackendServers),
-      MasterSlaveServerGroupName: ros.stringToRosTemplate(properties.masterSlaveServerGroupName),
+      'LoadBalancerId': ros.stringToRosTemplate(properties.loadBalancerId),
+      'MasterSlaveBackendServers': ros.listMapper(rosMasterSlaveServerGroupMasterSlaveBackendServersPropertyToRosTemplate)(properties.masterSlaveBackendServers),
+      'MasterSlaveServerGroupName': ros.stringToRosTemplate(properties.masterSlaveServerGroupName),
     };
 }
 
@@ -3453,12 +3472,12 @@ function rosMasterSlaveServerGroupMasterSlaveBackendServersPropertyToRosTemplate
     if (!ros.canInspect(properties)) { return properties; }
     RosMasterSlaveServerGroup_MasterSlaveBackendServersPropertyValidator(properties).assertSuccess();
     return {
-      ServerType: ros.stringToRosTemplate(properties.serverType),
-      Type: ros.stringToRosTemplate(properties.type),
-      ServerId: ros.stringToRosTemplate(properties.serverId),
-      ServerIp: ros.stringToRosTemplate(properties.serverIp),
-      Port: ros.numberToRosTemplate(properties.port),
-      Weight: ros.numberToRosTemplate(properties.weight),
+      'ServerType': ros.stringToRosTemplate(properties.serverType),
+      'Type': ros.stringToRosTemplate(properties.type),
+      'ServerId': ros.stringToRosTemplate(properties.serverId),
+      'ServerIp': ros.stringToRosTemplate(properties.serverIp),
+      'Port': ros.numberToRosTemplate(properties.port),
+      'Weight': ros.numberToRosTemplate(properties.weight),
     };
 }
 
@@ -3538,10 +3557,10 @@ function rosRulePropsToRosTemplate(properties: any, enableResourcePropertyConstr
         RosRulePropsValidator(properties).assertSuccess();
     }
     return {
-      ListenerPort: ros.numberToRosTemplate(properties.listenerPort),
-      LoadBalancerId: ros.stringToRosTemplate(properties.loadBalancerId),
-      RuleList: ros.listMapper(rosRuleRuleListPropertyToRosTemplate)(properties.ruleList),
-      ListenerProtocol: ros.stringToRosTemplate(properties.listenerProtocol),
+      'ListenerPort': ros.numberToRosTemplate(properties.listenerPort),
+      'LoadBalancerId': ros.stringToRosTemplate(properties.loadBalancerId),
+      'RuleList': ros.listMapper(rosRuleRuleListPropertyToRosTemplate)(properties.ruleList),
+      'ListenerProtocol': ros.stringToRosTemplate(properties.listenerProtocol),
     };
 }
 
@@ -3760,21 +3779,21 @@ function rosRuleAdvancedSettingsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosRule_AdvancedSettingsPropertyValidator(properties).assertSuccess();
     return {
-      CookieTimeout: ros.numberToRosTemplate(properties.cookieTimeout),
-      Cookie: ros.stringToRosTemplate(properties.cookie),
-      HealthCheckInterval: ros.numberToRosTemplate(properties.healthCheckInterval),
-      UnhealthyThreshold: ros.numberToRosTemplate(properties.unhealthyThreshold),
-      HealthCheckURI: ros.stringToRosTemplate(properties.healthCheckUri),
-      Scheduler: ros.stringToRosTemplate(properties.scheduler),
-      HealthCheck: ros.stringToRosTemplate(properties.healthCheck),
-      HealthCheckTimeout: ros.numberToRosTemplate(properties.healthCheckTimeout),
-      StickySession: ros.stringToRosTemplate(properties.stickySession),
-      HealthCheckConnectPort: ros.numberToRosTemplate(properties.healthCheckConnectPort),
-      HealthyThreshold: ros.numberToRosTemplate(properties.healthyThreshold),
-      ListenerSync: ros.stringToRosTemplate(properties.listenerSync),
-      HealthCheckDomain: ros.stringToRosTemplate(properties.healthCheckDomain),
-      StickySessionType: ros.stringToRosTemplate(properties.stickySessionType),
-      HealthCheckHttpCode: ros.stringToRosTemplate(properties.healthCheckHttpCode),
+      'CookieTimeout': ros.numberToRosTemplate(properties.cookieTimeout),
+      'Cookie': ros.stringToRosTemplate(properties.cookie),
+      'HealthCheckInterval': ros.numberToRosTemplate(properties.healthCheckInterval),
+      'UnhealthyThreshold': ros.numberToRosTemplate(properties.unhealthyThreshold),
+      'HealthCheckURI': ros.stringToRosTemplate(properties.healthCheckUri),
+      'Scheduler': ros.stringToRosTemplate(properties.scheduler),
+      'HealthCheck': ros.stringToRosTemplate(properties.healthCheck),
+      'HealthCheckTimeout': ros.numberToRosTemplate(properties.healthCheckTimeout),
+      'StickySession': ros.stringToRosTemplate(properties.stickySession),
+      'HealthCheckConnectPort': ros.numberToRosTemplate(properties.healthCheckConnectPort),
+      'HealthyThreshold': ros.numberToRosTemplate(properties.healthyThreshold),
+      'ListenerSync': ros.stringToRosTemplate(properties.listenerSync),
+      'HealthCheckDomain': ros.stringToRosTemplate(properties.healthCheckDomain),
+      'StickySessionType': ros.stringToRosTemplate(properties.stickySessionType),
+      'HealthCheckHttpCode': ros.stringToRosTemplate(properties.healthCheckHttpCode),
     };
 }
 
@@ -3837,11 +3856,11 @@ function rosRuleRuleListPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosRule_RuleListPropertyValidator(properties).assertSuccess();
     return {
-      VServerGroupId: ros.stringToRosTemplate(properties.vServerGroupId),
-      AdvancedSettings: rosRuleAdvancedSettingsPropertyToRosTemplate(properties.advancedSettings),
-      Domain: ros.stringToRosTemplate(properties.domain),
-      Url: ros.stringToRosTemplate(properties.url),
-      RuleName: ros.stringToRosTemplate(properties.ruleName),
+      'VServerGroupId': ros.stringToRosTemplate(properties.vServerGroupId),
+      'AdvancedSettings': rosRuleAdvancedSettingsPropertyToRosTemplate(properties.advancedSettings),
+      'Domain': ros.stringToRosTemplate(properties.domain),
+      'Url': ros.stringToRosTemplate(properties.url),
+      'RuleName': ros.stringToRosTemplate(properties.ruleName),
     };
 }
 
@@ -3947,9 +3966,9 @@ function rosTLSPolicyPropsToRosTemplate(properties: any, enableResourcePropertyC
         RosTLSPolicyPropsValidator(properties).assertSuccess();
     }
     return {
-      Ciphers: ros.listMapper(ros.stringToRosTemplate)(properties.ciphers),
-      TLSPolicyName: ros.stringToRosTemplate(properties.tlsPolicyName),
-      TlsVersions: ros.listMapper(ros.stringToRosTemplate)(properties.tlsVersions),
+      'Ciphers': ros.listMapper(ros.stringToRosTemplate)(properties.ciphers),
+      'TLSPolicyName': ros.stringToRosTemplate(properties.tlsPolicyName),
+      'TlsVersions': ros.listMapper(ros.stringToRosTemplate)(properties.tlsVersions),
     };
 }
 
@@ -4139,10 +4158,10 @@ function rosVServerGroupPropsToRosTemplate(properties: any, enableResourceProper
         RosVServerGroupPropsValidator(properties).assertSuccess();
     }
     return {
-      LoadBalancerId: ros.stringToRosTemplate(properties.loadBalancerId),
-      VServerGroupName: ros.stringToRosTemplate(properties.vServerGroupName),
-      BackendServers: ros.listMapper(rosVServerGroupBackendServersPropertyToRosTemplate)(properties.backendServers),
-      Tags: ros.listMapper(rosVServerGroupTagsPropertyToRosTemplate)(properties.tags),
+      'LoadBalancerId': ros.stringToRosTemplate(properties.loadBalancerId),
+      'VServerGroupName': ros.stringToRosTemplate(properties.vServerGroupName),
+      'BackendServers': ros.listMapper(rosVServerGroupBackendServersPropertyToRosTemplate)(properties.backendServers),
+      'Tags': ros.listMapper(rosVServerGroupTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -4274,6 +4293,13 @@ function RosVServerGroup_BackendServersPropertyValidator(properties: any): ros.V
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('serverId', ros.requiredValidator)(properties.serverId));
+    if(properties.serverId && (Array.isArray(properties.serverId) || (typeof properties.serverId) === 'string')) {
+        errors.collect(ros.propertyValidator('serverId', ros.validateLength)({
+            data: properties.serverId.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
     errors.collect(ros.propertyValidator('serverId', ros.validateString)(properties.serverId));
     errors.collect(ros.propertyValidator('serverIp', ros.validateString)(properties.serverIp));
     errors.collect(ros.propertyValidator('port', ros.requiredValidator)(properties.port));
@@ -4301,12 +4327,12 @@ function rosVServerGroupBackendServersPropertyToRosTemplate(properties: any): an
     if (!ros.canInspect(properties)) { return properties; }
     RosVServerGroup_BackendServersPropertyValidator(properties).assertSuccess();
     return {
-      Type: ros.stringToRosTemplate(properties.type),
-      Description: ros.stringToRosTemplate(properties.description),
-      ServerId: ros.stringToRosTemplate(properties.serverId),
-      ServerIp: ros.stringToRosTemplate(properties.serverIp),
-      Port: ros.numberToRosTemplate(properties.port),
-      Weight: ros.numberToRosTemplate(properties.weight),
+      'Type': ros.stringToRosTemplate(properties.type),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'ServerId': ros.stringToRosTemplate(properties.serverId),
+      'ServerIp': ros.stringToRosTemplate(properties.serverIp),
+      'Port': ros.numberToRosTemplate(properties.port),
+      'Weight': ros.numberToRosTemplate(properties.weight),
     };
 }
 
@@ -4353,7 +4379,7 @@ function rosVServerGroupTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosVServerGroup_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }

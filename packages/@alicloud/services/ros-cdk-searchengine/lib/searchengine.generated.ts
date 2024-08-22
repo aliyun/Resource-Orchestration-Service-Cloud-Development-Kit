@@ -134,16 +134,16 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      ChargeType: ros.stringToRosTemplate(properties.chargeType),
-      Password: ros.stringToRosTemplate(properties.password),
-      QrsNum: ros.numberToRosTemplate(properties.qrsNum),
-      QrsSpec: ros.stringToRosTemplate(properties.qrsSpec),
-      SearcherDocSize: ros.numberToRosTemplate(properties.searcherDocSize),
-      SearcherNum: ros.numberToRosTemplate(properties.searcherNum),
-      SearcherSpec: ros.stringToRosTemplate(properties.searcherSpec),
-      UserName: ros.stringToRosTemplate(properties.userName),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
+      'ChargeType': ros.stringToRosTemplate(properties.chargeType),
+      'Password': ros.stringToRosTemplate(properties.password),
+      'QrsNum': ros.numberToRosTemplate(properties.qrsNum),
+      'QrsSpec': ros.stringToRosTemplate(properties.qrsSpec),
+      'SearcherDocSize': ros.numberToRosTemplate(properties.searcherDocSize),
+      'SearcherNum': ros.numberToRosTemplate(properties.searcherNum),
+      'SearcherSpec': ros.stringToRosTemplate(properties.searcherSpec),
+      'UserName': ros.stringToRosTemplate(properties.userName),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
     };
 }
 

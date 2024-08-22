@@ -56,9 +56,9 @@ function rosEditingProjectPropsToRosTemplate(properties: any, enableResourceProp
         RosEditingProjectPropsValidator(properties).assertSuccess();
     }
     return {
-      Title: ros.stringToRosTemplate(properties.title),
-      EditingProjectName: ros.stringToRosTemplate(properties.editingProjectName),
-      Timeline: ros.stringToRosTemplate(properties.timeline),
+      'Title': ros.stringToRosTemplate(properties.title),
+      'EditingProjectName': ros.stringToRosTemplate(properties.editingProjectName),
+      'Timeline': ros.stringToRosTemplate(properties.timeline),
     };
 }
 
@@ -252,14 +252,14 @@ function rosMessageCallbackPropsToRosTemplate(properties: any, enableResourcePro
         RosMessageCallbackPropsValidator(properties).assertSuccess();
     }
     return {
-      CallbackType: ros.stringToRosTemplate(properties.callbackType),
-      AppId: ros.stringToRosTemplate(properties.appId),
-      AuthKey: ros.stringToRosTemplate(properties.authKey),
-      AuthSwitch: ros.stringToRosTemplate(properties.authSwitch),
-      CallbackUrl: ros.stringToRosTemplate(properties.callbackUrl),
-      EventTypeList: ros.stringToRosTemplate(properties.eventTypeList),
-      MnsEndpoint: ros.stringToRosTemplate(properties.mnsEndpoint),
-      MnsQueueName: ros.stringToRosTemplate(properties.mnsQueueName),
+      'CallbackType': ros.stringToRosTemplate(properties.callbackType),
+      'AppId': ros.stringToRosTemplate(properties.appId),
+      'AuthKey': ros.stringToRosTemplate(properties.authKey),
+      'AuthSwitch': ros.stringToRosTemplate(properties.authSwitch),
+      'CallbackUrl': ros.stringToRosTemplate(properties.callbackUrl),
+      'EventTypeList': ros.stringToRosTemplate(properties.eventTypeList),
+      'MnsEndpoint': ros.stringToRosTemplate(properties.mnsEndpoint),
+      'MnsQueueName': ros.stringToRosTemplate(properties.mnsQueueName),
     };
 }
 
@@ -468,9 +468,9 @@ function rosStoragePropsToRosTemplate(properties: any, enableResourcePropertyCon
         RosStoragePropsValidator(properties).assertSuccess();
     }
     return {
-      StorageLocation: ros.stringToRosTemplate(properties.storageLocation),
-      StorageType: ros.stringToRosTemplate(properties.storageType),
-      DefaultUpload: ros.booleanToRosTemplate(properties.defaultUpload),
+      'StorageLocation': ros.stringToRosTemplate(properties.storageLocation),
+      'StorageType': ros.stringToRosTemplate(properties.storageType),
+      'DefaultUpload': ros.booleanToRosTemplate(properties.defaultUpload),
     };
 }
 

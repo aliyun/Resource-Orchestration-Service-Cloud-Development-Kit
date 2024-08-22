@@ -68,9 +68,9 @@ function rosMediaWorkflowPropsToRosTemplate(properties: any, enableResourcePrope
         RosMediaWorkflowPropsValidator(properties).assertSuccess();
     }
     return {
-      Name: ros.stringToRosTemplate(properties.name),
-      Topology: ros.hashMapper(ros.objectToRosTemplate)(properties.topology),
-      TriggerMode: ros.stringToRosTemplate(properties.triggerMode),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'Topology': ros.hashMapper(ros.objectToRosTemplate)(properties.topology),
+      'TriggerMode': ros.stringToRosTemplate(properties.triggerMode),
     };
 }
 
@@ -260,12 +260,12 @@ function rosPipelinePropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosPipelinePropsValidator(properties).assertSuccess();
     }
     return {
-      Name: ros.stringToRosTemplate(properties.name),
-      NotifyConfig: rosPipelineNotifyConfigPropertyToRosTemplate(properties.notifyConfig),
-      Role: ros.stringToRosTemplate(properties.role),
-      Speed: ros.stringToRosTemplate(properties.speed),
-      SpeedLevel: ros.numberToRosTemplate(properties.speedLevel),
-      State: ros.stringToRosTemplate(properties.state),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'NotifyConfig': rosPipelineNotifyConfigPropertyToRosTemplate(properties.notifyConfig),
+      'Role': ros.stringToRosTemplate(properties.role),
+      'Speed': ros.stringToRosTemplate(properties.speed),
+      'SpeedLevel': ros.numberToRosTemplate(properties.speedLevel),
+      'State': ros.stringToRosTemplate(properties.state),
     };
 }
 
@@ -405,7 +405,7 @@ function rosPipelineNotifyConfigPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosPipeline_NotifyConfigPropertyValidator(properties).assertSuccess();
     return {
-      Topic: ros.stringToRosTemplate(properties.topic),
-      QueueName: ros.stringToRosTemplate(properties.queueName),
+      'Topic': ros.stringToRosTemplate(properties.topic),
+      'QueueName': ros.stringToRosTemplate(properties.queueName),
     };
 }

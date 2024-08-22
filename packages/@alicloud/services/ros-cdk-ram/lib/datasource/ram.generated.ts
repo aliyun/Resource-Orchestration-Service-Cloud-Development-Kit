@@ -7,6 +7,14 @@ import * as ros from '@alicloud/ros-cdk-core';
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-accountalias
  */
 export interface RosAccountAliasProps {
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -19,6 +27,13 @@ export interface RosAccountAliasProps {
 function RosAccountAliasPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosAccountAliasProps"');
 }
 
@@ -36,6 +51,7 @@ function rosAccountAliasPropsToRosTemplate(properties: any, enableResourceProper
         RosAccountAliasPropsValidator(properties).assertSuccess();
     }
     return {
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -59,6 +75,14 @@ export class RosAccountAlias extends ros.RosResource {
 
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -68,11 +92,13 @@ export class RosAccountAlias extends ros.RosResource {
         this.attrAccountAlias = this.getAtt('AccountAlias');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -92,6 +118,14 @@ export interface RosGroupsProps {
     readonly groupName?: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * @Property userName: The specific user which groups contains.
      */
     readonly userName?: string | ros.IResolvable;
@@ -109,6 +143,13 @@ function RosGroupsPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('groupName', ros.validateString)(properties.groupName));
     errors.collect(ros.propertyValidator('userName', ros.validateString)(properties.userName));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosGroupsProps"');
 }
 
@@ -126,8 +167,9 @@ function rosGroupsPropsToRosTemplate(properties: any, enableResourcePropertyCons
         RosGroupsPropsValidator(properties).assertSuccess();
     }
     return {
-      GroupName: ros.stringToRosTemplate(properties.groupName),
-      UserName: ros.stringToRosTemplate(properties.userName),
+      'GroupName': ros.stringToRosTemplate(properties.groupName),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'UserName': ros.stringToRosTemplate(properties.userName),
     };
 }
 
@@ -161,6 +203,14 @@ export class RosGroups extends ros.RosResource {
     public groupName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property userName: The specific user which groups contains.
      */
     public userName: string | ros.IResolvable | undefined;
@@ -177,6 +227,7 @@ export class RosGroups extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.groupName = props.groupName;
+        this.refreshOptions = props.refreshOptions;
         this.userName = props.userName;
     }
 
@@ -184,6 +235,7 @@ export class RosGroups extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             groupName: this.groupName,
+            refreshOptions: this.refreshOptions,
             userName: this.userName,
         };
     }
@@ -212,6 +264,14 @@ export interface RosPoliciesProps {
      * @Property policyType: Filter the results by a specific policy type.
      */
     readonly policyType?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 
     /**
      * @Property roleName: The specific role to which policies attached.Only one of UserName, GroupName, and RoleName can be specified at most.
@@ -245,6 +305,13 @@ function RosPoliciesPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('roleName', ros.validateString)(properties.roleName));
     errors.collect(ros.propertyValidator('userName', ros.validateString)(properties.userName));
     errors.collect(ros.propertyValidator('policyName', ros.validateString)(properties.policyName));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosPoliciesProps"');
 }
 
@@ -262,11 +329,12 @@ function rosPoliciesPropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosPoliciesPropsValidator(properties).assertSuccess();
     }
     return {
-      GroupName: ros.stringToRosTemplate(properties.groupName),
-      PolicyName: ros.stringToRosTemplate(properties.policyName),
-      PolicyType: ros.stringToRosTemplate(properties.policyType),
-      RoleName: ros.stringToRosTemplate(properties.roleName),
-      UserName: ros.stringToRosTemplate(properties.userName),
+      'GroupName': ros.stringToRosTemplate(properties.groupName),
+      'PolicyName': ros.stringToRosTemplate(properties.policyName),
+      'PolicyType': ros.stringToRosTemplate(properties.policyType),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'RoleName': ros.stringToRosTemplate(properties.roleName),
+      'UserName': ros.stringToRosTemplate(properties.userName),
     };
 }
 
@@ -310,6 +378,14 @@ export class RosPolicies extends ros.RosResource {
     public policyType: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property roleName: The specific role to which policies attached.Only one of UserName, GroupName, and RoleName can be specified at most.
      */
     public roleName: string | ros.IResolvable | undefined;
@@ -333,6 +409,7 @@ export class RosPolicies extends ros.RosResource {
         this.groupName = props.groupName;
         this.policyName = props.policyName;
         this.policyType = props.policyType;
+        this.refreshOptions = props.refreshOptions;
         this.roleName = props.roleName;
         this.userName = props.userName;
     }
@@ -343,6 +420,7 @@ export class RosPolicies extends ros.RosResource {
             groupName: this.groupName,
             policyName: this.policyName,
             policyType: this.policyType,
+            refreshOptions: this.refreshOptions,
             roleName: this.roleName,
             userName: this.userName,
         };
@@ -357,6 +435,14 @@ export class RosPolicies extends ros.RosResource {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-role
  */
 export interface RosRoleProps {
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 
     /**
      * @Property roleName: RAM role name. If not specified, the current ram role will be used.
@@ -375,6 +461,13 @@ function RosRolePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('roleName', ros.validateString)(properties.roleName));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosRoleProps"');
 }
 
@@ -392,7 +485,8 @@ function rosRolePropsToRosTemplate(properties: any, enableResourcePropertyConstr
         RosRolePropsValidator(properties).assertSuccess();
     }
     return {
-      RoleName: ros.stringToRosTemplate(properties.roleName),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'RoleName': ros.stringToRosTemplate(properties.roleName),
     };
 }
 
@@ -446,6 +540,14 @@ export class RosRole extends ros.RosResource {
 
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property roleName: RAM role name. If not specified, the current ram role will be used.
      */
     public roleName: string | ros.IResolvable | undefined;
@@ -466,12 +568,14 @@ export class RosRole extends ros.RosResource {
         this.attrUpdateDate = this.getAtt('UpdateDate');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.refreshOptions = props.refreshOptions;
         this.roleName = props.roleName;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
+            refreshOptions: this.refreshOptions,
             roleName: this.roleName,
         };
     }
@@ -485,6 +589,14 @@ export class RosRole extends ros.RosResource {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-roles
  */
 export interface RosRolesProps {
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 
     /**
      * @Property roleName: Filter the results by a specific role name. Supports using * and ?  to fuzzy match.
@@ -503,6 +615,13 @@ function RosRolesPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('roleName', ros.validateString)(properties.roleName));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosRolesProps"');
 }
 
@@ -520,7 +639,8 @@ function rosRolesPropsToRosTemplate(properties: any, enableResourcePropertyConst
         RosRolesPropsValidator(properties).assertSuccess();
     }
     return {
-      RoleName: ros.stringToRosTemplate(properties.roleName),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'RoleName': ros.stringToRosTemplate(properties.roleName),
     };
 }
 
@@ -549,6 +669,14 @@ export class RosRoles extends ros.RosResource {
 
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property roleName: Filter the results by a specific role name. Supports using * and ?  to fuzzy match.
      */
     public roleName: string | ros.IResolvable | undefined;
@@ -564,12 +692,14 @@ export class RosRoles extends ros.RosResource {
         this.attrRoles = this.getAtt('Roles');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.refreshOptions = props.refreshOptions;
         this.roleName = props.roleName;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
+            refreshOptions: this.refreshOptions,
             roleName: this.roleName,
         };
     }
@@ -583,6 +713,14 @@ export class RosRoles extends ros.RosResource {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-user
  */
 export interface RosUserProps {
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 
     /**
      * @Property userId: RAM user ID. At most one UserName and UserId can be specified; if both are specified, UserName will be used. If neither is specified, the current user ID will be used.
@@ -607,6 +745,13 @@ function RosUserPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('userName', ros.validateString)(properties.userName));
     errors.collect(ros.propertyValidator('userId', ros.validateString)(properties.userId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosUserProps"');
 }
 
@@ -624,8 +769,9 @@ function rosUserPropsToRosTemplate(properties: any, enableResourcePropertyConstr
         RosUserPropsValidator(properties).assertSuccess();
     }
     return {
-      UserId: ros.stringToRosTemplate(properties.userId),
-      UserName: ros.stringToRosTemplate(properties.userName),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'UserId': ros.stringToRosTemplate(properties.userId),
+      'UserName': ros.stringToRosTemplate(properties.userName),
     };
 }
 
@@ -674,6 +820,14 @@ export class RosUser extends ros.RosResource {
 
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property userId: RAM user ID. At most one UserName and UserId can be specified; if both are specified, UserName will be used. If neither is specified, the current user ID will be used.
      */
     public userId: string | ros.IResolvable | undefined;
@@ -698,6 +852,7 @@ export class RosUser extends ros.RosResource {
         this.attrUserName = this.getAtt('UserName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.refreshOptions = props.refreshOptions;
         this.userId = props.userId;
         this.userName = props.userName;
     }
@@ -705,6 +860,7 @@ export class RosUser extends ros.RosResource {
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
+            refreshOptions: this.refreshOptions,
             userId: this.userId,
             userName: this.userName,
         };
@@ -726,6 +882,14 @@ export interface RosUsersProps {
     readonly groupName?: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * @Property userName: Filter the results by a specific user name. Supports using * and ? to fuzzy match.
      */
     readonly userName?: string | ros.IResolvable;
@@ -743,6 +907,13 @@ function RosUsersPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('groupName', ros.validateString)(properties.groupName));
     errors.collect(ros.propertyValidator('userName', ros.validateString)(properties.userName));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosUsersProps"');
 }
 
@@ -760,8 +931,9 @@ function rosUsersPropsToRosTemplate(properties: any, enableResourcePropertyConst
         RosUsersPropsValidator(properties).assertSuccess();
     }
     return {
-      GroupName: ros.stringToRosTemplate(properties.groupName),
-      UserName: ros.stringToRosTemplate(properties.userName),
+      'GroupName': ros.stringToRosTemplate(properties.groupName),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'UserName': ros.stringToRosTemplate(properties.userName),
     };
 }
 
@@ -795,6 +967,14 @@ export class RosUsers extends ros.RosResource {
     public groupName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property userName: Filter the results by a specific user name. Supports using * and ? to fuzzy match.
      */
     public userName: string | ros.IResolvable | undefined;
@@ -811,6 +991,7 @@ export class RosUsers extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.groupName = props.groupName;
+        this.refreshOptions = props.refreshOptions;
         this.userName = props.userName;
     }
 
@@ -818,6 +999,7 @@ export class RosUsers extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             groupName: this.groupName,
+            refreshOptions: this.refreshOptions,
             userName: this.userName,
         };
     }

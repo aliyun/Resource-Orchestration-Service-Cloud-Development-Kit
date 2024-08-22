@@ -46,7 +46,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pai
 
         /// <summary>Attribute GroupName: Resource group name.</summary>
         /// <remarks>
-        /// If you want to obtain a resource group name, see [ListResources](~~ 449143 ~~).
+        /// If you want to obtain a resource group name, see [ListResources].
         /// </remarks>
         [JsiiProperty(name: "attrGroupName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrGroupName

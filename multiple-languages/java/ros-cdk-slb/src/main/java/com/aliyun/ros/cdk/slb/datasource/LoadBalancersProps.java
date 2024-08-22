@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.slb.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-loadbalancers
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.371Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:24.260Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.datasource.LoadBalancersProps")
 @software.amazon.jsii.Jsii.Proxy(LoadBalancersProps.Jsii$Proxy.class)
 public interface LoadBalancersProps extends software.amazon.jsii.JsiiSerializable {
@@ -74,6 +74,21 @@ public interface LoadBalancersProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
      * Property resourceGroupId: Resource group id.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
@@ -127,6 +142,7 @@ public interface LoadBalancersProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object masterZoneId;
         java.lang.Object networkType;
         java.lang.Object paymentType;
+        java.lang.Object refreshOptions;
         java.lang.Object resourceGroupId;
         java.lang.Object slaveZoneId;
         java.lang.Object status;
@@ -314,6 +330,40 @@ public interface LoadBalancersProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link LoadBalancersProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link LoadBalancersProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LoadBalancersProps#getResourceGroupId}
          * @param resourceGroupId Property resourceGroupId: Resource group id.
          * @return {@code this}
@@ -438,6 +488,7 @@ public interface LoadBalancersProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object masterZoneId;
         private final java.lang.Object networkType;
         private final java.lang.Object paymentType;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object slaveZoneId;
         private final java.lang.Object status;
@@ -459,6 +510,7 @@ public interface LoadBalancersProps extends software.amazon.jsii.JsiiSerializabl
             this.masterZoneId = software.amazon.jsii.Kernel.get(this, "masterZoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.paymentType = software.amazon.jsii.Kernel.get(this, "paymentType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.slaveZoneId = software.amazon.jsii.Kernel.get(this, "slaveZoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.status = software.amazon.jsii.Kernel.get(this, "status", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -480,6 +532,7 @@ public interface LoadBalancersProps extends software.amazon.jsii.JsiiSerializabl
             this.masterZoneId = builder.masterZoneId;
             this.networkType = builder.networkType;
             this.paymentType = builder.paymentType;
+            this.refreshOptions = builder.refreshOptions;
             this.resourceGroupId = builder.resourceGroupId;
             this.slaveZoneId = builder.slaveZoneId;
             this.status = builder.status;
@@ -530,6 +583,11 @@ public interface LoadBalancersProps extends software.amazon.jsii.JsiiSerializabl
         @Override
         public final java.lang.Object getPaymentType() {
             return this.paymentType;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -590,6 +648,9 @@ public interface LoadBalancersProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getPaymentType() != null) {
                 data.set("paymentType", om.valueToTree(this.getPaymentType()));
             }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
+            }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
@@ -632,6 +693,7 @@ public interface LoadBalancersProps extends software.amazon.jsii.JsiiSerializabl
             if (this.masterZoneId != null ? !this.masterZoneId.equals(that.masterZoneId) : that.masterZoneId != null) return false;
             if (this.networkType != null ? !this.networkType.equals(that.networkType) : that.networkType != null) return false;
             if (this.paymentType != null ? !this.paymentType.equals(that.paymentType) : that.paymentType != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.slaveZoneId != null ? !this.slaveZoneId.equals(that.slaveZoneId) : that.slaveZoneId != null) return false;
             if (this.status != null ? !this.status.equals(that.status) : that.status != null) return false;
@@ -650,6 +712,7 @@ public interface LoadBalancersProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.masterZoneId != null ? this.masterZoneId.hashCode() : 0);
             result = 31 * result + (this.networkType != null ? this.networkType.hashCode() : 0);
             result = 31 * result + (this.paymentType != null ? this.paymentType.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.slaveZoneId != null ? this.slaveZoneId.hashCode() : 0);
             result = 31 * result + (this.status != null ? this.status.hashCode() : 0);

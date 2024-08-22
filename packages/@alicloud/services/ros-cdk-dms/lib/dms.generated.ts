@@ -218,27 +218,27 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      DatabasePassword: ros.stringToRosTemplate(properties.databasePassword),
-      DatabaseUser: ros.stringToRosTemplate(properties.databaseUser),
-      DbaUid: ros.numberToRosTemplate(properties.dbaUid),
-      EnvType: ros.stringToRosTemplate(properties.envType),
-      ExportTimeout: ros.numberToRosTemplate(properties.exportTimeout),
-      Host: ros.stringToRosTemplate(properties.host),
-      InstanceAlias: ros.stringToRosTemplate(properties.instanceAlias),
-      InstanceSource: ros.stringToRosTemplate(properties.instanceSource),
-      InstanceType: ros.stringToRosTemplate(properties.instanceType),
-      NetworkType: ros.stringToRosTemplate(properties.networkType),
-      Port: ros.numberToRosTemplate(properties.port),
-      QueryTimeout: ros.numberToRosTemplate(properties.queryTimeout),
-      SafeRule: ros.stringToRosTemplate(properties.safeRule),
-      DataLinkName: ros.stringToRosTemplate(properties.dataLinkName),
-      DdlOnline: ros.numberToRosTemplate(properties.ddlOnline),
-      EcsInstanceId: ros.stringToRosTemplate(properties.ecsInstanceId),
-      EcsRegion: ros.stringToRosTemplate(properties.ecsRegion),
-      Sid: ros.stringToRosTemplate(properties.sid),
-      Tid: ros.numberToRosTemplate(properties.tid),
-      UseDsql: ros.numberToRosTemplate(properties.useDsql),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
+      'DatabasePassword': ros.stringToRosTemplate(properties.databasePassword),
+      'DatabaseUser': ros.stringToRosTemplate(properties.databaseUser),
+      'DbaUid': ros.numberToRosTemplate(properties.dbaUid),
+      'EnvType': ros.stringToRosTemplate(properties.envType),
+      'ExportTimeout': ros.numberToRosTemplate(properties.exportTimeout),
+      'Host': ros.stringToRosTemplate(properties.host),
+      'InstanceAlias': ros.stringToRosTemplate(properties.instanceAlias),
+      'InstanceSource': ros.stringToRosTemplate(properties.instanceSource),
+      'InstanceType': ros.stringToRosTemplate(properties.instanceType),
+      'NetworkType': ros.stringToRosTemplate(properties.networkType),
+      'Port': ros.numberToRosTemplate(properties.port),
+      'QueryTimeout': ros.numberToRosTemplate(properties.queryTimeout),
+      'SafeRule': ros.stringToRosTemplate(properties.safeRule),
+      'DataLinkName': ros.stringToRosTemplate(properties.dataLinkName),
+      'DdlOnline': ros.numberToRosTemplate(properties.ddlOnline),
+      'EcsInstanceId': ros.stringToRosTemplate(properties.ecsInstanceId),
+      'EcsRegion': ros.stringToRosTemplate(properties.ecsRegion),
+      'Sid': ros.stringToRosTemplate(properties.sid),
+      'Tid': ros.numberToRosTemplate(properties.tid),
+      'UseDsql': ros.numberToRosTemplate(properties.useDsql),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
     };
 }
 
@@ -544,12 +544,12 @@ function rosUserPropsToRosTemplate(properties: any, enableResourcePropertyConstr
         RosUserPropsValidator(properties).assertSuccess();
     }
     return {
-      Uid: ros.stringToRosTemplate(properties.uid),
-      Mobile: ros.stringToRosTemplate(properties.mobile),
-      RoleNames: ros.listMapper(ros.stringToRosTemplate)(properties.roleNames),
-      Status: ros.stringToRosTemplate(properties.status),
-      Tid: ros.stringToRosTemplate(properties.tid),
-      UserName: ros.stringToRosTemplate(properties.userName),
+      'Uid': ros.stringToRosTemplate(properties.uid),
+      'Mobile': ros.stringToRosTemplate(properties.mobile),
+      'RoleNames': ros.listMapper(ros.stringToRosTemplate)(properties.roleNames),
+      'Status': ros.stringToRosTemplate(properties.status),
+      'Tid': ros.stringToRosTemplate(properties.tid),
+      'UserName': ros.stringToRosTemplate(properties.userName),
     };
 }
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.emr.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::EMR::FlowProjects</code>, which is used to query projects.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:06.917Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:21.292Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.emr.$Module.class, fqn = "@alicloud/ros-cdk-emr.datasource.RosFlowProjects")
 public class RosFlowProjects extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -102,6 +102,24 @@ public class RosFlowProjects extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setRefreshOptions(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "refreshOptions", value);
+    }
+
+    /**
+     */
+    public void setRefreshOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "refreshOptions", value);
+    }
+
+    /**
      * A fluent builder for {@link com.aliyun.ros.cdk.emr.datasource.RosFlowProjects}.
      */
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.emr.datasource.RosFlowProjects> {
@@ -158,6 +176,23 @@ public class RosFlowProjects extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder flowProjectName(final com.aliyun.ros.cdk.core.IResolvable flowProjectName) {
             this.props.flowProjectName(flowProjectName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param refreshOptions This parameter is required.
+         */
+        public Builder refreshOptions(final java.lang.String refreshOptions) {
+            this.props.refreshOptions(refreshOptions);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param refreshOptions This parameter is required.
+         */
+        public Builder refreshOptions(final com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.props.refreshOptions(refreshOptions);
             return this;
         }
 

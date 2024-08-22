@@ -64,7 +64,7 @@ export default class ResourceCodeGenerator {
     const rosName = SpecName.parse(resourceName);
     const rosReourceName = genspec.CodeName.forRosResource(rosName, this.affix);
     const resourceCodeName = genspec.CodeName.forResource(rosName, this.affix);
-    if (resourceCodeName.packageName === 'eip') {
+    if (resourceCodeName.packageName === 'eip' || resourceCodeName.packageName === 'eipanycast') {
       // 处理DATASOURCE::EIP::Addresses 这个原属于VPC的特殊资源
       this.code.line(
           `import { ${RESOURCE_CLASS_PREFIX}${rosName.resourceName} } from './vpc.generated';`,

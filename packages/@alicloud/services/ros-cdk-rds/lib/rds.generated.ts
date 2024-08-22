@@ -71,11 +71,11 @@ function rosADInfoPropsToRosTemplate(properties: any, enableResourcePropertyCons
         RosADInfoPropsValidator(properties).assertSuccess();
     }
     return {
-      ADAccountName: ros.stringToRosTemplate(properties.adAccountName),
-      ADDNS: ros.stringToRosTemplate(properties.addns),
-      ADPassword: ros.stringToRosTemplate(properties.adPassword),
-      ADServerIpAddress: ros.stringToRosTemplate(properties.adServerIpAddress),
-      DBInstanceId: ros.stringToRosTemplate(properties.dbInstanceId),
+      'ADAccountName': ros.stringToRosTemplate(properties.adAccountName),
+      'ADDNS': ros.stringToRosTemplate(properties.addns),
+      'ADPassword': ros.stringToRosTemplate(properties.adPassword),
+      'ADServerIpAddress': ros.stringToRosTemplate(properties.adServerIpAddress),
+      'DBInstanceId': ros.stringToRosTemplate(properties.dbInstanceId),
     };
 }
 
@@ -257,11 +257,11 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
         RosAccountPropsValidator(properties).assertSuccess();
     }
     return {
-      AccountName: ros.stringToRosTemplate(properties.accountName),
-      AccountPassword: ros.stringToRosTemplate(properties.accountPassword),
-      DBInstanceId: ros.stringToRosTemplate(properties.dbInstanceId),
-      AccountDescription: ros.stringToRosTemplate(properties.accountDescription),
-      AccountType: ros.stringToRosTemplate(properties.accountType),
+      'AccountName': ros.stringToRosTemplate(properties.accountName),
+      'AccountPassword': ros.stringToRosTemplate(properties.accountPassword),
+      'DBInstanceId': ros.stringToRosTemplate(properties.dbInstanceId),
+      'AccountDescription': ros.stringToRosTemplate(properties.accountDescription),
+      'AccountType': ros.stringToRosTemplate(properties.accountType),
     };
 }
 
@@ -425,10 +425,10 @@ function rosAccountPrivilegePropsToRosTemplate(properties: any, enableResourcePr
         RosAccountPrivilegePropsValidator(properties).assertSuccess();
     }
     return {
-      AccountName: ros.stringToRosTemplate(properties.accountName),
-      AccountPrivilege: ros.stringToRosTemplate(properties.accountPrivilege),
-      DBInstanceId: ros.stringToRosTemplate(properties.dbInstanceId),
-      DBName: ros.stringToRosTemplate(properties.dbName),
+      'AccountName': ros.stringToRosTemplate(properties.accountName),
+      'AccountPrivilege': ros.stringToRosTemplate(properties.accountPrivilege),
+      'DBInstanceId': ros.stringToRosTemplate(properties.dbInstanceId),
+      'DBName': ros.stringToRosTemplate(properties.dbName),
     };
 }
 
@@ -580,11 +580,11 @@ function rosConnectionPropsToRosTemplate(properties: any, enableResourceProperty
         RosConnectionPropsValidator(properties).assertSuccess();
     }
     return {
-      DBInstanceId: ros.stringToRosTemplate(properties.dbInstanceId),
-      Port: ros.numberToRosTemplate(properties.port),
-      BabelfishPort: ros.stringToRosTemplate(properties.babelfishPort),
-      ConnectionStringPrefix: ros.stringToRosTemplate(properties.connectionStringPrefix),
-      GeneralGroupName: ros.stringToRosTemplate(properties.generalGroupName),
+      'DBInstanceId': ros.stringToRosTemplate(properties.dbInstanceId),
+      'Port': ros.numberToRosTemplate(properties.port),
+      'BabelfishPort': ros.stringToRosTemplate(properties.babelfishPort),
+      'ConnectionStringPrefix': ros.stringToRosTemplate(properties.connectionStringPrefix),
+      'GeneralGroupName': ros.stringToRosTemplate(properties.generalGroupName),
     };
 }
 
@@ -784,6 +784,11 @@ export interface RosDBInstanceProps {
     readonly backupRetentionPeriod?: number | ros.IResolvable;
 
     /**
+     * @Property burstingEnabled: Whether to enable bursting.
+     */
+    readonly burstingEnabled?: boolean | ros.IResolvable;
+
+    /**
      * @Property category: The edition of the instance. Valid values:
      * Basic: RDS Basic Edition
      * HighAvailability: RDS High-availability Edition
@@ -793,6 +798,11 @@ export interface RosDBInstanceProps {
      * serverless_basic: RDS Serverless Basic Edition
      */
     readonly category?: string | ros.IResolvable;
+
+    /**
+     * @Property coldDataEnabled: Whether to enable cold data storage.
+     */
+    readonly coldDataEnabled?: boolean | ros.IResolvable;
 
     /**
      * @Property compressType: The format used to compress backups. Valid values: 
@@ -895,6 +905,11 @@ export interface RosDBInstanceProps {
      * @Property instanceNetworkType: Instance network type, VPC or Classic
      */
     readonly instanceNetworkType?: string | ros.IResolvable;
+
+    /**
+     * @Property ioAccelerationEnabled: Whether to enable IO Acceleration, 1 for enable 0 for disable.
+     */
+    readonly ioAccelerationEnabled?: string | ros.IResolvable;
 
     /**
      * @Property localLogRetentionHours: The number of hours for which to retain log backup files on the instance. 
@@ -1197,6 +1212,13 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('engine', ros.validateString)(properties.engine));
     errors.collect(ros.propertyValidator('dbInstanceDescription', ros.validateString)(properties.dbInstanceDescription));
+    if(properties.ioAccelerationEnabled && (typeof properties.ioAccelerationEnabled) !== 'object') {
+        errors.collect(ros.propertyValidator('ioAccelerationEnabled', ros.validateAllowedValues)({
+          data: properties.ioAccelerationEnabled,
+          allowedValues: ["0","1"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ioAccelerationEnabled', ros.validateString)(properties.ioAccelerationEnabled));
     errors.collect(ros.propertyValidator('targetDedicatedHostIdForMaster', ros.validateString)(properties.targetDedicatedHostIdForMaster));
     errors.collect(ros.propertyValidator('engineVersion', ros.requiredValidator)(properties.engineVersion));
     if(properties.engineVersion && (Array.isArray(properties.engineVersion) || (typeof properties.engineVersion) === 'string')) {
@@ -1336,6 +1358,8 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('dbIsIgnoreCase', ros.validateNumber)(properties.dbIsIgnoreCase));
     errors.collect(ros.propertyValidator('maintainTime', ros.validateString)(properties.maintainTime));
     errors.collect(ros.propertyValidator('dbParamGroupId', ros.validateString)(properties.dbParamGroupId));
+    errors.collect(ros.propertyValidator('burstingEnabled', ros.validateBoolean)(properties.burstingEnabled));
+    errors.collect(ros.propertyValidator('coldDataEnabled', ros.validateBoolean)(properties.coldDataEnabled));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('targetDedicatedHostIdForLog', ros.validateString)(properties.targetDedicatedHostIdForLog));
     errors.collect(ros.propertyValidator('allocatePublicConnection', ros.validateBoolean)(properties.allocatePublicConnection));
@@ -1392,71 +1416,74 @@ function rosDBInstancePropsToRosTemplate(properties: any, enableResourceProperty
         RosDBInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      DBInstanceClass: ros.stringToRosTemplate(properties.dbInstanceClass),
-      DBInstanceStorage: ros.numberToRosTemplate(properties.dbInstanceStorage),
-      Engine: ros.stringToRosTemplate(properties.engine),
-      EngineVersion: ros.stringToRosTemplate(properties.engineVersion),
-      SecurityIPList: ros.stringToRosTemplate(properties.securityIpList),
-      AllocatePublicConnection: ros.booleanToRosTemplate(properties.allocatePublicConnection),
-      ArchiveBackupKeepCount: ros.numberToRosTemplate(properties.archiveBackupKeepCount),
-      ArchiveBackupKeepPolicy: ros.stringToRosTemplate(properties.archiveBackupKeepPolicy),
-      ArchiveBackupRetentionPeriod: ros.numberToRosTemplate(properties.archiveBackupRetentionPeriod),
-      AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
-      BackUpCategory: ros.stringToRosTemplate(properties.backUpCategory),
-      BackupPolicyMode: ros.stringToRosTemplate(properties.backupPolicyMode),
-      BackupRetentionPeriod: ros.numberToRosTemplate(properties.backupRetentionPeriod),
-      Category: ros.stringToRosTemplate(properties.category),
-      CompressType: ros.numberToRosTemplate(properties.compressType),
-      ConnectionMode: ros.stringToRosTemplate(properties.connectionMode),
-      ConnectionStringPrefix: ros.stringToRosTemplate(properties.connectionStringPrefix),
-      ConnectionStringType: ros.stringToRosTemplate(properties.connectionStringType),
-      DBInstanceDescription: ros.stringToRosTemplate(properties.dbInstanceDescription),
-      DBInstanceNetType: ros.stringToRosTemplate(properties.dbInstanceNetType),
-      DBInstanceStorageType: ros.stringToRosTemplate(properties.dbInstanceStorageType),
-      DBIsIgnoreCase: ros.numberToRosTemplate(properties.dbIsIgnoreCase),
-      DBMappings: ros.listMapper(rosDBInstanceDBMappingsPropertyToRosTemplate)(properties.dbMappings),
-      DBParamGroupId: ros.stringToRosTemplate(properties.dbParamGroupId),
-      DBTimeZone: ros.stringToRosTemplate(properties.dbTimeZone),
-      DedicatedHostGroupId: ros.stringToRosTemplate(properties.dedicatedHostGroupId),
-      EnableBackupLog: ros.booleanToRosTemplate(properties.enableBackupLog),
-      EncryptionKey: ros.stringToRosTemplate(properties.encryptionKey),
-      HighSpaceUsageProtection: ros.stringToRosTemplate(properties.highSpaceUsageProtection),
-      InstanceNetworkType: ros.stringToRosTemplate(properties.instanceNetworkType),
-      LocalLogRetentionHours: ros.numberToRosTemplate(properties.localLogRetentionHours),
-      LocalLogRetentionSpace: ros.numberToRosTemplate(properties.localLogRetentionSpace),
-      LogBackupFrequency: ros.stringToRosTemplate(properties.logBackupFrequency),
-      LogBackupLocalRetentionNumber: ros.numberToRosTemplate(properties.logBackupLocalRetentionNumber),
-      LogBackupRetentionPeriod: ros.numberToRosTemplate(properties.logBackupRetentionPeriod),
-      MaintainTime: ros.stringToRosTemplate(properties.maintainTime),
-      MasterUsername: ros.stringToRosTemplate(properties.masterUsername),
-      MasterUserPassword: ros.stringToRosTemplate(properties.masterUserPassword),
-      MasterUserType: ros.stringToRosTemplate(properties.masterUserType),
-      MultiAZ: ros.booleanToRosTemplate(properties.multiAz),
-      PayType: ros.stringToRosTemplate(properties.payType),
-      Period: ros.numberToRosTemplate(properties.period),
-      PeriodType: ros.stringToRosTemplate(properties.periodType),
-      Port: ros.numberToRosTemplate(properties.port),
-      PreferredBackupPeriod: ros.listMapper(ros.stringToRosTemplate)(properties.preferredBackupPeriod),
-      PreferredBackupTime: ros.stringToRosTemplate(properties.preferredBackupTime),
-      PrivateIpAddress: ros.stringToRosTemplate(properties.privateIpAddress),
-      ReleasedKeepPolicy: ros.stringToRosTemplate(properties.releasedKeepPolicy),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      RoleARN: ros.stringToRosTemplate(properties.roleArn),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
-      ServerlessConfig: rosDBInstanceServerlessConfigPropertyToRosTemplate(properties.serverlessConfig),
-      SlaveZoneIds: ros.listMapper(ros.stringToRosTemplate)(properties.slaveZoneIds),
-      SQLCollectorStatus: ros.stringToRosTemplate(properties.sqlCollectorStatus),
-      SSLSetting: ros.stringToRosTemplate(properties.sslSetting),
-      StorageAutoScale: ros.stringToRosTemplate(properties.storageAutoScale),
-      StorageThreshold: ros.numberToRosTemplate(properties.storageThreshold),
-      StorageUpperBound: ros.numberToRosTemplate(properties.storageUpperBound),
-      Tags: ros.hashMapper(ros.objectToRosTemplate)(properties.tags),
-      TargetDedicatedHostIdForLog: ros.stringToRosTemplate(properties.targetDedicatedHostIdForLog),
-      TargetDedicatedHostIdForMaster: ros.stringToRosTemplate(properties.targetDedicatedHostIdForMaster),
-      TargetDedicatedHostIdForSlave: ros.stringToRosTemplate(properties.targetDedicatedHostIdForSlave),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      'DBInstanceClass': ros.stringToRosTemplate(properties.dbInstanceClass),
+      'DBInstanceStorage': ros.numberToRosTemplate(properties.dbInstanceStorage),
+      'Engine': ros.stringToRosTemplate(properties.engine),
+      'EngineVersion': ros.stringToRosTemplate(properties.engineVersion),
+      'SecurityIPList': ros.stringToRosTemplate(properties.securityIpList),
+      'AllocatePublicConnection': ros.booleanToRosTemplate(properties.allocatePublicConnection),
+      'ArchiveBackupKeepCount': ros.numberToRosTemplate(properties.archiveBackupKeepCount),
+      'ArchiveBackupKeepPolicy': ros.stringToRosTemplate(properties.archiveBackupKeepPolicy),
+      'ArchiveBackupRetentionPeriod': ros.numberToRosTemplate(properties.archiveBackupRetentionPeriod),
+      'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
+      'BackUpCategory': ros.stringToRosTemplate(properties.backUpCategory),
+      'BackupPolicyMode': ros.stringToRosTemplate(properties.backupPolicyMode),
+      'BackupRetentionPeriod': ros.numberToRosTemplate(properties.backupRetentionPeriod),
+      'BurstingEnabled': ros.booleanToRosTemplate(properties.burstingEnabled),
+      'Category': ros.stringToRosTemplate(properties.category),
+      'ColdDataEnabled': ros.booleanToRosTemplate(properties.coldDataEnabled),
+      'CompressType': ros.numberToRosTemplate(properties.compressType),
+      'ConnectionMode': ros.stringToRosTemplate(properties.connectionMode),
+      'ConnectionStringPrefix': ros.stringToRosTemplate(properties.connectionStringPrefix),
+      'ConnectionStringType': ros.stringToRosTemplate(properties.connectionStringType),
+      'DBInstanceDescription': ros.stringToRosTemplate(properties.dbInstanceDescription),
+      'DBInstanceNetType': ros.stringToRosTemplate(properties.dbInstanceNetType),
+      'DBInstanceStorageType': ros.stringToRosTemplate(properties.dbInstanceStorageType),
+      'DBIsIgnoreCase': ros.numberToRosTemplate(properties.dbIsIgnoreCase),
+      'DBMappings': ros.listMapper(rosDBInstanceDBMappingsPropertyToRosTemplate)(properties.dbMappings),
+      'DBParamGroupId': ros.stringToRosTemplate(properties.dbParamGroupId),
+      'DBTimeZone': ros.stringToRosTemplate(properties.dbTimeZone),
+      'DedicatedHostGroupId': ros.stringToRosTemplate(properties.dedicatedHostGroupId),
+      'EnableBackupLog': ros.booleanToRosTemplate(properties.enableBackupLog),
+      'EncryptionKey': ros.stringToRosTemplate(properties.encryptionKey),
+      'HighSpaceUsageProtection': ros.stringToRosTemplate(properties.highSpaceUsageProtection),
+      'InstanceNetworkType': ros.stringToRosTemplate(properties.instanceNetworkType),
+      'IoAccelerationEnabled': ros.stringToRosTemplate(properties.ioAccelerationEnabled),
+      'LocalLogRetentionHours': ros.numberToRosTemplate(properties.localLogRetentionHours),
+      'LocalLogRetentionSpace': ros.numberToRosTemplate(properties.localLogRetentionSpace),
+      'LogBackupFrequency': ros.stringToRosTemplate(properties.logBackupFrequency),
+      'LogBackupLocalRetentionNumber': ros.numberToRosTemplate(properties.logBackupLocalRetentionNumber),
+      'LogBackupRetentionPeriod': ros.numberToRosTemplate(properties.logBackupRetentionPeriod),
+      'MaintainTime': ros.stringToRosTemplate(properties.maintainTime),
+      'MasterUsername': ros.stringToRosTemplate(properties.masterUsername),
+      'MasterUserPassword': ros.stringToRosTemplate(properties.masterUserPassword),
+      'MasterUserType': ros.stringToRosTemplate(properties.masterUserType),
+      'MultiAZ': ros.booleanToRosTemplate(properties.multiAz),
+      'PayType': ros.stringToRosTemplate(properties.payType),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PeriodType': ros.stringToRosTemplate(properties.periodType),
+      'Port': ros.numberToRosTemplate(properties.port),
+      'PreferredBackupPeriod': ros.listMapper(ros.stringToRosTemplate)(properties.preferredBackupPeriod),
+      'PreferredBackupTime': ros.stringToRosTemplate(properties.preferredBackupTime),
+      'PrivateIpAddress': ros.stringToRosTemplate(properties.privateIpAddress),
+      'ReleasedKeepPolicy': ros.stringToRosTemplate(properties.releasedKeepPolicy),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'RoleARN': ros.stringToRosTemplate(properties.roleArn),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
+      'ServerlessConfig': rosDBInstanceServerlessConfigPropertyToRosTemplate(properties.serverlessConfig),
+      'SlaveZoneIds': ros.listMapper(ros.stringToRosTemplate)(properties.slaveZoneIds),
+      'SQLCollectorStatus': ros.stringToRosTemplate(properties.sqlCollectorStatus),
+      'SSLSetting': ros.stringToRosTemplate(properties.sslSetting),
+      'StorageAutoScale': ros.stringToRosTemplate(properties.storageAutoScale),
+      'StorageThreshold': ros.numberToRosTemplate(properties.storageThreshold),
+      'StorageUpperBound': ros.numberToRosTemplate(properties.storageUpperBound),
+      'Tags': ros.hashMapper(ros.objectToRosTemplate)(properties.tags),
+      'TargetDedicatedHostIdForLog': ros.stringToRosTemplate(properties.targetDedicatedHostIdForLog),
+      'TargetDedicatedHostIdForMaster': ros.stringToRosTemplate(properties.targetDedicatedHostIdForMaster),
+      'TargetDedicatedHostIdForSlave': ros.stringToRosTemplate(properties.targetDedicatedHostIdForSlave),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
     };
 }
 
@@ -1599,6 +1626,11 @@ export class RosDBInstance extends ros.RosResource {
     public backupRetentionPeriod: number | ros.IResolvable | undefined;
 
     /**
+     * @Property burstingEnabled: Whether to enable bursting.
+     */
+    public burstingEnabled: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property category: The edition of the instance. Valid values:
      * Basic: RDS Basic Edition
      * HighAvailability: RDS High-availability Edition
@@ -1608,6 +1640,11 @@ export class RosDBInstance extends ros.RosResource {
      * serverless_basic: RDS Serverless Basic Edition
      */
     public category: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property coldDataEnabled: Whether to enable cold data storage.
+     */
+    public coldDataEnabled: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property compressType: The format used to compress backups. Valid values: 
@@ -1710,6 +1747,11 @@ export class RosDBInstance extends ros.RosResource {
      * @Property instanceNetworkType: Instance network type, VPC or Classic
      */
     public instanceNetworkType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ioAccelerationEnabled: Whether to enable IO Acceleration, 1 for enable 0 for disable.
+     */
+    public ioAccelerationEnabled: string | ros.IResolvable | undefined;
 
     /**
      * @Property localLogRetentionHours: The number of hours for which to retain log backup files on the instance. 
@@ -1959,7 +2001,9 @@ export class RosDBInstance extends ros.RosResource {
         this.backUpCategory = props.backUpCategory;
         this.backupPolicyMode = props.backupPolicyMode;
         this.backupRetentionPeriod = props.backupRetentionPeriod;
+        this.burstingEnabled = props.burstingEnabled;
         this.category = props.category;
+        this.coldDataEnabled = props.coldDataEnabled;
         this.compressType = props.compressType;
         this.connectionMode = props.connectionMode;
         this.connectionStringPrefix = props.connectionStringPrefix;
@@ -1976,6 +2020,7 @@ export class RosDBInstance extends ros.RosResource {
         this.encryptionKey = props.encryptionKey;
         this.highSpaceUsageProtection = props.highSpaceUsageProtection;
         this.instanceNetworkType = props.instanceNetworkType;
+        this.ioAccelerationEnabled = props.ioAccelerationEnabled;
         this.localLogRetentionHours = props.localLogRetentionHours;
         this.localLogRetentionSpace = props.localLogRetentionSpace;
         this.logBackupFrequency = props.logBackupFrequency;
@@ -2029,7 +2074,9 @@ export class RosDBInstance extends ros.RosResource {
             backUpCategory: this.backUpCategory,
             backupPolicyMode: this.backupPolicyMode,
             backupRetentionPeriod: this.backupRetentionPeriod,
+            burstingEnabled: this.burstingEnabled,
             category: this.category,
+            coldDataEnabled: this.coldDataEnabled,
             compressType: this.compressType,
             connectionMode: this.connectionMode,
             connectionStringPrefix: this.connectionStringPrefix,
@@ -2046,6 +2093,7 @@ export class RosDBInstance extends ros.RosResource {
             encryptionKey: this.encryptionKey,
             highSpaceUsageProtection: this.highSpaceUsageProtection,
             instanceNetworkType: this.instanceNetworkType,
+            ioAccelerationEnabled: this.ioAccelerationEnabled,
             localLogRetentionHours: this.localLogRetentionHours,
             localLogRetentionSpace: this.localLogRetentionSpace,
             logBackupFrequency: this.logBackupFrequency,
@@ -2144,9 +2192,9 @@ function rosDBInstanceDBMappingsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosDBInstance_DBMappingsPropertyValidator(properties).assertSuccess();
     return {
-      CharacterSetName: ros.stringToRosTemplate(properties.characterSetName),
-      DBDescription: ros.stringToRosTemplate(properties.dbDescription),
-      DBName: ros.stringToRosTemplate(properties.dbName),
+      'CharacterSetName': ros.stringToRosTemplate(properties.characterSetName),
+      'DBDescription': ros.stringToRosTemplate(properties.dbDescription),
+      'DBName': ros.stringToRosTemplate(properties.dbName),
     };
 }
 
@@ -2222,10 +2270,10 @@ function rosDBInstanceServerlessConfigPropertyToRosTemplate(properties: any): an
     if (!ros.canInspect(properties)) { return properties; }
     RosDBInstance_ServerlessConfigPropertyValidator(properties).assertSuccess();
     return {
-      SwitchForce: ros.booleanToRosTemplate(properties.switchForce),
-      MinCapacity: ros.numberToRosTemplate(properties.minCapacity),
-      AutoPause: ros.booleanToRosTemplate(properties.autoPause),
-      MaxCapacity: ros.numberToRosTemplate(properties.maxCapacity),
+      'SwitchForce': ros.booleanToRosTemplate(properties.switchForce),
+      'MinCapacity': ros.numberToRosTemplate(properties.minCapacity),
+      'AutoPause': ros.booleanToRosTemplate(properties.autoPause),
+      'MaxCapacity': ros.numberToRosTemplate(properties.maxCapacity),
     };
 }
 
@@ -2646,46 +2694,46 @@ function rosDBInstanceClonePropsToRosTemplate(properties: any, enableResourcePro
         RosDBInstanceClonePropsValidator(properties).assertSuccess();
     }
     return {
-      DBInstanceId: ros.stringToRosTemplate(properties.dbInstanceId),
-      PayType: ros.stringToRosTemplate(properties.payType),
-      AllocatePublicConnection: ros.booleanToRosTemplate(properties.allocatePublicConnection),
-      BackupId: ros.stringToRosTemplate(properties.backupId),
-      BackupRetentionPeriod: ros.numberToRosTemplate(properties.backupRetentionPeriod),
-      BackupType: ros.stringToRosTemplate(properties.backupType),
-      Category: ros.stringToRosTemplate(properties.category),
-      ConnectionStringPrefix: ros.stringToRosTemplate(properties.connectionStringPrefix),
-      ConnectionStringType: ros.stringToRosTemplate(properties.connectionStringType),
-      DBInstanceClass: ros.stringToRosTemplate(properties.dbInstanceClass),
-      DBInstanceDescription: ros.stringToRosTemplate(properties.dbInstanceDescription),
-      DBInstanceStorage: ros.numberToRosTemplate(properties.dbInstanceStorage),
-      DBInstanceStorageType: ros.stringToRosTemplate(properties.dbInstanceStorageType),
-      DBMappings: ros.listMapper(rosDBInstanceCloneDBMappingsPropertyToRosTemplate)(properties.dbMappings),
-      DbNames: ros.stringToRosTemplate(properties.dbNames),
-      DedicatedHostGroupId: ros.stringToRosTemplate(properties.dedicatedHostGroupId),
-      InstanceNetworkType: ros.stringToRosTemplate(properties.instanceNetworkType),
-      MaintainTime: ros.stringToRosTemplate(properties.maintainTime),
-      MasterUsername: ros.stringToRosTemplate(properties.masterUsername),
-      MasterUserPassword: ros.stringToRosTemplate(properties.masterUserPassword),
-      MasterUserType: ros.stringToRosTemplate(properties.masterUserType),
-      Period: ros.numberToRosTemplate(properties.period),
-      PeriodType: ros.stringToRosTemplate(properties.periodType),
-      Port: ros.numberToRosTemplate(properties.port),
-      PreferredBackupPeriod: ros.listMapper(ros.stringToRosTemplate)(properties.preferredBackupPeriod),
-      PreferredBackupTime: ros.stringToRosTemplate(properties.preferredBackupTime),
-      PrivateIpAddress: ros.stringToRosTemplate(properties.privateIpAddress),
-      RestoreTable: ros.stringToRosTemplate(properties.restoreTable),
-      RestoreTime: ros.stringToRosTemplate(properties.restoreTime),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
-      SecurityIPList: ros.stringToRosTemplate(properties.securityIpList),
-      SlaveZoneIds: ros.listMapper(ros.stringToRosTemplate)(properties.slaveZoneIds),
-      SQLCollectorStatus: ros.stringToRosTemplate(properties.sqlCollectorStatus),
-      SSLSetting: ros.stringToRosTemplate(properties.sslSetting),
-      TableMeta: ros.listMapper(rosDBInstanceCloneTableMetaPropertyToRosTemplate)(properties.tableMeta),
-      Tags: ros.hashMapper(ros.objectToRosTemplate)(properties.tags),
-      TimeoutInMinutes: ros.numberToRosTemplate(properties.timeoutInMinutes),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      'DBInstanceId': ros.stringToRosTemplate(properties.dbInstanceId),
+      'PayType': ros.stringToRosTemplate(properties.payType),
+      'AllocatePublicConnection': ros.booleanToRosTemplate(properties.allocatePublicConnection),
+      'BackupId': ros.stringToRosTemplate(properties.backupId),
+      'BackupRetentionPeriod': ros.numberToRosTemplate(properties.backupRetentionPeriod),
+      'BackupType': ros.stringToRosTemplate(properties.backupType),
+      'Category': ros.stringToRosTemplate(properties.category),
+      'ConnectionStringPrefix': ros.stringToRosTemplate(properties.connectionStringPrefix),
+      'ConnectionStringType': ros.stringToRosTemplate(properties.connectionStringType),
+      'DBInstanceClass': ros.stringToRosTemplate(properties.dbInstanceClass),
+      'DBInstanceDescription': ros.stringToRosTemplate(properties.dbInstanceDescription),
+      'DBInstanceStorage': ros.numberToRosTemplate(properties.dbInstanceStorage),
+      'DBInstanceStorageType': ros.stringToRosTemplate(properties.dbInstanceStorageType),
+      'DBMappings': ros.listMapper(rosDBInstanceCloneDBMappingsPropertyToRosTemplate)(properties.dbMappings),
+      'DbNames': ros.stringToRosTemplate(properties.dbNames),
+      'DedicatedHostGroupId': ros.stringToRosTemplate(properties.dedicatedHostGroupId),
+      'InstanceNetworkType': ros.stringToRosTemplate(properties.instanceNetworkType),
+      'MaintainTime': ros.stringToRosTemplate(properties.maintainTime),
+      'MasterUsername': ros.stringToRosTemplate(properties.masterUsername),
+      'MasterUserPassword': ros.stringToRosTemplate(properties.masterUserPassword),
+      'MasterUserType': ros.stringToRosTemplate(properties.masterUserType),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PeriodType': ros.stringToRosTemplate(properties.periodType),
+      'Port': ros.numberToRosTemplate(properties.port),
+      'PreferredBackupPeriod': ros.listMapper(ros.stringToRosTemplate)(properties.preferredBackupPeriod),
+      'PreferredBackupTime': ros.stringToRosTemplate(properties.preferredBackupTime),
+      'PrivateIpAddress': ros.stringToRosTemplate(properties.privateIpAddress),
+      'RestoreTable': ros.stringToRosTemplate(properties.restoreTable),
+      'RestoreTime': ros.stringToRosTemplate(properties.restoreTime),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
+      'SecurityIPList': ros.stringToRosTemplate(properties.securityIpList),
+      'SlaveZoneIds': ros.listMapper(ros.stringToRosTemplate)(properties.slaveZoneIds),
+      'SQLCollectorStatus': ros.stringToRosTemplate(properties.sqlCollectorStatus),
+      'SSLSetting': ros.stringToRosTemplate(properties.sslSetting),
+      'TableMeta': ros.listMapper(rosDBInstanceCloneTableMetaPropertyToRosTemplate)(properties.tableMeta),
+      'Tags': ros.hashMapper(ros.objectToRosTemplate)(properties.tags),
+      'TimeoutInMinutes': ros.numberToRosTemplate(properties.timeoutInMinutes),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
     };
 }
 
@@ -3155,9 +3203,9 @@ function rosDBInstanceCloneDBMappingsPropertyToRosTemplate(properties: any): any
     if (!ros.canInspect(properties)) { return properties; }
     RosDBInstanceClone_DBMappingsPropertyValidator(properties).assertSuccess();
     return {
-      CharacterSetName: ros.stringToRosTemplate(properties.characterSetName),
-      DBDescription: ros.stringToRosTemplate(properties.dbDescription),
-      DBName: ros.stringToRosTemplate(properties.dbName),
+      'CharacterSetName': ros.stringToRosTemplate(properties.characterSetName),
+      'DBDescription': ros.stringToRosTemplate(properties.dbDescription),
+      'DBName': ros.stringToRosTemplate(properties.dbName),
     };
 }
 
@@ -3213,10 +3261,10 @@ function rosDBInstanceCloneTableMetaPropertyToRosTemplate(properties: any): any 
     if (!ros.canInspect(properties)) { return properties; }
     RosDBInstanceClone_TableMetaPropertyValidator(properties).assertSuccess();
     return {
-      Type: ros.stringToRosTemplate(properties.type),
-      Tables: ros.listMapper(rosDBInstanceCloneTablesPropertyToRosTemplate)(properties.tables),
-      NewName: ros.stringToRosTemplate(properties.newName),
-      Name: ros.stringToRosTemplate(properties.name),
+      'Type': ros.stringToRosTemplate(properties.type),
+      'Tables': ros.listMapper(rosDBInstanceCloneTablesPropertyToRosTemplate)(properties.tables),
+      'NewName': ros.stringToRosTemplate(properties.newName),
+      'Name': ros.stringToRosTemplate(properties.name),
     };
 }
 
@@ -3267,9 +3315,9 @@ function rosDBInstanceCloneTablesPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosDBInstanceClone_TablesPropertyValidator(properties).assertSuccess();
     return {
-      Type: ros.stringToRosTemplate(properties.type),
-      NewName: ros.stringToRosTemplate(properties.newName),
-      Name: ros.stringToRosTemplate(properties.name),
+      'Type': ros.stringToRosTemplate(properties.type),
+      'NewName': ros.stringToRosTemplate(properties.newName),
+      'Name': ros.stringToRosTemplate(properties.name),
     };
 }
 
@@ -3333,9 +3381,9 @@ function rosDBInstanceParameterGroupPropsToRosTemplate(properties: any, enableRe
         RosDBInstanceParameterGroupPropsValidator(properties).assertSuccess();
     }
     return {
-      DBInstanceId: ros.stringToRosTemplate(properties.dbInstanceId),
-      Parameters: ros.listMapper(rosDBInstanceParameterGroupParametersPropertyToRosTemplate)(properties.parameters),
-      Forcerestart: ros.stringToRosTemplate(properties.forcerestart),
+      'DBInstanceId': ros.stringToRosTemplate(properties.dbInstanceId),
+      'Parameters': ros.listMapper(rosDBInstanceParameterGroupParametersPropertyToRosTemplate)(properties.parameters),
+      'Forcerestart': ros.stringToRosTemplate(properties.forcerestart),
     };
 }
 
@@ -3439,8 +3487,8 @@ function rosDBInstanceParameterGroupParametersPropertyToRosTemplate(properties: 
     if (!ros.canInspect(properties)) { return properties; }
     RosDBInstanceParameterGroup_ParametersPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -3498,9 +3546,9 @@ function rosDBInstanceSecurityIpsPropsToRosTemplate(properties: any, enableResou
         RosDBInstanceSecurityIpsPropsValidator(properties).assertSuccess();
     }
     return {
-      DBInstanceId: ros.stringToRosTemplate(properties.dbInstanceId),
-      DBInstanceIPArrayAttribute: ros.stringToRosTemplate(properties.dbInstanceIpArrayAttribute),
-      DBInstanceIPArrayName: ros.stringToRosTemplate(properties.dbInstanceIpArrayName),
+      'DBInstanceId': ros.stringToRosTemplate(properties.dbInstanceId),
+      'DBInstanceIPArrayAttribute': ros.stringToRosTemplate(properties.dbInstanceIpArrayAttribute),
+      'DBInstanceIPArrayName': ros.stringToRosTemplate(properties.dbInstanceIpArrayName),
     };
 }
 
@@ -3644,10 +3692,10 @@ function rosDatabasePropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosDatabasePropsValidator(properties).assertSuccess();
     }
     return {
-      CharacterSetName: ros.stringToRosTemplate(properties.characterSetName),
-      DBInstanceId: ros.stringToRosTemplate(properties.dbInstanceId),
-      DBName: ros.stringToRosTemplate(properties.dbName),
-      DBDescription: ros.stringToRosTemplate(properties.dbDescription),
+      'CharacterSetName': ros.stringToRosTemplate(properties.characterSetName),
+      'DBInstanceId': ros.stringToRosTemplate(properties.dbInstanceId),
+      'DBName': ros.stringToRosTemplate(properties.dbName),
+      'DBDescription': ros.stringToRosTemplate(properties.dbDescription),
     };
 }
 
@@ -3852,13 +3900,13 @@ function rosMigrateTaskPropsToRosTemplate(properties: any, enableResourcePropert
         RosMigrateTaskPropsValidator(properties).assertSuccess();
     }
     return {
-      BackupMode: ros.stringToRosTemplate(properties.backupMode),
-      DBInstanceId: ros.stringToRosTemplate(properties.dbInstanceId),
-      DBName: ros.stringToRosTemplate(properties.dbName),
-      IsOnlineDB: ros.booleanToRosTemplate(properties.isOnlineDb),
-      CheckDBMode: ros.stringToRosTemplate(properties.checkDbMode),
-      OssObjectPositions: ros.stringToRosTemplate(properties.ossObjectPositions),
-      OSSUrls: ros.stringToRosTemplate(properties.ossUrls),
+      'BackupMode': ros.stringToRosTemplate(properties.backupMode),
+      'DBInstanceId': ros.stringToRosTemplate(properties.dbInstanceId),
+      'DBName': ros.stringToRosTemplate(properties.dbName),
+      'IsOnlineDB': ros.booleanToRosTemplate(properties.isOnlineDb),
+      'CheckDBMode': ros.stringToRosTemplate(properties.checkDbMode),
+      'OssObjectPositions': ros.stringToRosTemplate(properties.ossObjectPositions),
+      'OSSUrls': ros.stringToRosTemplate(properties.ossUrls),
     };
 }
 
@@ -4076,13 +4124,13 @@ function rosPostgresExtensionsPropsToRosTemplate(properties: any, enableResource
         RosPostgresExtensionsPropsValidator(properties).assertSuccess();
     }
     return {
-      AccountName: ros.stringToRosTemplate(properties.accountName),
-      DBInstanceId: ros.stringToRosTemplate(properties.dbInstanceId),
-      DBName: ros.stringToRosTemplate(properties.dbName),
-      Extensions: ros.listMapper(ros.stringToRosTemplate)(properties.extensions),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      RiskConfirmed: ros.booleanToRosTemplate(properties.riskConfirmed),
-      SourceDatabase: ros.stringToRosTemplate(properties.sourceDatabase),
+      'AccountName': ros.stringToRosTemplate(properties.accountName),
+      'DBInstanceId': ros.stringToRosTemplate(properties.dbInstanceId),
+      'DBName': ros.stringToRosTemplate(properties.dbName),
+      'Extensions': ros.listMapper(ros.stringToRosTemplate)(properties.extensions),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'RiskConfirmed': ros.booleanToRosTemplate(properties.riskConfirmed),
+      'SourceDatabase': ros.stringToRosTemplate(properties.sourceDatabase),
     };
 }
 
@@ -4288,6 +4336,11 @@ export interface RosPrepayDBInstanceProps {
     readonly backupRetentionPeriod?: number | ros.IResolvable;
 
     /**
+     * @Property burstingEnabled: Whether to enable bursting.
+     */
+    readonly burstingEnabled?: boolean | ros.IResolvable;
+
+    /**
      * @Property category: The edition of the instance. Valid values:
      * Basic: RDS Basic Edition
      * HighAvailability: RDS High-availability Edition
@@ -4297,6 +4350,11 @@ export interface RosPrepayDBInstanceProps {
      * serverless_basic: RDS Serverless Basic Edition
      */
     readonly category?: string | ros.IResolvable;
+
+    /**
+     * @Property coldDataEnabled: Whether to enable cold data storage.
+     */
+    readonly coldDataEnabled?: boolean | ros.IResolvable;
 
     /**
      * @Property compressType: The format used to compress backups. Valid values: 
@@ -4404,6 +4462,11 @@ export interface RosPrepayDBInstanceProps {
      * @Property instanceNetworkType: Instance network type, VPC or Classic
      */
     readonly instanceNetworkType?: string | ros.IResolvable;
+
+    /**
+     * @Property ioAccelerationEnabled: Whether to enable IO Acceleration, 1 for enable 0 for disable.
+     */
+    readonly ioAccelerationEnabled?: string | ros.IResolvable;
 
     /**
      * @Property localLogRetentionHours: The number of hours for which to retain log backup files on the instance. 
@@ -4695,6 +4758,13 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
         }));
     }
     errors.collect(ros.propertyValidator('engine', ros.validateString)(properties.engine));
+    if(properties.ioAccelerationEnabled && (typeof properties.ioAccelerationEnabled) !== 'object') {
+        errors.collect(ros.propertyValidator('ioAccelerationEnabled', ros.validateAllowedValues)({
+          data: properties.ioAccelerationEnabled,
+          allowedValues: ["0","1"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ioAccelerationEnabled', ros.validateString)(properties.ioAccelerationEnabled));
     errors.collect(ros.propertyValidator('targetDedicatedHostIdForMaster', ros.validateString)(properties.targetDedicatedHostIdForMaster));
     errors.collect(ros.propertyValidator('engineVersion', ros.requiredValidator)(properties.engineVersion));
     if(properties.engineVersion && (Array.isArray(properties.engineVersion) || (typeof properties.engineVersion) === 'string')) {
@@ -4835,6 +4905,8 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
     errors.collect(ros.propertyValidator('commodityCode', ros.validateString)(properties.commodityCode));
     errors.collect(ros.propertyValidator('maintainTime', ros.validateString)(properties.maintainTime));
     errors.collect(ros.propertyValidator('dbParamGroupId', ros.validateString)(properties.dbParamGroupId));
+    errors.collect(ros.propertyValidator('burstingEnabled', ros.validateBoolean)(properties.burstingEnabled));
+    errors.collect(ros.propertyValidator('coldDataEnabled', ros.validateBoolean)(properties.coldDataEnabled));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('targetDedicatedHostIdForLog', ros.validateString)(properties.targetDedicatedHostIdForLog));
     errors.collect(ros.propertyValidator('allocatePublicConnection', ros.validateBoolean)(properties.allocatePublicConnection));
@@ -4858,6 +4930,7 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
     }
     errors.collect(ros.propertyValidator('backUpCategory', ros.validateString)(properties.backUpCategory));
     errors.collect(ros.propertyValidator('compressType', ros.validateNumber)(properties.compressType));
+    errors.collect(ros.propertyValidator('logBackupFrequency', ros.validateString)(properties.logBackupFrequency));
     if(properties.connectionStringType && (typeof properties.connectionStringType) !== 'object') {
         errors.collect(ros.propertyValidator('connectionStringType', ros.validateAllowedValues)({
           data: properties.connectionStringType,
@@ -4865,7 +4938,6 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
         }));
     }
     errors.collect(ros.propertyValidator('connectionStringType', ros.validateString)(properties.connectionStringType));
-    errors.collect(ros.propertyValidator('logBackupFrequency', ros.validateString)(properties.logBackupFrequency));
     errors.collect(ros.propertyValidator('couponCode', ros.validateString)(properties.couponCode));
     if(properties.masterUserType && (typeof properties.masterUserType) !== 'object') {
         errors.collect(ros.propertyValidator('masterUserType', ros.validateAllowedValues)({
@@ -4901,73 +4973,76 @@ function rosPrepayDBInstancePropsToRosTemplate(properties: any, enableResourcePr
         RosPrepayDBInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      CommodityCode: ros.stringToRosTemplate(properties.commodityCode),
-      DBInstanceClass: ros.stringToRosTemplate(properties.dbInstanceClass),
-      DBInstanceStorage: ros.numberToRosTemplate(properties.dbInstanceStorage),
-      Engine: ros.stringToRosTemplate(properties.engine),
-      EngineVersion: ros.stringToRosTemplate(properties.engineVersion),
-      Period: ros.numberToRosTemplate(properties.period),
-      PeriodType: ros.stringToRosTemplate(properties.periodType),
-      AllocatePublicConnection: ros.booleanToRosTemplate(properties.allocatePublicConnection),
-      ArchiveBackupKeepCount: ros.numberToRosTemplate(properties.archiveBackupKeepCount),
-      ArchiveBackupKeepPolicy: ros.stringToRosTemplate(properties.archiveBackupKeepPolicy),
-      ArchiveBackupRetentionPeriod: ros.numberToRosTemplate(properties.archiveBackupRetentionPeriod),
-      AutoPay: ros.booleanToRosTemplate(properties.autoPay),
-      AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
-      BackUpCategory: ros.stringToRosTemplate(properties.backUpCategory),
-      BackupPolicyMode: ros.stringToRosTemplate(properties.backupPolicyMode),
-      BackupRetentionPeriod: ros.numberToRosTemplate(properties.backupRetentionPeriod),
-      Category: ros.stringToRosTemplate(properties.category),
-      CompressType: ros.numberToRosTemplate(properties.compressType),
-      ConnectionMode: ros.stringToRosTemplate(properties.connectionMode),
-      ConnectionStringPrefix: ros.stringToRosTemplate(properties.connectionStringPrefix),
-      ConnectionStringType: ros.stringToRosTemplate(properties.connectionStringType),
-      CouponCode: ros.stringToRosTemplate(properties.couponCode),
-      DBInstanceDescription: ros.stringToRosTemplate(properties.dbInstanceDescription),
-      DBInstanceNetType: ros.stringToRosTemplate(properties.dbInstanceNetType),
-      DBInstanceStorageType: ros.stringToRosTemplate(properties.dbInstanceStorageType),
-      DBIsIgnoreCase: ros.numberToRosTemplate(properties.dbIsIgnoreCase),
-      DBMappings: ros.listMapper(rosPrepayDBInstanceDBMappingsPropertyToRosTemplate)(properties.dbMappings),
-      DBParamGroupId: ros.stringToRosTemplate(properties.dbParamGroupId),
-      DBTimeZone: ros.stringToRosTemplate(properties.dbTimeZone),
-      DedicatedHostGroupId: ros.stringToRosTemplate(properties.dedicatedHostGroupId),
-      EnableBackupLog: ros.booleanToRosTemplate(properties.enableBackupLog),
-      EncryptionKey: ros.stringToRosTemplate(properties.encryptionKey),
-      HighSpaceUsageProtection: ros.stringToRosTemplate(properties.highSpaceUsageProtection),
-      InstanceNetworkType: ros.stringToRosTemplate(properties.instanceNetworkType),
-      LocalLogRetentionHours: ros.numberToRosTemplate(properties.localLogRetentionHours),
-      LocalLogRetentionSpace: ros.numberToRosTemplate(properties.localLogRetentionSpace),
-      LogBackupFrequency: ros.stringToRosTemplate(properties.logBackupFrequency),
-      LogBackupLocalRetentionNumber: ros.numberToRosTemplate(properties.logBackupLocalRetentionNumber),
-      LogBackupRetentionPeriod: ros.numberToRosTemplate(properties.logBackupRetentionPeriod),
-      MaintainTime: ros.stringToRosTemplate(properties.maintainTime),
-      MasterUsername: ros.stringToRosTemplate(properties.masterUsername),
-      MasterUserPassword: ros.stringToRosTemplate(properties.masterUserPassword),
-      MasterUserType: ros.stringToRosTemplate(properties.masterUserType),
-      MultiAZ: ros.booleanToRosTemplate(properties.multiAz),
-      Port: ros.numberToRosTemplate(properties.port),
-      PreferredBackupPeriod: ros.listMapper(ros.stringToRosTemplate)(properties.preferredBackupPeriod),
-      PreferredBackupTime: ros.stringToRosTemplate(properties.preferredBackupTime),
-      PrivateIpAddress: ros.stringToRosTemplate(properties.privateIpAddress),
-      Quantity: ros.numberToRosTemplate(properties.quantity),
-      ReleasedKeepPolicy: ros.stringToRosTemplate(properties.releasedKeepPolicy),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      RoleARN: ros.stringToRosTemplate(properties.roleArn),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
-      ServerlessConfig: rosPrepayDBInstanceServerlessConfigPropertyToRosTemplate(properties.serverlessConfig),
-      SlaveZoneIds: ros.listMapper(ros.stringToRosTemplate)(properties.slaveZoneIds),
-      SQLCollectorStatus: ros.stringToRosTemplate(properties.sqlCollectorStatus),
-      SSLSetting: ros.stringToRosTemplate(properties.sslSetting),
-      StorageAutoScale: ros.stringToRosTemplate(properties.storageAutoScale),
-      StorageThreshold: ros.numberToRosTemplate(properties.storageThreshold),
-      StorageUpperBound: ros.numberToRosTemplate(properties.storageUpperBound),
-      Tags: ros.hashMapper(ros.objectToRosTemplate)(properties.tags),
-      TargetDedicatedHostIdForLog: ros.stringToRosTemplate(properties.targetDedicatedHostIdForLog),
-      TargetDedicatedHostIdForMaster: ros.stringToRosTemplate(properties.targetDedicatedHostIdForMaster),
-      TargetDedicatedHostIdForSlave: ros.stringToRosTemplate(properties.targetDedicatedHostIdForSlave),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      'CommodityCode': ros.stringToRosTemplate(properties.commodityCode),
+      'DBInstanceClass': ros.stringToRosTemplate(properties.dbInstanceClass),
+      'DBInstanceStorage': ros.numberToRosTemplate(properties.dbInstanceStorage),
+      'Engine': ros.stringToRosTemplate(properties.engine),
+      'EngineVersion': ros.stringToRosTemplate(properties.engineVersion),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PeriodType': ros.stringToRosTemplate(properties.periodType),
+      'AllocatePublicConnection': ros.booleanToRosTemplate(properties.allocatePublicConnection),
+      'ArchiveBackupKeepCount': ros.numberToRosTemplate(properties.archiveBackupKeepCount),
+      'ArchiveBackupKeepPolicy': ros.stringToRosTemplate(properties.archiveBackupKeepPolicy),
+      'ArchiveBackupRetentionPeriod': ros.numberToRosTemplate(properties.archiveBackupRetentionPeriod),
+      'AutoPay': ros.booleanToRosTemplate(properties.autoPay),
+      'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
+      'BackUpCategory': ros.stringToRosTemplate(properties.backUpCategory),
+      'BackupPolicyMode': ros.stringToRosTemplate(properties.backupPolicyMode),
+      'BackupRetentionPeriod': ros.numberToRosTemplate(properties.backupRetentionPeriod),
+      'BurstingEnabled': ros.booleanToRosTemplate(properties.burstingEnabled),
+      'Category': ros.stringToRosTemplate(properties.category),
+      'ColdDataEnabled': ros.booleanToRosTemplate(properties.coldDataEnabled),
+      'CompressType': ros.numberToRosTemplate(properties.compressType),
+      'ConnectionMode': ros.stringToRosTemplate(properties.connectionMode),
+      'ConnectionStringPrefix': ros.stringToRosTemplate(properties.connectionStringPrefix),
+      'ConnectionStringType': ros.stringToRosTemplate(properties.connectionStringType),
+      'CouponCode': ros.stringToRosTemplate(properties.couponCode),
+      'DBInstanceDescription': ros.stringToRosTemplate(properties.dbInstanceDescription),
+      'DBInstanceNetType': ros.stringToRosTemplate(properties.dbInstanceNetType),
+      'DBInstanceStorageType': ros.stringToRosTemplate(properties.dbInstanceStorageType),
+      'DBIsIgnoreCase': ros.numberToRosTemplate(properties.dbIsIgnoreCase),
+      'DBMappings': ros.listMapper(rosPrepayDBInstanceDBMappingsPropertyToRosTemplate)(properties.dbMappings),
+      'DBParamGroupId': ros.stringToRosTemplate(properties.dbParamGroupId),
+      'DBTimeZone': ros.stringToRosTemplate(properties.dbTimeZone),
+      'DedicatedHostGroupId': ros.stringToRosTemplate(properties.dedicatedHostGroupId),
+      'EnableBackupLog': ros.booleanToRosTemplate(properties.enableBackupLog),
+      'EncryptionKey': ros.stringToRosTemplate(properties.encryptionKey),
+      'HighSpaceUsageProtection': ros.stringToRosTemplate(properties.highSpaceUsageProtection),
+      'InstanceNetworkType': ros.stringToRosTemplate(properties.instanceNetworkType),
+      'IoAccelerationEnabled': ros.stringToRosTemplate(properties.ioAccelerationEnabled),
+      'LocalLogRetentionHours': ros.numberToRosTemplate(properties.localLogRetentionHours),
+      'LocalLogRetentionSpace': ros.numberToRosTemplate(properties.localLogRetentionSpace),
+      'LogBackupFrequency': ros.stringToRosTemplate(properties.logBackupFrequency),
+      'LogBackupLocalRetentionNumber': ros.numberToRosTemplate(properties.logBackupLocalRetentionNumber),
+      'LogBackupRetentionPeriod': ros.numberToRosTemplate(properties.logBackupRetentionPeriod),
+      'MaintainTime': ros.stringToRosTemplate(properties.maintainTime),
+      'MasterUsername': ros.stringToRosTemplate(properties.masterUsername),
+      'MasterUserPassword': ros.stringToRosTemplate(properties.masterUserPassword),
+      'MasterUserType': ros.stringToRosTemplate(properties.masterUserType),
+      'MultiAZ': ros.booleanToRosTemplate(properties.multiAz),
+      'Port': ros.numberToRosTemplate(properties.port),
+      'PreferredBackupPeriod': ros.listMapper(ros.stringToRosTemplate)(properties.preferredBackupPeriod),
+      'PreferredBackupTime': ros.stringToRosTemplate(properties.preferredBackupTime),
+      'PrivateIpAddress': ros.stringToRosTemplate(properties.privateIpAddress),
+      'Quantity': ros.numberToRosTemplate(properties.quantity),
+      'ReleasedKeepPolicy': ros.stringToRosTemplate(properties.releasedKeepPolicy),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'RoleARN': ros.stringToRosTemplate(properties.roleArn),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
+      'ServerlessConfig': rosPrepayDBInstanceServerlessConfigPropertyToRosTemplate(properties.serverlessConfig),
+      'SlaveZoneIds': ros.listMapper(ros.stringToRosTemplate)(properties.slaveZoneIds),
+      'SQLCollectorStatus': ros.stringToRosTemplate(properties.sqlCollectorStatus),
+      'SSLSetting': ros.stringToRosTemplate(properties.sslSetting),
+      'StorageAutoScale': ros.stringToRosTemplate(properties.storageAutoScale),
+      'StorageThreshold': ros.numberToRosTemplate(properties.storageThreshold),
+      'StorageUpperBound': ros.numberToRosTemplate(properties.storageUpperBound),
+      'Tags': ros.hashMapper(ros.objectToRosTemplate)(properties.tags),
+      'TargetDedicatedHostIdForLog': ros.stringToRosTemplate(properties.targetDedicatedHostIdForLog),
+      'TargetDedicatedHostIdForMaster': ros.stringToRosTemplate(properties.targetDedicatedHostIdForMaster),
+      'TargetDedicatedHostIdForSlave': ros.stringToRosTemplate(properties.targetDedicatedHostIdForSlave),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
     };
 }
 
@@ -5128,6 +5203,11 @@ export class RosPrepayDBInstance extends ros.RosResource {
     public backupRetentionPeriod: number | ros.IResolvable | undefined;
 
     /**
+     * @Property burstingEnabled: Whether to enable bursting.
+     */
+    public burstingEnabled: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property category: The edition of the instance. Valid values:
      * Basic: RDS Basic Edition
      * HighAvailability: RDS High-availability Edition
@@ -5137,6 +5217,11 @@ export class RosPrepayDBInstance extends ros.RosResource {
      * serverless_basic: RDS Serverless Basic Edition
      */
     public category: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property coldDataEnabled: Whether to enable cold data storage.
+     */
+    public coldDataEnabled: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property compressType: The format used to compress backups. Valid values: 
@@ -5244,6 +5329,11 @@ export class RosPrepayDBInstance extends ros.RosResource {
      * @Property instanceNetworkType: Instance network type, VPC or Classic
      */
     public instanceNetworkType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ioAccelerationEnabled: Whether to enable IO Acceleration, 1 for enable 0 for disable.
+     */
+    public ioAccelerationEnabled: string | ros.IResolvable | undefined;
 
     /**
      * @Property localLogRetentionHours: The number of hours for which to retain log backup files on the instance. 
@@ -5485,7 +5575,9 @@ export class RosPrepayDBInstance extends ros.RosResource {
         this.backUpCategory = props.backUpCategory;
         this.backupPolicyMode = props.backupPolicyMode;
         this.backupRetentionPeriod = props.backupRetentionPeriod;
+        this.burstingEnabled = props.burstingEnabled;
         this.category = props.category;
+        this.coldDataEnabled = props.coldDataEnabled;
         this.compressType = props.compressType;
         this.connectionMode = props.connectionMode;
         this.connectionStringPrefix = props.connectionStringPrefix;
@@ -5503,6 +5595,7 @@ export class RosPrepayDBInstance extends ros.RosResource {
         this.encryptionKey = props.encryptionKey;
         this.highSpaceUsageProtection = props.highSpaceUsageProtection;
         this.instanceNetworkType = props.instanceNetworkType;
+        this.ioAccelerationEnabled = props.ioAccelerationEnabled;
         this.localLogRetentionHours = props.localLogRetentionHours;
         this.localLogRetentionSpace = props.localLogRetentionSpace;
         this.logBackupFrequency = props.logBackupFrequency;
@@ -5557,7 +5650,9 @@ export class RosPrepayDBInstance extends ros.RosResource {
             backUpCategory: this.backUpCategory,
             backupPolicyMode: this.backupPolicyMode,
             backupRetentionPeriod: this.backupRetentionPeriod,
+            burstingEnabled: this.burstingEnabled,
             category: this.category,
+            coldDataEnabled: this.coldDataEnabled,
             compressType: this.compressType,
             connectionMode: this.connectionMode,
             connectionStringPrefix: this.connectionStringPrefix,
@@ -5575,6 +5670,7 @@ export class RosPrepayDBInstance extends ros.RosResource {
             encryptionKey: this.encryptionKey,
             highSpaceUsageProtection: this.highSpaceUsageProtection,
             instanceNetworkType: this.instanceNetworkType,
+            ioAccelerationEnabled: this.ioAccelerationEnabled,
             localLogRetentionHours: this.localLogRetentionHours,
             localLogRetentionSpace: this.localLogRetentionSpace,
             logBackupFrequency: this.logBackupFrequency,
@@ -5671,9 +5767,9 @@ function rosPrepayDBInstanceDBMappingsPropertyToRosTemplate(properties: any): an
     if (!ros.canInspect(properties)) { return properties; }
     RosPrepayDBInstance_DBMappingsPropertyValidator(properties).assertSuccess();
     return {
-      CharacterSetName: ros.stringToRosTemplate(properties.characterSetName),
-      DBDescription: ros.stringToRosTemplate(properties.dbDescription),
-      DBName: ros.stringToRosTemplate(properties.dbName),
+      'CharacterSetName': ros.stringToRosTemplate(properties.characterSetName),
+      'DBDescription': ros.stringToRosTemplate(properties.dbDescription),
+      'DBName': ros.stringToRosTemplate(properties.dbName),
     };
 }
 
@@ -5749,10 +5845,10 @@ function rosPrepayDBInstanceServerlessConfigPropertyToRosTemplate(properties: an
     if (!ros.canInspect(properties)) { return properties; }
     RosPrepayDBInstance_ServerlessConfigPropertyValidator(properties).assertSuccess();
     return {
-      SwitchForce: ros.booleanToRosTemplate(properties.switchForce),
-      MinCapacity: ros.numberToRosTemplate(properties.minCapacity),
-      AutoPause: ros.booleanToRosTemplate(properties.autoPause),
-      MaxCapacity: ros.numberToRosTemplate(properties.maxCapacity),
+      'SwitchForce': ros.booleanToRosTemplate(properties.switchForce),
+      'MinCapacity': ros.numberToRosTemplate(properties.minCapacity),
+      'AutoPause': ros.booleanToRosTemplate(properties.autoPause),
+      'MaxCapacity': ros.numberToRosTemplate(properties.maxCapacity),
     };
 }
 
@@ -5964,26 +6060,26 @@ function rosReadOnlyDBInstancePropsToRosTemplate(properties: any, enableResource
         RosReadOnlyDBInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      DBInstanceClass: ros.stringToRosTemplate(properties.dbInstanceClass),
-      DBInstanceId: ros.stringToRosTemplate(properties.dbInstanceId),
-      DBInstanceStorage: ros.numberToRosTemplate(properties.dbInstanceStorage),
-      EngineVersion: ros.stringToRosTemplate(properties.engineVersion),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
-      AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
-      Category: ros.stringToRosTemplate(properties.category),
-      DBInstanceDescription: ros.stringToRosTemplate(properties.dbInstanceDescription),
-      DBInstanceStorageType: ros.stringToRosTemplate(properties.dbInstanceStorageType),
-      DedicatedHostGroupId: ros.stringToRosTemplate(properties.dedicatedHostGroupId),
-      DeletionProtection: ros.booleanToRosTemplate(properties.deletionProtection),
-      PayType: ros.stringToRosTemplate(properties.payType),
-      Period: ros.numberToRosTemplate(properties.period),
-      PeriodType: ros.stringToRosTemplate(properties.periodType),
-      PrivateIpAddress: ros.stringToRosTemplate(properties.privateIpAddress),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      Tags: ros.hashMapper(ros.objectToRosTemplate)(properties.tags),
-      TargetDedicatedHostIdForMaster: ros.stringToRosTemplate(properties.targetDedicatedHostIdForMaster),
-      VPCId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
+      'DBInstanceClass': ros.stringToRosTemplate(properties.dbInstanceClass),
+      'DBInstanceId': ros.stringToRosTemplate(properties.dbInstanceId),
+      'DBInstanceStorage': ros.numberToRosTemplate(properties.dbInstanceStorage),
+      'EngineVersion': ros.stringToRosTemplate(properties.engineVersion),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+      'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
+      'Category': ros.stringToRosTemplate(properties.category),
+      'DBInstanceDescription': ros.stringToRosTemplate(properties.dbInstanceDescription),
+      'DBInstanceStorageType': ros.stringToRosTemplate(properties.dbInstanceStorageType),
+      'DedicatedHostGroupId': ros.stringToRosTemplate(properties.dedicatedHostGroupId),
+      'DeletionProtection': ros.booleanToRosTemplate(properties.deletionProtection),
+      'PayType': ros.stringToRosTemplate(properties.payType),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PeriodType': ros.stringToRosTemplate(properties.periodType),
+      'PrivateIpAddress': ros.stringToRosTemplate(properties.privateIpAddress),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tags': ros.hashMapper(ros.objectToRosTemplate)(properties.tags),
+      'TargetDedicatedHostIdForMaster': ros.stringToRosTemplate(properties.targetDedicatedHostIdForMaster),
+      'VPCId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
     };
 }
 

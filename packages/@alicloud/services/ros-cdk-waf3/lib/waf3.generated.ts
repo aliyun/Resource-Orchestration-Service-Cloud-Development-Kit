@@ -254,27 +254,27 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      PayType: ros.stringToRosTemplate(properties.payType),
-      Region: ros.stringToRosTemplate(properties.region),
-      AdditionalProtectionNodes: ros.numberToRosTemplate(properties.additionalProtectionNodes),
-      ApiSecurity: ros.booleanToRosTemplate(properties.apiSecurity),
-      AutoPay: ros.booleanToRosTemplate(properties.autoPay),
-      AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
-      BotAppProtection: ros.booleanToRosTemplate(properties.botAppProtection),
-      BotWebProtection: ros.booleanToRosTemplate(properties.botWebProtection),
-      DomainsExtension: ros.numberToRosTemplate(properties.domainsExtension),
-      ElasticQps: ros.numberToRosTemplate(properties.elasticQps),
-      ExclusiveIPAddress: ros.numberToRosTemplate(properties.exclusiveIpAddress),
-      FraudDetection: ros.booleanToRosTemplate(properties.fraudDetection),
-      IgnoreExisting: ros.booleanToRosTemplate(properties.ignoreExisting),
-      IntelligentLoadBalancing: ros.booleanToRosTemplate(properties.intelligentLoadBalancing),
-      LogService: ros.booleanToRosTemplate(properties.logService),
-      LogStorage: ros.numberToRosTemplate(properties.logStorage),
-      Period: ros.numberToRosTemplate(properties.period),
-      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
-      QpsExtension: ros.numberToRosTemplate(properties.qpsExtension),
-      TrafficBillingProtectionThreshold: ros.numberToRosTemplate(properties.trafficBillingProtectionThreshold),
-      WafVersion: ros.stringToRosTemplate(properties.wafVersion),
+      'PayType': ros.stringToRosTemplate(properties.payType),
+      'Region': ros.stringToRosTemplate(properties.region),
+      'AdditionalProtectionNodes': ros.numberToRosTemplate(properties.additionalProtectionNodes),
+      'ApiSecurity': ros.booleanToRosTemplate(properties.apiSecurity),
+      'AutoPay': ros.booleanToRosTemplate(properties.autoPay),
+      'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
+      'BotAppProtection': ros.booleanToRosTemplate(properties.botAppProtection),
+      'BotWebProtection': ros.booleanToRosTemplate(properties.botWebProtection),
+      'DomainsExtension': ros.numberToRosTemplate(properties.domainsExtension),
+      'ElasticQps': ros.numberToRosTemplate(properties.elasticQps),
+      'ExclusiveIPAddress': ros.numberToRosTemplate(properties.exclusiveIpAddress),
+      'FraudDetection': ros.booleanToRosTemplate(properties.fraudDetection),
+      'IgnoreExisting': ros.booleanToRosTemplate(properties.ignoreExisting),
+      'IntelligentLoadBalancing': ros.booleanToRosTemplate(properties.intelligentLoadBalancing),
+      'LogService': ros.booleanToRosTemplate(properties.logService),
+      'LogStorage': ros.numberToRosTemplate(properties.logStorage),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
+      'QpsExtension': ros.numberToRosTemplate(properties.qpsExtension),
+      'TrafficBillingProtectionThreshold': ros.numberToRosTemplate(properties.trafficBillingProtectionThreshold),
+      'WafVersion': ros.stringToRosTemplate(properties.wafVersion),
     };
 }
 
@@ -475,4 +475,533 @@ export class RosInstance extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosInstancePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+/**
+ * Properties for defining a `RosTGW`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf3-tgw
+ */
+export interface RosTGWProps {
+
+    /**
+     * @Property instanceId: The ID of the WAF instance.
+     */
+    readonly instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property listen: Listening information.
+     */
+    readonly listen: RosTGW.ListenProperty | ros.IResolvable;
+
+    /**
+     * @Property redirect: Forwarding information.
+     */
+    readonly redirect?: RosTGW.RedirectProperty | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosTGWProps`
+ *
+ * @param properties - the TypeScript properties of a `RosTGWProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosTGWPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('listen', ros.requiredValidator)(properties.listen));
+    errors.collect(ros.propertyValidator('listen', RosTGW_ListenPropertyValidator)(properties.listen));
+    errors.collect(ros.propertyValidator('redirect', RosTGW_RedirectPropertyValidator)(properties.redirect));
+    return errors.wrap('supplied properties not correct for "RosTGWProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::WAF3::TGW` resource
+ *
+ * @param properties - the TypeScript properties of a `RosTGWProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::WAF3::TGW` resource.
+ */
+// @ts-ignore TS6133
+function rosTGWPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosTGWPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'Listen': rosTGWListenPropertyToRosTemplate(properties.listen),
+      'Redirect': rosTGWRedirectPropertyToRosTemplate(properties.redirect),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::WAF3::TGW`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `TGW` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf3-tgw
+ */
+export class RosTGW extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::WAF3::TGW";
+
+    /**
+     * @Attribute InstanceId: The ID of the WAF instance.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute Port: Access the cloud product port of WAF.
+     */
+    public readonly attrPort: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceProduct: Access to WAF cloud products.
+     */
+    public readonly attrResourceProduct: ros.IResolvable;
+
+    /**
+     * @Attribute TgwId: The protection object ID of the transparent access resource.
+     */
+    public readonly attrTgwId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property instanceId: The ID of the WAF instance.
+     */
+    public instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property listen: Listening information.
+     */
+    public listen: RosTGW.ListenProperty | ros.IResolvable;
+
+    /**
+     * @Property redirect: Forwarding information.
+     */
+    public redirect: RosTGW.RedirectProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosTGWProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosTGW.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrInstanceId = this.getAtt('InstanceId');
+        this.attrPort = this.getAtt('Port');
+        this.attrResourceProduct = this.getAtt('ResourceProduct');
+        this.attrTgwId = this.getAtt('TgwId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.instanceId = props.instanceId;
+        this.listen = props.listen;
+        this.redirect = props.redirect;
+        this.resourceGroupId = props.resourceGroupId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            instanceId: this.instanceId,
+            listen: this.listen,
+            redirect: this.redirect,
+            resourceGroupId: this.resourceGroupId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosTGWPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosTGW {
+    /**
+     * @stability external
+     */
+    export interface CertificatesProperty {
+        /**
+         * @Property appliedType: The certificate type for the HTTPS protocol. Valid values:
+     * default: Indicates the default certificate.
+     * extension: Indicates an extended certificate.
+         */
+        readonly appliedType?: string | ros.IResolvable;
+        /**
+         * @Property certificateId: The ID of the certificate that was added.
+         */
+        readonly certificateId?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `CertificatesProperty`
+ *
+ * @param properties - the TypeScript properties of a `CertificatesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosTGW_CertificatesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.appliedType && (typeof properties.appliedType) !== 'object') {
+        errors.collect(ros.propertyValidator('appliedType', ros.validateAllowedValues)({
+          data: properties.appliedType,
+          allowedValues: ["default","extension"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('appliedType', ros.validateString)(properties.appliedType));
+    errors.collect(ros.propertyValidator('certificateId', ros.validateString)(properties.certificateId));
+    return errors.wrap('supplied properties not correct for "CertificatesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::WAF3::TGW.Certificates` resource
+ *
+ * @param properties - the TypeScript properties of a `CertificatesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::WAF3::TGW.Certificates` resource.
+ */
+// @ts-ignore TS6133
+function rosTGWCertificatesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosTGW_CertificatesPropertyValidator(properties).assertSuccess();
+    return {
+      'AppliedType': ros.stringToRosTemplate(properties.appliedType),
+      'CertificateId': ros.stringToRosTemplate(properties.certificateId),
+    };
+}
+
+export namespace RosTGW {
+    /**
+     * @stability external
+     */
+    export interface ListenProperty {
+        /**
+         * @Property customCiphers: Customize the encryption suite list. This parameter is used only when CipherSuite is set to 99.
+         */
+        readonly customCiphers?: Array<any | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property tlsVersion: The TLS version to be added. This parameter is used only when the value of HttpsPorts is not empty (indicating that the domain name uses the HTTPS protocol). Values:
+     * tlsv1
+     * tlsv1.1
+     * tlsv1.2
+         */
+        readonly tlsVersion?: string | ros.IResolvable;
+        /**
+         * @Property http2Enabled: Whether to enable HTTP2. This parameter is used only when the value of HttpsPorts is not empty (indicating that the domain name uses the HTTPS protocol). Values:
+     * true: Enable HTTP2.
+     * false (default): Disable HTTP2.
+         */
+        readonly http2Enabled?: boolean | ros.IResolvable;
+        /**
+         * @Property cipherSuite: The type of encryption suite to be added. This parameter is used only when the value of HttpsPorts is not empty (indicating that the domain name uses the HTTPS protocol). Values:
+     * 1: Indicates adding all encryption suites.
+     * 2: Indicates adding a strong encryption suite. This value can be selected only when the value of TLSVersion is tlsv1.2.
+     * 99: Indicates adding a custom encryption suite.
+         */
+        readonly cipherSuite?: number | ros.IResolvable;
+        /**
+         * @Property enableTlSv3: Whether to support TSL1.3 version. This parameter is used only when the value of HttpsPorts is not empty (indicating that the domain name uses the HTTPS protocol). Value:
+     * true: indicates that TSL1.3 version is supported.
+     * false: indicates that TSL1.3 version is not supported.
+         */
+        readonly enableTlSv3?: boolean | ros.IResolvable;
+        /**
+         * @Property port: Access the cloud product port of WAF.
+         */
+        readonly port: number | ros.IResolvable;
+        /**
+         * @Property resourceProduct: Access to WAF cloud products.
+         */
+        readonly resourceProduct: string | ros.IResolvable;
+        /**
+         * @Property certificates: The domain name bound to the certificate.
+         */
+        readonly certificates?: Array<RosTGW.CertificatesProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property protocol: Protocol type
+         */
+        readonly protocol: string | ros.IResolvable;
+        /**
+         * @Property resourceInstanceId: The instance ID of the cloud product connected to WAF.
+         */
+        readonly resourceInstanceId: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ListenProperty`
+ *
+ * @param properties - the TypeScript properties of a `ListenProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosTGW_ListenPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.customCiphers && (Array.isArray(properties.customCiphers) || (typeof properties.customCiphers) === 'string')) {
+        errors.collect(ros.propertyValidator('customCiphers', ros.validateLength)({
+            data: properties.customCiphers.length,
+            min: 0,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('customCiphers', ros.listValidator(ros.validateAny))(properties.customCiphers));
+    if(properties.tlsVersion && (typeof properties.tlsVersion) !== 'object') {
+        errors.collect(ros.propertyValidator('tlsVersion', ros.validateAllowedValues)({
+          data: properties.tlsVersion,
+          allowedValues: ["tlsv1","tlsv1.1","tlsv1.2"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('tlsVersion', ros.validateString)(properties.tlsVersion));
+    errors.collect(ros.propertyValidator('http2Enabled', ros.validateBoolean)(properties.http2Enabled));
+    errors.collect(ros.propertyValidator('cipherSuite', ros.validateNumber)(properties.cipherSuite));
+    errors.collect(ros.propertyValidator('enableTlSv3', ros.validateBoolean)(properties.enableTlSv3));
+    errors.collect(ros.propertyValidator('port', ros.requiredValidator)(properties.port));
+    errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
+    errors.collect(ros.propertyValidator('resourceProduct', ros.requiredValidator)(properties.resourceProduct));
+    errors.collect(ros.propertyValidator('resourceProduct', ros.validateString)(properties.resourceProduct));
+    if(properties.certificates && (Array.isArray(properties.certificates) || (typeof properties.certificates) === 'string')) {
+        errors.collect(ros.propertyValidator('certificates', ros.validateLength)({
+            data: properties.certificates.length,
+            min: 0,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('certificates', ros.listValidator(RosTGW_CertificatesPropertyValidator))(properties.certificates));
+    errors.collect(ros.propertyValidator('protocol', ros.requiredValidator)(properties.protocol));
+    errors.collect(ros.propertyValidator('protocol', ros.validateString)(properties.protocol));
+    errors.collect(ros.propertyValidator('resourceInstanceId', ros.requiredValidator)(properties.resourceInstanceId));
+    errors.collect(ros.propertyValidator('resourceInstanceId', ros.validateString)(properties.resourceInstanceId));
+    return errors.wrap('supplied properties not correct for "ListenProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::WAF3::TGW.Listen` resource
+ *
+ * @param properties - the TypeScript properties of a `ListenProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::WAF3::TGW.Listen` resource.
+ */
+// @ts-ignore TS6133
+function rosTGWListenPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosTGW_ListenPropertyValidator(properties).assertSuccess();
+    return {
+      'CustomCiphers': ros.listMapper(ros.objectToRosTemplate)(properties.customCiphers),
+      'TLSVersion': ros.stringToRosTemplate(properties.tlsVersion),
+      'Http2Enabled': ros.booleanToRosTemplate(properties.http2Enabled),
+      'CipherSuite': ros.numberToRosTemplate(properties.cipherSuite),
+      'EnableTLSv3': ros.booleanToRosTemplate(properties.enableTlSv3),
+      'Port': ros.numberToRosTemplate(properties.port),
+      'ResourceProduct': ros.stringToRosTemplate(properties.resourceProduct),
+      'Certificates': ros.listMapper(rosTGWCertificatesPropertyToRosTemplate)(properties.certificates),
+      'Protocol': ros.stringToRosTemplate(properties.protocol),
+      'ResourceInstanceId': ros.stringToRosTemplate(properties.resourceInstanceId),
+    };
+}
+
+export namespace RosTGW {
+    /**
+     * @stability external
+     */
+    export interface RedirectProperty {
+        /**
+         * @Property xffHeaders: Sets a custom field list for obtaining the client IP, expressed in the format of ["header1", "header2", ...].
+         */
+        readonly xffHeaders?: Array<any | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property writeTimeout: Write timeout duration, unit: seconds. Value range: 1~3600.
+         */
+        readonly writeTimeout?: number | ros.IResolvable;
+        /**
+         * @Property xffHeaderMode: The way WAF obtains the client's real IP. Value:
+     * 0 (default): indicates that the client access traffic is not forwarded by other seven-layer proxies before reaching WAF.
+     * 1: indicates that WAF reads the first value of the X-Forwarded-For (XFF) field in the request header as the client IP.
+     * 2: indicates that WAF reads the custom field value set by you in the request header as the client IP.
+         */
+        readonly xffHeaderMode?: number | ros.IResolvable;
+        /**
+         * @Property keepalive: Whether to maintain a long connection. Value:
+     * true (default): indicates to maintain a long connection.
+     * false: indicates not to maintain a long connection.
+         */
+        readonly keepalive?: boolean | ros.IResolvable;
+        /**
+         * @Property requestHeaders: The traffic tag field and value of the domain name, used to tag traffic processed by WAF.
+         */
+        readonly requestHeaders?: Array<RosTGW.RequestHeadersProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property keepaliveRequests: The number of requests for multiplexing long connections. Value range: 60~1000, unit: number.
+         */
+        readonly keepaliveRequests?: number | ros.IResolvable;
+        /**
+         * @Property keepaliveTimeout: Idle long connection timeout, value range: 1~60, default 15, unit: second.
+         */
+        readonly keepaliveTimeout?: number | ros.IResolvable;
+        /**
+         * @Property readTimeout: Read timeout duration, unit: seconds. Value range: 1~3600.
+         */
+        readonly readTimeout?: number | ros.IResolvable;
+        /**
+         * @Property xffProto: X-Forward-For-Proto The protocol of WAF. Value:
+     * true (default): indicates that the protocol of WAF is transmitted.
+     * false: indicates that the protocol of WAF is not transmitted.
+         */
+        readonly xffProto?: boolean | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `RedirectProperty`
+ *
+ * @param properties - the TypeScript properties of a `RedirectProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosTGW_RedirectPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.xffHeaders && (Array.isArray(properties.xffHeaders) || (typeof properties.xffHeaders) === 'string')) {
+        errors.collect(ros.propertyValidator('xffHeaders', ros.validateLength)({
+            data: properties.xffHeaders.length,
+            min: 0,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('xffHeaders', ros.listValidator(ros.validateAny))(properties.xffHeaders));
+    if(properties.writeTimeout && (typeof properties.writeTimeout) !== 'object') {
+        errors.collect(ros.propertyValidator('writeTimeout', ros.validateRange)({
+            data: properties.writeTimeout,
+            min: 1,
+            max: 3600,
+          }));
+    }
+    errors.collect(ros.propertyValidator('writeTimeout', ros.validateNumber)(properties.writeTimeout));
+    if(properties.xffHeaderMode && (typeof properties.xffHeaderMode) !== 'object') {
+        errors.collect(ros.propertyValidator('xffHeaderMode', ros.validateAllowedValues)({
+          data: properties.xffHeaderMode,
+          allowedValues: [0,1,2],
+        }));
+    }
+    errors.collect(ros.propertyValidator('xffHeaderMode', ros.validateNumber)(properties.xffHeaderMode));
+    errors.collect(ros.propertyValidator('keepalive', ros.validateBoolean)(properties.keepalive));
+    if(properties.requestHeaders && (Array.isArray(properties.requestHeaders) || (typeof properties.requestHeaders) === 'string')) {
+        errors.collect(ros.propertyValidator('requestHeaders', ros.validateLength)({
+            data: properties.requestHeaders.length,
+            min: 0,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('requestHeaders', ros.listValidator(RosTGW_RequestHeadersPropertyValidator))(properties.requestHeaders));
+    if(properties.keepaliveRequests && (typeof properties.keepaliveRequests) !== 'object') {
+        errors.collect(ros.propertyValidator('keepaliveRequests', ros.validateRange)({
+            data: properties.keepaliveRequests,
+            min: 60,
+            max: 1000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('keepaliveRequests', ros.validateNumber)(properties.keepaliveRequests));
+    if(properties.keepaliveTimeout && (typeof properties.keepaliveTimeout) !== 'object') {
+        errors.collect(ros.propertyValidator('keepaliveTimeout', ros.validateRange)({
+            data: properties.keepaliveTimeout,
+            min: 1,
+            max: 60,
+          }));
+    }
+    errors.collect(ros.propertyValidator('keepaliveTimeout', ros.validateNumber)(properties.keepaliveTimeout));
+    if(properties.readTimeout && (typeof properties.readTimeout) !== 'object') {
+        errors.collect(ros.propertyValidator('readTimeout', ros.validateRange)({
+            data: properties.readTimeout,
+            min: 1,
+            max: 3600,
+          }));
+    }
+    errors.collect(ros.propertyValidator('readTimeout', ros.validateNumber)(properties.readTimeout));
+    errors.collect(ros.propertyValidator('xffProto', ros.validateBoolean)(properties.xffProto));
+    return errors.wrap('supplied properties not correct for "RedirectProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::WAF3::TGW.Redirect` resource
+ *
+ * @param properties - the TypeScript properties of a `RedirectProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::WAF3::TGW.Redirect` resource.
+ */
+// @ts-ignore TS6133
+function rosTGWRedirectPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosTGW_RedirectPropertyValidator(properties).assertSuccess();
+    return {
+      'XffHeaders': ros.listMapper(ros.objectToRosTemplate)(properties.xffHeaders),
+      'WriteTimeout': ros.numberToRosTemplate(properties.writeTimeout),
+      'XffHeaderMode': ros.numberToRosTemplate(properties.xffHeaderMode),
+      'Keepalive': ros.booleanToRosTemplate(properties.keepalive),
+      'RequestHeaders': ros.listMapper(rosTGWRequestHeadersPropertyToRosTemplate)(properties.requestHeaders),
+      'KeepaliveRequests': ros.numberToRosTemplate(properties.keepaliveRequests),
+      'KeepaliveTimeout': ros.numberToRosTemplate(properties.keepaliveTimeout),
+      'ReadTimeout': ros.numberToRosTemplate(properties.readTimeout),
+      'XffProto': ros.booleanToRosTemplate(properties.xffProto),
+    };
+}
+
+export namespace RosTGW {
+    /**
+     * @stability external
+     */
+    export interface RequestHeadersProperty {
+        /**
+         * @Property value: Customize the value set by the request header field.
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: The specified custom request header field.
+         */
+        readonly key?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `RequestHeadersProperty`
+ *
+ * @param properties - the TypeScript properties of a `RequestHeadersProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosTGW_RequestHeadersPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "RequestHeadersProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::WAF3::TGW.RequestHeaders` resource
+ *
+ * @param properties - the TypeScript properties of a `RequestHeadersProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::WAF3::TGW.RequestHeaders` resource.
+ */
+// @ts-ignore TS6133
+function rosTGWRequestHeadersPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosTGW_RequestHeadersPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
 }

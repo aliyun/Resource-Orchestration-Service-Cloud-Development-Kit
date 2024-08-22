@@ -100,13 +100,13 @@ function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyCons
         RosDomainPropsValidator(properties).assertSuccess();
     }
     return {
-      DomainName: ros.stringToRosTemplate(properties.domainName),
-      Sources: ros.listMapper(rosDomainSourcesPropertyToRosTemplate)(properties.sources),
-      CheckUrl: ros.stringToRosTemplate(properties.checkUrl),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      Scope: ros.stringToRosTemplate(properties.scope),
-      Tags: ros.listMapper(rosDomainTagsPropertyToRosTemplate)(properties.tags),
-      TopLevelDomain: ros.stringToRosTemplate(properties.topLevelDomain),
+      'DomainName': ros.stringToRosTemplate(properties.domainName),
+      'Sources': ros.listMapper(rosDomainSourcesPropertyToRosTemplate)(properties.sources),
+      'CheckUrl': ros.stringToRosTemplate(properties.checkUrl),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Scope': ros.stringToRosTemplate(properties.scope),
+      'Tags': ros.listMapper(rosDomainTagsPropertyToRosTemplate)(properties.tags),
+      'TopLevelDomain': ros.stringToRosTemplate(properties.topLevelDomain),
     };
 }
 
@@ -286,11 +286,11 @@ function rosDomainSourcesPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosDomain_SourcesPropertyValidator(properties).assertSuccess();
     return {
-      Type: ros.stringToRosTemplate(properties.type),
-      Content: ros.stringToRosTemplate(properties.content),
-      Priority: ros.stringToRosTemplate(properties.priority),
-      Port: ros.numberToRosTemplate(properties.port),
-      Weight: ros.stringToRosTemplate(properties.weight),
+      'Type': ros.stringToRosTemplate(properties.type),
+      'Content': ros.stringToRosTemplate(properties.content),
+      'Priority': ros.stringToRosTemplate(properties.priority),
+      'Port': ros.numberToRosTemplate(properties.port),
+      'Weight': ros.stringToRosTemplate(properties.weight),
     };
 }
 
@@ -337,7 +337,7 @@ function rosDomainTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosDomain_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }

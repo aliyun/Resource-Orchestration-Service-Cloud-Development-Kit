@@ -8,6 +8,14 @@ export { RosProjects as ProjectsProperty };
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-sls-projects
  */
 export interface ProjectsProps {
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -44,8 +52,8 @@ export class Projects extends ros.Resource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosProjects = new RosProjects(this, id,  {
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
-        props;
         this.resource = rosProjects;
         this.attrProjectNames = rosProjects.attrProjectNames;
         this.attrProjects = rosProjects.attrProjects;

@@ -8,6 +8,14 @@ export { RosSecrets as SecretsProperty };
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kms-secrets
  */
 export interface SecretsProps {
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -44,8 +52,8 @@ export class Secrets extends ros.Resource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosSecrets = new RosSecrets(this, id,  {
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
-        props;
         this.resource = rosSecrets;
         this.attrSecretNames = rosSecrets.attrSecretNames;
         this.attrSecrets = rosSecrets.attrSecrets;

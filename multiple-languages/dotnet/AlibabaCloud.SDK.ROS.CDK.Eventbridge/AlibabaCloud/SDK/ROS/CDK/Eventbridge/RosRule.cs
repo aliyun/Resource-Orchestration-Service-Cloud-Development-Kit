@@ -528,10 +528,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eventbridge
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: id: The custom ID of the event target.
+            /// <strong>Property</strong>: identity: The custom ID of the event target.
             /// </remarks>
-            [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            object Id
+            [JsiiProperty(name: "identity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Identity
             {
                 get;
             }
@@ -584,10 +584,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eventbridge
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: id: The custom ID of the event target.
+                /// <strong>Property</strong>: identity: The custom ID of the event target.
                 /// </remarks>
-                [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-                public object Id
+                [JsiiProperty(name: "identity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Identity
                 {
                     get => GetInstanceProperty<object>()!;
                 }
@@ -658,15 +658,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eventbridge
                 }
             }
 
-            private object _id;
+            private object _identity;
 
             /// <remarks>
-            /// <strong>Property</strong>: id: The custom ID of the event target.
+            /// <strong>Property</strong>: identity: The custom ID of the event target.
             /// </remarks>
-            [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object Id
+            [JsiiProperty(name: "identity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Identity
             {
-                get => _id;
+                get => _identity;
                 set
                 {
                     if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
@@ -686,7 +686,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eventbridge
                                 throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
                         }
                     }
-                    _id = value;
+                    _identity = value;
                 }
             }
 

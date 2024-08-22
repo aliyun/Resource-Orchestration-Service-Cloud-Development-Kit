@@ -6,6 +6,8 @@
 @alicloud/ros-cdk-arms.AlertContactProps=com.aliyun.ros.cdk.arms.AlertContactProps
 @alicloud/ros-cdk-arms.ApplyAlertRuleTemplate=com.aliyun.ros.cdk.arms.ApplyAlertRuleTemplate
 @alicloud/ros-cdk-arms.ApplyAlertRuleTemplateProps=com.aliyun.ros.cdk.arms.ApplyAlertRuleTemplateProps
+@alicloud/ros-cdk-arms.DeliverTask=com.aliyun.ros.cdk.arms.DeliverTask
+@alicloud/ros-cdk-arms.DeliverTaskProps=com.aliyun.ros.cdk.arms.DeliverTaskProps
 @alicloud/ros-cdk-arms.Environment=com.aliyun.ros.cdk.arms.Environment
 @alicloud/ros-cdk-arms.EnvironmentFeature=com.aliyun.ros.cdk.arms.EnvironmentFeature
 @alicloud/ros-cdk-arms.EnvironmentFeatureProps=com.aliyun.ros.cdk.arms.EnvironmentFeatureProps
@@ -24,6 +26,9 @@
 @alicloud/ros-cdk-arms.RosAlertContactProps=com.aliyun.ros.cdk.arms.RosAlertContactProps
 @alicloud/ros-cdk-arms.RosApplyAlertRuleTemplate=com.aliyun.ros.cdk.arms.RosApplyAlertRuleTemplate
 @alicloud/ros-cdk-arms.RosApplyAlertRuleTemplateProps=com.aliyun.ros.cdk.arms.RosApplyAlertRuleTemplateProps
+@alicloud/ros-cdk-arms.RosDeliverTask=com.aliyun.ros.cdk.arms.RosDeliverTask
+@alicloud/ros-cdk-arms.RosDeliverTask.TargetListProperty=com.aliyun.ros.cdk.arms.RosDeliverTask$TargetListProperty
+@alicloud/ros-cdk-arms.RosDeliverTaskProps=com.aliyun.ros.cdk.arms.RosDeliverTaskProps
 @alicloud/ros-cdk-arms.RosEnvironment=com.aliyun.ros.cdk.arms.RosEnvironment
 @alicloud/ros-cdk-arms.RosEnvironment.TagsProperty=com.aliyun.ros.cdk.arms.RosEnvironment$TagsProperty
 @alicloud/ros-cdk-arms.RosEnvironmentFeature=com.aliyun.ros.cdk.arms.RosEnvironmentFeature

@@ -51,6 +51,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eais.Datasource
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+        /// - Never: Never refresh the datasource resource when the stack is updated.
+        /// - Always: Always refresh the datasource resource when the stack is updated.
+        /// Default is Never.
+        /// </remarks>
+        [JsiiProperty(name: "refreshOptions", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? RefreshOptions
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: resourceGroupId: The ID of the resource group.
         /// </remarks>
         [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -100,6 +116,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eais.Datasource
             [JsiiOptional]
             [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? InstanceType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+            /// - Never: Never refresh the datasource resource when the stack is updated.
+            /// - Always: Always refresh the datasource resource when the stack is updated.
+            /// Default is Never.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "refreshOptions", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RefreshOptions
             {
                 get => GetInstanceProperty<object?>();
             }

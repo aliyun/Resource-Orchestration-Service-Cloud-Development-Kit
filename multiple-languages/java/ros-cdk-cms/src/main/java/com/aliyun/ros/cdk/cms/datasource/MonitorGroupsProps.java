@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cms.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-monitorgroups
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:05.194Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:18.720Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.datasource.MonitorGroupsProps")
 @software.amazon.jsii.Jsii.Proxy(MonitorGroupsProps.Jsii$Proxy.class)
 public interface MonitorGroupsProps extends software.amazon.jsii.JsiiSerializable {
@@ -28,6 +28,21 @@ public interface MonitorGroupsProps extends software.amazon.jsii.JsiiSerializabl
      * Property monitorGroupName: The name of the application group.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMonitorGroupName() {
+        return null;
+    }
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
         return null;
     }
 
@@ -56,6 +71,7 @@ public interface MonitorGroupsProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object dynamicTagRuleId;
         java.lang.Object groupId;
         java.lang.Object monitorGroupName;
+        java.lang.Object refreshOptions;
         java.lang.Object type;
 
         /**
@@ -119,6 +135,40 @@ public interface MonitorGroupsProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link MonitorGroupsProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link MonitorGroupsProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link MonitorGroupsProps#getType}
          * @param type Property type: The type of the application group.
          *             Valid values:
@@ -165,6 +215,7 @@ public interface MonitorGroupsProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object dynamicTagRuleId;
         private final java.lang.Object groupId;
         private final java.lang.Object monitorGroupName;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object type;
 
         /**
@@ -176,6 +227,7 @@ public interface MonitorGroupsProps extends software.amazon.jsii.JsiiSerializabl
             this.dynamicTagRuleId = software.amazon.jsii.Kernel.get(this, "dynamicTagRuleId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.groupId = software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.monitorGroupName = software.amazon.jsii.Kernel.get(this, "monitorGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -187,6 +239,7 @@ public interface MonitorGroupsProps extends software.amazon.jsii.JsiiSerializabl
             this.dynamicTagRuleId = builder.dynamicTagRuleId;
             this.groupId = builder.groupId;
             this.monitorGroupName = builder.monitorGroupName;
+            this.refreshOptions = builder.refreshOptions;
             this.type = builder.type;
         }
 
@@ -203,6 +256,11 @@ public interface MonitorGroupsProps extends software.amazon.jsii.JsiiSerializabl
         @Override
         public final java.lang.Object getMonitorGroupName() {
             return this.monitorGroupName;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -224,6 +282,9 @@ public interface MonitorGroupsProps extends software.amazon.jsii.JsiiSerializabl
             }
             if (this.getMonitorGroupName() != null) {
                 data.set("monitorGroupName", om.valueToTree(this.getMonitorGroupName()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
             if (this.getType() != null) {
                 data.set("type", om.valueToTree(this.getType()));
@@ -249,6 +310,7 @@ public interface MonitorGroupsProps extends software.amazon.jsii.JsiiSerializabl
             if (this.dynamicTagRuleId != null ? !this.dynamicTagRuleId.equals(that.dynamicTagRuleId) : that.dynamicTagRuleId != null) return false;
             if (this.groupId != null ? !this.groupId.equals(that.groupId) : that.groupId != null) return false;
             if (this.monitorGroupName != null ? !this.monitorGroupName.equals(that.monitorGroupName) : that.monitorGroupName != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             return this.type != null ? this.type.equals(that.type) : that.type == null;
         }
 
@@ -257,6 +319,7 @@ public interface MonitorGroupsProps extends software.amazon.jsii.JsiiSerializabl
             int result = this.dynamicTagRuleId != null ? this.dynamicTagRuleId.hashCode() : 0;
             result = 31 * result + (this.groupId != null ? this.groupId.hashCode() : 0);
             result = 31 * result + (this.monitorGroupName != null ? this.monitorGroupName.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.type != null ? this.type.hashCode() : 0);
             return result;
         }

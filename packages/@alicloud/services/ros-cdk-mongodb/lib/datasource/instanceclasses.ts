@@ -24,6 +24,14 @@ export interface InstanceClassesProps {
     readonly instanceChargeType?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property resourceGroupId: The ID of the resource group.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -72,6 +80,7 @@ export class InstanceClasses extends ros.Resource {
             zoneId: props.zoneId,
             instanceChargeType: props.instanceChargeType === undefined || props.instanceChargeType === null ? 'PostPaid' : props.instanceChargeType,
             dbType: props.dbType,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstanceClasses;
         this.attrInstanceClassIds = rosInstanceClasses.attrInstanceClassIds;

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::VpnPbrRouteEntry</code>, which is used to create a policy-based route for a VPN gateway.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.844Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:24.948Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.VpnPbrRouteEntry")
 public class VpnPbrRouteEntry extends com.aliyun.ros.cdk.core.Resource {
 
@@ -311,6 +311,33 @@ public class VpnPbrRouteEntry extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder overlayMode(final com.aliyun.ros.cdk.core.IResolvable overlayMode) {
             this.props.overlayMode(overlayMode);
+            return this;
+        }
+
+        /**
+         * Property priority: Policy priority for policy routing.
+         * <p>
+         * Range: 1-100 Default value: 10.
+         * The smaller the policy priority number, the higher the priority of the policy route.
+         * <p>
+         * @return {@code this}
+         * @param priority Property priority: Policy priority for policy routing. This parameter is required.
+         */
+        public Builder priority(final java.lang.Number priority) {
+            this.props.priority(priority);
+            return this;
+        }
+        /**
+         * Property priority: Policy priority for policy routing.
+         * <p>
+         * Range: 1-100 Default value: 10.
+         * The smaller the policy priority number, the higher the priority of the policy route.
+         * <p>
+         * @return {@code this}
+         * @param priority Property priority: Policy priority for policy routing. This parameter is required.
+         */
+        public Builder priority(final com.aliyun.ros.cdk.core.IResolvable priority) {
+            this.props.priority(priority);
             return this;
         }
 

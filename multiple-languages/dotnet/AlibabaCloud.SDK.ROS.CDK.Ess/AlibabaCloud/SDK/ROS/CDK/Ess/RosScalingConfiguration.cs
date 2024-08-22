@@ -3946,11 +3946,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         public interface IPrivatePoolOptionsProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: id: The ID of the private pool. The ID of a private pool is the same as the ID of the elasticity assurance or capacity reservation for which the private pool is generated.
+            /// <strong>Property</strong>: identity: The ID of the private pool. The ID of a private pool is the same as the ID of the elasticity assurance or capacity reservation for which the private pool is generated.
             /// </remarks>
-            [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [JsiiProperty(name: "identity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            object? Id
+            object? Identity
             {
                 get
                 {
@@ -3982,11 +3982,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: id: The ID of the private pool. The ID of a private pool is the same as the ID of the elasticity assurance or capacity reservation for which the private pool is generated.
+                /// <strong>Property</strong>: identity: The ID of the private pool. The ID of a private pool is the same as the ID of the elasticity assurance or capacity reservation for which the private pool is generated.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-                public object? Id
+                [JsiiProperty(name: "identity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Identity
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -4008,16 +4008,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         [JsiiByValue(fqn: "@alicloud/ros-cdk-ess.RosScalingConfiguration.PrivatePoolOptionsProperty")]
         public class PrivatePoolOptionsProperty : AlibabaCloud.SDK.ROS.CDK.Ess.RosScalingConfiguration.IPrivatePoolOptionsProperty
         {
-            private object? _id;
+            private object? _identity;
 
             /// <remarks>
-            /// <strong>Property</strong>: id: The ID of the private pool. The ID of a private pool is the same as the ID of the elasticity assurance or capacity reservation for which the private pool is generated.
+            /// <strong>Property</strong>: identity: The ID of the private pool. The ID of a private pool is the same as the ID of the elasticity assurance or capacity reservation for which the private pool is generated.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? Id
+            [JsiiProperty(name: "identity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Identity
             {
-                get => _id;
+                get => _identity;
                 set
                 {
                     if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
@@ -4037,7 +4037,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
                                 throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
                         }
                     }
-                    _id = value;
+                    _identity = value;
                 }
             }
 

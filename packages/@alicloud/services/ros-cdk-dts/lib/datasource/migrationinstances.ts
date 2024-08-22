@@ -13,6 +13,14 @@ export interface MigrationInstancesProps {
      * Property dtsInstanceId: Synchronization instance ID.
      */
     readonly dtsInstanceId?: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -50,6 +58,7 @@ export class MigrationInstances extends ros.Resource {
 
         const rosMigrationInstances = new RosMigrationInstances(this, id,  {
             dtsInstanceId: props.dtsInstanceId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosMigrationInstances;
         this.attrDtsInstanceIds = rosMigrationInstances.attrDtsInstanceIds;

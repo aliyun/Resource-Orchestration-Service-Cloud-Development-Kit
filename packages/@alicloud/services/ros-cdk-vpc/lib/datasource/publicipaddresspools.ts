@@ -35,6 +35,14 @@ export interface PublicIpAddressPoolsProps {
     readonly publicIpAddressPoolName?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property resourceGroupId: The ID of the resource group to which the IP address pool belongs.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -77,6 +85,7 @@ export class PublicIpAddressPools extends ros.Resource {
             resourceGroupId: props.resourceGroupId,
             publicIpAddressPoolName: props.publicIpAddressPoolName,
             isp: props.isp,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosPublicIpAddressPools;
         this.attrPublicIpAddressPoolIds = rosPublicIpAddressPools.attrPublicIpAddressPoolIds;

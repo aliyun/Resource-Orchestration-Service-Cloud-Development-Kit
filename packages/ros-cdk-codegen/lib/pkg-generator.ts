@@ -14,7 +14,7 @@ export async function createPackages() {
     const scopes = await tryReadPackageJson(allTypes());
     for(let index in scopes) {
         let service = scopes[index].split('::')[1].toLowerCase();
-        if (service == 'eip') {
+        if (service == 'eip' || service == 'eipanycast') {
             // 由于DATASOURCE::EIP::Addresses这个原本属于VPC资源的存在
             continue
         }
@@ -36,9 +36,11 @@ export async function createPackages() {
         pkg['jsii']['targets']['python']['distName'] = scope
 
         // jsii -> dotnet
-
         pkg['jsii']['targets']['dotnet']['namespace'] = ROS_DOTNAT_PACKAGE + service.toLowerCase().replace(/( |^)[a-z]/g, (L: string) => L.toUpperCase());
         pkg['jsii']['targets']['dotnet']['packageId'] = ROS_DOTNAT_PACKAGE + service.toLowerCase().replace(/( |^)[a-z]/g, (L: string) => L.toUpperCase());
+
+        // jsii -> go
+        pkg['jsii']['targets']['go']['packageName'] = 'alicloudroscdk' + service;
 
         fs.writeFileSync(pkgPath + '/package.json', JSON.stringify(pkg, null, 2), 'utf-8');
 

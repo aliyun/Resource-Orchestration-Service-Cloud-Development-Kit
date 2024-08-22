@@ -68,11 +68,11 @@ function rosFlowPropsToRosTemplate(properties: any, enableResourcePropertyConstr
         RosFlowPropsValidator(properties).assertSuccess();
     }
     return {
-      Definition: ros.stringToRosTemplate(properties.definition),
-      Name: ros.stringToRosTemplate(properties.name),
-      Description: ros.stringToRosTemplate(properties.description),
-      RequestId: ros.stringToRosTemplate(properties.requestId),
-      RoleArn: ros.stringToRosTemplate(properties.roleArn),
+      'Definition': ros.stringToRosTemplate(properties.definition),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'RequestId': ros.stringToRosTemplate(properties.requestId),
+      'RoleArn': ros.stringToRosTemplate(properties.roleArn),
     };
 }
 
@@ -243,12 +243,12 @@ function rosSchedulePropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosSchedulePropsValidator(properties).assertSuccess();
     }
     return {
-      CronExpression: ros.stringToRosTemplate(properties.cronExpression),
-      FlowName: ros.stringToRosTemplate(properties.flowName),
-      ScheduleName: ros.stringToRosTemplate(properties.scheduleName),
-      Description: ros.stringToRosTemplate(properties.description),
-      Enable: ros.booleanToRosTemplate(properties.enable),
-      Payload: ros.stringToRosTemplate(properties.payload),
+      'CronExpression': ros.stringToRosTemplate(properties.cronExpression),
+      'FlowName': ros.stringToRosTemplate(properties.flowName),
+      'ScheduleName': ros.stringToRosTemplate(properties.scheduleName),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Enable': ros.booleanToRosTemplate(properties.enable),
+      'Payload': ros.stringToRosTemplate(properties.payload),
     };
 }
 

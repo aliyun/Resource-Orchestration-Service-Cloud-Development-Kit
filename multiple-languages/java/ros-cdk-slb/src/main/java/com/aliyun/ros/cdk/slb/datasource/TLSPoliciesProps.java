@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.slb.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-tlspolicies
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.382Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:24.277Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.datasource.TLSPoliciesProps")
 @software.amazon.jsii.Jsii.Proxy(TLSPoliciesProps.Jsii$Proxy.class)
 public interface TLSPoliciesProps extends software.amazon.jsii.JsiiSerializable {
@@ -14,6 +14,21 @@ public interface TLSPoliciesProps extends software.amazon.jsii.JsiiSerializable 
      * Property instanceId: The ID of the TLS policy.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getInstanceId();
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
 
     /**
      * Property tlsPolicyName: The name of the TLS policy.
@@ -35,6 +50,7 @@ public interface TLSPoliciesProps extends software.amazon.jsii.JsiiSerializable 
      */
     public static final class Builder implements software.amazon.jsii.Builder<TLSPoliciesProps> {
         java.lang.Object instanceId;
+        java.lang.Object refreshOptions;
         java.lang.Object tlsPolicyName;
 
         /**
@@ -54,6 +70,40 @@ public interface TLSPoliciesProps extends software.amazon.jsii.JsiiSerializable 
          */
         public Builder instanceId(com.aliyun.ros.cdk.core.IResolvable instanceId) {
             this.instanceId = instanceId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TLSPoliciesProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TLSPoliciesProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
             return this;
         }
 
@@ -96,6 +146,7 @@ public interface TLSPoliciesProps extends software.amazon.jsii.JsiiSerializable 
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TLSPoliciesProps {
         private final java.lang.Object instanceId;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object tlsPolicyName;
 
         /**
@@ -105,6 +156,7 @@ public interface TLSPoliciesProps extends software.amazon.jsii.JsiiSerializable 
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tlsPolicyName = software.amazon.jsii.Kernel.get(this, "tlsPolicyName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -114,12 +166,18 @@ public interface TLSPoliciesProps extends software.amazon.jsii.JsiiSerializable 
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.instanceId = java.util.Objects.requireNonNull(builder.instanceId, "instanceId is required");
+            this.refreshOptions = builder.refreshOptions;
             this.tlsPolicyName = builder.tlsPolicyName;
         }
 
         @Override
         public final java.lang.Object getInstanceId() {
             return this.instanceId;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -134,6 +192,9 @@ public interface TLSPoliciesProps extends software.amazon.jsii.JsiiSerializable 
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
             data.set("instanceId", om.valueToTree(this.getInstanceId()));
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
+            }
             if (this.getTlsPolicyName() != null) {
                 data.set("tlsPolicyName", om.valueToTree(this.getTlsPolicyName()));
             }
@@ -156,12 +217,14 @@ public interface TLSPoliciesProps extends software.amazon.jsii.JsiiSerializable 
             TLSPoliciesProps.Jsii$Proxy that = (TLSPoliciesProps.Jsii$Proxy) o;
 
             if (!instanceId.equals(that.instanceId)) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             return this.tlsPolicyName != null ? this.tlsPolicyName.equals(that.tlsPolicyName) : that.tlsPolicyName == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.instanceId.hashCode();
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.tlsPolicyName != null ? this.tlsPolicyName.hashCode() : 0);
             return result;
         }

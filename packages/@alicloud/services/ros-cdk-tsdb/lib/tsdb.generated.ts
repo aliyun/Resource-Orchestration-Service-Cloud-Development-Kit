@@ -133,17 +133,17 @@ function rosHiTSDBInstancePropsToRosTemplate(properties: any, enableResourceProp
         RosHiTSDBInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      InstanceClass: ros.stringToRosTemplate(properties.instanceClass),
-      InstanceStorage: ros.numberToRosTemplate(properties.instanceStorage),
-      VPCId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
-      DiskCategory: ros.stringToRosTemplate(properties.diskCategory),
-      Duration: ros.numberToRosTemplate(properties.duration),
-      InstanceAlias: ros.stringToRosTemplate(properties.instanceAlias),
-      PayType: ros.stringToRosTemplate(properties.payType),
-      PricingCycle: ros.stringToRosTemplate(properties.pricingCycle),
-      SecurityIpList: ros.listMapper(ros.stringToRosTemplate)(properties.securityIpList),
+      'InstanceClass': ros.stringToRosTemplate(properties.instanceClass),
+      'InstanceStorage': ros.numberToRosTemplate(properties.instanceStorage),
+      'VPCId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+      'DiskCategory': ros.stringToRosTemplate(properties.diskCategory),
+      'Duration': ros.numberToRosTemplate(properties.duration),
+      'InstanceAlias': ros.stringToRosTemplate(properties.instanceAlias),
+      'PayType': ros.stringToRosTemplate(properties.payType),
+      'PricingCycle': ros.stringToRosTemplate(properties.pricingCycle),
+      'SecurityIpList': ros.listMapper(ros.stringToRosTemplate)(properties.securityIpList),
     };
 }
 
@@ -357,8 +357,8 @@ function rosInfluxDBDatabasePropsToRosTemplate(properties: any, enableResourcePr
         RosInfluxDBDatabasePropsValidator(properties).assertSuccess();
     }
     return {
-      DBName: ros.stringToRosTemplate(properties.dbName),
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+      'DBName': ros.stringToRosTemplate(properties.dbName),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
     };
 }
 
@@ -513,11 +513,11 @@ function rosInfluxDBUserPropsToRosTemplate(properties: any, enableResourceProper
         RosInfluxDBUserPropsValidator(properties).assertSuccess();
     }
     return {
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
-      Password: ros.stringToRosTemplate(properties.password),
-      UserName: ros.stringToRosTemplate(properties.userName),
-      UserType: ros.stringToRosTemplate(properties.userType),
-      DatabasePermissions: ros.listMapper(rosInfluxDBUserDatabasePermissionsPropertyToRosTemplate)(properties.databasePermissions),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'Password': ros.stringToRosTemplate(properties.password),
+      'UserName': ros.stringToRosTemplate(properties.userName),
+      'UserType': ros.stringToRosTemplate(properties.userType),
+      'DatabasePermissions': ros.listMapper(rosInfluxDBUserDatabasePermissionsPropertyToRosTemplate)(properties.databasePermissions),
     };
 }
 
@@ -668,7 +668,7 @@ function rosInfluxDBUserDatabasePermissionsPropertyToRosTemplate(properties: any
     if (!ros.canInspect(properties)) { return properties; }
     RosInfluxDBUser_DatabasePermissionsPropertyValidator(properties).assertSuccess();
     return {
-      Permission: ros.stringToRosTemplate(properties.permission),
-      DBName: ros.stringToRosTemplate(properties.dbName),
+      'Permission': ros.stringToRosTemplate(properties.permission),
+      'DBName': ros.stringToRosTemplate(properties.dbName),
     };
 }

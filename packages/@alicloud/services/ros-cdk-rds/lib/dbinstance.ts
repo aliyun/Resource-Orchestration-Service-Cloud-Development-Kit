@@ -99,6 +99,11 @@ export interface DBInstanceProps {
     readonly backupRetentionPeriod?: number | ros.IResolvable;
 
     /**
+     * Property burstingEnabled: Whether to enable bursting.
+     */
+    readonly burstingEnabled?: boolean | ros.IResolvable;
+
+    /**
      * Property category: The edition of the instance. Valid values:
      * Basic: RDS Basic Edition
      * HighAvailability: RDS High-availability Edition
@@ -108,6 +113,11 @@ export interface DBInstanceProps {
      * serverless_basic: RDS Serverless Basic Edition
      */
     readonly category?: string | ros.IResolvable;
+
+    /**
+     * Property coldDataEnabled: Whether to enable cold data storage.
+     */
+    readonly coldDataEnabled?: boolean | ros.IResolvable;
 
     /**
      * Property compressType: The format used to compress backups. Valid values: 
@@ -210,6 +220,11 @@ export interface DBInstanceProps {
      * Property instanceNetworkType: Instance network type, VPC or Classic
      */
     readonly instanceNetworkType?: string | ros.IResolvable;
+
+    /**
+     * Property ioAccelerationEnabled: Whether to enable IO Acceleration, 1 for enable 0 for disable.
+     */
+    readonly ioAccelerationEnabled?: string | ros.IResolvable;
 
     /**
      * Property localLogRetentionHours: The number of hours for which to retain log backup files on the instance. 
@@ -507,6 +522,7 @@ export class DBInstance extends ros.Resource {
             tags: props.tags,
             engine: props.engine,
             dbInstanceDescription: props.dbInstanceDescription,
+            ioAccelerationEnabled: props.ioAccelerationEnabled,
             targetDedicatedHostIdForMaster: props.targetDedicatedHostIdForMaster,
             engineVersion: props.engineVersion,
             dbInstanceClass: props.dbInstanceClass,
@@ -540,6 +556,8 @@ export class DBInstance extends ros.Resource {
             dbIsIgnoreCase: props.dbIsIgnoreCase,
             maintainTime: props.maintainTime,
             dbParamGroupId: props.dbParamGroupId,
+            burstingEnabled: props.burstingEnabled,
+            coldDataEnabled: props.coldDataEnabled,
             zoneId: props.zoneId,
             targetDedicatedHostIdForLog: props.targetDedicatedHostIdForLog,
             allocatePublicConnection: props.allocatePublicConnection,

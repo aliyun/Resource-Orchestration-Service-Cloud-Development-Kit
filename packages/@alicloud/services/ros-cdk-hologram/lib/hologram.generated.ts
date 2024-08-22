@@ -219,24 +219,24 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      Endpoints: ros.listMapper(rosInstanceEndpointsPropertyToRosTemplate)(properties.endpoints),
-      InstanceName: ros.stringToRosTemplate(properties.instanceName),
-      InstanceType: ros.stringToRosTemplate(properties.instanceType),
-      PaymentType: ros.stringToRosTemplate(properties.paymentType),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
-      AutoPay: ros.booleanToRosTemplate(properties.autoPay),
-      ColdStorageSize: ros.numberToRosTemplate(properties.coldStorageSize),
-      Cpu: ros.numberToRosTemplate(properties.cpu),
-      Duration: ros.numberToRosTemplate(properties.duration),
-      GatewayCount: ros.numberToRosTemplate(properties.gatewayCount),
-      InitialDatabases: ros.stringToRosTemplate(properties.initialDatabases),
-      LeaderInstanceId: ros.stringToRosTemplate(properties.leaderInstanceId),
-      PricingCycle: ros.stringToRosTemplate(properties.pricingCycle),
-      ProductCode: ros.stringToRosTemplate(properties.productCode),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      ScaleType: ros.stringToRosTemplate(properties.scaleType),
-      StorageSize: ros.numberToRosTemplate(properties.storageSize),
-      Tags: ros.listMapper(rosInstanceTagsPropertyToRosTemplate)(properties.tags),
+      'Endpoints': ros.listMapper(rosInstanceEndpointsPropertyToRosTemplate)(properties.endpoints),
+      'InstanceName': ros.stringToRosTemplate(properties.instanceName),
+      'InstanceType': ros.stringToRosTemplate(properties.instanceType),
+      'PaymentType': ros.stringToRosTemplate(properties.paymentType),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+      'AutoPay': ros.booleanToRosTemplate(properties.autoPay),
+      'ColdStorageSize': ros.numberToRosTemplate(properties.coldStorageSize),
+      'Cpu': ros.numberToRosTemplate(properties.cpu),
+      'Duration': ros.numberToRosTemplate(properties.duration),
+      'GatewayCount': ros.numberToRosTemplate(properties.gatewayCount),
+      'InitialDatabases': ros.stringToRosTemplate(properties.initialDatabases),
+      'LeaderInstanceId': ros.stringToRosTemplate(properties.leaderInstanceId),
+      'PricingCycle': ros.stringToRosTemplate(properties.pricingCycle),
+      'ProductCode': ros.stringToRosTemplate(properties.productCode),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'ScaleType': ros.stringToRosTemplate(properties.scaleType),
+      'StorageSize': ros.numberToRosTemplate(properties.storageSize),
+      'Tags': ros.listMapper(rosInstanceTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -594,11 +594,11 @@ export namespace RosInstance {
         /**
          * @Property vpcId: VPC primary key.
          */
-        readonly vpcId: string | ros.IResolvable;
+        readonly vpcId?: string | ros.IResolvable;
         /**
          * @Property vSwitchId: The ID of the virtual switch.
          */
-        readonly vSwitchId: string | ros.IResolvable;
+        readonly vSwitchId?: string | ros.IResolvable;
         /**
          * @Property enabled: Whether to turn on the network.
          */
@@ -625,9 +625,7 @@ function RosInstance_EndpointsPropertyValidator(properties: any): ros.Validation
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
     errors.collect(ros.propertyValidator('endpoint', ros.validateString)(properties.endpoint));
-    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
-    errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('enabled', ros.validateBoolean)(properties.enabled));
     errors.collect(ros.propertyValidator('vpcInstanceId', ros.validateString)(properties.vpcInstanceId));
@@ -647,13 +645,13 @@ function rosInstanceEndpointsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosInstance_EndpointsPropertyValidator(properties).assertSuccess();
     return {
-      Type: ros.stringToRosTemplate(properties.type),
-      Endpoint: ros.stringToRosTemplate(properties.endpoint),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      Enabled: ros.booleanToRosTemplate(properties.enabled),
-      VpcInstanceId: ros.stringToRosTemplate(properties.vpcInstanceId),
-      AlternativeEndpoints: ros.stringToRosTemplate(properties.alternativeEndpoints),
+      'Type': ros.stringToRosTemplate(properties.type),
+      'Endpoint': ros.stringToRosTemplate(properties.endpoint),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'Enabled': ros.booleanToRosTemplate(properties.enabled),
+      'VpcInstanceId': ros.stringToRosTemplate(properties.vpcInstanceId),
+      'AlternativeEndpoints': ros.stringToRosTemplate(properties.alternativeEndpoints),
     };
 }
 
@@ -700,7 +698,7 @@ function rosInstanceTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosInstance_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }

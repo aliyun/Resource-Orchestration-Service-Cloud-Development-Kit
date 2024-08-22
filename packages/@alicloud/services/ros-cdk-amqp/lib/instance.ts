@@ -117,6 +117,11 @@ export class Instance extends ros.Resource {
     public readonly attrPrivateEndpoint: ros.IResolvable;
 
     /**
+     * Attribute PublicEndpoint: The public endpoint of the instance.
+     */
+    public readonly attrPublicEndpoint: ros.IResolvable;
+
+    /**
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties
@@ -147,5 +152,6 @@ export class Instance extends ros.Resource {
         this.attrClassicEndpoint = rosInstance.attrClassicEndpoint;
         this.attrInstanceId = rosInstance.attrInstanceId;
         this.attrPrivateEndpoint = rosInstance.attrPrivateEndpoint;
+        this.attrPublicEndpoint = rosInstance.attrPublicEndpoint;
     }
 }

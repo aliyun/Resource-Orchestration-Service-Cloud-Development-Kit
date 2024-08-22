@@ -352,11 +352,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: id: The unique ID of the alert contact group notification.
+            /// <strong>Property</strong>: identity: The unique ID of the alert contact group notification.
             /// </remarks>
-            [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [JsiiProperty(name: "identity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            object? Id
+            object? Identity
             {
                 get
                 {
@@ -395,11 +395,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: id: The unique ID of the alert contact group notification.
+                /// <strong>Property</strong>: identity: The unique ID of the alert contact group notification.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-                public object? Id
+                [JsiiProperty(name: "identity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Identity
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -451,16 +451,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
                 }
             }
 
-            private object? _id;
+            private object? _identity;
 
             /// <remarks>
-            /// <strong>Property</strong>: id: The unique ID of the alert contact group notification.
+            /// <strong>Property</strong>: identity: The unique ID of the alert contact group notification.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? Id
+            [JsiiProperty(name: "identity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Identity
             {
-                get => _id;
+                get => _identity;
                 set
                 {
                     if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
@@ -480,7 +480,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
                                 throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
                         }
                     }
-                    _id = value;
+                    _identity = value;
                 }
             }
 
@@ -534,11 +534,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: id: The unique ID of the Function Compute notification.
+            /// <strong>Property</strong>: identity: The unique ID of the Function Compute notification.
             /// </remarks>
-            [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [JsiiProperty(name: "identity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            object? Id
+            object? Identity
             {
                 get
                 {
@@ -590,11 +590,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: id: The unique ID of the Function Compute notification.
+                /// <strong>Property</strong>: identity: The unique ID of the Function Compute notification.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-                public object? Id
+                [JsiiProperty(name: "identity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Identity
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -656,16 +656,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
                 }
             }
 
-            private object? _id;
+            private object? _identity;
 
             /// <remarks>
-            /// <strong>Property</strong>: id: The unique ID of the Function Compute notification.
+            /// <strong>Property</strong>: identity: The unique ID of the Function Compute notification.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? Id
+            [JsiiProperty(name: "identity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Identity
             {
-                get => _id;
+                get => _identity;
                 set
                 {
                     if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
@@ -685,7 +685,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
                                 throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
                         }
                     }
-                    _id = value;
+                    _identity = value;
                 }
             }
 
@@ -759,11 +759,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         public interface IMnsParametersProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: id: The unique ID of the Message Service (MNS) notification.
+            /// <strong>Property</strong>: identity: The unique ID of the Message Service (MNS) notification.
             /// </remarks>
-            [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [JsiiProperty(name: "identity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            object? Id
+            object? Identity
             {
                 get
                 {
@@ -805,11 +805,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: id: The unique ID of the Message Service (MNS) notification.
+                /// <strong>Property</strong>: identity: The unique ID of the Message Service (MNS) notification.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-                public object? Id
+                [JsiiProperty(name: "identity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Identity
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -838,16 +838,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         [JsiiByValue(fqn: "@alicloud/ros-cdk-cms.RosEventRuleTargets.MnsParametersProperty")]
         public class MnsParametersProperty : AlibabaCloud.SDK.ROS.CDK.Cms.RosEventRuleTargets.IMnsParametersProperty
         {
-            private object? _id;
+            private object? _identity;
 
             /// <remarks>
-            /// <strong>Property</strong>: id: The unique ID of the Message Service (MNS) notification.
+            /// <strong>Property</strong>: identity: The unique ID of the Message Service (MNS) notification.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? Id
+            [JsiiProperty(name: "identity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Identity
             {
-                get => _id;
+                get => _identity;
                 set
                 {
                     if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
@@ -867,7 +867,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
                                 throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
                         }
                     }
-                    _id = value;
+                    _identity = value;
                 }
             }
 
@@ -941,11 +941,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         public interface ISlsParametersProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: id: The unique ID of the Log Service notification.
+            /// <strong>Property</strong>: identity: The unique ID of the Log Service notification.
             /// </remarks>
-            [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [JsiiProperty(name: "identity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            object? Id
+            object? Identity
             {
                 get
                 {
@@ -1000,11 +1000,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: id: The unique ID of the Log Service notification.
+                /// <strong>Property</strong>: identity: The unique ID of the Log Service notification.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-                public object? Id
+                [JsiiProperty(name: "identity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Identity
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -1043,16 +1043,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         [JsiiByValue(fqn: "@alicloud/ros-cdk-cms.RosEventRuleTargets.SlsParametersProperty")]
         public class SlsParametersProperty : AlibabaCloud.SDK.ROS.CDK.Cms.RosEventRuleTargets.ISlsParametersProperty
         {
-            private object? _id;
+            private object? _identity;
 
             /// <remarks>
-            /// <strong>Property</strong>: id: The unique ID of the Log Service notification.
+            /// <strong>Property</strong>: identity: The unique ID of the Log Service notification.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? Id
+            [JsiiProperty(name: "identity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Identity
             {
-                get => _id;
+                get => _identity;
                 set
                 {
                     if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
@@ -1072,7 +1072,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
                                 throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
                         }
                     }
-                    _id = value;
+                    _identity = value;
                 }
             }
 
@@ -1179,11 +1179,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         public interface IWebhookParametersProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: id: The unique ID of the HTTP callback notification.
+            /// <strong>Property</strong>: identity: The unique ID of the HTTP callback notification.
             /// </remarks>
-            [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [JsiiProperty(name: "identity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            object? Id
+            object? Identity
             {
                 get
                 {
@@ -1238,11 +1238,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: id: The unique ID of the HTTP callback notification.
+                /// <strong>Property</strong>: identity: The unique ID of the HTTP callback notification.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-                public object? Id
+                [JsiiProperty(name: "identity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Identity
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -1281,16 +1281,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         [JsiiByValue(fqn: "@alicloud/ros-cdk-cms.RosEventRuleTargets.WebhookParametersProperty")]
         public class WebhookParametersProperty : AlibabaCloud.SDK.ROS.CDK.Cms.RosEventRuleTargets.IWebhookParametersProperty
         {
-            private object? _id;
+            private object? _identity;
 
             /// <remarks>
-            /// <strong>Property</strong>: id: The unique ID of the HTTP callback notification.
+            /// <strong>Property</strong>: identity: The unique ID of the HTTP callback notification.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? Id
+            [JsiiProperty(name: "identity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Identity
             {
-                get => _id;
+                get => _identity;
                 set
                 {
                     if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
@@ -1310,7 +1310,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
                                 throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
                         }
                     }
-                    _id = value;
+                    _identity = value;
                 }
             }
 

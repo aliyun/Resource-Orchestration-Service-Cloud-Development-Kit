@@ -17,18 +17,6 @@ export interface InstanceProps {
     readonly deployType: number | ros.IResolvable;
 
     /**
-     * Property diskSize: The size of the disk to be configured for the Message Queue for Apache Kafka instance.
-     */
-    readonly diskSize: number | ros.IResolvable;
-
-    /**
-     * Property diskType: The type of the disk to be configured for the Message Queue for Apache Kafka instance. Valid values: 
-     * 0: Ultra disk 
-     * 1: SSD
-     */
-    readonly diskType: string | ros.IResolvable;
-
-    /**
      * Property deletionForce: Whether delete all topics, consumer groups of the kafka instance and then delete instance. Default is false
      */
     readonly deletionForce?: boolean | ros.IResolvable;
@@ -37,6 +25,18 @@ export interface InstanceProps {
      * Property deployOption: If you want to deploy instance after create at once, the VSwitchId and DeployModule parameters is required
      */
     readonly deployOption?: RosInstance.DeployOptionProperty | ros.IResolvable;
+
+    /**
+     * Property diskSize: The size of the disk to be configured for the Message Queue for Apache Kafka instance.
+     */
+    readonly diskSize?: number | ros.IResolvable;
+
+    /**
+     * Property diskType: The type of the disk to be configured for the Message Queue for Apache Kafka instance. Valid values: 
+     * 0: Ultra disk 
+     * 1: SSD
+     */
+    readonly diskType?: string | ros.IResolvable;
 
     /**
      * Property eipMax: The public traffic to be configured for the Message Queue for Apache Kafka instance. 
@@ -77,6 +77,11 @@ export interface InstanceProps {
      * Property payType: Pay by hour or month.
      */
     readonly payType?: string | ros.IResolvable;
+
+    /**
+     * Property serverlessConfig: Serverless instance related settings.
+     */
+    readonly serverlessConfig?: RosInstance.ServerlessConfigProperty | ros.IResolvable;
 
     /**
      * Property specType: The edition of the Message Queue for Apache Kafka instance. Valid values: 
@@ -177,6 +182,7 @@ export class Instance extends ros.Resource {
             deployOption: props.deployOption,
             deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
             ioMaxSpec: props.ioMaxSpec,
+            serverlessConfig: props.serverlessConfig,
             diskSize: props.diskSize,
             topicQuota: props.topicQuota,
             tags: props.tags,

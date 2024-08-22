@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-recommendinstancetypes
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:06.588Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:20.539Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.datasource.RecommendInstanceTypesProps")
 @software.amazon.jsii.Jsii.Proxy(RecommendInstanceTypesProps.Jsii$Proxy.class)
 public interface RecommendInstanceTypesProps extends software.amazon.jsii.JsiiSerializable {
@@ -106,6 +106,21 @@ public interface RecommendInstanceTypesProps extends software.amazon.jsii.JsiiSe
     }
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
      * Property scene: Specifies the scenario in which the instance type is recommended.
      * <p>
      * Valid values:
@@ -186,6 +201,7 @@ public interface RecommendInstanceTypesProps extends software.amazon.jsii.JsiiSe
         java.lang.Object maxPrice;
         java.lang.Object memory;
         java.lang.Object priorityStrategy;
+        java.lang.Object refreshOptions;
         java.lang.Object scene;
         java.lang.Object spotStrategy;
         java.lang.Object systemDiskCategory;
@@ -419,6 +435,40 @@ public interface RecommendInstanceTypesProps extends software.amazon.jsii.JsiiSe
         }
 
         /**
+         * Sets the value of {@link RecommendInstanceTypesProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RecommendInstanceTypesProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RecommendInstanceTypesProps#getScene}
          * @param scene Property scene: Specifies the scenario in which the instance type is recommended.
          *              Valid values:
@@ -587,6 +637,7 @@ public interface RecommendInstanceTypesProps extends software.amazon.jsii.JsiiSe
         private final java.lang.Object maxPrice;
         private final java.lang.Object memory;
         private final java.lang.Object priorityStrategy;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object scene;
         private final java.lang.Object spotStrategy;
         private final java.lang.Object systemDiskCategory;
@@ -608,6 +659,7 @@ public interface RecommendInstanceTypesProps extends software.amazon.jsii.JsiiSe
             this.maxPrice = software.amazon.jsii.Kernel.get(this, "maxPrice", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.memory = software.amazon.jsii.Kernel.get(this, "memory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.priorityStrategy = software.amazon.jsii.Kernel.get(this, "priorityStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.scene = software.amazon.jsii.Kernel.get(this, "scene", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.spotStrategy = software.amazon.jsii.Kernel.get(this, "spotStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskCategory = software.amazon.jsii.Kernel.get(this, "systemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -629,6 +681,7 @@ public interface RecommendInstanceTypesProps extends software.amazon.jsii.JsiiSe
             this.maxPrice = builder.maxPrice;
             this.memory = builder.memory;
             this.priorityStrategy = builder.priorityStrategy;
+            this.refreshOptions = builder.refreshOptions;
             this.scene = builder.scene;
             this.spotStrategy = builder.spotStrategy;
             this.systemDiskCategory = builder.systemDiskCategory;
@@ -679,6 +732,11 @@ public interface RecommendInstanceTypesProps extends software.amazon.jsii.JsiiSe
         @Override
         public final java.lang.Object getPriorityStrategy() {
             return this.priorityStrategy;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -739,6 +797,9 @@ public interface RecommendInstanceTypesProps extends software.amazon.jsii.JsiiSe
             if (this.getPriorityStrategy() != null) {
                 data.set("priorityStrategy", om.valueToTree(this.getPriorityStrategy()));
             }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
+            }
             if (this.getScene() != null) {
                 data.set("scene", om.valueToTree(this.getScene()));
             }
@@ -781,6 +842,7 @@ public interface RecommendInstanceTypesProps extends software.amazon.jsii.JsiiSe
             if (this.maxPrice != null ? !this.maxPrice.equals(that.maxPrice) : that.maxPrice != null) return false;
             if (this.memory != null ? !this.memory.equals(that.memory) : that.memory != null) return false;
             if (this.priorityStrategy != null ? !this.priorityStrategy.equals(that.priorityStrategy) : that.priorityStrategy != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             if (this.scene != null ? !this.scene.equals(that.scene) : that.scene != null) return false;
             if (this.spotStrategy != null ? !this.spotStrategy.equals(that.spotStrategy) : that.spotStrategy != null) return false;
             if (this.systemDiskCategory != null ? !this.systemDiskCategory.equals(that.systemDiskCategory) : that.systemDiskCategory != null) return false;
@@ -799,6 +861,7 @@ public interface RecommendInstanceTypesProps extends software.amazon.jsii.JsiiSe
             result = 31 * result + (this.maxPrice != null ? this.maxPrice.hashCode() : 0);
             result = 31 * result + (this.memory != null ? this.memory.hashCode() : 0);
             result = 31 * result + (this.priorityStrategy != null ? this.priorityStrategy.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.scene != null ? this.scene.hashCode() : 0);
             result = 31 * result + (this.spotStrategy != null ? this.spotStrategy.hashCode() : 0);
             result = 31 * result + (this.systemDiskCategory != null ? this.systemDiskCategory.hashCode() : 0);

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Returns true if a specified string matches all values in a list.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:03.952Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:16.978Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.FnListMerge")
 public class FnListMerge extends software.amazon.jsii.JsiiObject implements com.aliyun.ros.cdk.core.IResolvable {
 

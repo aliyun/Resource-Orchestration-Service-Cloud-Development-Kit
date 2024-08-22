@@ -20,6 +20,14 @@ export interface LaunchTemplatesProps {
     readonly launchTemplateName?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property templateResourceGroupId: The ID of the enterprise resource group to which the template is launched.
      */
     readonly templateResourceGroupId?: string | ros.IResolvable;
@@ -61,6 +69,7 @@ export class LaunchTemplates extends ros.Resource {
         const rosLaunchTemplates = new RosLaunchTemplates(this, id,  {
             launchTemplateName: props.launchTemplateName,
             launchTemplateId: props.launchTemplateId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
             templateResourceGroupId: props.templateResourceGroupId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosLaunchTemplates;

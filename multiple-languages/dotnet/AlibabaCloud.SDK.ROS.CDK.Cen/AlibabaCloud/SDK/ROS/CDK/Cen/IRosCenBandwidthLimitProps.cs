@@ -47,6 +47,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             get;
         }
 
+        /// <remarks>
+        /// <strong>Property</strong>: bandwidthType: Bandwidth allocation mode. Value: BandwidthPackage: Allocates bandwidth from the bandwidth package.
+        /// </remarks>
+        [JsiiProperty(name: "bandwidthType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? BandwidthType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `RosCenBandwidthLimit`.</summary>
         /// <remarks>
         /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthlimit
@@ -92,6 +105,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             public object OppositeRegionId
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: bandwidthType: Bandwidth allocation mode. Value: BandwidthPackage: Allocates bandwidth from the bandwidth package.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "bandwidthType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? BandwidthType
+            {
+                get => GetInstanceProperty<object?>();
             }
         }
     }

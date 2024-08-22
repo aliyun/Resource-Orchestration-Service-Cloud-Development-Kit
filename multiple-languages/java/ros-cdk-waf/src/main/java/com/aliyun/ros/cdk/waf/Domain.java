@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.waf;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::WAF::Domain</code>, which is used to add a domain to Web Application Firewall (WAF).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.955Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:25.168Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.waf.$Module.class, fqn = "@alicloud/ros-cdk-waf.Domain")
 public class Domain extends com.aliyun.ros.cdk.core.Resource {
 

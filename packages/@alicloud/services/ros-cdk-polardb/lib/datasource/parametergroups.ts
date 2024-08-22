@@ -18,6 +18,14 @@ export interface ParameterGroupsProps {
      * Property dbVersion: The version of the database engine.
      */
     readonly dbVersion?: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -56,6 +64,7 @@ export class ParameterGroups extends ros.Resource {
         const rosParameterGroups = new RosParameterGroups(this, id,  {
             dbVersion: props.dbVersion,
             dbType: props.dbType,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosParameterGroups;
         this.attrParameterGroupIds = rosParameterGroups.attrParameterGroupIds;
